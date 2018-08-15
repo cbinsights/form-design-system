@@ -1,0 +1,14 @@
+{
+  "name": "fds-components",
+  "version": "0.0.1",
+  "description": "Form Design System React components",
+  "author": "adetrick@cbinsights.com",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src --out-dir lib --ignore test.jsx --source-maps"
+  },
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}

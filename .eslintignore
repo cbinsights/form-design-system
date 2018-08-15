@@ -1,0 +1,7 @@
+**/dist/
+**/build/
+**/lib/
+node_modules/
+**/node_modules/
+*.log
+.eslintrc.js

@@ -1,0 +1,48 @@
+{
+  "source": ["./properties/**/*.json"],
+
+  "platforms": {
+
+    "CSSCustomProperties": {
+      "transforms": [
+        "attribute/cti",
+        "name/ci/kebab",
+        "color/css"
+      ],
+      "buildPath": "./dist/css/",
+      "files": [{
+        "destination": "customProperties.css",
+        "format": "css/variables"
+      }]
+    },
+
+    "JSConstants": {
+      "transforms": [
+        "attribute/cti",
+        "name/ci/constant",
+        "color/css"
+      ],
+      "buildPath": "./dist/js/",
+      "files": [{
+        "destination": "es6Constants.js",
+        "format": "javascript/es6"
+      }]
+    },
+
+    "docs": {
+      "transforms": [
+        "attribute/cti",
+        "attribute/color",
+        "attribute/varNames",
+        "color/css"
+      ],
+      "buildPath": "./dist/doc/",
+      "files": [{
+        "destination": "static-styleguide.html",
+        "format": "html/doc"
+      }],
+      "actions": ["doc_assets"]
+    }
+
+  }
+}
