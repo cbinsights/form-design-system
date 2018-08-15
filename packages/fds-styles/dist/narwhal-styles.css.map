@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.css"],"names":[],"mappings":"AAAA;CACC,oBAAoB;CACpB;;AAED;CACC,eAAuB;CAAvB,uBAAuB;CACvB","file":"narwhal-styles.css","sourcesContent":[":root {\n\t--test-var: #b69420;\n}\n\nbody {\n\tcolor: var(--test-var);\n}\n"]}

@@ -5,7 +5,8 @@
   "author": "Adam Detrick <adetrick@cbinsights.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn node ./scripts/build.js"
+    "build": "yarn compile",
+    "compile": "postcss src/index.css -o lib/fds-styles.css -m"
   },
   "devDependencies": {}
 }
