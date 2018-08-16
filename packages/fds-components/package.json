@@ -5,9 +5,13 @@
   "author": "adetrick@cbinsights.com",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir lib --ignore test.jsx --source-maps"
+    "compile:jsx": "babel src --out-dir lib --ignore test.jsx --source-maps",
+    "compile:css": "postcss src/style/index.css -o lib/style/fds-components.css",
+    "build": "yarn compile:css && yarn compile:jsx"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   }
