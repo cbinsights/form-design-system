@@ -11,14 +11,45 @@
   justify-content: flex-start;
 }
 
+/* direction */
 .flex--row {
   flex-direction: row;
   width: 100%;
 }
-
+.flex--row--reverse {
+  flex-direction: row-reverse;
+}
 .flex--column {
   flex-direction: column;
   height: 100%;
+}
+.flex--column--reverse {
+  flex-direction: column-reverse;
+}
+
+/* parent justify */
+.flex--justifyEnd {
+  justify-content: flex-end;
+}
+.flex--justifyCenter {
+  justify-content: center;
+}
+.flex--justifySpaceBetween {
+  justify-content: space-between;
+}
+.flex--justifySpaceAround {
+  justify-content: space-around;
+}
+
+/* parent align */
+.flex--alignStart {
+  align-items: flex-start;
+}
+.flex--alignCenter {
+  align-items: center;
+}
+.flex--alignEnd {
+  align-items: flex-end;
 }
 
 .flex--wrap {
@@ -28,9 +59,6 @@
 /* Flex child */
 .flexItem {
   box-sizing: border-box;
-}
-
-.flexItem--grow {
   flex-basis: 0;
   flex-grow: 1;
   width: auto;
@@ -44,15 +72,38 @@
   width: initial;
 }
 
+/* child justify */
+.flexItem--justifyEnd {
+  justify-self: flex-end;
+}
+.flexItem--justifyCenter {
+  justify-self: center;
+}
+.flexItem--justifySpaceBetween {
+  justify-self: space-between;
+}
+.flexItem--justifySpaceAround {
+  justify-self: space-around;
+}
+
+/* child align */
+.flexItem--alignStart {
+  align-self: flex-start;
+}
+.flexItem--alignCenter {
+  align-self: center;
+}
+.flexItem--alignEnd {
+  align-self: flex-end;
+}
+
 /* Gutters */
 .flex--row .flexItem:not(:first-child) {
   padding-left: var(--space-gutter);
 }
-
 .flex--column .flexItem:not(:first-child) {
   padding-top: var(--space-gutter);
 }
-
 .flex--noGutters .flexItem {
   padding: 0;
 }
