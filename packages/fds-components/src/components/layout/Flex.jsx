@@ -3,20 +3,28 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 /**
- * @description map of alignment props to class names
+ * @description map of alignment values to class names
  */
-const DIRECTIONS = {
+const DirectionPropMap = {
   row: 'flex--row',
   column: 'flex--column',
 };
 
 /**
  * @param {Object} props react props
+ * @returns {ReactElement}
  */
 const Flex = (props) => {
-  const classNames = cx('foo', props.className);
-
-  return <div className={classNames} />;
+  const classNames = cx(
+    'flex',
+    DirectionPropMap[props.direction],
+    {
+      'flex--wrap': props.wrap,
+      'flex--noGutters': props.noGutters,
+    },
+    props.className
+  );
+  return <div className={classNames}>{props.children}</div>;
 };
 
 Flex.defaultProps = {
@@ -26,9 +34,11 @@ Flex.defaultProps = {
 
 // TODO: justify props
 Flex.propTypes = {
-  direction: PropTypes.oneOf(Object.keys(DIRECTIONS)),
+  direction: PropTypes.oneOf(Object.keys(DirectionPropMap)),
   noGutters: PropTypes.bool,
+  wrap: PropTypes.bool,
   className: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Flex;
