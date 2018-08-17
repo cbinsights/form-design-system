@@ -8,7 +8,6 @@
   box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
 }
 
 /* direction */
