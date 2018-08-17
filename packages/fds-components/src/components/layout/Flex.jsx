@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import childrenOfType from '../../util/propValidation';
+import { childrenOfType } from '../../util/propValidation';
 
 /**
  * @description map of alignment prop values to class names

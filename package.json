@@ -5,7 +5,8 @@
   "author": "Adam Detrick <adetrick@cbinsights.com>",
   "license": "MIT",
   "scripts": {
-    "build": "lerna run build",
+    "build": "lerna run build --stream",
+    "test": "lerna run test --stream",
     "bootstrap": "yarn lerna bootstrap",
     "lint": "eslint ./ --ext .js,.jsx",
     "precommit": "lint-staged"
@@ -47,9 +48,14 @@
     }
   },
   "lint-staged": {
-    "packages/**/*.{js,jsx}": [
-      "prettier --write",
-      "eslint"
+    "linters": {
+      "packages/**/*.{js,jsx}": [
+        "prettier --write",
+        "eslint --no-ignore"
+      ]
+    },
+    "ignore": [
+      "packages/**/*.test.{js,jsx}"
     ]
   }
 }

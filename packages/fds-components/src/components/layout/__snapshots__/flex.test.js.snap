@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flex component matches snapshot 1`] = `
+<div
+  className="flex flex--row"
+/>
+`;

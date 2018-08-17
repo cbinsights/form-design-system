@@ -8,12 +8,11 @@ import React from 'react';
  */
 export const childrenOfType = (displayNames) => (props, propName, componentName) => {
   const prop = props[propName];
-  const hasInvalidChild = React.Children.count(prop).some((child) =>
+  const hasInvalidChild = React.Children.toArray(prop).some((child) =>
     displayNames.some((name) => child.type.displayName !== name)
   );
-
   if (hasInvalidChild) {
     return new Error(`Children of ${componentName} must be of type \`FlexItem\``);
   }
-  return true;
+  return null;
 };
