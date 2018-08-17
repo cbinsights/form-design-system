@@ -4,6 +4,7 @@ import React from 'react';
 /**
  * Validates that children are of a specific component type(s)
  * @param {Array} displayNames list of valid component display names
+ * @returns {Function} custom propType validator
  */
 export const childrenOfType = (displayNames) => (props, propName, componentName) => {
   const prop = props[propName];
