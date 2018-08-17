@@ -60,7 +60,6 @@ Flex.defaultProps = {
   noGutters: false,
 };
 
-// TODO: move child validation to utils
 Flex.propTypes = {
   direction: PropTypes.oneOf(Object.keys(DirectionPropMap)),
   justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),
