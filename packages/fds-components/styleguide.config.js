@@ -2,8 +2,13 @@ const path = require('path');
 const { createConfig, match, babel, postcss } = require('webpack-blocks');
 
 module.exports = {
-  // always include our base stylesheet for fds-components
-  require: [path.join(__dirname, 'src/style/index.css')],
+  require: [
+    // always include our base stylesheet for fds-components
+    path.join(__dirname, 'src/style/index.css'),
+
+    // for the styleguide only, provide some additional debugging classes
+    path.join(__dirname, 'src/style/debug.css'),
+  ],
 
   // minimum possible config to run styleguidist.
   // babel and postcss loaders will read from base config

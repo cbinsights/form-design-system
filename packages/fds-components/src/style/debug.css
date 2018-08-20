@@ -1,0 +1,68 @@
+/**
+Debug styles
+---------------
+
+This file contains debugging utility classes that are
+loaded only in styleguidist.
+*/
+
+:root {
+  --debug-font: Monaco, Consolas, monospace;
+  --debug-color-layer: rgba(187,219,229, 0.33);
+  --debug-color-layerBorder: rgba(0, 51, 102, 0.2);
+  --debug-color-info: rgba(229, 50, 62, 1);
+  --debug-color-content: rgba(255,192,203,0.33);
+}
+
+/**
+<element class="debug--layers">
+
+Adds transparent backgrounds to all elements.
+Helps show stacking depth.
+*/
+.debug--layers * {
+  background-color: var(--debug-color-layer) !important;
+  border: 1px solid var(--debug-color-layerBorder) !important;
+}
+
+
+/**
+<element class="debug-classes">
+
+Applies a style to every child element that activates
+information about class names on hover.
+*/
+.debug--classes [class]:hover {
+  cursor: help;
+  position: relative !important;
+  outline: 2px dotted var(--debug-color-info);
+}
+.debug--classes [class]:hover:after {
+  content: attr(class);
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: -2px;
+  padding: 4px;
+  font-size: 12px;
+  font-family: var(--debug-font);
+  color: #fff;
+  background-color: var(--debug-color-info);
+}
+.debug--classes [class]:hover > [class]:hover:after {
+  bottom: initial;
+  left: initial;
+  top: 100%;
+  right: -2px;
+}
+
+/**
+<element class="debug--boxModel">
+
+Adds colors to element to show box model cues
+*/
+.debug--boxModel {
+  outline: 1px dotted var(--debug-color-info);
+  background-color: var(--debug-color-content);
+  background-clip: content-box;
+}

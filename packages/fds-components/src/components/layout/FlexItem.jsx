@@ -39,7 +39,7 @@ const FlexItem = (props) => {
       [JustifyPropMap[props.justify]]: props.justify,
       [AlignPropMap[props.align]]: props.align,
     },
-    props.classNames
+    props.className
   );
 
   return <div className={classNames}>{props.children}</div>;
@@ -57,7 +57,7 @@ FlexItem.propTypes = {
   shrink: PropTypes.bool,
 
   /** Classes to pass to flex child */
-  classNames: PropTypes.string,
+  className: PropTypes.string,
 
   /** React children */
   children: PropTypes.node,

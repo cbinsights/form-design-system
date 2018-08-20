@@ -33,7 +33,7 @@ const AlignPropMap = {
 /**
  * This is the `Flex` description
  *
- * @example ./Flex-FlexItem.md
+ * @example ./Flex.md
  *
  * @param {Object} props react props
  * @returns {ReactElement}

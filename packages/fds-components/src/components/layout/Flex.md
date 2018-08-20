@@ -17,12 +17,12 @@ Here is my very _c o o l_ example.
 #### With `reverse` prop
 This also injects some props into the example wrapper i guess
 
-```js { "props": { "className": "debug" } } 
+```js
 <Flex reverse>
-  <FlexItem shrink>
+  <FlexItem shrink className="debug--boxModel">
     <img src="https://via.placeholder.com/80/a02385/ffffff" />
   </FlexItem>
-  <FlexItem>
+  <FlexItem className="debug--boxModel">
     <p>The first <code>FlexItem</code> will shrink to content width.</p>
     <p><em>This item</em> grows to fill remaining width of parent</p>
   </FlexItem>
