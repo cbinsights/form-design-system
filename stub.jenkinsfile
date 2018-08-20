@@ -1,0 +1,28 @@
+pipeline {
+  stages {
+
+    stage('install'){
+      steps{
+        // yarn install && yarn bootstrap
+      }
+    }
+
+    stage('unit test'){
+      steps{
+        // yarn test
+      }
+    }
+
+    stage('build'){
+      steps{
+        // yarn build
+      }
+    }
+
+    stage('publish'){
+      steps{
+        // yarn publish
+      }
+    }
+  }
+}
