@@ -27,5 +27,35 @@ pipeline {
       }
     }
 
+    stage('Publish npm packages') {
+      steps {
+        ansiColor('xterm') {
+          script {
+            if (env.BRANCH_NAME == 'master') {
+              sh "echo Publish step not implemented"
+              // sh "yarn publish"
+            } else {
+              sh "echo Not on branch `master`. Skipping publish step..."
+            }
+          }
+        }
+      }
+    }
+
+    stage('Update gh-pages docs') {
+      steps {
+        ansiColor('xterm') {
+          script {
+            if (env.BRANCH_NAME == 'master') {
+              sh "echo Docs step not implemented"
+              // sh "yarn publish"
+            } else {
+              sh "echo Not on branch `master`. Skipping docs step..."
+            }
+          }
+        }
+      }
+    }
+
   }
 }
