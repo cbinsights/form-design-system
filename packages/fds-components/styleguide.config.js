@@ -1,16 +1,16 @@
 const path = require('path');
-const { createConfig, match, babel, css } = require('webpack-blocks');
+const { createConfig, match, babel, postcss } = require('webpack-blocks');
 
 module.exports = {
-  // PostCSS is only used for styleguidist internal config. For our styles,
-  // we load CSS that has already been compiled from `lib/`.
-  require: [path.join(__dirname, 'lib/style/fds-components.css')],
+  // always include our base stylesheet for fds-components
+  require: [path.join(__dirname, 'src/style/index.css')],
 
   // minimum possible config to run styleguidist.
-  // babel loader for JSX, css/style loader for our CSS imported from `lib/`
+  // babel and postcss loaders will read from base config
+  // files in lerna project root
   webpackConfig: createConfig([
     match(['*.js', '*jsx', '!*node_modules*'], [babel()]),
-    match(['*.css', '!*node_modules*'], [css()]),
+    match(['*.css', '!*node_modules*'], [postcss()]),
   ]),
 
   // Writes correct import path for using components
