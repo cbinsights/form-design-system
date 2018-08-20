@@ -2,12 +2,12 @@
 
 exports[`Flex component matches snapshot (default props) 1`] = `
 <div
-  className="flex flex--row"
+  className="flexItem"
 />
 `;
 
 exports[`Flex component matches snapshot (set all props) 1`] = `
 <div
-  className="flex flex--column flex--column--reverse flex--justifySpaceBetween flex--alignStart flex--wrap flex--noGutters foo"
+  className="flexItem flexItem--shrink flexItem--justifySpaceBetween flexItem--alignStart foo"
 />
 `;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Flex from './Flex';
+import FlexItem from './FlexItem';
 
-const renderComponent = (props) => shallow(<Flex {...props} />);
+const renderComponent = (props) => shallow(<FlexItem {...props} />);
 
 describe('Flex component', () => {
 
@@ -14,10 +14,7 @@ describe('Flex component', () => {
 
   it('matches snapshot (set all props)', () => {
     const flex = renderComponent({
-      noGutters: true,
-      wrap: true,
-      reverse: true,
-      direction: 'column',
+      shrink: true,
       align: 'flexStart',
       justify: 'spaceBetween',
       className: 'foo'
