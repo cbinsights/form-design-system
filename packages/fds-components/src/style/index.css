@@ -1,1 +1,9 @@
 @import "./layout/flex.css";
+
+.debug {
+  outline: 1px dotted red;
+  background: pink;
+  color: red;
+  padding: 0.5rem;
+  font-family: Monaco, Consolas, monospace;
+}

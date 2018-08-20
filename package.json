@@ -5,6 +5,7 @@
   "author": "Adam Detrick <adetrick@cbinsights.com>",
   "license": "MIT",
   "scripts": {
+    "styleguide": "lerna run serve --stream --scope fds-components",
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "bootstrap": "yarn lerna bootstrap",

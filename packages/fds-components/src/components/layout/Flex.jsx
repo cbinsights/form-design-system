@@ -31,6 +31,10 @@ const AlignPropMap = {
 };
 
 /**
+ * This is the `Flex` description
+ *
+ * @example ./Flex-FlexItem.md
+ *
  * @param {Object} props react props
  * @returns {ReactElement}
  */
@@ -64,10 +68,20 @@ Flex.propTypes = {
   direction: PropTypes.oneOf(Object.keys(DirectionPropMap)),
   justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),
   align: PropTypes.oneOf(Object.keys(AlignPropMap)),
+
+  /** When set, gutters are removed from `FlexItem` children */
   noGutters: PropTypes.bool,
+
+  /** When set, `FlexItem` children are allowed to wrap */
   wrap: PropTypes.bool,
+
+  /** When set, `FlexItem` order is rendered in reverse */
   reverse: PropTypes.bool,
+
+  /** Classes to pass to flex parent */
   className: PropTypes.string,
+
+  /** React children (must be of type `FlexItem`) */
   children: childrenOfType(['FlexItem']),
 };
 

@@ -22,6 +22,10 @@ const AlignPropMap = {
 };
 
 /**
+ * This is the `FlexItem` description.
+ *
+ * @example ./Flex-FlexItem.md
+ *
  * @param {Object} props react props
  * @returns {ReactElement}
  */
@@ -46,10 +50,16 @@ FlexItem.defaultProps = {
 };
 
 FlexItem.propTypes = {
-  shrink: PropTypes.bool,
   justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),
   align: PropTypes.oneOf(Object.keys(AlignPropMap)),
+
+  /** When set, the `FlexItem` will shrink to content size */
+  shrink: PropTypes.bool,
+
+  /** Classes to pass to flex child */
   classNames: PropTypes.string,
+
+  /** React children */
   children: PropTypes.node,
 };
 
