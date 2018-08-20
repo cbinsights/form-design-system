@@ -15,13 +15,16 @@
   flex-direction: row;
   width: 100%;
 }
+
 .flex--row--reverse {
   flex-direction: row-reverse;
 }
+
 .flex--column {
   flex-direction: column;
   height: 100%;
 }
+
 .flex--column--reverse {
   flex-direction: column-reverse;
 }
@@ -30,12 +33,15 @@
 .flex--justifyEnd {
   justify-content: flex-end;
 }
+
 .flex--justifyCenter {
   justify-content: center;
 }
+
 .flex--justifySpaceBetween {
   justify-content: space-between;
 }
+
 .flex--justifySpaceAround {
   justify-content: space-around;
 }
@@ -44,9 +50,11 @@
 .flex--alignStart {
   align-items: flex-start;
 }
+
 .flex--alignCenter {
   align-items: center;
 }
+
 .flex--alignEnd {
   align-items: flex-end;
 }
@@ -75,12 +83,15 @@
 .flexItem--justifyEnd {
   justify-self: flex-end;
 }
+
 .flexItem--justifyCenter {
   justify-self: center;
 }
+
 .flexItem--justifySpaceBetween {
   justify-self: space-between;
 }
+
 .flexItem--justifySpaceAround {
   justify-self: space-around;
 }
@@ -89,9 +100,11 @@
 .flexItem--alignStart {
   align-self: flex-start;
 }
+
 .flexItem--alignCenter {
   align-self: center;
 }
+
 .flexItem--alignEnd {
   align-self: flex-end;
 }
@@ -100,9 +113,11 @@
 .flex--row .flexItem:not(:first-child) {
   padding-left: var(--space-gutter);
 }
+
 .flex--column .flexItem:not(:first-child) {
   padding-top: var(--space-gutter);
 }
+
 .flex--noGutters .flexItem {
   padding: 0;
 }
