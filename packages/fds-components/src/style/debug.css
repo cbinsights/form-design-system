@@ -59,9 +59,10 @@ information about class names on hover.
 /**
 <element class="debug--boxModel">
 
-Adds colors to element to show box model cues
+Adds colors to direct child elements to highlight
+border and content box.
 */
-.debug--boxModel {
+.debug--boxModel > * {
   outline: 1px dotted var(--debug-color-info);
   background-color: var(--debug-color-content);
   background-clip: content-box;
