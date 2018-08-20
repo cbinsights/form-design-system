@@ -24,8 +24,6 @@ const AlignPropMap = {
 /**
  * This is the `FlexItem` description.
  *
- * @example ./Flex-FlexItem.md
- *
  * @param {Object} props react props
  * @returns {ReactElement}
  */
