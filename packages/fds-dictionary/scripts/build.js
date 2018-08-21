@@ -5,27 +5,27 @@ const transforms = require('./transforms');
 const formats = require('./formats');
 const actions = require('./actions');
 
-const fancyLog = msg => {
+const fancyLog = (msg) => {
   const logHR = `${new Array(msg.length).fill('~').join('')}`;
   console.log(`\n${logHR}`);
   console.log(msg);
   console.log(logHR);
 };
 
-transforms.forEach(t => {
+transforms.forEach((t) => {
   console.log(`Registering transform ${t.name}`);
   StyleDictionary.registerTransform(t);
 });
 
-formats.forEach(f => {
+formats.forEach((f) => {
   console.log(`Registering format ${f.name}`);
   StyleDictionary.registerFormat(f);
 });
 
-actions.forEach(a => {
+actions.forEach((a) => {
   console.log(`Registering action ${a.name}`);
   StyleDictionary.registerAction(a);
 });
 
-fancyLog('💅 📖 Building distributions with style-dictionary 💅 📖');
+fancyLog('💅 📖 Building distributions with style-dictionary 📖 💅');
 StyleDictionary.buildAllPlatforms();
