@@ -5,6 +5,7 @@
   "author": "Adam Detrick <adetrick@cbinsights.com>",
   "license": "MIT",
   "scripts": {
+    "clean": "lerna run clean --stream",
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "bootstrap": "yarn lerna bootstrap",

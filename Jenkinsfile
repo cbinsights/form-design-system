@@ -7,6 +7,9 @@ pipeline {
         ansiColor('xterm') {
           sh "yarn install"
           sh "yarn bootstrap"
+
+          // fail if yarn install produces unstaged changes (yarn.lock)
+          sh "git diff --exit-code"
         }
       }
     }
