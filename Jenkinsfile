@@ -30,6 +30,7 @@ pipeline {
       }
     }
 
+    /*
     stage('Publish npm packages') {
       steps {
         ansiColor('xterm') {
@@ -44,7 +45,9 @@ pipeline {
         }
       }
     }
+    */
 
+    /*
     stage('Update gh-pages docs') {
       steps {
         ansiColor('xterm') {
@@ -59,6 +62,7 @@ pipeline {
         }
       }
     }
+    */
 
   }
 }
