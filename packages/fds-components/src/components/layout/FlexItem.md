@@ -46,7 +46,7 @@ You can use the same `align` and `justify` prop interface from `Flex` to control
 Within a fixed height container, this `Flex` creates a fixed height header and footer and allows the content area to expand to fill the remaining space.
 
 ```js
-<div style={{ height: '400px' }}>
+<div style={{ height: '200px' }}>
   <Flex direction="column" align="stretch" className="debug--boxModel">
     <FlexItem shrink>
       <p>This is the header, set to <code>shrink</code>.</p>
