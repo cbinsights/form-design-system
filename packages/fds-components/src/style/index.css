@@ -1,1 +1,8 @@
 @import "./layout/flex.css";
+
+/* TODO: replace these overrides with foundational stylesheet imported from fds-styles */
+img,
+p {
+  margin: 0;
+  padding: 0;
+}

@@ -1,58 +1,72 @@
-Here is my very _c o o l_ example.
-
-#### Basic example
-
-```js
-<Flex>
-  <FlexItem shrink>
-    <img src="https://via.placeholder.com/80/a02385/ffffff" />
-  </FlexItem>
-  <FlexItem>
-    <p>The first <code>FlexItem</code> will shrink to content width.</p>
-    <p><em>This item</em> grows to fill remaining width of parent</p>
-  </FlexItem>
-</Flex>
-```
-
-#### With `reverse` prop
-This also injects some props into the example wrapper i guess
+### Flex direction
+`Flex` renders in row orientation by default. Use the `direction` prop to change flex direction. To reverse the row or column, use the boolean prop `reverse`.
 
 ```js
-<Flex reverse>
-  <FlexItem shrink className="debug--boxModel">
-    <img src="https://via.placeholder.com/80/a02385/ffffff" />
-  </FlexItem>
-  <FlexItem className="debug--boxModel">
-    <p>The first <code>FlexItem</code> will shrink to content width.</p>
-    <p><em>This item</em> grows to fill remaining width of parent</p>
-  </FlexItem>
-</Flex>
+<div style={{ marginTop: '1rem' }}>
+  <p><strong>row</strong></p>
+  <Flex direction="row" className="debug--boxModel">
+    <FlexItem>
+      <img src="https://place-hold.it/48x24/a02385/fff&text=item1" />
+    </FlexItem>
+    <FlexItem>
+      <img src="https://place-hold.it/48x24/a02385/fff&text=item2" />
+    </FlexItem>
+    <FlexItem>
+      <img src="https://place-hold.it/48x24/a02385/fff&text=item3" />
+    </FlexItem>
+  </Flex>
+</div>
+
+<div style={{ marginTop: '1rem' }}>
+  <p><strong>row</strong> with <strong>reverse</strong></p>
+  <Flex direction="row" reverse className="debug--boxModel">
+    <FlexItem>
+      <img src="https://place-hold.it/48x24/a02385/fff&text=item1" />
+    </FlexItem>
+    <FlexItem>
+      <img src="https://place-hold.it/48x24/a02385/fff&text=item2" />
+    </FlexItem>
+    <FlexItem>
+      <img src="https://place-hold.it/48x24/a02385/fff&text=item3" />
+    </FlexItem>
+  </Flex>
+</div>
+
+<div style={{ height: '400px;', marginTop: '1rem' }}>
+  <p><strong>column</strong></p>
+  <Flex direction="column" className="debug--boxModel">
+    <FlexItem>
+      <img src="https://place-hold.it/48x24/a02385/fff&text=item1" />
+    </FlexItem>
+    <FlexItem>
+      <img src="https://place-hold.it/48x24/a02385/fff&text=item2" />
+    </FlexItem>
+    <FlexItem>
+      <img src="https://place-hold.it/48x24/a02385/fff&text=item3" />
+    </FlexItem>
+  </Flex>
+</div>
 ```
 
-#### No editor
+### Flex alignment/justification
+Following the flexbox spec, `align` controls cross-axis alignment and `justify` controls main axis alignment. In this example, both `align` and `justify` are set to `end`. The child
+`FlexItem` components here are set to `shrink` to their content width.
 
-```jsx noeditor
-<Flex>
+_See `FlexItem` documentation below for more information on the `shrink` prop_
+
+```js
+<Flex align="end" justify="end" className="debug--boxModel">
   <FlexItem shrink>
-    <img src="https://via.placeholder.com/80/a02385/ffffff" />
+    <img src="https://place-hold.it/48x24/a02385/fff&text=item1" />
   </FlexItem>
-  <FlexItem>
-    <p>The first <code>FlexItem</code> will shrink to content width.</p>
-    <p><em>This item</em> grows to fill remaining width of parent</p>
-  </FlexItem>
-</Flex>
-```
-
-#### Source only
-
-```jsx static
-<Flex>
   <FlexItem shrink>
-    <img src="https://via.placeholder.com/80/a02385/ffffff" />
+    <img src="https://place-hold.it/48x64/a02385/fff&text=item2" />
   </FlexItem>
-  <FlexItem>
-    <p>The first <code>FlexItem</code> will shrink to content width.</p>
-    <p><em>This item</em> grows to fill remaining width of parent</p>
+  <FlexItem shrink>
+    <img src="https://place-hold.it/48x24/a02385/fff&text=item3" />
+  </FlexItem>
+  <FlexItem shrink>
+    <img src="https://place-hold.it/48x64/a02385/fff&text=item4" />
   </FlexItem>
 </Flex>
 ```

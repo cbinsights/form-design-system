@@ -30,6 +30,10 @@
 }
 
 /* parent justify */
+.flex--justifyStart {
+  justify-content: flex-start;
+}
+
 .flex--justifyEnd {
   justify-content: flex-end;
 }
@@ -47,6 +51,10 @@
 }
 
 /* parent align */
+.flex--alignStretch {
+  align-items: stretch;
+}
+
 .flex--alignStart {
   align-items: flex-start;
 }
@@ -79,7 +87,21 @@
   width: initial;
 }
 
+.flex--row .flexItem {
+  height: 100%;
+  padding-left: var(--space-gutter);
+}
+
+.flex--column .flexItem {
+  width: 100%;
+  padding-top: var(--space-gutter);
+}
+
 /* child justify */
+.flexItem--justifyStart {
+  justify-self: flex-start;
+}
+
 .flexItem--justifyEnd {
   justify-self: flex-end;
 }
@@ -110,14 +132,17 @@
 }
 
 /* Gutters */
-.flex--row .flexItem:not(:first-child) {
-  padding-left: var(--space-gutter);
+/* stylelint-disable selector-max-specificity */
+.flex--row--reverse .flexItem:last-child {
+  padding-left: 0;
 }
 
-.flex--column .flexItem:not(:first-child) {
-  padding-top: var(--space-gutter);
+.flex--column:not(.flex--column--reverse) .flexItem:first-child,
+.flex--column--reverse .flexItem:last-child {
+  padding-top: 0;
 }
 
 .flex--noGutters .flexItem {
-  padding: 0;
+  padding: 0 !important;
 }
+/* stylelint-enable */

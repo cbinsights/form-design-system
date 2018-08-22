@@ -3,7 +3,6 @@ module.exports = {
     'at-rule-empty-line-before': [
       'always',
       {
-        except: ['first-nested'],
         ignore: ['after-comment', 'inside-block'],
         ignoreAtRules: ['if', 'else', 'import'],
       },
@@ -131,7 +130,10 @@ module.exports = {
     ],
     'rule-empty-line-before': [
       'always',
-      { except: ['first-nested', 'after-single-line-comment'] },
+      {
+        except: ['first-nested', 'after-single-line-comment'],
+        ignore: ['after-comment']
+      },
     ],
     'selector-attribute-brackets-space-inside': 'never',
     'selector-attribute-operator-blacklist': '|=',
