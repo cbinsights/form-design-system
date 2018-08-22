@@ -33,8 +33,6 @@ const AlignPropMap = {
 };
 
 /**
- * The `Flex` component acts as the flex parent for our flexbox abstraction.
- *
  * @param {Object} props react props
  * @returns {ReactElement}
  */

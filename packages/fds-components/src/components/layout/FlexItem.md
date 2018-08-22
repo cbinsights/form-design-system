@@ -1,3 +1,4 @@
+
 ### Shrinking & growing a `FlexItem`
 By default, all `FlexItem` components will grow to fill remaining space within the parent
 `Flex`. The boolean prop `shrink` will cause a `FlexItem` to shrink to its content size.
@@ -39,7 +40,7 @@ You can use the same `align` and `justify` prop interface from `Flex` to control
 </Flex>
 ```
 
-## Flex & FlexItem patterns
+## Flex & FlexItem cookbook
 
 ### Auto-sized content area with fixed footer
 Within a fixed height container, this `Flex` creates a fixed height header and footer and allows the content area to expand to fill the remaining space.
@@ -87,3 +88,33 @@ Basic layout of comments in the CB Insights platform. This pattern uses a nested
   </FlexItem>
 </Flex>
 ```
+
+### Flexible site header
+`Flex` and `FlexItem` provide advantages in flexibility; fixed widths and explicit padding/marging are less necessary, and it's easy to add and remove elements to a row without the layout breaking.
+
+_Open the editor below to try adding and removing items_
+
+```js
+<Flex align="center">
+  <FlexItem shrink>
+    <img src="https://place-hold.it/36x36/a02385/fff?text=menu" />
+  </FlexItem>
+  <FlexItem shrink>
+    <img src="https://place-hold.it/200x36/a02385/fff?text=logo" />
+  </FlexItem>
+  <FlexItem>
+    <input
+      type="text"
+      placeholder="Search"
+      style={{ width: '100%', lineHeight: '30px' }}
+    />
+  </FlexItem>
+  <FlexItem shrink>
+    <img src="https://place-hold.it/36x36/a02385/fff?text=icon" />
+  </FlexItem>
+  <FlexItem shrink>
+    <img src="https://place-hold.it/36x36/a02385/fff?text=icon" />
+  </FlexItem>
+</Flex>
+```
+

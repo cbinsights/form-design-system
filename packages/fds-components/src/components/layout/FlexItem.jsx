@@ -23,11 +23,6 @@ const AlignPropMap = {
 };
 
 /**
- * The `FlexItem` component acts as the flex child in our flexbox abstraction.
- * This component ensures that the implicit flex child is _always_ a `FlexItem`
- * and not any random element. `FlexItem` contains styles to normalize
- * layout across browsers.
- *
  * @param {Object} props react props
  * @returns {ReactElement}
  */
