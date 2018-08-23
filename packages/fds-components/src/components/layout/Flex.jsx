@@ -38,15 +38,13 @@ const AlignPropMap = {
 const Flex = (props) => {
   const classNames = cx(
     'flex',
-    DirectionPropMap[props.direction],
     AlignPropMap[props.align],
-    JustifyPropMap[props.justify],
+    DirectionPropMap[props.direction],
     {
       [`flex--${props.direction}--reverse`]: props.reverse,
     },
     {
       [JustifyPropMap[props.justify]]: props.justify,
-      [AlignPropMap[props.align]]: props.align,
     },
     {
       'flex--wrap': props.wrap,

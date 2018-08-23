@@ -129,6 +129,7 @@
 
 /* Gutters */
 /* stylelint-disable selector-max-specificity */
+.flex--row:not(.flex--row--reverse) > .flexItem:first-child,
 .flex--row--reverse > .flexItem:last-child {
   padding-left: 0;
 }
