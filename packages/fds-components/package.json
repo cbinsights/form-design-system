@@ -5,6 +5,7 @@
   "author": "adetrick@cbinsights.com",
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf lib/",
     "compile:jsx": "babel src --out-dir lib --ignore test.jsx --source-maps",
     "compile:css": "postcss src/style/index.css -o lib/style/fds-components.css",
     "build": "yarn compile:css && yarn compile:jsx",

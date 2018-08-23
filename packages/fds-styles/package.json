@@ -5,8 +5,8 @@
   "author": "Adam Detrick <adetrick@cbinsights.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn compile",
-    "compile": "postcss src/index.css -o lib/fds-styles.css -m"
+    "clean": "rm -rf lib/",
+    "build": "postcss src/index.css -o lib/fds-styles.css -m"
   },
   "devDependencies": {}
 }
