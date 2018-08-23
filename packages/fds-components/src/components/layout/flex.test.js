@@ -18,7 +18,7 @@ describe('Flex component', () => {
       wrap: true,
       reverse: true,
       direction: 'column',
-      align: 'flexStart',
+      align: 'end',
       justify: 'spaceBetween',
       className: 'foo'
     });
