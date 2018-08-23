@@ -15,7 +15,6 @@ const DirectionPropMap = {
  * @description map of justify prop values to class names
  */
 const JustifyPropMap = {
-  start: 'flex--justifyStart',
   end: 'flex--justifyEnd',
   center: 'flex--justifyCenter',
   spaceBetween: 'flex--justifySpaceBetween',
@@ -61,7 +60,6 @@ const Flex = (props) => {
 
 Flex.defaultProps = {
   direction: 'row',
-  justify: 'start',
   align: 'stretch',
 };
 

@@ -62,7 +62,7 @@ Within a fixed height container, this `Flex` creates a fixed height header and f
 ```
 
 ### Comment block
-Basic layout of comments in the CB Insights platform. This pattern uses a nested `Flex`.
+Basic layout of comments in the CB Insights platform.
 
 ```js
 <Flex>
@@ -70,21 +70,16 @@ Basic layout of comments in the CB Insights platform. This pattern uses a nested
     <img src="https://place-hold.it/48x48/a02385/fff" />
   </FlexItem>
   <FlexItem>
-    <Flex direction="column" noGutters>
-      <FlexItem>
-        <div style={{ 
-          border: '1px solid #d6d4d4', 
-          padding: '0.5rem', 
-          borderRadius: '6px' 
-        }}>
-          <p><strong>A dog</strong></p>
-          <p>bark bark bork buff boark bork bark berk woof</p>
-        </div>
-      </FlexItem>
-      <FlexItem shrink>
-        <p><a href="#">Reply</a> &middot; <a href="#">Delete</a></p>
-      </FlexItem>
-    </Flex>
+    <div style={{ 
+      border: '1px solid #d6d4d4', 
+      padding: '0.5rem', 
+      borderRadius: '6px' 
+    }}>
+      <p><strong>A dog</strong></p>
+      <p>bark bark bork buff boark bork bark berk woof</p>
+      <p>This content expands to fill remaining space within the <code>Flex</code></p>
+    </div>
+    <p><a href="#">Reply</a> &middot; <a href="#">Delete</a></p>
   </FlexItem>
 </Flex>
 ```

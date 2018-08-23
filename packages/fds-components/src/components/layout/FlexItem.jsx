@@ -29,10 +29,12 @@ const AlignPropMap = {
 const FlexItem = (props) => {
   const classNames = cx(
     'flexItem',
-    AlignPropMap[props.align],
-    JustifyPropMap[props.justify],
     {
       'flexItem--shrink': props.shrink,
+    },
+    {
+      [JustifyPropMap[props.justify]]: props.justify,
+      [AlignPropMap[props.align]]: props.align,
     },
     props.className
   );
@@ -42,8 +44,6 @@ const FlexItem = (props) => {
 
 FlexItem.defaultProps = {
   shrink: false,
-  align: 'start',
-  justify: 'start',
 };
 
 FlexItem.propTypes = {
