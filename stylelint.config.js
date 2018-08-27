@@ -23,25 +23,6 @@ module.exports = {
     'block-opening-brace-newline-before': 'never-single-line',
     'block-opening-brace-space-before': 'always',
     'color-no-invalid-hex': true,
-    'comment-word-blacklist': [
-      [
-        'Adam',
-        'adam',
-        'Mike',
-        'mike',
-        'adamd',
-        'mikep',
-        'SDS',
-        'sds',
-        ':SDS:',
-        'SDS:',
-      ],
-      {
-        message:
-          "If there's something SDS needs to follow up on, please file a ticket",
-        severity: 'warning',
-      },
-    ],
     'declaration-bang-space-after': 'never',
     'declaration-bang-space-before': 'always',
     'declaration-block-no-shorthand-property-overrides': true,
