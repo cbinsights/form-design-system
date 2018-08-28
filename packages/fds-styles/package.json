@@ -6,7 +6,10 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn compile",
-    "compile": "postcss src/index.css -o lib/fds-styles.css -m"
+    "compile": "postcss src/index.css -o lib/fds-styles.css -m --config=./postcss.config.js"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "mdcss": "^1.5.2"
+  }
 }

@@ -1,0 +1,44 @@
+/*---
+title: Flush
+name: flushSpacing
+section: Spacing Helpers
+useMarkup: false
+---
+
+Removes spacing from the given side of an element.
+Sets both `padding` and `margin` to `0`;
+
+class           | description
+--------------- | ---------------------------------
+`flush--top`    | Removes top spacing from element
+`flush--right`  | Removes right spacing from element
+`flush--bottom` | Removes bottom spacing from element
+`flush--left`   | Removes left spacing from element
+`flush--all`    | Removes spacing from all sides of an element
+*/
+
+.flush--top {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.flush--right {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.flush--bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.flush--left {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.flush--all {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+

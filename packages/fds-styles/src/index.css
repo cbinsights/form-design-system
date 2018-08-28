@@ -1,7 +1,9 @@
+@import "./flush.css";
+
 :root {
-	--test-var: #b69420;
+  --test-var: #b69420;
 }
 
 body {
-	color: var(--test-var);
+  color: var(--test-var);
 }
