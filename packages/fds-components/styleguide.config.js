@@ -5,7 +5,7 @@ module.exports = {
   title: 'fds-components',
 
   // destination dir for static build
-  styleguideDir: './.docs/',
+  styleguideDir: '../../docs/fds-components/',
 
   // expand props tables by default
   usageMode: 'expand',

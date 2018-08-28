@@ -36,7 +36,7 @@
         "attribute/varNames",
         "color/css"
       ],
-      "buildPath": "./.docs/",
+      "buildPath": "../../docs/fds-dictionary/",
       "files": [{
         "destination": "index.html",
         "format": "html/doc"

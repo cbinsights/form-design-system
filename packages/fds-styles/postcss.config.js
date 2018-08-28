@@ -1,7 +1,8 @@
+/* eslint-disable */
 const plugins = [
   ...require('../../postcss.plugins'),
   require('mdcss')({
-    destination: './.docs/',
+    destination: '../../docs/fds-styles/',
     assets: ['./assets', './lib'],
     theme: require('mdcss-theme-github')({
       title: 'fds-styles',
@@ -14,9 +15,9 @@ const plugins = [
       ],
       logo: 'assets/logo.png',
       examples: {
-        css: ['lib/fds-styles.css']
-      }
-    })
+        css: ['lib/fds-styles.css'],
+      },
+    }),
   }),
   require('cssnano'),
 ];

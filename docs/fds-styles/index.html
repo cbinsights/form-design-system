@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>fds-styles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="primer.css" rel="stylesheet"><link href="style.css" rel="stylesheet"><link href="octicons/octicons.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"><link href="assets/doc.css" rel="stylesheet">
+    <script>examples={"base":"","target":"_self","css":["lib/fds-styles.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
+    
+  </head>
+  <body>
+    <header class="masthead" style="background-color: #4078c0;">
+      <div class="container">
+        <a href="/" class="masthead-logo">
+          <img src="assets/logo.png" alt="fds-styles" height="32"> fds-styles
+        </a>
+        <nav class="masthead-nav">
+            
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="columns docs-layout">
+        <div class="one-fourth column">
+          <nav class="menu docs-menu">
+            
+    
+        <a class="menu-heading" href="#spacing-helpers"><span>Spacing Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#spacingFlush"><span>Flush</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#position-helpers"><span>Position Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#positionAlign"><span>Algin</span></a>
+        
+        
+        <a class="menu-item" href="#positionVAlign"><span>Vertical Align</span></a>
+        
+        
+        <a class="menu-item" href="#positionChildAlign"><span>Child Align</span></a>
+        
+        
+  
+        
+  
+          </nav>
+        </div>
+
+        <main class="three-fourths column markdown-body">
+          
+    <section id="spacing-helpers">
+      <h1 class="page-title">Spacing Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="spacingFlush">
+      <h2 class="page-title">Flush</h2>
+
+      <div class="markdown-body">
+        <p>Removes spacing from the given side of an element.
+Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flush--top</code></td>
+<td>Removes top spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--right</code></td>
+<td>Removes right spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--bottom</code></td>
+<td>Removes bottom spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--left</code></td>
+<td>Removes left spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--all</code></td>
+<td>Removes spacing from all sides of an element</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="position-helpers">
+      <h1 class="page-title">Position Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="positionAlign">
+      <h2 class="page-title">Algin</h2>
+
+      <div class="markdown-body">
+        <p>Sets <code>text-align</code> with <code>left</code>/<code>right</code> fallbacks for IE11.</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>align--start</code></td>
+<td>Sets <code>text-align</code> to <code>left</code>/<code>start</code></td>
+</tr>
+<tr>
+<td><code>align--center</code></td>
+<td>Sets <code>text-align</code> to <code>center</code></td>
+</tr>
+<tr>
+<td><code>align--end</code></td>
+<td>Sets <code>text-align</code> to <code>right</code>/<code>end</code></td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+    <section id="positionVAlign">
+      <h2 class="page-title">Vertical Align</h2>
+
+      <div class="markdown-body">
+        <p>Sets <code>vertical-align</code> property. Note that <code>vertical-align</code>
+**only applies to elements displayed <code>inline</code>, <code>inline-block</code>,
+<code>table-cell</code> or <code>inline-flex</code>.</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>valign--top</code></td>
+<td>Sets <code>vertical-align</code> to <code>top</code></td>
+</tr>
+<tr>
+<td><code>valign--center</code></td>
+<td>Sets <code>vertical-align</code> to <code>middle</code></td>
+</tr>
+<tr>
+<td><code>valign--bottom</code></td>
+<td>Sets <code>vertical-align</code> to <code>bottom</code></td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+    <section id="positionChildAlign">
+      <h2 class="page-title">Child Align</h2>
+
+      <div class="markdown-body">
+        <p>Positions direct child(s) of element using flex properties.
+<strong>These classes modify <code>flex</code> properties</strong>. Avoid combining
+<code>alignChild</code> classes with flexbox layout elements.</p>
+<p>Classes follow this signature:</p>
+<pre><code class="lang-css">.alignChild--(left|right|center)--(top|bottom|center)
+</code></pre>
+<pre><code class="lang-example:html">&lt;div
+  class=&quot;alignChild--center--center&quot;
+  style=&quot;border: 1px dotted red; height: 100px; width: 100px;&quot;
+&gt;
+  &lt;div style=&quot;background: pink;&quot;&gt;child&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+        </main>
+      </div>
+      <footer class="footer">
+        Last modified Tuesday, 28 August 2018 19:01
+      </footer>
+    </div>
+    <script src="prism.js?871234"></script>
+    <script src="examples.js?873428"></script>
+    <script src="script.js?02359872"></script>
+    <script src="anchor.min.js?225234"></script>
+    <script src="interact.min.js?8552934"></script>
+    <script>
+     anchors.options = {
+         placement: 'left',
+         visible: 'hover',
+         class: 'anchor-link'
+     };
+     anchors.add('h2, h3');
+
+     /* interact('.docs-resize')
+      *   .resizable({
+      *     edges: {
+      *       left: '.c-resize--left',
+      *       right: '.c-resize--right',
+      *       bottom: false,
+      *       top: false
+      *     },
+      *     onmove: function (e) {
+      *       var width = e.rect.width,
+      *         windowWidth = $(window).width();
+
+      *       if (width < 160) {
+      *         width = 160;
+      *       } else if ((width * 2) + 100 > windowWidth) {
+      *         width = (windowWidth - 100) / 2;
+      *       }
+
+      *       $('.docs-example').find('docs-resize').addClass('resize-overlay');
+      *       $('.docs-resize').style.width = (width * 2) + 'px';
+      *     },
+      *     onend: function () {
+      *       $('.docs-example').find('docs-resize').removeClass('resize-overlay');
+      *     }
+      *   })
+      *   .on('resizemove', function (event) {
+      *     var target = event.target,
+      *         x = (parseFloat(target.getAttribute('data-x')) || 0);
+
+      *     // update the element's style
+      *     target.style.width  = event.rect.width + 'px';
+
+      *     // translate when resizing from top or left edges
+      *     x += event.deltaRect.left;
+
+      *     target.style.webkitTransform = target.style.transform =
+      *       'translateX(' + x + 'px)';
+
+      *     target.setAttribute('data-x', x);
+      *     target.textContent = Math.round(event.rect.width);
+      *   });*/
+    </script>
+    
+  
+  </body>
+</html>
+
+

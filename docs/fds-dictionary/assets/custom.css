@@ -1,0 +1,89 @@
+@import '../../css/customProperties.css';
+
+:root {
+  --size-swatch: 120px;
+}
+
+body {
+  font-size: 16px;
+  padding: 1rem;
+  line-height: 1.4;
+}
+
+h1,h2,h3,h4,h5,h6, p, code {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: Monaco, Consolas, 'Courier New', Courier, monospace;
+}
+
+.bounds {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.inlineFlexList {
+  list-style: none;
+  margin-right: -1rem;
+}
+.inlineFlexList li {
+  display: inline-flex;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.swatch {
+  border-top: 1px solid var(--color-timberwolf);
+  flex-direction: row;
+  padding: 1rem;
+  padding-left: 0;
+  width: 420px;
+}
+
+.swatch-color {
+  height: var(--size-swatch);
+  width: var(--size-swatch);
+}
+
+.swatch-description {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.swatch-description h4 {
+  font-size: 1.33rem;
+  margin-bottom: 0.5rem;
+}
+
+.swatch-meta {
+  padding: 0;
+  margin: 0;
+}
+
+.swatch-meta ul {
+  margin: 0;
+  padding: 0;
+}
+
+.swatch-meta li {
+  color: var(--color-slate);
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0.25rem;
+  font-size: 14px;
+}
+.swatch-meta li:hover {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  cursor: pointer;
+  position: relative;
+}
+
+.swatch-meta code:first-child {
+  display: inline-block;
+  width: 2.5rem;
+  padding-right: 1rem;
+}
