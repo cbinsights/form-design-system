@@ -1,3 +1,4 @@
+/* stylelint-disable */
 /**
 Debug styles
 ---------------
@@ -37,7 +38,8 @@ information about class names on hover.
   position: relative !important;
   outline: 2px dotted var(--debug-color-info);
 }
-.debug--classes [class]:hover:after {
+
+.debug--classes [class]:hover::after {
   content: attr(class);
   display: block;
   position: absolute;
@@ -49,7 +51,8 @@ information about class names on hover.
   color: #fff;
   background-color: var(--debug-color-info);
 }
-.debug--classes [class]:hover > [class]:hover:after {
+
+.debug--classes [class]:hover > [class]:hover::after {
   bottom: initial;
   left: initial;
   top: 100%;
@@ -66,4 +69,13 @@ border and content box.
   outline: 1px dotted var(--debug-color-info);
   background-color: var(--debug-color-content);
   background-clip: content-box;
+}
+
+/**
+<div class="debug--box">
+
+Adds a border and margin around an element.
+*/
+.debug--box {
+  border: 1px dotted var(--debug-color-info);
 }

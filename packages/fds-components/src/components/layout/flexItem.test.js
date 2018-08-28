@@ -15,7 +15,7 @@ describe('Flex component', () => {
   it('matches snapshot (set all props)', () => {
     const flex = renderComponent({
       shrink: true,
-      align: 'flexStart',
+      align: 'center',
       justify: 'spaceBetween',
       className: 'foo'
     });

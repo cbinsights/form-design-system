@@ -15,7 +15,7 @@ const DirectionPropMap = {
  * @description map of justify prop values to class names
  */
 const JustifyPropMap = {
-  flexEnd: 'flex--justifyEnd',
+  end: 'flex--justifyEnd',
   center: 'flex--justifyCenter',
   spaceBetween: 'flex--justifySpaceBetween',
   spaceAround: 'flex--justifySpaceAround',
@@ -25,27 +25,26 @@ const JustifyPropMap = {
  * @description map of align prop values to class names
  */
 const AlignPropMap = {
-  flexStart: 'flex--alignStart',
+  start: 'flex--alignStart',
+  end: 'flex--alignEnd',
   center: 'flex--alignCenter',
-  flexEnd: 'flex--alignEnd',
+  stretch: 'flex--alignStretch',
 };
 
 /**
- * This is the `Flex` description
- *
  * @param {Object} props react props
  * @returns {ReactElement}
  */
 const Flex = (props) => {
   const classNames = cx(
     'flex',
+    AlignPropMap[props.align],
     DirectionPropMap[props.direction],
     {
       [`flex--${props.direction}--reverse`]: props.reverse,
     },
     {
       [JustifyPropMap[props.justify]]: props.justify,
-      [AlignPropMap[props.align]]: props.align,
     },
     {
       'flex--wrap': props.wrap,
@@ -59,7 +58,7 @@ const Flex = (props) => {
 
 Flex.defaultProps = {
   direction: 'row',
-  noGutters: false,
+  align: 'stretch',
 };
 
 Flex.propTypes = {

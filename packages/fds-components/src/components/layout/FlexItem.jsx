@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
  * @description map of justify prop values to class names
  */
 const JustifyPropMap = {
-  flexEnd: 'flexItem--justifyEnd',
+  start: 'flexItem--justifyStart',
+  end: 'flexItem--justifyEnd',
   center: 'flexItem--justifyCenter',
   spaceBetween: 'flexItem--justifySpaceBetween',
   spaceAround: 'flexItem--justifySpaceAround',
@@ -16,14 +17,12 @@ const JustifyPropMap = {
  * @description map of align prop values to class names
  */
 const AlignPropMap = {
-  flexStart: 'flexItem--alignStart',
+  start: 'flexItem--alignStart',
+  end: 'flexItem--alignEnd',
   center: 'flexItem--alignCenter',
-  flexEnd: 'flexItem--alignEnd',
 };
 
 /**
- * This is the `FlexItem` description.
- *
  * @param {Object} props react props
  * @returns {ReactElement}
  */

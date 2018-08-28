@@ -3,7 +3,6 @@ module.exports = {
     'at-rule-empty-line-before': [
       'always',
       {
-        except: ['first-nested'],
         ignore: ['after-comment', 'inside-block'],
         ignoreAtRules: ['if', 'else', 'import'],
       },
@@ -24,25 +23,6 @@ module.exports = {
     'block-opening-brace-newline-before': 'never-single-line',
     'block-opening-brace-space-before': 'always',
     'color-no-invalid-hex': true,
-    'comment-word-blacklist': [
-      [
-        'Adam',
-        'adam',
-        'Mike',
-        'mike',
-        'adamd',
-        'mikep',
-        'SDS',
-        'sds',
-        ':SDS:',
-        'SDS:',
-      ],
-      {
-        message:
-          "If there's something SDS needs to follow up on, please file a ticket",
-        severity: 'warning',
-      },
-    ],
     'declaration-bang-space-after': 'never',
     'declaration-bang-space-before': 'always',
     'declaration-block-no-shorthand-property-overrides': true,
@@ -131,7 +111,10 @@ module.exports = {
     ],
     'rule-empty-line-before': [
       'always',
-      { except: ['first-nested', 'after-single-line-comment'] },
+      {
+        except: ['first-nested', 'after-single-line-comment'],
+        ignore: ['after-comment']
+      },
     ],
     'selector-attribute-brackets-space-inside': 'never',
     'selector-attribute-operator-blacklist': '|=',
