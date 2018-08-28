@@ -25,5 +25,6 @@
     "react-styleguidist": "^7.2.4",
     "webpack": "^4.16.5",
     "webpack-blocks": "^1.0.0"
-  }
+  },
+  "gitHead": "cc2e1975aa791bb367b6dd22d9bbd8dfa1db8bcb"
 }
