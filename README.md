@@ -13,3 +13,6 @@ Build with `yarn build` in root dir.
 Test with `yarn test` in root dir.
 
 See individual package instructions in `packages/`.
+
+#### Changelogs
+Each package in this repository maintains a `CHANGELOG.md`.

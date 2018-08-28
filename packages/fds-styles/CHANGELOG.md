@@ -1,0 +1,15 @@
+# Changelog
+
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+All Major and Minor changes to this project will be documented in this file.
+
+# [Major.minor] _(example)_
+
+### **BREAKING CHANGES**
+- this is an example of a change note
+
+### **Changes**
+- this is an example of a change note
+
+### **Deprecations**
+- this is an example of a deprecation note
