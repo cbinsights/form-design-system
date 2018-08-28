@@ -2,10 +2,20 @@ const plugins = [
   ...require('../../postcss.plugins'),
   require('mdcss')({
     destination: './.docs/',
-    assets: ['./assets'],
+    assets: ['./assets', './lib'],
     theme: require('mdcss-theme-github')({
-      title: 'fd-styles',
+      title: 'fds-styles',
+      css: [
+        'primer.css',
+        'style.css',
+        'octicons/octicons.css',
+        'https://fonts.googleapis.com/css?family=Roboto:300,400,700',
+        'assets/doc.css',
+      ],
       logo: 'assets/logo.png',
+      examples: {
+        css: ['lib/fds-styles.css']
+      }
     })
   }),
   require('cssnano'),

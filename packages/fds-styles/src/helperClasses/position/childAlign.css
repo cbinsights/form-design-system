@@ -1,0 +1,81 @@
+/*---
+title: Child Align
+name: positionChildAlign
+section: Position Helpers
+---
+
+Positions direct child(s) of element using flex properties.
+**These classes modify `flex` properties**. Avoid combining
+`alignChild` classes with flexbox layout elements.
+
+Classes follow this signature:
+```css
+.alignChild--(left|right|center)--(top|bottom|center)
+```
+
+```example:html
+<div
+  class="alignChild--center--center"
+  style="border: 1px dotted red; height: 100px; width: 100px;"
+>
+  <div style="background: pink;">child</div>
+</div>
+```
+*/
+
+.alignChild--center--center,
+.alignChild--center--top,
+.alignChild--center--bottom,
+.alignChild--left--center,
+.alignChild--left--top,
+.alignChild--left--bottom,
+.alignChild--right--center,
+.alignChild--right--top,
+.alignChild--right--bottom {
+  display: flex;
+}
+
+.alignChild--center--center {
+  justify-content: center;
+  align-items: center;
+}
+
+.alignChild--center--top {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.alignChild--center--bottom {
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.alignChild--left--center {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.alignChild--left--top {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.alignChild--left--bottom {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.alignChild--right--center {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.alignChild--right--top {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.alignChild--right--bottom {
+  justify-content: flex-end;
+  align-items: flex-end;
+}

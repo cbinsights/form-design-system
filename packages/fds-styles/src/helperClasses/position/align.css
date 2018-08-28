@@ -1,0 +1,28 @@
+/*---
+title: Algin
+name: positionAlign
+section: Position Helpers
+---
+
+Sets `text-align` with `left`/`right` fallbacks for IE11.
+
+class           | description
+--------------- | ---------------------------------
+`align--start`  | Sets `text-align` to `left`/`start`
+`align--center` | Sets `text-align` to `center`
+`align--end`    | Sets `text-align` to `right`/`end`
+*/
+
+.align--start {
+  text-align: left;
+  text-align: start;
+}
+
+.align--center {
+  text-align: center;
+}
+
+.align--end {
+  text-align: right;
+  text-align: end;
+}
