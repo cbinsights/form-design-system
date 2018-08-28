@@ -1,0 +1,10 @@
+{
+  "font": {
+    "weight": {
+
+      "default": { "value": "400" },
+      "bold": { "value": "700" }
+
+    }
+  }
+}

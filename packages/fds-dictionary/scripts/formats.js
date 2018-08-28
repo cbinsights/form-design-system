@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Handlebars = require('handlebars');
 
-Handlebars.registerHelper('json', c => JSON.stringify(c, null, 2));
+Handlebars.registerHelper('json', (c) => JSON.stringify(c, null, 2));
 
 const template = Handlebars.compile(fs.readFileSync(`./doc/index.hbs`).toString());
 
@@ -11,7 +11,7 @@ const template = Handlebars.compile(fs.readFileSync(`./doc/index.hbs`).toString(
  * @param {Object} hsl
  * @returns {String} CSS hsla value
  */
-const toHsla = hsl => {
+const toHsla = (hsl) => {
   const H = parseInt(hsl.h, 10);
   const S = parseInt(hsl.s, 10);
   const L = parseInt(hsl.l, 10);
@@ -19,33 +19,39 @@ const toHsla = hsl => {
   return `hsla(${H},${S},${L},${A})`;
 };
 
+/**
+ * @param {Array} dictionary style-dictionary dictionary
+ * @return {String} html file
+ */
+const formatHtmlDoc = (dictionary) => {
+  const colors = dictionary.allProperties
+    .filter((p) => p.attributes.category === 'color')
+    .map((p) => {
+      const { hex, rgb, hsl, varNames } = p.attributes;
+
+      return {
+        name: p.name,
+        varNames,
+        values: {
+          calculated: p.value,
+          hex,
+          rgba: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
+          hsla: toHsla(hsl),
+        },
+      };
+    });
+
+  return template({
+    properties: {
+      colors,
+    },
+  });
+};
+
 // Custom formats
 module.exports = [
   {
     name: 'html/doc',
-    formatter: dictionary => {
-      const colors = dictionary.allProperties
-        .filter(p => p.attributes.category === 'color')
-        .map(p => {
-          const { hex, rgb, hsl, varNames } = p.attributes;
-
-          return {
-            name: p.name,
-            varNames,
-            values: {
-              calculated: p.value,
-              hex,
-              rgba: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
-              hsla: toHsla(hsl)
-            }
-          };
-        });
-
-      return template({
-        properties: {
-          colors
-        }
-      });
-    }
-  }
+    formatter: formatHtmlDoc,
+  },
 ];

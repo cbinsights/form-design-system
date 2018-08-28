@@ -52,11 +52,11 @@
   },
   "lint-staged": {
     "linters": {
-      "packages/**/src/**/*.css": [
+      "packages/**/*.css": [
         "stylelint --fix",
         "git add"
       ],
-      "packages/**/src/**/*.{js,jsx}": [
+      "packages/**/*.{js,jsx}": [
         "prettier --write",
         "eslint --no-ignore",
         "git add"

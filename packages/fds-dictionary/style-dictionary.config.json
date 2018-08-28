@@ -19,7 +19,7 @@
     "JSConstants": {
       "transforms": [
         "attribute/cti",
-        "name/ci/constant",
+        "name/custom/constant",
         "color/css"
       ],
       "buildPath": "./dist/js/",
