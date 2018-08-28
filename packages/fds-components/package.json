@@ -7,7 +7,8 @@
   "scripts": {
     "compile:jsx": "babel src --out-dir lib --ignore test.jsx --source-maps",
     "compile:css": "postcss src/style/index.css -o lib/style/fds-components.css --config=./postcss.config.js",
-    "build": "yarn compile:css && yarn compile:jsx",
+    "compile:docs": "styleguidist build",
+    "build": "yarn compile:css && yarn compile:jsx && yarn compile:docs",
     "test": "jest --color --config jest.config.json",
     "serve": "npx styleguidist server"
   },

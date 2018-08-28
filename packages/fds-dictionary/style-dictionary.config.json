@@ -36,9 +36,9 @@
         "attribute/varNames",
         "color/css"
       ],
-      "buildPath": "./dist/doc/",
+      "buildPath": "./.docs/",
       "files": [{
-        "destination": "static-styleguide.html",
+        "destination": "index.html",
         "format": "html/doc"
       }],
       "actions": ["doc_assets"]

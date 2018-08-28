@@ -4,6 +4,9 @@ const { createConfig, match, babel, postcss } = require('webpack-blocks');
 module.exports = {
   title: 'fds-components',
 
+  // destination dir for static build
+  styleguideDir: './.docs/',
+
   // expand props tables by default
   usageMode: 'expand',
 
@@ -29,7 +32,7 @@ module.exports = {
     path.join(__dirname, 'src/style/debug.css'),
   ],
 
-  // minimum possible config to run styleguidist.
+  // minimum possible webpack config to run/build styleguidist.
   // babel and postcss loaders will read from base config
   // files in lerna project root
   webpackConfig: createConfig([
