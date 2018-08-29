@@ -2,3 +2,6 @@
 # yarn lockfile v1
 
 
+fds-dictionary@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-0.1.5.tgz#3350a447f5c81f968d2ffa2136c98785a01df31b"

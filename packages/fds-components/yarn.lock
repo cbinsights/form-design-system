@@ -1117,6 +1117,10 @@ fbjs@^0.8.16:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
+fds-styles@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-0.1.6.tgz#8b68e4af7b992ceb9f4f4626701ad88f6820f09b"
+
 filename-regex@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"

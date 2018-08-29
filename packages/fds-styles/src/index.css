@@ -1,3 +1,6 @@
+/* Custom properties */
+@import "fds-dictionary/dist/css/customProperties";
+
 /* Spacing Helpers */
 @import "helperClasses/spacing/flush";
 

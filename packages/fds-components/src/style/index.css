@@ -1,6 +1,10 @@
+/* Foundational Styles (fds-styles) */
+@import "fds-styles/lib/fds-styles";
+
+/* Components */
 @import "./layout/flex.css";
 
-/* TODO: replace these overrides with foundational stylesheet imported from fds-styles */
+/* Overrides (remove when possible) */
 img,
 p {
   margin: 0;

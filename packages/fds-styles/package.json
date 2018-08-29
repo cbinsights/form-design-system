@@ -15,5 +15,8 @@
     "type": "git",
     "url": "https://github.com/cbinsights/form-design-system.git"
   },
-  "gitHead": "cc2e1975aa791bb367b6dd22d9bbd8dfa1db8bcb"
+  "gitHead": "cc2e1975aa791bb367b6dd22d9bbd8dfa1db8bcb",
+  "dependencies": {
+    "fds-dictionary": "^0.1.5"
+  }
 }
