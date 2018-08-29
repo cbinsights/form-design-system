@@ -4,9 +4,9 @@
   "description": "Form Design System React components",
   "author": "adetrick@cbinsights.com",
   "license": "MIT",
-  "directories": {
-    "lib": "lib"
-  },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "compile:jsx": "babel src --out-dir lib --ignore test.jsx --source-maps",
     "compile:css": "postcss src/style/index.css -o lib/style/fds-components.css --config=./postcss.config.js",
