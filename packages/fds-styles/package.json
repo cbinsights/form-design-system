@@ -4,6 +4,9 @@
   "description": "Style foundation for Form Design System",
   "author": "Adam Detrick <adetrick@cbinsights.com>",
   "license": "MIT",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "build": "yarn compile",
     "compile": "postcss src/index.css -o lib/fds-styles.css -m --config=./postcss.config.js"
@@ -11,5 +14,6 @@
   "dependencies": {
     "mdcss": "^1.5.2"
   },
+  "license": "MIT",
   "gitHead": "cc2e1975aa791bb367b6dd22d9bbd8dfa1db8bcb"
 }
