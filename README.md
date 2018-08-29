@@ -26,7 +26,7 @@ run from the root directory.
 Command          | Description
 ---------------- | ------------------------------------------------------
 `yarn bootstrap` | Bootstraps dependencies for packages with Lerna
-`yarn build`     | Build all packages (generates unversioned `lib/` or `dist/` dir in each package)
+`yarn build`     | Builds unversioned `lib/` or `dist/` dirs in each package; builds all docs to `<root>/docs/`
 `yarn test`      | Runs tests for all relevant packages
 `yarn lint`      | Runs `eslint` on all js files
 `yarn serve:components` | Starts dev server for `fds-components`
