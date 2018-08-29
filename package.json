@@ -10,7 +10,8 @@
     "test": "lerna run test --stream",
     "bootstrap": "yarn lerna bootstrap",
     "lint": "eslint ./ --ext .js,.jsx",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "publish": "yarn lerna publish"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
