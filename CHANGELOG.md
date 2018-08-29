@@ -17,6 +17,16 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [0.2]
+Add cross-package dependencies.
+The component lib now imports the foundational stylesheet from `fds-styles`.
+The foundational stylesheet imports custom properties from `fds-dictionary`.
+
+#### **Changes**
+- `fds-styles` now depends on `fds-dictionary`
+- `fds-components` now depends on `fds-styles`
+
+
 ## [0.1]
 First published beta version of FDS components. Use with caution.
 
