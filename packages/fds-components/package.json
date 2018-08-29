@@ -2,7 +2,7 @@
   "name": "fds-components",
   "version": "0.1.4",
   "description": "Form Design System React components",
-  "author": "adetrick@cbinsights.com",
+  "author": "CB Insights",
   "license": "MIT",
   "files": [
     "lib"
@@ -26,6 +26,10 @@
     "enzyme-adapter-react-16": "^1.3.0",
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbinsights/form-design-system.git"
   },
   "gitHead": "cc2e1975aa791bb367b6dd22d9bbd8dfa1db8bcb"
 }

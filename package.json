@@ -2,7 +2,7 @@
   "name": "form-design-system",
   "version": "0.1.1",
   "description": "Form: A design system by CB Insights",
-  "author": "Adam Detrick <adetrick@cbinsights.com>",
+  "author": "CB Insights",
   "license": "MIT",
   "scripts": {
     "serve:components": "lerna run serve --stream --scope fds-components",
@@ -47,6 +47,10 @@
     "stylelint": "^9.5.0",
     "webpack": "^4.17.1",
     "webpack-blocks": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbinsights/form-design-system.git"
   },
   "browserslist": [
     "last 1 Chrome versions",

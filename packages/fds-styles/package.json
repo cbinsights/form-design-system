@@ -2,7 +2,7 @@
   "name": "form-styles",
   "version": "0.1.4",
   "description": "Style foundation for Form Design System",
-  "author": "Adam Detrick <adetrick@cbinsights.com>",
+  "author": "CB Insights",
   "license": "MIT",
   "files": [
     "lib"
@@ -10,6 +10,10 @@
   "scripts": {
     "build": "yarn compile",
     "compile": "postcss src/index.css -o lib/fds-styles.css -m --config=./postcss.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbinsights/form-design-system.git"
   },
   "gitHead": "cc2e1975aa791bb367b6dd22d9bbd8dfa1db8bcb"
 }
