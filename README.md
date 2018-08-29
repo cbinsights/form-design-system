@@ -31,7 +31,7 @@ Command          | Description
 `yarn lint`      | Runs `eslint` on all js files
 `yarn serve:components` | Starts dev server for `fds-components`
 `yarn precommit` | Runs `lint-staged` to verify precommit hook will pass
-`yarn publish`   | ⚠️  bumps package versions and publishes packages to npm
+`yarn publish`   | ⚠️  bumps version of packages and publishes packages to npm
 
 
 ### Docs
