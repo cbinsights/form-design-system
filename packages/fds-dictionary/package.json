@@ -10,11 +10,5 @@
   "scripts": {
     "build": "node ./scripts/build.js"
   },
-  "dependencies": {
-    "fs-extra": "^7.0.0",
-    "handlebars": "^4.0.11",
-    "lodash": "^4.17.10",
-    "style-dictionary": "^2.2.1"
-  },
   "gitHead": "cc2e1975aa791bb367b6dd22d9bbd8dfa1db8bcb"
 }

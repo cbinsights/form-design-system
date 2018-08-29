@@ -17,17 +17,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "enzyme": "^3.4.3",
-    "enzyme-adapter-react-16": "^1.2.0",
-    "enzyme-to-json": "^3.3.4",
-    "jest": "^23.5.0",
-    "postcss-loader": "^3.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-styleguidist": "^7.2.4",
-    "webpack": "^4.16.5",
-    "webpack-blocks": "^1.0.0"
+    "react-dom": "^16.4.2"
   },
   "gitHead": "cc2e1975aa791bb367b6dd22d9bbd8dfa1db8bcb"
 }
