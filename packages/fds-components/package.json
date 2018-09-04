@@ -16,11 +16,11 @@
     "serve": "npx styleguidist server"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
+    "classnames": "^2",
     "fds-styles": "^1.0.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.3",
-    "react-dom": "^16.3"
+    "prop-types": "^15",
+    "react": "^16",
+    "react-dom": "^16"
   },
   "devDependencies": {
     "enzyme": "^3.5.0",
