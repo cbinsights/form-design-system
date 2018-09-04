@@ -1117,9 +1117,15 @@ fbjs@^0.8.16:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-fds-styles@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-0.1.6.tgz#8b68e4af7b992ceb9f4f4626701ad88f6820f09b"
+fds-dictionary@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-1.0.0.tgz#6ffb035e7f7a77dea11601199476408953cafa93"
+
+fds-styles@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-1.0.0.tgz#d6f603b51f164fb1112cde7e8f76998f22709bb8"
+  dependencies:
+    fds-dictionary "^1.0.0"
 
 filename-regex@^2.0.0:
   version "2.0.1"
@@ -2828,7 +2834,7 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^16.4.2:
+react-dom@^16.3.1:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
   dependencies:
@@ -2850,7 +2856,7 @@ react-test-renderer@^16.0.0-0:
     prop-types "^15.6.0"
     react-is "^16.4.2"
 
-react@^16.4.2:
+react@^16.3.1:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"
   dependencies:
