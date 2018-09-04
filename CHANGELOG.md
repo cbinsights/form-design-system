@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.0] - Stable
+Public API defined; all packages ready for use in production, but most are very basic stubs.
+For `v1.0.0`, the package to consume is `fds-components`, which includes `Flex` and `FlexItem`
+layout helper components.
+
+
 ## [0.2]
 Add cross-package dependencies.
 The component lib now imports the foundational stylesheet from `fds-styles`.
