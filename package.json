@@ -11,7 +11,7 @@
     "bootstrap": "yarn lerna bootstrap",
     "lint": "eslint ./ --ext .js,.jsx",
     "precommit": "lint-staged",
-    "publish": "yarn lerna publish"
+    "publish": "yarn lerna publish --independent"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
