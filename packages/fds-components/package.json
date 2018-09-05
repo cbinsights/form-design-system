@@ -1,6 +1,6 @@
 {
   "name": "fds-components",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Form Design System React components",
   "author": "CB Insights",
   "license": "MIT",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "classnames": "^2",
-    "fds-styles": "^1.0.11",
+    "fds-styles": "^1.0.12",
     "prop-types": "^15"
   },
   "devDependencies": {
