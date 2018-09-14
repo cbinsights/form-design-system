@@ -17,6 +17,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.2]
+Added typesetting and type modifier classes to `fds-styles`.
+
 ## [1.1]
 Added dictionary properties for typography.
 
