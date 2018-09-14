@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.3]
+- Improved signature of type modifiers
+- Added type specimen to docs (not linked publicly)
+- Use condensed Roboto where appropriate
+- Fixes issue where default body type size was not being set
+
 ## [1.2]
 Added typesetting and type modifier classes to `fds-styles`.
 

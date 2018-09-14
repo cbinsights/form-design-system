@@ -1,20 +1,20 @@
 /*----
 title: Weight Modifiers
-name: textWeightModifiers
-section: Text Modifiers
+name: typeWeightModifiers
+section: Type Modifiers
 ----
 Modifies weight of text.
 
 ```example:html
-<p class="text--bold">Bold Text</p>
-<p class="text--book">Book Text</p>
-<p class="typeset--head3 text--book">Heading3 modified with book weight</p>
+<p class="typemod--bold">Bold Text</p>
+<p class="typemod--book">Book Text</p>
+<p class="typeset--head3 typemod--book">Heading3 modified with book weight</p>
 ```
 */
-.text--bold {
+.typemod--bold {
   font-weight: var(--font-weight-bold);
 }
 
-.text--book {
+.typemod--book {
   font-weight: var(--font-weight-default);
 }

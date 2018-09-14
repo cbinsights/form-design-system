@@ -1,57 +1,57 @@
 /*----
 title: Color Modifiers
-name: textColorModifiers
-section: Text Modifiers
+name: typeColorModifiers
+section: Type Modifiers
 ----
 Modifies color of text.
 
 ### Standard text colors
 ```example:html
-<p class="text--dark">Dark Text</p>
+<p class="typemod--dark">Dark Text</p>
 <p>Default body text</p>
-<p class="text--light">Light Text</p>
+<p class="typemod--light">Light Text</p>
 ```
 
 ### Fancy text colors
 _Examples set in heading level 4_
 ```example:html
-<p class="typeset--head4 text--slate">Slate text (default body color)</p>
-<p class="typeset--head4 text--green">Green text</p>
-<p class="typeset--head4 text--navy">Navy text</p>
-<p class="typeset--head4 text--blue">Blue text</p>
-<p class="typeset--head4 text--red">Red text</p>
-<p class="typeset--head4 text--orange">Orange text</p>
+<p class="typeset--head4 typemod--slate">Slate text (default body color)</p>
+<p class="typeset--head4 typemod--green">Green text</p>
+<p class="typeset--head4 typemod--navy">Navy text</p>
+<p class="typeset--head4 typemod--blue">Blue text</p>
+<p class="typeset--head4 typemod--red">Red text</p>
+<p class="typeset--head4 typemod--orange">Orange text</p>
 ```
 */
-.text--dark {
+.typemod--dark {
   color: var(--font-color-dark);
 }
 
-.text--light {
+.typemod--light {
   color: var(--font-color-light);
 }
 
-.text--slate {
+.typemod--slate {
   color: var(--color-slate);
 }
 
-.text--green {
+.typemod--green {
   color: var(--color-green);
 }
 
-.text--navy {
+.typemod--navy {
   color: var(--color-navy);
 }
 
-.text--blue {
+.typemod--blue {
   color: var(--color-blue);
 }
 
-.text--red {
+.typemod--red {
   color: var(--color-red);
 }
 
-.text--orange {
+.typemod--orange {
   color: var(--color-orange);
 }
 
