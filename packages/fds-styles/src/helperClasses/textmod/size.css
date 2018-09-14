@@ -41,5 +41,5 @@ Modifies size of text and adjusts leading accordingly.
 
 .typemod--tiny {
   font-size: var(--font-size-tiny);
-  line-height: var(--font-lineHeight-tinyText);
+  line-height: var(--font-lineHeight-smallText);
 }

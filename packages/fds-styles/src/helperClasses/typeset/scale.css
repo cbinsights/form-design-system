@@ -133,5 +133,5 @@ Tiny text for captions and legalese.
 */
 .typeset--caption {
   font-size: var(--font-size-tiny);
-  line-height: var(--font-lineHeight-tinyText);
+  line-height: var(--font-lineHeight-smallText);
 }
