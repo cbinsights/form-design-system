@@ -3,7 +3,7 @@
     "weight": {
 
       "default": { "value": "400" },
-      "bold": { "value": "700" }
+      "bold":    { "value": "700" }
 
     }
   }

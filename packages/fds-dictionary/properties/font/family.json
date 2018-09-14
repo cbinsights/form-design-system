@@ -1,0 +1,10 @@
+{
+  "font": {
+    "family": {
+
+      "default":  { "value": "Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif" },
+      "mono":    { "value": "Monaco, Consolas, monospace" }
+
+    }
+  }
+}

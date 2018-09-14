@@ -1,0 +1,11 @@
+{
+  "font": {
+    "lineHeight": {
+
+      "bigText":   { "value": "1.1" },
+      "default":   { "value": "1.4" },
+      "smallText": { "value": "1.6" }
+
+    }
+  }
+}

@@ -11,6 +11,16 @@ const getCTI = (prop) => ({
 });
 
 /**
+ * Returns name parts based on the recommended structure,
+ * [CTI](https://amzn.github.io/style-dictionary/#/package_structure?id=category-type-item).
+ *
+ * Category - "color"
+ * Type - "base"
+ * Item - "red"
+ *
+ * Based on the category of a property, we can decide which parts of CTI
+ * to include in the generated varaiable name.
+ *
  * @param {Object} prop style-dictionary prop
  * @returns {Array} array of CTI parts to use in name
  */
@@ -21,6 +31,9 @@ const getNameParts = (prop) => {
   switch (category) {
     case 'color':
       nameParts = [category, item];
+      break;
+    case 'layout':
+      nameParts = [type, item];
       break;
     default:
       nameParts = [category, type, item];
