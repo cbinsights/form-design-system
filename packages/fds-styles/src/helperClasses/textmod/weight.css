@@ -8,7 +8,7 @@ Modifies weight of text.
 ```example:html
 <p class="typemod--bold">Bold Text</p>
 <p class="typemod--book">Book Text</p>
-<p class="typeset--head3 typemod--book">Heading3 modified with book weight</p>
+<p class="typeset--head3">Modifiers <span class="typemod--book">override</span> default styles</p>
 ```
 */
 .typemod--bold {
