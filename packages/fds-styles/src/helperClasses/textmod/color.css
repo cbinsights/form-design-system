@@ -5,10 +5,22 @@ section: Text Modifiers
 ----
 Modifies color of text.
 
+### Standard text colors
 ```example:html
 <p class="text--dark">Dark Text</p>
-<p>Default body Text</p>
+<p>Default body text</p>
 <p class="text--light">Light Text</p>
+```
+
+### Fancy text colors
+_Examples set in heading level 4_
+```example:html
+<p class="typeset--head4 text--slate">Slate text (default body color)</p>
+<p class="typeset--head4 text--green">Green text</p>
+<p class="typeset--head4 text--navy">Navy text</p>
+<p class="typeset--head4 text--blue">Blue text</p>
+<p class="typeset--head4 text--red">Red text</p>
+<p class="typeset--head4 text--orange">Orange text</p>
 ```
 */
 .text--dark {
@@ -18,3 +30,28 @@ Modifies color of text.
 .text--light {
   color: var(--font-color-light);
 }
+
+.text--slate {
+  color: var(--color-slate);
+}
+
+.text--green {
+  color: var(--color-green);
+}
+
+.text--navy {
+  color: var(--color-navy);
+}
+
+.text--blue {
+  color: var(--color-blue);
+}
+
+.text--red {
+  color: var(--color-red);
+}
+
+.text--orange {
+  color: var(--color-orange);
+}
+

@@ -22,6 +22,7 @@ of the typesetting classes below.
 .typeset--head3,
 .typeset--head4 {
   color: var(--font-color-dark);
+  font-family: var(--font-family-condensed);
 }
 
 /*---
@@ -99,6 +100,8 @@ Default body text. No classes necessary.
 <p>This is default body text</p>
 ```
 */
+/* see documentTags.css */
+
 
 /*---
 title: Data
