@@ -1,0 +1,45 @@
+/*----
+title: Size Modifiers
+name: textSizeModifiers
+section: Text Modifiers
+----
+Modifies size of text and adjusts leading accordingly.
+
+```example:html
+<p class="text--huge">Huge text</p>
+<p class="text--xxlarge">XXL text</p>
+<p class="text--xlarge">XL text</p>
+<p class="text--large">Large text</p>
+<p>Default body text</p>
+<p class="text--small">Small text</p>
+<p class="text--tiny">Tiny text</p>
+```
+*/
+.text--huge {
+  font-size: var(--font-size-heading1);
+  line-height: var(--font-lineHeight-bigText);
+}
+
+.text--xxlarge {
+  font-size: var(--font-size-heading2);
+  line-height: var(--font-lineHeight-bigText);
+}
+
+.text--xlarge {
+  font-size: var(--font-size-heading3);
+  line-height: var(--font-lineHeight-bigText);
+}
+
+.text--large {
+  font-size: var(--font-size-big);
+}
+
+.text--small {
+  font-size: var(--font-size-small);
+  line-height: var(--font-lineHeight-smallText);
+}
+
+.text--tiny {
+  font-size: var(--font-size-tiny);
+  line-height: var(--font-lineHeight-tinyText);
+}

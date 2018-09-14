@@ -1,0 +1,48 @@
+/**
+Inline tag defaults
+*/
+
+a,
+abbr,
+acronym,
+em,
+kbd,
+samp,
+small,
+span,
+strike,
+strong,
+time,
+sub,
+sup,
+var {
+  display: inline;
+}
+
+abbr,
+acronym {
+  border-width: 0;
+  outline-width: 0;
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+kbd,
+var,
+samp {
+  font-family: var(--font-family-mono);
+}
+
+small {
+  font-size: var(--font-size-tiny);
+}
+
+img {
+  display: inline-block;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}

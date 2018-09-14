@@ -1,0 +1,16 @@
+/**
+Heading defaults
+(Set all headings to standard text size and kill spacing)
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: var(--font-weight-default);
+  margin: 0;
+  padding: 0;
+}

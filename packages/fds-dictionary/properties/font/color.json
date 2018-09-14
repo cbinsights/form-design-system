@@ -2,7 +2,7 @@
   "font": {
     "color": {
 
-      "heavy":   { "value": "{color.base.charcoal.value}" },
+      "dark":    { "value": "{color.base.charcoal.value}" },
       "default": { "value": "{color.base.slate.value}" },
       "light":   { "value": "{color.base.gray.value}" }
 

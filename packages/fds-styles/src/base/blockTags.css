@@ -1,0 +1,48 @@
+/**
+Block tag defaults
+*/
+
+p,
+ul,
+ol,
+blockquote,
+form,
+fieldset,
+legend,
+table,
+dl,
+dd,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+audio,
+canvas,
+video {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+address {
+  display: inline-block;
+  font-style: normal;
+}

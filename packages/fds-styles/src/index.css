@@ -1,10 +1,27 @@
 /* Custom properties */
 @import "fds-dictionary/dist/css/customProperties";
 
+/* Base styles */
+@import "./base/customNormalize";
+@import "./base/documentTags";
+@import "./base/inlineTags";
+@import "./base/blockTags";
+@import "./base/headingTags";
+
 /* Spacing Helpers */
-@import "helperClasses/spacing/flush";
+@import "./helperClasses/spacing/flush";
+@import "./helperClasses/spacing/margin";
+@import "./helperClasses/spacing/padding";
 
 /* Position Helpers */
-@import "helperClasses/position/align";
-@import "helperClasses/position/valign";
-@import "helperClasses/position/childAlign";
+@import "./helperClasses/position/align";
+@import "./helperClasses/position/valign";
+@import "./helperClasses/position/childAlign";
+
+/* Typesetting */
+@import "./helperClasses/typeset/scale";
+
+/* Text modifiers */
+@import "./helperClasses/textmod/size";
+@import "./helperClasses/textmod/weight";
+@import "./helperClasses/textmod/color";

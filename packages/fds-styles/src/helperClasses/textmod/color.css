@@ -1,0 +1,20 @@
+/*----
+title: Color Modifiers
+name: textColorModifiers
+section: Text Modifiers
+----
+Modifies color of text.
+
+```example:html
+<p class="text--dark">Dark Text</p>
+<p>Default body Text</p>
+<p class="text--light">Light Text</p>
+```
+*/
+.text--dark {
+  color: var(--font-color-dark);
+}
+
+.text--light {
+  color: var(--font-color-light);
+}

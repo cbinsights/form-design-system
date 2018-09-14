@@ -1,0 +1,36 @@
+/*---
+title: Padding
+name: spacingPadding
+section: Spacing Helpers
+---
+
+Adds padding to the given side of an element.
+
+class            | description
+---------------- | ---------------------------------
+`padding--top`    | Adds standard padding to top of elementt
+`padding--right`  | Adds standard padding to right of elementt
+`padding--bottom` | Adds standard padding to bottom of elementt
+`padding--left`   | Adds standard padding to left of elementt
+`padding--all`    | Adds standard padding to all sidess
+*/
+
+.padding--top {
+  padding-top: var(--space-default);
+}
+
+.padding--right {
+  padding-right: var(--space-default);
+}
+
+.padding--bottom {
+  padding-bottom: var(--space-default);
+}
+
+.padding--left {
+  padding-left: var(--space-default);
+}
+
+.padding--all {
+  padding: var(--space-default);
+}

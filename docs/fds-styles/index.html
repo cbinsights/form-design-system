@@ -6,7 +6,7 @@
     <title>fds-styles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="primer.css" rel="stylesheet"><link href="style.css" rel="stylesheet"><link href="octicons/octicons.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"><link href="assets/doc.css" rel="stylesheet">
-    <script>examples={"base":"","target":"_self","css":["lib/fds-styles.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
+    <script>examples={"base":"","target":"_self","css":["lib/fds-styles.css","./assets/webfont.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
     
   </head>
   <body>
@@ -33,6 +33,12 @@
         <a class="menu-item" href="#spacingFlush"><span>Flush</span></a>
         
         
+        <a class="menu-item" href="#spacingMargin"><span>Margin</span></a>
+        
+        
+        <a class="menu-item" href="#spacingPadding"><span>Padding</span></a>
+        
+        
   
         
         <a class="menu-heading" href="#position-helpers"><span>Position Helpers</span></a>
@@ -45,6 +51,49 @@
         
         
         <a class="menu-item" href="#positionChildAlign"><span>Child Align</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#typesetting"><span>Typesetting</span></a>
+        
+    
+        <a class="menu-item" href="#headingTags"><span>Heading Tags</span></a>
+        
+        
+        <a class="menu-item" href="#heading1"><span>Heading 1</span></a>
+        
+        
+        <a class="menu-item" href="#heading2"><span>Heading 2</span></a>
+        
+        
+        <a class="menu-item" href="#heading3"><span>Heading 3</span></a>
+        
+        
+        <a class="menu-item" href="#heading4"><span>Heading 4</span></a>
+        
+        
+        <a class="menu-item" href="#bodyText"><span>Body</span></a>
+        
+        
+        <a class="menu-item" href="#dataText"><span>Data</span></a>
+        
+        
+        <a class="menu-item" href="#captionText"><span>Caption</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#text-modifiers"><span>Text Modifiers</span></a>
+        
+    
+        <a class="menu-item" href="#textSizeModifiers"><span>Size Modifiers</span></a>
+        
+        
+        <a class="menu-item" href="#textWeightModifiers"><span>Weight Modifiers</span></a>
+        
+        
+        <a class="menu-item" href="#textColorModifiers"><span>Color Modifiers</span></a>
         
         
   
@@ -102,6 +151,86 @@ Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
       </div>
     </section>
     
+    <section id="spacingMargin">
+      <h2 class="page-title">Margin</h2>
+
+      <div class="markdown-body">
+        <p>Adds margin to the given side of an element.</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>margin--top</code></td>
+<td>Adds standard margin to top of element</td>
+</tr>
+<tr>
+<td><code>margin--right</code></td>
+<td>Adds standard margin to right of element</td>
+</tr>
+<tr>
+<td><code>margin--bottom</code></td>
+<td>Adds standard margin to bottom of element</td>
+</tr>
+<tr>
+<td><code>margin--left</code></td>
+<td>Adds standard margin to left of element</td>
+</tr>
+<tr>
+<td><code>margin--all</code></td>
+<td>Adds standard margin to all sides</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+    <section id="spacingPadding">
+      <h2 class="page-title">Padding</h2>
+
+      <div class="markdown-body">
+        <p>Adds padding to the given side of an element.</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>padding--top</code></td>
+<td>Adds standard padding to top of elementt</td>
+</tr>
+<tr>
+<td><code>padding--right</code></td>
+<td>Adds standard padding to right of elementt</td>
+</tr>
+<tr>
+<td><code>padding--bottom</code></td>
+<td>Adds standard padding to bottom of elementt</td>
+</tr>
+<tr>
+<td><code>padding--left</code></td>
+<td>Adds standard padding to left of elementt</td>
+</tr>
+<tr>
+<td><code>padding--all</code></td>
+<td>Adds standard padding to all sidess</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
       </div>
     </section>
     
@@ -148,8 +277,8 @@ Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
 
       <div class="markdown-body">
         <p>Sets <code>vertical-align</code> property. Note that <code>vertical-align</code>
-**only applies to elements displayed <code>inline</code>, <code>inline-block</code>,
-<code>table-cell</code> or <code>inline-flex</code>.</p>
+<strong>only applies to elements displayed <code>inline</code>, <code>inline-block</code>,
+<code>table-cell</code> or <code>inline-flex</code>.</strong></p>
 <table>
 <thead>
 <tr>
@@ -202,10 +331,174 @@ Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
       </div>
     </section>
     
+    <section id="typesetting">
+      <h1 class="page-title">Typesetting</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="headingTags">
+      <h2 class="page-title">Heading Tags</h2>
+
+      <div class="markdown-body">
+        <p>By default, HTML heading tags are set to match the default
+body text. To set the display of a given heading tag, use one
+of the typesetting classes below.</p>
+<pre><code class="lang-example:html">&lt;h1&gt;Heading1&lt;/h1&gt;
+&lt;h2&gt;Heading2&lt;/h2&gt;
+&lt;h3&gt;Heading3&lt;/h3&gt;
+&lt;h4&gt;Heading4&lt;/h4&gt;
+&lt;h5&gt;Heading5&lt;/h5&gt;
+&lt;h6&gt;Heading6&lt;/h6&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="heading1">
+      <h2 class="page-title">Heading 1</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head1&quot;&gt;This is a top-level heading&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="heading2">
+      <h2 class="page-title">Heading 2</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head2&quot;&gt;This is a secondary heading&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="heading3">
+      <h2 class="page-title">Heading 3</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head3&quot;&gt;This is a tertiary heading&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="heading4">
+      <h2 class="page-title">Heading 4</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head4&quot;&gt;This is a minor heading&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="bodyText">
+      <h2 class="page-title">Body</h2>
+
+      <div class="markdown-body">
+        <p>Default body text. No classes necessary.</p>
+<pre><code class="lang-example:html">&lt;p&gt;This is default body text&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="dataText">
+      <h2 class="page-title">Data</h2>
+
+      <div class="markdown-body">
+        <p>Typsetting for data (e.g. tables).</p>
+<pre><code class="lang-example:html">&lt;p class=&quot;typeset--data&quot;&gt;This is data text. Good for tables.&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="captionText">
+      <h2 class="page-title">Caption</h2>
+
+      <div class="markdown-body">
+        <p>Tiny text for captions and legalese.
+<strong>This is not very readable; only use in special circumstances.</strong></p>
+<pre><code class="lang-example:html">&lt;p class=&quot;typeset--caption&quot;&gt;This is a caption. &amp;copy; 2018&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="text-modifiers">
+      <h1 class="page-title">Text Modifiers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="textSizeModifiers">
+      <h2 class="page-title">Size Modifiers</h2>
+
+      <div class="markdown-body">
+        <p>Modifies size of text and adjusts leading accordingly.</p>
+<pre><code class="lang-example:html">&lt;p class=&quot;text--huge&quot;&gt;Huge text&lt;/p&gt;
+&lt;p class=&quot;text--xxlarge&quot;&gt;XXL text&lt;/p&gt;
+&lt;p class=&quot;text--xlarge&quot;&gt;XL text&lt;/p&gt;
+&lt;p class=&quot;text--large&quot;&gt;Large text&lt;/p&gt;
+&lt;p&gt;Default body text&lt;/p&gt;
+&lt;p class=&quot;text--small&quot;&gt;Small text&lt;/p&gt;
+&lt;p class=&quot;text--tiny&quot;&gt;Tiny text&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="textWeightModifiers">
+      <h2 class="page-title">Weight Modifiers</h2>
+
+      <div class="markdown-body">
+        <p>Modifies weight of text.</p>
+<pre><code class="lang-example:html">&lt;p class=&quot;text--bold&quot;&gt;Bold Text&lt;/p&gt;
+&lt;p class=&quot;text--book&quot;&gt;Book Text&lt;/p&gt;
+&lt;p class=&quot;typeset--head3 text--book&quot;&gt;Heading3 modified with book weight&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="textColorModifiers">
+      <h2 class="page-title">Color Modifiers</h2>
+
+      <div class="markdown-body">
+        <p>Modifies color of text.</p>
+<pre><code class="lang-example:html">&lt;p class=&quot;text--dark&quot;&gt;Dark Text&lt;/p&gt;
+&lt;p&gt;Default body Text&lt;/p&gt;
+&lt;p class=&quot;text--light&quot;&gt;Light Text&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
         </main>
       </div>
       <footer class="footer">
-        Last modified Friday, 14 September 2018 14:00
+        Last modified Friday, 14 September 2018 15:16
       </footer>
     </div>
     <script src="prism.js?871234"></script>

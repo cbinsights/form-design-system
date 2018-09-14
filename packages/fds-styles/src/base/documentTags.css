@@ -1,0 +1,18 @@
+/**
+Document-level defaults
+*/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+html {
+  line-height: var(--font-lineHeight-default);
+  font-family: var(--font-family-default);
+  color: var(--font-color-default);
+  text-rendering: geometricPrecision; /* stylelint-disable-line property-blacklist */
+  overflow-y: scroll;
+}

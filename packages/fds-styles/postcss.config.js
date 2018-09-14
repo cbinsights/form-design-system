@@ -15,7 +15,7 @@ const plugins = [
       ],
       logo: 'assets/logo.png',
       examples: {
-        css: ['lib/fds-styles.css'],
+        css: ['lib/fds-styles.css', './assets/webfont.css'],
       },
     }),
   }),
