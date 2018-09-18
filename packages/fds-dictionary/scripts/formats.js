@@ -48,10 +48,24 @@ const formatHtmlDoc = (dictionary) => {
   });
 };
 
+/**
+ * @param {Array} dictionary style-dicitonary dictionary
+ * @return {String} js file with commonJS exports
+ */
+const formatCommonJs = (dictionary) =>
+  dictionary.allProperties
+    .filter((prop) => prop.attributes.category !== 'font') // encourage CSS classes for type styles
+    .map((prop) => `exports.${prop.name} = '${prop.value}';`)
+    .join('\n');
+
 // Custom formats
 module.exports = [
   {
     name: 'html/doc',
     formatter: formatHtmlDoc,
+  },
+  {
+    name: 'javascript/commonJs',
+    formatter: formatCommonJs,
   },
 ];

@@ -3,6 +3,18 @@
 
   "platforms": {
 
+    "SketchPalette": {
+      "transforms": [
+        "attribute/cti"
+      ],
+      "buildPath": "./dist/sketch/",
+      "files": [{
+        "destination": "cbi.sketchpalette",
+        "format": "sketch/palette"
+      }]
+    },
+
+
     "CSSCustomProperties": {
       "transforms": [
         "attribute/cti",
@@ -24,8 +36,8 @@
       ],
       "buildPath": "./dist/js/",
       "files": [{
-        "destination": "es6Constants.js",
-        "format": "javascript/es6"
+        "destination": "styleConstants.js",
+        "format": "javascript/commonJs"
       }]
     },
 
