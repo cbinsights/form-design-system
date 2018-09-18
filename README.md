@@ -5,6 +5,9 @@ A design system by CB Insights.
 ⚠️  **This is currently a work in progress.** ⚠️
 Please check the [changelog](https://github.com/cbinsights/form-design-system/blob/master/CHANGELOG.md) for information about recent releases.
 
+## Documentation
+[https://github.com/cbinsights/form-design-system](https://github.com/cbinsights/form-design-system)
+
 
 ## Releases
 This project uses [semantic versioning](https://semver.org/spec/v2.0.0.html). Versioning,
