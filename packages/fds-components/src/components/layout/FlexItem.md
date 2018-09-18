@@ -112,9 +112,3 @@ _Open the editor below to try adding and removing items_
   </FlexItem>
 </Flex>
 ```
-
-### FLEXIBLE 👏 LAYOUT 👏 CHALLENGE
-🚨 LIVE CODING DEMO 🚨
-
-```js
-```
