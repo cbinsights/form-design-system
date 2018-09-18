@@ -6,7 +6,7 @@ A design system by CB Insights.
 Please check the [changelog](https://github.com/cbinsights/form-design-system/blob/master/CHANGELOG.md) for information about recent releases.
 
 ## Documentation
-[https://github.com/cbinsights/form-design-system](https://github.com/cbinsights/form-design-system)
+[https://cbinsights.github.io/form-design-system/](https://cbinsights.github.io/form-design-system/)
 
 
 ## Releases
