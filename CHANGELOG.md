@@ -17,7 +17,15 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.4]
+
+#### **Changes**
+- Added `sketch/palettes` distribution to `fds-dictionary`
+- Changed javascript distribution in `fds-dictionary` to commonJS modules
+
 ## [1.3]
+
+#### **Changes**
 - Improved signature of type modifiers
 - Added type specimen to docs (not linked publicly)
 - Use condensed Roboto where appropriate
