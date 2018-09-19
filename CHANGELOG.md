@@ -17,6 +17,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.5]
+
+#### **Changes**
+- Removed default background color on `body` and `html` elements
+- Fixed defect where `table` was being set to `display: block` by default
+- Modified publish routine - allow lerna to version root package
+
 ## [1.4]
 
 #### **Changes**
