@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.6]
+
+#### **Changes**
+- Added react native dist to `fds-dictionary`. Import path is `'fds-dictionary/dist/js/reactNative'`.
+
 ## [1.5]
 
 #### **Changes**

@@ -55,6 +55,23 @@ const toKebab = (prop) => getNameParts(prop).join('-');
  */
 const toConstant = (prop) => _.snakeCase(getNameParts(prop).join(' ')).toUpperCase();
 
+/**
+ * @param {Object} prop style-dictionary prop
+ * @returns {String} name string containing item as lowercase object key
+ */
+const toItemObjectKey = (prop) => getCTI(prop).item.toLowerCase();
+
+/**
+ * @param {Object} prop style-dictionary prop
+ * @returns {Object} map of distributions to var names for this prop
+ */
+const toVarNames = (prop) => ({
+  varNames: {
+    css: `var(--${toKebab(prop)})`,
+    js: `${toConstant(prop)}`,
+  },
+});
+
 // Custom transforms
 module.exports = [
   {
@@ -68,13 +85,13 @@ module.exports = [
     transformer: toConstant,
   },
   {
+    name: 'name/i/objectKey',
+    type: 'name',
+    transformer: toItemObjectKey,
+  },
+  {
     name: 'attribute/varNames',
     type: 'attribute',
-    transformer: (prop) => ({
-      varNames: {
-        css: `var(--${toKebab(prop)})`,
-        js: `${toConstant(prop)}`,
-      },
-    }),
+    transformer: toVarNames,
   },
 ];

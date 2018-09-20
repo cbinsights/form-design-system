@@ -3,6 +3,18 @@
 
   "platforms": {
 
+    "ReactNative": {
+      "transforms": [
+        "attribute/cti",
+        "name/i/objectKey"
+      ],
+      "buildPath": "./dist/js/",
+      "files": [{
+        "destination": "reactNative.js",
+        "format": "javascript/reactNativeColors"
+      }]
+    },
+
     "SketchPalette": {
       "transforms": [
         "attribute/cti"
