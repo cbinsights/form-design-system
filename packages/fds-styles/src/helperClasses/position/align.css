@@ -4,25 +4,23 @@ name: positionAlign
 section: Position Helpers
 ---
 
-Sets `text-align` with `left`/`right` fallbacks for IE11.
+eets `text-align`.
 
 class           | description
 --------------- | ---------------------------------
-`align--start`  | Sets `text-align` to `left`/`start`
+`align--left `  | Sets `text-align` to `left`
 `align--center` | Sets `text-align` to `center`
-`align--end`    | Sets `text-align` to `right`/`end`
+`align--right`  | Sets `text-align` to `right`
 */
 
-.align--start {
+.align--left {
   text-align: left;
-  text-align: start;
 }
 
 .align--center {
   text-align: center;
 }
 
-.align--end {
+.align--right {
   text-align: right;
-  text-align: end;
 }

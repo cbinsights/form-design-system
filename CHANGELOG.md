@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.7]
+
+#### **Changes**
+- Changed `align--` classes to use `left` and `right` instead of `start` and `end`. Fixes bug where
+  PostCSS was producing invalid CSS by nesting `[dir]` attribute selectors inside `align--` blocks.
+
 ## [1.6]
 
 #### **Changes**

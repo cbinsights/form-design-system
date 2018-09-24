@@ -8,11 +8,11 @@ Adds padding to the given side of an element.
 
 class            | description
 ---------------- | ---------------------------------
-`padding--top`    | Adds standard padding to top of elementt
-`padding--right`  | Adds standard padding to right of elementt
-`padding--bottom` | Adds standard padding to bottom of elementt
-`padding--left`   | Adds standard padding to left of elementt
-`padding--all`    | Adds standard padding to all sidess
+`padding--top`    | Adds standard padding to top of element
+`padding--right`  | Adds standard padding to right of element
+`padding--bottom` | Adds standard padding to bottom of element
+`padding--left`   | Adds standard padding to left of element
+`padding--all`    | Adds standard padding to all sides
 */
 
 .padding--top {
