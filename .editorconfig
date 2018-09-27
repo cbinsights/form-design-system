@@ -14,3 +14,7 @@ trim_trailing_whitespace = false
 
 [*.css]
 max_line_length = 60
+
+[Makefile]
+indent_style = tab
+indent_size = 4
