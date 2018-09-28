@@ -90,6 +90,7 @@
 
 .flex--column > .flexItem {
   width: 100%;
+  flex-basis: auto;
   padding-top: var(--space-gutter);
 }
 
