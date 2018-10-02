@@ -4,8 +4,8 @@
   "author": "CB Insights",
   "license": "MIT",
   "scripts": {
-    "serve:components": "lerna run serve --stream --scope fds-components",
-    "build": "lerna run build --stream",
+    "serve:components": "lerna run serve --stream --scope=fds-components",
+    "build": "lerna run build --parallel",
     "test": "lerna run test --stream",
     "bootstrap": "yarn lerna bootstrap",
     "lint": "eslint ./ --ext .js,.jsx",

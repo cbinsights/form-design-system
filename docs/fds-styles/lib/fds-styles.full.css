@@ -1,0 +1,930 @@
+/* Custom properties */
+/**
+ * Do not edit directly
+ * Generated on Tue Oct 02 2018 13:54:32 GMT-0400 (Eastern Daylight Time)
+ */
+:root {
+ --color-charcoal: #404040;
+ --color-slate: #757575;
+ --color-gray: #a2a0a0;
+ --color-silver: #c2bfbf;
+ --color-timberwolf: #d6d4d4;
+ --color-lightGray: #f2f2f2;
+ --color-white: #ffffff;
+ --color-navy: #003366;
+ --color-blue: #006699;
+ --color-aqua: #4cabce;
+ --color-sky: #bbdbe5;
+ --color-red: #e5323e;
+ --color-orange: #ff6633;
+ --color-sienna: #f9a862;
+ --color-sand: #fcc89a;
+ --color-green: #00986b;
+ --color-mint: #70c390;
+ --color-purple: #a02385;
+ --color-violet: #d772ad;
+ --font-color-dark: #404040;
+ --font-color-default: #757575;
+ --font-color-light: #a2a0a0;
+ --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ --font-family-default: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ --font-family-mono: Monaco, Consolas, monospace;
+ --font-lineHeight-bigText: 1.1;
+ --font-lineHeight-default: 1.4;
+ --font-lineHeight-smallText: 1.6;
+ --font-size-heading1: 39px;
+ --font-size-heading2: 31px;
+ --font-size-heading3: 25px;
+ --font-size-big: 20px;
+ --font-size-default: 16px;
+ --font-size-small: 13px;
+ --font-size-tiny: 10px;
+ --font-weight-default: 400;
+ --font-weight-bold: 700;
+ --space-double: 32px;
+ --space-default: 16px;
+ --space-half: 8px;
+}
+/* Base styles */
+/* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/* CUSTOMIZED FOR FORM DESIGN SYSTEM */
+/* stylelint-disable */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 3. CUSTOM: also set ms adjust
+ */
+html {
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -ms-text-size-adjust: 100%; /* 2 */
+}
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  margin: 0; /* 2 */
+}
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+}
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+/**
+Document-level defaults
+*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  line-height: 1.4;
+  line-height: var(--font-lineHeight-default);
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-default);
+  font-size: 16px;
+  font-size: var(--font-size-default);
+  color: #757575;
+  color: var(--font-color-default);
+  text-rendering: geometricPrecision; /* stylelint-disable-line property-blacklist */
+  overflow-y: scroll;
+}
+/**
+Inline tag defaults
+*/
+a,
+abbr,
+acronym,
+em,
+kbd,
+samp,
+small,
+span,
+strike,
+strong,
+time,
+sub,
+sup,
+var {
+  display: inline;
+}
+abbr,
+acronym {
+  border-width: 0;
+  outline-width: 0;
+}
+b,
+strong {
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+}
+kbd,
+var,
+samp {
+  font-family: Monaco, Consolas, monospace;
+  font-family: var(--font-family-mono);
+}
+small {
+  font-size: 10px;
+  font-size: var(--font-size-tiny);
+}
+img {
+  display: inline-block;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+/**
+Block tag defaults
+*/
+p,
+ul,
+ol,
+blockquote,
+form,
+fieldset,
+legend,
+dl,
+dd,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+audio,
+canvas,
+video {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+li {
+  margin: 0;
+  padding: 0;
+}
+address {
+  display: inline-block;
+  font-style: normal;
+}
+/**
+Heading defaults
+(Set all headings to standard text size and kill spacing)
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: 400;
+  font-weight: var(--font-weight-default);
+  margin: 0;
+  padding: 0;
+}
+/* Spacing Helpers */
+/*---
+title: Flush
+name: spacingFlush
+section: Spacing Helpers
+---
+
+Removes spacing from the given side of an element.
+Sets both `padding` and `margin` to `0`;
+
+class           | description
+--------------- | ---------------------------------
+`flush--top`    | Removes top spacing from element
+`flush--right`  | Removes right spacing from element
+`flush--bottom` | Removes bottom spacing from element
+`flush--left`   | Removes left spacing from element
+`flush--all`    | Removes spacing from all sides of an element
+*/
+.flush--top {
+  margin-top: 0;
+  padding-top: 0;
+}
+.flush--right {
+  margin-right: 0;
+  padding-right: 0;
+}
+.flush--bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.flush--left {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.flush--all {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/*---
+title: Margin
+name: spacingMargin
+section: Spacing Helpers
+---
+
+Adds margin to the given side of an element.
+
+class            | description
+---------------- | ---------------------------------
+`margin--top`    | Adds standard margin to top of element
+`margin--right`  | Adds standard margin to right of element
+`margin--bottom` | Adds standard margin to bottom of element
+`margin--left`   | Adds standard margin to left of element
+`margin--all`    | Adds standard margin to all sides
+*/
+.margin--top {
+  margin-top: 16px;
+  margin-top: var(--space-default);
+}
+.margin--right {
+  margin-right: 16px;
+  margin-right: var(--space-default);
+}
+.margin--bottom {
+  margin-bottom: 16px;
+  margin-bottom: var(--space-default);
+}
+.margin--left {
+  margin-left: 16px;
+  margin-left: var(--space-default);
+}
+.margin--all {
+  margin: 16px;
+  margin: var(--space-default);
+}
+/*---
+title: Padding
+name: spacingPadding
+section: Spacing Helpers
+---
+
+Adds padding to the given side of an element.
+
+class            | description
+---------------- | ---------------------------------
+`padding--top`    | Adds standard padding to top of element
+`padding--right`  | Adds standard padding to right of element
+`padding--bottom` | Adds standard padding to bottom of element
+`padding--left`   | Adds standard padding to left of element
+`padding--all`    | Adds standard padding to all sides
+*/
+.padding--top {
+  padding-top: 16px;
+  padding-top: var(--space-default);
+}
+.padding--right {
+  padding-right: 16px;
+  padding-right: var(--space-default);
+}
+.padding--bottom {
+  padding-bottom: 16px;
+  padding-bottom: var(--space-default);
+}
+.padding--left {
+  padding-left: 16px;
+  padding-left: var(--space-default);
+}
+.padding--all {
+  padding: 16px;
+  padding: var(--space-default);
+}
+/* Position Helpers */
+/*---
+title: Algin
+name: positionAlign
+section: Position Helpers
+---
+
+eets `text-align`.
+
+class           | description
+--------------- | ---------------------------------
+`align--left `  | Sets `text-align` to `left`
+`align--center` | Sets `text-align` to `center`
+`align--right`  | Sets `text-align` to `right`
+*/
+.align--left {
+  text-align: left;
+}
+.align--center {
+  text-align: center;
+}
+.align--right {
+  text-align: right;
+}
+/*---
+title: Vertical Align
+name: positionVAlign
+section: Position Helpers
+---
+
+Sets `vertical-align` property. Note that `vertical-align`
+**only applies to elements displayed `inline`, `inline-block`,
+`table-cell` or `inline-flex`.**
+
+class                     | description
+------------------------- | ---------------------------------
+`valign--top`             | Sets `vertical-align` to `top`
+`valign--center`          | Sets `vertical-align` to `middle`
+`valign--bottom`          | Sets `vertical-align` to `bottom`
+*/
+.valign--top {
+  vertical-align: top;
+}
+.valign--bottom {
+  vertical-align: bottom;
+}
+.valign--middle,
+.valign--center {
+  vertical-align: middle;
+}
+/*---
+title: Child Align
+name: positionChildAlign
+section: Position Helpers
+---
+
+Positions direct child(s) of element using flex properties.
+**These classes modify `flex` properties**. Avoid combining
+`alignChild` classes with flexbox layout elements.
+
+Classes follow this signature:
+```css
+.alignChild--(left|right|center)--(top|bottom|center)
+```
+
+```example:html
+<div
+  class="alignChild--center--center"
+  style="border: 1px dotted red; height: 100px; width: 100px;"
+>
+  <div style="background: pink;">child</div>
+</div>
+```
+*/
+.alignChild--center--center,
+.alignChild--center--top,
+.alignChild--center--bottom,
+.alignChild--left--center,
+.alignChild--left--top,
+.alignChild--left--bottom,
+.alignChild--right--center,
+.alignChild--right--top,
+.alignChild--right--bottom {
+  display: flex;
+}
+.alignChild--center--center {
+  justify-content: center;
+  align-items: center;
+}
+.alignChild--center--top {
+  justify-content: center;
+  align-items: flex-start;
+}
+.alignChild--center--bottom {
+  justify-content: center;
+  align-items: flex-end;
+}
+.alignChild--left--center {
+  justify-content: flex-start;
+  align-items: center;
+}
+.alignChild--left--top {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.alignChild--left--bottom {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.alignChild--right--center {
+  justify-content: flex-end;
+  align-items: center;
+}
+.alignChild--right--top {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.alignChild--right--bottom {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+/* Typesetting */
+/*---
+title: Heading Tags
+name: headingTags
+section: Typesetting
+---
+By default, HTML heading tags are set to match the default
+body text. To set the display of a given heading tag, use one
+of the typesetting classes below.
+
+```example:html
+<h1>Heading1</h1>
+<h2>Heading2</h2>
+<h3>Heading3</h3>
+<h4>Heading4</h4>
+<h5>Heading5</h5>
+<h6>Heading6</h6>
+```
+*/
+.typeset--head1,
+.typeset--head2,
+.typeset--head3,
+.typeset--head4 {
+  color: #404040;
+  color: var(--font-color-dark);
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-condensed);
+}
+/*---
+title: Heading 1
+name: heading1
+section: Typesetting
+---
+
+```example:html
+<p class="typeset--head1">This is a top-level heading</p>
+```
+*/
+.typeset--head1 {
+  font-size: 39px;
+  font-size: var(--font-size-heading1);
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  line-height: var(--font-lineHeight-bigText);
+}
+/*---
+title: Heading 2
+name: heading2
+section: Typesetting
+---
+
+```example:html
+<p class="typeset--head2">This is a secondary heading</p>
+```
+*/
+.typeset--head2 {
+  font-size: 31px;
+  font-size: var(--font-size-heading2);
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  line-height: var(--font-lineHeight-bigText);
+}
+/*---
+title: Heading 3
+name: heading3
+section: Typesetting
+---
+
+```example:html
+<p class="typeset--head3">This is a tertiary heading</p>
+```
+*/
+.typeset--head3 {
+  font-size: 25px;
+  font-size: var(--font-size-heading3);
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  line-height: var(--font-lineHeight-bigText);
+}
+/*---
+title: Heading 4
+name: heading4
+section: Typesetting
+---
+
+```example:html
+<p class="typeset--head4">This is a minor heading</p>
+```
+*/
+.typeset--head4 {
+  font-size: 20px;
+  font-size: var(--font-size-big);
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  line-height: var(--font-lineHeight-bigText);
+}
+/*---
+title: Body
+name: bodyText
+section: Typesetting
+---
+Default body text. No classes necessary.
+
+```example:html
+<p>This is default body text</p>
+```
+*/
+/* see documentTags.css */
+/*---
+title: Data
+name: dataText
+section: Typesetting
+---
+Typsetting for data (e.g. tables).
+
+```example:html
+<p class="typeset--data">This is data text. Good for tables.</p>
+```
+*/
+.typeset--data {
+  font-size: 13px;
+  font-size: var(--font-size-small);
+  line-height: 1.6;
+  line-height: var(--font-lineHeight-smallText);
+}
+/*---
+title: Caption
+name: captionText
+section: Typesetting
+---
+Tiny text for captions and legalese.
+**This is not very readable; only use in special circumstances.**
+
+```example:html
+<p class="typeset--caption">This is a caption. &copy; 2018</p>
+```
+*/
+.typeset--caption {
+  font-size: 10px;
+  font-size: var(--font-size-tiny);
+  line-height: 1.6;
+  line-height: var(--font-lineHeight-smallText);
+}
+/* Text modifiers */
+/*----
+title: Size Modifiers
+name: typeSizeModifiers
+section: Type Modifiers
+----
+Modifies size of text and adjusts leading accordingly.
+
+```example:html
+<p class="typemod--huge">Huge text</p>
+<p class="typemod--xxlarge">XXL text</p>
+<p class="typemod--xlarge">XL text</p>
+<p class="typemod--large">Large text</p>
+<p>Default body text</p>
+<p class="typemod--small">Small text</p>
+<p class="typemod--tiny">Tiny text</p>
+```
+*/
+.typemod--huge {
+  font-size: 39px;
+  font-size: var(--font-size-heading1);
+  line-height: 1.1;
+  line-height: var(--font-lineHeight-bigText);
+}
+.typemod--xxlarge {
+  font-size: 31px;
+  font-size: var(--font-size-heading2);
+  line-height: 1.1;
+  line-height: var(--font-lineHeight-bigText);
+}
+.typemod--xlarge {
+  font-size: 25px;
+  font-size: var(--font-size-heading3);
+  line-height: 1.1;
+  line-height: var(--font-lineHeight-bigText);
+}
+.typemod--large {
+  font-size: 20px;
+  font-size: var(--font-size-big);
+}
+.typemod--small {
+  font-size: 13px;
+  font-size: var(--font-size-small);
+  line-height: 1.6;
+  line-height: var(--font-lineHeight-smallText);
+}
+.typemod--tiny {
+  font-size: 10px;
+  font-size: var(--font-size-tiny);
+  line-height: 1.6;
+  line-height: var(--font-lineHeight-smallText);
+}
+/*----
+title: Weight Modifiers
+name: typeWeightModifiers
+section: Type Modifiers
+----
+Modifies weight of text.
+
+```example:html
+<p class="typemod--bold">Bold Text</p>
+<p class="typemod--book">Book Text</p>
+<p class="typeset--head3">Modifiers <span class="typemod--book">override</span> default styles</p>
+```
+*/
+.typemod--bold {
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+}
+.typemod--book {
+  font-weight: 400;
+  font-weight: var(--font-weight-default);
+}
+/*----
+title: Color Modifiers
+name: typeColorModifiers
+section: Type Modifiers
+----
+Modifies color of text.
+
+### Standard text colors
+```example:html
+<p class="typemod--dark">Dark Text</p>
+<p>Default body text</p>
+<p class="typemod--light">Light Text</p>
+```
+
+### Fancy text colors
+_Examples set in heading level 4_
+```example:html
+<p class="typeset--head4 typemod--slate">Slate text (default body color)</p>
+<p class="typeset--head4 typemod--green">Green text</p>
+<p class="typeset--head4 typemod--navy">Navy text</p>
+<p class="typeset--head4 typemod--blue">Blue text</p>
+<p class="typeset--head4 typemod--red">Red text</p>
+<p class="typeset--head4 typemod--orange">Orange text</p>
+```
+*/
+.typemod--dark {
+  color: #404040;
+  color: var(--font-color-dark);
+}
+.typemod--light {
+  color: #a2a0a0;
+  color: var(--font-color-light);
+}
+.typemod--slate {
+  color: #757575;
+  color: var(--color-slate);
+}
+.typemod--green {
+  color: #00986b;
+  color: var(--color-green);
+}
+.typemod--navy {
+  color: #003366;
+  color: var(--color-navy);
+}
+.typemod--blue {
+  color: #006699;
+  color: var(--color-blue);
+}
+.typemod--red {
+  color: #e5323e;
+  color: var(--color-red);
+}
+.typemod--orange {
+  color: #ff6633;
+  color: var(--color-orange);
+}

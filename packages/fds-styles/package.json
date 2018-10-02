@@ -8,9 +8,11 @@
     "lib"
   ],
   "scripts": {
-    "build": "yarn precompile && yarn compile",
+    "build": "yarn precompile && yarn postcss:min && yarn postcss:full && yarn docs",
     "precompile": "mkdir -p ./lib",
-    "compile": "postcss src/index.css -o lib/fds-styles.css -m --config=./postcss.config.js"
+    "postcss:min": "NODE_ENV=production postcss src/index.css --output=lib/fds-styles.css --config=./postcss.config.js",
+    "postcss:full": "postcss src/index.css --output=lib/fds-styles.full.css --config=./postcss.config.js",
+    "docs": "node ./buildDocs.js"
   },
   "repository": {
     "type": "git",
