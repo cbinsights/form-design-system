@@ -13,12 +13,16 @@ Modifies color of text.
 ```
 
 ### Fancy text colors
+If you don't see the color you need here, please notify UI Platform.
 _Examples set in heading level 4_
 ```example:html
 <p class="typeset--head4 typemod--slate">Slate text (default body color)</p>
 <p class="typeset--head4 typemod--green">Green text</p>
+<p class="typeset--head4 typemod--mint">Mint text</p>
 <p class="typeset--head4 typemod--navy">Navy text</p>
 <p class="typeset--head4 typemod--blue">Blue text</p>
+<p class="typeset--head4 typemod--sky">Sky text</p>
+<p class="typeset--head4 typemod--purple">Purple text</p>
 <p class="typeset--head4 typemod--red">Red text</p>
 <p class="typeset--head4 typemod--orange">Orange text</p>
 ```
@@ -39,12 +43,24 @@ _Examples set in heading level 4_
   color: var(--color-green);
 }
 
+.typemod--mint {
+  color: var(--color-mint);
+}
+
 .typemod--navy {
   color: var(--color-navy);
 }
 
 .typemod--blue {
   color: var(--color-blue);
+}
+
+.typemod--sky {
+  color: var(--color-sky);
+}
+
+.typemod--purple {
+  color: var(--color-purple);
 }
 
 .typemod--red {

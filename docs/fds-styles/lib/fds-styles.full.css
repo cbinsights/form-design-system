@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed Oct 03 2018 16:27:08 GMT-0400 (Eastern Daylight Time)
+ * Generated on Wed Oct 03 2018 17:55:44 GMT-0400 (Eastern Daylight Time)
  */
 :root {
  --color-charcoal: #404040;
@@ -886,12 +886,16 @@ Modifies color of text.
 ```
 
 ### Fancy text colors
+If you don't see the color you need here, please notify UI Platform.
 _Examples set in heading level 4_
 ```example:html
 <p class="typeset--head4 typemod--slate">Slate text (default body color)</p>
 <p class="typeset--head4 typemod--green">Green text</p>
+<p class="typeset--head4 typemod--mint">Mint text</p>
 <p class="typeset--head4 typemod--navy">Navy text</p>
 <p class="typeset--head4 typemod--blue">Blue text</p>
+<p class="typeset--head4 typemod--sky">Sky text</p>
+<p class="typeset--head4 typemod--purple">Purple text</p>
 <p class="typeset--head4 typemod--red">Red text</p>
 <p class="typeset--head4 typemod--orange">Orange text</p>
 ```
@@ -912,6 +916,10 @@ _Examples set in heading level 4_
   color: #00986b;
   color: var(--color-green);
 }
+.typemod--mint {
+  color: #70c390;
+  color: var(--color-mint);
+}
 .typemod--navy {
   color: #003366;
   color: var(--color-navy);
@@ -919,6 +927,14 @@ _Examples set in heading level 4_
 .typemod--blue {
   color: #006699;
   color: var(--color-blue);
+}
+.typemod--sky {
+  color: #bbdbe5;
+  color: var(--color-sky);
+}
+.typemod--purple {
+  color: #a02385;
+  color: var(--color-purple);
 }
 .typemod--red {
   color: #e5323e;
@@ -943,7 +959,7 @@ of clamping text to one line.
 Class                         | Description
 ----------------------------- | --------------------------------
 `.wrap--singleLine`           | forces text to a single line (nowrap)
-`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
+`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with "&hellip;" entity
 */
 .wrap--singleLine--truncate,
 .wrap--singleLine {
