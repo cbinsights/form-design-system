@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Tue Oct 02 2018 14:20:12 GMT-0400 (Eastern Daylight Time)
+ * Generated on Wed Oct 03 2018 16:27:08 GMT-0400 (Eastern Daylight Time)
  */
 :root {
  --color-charcoal: #404040;
@@ -928,3 +928,29 @@ _Examples set in heading level 4_
   color: #ff6633;
   color: var(--color-orange);
 }
+/* Whitespace helpers */
+/*---
+title: Wrapping helpers
+name: wrap
+section: Whitespace
+---
+
+Helpers to adjust text wrapping with CSS.
+
+Allows compontents to render full strings while CSS does the job
+of clamping text to one line.
+
+Class                         | Description
+----------------------------- | --------------------------------
+`.wrap--singleLine`           | forces text to a single line (nowrap)
+`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
+*/
+.wrap--singleLine--truncate,
+.wrap--singleLine {
+  white-space: nowrap !important;
+}
+.wrap--singleLine--truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+

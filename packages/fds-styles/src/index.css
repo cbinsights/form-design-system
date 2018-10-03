@@ -25,3 +25,7 @@
 @import "./helperClasses/textmod/size";
 @import "./helperClasses/textmod/weight";
 @import "./helperClasses/textmod/color";
+
+/* Whitespace helpers */
+@import "./helperClasses/whitespace/wrap";
+

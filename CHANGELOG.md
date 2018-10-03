@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.8]
+
+#### **Changes**
+- Added whitespace "wrap" helpers to `fds-styles`
+
 ## [1.7]
 
 #### **Changes**
