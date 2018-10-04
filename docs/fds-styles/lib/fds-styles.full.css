@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu Oct 04 2018 11:29:33 GMT-0400 (Eastern Daylight Time)
+ * Generated on Thu Oct 04 2018 14:44:04 GMT-0400 (Eastern Daylight Time)
  */
 :root {
  --color-charcoal: #404040;
@@ -946,7 +946,7 @@ _Examples set in heading level 4_
 }
 /* Whitespace helpers */
 /*---
-title: Truncate helpers
+title: Truncate text
 name: truncate
 section: Text flow
 ---
@@ -970,7 +970,7 @@ Class                         | Description
   text-overflow: ellipsis !important;
 }
 /*---
-title: Wrapping helpers
+title: Text wrap control
 name: wrap
 section: Text flow
 ---
