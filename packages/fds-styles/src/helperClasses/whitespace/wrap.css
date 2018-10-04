@@ -1,7 +1,7 @@
 /*---
 title: Wrapping helpers
 name: wrap
-section: Whitespace
+section: Text flow
 ---
 
 Helpers to adjust text wrapping with CSS.
@@ -9,18 +9,13 @@ Helpers to adjust text wrapping with CSS.
 Allows compontents to render full strings while CSS does the job
 of clamping text to one line.
 
-Class                         | Description
------------------------------ | --------------------------------
-`.wrap--singleLine`           | forces text to a single line (nowrap)
-`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with "&hellip;" entity
+Class                   | Description
+----------------------- | --------------------------------
+`.wrap--hyphenate`      | Allows breaking on word with hyphenation
 */
 
-.wrap--singleLine--truncate,
-.wrap--singleLine {
-  white-space: nowrap !important;
-}
-
-.wrap--singleLine--truncate {
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+.wrap--hyphenate {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
 }

@@ -27,5 +27,6 @@
 @import "./helperClasses/typemod/color";
 
 /* Whitespace helpers */
+@import "./helperClasses/whitespace/truncate";
 @import "./helperClasses/whitespace/wrap";
 

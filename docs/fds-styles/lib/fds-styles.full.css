@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed Oct 03 2018 17:55:44 GMT-0400 (Eastern Daylight Time)
+ * Generated on Thu Oct 04 2018 11:29:33 GMT-0400 (Eastern Daylight Time)
  */
 :root {
  --color-charcoal: #404040;
@@ -946,9 +946,9 @@ _Examples set in heading level 4_
 }
 /* Whitespace helpers */
 /*---
-title: Wrapping helpers
-name: wrap
-section: Whitespace
+title: Truncate helpers
+name: truncate
+section: Text flow
 ---
 
 Helpers to adjust text wrapping with CSS.
@@ -968,5 +968,25 @@ Class                         | Description
 .wrap--singleLine--truncate {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+}
+/*---
+title: Wrapping helpers
+name: wrap
+section: Text flow
+---
+
+Helpers to adjust text wrapping with CSS.
+
+Allows compontents to render full strings while CSS does the job
+of clamping text to one line.
+
+Class                   | Description
+----------------------- | --------------------------------
+`.wrap--hyphenate`      | Allows breaking on word with hyphenation
+*/
+.wrap--hyphenate {
+  word-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
 }
 

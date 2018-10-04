@@ -10,7 +10,7 @@ module.exports = (ctx) => {
   }
 
   return {
-    map: isProdBuild,
+    map: isProdBuild ? { inline: false } : false,
     plugins,
   };
 };
