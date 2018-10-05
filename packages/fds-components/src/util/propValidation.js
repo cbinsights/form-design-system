@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+/* eslint-disable */
 import React from 'react';
 
 /**
@@ -12,7 +12,9 @@ export const childrenOfType = (displayNames) => (props, propName, componentName)
     displayNames.some((name) => child.type.displayName !== name)
   );
   if (hasInvalidChild) {
-    return new Error(`Children of ${componentName} must be of type \`FlexItem\``);
+    return new Error(
+      `Children of ${componentName} must be one of type [${displayNames.join(',')}]`
+    );
   }
   return null;
 };

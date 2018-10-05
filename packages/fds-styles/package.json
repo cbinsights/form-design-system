@@ -1,6 +1,6 @@
 {
   "name": "fds-styles",
-  "version": "1.7.0",
+  "version": "1.8.3",
   "description": "Style foundation for Form Design System",
   "author": "CB Insights",
   "license": "MIT",
@@ -8,9 +8,11 @@
     "lib"
   ],
   "scripts": {
-    "build": "yarn precompile && yarn compile",
+    "build": "yarn precompile && yarn postcss:min && yarn postcss:full && yarn docs",
     "precompile": "mkdir -p ./lib",
-    "compile": "postcss src/index.css -o lib/fds-styles.css -m --config=./postcss.config.js"
+    "postcss:min": "NODE_ENV=production postcss src/index.css --output=lib/fds-styles.css --config=./postcss.config.js",
+    "postcss:full": "postcss src/index.css --output=lib/fds-styles.full.css --config=./postcss.config.js",
+    "docs": "node ./buildDocs.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,6 @@
   },
   "gitHead": "cc2e1975aa791bb367b6dd22d9bbd8dfa1db8bcb",
   "dependencies": {
-    "fds-dictionary": "^1.7.0"
+    "fds-dictionary": "^1.8.3"
   }
 }

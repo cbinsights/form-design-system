@@ -22,6 +22,11 @@
 @import "./helperClasses/typeset/scale";
 
 /* Text modifiers */
-@import "./helperClasses/textmod/size";
-@import "./helperClasses/textmod/weight";
-@import "./helperClasses/textmod/color";
+@import "./helperClasses/typemod/size";
+@import "./helperClasses/typemod/weight";
+@import "./helperClasses/typemod/color";
+
+/* Whitespace helpers */
+@import "./helperClasses/whitespace/truncate";
+@import "./helperClasses/whitespace/wrap";
+

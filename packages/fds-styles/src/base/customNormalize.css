@@ -158,9 +158,9 @@ select { /* 1 */
  */
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
 }
 

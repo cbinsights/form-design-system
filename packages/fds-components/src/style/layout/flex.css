@@ -93,6 +93,13 @@
   padding-top: var(--space-gutter);
 }
 
+/* IE11 needs auto flex basis for column items */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .flex--column > .flexItem {
+    flex-basis: auto;
+  }
+}
+
 /* child justify */
 .flexItem--justifyStart {
   justify-self: flex-start;
