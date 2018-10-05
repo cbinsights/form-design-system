@@ -90,8 +90,14 @@
 
 .flex--column > .flexItem {
   width: 100%;
-  flex-basis: auto;
   padding-top: var(--space-gutter);
+}
+
+/* IE11 needs auto flex basis for column items */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .flex--column > .flexItem {
+    flex-basis: auto;
+  }
 }
 
 /* child justify */
