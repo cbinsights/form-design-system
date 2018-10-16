@@ -40,6 +40,19 @@
       }]
     },
 
+    "JSCustomProperties": {
+      "transforms": [
+        "attribute/cti",
+        "name/ci/kebab",
+        "color/css"
+      ],
+      "buildPath": "./dist/js/",
+      "files": [{
+        "destination": "cssCustomProperties.js",
+        "format": "js/customProperties"
+      }]
+    },
+
     "JSConstants": {
       "transforms": [
         "attribute/cti",

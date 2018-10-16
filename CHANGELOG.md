@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.9]
+
+#### **Changes**
+- Added distribution to `fds-dictionary`, a map of CSS custom property names to values. This is used
+  to populate a PostCSS plugin with fallback values of custom properties for IE11.
+
 ## [1.8]
 
 #### **Changes**

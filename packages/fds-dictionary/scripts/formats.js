@@ -47,6 +47,18 @@ const formatHtmlDoc = (dictionary) => {
 };
 
 /**
+ * @param {Array} dictionary style-dictionary dictionary
+ * @returns {String} js file
+ */
+const formatJSCustomProperties = (dictionary) =>
+  [
+    `${jsComment()}`,
+    'module.exports = {',
+    ...dictionary.allProperties.map((prop) => `  "--${prop.name}": "${prop.value}",`),
+    '};',
+  ].join('\n');
+
+/**
  * @param {Array} dictionary style-dicitonary dictionary
  * @return {String} js file with commonJS exports
  */
@@ -76,6 +88,10 @@ module.exports = [
   {
     name: 'html/doc',
     formatter: formatHtmlDoc,
+  },
+  {
+    name: 'js/customProperties',
+    formatter: formatJSCustomProperties,
   },
   {
     name: 'javascript/commonJs',
