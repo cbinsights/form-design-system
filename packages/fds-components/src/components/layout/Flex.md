@@ -33,7 +33,7 @@
   </Flex>
 </div>
 
-<div style={{ height: '400px;', marginTop: '1rem' }}>
+<div style={{ height: '400px', marginTop: '1rem' }}>
   <p><strong>column</strong></p>
   <Flex direction="column" className="debug--boxModel">
     <FlexItem>

@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import { childrenOfType } from '../../util/propValidation';
 
 /**
  * @description map of alignment prop values to class names
@@ -78,8 +77,9 @@ Flex.propTypes = {
   /** Classes to pass to flex parent */
   className: PropTypes.string,
 
-  /** React children (must be of type `FlexItem`) */
-  children: childrenOfType(['FlexItem']),
+  /** React children (should be of type `FlexItem`) */
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+    .isRequired,
 };
 
 export default Flex;

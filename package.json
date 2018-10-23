@@ -8,7 +8,7 @@
     "build": "lerna run build --parallel",
     "test": "lerna run test --stream",
     "bootstrap": "yarn lerna bootstrap",
-    "lint": "eslint ./ --ext .js,.jsx",
+    "lint": "eslint ./packages/ --ext .js,.jsx",
     "precommit": "lint-staged",
     "publish": "lerna publish --force-publish=fds-dictionary,fds-styles,fds-components"
   },
