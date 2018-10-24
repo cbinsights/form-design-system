@@ -6,6 +6,14 @@ Handlebars.registerHelper('json', (c) => JSON.stringify(c, null, 2));
 const template = Handlebars.compile(fs.readFileSync(`./doc/index.hbs`).toString());
 
 /**
+ * @param {Array} props list of dictionary props
+ * @param {String} cat category
+ * @returns {Array}
+ */
+const filterByCategory = (props, cat) =>
+  props.filter((p) => p.attributes.category === `${cat}`);
+
+/**
  * @returns {String} generated comment with date
  */
 const jsComment = () =>
@@ -22,27 +30,35 @@ const jsComment = () =>
  * @return {String} html file
  */
 const formatHtmlDoc = (dictionary) => {
-  const colors = dictionary.allProperties
-    .filter((p) => p.attributes.category === 'color')
-    .map((p) => {
-      const { hex, rgb, hsl, varNames } = p.attributes;
+  const color = filterByCategory(dictionary.allProperties, 'color').map((p) => {
+    const { name, hex, rgb, hsl, varNames } = p.attributes;
+    return {
+      name,
+      varNames,
+      values: {
+        calculated: p.value,
+        hex,
+        rgba: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
+        hsla: toHsla(hsl),
+      },
+    };
+  });
 
+  const otherProps = dictionary.allProperties
+    .filter((p) => p.attributes.category !== 'color')
+    .map((p) => {
+      const { varNames, category } = p.attributes;
       return {
-        name: p.name,
         varNames,
-        values: {
-          calculated: p.value,
-          hex,
-          rgba: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
-          hsla: toHsla(hsl),
-        },
+        value: p.value,
+        attributes: { category },
       };
     });
 
   return template({
-    properties: {
-      colors,
-    },
+    color,
+    font: filterByCategory(otherProps, 'font'),
+    layout: filterByCategory(otherProps, 'layout'),
   });
 };
 

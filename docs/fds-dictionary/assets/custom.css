@@ -1,13 +1,13 @@
 @import '../../css/customProperties.css';
 
-:root {
-  --size-swatch: 120px;
-}
-
 body {
   font-size: 16px;
   padding: 1rem;
   line-height: 1.4;
+}
+
+:root {
+  --font-family-mono: 'IBM Plex Mono','Menlo','DejaVu Sans Mono','Bitstream Vera Sans Mono','Courier', monospace;
 }
 
 h1,h2,h3,h4,h5,h6, p, code {
@@ -16,74 +16,41 @@ h1,h2,h3,h4,h5,h6, p, code {
 }
 
 code {
-  font-family: Monaco, Consolas, 'Courier New', Courier, monospace;
+  font-family: var(--font-family-mono);
 }
 
 .bounds {
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1024px;
 }
 
-.inlineFlexList {
-  list-style: none;
-  margin-right: -1rem;
-}
-.inlineFlexList li {
-  display: inline-flex;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-}
 
 .swatch {
-  border-top: 1px solid var(--color-timberwolf);
-  flex-direction: row;
-  padding: 1rem;
-  padding-left: 0;
-  width: 420px;
+  width: 30px;
+  height: 30px;
 }
 
-.swatch-color {
-  height: var(--size-swatch);
-  width: var(--size-swatch);
+.propertiesTable {
+  display: table;
+  table-layout: auto;
+  border-collapse: collapse;
+  font-family: var(--font-family-mono);
+  text-align: left;
+  width: 100%;
 }
 
-.swatch-description {
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-}
-.swatch-description h4 {
-  font-size: 1.33rem;
-  margin-bottom: 0.5rem;
+.propertiesTable th,
+.propertiesTable td {
+  padding: 8px 16px;
 }
 
-.swatch-meta {
-  padding: 0;
-  margin: 0;
+.propertiesTable th {
+  font-size: 21px;
 }
 
-.swatch-meta ul {
-  margin: 0;
-  padding: 0;
-}
-
-.swatch-meta li {
-  color: var(--color-slate);
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-  padding: 0.25rem;
-  font-size: 14px;
-}
-.swatch-meta li:hover {
-  background-color: var(--color-orange);
-  color: var(--color-white);
-  cursor: pointer;
-  position: relative;
-}
-
-.swatch-meta code:first-child {
-  display: inline-block;
-  width: 2.5rem;
-  padding-right: 1rem;
+.propertiesTable th:hover,
+.propertiesTable td:hover {
+  background-color: #a02385;
+  color: #fff;
+  cursor: copy;
 }

@@ -11,36 +11,30 @@
   </head>
   <body>
     <section class="bounds">
-      <p>Currently only building docs for colors; more properties to come</p>
+      <table class="propertiesTable">
+        <thead>
+          <tr>
+            <th></th>
+            <th id="css">CSS var</th>
+            <th id="js">JS var</th>
+            <th id="hex">hex</th>
+            <th id="rgba">rgba</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each this.color}}
+            <tr>
+              <td><div class="swatch" style="background-color: {{this.values.rgba}}"></div></td>
+              <td headers="css">{{this.varNames.css}}</td>
+              <td headers="js">{{this.varNames.js}}</td>
+              <td headers="hex">#{{this.values.hex}}</td>
+              <td headers="rgba">{{this.values.rgba}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </section>
-    <section class="bounds">
-      <h1>Colors</h1>
-      <ul class="inlineFlexList">
-        {{#each properties.colors}}
-          <li class="swatch">
-            <div class="swatch-color" style="background-color: {{this.values.calculated}}"></div>
-            <div class="swatch-description">
-              <h4>{{this.name}}</h4>
-              <ul class="swatch-meta">
-                <li class="js-clipboard" data-clipboard-text="{{this.varNames.css}}" title="Click to copy">
-                  <strong><code>CSS:</code></strong>
-                  <code>{{this.varNames.css}}</code>
-                </li>
-                <li class="js-clipboard" data-clipboard-text="{{this.varNames.js}}" title="Click to copy">
-                  <strong><code>JS:</code></strong>
-                  <code>{{this.varNames.js}}</code>
-                </li>
-                <li class="js-clipboard" data-clipboard-text="#{{this.values.hex}}" title="Click to copy">
-                  <strong><code>HEX:</code></strong>
-                  <code>#{{this.values.hex}}</code>
-                </li>
-              </ul>
-            </div>
-          </li>
-        {{/each}}
-      </ul>
-    </section>
-  
+
   <script
     src="https://code.jquery.com/jquery-1.12.4.min.js"
     integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
