@@ -11,10 +11,20 @@
   </head>
   <body>
     <section class="bounds">
+      <p><a style="color: #fff !important;" href="https://github.com/cbinsights/form-design-system">&larr; github</a></p>
+      <h1><code>fds-dictionary</code></h1>
+      <div style="font-size: 18px;">
+        <p><strong>For usage in CSS:</strong> all of the custom properties below should already be globally available in your app.</p>
+        <p><strong>For usage in JS:</strong> <code>import FDS from 'fds-dictionary/dist/js/styleConstants.js'; /* usage: FDS.COLOR_MINT */</code></p>
+      </div>
+    </section>
+
+    <section class="bounds">
+      <h2>Color</h2>
       <table class="propertiesTable">
         <thead>
           <tr>
-            <th></th>
+            <th>🎨</th>
             <th id="css">CSS var</th>
             <th id="js">JS var</th>
             <th id="hex">hex</th>
@@ -23,137 +33,272 @@
         </thead>
         <tbody>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(64, 64, 64, 1)"></div></td>
-              <td headers="css">var(--color-charcoal)</td>
-              <td headers="js">COLOR_CHARCOAL</td>
-              <td headers="hex">#404040</td>
-              <td headers="rgba">rgba(64, 64, 64, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(64, 64, 64, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-charcoal)" headers="css">var(--color-charcoal)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_CHARCOAL" headers="js">COLOR_CHARCOAL</td>
+              <td class="js-clipboard" data-clipboard-text="#404040" headers="hex">#404040</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(64, 64, 64, 1)" headers="rgba">rgba(64, 64, 64, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(117, 117, 117, 1)"></div></td>
-              <td headers="css">var(--color-slate)</td>
-              <td headers="js">COLOR_SLATE</td>
-              <td headers="hex">#757575</td>
-              <td headers="rgba">rgba(117, 117, 117, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(117, 117, 117, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-slate)" headers="css">var(--color-slate)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_SLATE" headers="js">COLOR_SLATE</td>
+              <td class="js-clipboard" data-clipboard-text="#757575" headers="hex">#757575</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(117, 117, 117, 1)" headers="rgba">rgba(117, 117, 117, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(162, 160, 160, 1)"></div></td>
-              <td headers="css">var(--color-gray)</td>
-              <td headers="js">COLOR_GRAY</td>
-              <td headers="hex">#a2a0a0</td>
-              <td headers="rgba">rgba(162, 160, 160, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(162, 160, 160, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-gray)" headers="css">var(--color-gray)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_GRAY" headers="js">COLOR_GRAY</td>
+              <td class="js-clipboard" data-clipboard-text="#a2a0a0" headers="hex">#a2a0a0</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(162, 160, 160, 1)" headers="rgba">rgba(162, 160, 160, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(194, 191, 191, 1)"></div></td>
-              <td headers="css">var(--color-silver)</td>
-              <td headers="js">COLOR_SILVER</td>
-              <td headers="hex">#c2bfbf</td>
-              <td headers="rgba">rgba(194, 191, 191, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(194, 191, 191, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-silver)" headers="css">var(--color-silver)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_SILVER" headers="js">COLOR_SILVER</td>
+              <td class="js-clipboard" data-clipboard-text="#c2bfbf" headers="hex">#c2bfbf</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(194, 191, 191, 1)" headers="rgba">rgba(194, 191, 191, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(214, 212, 212, 1)"></div></td>
-              <td headers="css">var(--color-timberwolf)</td>
-              <td headers="js">COLOR_TIMBERWOLF</td>
-              <td headers="hex">#d6d4d4</td>
-              <td headers="rgba">rgba(214, 212, 212, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(214, 212, 212, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-timberwolf)" headers="css">var(--color-timberwolf)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_TIMBERWOLF" headers="js">COLOR_TIMBERWOLF</td>
+              <td class="js-clipboard" data-clipboard-text="#d6d4d4" headers="hex">#d6d4d4</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(214, 212, 212, 1)" headers="rgba">rgba(214, 212, 212, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(242, 242, 242, 1)"></div></td>
-              <td headers="css">var(--color-lightGray)</td>
-              <td headers="js">COLOR_LIGHT_GRAY</td>
-              <td headers="hex">#f2f2f2</td>
-              <td headers="rgba">rgba(242, 242, 242, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(242, 242, 242, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-lightGray)" headers="css">var(--color-lightGray)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_LIGHT_GRAY" headers="js">COLOR_LIGHT_GRAY</td>
+              <td class="js-clipboard" data-clipboard-text="#f2f2f2" headers="hex">#f2f2f2</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(242, 242, 242, 1)" headers="rgba">rgba(242, 242, 242, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(255, 255, 255, 1)"></div></td>
-              <td headers="css">var(--color-white)</td>
-              <td headers="js">COLOR_WHITE</td>
-              <td headers="hex">#ffffff</td>
-              <td headers="rgba">rgba(255, 255, 255, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(255, 255, 255, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-white)" headers="css">var(--color-white)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_WHITE" headers="js">COLOR_WHITE</td>
+              <td class="js-clipboard" data-clipboard-text="#ffffff" headers="hex">#ffffff</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(255, 255, 255, 1)" headers="rgba">rgba(255, 255, 255, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(0, 51, 102, 1)"></div></td>
-              <td headers="css">var(--color-navy)</td>
-              <td headers="js">COLOR_NAVY</td>
-              <td headers="hex">#003366</td>
-              <td headers="rgba">rgba(0, 51, 102, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(0, 51, 102, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-navy)" headers="css">var(--color-navy)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_NAVY" headers="js">COLOR_NAVY</td>
+              <td class="js-clipboard" data-clipboard-text="#003366" headers="hex">#003366</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(0, 51, 102, 1)" headers="rgba">rgba(0, 51, 102, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(0, 102, 153, 1)"></div></td>
-              <td headers="css">var(--color-blue)</td>
-              <td headers="js">COLOR_BLUE</td>
-              <td headers="hex">#006699</td>
-              <td headers="rgba">rgba(0, 102, 153, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(0, 102, 153, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-blue)" headers="css">var(--color-blue)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_BLUE" headers="js">COLOR_BLUE</td>
+              <td class="js-clipboard" data-clipboard-text="#006699" headers="hex">#006699</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(0, 102, 153, 1)" headers="rgba">rgba(0, 102, 153, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(76, 171, 206, 1)"></div></td>
-              <td headers="css">var(--color-aqua)</td>
-              <td headers="js">COLOR_AQUA</td>
-              <td headers="hex">#4cabce</td>
-              <td headers="rgba">rgba(76, 171, 206, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(76, 171, 206, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-aqua)" headers="css">var(--color-aqua)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_AQUA" headers="js">COLOR_AQUA</td>
+              <td class="js-clipboard" data-clipboard-text="#4cabce" headers="hex">#4cabce</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(76, 171, 206, 1)" headers="rgba">rgba(76, 171, 206, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(187, 219, 229, 1)"></div></td>
-              <td headers="css">var(--color-sky)</td>
-              <td headers="js">COLOR_SKY</td>
-              <td headers="hex">#bbdbe5</td>
-              <td headers="rgba">rgba(187, 219, 229, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(187, 219, 229, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-sky)" headers="css">var(--color-sky)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_SKY" headers="js">COLOR_SKY</td>
+              <td class="js-clipboard" data-clipboard-text="#bbdbe5" headers="hex">#bbdbe5</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(187, 219, 229, 1)" headers="rgba">rgba(187, 219, 229, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(229, 50, 62, 1)"></div></td>
-              <td headers="css">var(--color-red)</td>
-              <td headers="js">COLOR_RED</td>
-              <td headers="hex">#e5323e</td>
-              <td headers="rgba">rgba(229, 50, 62, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(229, 50, 62, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-red)" headers="css">var(--color-red)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_RED" headers="js">COLOR_RED</td>
+              <td class="js-clipboard" data-clipboard-text="#e5323e" headers="hex">#e5323e</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(229, 50, 62, 1)" headers="rgba">rgba(229, 50, 62, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(255, 102, 51, 1)"></div></td>
-              <td headers="css">var(--color-orange)</td>
-              <td headers="js">COLOR_ORANGE</td>
-              <td headers="hex">#ff6633</td>
-              <td headers="rgba">rgba(255, 102, 51, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(255, 102, 51, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-orange)" headers="css">var(--color-orange)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_ORANGE" headers="js">COLOR_ORANGE</td>
+              <td class="js-clipboard" data-clipboard-text="#ff6633" headers="hex">#ff6633</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(255, 102, 51, 1)" headers="rgba">rgba(255, 102, 51, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(249, 168, 98, 1)"></div></td>
-              <td headers="css">var(--color-sienna)</td>
-              <td headers="js">COLOR_SIENNA</td>
-              <td headers="hex">#f9a862</td>
-              <td headers="rgba">rgba(249, 168, 98, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(249, 168, 98, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-sienna)" headers="css">var(--color-sienna)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_SIENNA" headers="js">COLOR_SIENNA</td>
+              <td class="js-clipboard" data-clipboard-text="#f9a862" headers="hex">#f9a862</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(249, 168, 98, 1)" headers="rgba">rgba(249, 168, 98, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(252, 200, 154, 1)"></div></td>
-              <td headers="css">var(--color-sand)</td>
-              <td headers="js">COLOR_SAND</td>
-              <td headers="hex">#fcc89a</td>
-              <td headers="rgba">rgba(252, 200, 154, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(252, 200, 154, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-sand)" headers="css">var(--color-sand)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_SAND" headers="js">COLOR_SAND</td>
+              <td class="js-clipboard" data-clipboard-text="#fcc89a" headers="hex">#fcc89a</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(252, 200, 154, 1)" headers="rgba">rgba(252, 200, 154, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(0, 152, 107, 1)"></div></td>
-              <td headers="css">var(--color-green)</td>
-              <td headers="js">COLOR_GREEN</td>
-              <td headers="hex">#00986b</td>
-              <td headers="rgba">rgba(0, 152, 107, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(0, 152, 107, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-green)" headers="css">var(--color-green)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_GREEN" headers="js">COLOR_GREEN</td>
+              <td class="js-clipboard" data-clipboard-text="#00986b" headers="hex">#00986b</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(0, 152, 107, 1)" headers="rgba">rgba(0, 152, 107, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(112, 195, 144, 1)"></div></td>
-              <td headers="css">var(--color-mint)</td>
-              <td headers="js">COLOR_MINT</td>
-              <td headers="hex">#70c390</td>
-              <td headers="rgba">rgba(112, 195, 144, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(112, 195, 144, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-mint)" headers="css">var(--color-mint)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_MINT" headers="js">COLOR_MINT</td>
+              <td class="js-clipboard" data-clipboard-text="#70c390" headers="hex">#70c390</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(112, 195, 144, 1)" headers="rgba">rgba(112, 195, 144, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(160, 35, 133, 1)"></div></td>
-              <td headers="css">var(--color-purple)</td>
-              <td headers="js">COLOR_PURPLE</td>
-              <td headers="hex">#a02385</td>
-              <td headers="rgba">rgba(160, 35, 133, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(160, 35, 133, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-purple)" headers="css">var(--color-purple)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_PURPLE" headers="js">COLOR_PURPLE</td>
+              <td class="js-clipboard" data-clipboard-text="#a02385" headers="hex">#a02385</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(160, 35, 133, 1)" headers="rgba">rgba(160, 35, 133, 1)</td>
             </tr>
             <tr>
-              <td><div class="swatch" style="background-color: rgba(215, 114, 173, 1)"></div></td>
-              <td headers="css">var(--color-violet)</td>
-              <td headers="js">COLOR_VIOLET</td>
-              <td headers="hex">#d772ad</td>
-              <td headers="rgba">rgba(215, 114, 173, 1)</td>
+              <th><div class="swatch" style="background-color: rgba(215, 114, 173, 1)"></div></th>
+              <td class="js-clipboard" data-clipboard-text="var(--color-violet)" headers="css">var(--color-violet)</td>
+              <td class="js-clipboard" data-clipboard-text="COLOR_VIOLET" headers="js">COLOR_VIOLET</td>
+              <td class="js-clipboard" data-clipboard-text="#d772ad" headers="hex">#d772ad</td>
+              <td class="js-clipboard" data-clipboard-text="rgba(215, 114, 173, 1)" headers="rgba">rgba(215, 114, 173, 1)</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="bounds">
+      <h2>Layout</h2>
+      <table class="propertiesTable">
+        <thead>
+          <tr>
+            <th id="css">CSS var</th>
+            <th id="js">JS var</th>
+            <th id="value">value</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--space-double)" headers="css">var(--space-double)</td>
+              <td class="js-clipboard" data-clipboard-text="SPACE_DOUBLE" headers="js">SPACE_DOUBLE</td>
+              <td class="js-clipboard" data-clipboard-text="32px" headers="value">32px</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--space-default)" headers="css">var(--space-default)</td>
+              <td class="js-clipboard" data-clipboard-text="SPACE_DEFAULT" headers="js">SPACE_DEFAULT</td>
+              <td class="js-clipboard" data-clipboard-text="16px" headers="value">16px</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--space-half)" headers="css">var(--space-half)</td>
+              <td class="js-clipboard" data-clipboard-text="SPACE_HALF" headers="js">SPACE_HALF</td>
+              <td class="js-clipboard" data-clipboard-text="8px" headers="value">8px</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="bounds">
+      <h2>Font</h1>
+      <table class="propertiesTable">
+        <thead>
+          <tr>
+            <th style="min-width: 360px;" id="css">CSS var</th>
+            <th id="js">JS var</th>
+            <th id="value">value</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-color-dark)" headers="css">var(--font-color-dark)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_COLOR_DARK" headers="js">FONT_COLOR_DARK</td>
+              <td class="js-clipboard" data-clipboard-text="#404040" headers="value">#404040</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-color-default)" headers="css">var(--font-color-default)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_COLOR_DEFAULT" headers="js">FONT_COLOR_DEFAULT</td>
+              <td class="js-clipboard" data-clipboard-text="#757575" headers="value">#757575</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-color-light)" headers="css">var(--font-color-light)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_COLOR_LIGHT" headers="js">FONT_COLOR_LIGHT</td>
+              <td class="js-clipboard" data-clipboard-text="#a2a0a0" headers="value">#a2a0a0</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-family-condensed)" headers="css">var(--font-family-condensed)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_FAMILY_CONDENSED" headers="js">FONT_FAMILY_CONDENSED</td>
+              <td class="js-clipboard" data-clipboard-text="&#x27;Roboto Condensed&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif" headers="value">&#x27;Roboto Condensed&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-family-default)" headers="css">var(--font-family-default)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_FAMILY_DEFAULT" headers="js">FONT_FAMILY_DEFAULT</td>
+              <td class="js-clipboard" data-clipboard-text="Roboto, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif" headers="value">Roboto, &#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-family-mono)" headers="css">var(--font-family-mono)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_FAMILY_MONO" headers="js">FONT_FAMILY_MONO</td>
+              <td class="js-clipboard" data-clipboard-text="Monaco, Consolas, monospace" headers="value">Monaco, Consolas, monospace</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-lineHeight-bigText)" headers="css">var(--font-lineHeight-bigText)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_LINE_HEIGHT_BIG_TEXT" headers="js">FONT_LINE_HEIGHT_BIG_TEXT</td>
+              <td class="js-clipboard" data-clipboard-text="1.1" headers="value">1.1</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-lineHeight-default)" headers="css">var(--font-lineHeight-default)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_LINE_HEIGHT_DEFAULT" headers="js">FONT_LINE_HEIGHT_DEFAULT</td>
+              <td class="js-clipboard" data-clipboard-text="1.4" headers="value">1.4</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-lineHeight-smallText)" headers="css">var(--font-lineHeight-smallText)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_LINE_HEIGHT_SMALL_TEXT" headers="js">FONT_LINE_HEIGHT_SMALL_TEXT</td>
+              <td class="js-clipboard" data-clipboard-text="1.6" headers="value">1.6</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-size-heading1)" headers="css">var(--font-size-heading1)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_SIZE_HEADING_1" headers="js">FONT_SIZE_HEADING_1</td>
+              <td class="js-clipboard" data-clipboard-text="39px" headers="value">39px</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-size-heading2)" headers="css">var(--font-size-heading2)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_SIZE_HEADING_2" headers="js">FONT_SIZE_HEADING_2</td>
+              <td class="js-clipboard" data-clipboard-text="31px" headers="value">31px</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-size-heading3)" headers="css">var(--font-size-heading3)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_SIZE_HEADING_3" headers="js">FONT_SIZE_HEADING_3</td>
+              <td class="js-clipboard" data-clipboard-text="25px" headers="value">25px</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-size-big)" headers="css">var(--font-size-big)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_SIZE_BIG" headers="js">FONT_SIZE_BIG</td>
+              <td class="js-clipboard" data-clipboard-text="20px" headers="value">20px</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-size-default)" headers="css">var(--font-size-default)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_SIZE_DEFAULT" headers="js">FONT_SIZE_DEFAULT</td>
+              <td class="js-clipboard" data-clipboard-text="16px" headers="value">16px</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-size-small)" headers="css">var(--font-size-small)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_SIZE_SMALL" headers="js">FONT_SIZE_SMALL</td>
+              <td class="js-clipboard" data-clipboard-text="13px" headers="value">13px</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-size-tiny)" headers="css">var(--font-size-tiny)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_SIZE_TINY" headers="js">FONT_SIZE_TINY</td>
+              <td class="js-clipboard" data-clipboard-text="10px" headers="value">10px</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-weight-default)" headers="css">var(--font-weight-default)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_WEIGHT_DEFAULT" headers="js">FONT_WEIGHT_DEFAULT</td>
+              <td class="js-clipboard" data-clipboard-text="400" headers="value">400</td>
+            </tr>
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="var(--font-weight-bold)" headers="css">var(--font-weight-bold)</td>
+              <td class="js-clipboard" data-clipboard-text="FONT_WEIGHT_BOLD" headers="js">FONT_WEIGHT_BOLD</td>
+              <td class="js-clipboard" data-clipboard-text="700" headers="value">700</td>
             </tr>
         </tbody>
       </table>

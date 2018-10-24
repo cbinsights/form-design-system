@@ -11,10 +11,20 @@
   </head>
   <body>
     <section class="bounds">
+      <p><a style="color: #fff !important;" href="https://github.com/cbinsights/form-design-system">&larr; github</a></p>
+      <h1><code>fds-dictionary</code></h1>
+      <div style="font-size: 18px;">
+        <p><strong>For usage in CSS:</strong> all of the custom properties below should already be globally available in your app.</p>
+        <p><strong>For usage in JS:</strong> <code>import FDS from 'fds-dictionary/dist/js/styleConstants.js'; /* usage: FDS.COLOR_MINT */</code></p>
+      </div>
+    </section>
+
+    <section class="bounds">
+      <h2>Color</h2>
       <table class="propertiesTable">
         <thead>
           <tr>
-            <th></th>
+            <th>🎨</th>
             <th id="css">CSS var</th>
             <th id="js">JS var</th>
             <th id="hex">hex</th>
@@ -24,11 +34,55 @@
         <tbody>
           {{#each this.color}}
             <tr>
-              <td><div class="swatch" style="background-color: {{this.values.rgba}}"></div></td>
-              <td headers="css">{{this.varNames.css}}</td>
-              <td headers="js">{{this.varNames.js}}</td>
-              <td headers="hex">#{{this.values.hex}}</td>
-              <td headers="rgba">{{this.values.rgba}}</td>
+              <th><div class="swatch" style="background-color: {{this.values.rgba}}"></div></th>
+              <td class="js-clipboard" data-clipboard-text="{{this.varNames.css}}" headers="css">{{this.varNames.css}}</td>
+              <td class="js-clipboard" data-clipboard-text="{{this.varNames.js}}" headers="js">{{this.varNames.js}}</td>
+              <td class="js-clipboard" data-clipboard-text="#{{this.values.hex}}" headers="hex">#{{this.values.hex}}</td>
+              <td class="js-clipboard" data-clipboard-text="{{this.values.rgba}}" headers="rgba">{{this.values.rgba}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="bounds">
+      <h2>Layout</h2>
+      <table class="propertiesTable">
+        <thead>
+          <tr>
+            <th id="css">CSS var</th>
+            <th id="js">JS var</th>
+            <th id="value">value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each this.layout}}
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="{{this.varNames.css}}" headers="css">{{this.varNames.css}}</td>
+              <td class="js-clipboard" data-clipboard-text="{{this.varNames.js}}" headers="js">{{this.varNames.js}}</td>
+              <td class="js-clipboard" data-clipboard-text="{{this.value}}" headers="value">{{this.value}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="bounds">
+      <h2>Font</h1>
+      <table class="propertiesTable">
+        <thead>
+          <tr>
+            <th style="min-width: 360px;" id="css">CSS var</th>
+            <th id="js">JS var</th>
+            <th id="value">value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each this.font}}
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="{{this.varNames.css}}" headers="css">{{this.varNames.css}}</td>
+              <td class="js-clipboard" data-clipboard-text="{{this.varNames.js}}" headers="js">{{this.varNames.js}}</td>
+              <td class="js-clipboard" data-clipboard-text="{{this.value}}" headers="value">{{this.value}}</td>
             </tr>
           {{/each}}
         </tbody>

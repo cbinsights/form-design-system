@@ -4,6 +4,8 @@ body {
   font-size: 16px;
   padding: 1rem;
   line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+  background: #333;
 }
 
 :root {
@@ -22,19 +24,34 @@ code {
   padding: 0;
 }
 
+p {
+  margin-bottom: 16px;
+}
+
+h1,
+h2 {
+  margin-bottom: 32px;
+  color: #bbdbe5;
+}
+
+h2 {
+  font-size: 42px;
+  transform: translateX(-21px);
+}
+
 code {
   font-family: var(--font-family-mono);
 }
 
 .bounds {
   margin: 0 auto;
-  max-width: 1024px;
+  max-width: 1240px;
+  margin-bottom: 32px;
 }
 
-
 .swatch {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
 }
 
 .propertiesTable {
@@ -46,6 +63,10 @@ code {
   width: 100%;
 }
 
+.propertiesTable td {
+  border-top: 1px solid #efefef;
+}
+
 .propertiesTable th,
 .propertiesTable td {
   padding: 8px 16px;
@@ -55,9 +76,8 @@ code {
   font-size: 21px;
 }
 
-.propertiesTable th:hover,
 .propertiesTable td:hover {
-  background-color: #a02385;
-  color: #fff;
+  background-color: #f2f2f2;
+  color: #333;
   cursor: copy;
 }
