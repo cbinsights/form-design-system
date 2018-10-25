@@ -55,6 +55,10 @@ code {
   height: 36px;
 }
 
+.swatch--base {
+  border-radius: 100%;
+}
+
 .propertiesTable {
   display: table;
   table-layout: auto;
@@ -105,4 +109,5 @@ code {
 .paletteList li {
   display: flex;
   align-items: center;
+  padding-bottom: 4px;
 }

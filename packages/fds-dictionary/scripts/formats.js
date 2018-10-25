@@ -50,6 +50,7 @@ const formatHtmlDoc = (dictionary) => {
       materialPalette: Object.keys(materialPalette).map((key) => ({
         key,
         value: materialPalette[key],
+        isBase: Boolean(key.toString() === '500'),
       })),
     };
   });

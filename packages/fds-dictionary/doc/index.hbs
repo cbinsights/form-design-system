@@ -25,7 +25,7 @@
           <ul class="paletteList">
             {{#each this.materialPalette}}
               <li>
-                <span class="swatch" style="background-color: {{this.value}};"></span>
+                <span class="swatch {{#if this.isBase}}swatch--base{{/if}}" style="background-color: {{this.value}};"></span>
                 &nbsp;
                 <span>{{this.key}}</span>
               </li>
