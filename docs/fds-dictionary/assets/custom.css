@@ -50,8 +50,13 @@ code {
 }
 
 .swatch {
+  display: inline-flex;
   width: 36px;
   height: 36px;
+}
+
+.swatch--base {
+  border-radius: 100%;
 }
 
 .propertiesTable {
@@ -80,4 +85,29 @@ code {
   background-color: #f2f2f2;
   color: #333;
   cursor: copy;
+}
+
+.palettes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.palette {
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  flex-shrink: 1;
+  min-width: 100px;
+}
+
+.paletteList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.paletteList li {
+  display: flex;
+  align-items: center;
+  padding-bottom: 4px;
 }
