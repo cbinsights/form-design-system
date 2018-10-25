@@ -45,6 +45,7 @@
     "react-styleguidist": "^7.3.0",
     "style-dictionary": "^2.3.0",
     "stylelint": "^9.5.0",
+    "tinycolor2": "^1.4.1",
     "webpack": "^4.17.1",
     "webpack-blocks": "^1.0.0"
   },

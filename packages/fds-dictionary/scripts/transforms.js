@@ -1,4 +1,6 @@
 const _ = require('lodash');
+const { materialTint } = require('./util/color');
+const { materialShade } = require('./util/color');
 
 /**
  * @param {Object} prop style-dictionary prop
@@ -72,6 +74,40 @@ const toVarNames = (prop) => ({
   },
 });
 
+/**
+ * @param {Object} value style-dictionary value
+ * @returns {Object} object representing material UI palette color values
+ */
+const toMaterialPaletteColor = (value) => {
+  const tintKeys = [400, 300, 200, 100, 50];
+  const shadeKeys = [600, 700, 800, 900];
+
+  const flattenReducer = (acc, curr) => {
+    acc[curr.key] = curr.color;
+    return acc;
+  };
+
+  const tints = tintKeys
+    .map((key, i) => ({
+      key,
+      color: materialTint(value, i + 1),
+    }))
+    .reduce(flattenReducer, {});
+
+  const shades = shadeKeys
+    .map((key, i) => ({
+      key,
+      color: materialShade(value, i + 1),
+    }))
+    .reduce(flattenReducer, {});
+
+  return {
+    ...tints,
+    500: value,
+    ...shades,
+  };
+};
+
 // Custom transforms
 module.exports = [
   {
@@ -93,5 +129,11 @@ module.exports = [
     name: 'attribute/varNames',
     type: 'attribute',
     transformer: toVarNames,
+  },
+  {
+    name: 'color/materialPaletteColor',
+    type: 'value',
+    matcher: (p) => p.attributes.category === 'color',
+    transformer: toMaterialPaletteColor,
   },
 ];

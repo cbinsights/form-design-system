@@ -19,12 +19,28 @@
       </div>
     </section>
 
+    <section class="bounds palettes">
+      {{#each this.color}}
+        <div class="palette">
+          <ul class="paletteList">
+            {{#each this.materialPalette}}
+              <li>
+                <span class="swatch" style="background-color: {{this.value}};"></span>
+                &nbsp;
+                <span>{{this.key}}</span>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/each}}
+    </section>
+
     <section class="bounds">
       <h2>Color</h2>
       <table class="propertiesTable">
         <thead>
           <tr>
-            <th>🎨</th>
+            <th style="padding-left: 22px;">🎨</th>
             <th id="css">CSS var</th>
             <th id="js">JS var</th>
             <th id="hex">hex</th>

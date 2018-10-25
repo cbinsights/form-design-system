@@ -2,6 +2,11 @@ const fs = require('fs');
 const Handlebars = require('handlebars');
 const { toHsla } = require('./util/color');
 
+// import prop value transformer for ad-hoc material ui colors in docs
+const toMaterialPaletteColor = require('./transforms').filter(
+  (t) => t.name === 'color/materialPaletteColor'
+)[0].transformer;
+
 Handlebars.registerHelper('json', (c) => JSON.stringify(c, null, 2));
 const template = Handlebars.compile(fs.readFileSync(`./doc/index.hbs`).toString());
 
@@ -32,6 +37,7 @@ const jsComment = () =>
 const formatHtmlDoc = (dictionary) => {
   const color = filterByCategory(dictionary.allProperties, 'color').map((p) => {
     const { name, hex, rgb, hsl, varNames } = p.attributes;
+    const materialPalette = toMaterialPaletteColor(p.value);
     return {
       name,
       varNames,
@@ -41,6 +47,10 @@ const formatHtmlDoc = (dictionary) => {
         rgba: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
         hsla: toHsla(hsl),
       },
+      materialPalette: Object.keys(materialPalette).map((key) => ({
+        key,
+        value: materialPalette[key],
+      })),
     };
   });
 
