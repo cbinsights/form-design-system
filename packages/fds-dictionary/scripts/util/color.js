@@ -62,10 +62,6 @@ exports.materialShade = (base, level) => {
     .domain([0, 255])
     .range([3, 3, 3.5, 4, 4, 4, 5.5, 7, 8, 10, 10, 12, 16, 18]);
 
-  console.info(
-    `${color.toHexString()} | ${color.getBrightness()} | ${scale(color.getBrightness())}`
-  );
-
   const adjust = {
     spin: -1,
     saturate: 1,
