@@ -1,6 +1,5 @@
 const _ = require('lodash');
-const { materialTint } = require('./util/color');
-const { materialShade } = require('./util/color');
+const { materialTint, materialShade } = require('./util/color');
 
 /**
  * @param {Object} prop style-dictionary prop
