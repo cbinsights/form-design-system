@@ -1,4 +1,5 @@
 const Color = require('tinycolor2');
+const d3 = require('d3-scale');
 
 /**
  * For whatever reason, style-dictionary uses high decimal precision
@@ -20,10 +21,21 @@ exports.toHsla = (hsl) => {
  */
 exports.materialTint = (base, level) => {
   const color = Color(base);
+
+  // Scale the lightening adjustment based on brightness
+  // of base color - darker colors can be lightened more.
+  //
+  // The numbers in the range are essentially defining a curve
+  // for handling dark to light colors
+  const scale = d3
+    .scaleQuantize()
+    .domain([0, 255])
+    .range([15, 12, 10, 9, 8, 7, 6, 5, 4, 3]);
+
   const adjust = {
     spin: 0.5,
     desaturate: 0.75,
-    lighten: color.isDark() ? 9 : 5,
+    lighten: scale(color.getBrightness()),
   };
 
   return color
@@ -39,11 +51,27 @@ exports.materialTint = (base, level) => {
  */
 exports.materialShade = (base, level) => {
   const color = Color(base);
+
+  // Scale the lightening adjustment based on brightness
+  // of base color - lighter colors can be darkened more
+  //
+  // The numbers in the range are essentially defining a curve
+  // for handling dark to light colors
+  const scale = d3
+    .scaleQuantize()
+    .domain([0, 255])
+    .range([3, 3, 3.5, 4, 4, 4, 5.5, 7, 8, 10, 10, 12, 16, 18]);
+
+  console.info(
+    `${color.toHexString()} | ${color.getBrightness()} | ${scale(color.getBrightness())}`
+  );
+
   const adjust = {
     spin: -1,
-    saturate: 1.5,
-    darken: color.isLight() ? 11 : 5.25,
+    saturate: 1,
+    darken: scale(color.getBrightness()),
   };
+
   return color
     .spin(adjust.spin * level)
     .saturate(adjust.saturate * level)
