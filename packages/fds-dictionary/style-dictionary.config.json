@@ -66,6 +66,19 @@
       }]
     },
 
+    "MaterialUIColors": {
+      "transforms": [
+        "attribute/cti",
+        "attribute/materialPalette",
+        "name/item"
+      ],
+      "buildPath": "./dist/js/",
+      "files": [{
+        "destination": "materialPalette.js",
+        "format": "javascript/materialPalette"
+      }]
+    },
+
     "docs": {
       "transforms": [
         "attribute/cti",

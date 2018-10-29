@@ -4,7 +4,7 @@ const { toHsla } = require('./util/color');
 
 // import prop value transformer for ad-hoc material ui colors in docs
 const toMaterialPaletteColor = require('./transforms').filter(
-  (t) => t.name === 'color/materialPaletteColor'
+  (t) => t.name === 'attribute/materialPalette'
 )[0].transformer;
 
 Handlebars.registerHelper('json', (c) => JSON.stringify(c, null, 2));
@@ -110,6 +110,22 @@ const formatReactNativeColors = (dictionary) =>
     '};',
   ].join('\n');
 
+const formatMaterialPalette = (dictionary) =>
+  [
+    `${jsComment()}`,
+    'module.exports = {',
+    ...dictionary.allProperties
+      .filter((prop) => prop.attributes.category === 'color')
+      .map((prop) => {
+        const paletteProps = Object.keys(prop.attributes.materialPalette)
+          .map((k) => `    ${k}: ${prop.attributes.materialPalette[k]},`)
+          .join('\n');
+
+        return `  ${prop.name}: {\n${paletteProps}\n  },`;
+      }),
+    '};',
+  ].join('\n');
+
 // Custom formats
 module.exports = [
   {
@@ -127,5 +143,9 @@ module.exports = [
   {
     name: 'javascript/reactNativeColors',
     formatter: formatReactNativeColors,
+  },
+  {
+    name: 'javascript/materialPalette',
+    formatter: formatMaterialPalette,
   },
 ];
