@@ -9,8 +9,12 @@
     "type": "git",
     "url": "git+https://github.com/cbinsights/form-design-system.git"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "build": "echo \"TODO - build script\""
+    "setupLib": "mkdir -p ./lib",
+    "build": "babel src --out-dir lib --source-maps"
   },
   "dependencies": {
     "@material-ui/core": "^3.3.2",
