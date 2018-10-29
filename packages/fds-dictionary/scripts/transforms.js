@@ -77,6 +77,7 @@ const toVarNames = (prop) => ({
   varNames: {
     css: `var(--${toKebab(prop)})`,
     js: `${toConstant(prop)}`,
+    human: `${getCTI(prop).item}`,
   },
 });
 

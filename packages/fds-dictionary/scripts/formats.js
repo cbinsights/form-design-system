@@ -37,7 +37,7 @@ const jsComment = () =>
 const formatHtmlDoc = (dictionary) => {
   const color = filterByCategory(dictionary.allProperties, 'color').map((p) => {
     const { name, hex, rgb, hsl, varNames } = p.attributes;
-    const materialPalette = toMaterialPaletteColor(p.value);
+    const { materialPalette } = toMaterialPaletteColor(p);
     return {
       name,
       varNames,

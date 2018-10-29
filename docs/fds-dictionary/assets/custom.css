@@ -6,11 +6,20 @@ body {
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.8);
   background: #333;
+  text-rendering: geometricPrecision; /* stylelint-disable-line */
 }
 
 :root {
   --font-family-mono: "IBM Plex Mono","Menlo","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier", monospace;
 }
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #fff;
+}
+
 
 h1,
 h2,
@@ -88,26 +97,47 @@ code {
 }
 
 .palettes {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  width: 660px;
+  margin: 32px auto 0;
 }
 
 .palette {
-  padding-right: 1rem;
-  padding-bottom: 1rem;
-  flex-shrink: 1;
-  min-width: 100px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.8);
+  padding-top: 8px;
 }
 
-.paletteList {
+.palette-name {
+  color: #fff;
+  margin-right: 1rem;
+  flex-grow: 1;
+}
+
+.palette-swatches {
+  display: flex;
   list-style-type: none;
   padding: 0;
   margin: 0;
+  flex-shrink: 1;
 }
 
-.paletteList li {
-  display: flex;
+.palette-swatches .swatch {
+  width: 48px;
+  height: 48px;
+}
+
+.palette-swatches li {
+  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  padding-bottom: 4px;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.swatch-key {
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  margin-top: 0.25em;
 }

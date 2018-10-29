@@ -11,7 +11,7 @@
   </head>
   <body>
     <section class="bounds">
-      <p><a style="color: #fff !important;" href="https://github.com/cbinsights/form-design-system">&larr; github</a></p>
+      <p><a href="https://github.com/cbinsights/form-design-system">&larr; github</a></p>
       <h1><code>fds-dictionary</code></h1>
       <div style="font-size: 18px;">
         <p><strong>For usage in CSS:</strong> all of the custom properties below should already be globally available in your app.</p>
@@ -19,21 +19,6 @@
       </div>
     </section>
 
-    <section class="bounds palettes">
-      {{#each this.color}}
-        <div class="palette">
-          <ul class="paletteList">
-            {{#each this.materialPalette}}
-              <li>
-                <span class="swatch {{#if this.isBase}}swatch--base{{/if}}" style="background-color: {{this.value}};"></span>
-                &nbsp;
-                <span>{{this.key}}</span>
-              </li>
-            {{/each}}
-          </ul>
-        </div>
-      {{/each}}
-    </section>
 
     <section class="bounds">
       <h2>Color</h2>
@@ -103,6 +88,29 @@
           {{/each}}
         </tbody>
       </table>
+    </section>
+
+    <section class="bounds">
+      <h2>Material UI Palette</h2>
+
+      <p>Palette objects following <a href="https://material.io/design/color/the-color-system.html#">material design convention of light and dark variants</a>.</p>
+      <p><strong>Import statement example:</strong><br /><code>import { timberwolf, sienna, blue, violet } from 'fds-dictionary/dist/js/materialPalette.js';</code></p>
+
+      <div class="palettes">
+        {{#each this.color}}
+          <div class="palette">
+            <p class="palette-name"><code>{{this.varNames.human}}</code></p>
+            <ul class="palette-swatches">
+              {{#each this.materialPalette}}
+                <li>
+                  <div class="swatch {{#if this.isBase}}swatch--base{{/if}}" style="background-color: {{this.value}};"></div>
+                  <div class="swatch-key">{{this.key}}</div>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+        {{/each}}
+      </div>
     </section>
 
   <script

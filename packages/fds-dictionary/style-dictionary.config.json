@@ -83,6 +83,7 @@
       "transforms": [
         "attribute/cti",
         "attribute/color",
+        "attribute/materialPalette",
         "attribute/varNames",
         "color/css"
       ],
