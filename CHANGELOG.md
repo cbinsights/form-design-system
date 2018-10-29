@@ -17,6 +17,20 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.10]
+
+#### **Changes**
+- Added material UI palettes to `fds-dictionary`. Light and dark variants are generated for each
+  base color for use in `material-ui` framework theming.
+
+```
+import with: `import { blue } from 'fds-dictionary/dist/js/materialPalette.js'`
+
+blue[500]; // base blue color
+blue[100]; // lightened blue
+blue[900]; // darkened blue
+```
+
 ## [1.9]
 
 #### **Changes**
