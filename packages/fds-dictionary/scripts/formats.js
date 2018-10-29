@@ -118,7 +118,7 @@ const formatMaterialPalette = (dictionary) =>
       .filter((prop) => prop.attributes.category === 'color')
       .map((prop) => {
         const paletteProps = Object.keys(prop.attributes.materialPalette)
-          .map((k) => `    ${k}: ${prop.attributes.materialPalette[k]},`)
+          .map((k) => `    ${k}: '${prop.attributes.materialPalette[k]}',`)
           .join('\n');
 
         return `  ${prop.name}: {\n${paletteProps}\n  },`;
