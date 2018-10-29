@@ -1,0 +1,19 @@
+{
+  "name": "fds-mui-theme",
+  "version": "1.10.4",
+  "description": "material-ui theme",
+  "author": "CB Insights",
+  "homepage": "https://github.com/cbinsights/form-design-system#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbinsights/form-design-system.git"
+  },
+  "scripts": {
+    "build": "echo \"TODO - build script\""
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.3.2",
+    "fds-dictionary": "^1.10.4"
+  }
+}
