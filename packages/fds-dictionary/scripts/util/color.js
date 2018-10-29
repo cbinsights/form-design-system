@@ -30,7 +30,7 @@ exports.materialTint = (base, level) => {
   const scale = d3
     .scaleQuantize()
     .domain([0, 255])
-    .range([15, 12, 10, 9, 8, 7, 6, 5, 4, 3]);
+    .range([15, 12, 10, 9, 8, 7, 6, 5, 3, 2]);
 
   const adjust = {
     spin: 0.5,
