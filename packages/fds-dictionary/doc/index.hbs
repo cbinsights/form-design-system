@@ -103,7 +103,10 @@
             <ul class="palette-swatches">
               {{#each this.materialPalette}}
                 <li>
-                  <div class="swatch {{#if this.isBase}}swatch--base{{/if}}" style="background-color: {{this.value}};"></div>
+                  <div
+                    class="swatch swatch--material {{#if this.isBase}}swatch--base{{/if}} {{#if this.isAccent}}swatch--accent{{/if}}"
+                    style="background-color: {{this.value}};"
+                  ></div>
                   <div class="swatch-key">{{this.key}}</div>
                 </li>
               {{/each}}

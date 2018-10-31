@@ -51,6 +51,7 @@ const formatHtmlDoc = (dictionary) => {
         key,
         value: materialPalette[key],
         isBase: Boolean(key.toString() === '500'),
+        isAccent: Boolean(key.toString().includes('A')),
       })),
     };
   });

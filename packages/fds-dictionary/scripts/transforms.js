@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const { materialTint, materialShade } = require('./util/color');
+const { materialTint, materialShade, getMaterialAccents } = require('./util/color');
 
 /**
  * @param {Object} prop style-dictionary prop
@@ -113,6 +113,7 @@ const toMaterialPalette = (prop) => {
       ...tints,
       500: prop.value,
       ...shades,
+      ...getMaterialAccents(prop.value),
     },
   };
 };
