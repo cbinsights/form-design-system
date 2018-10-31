@@ -11,6 +11,7 @@ body {
 
 :root {
   --font-family-mono: "IBM Plex Mono","Menlo","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier", monospace;
+  --color-border: rgba(255, 255, 255, 0.8);
 }
 
 a:link,
@@ -64,9 +65,6 @@ code {
   height: 36px;
 }
 
-.swatch--base {
-  border-radius: 100%;
-}
 
 .propertiesTable {
   display: table;
@@ -97,7 +95,7 @@ code {
 }
 
 .palettes {
-  width: 660px;
+  max-width: 840px;
   margin: 32px auto 0;
 }
 
@@ -105,7 +103,7 @@ code {
   display: flex;
   align-items: flex-start;
   margin-bottom: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  border-top: 1px solid var(--color-border);
   padding-top: 8px;
 }
 
@@ -123,9 +121,19 @@ code {
   flex-shrink: 1;
 }
 
-.palette-swatches .swatch {
+.swatch--material {
   width: 48px;
   height: 48px;
+}
+
+.swatch--base {
+  border-radius: 100%;
+}
+
+.swatch--accent {
+  border-bottom: 8px solid var(--color-border);
+  width: 36px;
+  height: 40px;
 }
 
 .palette-swatches li {
@@ -133,7 +141,7 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 4px;
+  border-right: 5px solid transparent;
 }
 
 .swatch-key {

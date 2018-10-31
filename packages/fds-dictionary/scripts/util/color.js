@@ -16,29 +16,44 @@ exports.toHsla = (hsl) => {
 };
 
 /**
+ * Get a value from a range based on color brightness
+ *
+ * @param {String} color hex color string
+ * @param {Array} r range to map to color brightness (0-255)
+ * @param {string} scaleType optional scale type
+ * @returns {Number}
+ */
+const brightScale = (color, r, scaleType = 'scaleLinear') =>
+  d3[scaleType]()
+    .domain([0, 255])
+    .range(r)(Color(color).getBrightness());
+
+/**
+ * Get a value from a range based on color saturation
+ *
+ * @param {String} color hex color string
+ * @param {Array} r range to map to color saturation (0-1)
+ * @returns {Number}
+ */
+const satScale = (color, r) =>
+  d3
+    .scaleLinear()
+    .domain([0, 1])
+    .range(r)(Color(color).toHsl().s);
+
+/**
  * @param {String} base color to adjust
  * @param {Number} level 1-5 level of adjustment
+ * @returns {String} adjusted color as hex string
  */
 exports.materialTint = (base, level) => {
-  const color = Color(base);
-
-  // Scale the lightening adjustment based on brightness
-  // of base color - darker colors can be lightened more.
-  //
-  // The numbers in the range are essentially defining a curve
-  // for handling dark to light colors
-  const scale = d3
-    .scaleQuantize()
-    .domain([0, 255])
-    .range([15, 12, 10, 9, 8, 7, 6, 5, 3, 2]);
-
   const adjust = {
-    spin: 0.5,
-    desaturate: 0.75,
-    lighten: scale(color.getBrightness()),
+    spin: 0.75,
+    desaturate: satScale(base, [0.5, 1.5]),
+    lighten: brightScale(base, [12, 1.5]),
   };
 
-  return color
+  return Color(base)
     .spin(adjust.spin * level)
     .desaturate(adjust.desaturate * level)
     .lighten(adjust.lighten * level)
@@ -48,29 +63,49 @@ exports.materialTint = (base, level) => {
 /**
  * @param {String} base color to adjust
  * @param {Number} level 1-5 level of adjustment
+ * @returns {String} adjusted color as hex string
  */
 exports.materialShade = (base, level) => {
-  const color = Color(base);
-
-  // Scale the lightening adjustment based on brightness
-  // of base color - lighter colors can be darkened more
-  //
-  // The numbers in the range are essentially defining a curve
-  // for handling dark to light colors
-  const scale = d3
-    .scaleQuantize()
-    .domain([0, 255])
-    .range([3, 3, 3.5, 4, 4, 4, 5.5, 7, 8, 10, 10, 12, 16, 18]);
-
   const adjust = {
-    spin: -1,
-    saturate: 1,
-    darken: scale(color.getBrightness()),
+    spin: -1.25,
+    saturate: satScale(base, [0.75, 2]),
+    darken: brightScale(
+      base,
+      /*
+      * darkening colors can be tricky, so we're using a custom curve
+      * here instead of a straight range function
+      */
+      [3, 3, 3, 4, 4, 4, 7, 8, 10, 10, 12, 15, 17],
+      'scaleQuantize'
+    ),
   };
 
-  return color
+  return Color(base)
     .spin(adjust.spin * level)
     .saturate(adjust.saturate * level)
     .darken(adjust.darken * level)
     .toHexString();
 };
+
+/**
+ * @param {String} base color from which to generate accent colors
+ * @returns {Object} material palette accent colors (A100-A700)
+ */
+exports.getMaterialAccents = (base) => ({
+  A100: Color(base)
+    .lighten(brightScale(base, [42, 8]))
+    .saturate(satScale(base, [5, 10]))
+    .toHexString(),
+  A200: Color(base)
+    .lighten(brightScale(base, [8, 2]))
+    .saturate(satScale(base, [5, 20]))
+    .toHexString(),
+  A400: Color(base)
+    .darken(brightScale(base, [8, 10]))
+    .saturate(satScale(base, [10, 25]))
+    .toHexString(),
+  A700: Color(base)
+    .darken(brightScale(base, [12, 20]))
+    .saturate(satScale(base, [15, 36]))
+    .toHexString(),
+});
