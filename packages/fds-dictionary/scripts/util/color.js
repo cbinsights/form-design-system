@@ -23,7 +23,7 @@ exports.toHsla = (hsl) => {
  * @param {string} scaleType optional scale type
  * @returns {Number}
  */
-const brightRange = (color, r, scaleType = 'scaleLinear') =>
+const brightScale = (color, r, scaleType = 'scaleLinear') =>
   d3[scaleType]()
     .domain([0, 255])
     .range(r)(Color(color).getBrightness());
@@ -35,7 +35,7 @@ const brightRange = (color, r, scaleType = 'scaleLinear') =>
  * @param {Array} r range to map to color saturation (0-1)
  * @returns {Number}
  */
-const satRange = (color, r) =>
+const satScale = (color, r) =>
   d3
     .scaleLinear()
     .domain([0, 1])
@@ -49,8 +49,8 @@ const satRange = (color, r) =>
 exports.materialTint = (base, level) => {
   const adjust = {
     spin: 0.75,
-    desaturate: satRange(base, [0.5, 1.5]),
-    lighten: brightRange(base, [12, 1.5]),
+    desaturate: satScale(base, [0.5, 1.5]),
+    lighten: brightScale(base, [12, 1.5]),
   };
 
   return Color(base)
@@ -68,8 +68,8 @@ exports.materialTint = (base, level) => {
 exports.materialShade = (base, level) => {
   const adjust = {
     spin: -1.25,
-    saturate: satRange(base, [0.75, 2]),
-    darken: brightRange(
+    saturate: satScale(base, [0.75, 2]),
+    darken: brightScale(
       base,
       /*
       * darkening colors can be tricky, so we're using a custom curve
@@ -93,19 +93,19 @@ exports.materialShade = (base, level) => {
  */
 exports.getMaterialAccents = (base) => ({
   A100: Color(base)
-    .lighten(brightRange(base, [42, 8]))
-    .saturate(satRange(base, [5, 10]))
+    .lighten(brightScale(base, [42, 8]))
+    .saturate(satScale(base, [5, 10]))
     .toHexString(),
   A200: Color(base)
-    .lighten(brightRange(base, [8, 2]))
-    .saturate(satRange(base, [5, 20]))
+    .lighten(brightScale(base, [8, 2]))
+    .saturate(satScale(base, [5, 20]))
     .toHexString(),
   A400: Color(base)
-    .darken(brightRange(base, [8, 10]))
-    .saturate(satRange(base, [10, 25]))
+    .darken(brightScale(base, [8, 10]))
+    .saturate(satScale(base, [10, 25]))
     .toHexString(),
   A700: Color(base)
-    .darken(brightRange(base, [12, 20]))
-    .saturate(satRange(base, [15, 36]))
+    .darken(brightScale(base, [12, 20]))
+    .saturate(satScale(base, [15, 36]))
     .toHexString(),
 });
