@@ -17,14 +17,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [1.12]
+## [1.13]
 
 #### **Changes**
 - Added `fds-mui-theme` package. This provides a theme for `material-ui` based on our standard styles
   defined in `fds-dictionary`.
 
 
-## [1.11]
+## [1.11, 1.12]
 bad publish - identical to `1.10`.
 
 ## [1.10]
