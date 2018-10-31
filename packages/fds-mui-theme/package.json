@@ -1,6 +1,6 @@
 {
   "name": "fds-mui-theme",
-  "version": "1.11.0",
+  "version": "1.13.0",
   "description": "material-ui theme",
   "author": "CB Insights",
   "homepage": "https://github.com/cbinsights/form-design-system#readme",
@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "@material-ui/core": "^3.3.2",
-    "fds-dictionary": "^1.11.0"
+    "fds-dictionary": "^1.13.0"
   }
 }
