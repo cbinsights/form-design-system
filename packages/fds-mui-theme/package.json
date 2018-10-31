@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "setupLib": "mkdir -p ./lib",
-    "build": "babel src --out-dir lib --source-maps"
+    "build": "yarn setupLib && babel src --out-dir lib --source-maps"
   },
   "dependencies": {
     "@material-ui/core": "^3.3.2",
