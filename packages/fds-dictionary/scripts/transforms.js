@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const { materialTint, materialShade, getMaterialAccents } = require('./util/color');
 
 /**
  * @param {Object} prop style-dictionary prop
@@ -44,6 +45,13 @@ const getNameParts = (prop) => {
 };
 
 /**
+ *
+ * @param {Object} prop style-dictionary prop
+ * @returns {String} "item" name of property
+ */
+const toItemName = (prop) => getCTI(prop).item;
+
+/**
  * @param {Object} prop style-dictionary prop
  * @returns {String} name string in kebab format
  */
@@ -69,11 +77,54 @@ const toVarNames = (prop) => ({
   varNames: {
     css: `var(--${toKebab(prop)})`,
     js: `${toConstant(prop)}`,
+    human: `${getCTI(prop).item}`,
   },
 });
 
+/**
+ * @param {Object} prop style-dictionary prop
+ * @returns {Object} object representing material UI palette color values
+ */
+const toMaterialPalette = (prop) => {
+  const tintKeys = [400, 300, 200, 100, 50];
+  const shadeKeys = [600, 700, 800, 900];
+
+  const flattenReducer = (acc, curr) => {
+    acc[curr.key] = curr.color;
+    return acc;
+  };
+
+  const tints = tintKeys
+    .map((key, i) => ({
+      key,
+      color: materialTint(prop.value, i + 1),
+    }))
+    .reduce(flattenReducer, {});
+
+  const shades = shadeKeys
+    .map((key, i) => ({
+      key,
+      color: materialShade(prop.value, i + 1),
+    }))
+    .reduce(flattenReducer, {});
+
+  return {
+    materialPalette: {
+      ...tints,
+      500: prop.value,
+      ...shades,
+      ...getMaterialAccents(prop.value),
+    },
+  };
+};
+
 // Custom transforms
 module.exports = [
+  {
+    name: 'name/item',
+    type: 'name',
+    transformer: toItemName,
+  },
   {
     name: 'name/ci/kebab',
     type: 'name',
@@ -93,5 +144,11 @@ module.exports = [
     name: 'attribute/varNames',
     type: 'attribute',
     transformer: toVarNames,
+  },
+  {
+    name: 'attribute/materialPalette',
+    type: 'attribute',
+    matcher: (p) => p.attributes.category === 'color',
+    transformer: toMaterialPalette,
   },
 ];

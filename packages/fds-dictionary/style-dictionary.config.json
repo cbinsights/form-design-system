@@ -40,6 +40,19 @@
       }]
     },
 
+    "JSCustomProperties": {
+      "transforms": [
+        "attribute/cti",
+        "name/ci/kebab",
+        "color/css"
+      ],
+      "buildPath": "./dist/js/",
+      "files": [{
+        "destination": "cssCustomProperties.js",
+        "format": "js/customProperties"
+      }]
+    },
+
     "JSConstants": {
       "transforms": [
         "attribute/cti",
@@ -53,10 +66,24 @@
       }]
     },
 
+    "MaterialUIColors": {
+      "transforms": [
+        "attribute/cti",
+        "attribute/materialPalette",
+        "name/item"
+      ],
+      "buildPath": "./dist/js/",
+      "files": [{
+        "destination": "materialPalette.js",
+        "format": "javascript/materialPalette"
+      }]
+    },
+
     "docs": {
       "transforms": [
         "attribute/cti",
         "attribute/color",
+        "attribute/materialPalette",
         "attribute/varNames",
         "color/css"
       ],

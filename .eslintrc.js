@@ -20,7 +20,8 @@ module.exports = {
   ],
   rules: {
     'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error'
+    'react/jsx-uses-vars': 'error',
+    'import/no-extraneous-dependencies': 'off'
   },
   env: {
     'jest/globals': true
@@ -31,7 +32,7 @@ module.exports = {
         '*.test.js'
       ],
       'rules': {
-        'import/no-unresolved': false
+        'import/no-unresolved': false,
       }
     }
   ]
