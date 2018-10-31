@@ -81,5 +81,6 @@
     "ignore": [
       "packages/**/*.test.{js,jsx}"
     ]
-  }
+  },
+  "version": "1.11.0"
 }
