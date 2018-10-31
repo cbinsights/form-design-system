@@ -29,6 +29,7 @@ pipeline {
       steps {
         ansiColor('xterm') {
           sh "yarn build"
+          // TODO: commit new docs after build?
         }
       }
     }
@@ -42,13 +43,13 @@ pipeline {
             // OR
             // Set up a beta release from PR/branch build
             if (env.BRANCH_NAME == 'master') {
-              sh echo "Publishing packages version $(make version)"
-              sh export NPM_TAG=latest
               sh export GIT_TAG=$(make version)
+              sh echo "Publishing packages version" $GIT_TAG
+              sh export NPM_TAG=latest
             } else {
-              sh echo "Publishing packages version $(make version)-beta"
-              sh export NPM_TAG=beta
               sh export GIT_TAG=$(make version)-beta
+              sh echo "Publishing packages version " $GIT_TAG
+              sh export NPM_TAG=beta
             }
 
             sh yarn lerna publish --yes --force-publish --skip-git --npm-tag=$NPM_TAG --repo-version=$GIT_TAG &&
