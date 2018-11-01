@@ -7,13 +7,11 @@ pipeline {
 
     stage('Install Dependencies') {
       steps {
-        ansiColor('xterm') {
-          sh "yarn install"
-          sh "yarn bootstrap"
+        sh "yarn install"
+        sh "yarn bootstrap"
 
-          // fail if yarn install produces unstaged changes (yarn.lock)
-          sh "git diff --exit-code"
-        }
+        // fail if yarn install produces unstaged changes (yarn.lock)
+        sh "git diff --exit-code"
       }
     }
 
@@ -27,42 +25,34 @@ pipeline {
 
     stage('Build') {
       steps {
-        ansiColor('xterm') {
-          sh "yarn build"
-          // TODO: commit new docs after build?
-        }
+        sh "yarn build"
+        // TODO: commit new docs after build?
       }
     }
 
     stage('Create release version') {
       when { env.BRANCH_NAME == 'master' }
       steps {
-        ansiColor('xterm') {
-          sh export GIT_TAG=$(make version)
-          sh echo "Creating version " $GIT_TAG
-          sh export NPM_TAG=latest
-        }
+        sh export GIT_TAG=$(make version)
+        sh echo "Creating version " $GIT_TAG
+        sh export NPM_TAG=latest
       }
     }
 
     stage('Create beta version') {
       when { not { env.BRANCH_NAME == 'master' } }
       steps {
-        ansiColor('xterm') {
-          sh export GIT_TAG=$(make version)-beta
-          sh echo "Creating version " $GIT_TAG
-          sh export NPM_TAG=beta
-        }
+        sh export GIT_TAG=$(make version)-beta
+        sh echo "Creating version " $GIT_TAG
+        sh export NPM_TAG=beta
       }
     }
 
     stage('Publish npm packages') {
       steps {
-        ansiColor('xterm') {
-          sh yarn lerna publish --yes --force-publish --skip-git --npm-tag=$NPM_TAG --repo-version=$GIT_TAG &&
-              git tag -a $GIT_TAG -m "Form Design System $GIT_TAG built by Jenkins build $BUILD_NUMBER" &&
-              git push --tags git@github.com:$REPO_SLUG.git
-        }
+        sh yarn lerna publish --yes --force-publish --skip-git --npm-tag=$NPM_TAG --repo-version=$GIT_TAG &&
+            git tag -a $GIT_TAG -m "Form Design System $GIT_TAG built by Jenkins build $BUILD_NUMBER" &&
+            git push --tags git@github.com:$REPO_SLUG.git
       }
     }
   }
