@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "serve:components": "lerna run serve --stream --scope=fds-components",
-    "build": "lerna run build --parallel",
+    "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "bootstrap": "yarn lerna bootstrap",
     "lint": "eslint ./packages/ --ext .js,.jsx",
