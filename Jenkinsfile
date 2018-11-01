@@ -28,7 +28,7 @@ pipeline {
     stage('Build') {
       steps {
         sh "yarn build"
-        // TODO: commit new docs after build?
+        sh "git commit -am 'Regenerate docs from Jenkins build $BUILD_NUMBER'"
       }
     }
 
