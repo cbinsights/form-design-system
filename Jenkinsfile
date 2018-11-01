@@ -31,7 +31,7 @@ pipeline {
     }
 
     stage('Create release version') {
-      when { env.BRANCH_NAME == 'master' }
+      when { expression { env.BRANCH_NAME == 'master' } }
       steps {
         sh export GIT_TAG=$(make version)
         sh echo "Creating version " $GIT_TAG
