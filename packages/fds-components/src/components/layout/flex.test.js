@@ -2,8 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Flex from './Flex';
+import FlexItem from './FlexItem';
 
-const renderComponent = (props) => shallow(<Flex {...props} />);
+const renderComponent = (props) => shallow(<Flex {...props}><FlexItem /></Flex>);
 
 describe('Flex component', () => {
 
