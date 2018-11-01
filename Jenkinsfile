@@ -1,7 +1,7 @@
 pipeline {
   agent { docker { image 'node:10' } }
   environment {
-    REPO_SLUG = cbinsights/form-design-system
+    REPO_SLUG = 'cbinsights/form-design-system'
   }
   stages {
 
