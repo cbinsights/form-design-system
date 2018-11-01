@@ -7,7 +7,7 @@ pipeline {
 
     stage('Install Dependencies') {
       steps {
-        sh "yarn install"
+        sh "yarn install --pure-lockfile"
         sh "yarn bootstrap"
 
         // fail if yarn install produces unstaged changes (yarn.lock)
