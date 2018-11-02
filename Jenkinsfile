@@ -20,6 +20,8 @@ pipeline {
         script {
           GIT_TAG = sh script: "make version", returnStdout: true
         }
+        sh "echo Git tag: $GIT_TAG"
+        sh "echo npm tag: $NPM_TAG"
       }
     }
 
