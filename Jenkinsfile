@@ -33,6 +33,14 @@ pipeline {
       }
     }
 
+    stage('Lint') {
+      steps {
+        ansiColor('xterm') {
+          sh "yarn lint"
+        }
+      }
+    }
+
     stage('Test') {
       steps {
         ansiColor('xterm') {
