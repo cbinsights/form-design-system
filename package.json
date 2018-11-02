@@ -7,6 +7,7 @@
     "serve:components": "lerna run serve --stream --scope=fds-components",
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
+    "test:ci": "lerna run test",
     "bootstrap": "yarn lerna bootstrap",
     "lint": "eslint ./packages/ --ext .js,.jsx",
     "precommit": "lint-staged",
