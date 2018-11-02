@@ -20,6 +20,8 @@ pipeline {
         script {
           GIT_TAG = sh script: "make version", returnStdout: true
         }
+        sh "echo Git tag: $GIT_TAG"
+        sh "echo npm tag: $NPM_TAG"
       }
     }
 
@@ -30,6 +32,14 @@ pipeline {
 
         // fail if yarn install produces unstaged changes (yarn.lock)
         sh "git diff --exit-code"
+      }
+    }
+
+    stage('Lint') {
+      steps {
+        ansiColor('xterm') {
+          sh "yarn lint"
+        }
       }
     }
 
@@ -45,11 +55,9 @@ pipeline {
       steps {
 
         // publish all modules to npm and push a git tag for this version.
-        sh '''
-          yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${GIT_TAG} && \
-            git tag -a ${GIT_TAG} -m "Form Design System ${GIT_TAG} built by Jenkins build ${env.BUILD_NUMBER}" && \
-            git push --tags git@github.com:$REPO_SLUG.git
-        '''
+        sh "yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${GIT_TAG}"
+        sh "git tag -a ${GIT_TAG} -m 'Form Design System ${GIT_TAG} built by Jenkins build ${env.BUILD_NUMBER}'"
+        sh "git push --tags git@github.com:${REPO_SLUG}.git"
       }
     }
   }
