@@ -36,7 +36,7 @@ pipeline {
     stage('Test') {
       steps {
         ansiColor('xterm') {
-          sh "yarn test"
+          sh "yarn test:ci"
         }
       }
     }
