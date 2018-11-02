@@ -17,7 +17,9 @@ pipeline {
 
     stage('Get semver') {
       steps {
-        GIT_TAG = sh script: "make version", returnStdout: true
+        script {
+          GIT_TAG = sh script: "make version", returnStdout: true
+        }
       }
     }
 
