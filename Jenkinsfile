@@ -54,9 +54,6 @@ pipeline {
     stage('Publish npm packages') {
       steps {
 
-        sh "echo 'GIT_TAG: ${GIT_TAG}'"
-        sh "echo 'NPM_TAG: ${NPM_TAG}'"
-
         // publish all modules to npm and push a git tag for this version.
         sh """"
           yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${GIT_TAG} && \
