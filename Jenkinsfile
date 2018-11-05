@@ -54,7 +54,8 @@ pipeline {
     stage('Publish npm packages') {
       steps {
 
-        sh "echo Publishing v${GIT_TAG} ${NPM_TAG}"
+        sh "echo 'GIT_TAG: ${GIT_TAG}'"
+        sh "echo 'NPM_TAG: ${NPM_TAG}'"
 
         // publish all modules to npm and push a git tag for this version.
         sh """"
