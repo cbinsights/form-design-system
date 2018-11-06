@@ -1,6 +1,19 @@
 const path = require('path');
 const { createConfig, match, babel, postcss } = require('webpack-blocks');
 
+/**
+ * Creates configuration for a styleguide section.
+ * @param {String} name display name of section
+ * @param {String} slug directory name
+ * @returns {Object} config object for `sections` config below
+ */
+const makeSection = (name, slug) => ({
+  name: `${name}`,
+  components: () => [`./src/components/${slug}/*.jsx`],
+  content: `./src/components/${slug}/index.md`,
+  sectionDepth: 1,
+});
+
 module.exports = {
   title: 'fds-components',
 
@@ -14,14 +27,7 @@ module.exports = {
   editorConfig: path.join(__dirname, '../../.editorconfig'),
 
   // define component groupings in documentation
-  sections: [
-    {
-      name: 'Layout',
-      components: () => ['./src/components/layout/*.jsx'],
-      content: './src/components/layout/index.md',
-      sectionDepth: 1,
-    },
-  ],
+  sections: [makeSection('Layout', 'layout'), makeSection('Media', 'media')],
 
   // webpack require assets into styleguide
   require: [
