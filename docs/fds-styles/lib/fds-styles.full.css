@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Tue Nov 06 2018 18:07:15 GMT-0500 (Eastern Standard Time)
+ * Generated on Wed Nov 07 2018 15:27:22 GMT-0500 (Eastern Standard Time)
  */
 :root {
  --color-charcoal: #404040;
@@ -41,6 +41,11 @@
  --font-size-tiny: 10px;
  --font-weight-default: 400;
  --font-weight-bold: 700;
+ --media-xs: 16px;
+ --media-s: 24px;
+ --media-m: 40px;
+ --media-l: 60px;
+ --media-xl: 86px;
  --space-double: 32px;
  --space-default: 16px;
  --space-half: 8px;
@@ -650,6 +655,72 @@ Classes follow this signature:
 .alignChild--right--bottom {
   justify-content: flex-end;
   align-items: flex-end;
+}
+/* Layout Helpers */
+/*---
+title: Media Sizing
+name: layoutMedia
+section: Layout Helpers
+---
+
+For standard media like avatars and icons, these classes set square
+dimenions on the selected element to match standard media sizes.
+
+class           | description
+--------------- | ---------------------------------
+`media--xs `    | Sets height and width of element to `var(--media-xs)`
+`media--s `     | Sets height and width of element to `var(--media-s)`
+`media--m `     | Sets height and width of element to `var(--media-m)`
+`media--l `     | Sets height and width of element to `var(--media-l)`
+`media--xl `    | Sets height and width of element to `var(--media-xl)`
+
+```example:html
+<style>
+  .DOC_MEDIA {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    background: var(--color-violet);
+    color: var(--color-purple);
+  }
+</style>
+<div class="DOC_MEDIA media--xs">xs</div>
+<div class="DOC_MEDIA media--s">s</div>
+<div class="DOC_MEDIA media--m">m</div>
+<div class="DOC_MEDIA media--l">l</div>
+<div class="DOC_MEDIA media--xl">xl</div>
+```
+*/
+.media--xs {
+  height: 16px;
+  height: var(--media-xs);
+  width: 16px;
+  width: var(--media-xs);
+}
+.media--s {
+  height: 24px;
+  height: var(--media-s);
+  width: 24px;
+  width: var(--media-s);
+}
+.media--m {
+  height: 40px;
+  height: var(--media-m);
+  width: 40px;
+  width: var(--media-m);
+}
+.media--l {
+  height: 60px;
+  height: var(--media-l);
+  width: 60px;
+  width: var(--media-l);
+}
+.media--xl {
+  height: 86px;
+  height: var(--media-xl);
+  width: 86px;
+  width: var(--media-xl);
 }
 /* Typesetting */
 /*---

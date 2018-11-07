@@ -1,0 +1,13 @@
+{
+  "layout": {
+    "media": {
+
+      "xs": { "value": "16px" },
+      "s":  { "value": "24px" },
+      "m":  { "value": "40px" },
+      "l":  { "value": "60px" },
+      "xl": { "value": "86px" }
+
+    }
+  }
+}
