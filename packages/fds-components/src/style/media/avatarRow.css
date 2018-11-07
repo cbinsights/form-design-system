@@ -1,5 +1,5 @@
 .avatarRow {
-  --avatarRow-borderWidth: 3px;
+  --avatarRow-borderWidth: 2px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -14,17 +14,17 @@
 
 .avatarRow--m {
   --avatarRow-avatarSize: var(--media-m);
-  --avatarRow-offset: 12px;
+  --avatarRow-offset: 14px;
 }
 
 .avatarRow--l {
   --avatarRow-avatarSize: var(--media-l);
-  --avatarRow-offset: 22px;
+  --avatarRow-offset: 24px;
 }
 
 .avatarRow--xl {
   --avatarRow-avatarSize: var(--media-xl);
-  --avatarRow-offset: 28px;
+  --avatarRow-offset: 32px;
 }
 
 .avatarRow-item {
