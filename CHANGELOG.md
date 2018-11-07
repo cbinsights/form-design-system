@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.15]
+
+#### **Changes**
+- Added `important` declarations to modifier classes commonly used to override things.
+  For example, `typemod--red` should _always_ override any inherited `color` attribute.
+
 ## [1.14] Media Sizes
 
 #### **Changes**
