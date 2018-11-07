@@ -29,7 +29,7 @@ const AvatarRow = (props) => {
   const fontClass = cx({
     'typemod--tiny': size === 's',
     'typemod--small': size === 'm',
-    'typemod--xlarge': size === 'xl',
+    'typemod--xxlarge': size === 'xl',
   });
 
   return (
