@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed Nov 07 2018 15:27:22 GMT-0500 (Eastern Standard Time)
+ * Generated on Wed Nov 07 2018 16:27:53 GMT-0500 (Eastern Standard Time)
  */
 :root {
  --color-charcoal: #404040;
@@ -444,24 +444,24 @@ class           | description
 `flush--all`    | Removes spacing from all sides of an element
 */
 .flush--top {
-  margin-top: 0;
-  padding-top: 0;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 .flush--right {
-  margin-right: 0;
-  padding-right: 0;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
 }
 .flush--bottom {
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 .flush--left {
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 .flush--all {
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 /*---
 title: Margin
@@ -693,34 +693,34 @@ class           | description
 ```
 */
 .media--xs {
-  height: 16px;
-  height: var(--media-xs);
-  width: 16px;
-  width: var(--media-xs);
+  height: 16px !important;
+  height: var(--media-xs) !important;
+  width: 16px !important;
+  width: var(--media-xs) !important;
 }
 .media--s {
-  height: 24px;
-  height: var(--media-s);
-  width: 24px;
-  width: var(--media-s);
+  height: 24px !important;
+  height: var(--media-s) !important;
+  width: 24px !important;
+  width: var(--media-s) !important;
 }
 .media--m {
-  height: 40px;
-  height: var(--media-m);
-  width: 40px;
-  width: var(--media-m);
+  height: 40px !important;
+  height: var(--media-m) !important;
+  width: 40px !important;
+  width: var(--media-m) !important;
 }
 .media--l {
-  height: 60px;
-  height: var(--media-l);
-  width: 60px;
-  width: var(--media-l);
+  height: 60px !important;
+  height: var(--media-l) !important;
+  width: 60px !important;
+  width: var(--media-l) !important;
 }
 .media--xl {
-  height: 86px;
-  height: var(--media-xl);
-  width: 86px;
-  width: var(--media-xl);
+  height: 86px !important;
+  height: var(--media-xl) !important;
+  width: 86px !important;
+  width: var(--media-xl) !important;
 }
 /* Typesetting */
 /*---
@@ -888,38 +888,38 @@ Modifies size of text and adjusts leading accordingly.
 ```
 */
 .typemod--huge {
-  font-size: 39px;
-  font-size: var(--font-size-heading1);
-  line-height: 1.1;
-  line-height: var(--font-lineHeight-bigText);
+  font-size: 39px !important;
+  font-size: var(--font-size-heading1) !important;
+  line-height: 1.1 !important;
+  line-height: var(--font-lineHeight-bigText) !important;
 }
 .typemod--xxlarge {
-  font-size: 31px;
-  font-size: var(--font-size-heading2);
-  line-height: 1.1;
-  line-height: var(--font-lineHeight-bigText);
+  font-size: 31px !important;
+  font-size: var(--font-size-heading2) !important;
+  line-height: 1.1 !important;
+  line-height: var(--font-lineHeight-bigText) !important;
 }
 .typemod--xlarge {
-  font-size: 25px;
-  font-size: var(--font-size-heading3);
-  line-height: 1.1;
-  line-height: var(--font-lineHeight-bigText);
+  font-size: 25px !important;
+  font-size: var(--font-size-heading3) !important;
+  line-height: 1.1 !important;
+  line-height: var(--font-lineHeight-bigText) !important;
 }
 .typemod--large {
-  font-size: 20px;
-  font-size: var(--font-size-big);
+  font-size: 20px !important;
+  font-size: var(--font-size-big) !important;
 }
 .typemod--small {
-  font-size: 13px;
-  font-size: var(--font-size-small);
-  line-height: 1.6;
-  line-height: var(--font-lineHeight-smallText);
+  font-size: 13px !important;
+  font-size: var(--font-size-small) !important;
+  line-height: 1.6 !important;
+  line-height: var(--font-lineHeight-smallText) !important;
 }
 .typemod--tiny {
-  font-size: 10px;
-  font-size: var(--font-size-tiny);
-  line-height: 1.6;
-  line-height: var(--font-lineHeight-smallText);
+  font-size: 10px !important;
+  font-size: var(--font-size-tiny) !important;
+  line-height: 1.6 !important;
+  line-height: var(--font-lineHeight-smallText) !important;
 }
 /*----
 title: Weight Modifiers
@@ -935,12 +935,12 @@ Modifies weight of text.
 ```
 */
 .typemod--bold {
-  font-weight: 700;
-  font-weight: var(--font-weight-bold);
+  font-weight: 700 !important;
+  font-weight: var(--font-weight-bold) !important;
 }
 .typemod--book {
-  font-weight: 400;
-  font-weight: var(--font-weight-default);
+  font-weight: 400 !important;
+  font-weight: var(--font-weight-default) !important;
 }
 /*----
 title: Color Modifiers
@@ -972,48 +972,48 @@ _Examples set in heading level 4_
 ```
 */
 .typemod--dark {
-  color: #404040;
-  color: var(--font-color-dark);
+  color: #404040 !important;
+  color: var(--font-color-dark) !important;
 }
 .typemod--light {
-  color: #a2a0a0;
-  color: var(--font-color-light);
+  color: #a2a0a0 !important;
+  color: var(--font-color-light) !important;
 }
 .typemod--slate {
-  color: #757575;
-  color: var(--color-slate);
+  color: #757575 !important;
+  color: var(--color-slate) !important;
 }
 .typemod--green {
-  color: #00986b;
-  color: var(--color-green);
+  color: #00986b !important;
+  color: var(--color-green) !important;
 }
 .typemod--mint {
-  color: #70c390;
-  color: var(--color-mint);
+  color: #70c390 !important;
+  color: var(--color-mint) !important;
 }
 .typemod--navy {
-  color: #003366;
-  color: var(--color-navy);
+  color: #003366 !important;
+  color: var(--color-navy) !important;
 }
 .typemod--blue {
-  color: #006699;
-  color: var(--color-blue);
+  color: #006699 !important;
+  color: var(--color-blue) !important;
 }
 .typemod--sky {
-  color: #bbdbe5;
-  color: var(--color-sky);
+  color: #bbdbe5 !important;
+  color: var(--color-sky) !important;
 }
 .typemod--purple {
-  color: #a02385;
-  color: var(--color-purple);
+  color: #a02385 !important;
+  color: var(--color-purple) !important;
 }
 .typemod--red {
-  color: #e5323e;
-  color: var(--color-red);
+  color: #e5323e !important;
+  color: var(--color-red) !important;
 }
 .typemod--orange {
-  color: #ff6633;
-  color: var(--color-orange);
+  color: #ff6633 !important;
+  color: var(--color-orange) !important;
 }
 /* Whitespace helpers */
 /*---

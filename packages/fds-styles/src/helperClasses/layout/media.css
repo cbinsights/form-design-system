@@ -35,26 +35,26 @@ class           | description
 */
 
 .media--xs {
-  height: var(--media-xs);
-  width: var(--media-xs);
+  height: var(--media-xs) !important;
+  width: var(--media-xs) !important;
 }
 
 .media--s {
-  height: var(--media-s);
-  width: var(--media-s);
+  height: var(--media-s) !important;
+  width: var(--media-s) !important;
 }
 
 .media--m {
-  height: var(--media-m);
-  width: var(--media-m);
+  height: var(--media-m) !important;
+  width: var(--media-m) !important;
 }
 
 .media--l {
-  height: var(--media-l);
-  width: var(--media-l);
+  height: var(--media-l) !important;
+  width: var(--media-l) !important;
 }
 
 .media--xl {
-  height: var(--media-xl);
-  width: var(--media-xl);
+  height: var(--media-xl) !important;
+  width: var(--media-xl) !important;
 }
