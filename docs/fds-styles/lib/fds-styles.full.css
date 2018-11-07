@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed Oct 31 2018 15:22:30 GMT-0400 (Eastern Daylight Time)
+ * Generated on Wed Nov 07 2018 12:19:17 GMT-0500 (Eastern Standard Time)
  */
 :root {
  --color-charcoal: #404040;
@@ -41,6 +41,11 @@
  --font-size-tiny: 10px;
  --font-weight-default: 400;
  --font-weight-bold: 700;
+ --media-xs: 16px;
+ --media-s: 24px;
+ --media-m: 40px;
+ --media-l: 60px;
+ --media-xl: 86px;
  --space-double: 32px;
  --space-default: 16px;
  --space-half: 8px;
