@@ -21,20 +21,34 @@ export const getRenderConfig = (list, max) => {
  * @returns {ReactElement}
  */
 const AvatarRow = (props) => {
-  const { memberList, max, className } = props;
+  const { memberList, size, max, className } = props;
   const renderConfig = getRenderConfig(memberList, max);
 
+  const classNames = cx('avatarRow', `avatarRow--${size}`, className);
+
+  const fontClass = cx({
+    'typemod--tiny': size === 's',
+    'typemod--small': size === 'm',
+    'typemod--xlarge': size === 'xl',
+  });
+
   return (
-    <ul className={cx('avatarRow', className)}>
+    <ul className={classNames}>
       {renderConfig.renderList.map((member, i) => (
         <li className="avatarRow-item" key={`${member.name.replace(/\s/g, '')}-${i}`}>
-          <Avatar alt={member.name} src={member.src} className="avatarRow-avatar" />
+          {member.src ? (
+            <Avatar alt={member.name} src={member.src} className="avatarRow-avatar" />
+          ) : (
+            <Avatar alt={member.name} className={cx('avatarRow-avatar', fontClass)}>
+              {member.name.charAt(0).toUpperCase()}
+            </Avatar>
+          )}
         </li>
       ))}
       {renderConfig.count > 0 && (
         <li className="avatarRow-item">
-          <Avatar className="avatarRow-avatar">
-            <span className="typemod--book typemod--small">+{renderConfig.count}</span>
+          <Avatar className="avatarRow-avatar avatarRow-avatar--count">
+            <span className={cx('typemod--book', fontClass)}>+{renderConfig.count}</span>
           </Avatar>
         </li>
       )}
@@ -44,16 +58,20 @@ const AvatarRow = (props) => {
 
 AvatarRow.defaultProps = {
   max: 3,
+  size: 'm',
 };
 
 AvatarRow.propTypes = {
   /** List of members to render - `[ {name, src}, ... ]` */
   memberList: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string,
+      name: PropTypes.string.isRequired,
       src: PropTypes.string,
     })
   ).isRequired,
+
+  /** Size of avatars */
+  size: PropTypes.oneOf(['s', 'm', 'l', 'xl']),
 
   /** Maximum number of avatars to render */
   max: PropTypes.number,

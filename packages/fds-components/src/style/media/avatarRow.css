@@ -1,13 +1,30 @@
-:root {
-  --avatarRow-avatarSize: 34px;
-  --avatarRow-offset: 8px;
-}
-
 .avatarRow {
+  --avatarRow-borderWidth: 3px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
   padding-right: calc(var(--avatarRow-offset) * 2);
+}
+
+.avatarRow--s {
+  --avatarRow-avatarSize: var(--media-s);
+  --avatarRow-offset: 8px;
+  --avatarRow-borderWidth: 1px;
+}
+
+.avatarRow--m {
+  --avatarRow-avatarSize: var(--media-m);
+  --avatarRow-offset: 12px;
+}
+
+.avatarRow--l {
+  --avatarRow-avatarSize: var(--media-l);
+  --avatarRow-offset: 22px;
+}
+
+.avatarRow--xl {
+  --avatarRow-avatarSize: var(--media-xl);
+  --avatarRow-offset: 28px;
 }
 
 .avatarRow-item {
@@ -17,14 +34,19 @@
   overflow: visible;
 }
 
+/* importants override material ui */
 .avatarRow-avatar {
   width: var(--avatarRow-avatarSize) !important;
   height: var(--avatarRow-avatarSize) !important;
   display: inline-flex !important;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-navy) !important;
   background-clip: content-box;
+  border: var(--avatarRow-borderWidth) solid var(--color-white);
+  background-color: var(--color-sky) !important;
+}
+
+.avatarRow-avatar--count {
+  background-color: var(--color-navy) !important;
   color: var(--color-white);
-  border: 3px solid var(--color-white);
 }
