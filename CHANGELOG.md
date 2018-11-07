@@ -17,7 +17,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [1.13]
+## [1.14] Media Sizes
+
+#### **Changes**
+- Added `media` properties to `fds-dictionary` for standard media sizing (icons, avatars, etc.)
+- Added `media--` helper classes to `fds-styles` to set dimensions of a selected element to a given
+  standard media size.
+
+## [1.13] material-ui theme
 
 #### **Changes**
 - Added `fds-mui-theme` package. This provides a theme for `material-ui` based on our standard styles

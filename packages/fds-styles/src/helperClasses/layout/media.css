@@ -1,0 +1,60 @@
+/*---
+title: Media Sizing
+name: layoutMedia
+section: Layout Helpers
+---
+
+For standard media like avatars and icons, these classes set square
+dimenions on the selected element to match standard media sizes.
+
+class           | description
+--------------- | ---------------------------------
+`media--xs `    | Sets height and width of element to `var(--media-xs)`
+`media--s `     | Sets height and width of element to `var(--media-s)`
+`media--m `     | Sets height and width of element to `var(--media-m)`
+`media--l `     | Sets height and width of element to `var(--media-l)`
+`media--xl `    | Sets height and width of element to `var(--media-xl)`
+
+```example:html
+<style>
+  .DOC_MEDIA {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    background: var(--color-violet);
+    color: var(--color-purple);
+  }
+</style>
+<div class="DOC_MEDIA media--xs">xs</div>
+<div class="DOC_MEDIA media--s">s</div>
+<div class="DOC_MEDIA media--m">m</div>
+<div class="DOC_MEDIA media--l">l</div>
+<div class="DOC_MEDIA media--xl">xl</div>
+```
+*/
+
+.media--xs {
+  height: var(--media-xs);
+  width: var(--media-xs);
+}
+
+.media--s {
+  height: var(--media-s);
+  width: var(--media-s);
+}
+
+.media--m {
+  height: var(--media-m);
+  width: var(--media-m);
+}
+
+.media--l {
+  height: var(--media-l);
+  width: var(--media-l);
+}
+
+.media--xl {
+  height: var(--media-xl);
+  width: var(--media-xl);
+}
