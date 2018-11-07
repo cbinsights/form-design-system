@@ -15,11 +15,11 @@ const MOCK_PROPS = {
   ]
 };
 
-describe('Flex component', () => {
+describe('AvatarRow component', () => {
 
   it('matches snapshot', () => {
-    const flex = renderComponent(MOCK_PROPS);
-    expect(flex).toMatchSnapshot();
+    const component = renderComponent(MOCK_PROPS);
+    expect(component).toMatchSnapshot();
   });
 
   it('getRenderConfig returns correct render list and count', () => {

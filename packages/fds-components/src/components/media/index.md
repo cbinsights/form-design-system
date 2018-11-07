@@ -1,4 +1,3 @@
-Media components.
 
 ## Avatars
 For basic person, icon, or letter avatars, please use
