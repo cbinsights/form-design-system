@@ -1,52 +1,70 @@
 .avatarRow {
-  --avatarRow-borderWidth: 2px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  padding-right: calc(var(--avatarRow-offset) * 2);
-}
-
-.avatarRow--s {
-  --avatarRow-avatarSize: var(--media-s);
-  --avatarRow-offset: 8px;
-  --avatarRow-borderWidth: 1px;
-}
-
-.avatarRow--m {
-  --avatarRow-avatarSize: var(--media-m);
-  --avatarRow-offset: 14px;
-}
-
-.avatarRow--l {
-  --avatarRow-avatarSize: var(--media-l);
-  --avatarRow-offset: 24px;
-}
-
-.avatarRow--xl {
-  --avatarRow-avatarSize: var(--media-xl);
-  --avatarRow-offset: 32px;
 }
 
 .avatarRow-item {
   display: inline-block;
   flex-shrink: 1;
-  width: calc(var(--avatarRow-avatarSize) - var(--avatarRow-offset));
   overflow: visible;
 }
 
 /* importants override material ui */
 .avatarRow-avatar {
-  width: var(--avatarRow-avatarSize) !important;
-  height: var(--avatarRow-avatarSize) !important;
   display: inline-flex !important;
   justify-content: center;
   align-items: center;
   background-clip: content-box;
-  border: var(--avatarRow-borderWidth) solid var(--color-white);
+  border: 2px solid var(--color-white);
   background-color: var(--color-sky) !important;
 }
 
 .avatarRow-avatar--count {
   background-color: var(--color-navy) !important;
   color: var(--color-white);
+}
+
+/**
+* Size overrides
+* ---------------
+* This would be very clean with custom properties,
+* but IE11 is stupid. We must hard code the widths
+* of the avatar wrappers to create the overlap effect.
+*/
+.avatarRow--s .avatarRow-item {
+  width: 16px;
+}
+
+.avatarRow--s .avatarRow-avatar {
+  border-width: 1px;
+  width: var(--media-s) !important;
+  height: var(--media-s) !important;
+}
+
+.avatarRow--m .avatarRow-item {
+  width: 26px;
+}
+
+.avatarRow--m .avatarRow-avatar {
+  width: var(--media-m) !important;
+  height: var(--media-m) !important;
+}
+
+.avatarRow--l .avatarRow-item {
+  width: 40px;
+}
+
+.avatarRow--l .avatarRow-avatar {
+  width: var(--media-l) !important;
+  height: var(--media-l) !important;
+}
+
+.avatarRow--xl .avatarRow-item {
+  width: 55px;
+}
+
+.avatarRow--xl .avatarRow-avatar {
+  width: var(--media-xl) !important;
+  height: var(--media-xl) !important;
 }
