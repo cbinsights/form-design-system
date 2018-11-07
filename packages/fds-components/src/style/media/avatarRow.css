@@ -28,9 +28,9 @@
 /**
 * Size overrides
 * ---------------
-* This would be very clean with custom properties,
-* but IE11 is stupid. We must hard code the widths
-* of the avatar wrappers to create the overlap effect.
+* This would be very clean with custom properties and `calc()`,
+* but IE11 is stupid. We must hard code the widths of the
+* avatar wrappers to create the overlap effect.
 */
 .avatarRow--s .avatarRow-item {
   width: 16px;

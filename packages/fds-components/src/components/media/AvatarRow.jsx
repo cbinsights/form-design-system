@@ -34,6 +34,7 @@ const AvatarRow = (props) => {
 
   return (
     <ul className={classNames}>
+      {/* avatars */}
       {renderConfig.renderList.map((member, i) => (
         <li className="avatarRow-item" key={`${member.name.replace(/\s/g, '')}-${i}`}>
           {member.src ? (
@@ -45,6 +46,8 @@ const AvatarRow = (props) => {
           )}
         </li>
       ))}
+
+      {/* overflow count bubble */}
       {renderConfig.count > 0 && (
         <li className="avatarRow-item">
           <Avatar className="avatarRow-avatar avatarRow-avatar--count">
