@@ -93,7 +93,7 @@ const formatJSCustomProperties = (dictionary) =>
 const formatCommonJs = (dictionary) =>
   jsComment() +
   dictionary.allProperties
-    .map((prop) => `exports.${prop.name} = '${prop.value}';`)
+    .map((prop) => `exports.${prop.name} = "${prop.value}";`)
     .join('\n');
 
 /**
