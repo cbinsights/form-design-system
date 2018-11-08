@@ -1,8 +1,20 @@
 const { blue, navy, red, orange } = require('fds-dictionary/dist/js/materialPalette');
 const FDS = require('fds-dictionary/dist/js/styleConstants');
 
-const MuiIconButton = require('./overrides/MuiIconButton');
-const MuiButton = require('./overrides/MuiButton');
+const MuiButton = {
+  root: {
+    lineHeight: 'normal',
+    backgroundColor: 'normal',
+  },
+};
+
+const MuiIconButton = {
+  root: {
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+  },
+};
 
 module.exports = {
   palette: {

@@ -9,9 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/cbinsights/form-design-system.git"
   },
-  "files": [
-    "lib"
-  ],
+  "main": "index.js",
   "dependencies": {
     "@material-ui/core": "^3.3.2",
     "fds-dictionary": "^1.15.3"
