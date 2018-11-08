@@ -1,8 +1,3 @@
-/* TODO: import vars */
-:root {
-  --space-gutter: 16px;
-}
-
 /* Flex parent */
 .flex {
   box-sizing: border-box;
@@ -85,12 +80,12 @@
 
 .flex--row > .flexItem {
   height: 100%;
-  padding-left: var(--space-gutter);
+  padding-left: var(--space-default);
 }
 
 .flex--column > .flexItem {
   width: 100%;
-  padding-top: var(--space-gutter);
+  padding-top: var(--space-default);
 }
 
 /* IE11 needs auto flex basis for column items */

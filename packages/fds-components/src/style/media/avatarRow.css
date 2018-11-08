@@ -1,0 +1,70 @@
+.avatarRow {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.avatarRow-item {
+  display: inline-block;
+  flex-shrink: 1;
+  overflow: visible;
+}
+
+/* importants override material ui */
+.avatarRow-avatar {
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  background-clip: content-box;
+  border: 2px solid var(--color-white);
+  background-color: var(--color-sky) !important;
+}
+
+.avatarRow-avatar--count {
+  background-color: var(--color-navy) !important;
+  color: var(--color-white);
+}
+
+/**
+* Size overrides
+* ---------------
+* This would be very clean with custom properties and `calc()`,
+* but IE11 is stupid. We must hard code the widths of the
+* avatar wrappers to create the overlap effect.
+*/
+.avatarRow--s .avatarRow-item {
+  width: 16px;
+}
+
+.avatarRow--s .avatarRow-avatar {
+  border-width: 1px;
+  width: var(--media-s) !important;
+  height: var(--media-s) !important;
+}
+
+.avatarRow--m .avatarRow-item {
+  width: 26px;
+}
+
+.avatarRow--m .avatarRow-avatar {
+  width: var(--media-m) !important;
+  height: var(--media-m) !important;
+}
+
+.avatarRow--l .avatarRow-item {
+  width: 40px;
+}
+
+.avatarRow--l .avatarRow-avatar {
+  width: var(--media-l) !important;
+  height: var(--media-l) !important;
+}
+
+.avatarRow--xl .avatarRow-item {
+  width: 55px;
+}
+
+.avatarRow--xl .avatarRow-avatar {
+  width: var(--media-xl) !important;
+  height: var(--media-xl) !important;
+}

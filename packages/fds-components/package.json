@@ -17,6 +17,7 @@
     "serve": "npx styleguidist server"
   },
   "dependencies": {
+    "@material-ui/core": "^3.4.0",
     "classnames": "^2",
     "fds-styles": "^1.15.3",
     "prop-types": "^15"

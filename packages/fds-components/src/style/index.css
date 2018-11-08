@@ -3,6 +3,7 @@
 
 /* Components */
 @import "./layout/flex.css";
+@import "./media/avatarRow.css";
 
 /* Overrides (remove when possible) */
 img,
