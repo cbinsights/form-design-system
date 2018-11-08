@@ -148,10 +148,10 @@ fbjs@^0.8.1:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-fds-dictionary@^1.10.4:
-  version "1.10.4"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-1.10.4.tgz#db0b83725506df92a862b1329997c57f788bee73"
-  integrity sha512-Z5wApSXlnW7PcLh2zKCEWAYGXgGXtzahFGhASOFN85FQ2Gnxq/6nKU76/cr0RsC4HugO3EhzDvtJN5/OX0eQXg==
+fds-dictionary@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-1.14.0.tgz#41c42c34db629855fae4d8ef41d4c15a617bdb50"
+  integrity sha512-WFVqd7+nt5HknD3mKJ5bmhmlmg1+w5ZWX/kc7l0exMYgFsAuFSRcmmUIsZ2ke5XD1g7jBuk9910NaPIrEnSb0A==
 
 hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"

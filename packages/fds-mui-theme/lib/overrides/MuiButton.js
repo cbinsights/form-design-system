@@ -5,4 +5,4 @@ const MuiButton = {
   },
 };
 
-export default MuiButton;
+module.exports = MuiButton;

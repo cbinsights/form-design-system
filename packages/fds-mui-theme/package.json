@@ -12,10 +12,6 @@
   "files": [
     "lib"
   ],
-  "scripts": {
-    "setupLib": "mkdir -p ./lib",
-    "build": "yarn setupLib && babel src --out-dir lib --source-maps"
-  },
   "dependencies": {
     "@material-ui/core": "^3.3.2",
     "fds-dictionary": "^1.14.0"

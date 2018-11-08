@@ -6,4 +6,4 @@ const MuiIconButton = {
   },
 };
 
-export default MuiIconButton;
+module.exports = MuiIconButton;

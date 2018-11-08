@@ -1,10 +1,10 @@
-import { blue, navy, red, orange } from 'fds-dictionary/dist/js/materialPalette';
-import FDS from 'fds-dictionary/dist/js/styleConstants';
+const { blue, navy, red, orange } = require('fds-dictionary/dist/js/materialPalette');
+const FDS = require('fds-dictionary/dist/js/styleConstants');
 
-import MuiIconButton from './overrides/MuiIconButton';
-import MuiButton from './overrides/MuiButton';
+const MuiIconButton = require('./overrides/MuiIconButton');
+const MuiButton = require('./overrides/MuiButton');
 
-const theme = {
+module.exports = {
   palette: {
     type: 'light',
     primary: blue,
@@ -26,5 +26,3 @@ const theme = {
     MuiIconButton,
   },
 };
-
-export default theme;
