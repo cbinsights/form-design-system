@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.17]
+
+#### **Changes**
+- Fix import statement in `fds-mui-theme`
+
 ## [1.16]
 
 #### **Changes**

@@ -1,4 +1,4 @@
-const { blue, navy, red, orange } = require('fds-dictionary/dist/js/materialPalette');
+const COLORS = require('fds-dictionary/dist/js/materialPalette');
 const FDS = require('fds-dictionary/dist/js/styleConstants');
 
 const MuiButton = {
@@ -19,10 +19,10 @@ const MuiIconButton = {
 module.exports = {
   palette: {
     type: 'light',
-    primary: blue,
-    secondary: navy,
-    accent: orange,
-    error: red,
+    primary: COLORS.blue,
+    secondary: COLORS.navy,
+    accent: COLORS.orange,
+    error: COLORS.red,
     divider: FDS.FONT_COLOR_LIGHT,
     text: {
       primary: FDS.FONT_COLOR_DEFAULT,
