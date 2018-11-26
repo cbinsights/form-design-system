@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.18]
+
+#### **Changes**
+- Adds disabled font color to `fds-dictionary`
+- Adds `MenuButton` component to `fds-components`
+
 ## [1.17]
 
 #### **Changes**
