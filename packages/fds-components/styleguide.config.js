@@ -27,7 +27,11 @@ module.exports = {
   editorConfig: path.join(__dirname, '../../.editorconfig'),
 
   // define component groupings in documentation
-  sections: [makeSection('Layout', 'layout'), makeSection('Media', 'media')],
+  sections: [
+    makeSection('Layout', 'layout'),
+    makeSection('Media', 'media'),
+    makeSection('Interactive', 'interactive'),
+  ],
 
   // webpack require assets into styleguide
   require: [
