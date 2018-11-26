@@ -25,6 +25,7 @@ _Examples set in heading level 4_
 <p class="typeset--head4 typemod--purple">Purple text</p>
 <p class="typeset--head4 typemod--red">Red text</p>
 <p class="typeset--head4 typemod--orange">Orange text</p>
+<p class="typeset--head4 typemod--white">White text</p>
 ```
 */
 .typemod--dark {
@@ -69,5 +70,9 @@ _Examples set in heading level 4_
 
 .typemod--orange {
   color: var(--color-orange) !important;
+}
+
+.typemod--white {
+  color: var(--color-white) !important;
 }
 

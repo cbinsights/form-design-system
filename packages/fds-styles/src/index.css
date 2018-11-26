@@ -28,6 +28,7 @@
 @import "./helperClasses/typemod/size";
 @import "./helperClasses/typemod/weight";
 @import "./helperClasses/typemod/color";
+@import "./helperClasses/typemod/style";
 
 /* Whitespace helpers */
 @import "./helperClasses/whitespace/truncate";

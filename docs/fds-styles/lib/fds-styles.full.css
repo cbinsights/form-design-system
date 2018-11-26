@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Mon Nov 26 2018 12:31:16 GMT-0500 (Eastern Standard Time)
+ * Generated on Mon Nov 26 2018 16:27:34 GMT-0500 (Eastern Standard Time)
  */
 :root {
  --color-charcoal: #404040;
@@ -970,6 +970,7 @@ _Examples set in heading level 4_
 <p class="typeset--head4 typemod--purple">Purple text</p>
 <p class="typeset--head4 typemod--red">Red text</p>
 <p class="typeset--head4 typemod--orange">Orange text</p>
+<p class="typeset--head4 typemod--white">White text</p>
 ```
 */
 .typemod--dark {
@@ -1015,6 +1016,32 @@ _Examples set in heading level 4_
 .typemod--orange {
   color: #ff6633 !important;
   color: var(--color-orange) !important;
+}
+.typemod--white {
+  color: #ffffff !important;
+  color: var(--color-white) !important;
+}
+/*----
+title: Type Style Modifiers
+name: typeStyleModifiers
+section: Type Modifiers
+----
+Modifies style, decoration, or transform of text
+
+```example:html
+<p class="typemod--italic">Italic text</p>
+<p class="typemod--underline">Underline text</p>
+<p class="typemod--caps">Uppercase text</p>
+```
+*/
+.typemod--italic {
+  font-style: italic;
+}
+.typemod--underline {
+  text-decoration: underline;
+}
+.typemod--caps {
+  text-transform: uppercase;
 }
 /* Whitespace helpers */
 /*---
