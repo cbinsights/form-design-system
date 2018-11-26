@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu Nov 08 2018 16:24:20 GMT-0500 (Eastern Standard Time)
+ * Generated on Mon Nov 26 2018 12:31:16 GMT-0500 (Eastern Standard Time)
  */
 :root {
  --color-charcoal: #404040;
@@ -26,6 +26,7 @@
  --font-color-dark: #404040;
  --font-color-default: #757575;
  --font-color-light: #a2a0a0;
+ --font-color-disabled: #c2bfbf;
  --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
  --font-family-default: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
  --font-family-mono: Monaco, Consolas, monospace;

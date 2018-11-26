@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Flex component matches snapshot 1`] = `
+exports[`AvatarRow component matches snapshot 1`] = `
 <ul
-  className="avatarRow list--reset"
+  className="avatarRow avatarRow--m"
 >
   <li
     className="avatarRow-item"
@@ -38,7 +38,7 @@ exports[`Flex component matches snapshot 1`] = `
     className="avatarRow-item"
   >
     <WithStyles(Avatar)
-      className="avatarRow-avatar"
+      className="avatarRow-avatar avatarRow-avatar--count"
     >
       <span
         className="typemod--book typemod--small"

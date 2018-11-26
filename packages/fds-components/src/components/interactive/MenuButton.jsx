@@ -11,13 +11,33 @@ import FlexItem from '../layout/FlexItem';
  * @returns {ReactElement}
  */
 const MenuButton = (props) => {
-  const { iconComponent, label, className, labelClassName, ...other } = props;
+  const {
+    iconComponent,
+    label,
+    className,
+    labelClassName,
+    disabled,
+    active,
+    ...other
+  } = props;
 
   return (
-    <Button className={cx('iconButton', className)} {...other}>
-      <Flex direction="column">
-        <FlexItem className="iconButton-icon">{iconComponent}</FlexItem>
-        <FlexItem shrink className={cx('typemod--tiny iconButton-label', labelClassName)}>
+    <Button
+      className={cx(
+        'menuButton',
+        {
+          'menuButton--active': active,
+          'menuButton--disabled': disabled,
+        },
+        className
+      )}
+      disabled={disabled}
+      variant="text"
+      {...other}
+    >
+      <Flex className="menuButton-inner" direction="column" noGutters>
+        <FlexItem className="menuButton-icon">{iconComponent}</FlexItem>
+        <FlexItem shrink className={cx('typemod--tiny menuButton-label', labelClassName)}>
           {label}
         </FlexItem>
       </Flex>
@@ -25,9 +45,6 @@ const MenuButton = (props) => {
   );
 };
 
-/**
- * TODO: all the proptypes
- */
 MenuButton.propTypes = {
   /** Icon component to render in the button */
   iconComponent: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
@@ -38,6 +55,9 @@ MenuButton.propTypes = {
 
   /** Disabled mode */
   disabled: PropTypes.bool,
+
+  /** Active mode */
+  active: PropTypes.bool,
 
   /** Class for label element */
   labelClassName: PropTypes.string,

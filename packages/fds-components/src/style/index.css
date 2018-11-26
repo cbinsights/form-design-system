@@ -4,6 +4,7 @@
 /* Components */
 @import "./layout/flex.css";
 @import "./media/avatarRow.css";
+@import "./interactive/menuButton.css";
 
 /* Overrides (remove when possible) */
 img,
