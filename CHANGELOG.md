@@ -17,7 +17,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [1.18]
+## [1.18] `MenuButton`
 
 #### **Changes**
 - Adds disabled font color to `fds-dictionary`
@@ -28,7 +28,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### **Changes**
 - Fix import statement in `fds-mui-theme`
 
-## [1.16]
+## [1.16] `AvatarRow`
 
 #### **Changes**
 - Added `AvatarRow` component to `fds-components`.
