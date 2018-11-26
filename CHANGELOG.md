@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.19]
+
+#### **Changes**
+- Adds type modifier classes to `fds-styles` for underline, italic, and all caps
+
 ## [1.18] `MenuButton`
 
 #### **Changes**
