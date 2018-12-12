@@ -93,8 +93,7 @@ const formatJSCustomProperties = (dictionary) =>
 const formatCommonJs = (dictionary) =>
   jsComment() +
   dictionary.allProperties
-    .filter((prop) => prop.attributes.category !== 'font') // encourage CSS classes for type styles
-    .map((prop) => `exports.${prop.name} = '${prop.value}';`)
+    .map((prop) => `exports.${prop.name} = "${prop.value}";`)
     .join('\n');
 
 /**

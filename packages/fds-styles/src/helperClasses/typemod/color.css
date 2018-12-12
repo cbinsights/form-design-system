@@ -25,49 +25,54 @@ _Examples set in heading level 4_
 <p class="typeset--head4 typemod--purple">Purple text</p>
 <p class="typeset--head4 typemod--red">Red text</p>
 <p class="typeset--head4 typemod--orange">Orange text</p>
+<p class="typeset--head4 typemod--white">White text</p>
 ```
 */
 .typemod--dark {
-  color: var(--font-color-dark);
+  color: var(--font-color-dark) !important;
 }
 
 .typemod--light {
-  color: var(--font-color-light);
+  color: var(--font-color-light) !important;
 }
 
 .typemod--slate {
-  color: var(--color-slate);
+  color: var(--color-slate) !important;
 }
 
 .typemod--green {
-  color: var(--color-green);
+  color: var(--color-green) !important;
 }
 
 .typemod--mint {
-  color: var(--color-mint);
+  color: var(--color-mint) !important;
 }
 
 .typemod--navy {
-  color: var(--color-navy);
+  color: var(--color-navy) !important;
 }
 
 .typemod--blue {
-  color: var(--color-blue);
+  color: var(--color-blue) !important;
 }
 
 .typemod--sky {
-  color: var(--color-sky);
+  color: var(--color-sky) !important;
 }
 
 .typemod--purple {
-  color: var(--color-purple);
+  color: var(--color-purple) !important;
 }
 
 .typemod--red {
-  color: var(--color-red);
+  color: var(--color-red) !important;
 }
 
 .typemod--orange {
-  color: var(--color-orange);
+  color: var(--color-orange) !important;
+}
+
+.typemod--white {
+  color: var(--color-white) !important;
 }
 

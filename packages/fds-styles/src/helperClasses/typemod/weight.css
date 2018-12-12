@@ -12,9 +12,9 @@ Modifies weight of text.
 ```
 */
 .typemod--bold {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold) !important;
 }
 
 .typemod--book {
-  font-weight: var(--font-weight-default);
+  font-weight: var(--font-weight-default) !important;
 }

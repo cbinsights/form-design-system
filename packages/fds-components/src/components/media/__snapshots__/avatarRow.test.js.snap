@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvatarRow component matches snapshot 1`] = `
+<ul
+  className="avatarRow avatarRow--m"
+>
+  <li
+    className="avatarRow-item"
+    key="MOCKNAME-0"
+  >
+    <WithStyles(Avatar)
+      alt="MOCK NAME"
+      className="avatarRow-avatar"
+      src="https://placeimg.com/40/41/animals"
+    />
+  </li>
+  <li
+    className="avatarRow-item"
+    key="MOCKNAME-1"
+  >
+    <WithStyles(Avatar)
+      alt="MOCK NAME"
+      className="avatarRow-avatar"
+      src="https://placeimg.com/40/41/animals"
+    />
+  </li>
+  <li
+    className="avatarRow-item"
+    key="MOCKNAME-2"
+  >
+    <WithStyles(Avatar)
+      alt="MOCK NAME"
+      className="avatarRow-avatar"
+      src="https://placeimg.com/40/41/animals"
+    />
+  </li>
+  <li
+    className="avatarRow-item"
+  >
+    <WithStyles(Avatar)
+      className="avatarRow-avatar avatarRow-avatar--count"
+    >
+      <span
+        className="typemod--book typemod--small"
+      >
+        +
+        2
+      </span>
+    </WithStyles(Avatar)>
+  </li>
+</ul>
+`;

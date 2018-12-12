@@ -16,30 +16,30 @@ Modifies size of text and adjusts leading accordingly.
 ```
 */
 .typemod--huge {
-  font-size: var(--font-size-heading1);
-  line-height: var(--font-lineHeight-bigText);
+  font-size: var(--font-size-heading1) !important;
+  line-height: var(--font-lineHeight-bigText) !important;
 }
 
 .typemod--xxlarge {
-  font-size: var(--font-size-heading2);
-  line-height: var(--font-lineHeight-bigText);
+  font-size: var(--font-size-heading2) !important;
+  line-height: var(--font-lineHeight-bigText) !important;
 }
 
 .typemod--xlarge {
-  font-size: var(--font-size-heading3);
-  line-height: var(--font-lineHeight-bigText);
+  font-size: var(--font-size-heading3) !important;
+  line-height: var(--font-lineHeight-bigText) !important;
 }
 
 .typemod--large {
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-big) !important;
 }
 
 .typemod--small {
-  font-size: var(--font-size-small);
-  line-height: var(--font-lineHeight-smallText);
+  font-size: var(--font-size-small) !important;
+  line-height: var(--font-lineHeight-smallText) !important;
 }
 
 .typemod--tiny {
-  font-size: var(--font-size-tiny);
-  line-height: var(--font-lineHeight-smallText);
+  font-size: var(--font-size-tiny) !important;
+  line-height: var(--font-lineHeight-smallText) !important;
 }

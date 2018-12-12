@@ -44,13 +44,21 @@
         <a class="menu-heading" href="#position-helpers"><span>Position Helpers</span></a>
         
     
-        <a class="menu-item" href="#positionAlign"><span>Algin</span></a>
+        <a class="menu-item" href="#positionAlign"><span>Align</span></a>
         
         
         <a class="menu-item" href="#positionVAlign"><span>Vertical Align</span></a>
         
         
         <a class="menu-item" href="#positionChildAlign"><span>Child Align</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#layout-helpers"><span>Layout Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#layoutMedia"><span>Media Sizing</span></a>
         
         
   
@@ -94,6 +102,9 @@
         
         
         <a class="menu-item" href="#typeColorModifiers"><span>Color Modifiers</span></a>
+        
+        
+        <a class="menu-item" href="#typeStyleModifiers"><span>Type Style Modifiers</span></a>
         
         
   
@@ -252,7 +263,7 @@ Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
         
         
     <section id="positionAlign">
-      <h2 class="page-title">Algin</h2>
+      <h2 class="page-title">Align</h2>
 
       <div class="markdown-body">
         <p>eets <code>text-align</code>.</p>
@@ -333,6 +344,72 @@ Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
 &gt;
   &lt;div style=&quot;background: pink;&quot;&gt;child&lt;/div&gt;
 &lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="layout-helpers">
+      <h1 class="page-title">Layout Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="layoutMedia">
+      <h2 class="page-title">Media Sizing</h2>
+
+      <div class="markdown-body">
+        <p>For standard media like avatars and icons, these classes set square
+dimenions on the selected element to match standard media sizes.</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>media--xs</code></td>
+<td>Sets height and width of element to <code>var(--media-xs)</code></td>
+</tr>
+<tr>
+<td><code>media--s</code></td>
+<td>Sets height and width of element to <code>var(--media-s)</code></td>
+</tr>
+<tr>
+<td><code>media--m</code></td>
+<td>Sets height and width of element to <code>var(--media-m)</code></td>
+</tr>
+<tr>
+<td><code>media--l</code></td>
+<td>Sets height and width of element to <code>var(--media-l)</code></td>
+</tr>
+<tr>
+<td><code>media--xl</code></td>
+<td>Sets height and width of element to <code>var(--media-xl)</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-example:html">&lt;style&gt;
+  .DOC_MEDIA {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    background: var(--color-violet);
+    color: var(--color-purple);
+  }
+&lt;/style&gt;
+&lt;div class=&quot;DOC_MEDIA media--xs&quot;&gt;xs&lt;/div&gt;
+&lt;div class=&quot;DOC_MEDIA media--s&quot;&gt;s&lt;/div&gt;
+&lt;div class=&quot;DOC_MEDIA media--m&quot;&gt;m&lt;/div&gt;
+&lt;div class=&quot;DOC_MEDIA media--l&quot;&gt;l&lt;/div&gt;
+&lt;div class=&quot;DOC_MEDIA media--xl&quot;&gt;xl&lt;/div&gt;
 </code></pre>
 
         
@@ -511,6 +588,21 @@ of the typesetting classes below.</p>
 &lt;p class=&quot;typeset--head4 typemod--purple&quot;&gt;Purple text&lt;/p&gt;
 &lt;p class=&quot;typeset--head4 typemod--red&quot;&gt;Red text&lt;/p&gt;
 &lt;p class=&quot;typeset--head4 typemod--orange&quot;&gt;Orange text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--white&quot;&gt;White text&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="typeStyleModifiers">
+      <h2 class="page-title">Type Style Modifiers</h2>
+
+      <div class="markdown-body">
+        <p>Modifies style, decoration, or transform of text</p>
+<pre><code class="lang-example:html">&lt;p class=&quot;typemod--italic&quot;&gt;Italic text&lt;/p&gt;
+&lt;p class=&quot;typemod--underline&quot;&gt;Underline text&lt;/p&gt;
+&lt;p class=&quot;typemod--caps&quot;&gt;Uppercase text&lt;/p&gt;
 </code></pre>
 
         
@@ -588,7 +680,7 @@ of clamping text to one line.</p>
         </main>
       </div>
       <footer class="footer">
-        Last modified Thursday, 1 November 2018 14:20
+        Last modified Wednesday, 12 December 2018 10:57
       </footer>
     </div>
     <script src="prism.js?871234"></script>

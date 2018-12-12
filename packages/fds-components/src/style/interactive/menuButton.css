@@ -1,0 +1,30 @@
+/**
+Important styles override material-ui inline styles.
+*/
+
+.menuButton {
+  padding: 4px !important;
+  color: var(--font-color-default) !important;
+  text-transform: none !important;
+  min-height: var(--media-l) !important;
+  max-width: var(--media-m);
+}
+
+.menuButton--active {
+  color: var(--font-color-dark) !important;
+  font-weight: var(--font-weight-bold) !important;
+}
+
+.menuButton--disabled {
+  color: var(--font-color-disabled) !important;
+  fill: var(--font-color-disabled) !important;
+  stroke: var(--font-color-disabled) !important;
+}
+
+.menuButton-inner {
+  height: 100%;
+}
+
+.menuButton-label {
+  line-height: 1.1 !important;
+}
