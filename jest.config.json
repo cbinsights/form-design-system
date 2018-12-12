@@ -2,7 +2,7 @@
   "setupFiles": [
     "<rootDir>/scripts/setupTests.js"
   ],
-  "testRegex": "src/.*.test.(js|jsx)?$",
+  "testRegex": "./packages/.*.test.(js|jsx)?$",
   "snapshotSerializers": [
     "<rootDir>/node_modules/enzyme-to-json/serializer"
   ]

@@ -13,7 +13,6 @@
     "compile:css": "postcss src/style/index.css -o lib/style/fds-components.css --config=./postcss.config.js",
     "compile:docs": "styleguidist build",
     "build": "yarn setupLib && yarn compile:css && yarn compile:jsx && yarn compile:docs",
-    "test": "jest --color --config jest.config.json",
     "serve": "npx styleguidist server"
   },
   "dependencies": {
