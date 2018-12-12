@@ -60,6 +60,14 @@ pipeline {
       }
     }
 
+    stage('Lint') {
+      steps {
+        ansiColor('xterm') {
+          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn lint"
+        }
+      }
+    }
+
     stage('Test') {
       steps {
         ansiColor('xterm') {
