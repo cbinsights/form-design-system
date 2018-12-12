@@ -1,6 +1,6 @@
 {
   "setupFiles": [
-    "<rootDir>/scripts/setupTests.js"
+    "<rootDir>/util/setupTests.js"
   ],
   "testRegex": "./packages/.*.test.(js|jsx)?$",
   "snapshotSerializers": [
