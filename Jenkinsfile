@@ -71,7 +71,7 @@ pipeline {
     stage('Test') {
       steps {
         ansiColor('xterm') {
-          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn test:ci"
+          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn test"
         }
       }
     }
