@@ -1408,18 +1408,6 @@ fbjs@^0.8.1, fbjs@^0.8.16:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-fds-dictionary@^1.18.0:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-1.18.0.tgz#9fe829bf8156fbad86b428b77343ba57721fcffe"
-  integrity sha512-wbZUHfRbbr0UNlb2Qlf9HFdveIJC0G9RmktTDt8xSGE6+ju1VqNehy+IlGsJFLa4osAC3yD/xc6kGnb8Maq5Eg==
-
-fds-styles@^1.19.0:
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-1.19.0.tgz#9412934c96905253178c6745784670325e3e7c32"
-  integrity sha512-wf4Kf7xFufQraRGyclZo7RtrnfDqJbL7EYWMxBtnD+cowiganLQrRWAauTl75y+tUiAqWyIwDCp62USsh231CA==
-  dependencies:
-    fds-dictionary "^1.18.0"
-
 filename-regex@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"
