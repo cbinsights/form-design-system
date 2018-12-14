@@ -2,9 +2,6 @@
 
 A design system by CB Insights.
 
-⚠️  **This is currently a work in progress.** ⚠️
-Please check the [changelog](https://github.com/cbinsights/form-design-system/blob/master/CHANGELOG.md) for information about recent releases.
-
 ## Documentation
 [https://cbinsights.github.io/form-design-system/](https://cbinsights.github.io/form-design-system/)
 
