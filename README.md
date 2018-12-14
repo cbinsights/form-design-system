@@ -8,7 +8,7 @@ A design system by CB Insights.
 The design system is comprised of a number of separate node modules. You can install as many
 or as few of them as you'd like.
 
-**Just the design tokens (constnats)**
+**Just the design tokens (color constants, etc)**
 `yarn add fds-dictionary`
 
 **Install everything**
