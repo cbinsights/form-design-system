@@ -1,6 +1,7 @@
 {
+  "rootDir": "../../",
   "setupFiles": [
-    "<rootDir>/scripts/setupTests.js"
+    "<rootDir>/packages/fds-components/scripts/setupTests.js"
   ],
   "testRegex": "src/.*.test.(js|jsx)?$",
   "snapshotSerializers": [
