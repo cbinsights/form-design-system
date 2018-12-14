@@ -9,10 +9,14 @@ The design system is comprised of a number of separate node modules. You can ins
 or as few of them as you need.
 
 **Just the design tokens (color constants, etc)**
-`yarn add fds-dictionary`
+```bash
+yarn add fds-dictionary
+```
 
 **Install everything**
-`yarn add fds-dictionary fds-styles fds-components fds-mui-theme`
+```bash
+yarn add fds-dictionary fds-styles fds-components fds-mui-theme
+```
 
 ### Documentation
 [https://cbinsights.github.io/form-design-system/](https://cbinsights.github.io/form-design-system/)
