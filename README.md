@@ -2,6 +2,18 @@
 
 A design system by CB Insights.
 
+## Getting started
+
+## Installation
+The design system is comprised of a number of separate node modules. You can install as many
+or as few of them as you'd like.
+
+**Just the design tokens (constnats)**
+`yarn add fds-dictionary`
+
+**Install everything**
+`yarn add fds-dictionary fds-styles fds-components fds-mui-theme`
+
 ## Documentation
 [https://cbinsights.github.io/form-design-system/](https://cbinsights.github.io/form-design-system/)
 
