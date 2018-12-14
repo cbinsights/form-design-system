@@ -60,6 +60,8 @@ This repo uses [lerna](https://lernajs.io/) to manage multiple npm modules in on
 All packages managed by `form-design-system` share the same version. If the major, minor, or patch version
 for this project changes, all packages will be published with the update.
 
+**Please update the minor or major version as appropriate when making changes in a branch**
+
 #### Updating version number
 We commit the major and minor version in [`Jenkinsfile`](https://github.com/cbinsights/form-design-system/blob/master/Jenkinsfile#L10).
 Jenkins populates the patch version with its build number.
