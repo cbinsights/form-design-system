@@ -4,7 +4,7 @@ A design system by CB Insights.
 
 ## Getting started
 
-## Installation
+### Installation
 The design system is comprised of a number of separate node modules. You can install as many
 or as few of them as you'd like.
 
@@ -14,10 +14,10 @@ or as few of them as you'd like.
 **Install everything**
 `yarn add fds-dictionary fds-styles fds-components fds-mui-theme`
 
-## Documentation
+### Documentation
 [https://cbinsights.github.io/form-design-system/](https://cbinsights.github.io/form-design-system/)
 
-## Versions
+### Versions
 This project uses [semantic versioning](https://semver.org/spec/v2.0.0.html).
 Refer to the [**Changelog**](https://github.com/cbinsights/form-design-system/blob/master/CHANGELOG.md)
 for details on each major and minor release.
