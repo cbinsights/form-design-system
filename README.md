@@ -72,6 +72,7 @@ To update the version of the design system in your branch...
 
 1. Update the minor and/or major version in `Jenkinsfile`
 2. Update `CHANGELOG.md` with a note about your changes
+3. Submit your PR.
 
 #### Beta versions
 Jenkins will publish an npm version for any branch pushed to origin.
