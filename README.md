@@ -6,7 +6,7 @@ A design system by CB Insights.
 
 ### Installation
 The design system is comprised of a number of separate node modules. You can install as many
-or as few of them as you'd like.
+or as few of them as you need.
 
 **Just the design tokens (color constants, etc)**
 `yarn add fds-dictionary`
