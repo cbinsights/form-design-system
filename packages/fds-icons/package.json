@@ -1,0 +1,17 @@
+{
+  "name": "fds-icons",
+  "version": "1.19.0",
+  "description": "Custom SVG icons for Form Design System",
+  "author": "CB Insights",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node ./scripts/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbinsights/form-design-system.git"
+ }
+}
