@@ -102,6 +102,8 @@
             <p class="palette-name"><code>{{this.varNames.human}}</code></p>
             <ul class="palette-swatches">
               {{#each this.materialPalette}}
+                {{!-- Disabling accent colors in docs to discourage use --}}
+                {{#unless this.isAccent}}
                 <li>
                   <div
                     class="swatch swatch--material {{#if this.isBase}}swatch--base{{/if}} {{#if this.isAccent}}swatch--accent{{/if}}"
@@ -109,6 +111,7 @@
                   ></div>
                   <div class="swatch-key">{{this.key}}</div>
                 </li>
+                {{/unless}}
               {{/each}}
             </ul>
           </div>
