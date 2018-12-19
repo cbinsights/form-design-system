@@ -1,6 +1,6 @@
 {
   "name": "fds-styles",
-  "version": "1.19.2",
+  "version": "1.19.22",
   "description": "Style foundation for Form Design System",
   "author": "CB Insights",
   "license": "MIT",
@@ -20,6 +20,6 @@
   },
   "gitHead": "df53ab32b610d14ec96e0a16902deff219746f5a",
   "dependencies": {
-    "fds-dictionary": "^1.18.0"
+    "fds-dictionary": "^1.19.22"
   }
 }
