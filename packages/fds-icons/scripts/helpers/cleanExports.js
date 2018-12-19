@@ -1,3 +1,14 @@
+/**
+ * @module cleanExports
+ *
+ * `sketchtool` exports SVG files based on their slice name.
+ * For example, a slice named "Icon/plus" will be exported to
+ * `<destination>/Icon/plus`. We have no control over this.
+ *
+ * This module exports a function that removes all dirs created
+ * by sketchtool, and moves all SVG exports into `<destination>`
+ * with a PascalCase file name.
+ */
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');

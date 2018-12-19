@@ -1,3 +1,12 @@
+/**
+ * @module exportFromSketch
+ *
+ * Node script called by `yarn export`.
+ * Exports all slices from an icons page in a sketch file.
+ * The page name and slice prefix are configured in `icons.config.js`
+ *
+ * @usage `node exportFromSketch.js <sketch file path>`
+ */
 const { exec } = require('child_process');
 const path = require('path');
 const { sketchConfig } = require('../icons.config');
