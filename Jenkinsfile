@@ -79,7 +79,7 @@ pipeline {
     stage('Build') {
       steps {
         ansiColor('xterm') {
-          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn build:ci"
+          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn build:full"
         }
       }
     }

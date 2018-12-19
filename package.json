@@ -6,7 +6,7 @@
   "scripts": {
     "serve:components": "lerna run serve --stream --scope=fds-components",
     "build": "lerna run build --parallel",
-    "build:ci": "lerna run build --stream",
+    "build:full": "lerna run build --stream",
     "test": "lerna run test --stream",
     "bootstrap": "yarn lerna bootstrap",
     "lint": "eslint ./packages/ --ext .js,.jsx",
