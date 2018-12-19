@@ -36,67 +36,15 @@ pipeline {
 
   stages {
 
-    stage('Pull .npmrc file'){
+    stage('Add a file'){
       steps {
-        sh "aws --region us-east-1 s3 cp s3://com.cbinsights.devops/certificates/npm-registry/npmrc npmrc"
+        sh "echo 'hello' > chima.txt"
       }
     }
 
-    stage('Build Docker image'){
+    stage('push back to github'){
       steps {
-        ansiColor('xterm'){
-          sh "docker build -t ${DOCKER_IMAGE_NAME} ./"
-        }
-      }
-    }
-
-    stage('Install Dependencies'){
-      steps {
-        sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn install --pure-lockfile"
-        sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn bootstrap"
-
-        // fail if yarn install produces unstaged changes (yarn.lock)
-        sh "docker run --rm ${DOCKER_IMAGE_NAME} git diff --exit-code"
-      }
-    }
-
-    stage('Lint') {
-      steps {
-        ansiColor('xterm') {
-          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn lint"
-        }
-      }
-    }
-
-    stage('Test') {
-      steps {
-        ansiColor('xterm') {
-          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn test"
-        }
-      }
-    }
-
-    stage('Build') {
-      steps {
-        ansiColor('xterm') {
-          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn build:full"
-        }
-      }
-    }
-
-    stage('Publish npm packages') {
-      steps {
-        ansiColor('xterm') {
-          sh "docker run --rm ${DOCKER_IMAGE_NAME} npm whoami"
-          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${GIT_TAG}"
-        }
-      }
-    }
-
-    stage('Git tag build'){
-      steps {
-        sh "git tag -a ${GIT_TAG} -m '${GIT_TAG} Tagged by Jenkins from branch ${BRANCH_NAME}'"
-        sh "git push --tags"
+        sh "git push origin ${env.BRANCH_NAME}"
       }
     }
 
