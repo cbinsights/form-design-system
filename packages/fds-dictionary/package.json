@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "node ./scripts/build.js"
+    "build": "node ./scripts/build.js && ls ./"
   },
   "repository": {
     "type": "git",
