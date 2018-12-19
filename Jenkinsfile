@@ -80,7 +80,7 @@ pipeline {
       steps {
         ansiColor('xterm') {
           sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn build:full"
-          sh "git diff"
+          sh "docker run --rm ${DOCKER_IMAGE_NAME} git diff"
           sh "docker run --rm ${DOCKER_IMAGE_NAME} ls ./"
           sh "docker run --rm ${DOCKER_IMAGE_NAME} ls ./packages/fds-components/"
         }
