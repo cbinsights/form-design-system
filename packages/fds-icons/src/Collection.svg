@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Collection</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M5,2 L19,2 L19,22.4200701 L12,16.8486415 L5,22.4200701 L5,2 Z M7,4 L7,18 L12,14.1854198 L17,18 L17,4 L7,4 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Collection">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Collection" fill="#D8D8D8" xlink:href="#path-1"></use>
+            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
+                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

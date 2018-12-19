@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Image</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M20,11.8300359 L20,6 L4,6 L4,14.3300604 L6.73840332,11.5615234 L9.67382812,14.6334229 L16.3330078,8 L20,11.8300359 Z M20,14.7317171 L16.3330078,10.9145508 L10.2017019,17 L20,17 L20,14.7317171 Z M9.17262101,17 L6.73840332,14.4554443 L4.14525846,17 L9.17262101,17 Z M4,4 L20,4 C21.1045695,4 22,4.8954305 22,6 L22,17 C22,18.1045695 21.1045695,19 20,19 L4,19 C2.8954305,19 2,18.1045695 2,17 L2,6 C2,4.8954305 2.8954305,4 4,4 Z M8.5,11 C7.67157288,11 7,10.3284271 7,9.5 C7,8.67157288 7.67157288,8 8.5,8 C9.32842712,8 10,8.67157288 10,9.5 C10,10.3284271 9.32842712,11 8.5,11 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Image">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Combined-Shape" fill="#404040" xlink:href="#path-1"></use>
+            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
+                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,5 +1,6 @@
 const { exec } = require('child_process');
 const path = require('path');
+const { sketchConfig } = require('../icons.config');
 const cleanExports = require('./helpers/cleanExports');
 
 if (!process.argv[2]) {
@@ -7,10 +8,10 @@ if (!process.argv[2]) {
 }
 
 const PATH_SKETCH_FILE = path.normalize(process.argv[2]);
-const PATH_SVG_DEST = path.join(__dirname, '../dist/');
+const PATH_SVG_DEST = sketchConfig.output;
 
-const SKETCH_PAGE_NAME = 'Icons';
-const SKETCH_SLICE_PREFIX = 'Icon/';
+const SKETCH_PAGE_NAME = sketchConfig.pageName;
+const SKETCH_SLICE_PREFIX = sketchConfig.slicePrefix;
 
 /**
  * Builds command to export icon slices as SVG files

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Trash</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M19,8 L19,20 C19,21.104 18.106,22 17,22 L7.001,22 C5.896,22 5,21.104 5,20 L5,8 L19,8 Z M7,8 L7,20 L17,20 L17,8 L7,8 Z M7,4 C7,4 7,2 9,2 L15,2 C17,2 17,4 17,4 L17,6 L21,5.99866711 L21,8 L3,8 L3,5.99866711 L7,5.99866711 L7,4 Z M11,4 C9,4 9,4 9,6 L15,6 C15,4 15,4 13,4 L11,4 Z M9,10 L11,10 L11,20 L9,20 L9,10 Z M13,10 L15,10 L15,20 L13,20 L13,10 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Trash">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Combined-Shape" fill="#757575" xlink:href="#path-1"></use>
+            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
+                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

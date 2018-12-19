@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/share</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M14.6999998,9.72191139 C7.70415051,9.96341516 4.81415235,11.8747806 4.66167505,14.6169059 C6.23258134,12.583655 9.53267463,11.4282633 14.6999998,11.24258 L14.6999998,14 L18.3999999,10.5 L14.6999998,7 L14.6999998,9.72191139 Z M13,12.9934583 C1.26746203,14.0453608 6.32834487,21 6.32834487,21 C4.61112022,21 -3.01359727,9.51726406 13,8.17811879 L13,3 L21,10.5 L13,18 L13,12.9934583 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/share">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Combined-Shape" fill="#757575" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
+                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

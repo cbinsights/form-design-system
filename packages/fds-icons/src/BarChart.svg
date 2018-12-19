@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Bar Chart </title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M3,21 L3,12 L5,12 L5,21 L3,21 Z M7,21 L7,16 L9,16 L9,21 L7,21 Z M11,21 L11,8 L13,8 L13,21 L11,21 Z M15,21 L15,3 L17,3 L17,21 L15,21 Z M19,21 L19,14 L21,14 L21,21 L19,21 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Bar-Chart-">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Combined-Shape" fill="#D8D8D8" transform="translate(12.000000, 12.000000) rotate(90.000000) translate(-12.000000, -12.000000) " xlink:href="#path-1"></use>
+            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
+                <g transform="translate(-45.000000, -48.000000)" id="Rectangle-6">
+                    <rect x="0" y="0" width="100" height="100"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
