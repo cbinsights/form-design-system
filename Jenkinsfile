@@ -79,8 +79,8 @@ pipeline {
     stage('Build') {
       steps {
         ansiColor('xterm') {
-          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn build:full"
-          sh "docker run --rm ${DOCKER_IMAGE_NAME} ls ./packages/fds-dictionary/"
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn build:full"
+          sh "docker run ${DOCKER_IMAGE_NAME} ls ./packages/fds-dictionary/"
         }
       }
     }
