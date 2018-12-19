@@ -88,7 +88,7 @@ pipeline {
     stage('Publish npm packages') {
       steps {
         ansiColor('xterm') {
-          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${GIT_TAG}"
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${GIT_TAG}"
         }
       }
     }
