@@ -8,6 +8,8 @@
     "dist"
   ],
   "scripts": {
+    "setupDist": "rm -rf ./dist && mkdir ./dist",
+    "export": "yarn setupDist && node ./scripts/exportFromSketch.js",
     "build": "echo 'build'"
   },
   "repository": {

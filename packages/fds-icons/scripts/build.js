@@ -1,7 +1,9 @@
-// 1. SVGO source icons
-// 2. dump raw files into `dist/raw`
-// 2. Generate react components from `dist/raw`
-// 3. webpack that shit to `dist/components/`
+/* eslint-disable no-unused-vars */
+// 0. Export slices from sketch
+// 1. flatten & rename export dir to `dist/raw`
+// 2. SVGO source icons in-place
+// 4. Generate react components from `dist/raw`
+// 3. webpack that shit to `lib/react/`
 
 const SVGO = require('svgo');
 
@@ -51,4 +53,6 @@ const svgo = new SVGO({
   ],
 });
 
-// svgo.optimize(dataFromReadFile, {filepath: 'wtf'}).then((result) => result);
+/*
+svgo.optimize(dataFromReadFile, {filepath: 'wtf'}).then((result) => result);
+*/
