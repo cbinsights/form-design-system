@@ -5,6 +5,7 @@
 }
 
 .avatarRow-item {
+  box-sizing: border-box;
   display: inline-block;
   flex-shrink: 1;
   overflow: visible;
