@@ -21,7 +21,7 @@ yarn add -D fds-icons
 ```
 import CloudIcon from 'fds-icons/dist/react/CloudIcon';
 
-const SomeComponent = () => {
+const UploadButton = () => {
   <button>
     <CloudIcon />
     Upload yourself to the cloud
@@ -33,7 +33,7 @@ const SomeComponent = () => {
 ```
 import cloudSvg from 'fds-icons/dist/raw/Cloud.svg';
 
-const SomeComponent = () => {
+const LookAtCloudComponent = () => {
   <p>Check out this cloud: {cloudSvg}</p>
 }
 ```
