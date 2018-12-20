@@ -50,7 +50,7 @@ const LookAtCloudComponent = () => {
 Command | Description
 ------- | ------------
 `yarn build` | builds docs, minified SVG files to `dist/raw`, and react components to `dist/react`
-`yarn export <path to sketch file>` | exports icons as SVG from a sketch file to `src/`
+`yarn export <sketch file>` | exports icons as SVG from a sketch file to `src/`
 
 ### Regenerating `dist/` and docs
 The `dist/` dir contains the following build artifacts:
