@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * @module exportFromSketch
  *
@@ -66,6 +67,7 @@ exec(`sketchtool list slices "${PATH_SKETCH_FILE}"`, (error, result) => {
   // export all slices to SVG files
   exec(getExportCmd(PATH_SKETCH_FILE, PATH_SVG_DEST, sliceIds), (exportError) => {
     if (error) throw new Error(`exec error: ${exportError}`);
+    console.info('Slices exported');
 
     // clean up the messy exports from sketch
     cleanExports();

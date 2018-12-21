@@ -10,7 +10,7 @@
   "scripts": {
     "setupDist": "rm -rf ./dist && mkdir ./dist",
     "export": "node ./scripts/exportFromSketch.js",
-    "build": "echo 'build'"
+    "build": "yarn setupDist && node ./scripts/build.js"
   },
   "repository": {
     "type": "git",

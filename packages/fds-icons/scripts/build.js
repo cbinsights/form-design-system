@@ -1,11 +1,20 @@
-/* eslint-disable no-unused-vars */
-// 0. Export slices from sketch
-// 1. flatten & rename export dir to `dist/raw`
-// 2. SVGO source icons in-place
-// 4. Generate react components from `dist/raw`
-// 3. webpack that shit to `lib/react/`
+/**
+ * Builds `dist/` for icons package.
+ *
+ * 1. optimize `src/svg` into `dist/raw`
+ * 2. generate react components to `dist/react`
+ * 3. generate docs to `<repo_root>/docs/fds-icons/index.html`
+ */
 
+const fs = require('fs');
+const path = require('path');
+const glob = require('glob');
 const SVGO = require('svgo');
+const { buildConfig } = require('../icons.config');
+
+if (!fs.existsSync(buildConfig.output)) {
+  fs.mkdirSync(buildConfig.output);
+}
 
 const svgo = new SVGO({
   floatPrecision: 4,
@@ -53,6 +62,18 @@ const svgo = new SVGO({
   ],
 });
 
-/*
-svgo.optimize(dataFromReadFile, {filepath: 'wtf'}).then((result) => result);
-*/
+const optimizeFile = (filepath) => {
+  const fileName = path.basename(filepath);
+  const data = fs.readFileSync(filepath);
+  console.info(`Optimizing ${fileName}`);
+  svgo.optimize(data, { filepath }).then((result) => {
+    fs.writeFileSync(`${buildConfig.output}/${fileName}`, result.data);
+  });
+};
+
+glob(`${buildConfig.input}/**/*.svg`, {}, (error, files) => {
+  if (error) throw new Error(`glob error: ${error}`);
+  files.forEach(optimizeFile);
+  console.info('\n---------------------------');
+  console.info('SUCCESS - good job very nice');
+});
