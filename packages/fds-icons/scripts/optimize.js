@@ -1,19 +1,11 @@
-/**
- * Builds `dist/` for icons package.
- *
- * 1. optimize `src/svg` into `dist/raw`
- * 2. generate react components to `dist/react`
- * 3. generate docs to `<repo_root>/docs/fds-icons/index.html`
- */
-
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const SVGO = require('svgo');
 const { buildConfig } = require('../icons.config');
 
-if (!fs.existsSync(buildConfig.output)) {
-  fs.mkdirSync(buildConfig.output);
+if (!fs.existsSync(buildConfig.raw.output)) {
+  fs.mkdirSync(buildConfig.raw.output);
 }
 
 const svgo = new SVGO({
@@ -62,18 +54,21 @@ const svgo = new SVGO({
   ],
 });
 
+/**
+ * @param {String} filepath
+ * @returns {undefined}
+ */
 const optimizeFile = (filepath) => {
   const fileName = path.basename(filepath);
   const data = fs.readFileSync(filepath);
-  console.info(`Optimizing ${fileName}`);
   svgo.optimize(data, { filepath }).then((result) => {
-    fs.writeFileSync(`${buildConfig.output}/${fileName}`, result.data);
+    fs.writeFileSync(`${buildConfig.raw.output}/${fileName}`, result.data);
   });
 };
 
-glob(`${buildConfig.input}/**/*.svg`, {}, (error, files) => {
+glob(`${buildConfig.raw.input}/**/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
+  console.info(`Optimizing ${files.length} SVG files...`);
   files.forEach(optimizeFile);
-  console.info('\n---------------------------');
-  console.info('SUCCESS - good job very nice');
+  console.info(`Successfully optimized ${files.length} files`);
 });

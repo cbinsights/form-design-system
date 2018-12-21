@@ -10,7 +10,10 @@
   "scripts": {
     "setupDist": "rm -rf ./dist && mkdir ./dist",
     "export": "node ./scripts/exportFromSketch.js",
-    "build": "yarn setupDist && node ./scripts/build.js"
+    "dist:optimize": "node ./scripts/optimize.js",
+    "dist:react": "node ./scripts/createComponents.js",
+    "dist:compile": "echo 'compile with babel'",
+    "build": "yarn setupDist && yarn dist:optimize && yarn dist:react"
   },
   "repository": {
     "type": "git",

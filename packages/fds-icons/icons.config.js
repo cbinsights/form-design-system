@@ -14,7 +14,13 @@ module.exports = {
 
   // options for building `src/` to `dist/`
   buildConfig: {
-    input: path.resolve(__dirname, 'src/'),
-    output: path.resolve(__dirname, 'dist/raw/'),
+    raw: {
+      input: path.resolve(__dirname, 'src/'),
+      output: path.resolve(__dirname, 'dist/raw/'),
+    },
+    react: {
+      input: path.resolve(__dirname, 'dist/raw'),
+      output: path.resolve(__dirname, 'dist/react/'),
+    },
   },
 };
