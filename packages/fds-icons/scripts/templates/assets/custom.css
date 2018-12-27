@@ -1,0 +1,55 @@
+:root {
+  --font-family-mono: "IBM Plex Mono","Menlo","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier", monospace;
+}
+
+body {
+  font-size: 16px;
+  padding: 1rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+  background: #333;
+  text-rendering: geometricPrecision; /* stylelint-disable-line */
+}
+
+.bounds {
+  margin: 0 auto;
+  max-width: 1240px;
+  margin-bottom: 32px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+code {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: var(--font-family-mono);
+}
+
+.shapeList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.shapeList-shape {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.shape-svg {
+  outline: red;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+}

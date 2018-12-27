@@ -13,7 +13,9 @@
     "dist:optimize": "node ./scripts/optimize.js",
     "dist:react": "node ./scripts/createComponents.js",
     "dist:compile": "babel ./dist/react/ --out-dir ./dist/react/",
-    "build": "yarn setupDist && yarn dist:optimize && yarn dist:react && yarn dist:compile"
+    "build:dist": "yarn setupDist && yarn dist:optimize && yarn dist:react && yarn dist:compile",
+    "build:docs": "node ./scripts/buildDocs.js",
+    "build": "yarn build:dist && yarn build:docs"
   },
   "repository": {
     "type": "git",

@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 const fs = require('fs');
-const path = require('path');
 const glob = require('glob');
 const svgtojsx = require('svg-to-jsx');
 const createIconComponent = require('./templates/iconComponent');
+const getComponentName = require('./helpers/getComponentName');
 const { buildConfig } = require('../icons.config');
 
 if (!fs.existsSync(buildConfig.react.output)) {
@@ -16,9 +16,9 @@ if (!fs.existsSync(buildConfig.react.output)) {
  */
 const svgToComponent = (filepath) => {
   const svgData = fs.readFileSync(filepath);
-  const iconName = `${path.basename(filepath, '.svg')}Icon`;
+  const iconName = getComponentName(filepath);
 
-  svgtojsx(svgData).then((jsx) => {
+  svgtojsx(svgData, {}).then((jsx) => {
     console.info(`Creating ${iconName} component`);
     fs.writeFileSync(
       `${buildConfig.react.output}/${iconName}.jsx`,

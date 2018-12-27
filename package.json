@@ -95,7 +95,8 @@
       ]
     },
     "ignore": [
-      "packages/**/*.test.{js,jsx}"
+      "packages/**/*.test.{js,jsx}",
+      "packages/**/assets/*.css"
     ]
   },
   "version": "1.11.0"
