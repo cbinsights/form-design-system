@@ -76,6 +76,14 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        ansiColor('xterm') {
+          sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn build:full"
+        }
+      }
+    }
+
     stage('Publish npm packages') {
       steps {
         ansiColor('xterm') {
