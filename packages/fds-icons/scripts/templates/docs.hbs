@@ -12,11 +12,11 @@
 <body>
   <section class="bounds">
     <ul class="shapeList">
-      {{#each this.icons}}
+      {{#each this}}
         <li class="shapeList-shape">
-          <div class="shape-svg">{{{svg}}}</div>
-          <code class="shape-name">{{name}}</code>
-          <code class="component-name">{{componentName}}</code>
+          <div class="shape-svg">{{{this.svg}}}</div>
+          <code class="shape-name">{{this.name}}</code>
+          <code class="import-name">{{this.importName}}</code>
         </li>
       {{/each}}
     </ul>

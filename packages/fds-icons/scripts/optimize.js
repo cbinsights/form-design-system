@@ -8,51 +8,51 @@ if (!fs.existsSync(buildConfig.raw.output)) {
   fs.mkdirSync(buildConfig.raw.output);
 }
 
-const svgo = new SVGO({
+const SVGO_OPTIONS = {
   floatPrecision: 4,
-  plugins: [
-    { cleanupAttrs: true },
-    { removeDoctype: true },
-    { removeXMLProcInst: true },
-    { removeComments: true },
-    { removeMetadata: true },
-    { removeTitle: true },
-    { removeDesc: true },
-    { removeUselessDefs: true },
-    { removeXMLNS: true },
-    { removeEditorsNSData: true },
-    { removeEmptyAttrs: true },
-    { removeHiddenElems: true },
-    { removeEmptyText: true },
-    { removeEmptyContainers: true },
-    { removeViewBox: true },
-    { cleanupEnableBackground: true },
-    { minifyStyles: true },
-    { convertStyleToAttrs: true },
-    { convertColors: true },
-    { convertPathData: true },
-    { convertTransform: true },
-    { removeUnknownsAndDefaults: true },
-    { removeNonInheritableGroupAttrs: true },
-    { removeUselessStrokeAndFill: true },
-    { removeUnusedNS: true },
-    { cleanupIDs: true },
-    { cleanupNumericValues: true },
-    { cleanupListOfValues: true },
-    { moveElemsAttrsToGroup: true },
-    { moveGroupAttrsToElems: true },
-    { collapseGroups: true },
-    { removeRasterImages: true },
-    { mergePaths: true },
-    { convertShapeToPath: true },
-    { sortAttrs: true },
-    { removeDimensions: true },
-    { removeAttrs: true },
-    { removeElementsByAttr: true },
-    { removeStyleElement: true },
-    { removeScriptElement: true },
-  ],
-});
+};
+
+const SVGO_PLUGINS = [
+  { cleanupAttrs: true },
+  { removeDoctype: true },
+  { removeXMLProcInst: true },
+  { removeComments: true },
+  { removeMetadata: true },
+  { removeTitle: true },
+  { removeDesc: true },
+  { removeUselessDefs: true },
+  { removeXMLNS: true },
+  { removeEditorsNSData: true },
+  { removeEmptyAttrs: true },
+  { removeHiddenElems: true },
+  { removeEmptyText: true },
+  { removeEmptyContainers: true },
+  { removeViewBox: false },
+  { cleanupEnableBackground: true },
+  { minifyStyles: true },
+  { convertStyleToAttrs: true },
+  { convertColors: true },
+  { convertPathData: true },
+  { convertTransform: true },
+  { removeUnknownsAndDefaults: true },
+  { removeNonInheritableGroupAttrs: true },
+  { removeUselessStrokeAndFill: true },
+  { removeUnusedNS: true },
+  { cleanupNumericValues: true },
+  { cleanupListOfValues: true },
+  { moveElemsAttrsToGroup: true },
+  { moveGroupAttrsToElems: true },
+  { collapseGroups: true },
+  { removeRasterImages: true },
+  { mergePaths: true },
+  { convertShapeToPath: true },
+  { sortAttrs: true },
+  { removeDimensions: true },
+  { removeAttrs: true },
+  { removeElementsByAttr: true },
+  { removeStyleElement: true },
+  { removeScriptElement: true },
+];
 
 /**
  * @param {String} filepath
@@ -60,10 +60,19 @@ const svgo = new SVGO({
  */
 const optimizeFile = (filepath) => {
   const fileName = path.basename(filepath);
+  const iconName = path.basename(filepath, '.svg');
   const data = fs.readFileSync(filepath);
-  svgo.optimize(data, { filepath }).then((result) => {
-    fs.writeFileSync(`${buildConfig.raw.output}/${fileName}`, result.data);
-  });
+
+  // thanks to a poor design decision by SVGO, we must create
+  // a new instance for each icon so IDs can be local-scope prefixed
+  new SVGO({
+    ...SVGO_OPTIONS,
+    plugins: [...SVGO_PLUGINS, { cleanupIDs: { prefix: iconName } }],
+  })
+    .optimize(data, { filepath })
+    .then((result) => {
+      fs.writeFileSync(`${buildConfig.raw.output}/${fileName}`, result.data);
+    });
 };
 
 glob(`${buildConfig.raw.input}/**/*.svg`, {}, (error, files) => {

@@ -18,7 +18,7 @@ const svgToComponent = (filepath) => {
   const svgData = fs.readFileSync(filepath);
   const iconName = getComponentName(filepath);
 
-  svgtojsx(svgData, {}).then((jsx) => {
+  svgtojsx(svgData).then((jsx) => {
     console.info(`Creating ${iconName} component`);
     fs.writeFileSync(
       `${buildConfig.react.output}/${iconName}.jsx`,

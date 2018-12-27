@@ -9,26 +9,27 @@ if (!fs.existsSync(buildConfig.docs.output)) {
   fs.mkdirSync(buildConfig.docs.output);
 }
 
+Handlebars.registerHelper('json', (c) => JSON.stringify(c, null, 2));
 const template = Handlebars.compile(
   fs.readFileSync(path.join(__dirname, '/templates/docs.hbs')).toString()
 );
 
-const docsView = []; // template view for handlebars
-
 glob(`${buildConfig.docs.input}/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
 
+  // template view for handlebars
+  const docsView = [];
+
   files.forEach((filepath) => {
     const svg = fs.readFileSync(filepath).toString();
+    const componentName = getComponentName(filepath);
+
     docsView.push({
       svg,
       name: path.basename(filepath, '.svg'),
-      componentName: getComponentName(filepath),
+      importName: `import ${componentName} from 'fds-icons/dist/react/${componentName}';`,
     });
   });
 
-  fs.writeFileSync(
-    `${buildConfig.docs.output}/index.html`,
-    template({ icons: docsView })
-  );
+  fs.writeFileSync(`${buildConfig.docs.output}/index.html`, template(docsView));
 });
