@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.20] `fds-icons`
+
+#### **Changes**
+- Adds `fds-icons` package
+
 ## [1.19]
 
 #### **Changes**
