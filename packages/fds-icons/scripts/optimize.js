@@ -48,7 +48,7 @@ const SVGO_PLUGINS = [
   { convertShapeToPath: true },
   { sortAttrs: true },
   { removeDimensions: true },
-  { removeAttrs: true },
+  { removeAttrs: { attrs: '(fill|stroke)' } },
   { removeElementsByAttr: true },
   { removeStyleElement: true },
   { removeScriptElement: true },
