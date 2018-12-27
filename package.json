@@ -60,6 +60,7 @@
     "rimraf": "^2.6.2",
     "style-dictionary": "^2.3.0",
     "stylelint": "^9.5.0",
+    "svg-to-jsx": "^1.0.0",
     "svgo": "^1.1.1",
     "tinycolor2": "^1.4.1",
     "webpack": "^4.17.1",

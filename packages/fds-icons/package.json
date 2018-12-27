@@ -12,8 +12,8 @@
     "export": "node ./scripts/exportFromSketch.js",
     "dist:optimize": "node ./scripts/optimize.js",
     "dist:react": "node ./scripts/createComponents.js",
-    "dist:compile": "echo 'compile with babel'",
-    "build": "yarn setupDist && yarn dist:optimize && yarn dist:react"
+    "dist:compile": "babel ./dist/react/ --out-dir ./dist/react/",
+    "build": "yarn setupDist && yarn dist:optimize && yarn dist:react && yarn dist:compile"
   },
   "repository": {
     "type": "git",
