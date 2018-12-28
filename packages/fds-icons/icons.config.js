@@ -19,7 +19,7 @@ module.exports = {
       output: path.resolve(__dirname, 'dist/raw/'),
     },
     react: {
-      input: path.resolve(__dirname, 'dist/raw/'),
+      input: path.resolve(__dirname, 'src/'),
       output: path.resolve(__dirname, 'dist/react/'),
     },
     docs: {

@@ -19,6 +19,9 @@
   "devDependencies": {
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
+    "@svgr/core": "^4.1.0",
+    "@svgr/plugin-jsx": "^4.1.0",
+    "@svgr/plugin-svgo": "^4.0.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
@@ -60,8 +63,6 @@
     "rimraf": "^2.6.2",
     "style-dictionary": "^2.3.0",
     "stylelint": "^9.5.0",
-    "svg-to-jsx": "^1.0.0",
-    "svgo": "^1.1.1",
     "tinycolor2": "^1.4.1",
     "webpack": "^4.17.1",
     "webpack-blocks": "^1.0.0"
