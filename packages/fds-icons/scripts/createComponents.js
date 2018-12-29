@@ -10,12 +10,14 @@ if (!fs.existsSync(buildConfig.react.output)) {
   fs.mkdirSync(buildConfig.react.output);
 }
 
+/**
+ * @param {String} iconName
+ * @returns {Object} configuration for svgr
+ */
 const getSvgrConfig = (iconName) => ({
   plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
   ext: 'jsx',
   prettier: false,
-  // TODO: use fds-dictionary to set color attr
-  // replaceAttrValues: { 'fill': FDS.COLOR_CHARCOAL },
   svgo: true,
   svgoConfig: {
     svgoOptions,
