@@ -34,4 +34,8 @@ glob(`${buildConfig.docs.input}/*.svg`, {}, (error, files) => {
 
   fs.writeFileSync(`${buildConfig.docs.output}/index.html`, template(docsView));
   fs.copySync(PATH_ASSETS, `${buildConfig.docs.output}/assets`);
+  fs.copySync(
+    path.join(__dirname, '../src/fds-icons.css'),
+    `${buildConfig.docs.output}/assets/fds-icons.css`
+  );
 });

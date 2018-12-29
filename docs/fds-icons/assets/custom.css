@@ -58,7 +58,6 @@ code {
 
 .shape-svg svg {
   fill: #fff;
-  shape-rendering: geometricPrecision;
 }
 
 .shape-name {

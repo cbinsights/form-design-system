@@ -20,5 +20,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/cbinsights/form-design-system.git"
- }
+ },
+  "dependencies": {
+    "fds-dictionary": "^1.19.22"
+  }
 }

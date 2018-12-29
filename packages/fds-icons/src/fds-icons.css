@@ -1,0 +1,18 @@
+@import "fds-dictionary/dist/css/customProperties";
+
+/**
+ * The SVG element.
+ * Render with geometric precision to avoid fuzzy rendering.
+ */
+.fds-icon {
+  color: var(--color-charcoal);
+  shape-rendering: geometricPrecision;
+}
+
+/**
+ * Sketch exports messy masks.
+ * We hide all `mask` elements by default.
+ */
+.fds-icon mask {
+  visibility: hidden;
+}

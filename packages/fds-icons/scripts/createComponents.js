@@ -21,6 +21,7 @@ const getSvgrConfig = (iconName) => ({
     svgoOptions,
     plugins: [...svgoPlugins, { cleanupIDs: { prefix: iconName } }],
   },
+  svgProps: { className: 'fds-icon' },
 });
 
 /**
@@ -34,8 +35,6 @@ const svgToComponent = (filepath) => {
   svgr(svgData, getSvgrConfig(iconName), {
     componentName: getComponentName(iconName),
   }).then((component) => {
-    console.warn('GENERATED COMPONENT:');
-    console.log(component);
     fs.writeFileSync(`${buildConfig.react.output}/${iconName}.jsx`, component);
   });
 };
@@ -43,7 +42,6 @@ const svgToComponent = (filepath) => {
 glob(`${buildConfig.react.input}/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
   console.info('Creating react components');
-  svgToComponent(files[0]);
-  // files.forEach(svgToComponent);
+  files.forEach(svgToComponent);
   console.info('Success - react components created');
 });

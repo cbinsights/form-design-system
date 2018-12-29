@@ -8,13 +8,14 @@
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i" rel="stylesheet">
   <link rel="stylesheet" href="assets/pure-min.css" type="text/css">
   <link rel="stylesheet" href="assets/custom.css" type="text/css">
+  <link rel="stylesheet" href="assets/fds-icons.css" type="text/css">
 </head>
 <body>
   <section class="bounds">
     <ul class="shapeList">
       {{#each this}}
         <li class="shapeList-shape">
-          <div class="shape-svg">{{{this.svg}}}</div>
+          <div class="shape-svg fds-icon">{{{this.svg}}}</div>
           <code class="shape-name">{{this.name}}</code>
           <!--code class="import-name">{{this.importName}}</code-->
         </li>
