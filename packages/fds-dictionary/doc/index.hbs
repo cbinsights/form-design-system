@@ -12,7 +12,10 @@
   </head>
   <body>
     <section class="bounds">
+      <p><a href="https://cbinsights.github.io/form-design-system/">&larr; docs index</a></p>
       <p><a href="https://github.com/cbinsights/form-design-system">&larr; github</a></p>
+    </section>
+    <section class="bounds">
       <h1><code>fds-dictionary</code></h1>
       <div style="font-size: 18px;">
         <p><strong>For usage in CSS:</strong> all of the custom properties below should already be globally available in your app.</p>
@@ -131,7 +134,6 @@
       toastr.options.preventDuplicates = true;
 
       var clipboard = new ClipboardJS('.js-clipboard');
-      var copyIndicator = $('#copyIndicator');
 
       clipboard.on('success', function(e) {
         toastr.clear();

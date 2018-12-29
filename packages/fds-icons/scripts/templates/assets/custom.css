@@ -6,15 +6,22 @@ body {
   font-size: 16px;
   padding: 1rem;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.8);
+  color: #c2bfbf;
   background: #333;
   text-rendering: geometricPrecision; /* stylelint-disable-line */
 }
 
 .bounds {
   margin: 0 auto;
-  max-width: 1240px;
+  padding: 0 32px;
   margin-bottom: 32px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #fff;
 }
 
 h1,
@@ -29,6 +36,11 @@ code {
   padding: 0;
 }
 
+h1 {
+  margin-bottom: 16px;
+  color: #bbdbe5;
+}
+
 code {
   font-family: var(--font-family-mono);
 }
@@ -36,21 +48,15 @@ code {
 .shapeList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
+  margin-left: -32px;
 }
 
 .shapeList-shape {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  flex-basis: 140px;
-  padding: 1.5rem 0.5rem 0.5rem;
+  display: flex;
+  margin: 0 0 16px 32px;
 }
 
 .shape-svg {
-  outline: red;
   width: 40px;
   height: 40px;
   margin-bottom: 16px;
@@ -60,14 +66,37 @@ code {
   fill: #fff;
 }
 
-.shape-name {
-  font-size: 13px;
+.shape-desc {
+  outline: lime;
+  margin-left: 8px;
 }
 
-.import-name {
-  width: 100%;
-  margin: 4px;
-  overflow-x: scroll;
+.desc-name,
+.desc-import {
+  display: block;
+}
+
+.desc-name {
+  font-size: 18px;
+}
+
+.desc-import {
   font-size: 10px;
   font-style: italic;
+  color: #d772ad;
+  padding: 4px;
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.desc-import:hover {
+  cursor: pointer;
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+}
+
+.toast {
+  font-size: 13px;
 }
