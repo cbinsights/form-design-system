@@ -46,17 +46,8 @@ pipeline {
       steps {
         ansiColor('xterm'){
           sh "docker build -t ${DOCKER_IMAGE_NAME} ./"
+          sh "docker run ${DOCKER_IMAGE_NAME} ls packages/fds-dictionary/"
         }
-      }
-    }
-
-    stage('Install Dependencies'){
-      steps {
-        sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn install --pure-lockfile"
-        sh "docker run --rm ${DOCKER_IMAGE_NAME} yarn bootstrap"
-
-        // fail if yarn install produces unstaged changes (yarn.lock)
-        sh "docker run --rm ${DOCKER_IMAGE_NAME} git diff --exit-code"
       }
     }
 
@@ -76,19 +67,10 @@ pipeline {
       }
     }
 
-    stage('Build') {
-      steps {
-        ansiColor('xterm') {
-          sh "docker exec -d ${DOCKER_IMAGE_NAME} yarn build:full"
-          sh "docker exec -d ${DOCKER_IMAGE_NAME} ls packages/fds-dictionary/"
-        }
-      }
-    }
-
     stage('Publish npm packages') {
       steps {
         ansiColor('xterm') {
-          sh "docker exec -d ${DOCKER_IMAGE_NAME} yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${GIT_TAG}"
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${GIT_TAG}"
         }
       }
     }
