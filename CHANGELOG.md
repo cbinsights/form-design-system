@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.20] **stable**
+
+#### **Changes**
+- Fixes issue occurring in some patch versions of `1.19` where packages were published without `lib/` or `dist/` dirs.
+
 ## [1.19]
 
 #### **Changes**
