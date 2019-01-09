@@ -15,3 +15,29 @@
 .fds-icon mask {
   visibility: hidden;
 }
+
+/* size variants */
+.fds-icon--xs {
+  width: var(--media-xs);
+  height: var(--media-xs);
+}
+
+.fds-icon--s {
+  width: var(--media-s);
+  height: var(--media-s);
+}
+
+.fds-icon--m {
+  width: var(--media-m);
+  height: var(--media-m);
+}
+
+.fds-icon--l {
+  width: var(--media-l);
+  height: var(--media-l);
+}
+
+.fds-icon--xl {
+  width: var(--media-l);
+  height: var(--media-l);
+}

@@ -10,7 +10,7 @@
     "build:styles": "lerna run --scope=fds-styles build",
     "build:comp": "lerna run --scope=fds-components build",
     "build:icons": "lerna run --scope=fds-icons build",
-    "build:full": "yarn build:dict && yarn bootstrap && yarn build:styles && yarn build:comp && yarn build:icons",
+    "build:full": "yarn build:dict && yarn build:icons && yarn bootstrap && yarn build:styles && yarn build:comp",
     "test": "lerna run test --stream",
     "bootstrap": "yarn lerna bootstrap",
     "lint": "eslint ./packages/ --ext .js,.jsx",

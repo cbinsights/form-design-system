@@ -12,18 +12,18 @@ module.exports = {
     slicePrefix: 'Icon/',
   },
 
-  // options for building `src/` to `dist/`
+  // options for building `src/` to `lib/`
   buildConfig: {
     raw: {
       input: path.resolve(__dirname, 'src/'),
-      output: path.resolve(__dirname, 'dist/raw/'),
+      output: path.resolve(__dirname, 'lib/raw/'),
     },
     react: {
       input: path.resolve(__dirname, 'src/'),
-      output: path.resolve(__dirname, 'dist/react/'),
+      output: path.resolve(__dirname, 'lib/react/'),
     },
     docs: {
-      input: path.resolve(__dirname, 'dist/raw/'),
+      input: path.resolve(__dirname, 'lib/raw/'),
       output: path.resolve(__dirname, '../../docs/fds-icons/'),
     },
   },
