@@ -71,7 +71,6 @@ const svgToComponent = (filepath) => {
 glob(`${buildConfig.react.input}/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
   console.info('Creating react components');
-  // files.forEach(svgToComponent);
-  svgToComponent(files[0]);
+  files.forEach(svgToComponent);
   console.info('Success - react components created');
 });
