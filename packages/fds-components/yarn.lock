@@ -150,6 +150,20 @@ fbjs@^0.8.1:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
+fds-dictionary@^1.21.28-beta:
+  version "1.21.28-beta"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-1.21.28-beta.tgz#c03e31e235345a53ff86055b5c721dee79837743"
+  integrity sha512-QbkxpBSWTIXGNjzX6MUNOTXdFzVU2Ka3VntN6d9NIfW5SHGfbGdRc7boBO3Tr9PThYBNpHi1uDORXHlZ6oab7w==
+
+fds-icons@^1.21.28-beta:
+  version "1.21.28-beta"
+  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-1.21.28-beta.tgz#12b40be808337283d817689606b5570754e48976"
+  integrity sha512-4mlXjw0Lfne5ar1m9AQq1FNIOhm8SFj0OuVgYSFrnCatc3Vy9n5Keaaezv5i/KHJgj5nUbUrjE8BCpAYn47MBw==
+  dependencies:
+    classnames "^2"
+    fds-dictionary "^1.21.28-beta"
+    prop-types "^15"
+
 hoist-non-react-statics@^2.3.1:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
