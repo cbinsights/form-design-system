@@ -22,6 +22,8 @@
     "url": "https://github.com/cbinsights/form-design-system.git"
  },
   "dependencies": {
-    "fds-dictionary": "^1.19.22"
+    "classnames": "^2",
+    "fds-dictionary": "^1.19.22",
+    "prop-types": "^15"
   }
 }
