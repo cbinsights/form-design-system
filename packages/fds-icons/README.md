@@ -1,12 +1,6 @@
 # `fds-icons`
 Icon library for Form Design System
 
--------
-
-**Work in progress; not ready for production**
-
-------
-
 ## Getting Started
 
 ### Installation
