@@ -13,7 +13,7 @@ yarn add -D fds-icons
 
 #### As a React component (recommended)
 ```
-import CloudIcon from 'fds-icons/dist/react/CloudIcon';
+import CloudIcon from 'fds-icons/lib/react/CloudIcon';
 
 const UploadButton = () => {
   <button>
@@ -23,16 +23,21 @@ const UploadButton = () => {
 };
 ```
 
+Every Icon component from `fds-icons` accepts the following props:
+
+Prop    | Type     | Default | Description
+------- | -------- | ------- | -----------------
+`color` | `String` | `COLOR_CHARCOAL` | Color of `fill` for SVG
+`size`  | `xs`,`s`,`m`,`l`,`xl` | `s` | Standard media size of icon
+
 #### As raw SVG
 ```
-import cloudSvg from 'fds-icons/dist/raw/Cloud.svg';
+import cloudSvg from 'fds-icons/lib/raw/Cloud.svg';
 
 const LookAtCloudComponent = () => {
   <p>Check out this cloud: {cloudSvg}</p>
 }
 ```
-
-### 
 
 
 ------
