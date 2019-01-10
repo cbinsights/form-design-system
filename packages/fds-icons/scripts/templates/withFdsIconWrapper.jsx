@@ -3,37 +3,35 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-const withFdsIconWrapper = (WrappedComponent) => (props) => {
-  const classNames = cx('fds-icon', `fds-icon--${props.size}`, props.className);
+const withFdsIconWrapper = (WrappedComponent) => {
+  const IconComponent = (props) => {
+    const classNames = cx('fds-icon', `fds-icon--${props.size}`, props.className);
 
-  const otherProps = {};
-  if (props.color) {
-    otherProps.style = { fill: props.color };
-  }
-
-  class Component extends React.PureComponent {
-    render() {
-      return (
-        <div className={classNames} {...otherProps}>
-          <WrappedComponent />
-        </div>
-      );
+    const otherProps = {};
+    if (props.color) {
+      otherProps.style = { fill: props.color };
     }
-  }
 
-  Component.defaultProps = {
+    return (
+      <div className={classNames} {...otherProps}>
+        <WrappedComponent />
+      </div>
+    );
+  };
+
+  IconComponent.defaultProps = {
     size: 's',
   };
 
-  Component.propTypes = {
+  IconComponent.propTypes = {
     color: PropTypes.string,
     size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
     className: PropTypes.string,
   };
 
-  return Component;
-};
+  IconComponent.displayName = 'FdsIcon';
 
-withFdsIconWrapper.displayName = 'FdsIcon';
+  return IconComponent;
+};
 
 export default withFdsIconWrapper;
