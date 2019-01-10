@@ -1,6 +1,9 @@
 /* Foundational Styles (fds-styles) */
 @import "fds-styles/lib/fds-styles";
 
+/* Icon Styles (fds-icons) */
+/* @import "fds-icons/lib/fds-icons"; */
+
 /* Components */
 @import "./layout/flex.css";
 @import "./media/avatarRow.css";
