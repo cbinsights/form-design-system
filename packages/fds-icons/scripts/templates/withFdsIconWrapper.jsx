@@ -11,11 +11,15 @@ const withFdsIconWrapper = (WrappedComponent) => (props) => {
     otherProps.style = { fill: props.color };
   }
 
-  const Component = (
-    <div className={classNames} {...otherProps}>
-      <WrappedComponent />
-    </div>
-  );
+  class Component extends React.PureComponent {
+    render() {
+      return (
+        <div className={classNames} {...otherProps}>
+          <WrappedComponent />
+        </div>
+      );
+    }
+  }
 
   Component.defaultProps = {
     size: 's',
