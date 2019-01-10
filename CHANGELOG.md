@@ -17,6 +17,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [1.21] `fds-icons`
+
+#### **Changes**
+- Adds `fds-icons` package to `form-design-system`
+  - [Documentation](https://cbinsights.github.io/form-design-system/fds-icons/)
+  - [Github](https://github.com/cbinsights/form-design-system/tree/master/packages/fds-icons)
+- `fds-components` now imports css from `fds-icons` into main stylesheet
+
 ## [1.20] **stable**
 
 #### **Changes**

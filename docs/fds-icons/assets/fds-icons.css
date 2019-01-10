@@ -1,11 +1,22 @@
 
 /**
- * The SVG element.
- * Render with geometric precision to avoid fuzzy rendering.
+ * The wrapper element
  */
 .fds-icon {
-  color: var(--color-charcoal);
+  fill: var(--color-charcoal); /* default icon color; svg el inherits */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+* The SVG element
+ * Render with geometric precision to avoid fuzzy rendering.
+ */
+.fds-icon svg {
   shape-rendering: geometricPrecision;
+  width: 100%;
+  height: 100%;
 }
 
 /**
@@ -38,6 +49,6 @@
 }
 
 .fds-icon--xl {
-  width: var(--media-l);
-  height: var(--media-l);
+  width: var(--media-xl);
+  height: var(--media-xl);
 }
