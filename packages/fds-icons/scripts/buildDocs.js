@@ -28,7 +28,7 @@ glob(`${buildConfig.docs.input}/*.svg`, {}, (error, files) => {
     docsView.push({
       svg,
       name: path.basename(filepath, '.svg'),
-      importName: `import ${componentName} from 'fds-icons/dist/react/${componentName}';`,
+      importName: `import ${componentName} from 'fds-icons/lib/react/${componentName}';`,
     });
   });
 
