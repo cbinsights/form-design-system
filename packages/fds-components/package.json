@@ -19,7 +19,6 @@
   "dependencies": {
     "@material-ui/core": "^3.4.0",
     "classnames": "^2",
-    "fds-icons": "^1.21.28-beta",
     "fds-styles": "^1.19.22",
     "prop-types": "^15"
   },
