@@ -13,7 +13,8 @@
       "navy": { "value": "#003366" },
       "blue": { "value": "#006699" },
       "aqua": { "value": "#4CABCE" },
-      "sky": { "value": "#BBDBE5" },
+      "sky":  { "value": "#BBDBE5" },
+      "haze": { "value": "#f1f5f7" },
 
       "red": { "value": "#E5323E" },
       "orange": { "value": "#FF6633" },

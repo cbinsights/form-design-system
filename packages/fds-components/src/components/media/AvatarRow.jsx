@@ -2,6 +2,8 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
+import { withStyles } from '@material-ui/core/styles';
+import FDS from 'fds-dictionary/dist/js/styleConstants';
 
 /**
  * @param {Array} list original member list
@@ -21,7 +23,7 @@ export const getRenderConfig = (list, max) => {
  * @returns {ReactElement}
  */
 const AvatarRow = (props) => {
-  const { memberList, size, max, className } = props;
+  const { memberList, size, max, className, borderColor } = props;
   const renderConfig = getRenderConfig(memberList, max);
 
   const classNames = cx('avatarRow', `avatarRow--${size}`, className);
@@ -32,17 +34,23 @@ const AvatarRow = (props) => {
     'typemod--xxlarge': size === 'xl',
   });
 
+  const StyledAvatar = withStyles({ root: { borderColor } })(Avatar);
+
   return (
     <ul className={classNames}>
       {/* avatars */}
       {renderConfig.renderList.map((member, i) => (
         <li className="avatarRow-item" key={`${member.name.replace(/\s/g, '')}-${i}`}>
           {member.src ? (
-            <Avatar alt={member.name} src={member.src} className="avatarRow-avatar" />
+            <StyledAvatar
+              alt={member.name}
+              src={member.src}
+              className="avatarRow-avatar"
+            />
           ) : (
-            <Avatar alt={member.name} className={cx('avatarRow-avatar', fontClass)}>
+            <StyledAvatar alt={member.name} className={cx('avatarRow-avatar', fontClass)}>
               {member.name.charAt(0).toUpperCase()}
-            </Avatar>
+            </StyledAvatar>
           )}
         </li>
       ))}
@@ -50,9 +58,9 @@ const AvatarRow = (props) => {
       {/* overflow count bubble */}
       {renderConfig.count > 0 && (
         <li className="avatarRow-item">
-          <Avatar className="avatarRow-avatar avatarRow-avatar--count">
+          <StyledAvatar className="avatarRow-avatar avatarRow-avatar--count">
             <span className={cx('typemod--book', fontClass)}>+{renderConfig.count}</span>
-          </Avatar>
+          </StyledAvatar>
         </li>
       )}
     </ul>
@@ -62,6 +70,7 @@ const AvatarRow = (props) => {
 AvatarRow.defaultProps = {
   max: 3,
   size: 'm',
+  borderColor: FDS.COLOR_HAZE,
 };
 
 AvatarRow.propTypes = {
@@ -81,6 +90,9 @@ AvatarRow.propTypes = {
 
   /** Classes to pass to AvatarRow wrapper */
   className: PropTypes.string,
+
+  /** Color of background under the avatars. Used to set the border colors */
+  borderColor: PropTypes.string,
 };
 
 export default AvatarRow;

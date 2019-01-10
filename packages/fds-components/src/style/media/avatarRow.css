@@ -5,7 +5,6 @@
 }
 
 .avatarRow-item {
-  box-sizing: border-box;
   display: inline-block;
   flex-shrink: 1;
   overflow: visible;
@@ -13,16 +12,21 @@
 
 /* importants override material ui */
 .avatarRow-avatar {
+  box-sizing: border-box;
   display: inline-flex !important;
   justify-content: center;
   align-items: center;
   background-clip: content-box;
-  border: 2px solid var(--color-white);
   background-color: var(--color-sky) !important;
+
+  /* border color set by component inline */
+  border-width: 2px;
+  border-style: solid;
 }
 
 .avatarRow-avatar--count {
   background-color: var(--color-navy) !important;
+  border-color: inherit;
   color: var(--color-white);
 }
 
