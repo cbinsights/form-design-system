@@ -11,8 +11,8 @@
   },
   "main": "index.js",
   "dependencies": {
-    "@material-ui/core": "^3.3.2",
-    "fds-dictionary": "^1.19.22"
+    "@material-ui/core": "^3.1.0",
+    "fds-dictionary": "^1.21"
   },
   "gitHead": "df53ab32b610d14ec96e0a16902deff219746f5a"
 }
