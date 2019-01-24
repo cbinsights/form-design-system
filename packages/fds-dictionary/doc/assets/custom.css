@@ -88,6 +88,12 @@ code {
   font-size: 21px;
 }
 
+.js-import code:hover {
+  background-color: #f2f2f2;
+  color: #333;
+  cursor: copy;
+}
+
 .propertiesTable td:hover {
   background-color: #f2f2f2;
   color: #333;
