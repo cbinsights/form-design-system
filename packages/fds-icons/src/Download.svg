@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/download</title>
+    <title>icon/download</title>
     <desc>Created with sketchtool.</desc>
-    <defs>
-        <path d="M13,12 L13,5 L11,5 L11,12 L8,12 L12,15.5 L16,12 L13,12 Z M15,10 L21,10 L12,18 L3,10 L9,10 L9,3 L15,3 L15,10 Z M3,19 L21,19 L21,21 L3,21 L3,19 Z" id="path-1"></path>
-    </defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/download">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="Icon-13pt/Download/G" fill="#757575" xlink:href="#path-1"></use>
-            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
-                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
-            </g>
+        <g id="icon/download" fill="#404040">
+            <path d="M13,12 L13,5 L11,5 L11,12 L8,12 L12,15.5 L16,12 L13,12 Z M15,10 L21,10 L12,18 L3,10 L9,10 L9,3 L15,3 L15,10 Z M3,19 L21,19 L21,21 L3,21 L3,19 Z" id="download"></path>
         </g>
     </g>
 </svg>

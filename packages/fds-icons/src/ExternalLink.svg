@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/External Link</title>
+    <title>icon/external_link</title>
     <desc>Created with sketchtool.</desc>
-    <defs>
-        <path d="M17.9571068,7.95710678 L10.3180195,15.5961941 L8.90380592,14.1819805 L16.5428932,6.54289322 L13,3 L21,3 L21,11 L17.9571068,7.95710678 Z M10,6 L10,8 L5.9955775,8 C5.44483697,8 5,8.44573523 5,8.9955775 L5,18.0044225 C5,18.555163 5.44573523,19 5.9955775,19 L15.0044225,19 C15.555163,19 16,18.5542648 16,18.0044225 L16,14 L18,14 L18,19.0081158 C18,20.1082031 17.1066027,21 16.0081158,21 L4.99188419,21 C3.89179693,21 3,20.1066027 3,19.0081158 L3,7.99188419 C3,6.89179693 3.89339733,6 4.99188419,6 L10,6 Z" id="path-1"></path>
-    </defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/External-Link">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="External-Link" fill="#757575" xlink:href="#path-1"></use>
-            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
-                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
-            </g>
+        <g id="icon/external_link" fill="#404040">
+            <path d="M17.9571068,7.95710678 L10.3180195,15.5961941 L8.90380592,14.1819805 L16.5428932,6.54289322 L13,3 L21,3 L21,11 L17.9571068,7.95710678 Z M10,6 L10,8 L5.9955775,8 C5.44483697,8 5,8.44573523 5,8.9955775 L5,18.0044225 C5,18.555163 5.44573523,19 5.9955775,19 L15.0044225,19 C15.555163,19 16,18.5542648 16,18.0044225 L16,14 L18,14 L18,19.0081158 C18,20.1082031 17.1066027,21 16.0081158,21 L4.99188419,21 C3.89179693,21 3,20.1066027 3,19.0081158 L3,7.99188419 C3,6.89179693 3.89339733,6 4.99188419,6 L10,6 Z" id="external-link"></path>
         </g>
     </g>
 </svg>

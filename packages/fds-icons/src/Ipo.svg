@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/IPO</title>
+    <title>icon/ipo</title>
     <desc>Created with sketchtool.</desc>
     <defs>
         <path d="M17.8355103,4.92492676 L15.9057007,3 L21,3 L21,8.07940532 L19.2349243,6.30865479 L12.5410767,13.0123901 L9.06518555,9.49261475 L4.42272949,14.1484375 L2.97277832,12.7578125 L9.06518555,6.62658691 L12.5410767,10.15625 L17.8355103,4.92492676 Z M8,13.3935547 L9.06524658,12.3280029 L10,13.2515869 L10,17 L8,17 L8,13.3935547 Z M5,16.4021606 L7,14.3971558 L7,17 L5,17 L5,16.4021606 Z M13,17 L11,17 L11,14.2623901 L12.5092163,15.9020996 L13,15.4035645 L13,17 Z M14,14.3862305 L16,12.3683472 L16,17 L14,17 L14,14.3862305 Z M17,11.4073181 L19,9.40988159 L19,17 L17,17 L17,11.4073181 Z M3,19 L21,19 L21,21 L3,21 L3,19 Z" id="path-1"></path>
     </defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/IPO">
+        <g id="icon/ipo">
             <mask id="mask-2" fill="white">
                 <use xlink:href="#path-1"></use>
             </mask>
-            <use id="IPO" fill="#757575" opacity="0.9" xlink:href="#path-1"></use>
-            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
-                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
-            </g>
+            <use id="ipo" fill="#404040" xlink:href="#path-1"></use>
         </g>
     </g>
 </svg>

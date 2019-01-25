@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/caret/up</title>
+    <title>icon/caret_up</title>
     <desc>Created with sketchtool.</desc>
     <defs>
         <path d="M19.6553429,13.2228184 C19.8779719,13.4128113 20.0061918,13.690799 20.0061918,13.9834779 C20.0061918,14.5357627 19.5584765,14.9834779 19.0061918,14.9834779 L5.0000186,14.9834779 C4.70774411,14.9834779 4.43009862,14.8556107 4.24011108,14.6335091 C3.88110876,14.2138238 3.93030206,13.5825727 4.34998739,13.2235704 L11.3448667,7.24009249 C11.718768,6.92025418 12.2697777,6.91993526 12.644049,7.23934052 L19.6553429,13.2228184 Z" id="path-1"></path>
     </defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/caret/up">
+        <g id="icon/caret_up">
             <mask id="mask-2" fill="white">
                 <use xlink:href="#path-1"></use>
             </mask>
-            <use id="Combined-Shape" fill="#757575" xlink:href="#path-1"></use>
-            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
-                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
-            </g>
+            <use id="caret-up" fill="#404040" xlink:href="#path-1"></use>
         </g>
     </g>
 </svg>

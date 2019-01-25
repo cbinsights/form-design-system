@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/News</title>
+    <title>icon/news</title>
     <desc>Created with sketchtool.</desc>
-    <defs>
-        <path d="M21,18 C21,19.5 19.5,21 18,21 L6,21 C4.5,21 3,19.5 3,18 L3,10 L5,10 L6,10 L6,3 L21,3 L21,17.5 L21,18 Z M19,18 L19,17.5 L19,5 L8,5 L8,17.5 L6,17.5 L6,12 L5,12 L5,18 C4.99796972,18.3501487 5,19 5,19 L6,19 L18,19 L19,19 C19,19 19.0021969,18.3788872 19,18 Z M10,7 L17,7 L17,11.5 L10,11.5 L10,7 Z M11.5,8.5 L11.5,10 L15.5,10 L15.5,8.5 L11.5,8.5 Z M10,13 L17,13 L17,14.5 L10,14.5 L10,13 Z M10,16 L16,16 L16,17.5 L10,17.5 L10,16 Z" id="path-1"></path>
-    </defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/News">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="News" fill="#757575" xlink:href="#path-1"></use>
-            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
-                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
-            </g>
+        <g id="icon/news" fill="#404040">
+            <path d="M21,18 C21,19.5 19.5,21 18,21 L6,21 C4.5,21 3,19.5 3,18 L3,10 L6,10 L6,3 L21,3 L21,18 Z M19,18 L19,5 L8,5 L8,17.5 L6,17.5 L6,12 L5,12 L5,18 C4.99796972,18.3501487 5,19 5,19 L19,19 C19,19 19.0021969,18.3788872 19,18 Z M10,7 L17,7 L17,11.5 L10,11.5 L10,7 Z M11.5,8.5 L11.5,10 L15.5,10 L15.5,8.5 L11.5,8.5 Z M10,13 L17,13 L17,14.5 L10,14.5 L10,13 Z M10,16 L16,16 L16,17.5 L10,17.5 L10,16 Z" id="news"></path>
         </g>
     </g>
 </svg>
