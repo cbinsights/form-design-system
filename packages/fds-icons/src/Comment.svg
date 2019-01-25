@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/Comment</title>
+    <title>icon/comment</title>
     <desc>Created with sketchtool.</desc>
-    <defs>
-        <path d="M7,14 L19,14 L19,5 L5,5 L5,14 L5,16 L7,14 Z M8,16 L3,21 L3,16 L3,5 C3,3.8954305 3.8954305,3 5,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,14 C21,15.1045695 20.1045695,16 19,16 L8,16 Z" id="path-1"></path>
-    </defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/Comment">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="Combined-Shape" fill="#D8D8D8" xlink:href="#path-1"></use>
-            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
-                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
-            </g>
+        <g id="icon/comment" fill="#404040">
+            <path d="M7,14 L19,14 L19,5 L5,5 L5,16 L7,14 Z M8,16 L3,21 L3,5 C3,3.8954305 3.8954305,3 5,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,14 C21,15.1045695 20.1045695,16 19,16 L8,16 Z" id="comment"></path>
         </g>
     </g>
 </svg>

@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/Deny</title>
+    <title>icon/deny</title>
     <desc>Created with sketchtool.</desc>
-    <defs>
-        <path d="M10.363961,11.7781746 L4,5.41421356 L5.41421356,4 L11.7781746,10.363961 L18.1421356,4 L19.5563492,5.41421356 L13.1923882,11.7781746 L19.5563492,18.1421356 L18.1421356,19.5563492 L11.7781746,13.1923882 L5.41421356,19.5563492 L4,18.1421356 L10.363961,11.7781746 Z" id="path-1"></path>
-    </defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/Deny">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="Combined-Shape" fill="#404040" xlink:href="#path-1"></use>
-            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
-                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
-            </g>
+        <g id="icon/deny" fill="#404040">
+            <polygon id="Deny" points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"></polygon>
         </g>
     </g>
 </svg>

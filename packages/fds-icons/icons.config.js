@@ -9,7 +9,7 @@ module.exports = {
   sketchConfig: {
     output: path.resolve(__dirname, 'src/'),
     pageName: 'Icons',
-    slicePrefix: 'Icon/',
+    slicePrefix: 'icon/',
   },
 
   // options for building `src/` to `lib/`

@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/Lock</title>
+    <title>icon/lock</title>
     <desc>Created with sketchtool.</desc>
-    <defs>
-        <path d="M17,11 L18.9991283,11 C19.5518945,11 20,11.444837 20,11.9955775 L20,21.0044225 C20,21.5542648 19.5553691,22 18.9991283,22 L5.00087166,22 C4.4481055,22 4,21.555163 4,21.0044225 L4,11.9955775 C4,11.4457352 4.44463086,11 5.00087166,11 L7,11 L7,6.99525338 C7,4.23645112 9.24419519,2 12,2 C14.7614237,2 17,4.23603796 17,6.99525338 L17,11 Z M15,11 L15,7.00947762 C15,5.33663106 13.6568542,4 12,4 C10.3465171,4 9,5.34738902 9,7.00947762 L9,11 L15,11 Z M6,13 L6,20 L18,20 L18,13 L6,13 Z M11,15 L13,15 L13,19 L11,19 L11,15 Z" id="path-1"></path>
-    </defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/Lock">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="Lock" fill="#757575" xlink:href="#path-1"></use>
-            <g id="Color-/-Charcoal" mask="url(#mask-2)" fill="#404040">
-                <rect id="Rectangle-6" x="0" y="0" width="24" height="24"></rect>
-            </g>
+        <g id="icon/lock" fill="#404040">
+            <path d="M17,11 L18.9991283,11 C19.5518945,11 20,11.444837 20,11.9955775 L20,21.0044225 C20,21.5542648 19.5553691,22 18.9991283,22 L5.00087166,22 C4.4481055,22 4,21.555163 4,21.0044225 L4,11.9955775 C4,11.4457352 4.44463086,11 5.00087166,11 L7,11 L7,6.99525338 C7,4.23645112 9.24419519,2 12,2 C14.7614237,2 17,4.23603796 17,6.99525338 L17,11 Z M15,11 L15,7.00947762 C15,5.33663106 13.6568542,4 12,4 C10.3465171,4 9,5.34738902 9,7.00947762 L9,11 L15,11 Z M6,13 L6,20 L18,20 L18,13 L6,13 Z M11,15 L13,15 L13,19 L11,19 L11,15 Z" id="lock"></path>
         </g>
     </g>
 </svg>
