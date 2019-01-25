@@ -17,6 +17,55 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.0] Major Icon Update
+Updated `fds-icons` package with breaking changes.
+
+#### **Changes**
+- Added new icons
+
+```diff
++ActionsArrowDown
++ActionsArrowLeft
++ActionsArrowRight
++ActionsArrowUp
++AdvancedSearch
++At
++AutoBuild
++Bell
++CbiData
++CheckFilled
++CompanyCustom
++Line
++Reset
++StarEmpty
++StarFilled
++Story
++StoryAdd
++StoryExpert
++ThreeDot
++Visualize
++WorkFaster
+```
+
+#### **BREAKING CHANGES**
+Renamed a number of icons...
+
+- `Down` => `CaretDown`
+- `Right` => `CaretRight`
+- `Left` => `CaretLeft`
+- `Up` => `CaretUp`
+- `Collection` => `CollectionPublic`
+- `EmptyCheck` => `CheckEmpty`
+- `ExpertCollection` => `CollectionExpert`
+- `HanburgerBars` => `HamburgerBars`
+- `AlphabeticalAz` => `OrderAlphabeticalAz`
+- `AlphabeticalZa` => `OrderAlphabeticalZa`
+- `Ascending` => `OrderAscending`
+- `Decending` => `OrderDescending`
+- `RadioButtonEmpty` => `RadioEmpty`
+- `RadioButtonFilled` => `RadioFilled`
+
+
 ## [1.21] `fds-icons`
 
 #### **Changes**
