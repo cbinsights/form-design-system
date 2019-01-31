@@ -6,6 +6,8 @@ section: Spacing Helpers
 
 Adds padding to the given side of an element.
 
+#### Full padding
+
 class            | description
 ---------------- | ---------------------------------
 `padding--top`    | Adds standard padding to top of element
@@ -13,6 +15,16 @@ class            | description
 `padding--bottom` | Adds standard padding to bottom of element
 `padding--left`   | Adds standard padding to left of element
 `padding--all`    | Adds standard padding to all sides
+
+#### Half padding
+
+class                   | description
+----------------------- | ---------------------------------
+`padding--top--half`    | Adds half padding to top of element
+`padding--right--half`  | Adds half padding to right of element
+`padding--bottom--half` | Adds half padding to bottom of element
+`padding--left--half`   | Adds half padding to left of element
+`padding--all--half`    | Adds half padding to all sides
 */
 
 .padding--top {
@@ -33,4 +45,24 @@ class            | description
 
 .padding--all {
   padding: var(--space-default);
+}
+
+.padding--top--half {
+  padding-top: var(--space-half);
+}
+
+.padding--right--half {
+  padding-right: var(--space-half);
+}
+
+.padding--bottom--half {
+  padding-bottom: var(--space-half);
+}
+
+.padding--left--half {
+  padding-left: var(--space-half);
+}
+
+.padding--all--half {
+  padding: var(--space-half);
 }

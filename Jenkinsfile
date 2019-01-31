@@ -7,7 +7,7 @@
 * Jenkins populates the patch version with build number.
 */
 
-String VERSION = "2.0.${env.BUILD_NUMBER}"
+String VERSION = "2.1.${env.BUILD_NUMBER}"
 
 /* ---- DO NOT EDIT BELOW (unless you really know what you're doing) ---- */
 

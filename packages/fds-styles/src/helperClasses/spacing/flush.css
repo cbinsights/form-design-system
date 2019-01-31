@@ -14,6 +14,16 @@ class           | description
 `flush--bottom` | Removes bottom spacing from element
 `flush--left`   | Removes left spacing from element
 `flush--all`    | Removes spacing from all sides of an element
+
+#### Overriding `flush`
+
+Margin and padding utility classes can override a flush class:
+
+```html
+  <div class="flush--all padding--left">
+    Removes all padding, then sets padding left.
+  </div>
+```
 */
 
 .flush--top {

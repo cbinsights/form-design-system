@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.1] half spacing helpers
+
+#### **Changes**
+- Added `--half` variants to padding and spacing utility classes in `fds-styles`
+
 ## [2.0] Major Icon Update
 Updated `fds-icons` package with breaking changes.
 

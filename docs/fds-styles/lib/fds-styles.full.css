@@ -444,6 +444,16 @@ class           | description
 `flush--bottom` | Removes bottom spacing from element
 `flush--left`   | Removes left spacing from element
 `flush--all`    | Removes spacing from all sides of an element
+
+#### Overriding `flush`
+
+Margin and padding utility classes can override a flush class:
+
+```html
+  <div class="flush--all padding--left">
+    Removes all padding, then sets padding left.
+  </div>
+```
 */
 .flush--top {
   margin-top: 0 !important;
@@ -473,6 +483,8 @@ section: Spacing Helpers
 
 Adds margin to the given side of an element.
 
+#### Full margin
+
 class            | description
 ---------------- | ---------------------------------
 `margin--top`    | Adds standard margin to top of element
@@ -480,6 +492,16 @@ class            | description
 `margin--bottom` | Adds standard margin to bottom of element
 `margin--left`   | Adds standard margin to left of element
 `margin--all`    | Adds standard margin to all sides
+
+#### Half margin
+
+class                  | description
+---------------------- | ---------------------------------
+`margin--top--half`    | Adds half margin to top of element
+`margin--right--half`  | Adds half margin to right of element
+`margin--bottom--half` | Adds half margin to bottom of element
+`margin--left--half`   | Adds half margin to left of element
+`margin--all--half`    | Adds half margin to all sides
 */
 .margin--top {
   margin-top: 16px;
@@ -501,6 +523,26 @@ class            | description
   margin: 16px;
   margin: var(--space-default);
 }
+.margin--top--half {
+  margin-top: 8px;
+  margin-top: var(--space-half);
+}
+.margin--right--half {
+  margin-right: 8px;
+  margin-right: var(--space-half);
+}
+.margin--bottom--half {
+  margin-bottom: 8px;
+  margin-bottom: var(--space-half);
+}
+.margin--left--half {
+  margin-left: 8px;
+  margin-left: var(--space-half);
+}
+.margin--all--half {
+  margin: 8px;
+  margin: var(--space-half);
+}
 /*---
 title: Padding
 name: spacingPadding
@@ -509,6 +551,8 @@ section: Spacing Helpers
 
 Adds padding to the given side of an element.
 
+#### Full padding
+
 class            | description
 ---------------- | ---------------------------------
 `padding--top`    | Adds standard padding to top of element
@@ -516,6 +560,16 @@ class            | description
 `padding--bottom` | Adds standard padding to bottom of element
 `padding--left`   | Adds standard padding to left of element
 `padding--all`    | Adds standard padding to all sides
+
+#### Half padding
+
+class                   | description
+----------------------- | ---------------------------------
+`padding--top--half`    | Adds half padding to top of element
+`padding--right--half`  | Adds half padding to right of element
+`padding--bottom--half` | Adds half padding to bottom of element
+`padding--left--half`   | Adds half padding to left of element
+`padding--all--half`    | Adds half padding to all sides
 */
 .padding--top {
   padding-top: 16px;
@@ -536,6 +590,26 @@ class            | description
 .padding--all {
   padding: 16px;
   padding: var(--space-default);
+}
+.padding--top--half {
+  padding-top: 8px;
+  padding-top: var(--space-half);
+}
+.padding--right--half {
+  padding-right: 8px;
+  padding-right: var(--space-half);
+}
+.padding--bottom--half {
+  padding-bottom: 8px;
+  padding-bottom: var(--space-half);
+}
+.padding--left--half {
+  padding-left: 8px;
+  padding-left: var(--space-half);
+}
+.padding--all--half {
+  padding: 8px;
+  padding: var(--space-half);
 }
 /* Position Helpers */
 /*---
