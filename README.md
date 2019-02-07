@@ -77,7 +77,7 @@ To update the version of the design system in your branch...
 3. Submit your PR.
 
 #### Beta versions
-Jenkins will publish an npm version for any branch pushed to origin.
+Jenkins will publish all fds packages to npm on any push to origin.
 Non-master branches publish with a "beta" tag followed by the short sha1 hash for the commit.
 Pushes to `master` will publish a "latest" version.
 
