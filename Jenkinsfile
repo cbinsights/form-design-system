@@ -38,6 +38,7 @@ pipeline {
               NPM_TAG = "beta"
               break
           }
+          sh "echo ${VERSION}"
         }
       }
     }
