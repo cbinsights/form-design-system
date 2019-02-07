@@ -2,32 +2,20 @@
 
 /**
 * Set the package version here.
-* `{major}.{minor}.{patch}`
+* `{major}.{minor}`
 *
-* Jenkins populates the patch version with build number.
+* Jenkins populates the patch version depending on the branch.
 */
 
-String VERSION = "2.1.${env.BUILD_NUMBER}"
+String VERSION = "2.1"
 
 /* ---- DO NOT EDIT BELOW (unless you really know what you're doing) ---- */
 
 
-String SERVER_ENV = ""
-String TMP_FOLDER = ""
-String NPM_TAG = "beta"
+String NPM_TAG = ""
 String REPO_SLUG = "form-design-system"
-String BRANCH_NAME = "${env.BRANCH_NAME}"
+String BRANCH_NAME = env.BRANCH_NAME
 String DOCKER_IMAGE_NAME = "${REPO_SLUG}:${env.BUILD_NUMBER}"
-String GIT_TAG = "${VERSION}"
-
-switch(BRANCH_NAME) {
-  case "master":
-    NPM_TAG = "latest"
-    break
-  default:
-    GIT_TAG = "${VERSION}-beta"
-    break
-}
 
 pipeline {
   agent {
@@ -35,6 +23,24 @@ pipeline {
   }
 
   stages {
+
+    stage('Set version number') {
+      steps {
+        script {
+          switch(BRANCH_NAME) {
+            case "master":
+              VERSION = "${VERSION}.${env.BUILD_NUMBER}"
+              NPM_TAG = "latest"
+              break
+            default:
+              SHORT_COMMIT = env.GIT_COMMIT.take(7)
+              VERSION = "${VERSION}.0-beta.${SHORT_COMMIT}"
+              NPM_TAG = "beta"
+              break
+          }
+        }
+      }
+    }
 
     stage('Pull .npmrc file'){
       steps {
@@ -70,14 +76,14 @@ pipeline {
     stage('Publish npm packages') {
       steps {
         ansiColor('xterm') {
-          sh "docker run ${DOCKER_IMAGE_NAME} yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${GIT_TAG}"
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${VERSION}"
         }
       }
     }
 
     stage('Git tag build'){
       steps {
-        sh "git tag -a ${GIT_TAG} -m '${GIT_TAG} Tagged by Jenkins from branch ${BRANCH_NAME}'"
+        sh "git tag -a ${VERSION} -m '${VERSION} Tagged by Jenkins from branch ${BRANCH_NAME}'"
         sh "git push --tags"
       }
     }

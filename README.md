@@ -64,10 +64,10 @@ for this project changes, all packages will be published with the update.
 
 #### Updating version number
 We commit the major and minor version in [`Jenkinsfile`](https://github.com/cbinsights/form-design-system/blob/master/Jenkinsfile#L10).
-Jenkins populates the patch version with its build number.
+Jenkins populates the patch version based on branch.
 
 ```
-String VERSION = "1.19.${env.BUILD_NUMBER}"
+String VERSION = "1.19"
 ```
 
 To update the version of the design system in your branch...
@@ -78,10 +78,10 @@ To update the version of the design system in your branch...
 
 #### Beta versions
 Jenkins will publish an npm version for any branch pushed to origin.
-Non-master branches publish with a "beta" tag. Pushes to `master` will
-publish a "latest" version.
+Non-master branches publish with a "beta" tag followed by the short sha1 hash for the commit.
+Pushes to `master` will publish a "latest" version.
 
-Branch   | npm version
+Branch   | version
 -------- | -------------------------------------
-`master` | `X.X.X` ("latest" tag)
-`feature/some-feature-branch | `X.X.X-beta` ("beta" tag)
+`master` | `X.X.X` (npm "latest" tag)
+`feature/my-cool-feature` | `X.X.0-beta.d270ad1` (npm "beta" tag)
