@@ -183,31 +183,31 @@ fbjs@^0.8.1:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-fds-dictionary@^1.21:
-  version "1.21.36"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-1.21.36.tgz#619d309d2e1ca4225b09d90eb02b4f41bb3ce06a"
-  integrity sha512-ALy2VopjPE3YDCCbjRDho/uyBxRhPyXr9tJDa3REQgeLHqzYNiG5PGjz58ctOqQBO82FAPETYoxZixBjwRM77w==
-
 fds-dictionary@^2.2.47:
   version "2.2.47"
   resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.2.47.tgz#b59f377ca347744c48b58a041cf22011453e8fb9"
   integrity sha512-07p4HlGNOBD2T5Hlh7ezgpM0HqcjEU7WJpiYujPQxFKhtnGILpm+uVaMz/HtadRFXtDBPXCl7g+6f8unrsfCXg==
 
-fds-icons@^2.2.47:
-  version "2.2.47"
-  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.2.47.tgz#5148d22190f8d1815070b81a59c232aa84dbd49c"
-  integrity sha512-WQhosJHBSje9Jtb3W1aJ1U7VAIHidxn0U1UsytmTt2qydMywvURFWHgVrFgJ/qoDP/a9vrnc7ZJaILfjuJzykg==
+fds-dictionary@^2.2.51:
+  version "2.2.51"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.2.51.tgz#07d3f5c32ccced57871e7dbde2c143c0b3c4c892"
+  integrity sha512-xRC6Csm/16lq2lFvJ2ivQ4xAx1wer0bGgM/y3eSex+CbRP+2PYgnePE98IcBGs/7oGzUW6Qq0z3voAPKfdDCeA==
+
+fds-icons@^2.2.51:
+  version "2.2.51"
+  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.2.51.tgz#3373f69eaef327e18eedd177716f7b934ac7ca52"
+  integrity sha512-vZbT9WqixpkCfTVRXX7LQHhkNybfyo/XwQ/j4c54O9S82xibCkD/ztybpIqG1DV/jE4+C5VBdhkL8PcHDtoSqg==
   dependencies:
     classnames "^2"
-    fds-dictionary "^1.21"
+    fds-dictionary "^2.2.47"
     prop-types "^15"
 
-fds-styles@^2.2.47:
-  version "2.2.47"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.2.47.tgz#95909ab699b8624d9c2686699029098000cb8c9f"
-  integrity sha512-LB4Rv5LaawfWBwkrZtHUtfpCYa9hIH3O0qCHC5XPvnyGL0mPPUiFmBfbVgnmiMGAJZwPDgKntVM5RwCE/q1RMQ==
+fds-styles@^2.2.51:
+  version "2.2.51"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.2.51.tgz#3bb524219e84033b8f230703b49434f1b9d6165a"
+  integrity sha512-b4Oi+nTdc5DCz8UfdIBXw1Tr9hprZlm/zDS3iym7/ao+rbSCPk+NTxRd7VIlRLBLJRiW04ST2+YNbTITfpfsQg==
   dependencies:
-    fds-dictionary "^1.21"
+    fds-dictionary "^2.2.47"
 
 hoist-non-react-statics@^2.3.1:
   version "2.5.5"

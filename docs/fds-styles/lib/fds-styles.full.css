@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu Jan 10 2019 23:27:04 GMT+0000 (Coordinated Universal Time)
+ * Generated on Tue Feb 12 2019 20:00:23 GMT+0000 (Coordinated Universal Time)
  */
 :root {
  --color-charcoal: #404040;
@@ -51,6 +51,14 @@
  --space-double: 32px;
  --space-default: 16px;
  --space-half: 8px;
+ --zindex-main: 10;
+ --zindex-navigation: 20;
+ --zindex-popover: 30;
+ --zindex-banner: 40;
+ --zindex-floatingAction: 50;
+ --zindex-shim: 60;
+ --zindex-modal: 70;
+ --zindex-crazy: 80;
 }
 /* Base styles */
 /* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
