@@ -20,6 +20,6 @@
   },
   "gitHead": "df53ab32b610d14ec96e0a16902deff219746f5a",
   "dependencies": {
-    "fds-dictionary": "^1.21"
+    "fds-dictionary": "^2.2.47"
   }
 }

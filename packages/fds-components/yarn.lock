@@ -188,24 +188,24 @@ fds-dictionary@^1.21:
   resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-1.21.36.tgz#619d309d2e1ca4225b09d90eb02b4f41bb3ce06a"
   integrity sha512-ALy2VopjPE3YDCCbjRDho/uyBxRhPyXr9tJDa3REQgeLHqzYNiG5PGjz58ctOqQBO82FAPETYoxZixBjwRM77w==
 
-fds-dictionary@^2.1.45:
-  version "2.1.45"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.1.45.tgz#1fa3689a3687ae61414bb14d346abff4bc0a6dee"
-  integrity sha512-wpakJwI9P0lbJvE8qe2Qut96wp2kW30cHvKSKitmn03oae3qT4kk0WJEZtoTbSDK+WCGxf4M9Me0g6JO6fNmnQ==
+fds-dictionary@^2.2.47:
+  version "2.2.47"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.2.47.tgz#b59f377ca347744c48b58a041cf22011453e8fb9"
+  integrity sha512-07p4HlGNOBD2T5Hlh7ezgpM0HqcjEU7WJpiYujPQxFKhtnGILpm+uVaMz/HtadRFXtDBPXCl7g+6f8unrsfCXg==
 
-fds-icons@^2.1.45:
-  version "2.1.45"
-  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.1.45.tgz#a4c5cd4c189b55253e6dd5c224eae7a3db0b4725"
-  integrity sha512-McV4nJyDCimTylt8GVwIgIwliufNWk2ji3cXe2wVhpyk0/8yeHM0fqIZ7EB73SA/mEsIcKq9Mf4aHf62LfQGNw==
+fds-icons@^2.2.47:
+  version "2.2.47"
+  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.2.47.tgz#5148d22190f8d1815070b81a59c232aa84dbd49c"
+  integrity sha512-WQhosJHBSje9Jtb3W1aJ1U7VAIHidxn0U1UsytmTt2qydMywvURFWHgVrFgJ/qoDP/a9vrnc7ZJaILfjuJzykg==
   dependencies:
     classnames "^2"
     fds-dictionary "^1.21"
     prop-types "^15"
 
-fds-styles@^2.1.45:
-  version "2.1.45"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.1.45.tgz#58bea7b1b68bf0700f7cef95a4c5654f12cb080e"
-  integrity sha512-Yu2QS5mgjF4J/jv3dBGXMMbl/uWN07hO0E3YqMBXs0xcLWcUqKt6/TrdfPn94UFj2Y6AfnwDX2RRyiQn5C1CwQ==
+fds-styles@^2.2.47:
+  version "2.2.47"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.2.47.tgz#95909ab699b8624d9c2686699029098000cb8c9f"
+  integrity sha512-LB4Rv5LaawfWBwkrZtHUtfpCYa9hIH3O0qCHC5XPvnyGL0mPPUiFmBfbVgnmiMGAJZwPDgKntVM5RwCE/q1RMQ==
   dependencies:
     fds-dictionary "^1.21"
 
