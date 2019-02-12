@@ -1,0 +1,16 @@
+{
+  "layout": {
+    "zindex": {
+
+      "main":           { "value": "10" },
+      "navigation":     { "value": "20" },
+      "popover":        { "value": "30" },
+      "banner":         { "value": "40" },
+      "floatingAction": { "value": "50" },
+      "shim":           { "value": "60" },
+      "modal":          { "value": "70" },
+      "crazy":          { "value": "80" }
+
+    }
+  }
+}
