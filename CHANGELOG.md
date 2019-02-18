@@ -17,6 +17,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.3] New Icons
+
+#### **Changes**
+- Adds two icons to `fds-icons`
+  - `FunnelIcon`
+  - `NumbersIcon`
+
 ## [2.2] zindex vars
 
 #### **Changes**
