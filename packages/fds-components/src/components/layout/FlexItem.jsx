@@ -39,7 +39,11 @@ const FlexItem = (props) => {
     props.className
   );
 
-  return <div className={classNames}>{props.children}</div>;
+  return (
+    <div className={classNames} style={props.style}>
+      {props.children}
+    </div>
+  );
 };
 
 FlexItem.defaultProps = {
@@ -55,6 +59,9 @@ FlexItem.propTypes = {
 
   /** Classes to pass to flex child */
   className: PropTypes.string,
+
+  /** Styles to pass to flex child */
+  style: PropTypes.object,
 
   /** React children */
   children: PropTypes.node,

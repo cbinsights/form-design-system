@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.21] flex style
+
+#### **Changes**
+- Adds `style` prop to `Flex` and `FlexItem`.
+
 ## [2.2] zindex vars
 
 #### **Changes**
