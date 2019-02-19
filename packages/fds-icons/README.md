@@ -51,17 +51,6 @@ Command | Description
 `yarn build` | builds docs, minified SVG files to `dist/raw`, and react components to `dist/react`
 `yarn export <sketch file>` | exports icons as SVG from a sketch file to `src/`
 
-### Regenerating `dist/` and docs
-The `dist/` dir contains the following build artifacts:
-
-- optimized raw SVG files in `dist/raw`
-- react components (in the style of [material-ui](https://github.com/mui-org/material-ui/tree/master/packages/material-ui-icons)) in `dist/react`
-
-To regenerate these files, run:
-
-```
-yarn build
-```
 
 ### Updating icons from a Sketch file
 This project uses `sketchtool` to export SVG icons directly from a sketch file provided by the design team. You must have [Sketch](https://www.sketchapp.com/) installed in order to run the export command.
@@ -77,10 +66,25 @@ export PATH=$PATH:SKETCHTOOL_PATH
 ```
 
 #### Running the export
-This project uses a node script to automate `sketchtool` commands. Run it with `yarn`:
+This project uses a node script to automate `sketchtool` commands.
+Run it **from the root of the `form-design-system` repo**.
 
 ```
-yarn export <path to sketch file>
+yarn icons:export <path to sketch file>
 ```
 
-This will export SVG files to `src/`.
+This will export SVG files to `packages/fds-icons/src/`.
+
+#### Verifying changes
+A good way to verify icons exported as expected is to run a build on the icons package and check the regenerated docs.
+
+```
+yarn build:icons
+```
+
+Once the build is complete you can open `docs/fds-icons/index.html` in a browser to see
+changes/additions to the icon set.
+
+#### Bump the version number
+When adding or changing icons, please bump the minor version number for FDS. When removing
+icons, bump the major version number.
