@@ -1,0 +1,17 @@
+# global
+* @akdetrick
+
+# style dictionary
+/packages/fds-dictionary/ @akdetrick
+
+# utility stylesheet
+/packages/fds-styles/ @akdetrick
+
+# component library
+/packages/fds-components/ @akdetrick
+
+# material ui theme
+/packages/fds-mui-theme/ @akdetrick
+
+# svg/react icon set
+/packages/fds-icons/ @akdetrick
