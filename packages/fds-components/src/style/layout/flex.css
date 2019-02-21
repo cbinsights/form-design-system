@@ -116,6 +116,35 @@
   justify-self: space-around;
 }
 
+/* child grow */
+.flexItem-grow1 {
+  flex-grow: 1;
+}
+
+.flexItem-grow2 {
+  flex-grow: 2;
+}
+
+.flexItem-grow3 {
+  flex-grow: 3;
+}
+
+.flexItem-grow4 {
+  flex-grow: 4;
+}
+
+.flexItem-grow5 {
+  flex-grow: 5;
+}
+
+.flexItem-grow6 {
+  flex-grow: 6;
+}
+
+.flexItem-grow7 {
+  flex-grow: 7;
+}
+
 /* child align */
 .flexItem--alignStart {
   align-self: flex-start;

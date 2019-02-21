@@ -16,6 +16,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [2.4] FlexGrow
+
+#### **Changes**
+- Add flexGrow prop to FlexItem
 
 ## [2.3] New Icons
 
