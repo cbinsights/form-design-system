@@ -42,12 +42,12 @@ Margin and padding utility classes can override a flush class:
 }
 
 .flush--left {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 .flush--all {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
