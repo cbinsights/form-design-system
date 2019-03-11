@@ -19,9 +19,9 @@
   "dependencies": {
     "@material-ui/core": "^3.1.0",
     "classnames": "^2",
-    "fds-dictionary": "^2.2.51",
-    "fds-styles": "^2.2.51",
-    "fds-icons": "^2.2.51",
+    "fds-dictionary": "^2.5.59",
+    "fds-styles": "^2.5.59",
+    "fds-icons": "^2.5.59",
     "prop-types": "^15"
   },
   "repository": {
