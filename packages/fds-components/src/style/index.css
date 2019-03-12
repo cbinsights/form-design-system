@@ -8,6 +8,7 @@
 @import "./layout/flex.css";
 @import "./media/avatarRow.css";
 @import "./interactive/menuButton.css";
+@import "./interactive/toast.css";
 
 /* Overrides (remove when possible) */
 img,

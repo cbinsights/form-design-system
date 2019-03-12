@@ -1,0 +1,88 @@
+/**
+* Toast
+*/
+:root {
+  --toast-border-radius: 4px;
+  --toast-maxWidth: 600px;
+}
+
+.toast {
+  max-width: var(--toast-maxWidth);
+  min-width: 320px;
+  border-radius: var(--toast-border-radius);
+  box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.4);
+}
+
+.toast-content {
+  padding: var(--space-half) var(--space-default);
+}
+
+.toast-action {
+  color: var(--font-color-light) !important;
+  font-size: var(--font-size-small) !important;
+  letter-spacing: 0.12em;
+}
+
+.toast-bar {
+  height: 8px;
+  border-radius: var(--toast-border-radius) var(--toast-border-radius) 0 0;
+  overflow: hidden;
+}
+
+.toast-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toast--info .toast-bar {
+  background: var(--color-blue);
+}
+
+.toast--warn .toast-bar,
+.toast--warn .toast-icon {
+  background: var(--color-orange);
+}
+
+.toast--error .toast-bar,
+.toast--error .toast-icon {
+  background: var(--color-red);
+}
+
+.toast--success .toast-bar,
+.toast--success .toast-icon {
+  background: var(--color-green);
+}
+
+.toast--progress .toast-bar {
+  background: var(--color-sky);
+}
+
+
+.progressBar {
+  height: 100%;
+  background-color: var(--color-aqua);
+}
+
+.progressBar--amount {
+  transition: width 500ms;
+}
+
+
+@keyframes moveX {
+  0% {
+    transform: translateX(-200px);
+  }
+
+  100% {
+    transform: translateX(calc(var(--toast-maxWidth) + 200px));
+  }
+}
+
+.progressBar--continuous {
+  width: 200px;
+  animation: moveX 2500ms linear infinite;
+}
