@@ -23,6 +23,10 @@
   letter-spacing: 0.12em;
 }
 
+.toast-action:hover {
+  color: var(--font-color-default) !important;
+}
+
 .toast-bar {
   height: 8px;
   border-radius: var(--toast-border-radius) var(--toast-border-radius) 0 0;
@@ -62,12 +66,12 @@
 }
 
 
-.progressBar {
+.toast-progressBar {
   height: 100%;
   background-color: var(--color-aqua);
 }
 
-.progressBar--amount {
+.toast-progressBar--amount {
   transition: width 500ms;
 }
 
@@ -82,7 +86,7 @@
   }
 }
 
-.progressBar--continuous {
+.toast-progressBar--continuous {
   width: 200px;
   animation: moveX 2500ms linear infinite;
 }

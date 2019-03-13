@@ -1,0 +1,11 @@
+/**
+* CircularCountdown
+*/
+.circularCountdown {
+  outline: 1px dashed mediumspringgreen;
+}
+
+.circularCountdown circle {
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+}

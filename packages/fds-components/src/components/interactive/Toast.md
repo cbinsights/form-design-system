@@ -2,7 +2,7 @@
 
 ```js
 <Toast
-  content={<p className="typemod--light">Check out this <strong className="typemod--dark">cool toast</strong></p>}
+  content={<p>Check out this <strong className="typemod--dark">toast</strong></p>}
   actionLabel="Action"
   onAction={() => {}}
   type="info"

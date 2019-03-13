@@ -48,11 +48,13 @@ const Toast = ({
     <div className="toast-bar">
       {useContinuousProgressBar && (
         <div
-          className="progressBar progressBar--amount"
+          className="toast-progressBar toast-progressBar--amount"
           style={{ width: `${progress}%` }}
         />
       )}
-      {useAmountProgressBar && <div className="progressBar progressBar--continuous" />}
+      {useAmountProgressBar && (
+        <div className="toast-progressBar toast-progressBar--continuous" />
+      )}
     </div>
   );
 
@@ -114,6 +116,9 @@ Toast.propTypes = {
 
   /** Should this toast auto-dismiss itself? */
   isAutoDismiss: PropTypes.bool,
+
+  /** Delay auto-dismissal of toast by this delay (in MS) */
+  dismissDelay: PropTypes.Number,
 
   /** Is this toast user-dismissable? */
   canDismiss: PropTypes.bool,
