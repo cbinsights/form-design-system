@@ -95,6 +95,28 @@
     </section>
 
     <section class="bounds">
+      <h2>Motion</h1>
+      <table class="propertiesTable">
+        <thead>
+          <tr>
+            <th style="min-width: 360px;" id="css">CSS var</th>
+            <th id="js">JS var</th>
+            <th id="value">value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each this.motion}}
+            <tr>
+              <td class="js-clipboard" data-clipboard-text="{{this.varNames.css}}" headers="css">{{this.varNames.css}}</td>
+              <td class="js-clipboard" data-clipboard-text="{{this.varNames.js}}" headers="js">{{this.varNames.js}}</td>
+              <td class="js-clipboard" data-clipboard-text="{{this.value}}" headers="value">{{this.value}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="bounds">
       <h2>Material UI Palette</h2>
 
       <p>Palette objects following <a href="https://material.io/design/color/the-color-system.html#">material design convention of light and dark variants</a>.</p>

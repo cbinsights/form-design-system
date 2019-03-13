@@ -71,6 +71,7 @@ const formatHtmlDoc = (dictionary) => {
     color,
     font: filterByCategory(otherProps, 'font'),
     layout: filterByCategory(otherProps, 'layout'),
+    motion: filterByCategory(otherProps, 'motion'),
   });
 };
 
