@@ -86,7 +86,7 @@ Flex.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
     .isRequired,
 
-  /** dataTest to pass to flex parent */
+  /** data-test to pass to flex parent */
   dataTest: PropTypes.string,
 };
 

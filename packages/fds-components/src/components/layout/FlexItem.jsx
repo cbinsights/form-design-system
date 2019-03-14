@@ -66,7 +66,7 @@ FlexItem.propTypes = {
   /** React children */
   children: PropTypes.node,
 
-  /** dataTest to pass to flex parent */
+  /** data-test to pass to flex child */
   dataTest: PropTypes.string,
 };
 
