@@ -17,6 +17,17 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.7] data-tests
+
+#### **Changes**
+- Adds dataTest props to Flex and Flex-Item
+
+
+## [2.6] `easing` standards
+
+#### **Changes**
+- Adds motion/easing standards to `fds-dictionary`
+
 ## [2.5] React hooks
 
 #### **Changes**
