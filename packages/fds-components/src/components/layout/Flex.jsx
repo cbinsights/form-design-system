@@ -52,12 +52,17 @@ const Flex = (props) => {
     props.className
   );
 
-  return <div className={classNames}>{props.children}</div>;
+  return (
+    <div className={classNames} data-test={props.dataTest}>
+      {props.children}
+    </div>
+  );
 };
 
 Flex.defaultProps = {
   direction: 'row',
   align: 'stretch',
+  dataTest: '',
 };
 
 Flex.propTypes = {
@@ -80,6 +85,9 @@ Flex.propTypes = {
   /** React children (should be of type `FlexItem`) */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
     .isRequired,
+
+  /** data-test to pass to flex parent */
+  dataTest: PropTypes.string,
 };
 
 export default Flex;
