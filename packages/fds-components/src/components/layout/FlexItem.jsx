@@ -40,11 +40,16 @@ const FlexItem = (props) => {
     props.className
   );
 
-  return <div className={classNames}>{props.children}</div>;
+  return (
+    <div className={classNames} data-test={props.dataTest}>
+      {props.children}
+    </div>
+  );
 };
 
 FlexItem.defaultProps = {
   shrink: false,
+  dataTest: '',
 };
 
 FlexItem.propTypes = {
@@ -60,6 +65,9 @@ FlexItem.propTypes = {
 
   /** React children */
   children: PropTypes.node,
+
+  /** dataTest to pass to flex parent */
+  dataTest: PropTypes.string,
 };
 
 export default FlexItem;
