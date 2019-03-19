@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
 /**
@@ -10,7 +11,6 @@ const Toaster = ({ delay, toast }) => {
 
   /**
    * Removes a toast from `toasts` internal state array
-   * @param {String} toastId
    */
   const dismissToast = () => {
     setIsToasting(false);
@@ -30,7 +30,24 @@ const Toaster = ({ delay, toast }) => {
     };
   });
 
-  return <div className="toaster">{isToasting && toast}</div>;
+  return (
+    <div className="toaster">
+      <CSSTransition
+        in={isToasting}
+        appear
+        unmountOnExit
+        timeout={500}
+        className="toaster-trans"
+        classNames={{
+          appear: 'toaster-trans--appear',
+          enterDone: 'toaster-trans-enterDone',
+          exit: 'toaster-trans--exit',
+        }}
+      >
+        {toast}
+      </CSSTransition>
+    </div>
+  );
 };
 
 Toaster.defaultProps = {

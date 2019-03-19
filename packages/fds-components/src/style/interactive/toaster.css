@@ -1,0 +1,16 @@
+.toaster-trans {
+  transition-property: all;
+  transition-timing-function: var(--motion-easing-default);
+  opacity: 1;
+  outline: 20px solid orange;
+}
+
+.toaster-trans--appear {
+  opacity: 0;
+  outline: 20px solid greenyellow;
+}
+
+.toaster-trans--exit {
+  opacity: 0;
+  outline: 20px solid red;
+}

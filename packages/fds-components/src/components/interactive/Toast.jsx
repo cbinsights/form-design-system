@@ -117,6 +117,9 @@ Toast.propTypes = {
   /** Should this toast auto-dismiss itself? */
   isAutoDismiss: PropTypes.bool,
 
+  /** Delay auto-dismissal of toast by this delay (in MS) */
+  dismissDelay: PropTypes.Number,
+
   /** Is this toast user-dismissable? */
   canDismiss: PropTypes.bool,
 

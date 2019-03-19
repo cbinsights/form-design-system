@@ -22,7 +22,8 @@
     "fds-dictionary": "^2.5.59",
     "fds-styles": "^2.5.59",
     "fds-icons": "^2.5.59",
-    "prop-types": "^15"
+    "prop-types": "^15",
+    "react-transition-group": "2.6.1"
   },
   "repository": {
     "type": "git",
