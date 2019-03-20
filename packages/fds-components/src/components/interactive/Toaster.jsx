@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
  */
 const Toaster = ({ delay, toast }) => {
   const [isToasting, setIsToasting] = useState(Boolean(toast));
+  let clonedToast = null;
 
   /**
    * Removes a toast from `toasts` internal state array
@@ -18,7 +19,7 @@ const Toaster = ({ delay, toast }) => {
 
   // pass dismiss function down to toast
   if (toast) {
-    React.cloneElement(toast, { dismissToast });
+    clonedToast = React.cloneElement(toast, { dismissToast });
   }
 
   // set a timeout of `delay` on `toast` to dismiss itself
@@ -36,15 +37,10 @@ const Toaster = ({ delay, toast }) => {
         in={isToasting}
         appear
         unmountOnExit
-        timeout={500}
-        className="toaster-trans"
-        classNames={{
-          appear: 'toaster-trans--appear',
-          enterDone: 'toaster-trans-enterDone',
-          exit: 'toaster-trans--exit',
-        }}
+        timeout={300}
+        classNames="toaster-trans"
       >
-        {toast}
+        {clonedToast}
       </CSSTransition>
     </div>
   );

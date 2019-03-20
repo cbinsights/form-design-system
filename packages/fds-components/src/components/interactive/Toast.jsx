@@ -19,7 +19,7 @@ const Toast = ({
   // onDismiss,
   // isAutoDismiss,
   canDismiss,
-  // dismissToast /* Passed from Toaster */,
+  dismissToast /* Passed from Toaster */,
 }) => {
   const classNames = cx('toast', `toast--${type}`);
 
@@ -84,7 +84,10 @@ const Toast = ({
           {canDismiss && (
             <FlexItem shrink>
               {/* TODO: pull this out into a separate component with timer */}
-              <CircleCloseIcon size="m" color={FDS.FONT_COLOR_DEFAULT} />
+              {/* TODO: use a real button */}
+              <button onClick={dismissToast}>
+                <CircleCloseIcon size="m" color={FDS.FONT_COLOR_DEFAULT} />
+              </button>
             </FlexItem>
           )}
         </Flex>
