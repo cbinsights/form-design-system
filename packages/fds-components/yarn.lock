@@ -193,24 +193,24 @@ fds-dictionary@^2.2.51:
   resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.2.51.tgz#07d3f5c32ccced57871e7dbde2c143c0b3c4c892"
   integrity sha512-xRC6Csm/16lq2lFvJ2ivQ4xAx1wer0bGgM/y3eSex+CbRP+2PYgnePE98IcBGs/7oGzUW6Qq0z3voAPKfdDCeA==
 
-fds-dictionary@^2.5.59:
-  version "2.5.59"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.5.59.tgz#6a785b18067ea9aef11cda43593a85f3de7a6b12"
-  integrity sha512-vpuaB0zcJueaLNLNqELkWERiQMa9PyrII8rOH49UaDUUya1zZ8JBlp15Sh0/dpLcTZ6MMm+DREW9na0kFfukbg==
+fds-dictionary@^2.6:
+  version "2.7.61"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.7.61.tgz#57414d5e873950f07332a7949a91cb3a72b268f5"
+  integrity sha512-DcpFwhNYwr/00lnsViWX8CJ4N0S8Df3zU9+n8o+xXogwhm+r60+e8JSOjHAI2VuEA+gFWcAHcJVBvP8G6OKRFg==
 
-fds-icons@^2.5.59:
-  version "2.5.59"
-  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.5.59.tgz#2cbb9337aec4ef81696c7ccde3d741a3a603cde3"
-  integrity sha512-iBoDThX16gHsBbzKQkg/GRmPwsByvtgW6ouVhmXHQPX1D4W/XiXyPVQufXAGSMeQ2v1Ey0yAwqdMchQAQx7/Kg==
+fds-icons@^2.6:
+  version "2.7.61"
+  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.7.61.tgz#f58fea2836dac00e2e494245b6ea5178eb328466"
+  integrity sha512-N46dlIgf7+XXAzU641r1f2Swmr8iL4YyFXU6bjSZxFE98Pjy8EU6q48lfPb5vEpIWC7tO13R09YPbJYw40FBdA==
   dependencies:
     classnames "^2"
     fds-dictionary "^2.2.47"
     prop-types "^15"
 
-fds-styles@^2.5.59:
-  version "2.5.59"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.5.59.tgz#65418353d58e6500d2f1a0cf95703e25e5615150"
-  integrity sha512-g+h7oTfXw78YKaJZVHNiRsH3NF+rVObgkMopASYOVyd00E52SFUFHg770s8yY+b+7Rh2EqvXqQeafwgqFtN4Ig==
+fds-styles@^2.6:
+  version "2.7.61"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.7.61.tgz#b0ab20b965d9ca54d90fedad453a163b743aacb0"
+  integrity sha512-9bLFW0pQiaWg5gqnyqEUeUIIEWQk1w9i6WYImJKw10WBBf1quALrct6JtBsaaLlwohYtYOtk43cMI+T4Yv566Q==
   dependencies:
     fds-dictionary "^2.2.51"
 

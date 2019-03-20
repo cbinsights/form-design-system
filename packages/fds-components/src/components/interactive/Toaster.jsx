@@ -31,14 +31,15 @@ const Toaster = ({ delay, toast }) => {
     };
   });
 
+  /* TODO: portal this to document.body and set default styles */
   return (
     <div className="toaster">
       <CSSTransition
         in={isToasting}
         appear
         unmountOnExit
-        timeout={300}
-        classNames="toaster-trans"
+        timeout={350}
+        classNames="toast"
       >
         {clonedToast}
       </CSSTransition>
@@ -47,7 +48,7 @@ const Toaster = ({ delay, toast }) => {
 };
 
 Toaster.defaultProps = {
-  delay: 3000,
+  delay: 3000000,
 };
 
 Toaster.propTypes = {
