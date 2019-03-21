@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import FDS from 'fds-dictionary/dist/js/styleConstants';
 import CheckIcon from 'fds-icons/lib/react/CheckIcon';
 import InformationIcon from 'fds-icons/lib/react/InformationIcon';
-import CircleCloseIcon from 'fds-icons/lib/react/CircleCloseIcon';
+import DenyIcon from 'fds-icons/lib/react/DenyIcon';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import customPropTypes from '../../util/customPropTypes';
@@ -26,16 +27,24 @@ const Toast = ({
   let icon;
   switch (type) {
     case 'info':
-      icon = <InformationIcon size="l" color={FDS.COLOR_SKY} />;
+      icon = <InformationIcon size="l" color={FDS.COLOR_AQUA} />;
       break;
     case 'success':
-      icon = <CheckIcon size="s" color={FDS.COLOR_WHITE} />;
+      icon = <CheckIcon size="xs" color={FDS.COLOR_WHITE} />;
       break;
     case 'warn':
-      icon = <strong className="typemod--white typemod--large">!</strong>;
+      icon = (
+        <div role="image" className="typemod--white">
+          !
+        </div>
+      );
       break;
     case 'error':
-      icon = <strong className="typemod--white typemod--large">!</strong>;
+      icon = (
+        <div role="image" className="typemod--white">
+          !
+        </div>
+      );
       break;
     default:
       icon = null;
@@ -70,7 +79,7 @@ const Toast = ({
         <Flex align="center">
           {icon && (
             <FlexItem shrink>
-              <div className="toast-icon">{icon}</div>
+              <div className="toast-icon media--s">{icon}</div>
             </FlexItem>
           )}
           <FlexItem>{content}</FlexItem>
@@ -84,10 +93,9 @@ const Toast = ({
           {canDismiss && (
             <FlexItem shrink>
               {/* TODO: pull this out into a separate component with timer */}
-              {/* TODO: use a real button */}
-              <button onClick={dismissToast}>
-                <CircleCloseIcon size="m" color={FDS.FONT_COLOR_DEFAULT} />
-              </button>
+              <IconButton onClick={dismissToast}>
+                <DenyIcon size="xs" color={FDS.FONT_COLOR_DEFAULT} />
+              </IconButton>
             </FlexItem>
           )}
         </Flex>

@@ -14,7 +14,7 @@
 }
 
 .toast-content {
-  padding: var(--space-half) var(--space-default);
+  padding: calc(var(--space-half) / 2) var(--space-default);
 }
 
 .toast-action {
@@ -34,8 +34,6 @@
 }
 
 .toast-icon {
-  width: 34px;
-  height: 34px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
