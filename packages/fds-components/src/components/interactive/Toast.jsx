@@ -105,8 +105,10 @@ const Toast = ({
 };
 
 Toast.defaultProps = {
+  dismissDelay: 3500,
   canDismiss: true,
   isAutoDismiss: true,
+  onDismiss: () => {},
 };
 
 Toast.propTypes = {
@@ -125,20 +127,17 @@ Toast.propTypes = {
   /** Callback invoked on dismissal of toast */
   onDismiss: PropTypes.func,
 
+  /** Time in ms to auto-dismiss toast */
+  dismissDelay: PropTypes.number,
+
   /** Should this toast auto-dismiss itself? */
   isAutoDismiss: PropTypes.bool,
-
-  /** Delay auto-dismissal of toast by this delay (in MS) */
-  dismissDelay: PropTypes.Number,
 
   /** Is this toast user-dismissable? */
   canDismiss: PropTypes.bool,
 
   /** Number 1-100 declaring % progress */
   progress: customPropTypes.range(1, 100),
-
-  /** Passed by Toaster: Number 1-100 declaring % progress of dismissal countdown */
-  dismissProgress: customPropTypes.range(1, 100),
 
   /** Passed by Toaster: function to dismiss the toast */
   dismissToast: PropTypes.func,

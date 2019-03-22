@@ -10,7 +10,23 @@ Timer starts immediately on mount.
       content={<p>Check out this <strong className="typemod--dark">toast</strong></p>}
       actionLabel="Action"
       onAction={() => {}}
-      type="progress"
+      type="error"
+    />
+  }
+/>
+```
+
+### Persisting a `Toast`
+
+Use the `isAutoDismiss` prop of `Toast` to disable the dismiss timer.
+
+```js
+<Toaster
+  toast={
+    <Toast
+      isAutoDismiss={false}
+      content={<p>This is an <strong className="typemod--dark">important message</strong> that doesn't go away until a user dismisses it with the close button</p>}
+      type="info"
     />
   }
 />

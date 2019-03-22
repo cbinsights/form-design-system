@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * @module Toaster
  * Controller for showing, dismissing and positioning Toast components.
  */
-const Toaster = ({ delay, toast }) => {
+const Toaster = ({ toast }) => {
   const [isToasting, setIsToasting] = useState(Boolean(toast));
   let clonedToast = null;
 
@@ -15,6 +15,7 @@ const Toaster = ({ delay, toast }) => {
    */
   const dismissToast = () => {
     setIsToasting(false);
+    toast.props.onDismiss();
   };
 
   // pass dismiss function down to toast
@@ -22,13 +23,16 @@ const Toaster = ({ delay, toast }) => {
     clonedToast = React.cloneElement(toast, { dismissToast });
   }
 
-  // set a timeout of `delay` on `toast` to dismiss itself
+  // set a timeout for toast to dismiss itself
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
-    const timer = setTimeout(dismissToast, delay);
+    if (toast && toast.props.isAutoDismiss) {
+      const timer = setTimeout(dismissToast, toast.props.dismissDelay);
 
-    return function cleanup() {
-      clearTimeout(timer);
-    };
+      return function cleanup() {
+        clearTimeout(timer);
+      };
+    }
   });
 
   /* TODO: portal this to document.body and set default styles */
@@ -38,7 +42,7 @@ const Toaster = ({ delay, toast }) => {
         in={isToasting}
         appear
         unmountOnExit
-        timeout={350}
+        timeout={300}
         classNames="toast"
       >
         {clonedToast}
@@ -47,14 +51,7 @@ const Toaster = ({ delay, toast }) => {
   );
 };
 
-Toaster.defaultProps = {
-  delay: 3000000,
-};
-
 Toaster.propTypes = {
-  /** Length of time in MS toasts should auto-dismiss */
-  delay: PropTypes.number,
-
   /** a `Toast` element */
   toast: PropTypes.element,
 };

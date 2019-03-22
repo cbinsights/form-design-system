@@ -2,18 +2,19 @@
  * Toast transition styles, set by `Toaster` via `CSSTransition`
  */
 
-/* TODO: use standard easing vars */
-
 :root {
-  --toast-timeout: 350ms;
+  --toast-ease: cubic-bezier(0.4, 0, 0.2, 1); /* TODO: use fds-dictionary var */
+  --toast-decelerate: cubic-bezier(0, 0, 0.2, 1); /* TODO: use fds-dictionary var */
+  --toast-timeout: 300ms;
 }
 
 /* begin ENTER transition */
 .toast-appear,
 .toast-enter {
   opacity: 0.01;
-  transform: translateY(-200px);
-  transition: all var(--toast-timeout) ease-in;
+  transform: translateY(-100px);
+  transition: transform var(--toast-timeout) var(--toast-ease),
+    opacity var(--toast-timeout) var(--toast-decelerate);
 }
 
 /* end ENTER transition */
@@ -27,11 +28,12 @@
 .toast-exit {
   opacity: 1;
   transform: translateY(0);
-  transition: all var(--toast-timeout) ease-in;
+  transition: transform var(--toast-timeout) var(--toast-ease),
+    opacity var(--toast-timeout) var(--toast-decelerate);
 }
 
 /* end EXIT transition */
 .toast-exit-active {
   opacity: 0.01; /* removed from DOM on duration complete */
-  transform: translateY(-200px);
+  transform: translateY(-100px);
 }
