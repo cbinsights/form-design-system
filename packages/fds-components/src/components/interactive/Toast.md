@@ -33,8 +33,8 @@
 
 ```js
 <Toast
-  content={<p>You made a <strong className="typemod--dark">huge mistake</strong></p>}
-  actionLabel="Try again"
+  content={<p>Failed to <strong className="typemod--dark">do a thing</strong></p>}
+  actionLabel="Retry"
   onAction={() => {}}
   type="error"
 />

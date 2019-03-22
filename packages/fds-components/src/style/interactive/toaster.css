@@ -3,8 +3,6 @@
  */
 
 :root {
-  --toast-ease: cubic-bezier(0.4, 0, 0.2, 1); /* TODO: use fds-dictionary var */
-  --toast-decelerate: cubic-bezier(0, 0, 0.2, 1); /* TODO: use fds-dictionary var */
   --toast-timeout: 300ms;
 }
 
@@ -12,9 +10,9 @@
 .toast-appear,
 .toast-enter {
   opacity: 0.01;
-  transform: translateY(-100px);
-  transition: transform var(--toast-timeout) var(--toast-ease),
-    opacity var(--toast-timeout) var(--toast-decelerate);
+  transform: translateY(-200px);
+  transition: transform var(--toast-timeout) var(--motion-easing-default),
+    opacity var(--toast-timeout) var(--motion-easing-decelerate);
 }
 
 /* end ENTER transition */
@@ -28,12 +26,12 @@
 .toast-exit {
   opacity: 1;
   transform: translateY(0);
-  transition: transform var(--toast-timeout) var(--toast-ease),
-    opacity var(--toast-timeout) var(--toast-decelerate);
+  transition: transform var(--toast-timeout) var(--motion-easing-decelerate),
+    opacity var(--toast-timeout) var(--motion-easing-default);
 }
 
 /* end EXIT transition */
 .toast-exit-active {
   opacity: 0.01; /* removed from DOM on duration complete */
-  transform: translateY(-100px);
+  transform: translateY(-200px);
 }
