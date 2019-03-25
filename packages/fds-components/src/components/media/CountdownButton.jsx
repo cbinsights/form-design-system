@@ -6,7 +6,7 @@ import DenyIcon from 'fds-icons/lib/react/DenyIcon';
 import FDS from 'fds-dictionary/dist/js/styleConstants';
 
 const CountdownButton = ({ icon, duration, onClick }) => {
-  const circleSize = 30; // match MUI IconButton with xs icon inside
+  const circleSize = 40; // match MUI IconButton with xs icon inside
   const strokeWidth = '2';
   const r = (circleSize - strokeWidth) / 2;
   const c = Math.PI * r * 2;
@@ -14,12 +14,16 @@ const CountdownButton = ({ icon, duration, onClick }) => {
   const defaultCircleStyle = {
     strokeDasharray: c, // dashed stroke with dashes matching circumference
     strokeDashoffset: 0,
-    transition: `all ${duration}ms`, // transition dash offset change over props.duration
+    transition: `all ${duration}ms linear`, // transition dash offset change over props.duration
+
+    // start the countdown at "midnight" position of circle
+    transformOrigin: 'center center',
+    transform: 'rotate(-90deg)',
   };
 
   const transitionStyles = {
     entering: { strokeDashoffset: 0 },
-    entered: { strokeDashoffset: 0 }, // align empty part of the dashed stroke with circumference
+    entered: { strokeDashoffset: c }, // align empty part of the dashed stroke with circumference
   };
 
   return (
@@ -30,36 +34,39 @@ const CountdownButton = ({ icon, duration, onClick }) => {
         height: `${circleSize}px`,
       }}
     >
-      {false && (
-        <IconButton className="countdownButton-icon" onClick={onClick}>
-          {icon}
-        </IconButton>
-      )}
-      <Transition in={true} appear timeout={duration}>
-        {(state) => {
-          console.log(state);
-          return (
-            <svg
-              className="countdownButton-circle"
-              width={circleSize}
-              height={circleSize}
-              viewBox={`0 0 ${circleSize} ${circleSize}`}
-            >
-              <circle
-                cx={circleSize / 2}
-                cy={circleSize / 2}
-                r={r}
-                strokeWidth={strokeWidth}
-                fill="transparent"
-                stroke={FDS.FONT_COLOR_LIGHT}
-                style={{
-                  ...defaultCircleStyle,
-                  ...transitionStyles[state],
-                }}
-              />
-            </svg>
-          );
+      <IconButton className="countdownButton-button" onClick={onClick}>
+        {icon}
+      </IconButton>
+      <Transition
+        in={true}
+        appear
+        timeout={{
+          appear: 1,
+          enter: duration,
         }}
+        mountOnEnter
+      >
+        {(state) => (
+          <svg
+            className="countdownButton-animation"
+            width={circleSize}
+            height={circleSize}
+            viewBox={`0 0 ${circleSize} ${circleSize}`}
+          >
+            <circle
+              cx={circleSize / 2}
+              cy={circleSize / 2}
+              r={r}
+              strokeWidth={strokeWidth}
+              fill="transparent"
+              stroke={FDS.FONT_COLOR_LIGHT}
+              style={{
+                ...defaultCircleStyle,
+                ...transitionStyles[state],
+              }}
+            />
+          </svg>
+        )}
       </Transition>
     </div>
   );

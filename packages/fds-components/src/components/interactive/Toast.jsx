@@ -9,6 +9,7 @@ import InformationIcon from 'fds-icons/lib/react/InformationIcon';
 import DenyIcon from 'fds-icons/lib/react/DenyIcon';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
+import CountdownButton from '../media/CountdownButton';
 import customPropTypes from '../../util/customPropTypes';
 
 const Toast = ({
@@ -17,8 +18,8 @@ const Toast = ({
   actionLabel,
   progress,
   onAction,
-  // onDismiss,
-  // isAutoDismiss,
+  isAutoDismiss,
+  dismissDelay,
   canDismiss,
   dismissToast /* Passed from Toaster */,
 }) => {
@@ -92,10 +93,13 @@ const Toast = ({
           )}
           {canDismiss && (
             <FlexItem shrink>
-              {/* TODO: pull this out into a separate component with timer */}
-              <IconButton onClick={dismissToast}>
-                <DenyIcon size="xs" color={FDS.FONT_COLOR_DEFAULT} />
-              </IconButton>
+              {isAutoDismiss ? (
+                <CountdownButton onClick={dismissToast} duration={dismissDelay} />
+              ) : (
+                <IconButton onClick={dismissToast}>
+                  <DenyIcon size="xs" color={FDS.FONT_COLOR_DEFAULT} />
+                </IconButton>
+              )}
             </FlexItem>
           )}
         </Flex>
