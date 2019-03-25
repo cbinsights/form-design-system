@@ -12,9 +12,13 @@ const CountdownButton = ({ icon, duration, onClick }) => {
   const c = Math.PI * r * 2;
 
   const defaultCircleStyle = {
-    strokeDasharray: c, // dashed stroke with dashes matching circumference
+    // strokeDasharray sets up a dashed line in which each dash is equal to
+    // the circumference of the circle.
+    //
+    // We offset the dash by 0 to start to create a full circle
+    strokeDasharray: c,
     strokeDashoffset: 0,
-    transition: `all ${duration}ms linear`, // transition dash offset change over props.duration
+    transition: `all ${duration}ms linear`,
 
     // start the countdown at "midnight" position of circle
     transformOrigin: 'center center',
@@ -23,7 +27,10 @@ const CountdownButton = ({ icon, duration, onClick }) => {
 
   const transitionStyles = {
     entering: { strokeDashoffset: 0 },
-    entered: { strokeDashoffset: c }, // align empty part of the dashed stroke with circumference
+
+    // offsetting the dash by the exact circle circumference lines up
+    // the empty part of the dashed stroke with the circle circumference
+    entered: { strokeDashoffset: c },
   };
 
   return (
@@ -74,15 +81,14 @@ const CountdownButton = ({ icon, duration, onClick }) => {
 
 CountdownButton.defaultProps = {
   icon: <DenyIcon size="xs" color={FDS.FONT_COLOR_DEFAULT} />,
-  duration: 3500,
 };
 
 CountdownButton.propTypes = {
+  /** Duration in ms of countdown animation */
+  duration: PropTypes.number.isRequired,
+
   /** Icon component to render inside the radial countdown */
   icon: PropTypes.element,
-
-  /** Duration in ms of countdown animation */
-  duration: PropTypes.number,
 
   /** Click callback for button */
   onClick: PropTypes.func,
