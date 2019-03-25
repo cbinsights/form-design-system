@@ -4,7 +4,7 @@
   "author": "CB Insights",
   "license": "MIT",
   "scripts": {
-    "components:serve": "lerna run serve --stream --scope=fds-components",
+    "serve:comp": "lerna run serve --stream --scope=fds-components",
     "icons:export": "lerna run --scope=fds-icons export",
     "build": "lerna run build --parallel",
     "build:dict": "lerna run --scope=fds-dictionary build",
