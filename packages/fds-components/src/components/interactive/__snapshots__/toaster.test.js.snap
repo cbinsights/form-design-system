@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toaster component matches snapshot 1`] = `
+<div
+  className="toaster"
+>
+  <CSSTransition
+    appear={true}
+    classNames="toast"
+    in={true}
+    timeout={300}
+    unmountOnExit={true}
+  >
+    <Toast
+      canDismiss={true}
+      content={
+        <p>
+          test
+        </p>
+      }
+      dismissDelay={3500}
+      dismissToast={[Function]}
+      isAutoDismiss={true}
+      onDismiss={[Function]}
+      type="info"
+    />
+  </CSSTransition>
+</div>
+`;

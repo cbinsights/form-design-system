@@ -10,9 +10,6 @@ const Toaster = ({ toast }) => {
   const [isToasting, setIsToasting] = useState(Boolean(toast));
   let clonedToast = null;
 
-  /**
-   * Removes a toast from `toasts` internal state array
-   */
   const dismissToast = () => {
     setIsToasting(false);
     toast.props.onDismiss();

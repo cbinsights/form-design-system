@@ -118,60 +118,6 @@ exports[`Toast component matches snapshot (info) 1`] = `
 </div>
 `;
 
-exports[`Toast component matches snapshot (progress determinate) 1`] = `
-<div
-  aria-atomic="true"
-  aria-relevant="all"
-  className="toast toast--progress"
-  role="log"
->
-  <div
-    className="toast-bar"
-  >
-    <div
-      className="toast-progressBar toast-progressBar--amount"
-      style={
-        Object {
-          "width": "66%",
-        }
-      }
-    />
-  </div>
-  <div
-    className="toast-content"
-  >
-    <Flex
-      align="center"
-      dataTest=""
-      direction="row"
-    >
-      <FlexItem
-        dataTest=""
-        shrink={false}
-      >
-        <p>
-          lol
-        </p>
-      </FlexItem>
-      <FlexItem
-        dataTest=""
-        shrink={true}
-      >
-        <CountdownButton
-          duration={3500}
-          icon={
-            <FdsIcon
-              color="#757575"
-              size="xs"
-            />
-          }
-        />
-      </FlexItem>
-    </Flex>
-  </div>
-</div>
-`;
-
 exports[`Toast component matches snapshot (progress) 1`] = `
 <div
   aria-atomic="true"
