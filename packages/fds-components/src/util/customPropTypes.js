@@ -7,6 +7,9 @@ const customPropTypes = {};
  */
 customPropTypes.range = (start, end) => (props, propName, componentName) => {
   const val = props[propName];
+
+  if (!val) return null;
+
   if (typeof val !== 'number') {
     return new Error(`'progress' prop in ${componentName} must be a number`);
   }

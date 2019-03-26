@@ -25,31 +25,20 @@ const Toast = ({
 }) => {
   const classNames = cx('toast', `toast--${type}`);
 
-  let icon;
-  switch (type) {
-    case 'info':
-      icon = <InformationIcon size="l" color={FDS.COLOR_AQUA} />;
-      break;
-    case 'success':
-      icon = <CheckIcon size="xs" color={FDS.COLOR_WHITE} />;
-      break;
-    case 'warn':
-      icon = (
-        <div role="image" className="typemod--white">
-          !
-        </div>
-      );
-      break;
-    case 'error':
-      icon = (
-        <div role="image" className="typemod--white">
-          !
-        </div>
-      );
-      break;
-    default:
-      icon = null;
-  }
+  const icon = {
+    info: <InformationIcon size="l" color={FDS.COLOR_AQUA} />,
+    success: <CheckIcon size="xs" color={FDS.COLOR_WHITE} />,
+    warn: (
+      <div role="image" className="typemod--white">
+        !
+      </div>
+    ),
+    error: (
+      <div role="image" className="typemod--white">
+        !
+      </div>
+    ),
+  }[type];
 
   const useContinuousProgressBar = type === 'progress' && progress;
   const useAmountProgressBar = type === 'progress' && !progress;

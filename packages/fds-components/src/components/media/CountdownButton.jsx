@@ -5,11 +5,25 @@ import IconButton from '@material-ui/core/IconButton';
 import DenyIcon from 'fds-icons/lib/react/DenyIcon';
 import FDS from 'fds-dictionary/dist/js/styleConstants';
 
+/**
+ *
+ * @param {Number} circleSize bounding box size of circle in px
+ * @param {Number} strokeWidth width of circle stroke
+ */
+export const getCircleInfo = (circleSize, strokeWidth) => {
+  const radius = (circleSize - strokeWidth) / 2;
+
+  return {
+    r: radius,
+    c: Math.PI * radius * 2,
+    centerOffset: circleSize / 2,
+  };
+};
+
 const CountdownButton = ({ icon, duration, onClick }) => {
   const circleSize = 40; // match MUI IconButton with xs icon inside
   const strokeWidth = '2';
-  const r = (circleSize - strokeWidth) / 2;
-  const c = Math.PI * r * 2;
+  const { r, c, centerOffset } = getCircleInfo(circleSize, strokeWidth);
 
   const defaultCircleStyle = {
     // strokeDasharray sets up a dashed line in which each dash is equal to
@@ -61,8 +75,8 @@ const CountdownButton = ({ icon, duration, onClick }) => {
             viewBox={`0 0 ${circleSize} ${circleSize}`}
           >
             <circle
-              cx={circleSize / 2}
-              cy={circleSize / 2}
+              cx={centerOffset}
+              cy={centerOffset}
               r={r}
               strokeWidth={strokeWidth}
               fill="transparent"
