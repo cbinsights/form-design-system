@@ -40,19 +40,19 @@ const Toast = ({
     ),
   }[type];
 
-  const useContinuousProgressBar = type === 'progress' && progress;
-  const useAmountProgressBar = type === 'progress' && !progress;
+  const useContinuousProgressBar = type === 'progress' && !progress;
+  const useAmountProgressBar = type === 'progress' && progress;
 
   const toastBar = (
     <div className="toast-bar">
       {useContinuousProgressBar && (
+        <div className="toast-progressBar toast-progressBar--continuous" />
+      )}
+      {useAmountProgressBar && (
         <div
           className="toast-progressBar toast-progressBar--amount"
           style={{ width: `${progress}%` }}
         />
-      )}
-      {useAmountProgressBar && (
-        <div className="toast-progressBar toast-progressBar--continuous" />
       )}
     </div>
   );
