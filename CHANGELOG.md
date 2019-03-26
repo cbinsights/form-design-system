@@ -17,19 +17,22 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [2.8] 🍞 Toasts
+## [2.9] 🍞 Toasts
 
 #### **Changes**
 - Adds `Toast` component to `fds-components`
 - Adds `Toaster` controller component to `fds-components`
 - Adds `CountdownButton` component to `fds-components`
 
+## [2.8] Material ui theme
+
+#### **Changes**
+- Gives modals and <Modal>-based components a z-index of 9999
 
 ## [2.7] data-tests
 
 #### **Changes**
 - Adds dataTest props to Flex and Flex-Item
-
 
 ## [2.6] `easing` standards
 

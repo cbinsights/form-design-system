@@ -25,10 +25,11 @@ const UploadButton = () => {
 
 Every Icon component from `fds-icons` accepts the following props:
 
-Prop    | Type     | Default | Description
-------- | -------- | ------- | -----------------
-`color` | `String` | `COLOR_CHARCOAL` | Color of `fill` for SVG
-`size`  | `xs`,`s`,`m`,`l`,`xl` | `s` | Standard media size of icon
+Prop        | Type     | Default | Description
+----------- | -------- | ------- | -----------------
+`color`     | `String` | `COLOR_CHARCOAL` | Color of `fill` for SVG
+`size`      | `xs`,`s`,`m`,`l`,`xl` | `s` | Standard media size of icon
+`className` | `String` |         | custom class name
 
 #### As raw SVG
 ```

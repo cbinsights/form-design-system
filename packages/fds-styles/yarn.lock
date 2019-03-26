@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-fds-dictionary@^2.6:
-  version "2.7.61"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.7.61.tgz#57414d5e873950f07332a7949a91cb3a72b268f5"
-  integrity sha512-DcpFwhNYwr/00lnsViWX8CJ4N0S8Df3zU9+n8o+xXogwhm+r60+e8JSOjHAI2VuEA+gFWcAHcJVBvP8G6OKRFg==
+fds-dictionary@^2.7:
+  version "2.7.62"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.7.62.tgz#c1a1f3ca2d9612d05616127441979717deb47fba"
+  integrity sha512-CkY21pL5X8OAdg1584M0G4HS9bGeZWxjfzcuE33ggMqqKyTP9isOnn7hHuRYX+jUN9+j1YtFsXRVkJFLqy6iuA==

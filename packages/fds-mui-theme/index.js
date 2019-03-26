@@ -37,4 +37,7 @@ module.exports = {
     MuiButton,
     MuiIconButton,
   },
+  zIndex: {
+    modal: 9999,
+  },
 };
