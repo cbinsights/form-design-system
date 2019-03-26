@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
@@ -12,7 +13,6 @@ const Toaster = ({ toast }) => {
 
   const dismissToast = () => {
     setIsToasting(false);
-    toast.props.onDismiss();
   };
 
   // pass dismiss function down to toast
@@ -32,19 +32,21 @@ const Toaster = ({ toast }) => {
     }
   });
 
-  /* TODO: portal this to document.body and set default styles */
-  return (
-    <div className="toaster">
+  return ReactDOM.createPortal(
+    <div aria-live="assertive" className="toaster">
       <CSSTransition
         in={isToasting}
         appear
         unmountOnExit
         timeout={300}
         classNames="toast"
+        onExited={toast.props.onDismiss}
       >
         {clonedToast}
       </CSSTransition>
-    </div>
+    </div>,
+    // eslint-disable-next-line no-undef
+    document.body
   );
 };
 

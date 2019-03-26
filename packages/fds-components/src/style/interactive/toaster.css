@@ -6,6 +6,18 @@
   --toast-timeout: 300ms;
 }
 
+body {
+  /* ensure any page running toast uses document body as positioning reference */
+  position: relative;
+}
+
+.toaster {
+  position: fixed;
+  top: 76px; /* assumes 60px header + standard gutter */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* begin ENTER transition */
 .toast-appear,
 .toast-enter {
