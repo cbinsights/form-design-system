@@ -8,7 +8,7 @@
 
 .toast {
   max-width: var(--toast-maxWidth);
-  min-width: 320px;
+  min-width: 540px;
   border-radius: var(--toast-border-radius);
   box-shadow: 0 3px 36px 3px rgba(0, 0, 0, 0.4);
   background: var(--color-white);

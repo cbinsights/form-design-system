@@ -38,7 +38,7 @@ const Toaster = ({ toast }) => {
         in={isToasting}
         appear
         unmountOnExit
-        timeout={300}
+        timeout={380}
         classNames="toast"
         onExited={toast.props.onDismiss}
       >

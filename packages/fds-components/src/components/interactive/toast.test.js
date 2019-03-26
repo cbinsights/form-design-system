@@ -27,13 +27,6 @@ describe('Toast component', () => {
     expect(component).toMatchSnapshot();
   });
 
-  /*
-  it('matches snapshot (progress determinate)', () => {
-    const component = renderByType('progress', { progress: 66 });
-    expect(component).toMatchSnapshot();
-  });
-  */
-
   it('matches snapshot (error)', () => {
     const component = renderByType('error');
     expect(component).toMatchSnapshot();

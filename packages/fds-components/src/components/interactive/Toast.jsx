@@ -98,7 +98,7 @@ const Toast = ({
 };
 
 Toast.defaultProps = {
-  dismissDelay: 3500,
+  dismissDelay: 4000,
   canDismiss: true,
   isAutoDismiss: true,
   onDismiss: () => {},

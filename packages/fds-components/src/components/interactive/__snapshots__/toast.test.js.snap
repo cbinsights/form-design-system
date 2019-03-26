@@ -46,7 +46,7 @@ exports[`Toast component matches snapshot (error) 1`] = `
         shrink={true}
       >
         <CountdownButton
-          duration={3500}
+          duration={4000}
           icon={
             <FdsIcon
               color="#757575"
@@ -104,7 +104,7 @@ exports[`Toast component matches snapshot (info) 1`] = `
         shrink={true}
       >
         <CountdownButton
-          duration={3500}
+          duration={4000}
           icon={
             <FdsIcon
               color="#757575"
@@ -153,7 +153,7 @@ exports[`Toast component matches snapshot (progress) 1`] = `
         shrink={true}
       >
         <CountdownButton
-          duration={3500}
+          duration={4000}
           icon={
             <FdsIcon
               color="#757575"
@@ -211,7 +211,7 @@ exports[`Toast component matches snapshot (success) 1`] = `
         shrink={true}
       >
         <CountdownButton
-          duration={3500}
+          duration={4000}
           icon={
             <FdsIcon
               color="#757575"
@@ -271,7 +271,7 @@ exports[`Toast component matches snapshot (warn) 1`] = `
         shrink={true}
       >
         <CountdownButton
-          duration={3500}
+          duration={4000}
           icon={
             <FdsIcon
               color="#757575"

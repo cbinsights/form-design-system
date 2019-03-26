@@ -13,7 +13,7 @@ exports[`Toaster component matches snapshot 1`] = `
       classNames="toast"
       in={true}
       onExited={[Function]}
-      timeout={300}
+      timeout={380}
       unmountOnExit={true}
     >
       <Toast
@@ -23,7 +23,7 @@ exports[`Toaster component matches snapshot 1`] = `
             test
           </p>
         }
-        dismissDelay={3500}
+        dismissDelay={4000}
         dismissToast={[Function]}
         isAutoDismiss={true}
         onDismiss={[Function]}

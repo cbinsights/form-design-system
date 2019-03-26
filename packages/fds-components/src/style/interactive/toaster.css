@@ -3,7 +3,7 @@
  */
 
 :root {
-  --toast-timeout: 300ms;
+  --toast-timeout: 380ms;
 }
 
 body {
@@ -23,8 +23,8 @@ body {
 .toast-enter {
   opacity: 0.01;
   transform: translateY(-200px);
-  transition: transform var(--toast-timeout) var(--motion-easing-default),
-    opacity var(--toast-timeout) var(--motion-easing-decelerate);
+  transition: transform var(--toast-timeout) var(--motion-easing-decelerate),
+    opacity var(--toast-timeout) var(--motion-easing-default);
 }
 
 /* end ENTER transition */
@@ -38,7 +38,7 @@ body {
 .toast-exit {
   opacity: 1;
   transform: translateY(0);
-  transition: transform var(--toast-timeout) var(--motion-easing-decelerate),
+  transition: transform var(--toast-timeout) var(--motion-easing-default),
     opacity var(--toast-timeout) var(--motion-easing-default);
 }
 
