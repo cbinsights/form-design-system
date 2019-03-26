@@ -6,9 +6,8 @@ import CountdownButton from '../media/CountdownButton';
 
 import Toast from './Toast';
 
-const renderByType = (type, extraProps) => {
-  return shallow(<Toast type={type} content={<p>lol</p>} {...extraProps} />)
-}
+const renderByType = (type, extraProps) =>
+  shallow(<Toast type={type} content={<p>lol</p>} {...extraProps} />);
 
 
 describe('Toast component', () => {
