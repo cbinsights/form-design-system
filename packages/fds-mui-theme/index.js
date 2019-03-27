@@ -39,5 +39,5 @@ module.exports = {
   },
   zIndex: {
     modal: 9999,
-  }
+  },
 };

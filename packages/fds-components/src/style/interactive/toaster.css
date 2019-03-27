@@ -1,0 +1,50 @@
+/**
+ * Toast transition styles, set by `Toaster` via `CSSTransition`
+ */
+
+:root {
+  --toast-timeout: 380ms;
+}
+
+body {
+  /* ensure any page running toast uses document body as positioning reference */
+  position: relative;
+}
+
+.toaster {
+  position: fixed;
+  top: 76px; /* assumes 60px header + standard gutter */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--zindex-modal);
+}
+
+/* begin ENTER transition */
+.toast-appear,
+.toast-enter {
+  opacity: 0.01;
+  transform: translateY(-200px);
+  transition: transform var(--toast-timeout) var(--motion-easing-decelerate),
+    opacity var(--toast-timeout) var(--motion-easing-default);
+}
+
+/* end ENTER transition */
+.toast-appear-active,
+.toast-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* begin EXIT transition */
+.toast-exit {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform var(--toast-timeout) var(--motion-easing-default),
+    opacity var(--toast-timeout) var(--motion-easing-default);
+}
+
+/* end EXIT transition */
+.toast-exit-active {
+  opacity: 0.01; /* removed from DOM on duration complete */
+  transform: translateY(-200px);
+}

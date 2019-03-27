@@ -45,7 +45,7 @@ Command          | Description
 `yarn build`     | Builds unversioned `lib/` or `dist/` dirs in each package; builds all docs to `<root>/docs/`
 `yarn test`      | Runs tests for all relevant packages
 `yarn lint`      | Runs `eslint` on all js files
-`yarn components:serve` | Starts dev server for `fds-components`
+`yarn serve:comp` | Starts dev server for `fds-components`
 `yarn precommit` | Runs `lint-staged` to verify precommit hook will pass
 
 ### Docs

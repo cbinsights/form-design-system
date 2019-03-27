@@ -1,0 +1,286 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast component matches snapshot (error) 1`] = `
+<div
+  aria-atomic="true"
+  aria-relevant="all"
+  className="toast toast--error"
+  role="alert"
+>
+  <div
+    className="toast-bar"
+  />
+  <div
+    className="toast-content"
+  >
+    <Flex
+      align="center"
+      dataTest=""
+      direction="row"
+    >
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <div
+          className="toast-icon media--s"
+        >
+          <div
+            className="typemod--white"
+            role="image"
+          >
+            !
+          </div>
+        </div>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={false}
+      >
+        <p>
+          lol
+        </p>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <CountdownButton
+          duration={4000}
+          icon={
+            <FdsIcon
+              color="#757575"
+              size="xs"
+            />
+          }
+        />
+      </FlexItem>
+    </Flex>
+  </div>
+</div>
+`;
+
+exports[`Toast component matches snapshot (info) 1`] = `
+<div
+  aria-atomic="true"
+  aria-relevant="all"
+  className="toast toast--info"
+  role="log"
+>
+  <div
+    className="toast-bar"
+  />
+  <div
+    className="toast-content"
+  >
+    <Flex
+      align="center"
+      dataTest=""
+      direction="row"
+    >
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <div
+          className="toast-icon media--s"
+        >
+          <FdsIcon
+            color="#4cabce"
+            size="l"
+          />
+        </div>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={false}
+      >
+        <p>
+          lol
+        </p>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <CountdownButton
+          duration={4000}
+          icon={
+            <FdsIcon
+              color="#757575"
+              size="xs"
+            />
+          }
+        />
+      </FlexItem>
+    </Flex>
+  </div>
+</div>
+`;
+
+exports[`Toast component matches snapshot (progress) 1`] = `
+<div
+  aria-atomic="true"
+  aria-relevant="all"
+  className="toast toast--progress"
+  role="log"
+>
+  <div
+    className="toast-bar"
+  >
+    <div
+      className="toast-progressBar toast-progressBar--continuous"
+    />
+  </div>
+  <div
+    className="toast-content"
+  >
+    <Flex
+      align="center"
+      dataTest=""
+      direction="row"
+    >
+      <FlexItem
+        dataTest=""
+        shrink={false}
+      >
+        <p>
+          lol
+        </p>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <CountdownButton
+          duration={4000}
+          icon={
+            <FdsIcon
+              color="#757575"
+              size="xs"
+            />
+          }
+        />
+      </FlexItem>
+    </Flex>
+  </div>
+</div>
+`;
+
+exports[`Toast component matches snapshot (success) 1`] = `
+<div
+  aria-atomic="true"
+  aria-relevant="all"
+  className="toast toast--success"
+  role="log"
+>
+  <div
+    className="toast-bar"
+  />
+  <div
+    className="toast-content"
+  >
+    <Flex
+      align="center"
+      dataTest=""
+      direction="row"
+    >
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <div
+          className="toast-icon media--s"
+        >
+          <FdsIcon
+            color="#ffffff"
+            size="xs"
+          />
+        </div>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={false}
+      >
+        <p>
+          lol
+        </p>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <CountdownButton
+          duration={4000}
+          icon={
+            <FdsIcon
+              color="#757575"
+              size="xs"
+            />
+          }
+        />
+      </FlexItem>
+    </Flex>
+  </div>
+</div>
+`;
+
+exports[`Toast component matches snapshot (warn) 1`] = `
+<div
+  aria-atomic="true"
+  aria-relevant="all"
+  className="toast toast--warn"
+  role="log"
+>
+  <div
+    className="toast-bar"
+  />
+  <div
+    className="toast-content"
+  >
+    <Flex
+      align="center"
+      dataTest=""
+      direction="row"
+    >
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <div
+          className="toast-icon media--s"
+        >
+          <div
+            className="typemod--white"
+            role="image"
+          >
+            !
+          </div>
+        </div>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={false}
+      >
+        <p>
+          lol
+        </p>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <CountdownButton
+          duration={4000}
+          icon={
+            <FdsIcon
+              color="#757575"
+              size="xs"
+            />
+          }
+        />
+      </FlexItem>
+    </Flex>
+  </div>
+</div>
+`;
