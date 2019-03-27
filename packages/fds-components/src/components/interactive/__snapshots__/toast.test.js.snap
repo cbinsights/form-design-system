@@ -229,8 +229,8 @@ exports[`Toast component matches snapshot (warn) 1`] = `
 <div
   aria-atomic="true"
   aria-relevant="all"
-  className="toast toast--error"
-  role="alert"
+  className="toast toast--warn"
+  role="log"
 >
   <div
     className="toast-bar"

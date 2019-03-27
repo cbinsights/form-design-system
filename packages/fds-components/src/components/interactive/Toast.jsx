@@ -75,7 +75,11 @@ const Toast = ({
           <FlexItem>{content}</FlexItem>
           {actionLabel && onAction && (
             <FlexItem shrink>
-              <Button className="toast-action" onClick={onAction}>
+              <Button
+                className="toast-action"
+                onClick={onAction}
+                data-test="toast-action"
+              >
                 {actionLabel}
               </Button>
             </FlexItem>

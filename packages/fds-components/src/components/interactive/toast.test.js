@@ -33,13 +33,13 @@ describe('Toast component', () => {
   });
 
   it('matches snapshot (warn)', () => {
-    const component = renderByType('error');
+    const component = renderByType('warn');
     expect(component).toMatchSnapshot();
   });
 
   it('does NOT render action button if label and action are not passed', () => {
     const component = renderByType('info');
-    const actionButton = component.find('.toast-action');
+    const actionButton = component.find('[data-test="toast-action"]');
     expect(actionButton).toHaveLength(0);
   });
 
