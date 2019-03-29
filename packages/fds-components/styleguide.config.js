@@ -23,9 +23,6 @@ module.exports = {
   // expand props tables by default
   usageMode: 'expand',
 
-  // use FDS editorconfig in interactive code examples
-  editorConfig: path.join(__dirname, '../../.editorconfig'),
-
   // define component groupings in documentation
   sections: [
     makeSection('Layout', 'layout'),
