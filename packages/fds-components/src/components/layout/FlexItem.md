@@ -4,6 +4,7 @@ By default, all `FlexItem` components will grow to fill remaining space within t
 `Flex`. The boolean prop `shrink` will cause a `FlexItem` to shrink to its content size.
 
 ```js
+import Flex from './Flex';
 <Flex align="center" className="debug--boxModel">
   <FlexItem shrink>
     <img src="https://place-hold.it/60x32/a02385/fff&text=shrink" />
@@ -24,6 +25,7 @@ By default, all `FlexItem` components will grow to fill remaining space within t
 You can use the same `align` and `justify` prop interface from `Flex` to control alignment and justification of individual `FlexItem` components.
 
 ```js
+import Flex from './Flex';
 <Flex className="debug--boxModel">
   <FlexItem shrink>
     <img src="https://place-hold.it/60x80/a02385/fff&text=default" />
@@ -46,6 +48,7 @@ You can use the same `align` and `justify` prop interface from `Flex` to control
 Within a fixed height container, this `Flex` creates a fixed height header and footer and allows the content area to expand to fill the remaining space.
 
 ```js
+import Flex from './Flex';
 <div style={{ height: '200px' }}>
   <Flex direction="column" align="stretch" className="debug--boxModel">
     <FlexItem shrink>
@@ -65,6 +68,7 @@ Within a fixed height container, this `Flex` creates a fixed height header and f
 Basic layout of comments in the CB Insights platform.
 
 ```js
+import Flex from './Flex';
 <Flex>
   <FlexItem shrink>
     <img src="https://place-hold.it/48x48/a02385/fff" />
@@ -90,6 +94,7 @@ Basic layout of comments in the CB Insights platform.
 _Open the editor below to try adding and removing items_
 
 ```js
+import Flex from './Flex';
 <Flex align="center">
   <FlexItem shrink>
     <img src="https://place-hold.it/36x36/a02385/fff?text=menu" />
