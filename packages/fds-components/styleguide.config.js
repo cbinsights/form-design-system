@@ -11,7 +11,6 @@ const makeSection = (name, slug) => ({
   name: `${name}`,
   components: () => [`./src/components/${slug}/*.jsx`],
   content: `./src/components/${slug}/index.md`,
-  sectionDepth: 1,
 });
 
 module.exports = {
@@ -23,11 +22,15 @@ module.exports = {
   // expand props tables by default
   usageMode: 'expand',
 
+  // make each section its own page/route
+  pagePerSection: true,
+
   // define component groupings in documentation
   sections: [
     makeSection('Layout', 'layout'),
     makeSection('Media', 'media'),
     makeSection('Interactive', 'interactive'),
+    makeSection('ActionBar', 'actionbar'),
   ],
 
   // webpack require assets into styleguide
