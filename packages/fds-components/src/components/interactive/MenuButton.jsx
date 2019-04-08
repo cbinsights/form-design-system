@@ -37,7 +37,10 @@ const MenuButton = (props) => {
     >
       <Flex className="menuButton-inner" direction="column" noGutters>
         <FlexItem className="menuButton-icon">{iconComponent}</FlexItem>
-        <FlexItem shrink className={cx('typemod--tiny menuButton-label', labelClassName)}>
+        <FlexItem
+          shrink
+          className={cx('typemod--tiny typemod--dark menuButton-label', labelClassName)}
+        >
           {label}
         </FlexItem>
       </Flex>

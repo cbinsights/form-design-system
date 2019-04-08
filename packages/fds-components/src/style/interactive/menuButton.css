@@ -15,10 +15,12 @@ Important styles override material-ui inline styles.
   font-weight: var(--font-weight-bold) !important;
 }
 
-.menuButton--disabled {
+.menuButton--disabled .menuButton-label {
   color: var(--font-color-disabled) !important;
+}
+
+.menuButton--disabled svg {
   fill: var(--font-color-disabled) !important;
-  stroke: var(--font-color-disabled) !important;
 }
 
 .menuButton-inner {
@@ -27,4 +29,5 @@ Important styles override material-ui inline styles.
 
 .menuButton-label {
   line-height: 1.1 !important;
+  margin-top: calc(var(--space-half) / 2);
 }
