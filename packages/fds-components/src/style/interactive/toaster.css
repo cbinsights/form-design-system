@@ -13,9 +13,8 @@ body {
 
 .toaster {
   position: fixed;
-  top: 76px; /* assumes 60px header + standard gutter */
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: var(--space-double);
+  left: var(--space-double);
   z-index: var(--zindex-modal);
 }
 
@@ -23,8 +22,8 @@ body {
 .toast-appear,
 .toast-enter {
   opacity: 0.01;
-  transform: translateY(-200px);
-  transition: transform var(--toast-timeout) var(--motion-easing-decelerate),
+  transform: translateY(100px);
+  transition: transform var(--toast-timeout) var(--motion-easing-default),
     opacity var(--toast-timeout) var(--motion-easing-default);
 }
 
@@ -46,5 +45,5 @@ body {
 /* end EXIT transition */
 .toast-exit-active {
   opacity: 0.01; /* removed from DOM on duration complete */
-  transform: translateY(-200px);
+  transform: translateY(100px);
 }

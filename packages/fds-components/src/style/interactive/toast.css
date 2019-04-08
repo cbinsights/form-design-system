@@ -10,7 +10,7 @@
   max-width: var(--toast-maxWidth);
   min-width: 540px;
   border-radius: var(--toast-border-radius);
-  box-shadow: 0 3px 36px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 16px 4px rgba(0, 0, 0, 0.25);
   background: var(--color-white);
 }
 
