@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.10] Bottom left toasts
+
+#### **Changes**
+- Modifies `Toaster` component to position appearing toasts to the bottom
+  left of the viewport.
+
 ## [2.9] 🍞 Toasts
 
 #### **Changes**
