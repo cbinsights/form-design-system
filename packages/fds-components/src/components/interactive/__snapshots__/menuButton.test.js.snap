@@ -22,7 +22,7 @@ exports[`MenuButton component matches snapshot (default props) 1`] = `
       </span>
     </FlexItem>
     <FlexItem
-      className="typemod--tiny menuButton-label"
+      className="typemod--tiny typemod--dark menuButton-label"
       dataTest=""
       shrink={true}
     >
@@ -56,7 +56,7 @@ exports[`MenuButton component matches snapshot (set all props) 1`] = `
       </span>
     </FlexItem>
     <FlexItem
-      className="typemod--tiny menuButton-label myCustomClass"
+      className="typemod--tiny typemod--dark menuButton-label myCustomClass"
       dataTest=""
       shrink={true}
     >
