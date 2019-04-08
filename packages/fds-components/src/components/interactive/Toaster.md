@@ -1,9 +1,11 @@
 Controller for positioning, transition, and dismissal of toasts.
 
 Timer starts immediately on mount.
-**Edit the code example to re-render the `Toaster`**
+
+**⚠️ Include only one `Toaster` component per page/container** to ensure that only one toast is rendered at a time.
 
 ```js
+import Toast from './Toast';
 initialState = { showToast: false };
 <div>
   <button onClick={() => setState({ showToast: true })}>Show toast</button>
@@ -27,6 +29,7 @@ initialState = { showToast: false };
 Currently, `Toaster` only shows one toast at a time. If a new toast is rendered, it should immediately replace the existing toast.
 
 ```js
+import Toast from './Toast';
 initialState = { showToast: false, firstToast: true };
 <div>
   <button onClick={() => setState({ showToast: true })}>Show toast</button>
@@ -66,6 +69,7 @@ initialState = { showToast: false, firstToast: true };
 Use the `isAutoDismiss` prop of `Toast` to disable the dismiss timer.
 
 ```js
+import Toast from './Toast';
 <div>
   <button onClick={() => setState({ showToast: true })}>Show toast</button>
   {state.showToast && (
