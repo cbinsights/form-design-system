@@ -20,7 +20,7 @@ const Toaster = ({ toast }) => {
     clonedToast = React.cloneElement(toast, { dismissToast });
   }
 
-  // when the value of toast prop goes from falsey to truth, set isToasting to true
+  // when the value of toast prop goes from falsey to truthy, set isToasting to true
   useEffect(() => {
     if (toast && !isToasting) {
       setIsToasting(true);
