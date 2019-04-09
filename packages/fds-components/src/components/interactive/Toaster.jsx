@@ -31,6 +31,7 @@ const Toaster = ({ toast }) => {
       };
     }
   });
+  const onExited = (toast.props && toast.props.onDismiss) || (() => {});
 
   return ReactDOM.createPortal(
     <div aria-live="assertive" className="toaster">
@@ -40,7 +41,7 @@ const Toaster = ({ toast }) => {
         unmountOnExit
         timeout={380}
         classNames="toast"
-        onExited={toast.props.onDismiss}
+        onExited={onExited}
       >
         {clonedToast}
       </CSSTransition>
