@@ -31,7 +31,7 @@ const Toaster = ({ toast }) => {
       };
     }
   });
-  const onExited = (toast.props && toast.props.onDismiss) || (() => {});
+  const onExited = (toast && toast.props && toast.props.onDismiss) || (() => {});
 
   return ReactDOM.createPortal(
     <div aria-live="assertive" className="toaster">
