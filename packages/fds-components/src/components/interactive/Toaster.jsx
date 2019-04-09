@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
@@ -20,14 +20,12 @@ const Toaster = ({ toast }) => {
     clonedToast = React.cloneElement(toast, { dismissToast });
   }
 
-  const lastToast = useRef();
   // when the value of toast prop goes from falsey to truth, set isToasting to true
   useEffect(() => {
-    if (toast && !isToasting && !lastToast.current) {
+    if (toast && !isToasting) {
       setIsToasting(true);
     }
-    lastToast.current = toast;
-  }, [toast]);
+  }, [Boolean(toast)]);
 
   // set a timeout for toast to dismiss itself
   // eslint-disable-next-line consistent-return
