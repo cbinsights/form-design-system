@@ -20,6 +20,13 @@ const Toaster = ({ toast }) => {
     clonedToast = React.cloneElement(toast, { dismissToast });
   }
 
+  // when the value of toast prop goes from falsey to truthy, set isToasting to true
+  useEffect(() => {
+    if (toast && !isToasting) {
+      setIsToasting(true);
+    }
+  }, [Boolean(toast)]);
+
   // set a timeout for toast to dismiss itself
   // eslint-disable-next-line consistent-return
   useEffect(() => {
