@@ -1,0 +1,29 @@
+/**
+Form tag defaults
+*/
+
+button,
+input,
+select,
+textarea {
+  vertical-align: middle;
+}
+
+button,
+label,
+select,
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+input[type="seach"] {
+  box-sizing: content-box;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}

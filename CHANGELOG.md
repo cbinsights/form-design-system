@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.11] Adding more style defaults
+
+#### **Changes**
+- Adds more base element defaults to `fds-styles` to help us move away from bootstrap.
+
 ## [2.10] Bottom left toasts
 
 #### **Changes**
