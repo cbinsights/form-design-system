@@ -20,11 +20,16 @@ footer,
 header,
 hgroup,
 nav,
-section,
+section {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
 audio,
 canvas,
 video {
-  display: block;
+  display: inline-block;
   margin: 0;
   padding: 0;
 }

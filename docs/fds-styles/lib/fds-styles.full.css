@@ -376,8 +376,16 @@ small {
 img {
   display: inline-block;
   line-height: 0;
+  max-width: 100%;
+  vertical-align: middle;
   margin: 0;
   padding: 0;
+}
+a {
+  text-decoration: none;
+}
+a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
 }
 /**
 Block tag defaults
@@ -400,11 +408,15 @@ footer,
 header,
 hgroup,
 nav,
-section,
+section {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
 audio,
 canvas,
 video {
-  display: block;
+  display: inline-block;
   margin: 0;
   padding: 0;
 }
@@ -437,6 +449,31 @@ h6 {
   font-weight: var(--font-weight-default);
   margin: 0;
   padding: 0;
+}
+/**
+Form tag defaults
+*/
+button,
+input,
+select,
+textarea {
+  vertical-align: middle;
+}
+button,
+label,
+select,
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
+input[type="seach"] {
+  box-sizing: content-box;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
 }
 /* Spacing Helpers */
 /*---
