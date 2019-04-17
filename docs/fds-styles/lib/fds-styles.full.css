@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed, 20 Mar 2019 19:48:02 GMT
+ * Generated on Wed, 17 Apr 2019 20:37:25 GMT
  */
 :root {
  --color-charcoal: #404040;
@@ -375,9 +375,9 @@ small {
 }
 img {
   display: inline-block;
-  line-height: 0;
-  max-width: 100%;
   vertical-align: middle;
+  max-width: 100%;
+  line-height: 0;
   margin: 0;
   padding: 0;
 }

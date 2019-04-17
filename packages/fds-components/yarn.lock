@@ -163,24 +163,29 @@ fbjs@^0.8.1:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
+fds-dictionary@^2.11:
+  version "2.11.81"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.11.81.tgz#a42aba75333bdb72e447457cc489759870ba7cf3"
+  integrity sha512-djSImWIJ4/UhROTCyWvwPKi7O05jXF1Ua3uVUOQrpcYEFNFkWpLFECrxxc4to3zRQca90Xz7fOWnXhNXw6OXDQ==
+
 fds-dictionary@^2.2.47, fds-dictionary@^2.7:
   version "2.7.69"
   resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.7.69.tgz#7bd4ceb5dd953be34b801c7a2008733ee993ff11"
   integrity sha512-Q+agbS9ObZOgybmb1Xfh9h8VVCJTGtRG9hfl8LwYwyFkZXNnYtFzKWezXTKrlAIcN0xUjY4AknV8hBJQRDzMCg==
 
-fds-icons@^2.7:
-  version "2.7.69"
-  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.7.69.tgz#403829e3e3239cf5bb12d4803a6b546cf78d10aa"
-  integrity sha512-VmQirys99HKp1GDdCz3wNEo2APqFxlGvd/c92NSMODqqg2IaamJ6pPILv8NlI5pZ+pyatxzDYCig8ZfV7TteQQ==
+fds-icons@^2.11:
+  version "2.11.81"
+  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.11.81.tgz#ca6cd02df0307bf8e477cb5ff2ead05dae145422"
+  integrity sha512-f/qr95b+CeIinbo6FmMg9xlTL5GcrIbQCbGJSnMBDPWtHNonXsv9+9yG+yiMcoJBo65sgGIZO0SRsHufTqUhDA==
   dependencies:
     classnames "^2"
     fds-dictionary "^2.2.47"
     prop-types "^15"
 
-fds-styles@^2.7:
-  version "2.7.69"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.7.69.tgz#de531014985c1c7bddf677d70c8de07ac93659df"
-  integrity sha512-aooh/2u9yoCV+HUmdlYIpAtPl2k9P7EXFe/nKh+ELOZSWzDLm8f4I/pY++vQmqLHkwACwzNIOOWzbMhiSvFX/Q==
+fds-styles@^2.11:
+  version "2.11.81"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.11.81.tgz#d90a4bc3687310e63804561c67d8e3f9d81aefff"
+  integrity sha512-GW1PjpRviKMP8JfL7kYTwog7eBETUOID5ZEM0/spI9Lmd5s+EuM99ILluNf0bXFSuyOIe8Qcgtvv7xEk1Dp/ZQ==
   dependencies:
     fds-dictionary "^2.7"
 
