@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.12] `Updatable`
+
+#### **Changes**
+- Adds `Updatable` component to `fds-components`.
+
 ## [2.11] Adding more style defaults
 
 #### **Changes**
