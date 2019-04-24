@@ -1,6 +1,7 @@
-
-### Updatable
 Add an updates indicator to any component.
+
+**Note:** `Updatable` will wrap `props.component` in a wrapping element displayed `inline-block`
+in order to set positioning context for the indicator bubble.
 
 #### With a count
 
