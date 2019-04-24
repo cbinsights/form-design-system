@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvatarRow component matches snapshot with count 1`] = `
+<div
+  className="updatable"
+>
+  <div>
+    I can be updated with an update indicator.
+  </div>
+  <div
+    className="updatable-indicator"
+  >
+    666
+  </div>
+</div>
+`;
+
+exports[`AvatarRow component matches snapshot with element in message 1`] = `
+<div
+  className="updatable"
+>
+  <div>
+    I can be updated with an update indicator.
+  </div>
+  <div
+    className="updatable-indicator"
+  >
+    <span>
+      <FdsIcon
+        color="#ffffff"
+        size="xs"
+      />
+       lightning bolt for some reason
+    </span>
+  </div>
+</div>
+`;
