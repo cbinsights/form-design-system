@@ -148,7 +148,6 @@ module.exports = [
   {
     name: 'attribute/materialPalette',
     type: 'attribute',
-    matcher: (p) => p.attributes.category === 'color',
     transformer: toMaterialPalette,
   },
 ];
