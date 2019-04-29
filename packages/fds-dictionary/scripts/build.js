@@ -1,6 +1,7 @@
 const StyleDictionary = require('style-dictionary').extend(
   './style-dictionary.config.json'
 );
+const filters = require('./filters');
 const transforms = require('./transforms');
 const formats = require('./formats');
 const actions = require('./actions');
@@ -11,6 +12,11 @@ const fancyLog = (msg) => {
   console.log(msg);
   console.log(logHR);
 };
+
+filters.forEach((f) => {
+  console.log(`Registering filter ${f.name}`);
+  StyleDictionary.registerFilter(f);
+});
 
 transforms.forEach((t) => {
   console.log(`Registering transform ${t.name}`);

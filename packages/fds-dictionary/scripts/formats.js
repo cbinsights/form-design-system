@@ -105,9 +105,7 @@ const formatReactNativeColors = (dictionary) =>
   [
     `${jsComment()}`,
     'module.exports = {',
-    ...dictionary.allProperties
-      .filter((prop) => prop.attributes.category === 'color')
-      .map((prop) => `  ${prop.name}: '${prop.value}',`),
+    ...dictionary.allProperties.map((prop) => `  ${prop.name}: '${prop.value}',`),
     '};',
   ].join('\n');
 
@@ -115,15 +113,13 @@ const formatMaterialPalette = (dictionary) =>
   [
     `${jsComment()}`,
     'module.exports = {',
-    ...dictionary.allProperties
-      .filter((prop) => prop.attributes.category === 'color')
-      .map((prop) => {
-        const paletteProps = Object.keys(prop.attributes.materialPalette)
-          .map((k) => `    ${k}: '${prop.attributes.materialPalette[k]}',`)
-          .join('\n');
+    ...dictionary.allProperties.map((prop) => {
+      const paletteProps = Object.keys(prop.attributes.materialPalette)
+        .map((k) => `    ${k}: '${prop.attributes.materialPalette[k]}',`)
+        .join('\n');
 
-        return `  ${prop.name}: {\n${paletteProps}\n  },`;
-      }),
+      return `  ${prop.name}: {\n${paletteProps}\n  },`;
+    }),
     '};',
   ].join('\n');
 
