@@ -21,7 +21,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 #### **Changes**
 - Added [custom media](https://preset-env.cssdb.org/features#custom-media-queries)
-  properties to `fds-dictionary`.
+  properties to `fds-dictionary`. Assuming the consumer has `postcss-preset-env` set up,
+  consumers can import `customMedia.css` to support the following standard viewports:
+  - `@media (--viewport-xs) { ...extra small and larger.. }`
+  - `@media (--viewport-s) { ...small and larger.. }`
+  - `@media (--viewport-m) { ...medium and larger.. }`
+  - `@media (--viewport-l) { ...large and larger.. }`
+  - `@media (--viewport-xl) { ...extra large and larger.. }`
 
 ## [2.13] `ShareIcon`
 
