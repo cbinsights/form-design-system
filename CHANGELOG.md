@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.12] `ShareIcon`
+
+#### **Changes**
+- Updates all icons from latest sketch file
+- Modifies `ShareIcon` to use an arrow instead of a network icon
+
 ## [2.12] `Updatable`
 
 #### **Changes**
