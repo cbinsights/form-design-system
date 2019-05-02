@@ -98,22 +98,26 @@ const formatCommonJs = (dictionary) =>
     .join('\n');
 
 /**
- * @param {dictionary} dictionary style-dictionary dictionary
+ * @param {Object} filteredDictionary dictionary category-filtered by config
  * @return {String} js file for colors in the CBI React Native app
  */
-const formatReactNativeColors = (dictionary) =>
+const formatReactNativeColors = (filteredDictionary) =>
   [
     `${jsComment()}`,
     'module.exports = {',
-    ...dictionary.allProperties.map((prop) => `  ${prop.name}: '${prop.value}',`),
+    ...filteredDictionary.allProperties.map((prop) => `  ${prop.name}: '${prop.value}',`),
     '};',
   ].join('\n');
 
-const formatMaterialPalette = (dictionary) =>
+/**
+ * @param {Object} filteredDictionary dictionary category-filtered by config
+ * @return {String} js file with commonjs export of tint/shade objects for each color
+ */
+const formatMaterialPalette = (filteredDictionary) =>
   [
     `${jsComment()}`,
     'module.exports = {',
-    ...dictionary.allProperties.map((prop) => {
+    ...filteredDictionary.allProperties.map((prop) => {
       const paletteProps = Object.keys(prop.attributes.materialPalette)
         .map((k) => `    ${k}: '${prop.attributes.materialPalette[k]}',`)
         .join('\n');
@@ -121,6 +125,25 @@ const formatMaterialPalette = (dictionary) =>
       return `  ${prop.name}: {\n${paletteProps}\n  },`;
     }),
     '};',
+  ].join('\n');
+
+/**
+ * @param {Object} filteredDictionary dictionary category-filtered by config
+ * @return {String} css file with "custom media" declarations (uses PostCSS to polyfill)
+ */
+const formatCssCustomMedia = (filteredDictionary) =>
+  [
+    `${jsComment()}`,
+    `/**
+* Usage (relies on postcss-preset-env Stage 1 polyfills):
+*
+* @media (--viewport-s) {
+*   ...styles that target small viewports AND larger...
+* }
+*/`,
+    ...filteredDictionary.allProperties.map(
+      (prop) => `@custom-media --viewport-${prop.name} ${prop.value};`
+    ),
   ].join('\n');
 
 // Custom formats
@@ -144,5 +167,9 @@ module.exports = [
   {
     name: 'javascript/materialPalette',
     formatter: formatMaterialPalette,
+  },
+  {
+    name: 'css/customMedia',
+    formatter: formatCssCustomMedia,
   },
 ];

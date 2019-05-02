@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.14] Custom Media
+
+#### **Changes**
+- Added [custom media](https://preset-env.cssdb.org/features#custom-media-queries)
+  properties to `fds-dictionary`.
+
 ## [2.13] `ShareIcon`
 
 #### **Changes**

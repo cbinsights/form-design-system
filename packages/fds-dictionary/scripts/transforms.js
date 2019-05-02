@@ -30,6 +30,9 @@ const getNameParts = (prop) => {
   const { category, type, item } = getCTI(prop);
 
   switch (category) {
+    case 'customMedia':
+      nameParts = [item];
+      break;
     case 'color':
       nameParts = [category, item];
       break;
@@ -126,7 +129,7 @@ module.exports = [
     transformer: toItemName,
   },
   {
-    name: 'name/ci/kebab',
+    name: 'name/custom/kebab',
     type: 'name',
     transformer: toKebab,
   },
