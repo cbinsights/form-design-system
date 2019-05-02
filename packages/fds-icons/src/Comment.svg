@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
     <title>icon/comment</title>
     <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/comment" fill="#404040">
-            <path d="M7,14 L19,14 L19,5 L5,5 L5,16 L7,14 Z M8,16 L3,21 L3,5 C3,3.8954305 3.8954305,3 5,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,14 C21,15.1045695 20.1045695,16 19,16 L8,16 Z" id="comment"></path>
+            <path d="M7,14 L19,14 L19,5 L5,5 L5,16 L7,14 L7,14 Z M8,16 L3,21 L3,5 C3,3.8954305 3.8954305,3 5,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,14 C21,15.1045695 20.1045695,16 19,16 L8,16 Z" id="comment"></path>
         </g>
     </g>
 </svg>
