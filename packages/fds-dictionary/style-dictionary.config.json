@@ -27,11 +27,10 @@
       }]
     },
 
-
     "CssCustomProperties": {
       "transforms": [
         "attribute/cti",
-        "name/ci/kebab",
+        "name/custom/kebab",
         "color/css"
       ],
       "buildPath": "./dist/css/",
@@ -41,10 +40,23 @@
       }]
     },
 
+    "CssCustomMedia": {
+      "transforms": [
+        "attribute/cti",
+        "name/custom/kebab"
+      ],
+      "buildPath": "./dist/css/",
+      "files": [{
+        "filter": "isCustomMedia",
+        "destination": "customMedia.css",
+        "format": "css/customMedia"
+      }]
+    },
+
     "JSCustomProperties": {
       "transforms": [
         "attribute/cti",
-        "name/ci/kebab",
+        "name/custom/kebab",
         "color/css"
       ],
       "buildPath": "./dist/js/",
