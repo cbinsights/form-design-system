@@ -31,6 +31,10 @@
 @import "./helperClasses/typemod/color";
 @import "./helperClasses/typemod/style";
 
+/* Form field modifiers */
+@import "./helperClasses/forms/error";
+@import "./helperClasses/forms/reset";
+
 /* Whitespace helpers */
 @import "./helperClasses/whitespace/truncate";
 @import "./helperClasses/whitespace/wrap";

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Form Input Specimen: Form Design System</title>
+    <link rel="stylesheet" type="text/css" href="fds-styles/lib/fds-styles.css" />
+
+    <style type="text/css">
+      body {
+        padding: 2rem;
+      }
+
+      p {
+        margin-bottom: var(--space-default);
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        width: 100%;
+      }
+
+      .row-item {
+        box-sizing: border-box;
+        padding: var(--space-default);
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 0;
+        width: auto;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <h3 class="typeset--head2">All input types</h3>
+    <div>
+      <button>Button</button>
+      <input type="reset" />
+      <input type="submit" />
+      <input type="radio" />
+      <input type="checkbox" />
+      <input type="text" />
+      <input type="file" />
+      <input type="image" />
+      <input type="password" />
+      <input type="datetime" />
+      <input type="datetime-local" />
+      <input type="date" />
+      <input type="month" />
+      <input type="year" />
+      <input type="time" />
+      <input type="week" />
+      <input type="number" />
+      <input type="email" />
+      <input type="url" />
+      <input type="search" />
+      <input type="tel" />
+      <input type="color" />
+      <select>
+        <option>option 1</option>
+        <option>option 2</option>
+      </select>
+      <select size>
+        <option>option 1</option>
+        <option>option 2</option>
+      </select>
+      <select multiple>
+        <option>option 1</option>
+        <option>option 2</option>
+      </select>
+      <textarea></textarea>
+    </div>
+
+    <hr />
+
+    <div>
+      <h4 class="typeset--head2 margin--bottom">Checkboxes (nested inside labels)</h4>
+      <label for="agree"><input id="agree" type="checkbox" /> I agree</label>
+      <label for="spam"><input id="spam" type="checkbox" /> Send me spam</label>
+    </div>
+
+    <hr />
+
+    <div>
+      <h4 class="typeset--head2 margin--bottom">Radios (nested inside labels)</h4>
+      <p>How would you like your eggs?</p>
+      <label for="sunny"><input name="eggs" id="sunny" type="radio" value="sunny" /> Sunny side up</label>
+      <label for="scrambled"><input name="eggs" id="scrambled" type="radio" value="scrambled" /> Scrambled</label>
+      <label for="raw"><input name="eggs" id="raw" type="radio" value="raw" /> Raw</label>
+    </div>
+
+
+    <hr />
+
+    <h4 class="typeset--head2 margin--bottom">🐴 Inputs in context 🐎</h4>
+    <p>Please tell us about your horse</p>
+
+    <div class="row">
+      <div class="row-item">
+        <label>Name your horse</label>
+        <input type="text" placeholder="(not Geoffrey)" />
+      </div>
+      <div class="row-item">
+        <label>Stop</label>
+        <input type="text" value="Can't touch this"  disabled />
+      </div>
+      <div class="row-item">
+        <p class="typemod--dark">Color of your horse</p>
+        <label for="saffron"><input name="hcolor" id="saffron" type="radio" value="saffron" /> Old Saffron</label>
+        <label for="mtan"><input name="hcolor" id="mtan" type="radio" value="mtan" /> Midnight Tan</label>
+        <label for="fclove"><input name="hcolor" id="fclove" type="radio" value="fclose" /> Forest Clove</label>
+        <label for="cloud"><input name="hcolor" id="cloud" type="radio" value="cloud" /> Cloud</label>
+        <label for="brown"><input name="hcolor" id="brown" type="radio" value="brown" /> Santa Fe Sand</label>
+      </div>
+      <div class="row-item">
+        <label for="hfood">What does your horse eat?</label>
+        <select>
+          <option>Sugar cubes</option>
+          <option>Carrots</option>
+          <option>Souls</option>
+          <option>Anything it wants</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-item">
+        <label for="hsleep">Poem that describes your horse best</label>
+        <textarea>My lovely horse
+Running around
+Like a train in the night
+</textarea>
+      </div>
+      <div class="row-item">
+        <label for="hsleep">How many hours does your horse sleep per night?</label>
+        <input type="number" />
+      </div>
+      <div class="row-item">
+        <label for="hsleep">Confirm horse name</label>
+        <input type="text" value="Geoffrey" class="error" />
+        <p class="typemod--small typemod--red">Geoffrey is <strong>not allowed</strong>.</p>
+      </div>
+      <div class="row-item">
+        <label for="hsleep">Find this invisible input:</label>
+        <input type="text" class="resetInput" />
+      </div>
+    </div>
+
+  </body>
+</html>

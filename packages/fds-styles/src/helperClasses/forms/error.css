@@ -1,0 +1,19 @@
+/*---
+title: Input error
+name: inputError
+section: Form Helpers
+---
+
+By default, any form input that is `:invalid` will show a
+red border. You can also force the appearance of an
+`:invalid` state by adding the `error` class.
+
+```example:html
+<input class="error" value="invalid entry" />
+```
+*/
+
+input.error,
+select.error {
+  border-color: var(--color-red);
+}
