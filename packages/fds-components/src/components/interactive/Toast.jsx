@@ -57,6 +57,13 @@ const Toast = ({
     </div>
   );
 
+  const onActionDismiss = (event) => {
+    dismissToast();
+    if (typeof onAction === 'function') {
+      onAction(event);
+    }
+  };
+
   return (
     <div
       className={classNames}
@@ -77,7 +84,7 @@ const Toast = ({
             <FlexItem shrink>
               <Button
                 className="toast-action"
-                onClick={onAction}
+                onClick={onActionDismiss}
                 data-test="toast-action"
               >
                 {actionLabel}

@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.15] Toast onAction Dismiss
+
+#### **Changes**
+- When user engages the action on a Toast we will not dismiss the message
+
 ## [2.14] Custom Media
 
 #### **Changes**
