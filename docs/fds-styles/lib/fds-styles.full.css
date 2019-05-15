@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed, 17 Apr 2019 20:37:25 GMT
+ * Generated on Thu, 02 May 2019 18:35:18 GMT
  */
 :root {
  --color-charcoal: #404040;
@@ -24,6 +24,11 @@
  --color-mint: #70c390;
  --color-purple: #a02385;
  --color-violet: #d772ad;
+ --xs: (min-width: 320px);
+ --s: (min-width: 480px);
+ --m: (min-width: 768px);
+ --l: (min-width: 1024px);
+ --xl: (min-width: 1280px);
  --font-color-dark: #404040;
  --font-color-default: #757575;
  --font-color-light: #a2a0a0;
@@ -217,10 +222,12 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 /**
- * Correct the padding in Firefox.
+ * Reset all browser defaults for fieldset.
  */
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 /**
  * 1. Correct the text wrapping in Edge and IE.
@@ -243,10 +250,12 @@ progress {
   vertical-align: baseline;
 }
 /**
- * Remove the default vertical scrollbar in IE 10+.
+ * 1. Remove the default vertical scrollbar in IE 10+.
+ * 2. Allow textarea to grow to fit content
  */
 textarea {
-  overflow: auto;
+  overflow: auto; /* 1 */
+  height: auto; /* 2 */
 }
 /**
  * 1. Add the correct box sizing in IE 10.
@@ -453,27 +462,121 @@ h6 {
 /**
 Form tag defaults
 */
+::-ms-input-placeholder {
+  color: #a2a0a0;
+  color: var(--font-color-light);
+}
+::placeholder {
+  color: #a2a0a0;
+  color: var(--font-color-light);
+}
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-weight: var(--font-weight-default);
+  color: #404040;
+  color: var(--font-color-dark);
+}
 button,
 input,
 select,
 textarea {
+  font-size: 16px;
+  font-size: var(--font-size-default);
+  line-height: 1.4;
+  line-height: var(--font-lineHeight-default);
+  font-weight: normal;
   vertical-align: middle;
+  margin-bottom: 4px;
+}
+select,
+textarea,
+input:not([type="submit"]) {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: calc(8px / 2) 8px;
+  padding: calc(var(--space-half) / 2) var(--space-half);
+  border-radius: 4px;
+  border: 1px solid #c2bfbf;
+  border: 1px solid var(--color-silver);
+  background: #ffffff;
+  background: var(--color-white);
+  width: auto;
+  min-width: 32px;
+  min-width: var(--space-double);
+}
+button,
+input[type="color"],
+input[type="reset"],
+input[type="submit"] {
+  box-sizing: border-box;
+  min-height: 32px;
+  min-height: var(--space-double);
 }
 button,
 label,
 select,
+input[type="color"],
 input[type="reset"],
 input[type="submit"],
 input[type="radio"],
 input[type="checkbox"] {
   cursor: pointer;
 }
-input[type="seach"] {
-  box-sizing: content-box;
+/**
+ * Specific input overrides
+ */
+input[type="radio"],
+input[type="checkbox"] {
+  height: 16px;
+  height: var(--font-size-default);
+  width: 16px;
+  width: var(--font-size-default);
+  margin-right: 8px;
+  margin-right: var(--space-half);
+  vertical-align: baseline;
+}
+select {
+  border-color: #f2f2f2;
+  border-color: var(--color-lightGray);
+  background: #f2f2f2;
+  background: var(--color-lightGray);
+  height: 32px;
+  height: var(--space-double);
+}
+select[multiple] {
+  background: #ffffff;
+  background: var(--color-white);
+  height: auto;
 }
 textarea {
-  overflow: auto;
   vertical-align: top;
+}
+input[type="seach"] {
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+input[type="file"] {
+  font-size: 13px;
+  font-size: var(--font-size-small);
+}
+/**
+ * Input states
+ */
+select:invalid,
+textarea:invalid,
+input:not([type="submit"]):invalid {
+  border-color: #e5323e;
+  border-color: var(--color-red);
+}
+select:disabled,
+textarea:disabled,
+input:not([type="submit"]):disabled {
+  color: #c2bfbf;
+  color: var(--font-color-disabled);
+  border-color: #f2f2f2;
+  border-color: var(--color-lightGray);
 }
 /* Spacing Helpers */
 /*---
@@ -1165,6 +1268,47 @@ Modifies style, decoration, or transform of text
 }
 .typemod--caps {
   text-transform: uppercase;
+}
+/* Form field modifiers */
+/*---
+title: Input error
+name: inputError
+section: Form Helpers
+---
+
+By default, any form input that is `:invalid` will show a
+red border. You can also force the appearance of an
+`:invalid` state by adding the `error` class.
+
+```example:html
+<input class="error" value="invalid entry" />
+```
+*/
+input.error,
+select.error {
+  border-color: #e5323e;
+  border-color: var(--color-red);
+}
+/*---
+title: Reset Input
+name: resetInput
+section: Form Helpers
+---
+
+Sometimes we need to place an input inside another visual
+element, like a chip or a token editor. The `resetInput`
+class will strip away margin and border styles.
+
+```example:html
+<input value="Normal input" />
+<input class="resetInput" value="'Reset' input" />
+```
+*/
+select.resetInput,
+input.resetInput {
+  border-width: 0;
+  background: transparent;
+  margin: 0;
 }
 /* Whitespace helpers */
 /*---

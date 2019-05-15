@@ -109,6 +109,17 @@
         
   
         
+        <a class="menu-heading" href="#form-helpers"><span>Form Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#inputError"><span>Input error</span></a>
+        
+        
+        <a class="menu-item" href="#resetInput"><span>Reset Input</span></a>
+        
+        
+  
+        
         <a class="menu-heading" href="#text-flow"><span>Text flow</span></a>
         
     
@@ -682,6 +693,44 @@ of the typesetting classes below.</p>
       </div>
     </section>
     
+    <section id="form-helpers">
+      <h1 class="page-title">Form Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="inputError">
+      <h2 class="page-title">Input error</h2>
+
+      <div class="markdown-body">
+        <p>By default, any form input that is <code>:invalid</code> will show a
+red border. You can also force the appearance of an
+<code>:invalid</code> state by adding the <code>error</code> class.</p>
+<pre><code class="lang-example:html">&lt;input class=&quot;error&quot; value=&quot;invalid entry&quot; /&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="resetInput">
+      <h2 class="page-title">Reset Input</h2>
+
+      <div class="markdown-body">
+        <p>Sometimes we need to place an input inside another visual
+element, like a chip or a token editor. The <code>resetInput</code>
+class will strip away margin and border styles.</p>
+<pre><code class="lang-example:html">&lt;input value=&quot;Normal input&quot; /&gt;
+&lt;input class=&quot;resetInput&quot; value=&quot;&#39;Reset&#39; input&quot; /&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
     <section id="text-flow">
       <h1 class="page-title">Text flow</h1>
 
@@ -750,7 +799,7 @@ of clamping text to one line.</p>
         </main>
       </div>
       <footer class="footer">
-        Last modified Thursday, 2 May 2019 14:05
+        Last modified Tuesday, 14 May 2019 17:14
       </footer>
     </div>
     <script src="prism.js?871234"></script>

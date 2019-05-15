@@ -188,11 +188,13 @@ button:-moz-focusring,
 }
 
 /**
- * Correct the padding in Firefox.
+ * Reset all browser defaults for fieldset.
  */
 
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 /**
@@ -220,11 +222,13 @@ progress {
 }
 
 /**
- * Remove the default vertical scrollbar in IE 10+.
+ * 1. Remove the default vertical scrollbar in IE 10+.
+ * 2. Allow textarea to grow to fit content
  */
 
 textarea {
-  overflow: auto;
+  overflow: auto; /* 1 */
+  height: auto; /* 2 */
 }
 
 /**
