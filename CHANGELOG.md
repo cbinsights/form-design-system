@@ -17,7 +17,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [2.15] Form field defaults
+## [2.16] Form field defaults
 
 #### **Changes**
 - Added better base tag defaults for form elements
