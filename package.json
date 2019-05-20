@@ -18,6 +18,9 @@
     "precommit": "lint-staged",
     "publish": "lerna publish"
   },
+  "resolutions": {
+    "lodash": "^4.17.11"
+  },
   "devDependencies": {
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
@@ -47,7 +50,7 @@
     "handlebars": "^4.0.12",
     "husky": "^1.0.0-rc.13",
     "jest": "^23.6.0",
-    "lerna": "^3.0.0-rc.0",
+    "lerna": "^3.14.1",
     "lint-staged": "^7.2.2",
     "lodash": "^4.17.11",
     "mdcss": "^1.5.2",
