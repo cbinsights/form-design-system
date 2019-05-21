@@ -17,7 +17,6 @@ button,
 input,
 select,
 textarea {
-  font-size: var(--font-size-default);
   line-height: var(--font-lineHeight-default);
   font-weight: normal;
   vertical-align: middle;
@@ -80,6 +79,7 @@ select[multiple] {
 }
 
 textarea {
+  box-sizing: content-box;
   vertical-align: top;
 }
 
