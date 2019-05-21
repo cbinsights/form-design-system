@@ -26,7 +26,6 @@ textarea {
 select,
 textarea,
 input:not([type="submit"]) {
-  box-sizing: border-box;
   display: inline-block;
   padding: calc(var(--space-half) / 2) var(--space-half);
   border-radius: 4px;
@@ -61,8 +60,7 @@ input[type="checkbox"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-  height: var(--font-size-default);
-  width: var(--font-size-default);
+  font-size: var(--font-size-default);
   margin-right: var(--space-half);
   vertical-align: baseline;
 }
