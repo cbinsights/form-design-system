@@ -482,8 +482,6 @@ button,
 input,
 select,
 textarea {
-  font-size: 16px;
-  font-size: var(--font-size-default);
   line-height: 1.4;
   line-height: var(--font-lineHeight-default);
   font-weight: normal;
@@ -492,8 +490,9 @@ textarea {
 }
 select,
 textarea,
-input:not([type="submit"]) {
-  box-sizing: border-box;
+input:not([type="submit"]),
+input:not([type="checkbox"]),
+input:not([type="radio"]) {
   display: inline-block;
   padding: calc(8px / 2) 8px;
   padding: calc(var(--space-half) / 2) var(--space-half);
@@ -529,10 +528,8 @@ input[type="checkbox"] {
  */
 input[type="radio"],
 input[type="checkbox"] {
-  height: 16px;
-  height: var(--font-size-default);
-  width: 16px;
-  width: var(--font-size-default);
+  font-size: 16px;
+  font-size: var(--font-size-default);
   margin-right: 8px;
   margin-right: var(--space-half);
   vertical-align: baseline;
@@ -551,6 +548,7 @@ select[multiple] {
   height: auto;
 }
 textarea {
+  box-sizing: content-box;
   vertical-align: top;
 }
 input[type="seach"] {
