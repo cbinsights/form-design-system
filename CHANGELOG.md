@@ -17,6 +17,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.17] Form tag fixes
+
+#### **Changes**
+- Includes fixes for...
+  - checkbox wrapping
+  - input border-box size bugs
+
 ## [2.16] Form field defaults
 
 #### **Changes**
