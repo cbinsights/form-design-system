@@ -182,10 +182,10 @@ fds-icons@^2.17:
     fds-dictionary "^2"
     prop-types "^15"
 
-fds-styles@^2.17.101:
-  version "2.17.101"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.17.101.tgz#faeefe7e1dd6f2c459bfd7583d0daacf97b8f5ff"
-  integrity sha512-MdvsA1U4GB0a68locjkfDea3d1LlOyzmmno9fwWwqKwveN9L/k9dfXcy9cC3qWprCoCqSHUHRhdIHgCPRjnuOA==
+fds-styles@^2.18.104:
+  version "2.18.104"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.18.104.tgz#d0a2066792fdcf9e5fa4da1e6bfc5edc62e2f4b7"
+  integrity sha512-DZKIHH/nOGplOI1b64e0YxOTlYlICOaCc8pGtdAmzzBl78f3stkO5Cq2zzqz4lLI49rleByr4vNES9ufAfjbVA==
   dependencies:
     fds-dictionary "^2.17"
 

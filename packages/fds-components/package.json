@@ -21,7 +21,7 @@
     "classnames": "^2",
     "fds-dictionary": "^2.17",
     "fds-icons": "^2.17",
-    "fds-styles": "^2.17.101",
+    "fds-styles": "^2.18.104",
     "prop-types": "^15",
     "react-transition-group": "2.6.1"
   },
