@@ -24,7 +24,7 @@
  },
   "dependencies": {
     "classnames": "^2",
-    "fds-dictionary": "^2",
+    "fds-dictionary": "^2.17",
     "prop-types": "^15"
   }
 }

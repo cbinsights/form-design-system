@@ -168,31 +168,26 @@ fds-dictionary@^2:
   resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.16.93.tgz#84f45ac3c912ac6c0a2e7a66e478b584e8c5f9b0"
   integrity sha512-/DES63N1gxODGcn+Qa9t7KhpzaaMQPJdikONvwyd/Iwz0P8MUZ+RFcvjxAh94OhU9kLp6m3jRF42jKJrtTP/cQ==
 
-fds-dictionary@^2.11:
-  version "2.11.81"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.11.81.tgz#a42aba75333bdb72e447457cc489759870ba7cf3"
-  integrity sha512-djSImWIJ4/UhROTCyWvwPKi7O05jXF1Ua3uVUOQrpcYEFNFkWpLFECrxxc4to3zRQca90Xz7fOWnXhNXw6OXDQ==
+fds-dictionary@^2.17:
+  version "2.17.98"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.17.98.tgz#af8df9194d46dfcf8199905da6b50db4d087ce82"
+  integrity sha512-+7G9NoQdPjmh0YLLSkGeIaN+5i671kF5jq/WhnMnnMD5NzdI9nyxkGt6h5CvP75Qc2WrU41jTjjogVbi+101tg==
 
-fds-dictionary@^2.2.47:
-  version "2.7.69"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.7.69.tgz#7bd4ceb5dd953be34b801c7a2008733ee993ff11"
-  integrity sha512-Q+agbS9ObZOgybmb1Xfh9h8VVCJTGtRG9hfl8LwYwyFkZXNnYtFzKWezXTKrlAIcN0xUjY4AknV8hBJQRDzMCg==
-
-fds-icons@^2:
-  version "2.16.93"
-  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.16.93.tgz#543bca3270dee793f32017851188dd918517dabd"
-  integrity sha512-21Vff11zuXy1OjcRl/ueN/OfxSPBOSY46iBZvznAYel0bc+Bi6c7FqohSWhfq4zwAQ17GevW0ORL4TlwQNECag==
+fds-icons@^2.17:
+  version "2.17.98"
+  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.17.98.tgz#f9afc7b9b63659610e1647547c9dd35a512edda1"
+  integrity sha512-7tILPg9KbgIigL3ZPytQBDNTL2s1Tcw3vKY2elUL969OJlpUwGGjCLE/dBytID11fJK/14G+cs9TBSJMLG1zaA==
   dependencies:
     classnames "^2"
-    fds-dictionary "^2.2.47"
+    fds-dictionary "^2"
     prop-types "^15"
 
-fds-styles@^2:
-  version "2.16.93"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.16.93.tgz#ca5920407b81066d029e17c40aa4f1fc5fd02f76"
-  integrity sha512-D1JXU04uchhbizzK+r8K3TLrp8bNSrO9IolZsBwbpD4axkw/TKbYbFHrmb+vz3tkB6gHUGXe8Lk59969FnO6tw==
+fds-styles@^2.17:
+  version "2.17.98"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.17.98.tgz#fdbd17996d60320f6bcecbb7a1f691318e56dd42"
+  integrity sha512-lf2/MVwvQ4n36x8nqjbvBoaEXB6xdOICvXDW0pmSIKD31lxNI5Y8AhuVKQoLeMUJfn6lgmbiojLfV/qi55P1sw==
   dependencies:
-    fds-dictionary "^2.11"
+    fds-dictionary "^2"
 
 hoist-non-react-statics@^2.3.1:
   version "2.5.5"
