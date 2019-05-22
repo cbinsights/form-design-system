@@ -490,7 +490,21 @@ textarea {
 }
 select,
 textarea,
-input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]) {
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="year"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
   display: inline-block;
   padding: calc(8px / 2) 8px;
   padding: calc(var(--space-half) / 2) var(--space-half);
@@ -499,7 +513,6 @@ input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]) {
   border: 1px solid var(--color-silver);
   background: #ffffff;
   background: var(--color-white);
-  width: auto;
   min-width: 32px;
   min-width: var(--space-double);
 }

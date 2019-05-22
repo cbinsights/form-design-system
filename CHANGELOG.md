@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.18] Explicit input type selectors in `fds-styles`
+
+#### **Changes**
+- Changes high-specificity negating selector for non-checkbox, non-button inputs. Instead,
+  base input styles will be set by single attribute selectors (e.g. `input[type="text"]`)
+
 ## [2.17] Form tag fixes
 
 #### **Changes**
