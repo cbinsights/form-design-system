@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu, 02 May 2019 18:35:18 GMT
+ * Generated on Wed, 22 May 2019 17:33:03 GMT
  */
 :root {
  --color-charcoal: #404040;
@@ -490,9 +490,7 @@ textarea {
 }
 select,
 textarea,
-input:not([type="submit"]),
-input:not([type="checkbox"]),
-input:not([type="radio"]) {
+input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]) {
   display: inline-block;
   padding: calc(8px / 2) 8px;
   padding: calc(var(--space-half) / 2) var(--space-half);
@@ -532,7 +530,8 @@ input[type="checkbox"] {
   font-size: var(--font-size-default);
   margin-right: 8px;
   margin-right: var(--space-half);
-  vertical-align: baseline;
+  vertical-align: text-top;
+  margin-bottom: 0;
 }
 select {
   border-color: #f2f2f2;
