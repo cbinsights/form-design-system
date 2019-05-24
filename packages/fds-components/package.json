@@ -14,6 +14,7 @@
     "compile:docs": "styleguidist build",
     "build": "yarn setupLib && yarn compile:css && yarn compile:jsx && yarn compile:docs",
     "test": "jest --color --config jest.config.json",
+    "snapshot-update": "jest -u --color --config jest.config.json",
     "serve": "npx styleguidist server"
   },
   "dependencies": {

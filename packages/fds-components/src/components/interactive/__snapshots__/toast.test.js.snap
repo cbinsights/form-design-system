@@ -11,7 +11,7 @@ exports[`Toast component matches snapshot (error) 1`] = `
     className="toast-bar"
   />
   <div
-    className="toast-content"
+    className="toast-content alignChild--left--center"
   >
     <Flex
       align="center"
@@ -71,7 +71,7 @@ exports[`Toast component matches snapshot (info) 1`] = `
     className="toast-bar"
   />
   <div
-    className="toast-content"
+    className="toast-content alignChild--left--center"
   >
     <Flex
       align="center"
@@ -133,7 +133,7 @@ exports[`Toast component matches snapshot (progress) 1`] = `
     />
   </div>
   <div
-    className="toast-content"
+    className="toast-content alignChild--left--center"
   >
     <Flex
       align="center"
@@ -147,20 +147,6 @@ exports[`Toast component matches snapshot (progress) 1`] = `
         <p>
           lol
         </p>
-      </FlexItem>
-      <FlexItem
-        dataTest=""
-        shrink={true}
-      >
-        <CountdownButton
-          duration={4000}
-          icon={
-            <FdsIcon
-              color="#757575"
-              size="xs"
-            />
-          }
-        />
       </FlexItem>
     </Flex>
   </div>
@@ -178,7 +164,7 @@ exports[`Toast component matches snapshot (success) 1`] = `
     className="toast-bar"
   />
   <div
-    className="toast-content"
+    className="toast-content alignChild--left--center"
   >
     <Flex
       align="center"
@@ -236,7 +222,7 @@ exports[`Toast component matches snapshot (warn) 1`] = `
     className="toast-bar"
   />
   <div
-    className="toast-content"
+    className="toast-content alignChild--left--center"
   >
     <Flex
       align="center"
