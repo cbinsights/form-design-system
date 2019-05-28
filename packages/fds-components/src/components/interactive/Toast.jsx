@@ -72,7 +72,7 @@ const Toast = ({
       aria-atomic="true"
     >
       {toastBar}
-      <div className="toast-content">
+      <div className="toast-content alignChild--left--center">
         <Flex align="center">
           {icon && (
             <FlexItem shrink>
@@ -91,7 +91,7 @@ const Toast = ({
               </Button>
             </FlexItem>
           )}
-          {canDismiss && (
+          {canDismiss && type !== 'progress' && (
             <FlexItem shrink>
               {isAutoDismiss ? (
                 <CountdownButton onClick={dismissToast} duration={dismissDelay} />

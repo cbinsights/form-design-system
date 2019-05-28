@@ -17,6 +17,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.18] Progress Toast update
+
+#### **Changes**
+- If a `Toast` is of type `progress`, it will not render a dismiss button. This helps
+  avoid confusion that dismissing a toast is the same as cancelling the operation in
+  progress (it doesn't).
+- Adds new `yarn` command for updating snapshots in all packages
+
 ## [2.18] Explicit input type selectors in `fds-styles`
 
 #### **Changes**

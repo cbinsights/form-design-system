@@ -13,6 +13,7 @@
     "build:icons": "lerna run --scope=fds-icons build",
     "build:full": "yarn build:dict && yarn build:icons && yarn bootstrap && yarn build:styles && yarn build:comp",
     "test": "lerna run test --stream",
+    "snapshot-update": "lerna run snapshot-update --stream",
     "bootstrap": "yarn lerna bootstrap",
     "lint": "eslint ./packages/ --ext .js,.jsx",
     "precommit": "lint-staged",

@@ -41,12 +41,13 @@ run from the root directory.
 
 Command          | Description
 ---------------- | ------------------------------------------------------
-`yarn bootstrap` | Bootstraps dependencies for packages with Lerna
-`yarn build`     | Builds unversioned `lib/` or `dist/` dirs in each package; builds all docs to `<root>/docs/`
-`yarn test`      | Runs tests for all relevant packages
-`yarn lint`      | Runs `eslint` on all js files
-`yarn serve:comp` | Starts dev server for `fds-components`
-`yarn precommit` | Runs `lint-staged` to verify precommit hook will pass
+`yarn bootstrap`      | Bootstraps dependencies for packages with Lerna
+`yarn build`          | Builds unversioned `lib/` or `dist/` dirs in each package; builds all docs to `<root>/docs/`
+`yarn test`           | Runs tests for all relevant packages
+`yarn snapshot-update`| Updates snapshots
+`yarn lint`           | Runs `eslint` on all js files
+`yarn serve:comp`     | Starts dev server for `fds-components`
+`yarn precommit`      | Runs `lint-staged` to verify precommit hook will pass
 
 ### Docs
 Documentation is published to Github Pages from the `docs/` directory in `master`.

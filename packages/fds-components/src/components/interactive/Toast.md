@@ -42,7 +42,12 @@
 
 ### Progress Toast (without progress specified)
 By default, progress toasts show a continuous animation of a progress bar.
+
 To make the progress bar reflect a specific amount of progress, use the `progress` prop (see below).
+
+Most of the operations on `cbi-site` are not cancellable, so progress toasts do not render
+a dismiss button to avoid misleading the user (dismissing a toast is not the same as
+cancelling an operation).
 
 ```js
 <Toast

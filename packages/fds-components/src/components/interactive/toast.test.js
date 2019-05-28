@@ -60,7 +60,13 @@ describe('Toast component', () => {
     expect(closeButton).toHaveLength(0);
   });
 
-  it('renders close button by default', () => {
+  it('does NOT render close button for "progress" toasts', () => {
+    const component = renderByType('progress');
+    const closeButton = component.find(CountdownButton);
+    expect(closeButton).toHaveLength(0);
+  });
+
+ it('renders close button by default', () => {
     const component = renderByType('info');
     const closeButton = component.find(CountdownButton);
     expect(closeButton).toHaveLength(1);
