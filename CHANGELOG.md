@@ -16,8 +16,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [2.20] `MoreIcon`
 
-## [2.18] Progress Toast update
+#### **Changes**
+- adds "more" icon to `fds-icons`
+- modifies "investor" icon in `fds-icons` (adds dollar sign to briefcase)
+
+## [2.19] Progress Toast update
 
 #### **Changes**
 - If a `Toast` is of type `progress`, it will not render a dismiss button. This helps
