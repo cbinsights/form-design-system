@@ -20,9 +20,9 @@
   "dependencies": {
     "@material-ui/core": "^3.1.0",
     "classnames": "^2",
-    "fds-dictionary": "^2.17",
-    "fds-icons": "^2.17",
-    "fds-styles": "^2.18.104",
+    "fds-dictionary": "^2.20",
+    "fds-icons": "^2.20",
+    "fds-styles": "^2.20",
     "prop-types": "^15",
     "react-transition-group": "2.6.1"
   },

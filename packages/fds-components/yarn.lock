@@ -163,29 +163,29 @@ fbjs@^0.8.1:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-fds-dictionary@^2:
-  version "2.17.95"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.17.95.tgz#3c700c2195f978fda30e2d6310bcd247f9ae8869"
-  integrity sha512-4fvSY6TakD3hvROHTDyjQm6VHrzlwWfOQRnJH5FjfkZ1C3/E7phB7e0bXgMAUz70Xmj6yWtrI4X/5+vUoihHJA==
-
 fds-dictionary@^2.17:
   version "2.17.98"
   resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.17.98.tgz#af8df9194d46dfcf8199905da6b50db4d087ce82"
   integrity sha512-+7G9NoQdPjmh0YLLSkGeIaN+5i671kF5jq/WhnMnnMD5NzdI9nyxkGt6h5CvP75Qc2WrU41jTjjogVbi+101tg==
 
-fds-icons@^2.17:
-  version "2.17.98"
-  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.17.98.tgz#f9afc7b9b63659610e1647547c9dd35a512edda1"
-  integrity sha512-7tILPg9KbgIigL3ZPytQBDNTL2s1Tcw3vKY2elUL969OJlpUwGGjCLE/dBytID11fJK/14G+cs9TBSJMLG1zaA==
+fds-dictionary@^2.20:
+  version "2.20.107"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.20.107.tgz#7be648be603399bfcac9b01ae0258e2a4a103217"
+  integrity sha512-vKttZaY3L4CqldSRk24lJ3Dcl/ypyglASyyB1avSoHNFoNEuHUEO1syGFeJnQEAFmnwJXr549aHHIiB3yPE0zA==
+
+fds-icons@^2.20:
+  version "2.20.107"
+  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.20.107.tgz#16a08c4340cfccc08c324c86da985fe5b72739e5"
+  integrity sha512-/uEg47BTgMXa3RaoOectpNim5EW+ug88IzxlWrUAdoIsUOLeS1yQATrJFd2YVdQ+sC5BQc0s9zAxc+sp1iMVUQ==
   dependencies:
     classnames "^2"
-    fds-dictionary "^2"
+    fds-dictionary "^2.17"
     prop-types "^15"
 
-fds-styles@^2.18.104:
-  version "2.18.104"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.18.104.tgz#d0a2066792fdcf9e5fa4da1e6bfc5edc62e2f4b7"
-  integrity sha512-DZKIHH/nOGplOI1b64e0YxOTlYlICOaCc8pGtdAmzzBl78f3stkO5Cq2zzqz4lLI49rleByr4vNES9ufAfjbVA==
+fds-styles@^2.20:
+  version "2.20.107"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.20.107.tgz#209202acc46874e41dd657380e00c7670f5e76d6"
+  integrity sha512-d3AwRVbbt1mQc181pGxs8Mgg8r9xbAYVQOr1rEn235fa3DTRuMsYuqVuQ/yr7IBKnI4VSvx8QOUhlwViJMfiCw==
   dependencies:
     fds-dictionary "^2.17"
 
