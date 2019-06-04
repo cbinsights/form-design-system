@@ -1,5 +1,8 @@
 const path = require('path');
-const { createConfig, match, babel, postcss } = require('webpack-blocks');
+const { createConfig, match } = require('@webpack-blocks/webpack');
+const { css } = require('@webpack-blocks/assets');
+const babel = require('@webpack-blocks/babel');
+const postcss = require('@webpack-blocks/postcss');
 
 /**
  * Creates configuration for a styleguide section.
@@ -44,7 +47,7 @@ module.exports = {
   // files in lerna project root
   webpackConfig: createConfig([
     match(['*.js', '*jsx', '!*node_modules*'], [babel()]),
-    match(['*.css', '!*node_modules*'], [postcss()]),
+    match(['*.css', '!*node_modules*'], [css(), postcss()]),
   ]),
 
   // Writes correct import path for using components
