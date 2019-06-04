@@ -16,6 +16,19 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+
+## [2.21] 💫 Upgrades / Housekeeping
+
+#### **Changes**
+- Move all jest configuration to repo root; run tests from root
+- Upgrade some dev dependencies to latest...
+  - `babel` (cli, core, etc)
+  - `webpack-blocks`
+  - `enzyme`
+  - `enzyme-to-json`
+  - `lint-staged`
+  - `react-styleguidist`
+
 ## [2.20] `MoreIcon`
 
 #### **Changes**
