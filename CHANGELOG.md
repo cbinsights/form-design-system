@@ -17,7 +17,15 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [2.21] 💫 Upgrades / Housekeeping
+## [2.22] (stable) Fix babel transpile for IE11
+
+#### **Changes**
+- Add IE11 target to `babel/preset-env` configuration to ensure arrow functions are
+  transformed.
+
+## [2.21] ☢️  (broken) Upgrades / Housekeeping
+
+**⚠️  In this version, babel fails to read browserslist and does not transform "`=>`"**
 
 #### **Changes**
 - Move all jest configuration to repo root; run tests from root
