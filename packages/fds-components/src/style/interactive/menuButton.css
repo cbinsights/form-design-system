@@ -30,4 +30,5 @@ Important styles override material-ui inline styles.
 .menuButton-label {
   line-height: 1.1 !important;
   margin-top: calc(var(--space-half) / 2);
+  width: 99.9%; /* Force IE11 to wrap labels */
 }
