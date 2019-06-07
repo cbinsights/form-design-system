@@ -46,7 +46,15 @@ module.exports = {
   // babel and postcss loaders will read from base config
   // files in lerna project root
   webpackConfig: createConfig([
-    match(['*.js', '*jsx', '!*node_modules*'], [babel()]),
+    match(
+      [
+        '*.js',
+        '*jsx',
+        '!/node_modules/(?!(ansi-styles|strip-ansi|ansi-regex|react-dev-utils|chalk|regexpu-core|unicode-match-property-ecmascript|unicode-match-property-value-ecmascript|acorn-jsx)/).*/' /* IE11 bug fix */,
+        '!*node_modules/core-js*',
+      ],
+      [babel()]
+    ),
     match(['*.css', '!*node_modules*'], [css(), postcss()]),
   ]),
 
