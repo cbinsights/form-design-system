@@ -8,11 +8,11 @@
     "lib"
   ],
   "scripts": {
-    "setupLib": "rm -rf ./lib && mkdir ./lib",
+    "setupLib": "rm -rf ./lib && mkdir ./lib && mkdir ./lib/raw/",
     "export": "node ./scripts/exportFromSketch.js",
     "dist:optimize": "node ./scripts/optimize.js",
     "dist:react": "node ./scripts/createComponents.js",
-    "dist:compile": "babel ./lib/react/ --out-dir ./lib/react/",
+    "dist:compile": "babel ./lib/raw/react/ --out-dir ./lib/react/",
     "dist:styles": "cp style/fds-icons.css lib/fds-icons.css",
     "build:dist": "yarn setupLib && yarn dist:optimize && yarn dist:react && yarn dist:compile && yarn dist:styles",
     "build:docs": "node ./scripts/buildDocs.js",

@@ -17,9 +17,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [2.23] Added new icons
+## [2.23] Icons update
 
 #### **Changes**
+- Change build in `fds-icons` to ensure only transpiled files are in `lib`
 - Add `ExpertTag` icon to `fds-icons`
 - Add `StoryDossier` icon to `fds-icons`
 

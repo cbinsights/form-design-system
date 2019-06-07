@@ -16,11 +16,11 @@ module.exports = {
   buildConfig: {
     raw: {
       input: path.resolve(__dirname, 'src/'),
-      output: path.resolve(__dirname, 'lib/raw/'),
+      output: path.resolve(__dirname, 'lib/raw/svg/'),
     },
     react: {
       input: path.resolve(__dirname, 'src/'),
-      output: path.resolve(__dirname, 'lib/react/'),
+      output: path.resolve(__dirname, 'lib/raw/react/'),
     },
     docs: {
       input: path.resolve(__dirname, 'lib/raw/'),
