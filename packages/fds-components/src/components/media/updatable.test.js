@@ -13,18 +13,13 @@ const MOCK_COMPONENT = (
 describe('AvatarRow component', () => {
 
   it('matches snapshot with count', () => {
-    const component = renderComponent({
-      component: MOCK_COMPONENT,
-      message: '666'
-    });
+    const component = shallow(<Updatable message="666">{MOCK_COMPONENT}</Updatable>)
     expect(component).toMatchSnapshot();
   });
 
   it('matches snapshot with element in message', () => {
-    const component = renderComponent({
-      component: MOCK_COMPONENT,
-      message: <span><WorkFasterIcon size="xs" color="#ffffff" /> lightning bolt for some reason</span>,
-    });
+    const message = (<span><WorkFasterIcon size="xs" color="#ffffff" /> lightning bolt for some reason</span>);
+    const component = shallow(<Updatable message={message}>{MOCK_COMPONENT}</Updatable>);
     expect(component).toMatchSnapshot();
   });
 
