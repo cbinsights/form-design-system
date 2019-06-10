@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.24] `Updatable` signature change
+
+#### **Changes**
+- `Updatable` component now takes `children` instead of a `component` prop.
+
 ## [2.23] New Icons
 
 #### **Changes**
