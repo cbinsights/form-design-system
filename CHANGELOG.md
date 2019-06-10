@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.23] New Icons
+
+#### **Changes**
+- Add `ExpertTag` icon to `fds-icons`
+- Add `StoryDossier` icon to `fds-icons`
+
 ## [2.22] (stable) Fix babel transpile for IE11
 
 #### **Changes**
