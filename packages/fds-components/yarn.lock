@@ -168,24 +168,24 @@ fds-dictionary@^2.17:
   resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.17.98.tgz#af8df9194d46dfcf8199905da6b50db4d087ce82"
   integrity sha512-+7G9NoQdPjmh0YLLSkGeIaN+5i671kF5jq/WhnMnnMD5NzdI9nyxkGt6h5CvP75Qc2WrU41jTjjogVbi+101tg==
 
-fds-dictionary@^2.20:
-  version "2.20.107"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.20.107.tgz#7be648be603399bfcac9b01ae0258e2a4a103217"
-  integrity sha512-vKttZaY3L4CqldSRk24lJ3Dcl/ypyglASyyB1avSoHNFoNEuHUEO1syGFeJnQEAFmnwJXr549aHHIiB3yPE0zA==
+fds-dictionary@^2.22:
+  version "2.22.107"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.22.107.tgz#62465d870d9e71db822409d6cf1c580c643b4313"
+  integrity sha512-v5Ui5lf5ekJZvSmUsphzqAFr7GIwylIijTBbmn/yMMbySP/0t/MU363xZgJldCu/g0MbqDv4jXvuWeX41uwxEQ==
 
-fds-icons@^2.20:
-  version "2.20.107"
-  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.20.107.tgz#16a08c4340cfccc08c324c86da985fe5b72739e5"
-  integrity sha512-/uEg47BTgMXa3RaoOectpNim5EW+ug88IzxlWrUAdoIsUOLeS1yQATrJFd2YVdQ+sC5BQc0s9zAxc+sp1iMVUQ==
+fds-icons@^2.22:
+  version "2.22.107"
+  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.22.107.tgz#d694527bb42fd389654cf8cd0c37e28c4914b435"
+  integrity sha512-s7KRTYEi3pfcbwDNtUvonvQ9ucKBHXoKW7UOU7ZtSKcEFhqlERqQ0CohHBxfoMirPyApkQETKKmGTQwgu0c39Q==
   dependencies:
     classnames "^2"
     fds-dictionary "^2.17"
     prop-types "^15"
 
-fds-styles@^2.20:
-  version "2.20.107"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.20.107.tgz#209202acc46874e41dd657380e00c7670f5e76d6"
-  integrity sha512-d3AwRVbbt1mQc181pGxs8Mgg8r9xbAYVQOr1rEn235fa3DTRuMsYuqVuQ/yr7IBKnI4VSvx8QOUhlwViJMfiCw==
+fds-styles@^2.22:
+  version "2.22.107"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.22.107.tgz#c595107f5910a80b7845f3cd2d4e459da3b23464"
+  integrity sha512-z4yTWnfbTnFU2UsIU8u8Dv0paZshfX9q0bTBVTEaHfCHlILvNDfZqjp8uYOaVgeaN9z5glgl934mwLs0yxQ7eA==
   dependencies:
     fds-dictionary "^2.17"
 
