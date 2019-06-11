@@ -6,6 +6,7 @@
 
 /* Components */
 @import "./layout/flex.css";
+@import "./layout/divider.css";
 @import "./media/avatarRow.css";
 @import "./media/updatable.css";
 @import "./media/countdownButton.css";

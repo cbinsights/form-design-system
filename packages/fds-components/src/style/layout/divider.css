@@ -1,0 +1,13 @@
+.divider {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: var(--space-half);
+  padding-top: var(--space-half);
+  border-top: 1px solid var(--color-timberwolf);
+  color: var(--font-color-light);
+}
+
+.divider--hasContent {
+  margin-bottom: calc(var(--space-half) / 2);
+}
