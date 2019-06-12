@@ -4,8 +4,6 @@ import { shallow } from 'enzyme';
 import WorkFasterIcon from 'fds-icons/lib/react/WorkFasterIcon';
 import Updatable from './Updatable';
 
-const renderComponent = (props) => shallow(<Updatable {...props} />);
-
 const MOCK_COMPONENT = (
   <div>I can be updated with an update indicator.</div>
 );

@@ -1,14 +1,15 @@
-const COLORS = require('fds-dictionary/dist/js/materialPalette');
-const FDS = require('fds-dictionary/dist/js/styleConstants');
+/* eslint-disable no-var */
+var COLORS = require('fds-dictionary/dist/js/materialPalette');
+var FDS = require('fds-dictionary/dist/js/styleConstants');
 
-const MuiButton = {
+var MuiButton = {
   root: {
     lineHeight: 'normal',
     backgroundColor: 'normal',
   },
 };
 
-const MuiIconButton = {
+var MuiIconButton = {
   root: {
     '&:hover': {
       backgroundColor: 'transparent',
