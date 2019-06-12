@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.25] Fix `Move` icon
+
+#### **Changes**
+- Roll back  SVG changes to `Move` icon
+
 ## [2.24] `Updatable` signature change
 
 #### **Changes**
