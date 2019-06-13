@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.26] New component: `Divider`
+
+#### **Changes**
+- Adds `Divider` component to `fds-components`.
+
 ## [2.25] Fix `Move` icon
 
 #### **Changes**
