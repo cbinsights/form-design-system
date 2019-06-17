@@ -41,28 +41,57 @@ const getExportCmd = (sourcePath, destPath, itemIds) =>
   ].join(' ');
 
 /**
+ * Collects duplicate slice names from sketch export. Returns empty array if none found.
+ *
+ * @param {Array} slices aray of slice objects `{ id, name }`
+ * @returns {Array} list of icon names that are duplicated in the sketch file
+ */
+const getDuplicates = (slices) => {
+  const names = slices.map(({ name }) => name);
+  const checked = new Set();
+  const duplicates = [];
+
+  names.forEach((name) => {
+    if (checked.has(name)) {
+      duplicates.push(name);
+    } else {
+      checked.add(name);
+    }
+  });
+
+  return duplicates;
+};
+
+/**
  * Gets all slices from a given sketch file page
  *
- * @param {Object} slices full slices data from sketchtool
+ * @param {Object} sketchData result from sketchtool
  * @param {String} pageName name of page to get slices from
  * @param {String} slicePrefix include only slices with this prefix
  * @returns {Array} list of { id, name } objects for all slices in `pageName`
  */
-const getSlicesByPage = (slices, pageName, slicePrefix) =>
-  slices.pages
+const getSlicesByPage = (sketchData, pageName, slicePrefix) =>
+  sketchData.pages
     .filter((page) => page.name.toUpperCase() === pageName.toUpperCase())
     .pop()
     .slices.filter((slice) => slice.name.includes(slicePrefix))
-    .map((slice) => slice.id);
+    .map(({ id, name }) => ({ id, name }));
 
 exec(`sketchtool list slices "${PATH_SKETCH_FILE}"`, (error, result) => {
   if (error) throw new Error(`exec error: ${error}`);
 
-  const sliceIds = getSlicesByPage(
+  const slices = getSlicesByPage(
     JSON.parse(result),
     SKETCH_PAGE_NAME,
     SKETCH_SLICE_PREFIX
   );
+  const duplicates = getDuplicates(slices);
+  const sliceIds = slices.map(({ id }) => id);
+
+  // Stop the export if there are duplicate slice names in the sketch file.
+  if (duplicates.length > 0) {
+    throw new Error(`Found duplicate slice names in Sketch file: "${duplicates}".`);
+  }
 
   // export all slices to SVG files
   exec(getExportCmd(PATH_SKETCH_FILE, PATH_SVG_DEST, sliceIds), (exportError) => {
