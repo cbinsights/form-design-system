@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.26] Add `Export` icon
+
+#### **Changes**
+- Adds `Export` icon
+- Puts dollar sign back in `Investor` icon
+
 ## [2.25] Fix `Move` icon
 
 #### **Changes**
