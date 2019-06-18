@@ -32,8 +32,9 @@
 @import "./helperClasses/typemod/style";
 
 /* Form field modifiers */
-@import "./helperClasses/forms/error";
-@import "./helperClasses/forms/reset";
+@import "./helperClasses/forms/inputError";
+@import "./helperClasses/forms/inputReset";
+@import "./helperClasses/forms/buttonReset";
 
 /* Whitespace helpers */
 @import "./helperClasses/whitespace/truncate";

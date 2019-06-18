@@ -1320,6 +1320,23 @@ input.resetInput {
   background: transparent;
   margin: 0;
 }
+/*---
+title: Reset Button
+name: resetButton
+section: Form Helpers
+---
+
+```example:html
+<button class="resetButton">This is a button</button>
+```
+*/
+button.resetButton {
+  background: transparent;
+  border-width: 0;
+  padding: 0;
+  min-height: 0;
+  min-height: initial;
+}
 /* Whitespace helpers */
 /*---
 title: Truncate text
