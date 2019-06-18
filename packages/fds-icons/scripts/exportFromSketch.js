@@ -19,26 +19,8 @@ if (!process.argv[2]) {
 
 const PATH_SKETCH_FILE = path.normalize(process.argv[2]);
 const PATH_SVG_DEST = sketchConfig.output;
-
 const SKETCH_PAGE_NAME = sketchConfig.pageName;
 const SKETCH_SLICE_PREFIX = sketchConfig.slicePrefix;
-
-/**
- * Builds command to export icon slices as SVG files
- *
- * @param {String} sourcePath file path of sketch file
- * @param {String} destPath destination path for SVG exports
- * @param {Array} itemIds ids of slices to export as SVGs
- * @returns {String} bash command for sketchtool export
- */
-const getExportCmd = (sourcePath, destPath, itemIds) =>
-  [
-    `sketchtool export slices "${sourcePath}"`,
-    '--scales=1.0',
-    `--output=${destPath}`,
-    '--formats=svg',
-    `--items=${itemIds}`,
-  ].join(' ');
 
 /**
  * Collects duplicate slice names from sketch export. Returns empty array if none found.
@@ -90,11 +72,21 @@ exec(`sketchtool list slices "${PATH_SKETCH_FILE}"`, (error, result) => {
 
   // Stop the export if there are duplicate slice names in the sketch file.
   if (duplicates.length > 0) {
-    throw new Error(`Found duplicate slice names in Sketch file: "${duplicates}".`);
+    throw new Error(
+      `Found duplicate slice names in Sketch file: "${duplicates}". Ask the design team to remove duplicate icons from the sketch file.`
+    );
   }
 
+  const sketchtoolCommand = [
+    `sketchtool export slices "${PATH_SKETCH_FILE}"`,
+    '--scales=1.0',
+    `--output=${PATH_SVG_DEST}`,
+    '--formats=svg',
+    `--items=${sliceIds}`,
+  ].join(' ');
+
   // export all slices to SVG files
-  exec(getExportCmd(PATH_SKETCH_FILE, PATH_SVG_DEST, sliceIds), (exportError) => {
+  exec(sketchtoolCommand, (exportError) => {
     if (error) throw new Error(`exec error: ${exportError}`);
     console.info('Slices exported');
 
