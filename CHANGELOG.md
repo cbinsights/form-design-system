@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.26] Add `resetButton` class
+
+#### **Changes**
+- Adds `resetButton` utility class to `fds-styles`.
+
 ## [2.26] Add `Export` icon
 
 #### **Changes**

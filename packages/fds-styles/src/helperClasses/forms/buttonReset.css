@@ -4,6 +4,8 @@ name: resetButton
 section: Form Helpers
 ---
 
+Removes default user agent styling from `button` elements.
+
 ```example:html
 <button class="resetButton">This is a button</button>
 ```
@@ -12,4 +14,6 @@ section: Form Helpers
 button.resetButton {
   background: transparent;
   border-width: 0;
+  padding: 0;
+  min-height: initial;
 }
