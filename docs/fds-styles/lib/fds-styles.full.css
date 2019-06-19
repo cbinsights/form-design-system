@@ -959,6 +959,121 @@ class           | description
   width: 86px !important;
   width: var(--media-xl) !important;
 }
+/* Shadow Helpers */
+/*---
+title: Elevation shadows
+name: elevationShadows
+section: Shadow Helpers
+---
+
+These `elevation` classes set a `box-shadow` based on
+[material design shadows](https://material.io/design/environment/light-shadows.html#shadows).
+
+Signature: `elevation--<level>`
+
+```example:html
+<style>
+._example {
+  width: var(--media-xl);
+  height: var(--media-m);
+  padding: 0.25rem;
+  margin: 1rem 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-mono);
+  color: var(--color-violet);
+}
+</style>
+
+<div class="_example elevation--1">1 (2dp)</div>
+<div class="_example elevation--2">2 (4dp)</div>
+<div class="_example elevation--3">3 (8dp)</div>
+<div class="_example elevation--4">4 (12dp)</div>
+<div class="_example elevation--5">5 (16dp)</div>
+```
+*/
+/* Shadow 1.5dp */
+.elevation--1 {
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14),
+    0 3px 1px -2px rgba(0,0,0,0.12),
+    0 1px 3px 0 rgba(0,0,0,0.20);
+}
+/* Shadow 4dp */
+.elevation--2 {
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),
+    0 1px 10px 0 rgba(0,0,0,0.12),
+    0 2px 4px -1px rgba(0,0,0,0.20);
+}
+/* Shadow 8dp */
+.elevation--3 {
+  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14),
+    0 3px 14px 2px rgba(0,0,0,0.12),
+    0 5px 5px -3px rgba(0,0,0,0.20);
+}
+/* Shadow 12dp */
+.elevation--4 {
+  box-shadow: 0 12px 17px 2px rgba(0,0,0,0.14),
+    0 5px 22px 4px rgba(0,0,0,0.12),
+    0 7px 8px -4px rgba(0,0,0,0.20);
+}
+/* Shadow 16dp */
+.elevation--5 {
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14),
+    0 6px 30px 5px rgba(0,0,0,0.12),
+    0 8px 10px -5px rgba(0,0,0,0.20);
+}
+/*---
+title: Depth shadows
+name: depthShadows
+section: Shadow Helpers
+---
+
+These `depth` classes set an `inset` `box-shadow` to
+illustrate depth below "page surface".
+
+Signature: `depth--<level>`
+
+```example:html
+<style>
+._example {
+  width: 25%;
+  height: var(--media-m);
+  padding: 0.25rem;
+  margin: 1rem 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-mono);
+  color: var(--color-violet);
+}
+</style>
+
+<div class="_example depth--1">1 (1dp)</div>
+<div class="_example depth--2">2 (2dp)</div>
+<div class="_example depth--3">3 (4dp)</div>
+```
+*/
+/* Shadow 1dp */
+.depth--1 {
+  box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.14),
+    inset 0 2px 1px -1px rgba(0,0,0,0.12),
+    inset 0 1px 3px 0 rgba(0,0,0,0.20);
+}
+/* Shadow 2dp */
+.depth--2 {
+  box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.14),
+    inset 0 3px 1px -2px rgba(0,0,0,0.12),
+    inset 0 1px 5px 0 rgba(0,0,0,0.20);
+}
+/* Shadow 4dp */
+.depth--3 {
+  box-shadow: inset 0 4px 5px 0 rgba(0,0,0,0.14),
+    inset 0 1px 10px 0 rgba(0,0,0,0.12),
+    inset 0 2px 4px -1px rgba(0,0,0,0.20);
+}
 /* Typesetting */
 /*---
 title: Heading Tags
@@ -1325,6 +1440,8 @@ title: Reset Button
 name: resetButton
 section: Form Helpers
 ---
+
+Removes default user agent styling from `button` elements.
 
 ```example:html
 <button class="resetButton">This is a button</button>

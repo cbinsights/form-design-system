@@ -22,6 +22,10 @@
 /* Layout Helpers */
 @import "./helperClasses/layout/media";
 
+/* Shadow Helpers */
+@import "./helperClasses/shadow/elevation";
+@import "./helperClasses/shadow/depth";
+
 /* Typesetting */
 @import "./helperClasses/typeset/scale";
 
