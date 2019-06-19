@@ -63,6 +63,17 @@
         
   
         
+        <a class="menu-heading" href="#shadow-helpers"><span>Shadow Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#elevationShadows"><span>Elevation shadows</span></a>
+        
+        
+        <a class="menu-item" href="#depthShadows"><span>Depth shadows</span></a>
+        
+        
+  
+        
         <a class="menu-heading" href="#typesetting"><span>Typesetting</span></a>
         
     
@@ -503,6 +514,79 @@ dimenions on the selected element to match standard media sizes.</p>
       </div>
     </section>
     
+    <section id="shadow-helpers">
+      <h1 class="page-title">Shadow Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="elevationShadows">
+      <h2 class="page-title">Elevation shadows</h2>
+
+      <div class="markdown-body">
+        <p>These <code>elevation</code> classes set a <code>box-shadow</code> based on
+<a href="https://material.io/design/environment/light-shadows.html#shadows">material design shadows</a>.</p>
+<p>Signature: <code>elevation--&lt;level&gt;</code></p>
+<pre><code class="lang-example:html">&lt;style&gt;
+._example {
+  width: var(--media-xl);
+  height: var(--media-m);
+  padding: 0.25rem;
+  margin: 1rem 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-mono);
+  color: var(--color-violet);
+}
+&lt;/style&gt;
+
+&lt;div class=&quot;_example elevation--1&quot;&gt;1 (2dp)&lt;/div&gt;
+&lt;div class=&quot;_example elevation--2&quot;&gt;2 (4dp)&lt;/div&gt;
+&lt;div class=&quot;_example elevation--3&quot;&gt;3 (8dp)&lt;/div&gt;
+&lt;div class=&quot;_example elevation--4&quot;&gt;4 (12dp)&lt;/div&gt;
+&lt;div class=&quot;_example elevation--5&quot;&gt;5 (16dp)&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="depthShadows">
+      <h2 class="page-title">Depth shadows</h2>
+
+      <div class="markdown-body">
+        <p>These <code>depth</code> classes set an <code>inset</code> <code>box-shadow</code> to
+illustrate depth below &quot;page surface&quot;.</p>
+<p>Signature: <code>depth--&lt;level&gt;</code></p>
+<pre><code class="lang-example:html">&lt;style&gt;
+._example {
+  width: 25%;
+  height: var(--media-m);
+  padding: 0.25rem;
+  margin: 1rem 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-mono);
+  color: var(--color-violet);
+}
+&lt;/style&gt;
+
+&lt;div class=&quot;_example depth--1&quot;&gt;1 (1dp)&lt;/div&gt;
+&lt;div class=&quot;_example depth--2&quot;&gt;2 (2dp)&lt;/div&gt;
+&lt;div class=&quot;_example depth--3&quot;&gt;3 (4dp)&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
     <section id="typesetting">
       <h1 class="page-title">Typesetting</h1>
 
@@ -735,7 +819,8 @@ class will strip away margin and border styles.</p>
       <h2 class="page-title">Reset Button</h2>
 
       <div class="markdown-body">
-        <pre><code class="lang-example:html">&lt;button class=&quot;resetButton&quot;&gt;This is a button&lt;/button&gt;
+        <p>Removes default user agent styling from <code>button</code> elements.</p>
+<pre><code class="lang-example:html">&lt;button class=&quot;resetButton&quot;&gt;This is a button&lt;/button&gt;
 </code></pre>
 
         
@@ -813,7 +898,7 @@ of clamping text to one line.</p>
         </main>
       </div>
       <footer class="footer">
-        Last modified Tuesday, 18 June 2019 15:16
+        Last modified Wednesday, 19 June 2019 12:04
       </footer>
     </div>
     <script src="prism.js?871234"></script>
