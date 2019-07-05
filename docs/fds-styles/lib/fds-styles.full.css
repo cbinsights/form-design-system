@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Mon, 10 Jun 2019 15:10:26 GMT
+ * Generated on Fri, 05 Jul 2019 18:36:25 GMT
  */
 :root {
  --color-charcoal: #404040;
@@ -29,6 +29,7 @@
  --m: (min-width: 768px);
  --l: (min-width: 1024px);
  --xl: (min-width: 1280px);
+ --font-color-link: #4cabce;
  --font-color-dark: #404040;
  --font-color-default: #757575;
  --font-color-light: #a2a0a0;
@@ -1220,6 +1221,36 @@ Tiny text for captions and legalese.
   font-size: var(--font-size-tiny);
   line-height: 1.6;
   line-height: var(--font-lineHeight-smallText);
+}
+/*---
+title: Links
+name: links
+section: Typesetting
+---
+
+```example:html
+<div>
+  <a class="typeset--link" href="#">This is an actual link with the link class</a>
+</div>
+<div>
+  <button class="resetButton typeset--link">This reset button looks like a link</button>
+</div>
+<p>
+  This paragraph as a <span class="typeset--link">span</span> that looks like a link.
+</p>
+```
+*/
+.typeset--link {
+  color: #4cabce;
+  color: var(--font-color-link);
+}
+.typeset--link:hover,
+.typeset--link:focus,
+.typeset--link:active {
+  cursor: pointer;
+  color: #006699;
+  color: var(--color-blue);
+  text-decoration: underline;
 }
 /* Text modifiers */
 /*----
