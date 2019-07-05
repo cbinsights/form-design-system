@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.29] Added font-color-link
+
+#### **Changes**
+- Adds `font-color-link` variable to `fds-dictionary`
+
 ## [2.28] Standard box shadows
 
 #### **Changes**
