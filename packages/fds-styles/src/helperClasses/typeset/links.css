@@ -1,0 +1,30 @@
+/*---
+title: Links
+name: links
+section: Typesetting
+---
+
+```example:html
+<div>
+  <a class="typeset--link" href="#">This is an actual link with the link class</a>
+</div>
+<div>
+  <button class="resetButton typeset--link">This reset button looks like a link</button>
+</div>
+<p>
+  This paragraph as a <span class="typeset--link">span</span> that looks like a link.
+</p>
+```
+*/
+
+.typeset--link {
+  color: var(--font-color-link);
+}
+
+.typeset--link:hover,
+.typeset--link:focus,
+.typeset--link:active {
+  cursor: pointer;
+  color: var(--color-blue);
+  text-decoration: underline;
+}

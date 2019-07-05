@@ -28,6 +28,7 @@
 
 /* Typesetting */
 @import "./helperClasses/typeset/scale";
+@import "./helperClasses/typeset/links";
 
 /* Text modifiers */
 @import "./helperClasses/typemod/size";
