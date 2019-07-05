@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.29] Added link helper class
+
+#### **Changes**
+- Adds `typeset--link` helper class to `fds-styles`
+
 ## [2.29] Added font-color-link
 
 #### **Changes**
