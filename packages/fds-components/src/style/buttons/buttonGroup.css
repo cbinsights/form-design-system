@@ -30,7 +30,7 @@
 .group-btn {
   border: 1px solid #B3B5B6;
   border-radius: 5px;
-  color: #757575;
+  color: var(--color-slate);
   padding: 10px;
   font-size: 10px;
   text-transform: none;
@@ -60,7 +60,7 @@
 
 .group-btn:active {
   background-color: #7F99B2;
-  border-color: #757575;
-  color: #404040;
+  border-color: var(--color-slate);
+  color: var(--color-charcoal);
   z-index: 2;
 }
