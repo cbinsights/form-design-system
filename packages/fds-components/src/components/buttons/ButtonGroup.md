@@ -36,10 +36,9 @@ const buttons = [
       Icon={button.icon}
       onClick={() => handleClick(index)} 
       isActive={activeIndex === index}
-    >
-      {button.name}
-    </GroupButton>
+      label={button.name}
+    />
   ))}
-  <GroupButton onClick={custom}>w/out icon</GroupButton>
+  <GroupButton onClick={custom} label="w/out icon" />
 </ButtonGroup>
 ```
