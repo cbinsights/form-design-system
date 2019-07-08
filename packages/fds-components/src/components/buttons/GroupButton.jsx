@@ -3,10 +3,10 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 export const GroupButton = (props) => {
-  const { className, active, Icon, children, ...rest } = props;
+  const { className, isActive, Icon, children, ...rest } = props;
 
   const rootClass = cx('group-btn', className, {
-    active,
+    isActive,
   });
 
   return (
@@ -19,7 +19,7 @@ export const GroupButton = (props) => {
 
 GroupButton.propTypes = {
   /** Displays active button style when true */
-  active: PropTypes.bool,
+  isActive: PropTypes.bool,
 
   children: PropTypes.node,
 

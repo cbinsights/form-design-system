@@ -15,7 +15,7 @@ describe('GroupButton component', () => {
     const component = renderComponent({
       Icon,
       onClick: () => false,
-      active: true,
+      isActive: true,
       className: 'foo',
     });
     expect(component).toMatchSnapshot();
