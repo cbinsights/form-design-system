@@ -15,5 +15,6 @@ button.resetButton {
   background: transparent;
   border-width: 0;
   padding: 0;
+  margin: 0;
   min-height: initial;
 }
