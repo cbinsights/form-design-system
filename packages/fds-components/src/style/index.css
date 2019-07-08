@@ -5,6 +5,7 @@
 @import "fds-icons/lib/fds-icons";
 
 /* Components */
+@import "./buttons/buttonGroup.css";
 @import "./layout/flex.css";
 @import "./media/avatarRow.css";
 @import "./media/updatable.css";

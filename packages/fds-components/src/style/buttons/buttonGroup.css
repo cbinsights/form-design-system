@@ -1,0 +1,66 @@
+:root {
+  --button-group-timeout: 250ms;
+}
+
+.btn-group {
+  display: inline-flex;
+}
+
+.btn-group > .group-btn {
+  margin-left: -1px;
+  position: relative;
+  border-radius: 0;
+}
+
+.btn-group > .group-btn:focus {
+  z-index: 2;
+}
+
+.btn-group > .group-btn:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-left: 0;
+}
+
+.btn-group > .group-btn:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.group-btn {
+  border: 1px solid #B3B5B6;
+  border-radius: 5px;
+  color: #757575;
+  padding: 10px;
+  font-size: 10px;
+  text-transform: none;
+  line-height: normal;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  transition: background-color var(--button-group-timeout) var(--motion-easing-default),
+    box-shadow var(--button-group-timeout) var(--motion-easing-default),
+    border var(--button-group-timeout) var(--motion-easing-default);
+}
+
+.group-btn .fds-icon {
+  fill: currentColor;
+}
+
+.group-btn:hover,
+.group-btn:focus {
+  text-decoration: none;
+  background-color: #D9E1E8;
+}
+
+.group-btn.active {
+  text-decoration: none;
+  background-color: #D9E1E8;
+}
+
+.group-btn:active {
+  background-color: #7F99B2;
+  border-color: #757575;
+  color: #404040;
+  z-index: 2;
+}
