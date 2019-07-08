@@ -47,19 +47,23 @@
   fill: currentColor;
 }
 
-.group-btn:hover,
+
 .group-btn:focus {
+  background-color: #D3DDE4;
+}
+
+.group-btn:hover {
   text-decoration: none;
-  background-color: #D9E1E8;
+  background-color: #DEE5EB;
 }
 
 .group-btn.active {
   text-decoration: none;
-  background-color: #D9E1E8;
+  background-color: #CAD5DF;
 }
 
 .group-btn:active {
-  background-color: #7F99B2;
+  background-color: #A3B6CA;
   border-color: var(--color-slate);
   color: var(--color-charcoal);
   z-index: 2;
