@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export const GroupButton = (props) => {
   const { className, isActive, Icon, label, ...rest } = props;
 
-  const rootClass = cx('group-btn', className, {
+  const rootClass = cx('groupbtn', className, {
     active: isActive,
   });
 

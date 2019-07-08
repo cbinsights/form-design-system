@@ -2,6 +2,6 @@
 
 exports[`GroupButton component matches snapshot 1`] = `
 <div
-  className="btn-group"
+  className="btngroup"
 />
 `;

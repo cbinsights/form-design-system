@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ButtonGroup = (props) => <div className="btn-group">{props.children}</div>;
+const ButtonGroup = (props) => <div className="btngroup">{props.children}</div>;
 
 ButtonGroup.propTypes = {
   children: PropTypes.node,
