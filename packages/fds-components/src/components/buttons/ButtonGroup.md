@@ -35,7 +35,7 @@ const buttons = [
       key={button.name}
       Icon={button.icon}
       onClick={() => handleClick(index)} 
-      active={Boolean(activeIndex === index)}
+      isActive={activeIndex === index}
     >
       {button.name}
     </GroupButton>
