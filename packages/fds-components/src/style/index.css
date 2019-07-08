@@ -5,7 +5,6 @@
 @import "fds-icons/lib/fds-icons";
 
 /* Components */
-@import "./buttons/buttonGroup.css";
 @import "./layout/flex.css";
 @import "./media/avatarRow.css";
 @import "./media/updatable.css";
@@ -13,6 +12,7 @@
 @import "./interactive/menuButton.css";
 @import "./interactive/toast.css";
 @import "./interactive/toaster.css";
+@import "./interactive/buttonGroup.css";
 
 /* Overrides (remove when possible) */
 img,

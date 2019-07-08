@@ -60,6 +60,7 @@
 .groupbtn.active {
   text-decoration: none;
   background-color: #CAD5DF;
+  font-weight: var(--font-weight-bold);
 }
 
 .groupbtn:active {
