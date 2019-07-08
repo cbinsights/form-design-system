@@ -1,1 +1,1 @@
-`<GroupButton />` should only be used inside `<ButtonGroup />`. This component controls it's own state. See above for example usage.
+`<GroupButton />` should only be used inside `<ButtonGroup />`.
