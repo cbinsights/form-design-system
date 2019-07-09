@@ -17,6 +17,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.31] Deduplicate Icons
+
+#### **Changes**
+- `ShareIcon` icon updated to always use an arrow shape.
+- `HideIcon` icon now uses a crossed out eye shape.
+  - **To use a "no sign" shape, please use `NopeIcon`**
+- `NetworkIcon` added (connected dots style share icon).
+
 ## [2.30] Added link helper class
 
 #### **Changes**
