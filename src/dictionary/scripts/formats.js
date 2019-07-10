@@ -8,7 +8,7 @@ const toMaterialPaletteColor = require('./transforms').filter(
 )[0].transformer;
 
 Handlebars.registerHelper('json', (c) => JSON.stringify(c, null, 2));
-const template = Handlebars.compile(fs.readFileSync(`./doc/index.hbs`).toString());
+const template = Handlebars.compile(fs.readFileSync(`./template/index.hbs`).toString());
 
 /**
  * @param {Array} props list of dictionary props

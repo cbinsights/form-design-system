@@ -7,11 +7,11 @@ module.exports = [
     name: 'doc_assets',
     do: (dictionary, config) => {
       console.log('Copying assets for static docs');
-      fs.copySync('doc/assets', `${config.buildPath}/assets`);
+      fs.copySync('tempalte/assets', `${config.buildPath}/assets`);
     },
     undo: (dictionary, config) => {
       console.log('Cleaning assets for static docs');
       fs.removeSync(`${config.buildPath}/assets`);
-    }
-  }
+    },
+  },
 ];
