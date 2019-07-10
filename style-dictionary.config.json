@@ -1,5 +1,5 @@
 {
-  "source": ["./properties/**/*.json"],
+  "source": ["./src/dictionary/**/*.json"],
 
   "platforms": {
 
@@ -8,7 +8,7 @@
         "attribute/cti",
         "name/i/objectKey"
       ],
-      "buildPath": "./dist/js/",
+      "buildPath": "./lib/dictionary/js/",
       "files": [{
         "filter": "isColor",
         "destination": "reactNative.js",
@@ -20,7 +20,7 @@
       "transforms": [
         "attribute/cti"
       ],
-      "buildPath": "./dist/sketch/",
+      "buildPath": "./lib/dictionary/sketch/",
       "files": [{
         "destination": "cbi.sketchpalette",
         "format": "sketch/palette"
@@ -33,7 +33,7 @@
         "name/custom/kebab",
         "color/css"
       ],
-      "buildPath": "./dist/css/",
+      "buildPath": "./lib/dictionary/css/",
       "files": [{
         "destination": "customProperties.css",
         "format": "css/variables"
@@ -45,7 +45,7 @@
         "attribute/cti",
         "name/custom/kebab"
       ],
-      "buildPath": "./dist/css/",
+      "buildPath": "./lib/dictionary/css/",
       "files": [{
         "filter": "isCustomMedia",
         "destination": "customMedia.css",
@@ -59,7 +59,7 @@
         "name/custom/kebab",
         "color/css"
       ],
-      "buildPath": "./dist/js/",
+      "buildPath": "./lib/dictionary/js/",
       "files": [{
         "destination": "cssCustomProperties.js",
         "format": "js/customProperties"
@@ -72,7 +72,7 @@
         "name/custom/constant",
         "color/css"
       ],
-      "buildPath": "./dist/js/",
+      "buildPath": "./lib/dictionary/js/",
       "files": [{
         "destination": "styleConstants.js",
         "format": "javascript/commonJs"
@@ -85,7 +85,7 @@
         "attribute/materialPalette",
         "name/item"
       ],
-      "buildPath": "./dist/js/",
+      "buildPath": "./lib/dictionary/js/",
       "files": [{
         "filter": "isColor",
         "destination": "materialPalette.js",
@@ -101,7 +101,7 @@
         "attribute/varNames",
         "color/css"
       ],
-      "buildPath": "../../docs/fds-dictionary/",
+      "buildPath": "../docs/fds-dictionary/",
       "files": [{
         "destination": "index.html",
         "format": "html/doc"

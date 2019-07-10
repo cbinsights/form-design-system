@@ -1,6 +1,8 @@
 const fs = require('fs');
+const path = require('path');
 const Handlebars = require('handlebars');
 const { toHsla } = require('./util/color');
+const { DICTIONARY_ROOT } = require('../constants');
 
 // import prop value transformer for ad-hoc material ui colors in docs
 const toMaterialPaletteColor = require('./transforms').filter(
@@ -8,7 +10,8 @@ const toMaterialPaletteColor = require('./transforms').filter(
 )[0].transformer;
 
 Handlebars.registerHelper('json', (c) => JSON.stringify(c, null, 2));
-const template = Handlebars.compile(fs.readFileSync(`./template/index.hbs`).toString());
+const templatePath = path.resolve(DICTIONARY_ROOT, 'doc-template/index.hbs');
+const template = Handlebars.compile(fs.readFileSync(templatePath).toString());
 
 /**
  * @param {Array} props list of dictionary props

@@ -1,6 +1,10 @@
+const path = require('path');
+const { REPO_ROOT } = require('../constants');
+
 const StyleDictionary = require('style-dictionary').extend(
-  './style-dictionary.config.json'
+  path.resolve(REPO_ROOT, 'style-dictionary.config.json')
 );
+
 const filters = require('./filters');
 const transforms = require('./transforms');
 const formats = require('./formats');
