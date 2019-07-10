@@ -14,7 +14,7 @@
     "build:docs": "echo docs build not ready. see `placeholder:docs` target for more details",
     "test": "jest --color",
     "snapshot-update": "jest -u --color",
-    "lint": "eslint ./packages/ --ext .js,.jsx",
+    "lint": "eslint ./src/ --ext .js,.jsx",
     "precommit": "lint-staged",
     "publish": "lerna publish"
   },
@@ -97,19 +97,19 @@
   },
   "lint-staged": {
     "linters": {
-      "packages/**/*.css": [
+      "src/**/*.css": [
         "stylelint --fix",
         "git add"
       ],
-      "packages/**/*.{js,jsx}": [
+      "src/**/*.{js,jsx}": [
         "prettier --write",
         "eslint --no-ignore",
         "git add"
       ]
     },
     "ignore": [
-      "packages/**/*.test.{js,jsx}",
-      "packages/**/assets/*.css"
+      "src/**/*.test.{js,jsx}",
+      "src/**/assets/*.css"
     ]
   },
   "version": "1.11.0"
