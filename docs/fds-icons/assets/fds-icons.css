@@ -24,6 +24,9 @@
  * Sketch exports messy masks.
  * We hide all `mask` elements by default.
  */
+.fds-icon mask {
+  visibility: hidden;
+}
 
 /* size variants */
 .fds-icon--xs {
