@@ -35,6 +35,7 @@ ButtonGroup.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string,
+      /** content is for when we want the value under the hood, and the content shown in the button, to be different */
       content: PropTypes.string,
       icon: PropTypes.func,
     })
