@@ -90,7 +90,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn build:full && git add docs && git commit amend"
+      "pre-push": "yarn build:full && git add docs && git commit --amend"
     }
   },
   "lint-staged": {
