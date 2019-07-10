@@ -18,9 +18,9 @@
   "dependencies": {
     "@material-ui/core": "^3.1.0",
     "classnames": "^2",
-    "fds-dictionary": "^2.30",
-    "fds-icons": "^2.30",
-    "fds-styles": "^2.30",
+    "fds-dictionary": "^2.31",
+    "fds-icons": "^2.31",
+    "fds-styles": "^2.31",
     "prop-types": "^15",
     "react-transition-group": "2.6.1"
   },

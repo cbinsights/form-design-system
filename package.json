@@ -4,24 +4,28 @@
   "author": "CB Insights",
   "license": "MIT",
   "scripts": {
-    "serve:comp": "lerna run serve --stream --scope=fds-components",
-    "icons:export": "lerna run --scope=fds-icons export",
-    "build": "lerna run build --parallel",
-    "build:dict": "lerna run --scope=fds-dictionary build",
-    "build:styles": "lerna run --scope=fds-styles build",
-    "build:comp": "lerna run --scope=fds-components build",
-    "build:icons": "lerna run --scope=fds-icons build",
-    "build:docs": "babel docs/fds-components/build --out-dir=docs/fds-components/build",
-    "build:full": "yarn build:dict && yarn build:icons && yarn bootstrap && yarn build:styles && yarn build:comp && yarn build:docs",
+    "build": "echo lol nope not yet",
+    "build:dict": "echo dictionary build not ready",
+    "build:styles": "echo styles build not read",
+    "build:comp": "echo components build not ready",
+    "build:icons": "echo icons build not ready",
+    "build:muitheme": "echo mui theme build not ready",
+    "placeholder:docs": "babel docs/fds-components/build --out-dir=docs/fds-components/build",
+    "build:docs": "echo docs build not ready. see `placeholder:docs` target for more details",
     "test": "jest --color",
     "snapshot-update": "jest -u --color",
-    "bootstrap": "yarn lerna bootstrap",
     "lint": "eslint ./packages/ --ext .js,.jsx",
     "precommit": "lint-staged",
     "publish": "lerna publish"
   },
   "resolutions": {
     "lodash": "^4.17.11"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.1.0",
+    "classnames": "^2",
+    "prop-types": "^15",
+    "react-transition-group": "2.6.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -55,7 +59,6 @@
     "handlebars": "^4.0.12",
     "husky": "^1.0.0-rc.13",
     "jest": "^24.8.0",
-    "lerna": "^3.14.1",
     "lint-staged": "^8.1.7",
     "lodash": "^4.17.11",
     "mdcss": "^1.5.2",
