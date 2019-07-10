@@ -43,11 +43,6 @@
     border var(--button-group-timeout) var(--motion-easing-default);
 }
 
-.groupbtn .fds-icon {
-  fill: currentColor;
-}
-
-
 .groupbtn:focus {
   background-color: #D3DDE4;
 }
