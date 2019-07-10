@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "echo lol nope not yet",
+    "build:bootstrap": "./scripts/bash/bootstrapBuild.sh",
     "build:dict": "echo dictionary build not ready",
     "build:styles": "echo styles build not read",
     "build:comp": "echo components build not ready",
