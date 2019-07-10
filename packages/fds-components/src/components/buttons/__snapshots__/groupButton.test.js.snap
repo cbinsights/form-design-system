@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GroupButton component matches snapshot 1`] = `
+exports[`GroupButton component matches snapshot (set all props) 1`] = `
 <button
-  className="groupbtn"
+  className="groupbtn active"
+  icon={[Function]}
+  value="Feed"
 />
 `;

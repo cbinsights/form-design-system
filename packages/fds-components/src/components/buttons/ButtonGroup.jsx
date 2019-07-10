@@ -11,14 +11,14 @@ function combine(...functions) {
       .forEach((func) => func(...args));
 }
 
-const ButtonGroup = ({ activeValue, buttons, onChange, className, ...restBtnGroup }) => {
+const ButtonGroup = ({ buttons, onChange, className, ...restBtnGroup }) => {
   const rootClass = cx('btngroup', className);
   return (
     <div className={rootClass} {...restBtnGroup}>
-      {buttons.map(({ value, content, icon, onClick, ...restBtn }) => (
+      {buttons.map(({ isActive, value, content, icon, onClick, ...restBtn }) => (
         <GroupButton
           key={value}
-          isActive={activeValue === value}
+          isActive={isActive}
           onClick={combine(() => onChange(value), onClick)}
           label={content || value}
           Icon={icon}
@@ -30,11 +30,11 @@ const ButtonGroup = ({ activeValue, buttons, onChange, className, ...restBtnGrou
 };
 
 ButtonGroup.propTypes = {
-  activeValue: PropTypes.string,
   /** Each object in array accepts value, content, onClick, and icon, and also will pass through any extra props */
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.string,
+      isActive: PropTypes.bool,
+      value: PropTypes.string.isRequired,
       /** content is for when we want the value under the hood, and the content shown in the button, to be different */
       content: PropTypes.string,
       icon: PropTypes.func,

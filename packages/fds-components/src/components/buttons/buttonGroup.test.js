@@ -10,16 +10,23 @@ const Icon = () => (
 )
 
 const buttons = [
-  { value: 'Feed', icon: Icon},
-  { value: 'Table', icon: Icon, onClick: () => console.log('additional console')},
+  { value: 'Feed', icon: Icon, isActive: true },
+  { value: 'Table', icon: Icon, onClick: () => console.log('additional console'), disabled: true },
 ];
 
 describe('ButtonGroup component', () => {
 
+  it('matches snapshot (default props)', () => {
+    const component = renderComponent({
+      buttons,
+    });
+    expect(component).toMatchSnapshot();
+  });
+
   it('matches snapshot (set all props)', () => {
     const component = renderComponent({
-      activeValue: 'Feed',
       buttons,
+      className: 'foo',
       onChange: () => console.log('changed')
     });
     expect(component).toMatchSnapshot();

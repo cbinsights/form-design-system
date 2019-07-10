@@ -52,20 +52,24 @@
   background-color: #D3DDE4;
 }
 
-.groupbtn:hover {
+.groupbtn:hover:enabled {
   text-decoration: none;
   background-color: #DEE5EB;
 }
 
-.groupbtn.active {
+.groupbtn.active:enabled {
   text-decoration: none;
   background-color: #CAD5DF;
   font-weight: var(--font-weight-bold);
 }
 
-.groupbtn:active {
+.groupbtn:active:enabled {
   background-color: #A3B6CA;
   border-color: var(--color-slate);
   color: var(--color-charcoal);
   z-index: 2;
+}
+
+.groupbtn:disabled {
+  opacity: 0.5;
 }
