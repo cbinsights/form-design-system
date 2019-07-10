@@ -17,6 +17,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.32] Added segmented button
+
+#### **Changes**
+- Adds `ButtonGroup` component to `fds-components`
+- **Pass GroupButton as children to ButtonGroup**
+- Adds `GroupButton` component to `fds-components`
+
 ## [2.31] Deduplicate Icons
 
 #### **Changes**
