@@ -101,7 +101,7 @@
         "attribute/varNames",
         "color/css"
       ],
-      "buildPath": "../docs/fds-dictionary/",
+      "buildPath": "./docs/fds-dictionary/",
       "files": [{
         "destination": "index.html",
         "format": "html/doc"
