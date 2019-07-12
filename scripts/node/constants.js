@@ -1,12 +1,16 @@
 const path = require('path');
 
-const REPO_ROOT = path.resolve(process.cwd());
-const SRC = path.resolve(REPO_ROOT, 'src/');
+const CWD = process.cwd();
+
+const REPO_ROOT = path.resolve(CWD);
 
 module.exports = {
   REPO_ROOT,
-  DICTIONARY_ROOT: path.resolve(SRC, 'dictionary'),
-  ICONS_ROOT: path.resolve(SRC, 'icons'),
-  STYLES_ROOT: path.resolve(SRC, 'styles'),
-  COMPONENTS_ROOT: path.resolve(SRC, 'components'),
+  SRC_ROOT: path.resolve(CWD, 'src'),
+  LIB_ROOT: path.resolve(CWD, 'lib'),
+  DOCS_ROOT: path.resolve(CWD, 'docs'),
+  DICTIONARY_ROOT: path.resolve(CWD, 'src', 'dictionary'),
+  ICONS_ROOT: path.resolve(CWD, 'src', 'icons'),
+  STYLES_ROOT: path.resolve(CWD, 'src', 'base-styles'),
+  COMPONENTS_ROOT: path.resolve(CWD, 'src', 'components'),
 };

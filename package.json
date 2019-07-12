@@ -7,12 +7,15 @@
     "build": "echo lol nope not yet",
     "bootstrap": "./scripts/bash/bootstrapBuild.sh",
     "build:dictionary": "yarn bootstrap && node scripts/node/dictionary/build.js",
-    "build:styles": "echo styles build not ready",
+    "build:styles": "yarn bootstrap && yarn styles:min && yarn styles:full && yarn styles:docs",
     "build:comp": "echo components build not ready",
     "build:icons": "echo icons build not ready",
     "build:muitheme": "echo mui theme build not ready",
     "placeholder:docs": "babel docs/fds-components/build --out-dir=docs/fds-components/build",
     "build:docs": "echo docs build not ready. see `placeholder:docs` target for more details",
+    "styles:min": "NODE_ENV=production postcss src/base-styles/src/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
+    "styles:full": "postcss src/base-styles/src/index.css --verbose --output=lib/base-styles/base-styles.full.css --config=./postcss.config.js",
+    "styles:docs": "node scripts/node/base-styles/buildDocs.js",
     "test": "jest --color",
     "snapshot-update": "jest -u --color",
     "lint": "eslint ./src/ --ext .js,.jsx",
@@ -22,19 +25,20 @@
   "resolutions": {
     "lodash": "^4.17.11"
   },
-  "dependencies": {
-    "@material-ui/core": "^3.1.0",
+  "peerDependencies": {
+    "@material-ui/core": "^3.1",
+    "@material-ui/icons": "^3.1",
     "classnames": "^2",
     "prop-types": "^15",
-    "react-transition-group": "2.6.1"
+    "react": "^16",
+    "react-dom": "^16",
+    "react-transition-group": "^2.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "@material-ui/core": "^3.5.1",
-    "@material-ui/icons": "^3.0.1",
     "@svgr/core": "^4.1.0",
     "@svgr/plugin-jsx": "^4.1.0",
     "@svgr/plugin-svgo": "^4.0.3",
@@ -70,9 +74,6 @@
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^5.3.0",
     "prettier": "^1.14.2",
-    "prop-types": "^15.6.2",
-    "react": "^16.8",
-    "react-dom": "^16.3.1",
     "react-styleguidist": "^9.0.5",
     "rimraf": "^2.6.2",
     "style-dictionary": "^2.8.1",
