@@ -1,1 +1,0 @@
-`<GroupButton />` should only be used inside `<ButtonGroup />`.
