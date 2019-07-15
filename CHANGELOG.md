@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.33] Changed fds-icon color
+
+#### **Changes**
+- `fds-icon` updated to utilize currentColor
+
 ## [2.32] Added segmented button
 
 #### **Changes**
