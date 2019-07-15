@@ -173,24 +173,24 @@ fds-dictionary@^2.29:
   resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.29.123.tgz#dbc3570078c222fcfc8b4e4d39c5ae50785f52c1"
   integrity sha512-0iUE7rruMpBAUxb33yp2BGSbiirZzUnOICt2vPTrI+DHi/4YW0Mp5WSrNVazSoPpP4ZIShrJVSkbmusr1ovj4w==
 
-fds-dictionary@^2.31:
-  version "2.31.135"
-  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.31.135.tgz#e76b76e5fd1ca98508258e2254806e35d7a8eb0b"
-  integrity sha512-WoS9q7rjp1H7YvCHIpGrDTuFRQIHkOfPVjnCAXFHStJXHHOaKqZcatds9nRuHiQfXvQI4OO5QN8DK6NtJEOqNw==
+fds-dictionary@^2.33:
+  version "2.33.135"
+  resolved "https://registry.yarnpkg.com/fds-dictionary/-/fds-dictionary-2.33.135.tgz#3399d503ac82dec2918c1fa2587004dd682d6664"
+  integrity sha512-fR7X/aK4rBA0T9M1WQZpaL8R3nLCwnwPeWtI0qC8aA7P2xX+E/UTnXvwfeP195Gey5neMP68yUgzTwV+KdL4ag==
 
-fds-icons@^2.31:
-  version "2.31.135"
-  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.31.135.tgz#e013ac5e9ae9699ee9c947d070544efc94f2a11b"
-  integrity sha512-nT8w5ZD7BMSrG8+41wQim2Pp0wka6wRwJStBtA3uddG5y6ft2ZbFTFvqMhA61wqpd26hOwta3W2uU8QhwRYqtg==
+fds-icons@^2.33:
+  version "2.33.135"
+  resolved "https://registry.yarnpkg.com/fds-icons/-/fds-icons-2.33.135.tgz#671de49ab4a0abb3819391f99b1a6ffabbbd5a1f"
+  integrity sha512-f54hKs4Ze/0HHmH8IHA6cmTM0tB1Q3W/TF0Tuh8ILkYp6JixYknqJrbRU66OFH3XWwEHds4LYBDZEArfKDY/jA==
   dependencies:
     classnames "^2"
     fds-dictionary "^2.17"
     prop-types "^15"
 
-fds-styles@^2.31:
-  version "2.31.127"
-  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.31.127.tgz#56a6f4791b2d897b933d8c366aed367336e9143d"
-  integrity sha512-QvsSNuZWeCdHDiDsnD5Wi5+cM+hlakhjdMKqrBJrXr4OYdYccJfvHCXMpK8BFkhRmbDHEgbziJdpixcSlmLUyg==
+fds-styles@^2.33:
+  version "2.33.135"
+  resolved "https://registry.yarnpkg.com/fds-styles/-/fds-styles-2.33.135.tgz#b9b4af5d1f53ff0e92c2c0f6504fef9d1530e10b"
+  integrity sha512-k+Oy1KWUCxpl8o200RjhLqPfxe542jg4/hCMvUFRVWn8Y3woIm6Sd1w08kUwMw0TkhaCM3EKhs04W7tphhKCvg==
   dependencies:
     fds-dictionary "^2.29"
 
