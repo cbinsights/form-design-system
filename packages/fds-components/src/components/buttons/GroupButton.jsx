@@ -11,7 +11,7 @@ export const GroupButton = (props) => {
 
   return (
     <button className={rootClass} {...rest}>
-      {Icon && <Icon size="xs" className="margin--right--half" />}
+      {Icon && <Icon size="xs" className="groupbtn-icon" />}
       {label}
     </button>
   );

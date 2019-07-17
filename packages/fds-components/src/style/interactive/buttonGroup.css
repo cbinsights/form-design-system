@@ -1,5 +1,11 @@
 :root {
   --button-group-timeout: 250ms;
+  --button-group-focus-color: rgba(0, 51, 102, 0.32);
+  --button-group-hover-color: #DEE5EB;
+  --button-group-pressed-color: #C2CEDA;
+  --button-group-active-color: #DBE2E9;
+  --button-group-disabled-border-color: #DBE2E9;
+  --border-radius-default: 4px;
 }
 
 .btngroup {
@@ -10,29 +16,47 @@
   margin-left: -1px;
   position: relative;
   border-radius: 0;
-}
-
-.btngroup .groupbtn:focus {
   z-index: 2;
 }
 
+/* z-index is used here to manage the border for those button
+states and their stacking order (whether they display or not).
+The border for a disabled button should appear below a border
+for a button being clicked on (:active) */
+.btngroup .groupbtn:disabled {
+  z-index: 1;
+}
+
+.btngroup .groupbtn.active {
+  z-index: 3;
+}
+
+.btngroup .groupbtn:focus {
+  z-index: 4;
+}
+
+.btngroup .groupbtn:active {
+  z-index: 5;
+}
+
 .btngroup .groupbtn:first-child {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: var(--border-radius-default);
+  border-bottom-left-radius: var(--border-radius-default);
   margin-left: 0;
 }
 
 .btngroup .groupbtn:last-child {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: var(--border-radius-default);
+  border-bottom-right-radius: var(--border-radius-default);
 }
 
 .groupbtn {
-  border: 1px solid #B3B5B6;
-  border-radius: 5px;
-  color: var(--color-slate);
-  padding: 12px;
+  border: 1px solid var(--color-silver);
+  border-radius: var(--border-radius-default);
+  padding: 8px 12px;
   font-size: 12px;
+  color: var(--color-slate);
+  font-weight: var(--font-weight-bold);
   text-transform: none;
   line-height: normal;
   display: inline-flex;
@@ -40,36 +64,51 @@
   user-select: none;
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
     box-shadow var(--button-group-timeout) var(--motion-easing-default),
-    border var(--button-group-timeout) var(--motion-easing-default);
+    border var(--button-group-timeout) var(--motion-easing-default),
+    z-index var(--button-group-timeout) var(--motion-easing-default),;
 }
 
 .groupbtn .fds-icon {
   fill: currentColor;
 }
 
+.groupbtn:focus,
+.groupbtn:active {
+  border-color: var(--color-slate);
+}
+
 .groupbtn:focus {
-  background-color: #D3DDE4;
+  background-color: none;
+  box-shadow: 0 0 0 3px var(--button-group-focus-color);
+  outline: 0;
+  color: var(--color-charcoal);
 }
 
 .groupbtn:hover:enabled {
   text-decoration: none;
-  background-color: #DEE5EB;
+  background-color: var(--button-group-hover-color);
 }
 
-.groupbtn.active:enabled {
-  text-decoration: none;
-  background-color: #CAD5DF;
-  font-weight: var(--font-weight-bold);
-}
-
+/* Pressed */
 .groupbtn:active:enabled {
-  background-color: #A3B6CA;
+  background-color: var(--button-group-pressed-color);
   border-color: var(--color-slate);
   color: var(--color-charcoal);
-  z-index: 2;
+}
+
+/* Activated */
+.groupbtn.active:enabled {
+  text-decoration: none;
+  background-color: var(--button-group-active-color);
+  border-color: var(--color-slate);
+  color: var(--color-charcoal);
 }
 
 .groupbtn:disabled {
-  opacity: 0.5;
-  cursor: default;
+  color: var(--color-silver);
+  border-color: var(--button-group-disabled-border-color);
+}
+
+.groupbtn-icon {
+  margin-right: calc(var(--space-half) / 2);
 }
