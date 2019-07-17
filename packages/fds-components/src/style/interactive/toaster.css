@@ -11,6 +11,12 @@ body {
   position: relative;
 }
 
+.toast-constrainGrowth {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+}
+
 .toaster {
   position: fixed;
   bottom: var(--space-double);
@@ -46,4 +52,9 @@ body {
 .toast-exit-active {
   opacity: 0.01; /* removed from DOM on duration complete */
   transform: translateY(100px);
+}
+
+/* Targeting a nested item isn't ideal, but material may block us from targeting this directly */
+.toast-action span {
+  line-height: 1;
 }
