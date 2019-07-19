@@ -17,6 +17,23 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.34] Changed default cursor on disabled items
+
+#### **Changes**
+- `fds-styles` Changed default cursor on disabled items
+
+## [2.33] Changed fds-icon color
+
+#### **Changes**
+- `fds-icon` updated to utilize currentColor
+
+## [2.32] Added segmented button
+
+#### **Changes**
+- Adds `ButtonGroup` component to `fds-components`
+- **Pass GroupButton as children to ButtonGroup**
+- Adds `GroupButton` component to `fds-components`
+
 ## [2.31] Deduplicate Icons
 
 #### **Changes**

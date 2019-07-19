@@ -3,7 +3,7 @@
  * The wrapper element
  */
 .fds-icon {
-  fill: var(--color-charcoal); /* default icon color; svg el inherits */
+  fill: currentColor;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -24,6 +24,9 @@
  * Sketch exports messy masks.
  * We hide all `mask` elements by default.
  */
+.fds-icon mask {
+  visibility: hidden;
+}
 
 /* size variants */
 .fds-icon--xs {

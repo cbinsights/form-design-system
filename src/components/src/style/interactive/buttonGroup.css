@@ -1,0 +1,71 @@
+:root {
+  --button-group-timeout: 250ms;
+}
+
+.btngroup {
+  display: inline-flex;
+}
+
+.btngroup .groupbtn {
+  margin-left: -1px;
+  position: relative;
+  border-radius: 0;
+}
+
+.btngroup .groupbtn:focus {
+  z-index: 2;
+}
+
+.btngroup .groupbtn:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-left: 0;
+}
+
+.btngroup .groupbtn:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.groupbtn {
+  border: 1px solid #B3B5B6;
+  border-radius: 5px;
+  color: var(--color-slate);
+  padding: 12px;
+  font-size: 12px;
+  text-transform: none;
+  line-height: normal;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  transition: background-color var(--button-group-timeout) var(--motion-easing-default),
+    box-shadow var(--button-group-timeout) var(--motion-easing-default),
+    border var(--button-group-timeout) var(--motion-easing-default);
+}
+
+.groupbtn:focus {
+  background-color: #D3DDE4;
+}
+
+.groupbtn:hover:enabled {
+  text-decoration: none;
+  background-color: #DEE5EB;
+}
+
+.groupbtn.active:enabled {
+  text-decoration: none;
+  background-color: #CAD5DF;
+  font-weight: var(--font-weight-bold);
+}
+
+.groupbtn:active:enabled {
+  background-color: #A3B6CA;
+  border-color: var(--color-slate);
+  color: var(--color-charcoal);
+  z-index: 2;
+}
+
+.groupbtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
