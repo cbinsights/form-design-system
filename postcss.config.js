@@ -3,14 +3,19 @@
 const plugins = [...require('./postcss.plugins')];
 
 module.exports = (ctx) => {
-  const isProdBuild = Boolean(ctx.env === 'production');
+  const isProd = Boolean(ctx.env === 'production');
+  const isStylesDocs = Boolean(ctx.env === 'base_styles_docs');
 
-  if (isProdBuild) {
+  if (isProd) {
     plugins.push(require('cssnano'));
   }
 
+  if (isStylesDocs) {
+    plugins.push(require('./postcss.mdcss'))
+  }
+
   return {
-    map: isProdBuild ? { inline: false } : false,
+    map: isProd ? { inline: false } : false,
     plugins,
   };
 };

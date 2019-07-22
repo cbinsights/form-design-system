@@ -15,7 +15,7 @@
     "build:docs": "echo docs build not ready. see `placeholder:docs` target for more details",
     "styles:min": "NODE_ENV=production postcss src/base-styles/src/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
     "styles:full": "postcss src/base-styles/src/index.css --verbose --output=lib/base-styles/base-styles.full.css --config=./postcss.config.js",
-    "styles:docs": "node scripts/node/base-styles/buildDocs.js",
+    "styles:docs": "NODE_ENV=base_styles_docs postcss ./lib/base-styles/base-styles.full.css --output=/dev/null",
     "test": "jest --color",
     "snapshot-update": "jest -u --color",
     "lint": "eslint ./src/ --ext .js,.jsx",
