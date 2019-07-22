@@ -1,5 +1,5 @@
 /* Custom properties */
-@import "../../../lib/dictionary/css/customProperties";
+@import "../../lib/dictionary/css/customProperties";
 
 /* Base styles */
 @import "./base/customNormalize";
