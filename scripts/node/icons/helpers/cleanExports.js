@@ -15,7 +15,7 @@ const path = require('path');
 const glob = require('glob');
 const rimraf = require('rimraf');
 const pascalCase = require('pascal-case');
-const { sketchConfig } = require('../../icons.config');
+const { sketchConfig } = require('../icons.config');
 
 // sketchtool uses slice names to create dirs
 const DIR_SRC = path.join(sketchConfig.output, sketchConfig.slicePrefix);

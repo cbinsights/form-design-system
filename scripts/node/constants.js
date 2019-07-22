@@ -11,6 +11,5 @@ module.exports = {
   DOCS_ROOT: path.resolve(CWD, 'docs'),
   DICTIONARY_ROOT: path.resolve(CWD, 'src', 'dictionary'),
   ICONS_ROOT: path.resolve(CWD, 'src', 'icons'),
-  STYLES_ROOT: path.resolve(CWD, 'src', 'base-styles'),
   COMPONENTS_ROOT: path.resolve(CWD, 'src', 'components'),
 };

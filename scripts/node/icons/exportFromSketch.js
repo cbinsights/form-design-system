@@ -10,7 +10,7 @@
  */
 const { exec } = require('child_process');
 const path = require('path');
-const { sketchConfig } = require('../icons.config');
+const { sketchConfig } = require('./icons.config');
 const cleanExports = require('./helpers/cleanExports');
 
 if (!process.argv[2]) {

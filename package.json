@@ -9,18 +9,24 @@
     "build:dictionary": "yarn bootstrap && node scripts/node/dictionary/build.js",
     "build:styles": "yarn bootstrap && yarn styles:min && yarn styles:full && yarn styles:docs",
     "build:comp": "echo components build not ready",
-    "build:icons": "echo icons build not ready",
+    "build:icons": "yarn bootstrap && yarn icons:optimize && yarn icons:react && yarn icons:transpile && yarn icons:styles && yarn icons:docs",
     "build:muitheme": "echo mui theme build not ready",
     "placeholder:docs": "babel docs/fds-components/build --out-dir=docs/fds-components/build",
     "build:docs": "echo docs build not ready. see `placeholder:docs` target for more details",
     "styles:min": "NODE_ENV=production postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
     "styles:full": "postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.full.css --config=./postcss.config.js",
     "styles:docs": "NODE_ENV=base_styles_docs postcss ./lib/base-styles/base-styles.full.css --output=/dev/null",
+    "icons:export": "node ./scripts/node/icons/exportFromSketch.js",
+    "icons:optimize": "node ./scripts/node/icons/optimize.js",
+    "icons:react": "node ./scripts/node/icons/createComponents.js",
+    "icons:transpile": "babel ./lib/icons/react --out-dir ./lib/icons/react",
+    "icons:styles": "cp src/icons/style/fds-icons.css ./lib/icons/fds-icons.css",
+    "icons:docs": "node ./scripts/icons/buildDocs.js",
     "test": "jest --color",
     "snapshot-update": "jest -u --color",
     "lint": "eslint ./src/ --ext .js,.jsx",
     "precommit": "lint-staged",
-    "publish": "lerna publish"
+    "publish": "echo publish target not ready yet"
   },
   "resolutions": {
     "lodash": "^4.17.11"
