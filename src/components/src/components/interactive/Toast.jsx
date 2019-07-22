@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import FDS from 'fds-dictionary/dist/js/styleConstants';
+import FDS from '../../../../../lib/fds-dictionary/dist/js/styleConstants';
 import CheckIcon from 'fds-icons/lib/react/CheckIcon';
 import InformationIcon from 'fds-icons/lib/react/InformationIcon';
 import DenyIcon from 'fds-icons/lib/react/DenyIcon';

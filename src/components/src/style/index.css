@@ -1,5 +1,5 @@
 /* Foundational Styles (fds-styles) */
-@import "fds-styles/lib/fds-styles";
+@import "../../../lib/base-styles/base-styles.min.css";
 
 /* Icon Styles (fds-icons) */
 @import "fds-icons/lib/fds-icons";
