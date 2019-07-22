@@ -8,11 +8,11 @@ loaded only in styleguidist.
 */
 
 :root {
-  --debug-font: Monaco, Consolas, monospace;
-  --debug-color-layer: rgba(187,219,229, 0.33);
+  --debug-font: monaco, consolas, monospace;
+  --debug-color-layer: rgba(187, 219, 229, 0.33);
   --debug-color-layerBorder: rgba(0, 51, 102, 0.2);
   --debug-color-info: rgba(229, 50, 62, 1);
-  --debug-color-content: rgba(255,192,203,0.33);
+  --debug-color-content: rgba(255, 192, 203, 0.33);
 }
 
 /**
