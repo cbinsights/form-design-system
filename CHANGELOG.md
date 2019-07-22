@@ -17,6 +17,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.36] Added correct fds-icon displayName
+
+#### **Changes**
+- `fds-icons` Changed icon displayName to reflect the actual name
+
 ## [2.34] Changed default cursor on disabled items
 
 #### **Changes**

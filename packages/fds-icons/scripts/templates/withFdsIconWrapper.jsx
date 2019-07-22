@@ -29,7 +29,7 @@ const withFdsIconWrapper = (WrappedComponent) => {
     className: PropTypes.string,
   };
 
-  IconComponent.displayName = 'FdsIcon';
+  IconComponent.displayName = WrappedComponent.name;
 
   return IconComponent;
 };
