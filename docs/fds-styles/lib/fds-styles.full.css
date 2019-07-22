@@ -535,6 +535,12 @@ input[type="radio"],
 input[type="checkbox"] {
   cursor: pointer;
 }
+button[disabled],
+label[disabled],
+select[disabled],
+input[disabled] {
+  cursor: default;
+}
 /**
  * Specific input overrides
  */
