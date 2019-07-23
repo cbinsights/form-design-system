@@ -14,7 +14,7 @@ exports[`Toast component matches snapshot (error) 1`] = `
     className="toast-content alignChild--left--center"
   >
     <Flex
-      align="center"
+      align="stretch"
       dataTest=""
       direction="row"
     >
@@ -23,13 +23,17 @@ exports[`Toast component matches snapshot (error) 1`] = `
         shrink={true}
       >
         <div
-          className="toast-icon media--s"
+          className="toast-constrainGrowth alignChild--center--center"
         >
           <div
-            className="typemod--white"
-            role="image"
+            className="toast-icon media--s"
           >
-            !
+            <div
+              className="typemod--white"
+              role="image"
+            >
+              !
+            </div>
           </div>
         </div>
       </FlexItem>
@@ -37,23 +41,31 @@ exports[`Toast component matches snapshot (error) 1`] = `
         dataTest=""
         shrink={false}
       >
-        <p>
-          lol
-        </p>
+        <div
+          className="toast-constrainGrowth"
+        >
+          <p>
+            lol
+          </p>
+        </div>
       </FlexItem>
       <FlexItem
         dataTest=""
         shrink={true}
       >
-        <CountdownButton
-          duration={4000}
-          icon={
-            <FdsIcon
-              color="#757575"
-              size="xs"
-            />
-          }
-        />
+        <div
+          className="toast-constrainGrowth alignChild--center--center"
+        >
+          <CountdownButton
+            duration={4000}
+            icon={
+              <FdsIcon
+                color="#757575"
+                size="xs"
+              />
+            }
+          />
+        </div>
       </FlexItem>
     </Flex>
   </div>
@@ -74,7 +86,7 @@ exports[`Toast component matches snapshot (info) 1`] = `
     className="toast-content alignChild--left--center"
   >
     <Flex
-      align="center"
+      align="stretch"
       dataTest=""
       direction="row"
     >
@@ -83,35 +95,47 @@ exports[`Toast component matches snapshot (info) 1`] = `
         shrink={true}
       >
         <div
-          className="toast-icon media--s"
+          className="toast-constrainGrowth alignChild--center--center"
         >
-          <FdsIcon
-            color="#4cabce"
-            size="l"
-          />
+          <div
+            className="toast-icon media--s"
+          >
+            <FdsIcon
+              color="#4cabce"
+              size="l"
+            />
+          </div>
         </div>
       </FlexItem>
       <FlexItem
         dataTest=""
         shrink={false}
       >
-        <p>
-          lol
-        </p>
+        <div
+          className="toast-constrainGrowth"
+        >
+          <p>
+            lol
+          </p>
+        </div>
       </FlexItem>
       <FlexItem
         dataTest=""
         shrink={true}
       >
-        <CountdownButton
-          duration={4000}
-          icon={
-            <FdsIcon
-              color="#757575"
-              size="xs"
-            />
-          }
-        />
+        <div
+          className="toast-constrainGrowth alignChild--center--center"
+        >
+          <CountdownButton
+            duration={4000}
+            icon={
+              <FdsIcon
+                color="#757575"
+                size="xs"
+              />
+            }
+          />
+        </div>
       </FlexItem>
     </Flex>
   </div>
@@ -136,7 +160,7 @@ exports[`Toast component matches snapshot (progress) 1`] = `
     className="toast-content alignChild--left--center"
   >
     <Flex
-      align="center"
+      align="stretch"
       dataTest=""
       direction="row"
     >
@@ -144,9 +168,13 @@ exports[`Toast component matches snapshot (progress) 1`] = `
         dataTest=""
         shrink={false}
       >
-        <p>
-          lol
-        </p>
+        <div
+          className="toast-constrainGrowth"
+        >
+          <p>
+            lol
+          </p>
+        </div>
       </FlexItem>
     </Flex>
   </div>
@@ -167,7 +195,7 @@ exports[`Toast component matches snapshot (success) 1`] = `
     className="toast-content alignChild--left--center"
   >
     <Flex
-      align="center"
+      align="stretch"
       dataTest=""
       direction="row"
     >
@@ -176,35 +204,47 @@ exports[`Toast component matches snapshot (success) 1`] = `
         shrink={true}
       >
         <div
-          className="toast-icon media--s"
+          className="toast-constrainGrowth alignChild--center--center"
         >
-          <FdsIcon
-            color="#ffffff"
-            size="xs"
-          />
+          <div
+            className="toast-icon media--s"
+          >
+            <FdsIcon
+              color="#ffffff"
+              size="xs"
+            />
+          </div>
         </div>
       </FlexItem>
       <FlexItem
         dataTest=""
         shrink={false}
       >
-        <p>
-          lol
-        </p>
+        <div
+          className="toast-constrainGrowth"
+        >
+          <p>
+            lol
+          </p>
+        </div>
       </FlexItem>
       <FlexItem
         dataTest=""
         shrink={true}
       >
-        <CountdownButton
-          duration={4000}
-          icon={
-            <FdsIcon
-              color="#757575"
-              size="xs"
-            />
-          }
-        />
+        <div
+          className="toast-constrainGrowth alignChild--center--center"
+        >
+          <CountdownButton
+            duration={4000}
+            icon={
+              <FdsIcon
+                color="#757575"
+                size="xs"
+              />
+            }
+          />
+        </div>
       </FlexItem>
     </Flex>
   </div>
@@ -225,7 +265,7 @@ exports[`Toast component matches snapshot (warn) 1`] = `
     className="toast-content alignChild--left--center"
   >
     <Flex
-      align="center"
+      align="stretch"
       dataTest=""
       direction="row"
     >
@@ -234,13 +274,17 @@ exports[`Toast component matches snapshot (warn) 1`] = `
         shrink={true}
       >
         <div
-          className="toast-icon media--s"
+          className="toast-constrainGrowth alignChild--center--center"
         >
           <div
-            className="typemod--white"
-            role="image"
+            className="toast-icon media--s"
           >
-            !
+            <div
+              className="typemod--white"
+              role="image"
+            >
+              !
+            </div>
           </div>
         </div>
       </FlexItem>
@@ -248,23 +292,31 @@ exports[`Toast component matches snapshot (warn) 1`] = `
         dataTest=""
         shrink={false}
       >
-        <p>
-          lol
-        </p>
+        <div
+          className="toast-constrainGrowth"
+        >
+          <p>
+            lol
+          </p>
+        </div>
       </FlexItem>
       <FlexItem
         dataTest=""
         shrink={true}
       >
-        <CountdownButton
-          duration={4000}
-          icon={
-            <FdsIcon
-              color="#757575"
-              size="xs"
-            />
-          }
-        />
+        <div
+          className="toast-constrainGrowth alignChild--center--center"
+        >
+          <CountdownButton
+            duration={4000}
+            icon={
+              <FdsIcon
+                color="#757575"
+                size="xs"
+              />
+            }
+          />
+        </div>
       </FlexItem>
     </Flex>
   </div>

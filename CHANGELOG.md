@@ -17,6 +17,17 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [2.35] Updated `ButtonGroup` per new designs
+
+#### **Changes**
+- `ButtonGroup` now manages z-index more carefully
+- `GroupButton` styles were updated, including having a new focus style
+
+## [2.34] Changed default cursor on disabled items
+
+#### **Changes**
+- `fds-styles` Changed default cursor on disabled items
+
 ## [2.33] Changed fds-icon color
 
 #### **Changes**

@@ -73,33 +73,41 @@ const Toast = ({
     >
       {toastBar}
       <div className="toast-content alignChild--left--center">
-        <Flex align="center">
+        <Flex>
           {icon && (
             <FlexItem shrink>
-              <div className="toast-icon media--s">{icon}</div>
+              <div className="toast-constrainGrowth alignChild--center--center">
+                <div className="toast-icon media--s">{icon}</div>
+              </div>
             </FlexItem>
           )}
-          <FlexItem>{content}</FlexItem>
+          <FlexItem>
+            <div className="toast-constrainGrowth">{content}</div>
+          </FlexItem>
           {actionLabel && onAction && (
             <FlexItem shrink>
-              <Button
-                className="toast-action"
-                onClick={onActionDismiss}
-                data-test="toast-action"
-              >
-                {actionLabel}
-              </Button>
+              <div className="toast-constrainGrowth alignChild--center--center">
+                <Button
+                  className="toast-action"
+                  onClick={onActionDismiss}
+                  data-test="toast-action"
+                >
+                  {actionLabel}
+                </Button>
+              </div>
             </FlexItem>
           )}
           {canDismiss && type !== 'progress' && (
             <FlexItem shrink>
-              {isAutoDismiss ? (
-                <CountdownButton onClick={dismissToast} duration={dismissDelay} />
-              ) : (
-                <IconButton onClick={dismissToast}>
-                  <DenyIcon size="xs" color={FDS.FONT_COLOR_DEFAULT} />
-                </IconButton>
-              )}
+              <div className="toast-constrainGrowth alignChild--center--center">
+                {isAutoDismiss ? (
+                  <CountdownButton onClick={dismissToast} duration={dismissDelay} />
+                ) : (
+                  <IconButton onClick={dismissToast}>
+                    <DenyIcon size="xs" color={FDS.FONT_COLOR_DEFAULT} />
+                  </IconButton>
+                )}
+              </div>
             </FlexItem>
           )}
         </Flex>
