@@ -3,17 +3,14 @@ const path = require('path');
 const glob = require('glob');
 const Handlebars = require('handlebars');
 const getComponentName = require('./helpers/getComponentName');
-const { buildConfig } = require('../icons.config');
-
-const PATH_TEMPLATE = path.join(__dirname, '/templates/docs.hbs');
-const PATH_ASSETS = path.join(__dirname, '/templates/assets/');
+const { buildConfig } = require('./icons.config');
 
 if (!fs.existsSync(buildConfig.docs.output)) {
   fs.mkdirSync(buildConfig.docs.output);
 }
 
 Handlebars.registerHelper('json', (c) => JSON.stringify(c, null, 2));
-const template = Handlebars.compile(fs.readFileSync(PATH_TEMPLATE).toString());
+const template = Handlebars.compile(fs.readFileSync(buildConfig.docs.template).toString());
 
 glob(`${buildConfig.docs.input}/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
@@ -28,14 +25,11 @@ glob(`${buildConfig.docs.input}/*.svg`, {}, (error, files) => {
     docsView.push({
       svg,
       name: path.basename(filepath, '.svg'),
-      importName: `import ${componentName} from 'fds-icons/lib/react/${componentName}';`,
+      importName: `import ${componentName} from '@cbinsights/fds/lib/react/${componentName}';`,
     });
   });
 
   fs.writeFileSync(`${buildConfig.docs.output}/index.html`, template(docsView));
-  fs.copySync(PATH_ASSETS, `${buildConfig.docs.output}/assets`);
-  fs.copySync(
-    path.join(__dirname, '../style/fds-icons.css'),
-    `${buildConfig.docs.output}/assets/fds-icons.css`
-  );
+  fs.copySync(buildConfig.docs.assets, `${buildConfig.docs.output}/assets`);
+  fs.copySync(buildConfig.docs.css, `${buildConfig.docs.output}/assets/icons.css`);
 });

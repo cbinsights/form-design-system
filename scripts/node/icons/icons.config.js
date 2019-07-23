@@ -25,10 +25,14 @@ module.exports = {
     },
     react: {
       input: `${ICONS_ROOT}/svg`,
+      template: `${ICONS_ROOT}/templates/withFdsIconWrapper.jsx`,
       output: `${PATH_ICONS_LIB}/react`,
     },
     docs: {
       input: `${PATH_ICONS_LIB}/raw`,
+      template: `${ICONS_ROOT}/templates/docs.hbs`,
+      assets: `${ICONS_ROOT}/templates/assets/`,
+      css: `${ICONS_ROOT}/style/icons.css`,
       output: `${DOCS_ROOT}/fds-icons`,
     },
   },

@@ -5,7 +5,7 @@ const glob = require('glob');
 const svgr = require('@svgr/core').default;
 const getComponentName = require('./helpers/getComponentName');
 const { svgoOptions, svgoPlugins } = require('./helpers/svgoConfig');
-const { buildConfig } = require('../icons.config');
+const { buildConfig } = require('./icons.config');
 
 const FDS_HOC_NAME = 'withFdsIconWrapper';
 
@@ -15,7 +15,7 @@ if (!fs.existsSync(buildConfig.react.output)) {
 
 // copy our HOC for icon components to the build dir
 fs.copyFileSync(
-  path.join(__dirname, `templates/${FDS_HOC_NAME}.jsx`),
+  buildConfig.react.template,
   path.join(buildConfig.react.output, `${FDS_HOC_NAME}.jsx`)
 );
 

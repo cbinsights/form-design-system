@@ -4,7 +4,7 @@ const path = require('path');
 const glob = require('glob');
 const SVGO = require('svgo');
 const { svgoOptions, svgoPlugins } = require('./helpers/svgoConfig');
-const { buildConfig } = require('../icons.config');
+const { buildConfig } = require('./icons.config');
 
 if (!fs.existsSync(buildConfig.raw.output)) {
   fs.mkdirSync(buildConfig.raw.output);
