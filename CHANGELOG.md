@@ -17,7 +17,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [2.35] Changed fds-icon color
+## [2.35] Arrow Icons
 
 #### **Changes**
 - Added arrow icons to `fds-icons`
