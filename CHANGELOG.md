@@ -17,11 +17,20 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [2.35] Updated `ButtonGroup` per new designs
+## [2.36] Updated `ButtonGroup` per new designs
 
 #### **Changes**
 - `ButtonGroup` now manages z-index more carefully
 - `GroupButton` styles were updated, including having a new focus style
+
+## [2.35] Arrow Icons
+
+#### **Changes**
+- Added arrow icons to `fds-icons`
+  - NavArrowBackIcon
+  - NavArrowDownIcon
+  - NavArrowForwardIcon
+  - NavArrowUpIcon
 
 ## [2.34] Changed default cursor on disabled items
 
@@ -31,7 +40,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ## [2.33] Changed fds-icon color
 
 #### **Changes**
-- `fds-icon` updated to utilize currentColor
+- `fds-icons` updated to utilize currentColor
 
 ## [2.32] Added segmented button
 
