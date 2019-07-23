@@ -1,8 +1,8 @@
 /* Foundational Styles (fds-styles) */
-@import "../../../lib/base-styles/base-styles.min.css";
+@import "../../base-styles/index.css";
 
 /* Icon Styles (fds-icons) */
-@import "fds-icons/lib/fds-icons";
+@import "../../icons/style/icons.css";
 
 /* Components */
 @import "./layout/flex.css";

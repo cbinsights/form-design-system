@@ -21,7 +21,7 @@ module.exports = {
   title: 'fds-components',
 
   // destination dir for static build
-  styleguideDir: '../../docs/fds-components/',
+  styleguideDir: './docs/fds-components/',
 
   // expand props tables by default
   usageMode: 'expand',
@@ -37,10 +37,10 @@ module.exports = {
   // webpack require assets into styleguide
   require: [
     // always include our base stylesheet for fds-components
-    path.join(__dirname, 'src/style/index.css'),
+    './src/components/style/index.css',
 
     // for the styleguide only, provide some additional debugging classes
-    path.join(__dirname, 'src/style/debug.css'),
+    './src/style/debug.css',
   ],
 
   // minimum possible webpack config to run/build styleguidist.
@@ -64,6 +64,6 @@ module.exports = {
   getComponentPathLine(componentPath) {
     const name = path.basename(componentPath, '.jsx');
     const dir = path.dirname(componentPath).replace('src', 'lib');
-    return `import ${name} from 'fds-components/${dir}/${name}';`;
+    return `import ${name} from 'form-design-system/${dir}/${name}';`;
   },
 };
