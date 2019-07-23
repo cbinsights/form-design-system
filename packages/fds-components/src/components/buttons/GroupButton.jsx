@@ -6,7 +6,7 @@ export const GroupButton = (props) => {
   const { className, isActive, Icon, label, ...rest } = props;
 
   const rootClass = cx('groupbtn', className, {
-    active: isActive,
+    'groupbtn--active': isActive,
   });
 
   return (

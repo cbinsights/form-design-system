@@ -27,7 +27,7 @@ for a button being clicked on (:active) */
   z-index: 1;
 }
 
-.btngroup .groupbtn.active {
+.btngroup .groupbtn--active {
   z-index: 3;
 }
 
@@ -99,7 +99,7 @@ for a button being clicked on (:active) */
 }
 
 /* Activated */
-.groupbtn.active:enabled {
+.groupbtn--active:enabled {
   text-decoration: none;
   background-color: var(--button-group-active-color);
   border-color: var(--color-slate);
