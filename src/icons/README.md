@@ -56,7 +56,8 @@ Command | Description
 ### Updating icons from a Sketch file
 This project uses `sketchtool` to export SVG icons directly from a sketch file provided by the design team. You must have [Sketch](https://www.sketchapp.com/) installed in order to run the export command.
 
-#### Setting up `sketchtool`
+#### 1) Setting up `sketchtool`
+If you don't already have `sketchtool` on your system, follow these steps:
 
 1. Install [Sketch](https://www.sketchapp.com/)
 2. Add the `sketchtool` binary to your PATH:
@@ -66,7 +67,17 @@ export SKETCHTOOL_PATH="/Applications/Sketch.app/Contents/Resources/sketchtool/b
 export PATH=$PATH:SKETCHTOOL_PATH
 ```
 
-#### Running the export
+#### 2) Getting the icons sketch file
+Talk to your friendly local product designer for a google drive link to our `Icons.sketch`
+file.
+
+##### Known issues
+- Icons should be contained in _exportable artboards_
+- Icon artboards should be named with prefix `icon/`
+- No two icons should be named the same thing. The export script will helpfully
+  throw an error if any duplicates are detected.
+
+#### 3) Running the export
 This project uses a node script to automate `sketchtool` commands.
 Run it **from the root of the `form-design-system` repo**.
 
@@ -86,6 +97,6 @@ yarn build:icons
 Once the build is complete you can open `docs/fds-icons/index.html` in a browser to see
 changes/additions to the icon set.
 
-#### Bump the version number
-When adding or changing icons, please bump the minor version number for FDS. When removing
-icons, bump the major version number.
+#### 4) Bump the version number
+When adding or changing icons, please bump the **minor** version number for FDS. When removing
+icons, bump the **major** version number.
