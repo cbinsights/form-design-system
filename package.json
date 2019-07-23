@@ -10,7 +10,7 @@
     "build:styles": "yarn bootstrap && yarn styles:min && yarn styles:full && yarn styles:docs",
     "build:comp": "echo components build not ready",
     "build:icons": "yarn bootstrap && yarn icons:optimize && yarn icons:react && yarn icons:transpile && yarn icons:style && yarn icons:docs",
-    "build:muitheme": "echo mui theme build not ready",
+    "build:mui-theme": "cp src/mui-theme/index.js ./lib/mui-theme/index.js",
     "placeholder:docs": "babel docs/fds-components/build --out-dir=docs/fds-components/build",
     "build:docs": "echo docs build not ready. see `placeholder:docs` target for more details",
     "styles:min": "NODE_ENV=production postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
