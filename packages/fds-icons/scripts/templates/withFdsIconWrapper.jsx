@@ -29,7 +29,9 @@ const withFdsIconWrapper = (WrappedComponent) => {
     className: PropTypes.string,
   };
 
-  IconComponent.displayName = 'FdsIcon';
+  const IconName = WrappedComponent.name;
+
+  IconComponent.displayName = IconName;
 
   return IconComponent;
 };
