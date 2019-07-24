@@ -29,10 +29,7 @@ const withFdsIconWrapper = (WrappedComponent) => {
     className: PropTypes.string,
   };
 
-  // This removes the suffix "Icon from the name", as "getComponentName"
-  // already adds this for us
-  // e.g. DenyIcon --> Deny
-  const IconName = WrappedComponent.name.slice(0, -4);
+  const IconName = WrappedComponent.name;
 
   IconComponent.displayName = IconName;
 
