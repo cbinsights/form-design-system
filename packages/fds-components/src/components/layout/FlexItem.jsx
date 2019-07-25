@@ -30,7 +30,6 @@ const FlexItem = (props) => {
   const classNames = cx(
     'flexItem',
     {
-      [`flexItem-grow${props.flexGrow}`]: props.flexGrow,
       'flexItem--shrink': props.shrink,
     },
     {
@@ -55,7 +54,6 @@ FlexItem.defaultProps = {
 FlexItem.propTypes = {
   justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),
   align: PropTypes.oneOf(Object.keys(AlignPropMap)),
-  flexGrow: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
 
   /** When set, the `FlexItem` will shrink to content size */
   shrink: PropTypes.bool,
