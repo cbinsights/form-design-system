@@ -59,7 +59,7 @@ exports[`Toast component matches snapshot (error) 1`] = `
           <CountdownButton
             duration={4000}
             icon={
-              <FdsIcon
+              <DenyIcon
                 color="#757575"
                 size="xs"
               />
@@ -100,7 +100,7 @@ exports[`Toast component matches snapshot (info) 1`] = `
           <div
             className="toast-icon media--s"
           >
-            <FdsIcon
+            <InformationIcon
               color="#4cabce"
               size="l"
             />
@@ -129,7 +129,7 @@ exports[`Toast component matches snapshot (info) 1`] = `
           <CountdownButton
             duration={4000}
             icon={
-              <FdsIcon
+              <DenyIcon
                 color="#757575"
                 size="xs"
               />
@@ -209,7 +209,7 @@ exports[`Toast component matches snapshot (success) 1`] = `
           <div
             className="toast-icon media--s"
           >
-            <FdsIcon
+            <CheckIcon
               color="#ffffff"
               size="xs"
             />
@@ -238,7 +238,7 @@ exports[`Toast component matches snapshot (success) 1`] = `
           <CountdownButton
             duration={4000}
             icon={
-              <FdsIcon
+              <DenyIcon
                 color="#757575"
                 size="xs"
               />
@@ -310,7 +310,7 @@ exports[`Toast component matches snapshot (warn) 1`] = `
           <CountdownButton
             duration={4000}
             icon={
-              <FdsIcon
+              <DenyIcon
                 color="#757575"
                 size="xs"
               />
