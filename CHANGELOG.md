@@ -17,7 +17,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [2.38] FlexGrow
+## [3.00] FlexGrow
+
+**⚠️ No consumers were using flexGrow, but we're making this a breaking change just to be safe **
 
 #### **BREAKING CHANGES**
 - Removed flexGrow prop from FlexItem
