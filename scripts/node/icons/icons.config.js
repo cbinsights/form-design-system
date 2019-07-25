@@ -26,7 +26,7 @@ module.exports = {
     react: {
       input: `${ICONS_ROOT}/svg`,
       template: `${ICONS_ROOT}/templates/withFdsIconWrapper.jsx`,
-      output: `${ICONS_ROOT}/react`,
+      output: `${PATH_ICONS_LIB}/react`,
     },
     docs: {
       input: `${PATH_ICONS_LIB}/raw`,

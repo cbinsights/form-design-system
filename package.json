@@ -22,7 +22,7 @@
     "icons:export": "node ./scripts/node/icons/exportFromSketch.js",
     "icons:optimize": "node ./scripts/node/icons/optimize.js",
     "icons:react": "node ./scripts/node/icons/createComponents.js",
-    "icons:transpile": "babel ./src/icons/react --out-dir ./lib/icons/react",
+    "icons:transpile": "babel ./lib/icons/react --out-dir ./lib/icons/react",
     "icons:css": "cp src/icons/style/icons.css ./lib/icons/style/icons.css",
     "icons:docs": "node ./scripts/node/icons/buildDocs.js",
 
