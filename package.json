@@ -4,6 +4,7 @@
   "author": "CB Insights",
   "license": "MIT",
   "scripts": {
+    "postinstall": "yarn bootstrap",
     "serve:comp": "lerna run serve --stream --scope=fds-components",
     "icons:export": "lerna run --scope=fds-icons export",
     "build": "lerna run build --parallel",
