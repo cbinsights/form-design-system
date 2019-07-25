@@ -61,8 +61,6 @@ const svgToComponent = (filepath) => {
   const svgData = fs.readFileSync(filepath);
   const iconName = getComponentName(filepath);
 
-  console.log('iconName', iconName);
-
   svgr(svgData, getSvgrConfig(iconName), {
     componentName: iconName,
   }).then((component) => {

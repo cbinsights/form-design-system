@@ -2,7 +2,7 @@
 
 const PATH_DOC_ASSETS = './src/base-styles/public';
 const PATH_STYLES_LIB = './lib/base-styles';
-const PATH_DEST = './docs/base-styles';
+const PATH_DEST = './docs/fds-styles';
 
 /* mdcss plugin with options */
 module.exports = require('mdcss')({
