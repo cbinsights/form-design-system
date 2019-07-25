@@ -11,9 +11,9 @@
     "build:comp": "yarn comp:css && yarn comp:jsx && yarn comp:docs",
     "build:mui-theme": "cp src/mui-theme/index.js ./lib/mui-theme/index.js",
     "build:transpile-docs": "babel ./docs/fds-components/build --out-dir=docs/fds-components/build",
-    "build:distCSS": "",
-    "build:full": "yarn build:bootstrap && yarn build:dictionary && yarn build:styles && yarn build:icons && yarn build:comp && yarn build:mui-theme && yarn build:transpile-docs",
+    "build:distCSS": "NODE_ENV=production postcss src/assets/all-styles.css -o ./lib/assets/all-styles.min.css",
 
+    "build:full": "yarn build:bootstrap && yarn build:dictionary && yarn build:styles && yarn build:icons && yarn build:comp && yarn build:mui-theme && yarn build:transpile-docs && yarn build:distCSS",
 
     "styles:min": "NODE_ENV=production postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
     "styles:full": "postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.full.css --config=./postcss.config.js",
