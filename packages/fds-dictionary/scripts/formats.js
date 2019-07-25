@@ -69,6 +69,7 @@ const formatHtmlDoc = (dictionary) => {
 
   return template({
     color,
+    border: filterByCategory(otherProps, 'border'),
     font: filterByCategory(otherProps, 'font'),
     layout: filterByCategory(otherProps, 'layout'),
     motion: filterByCategory(otherProps, 'motion'),
