@@ -61,8 +61,10 @@ const svgToComponent = (filepath) => {
   const svgData = fs.readFileSync(filepath);
   const iconName = getComponentName(filepath);
 
+  console.log('iconName', iconName);
+
   svgr(svgData, getSvgrConfig(iconName), {
-    componentName: getComponentName(iconName),
+    componentName: iconName,
   }).then((component) => {
     fs.writeFileSync(`${buildConfig.react.output}/${iconName}.jsx`, component);
   });
