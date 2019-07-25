@@ -32,7 +32,7 @@ const svgrTempalte = (
   { imports, componentName, jsx }
 ) => template.ast`${imports}
 import withFdsIconWrapper from './withFdsIconWrapper';
-const ${componentName} = (props) => ${jsx};
+const ${componentName} = () => ${jsx};
 export default withFdsIconWrapper(${componentName});
 `;
 
@@ -61,8 +61,6 @@ const svgToComponent = (filepath) => {
   const svgData = fs.readFileSync(filepath);
   const iconName = getComponentName(filepath);
 
-  console.log('iconName', iconName);
-
   svgr(svgData, getSvgrConfig(iconName), {
     componentName: iconName,
   }).then((component) => {
@@ -72,7 +70,7 @@ const svgToComponent = (filepath) => {
 
 glob(`${buildConfig.react.input}/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
-  console.info('Creating react components');
+  console.info(`Creating ${files.length} react components`);
   files.forEach(svgToComponent);
-  console.info('Success - react components created');
+  console.info(`Success - react components created`);
 });
