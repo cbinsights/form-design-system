@@ -38,9 +38,6 @@ module.exports = {
   require: [
     // always include our base stylesheet for fds-components
     './src/components/style/index.css',
-
-    // for the styleguide only, provide some additional debugging classes
-    './src/style/debug.css',
   ],
 
   // minimum possible webpack config to run/build styleguidist.

@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import FDS from '../../../../../lib/fds-dictionary/dist/js/styleConstants';
-import CheckIcon from 'fds-icons/lib/react/CheckIcon';
-import InformationIcon from 'fds-icons/lib/react/InformationIcon';
-import DenyIcon from 'fds-icons/lib/react/DenyIcon';
+import FDS from '../../../lib/dictionary/js/styleConstants';
+import CheckIcon from '../../../lib/icons/react/CheckIcon';
+import InformationIcon from '../../../lib/icons/react/InformationIcon';
+import DenyIcon from '../../../lib/icons/react/DenyIcon';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import CountdownButton from '../media/CountdownButton';
-import customPropTypes from '../../util/customPropTypes';
+import customPropTypes from '../util/customPropTypes';
 
 const Toast = ({
   content,

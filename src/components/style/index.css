@@ -1,7 +1,7 @@
-/* Foundational Styles (fds-styles) */
+/* Foundational Styles */
 @import "../../base-styles/index.css";
 
-/* Icon Styles (fds-icons) */
+/* Icon Styles */
 @import "../../icons/style/icons.css";
 
 /* Components */

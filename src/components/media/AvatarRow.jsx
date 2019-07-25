@@ -3,7 +3,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import { withStyles } from '@material-ui/core/styles';
-import FDS from 'fds-dictionary/dist/js/styleConstants';
+import FDS from '../../../lib/dictionary/js/styleConstants';
 
 /**
  * @param {Array} list original member list

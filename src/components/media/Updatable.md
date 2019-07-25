@@ -20,7 +20,7 @@ notification-style red bubble.
 #### With an icon
 
 ```js
-import WorkFasterIcon from 'fds-icons/lib/react/WorkFasterIcon';
+import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
 
 <Updatable message={<WorkFasterIcon size="xs" color="#ffffff" />}>
   <div className="media--xl" style={{ border: '1px solid blue' }}>just a div, but could be anything</div>

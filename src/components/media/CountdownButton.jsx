@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Transition } from 'react-transition-group';
 import IconButton from '@material-ui/core/IconButton';
-import DenyIcon from 'fds-icons/lib/react/DenyIcon';
-import FDS from 'fds-dictionary/dist/js/styleConstants';
+import DenyIcon from '../../../lib/icons/react/DenyIcon';
+import FDS from '../../../lib/dictionary/js/styleConstants';
 
 /**
  *

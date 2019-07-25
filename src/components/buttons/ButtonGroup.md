@@ -5,10 +5,10 @@ import { useState } from 'react';
 
 import ButtonGroup  from './ButtonGroup';
 
-import FeedIcon from 'fds-icons/lib/react/FeedIcon';
-import TableIcon from 'fds-icons/lib/react/TableIcon';
-import MarketMapIcon from 'fds-icons/lib/react/MarketMapIcon';
-import StarEmptyIcon from 'fds-icons/lib/react/StarEmptyIcon';
+import FeedIcon from '../../../lib/icons/react/FeedIcon';
+import TableIcon from '../../../lib/icons/react/TableIcon';
+import MarketMapIcon from '../../../lib/icons/react/MarketMapIcon';
+import StarEmptyIcon from '../../../lib/icons/react/StarEmptyIcon';
 
 const buttons = [
   { value: 'Feed', icon: FeedIcon, isActive: true, isActive: true },
@@ -27,10 +27,10 @@ import { useState } from 'react';
 
 import ButtonGroup  from './ButtonGroup';
 
-import FeedIcon from 'fds-icons/lib/react/FeedIcon';
-import TableIcon from 'fds-icons/lib/react/TableIcon';
-import MarketMapIcon from 'fds-icons/lib/react/MarketMapIcon';
-import StarEmptyIcon from 'fds-icons/lib/react/StarEmptyIcon';
+import FeedIcon from '../../../lib/icons/react/FeedIcon';
+import TableIcon from '../../../lib/icons/react/TableIcon';
+import MarketMapIcon from '../../../lib/icons/react/MarketMapIcon';
+import StarEmptyIcon from '../../../lib/icons/react/StarEmptyIcon';
 
 const [activeValue, setActiveValue] = useState('Feed');
 
