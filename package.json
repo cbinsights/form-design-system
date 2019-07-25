@@ -4,16 +4,16 @@
   "author": "CB Insights",
   "license": "MIT",
   "scripts": {
-    "build": "echo lol nope not yet",
     "build:bootstrap": "./scripts/bash/bootstrapBuild.sh",
-    "build:dictionary": "yarn build:bootstrap && node scripts/node/dictionary/build.js",
-    "build:styles": "yarn build:bootstrap && yarn styles:min && yarn styles:full && yarn styles:docs",
-    "build:comp": "yarn build:bootstrap && yarn comp:css && yarn comp:jsx && yarn comp:docs",
-    "build:icons": "yarn build:bootstrap && yarn icons:optimize && yarn icons:react && yarn icons:transpile && yarn icons:css && yarn icons:docs",
+    "build:dictionary": "node scripts/node/dictionary/build.js",
+    "build:styles": "yarn styles:min && yarn styles:full && yarn styles:docs",
+    "build:icons": "yarn icons:optimize && yarn icons:react && yarn icons:transpile && yarn icons:css && yarn icons:docs",
+    "build:comp": "yarn comp:css && yarn comp:jsx && yarn comp:docs",
     "build:mui-theme": "cp src/mui-theme/index.js ./lib/mui-theme/index.js",
+    "build:transpile-docs": "babel ./docs/fds-components/build --out-dir=docs/fds-components/build",
+    "build:distCSS": "",
+    "build:full": "yarn build:bootstrap && yarn build:dictionary && yarn build:styles && yarn build:icons && yarn build:comp && yarn build:mui-theme && yarn build:transpile-docs",
 
-    "placeholder:docs": "babel docs/fds-components/build --out-dir=docs/fds-components/build",
-    "build:docs": "echo docs build not ready. see `placeholder:docs` target for more details",
 
     "styles:min": "NODE_ENV=production postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
     "styles:full": "postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.full.css --config=./postcss.config.js",
