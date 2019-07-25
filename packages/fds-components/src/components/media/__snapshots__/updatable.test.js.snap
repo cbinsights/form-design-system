@@ -26,7 +26,7 @@ exports[`AvatarRow component matches snapshot with element in message 1`] = `
     className="updatable-indicator"
   >
     <span>
-      <FdsIcon
+      <WorkFasterIcon
         color="#ffffff"
         size="xs"
       />
