@@ -3,7 +3,7 @@
 ## Configs
 
 - [x] lint/test paths
-- [ ] sync up postcss configs?
+- [x] sync up postcss configs?
 
 ## Build stuff
 Get everything building to a common `lib` dir.
@@ -25,27 +25,33 @@ Get everything building to a common `lib` dir.
 - [x] mui-theme
 - [x] css rollup for `lib/assets/styles.css`
 
-## Other
 
-- [ ] Pulish target and Jenkinsfile
-- [x] Base styles in `docs/` should be `fds-styles`
-- [x] debug classes for components
-- [x] pick a name for the root package
-- [ ] DO NOT import things from lib (relative imports like CSS)
+## Docs
+
+- [ ] all README files
+  - [ ] root
+  - [ ] components
+  - [ ] styles
+  - [ ] dictionary
+  - [ ] icons
 - [ ] import hints from docs
   - [ ] components
   - [ ] styles
   - [ ] dictionary
   - [ ] icons
-- [ ] replace package links with relative paths (components, styles, etc)
+
+
+## Release
+
+- [ ] Pulish target and Jenkinsfile
 - [ ] set root package name and version. Use this instead of jenkinsfile?
 - [ ] update build pipeline
-- [ ] all README files
+
+## Other
+
+- [x] Base styles in `docs/` should be `fds-styles`
+- [x] debug classes for components
+- [x] pick a name for the root package
 - [x] flatten nested `src` (`src/base-styles/src` => `src/base-styles/css`)
   - `src/components/src/(components|styles)` => `src/components/(jsx|css)`
-
-
-### COMPONENTS-SPECIFIC
-
-- [ ] update styleguidist config (build dir)
 
