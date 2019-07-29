@@ -17,7 +17,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [3.00] FlexGrow
+## [3.0] FlexGrow
 
 **⚠️ No consumers were using flexGrow, but we're making this a breaking change just to be safe **
 
