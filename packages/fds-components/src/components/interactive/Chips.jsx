@@ -65,9 +65,9 @@ Chip.propTypes = {
   isActive: PropTypes.bool,
   subtitle: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired,
   hasClose: PropTypes.bool,
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
