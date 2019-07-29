@@ -24,6 +24,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### **BREAKING CHANGES**
 - Removed flexGrow prop from FlexItem
 
+## [2.38] Added Chips
+
+#### **Changes**
+- Adds `Chips` component to `fds-components`
+
 ## [2.37] Updated `ButtonGroup` per new designs
 
 #### **Changes**

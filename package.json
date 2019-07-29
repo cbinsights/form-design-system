@@ -4,6 +4,7 @@
   "author": "CB Insights",
   "license": "MIT",
   "scripts": {
+    "postinstall": "yarn bootstrap",
     "serve:comp": "lerna run serve --stream --scope=fds-components",
     "icons:export": "lerna run --scope=fds-icons export",
     "build": "lerna run build --parallel",
@@ -90,7 +91,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test && yarn build:full && git add docs && git commit --amend --no-edit"
+      "pre-push": "yarn test && yarn build:full && git add docs && git commit -m 'build docs'"
     }
   },
   "lint-staged": {
