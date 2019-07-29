@@ -1,22 +1,21 @@
 :root {
-  --button-group-timeout: 250ms;
-  --button-group-focus-color: rgba(0, 51, 102, 0.32);
-  --button-group-hover-color: #DEE5EB;
-  --button-group-pressed-color: #C2CEDA;
-  --button-group-active-color: #DBE2E9;
-  --button-group-disabled-border-color: #DBE2E9;
-  --border-radius-default: 4px;
+  --chip-bg: #E6E6E6;
+  --chip-active: #CACACA;
+  --chip-hover: #D8D8D8;
+  --chip-blue: #E0EDF2;
+  --chip-blue-hover: #D4E7EE;
+  --chip-outline-hover: #D8D8D8;
 }
 
 .fdsChip {
   display: inline-block;
-  background-color: #E6E6E6;
-  color: #404040;
+  background-color: var(--chip-bg);
+  color: var(--font-color-dark);
   border-radius: 20px;
   font-size: 12px;
   line-height: 1;
-  margin-right: 8px;
-  margin-bottom: 4px;
+  margin-right: var(--space-half);
+  margin-bottom: calc(var(--space-half) / 2);
   display: inline-flex;
   align-items: center;
   padding: 5px 7px;
@@ -33,51 +32,51 @@
 }
 
 .fdsChip-close {
-  padding-left: 8px;
-  font-size: 10px;
+  padding-left: var(--space-half);
+  font-size: var(--font-size-tiny);
 }
 
 .fdsChip-subtitle {
-  color: #A2A0A0;
-  font-size: 10px;
-  padding-left: 8px;
+  color: var(--font-color-light);
+  font-size: var(--font-size-tiny);
+  padding-left: var(--space-half);
 }
 
 .fdsChip--active {
-  background-color: #CACACA;
+  background-color: var(--chip-active);
 }
 
 .fdsChip:hover {
-  background-color: #D8D8D8;
+  background-color: var(--chip-hover);
 }
 
 .fdsChip--blue .fdsChip-subtitle {
-  color: #4CABCE;
+  color: inherit;
 }
 
 .fdsChip--blue {
-  color: #006699;
-  background-color: #E0EDF2;
+  color: var(--color-blue);
+  background-color: var(--chip-blue);
 }
 
 .fdsChip--blue.fdsChip--active {
-  background-color: #BBDBE5;
+  background-color: var(--color-sky);
 }
 
 .fdsChip--blue:hover {
-  background-color: #D4E7EE;
+  background-color: var(--chip-blue-hover);
 }
 
 .fdsChip--outline {
-  color: #757575;
-  border-color: #A2A0A0;
+  color: var(--color-slate);
+  border-color: var(--color-gray);
   background-color: transparent;
   font-weight: 600;
 }
 
 .fdsChip--outline:hover {
-  color: #404040;
-  background-color: #D8D8D8;
+  color: var(--color-charcoal);
+  background-color: var(--chip-outline-hover);
 }
 
 .fdsChip--small {
