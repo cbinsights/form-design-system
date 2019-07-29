@@ -92,6 +92,10 @@ Chips.propTypes = {
     PropTypes.shape({
       label: PropTypes.string,
       /**
+       * Use if labels are not unique
+       */
+      value: PropTypes.string,
+      /**
        * This allows for overriding of the Chip root element
        * (Meant to accomodate `<Link />`)
        */
