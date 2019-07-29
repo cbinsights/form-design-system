@@ -68,7 +68,7 @@ Chip.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   hasClose: PropTypes.bool,
-  key: PropTypes.string,
+  value: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
@@ -76,7 +76,7 @@ Chip.propTypes = {
 const Chips = ({ list, /* className is ignored */ className, ...topRest }) => (
   <React.Fragment>
     {list.map((listItem) => (
-      <Chip {...topRest} {...listItem} key={listItem.key || listItem.label} />
+      <Chip {...topRest} {...listItem} key={listItem.value || listItem.label} />
     ))}
   </React.Fragment>
 );
