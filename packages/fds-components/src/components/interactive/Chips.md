@@ -5,7 +5,7 @@ const chips = [
   { label: 'Lorem', href: "#lorem" },
   { label: 'Ipsum', href: "#ipsum", isActive: true, subtitle: 'active' },
   { label: 'Dolor', href: "#dolor", hasClose: true },
-  { label: 'Sit', onClick: () => console.log('more custom logic here'), isActive: false },
+  { label: 'Sit', onClick: () => console.log('custom logic here'), isActive: false },
 ];
 
 // Yes, this even works for Link components
@@ -18,7 +18,7 @@ const chipsTwo = [
   { label: 'Dolor Sit' },
   { rootEl: Link, label: 'hey', to: '#google' },
   { label: 'Sit Amet' },
-  { label: 'Consectetur', onClick: () => console.log('more custom logic here') },
+  { label: 'Consectetur', onClick: () => console.log('custom logic here') },
 ];
 
 <div>
