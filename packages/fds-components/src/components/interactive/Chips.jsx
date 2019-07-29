@@ -73,7 +73,7 @@ Chip.propTypes = {
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
 
-const Chips = ({ list, /* className is ignored */ className, ...topRest }) => (
+const Chips = ({ list, ...topRest }) => (
   <ul className="fdsChip-ul">
     {list.map((listItem) => (
       <li className="fdsChip-li" key={listItem.value || listItem.label}>
@@ -93,21 +93,18 @@ Chips.propTypes = {
     PropTypes.shape({
       label: PropTypes.string,
       /**
-       * This allows for overriding of the Chip root element.
-       * Meant to accomodate  `<Link />`
+       * This allows for overriding of the Chip root element
+       * (Meant to accomodate `<Link />`)
        */
       rootEl: PropTypes.func,
       isActive: PropTypes.bool,
       subtitle: PropTypes.string,
     })
-  ),
-  /** className will be ignored */
-  className: PropTypes.string,
+  ).isRequired,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
   /**
-   * You can specify hasClose on all chips here. Feel free
-   * to individually specify on each chip also
+   * You can specify hasClose on all chips here (or individually per chip)
    */
   hasClose: PropTypes.bool,
 };
