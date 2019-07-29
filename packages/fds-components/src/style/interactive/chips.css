@@ -31,7 +31,7 @@
 }
 
 .fdsChip-close,
- .fdsChip-subtitle {
+.fdsChip-subtitle {
   padding-left: var(--space-half);
   font-size: var(--font-size-tiny);
 }
