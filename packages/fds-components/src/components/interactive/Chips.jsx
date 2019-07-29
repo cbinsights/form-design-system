@@ -74,11 +74,13 @@ Chip.propTypes = {
 };
 
 const Chips = ({ list, /* className is ignored */ className, ...topRest }) => (
-  <React.Fragment>
+  <ul className="fdsChip-ul">
     {list.map((listItem) => (
-      <Chip {...topRest} {...listItem} key={listItem.value || listItem.label} />
+      <li className="fdsChip-li" key={listItem.value || listItem.label}>
+        <Chip {...topRest} {...listItem} />
+      </li>
     ))}
-  </React.Fragment>
+  </ul>
 );
 
 Chips.defaultProps = {

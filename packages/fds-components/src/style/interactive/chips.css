@@ -83,3 +83,11 @@
   padding-top: 1px;
   padding-bottom: 1px;
 }
+
+.fdsChip-ul {
+  display: inline-block;
+}
+
+.fdsChip-li {
+  display: inline-block;
+}
