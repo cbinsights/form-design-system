@@ -94,7 +94,7 @@ Chips.propTypes = {
       /**
        * Use if labels are not unique
        */
-      value: PropTypes.string,
+      value: PropTypes.string.isRequired,
       /**
        * This allows for overriding of the Chip root element
        * (Meant to accomodate `<Link />`)
