@@ -7,7 +7,7 @@ const chips = [
     { label: 'Lorem', href: "#lorem" },
     { label: 'Ipsum', href: "#ipsum", isActive: true, subtitle: 'active' },
     { label: 'Dolor', href: "#dolor", hasClose: true },
-    { label: 'Sit', onClick: () => console.log('custom logic here'), isActive: false },
+    { label: 'Sit', onClick: () => {}, isActive: false },
 ];
 
 /**
