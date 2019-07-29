@@ -1,10 +1,9 @@
 :root {
   --chip-bg: #E6E6E6;
-  --chip-active: #CACACA;
-  --chip-hover: #D8D8D8;
-  --chip-blue: #E0EDF2;
-  --chip-blue-hover: #D4E7EE;
-  --chip-outline-hover: #D8D8D8;
+  --chip-active-bg: #CACACA;
+  --chip-hover-bg: #D8D8D8;
+  --chip-blue-bg: #E0EDF2;
+  --chip-blue-hover-bg: #D4E7EE;
 }
 
 .fdsChip {
@@ -43,11 +42,11 @@
 }
 
 .fdsChip--active {
-  background-color: var(--chip-active);
+  background-color: var(--chip-active-bg);
 }
 
 .fdsChip:hover {
-  background-color: var(--chip-hover);
+  background-color: var(--chip-hover-bg);
 }
 
 .fdsChip--blue .fdsChip-subtitle {
@@ -56,7 +55,7 @@
 
 .fdsChip--blue {
   color: var(--color-blue);
-  background-color: var(--chip-blue);
+  background-color: var(--chip-blue-bg);
 }
 
 .fdsChip--blue.fdsChip--active {
@@ -64,7 +63,7 @@
 }
 
 .fdsChip--blue:hover {
-  background-color: var(--chip-blue-hover);
+  background-color: var(--chip-blue-hover-bg);
 }
 
 .fdsChip--outline {
@@ -76,7 +75,6 @@
 
 .fdsChip--outline:hover {
   color: var(--color-charcoal);
-  background-color: var(--chip-outline-hover);
 }
 
 .fdsChip--small {
@@ -84,10 +82,7 @@
   padding-bottom: 1px;
 }
 
-.fdsChip-ul {
-  display: inline-block;
-}
-
-.fdsChip-li {
+.fdsChip-ul,
+ .fdsChip-li {
   display: inline-block;
 }
