@@ -22,17 +22,7 @@ const baseElement = ({ href, as }) => {
   return Element;
 };
 
-const Chip = ({
-  size,
-  as,
-  theme,
-  isActive,
-  children,
-  label,
-  subtitle,
-  hasClose,
-  ...rest
-}) => {
+const Chip = ({ size, as, theme, isActive, label, subtitle, hasClose, ...rest }) => {
   const Element = baseElement({ href: rest.href, as });
 
   const rootClass = cx('fdsChip', {
@@ -56,7 +46,7 @@ const Chip = ({
 };
 
 Chip.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   /**
    * This allows for overriding of the Chip root element.
    * Meant to accomodate  `<Link />`
@@ -65,18 +55,17 @@ Chip.propTypes = {
   isActive: PropTypes.bool,
   subtitle: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.any.isRequired,
   hasClose: PropTypes.bool,
-  value: PropTypes.string.isRequired,
+  key: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
 
-const Chips = ({ list, ...topRest }) => (
+const Chips = ({ list, ...rest }) => (
   <ul className="fdsChip-ul">
-    {list.map((listItem) => (
-      <li className="fdsChip-li" key={listItem.value || listItem.label}>
-        <Chip {...topRest} {...listItem} />
+    {list.map(({ key, ...listItem }) => (
+      <li className="fdsChip-li" key={key || listItem.label}>
+        <Chip {...rest} {...listItem} />
       </li>
     ))}
   </ul>
@@ -90,11 +79,7 @@ Chips.defaultProps = {
 Chips.propTypes = {
   list: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string,
-      /**
-       * Use if labels are not unique
-       */
-      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
       /**
        * This allows for overriding of the Chip root element
        * (Meant to accomodate `<Link />`)
