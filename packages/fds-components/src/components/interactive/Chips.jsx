@@ -10,10 +10,10 @@ import DenyIcon from 'fds-icons/lib/react/DenyIcon';
  * override where you can specify any element / component as
  * the root
  */
-const baseElement = ({ href, rootEl }) => {
+const baseElement = ({ href, as }) => {
   let Element;
-  if (rootEl) {
-    Element = rootEl;
+  if (as) {
+    Element = as;
   } else if (href) {
     Element = 'a';
   } else {
@@ -24,7 +24,7 @@ const baseElement = ({ href, rootEl }) => {
 
 const Chip = ({
   size,
-  rootEl,
+  as,
   theme,
   isActive,
   children,
@@ -33,7 +33,7 @@ const Chip = ({
   hasClose,
   ...rest
 }) => {
-  const Element = baseElement({ href: rest.href, rootEl });
+  const Element = baseElement({ href: rest.href, as });
 
   const rootClass = cx('fdsChip', {
     'fdsChip--active': isActive,
@@ -61,7 +61,7 @@ Chip.propTypes = {
    * This allows for overriding of the Chip root element.
    * Meant to accomodate  `<Link />`
    */
-  rootEl: PropTypes.func,
+  as: PropTypes.func,
   isActive: PropTypes.bool,
   subtitle: PropTypes.string,
   className: PropTypes.string,
@@ -99,7 +99,7 @@ Chips.propTypes = {
        * This allows for overriding of the Chip root element
        * (Meant to accomodate `<Link />`)
        */
-      rootEl: PropTypes.func,
+      as: PropTypes.func,
       isActive: PropTypes.bool,
       subtitle: PropTypes.string,
     })

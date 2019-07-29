@@ -16,7 +16,7 @@ const Link = ({ to, children, ...rest }) => (
 const chipsTwo = [
   { label: 'Lorem Ipsum' },
   { label: 'Dolor Sit' },
-  { rootEl: Link, label: 'hey', to: '#google' },
+  { as: Link, label: 'hey', to: '#google' },
   { label: 'Sit Amet' },
   { label: 'Consectetur', onClick: () => console.log('custom logic here') },
 ];
