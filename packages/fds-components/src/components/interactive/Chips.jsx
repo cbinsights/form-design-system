@@ -26,7 +26,6 @@ const Chip = ({
   size,
   rootEl,
   theme,
-  /* className is ignored */ className,
   isActive,
   children,
   label,
@@ -44,7 +43,7 @@ const Chip = ({
     'fdsChip--outline': theme === 'outline',
   });
   return (
-    <Element className={rootClass} {...rest}>
+    <Element {...rest} className={rootClass}>
       {label}
       {subtitle && <span className="fdsChip-subtitle">{subtitle}</span>}
       {hasClose && (
