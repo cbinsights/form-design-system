@@ -30,15 +30,14 @@
   height: 10px;
 }
 
-.fdsChip-close {
+.fdsChip-close,
+ .fdsChip-subtitle {
   padding-left: var(--space-half);
   font-size: var(--font-size-tiny);
 }
 
 .fdsChip-subtitle {
   color: var(--font-color-light);
-  font-size: var(--font-size-tiny);
-  padding-left: var(--space-half);
 }
 
 .fdsChip--active {
@@ -83,6 +82,6 @@
 }
 
 .fdsChip-ul,
- .fdsChip-li {
+.fdsChip-li {
   display: inline-block;
 }
