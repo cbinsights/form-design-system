@@ -81,6 +81,10 @@ Chips.propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       /**
+       * Use if labels are not unique
+       */
+      key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      /**
        * This allows for overriding of the Chip root element
        * (Meant to accomodate `<Link />`)
        */
