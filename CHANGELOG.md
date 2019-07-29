@@ -17,7 +17,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [3.01] Updated Chips 
+## [3.1] Updated Chips 
 
 #### **Changes**
 - Can now specify key instead of value on array items
