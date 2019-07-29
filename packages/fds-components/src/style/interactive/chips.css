@@ -1,0 +1,86 @@
+:root {
+  --button-group-timeout: 250ms;
+  --button-group-focus-color: rgba(0, 51, 102, 0.32);
+  --button-group-hover-color: #DEE5EB;
+  --button-group-pressed-color: #C2CEDA;
+  --button-group-active-color: #DBE2E9;
+  --button-group-disabled-border-color: #DBE2E9;
+  --border-radius-default: 4px;
+}
+
+.fdsChip {
+  display: inline-block;
+  background-color: #E6E6E6;
+  color: #404040;
+  border-radius: 20px;
+  font-size: 12px;
+  line-height: 1;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 7px;
+  border: 1px solid transparent;
+  /* button element specific */
+  vertical-align: top;
+  min-height: auto;
+  /* ----------------------- */
+}
+
+.fdsChip .fds-icon {
+  width: 10px;
+  height: 10px;
+}
+
+.fdsChip-close {
+  padding-left: 8px;
+  font-size: 10px;
+}
+
+.fdsChip-subtitle {
+  color: #A2A0A0;
+  font-size: 10px;
+  padding-left: 8px;
+}
+
+.fdsChip--active {
+  background-color: #CACACA;
+}
+
+.fdsChip:hover {
+  background-color: #D8D8D8;
+}
+
+.fdsChip--blue .fdsChip-subtitle {
+  color: #4CABCE;
+}
+
+.fdsChip--blue {
+  color: #006699;
+  background-color: #E0EDF2;
+}
+
+.fdsChip--blue.fdsChip--active {
+  background-color: #BBDBE5;
+}
+
+.fdsChip--blue:hover {
+  background-color: #D4E7EE;
+}
+
+.fdsChip--outline {
+  color: #757575;
+  border-color: #A2A0A0;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.fdsChip--outline:hover {
+  color: #404040;
+  background-color: #D8D8D8;
+}
+
+.fdsChip--small {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}

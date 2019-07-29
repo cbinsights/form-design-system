@@ -13,6 +13,7 @@
 @import "./interactive/toast.css";
 @import "./interactive/toaster.css";
 @import "./interactive/buttonGroup.css";
+@import "./interactive/chips.css";
 
 /* Overrides (remove when possible) */
 img,
