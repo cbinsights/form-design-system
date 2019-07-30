@@ -2,25 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import GroupButton from './GroupButton';
-
-/* Allows you to combine functions */
-function combine(...functions) {
-  return (...args) =>
-    functions
-      .filter((func) => typeof func === 'function')
-      .forEach((func) => func(...args));
-}
+import combine from '../../util/combine';
 
 const ButtonGroup = ({ buttons, onChange, className, ...restBtnGroup }) => {
   const rootClass = cx('btngroup', className);
   return (
     <div className={rootClass} {...restBtnGroup}>
-      {buttons.map(({ isActive, value, content, icon, onClick, ...restBtn }) => (
+      {buttons.map(({ isActive, value, content, icon, onClick, label, ...restBtn }) => (
         <GroupButton
           key={value}
           isActive={isActive}
           onClick={combine(() => onChange(value), onClick)}
-          label={content || value}
+          label={label || content || value}
           Icon={icon}
           {...restBtn}
         />
@@ -33,10 +26,20 @@ ButtonGroup.propTypes = {
   /** Each object in array accepts value, content, onClick, and icon, and also will pass through any extra props */
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
+      /**
+       * This allows for overriding of the Chip root element
+       * (Meant to accomodate `<Link />`)
+       */
+      as: PropTypes.func,
+      /**
+       * Use if labels are not unique
+       */
+      key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       isActive: PropTypes.bool,
-      value: PropTypes.string.isRequired,
-      /** content is for when we want the value under the hood, and the content shown in the button, to be different */
-      content: PropTypes.string,
+      /**
+       * `content` & `value` props are deprecated
+       */
+      label: PropTypes.string,
       icon: PropTypes.func,
     })
   ).isRequired,

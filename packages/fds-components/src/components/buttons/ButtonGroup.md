@@ -10,11 +10,16 @@ import TableIcon from 'fds-icons/lib/react/TableIcon';
 import MarketMapIcon from 'fds-icons/lib/react/MarketMapIcon';
 import StarEmptyIcon from 'fds-icons/lib/react/StarEmptyIcon';
 
+// Yes, this even works for Link components
+const Link = ({ to, children, ...rest }) => (
+  <a href={to} {...rest}>{children}</a>
+)
+
 const buttons = [
-  { value: 'Feed', icon: FeedIcon, isActive: true, isActive: true },
-  { value: 'Table', icon: TableIcon, disabled: true, isActive: false },
-  { value: 'Map', icon: MarketMapIcon, isActive: false },
-  { value: 'Suggested', icon: StarEmptyIcon, onClick: () => console.log('more custom logic here'), isActive: false },
+  { label: 'Feed', icon: FeedIcon, isActive: true, isActive: true, href: "#" },
+  { label: 'Table', icon: TableIcon, disabled: true, isActive: false,  },
+  { label: 'Map', icon: MarketMapIcon, isActive: false, as: Link, to: '#example' },
+  { label: 'Suggested', icon: StarEmptyIcon, onClick: () => console.log('more custom logic here'), isActive: false },
 ];
 
 <ButtonGroup buttons={buttons} onChange={() => console.log('custom logic here')} />
@@ -32,14 +37,14 @@ import TableIcon from 'fds-icons/lib/react/TableIcon';
 import MarketMapIcon from 'fds-icons/lib/react/MarketMapIcon';
 import StarEmptyIcon from 'fds-icons/lib/react/StarEmptyIcon';
 
-const [activeValue, setActiveValue] = useState('Feed');
+const [activeButton, setActiveButton] = useState('Feed');
 
 const buttons = [
-  { value: 'Feed', icon: FeedIcon, isActive: activeValue === 'Feed' },
-  { value: 'Table', icon: TableIcon, disabled: true },
-  { value: 'Map', icon: MarketMapIcon, isActive: activeValue === 'Map' },
-  { value: 'Suggested', icon: StarEmptyIcon, onClick: () => console.log('more custom logic here'), isActive: activeValue === 'Suggested' },
+  { label: 'Feed', icon: FeedIcon, isActive: activeButton === 'Feed' },
+  { label: 'Table', icon: TableIcon, disabled: true },
+  { label: 'Map', icon: MarketMapIcon, isActive: activeButton === 'Map' },
+  { label: 'Suggested', icon: StarEmptyIcon, onClick: () => console.log('more custom logic here'), isActive: activeButton === 'Suggested' },
 ];
 
-<ButtonGroup buttons={buttons} onChange={setActiveValue} />
+<ButtonGroup buttons={buttons} onChange={setActiveButton} />
 ```
