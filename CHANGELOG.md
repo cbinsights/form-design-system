@@ -17,6 +17,16 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [3.2] Updated ButtonGroup
+
+#### **Changes**
+- Standardized `ButtonGroup` in line with `Chips`
+- Array items in `ButtonGroup` can now be rendered as anchors, buttons, or custom components (e.g. Link)
+- Added `label` prop to define display
+- Added `key` prop to override key (if labels are not unique)
+- `content` is now deprecated
+- `value` is now deprecated
+
 ## [3.1] Updated Chips 
 
 #### **Changes**

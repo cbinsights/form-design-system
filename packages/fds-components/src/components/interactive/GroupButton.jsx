@@ -1,25 +1,30 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import baseElement from '../../util/baseElement';
 
 export const GroupButton = (props) => {
-  const { className, isActive, Icon, label, ...rest } = props;
+  const { className, isActive, Icon, label, as, ...rest } = props;
+
+  const Element = baseElement({ href: rest.href, as });
 
   const rootClass = cx('groupbtn', className, {
     'groupbtn--active': isActive,
   });
 
   return (
-    <button className={rootClass} {...rest}>
+    <Element className={rootClass} {...rest}>
       {Icon && <Icon size="xs" className="groupbtn-icon" />}
       {label}
-    </button>
+    </Element>
   );
 };
 
 GroupButton.propTypes = {
   /** Displays active button style when true */
   isActive: PropTypes.bool,
+
+  as: PropTypes.func,
 
   label: PropTypes.string,
 

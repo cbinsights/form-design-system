@@ -31,7 +31,6 @@ module.exports = {
     makeSection('Layout', 'layout'),
     makeSection('Media', 'media'),
     makeSection('Interactive', 'interactive'),
-    makeSection('Buttons', 'buttons'),
   ],
 
   // webpack require assets into styleguide

@@ -1,26 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-
 import DenyIcon from 'fds-icons/lib/react/DenyIcon';
-
-/**
- * Common pattern where we use href to generate whether
- * an href or a button is returned, and also allow a master
- * override where you can specify any element / component as
- * the root
- */
-const baseElement = ({ href, as }) => {
-  let Element;
-  if (as) {
-    Element = as;
-  } else if (href) {
-    Element = 'a';
-  } else {
-    Element = 'button';
-  }
-  return Element;
-};
+import baseElement from '../../util/baseElement';
 
 const Chip = ({ size, as, theme, isActive, label, subtitle, hasClose, ...rest }) => {
   const Element = baseElement({ href: rest.href, as });

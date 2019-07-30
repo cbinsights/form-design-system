@@ -66,6 +66,7 @@ for a button being clicked on (:active) */
     box-shadow var(--button-group-timeout) var(--motion-easing-default),
     border var(--button-group-timeout) var(--motion-easing-default),
     z-index var(--button-group-timeout) var(--motion-easing-default),;
+  margin-bottom: 0;
 }
 
 .groupbtn .fds-icon {
