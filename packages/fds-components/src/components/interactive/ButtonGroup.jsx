@@ -12,7 +12,7 @@ const ButtonGroup = ({ buttons, onChange, className, ...restBtnGroup }) => {
         <GroupButton
           key={value}
           isActive={isActive}
-          onClick={combine(() => onChange(value), onClick)}
+          onClick={onChange ? combine(() => onChange(value), onClick) : onClick}
           label={label || content || value}
           Icon={icon}
           {...restBtn}
