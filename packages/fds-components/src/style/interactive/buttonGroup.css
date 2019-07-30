@@ -76,6 +76,7 @@ for a button being clicked on (:active) */
 .groupbtn:focus,
 .groupbtn:active {
   border-color: var(--color-slate);
+  text-decoration: none;
 }
 
 .groupbtn:focus {
