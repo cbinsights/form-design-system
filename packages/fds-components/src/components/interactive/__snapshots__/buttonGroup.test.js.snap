@@ -9,7 +9,6 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
     isActive={true}
     key="Feed"
     label="Feed"
-    onClick={[Function]}
   />
   <GroupButton
     Icon={[Function]}

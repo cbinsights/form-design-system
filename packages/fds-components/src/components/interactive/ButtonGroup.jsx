@@ -10,9 +10,9 @@ const ButtonGroup = ({ buttons, onChange, className, ...restBtnGroup }) => {
     <div className={rootClass} {...restBtnGroup}>
       {buttons.map(({ isActive, value, content, icon, onClick, label, ...restBtn }) => (
         <GroupButton
-          key={value}
+          key={label || value}
           isActive={isActive}
-          onClick={combine(() => onChange(value), onClick)}
+          onClick={onChange ? combine(() => onChange(value), onClick) : onClick}
           label={label || content || value}
           Icon={icon}
           {...restBtn}

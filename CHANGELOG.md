@@ -17,6 +17,15 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [3.3] Fixed ButtonGroup
+
+#### **Changes**
+
+- Key now properly gets generated from `label`
+- Anchor buttons can now have a disabled style
+- Fixed bug that happens when `onChange` is not specified
+
+
 ## [3.2] Updated ButtonGroup
 
 #### **Changes**
