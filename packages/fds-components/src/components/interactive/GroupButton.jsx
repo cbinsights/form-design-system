@@ -9,6 +9,7 @@ export const GroupButton = (props) => {
   const Element = baseElement({ href: rest.href, as });
 
   const rootClass = cx('groupbtn', className, {
+    'groupbtn--disabled': props.disabled,
     'groupbtn--active': isActive,
   });
 
@@ -29,6 +30,8 @@ GroupButton.propTypes = {
   label: PropTypes.string,
 
   className: PropTypes.string,
+
+  disabled: PropTypes.bool,
 
   /** Specify a fds-icon component */
   Icon: PropTypes.func,
