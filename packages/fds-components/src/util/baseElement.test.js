@@ -1,8 +1,6 @@
 import baseElement from './baseElement'
 
-const Dummy = () => {
-  return null 
-}
+const Dummy = () => null
 
 describe('baseElement', () => {
 
