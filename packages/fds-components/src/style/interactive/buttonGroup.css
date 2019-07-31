@@ -67,6 +67,7 @@ for a button being clicked on (:active) */
     border var(--button-group-timeout) var(--motion-easing-default),
     z-index var(--button-group-timeout) var(--motion-easing-default),;
   margin-bottom: 0;
+  background-color: transparent;
 }
 
 .groupbtn .fds-icon {
@@ -88,20 +89,20 @@ for a button being clicked on (:active) */
   color: var(--color-charcoal);
 }
 
-.groupbtn:hover:enabled {
+.groupbtn:hover {
   text-decoration: none;
   background-color: var(--button-group-hover-color);
 }
 
 /* Pressed */
-.groupbtn:active:enabled {
+.groupbtn:active {
   background-color: var(--button-group-pressed-color);
   border-color: var(--color-slate);
   color: var(--color-charcoal);
 }
 
 /* Activated */
-.groupbtn--active:enabled {
+.groupbtn--active {
   text-decoration: none;
   background-color: var(--button-group-active-color);
   border-color: var(--color-slate);
