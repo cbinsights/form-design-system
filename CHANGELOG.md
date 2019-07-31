@@ -17,6 +17,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [3.4] Fixed / Updated ButtonGroup
+
+#### **Changes**
+
+- `onChange` now works again in `ButtonGroup`
+- deprecated `icon` prop in favor of `Icon` prop in `ButtonGroup`
+- `className` no longer accepted on `ButtonGroup` or `GroupButton`
+
 ## [3.3] Fixed ButtonGroup
 
 #### **Changes**
