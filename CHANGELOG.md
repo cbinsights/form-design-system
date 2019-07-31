@@ -17,6 +17,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [3.5] Fixed GroupButton (Firefox)
+
+#### **Changes**
+
+- `GroupButton` background-color in Firefox is now fixed
+- `GroupButton` active states now work (removed :enabled)
+
 ## [3.4] Fixed / Updated ButtonGroup
 
 #### **Changes**
