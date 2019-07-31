@@ -1,8 +1,6 @@
 Hardcoded example without any local state
 
 ```js
-import { useState } from 'react';
-
 import ButtonGroup  from './ButtonGroup';
 
 import FeedIcon from 'fds-icons/lib/react/FeedIcon';
@@ -16,10 +14,10 @@ const Link = ({ to, children, ...rest }) => (
 )
 
 const buttons = [
-  { label: 'Feed', icon: FeedIcon, isActive: true, isActive: true, href: "#" },
-  { label: 'Table', icon: TableIcon, disabled: true, isActive: false,  },
-  { label: 'Map', icon: MarketMapIcon, isActive: false, as: Link, to: '#example' },
-  { label: 'Suggested', icon: StarEmptyIcon, onClick: () => console.log('more custom logic here'), isActive: false },
+  { label: 'Feed', Icon: FeedIcon, isActive: true, isActive: true, href: "#" },
+  { label: 'Table', Icon: TableIcon, disabled: true, isActive: false,  },
+  { label: 'Map', Icon: MarketMapIcon, isActive: false, as: Link, to: '#example' },
+  { label: 'Suggested', Icon: StarEmptyIcon, onClick: () => console.log('more custom logic here'), isActive: false },
 ];
 
 <ButtonGroup buttons={buttons} onChange={() => console.log('custom logic here')} />
@@ -40,10 +38,10 @@ import StarEmptyIcon from 'fds-icons/lib/react/StarEmptyIcon';
 const [activeButton, setActiveButton] = useState('Feed');
 
 const buttons = [
-  { label: 'Feed', icon: FeedIcon, isActive: activeButton === 'Feed' },
-  { label: 'Table', icon: TableIcon, disabled: true },
-  { label: 'Map', icon: MarketMapIcon, isActive: activeButton === 'Map' },
-  { label: 'Suggested', icon: StarEmptyIcon, onClick: () => console.log('more custom logic here'), isActive: activeButton === 'Suggested' },
+  { label: 'Feed', Icon: FeedIcon, isActive: activeButton === 'Feed' },
+  { label: 'Table', Icon: TableIcon, disabled: true },
+  { label: 'Map', Icon: MarketMapIcon, isActive: activeButton === 'Map' },
+  { label: 'Suggested', Icon: StarEmptyIcon, onClick: () => console.log('more custom logic here'), isActive: activeButton === 'Suggested' },
 ];
 
 <ButtonGroup buttons={buttons} onChange={setActiveButton} />

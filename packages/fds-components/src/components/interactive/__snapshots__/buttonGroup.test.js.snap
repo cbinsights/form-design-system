@@ -22,7 +22,7 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
 
 exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
 <div
-  className="btngroup foo"
+  className="btngroup"
 >
   <GroupButton
     Icon={[Function]}
