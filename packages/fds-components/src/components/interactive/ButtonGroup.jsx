@@ -5,9 +5,9 @@ import combine from '../../util/combine';
 
 const ButtonGroup = ({ buttons, onChange, ...restBtnGroup }) => (
   <div {...restBtnGroup} className="btngroup">
-    {buttons.map(({ value, content, Icon, icon, onClick, label, ...restBtn }) => (
+    {buttons.map(({ value, content, key, Icon, icon, onClick, label, ...restBtn }) => (
       <GroupButton
-        key={label || value}
+        key={key || label || value}
         onClick={onChange ? combine(() => onChange(label || value), onClick) : onClick}
         label={label || content || value}
         Icon={Icon || icon}

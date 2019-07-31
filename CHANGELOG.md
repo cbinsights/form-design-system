@@ -17,6 +17,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [3.6] Fixed GroupButton
+
+#### **Changes**
+
+- `key` now will properly be applied from array items passed to `ButtonGroup`
+
 ## [3.5] Fixed GroupButton (Firefox)
 
 #### **Changes**
