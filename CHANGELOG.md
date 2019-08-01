@@ -17,7 +17,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [3.7] Add view and sort icons
+## [3.8] Add view and sort icons
 
 #### **Changes**
 
@@ -26,6 +26,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
   - `SortUpIcon`
   - `ViewColumnsIcon`
   - `ViewListIcon`
+
+## [3.7] Fixed GroupButton
+
+#### **Changes**
+
+- `GroupButton` now should not overlap any other items that are positioned over it
 
 ## [3.6] Fixed GroupButton
 
