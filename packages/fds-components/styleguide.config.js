@@ -20,6 +20,8 @@ const makeSection = (name, slug) => ({
 module.exports = {
   title: 'fds-components',
 
+  skipComponentsWithoutExample: true,
+
   // destination dir for static build
   styleguideDir: '../../docs/fds-components/',
 
