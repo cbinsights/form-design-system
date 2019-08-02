@@ -43,11 +43,11 @@ Chip.propTypes = {
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
 
-const Chips = ({ list, ...rest }) => (
+const Chips = ({ list, ...topRest }) => (
   <ul className="fdsChip-ul">
-    {list.map(({ key, ...listItem }) => (
-      <li className="fdsChip-li" key={key || listItem.label}>
-        <Chip {...rest} {...listItem} />
+    {list.map(({ hasClose, size, theme, key, ...itemRest }) => (
+      <li className="fdsChip-li" key={key || itemRest.label}>
+        <Chip hasClose={hasClose} size={size} theme={theme} {...topRest} {...itemRest} />
       </li>
     ))}
   </ul>
@@ -71,6 +71,9 @@ Chips.propTypes = {
        * (Meant to accomodate `<Link />`)
        */
       as: PropTypes.func,
+      hasClose: PropTypes.bool,
+      size: PropTypes.oneOf(['small', 'medium', 'large']),
+      theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
       isActive: PropTypes.bool,
       subtitle: PropTypes.string,
     })
