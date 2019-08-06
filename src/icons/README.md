@@ -7,7 +7,7 @@ Icon library for Form Design System
 
 #### As a React component (recommended)
 ```
-import CloudIcon from 'form-design-system/lib/icons/react/CloudIcon';
+import CloudIcon from '@cbinsights/fds/lib/icons/react/CloudIcon';
 
 const UploadButton = () => {
   <button>
@@ -27,7 +27,7 @@ Prop        | Type     | Default | Description
 
 #### As raw SVG
 ```
-import cloudSvg from 'form-design-system/lib/raw/Cloud.svg';
+import cloudSvg from '@cbinsights/fds/lib/raw/Cloud.svg';
 
 const LookAtCloudComponent = () => {
   <p>Check out this cloud: {cloudSvg}</p>
