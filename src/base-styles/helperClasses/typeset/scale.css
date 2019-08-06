@@ -36,7 +36,7 @@ section: Typesetting
 ```
 */
 .typeset--head1 {
-  font-size: var(--font-size-heading1);
+  font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   line-height: var(--font-lineHeight-bigText);
 }
@@ -52,7 +52,7 @@ section: Typesetting
 ```
 */
 .typeset--head2 {
-  font-size: var(--font-size-heading2);
+  font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   line-height: var(--font-lineHeight-bigText);
 }
@@ -68,7 +68,7 @@ section: Typesetting
 ```
 */
 .typeset--head3 {
-  font-size: var(--font-size-heading3);
+  font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   line-height: var(--font-lineHeight-bigText);
 }
@@ -84,7 +84,7 @@ section: Typesetting
 ```
 */
 .typeset--head4 {
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   line-height: var(--font-lineHeight-bigText);
 }
@@ -115,7 +115,7 @@ Typsetting for data (e.g. tables).
 ```
 */
 .typeset--data {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-s);
   line-height: var(--font-lineHeight-smallText);
 }
 
@@ -132,6 +132,6 @@ Tiny text for captions and legalese.
 ```
 */
 .typeset--caption {
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-xs);
   line-height: var(--font-lineHeight-smallText);
 }

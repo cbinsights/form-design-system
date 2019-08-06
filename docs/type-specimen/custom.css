@@ -1,0 +1,21 @@
+html, body {
+  background: var(--color-haze);
+}
+
+.stripe {
+  padding: var(--space-double);
+  border-bottom: 1px solid var(--color-timberwolf);
+}
+
+.stripe:last-child {
+  border-bottom-width: 0;
+}
+
+.stripe--navy {
+  background: var(--color-navy);
+}
+
+.stripe--white {
+  background: var(--color-white);
+}
+

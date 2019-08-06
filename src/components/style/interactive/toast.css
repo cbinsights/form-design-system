@@ -21,7 +21,7 @@
 
 .toast-action {
   color: var(--font-color-light) !important;
-  font-size: var(--font-size-small) !important;
+  font-size: var(--font-size-s) !important;
   letter-spacing: 0.12em;
 }
 

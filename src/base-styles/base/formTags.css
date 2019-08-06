@@ -108,7 +108,7 @@ input[type="seach"] {
 }
 
 input[type="file"] {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-s);
 }
 
 
