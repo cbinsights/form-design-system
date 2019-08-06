@@ -25,7 +25,7 @@ glob(`${buildConfig.docs.input}/*.svg`, {}, (error, files) => {
     docsView.push({
       svg,
       name: path.basename(filepath, '.svg'),
-      importName: `import ${componentName} from '@cbinsights/fds/lib/react/${componentName}';`,
+      importName: `import ${componentName} from 'form-design-system/lib/react/${componentName}';`,
     });
   });
 

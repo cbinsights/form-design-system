@@ -8,5 +8,5 @@ React component library for Form Design System.
 
 ## Development
 
-To start the styleguide development server, run `yarn serve`
+To start the styleguide development server, run `yarn comp:serve`
 in the root directory of this repository.

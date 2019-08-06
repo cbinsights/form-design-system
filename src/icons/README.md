@@ -3,17 +3,11 @@ Icon library for Form Design System
 
 ## Getting Started
 
-### Installation
-
-```
-yarn add -D fds-icons
-```
-
 ### Usage
 
 #### As a React component (recommended)
 ```
-import CloudIcon from 'fds-icons/lib/react/CloudIcon';
+import CloudIcon from 'form-design-system/lib/icons/react/CloudIcon';
 
 const UploadButton = () => {
   <button>
@@ -33,7 +27,7 @@ Prop        | Type     | Default | Description
 
 #### As raw SVG
 ```
-import cloudSvg from 'fds-icons/lib/raw/Cloud.svg';
+import cloudSvg from 'form-design-system/lib/raw/Cloud.svg';
 
 const LookAtCloudComponent = () => {
   <p>Check out this cloud: {cloudSvg}</p>
@@ -44,14 +38,6 @@ const LookAtCloudComponent = () => {
 ------
 
 ## Development
-
-### Yarn commands
-
-Command | Description
-------- | ------------
-`yarn build` | builds docs, minified SVG files to `dist/raw`, and react components to `dist/react`
-`yarn export <sketch file>` | exports icons as SVG from a sketch file to `src/`
-
 
 ### Updating icons from a Sketch file
 This project uses `sketchtool` to export SVG icons directly from a sketch file provided by the design team. You must have [Sketch](https://www.sketchapp.com/) installed in order to run the export command.

@@ -28,23 +28,25 @@ Get everything building to a common `lib` dir.
 
 ## Docs
 
-- [ ] all README files
-  - [ ] root
-  - [ ] components
-  - [ ] styles
-  - [ ] dictionary
-  - [ ] icons
-- [ ] import hints from docs
-  - [ ] components
-  - [ ] styles
-  - [ ] dictionary
-  - [ ] icons
+- [x] all README files
+  - [x] root
+  - [x] components
+  - [x] styles
+  - [x] dictionary
+  - [x] icons
+- [x] import hints from docs
+  - [x] components
+  - [x] styles
+  - [x] dictionary
+  - [x] icons
 
+## BLOCKERS
+
+- [ ] `@cbinsights/fds/lib` or `form-design-system/lib`?
 
 ## Release
 
 - [ ] Pulish target and Jenkinsfile
-- [ ] set root package name and version. Use this instead of jenkinsfile?
 - [ ] update build pipeline
 
 ## Other

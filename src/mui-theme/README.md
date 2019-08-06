@@ -1,15 +1,11 @@
 # `fds-mui-theme`
 
-## Getting started
-
-`yarn install fds-mui-theme`
-
 ## Usage
 
 ### Apply base theme to your app
 
 ```js
-import theme from 'fds-mui-theme';
+import theme from 'form-design-system/lib/mui-theme';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const appTheme = createMuiTheme(theme);
@@ -26,8 +22,9 @@ const App = () => (
 Some features have their own secondary color. You can nest theme providers to accomplish this...
 
 ```js
-import theme from 'fds-mui-theme';
+import theme from 'form-design-system/lib/mui-theme';
 import { violet } from 'fds-dictionary/dist/js/materialPalette';
+import { violet } from 'form-design-system/lib/';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const appTheme = createMuiTheme(theme);
