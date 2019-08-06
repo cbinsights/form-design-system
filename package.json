@@ -3,7 +3,9 @@
   "description": "Form: A design system by CB Insights",
   "author": "CB Insights",
   "license": "MIT",
-  "files": "lib/",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build:bootstrap": "./scripts/bash/bootstrapBuild.sh",
     "build:dictionary": "node scripts/node/dictionary/build.js",
