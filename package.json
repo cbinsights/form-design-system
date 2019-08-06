@@ -32,8 +32,7 @@
     "test": "jest --color",
     "snapshot-update": "jest -u --color",
     "lint": "eslint ./src/ --ext .js,.jsx",
-    "precommit": "lint-staged",
-    "publish": "echo publish target not ready yet"
+    "precommit": "lint-staged"
   },
   "resolutions": {
     "lodash": "^4.17.11"
