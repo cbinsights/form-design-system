@@ -20,6 +20,8 @@ const makeSection = (name, slug) => ({
 module.exports = {
   title: 'fds-components',
 
+  skipComponentsWithoutExample: true,
+
   // destination dir for static build
   styleguideDir: './docs/fds-components/',
 
@@ -31,7 +33,6 @@ module.exports = {
     makeSection('Layout', 'layout'),
     makeSection('Media', 'media'),
     makeSection('Interactive', 'interactive'),
-    makeSection('Buttons', 'buttons'),
   ],
 
   // webpack require assets into styleguide

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chips component matches snapshot (default props) 1`] = `
+<ul
+  className="fdsChip-ul"
+>
+  <li
+    className="fdsChip-li"
+    key="Lorem"
+  >
+    <Chip
+      href="#lorem"
+      label="Lorem"
+      size="medium"
+      theme="gray"
+    />
+  </li>
+  <li
+    className="fdsChip-li"
+    key="Ipsum"
+  >
+    <Chip
+      href="#ipsum"
+      isActive={true}
+      label="Ipsum"
+      size="medium"
+      subtitle="active"
+      theme="gray"
+    />
+  </li>
+  <li
+    className="fdsChip-li"
+    key="Dolor"
+  >
+    <Chip
+      hasClose={true}
+      href="#dolor"
+      label="Dolor"
+      size="medium"
+      theme="gray"
+    />
+  </li>
+  <li
+    className="fdsChip-li"
+    key="Sit"
+  >
+    <Chip
+      isActive={false}
+      label="Sit"
+      onClick={[Function]}
+      size="medium"
+      theme="gray"
+    />
+  </li>
+</ul>
+`;

@@ -10,6 +10,8 @@
 
 .btngroup {
   display: inline-flex;
+  z-index: 0;
+  position: relative;
 }
 
 .btngroup .groupbtn {
@@ -23,7 +25,7 @@
 states and their stacking order (whether they display or not).
 The border for a disabled button should appear below a border
 for a button being clicked on (:active) */
-.btngroup .groupbtn:disabled {
+.btngroup .groupbtn--disabled {
   z-index: 1;
 }
 
@@ -66,6 +68,8 @@ for a button being clicked on (:active) */
     box-shadow var(--button-group-timeout) var(--motion-easing-default),
     border var(--button-group-timeout) var(--motion-easing-default),
     z-index var(--button-group-timeout) var(--motion-easing-default),;
+  margin-bottom: 0;
+  background-color: transparent;
 }
 
 .groupbtn .fds-icon {
@@ -75,6 +79,7 @@ for a button being clicked on (:active) */
 .groupbtn:focus,
 .groupbtn:active {
   border-color: var(--color-slate);
+  text-decoration: none;
 }
 
 .groupbtn:focus {
@@ -86,29 +91,31 @@ for a button being clicked on (:active) */
   color: var(--color-charcoal);
 }
 
-.groupbtn:hover:enabled {
+.groupbtn:hover {
   text-decoration: none;
   background-color: var(--button-group-hover-color);
 }
 
 /* Pressed */
-.groupbtn:active:enabled {
+.groupbtn:active {
   background-color: var(--button-group-pressed-color);
   border-color: var(--color-slate);
   color: var(--color-charcoal);
 }
 
 /* Activated */
-.groupbtn--active:enabled {
+.groupbtn--active {
   text-decoration: none;
   background-color: var(--button-group-active-color);
   border-color: var(--color-slate);
   color: var(--color-charcoal);
 }
 
-.groupbtn:disabled {
+.groupbtn--disabled {
   color: var(--color-silver);
   border-color: var(--button-group-disabled-border-color);
+  cursor: default;
+  pointer-events: none;
 }
 
 .groupbtn-icon {

@@ -17,6 +17,80 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [3.8] Add view and sort icons
+
+#### **Changes**
+
+- Added icons to `fds-icons`
+  - `SortDownIcon`
+  - `SortUpIcon`
+  - `ViewColumnsIcon`
+  - `ViewListIcon`
+
+## [3.7] Fixed GroupButton
+
+#### **Changes**
+
+- `GroupButton` now should not overlap any other items that are positioned over it
+
+## [3.6] Fixed GroupButton
+
+#### **Changes**
+
+- `key` now will properly be applied from array items passed to `ButtonGroup`
+
+## [3.5] Fixed GroupButton (Firefox)
+
+#### **Changes**
+
+- `GroupButton` background-color in Firefox is now fixed
+- `GroupButton` active states now work (removed :enabled)
+
+## [3.4] Fixed / Updated ButtonGroup
+
+#### **Changes**
+
+- `onChange` now works again in `ButtonGroup`
+- deprecated `icon` prop in favor of `Icon` prop in `ButtonGroup`
+- `className` no longer accepted on `ButtonGroup` or `GroupButton`
+
+## [3.3] Fixed ButtonGroup
+
+#### **Changes**
+
+- Key now properly gets generated from `label`
+- Anchor buttons can now have a disabled style
+- Fixed bug that happens when `onChange` is not specified
+
+
+## [3.2] Updated ButtonGroup
+
+#### **Changes**
+- Standardized `ButtonGroup` in line with `Chips`
+- Array items in `ButtonGroup` can now be rendered as anchors, buttons, or custom components (e.g. Link)
+- Added `label` prop to define display
+- Added `key` prop to override key (if labels are not unique)
+- `content` is now deprecated
+- `value` is now deprecated
+
+## [3.1] Updated Chips 
+
+#### **Changes**
+- Can now specify key instead of value on array items
+- Corrected propTypes
+
+## [3.0] FlexGrow
+
+**⚠️ No consumers were using flexGrow, but we're making this a breaking change just to be safe **
+
+#### **BREAKING CHANGES**
+- Removed flexGrow prop from FlexItem
+
+## [2.38] Added Chips
+
+#### **Changes**
+- Adds `Chips` component to `fds-components`
+
 ## [2.37] Updated `ButtonGroup` per new designs
 
 #### **Changes**

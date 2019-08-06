@@ -1,9 +1,10 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu, 25 Jul 2019 19:26:09 GMT
+ * Generated on Tue, 06 Aug 2019 15:30:06 GMT
  */
 :root {
+ --border-radius-default: 4px;
  --color-charcoal: #404040;
  --color-slate: #757575;
  --color-gray: #a2a0a0;
@@ -34,8 +35,8 @@
  --font-color-default: #757575;
  --font-color-light: #a2a0a0;
  --font-color-disabled: #c2bfbf;
- --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
- --font-family-default: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+ --font-family-default: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
  --font-family-mono: Monaco, Consolas, monospace;
  --font-lineHeight-bigText: 1.1;
  --font-lineHeight-default: 1.4;
@@ -335,7 +336,7 @@ body {
 html {
   line-height: 1.4;
   line-height: var(--font-lineHeight-default);
-  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
   font-family: var(--font-family-default);
   font-size: 16px;
   font-size: var(--font-size-default);
@@ -1106,7 +1107,7 @@ of the typesetting classes below.
 .typeset--head4 {
   color: #404040;
   color: var(--font-color-dark);
-  font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
   font-family: var(--font-family-condensed);
 }
 /*---
