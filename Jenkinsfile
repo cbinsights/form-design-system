@@ -74,10 +74,18 @@ pipeline {
       }
     }
 
+    stage('Bump package version') {
+      steps {
+        ansiColor('xterm') {
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn version --no-commit-hooks --no-git-tag-version --new-version=${VERSION}"
+        }
+      }
+    }
+
     stage('Publish npm packages') {
       steps {
         ansiColor('xterm') {
-          sh "docker run ${DOCKER_IMAGE_NAME} yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${VERSION}"
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn publish --access=public"
         }
       }
     }
