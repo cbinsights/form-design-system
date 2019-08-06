@@ -77,7 +77,7 @@ pipeline {
     stage('Bump package version') {
       steps {
         ansiColor('xterm') {
-          sh "docker run ${DOCKER_IMAGE_NAME} yarn version --no-commit-hooks --no-git-tag-version --new-version=${VERSION}"
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn version --no-commit-hooks --no-git-tag-version --new-version=${VERSION} --tag=${NPM_TAG}"
         }
       }
     }
