@@ -19,3 +19,24 @@ html, body {
   background: var(--color-white);
 }
 
+
+.specItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin: var(--space-double) 10vw;
+  margin-bottom: 0;
+  border-top: 1px solid var(--color-mint);
+  padding-top: var(--space-default);
+}
+
+.specItem-display {
+  margin-right: var(--space-default);
+}
+
+.specItem-info {
+  min-width: 200px;
+  flex-grow: 1;
+}
+

@@ -47,6 +47,7 @@ Command             | Description
 `build:comp`        | Builds React component docs and `lib`
 `build:mui`         | Builds material-ui theme `lib`
 `build:full`        | Builds docs and `lib` for everything
+`build:distCSS`     | Creates CSS rollup in `lib/assets/`
 
 #### Icons
 

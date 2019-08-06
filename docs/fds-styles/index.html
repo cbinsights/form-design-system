@@ -95,6 +95,9 @@
         <a class="menu-item" href="#bodyText"><span>Body</span></a>
         
         
+        <a class="menu-item" href="#bigText"><span>Big</span></a>
+        
+        
         <a class="menu-item" href="#dataText"><span>Data</span></a>
         
         
@@ -619,7 +622,7 @@ of the typesetting classes below.</p>
       <h2 class="page-title">Heading 1</h2>
 
       <div class="markdown-body">
-        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head1&quot;&gt;This is a top-level heading&lt;/p&gt;
+        <pre><code class="lang-example:html">&lt;p class=&quot;type--head1&quot;&gt;This is a top-level heading&lt;/p&gt;
 </code></pre>
 
         
@@ -630,7 +633,7 @@ of the typesetting classes below.</p>
       <h2 class="page-title">Heading 2</h2>
 
       <div class="markdown-body">
-        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head2&quot;&gt;This is a secondary heading&lt;/p&gt;
+        <pre><code class="lang-example:html">&lt;p class=&quot;type--head2&quot;&gt;This is a secondary heading&lt;/p&gt;
 </code></pre>
 
         
@@ -641,7 +644,7 @@ of the typesetting classes below.</p>
       <h2 class="page-title">Heading 3</h2>
 
       <div class="markdown-body">
-        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head3&quot;&gt;This is a tertiary heading&lt;/p&gt;
+        <pre><code class="lang-example:html">&lt;p class=&quot;type--head3&quot;&gt;This is a tertiary heading&lt;/p&gt;
 </code></pre>
 
         
@@ -652,7 +655,7 @@ of the typesetting classes below.</p>
       <h2 class="page-title">Heading 4</h2>
 
       <div class="markdown-body">
-        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head4&quot;&gt;This is a minor heading&lt;/p&gt;
+        <pre><code class="lang-example:html">&lt;p class=&quot;type--head4&quot;&gt;This is a minor heading&lt;/p&gt;
 </code></pre>
 
         
@@ -671,12 +674,25 @@ of the typesetting classes below.</p>
       </div>
     </section>
     
+    <section id="bigText">
+      <h2 class="page-title">Big</h2>
+
+      <div class="markdown-body">
+        <p>Big body text. Conceptually, this maps to the <code>&lt;big&gt;</code>
+non-heading element.</p>
+<pre><code class="lang-example:html">&lt;p class=&quot;type--big&quot;&gt;This is default body text&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
     <section id="dataText">
       <h2 class="page-title">Data</h2>
 
       <div class="markdown-body">
         <p>Typsetting for data (e.g. tables).</p>
-<pre><code class="lang-example:html">&lt;p class=&quot;typeset--data&quot;&gt;This is data text. Good for tables.&lt;/p&gt;
+<pre><code class="lang-example:html">&lt;p class=&quot;type--data&quot;&gt;This is data text. Good for tables.&lt;/p&gt;
 </code></pre>
 
         
@@ -689,7 +705,7 @@ of the typesetting classes below.</p>
       <div class="markdown-body">
         <p>Tiny text for captions and legalese.
 <strong>This is not very readable; only use in special circumstances.</strong></p>
-<pre><code class="lang-example:html">&lt;p class=&quot;typeset--caption&quot;&gt;This is a caption. &amp;copy; 2018&lt;/p&gt;
+<pre><code class="lang-example:html">&lt;p class=&quot;type--caption&quot;&gt;This is a caption. &amp;copy; 2018&lt;/p&gt;
 </code></pre>
 
         
@@ -701,13 +717,13 @@ of the typesetting classes below.</p>
 
       <div class="markdown-body">
         <pre><code class="lang-example:html">&lt;div&gt;
-  &lt;a class=&quot;typeset--link&quot; href=&quot;#&quot;&gt;This is an actual link with the link class&lt;/a&gt;
+  &lt;a class=&quot;type--link&quot; href=&quot;#&quot;&gt;This is an actual link with the link class&lt;/a&gt;
 &lt;/div&gt;
 &lt;div&gt;
-  &lt;button class=&quot;resetButton typeset--link&quot;&gt;This reset button looks like a link&lt;/button&gt;
+  &lt;button class=&quot;resetButton type--link&quot;&gt;This reset button looks like a link&lt;/button&gt;
 &lt;/div&gt;
 &lt;p&gt;
-  This paragraph as a &lt;span class=&quot;typeset--link&quot;&gt;span&lt;/span&gt; that looks like a link.
+  This paragraph as a &lt;span class=&quot;type--link&quot;&gt;span&lt;/span&gt; that looks like a link.
 &lt;/p&gt;
 </code></pre>
 
@@ -920,7 +936,7 @@ of clamping text to one line.</p>
         </main>
       </div>
       <footer class="footer">
-        Last modified Tuesday, 6 August 2019 18:58
+        Last modified Tuesday, 6 August 2019 19:28
       </footer>
     </div>
     <script src="prism.js?871234"></script>
