@@ -15,7 +15,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a change note
 - this is an example of a change note
 - this is an example of a change note
-- this is an example of a change note
 
 ### **BREAKING CHANGES**
 - this is an example of a change note
@@ -50,6 +49,7 @@ former npm module import    | new import statement
 `fds-dictionary/dist`       | `@cbinsights/fds/lib/dictionary/`
 `fds-icons/lib/react`       | `@cbinsights/fds/lib/icons/react`
 `fds-components/lib/`       | `@cbinsights/fds/lib/components/`
+`fds-mui-theme/`            | `@cbinsights/fds/lib/mui-theme/`
 
 
 #### New stylesheet for consumers
