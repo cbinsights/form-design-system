@@ -84,7 +84,7 @@ pipeline {
     stage('Publish npm packages') {
       steps {
         ansiColor('xterm') {
-          sh "docker run ${DOCKER_IMAGE_NAME} yarn publish --access=public"
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn publish --new-version=${VERSION} --access=public"
         }
       }
     }

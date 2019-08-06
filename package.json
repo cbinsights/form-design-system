@@ -12,25 +12,20 @@
     "build:mui-theme": "cp src/mui-theme/index.js ./lib/mui-theme/index.js",
     "build:transpile-docs": "babel ./docs/fds-components/build --out-dir=docs/fds-components/build",
     "build:distCSS": "NODE_ENV=production postcss src/assets/all-styles.css -o ./lib/assets/all-styles.min.css",
-
     "build:full": "yarn build:bootstrap && yarn build:dictionary && yarn build:styles && yarn build:icons && yarn build:comp && yarn build:mui-theme && yarn build:transpile-docs && yarn build:distCSS",
-
     "styles:min": "NODE_ENV=production postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
     "styles:full": "postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.full.css --config=./postcss.config.js",
     "styles:docs": "NODE_ENV=base_styles_docs postcss ./lib/base-styles/base-styles.full.css --output=/dev/null",
-
     "icons:export": "node ./scripts/node/icons/exportFromSketch.js",
     "icons:optimize": "node ./scripts/node/icons/optimize.js",
     "icons:react": "node ./scripts/node/icons/createComponents.js",
     "icons:transpile": "babel ./lib/icons/react --out-dir ./lib/icons/react",
     "icons:css": "cp src/icons/style/icons.css ./lib/icons/style/icons.css",
     "icons:docs": "node ./scripts/node/icons/buildDocs.js",
-
     "comp:jsx": "babel src --out-dir=lib --ignore=test.jsx --source-maps",
     "comp:css": "postcss src/components/style/index.css -o ./lib/components/style/fds-components.css --config=./postcss.config.js",
     "comp:docs": "styleguidist build",
     "comp:serve": "npx styleguidist server",
-
     "test": "jest --color",
     "snapshot-update": "jest -u --color",
     "lint": "eslint ./src/ --ext .js,.jsx",
@@ -136,5 +131,5 @@
       "src/**/assets/*.css"
     ]
   },
-  "version": "1.11.0"
+  "version": "4.0.0-beta.001"
 }
