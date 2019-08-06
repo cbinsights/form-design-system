@@ -53,7 +53,6 @@ pipeline {
       steps {
         ansiColor('xterm'){
           sh "docker build -t ${DOCKER_IMAGE_NAME} ./"
-          sh "docker run ${DOCKER_IMAGE_NAME} ls packages/fds-dictionary/"
         }
       }
     }
