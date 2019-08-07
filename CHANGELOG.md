@@ -27,6 +27,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ## [4.0] MAJOR
 
 - All modules in the Form Design System are now published as a single package, `@cbinsights/fds`.
+- Brand new typography defaults with updated dictionary and CSS utilities.
 
 
 ### **BREAKING CHANGES**
@@ -58,3 +59,80 @@ Instead of using the rollup stylesheet from `fds-components`, version `4.0` prov
 a special `assets` dir in `./lib` that includes combined styles:
 
 `@cbinsights/fds/lib/assets/all-styles.min.css`
+
+
+#### New typography scale and classes
+Typography has been completely rewritten for version `4.0` to reflect new design
+standards. Use the tables below as a migration guide:
+
+##### Updated JS vars
+
+old color var          | new color var
+---------------------- | ----------------------
+`FONT_COLOR_DARK`      | `FONT_COLOR_HEADING`
+`FONT_COLOR_DEFAULT`   | `FONT_COLOR_PRIMARY`
+`FONT_COLOR_LIGHT`     | `FONT_COLOR_SECONDARY`
+`FONT_COLOR_DISABLED`  | `FONT_COLOR_HINT`
+
+old size var           | new size var
+---------------------- | ----------------------
+`FONT_SIZE_HEADING1`   | `FONT_SIZE_4XL`
+`FONT_SIZE_HEADING2`   | `FONT_SIZE_3XL`
+`FONT_SIZE_HEADING3`   | `FONT_SIZE_2XL`
+`FONT_SIZE_BIG`        | `FONT_SIZE_XL`
+`FONT_SIZE_SMALL`      | `FONT_SIZE_S`
+`FONT_SIZE_TINY`       | `FONT_SIZE_XS`
+
+##### Updated CSS vars
+
+old color var            | new color var
+------------------------ | ----------------------
+`--font-color-dark`      | `--font-color-heading`
+`--font-color-default`   | `--font-color-primary`
+`--font-color-light`     | `--font-color-secondary`
+`--font-color-diabled`   | `--font-color-hint`
+
+old size var           | new size var
+---------------------- | ----------------------
+`--font-size-heading1` | `--font-size-4xl`
+`--font-size-heading2` | `--font-size-3xl`
+`--font-size-heading3` | `--font-size-2xl`
+`--font-size-big`      | `--font-size-xl`
+`--font-size-small`    | `--font-size-s`
+`--font-size-tiny`     | `--font-size-xs`
+
+##### `typeset` classes changed
+All `typeset--<classOfTypography>` classes have changed their signature.
+
+* `typeset--<classOfTypography>` => `type--<classOfTypography>`
+  * e.g. `typeset--head3` becomes `type--head3`
+
+##### `typemod` classes changed
+All `typemod--<modification>` classes have changed to reflect the CSS property
+being modified by the class.
+
+old size class      | new size class
+------------------- | ----------------------
+`typemod--huge`     | `fontSize--4xl`
+`typemod--xxlarge`  | `fontSize--3xl`
+`typemod--xlarge`   | `fontSize--xl`
+`typemod--large`    | `fontSize--l`
+`typemod--small`    | `fontSize-s-`
+`typemod--tiny`     | `fontSize--xs`
+
+old color class         | new color class
+----------------------- | ----------------------
+`typemod--dark`         | `color--heading`
+`typemod--light`        | `color--secondary`
+`typemod--<colorName>`  | `color--<colorName>`
+
+old weight class    | new weight class
+------------------- | ----------------------
+`typemod--bold`     | `fontWeight--bold`
+`typemod--book`     | `fontWeight--book`
+
+old font style class    | new font style class
+----------------------- | ----------------------
+`typemod--italic`       | `fontStyle--italic`
+`typemod--underline`    | `fontStyle--underline`
+`typemod--caps`         | `fontStyle--caps`
