@@ -67,14 +67,14 @@ standards. Use the tables below as a migration guide:
 
 ##### Updated JS vars
 
-old color var          | new color var
+Old JS color var       | New JS color var
 ---------------------- | ----------------------
 `FONT_COLOR_DARK`      | `FONT_COLOR_HEADING`
 `FONT_COLOR_DEFAULT`   | `FONT_COLOR_PRIMARY`
 `FONT_COLOR_LIGHT`     | `FONT_COLOR_SECONDARY`
 `FONT_COLOR_DISABLED`  | `FONT_COLOR_HINT`
 
-old size var           | new size var
+Old JS size var        | New JS size var
 ---------------------- | ----------------------
 `FONT_SIZE_HEADING1`   | `FONT_SIZE_4XL`
 `FONT_SIZE_HEADING2`   | `FONT_SIZE_3XL`
@@ -85,14 +85,14 @@ old size var           | new size var
 
 ##### Updated CSS vars
 
-old color var            | new color var
+Old CSS color var        | New CSS color var
 ------------------------ | ----------------------
 `--font-color-dark`      | `--font-color-heading`
 `--font-color-default`   | `--font-color-primary`
 `--font-color-light`     | `--font-color-secondary`
 `--font-color-diabled`   | `--font-color-hint`
 
-old size var           | new size var
+Old CSS size var       | New CSS size var
 ---------------------- | ----------------------
 `--font-size-heading1` | `--font-size-4xl`
 `--font-size-heading2` | `--font-size-3xl`
@@ -111,7 +111,7 @@ All `typeset--<classOfTypography>` classes have changed their signature.
 All `typemod--<modification>` classes have changed to reflect the CSS property
 being modified by the class.
 
-old size class      | new size class
+Old size CSS class  | New size CSS class
 ------------------- | ----------------------
 `typemod--huge`     | `fontSize--4xl`
 `typemod--xxlarge`  | `fontSize--3xl`
@@ -120,13 +120,13 @@ old size class      | new size class
 `typemod--small`    | `fontSize-s-`
 `typemod--tiny`     | `fontSize--xs`
 
-old color class         | new color class
+Old color CSS class     | New color CSS class
 ----------------------- | ----------------------
 `typemod--dark`         | `color--heading`
 `typemod--light`        | `color--secondary`
 `typemod--<colorName>`  | `color--<colorName>`
 
-old weight class    | new weight class
+Old weight CSS class    | New weight CSS class
 ------------------- | ----------------------
 `typemod--bold`     | `fontWeight--bold`
 `typemod--book`     | `fontWeight--book`
