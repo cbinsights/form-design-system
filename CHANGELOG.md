@@ -67,6 +67,7 @@ standards. Use the tables below as a migration guide:
 
 ##### Updated JS vars
 
+`fds-dictionary` color migration:
 Old JS color var       | New JS color var
 ---------------------- | ----------------------
 `FONT_COLOR_DARK`      | `FONT_COLOR_HEADING`
@@ -74,6 +75,7 @@ Old JS color var       | New JS color var
 `FONT_COLOR_LIGHT`     | `FONT_COLOR_SECONDARY`
 `FONT_COLOR_DISABLED`  | `FONT_COLOR_HINT`
 
+`fds-dictionary` size migration:
 Old JS size var        | New JS size var
 ---------------------- | ----------------------
 `FONT_SIZE_HEADING1`   | `FONT_SIZE_4XL`
@@ -85,6 +87,7 @@ Old JS size var        | New JS size var
 
 ##### Updated CSS vars
 
+`fds-dictionary` color migration:
 Old CSS color var        | New CSS color var
 ------------------------ | ----------------------
 `--font-color-dark`      | `--font-color-heading`
@@ -92,6 +95,7 @@ Old CSS color var        | New CSS color var
 `--font-color-light`     | `--font-color-secondary`
 `--font-color-diabled`   | `--font-color-hint`
 
+`fds-dictionary` size migration:
 Old CSS size var       | New CSS size var
 ---------------------- | ----------------------
 `--font-size-heading1` | `--font-size-4xl`
@@ -111,6 +115,7 @@ All `typeset--<classOfTypography>` classes have changed their signature.
 All `typemod--<modification>` classes have changed to reflect the CSS property
 being modified by the class.
 
+`fds-styles` size migration:
 Old size CSS class  | New size CSS class
 ------------------- | ----------------------
 `typemod--huge`     | `fontSize--4xl`
@@ -120,17 +125,20 @@ Old size CSS class  | New size CSS class
 `typemod--small`    | `fontSize-s-`
 `typemod--tiny`     | `fontSize--xs`
 
+`fds-styles` color migration:
 Old color CSS class     | New color CSS class
 ----------------------- | ----------------------
 `typemod--dark`         | `color--heading`
 `typemod--light`        | `color--secondary`
 `typemod--<colorName>`  | `color--<colorName>`
 
+`fds-styles` weight migration:
 Old weight CSS class    | New weight CSS class
 ------------------- | ----------------------
 `typemod--bold`     | `fontWeight--bold`
 `typemod--book`     | `fontWeight--book`
 
+`fds-styles` font style migration:
 old font style class    | new font style class
 ----------------------- | ----------------------
 `typemod--italic`       | `fontStyle--italic`
