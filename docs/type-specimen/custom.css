@@ -19,6 +19,19 @@ html, body {
   background: var(--color-white);
 }
 
+.stripe-title,
+.stripe-description {
+  font-family: var(--font-family-mono);
+  color: var(--color-sky);
+}
+
+.stripe-title {
+  font-size: var(--font-size-2xl);
+}
+
+.stripe-description {
+  font-size: var(--font-size-default);
+}
 
 .specItem {
   display: flex;

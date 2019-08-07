@@ -5,3 +5,4 @@ so i can keep track
     - affects both CSS and JS distributions
 - `typemod`/`typeset` classes in base-styles
     - `typeset--<thing>` -> `type--<typeTypeLOL>`
+    - `typemod--orange` -> `color--orange`
