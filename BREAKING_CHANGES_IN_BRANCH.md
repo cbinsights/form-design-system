@@ -5,4 +5,11 @@ so i can keep track
     - affects both CSS and JS distributions
 - `typemod`/`typeset` classes in base-styles
     - `typeset--<thing>` -> `type--<typeTypeLOL>`
-    - `typemod--orange` -> `color--orange`
+    - `typemod--<color>` -> `color--orange`
+    - `typemod--<weight>` -> `fontWeight--<weight>`
+    - `typemod--<style>` -> `fontStyle--<style>`
+    - `typemod--<size>` -> `fontSize--<size>`
+
+
+# Non-breaking changes
+- inverted text now supported

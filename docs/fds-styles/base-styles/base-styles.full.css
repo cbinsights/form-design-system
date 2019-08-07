@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Tue, 06 Aug 2019 23:27:12 GMT
+ * Generated on Wed, 07 Aug 2019 15:24:06 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -31,10 +31,16 @@
  --l: (min-width: 1024px);
  --xl: (min-width: 1280px);
  --font-color-link: #4cabce;
- --font-color-dark: #404040;
- --font-color-default: #757575;
- --font-color-light: #a2a0a0;
- --font-color-disabled: #c2bfbf;
+ --font-color-heading: #404040;
+ --font-color-primary: rgba(64, 64, 64, 0.87);
+ --font-color-secondary: rgba(64, 64, 64, 0.60);
+ --font-color-hint: rgba(64, 64, 64, 0.38);
+ --font-color-headingInverted: #ffffff;
+ --font-color-primaryInverted: rgba(255, 255, 255, 0.87);
+ --font-color-secondaryInverted: rgba(255, 255, 255, 0.60);
+ --font-color-hintInverted: rgba(255, 255, 255, 0.38);
+ --font-color-error: #e5323e;
+ --font-color-success: #00986b;
  --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
  --font-family-default: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
  --font-family-mono: Monaco, Consolas, monospace;
@@ -341,10 +347,14 @@ html {
   font-family: var(--font-family-default);
   font-size: 14px;
   font-size: var(--font-size-default);
-  color: #757575;
-  color: var(--font-color-default);
+  color: rgba(64, 64, 64, 0.87);
+  color: var(--font-color-primary);
   text-rendering: geometricPrecision; /* stylelint-disable-line property-blacklist */
   overflow-y: scroll;
+}
+.inverted {
+  color: rgba(255, 255, 255, 0.87);
+  color: var(--font-color-primaryInverted);
 }
 /**
 Inline tag defaults
@@ -459,19 +469,30 @@ h6 {
   font-size: 1rem;
   font-weight: 400;
   font-weight: var(--font-weight-default);
+  color: #404040;
+  color: var(--font-color-heading);
   margin: 0;
   padding: 0;
+}
+.inverted h1,
+.inverted h2,
+.inverted h3,
+.inverted h4,
+.inverted h5,
+.inverted h6 {
+  color: #ffffff;
+  color: var(--font-color-headingInverted);
 }
 /**
 Form tag defaults
 */
 ::-ms-input-placeholder {
-  color: #a2a0a0;
-  color: var(--font-color-light);
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
 }
 ::placeholder {
-  color: #a2a0a0;
-  color: var(--font-color-light);
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
 }
 label {
   display: block;
@@ -479,7 +500,7 @@ label {
   font-weight: 400;
   font-weight: var(--font-weight-default);
   color: #404040;
-  color: var(--font-color-dark);
+  color: var(--font-color-heading);
 }
 button,
 input,
@@ -592,8 +613,8 @@ input:not([type="submit"]):invalid {
 select:disabled,
 textarea:disabled,
 input:not([type="submit"]):disabled {
-  color: #c2bfbf;
-  color: var(--font-color-disabled);
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
   border-color: #f2f2f2;
   border-color: var(--color-lightGray);
 }
@@ -1107,7 +1128,7 @@ of the typesetting classes below.
 .type--head3,
 .type--head4 {
   color: #404040;
-  color: var(--font-color-dark);
+  color: var(--font-color-heading);
   font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
   font-family: var(--font-family-condensed);
 }
@@ -1204,7 +1225,7 @@ Big body text. Conceptually, this maps to the `<big>`
 non-heading element.
 
 ```example:html
-<p class="type--big">This is default body text</p>
+<p class="type--big">This is big body text</p>
 ```
 */
 .type--big {
@@ -1285,48 +1306,64 @@ section: Type Modifiers
 Modifies size of text and adjusts leading accordingly.
 
 ```example:html
-<p class="typemod--huge">Huge text</p>
-<p class="typemod--xxlarge">XXL text</p>
-<p class="typemod--xlarge">XL text</p>
-<p class="typemod--large">Large text</p>
-<p>Default body text</p>
-<p class="typemod--small">Small text</p>
-<p class="typemod--tiny">Tiny text</p>
+<p class="fontSize--4xl">4XL Text</p>
+<p class="fontSize--3xl">3XL Text</p>
+<p class="fontSize--2xl">2XL Text</p>
+<p class="fontSize--xl">XL Text</p>
+<p class="fontSize--l">L Text</p>
+<p class="fontSize--default">Default text (default)</p>
+<p class="fontSize--s">S text</p>
+<p class="fontSize--xs">XS text</p>
 ```
 */
-.typemod--huge {
-  font-size: var(--font-size-heading1) !important;
-  font-size: var(--font-size-heading1) !important;
+.fontSize--4xl,
+.fontSize--3xl,
+.fontSize--2xl,
+.fontSize--xl {
   line-height: 1.1 !important;
   line-height: var(--font-lineHeight-bigText) !important;
 }
-.typemod--xxlarge {
-  font-size: var(--font-size-heading2) !important;
-  font-size: var(--font-size-heading2) !important;
-  line-height: 1.1 !important;
-  line-height: var(--font-lineHeight-bigText) !important;
+.fontSize--l,
+.fontSize--default {
+  line-height: 1.5 !important;
+  line-height: var(--font-lineHeight-default) !important;
 }
-.typemod--xlarge {
-  font-size: var(--font-size-heading3) !important;
-  font-size: var(--font-size-heading3) !important;
-  line-height: 1.1 !important;
-  line-height: var(--font-lineHeight-bigText) !important;
-}
-.typemod--large {
-  font-size: var(--font-size-big) !important;
-  font-size: var(--font-size-big) !important;
-}
-.typemod--small {
-  font-size: var(--font-size-small) !important;
-  font-size: var(--font-size-small) !important;
+.fontSize--s,
+.fontSize--xs {
   line-height: 1.8 !important;
   line-height: var(--font-lineHeight-smallText) !important;
 }
-.typemod--tiny {
-  font-size: var(--font-size-tiny) !important;
-  font-size: var(--font-size-tiny) !important;
-  line-height: 1.8 !important;
-  line-height: var(--font-lineHeight-smallText) !important;
+.fontSize--4xl {
+  font-size: 42px !important;
+  font-size: var(--font-size-4xl) !important;
+}
+.fontSize--3xl {
+  font-size: 34px !important;
+  font-size: var(--font-size-3xl) !important;
+}
+.fontSize--2xl {
+  font-size: 27px !important;
+  font-size: var(--font-size-2xl) !important;
+}
+.fontSize--xl {
+  font-size: 22px !important;
+  font-size: var(--font-size-xl) !important;
+}
+.fontSize--l {
+  font-size: 18px !important;
+  font-size: var(--font-size-l) !important;
+}
+.fontSize--default {
+  font-size: 14px !important;
+  font-size: var(--font-size-default) !important;
+}
+.fontSize--s {
+  font-size: 12px !important;
+  font-size: var(--font-size-s) !important;
+}
+.fontSize--xs {
+  font-size: 10px !important;
+  font-size: var(--font-size-xs) !important;
 }
 /*----
 title: Weight Modifiers
@@ -1336,16 +1373,16 @@ section: Type Modifiers
 Modifies weight of text.
 
 ```example:html
-<p class="typemod--bold">Bold Text</p>
-<p class="typemod--book">Book Text</p>
-<p class="typeset--head3">Modifiers <span class="typemod--book">override</span> default styles</p>
+<p class="fontWeight--bold">Bold Text</p>
+<p class="fontWeight--book">Book Text</p>
+<p class="type--head3">Modifiers <span class="fontWeight--book">override</span> default styles</p>
 ```
 */
-.typemod--bold {
+.fontWeight--bold {
   font-weight: 700 !important;
   font-weight: var(--font-weight-bold) !important;
 }
-.typemod--book {
+.fontWeight--book {
   font-weight: 400 !important;
   font-weight: var(--font-weight-default) !important;
 }
@@ -1357,73 +1394,109 @@ section: Type Modifiers
 Modifies color of text.
 
 ### Standard text colors
+
+When using standard text color classes (`heading`,
+`primary`, `secondary`, `hint`), a parent element with the
+`inverted` class will switch the text to tints of white.
+
 ```example:html
-<p class="typemod--dark">Dark Text</p>
-<p>Default body text</p>
-<p class="typemod--light">Light Text</p>
+<div class="padding--all">
+  <p class="color--heading">Heading text color</p>
+  <p class="color--primary">Primary text color (default)</p>
+  <p class="color--secondary">Secondary text color</p>
+  <p class="color--hint">Hint text color</p>
+</div>
+<div class="padding--all inverted" style="background: var(--color-navy);">
+  <p class="color--heading">Heading text color</p>
+  <p class="color--primary">Primary text color (default)</p>
+  <p class="color--secondary">Secondary text color</p>
+  <p class="color--hint">Hint text color</p>
+</div>
 ```
 
 ### Fancy text colors
 If you don't see the color you need here, please notify UI Platform.
-_Examples set in heading level 4_
+_Text in this example is set in `fontWeight--bold`_
 ```example:html
-<p class="typeset--head4 typemod--slate">Slate text (default body color)</p>
-<p class="typeset--head4 typemod--green">Green text</p>
-<p class="typeset--head4 typemod--mint">Mint text</p>
-<p class="typeset--head4 typemod--navy">Navy text</p>
-<p class="typeset--head4 typemod--blue">Blue text</p>
-<p class="typeset--head4 typemod--sky">Sky text</p>
-<p class="typeset--head4 typemod--purple">Purple text</p>
-<p class="typeset--head4 typemod--red">Red text</p>
-<p class="typeset--head4 typemod--orange">Orange text</p>
-<p class="typeset--head4 typemod--white">White text</p>
+<ul class="fontWeight--bold">
+  <li class="color--slate">Slate text</li>
+  <li class="color--green">Green text</li>
+  <li class="color--mint">Mint text</li>
+  <li class="color--navy">Navy text</li>
+  <li class="color--blue">Blue text</li>
+  <li class="color--sky">Sky text</li>
+  <li class="color--purple">Purple text</li>
+  <li class="color--red">Red text</li>
+  <li class="color--orange">Orange text</li>
+  <li class="color--white">White text</li>
+</ul>
 ```
 */
-.typemod--dark {
+.color--heading {
   color: #404040 !important;
-  color: var(--font-color-dark) !important;
+  color: var(--font-color-heading) !important;
 }
-.typemod--light {
-  color: #a2a0a0 !important;
-  color: var(--font-color-light) !important;
+.inverted .color--heading {
+  color: #ffffff !important;
+  color: var(--font-color-headingInverted) !important;
 }
-.typemod--slate {
-  color: #757575 !important;
-  color: var(--color-slate) !important;
+.color--primary {
+  color: rgba(64, 64, 64, 0.87) !important;
+  color: var(--font-color-primary) !important;
 }
-.typemod--green {
+.inverted .color--primary {
+  color: rgba(255, 255, 255, 0.87) !important;
+  color: var(--font-color-primaryInverted) !important;
+}
+.color--secondary {
+  color: rgba(64, 64, 64, 0.60) !important;
+  color: var(--font-color-secondary) !important;
+}
+.inverted .color--secondary {
+  color: rgba(255, 255, 255, 0.60) !important;
+  color: var(--font-color-secondaryInverted) !important;
+}
+.color--hint {
+  color: rgba(64, 64, 64, 0.38) !important;
+  color: var(--font-color-hint) !important;
+}
+.inverted .color--hint {
+  color: rgba(255, 255, 255, 0.38) !important;
+  color: var(--font-color-hintInverted) !important;
+}
+.color--green {
   color: #00986b !important;
   color: var(--color-green) !important;
 }
-.typemod--mint {
+.color--mint {
   color: #70c390 !important;
   color: var(--color-mint) !important;
 }
-.typemod--navy {
+.color--navy {
   color: #003366 !important;
   color: var(--color-navy) !important;
 }
-.typemod--blue {
+.color--blue {
   color: #006699 !important;
   color: var(--color-blue) !important;
 }
-.typemod--sky {
+.color--sky {
   color: #bbdbe5 !important;
   color: var(--color-sky) !important;
 }
-.typemod--purple {
+.color--purple {
   color: #a02385 !important;
   color: var(--color-purple) !important;
 }
-.typemod--red {
+.color--red {
   color: #e5323e !important;
   color: var(--color-red) !important;
 }
-.typemod--orange {
+.color--orange {
   color: #ff6633 !important;
   color: var(--color-orange) !important;
 }
-.typemod--white {
+.color--white {
   color: #ffffff !important;
   color: var(--color-white) !important;
 }
@@ -1435,18 +1508,18 @@ section: Type Modifiers
 Modifies style, decoration, or transform of text
 
 ```example:html
-<p class="typemod--italic">Italic text</p>
-<p class="typemod--underline">Underline text</p>
-<p class="typemod--caps">Uppercase text</p>
+<p class="fontStyle--italic">Italic text</p>
+<p class="fontStyle--underline">Underline text</p>
+<p class="fontStyle--caps">Uppercase text</p>
 ```
 */
-.typemod--italic {
+.fontStyle--italic {
   font-style: italic;
 }
-.typemod--underline {
+.fontStyle--underline {
   text-decoration: underline;
 }
-.typemod--caps {
+.fontStyle--caps {
   text-transform: uppercase;
 }
 /* Form field modifiers */

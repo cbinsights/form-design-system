@@ -1,11 +1,21 @@
 {
   "font": {
     "color": {
+
       "link":     { "value": "{color.base.aqua.value}" },
-      "dark":     { "value": "{color.base.charcoal.value}" },
-      "default":  { "value": "{color.base.slate.value}" },
-      "light":    { "value": "{color.base.gray.value}" },
-      "disabled": { "value": "{color.base.silver.value}" }
+
+      "heading":    { "value": "{color.base.charcoal.value}" },
+      "primary":    { "value": "rgba(64, 64, 64, 0.87)" },
+      "secondary":  { "value": "rgba(64, 64, 64, 0.60)" },
+      "hint":       { "value": "rgba(64, 64, 64, 0.38)" },
+
+      "headingInverted":    { "value": "{color.base.white.value}" },
+      "primaryInverted":    { "value": "rgba(255, 255, 255, 0.87)" },
+      "secondaryInverted":  { "value": "rgba(255, 255, 255, 0.60)" },
+      "hintInverted":       { "value": "rgba(255, 255, 255, 0.38)" },
+
+      "error":     { "value": "{color.base.red.value}" },
+      "success":   { "value": "{color.base.green.value}" }
 
     }
   }

@@ -21,7 +21,7 @@ of the typesetting classes below.
 .type--head2,
 .type--head3,
 .type--head4 {
-  color: var(--font-color-dark);
+  color: var(--font-color-heading);
   font-family: var(--font-family-condensed);
 }
 
@@ -111,7 +111,7 @@ Big body text. Conceptually, this maps to the `<big>`
 non-heading element.
 
 ```example:html
-<p class="type--big">This is default body text</p>
+<p class="type--big">This is big body text</p>
 ```
 */
 .type--big {

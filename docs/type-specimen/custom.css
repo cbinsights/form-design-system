@@ -25,6 +25,12 @@ html, body {
   color: var(--color-sky);
 }
 
+.inverted .stripe-title,
+.inverted .stripe-description {
+  color: var(--color-blue);
+}
+
+
 .stripe-title {
   font-size: var(--font-size-2xl);
 }
