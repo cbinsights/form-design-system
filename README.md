@@ -5,17 +5,10 @@ A design system by CB Insights.
 ## Getting started
 
 ### Installation
-The design system is comprised of a number of separate node modules. You can install as many
-or as few of them as you need.
+The design system is comprised of a number of modules published as a single npm package.
 
-**Just the design tokens (color constants, etc)**
 ```bash
-yarn add fds-dictionary
-```
-
-**Install everything**
-```bash
-yarn add fds-dictionary fds-styles fds-components fds-mui-theme
+yarn add form-design-system
 ```
 
 ### Documentation
@@ -31,35 +24,58 @@ for details on each major and minor release.
 ## Development
 
 1. clone this repo
-2. run `yarn && yarn bootstrap`
+2. run `yarn && yarn build:full`
+
+
+### Modules
 
 
 ### Commands
-This project uses [Lerna](https://github.com/lerna/lerna) to maintain
-multiple npm packages within this repo. As such, all commands should be
-run from the root directory.
 
-Command          | Description
----------------- | ------------------------------------------------------
-`yarn bootstrap`      | Bootstraps dependencies for packages with Lerna
-`yarn build`          | Builds unversioned `lib/` or `dist/` dirs in each package; builds all docs to `<root>/docs/`
+Incomplete list of yarn targets.
+
+#### Builds
+
+Some modules rely on others to be built first. It's a good idea to start with a `yarn
+build:full` before running focused builds.
+
+Command             | Description
+------------------- | -------------------------------------
+`build:dictionary`  | Builds dictionary docs and `lib`
+`build:styles`      | Builds base styles docs and `lib`
+`build:icons`       | Builds icons docs and `lib`
+`build:comp`        | Builds React component docs and `lib`
+`build:mui`         | Builds material-ui theme `lib`
+`build:full`        | Builds docs and `lib` for everything
+
+#### Icons
+
+Command             | Description
+------------------- | -------------------------------------
+`icons:export`      | Runs [export script](https://github.com/cbinsights/form-design-system/blob/master/src/icons/README.md#updating-icons-from-a-sketch-file)
+
+#### Styleguidist
+
+Command             | Description
+------------------- | -------------------------------------
+`comp:serve`        | Runs local dev server of styleguidist
+
+
+#### Other
+
+Command                    | Description
+-------------------------- | ------------------------------------------------------
 `yarn test`           | Runs tests for all relevant packages
 `yarn snapshot-update`| Updates snapshots
 `yarn lint`           | Runs `eslint` on all js files
-`yarn serve:comp`     | Starts dev server for `fds-components`
 `yarn precommit`      | Runs `lint-staged` to verify precommit hook will pass
 
 ### Docs
 Documentation is published to Github Pages from the `docs/` directory in `master`.
 Every time the `build` command is run, docs are regenerated to the root `docs/` directory.
 
-### Monorepo setup
-This repo uses [lerna](https://lernajs.io/) to manage multiple npm modules in one repo. Each directory in
-`packages/` is published as a separate module.
-
 ### Versioning/Publishing
-All packages managed by `form-design-system` share the same version. If the major, minor, or patch version
-for this project changes, all packages will be published with the update.
+`form-design-system` is published as a single NPM package.
 
 **Please update the minor or major version as appropriate when making changes in a branch**
 

@@ -9,6 +9,5 @@ WORKDIR /root
 COPY . .
 RUN mv npmrc /root/.npmrc
 RUN yarn install
-RUN yarn bootstrap
 RUN yarn build:full
 CMD [ "ash" ]

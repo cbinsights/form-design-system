@@ -1,36 +1,58 @@
 {
-  "name": "form-design-system",
+  "name": "@cbinsights/fds",
   "description": "Form: A design system by CB Insights",
   "author": "CB Insights",
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "postinstall": "yarn bootstrap",
-    "serve:comp": "lerna run serve --stream --scope=fds-components",
-    "icons:export": "lerna run --scope=fds-icons export",
-    "build": "lerna run build --parallel",
-    "build:dict": "lerna run --scope=fds-dictionary build",
-    "build:styles": "lerna run --scope=fds-styles build",
-    "build:comp": "lerna run --scope=fds-components build",
-    "build:icons": "lerna run --scope=fds-icons build",
-    "build:docs": "babel docs/fds-components/build --out-dir=docs/fds-components/build",
-    "build:full": "yarn build:dict && yarn build:icons && yarn bootstrap && yarn build:styles && yarn build:comp && yarn build:docs",
+    "build:bootstrap": "./scripts/bash/bootstrapBuild.sh",
+    "build:dictionary": "node scripts/node/dictionary/build.js",
+    "build:styles": "yarn styles:min && yarn styles:full && yarn styles:docs",
+    "build:icons": "yarn icons:optimize && yarn icons:react && yarn icons:transpile && yarn icons:css && yarn icons:docs",
+    "build:comp": "yarn comp:css && yarn comp:jsx && yarn comp:docs",
+    "build:mui-theme": "cp src/mui-theme/index.js ./lib/mui-theme/index.js",
+    "build:transpile-docs": "babel ./docs/fds-components/build --out-dir=docs/fds-components/build",
+    "build:distCSS": "NODE_ENV=production postcss src/assets/all-styles.css -o ./lib/assets/all-styles.min.css",
+    "build:full": "yarn build:bootstrap && yarn build:dictionary && yarn build:styles && yarn build:icons && yarn build:comp && yarn build:mui-theme && yarn build:transpile-docs && yarn build:distCSS",
+    "styles:min": "NODE_ENV=production postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
+    "styles:full": "postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.full.css --config=./postcss.config.js",
+    "styles:docs": "NODE_ENV=base_styles_docs postcss ./lib/base-styles/base-styles.full.css --output=/dev/null",
+    "icons:export": "node ./scripts/node/icons/exportFromSketch.js",
+    "icons:optimize": "node ./scripts/node/icons/optimize.js",
+    "icons:react": "node ./scripts/node/icons/createComponents.js",
+    "icons:transpile": "babel ./lib/icons/react --out-dir ./lib/icons/react",
+    "icons:css": "cp src/icons/style/icons.css ./lib/icons/style/icons.css",
+    "icons:docs": "node ./scripts/node/icons/buildDocs.js",
+    "comp:jsx": "babel src --out-dir=lib --ignore=test.jsx --source-maps",
+    "comp:css": "postcss src/components/style/index.css -o ./lib/components/style/fds-components.css --config=./postcss.config.js",
+    "comp:docs": "styleguidist build",
+    "comp:serve": "npx styleguidist server",
     "test": "jest --color",
     "snapshot-update": "jest -u --color",
-    "bootstrap": "yarn lerna bootstrap",
-    "lint": "eslint ./packages/ --ext .js,.jsx",
-    "precommit": "lint-staged",
-    "publish": "lerna publish"
+    "lint": "eslint ./src/ --ext .js,.jsx",
+    "precommit": "lint-staged"
   },
   "resolutions": {
     "lodash": "^4.17.11"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^3.1",
+    "@material-ui/icons": "^3",
+    "classnames": "^2",
+    "prop-types": "^15",
+    "react": "^16",
+    "react-dom": "^16",
+    "react-transition-group": "^2.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "@material-ui/core": "^3.5.1",
-    "@material-ui/icons": "^3.0.1",
+    "@material-ui/core": "^3.1",
+    "@material-ui/icons": "^3",
     "@svgr/core": "^4.1.0",
     "@svgr/plugin-jsx": "^4.1.0",
     "@svgr/plugin-svgo": "^4.0.3",
@@ -40,6 +62,7 @@
     "@webpack-blocks/webpack": "^2.0.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
+    "classnames": "^2",
     "cssnano": "^4.1.0",
     "d3-scale": "^2.1.2",
     "enzyme": "^3.10.0",
@@ -51,12 +74,11 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.21.0",
     "eslint-plugin-react": "^7.11.1",
-    "fs-extra": "^7.0.0",
+    "fs-extra": "^8.1.0",
     "glob": "^7.1.3",
     "handlebars": "^4.0.12",
     "husky": "^1.0.0-rc.13",
     "jest": "^24.8.0",
-    "lerna": "^3.14.1",
     "lint-staged": "^8.1.7",
     "lodash": "^4.17.11",
     "mdcss": "^1.5.2",
@@ -67,12 +89,13 @@
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^5.3.0",
     "prettier": "^1.14.2",
-    "prop-types": "^15.6.2",
-    "react": "^16.8",
-    "react-dom": "^16.3.1",
+    "prop-types": "^15",
+    "react": "^16",
+    "react-dom": "^16",
     "react-styleguidist": "^9.0.5",
+    "react-transition-group": "^2.6",
     "rimraf": "^2.6.2",
-    "style-dictionary": "^2.3.0",
+    "style-dictionary": "^2.8.1",
     "stylelint": "^9.5.0",
     "tinycolor2": "^1.4.1",
     "webpack": "^4.17.1"
@@ -90,26 +113,25 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn test && yarn build:full && git add docs && git commit -m 'build docs'"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "linters": {
-      "packages/**/*.css": [
+      "src/**/*.css": [
         "stylelint --fix",
         "git add"
       ],
-      "packages/**/*.{js,jsx}": [
+      "src/**/*.{js,jsx}": [
         "prettier --write",
         "eslint --no-ignore",
         "git add"
       ]
     },
     "ignore": [
-      "packages/**/*.test.{js,jsx}",
-      "packages/**/assets/*.css"
+      "src/**/*.test.{js,jsx}",
+      "src/**/assets/*.css"
     ]
   },
-  "version": "1.11.0"
+  "version": "4.0.0-beta.001"
 }

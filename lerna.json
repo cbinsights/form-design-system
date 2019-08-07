@@ -1,8 +1,0 @@
-{
-  "registry": "https://registry.npmjs.org/",
-  "packages": [
-    "packages/*"
-  ],
-  "version": "1.19.22",
-  "npmClient": "yarn"
-}

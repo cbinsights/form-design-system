@@ -1,0 +1,19 @@
+/**
+ * Rollup of all design system styles.
+ *
+ * Default behavior of `postcss-import` ensures that each
+ * file will only be imported once.
+ */
+
+
+/* Global custom properties */
+@import "../../lib/dictionary/css/customProperties.css";
+
+/* Base styles */
+@import "../base-styles/index.css";
+
+/* Icons */
+@import "../icons/style/icons.css";
+
+/* Components */
+@import "../components/style/index.css";

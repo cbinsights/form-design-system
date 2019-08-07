@@ -7,7 +7,7 @@
 * Jenkins populates the patch version depending on the branch.
 */
 
-String VERSION = "3.8"
+String VERSION = "4.0"
 
 /* ---- DO NOT EDIT BELOW (unless you really know what you're doing) ---- */
 
@@ -53,7 +53,6 @@ pipeline {
       steps {
         ansiColor('xterm'){
           sh "docker build -t ${DOCKER_IMAGE_NAME} ./"
-          sh "docker run ${DOCKER_IMAGE_NAME} ls packages/fds-dictionary/"
         }
       }
     }
@@ -74,10 +73,18 @@ pipeline {
       }
     }
 
+    stage('Bump package version') {
+      steps {
+        ansiColor('xterm') {
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn version --no-commit-hooks --no-git-tag-version --new-version=${VERSION} --tag=${NPM_TAG}"
+        }
+      }
+    }
+
     stage('Publish npm packages') {
       steps {
         ansiColor('xterm') {
-          sh "docker run ${DOCKER_IMAGE_NAME} yarn lerna publish --yes --force-publish --skip-git --npm-tag=${NPM_TAG} --repo-version=${VERSION}"
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn publish --new-version=${VERSION} --access=public"
         }
       }
     }
