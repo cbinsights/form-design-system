@@ -29,12 +29,12 @@ const Toast = ({
     info: <InformationIcon size="l" color={FDS.COLOR_AQUA} />,
     success: <CheckIcon size="xs" color={FDS.COLOR_WHITE} />,
     warn: (
-      <div role="image" className="typemod--white">
+      <div role="image" className="fontWeight--bold color--white">
         !
       </div>
     ),
     error: (
-      <div role="image" className="typemod--white">
+      <div role="image" className="fontWeight--bold color--white">
         !
       </div>
     ),

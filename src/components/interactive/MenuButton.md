@@ -17,12 +17,12 @@ Additional styling customization should be done through `className` and
 
 ```js
 <MenuButton
-  iconComponent={<span className="typemod--xlarge">🔥</span>}
+  iconComponent={<span className="fontSize--2xl">🔥</span>}
   label="Set on fire"
   onClick={() => { alert('clicked') }}
 />
 <MenuButton
-  iconComponent={<span className="typemod--xlarge">🍕</span>}
+  iconComponent={<span className="fontSize--2xl">🍕</span>}
   label="Long pizza button label"
 />
 ```
@@ -31,12 +31,12 @@ Additional styling customization should be done through `className` and
 
 ```js
 <MenuButton
-  iconComponent={<span className="typemod--xlarge">📞</span>}
+  iconComponent={<span className="fontSize--2xl">📞</span>}
   label="Call"
   disabled
 />
 <MenuButton
-  iconComponent={<span className="typemod--xlarge">✏️</span>}
+  iconComponent={<span className="fontSize--2xl">✏️</span>}
   label="Edit Mode"
   active
 />

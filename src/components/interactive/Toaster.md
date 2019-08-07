@@ -13,7 +13,7 @@ initialState = { showToast: false };
     <Toaster
       toast={
         <Toast
-          content={<p>Check out this <strong className="typemod--dark">toast</strong></p>}
+          content={<p>Check out this <strong className="color--primary">toast</strong></p>}
           actionLabel="Action"
           onAction={() => {}}
           onDismiss={() => {setState({ showToast: false })}}
@@ -39,7 +39,7 @@ initialState = { showToast: false, firstToast: true };
     <Toaster
       toast={
         <Toast
-          content={<p>Check out this <strong className="typemod--dark">toast</strong></p>}
+          content={<p>Check out this <strong className="color--primary">toast</strong></p>}
           actionLabel="Action"
           onAction={() => {}}
           onDismiss={() => {setState({ showToast: false })}}
@@ -52,7 +52,7 @@ initialState = { showToast: false, firstToast: true };
     <Toaster
       toast={
         <Toast
-          content={<p>Check out this <strong className="typemod--dark">toast</strong></p>}
+          content={<p>Check out this <strong className="color--primary">toast</strong></p>}
           actionLabel="Action"
           onAction={() => {}}
           onDismiss={() => {setState({ showToast: false })}}
@@ -78,7 +78,7 @@ import Toast from './Toast';
         <Toast
           isAutoDismiss={false}
           onDismiss={() => {setState({ showToast: false })}}
-          content={<p>This is an <strong className="typemod--dark">important message</strong> that doesn't go away until a user dismisses it with the close button</p>}
+          content={<p>This is an <strong className="color--primary">important message</strong> that doesn't go away until a user dismisses it with the close button</p>}
           type="info"
         />
       }

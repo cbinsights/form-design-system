@@ -2,7 +2,7 @@
 
 ```js
 <Toast
-  content={<p>Check out this <strong className="typemod--dark">toast</strong></p>}
+  content={<p>Check out this <strong className="color--primary">toast</strong></p>}
   actionLabel="Action"
   onAction={() => {}}
   type="info"
@@ -13,7 +13,7 @@
 
 ```js
 <Toast
-  content={<p>You better <strong className="typemod--dark">watch out</strong></p>}
+  content={<p>You better <strong className="color--primary">watch out</strong></p>}
   actionLabel="run away"
   onAction={() => {}}
   type="warn"
@@ -24,7 +24,7 @@
 
 ```js
 <Toast
-  content={<p>You <strong className="typemod--dark">Did it!</strong></p>}
+  content={<p>You <strong className="color--primary">Did it!</strong></p>}
   type="success"
 />
 ```
@@ -33,7 +33,7 @@
 
 ```js
 <Toast
-  content={<p>Failed to <strong className="typemod--dark">do a thing</strong></p>}
+  content={<p>Failed to <strong className="color--primary">do a thing</strong></p>}
   actionLabel="Retry"
   onAction={() => {}}
   type="error"
@@ -51,7 +51,7 @@ cancelling an operation).
 
 ```js
 <Toast
-  content={<p>Uploading a photo of your <strong className="typemod--dark">your cat</strong></p>}
+  content={<p>Uploading a photo of your <strong className="color--primary">your cat</strong></p>}
   type="progress"
 />
 ```
@@ -60,7 +60,7 @@ cancelling an operation).
 
 ```js
 <Toast
-  content={<p><strong className="typemod--dark">42%</strong> complete uploading your cat photo</p>}
+  content={<p><strong className="color--primary">42%</strong> complete uploading your cat photo</p>}
   progress={42}
   type="progress"
 />

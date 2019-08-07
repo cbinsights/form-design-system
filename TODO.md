@@ -1,21 +1,25 @@
 # Branch TODOs
 
-- [ ] update dictionary for text colors (primary, secondary, hint)
-    - [ ] check usage for `--font-color-<mod>`:
+- [x] update dictionary for text colors (primary, secondary, hint)
+    - [x] check usage for `--font-color-<mod>`:
       - `dark`, `default`, `light`, `disabled`
 
-- [ ] support inverted text in base styles
+- [x] support inverted text in base styles
 
-- [ ] update typeset/typemod setup in fds-styles
+- [x] update typeset/typemod setup in fds-styles
     - [x] `typeset` -> `type`
-    - [ ] `typemod` -> split up by types of modification (`typeSize`, `typeColor`, `typeWeight`)
+    - [x] `typemod` -> split up by types of modification (`typeSize`, `typeColor`, `typeWeight`)
 
-- [ ] update sizes for typemods
+- [x] update sizes for typemods
 
-- [ ] add basic specimen to spec doc
+- [x] add basic specimen to spec doc
 
-- [ ] add mock content to spec doc
+- [x] add mock content to spec doc
 
-- [ ] check size modifiers for line height after resolution with typeset `big`
+- [x] check size modifiers for line height after resolution with typeset `big`
 
-- [ ] MEDIA SIZES!
+- [x] MEDIA SIZES!
+
+- [ ] update all components with typemod/typeset changes
+
+- [ ] draft full changelog for 4.0 branch
