@@ -2,14 +2,15 @@
   "font": {
     "size": {
 
-      "xs": { "value": "10px" },
-      "s": { "value": "12px" },
-      "default": { "value": "14px" },
-      "l": { "value": "18px" },
-      "xl": { "value": "22px" },
-      "2xl": { "value": "27px" },
-      "3xl": { "value": "34px" },
-      "4xl": { "value": "42px" }
+      "xs":      { "value": "10px" },
+      "s":       { "value": "12px" },
+      "m":       { "value": "14px" },
+      "default": { "value": "{font.size.m.value}" },
+      "l":       { "value": "18px" },
+      "xl":      { "value": "22px" },
+      "2xl":     { "value": "27px" },
+      "3xl":     { "value": "34px" },
+      "4xl":     { "value": "42px" }
 
     }
   }

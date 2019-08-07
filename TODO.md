@@ -17,3 +17,5 @@
 - [ ] add mock content to spec doc
 
 - [ ] check size modifiers for line height after resolution with typeset `big`
+
+- [ ] MEDIA SIZES!

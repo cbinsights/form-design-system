@@ -15,8 +15,10 @@
       "hintInverted":       { "value": "rgba(255, 255, 255, 0.38)" },
 
       "error":     { "value": "{color.base.red.value}" },
-      "success":   { "value": "{color.base.green.value}" }
+      "success":   { "value": "{color.base.green.value}" },
 
+      "errorInverted":     { "value": "{color.base.red.value}" },
+      "successInverted":   { "value": "{color.base.mint.value}" }
     }
   }
 }

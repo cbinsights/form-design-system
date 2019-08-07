@@ -2,11 +2,11 @@
   "layout": {
     "media": {
 
-      "xs": { "value": "16px" },
-      "s":  { "value": "24px" },
-      "m":  { "value": "40px" },
-      "l":  { "value": "60px" },
-      "xl": { "value": "86px" }
+      "xs": { "value": "18px" },
+      "s":  { "value": "27px" },
+      "m":  { "value": "42px" },
+      "l":  { "value": "65px" },
+      "xl": { "value": "82px" }
 
     }
   }

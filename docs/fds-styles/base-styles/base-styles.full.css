@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed, 07 Aug 2019 15:24:06 GMT
+ * Generated on Wed, 07 Aug 2019 17:35:59 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -41,6 +41,8 @@
  --font-color-hintInverted: rgba(255, 255, 255, 0.38);
  --font-color-error: #e5323e;
  --font-color-success: #00986b;
+ --font-color-errorInverted: #e5323e;
+ --font-color-successInverted: #70c390;
  --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
  --font-family-default: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
  --font-family-mono: Monaco, Consolas, monospace;
@@ -49,6 +51,7 @@
  --font-lineHeight-smallText: 1.8;
  --font-size-xs: 10px;
  --font-size-s: 12px;
+ --font-size-m: 14px;
  --font-size-default: 14px;
  --font-size-l: 18px;
  --font-size-xl: 22px;
@@ -57,11 +60,11 @@
  --font-size-4xl: 42px;
  --font-weight-default: 400;
  --font-weight-bold: 700;
- --media-xs: 16px;
- --media-s: 24px;
- --media-m: 40px;
- --media-l: 60px;
- --media-xl: 86px;
+ --media-xs: 22px;
+ --media-s: 27px;
+ --media-m: 42px;
+ --media-l: 65px;
+ --media-xl: 82px;
  --space-double: 32px;
  --space-default: 14px;
  --space-half: 8px;
@@ -960,33 +963,33 @@ class           | description
 ```
 */
 .media--xs {
-  height: 16px !important;
+  height: 22px !important;
   height: var(--media-xs) !important;
-  width: 16px !important;
+  width: 22px !important;
   width: var(--media-xs) !important;
 }
 .media--s {
-  height: 24px !important;
+  height: 27px !important;
   height: var(--media-s) !important;
-  width: 24px !important;
+  width: 27px !important;
   width: var(--media-s) !important;
 }
 .media--m {
-  height: 40px !important;
+  height: 42px !important;
   height: var(--media-m) !important;
-  width: 40px !important;
+  width: 42px !important;
   width: var(--media-m) !important;
 }
 .media--l {
-  height: 60px !important;
+  height: 65px !important;
   height: var(--media-l) !important;
-  width: 60px !important;
+  width: 65px !important;
   width: var(--media-l) !important;
 }
 .media--xl {
-  height: 86px !important;
+  height: 82px !important;
   height: var(--media-xl) !important;
-  width: 86px !important;
+  width: 82px !important;
   width: var(--media-xl) !important;
 }
 /* Shadow Helpers */
@@ -1405,12 +1408,16 @@ When using standard text color classes (`heading`,
   <p class="color--primary">Primary text color (default)</p>
   <p class="color--secondary">Secondary text color</p>
   <p class="color--hint">Hint text color</p>
+  <p class="color--success">Success text color</p>
+  <p class="color--error">Error text color</p>
 </div>
 <div class="padding--all inverted" style="background: var(--color-navy);">
   <p class="color--heading">Heading text color</p>
   <p class="color--primary">Primary text color (default)</p>
   <p class="color--secondary">Secondary text color</p>
   <p class="color--hint">Hint text color</p>
+  <p class="color--success">Success text color</p>
+  <p class="color--error">Error text color</p>
 </div>
 ```
 
@@ -1424,7 +1431,9 @@ _Text in this example is set in `fontWeight--bold`_
   <li class="color--mint">Mint text</li>
   <li class="color--navy">Navy text</li>
   <li class="color--blue">Blue text</li>
+  <li class="color--aqua">Aqua text</li>
   <li class="color--sky">Sky text</li>
+  <li class="color--violet">Purple text</li>
   <li class="color--purple">Purple text</li>
   <li class="color--red">Red text</li>
   <li class="color--orange">Orange text</li>
@@ -1464,6 +1473,22 @@ _Text in this example is set in `fontWeight--bold`_
   color: rgba(255, 255, 255, 0.38) !important;
   color: var(--font-color-hintInverted) !important;
 }
+.color--success {
+  color: #00986b !important;
+  color: var(--font-color-success) !important;
+}
+.inverted .color--success {
+  color: #70c390 !important;
+  color: var(--font-color-successInverted) !important;
+}
+.color--error {
+  color: #e5323e !important;
+  color: var(--font-color-error) !important;
+}
+.inverted .color--error {
+  color: #e5323e !important;
+  color: var(--font-color-errorInverted) !important;
+}
 .color--green {
   color: #00986b !important;
   color: var(--color-green) !important;
@@ -1480,9 +1505,17 @@ _Text in this example is set in `fontWeight--bold`_
   color: #006699 !important;
   color: var(--color-blue) !important;
 }
+.color--aqua {
+  color: #4cabce !important;
+  color: var(--color-aqua) !important;
+}
 .color--sky {
   color: #bbdbe5 !important;
   color: var(--color-sky) !important;
+}
+.color--violet {
+  color: #d772ad !important;
+  color: var(--color-violet) !important;
 }
 .color--purple {
   color: #a02385 !important;

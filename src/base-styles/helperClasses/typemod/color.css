@@ -17,12 +17,16 @@ When using standard text color classes (`heading`,
   <p class="color--primary">Primary text color (default)</p>
   <p class="color--secondary">Secondary text color</p>
   <p class="color--hint">Hint text color</p>
+  <p class="color--success">Success text color</p>
+  <p class="color--error">Error text color</p>
 </div>
 <div class="padding--all inverted" style="background: var(--color-navy);">
   <p class="color--heading">Heading text color</p>
   <p class="color--primary">Primary text color (default)</p>
   <p class="color--secondary">Secondary text color</p>
   <p class="color--hint">Hint text color</p>
+  <p class="color--success">Success text color</p>
+  <p class="color--error">Error text color</p>
 </div>
 ```
 
@@ -36,7 +40,9 @@ _Text in this example is set in `fontWeight--bold`_
   <li class="color--mint">Mint text</li>
   <li class="color--navy">Navy text</li>
   <li class="color--blue">Blue text</li>
+  <li class="color--aqua">Aqua text</li>
   <li class="color--sky">Sky text</li>
+  <li class="color--violet">Purple text</li>
   <li class="color--purple">Purple text</li>
   <li class="color--red">Red text</li>
   <li class="color--orange">Orange text</li>
@@ -77,6 +83,22 @@ _Text in this example is set in `fontWeight--bold`_
   color: var(--font-color-hintInverted) !important;
 }
 
+.color--success {
+  color: var(--font-color-success) !important;
+}
+
+.inverted .color--success {
+  color: var(--font-color-successInverted) !important;
+}
+
+.color--error {
+  color: var(--font-color-error) !important;
+}
+
+.inverted .color--error {
+  color: var(--font-color-errorInverted) !important;
+}
+
 .color--green {
   color: var(--color-green) !important;
 }
@@ -93,8 +115,16 @@ _Text in this example is set in `fontWeight--bold`_
   color: var(--color-blue) !important;
 }
 
+.color--aqua {
+  color: var(--color-aqua) !important;
+}
+
 .color--sky {
   color: var(--color-sky) !important;
+}
+
+.color--violet {
+  color: var(--color-violet) !important;
 }
 
 .color--purple {
