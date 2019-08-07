@@ -20,6 +20,6 @@
 
 - [x] MEDIA SIZES!
 
-- [ ] update all components with typemod/typeset changes
+- [x] update all components with typemod/typeset changes
 
 - [ ] draft full changelog for 4.0 branch
