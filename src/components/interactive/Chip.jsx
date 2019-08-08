@@ -9,8 +9,8 @@ const Chip = ({ size, Link, theme, isActive, label, subtitle, hasClose, ...rest 
 
   const rootClass = cx('fdsChip', {
     'fdsChip--active': isActive,
-    'fdsChip--small': size === 'small',
-    'fdsChip--large': size === 'large',
+    'fdsChip--small': size === 'sm',
+    'fdsChip--large': size === 'lg',
     'fdsChip--blue': theme === 'blue',
     'fdsChip--outline': theme === 'outline',
   });
@@ -38,13 +38,13 @@ Chip.propTypes = {
   isActive: PropTypes.bool,
   subtitle: PropTypes.string,
   hasClose: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
 
 Chip.defaultProps = {
   theme: 'gray',
-  size: 'medium',
+  size: 'md',
 };
 
 export default Chip;

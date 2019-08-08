@@ -18,9 +18,9 @@ const chipsTwo = [
 ];
 
 <div>
-  {chips.map(chip => <Chip {...chip} key={chip.label} size="small" />)}
+  {chips.map(chip => <Chip {...chip} key={chip.label} size="sm" />)}
   <br />
-  {chips.map(chip => <Chip {...chip} key={chip.label} theme="blue" size="small" />)}
+  {chips.map(chip => <Chip {...chip} key={chip.label} theme="blue" size="sm" />)}
   <br /><br />
   {chips.map(chip => <Chip {...chip} key={chip.label} />)}
   <br />
