@@ -3,8 +3,8 @@
 ## TODO
 
 - [ ] (adam) pick readme/info plugin
-- [ ] (rey) add knobs addon and try it on chips story
-- [ ] canvas positioning/spacing is consistent and good
+- [X] (rey) add knobs addon and try it on chips story
+- [X] canvas positioning/spacing is consistent and good
 - [ ] all components have stories
   - [ ] ButtonGroup.jsx
   - [ ] Chip.jsx
