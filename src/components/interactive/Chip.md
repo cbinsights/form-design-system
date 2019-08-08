@@ -1,5 +1,5 @@
 ```js
-import Chips from './Chips';
+import Chip from './Chip'
 
 const chips = [
   { label: 'Lorem', href: "#lorem" },
@@ -22,15 +22,15 @@ const chipsTwo = [
 ];
 
 <div>
-  <Chips list={chips} size="small" />
+  {chips.map(chip => <Chip {...chip} key={chip.label} size="small" />)}
   <br />
-  <Chips list={chips} theme="blue" size="small" />
+  {chips.map(chip => <Chip {...chip} key={chip.label} theme="blue" size="small" />)}
   <br /><br />
-  <Chips list={chips} />
+  {chips.map(chip => <Chip {...chip} key={chip.label} />)}
   <br />
-  <Chips list={chips} theme="blue"  />
+  {chips.map(chip => <Chip {...chip} key={chip.label} theme="blue" />)}
   <br /><br />
-  <Chips list={chipsTwo} hasClose={true} theme="outline"  />
+  {chipsTwo.map(chip => <Chip {...chip} key={chip.label} theme="outline" hasClose={true} />)}
   <br />
 </div>
 ```
