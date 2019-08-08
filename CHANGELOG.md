@@ -58,3 +58,7 @@ Instead of using the rollup stylesheet from `fds-components`, version `4.0` prov
 a special `assets` dir in `./lib` that includes combined styles:
 
 `@cbinsights/fds/lib/assets/all-styles.min.css`
+
+#### Removed components
+
+`Chips` was removed from codebase

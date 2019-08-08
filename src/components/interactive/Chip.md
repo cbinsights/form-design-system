@@ -1,5 +1,6 @@
 ```js
-import Chips from './Chips';
+import Chip from './Chip'
+import { Link } from '../util/react-router';
 
 const chips = [
   { label: 'Lorem', href: "#lorem" },
@@ -8,29 +9,24 @@ const chips = [
   { label: 'Sit', onClick: () => console.log('custom logic here'), isActive: false },
 ];
 
-// Yes, this even works for Link components
-const Link = ({ to, children, ...rest }) => (
-  <a href={to} {...rest}>{children}</a>
-)
-
 const chipsTwo = [
   { label: 'Lorem Ipsum' },
   { label: 'Dolor Sit' },
-  { as: Link, label: 'hey', to: '#google' },
+  { Link: Link, label: 'hey', to: '#google' },
   { label: 'Sit Amet' },
   { label: 'Consectetur', onClick: () => console.log('custom logic here') },
 ];
 
 <div>
-  <Chips list={chips} size="small" />
+  {chips.map(chip => <Chip {...chip} key={chip.label} size="small" />)}
   <br />
-  <Chips list={chips} theme="blue" size="small" />
+  {chips.map(chip => <Chip {...chip} key={chip.label} theme="blue" size="small" />)}
   <br /><br />
-  <Chips list={chips} />
+  {chips.map(chip => <Chip {...chip} key={chip.label} />)}
   <br />
-  <Chips list={chips} theme="blue"  />
+  {chips.map(chip => <Chip {...chip} key={chip.label} theme="blue" />)}
   <br /><br />
-  <Chips list={chipsTwo} hasClose={true} theme="outline"  />
+  {chipsTwo.map(chip => <Chip {...chip} key={chip.label} theme="outline" hasClose={true} />)}
   <br />
 </div>
 ```
