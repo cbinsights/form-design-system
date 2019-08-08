@@ -2,18 +2,34 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+import centered from '@storybook/addon-centered/react';
+import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 
-import { Welcome } from '@storybook/react/demo';
 import Chip from './Chip';
 import '../style/index.css';
 
 storiesOf('Chip', module)
-  .add('small', () => (
-    <div>
-      <Chip label="Lorem" onClick={action('clicked')} size="sm" />
-      <Chip label="Lorem" onClick={action('clicked')} size="sm" />
-    </div>
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
+  .add('knobs', () => (
+    <Chip
+      isActive={boolean('isActive', false)}
+      label={text('label', 'Hello World')}
+      subtitle={text('subtitle', '')}
+      hasClose={boolean('hasClose', false)}
+      onClick={action('clicked')}
+      size="sm"
+      theme={options(
+        'theme',
+        {
+          gray: 'gray',
+          blue: 'blue',
+          outline: 'outline',
+        },
+        'gray',
+        { display: 'inline-radio' }
+      )}
+    />
   ))
   .add('medium', () => (
     <div>
@@ -21,7 +37,3 @@ storiesOf('Chip', module)
       <Chip label="Lorem" onClick={action('clicked')} />
     </div>
   ));
-
-storiesOf('Welcome', module).add('to Storybook', () => (
-  <Welcome showApp={linkTo('Button')} />
-));
