@@ -5,51 +5,18 @@
 - [ ] (adam) pick readme/info plugin
 - [ ] (rey) add knobs addon and try it on chips story
 - [ ] canvas positioning/spacing is consistent and good
-
-```
-── interactive
-│   ├── ButtonGroup.jsx
-│   ├── ButtonGroup.md
-│   ├── Chip.jsx
-│   ├── Chip.md
-│   ├── GroupButton.jsx
-│   ├── MenuButton.jsx
-│   ├── MenuButton.md
-│   ├── Toast.jsx
-│   ├── Toast.md
-│   ├── Toaster.jsx
-│   ├── Toaster.md
-│   ├── __snapshots__
-│   ├── buttonGroup.test.js
-│   ├── chip.stories.js
-│   ├── chip.test.js
-│   ├── groupButton.test.js
-│   ├── index.md
-│   ├── menuButton.test.js
-│   ├── toast.test.js
-│   └── toaster.test.js
-├── layout
-│   ├── Flex.jsx
-│   ├── Flex.md
-│   ├── FlexItem.jsx
-│   ├── FlexItem.md
-│   ├── __snapshots__
-│   ├── flex.test.js
-│   ├── flexItem.test.js
-│   └── index.md
-├── media
-│   ├── AvatarRow.jsx
-│   ├── AvatarRow.md
-│   ├── CountdownButton.jsx
-│   ├── CountdownButton.md
-│   ├── Updatable.jsx
-│   ├── Updatable.md
-│   ├── __snapshots__
-│   ├── avatarRow.test.js
-│   ├── countdownButton.test.js
-│   ├── index.md
-│   └── updatable.test.js
-```
+- [ ] all components have stories
+  - [ ] ButtonGroup.jsx
+  - [ ] Chip.jsx
+  - [ ] GroupButton.jsx
+  - [ ] MenuButton.jsx
+  - [ ] Toast.jsx
+  - [ ] Toaster.jsx
+  - [ ] Flex.jsx
+  - [ ] FlexItem.jsx
+  - [ ] AvatarRow.jsx
+  - [ ] CountdownButton.jsx
+  - [ ] Updatable.jsx
 
 ## MVP
 - all components have stories
@@ -58,7 +25,8 @@
 ## Addons
 
 - knobs
-- storybook-addon-notes OR community readme plugin
+- storybook-readme
+- chapters? Organize by layout, media, etc.?
 
 ## Story organization
 
