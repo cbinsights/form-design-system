@@ -1,2 +1,0 @@
-- should we pull in the line height for `type--big`?
-- using `mint` for success inverted
