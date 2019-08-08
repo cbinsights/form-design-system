@@ -22,12 +22,7 @@ html, body {
 .stripe-title,
 .stripe-description {
   font-family: var(--font-family-mono);
-  color: var(--color-sky);
-}
-
-.inverted .stripe-title,
-.inverted .stripe-description {
-  color: var(--color-blue);
+  color: var(--color-aqua);
 }
 
 
@@ -53,6 +48,10 @@ html, body {
   text-align: right;
   min-width: 200px;
   flex-grow: 1;
+}
+
+.specItem-info code {
+  display: block;
 }
 
 

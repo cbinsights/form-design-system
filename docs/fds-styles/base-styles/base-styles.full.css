@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu, 08 Aug 2019 15:14:07 GMT
+ * Generated on Thu, 08 Aug 2019 18:18:09 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -62,9 +62,9 @@
  --font-weight-bold: 700;
  --media-xs: 18px;
  --media-s: 24px;
- --media-m: 38px;
- --media-l: 52px;
- --media-xl: 65px;
+ --media-m: 34px;
+ --media-l: 50px;
+ --media-xl: 72px;
  --space-double: 32px;
  --space-default: 14px;
  --space-half: 8px;
@@ -975,21 +975,21 @@ class           | description
   width: var(--media-s) !important;
 }
 .media--m {
-  height: 38px !important;
+  height: 34px !important;
   height: var(--media-m) !important;
-  width: 38px !important;
+  width: 34px !important;
   width: var(--media-m) !important;
 }
 .media--l {
-  height: 52px !important;
+  height: 50px !important;
   height: var(--media-l) !important;
-  width: 52px !important;
+  width: 50px !important;
   width: var(--media-l) !important;
 }
 .media--xl {
-  height: 65px !important;
+  height: 72px !important;
   height: var(--media-xl) !important;
-  width: 65px !important;
+  width: 72px !important;
   width: var(--media-xl) !important;
 }
 /* Shadow Helpers */

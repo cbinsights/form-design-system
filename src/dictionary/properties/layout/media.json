@@ -4,9 +4,9 @@
 
       "xs": { "value": "18px" },
       "s":  { "value": "24px" },
-      "m":  { "value": "38px" },
-      "l":  { "value": "52px" },
-      "xl": { "value": "65px" }
+      "m":  { "value": "34px" },
+      "l":  { "value": "50px" },
+      "xl": { "value": "72px" }
 
     }
   }
