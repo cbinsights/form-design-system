@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import baseElement from '../../util/baseElement';
 
 export const GroupButton = (props) => {
-  const { isActive, Icon, label, as, ...rest } = props;
+  const { isActive, Icon, label, Link, ...rest } = props;
 
-  const Element = baseElement({ href: rest.href, as });
+  const Element = baseElement({ href: rest.href, as: Link });
 
   const rootClass = cx('groupbtn', {
     'groupbtn--disabled': props.disabled,
@@ -25,7 +25,12 @@ GroupButton.propTypes = {
   /** Displays active button style when true */
   isActive: PropTypes.bool,
 
-  as: PropTypes.func,
+  /**
+   * Pass **only** react-router `Link` here. You may **not**
+   * pass anything else here: SFC, Class Component, etc (even
+   * if they use react-router `Link` underneath the hood).
+   */
+  Link: PropTypes.func,
 
   label: PropTypes.string,
 

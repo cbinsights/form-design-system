@@ -4,8 +4,8 @@ import cx from 'classnames';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
 import baseElement from '../../util/baseElement';
 
-const Chip = ({ size, as, theme, isActive, label, subtitle, hasClose, ...rest }) => {
-  const Element = baseElement({ href: rest.href, as });
+const Chip = ({ size, Link, theme, isActive, label, subtitle, hasClose, ...rest }) => {
+  const Element = baseElement({ href: rest.href, as: Link });
 
   const rootClass = cx('fdsChip', {
     'fdsChip--active': isActive,
@@ -30,10 +30,11 @@ const Chip = ({ size, as, theme, isActive, label, subtitle, hasClose, ...rest })
 Chip.propTypes = {
   label: PropTypes.string.isRequired,
   /**
-   * This allows for overriding of the Chip root element.
-   * Meant to accomodate  `<Link />`
+   * Pass **only** react-router `Link` here. You may **not**
+   * pass anything else here: SFC, Class Component, etc (even
+   * if they use react-router `Link` underneath the hood).
    */
-  as: PropTypes.func,
+  Link: PropTypes.func,
   isActive: PropTypes.bool,
   subtitle: PropTypes.string,
   hasClose: PropTypes.bool,
