@@ -779,9 +779,6 @@ non-heading element.</p>
       <div class="markdown-body">
         <p>Modifies color of text.</p>
 <h3 id="standard-text-colors">Standard text colors</h3>
-<p>When using standard text color classes (<code>heading</code>,
-<code>primary</code>, <code>secondary</code>, <code>hint</code>), a parent element with the
-<code>inverted</code> class will switch the text to tints of white.</p>
 <pre><code class="lang-example:html">&lt;div class=&quot;padding--all&quot;&gt;
   &lt;p class=&quot;color--heading&quot;&gt;Heading text color&lt;/p&gt;
   &lt;p class=&quot;color--primary&quot;&gt;Primary text color (default)&lt;/p&gt;
@@ -790,7 +787,12 @@ non-heading element.</p>
   &lt;p class=&quot;color--success&quot;&gt;Success text color&lt;/p&gt;
   &lt;p class=&quot;color--error&quot;&gt;Error text color&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;padding--all inverted&quot; style=&quot;background: var(--color-navy);&quot;&gt;
+</code></pre>
+<h3 id="inverted-standard-text-colors">Inverted standard text colors</h3>
+<p>When using standard text color classes (<code>heading</code>,
+<code>primary</code>, <code>secondary</code>, <code>hint</code>), a parent element with the
+<code>inverted</code> class will switch the text to tints of white.</p>
+<pre><code class="lang-example:html">&lt;div class=&quot;padding--all inverted&quot; style=&quot;background: var(--color-navy);&quot;&gt;
   &lt;p class=&quot;color--heading&quot;&gt;Heading text color&lt;/p&gt;
   &lt;p class=&quot;color--primary&quot;&gt;Primary text color (default)&lt;/p&gt;
   &lt;p class=&quot;color--secondary&quot;&gt;Secondary text color&lt;/p&gt;
@@ -957,7 +959,7 @@ of clamping text to one line.</p>
         </main>
       </div>
       <footer class="footer">
-        Last modified Thursday, 8 August 2019 14:18
+        Last modified Thursday, 8 August 2019 17:43
       </footer>
     </div>
     <script src="prism.js?871234"></script>

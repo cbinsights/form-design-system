@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu, 08 Aug 2019 18:18:09 GMT
+ * Generated on Thu, 08 Aug 2019 21:42:59 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -1398,10 +1398,6 @@ Modifies color of text.
 
 ### Standard text colors
 
-When using standard text color classes (`heading`,
-`primary`, `secondary`, `hint`), a parent element with the
-`inverted` class will switch the text to tints of white.
-
 ```example:html
 <div class="padding--all">
   <p class="color--heading">Heading text color</p>
@@ -1411,6 +1407,15 @@ When using standard text color classes (`heading`,
   <p class="color--success">Success text color</p>
   <p class="color--error">Error text color</p>
 </div>
+```
+
+### Inverted standard text colors
+
+When using standard text color classes (`heading`,
+`primary`, `secondary`, `hint`), a parent element with the
+`inverted` class will switch the text to tints of white.
+
+```example:html
 <div class="padding--all inverted" style="background: var(--color-navy);">
   <p class="color--heading">Heading text color</p>
   <p class="color--primary">Primary text color (default)</p>
