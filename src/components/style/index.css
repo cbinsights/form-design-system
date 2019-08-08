@@ -15,8 +15,6 @@
 @import "./interactive/buttonGroup.css";
 @import "./interactive/chips.css";
 
-body { background: pink; }
-
 /* Overrides (remove when possible) */
 img,
 p {
