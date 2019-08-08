@@ -3,10 +3,10 @@
     "media": {
 
       "xs": { "value": "18px" },
-      "s":  { "value": "27px" },
-      "m":  { "value": "42px" },
-      "l":  { "value": "65px" },
-      "xl": { "value": "82px" }
+      "s":  { "value": "24px" },
+      "m":  { "value": "38px" },
+      "l":  { "value": "52px" },
+      "xl": { "value": "65px" }
 
     }
   }

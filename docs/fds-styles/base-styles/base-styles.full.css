@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed, 07 Aug 2019 18:52:51 GMT
+ * Generated on Thu, 08 Aug 2019 15:14:07 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -46,25 +46,25 @@
  --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
  --font-family-default: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
  --font-family-mono: Monaco, Consolas, monospace;
- --font-lineHeight-bigText: 1.1;
+ --font-lineHeight-bigText: 1.2;
  --font-lineHeight-default: 1.5;
  --font-lineHeight-smallText: 1.8;
  --font-size-xs: 10px;
  --font-size-s: 12px;
  --font-size-m: 14px;
  --font-size-default: 14px;
- --font-size-l: 18px;
- --font-size-xl: 22px;
- --font-size-2xl: 27px;
- --font-size-3xl: 34px;
- --font-size-4xl: 42px;
+ --font-size-l: 16px;
+ --font-size-xl: 20px;
+ --font-size-2xl: 24px;
+ --font-size-3xl: 32px;
+ --font-size-4xl: 38px;
  --font-weight-default: 400;
  --font-weight-bold: 700;
  --media-xs: 18px;
- --media-s: 27px;
- --media-m: 42px;
- --media-l: 65px;
- --media-xl: 82px;
+ --media-s: 24px;
+ --media-m: 38px;
+ --media-l: 52px;
+ --media-xl: 65px;
  --space-double: 32px;
  --space-default: 14px;
  --space-half: 8px;
@@ -969,27 +969,27 @@ class           | description
   width: var(--media-xs) !important;
 }
 .media--s {
-  height: 27px !important;
+  height: 24px !important;
   height: var(--media-s) !important;
-  width: 27px !important;
+  width: 24px !important;
   width: var(--media-s) !important;
 }
 .media--m {
-  height: 42px !important;
+  height: 38px !important;
   height: var(--media-m) !important;
-  width: 42px !important;
+  width: 38px !important;
   width: var(--media-m) !important;
 }
 .media--l {
-  height: 65px !important;
+  height: 52px !important;
   height: var(--media-l) !important;
-  width: 65px !important;
+  width: 52px !important;
   width: var(--media-l) !important;
 }
 .media--xl {
-  height: 82px !important;
+  height: 65px !important;
   height: var(--media-xl) !important;
-  width: 82px !important;
+  width: 65px !important;
   width: var(--media-xl) !important;
 }
 /* Shadow Helpers */
@@ -1146,11 +1146,11 @@ section: Typesetting
 ```
 */
 .type--head1 {
-  font-size: 42px;
+  font-size: 38px;
   font-size: var(--font-size-4xl);
   font-weight: 700;
   font-weight: var(--font-weight-bold);
-  line-height: 1.1;
+  line-height: 1.2;
   line-height: var(--font-lineHeight-bigText);
 }
 /*---
@@ -1164,11 +1164,11 @@ section: Typesetting
 ```
 */
 .type--head2 {
-  font-size: 34px;
+  font-size: 32px;
   font-size: var(--font-size-3xl);
   font-weight: 700;
   font-weight: var(--font-weight-bold);
-  line-height: 1.1;
+  line-height: 1.2;
   line-height: var(--font-lineHeight-bigText);
 }
 /*---
@@ -1182,11 +1182,11 @@ section: Typesetting
 ```
 */
 .type--head3 {
-  font-size: 27px;
+  font-size: 24px;
   font-size: var(--font-size-2xl);
   font-weight: 700;
   font-weight: var(--font-weight-bold);
-  line-height: 1.1;
+  line-height: 1.2;
   line-height: var(--font-lineHeight-bigText);
 }
 /*---
@@ -1200,11 +1200,11 @@ section: Typesetting
 ```
 */
 .type--head4 {
-  font-size: 22px;
+  font-size: 20px;
   font-size: var(--font-size-xl);
   font-weight: 700;
   font-weight: var(--font-weight-bold);
-  line-height: 1.1;
+  line-height: 1.2;
   line-height: var(--font-lineHeight-bigText);
 }
 /*---
@@ -1232,7 +1232,7 @@ non-heading element.
 ```
 */
 .type--big {
-  font-size: 18px;
+  font-size: 16px;
   font-size: var(--font-size-l);
 }
 /*---
@@ -1323,7 +1323,7 @@ Modifies size of text and adjusts leading accordingly.
 .fontSize--3xl,
 .fontSize--2xl,
 .fontSize--xl {
-  line-height: 1.1 !important;
+  line-height: 1.2 !important;
   line-height: var(--font-lineHeight-bigText) !important;
 }
 .fontSize--l,
@@ -1337,23 +1337,23 @@ Modifies size of text and adjusts leading accordingly.
   line-height: var(--font-lineHeight-smallText) !important;
 }
 .fontSize--4xl {
-  font-size: 42px !important;
+  font-size: 38px !important;
   font-size: var(--font-size-4xl) !important;
 }
 .fontSize--3xl {
-  font-size: 34px !important;
+  font-size: 32px !important;
   font-size: var(--font-size-3xl) !important;
 }
 .fontSize--2xl {
-  font-size: 27px !important;
+  font-size: 24px !important;
   font-size: var(--font-size-2xl) !important;
 }
 .fontSize--xl {
-  font-size: 22px !important;
+  font-size: 20px !important;
   font-size: var(--font-size-xl) !important;
 }
 .fontSize--l {
-  font-size: 18px !important;
+  font-size: 16px !important;
   font-size: var(--font-size-l) !important;
 }
 .fontSize--default {

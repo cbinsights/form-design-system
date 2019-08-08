@@ -6,11 +6,11 @@
       "s":       { "value": "12px" },
       "m":       { "value": "14px" },
       "default": { "value": "{font.size.m.value}" },
-      "l":       { "value": "18px" },
-      "xl":      { "value": "22px" },
-      "2xl":     { "value": "27px" },
-      "3xl":     { "value": "34px" },
-      "4xl":     { "value": "42px" }
+      "l":       { "value": "16px" },
+      "xl":      { "value": "20px" },
+      "2xl":     { "value": "24px" },
+      "3xl":     { "value": "32px" },
+      "4xl":     { "value": "38px" }
 
     }
   }
