@@ -9,7 +9,8 @@ exports[`Chip component matches snapshot (default props) 1`] = `
 `;
 
 exports[`Chip component matches snapshot (set all props) 1`] = `
-<as
+<button
+  as={[Function]}
   className="fdsChip fdsChip--active fdsChip--large fdsChip--blue"
 >
   foo
@@ -18,5 +19,5 @@ exports[`Chip component matches snapshot (set all props) 1`] = `
   >
     bar
   </span>
-</as>
+</button>
 `;
