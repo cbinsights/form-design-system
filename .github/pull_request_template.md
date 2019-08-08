@@ -1,11 +1,3 @@
-## Packages changed
-<!-- check all that apply -->
-- [ ] `fds-dictionary`
-- [ ] `fds-styles`
-- [ ] `fds-components`
-- [ ] `fds-mui-theme`
-- [ ] `fds-icons`
-
 ## Description
 <!-- Enter a brief description of your changes -->
 
