@@ -4,12 +4,14 @@
 
 - [x] (adam) pick readme/info plugin
 - [x] (adam) set up notes addon
+  - in branch `storybook/notes-tab`
+- [ ] (adam) try addon-info for notes + prop tables
 - [x] (rey) add knobs addon and try it on chips story
 - [x] canvas positioning/spacing is consistent and good
-- [ ] set up global decorators globally instead of declaring them on each story (e.g. - `centered`)
+- [x] set up global decorators globally instead of declaring them on each story (e.g. - `centered`)
 - [ ] all components have stories
   - [ ] ButtonGroup.jsx
-  - [ ] Chip.jsx
+  - [x] Chip.jsx
   - [ ] GroupButton.jsx
   - [ ] MenuButton.jsx
   - [ ] Toast.jsx
