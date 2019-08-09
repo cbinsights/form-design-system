@@ -2,6 +2,8 @@
 
 ## TODO
 
+- [ ] What should we call knobs?
+  - api docs? intro? "K n' D"?
 - [x] (adam) pick readme/info plugin
 - [x] (adam) set up notes addon
 - [x] (adam) try addon-info for notes + prop tables
