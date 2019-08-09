@@ -64,5 +64,6 @@ Modifies size of text and adjusts leading accordingly.
 
 .fontSize--xs {
   font-size: var(--font-size-xs) !important;
+  text-rendering: optimizeLegibility; /* stylelint-disable-line */
 }
 

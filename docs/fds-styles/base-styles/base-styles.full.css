@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu, 08 Aug 2019 21:42:59 GMT
+ * Generated on Fri, 09 Aug 2019 22:08:42 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -1269,6 +1269,7 @@ Tiny text for captions and legalese.
   font-size: var(--font-size-xs);
   line-height: 1.8;
   line-height: var(--font-lineHeight-smallText);
+  text-rendering: optimizeLegibility;
 }
 /*---
 title: Links
@@ -1367,6 +1368,7 @@ Modifies size of text and adjusts leading accordingly.
 .fontSize--xs {
   font-size: 10px !important;
   font-size: var(--font-size-xs) !important;
+  text-rendering: optimizeLegibility;
 }
 /*----
 title: Weight Modifiers

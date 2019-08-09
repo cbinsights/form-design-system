@@ -149,4 +149,5 @@ Tiny text for captions and legalese.
 .type--caption {
   font-size: var(--font-size-xs);
   line-height: var(--font-lineHeight-smallText);
+  text-rendering: optimizeLegibility; /* stylelint-disable-line */
 }
