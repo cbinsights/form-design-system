@@ -15,28 +15,23 @@
   - [x] ButtonGroup.jsx
     - [x] knobs story
     - [x] variations story
-    - [ ] example stories (optional)
+    - [-] example stories (optional)
     - [x] readme markdown
     - [ ] add emoji icons for knobs version
   - [x] Chip.jsx
     - [x] knobs story
     - [x] variations story
-    - [ ] example stories (optional)
+    - [-] example stories (optional)
     - [x] readme markdown
-  - [ ] GroupButton.jsx (do we need this?)
-    - [ ] knobs story
-    - [ ] variations story
-    - [ ] example stories (optional)
-    - [ ] readme markdown
   - [x] MenuButton.jsx
     - [x] knobs story
     - [x] variations story
-    - [ ] example stories (optional)
+    - [-] example stories (optional)
     - [x] readme markdown
   - [x] Toast.jsx
     - [x] knobs story
     - [x] variations story
-    - [ ] example stories (optional)
+    - [-] example stories (optional)
     - [x] readme markdown
   - [ ] Toaster.jsx
     - [ ] knobs story
@@ -53,17 +48,17 @@
   - [x] AvatarRow.jsx
     - [x] knobs story
     - [x] variations story
-    - [ ] example stories (optional)
+    - [-] example stories (optional)
     - [x] readme markdown
   - [x] CountdownButton.jsx
     - [x] knobs story
     - [x] variations story
-    - [ ] example stories (optional)
+    - [-] example stories (optional)
     - [x] readme markdown
   - [x] Updatable.jsx
     - [x] knobs story
     - [x] variations story
-    - [ ] example stories (optional)
+    - [-] example stories (optional)
     - [x] readme markdown
 
 ## MVP
@@ -96,10 +91,10 @@ MyComponent
 
 There are a few things to do before this is production-ready.
 
-- [ ] Remove vestiges of styleguidist
-- [ ] figure out what to do with the debug css hacked into `.storybook/preview-head.html`
-- [ ] set up static storybook build (output to `docs/fds-components`)
-- [ ] make sure `.stories.js` is excluded from tests
+- [x] (adam) Remove vestiges of styleguidist
+- [x] (adam) figure out what to do with the debug css hacked into `.storybook/preview-head.html`
+- [x] set up static storybook build (output to `docs/fds-components`)
+- [x] update root README with new yarn commands
 - [ ] make sure prettier is running on `.stories.js`
-- [ ] update root README with new yarn commands
+- [ ] change title in upper left? Add a link back to our github or base documentation site?
 
