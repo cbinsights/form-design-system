@@ -32,7 +32,16 @@ storiesOf('Chip', module)
         subtitle={text('subtitle', '')}
         hasClose={boolean('hasClose', false)}
         onClick={action('clicked')}
-        size="sm"
+        size={options(
+          'size',
+          {
+            sm: 'sm',
+            md: 'md',
+            lg: 'lg',
+          },
+          'sm',
+          { display: 'inline-radio' }
+        )}
         theme={options(
           'theme',
           {
