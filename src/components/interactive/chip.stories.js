@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 
 import Chip from './Chip';
+import README from './Chip.md';
 import '../style/index.css';
 
 const chips = [
@@ -23,26 +24,30 @@ const chipsTwo = [
 
 storiesOf('Chip', module)
   .addDecorator(withKnobs)
-  .add('Knobs', () => (
-    <Chip
-      isActive={boolean('isActive', false)}
-      label={text('label', 'Hello World')}
-      subtitle={text('subtitle', '')}
-      hasClose={boolean('hasClose', false)}
-      onClick={action('clicked')}
-      size="sm"
-      theme={options(
-        'theme',
-        {
-          gray: 'gray',
-          blue: 'blue',
-          outline: 'outline',
-        },
-        'gray',
-        { display: 'inline-radio' }
-      )}
-    />
-  ))
+  .add(
+    'Knobs',
+    () => (
+      <Chip
+        isActive={boolean('isActive', false)}
+        label={text('label', 'Hello World')}
+        subtitle={text('subtitle', '')}
+        hasClose={boolean('hasClose', false)}
+        onClick={action('clicked')}
+        size="sm"
+        theme={options(
+          'theme',
+          {
+            gray: 'gray',
+            blue: 'blue',
+            outline: 'outline',
+          },
+          'gray',
+          { display: 'inline-radio' }
+        )}
+      />
+    ),
+    { notes: { markdown: README } }
+  )
   .add('Variations', () => (
     <div>
       {chipsTwo.map((chip) => (
