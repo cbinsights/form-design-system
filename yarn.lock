@@ -6010,7 +6010,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.0, fbjs@^0.8.1:
+fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.4:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   integrity sha1-xNWY6taUkRJlPWWIsBpc3Nn5D90=
@@ -8704,7 +8704,7 @@ longest-streak@^2.0.1:
   resolved "https://registry.yarnpkg.com/longest-streak/-/longest-streak-2.0.3.tgz#3de7a3f47ee18e9074ded8575b5c091f5d0a4105"
   integrity sha512-9lz5IVdpwsKLMzQi0MQ+oD9EA0mIGcWYP7jXMTZVXP8D42PwuAk+M/HBFYQoxt1G5OR8m7aSIgb1UymfWGBWEw==
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -9308,6 +9308,11 @@ neo-async@^2.5.0, neo-async@^2.6.0, neo-async@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
+
+nested-object-assign@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/nested-object-assign/-/nested-object-assign-1.0.3.tgz#5aca69390d9affe5a612152b5f0843ae399ac597"
+  integrity sha512-kgq1CuvLyUcbcIuTiCA93cQ2IJFSlRwXcN+hLcb2qLJwC2qrePHGZZa7IipyWqaWF6tQjdax2pQnVxdq19Zzwg==
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -11295,6 +11300,15 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-addons-create-fragment@^15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react-addons-create-fragment/-/react-addons-create-fragment-15.6.2.tgz#a394de7c2c7becd6b5475ba1b97ac472ce7c74f8"
+  integrity sha1-o5TefCx77Na1R1uhuXrEcs58dPg=
+  dependencies:
+    fbjs "^0.8.4"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.0"
+
 react-clientside-effect@^1.2.0:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/react-clientside-effect/-/react-clientside-effect-1.2.2.tgz#6212fb0e07b204e714581dd51992603d1accc837"
@@ -12858,6 +12872,16 @@ store2@^2.7.1:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.8.0.tgz#032d5dcbd185a5d74049d67a1765ff1e75faa04b"
   integrity sha512-FBJpcOEZQLZBIGL4Yp7W5RgZ0ejaURmcfUjIpyOb64BpI8z/iJXw7zd/NTBeq304dVMxuWVDZEUUCGn7llaVrA==
+
+storybook-addon-react-docgen@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/storybook-addon-react-docgen/-/storybook-addon-react-docgen-1.2.2.tgz#eefca64b0d582fd35898801eea791a0294bbfc9b"
+  integrity sha512-vRJUQvrmX4sutQjEmvlQjcTWDtf6Jw1qQMoyK/UNJEo9oTR5RYoT12ozYe7Pjz4bcEdU03j9xXnZ0AIX90qbjg==
+  dependencies:
+    nested-object-assign "^1.0.3"
+    prop-types "^15.6.2"
+    react-addons-create-fragment "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
 
 stream-browserify@^2.0.1:
   version "2.0.2"

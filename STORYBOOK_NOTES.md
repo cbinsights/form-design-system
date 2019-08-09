@@ -4,23 +4,66 @@
 
 - [x] (adam) pick readme/info plugin
 - [x] (adam) set up notes addon
-  - in branch `storybook/notes-tab`
-- [ ] (adam) try addon-info for notes + prop tables
+- [x] (adam) try addon-info for notes + prop tables
 - [x] (rey) add knobs addon and try it on chips story
 - [x] canvas positioning/spacing is consistent and good
 - [x] set up global decorators globally instead of declaring them on each story (e.g. - `centered`)
 - [ ] all components have stories
   - [ ] ButtonGroup.jsx
+    - [ ] knobs story
+    - [ ] variations story
+    - [ ] example stories (optional)
+    - [ ] readme markdown
   - [x] Chip.jsx
+    - [x] knobs story
+    - [x] variations story
+    - [x] example stories (optional)
+    - [x] readme markdown
   - [ ] GroupButton.jsx
+    - [ ] knobs story
+    - [ ] variations story
+    - [ ] example stories (optional)
+    - [ ] readme markdown
   - [ ] MenuButton.jsx
+    - [ ] knobs story
+    - [ ] variations story
+    - [ ] example stories (optional)
+    - [ ] readme markdown
   - [ ] Toast.jsx
+    - [ ] knobs story
+    - [ ] variations story
+    - [ ] example stories (optional)
+    - [ ] readme markdown
   - [ ] Toaster.jsx
+    - [ ] knobs story
+    - [ ] variations story
+    - [ ] example stories (optional)
+    - [ ] readme markdown
   - [ ] Flex.jsx
+    - [ ] knobs story
+    - [ ] variations story
+    - [ ] example stories (optional)
+    - [ ] readme markdown
   - [ ] FlexItem.jsx
+    - [ ] knobs story
+    - [ ] variations story
+    - [ ] example stories (optional)
+    - [ ] readme markdown
   - [ ] AvatarRow.jsx
+    - [ ] knobs story
+    - [ ] variations story
+    - [ ] example stories (optional)
+    - [ ] readme markdown
   - [ ] CountdownButton.jsx
+    - [ ] knobs story
+    - [ ] variations story
+    - [ ] example stories (optional)
+    - [ ] readme markdown
   - [ ] Updatable.jsx
+    - [ ] knobs story
+    - [ ] variations story
+    - [ ] example stories (optional)
+    - [ ] readme markdown
 
 ## MVP
 - all components have stories
