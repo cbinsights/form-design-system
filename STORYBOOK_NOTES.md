@@ -2,8 +2,9 @@
 
 ## TODO
 
-- [ ] What should we call knobs?
+- [x] What should we call knobs?
   - api docs? intro? "K n' D"?
+  - answer from Rey: we should them knobs for now IMO
 - [x] (adam) pick readme/info plugin
 - [x] (adam) set up notes addon
 - [x] (adam) try addon-info for notes + prop tables
@@ -62,11 +63,11 @@
     - [x] variations story
     - [ ] example stories (optional)
     - [x] readme markdown
-  - [ ] Updatable.jsx
-    - [ ] knobs story
-    - [ ] variations story
+  - [x] Updatable.jsx
+    - [x] knobs story
+    - [x] variations story
     - [ ] example stories (optional)
-    - [ ] readme markdown
+    - [x] readme markdown
 
 ## MVP
 - all components have stories
