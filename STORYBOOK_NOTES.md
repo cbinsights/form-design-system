@@ -7,7 +7,7 @@
 - [X] canvas positioning/spacing is consistent and good
 - [ ] all components have stories
   - [ ] ButtonGroup.jsx
-  - [ ] Chip.jsx
+  - [X] Chip.jsx
   - [ ] GroupButton.jsx
   - [ ] MenuButton.jsx
   - [ ] Toast.jsx
