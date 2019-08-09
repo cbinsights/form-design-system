@@ -52,11 +52,11 @@
     - [ ] variations story
     - [ ] example stories (optional)
     - [ ] readme markdown
-  - [ ] AvatarRow.jsx
-    - [ ] knobs story
-    - [ ] variations story
+  - [x] AvatarRow.jsx
+    - [x] knobs story
+    - [x] variations story
     - [ ] example stories (optional)
-    - [ ] readme markdown
+    - [x] readme markdown
   - [x] CountdownButton.jsx
     - [x] knobs story
     - [x] variations story
