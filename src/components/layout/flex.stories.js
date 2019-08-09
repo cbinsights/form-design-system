@@ -44,10 +44,10 @@ storiesOf('Layout/Flex', module)
           reverse={boolean('reverse', false)}
         >
           <FlexItem shrink>
-            <img src="https://place-hold.it/40x40/a02385/fff&text=:)" />
+            <img src="https://place-hold.it/40x40/a02385/fff&text=IMG" />
           </FlexItem>
           <FlexItem shrink>
-            <h4>Look at this media block</h4>
+            <h4>Look at this cool content</h4>
           </FlexItem>
           <FlexItem shrink>
             <p className="color--link">edit</p>
@@ -56,4 +56,59 @@ storiesOf('Layout/Flex', module)
       </div>
     ),
     { notes: { markdown: README } }
+  )
+  .add(
+    'Classic media block',
+    () => (
+      <div style={parentStyle}>
+        <Flex className="debug--boxModel">
+          <FlexItem shrink>
+            <img src="https://place-hold.it/40x40/a02385/fff&text=:)" />
+          </FlexItem>
+          <FlexItem>
+            Look at this media block. Notice how this area grows to fill the remaining
+            space of the fixed width parent container. When this content wraps, it will
+            not wrap below the figure the same way it would when positioning the image
+            with a<code>float</code>.
+          </FlexItem>
+        </Flex>
+      </div>
+    ),
+    {
+      notes: {
+        markdown:
+          'Making the imge `FlexItem` `shrink` and allowing the description `FlexItem` to grow creates the classic "media block" layout pattern.',
+      },
+    }
+  )
+  .add(
+    'Auto-sized content area',
+    () => (
+      <div style={{ height: '300px' }}>
+        <Flex direction="column" className="debug--boxModel">
+          <FlexItem shrink>
+            <p>
+              This is the header, in a <code>FlexItem</code> set to <code>shrink</code>
+            </p>
+          </FlexItem>
+          <FlexItem>
+            <p>
+              This is the content area, in a <code>FlexItem</code> that will grow to fill
+              remaining space
+            </p>
+          </FlexItem>
+          <FlexItem shrink>
+            <p>
+              This is the footer, in a <code>FlexItem</code> set to <code>shrink</code>
+            </p>
+          </FlexItem>
+        </Flex>
+      </div>
+    ),
+    {
+      notes: {
+        markdown:
+          'Within a fixed height container, this `Flex` creates a fixed height header and footer which allows the content area to expand to fill the remaining space.',
+      },
+    }
   );
