@@ -14,14 +14,14 @@
   - [x] ButtonGroup.jsx
     - [x] knobs story
     - [x] variations story
-    - [x] example stories (optional)
+    - [ ] example stories (optional)
     - [x] readme markdown
   - [x] Chip.jsx
     - [x] knobs story
     - [x] variations story
-    - [x] example stories (optional)
+    - [ ] example stories (optional)
     - [x] readme markdown
-  - [ ] GroupButton.jsx
+  - [ ] GroupButton.jsx (do we need this?)
     - [ ] knobs story
     - [ ] variations story
     - [ ] example stories (optional)
@@ -31,11 +31,11 @@
     - [ ] variations story
     - [ ] example stories (optional)
     - [ ] readme markdown
-  - [ ] Toast.jsx
-    - [ ] knobs story
-    - [ ] variations story
+  - [x] Toast.jsx
+    - [x] knobs story
+    - [x] variations story
     - [ ] example stories (optional)
-    - [ ] readme markdown
+    - [x] readme markdown
   - [ ] Toaster.jsx
     - [ ] knobs story
     - [ ] variations story

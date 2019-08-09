@@ -11,17 +11,17 @@ const chips = [
   { label: 'Lorem', href: '#lorem' },
   { label: 'Ipsum', href: '#ipsum', isActive: true, subtitle: 'active' },
   { label: 'Dolor', href: '#dolor', hasClose: true },
-  { label: 'Sit', onClick: () => console.log('custom logic here'), isActive: false },
+  { label: 'Sit', onClick: () => action('custom chip clicked'), isActive: false },
 ];
 
 const chipsTwo = [
   { label: 'Lorem Ipsum' },
   { label: 'Dolor Sit' },
   { label: 'Sit Amet' },
-  { label: 'Consectetur', onClick: () => console.log('custom logic here') },
+  { label: 'Consectetur', onClick: () => action('custom chip clicked') },
 ];
 
-storiesOf('Chip', module)
+storiesOf('Interactive/Chip', module)
   .addDecorator(withKnobs)
   .add(
     'Knobs',
@@ -48,11 +48,12 @@ storiesOf('Chip', module)
     { notes: { markdown: README } }
   )
   .add('Variations', () => (
-    <div>
-      {chipsTwo.map((chip) => (
-        <Chip {...chip} key={chip.label} theme="outline" hasClose={true} />
-      ))}
-      <br />
+    <React.Fragment>
+      <div>
+        {chipsTwo.map((chip) => (
+          <Chip {...chip} key={chip.label} theme="outline" hasClose={true} />
+        ))}
+      </div>
       <br />
       {chips.map((chip) => (
         <Chip {...chip} key={chip.label} size="sm" />
@@ -70,5 +71,5 @@ storiesOf('Chip', module)
       {chips.map((chip) => (
         <Chip {...chip} key={chip.label} theme="blue" />
       ))}
-    </div>
+    </React.Fragment>
   ));

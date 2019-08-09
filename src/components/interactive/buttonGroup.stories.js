@@ -21,15 +21,15 @@ const buttonsNoIcons = [
   { label: 'Sit' },
 ];
 
-storiesOf('ButtonGroup', module)
+storiesOf('Interactive/ButtonGroup', module)
   .addDecorator(withKnobs)
   .add('Knobs', () => <ButtonGroup buttons={object('buttons', buttons)} />, {
     notes: { markdown: README },
   })
   .add('Variations', () => (
-    <div>
+    <React.Fragment>
       <ButtonGroup buttons={buttons} />
       <br /> <br />
       <ButtonGroup buttons={buttonsNoIcons} />
-    </div>
+    </React.Fragment>
   ));
