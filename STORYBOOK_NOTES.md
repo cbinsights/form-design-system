@@ -2,9 +2,11 @@
 
 ## TODO
 
-- [ ] (adam) pick readme/info plugin
-- [ ] (rey) add knobs addon and try it on chips story
-- [ ] canvas positioning/spacing is consistent and good
+- [x] (adam) pick readme/info plugin
+- [x] (adam) set up notes addon
+- [x] (rey) add knobs addon and try it on chips story
+- [x] canvas positioning/spacing is consistent and good
+- [ ] set up global decorators globally instead of declaring them on each story (e.g. - `centered`)
 - [ ] all components have stories
   - [ ] ButtonGroup.jsx
   - [ ] Chip.jsx
