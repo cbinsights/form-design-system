@@ -11,11 +11,11 @@
 - [x] canvas positioning/spacing is consistent and good
 - [x] set up global decorators globally instead of declaring them on each story (e.g. - `centered`)
 - [ ] all components have stories
-  - [ ] ButtonGroup.jsx
-    - [ ] knobs story
-    - [ ] variations story
-    - [ ] example stories (optional)
-    - [ ] readme markdown
+  - [x] ButtonGroup.jsx
+    - [x] knobs story
+    - [x] variations story
+    - [x] example stories (optional)
+    - [x] readme markdown
   - [x] Chip.jsx
     - [x] knobs story
     - [x] variations story
