@@ -1,1 +1,3 @@
-Displays a segmented button list (rounded)
+# ButtonGroup
+
+Displays a segmented button list (rounded).
