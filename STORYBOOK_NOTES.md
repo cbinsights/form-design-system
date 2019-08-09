@@ -16,6 +16,7 @@
     - [x] variations story
     - [ ] example stories (optional)
     - [x] readme markdown
+    - [ ] add emoji icons for knobs version
   - [x] Chip.jsx
     - [x] knobs story
     - [x] variations story
@@ -26,11 +27,11 @@
     - [ ] variations story
     - [ ] example stories (optional)
     - [ ] readme markdown
-  - [ ] MenuButton.jsx
-    - [ ] knobs story
-    - [ ] variations story
+  - [x] MenuButton.jsx
+    - [x] knobs story
+    - [x] variations story
     - [ ] example stories (optional)
-    - [ ] readme markdown
+    - [x] readme markdown
   - [x] Toast.jsx
     - [x] knobs story
     - [x] variations story
