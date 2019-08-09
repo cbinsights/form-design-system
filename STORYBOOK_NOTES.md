@@ -90,4 +90,16 @@ MyComponent
 ├── Illustrative example 1
 └── Illustrative example 2, etc
 
+-------
+
+## Launch Plan
+
+There are a few things to do before this is production-ready.
+
+- [ ] Remove vestiges of styleguidist
+- [ ] figure out what to do with the debug css hacked into `.storybook/preview-head.html`
+- [ ] set up static storybook build (output to `docs/fds-components`)
+- [ ] make sure `.stories.js` is excluded from tests
+- [ ] make sure prettier is running on `.stories.js`
+- [ ] update root README with new yarn commands
 
