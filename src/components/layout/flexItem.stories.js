@@ -27,19 +27,18 @@ storiesOf('Layout/FlexItem', module)
       <div style={parentStyle}>
         <Flex className="debug--boxModel">
           <FlexItem
-            shrink={boolean('`shrink` item with image', false)}
-            align={getAlignKnob('image')}
+            shrink={boolean('add `shrink` prop to "image" item', false)}
           >
             <img src="https://place-hold.it/40x40/a02385/fff&text=IMG" />
           </FlexItem>
           <FlexItem
-            shrink={boolean('`shrink` "Dogs" item', false)}
+            shrink={boolean('add `shrink` prop to "Dogs" item', false)}
             align={getAlignKnob('Dogs')}
           >
             <p>Dogs</p>
           </FlexItem>
           <FlexItem
-            shrink={boolean('`shrink` "Cats" item', false)}
+            shrink={boolean('add `shrink` prop to "Cats" item', false)}
             align={getAlignKnob('Cats')}
           >
             <p>Cats</p>

@@ -12,6 +12,11 @@ const parentStyle = {
   background: 'var(--color-haze)',
 };
 
+const ConditionalItemsExample = () => (
+  <div style={parentStyle}>
+  </div>
+);
+
 storiesOf('Layout/Flex', module)
   .addDecorator(withKnobs)
   .add(
@@ -81,8 +86,12 @@ storiesOf('Layout/Flex', module)
       },
     }
   )
-  .add(
-    'Auto-sized content area',
+  .add('Conditional items',
+    () => (
+    ),
+    { notes: { markdown: '💡 `Flex` is great for conditionaly rendering items. When an item is added or removed, the other items just flow around it!' } }
+  )
+  .add('Auto-sized content area',
     () => (
       <div style={{ height: '300px' }}>
         <Flex direction="column" className="debug--boxModel">
