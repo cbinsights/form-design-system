@@ -42,7 +42,7 @@ what is important to demonstrate about a given component.
 
 MyComponent
 ├── Knobs
-├── (Matrix - optional)
+├── (Variations - optional)
 ├── Illustrative example 1
 └── Illustrative example 2, etc
 

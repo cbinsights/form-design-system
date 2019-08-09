@@ -25,7 +25,7 @@ const chipsTwo = [
 storiesOf('Chip', module)
   .addDecorator(withKnobs)
   .add(
-    'knobs',
+    'Knobs',
     () => (
       <Chip
         isActive={boolean('isActive', false)}
@@ -48,7 +48,7 @@ storiesOf('Chip', module)
     ),
     { notes: { markdown: README } }
   )
-  .add('spread', () => (
+  .add('Variations', () => (
     <div>
       {chipsTwo.map((chip) => (
         <Chip {...chip} key={chip.label} theme="outline" hasClose={true} />
