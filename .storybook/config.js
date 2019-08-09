@@ -1,5 +1,9 @@
-import { configure } from '@storybook/react';
+import { configure, addDecorator } from '@storybook/react';
+import centered from '@storybook/addon-centered/react';
+
 import '../src/components/style/index.css';
+
+addDecorator(centered)
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src/components', true, /\.stories\.js$/);

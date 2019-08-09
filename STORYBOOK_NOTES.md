@@ -8,10 +8,10 @@
 - [ ] (adam) try addon-info for notes + prop tables
 - [x] (rey) add knobs addon and try it on chips story
 - [x] canvas positioning/spacing is consistent and good
-- [ ] set up global decorators globally instead of declaring them on each story (e.g. - `centered`)
+- [x] set up global decorators globally instead of declaring them on each story (e.g. - `centered`)
 - [ ] all components have stories
   - [ ] ButtonGroup.jsx
-  - [X] Chip.jsx
+  - [x] Chip.jsx
   - [ ] GroupButton.jsx
   - [ ] MenuButton.jsx
   - [ ] Toast.jsx
