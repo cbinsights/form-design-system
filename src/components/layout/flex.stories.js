@@ -12,10 +12,34 @@ const parentStyle = {
   background: 'var(--color-haze)',
 };
 
-const ConditionalItemsExample = () => (
+/* eslint-disable */
+const ConditionalItemsExample = ({ show1, show2, show3, show4 }) => (
   <div style={parentStyle}>
+    <Flex className="debug--boxModel">
+      {show1 && (
+        <FlexItem shrink>
+          <img src="https://place-hold.it/40x40/a02385/fff&text=1" />
+        </FlexItem>
+      )}
+      {show2 && (
+        <FlexItem>
+          <img src="https://place-hold.it/40x40/a02385/fff&text=2" />
+        </FlexItem>
+      )}
+      {show3 && (
+        <FlexItem shrink>
+          <img src="https://place-hold.it/40x40/a02385/fff&text=3" />
+        </FlexItem>
+      )}
+      {show4 && (
+        <FlexItem shrink>
+          <img src="https://place-hold.it/40x40/a02385/fff&text=4" />
+        </FlexItem>
+      )}
+    </Flex>
   </div>
 );
+/* eslint-enable */
 
 storiesOf('Layout/Flex', module)
   .addDecorator(withKnobs)
@@ -86,12 +110,25 @@ storiesOf('Layout/Flex', module)
       },
     }
   )
-  .add('Conditional items',
+  .add(
+    'Conditional items',
     () => (
+      <ConditionalItemsExample
+        show1={boolean('Render item 1', true)}
+        show2={boolean('Render item 2', true)}
+        show3={boolean('Render item 3', false)}
+        show4={boolean('Render item 4', true)}
+      />
     ),
-    { notes: { markdown: '💡 `Flex` is great for conditionaly rendering items. When an item is added or removed, the other items just flow around it!' } }
+    {
+      notes: {
+        markdown:
+          '💡 `Flex` is great for conditionaly rendering items. When an item is added or removed, the other items just flow around it!',
+      },
+    }
   )
-  .add('Auto-sized content area',
+  .add(
+    'Auto-sized content area',
     () => (
       <div style={{ height: '300px' }}>
         <Flex direction="column" className="debug--boxModel">
