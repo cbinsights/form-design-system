@@ -43,12 +43,12 @@
     - [ ] example stories (optional)
     - [ ] readme markdown
   - [ ] Flex.jsx
-    - [ ] knobs story
-    - [ ] variations story
+    - [x] knobs story
+    - [x] ~variations story~
     - [ ] example stories (optional)
-    - [ ] readme markdown
+    - [x] readme markdown
   - [ ] FlexItem.jsx
-    - [ ] knobs story
+    - [x] knobs story
     - [ ] variations story
     - [ ] example stories (optional)
     - [ ] readme markdown

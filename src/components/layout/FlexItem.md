@@ -1,46 +1,13 @@
+# FlexItem
 
-### Shrinking & growing a `FlexItem`
+## Shrinking & growing a `FlexItem`
 By default, all `FlexItem` components will grow to fill remaining space within the parent
 `Flex`. The boolean prop `shrink` will cause a `FlexItem` to shrink to its content size.
 
-```js
-import Flex from './Flex';
-<Flex align="center" className="debug--boxModel">
-  <FlexItem shrink>
-    <img src="https://place-hold.it/60x32/a02385/fff&text=shrink" />
-  </FlexItem>
-  <FlexItem>
-    <img src="https://place-hold.it/60x32/a02385/fff&text=default" />
-  </FlexItem>
-  <FlexItem>
-    <img src="https://place-hold.it/60x32/a02385/fff&text=default" />
-  </FlexItem>
-  <FlexItem shrink>
-    <img src="https://place-hold.it/60x32/a02385/fff&text=shrink" />
-  </FlexItem>
-</Flex>
-```
 
-### Controlling alignment/justification
+## Controlling alignment/justification
 You can use the same `align` and `justify` prop interface from `Flex` to control alignment and justification of individual `FlexItem` components.
 
-```js
-import Flex from './Flex';
-<Flex className="debug--boxModel">
-  <FlexItem shrink>
-    <img src="https://place-hold.it/60x80/a02385/fff&text=default" />
-  </FlexItem>
-  <FlexItem shrink align="end">
-    <img src="https://place-hold.it/60x32/a02385/fff&text=end" />
-  </FlexItem>
-  <FlexItem shrink align="start">
-    <img src="https://place-hold.it/60x32/a02385/fff&text=start" />
-  </FlexItem>
-  <FlexItem shrink>
-    <img src="https://place-hold.it/60x80/a02385/fff&text=default" />
-  </FlexItem>
-</Flex>
-```
 
 ## Flex & FlexItem cookbook
 
