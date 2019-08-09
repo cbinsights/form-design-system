@@ -15,25 +15,25 @@ const parentStyle = {
 /* eslint-disable */
 const ConditionalItemsExample = ({ show1, show2, show3, show4 }) => (
   <div style={parentStyle}>
-    <Flex className="debug--boxModel">
+    <Flex className="debug--boxModel fontSize--xl fontWeight--bold">
       {show1 && (
         <FlexItem shrink>
-          <img src="https://place-hold.it/40x40/a02385/fff&text=1" />
+          <p>1</p>
         </FlexItem>
       )}
       {show2 && (
         <FlexItem>
-          <img src="https://place-hold.it/40x40/a02385/fff&text=2" />
+          <p>2</p>
         </FlexItem>
       )}
       {show3 && (
         <FlexItem shrink>
-          <img src="https://place-hold.it/40x40/a02385/fff&text=3" />
+          <p>3</p>
         </FlexItem>
       )}
       {show4 && (
         <FlexItem shrink>
-          <img src="https://place-hold.it/40x40/a02385/fff&text=4" />
+          <p>4</p>
         </FlexItem>
       )}
     </Flex>
