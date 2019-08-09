@@ -95,6 +95,6 @@ There are a few things to do before this is production-ready.
 - [x] (adam) figure out what to do with the debug css hacked into `.storybook/preview-head.html`
 - [x] set up static storybook build (output to `docs/fds-components`)
 - [x] update root README with new yarn commands
-- [ ] make sure prettier is running on `.stories.js`
+- [x] make sure prettier is running on `.stories.js`
 - [ ] change title in upper left? Add a link back to our github or base documentation site?
 
