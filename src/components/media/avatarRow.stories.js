@@ -6,6 +6,7 @@ import {
   number,
   optionsKnob as options,
   object,
+  text,
 } from '@storybook/addon-knobs';
 
 import AvatarRow from './AvatarRow';
@@ -29,6 +30,8 @@ storiesOf('Media/AvatarRow', module)
           'm',
           { display: 'inline-radio' }
         )}
+        borderColor={text('borderColor', undefined)}
+        className={text('className', '')}
         memberList={object('memberList', [
           { name: 'member mcmemberton', src: 'https://placeimg.com/80/81/animals' },
           { name: 'member mcmemberton', src: 'https://placeimg.com/81/80/animals' },
