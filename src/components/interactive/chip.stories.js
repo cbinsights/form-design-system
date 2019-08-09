@@ -6,7 +6,6 @@ import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/add
 
 import Chip from './Chip';
 import README from './Chip.md';
-import '../style/index.css';
 
 const chips = [
   { label: 'Lorem', href: '#lorem' },

@@ -5,7 +5,6 @@ import { withKnobs, object } from '@storybook/addon-knobs';
 
 import ButtonGroup from './ButtonGroup';
 import FeedIcon from '../../../lib/icons/react/FeedIcon';
-import '../style/index.css';
 
 const buttons = [
   { label: 'Lorem', Icon: FeedIcon, isActive: true },
