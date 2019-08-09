@@ -33,11 +33,11 @@
     - [x] variations story
     - [-] example stories (optional)
     - [x] readme markdown
-  - [ ] Toaster.jsx
-    - [ ] knobs story
-    - [ ] variations story
-    - [ ] example stories (optional)
-    - [ ] readme markdown
+  - [x] Toaster.jsx
+    - [x] knobs story
+    - [x] variations story
+    - [-] example stories (optional)
+    - [x] readme markdown
   - [x] Flex.jsx
     - [x] knobs story
     - [x] example stories (optional)
@@ -81,7 +81,7 @@ what is important to demonstrate about a given component.
 
 MyComponent
 ├── Knobs
-├── (Variations - optional)
+├── Variations (optional)
 ├── Illustrative example 1
 └── Illustrative example 2, etc
 
