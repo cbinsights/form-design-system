@@ -57,11 +57,11 @@
     - [ ] variations story
     - [ ] example stories (optional)
     - [ ] readme markdown
-  - [ ] CountdownButton.jsx
-    - [ ] knobs story
-    - [ ] variations story
+  - [x] CountdownButton.jsx
+    - [x] knobs story
+    - [x] variations story
     - [ ] example stories (optional)
-    - [ ] readme markdown
+    - [x] readme markdown
   - [ ] Updatable.jsx
     - [ ] knobs story
     - [ ] variations story
