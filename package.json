@@ -13,9 +13,8 @@
     "build:icons": "yarn icons:optimize && yarn icons:react && yarn icons:transpile && yarn icons:css && yarn icons:docs",
     "build:comp": "yarn comp:css && yarn comp:jsx && yarn comp:docs",
     "build:mui-theme": "cp src/mui-theme/index.js ./lib/mui-theme/index.js",
-    "build:transpile-docs": "babel ./docs/fds-components/build --out-dir=docs/fds-components/build",
     "build:distCSS": "NODE_ENV=production postcss src/assets/all-styles.css -o ./lib/assets/all-styles.min.css",
-    "build:full": "yarn build:bootstrap && yarn build:dictionary && yarn build:styles && yarn build:icons && yarn build:comp && yarn build:mui-theme && yarn build:transpile-docs && yarn build:distCSS",
+    "build:full": "yarn build:bootstrap && yarn build:dictionary && yarn build:styles && yarn build:icons && yarn build:comp && yarn build:mui-theme && yarn build:distCSS",
     "styles:min": "NODE_ENV=production postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
     "styles:full": "postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.full.css --config=./postcss.config.js",
     "styles:docs": "NODE_ENV=base_styles_docs postcss ./lib/base-styles/base-styles.full.css --output=/dev/null",
@@ -27,12 +26,13 @@
     "icons:docs": "node ./scripts/node/icons/buildDocs.js",
     "comp:jsx": "babel src --out-dir=lib --ignore=test.jsx --source-maps",
     "comp:css": "postcss src/components/style/index.css -o ./lib/components/style/fds-components.css --config=./postcss.config.js",
-    "comp:docs": "styleguidist build",
-    "comp:serve": "npx styleguidist server",
+    "comp:docs": "build-storybook -c .storybook -o ./docs/fds-components/",
     "test": "jest --color",
     "snapshot-update": "jest -u --color",
     "lint": "eslint ./src/ --ext .js,.jsx",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "resolutions": {
     "lodash": "^4.17.11"
@@ -49,19 +49,26 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@material-ui/core": "^3.1",
     "@material-ui/icons": "^3",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-centered": "^5.1.10",
+    "@storybook/addon-knobs": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addon-notes": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/react": "^5.2.0-beta.25",
+    "@storybook/theming": "^5.1.10",
     "@svgr/core": "^4.1.0",
     "@svgr/plugin-jsx": "^4.1.0",
     "@svgr/plugin-svgo": "^4.0.3",
-    "@webpack-blocks/assets": "^2.0.0",
-    "@webpack-blocks/babel": "^2.0.0",
-    "@webpack-blocks/postcss": "^2.0.0",
-    "@webpack-blocks/webpack": "^2.0.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
     "classnames": "^2",
     "cssnano": "^4.1.0",
     "d3-scale": "^2.1.2",
@@ -92,9 +99,10 @@
     "prop-types": "^15",
     "react": "^16",
     "react-dom": "^16",
-    "react-styleguidist": "^9.0.5",
     "react-transition-group": "^2.6",
     "rimraf": "^2.6.2",
+    "storybook-addon-jsx": "^7.1.5",
+    "storybook-addon-react-docgen": "^1.2.2",
     "style-dictionary": "^2.8.1",
     "stylelint": "^9.5.0",
     "tinycolor2": "^1.4.1",
@@ -122,7 +130,7 @@
         "stylelint --fix",
         "git add"
       ],
-      "src/**/*.{js,jsx}": [
+      "*.{js,jsx}": [
         "prettier --write",
         "eslint --no-ignore",
         "git add"
@@ -132,6 +140,5 @@
       "src/**/*.test.{js,jsx}",
       "src/**/assets/*.css"
     ]
-  },
-  "version": "4.0.0-beta.001"
+  }
 }

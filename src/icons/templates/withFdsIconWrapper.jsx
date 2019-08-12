@@ -3,7 +3,7 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-const withFdsIconWrapper = (WrappedComponent) => {
+export const withFdsIconWrapper = (WrappedComponent) => {
   const IconComponent = (props) => {
     const classNames = cx('fds-icon', `fds-icon--${props.size}`, props.className);
 

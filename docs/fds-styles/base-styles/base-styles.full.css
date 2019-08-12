@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Mon, 12 Aug 2019 20:26:53 GMT
+ * Generated on Mon, 12 Aug 2019 20:36:12 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -464,6 +464,10 @@ h6 {
 /**
 Form tag defaults
 */
+:-ms-input-placeholder {
+  color: #a2a0a0;
+  color: var(--font-color-light);
+}
 ::-ms-input-placeholder {
   color: #a2a0a0;
   color: var(--font-color-light);

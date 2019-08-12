@@ -11,7 +11,7 @@ exports[`Chip component matches snapshot (default props) 1`] = `
 exports[`Chip component matches snapshot (set all props) 1`] = `
 <button
   as={[Function]}
-  className="fdsChip fdsChip--active fdsChip--large fdsChip--blue"
+  className="fdsChip fdsChip--active fdsChip--blue"
 >
   foo
   <span
