@@ -1,0 +1,18 @@
+.fdsButton {
+  background: transparent;
+  border-width: 0;
+  padding: calc(var(--space-half) / 2) var(--space-half) !important;
+  border-radius: var(--border-radius-default);
+}
+
+.fdsButton--round {
+  border-radius: 100%;
+}
+
+.fdsButton:hover {
+  background: var(--button-group-hover-color);
+}
+
+.fdsButton:active {
+  background: var(--button-group-pressed-color);
+}

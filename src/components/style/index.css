@@ -9,6 +9,7 @@
 @import "./media/avatarRow.css";
 @import "./media/updatable.css";
 @import "./media/countdownButton.css";
+@import "./interactive/muiButtonShim.css";
 @import "./interactive/menuButton.css";
 @import "./interactive/toast.css";
 @import "./interactive/toaster.css";
