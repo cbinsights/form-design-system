@@ -6,10 +6,14 @@ import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 
 /**
- * @module ButtonBase
+ * @module MuiButtonShim
+ * DO NOT DOCUMENT (not for public use)
+ *
+ * This shim replaces the material-ui button use cases in FDS (until we have a standard
+ * button component).
  * Renders a `button` element with some basic style overrides.
  */
-const ButtonBase = ({ label, Icon, isRound }) => {
+const MuiButtonShim = ({ label, Icon, isRound }) => {
   let buttonContent = label;
 
   if (Icon) {
@@ -30,7 +34,7 @@ const ButtonBase = ({ label, Icon, isRound }) => {
   return <button className={classNames}>{buttonContent}</button>;
 };
 
-ButtonBase.propTypes = {
+MuiButtonShim.propTypes = {
   /** Optional `Icon` component to render */
   Icon: PropTypes.element,
 
@@ -41,4 +45,4 @@ ButtonBase.propTypes = {
   isRound: PropTypes.bool,
 };
 
-export default ButtonBase;
+export default MuiButtonShim;

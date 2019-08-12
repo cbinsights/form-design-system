@@ -1,8 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import Avatar from '@material-ui/core/Avatar';
-import { withStyles } from '@material-ui/core/styles';
+import MuiAvatarShim from './MuiAvatarShim';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 
 /**
@@ -41,6 +40,11 @@ const AvatarRow = (props) => {
       {/* avatars */}
       {renderConfig.renderList.map((member, i) => (
         <li className="avatarRow-item" key={`${member.name.replace(/\s/g, '')}-${i}`}>
+          <MuiAvatarShim
+            name={member.name}
+            src={member.src}
+            className="avatarRow-avatar"
+          />
           {member.src ? (
             <StyledAvatar
               alt={member.name}
