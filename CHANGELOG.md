@@ -61,4 +61,9 @@ a special `assets` dir in `./lib` that includes combined styles:
 
 #### Removed components
 
-`Chips` was removed from codebase
+- `Chips` was removed from codebase
+
+#### Prop interface changes
+
+- `ButtonGroup` prop `as` was removed in favor of `Link`
+- `Chip` prop `as` was removed in favor of `Link`

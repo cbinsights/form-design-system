@@ -1,6 +1,6 @@
 ```js
 import Chip from './Chip'
-import { Link } from '../util/react-router';
+import { MockLink } from '../util/mock-react-router';
 
 const chips = [
   { label: 'Lorem', href: "#lorem" },
@@ -12,7 +12,7 @@ const chips = [
 const chipsTwo = [
   { label: 'Lorem Ipsum' },
   { label: 'Dolor Sit' },
-  { Link: Link, label: 'hey', to: '#google' },
+  { Link: MockLink, label: 'hey', to: '#google' },
   { label: 'Sit Amet' },
   { label: 'Consectetur', onClick: () => console.log('custom logic here') },
 ];

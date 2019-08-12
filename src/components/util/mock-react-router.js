@@ -6,15 +6,15 @@ import PropTypes from 'prop-types';
 // component and give people the idea that they're allowed
 // to do that
 
-export const Link = ({ to, children, ...rest }) => (
+export const MockLink = ({ to, children, ...rest }) => (
   <a href={to} {...rest}>
     {children}
   </a>
 );
 
-Link.propTypes = {
+MockLink.propTypes = {
   to: PropTypes.string,
   children: PropTypes.node,
 };
 
-export default Link;
+export default MockLink;
