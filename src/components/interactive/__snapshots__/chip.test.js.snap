@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip component matches snapshot (default props) 1`] = `
+<button
+  className="fdsChip"
+>
+  foo
+</button>
+`;
+
+exports[`Chip component matches snapshot (set all props) 1`] = `
+<button
+  as={[Function]}
+  className="fdsChip fdsChip--active fdsChip--blue"
+>
+  foo
+  <span
+    className="fdsChip-subtitle"
+  >
+    bar
+  </span>
+</button>
+`;

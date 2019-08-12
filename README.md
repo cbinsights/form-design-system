@@ -47,6 +47,7 @@ Command             | Description
 `build:comp`        | Builds React component docs and `lib`
 `build:mui`         | Builds material-ui theme `lib`
 `build:full`        | Builds docs and `lib` for everything
+`build:distCSS`     | Creates CSS rollup in `lib/assets/`
 
 #### Icons
 
@@ -54,11 +55,11 @@ Command             | Description
 ------------------- | -------------------------------------
 `icons:export`      | Runs [export script](https://github.com/cbinsights/form-design-system/blob/master/src/icons/README.md#updating-icons-from-a-sketch-file)
 
-#### Styleguidist
+#### Storybook
 
 Command             | Description
 ------------------- | -------------------------------------
-`comp:serve`        | Runs local dev server of styleguidist
+`storybook`        | Runs local dev storybook server
 
 
 #### Other

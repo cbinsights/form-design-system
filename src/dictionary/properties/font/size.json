@@ -2,13 +2,15 @@
   "font": {
     "size": {
 
-      "heading1": { "value": "39px" },
-      "heading2": { "value": "31px" },
-      "heading3": { "value": "25px" },
-      "big":      { "value": "20px" },
-      "default":  { "value": "16px" },
-      "small":    { "value": "13px" },
-      "tiny":     { "value": "10px" }
+      "xs":      { "value": "10px" },
+      "s":       { "value": "12px" },
+      "m":       { "value": "14px" },
+      "default": { "value": "{font.size.m.value}" },
+      "l":       { "value": "16px" },
+      "xl":      { "value": "20px" },
+      "2xl":     { "value": "24px" },
+      "3xl":     { "value": "32px" },
+      "4xl":     { "value": "38px" }
 
     }
   }

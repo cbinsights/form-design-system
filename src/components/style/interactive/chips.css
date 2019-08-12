@@ -9,9 +9,9 @@
 .fdsChip {
   display: inline-block;
   background-color: var(--chip-bg);
-  color: var(--font-color-dark);
+  color: var(--font-color-heading);
   border-radius: 20px;
-  font-size: 12px;
+  font-size: var(--font-size-s);
   line-height: 1;
   margin-right: var(--space-half);
   margin-bottom: calc(var(--space-half) / 2);
@@ -33,11 +33,11 @@
 .fdsChip-close,
 .fdsChip-subtitle {
   padding-left: var(--space-half);
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-xs);
 }
 
 .fdsChip-subtitle {
-  color: var(--font-color-light);
+  color: var(--font-color-secondary);
 }
 
 .fdsChip--active {

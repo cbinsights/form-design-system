@@ -5,16 +5,12 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
   className="btngroup"
 >
   <GroupButton
-    Icon={[Function]}
+    icon={[Function]}
     isActive={true}
-    key="Feed"
-    label="Feed"
   />
   <GroupButton
-    Icon={[Function]}
     disabled={true}
-    key="Table"
-    label="Table"
+    icon={[Function]}
     onClick={[Function]}
   />
 </div>
@@ -25,17 +21,13 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
   className="btngroup"
 >
   <GroupButton
-    Icon={[Function]}
+    icon={[Function]}
     isActive={true}
-    key="Feed"
-    label="Feed"
     onClick={[Function]}
   />
   <GroupButton
-    Icon={[Function]}
     disabled={true}
-    key="Table"
-    label="Table"
+    icon={[Function]}
     onClick={[Function]}
   />
 </div>

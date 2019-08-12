@@ -3,14 +3,14 @@ Form tag defaults
 */
 
 ::placeholder {
-  color: var(--font-color-light);
+  color: var(--font-color-hint);
 }
 
 label {
   display: block;
   margin-bottom: 4px;
   font-weight: var(--font-weight-default);
-  color: var(--font-color-dark);
+  color: var(--font-color-heading);
 }
 
 button,
@@ -108,7 +108,7 @@ input[type="seach"] {
 }
 
 input[type="file"] {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-s);
 }
 
 
@@ -125,6 +125,6 @@ input:not([type="submit"]):invalid {
 select:disabled,
 textarea:disabled,
 input:not([type="submit"]):disabled {
-  color: var(--font-color-disabled);
+  color: var(--font-color-hint);
   border-color: var(--color-lightGray);
 }

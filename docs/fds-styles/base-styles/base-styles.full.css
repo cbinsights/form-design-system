@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu, 08 Aug 2019 19:11:37 GMT
+ * Generated on Mon, 12 Aug 2019 21:11:25 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -31,32 +31,42 @@
  --l: (min-width: 1024px);
  --xl: (min-width: 1280px);
  --font-color-link: #4cabce;
- --font-color-dark: #404040;
- --font-color-default: #757575;
- --font-color-light: #a2a0a0;
- --font-color-disabled: #c2bfbf;
+ --font-color-heading: #404040;
+ --font-color-primary: rgba(64, 64, 64, 0.87);
+ --font-color-secondary: rgba(64, 64, 64, 0.60);
+ --font-color-hint: rgba(64, 64, 64, 0.38);
+ --font-color-headingInverted: #ffffff;
+ --font-color-primaryInverted: rgba(255, 255, 255, 0.87);
+ --font-color-secondaryInverted: rgba(255, 255, 255, 0.60);
+ --font-color-hintInverted: rgba(255, 255, 255, 0.38);
+ --font-color-error: #e5323e;
+ --font-color-success: #00986b;
+ --font-color-errorInverted: #e5323e;
+ --font-color-successInverted: #70c390;
  --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
  --font-family-default: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
  --font-family-mono: Monaco, Consolas, monospace;
- --font-lineHeight-bigText: 1.1;
- --font-lineHeight-default: 1.4;
- --font-lineHeight-smallText: 1.6;
- --font-size-heading1: 39px;
- --font-size-heading2: 31px;
- --font-size-heading3: 25px;
- --font-size-big: 20px;
- --font-size-default: 16px;
- --font-size-small: 13px;
- --font-size-tiny: 10px;
+ --font-lineHeight-bigText: 1.2;
+ --font-lineHeight-default: 1.5;
+ --font-lineHeight-smallText: 1.8;
+ --font-size-xs: 10px;
+ --font-size-s: 12px;
+ --font-size-m: 14px;
+ --font-size-default: 14px;
+ --font-size-l: 16px;
+ --font-size-xl: 20px;
+ --font-size-2xl: 24px;
+ --font-size-3xl: 32px;
+ --font-size-4xl: 38px;
  --font-weight-default: 400;
  --font-weight-bold: 700;
- --media-xs: 16px;
+ --media-xs: 18px;
  --media-s: 24px;
- --media-m: 40px;
- --media-l: 60px;
- --media-xl: 86px;
+ --media-m: 34px;
+ --media-l: 50px;
+ --media-xl: 72px;
  --space-double: 32px;
- --space-default: 16px;
+ --space-default: 14px;
  --space-half: 8px;
  --zindex-main: 10;
  --zindex-navigation: 20;
@@ -334,16 +344,20 @@ body {
   padding: 0;
 }
 html {
-  line-height: 1.4;
+  line-height: 1.5;
   line-height: var(--font-lineHeight-default);
   font-family: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
   font-family: var(--font-family-default);
-  font-size: 16px;
+  font-size: 14px;
   font-size: var(--font-size-default);
-  color: #757575;
-  color: var(--font-color-default);
+  color: rgba(64, 64, 64, 0.87);
+  color: var(--font-color-primary);
   text-rendering: geometricPrecision; /* stylelint-disable-line property-blacklist */
   overflow-y: scroll;
+}
+.inverted {
+  color: rgba(255, 255, 255, 0.87);
+  color: var(--font-color-primaryInverted);
 }
 /**
 Inline tag defaults
@@ -382,7 +396,7 @@ samp {
 }
 small {
   font-size: 10px;
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-xs);
 }
 img {
   display: inline-block;
@@ -458,19 +472,34 @@ h6 {
   font-size: 1rem;
   font-weight: 400;
   font-weight: var(--font-weight-default);
+  color: #404040;
+  color: var(--font-color-heading);
   margin: 0;
   padding: 0;
+}
+.inverted h1,
+.inverted h2,
+.inverted h3,
+.inverted h4,
+.inverted h5,
+.inverted h6 {
+  color: #ffffff;
+  color: var(--font-color-headingInverted);
 }
 /**
 Form tag defaults
 */
+:-ms-input-placeholder {
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
+}
 ::-ms-input-placeholder {
-  color: #a2a0a0;
-  color: var(--font-color-light);
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
 }
 ::placeholder {
-  color: #a2a0a0;
-  color: var(--font-color-light);
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
 }
 label {
   display: block;
@@ -478,13 +507,13 @@ label {
   font-weight: 400;
   font-weight: var(--font-weight-default);
   color: #404040;
-  color: var(--font-color-dark);
+  color: var(--font-color-heading);
 }
 button,
 input,
 select,
 textarea {
-  line-height: 1.4;
+  line-height: 1.5;
   line-height: var(--font-lineHeight-default);
   font-weight: normal;
   vertical-align: middle;
@@ -547,7 +576,7 @@ input[disabled] {
  */
 input[type="radio"],
 input[type="checkbox"] {
-  font-size: 16px;
+  font-size: 14px;
   font-size: var(--font-size-default);
   margin-right: 8px;
   margin-right: var(--space-half);
@@ -576,8 +605,8 @@ input[type="seach"] {
   -webkit-appearance: textfield;
 }
 input[type="file"] {
-  font-size: 13px;
-  font-size: var(--font-size-small);
+  font-size: 12px;
+  font-size: var(--font-size-s);
 }
 /**
  * Input states
@@ -591,8 +620,8 @@ input:not([type="submit"]):invalid {
 select:disabled,
 textarea:disabled,
 input:not([type="submit"]):disabled {
-  color: #c2bfbf;
-  color: var(--font-color-disabled);
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
   border-color: #f2f2f2;
   border-color: var(--color-lightGray);
 }
@@ -673,23 +702,23 @@ class                  | description
 `margin--all--half`    | Adds half margin to all sides
 */
 .margin--top {
-  margin-top: 16px;
+  margin-top: 14px;
   margin-top: var(--space-default);
 }
 .margin--right {
-  margin-right: 16px;
+  margin-right: 14px;
   margin-right: var(--space-default);
 }
 .margin--bottom {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   margin-bottom: var(--space-default);
 }
 .margin--left {
-  margin-left: 16px;
+  margin-left: 14px;
   margin-left: var(--space-default);
 }
 .margin--all {
-  margin: 16px;
+  margin: 14px;
   margin: var(--space-default);
 }
 .margin--top--half {
@@ -741,23 +770,23 @@ class                   | description
 `padding--all--half`    | Adds half padding to all sides
 */
 .padding--top {
-  padding-top: 16px;
+  padding-top: 14px;
   padding-top: var(--space-default);
 }
 .padding--right {
-  padding-right: 16px;
+  padding-right: 14px;
   padding-right: var(--space-default);
 }
 .padding--bottom {
-  padding-bottom: 16px;
+  padding-bottom: 14px;
   padding-bottom: var(--space-default);
 }
 .padding--left {
-  padding-left: 16px;
+  padding-left: 14px;
   padding-left: var(--space-default);
 }
 .padding--all {
-  padding: 16px;
+  padding: 14px;
   padding: var(--space-default);
 }
 .padding--top--half {
@@ -938,9 +967,9 @@ class           | description
 ```
 */
 .media--xs {
-  height: 16px !important;
+  height: 18px !important;
   height: var(--media-xs) !important;
-  width: 16px !important;
+  width: 18px !important;
   width: var(--media-xs) !important;
 }
 .media--s {
@@ -950,21 +979,21 @@ class           | description
   width: var(--media-s) !important;
 }
 .media--m {
-  height: 40px !important;
+  height: 34px !important;
   height: var(--media-m) !important;
-  width: 40px !important;
+  width: 34px !important;
   width: var(--media-m) !important;
 }
 .media--l {
-  height: 60px !important;
+  height: 50px !important;
   height: var(--media-l) !important;
-  width: 60px !important;
+  width: 50px !important;
   width: var(--media-l) !important;
 }
 .media--xl {
-  height: 86px !important;
+  height: 72px !important;
   height: var(--media-xl) !important;
-  width: 86px !important;
+  width: 72px !important;
   width: var(--media-xl) !important;
 }
 /* Shadow Helpers */
@@ -989,7 +1018,7 @@ Signature: `elevation--<level>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-s);
   font-family: var(--font-family-mono);
   color: var(--color-violet);
 }
@@ -1053,7 +1082,7 @@ Signature: `depth--<level>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-s);
   font-family: var(--font-family-mono);
   color: var(--color-violet);
 }
@@ -1101,12 +1130,12 @@ of the typesetting classes below.
 <h6>Heading6</h6>
 ```
 */
-.typeset--head1,
-.typeset--head2,
-.typeset--head3,
-.typeset--head4 {
+.type--head1,
+.type--head2,
+.type--head3,
+.type--head4 {
   color: #404040;
-  color: var(--font-color-dark);
+  color: var(--font-color-heading);
   font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
   font-family: var(--font-family-condensed);
 }
@@ -1117,15 +1146,15 @@ section: Typesetting
 ---
 
 ```example:html
-<p class="typeset--head1">This is a top-level heading</p>
+<p class="type--head1">This is a top-level heading</p>
 ```
 */
-.typeset--head1 {
-  font-size: 39px;
-  font-size: var(--font-size-heading1);
+.type--head1 {
+  font-size: 38px;
+  font-size: var(--font-size-4xl);
   font-weight: 700;
   font-weight: var(--font-weight-bold);
-  line-height: 1.1;
+  line-height: 1.2;
   line-height: var(--font-lineHeight-bigText);
 }
 /*---
@@ -1135,15 +1164,15 @@ section: Typesetting
 ---
 
 ```example:html
-<p class="typeset--head2">This is a secondary heading</p>
+<p class="type--head2">This is a secondary heading</p>
 ```
 */
-.typeset--head2 {
-  font-size: 31px;
-  font-size: var(--font-size-heading2);
+.type--head2 {
+  font-size: 32px;
+  font-size: var(--font-size-3xl);
   font-weight: 700;
   font-weight: var(--font-weight-bold);
-  line-height: 1.1;
+  line-height: 1.2;
   line-height: var(--font-lineHeight-bigText);
 }
 /*---
@@ -1153,15 +1182,15 @@ section: Typesetting
 ---
 
 ```example:html
-<p class="typeset--head3">This is a tertiary heading</p>
+<p class="type--head3">This is a tertiary heading</p>
 ```
 */
-.typeset--head3 {
-  font-size: 25px;
-  font-size: var(--font-size-heading3);
+.type--head3 {
+  font-size: 24px;
+  font-size: var(--font-size-2xl);
   font-weight: 700;
   font-weight: var(--font-weight-bold);
-  line-height: 1.1;
+  line-height: 1.2;
   line-height: var(--font-lineHeight-bigText);
 }
 /*---
@@ -1171,15 +1200,15 @@ section: Typesetting
 ---
 
 ```example:html
-<p class="typeset--head4">This is a minor heading</p>
+<p class="type--head4">This is a minor heading</p>
 ```
 */
-.typeset--head4 {
+.type--head4 {
   font-size: 20px;
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-xl);
   font-weight: 700;
   font-weight: var(--font-weight-bold);
-  line-height: 1.1;
+  line-height: 1.2;
   line-height: var(--font-lineHeight-bigText);
 }
 /*---
@@ -1195,6 +1224,22 @@ Default body text. No classes necessary.
 */
 /* see documentTags.css */
 /*---
+title: Big
+name: bigText
+section: Typesetting
+---
+Big body text. Conceptually, this maps to the `<big>`
+non-heading element.
+
+```example:html
+<p class="type--big">This is big body text</p>
+```
+*/
+.type--big {
+  font-size: 16px;
+  font-size: var(--font-size-l);
+}
+/*---
 title: Data
 name: dataText
 section: Typesetting
@@ -1202,13 +1247,13 @@ section: Typesetting
 Typsetting for data (e.g. tables).
 
 ```example:html
-<p class="typeset--data">This is data text. Good for tables.</p>
+<p class="type--data">This is data text. Good for tables.</p>
 ```
 */
-.typeset--data {
-  font-size: 13px;
-  font-size: var(--font-size-small);
-  line-height: 1.6;
+.type--data {
+  font-size: 12px;
+  font-size: var(--font-size-s);
+  line-height: 1.8;
   line-height: var(--font-lineHeight-smallText);
 }
 /*---
@@ -1220,14 +1265,15 @@ Tiny text for captions and legalese.
 **This is not very readable; only use in special circumstances.**
 
 ```example:html
-<p class="typeset--caption">This is a caption. &copy; 2018</p>
+<p class="type--caption">This is a caption. &copy; 2018</p>
 ```
 */
-.typeset--caption {
+.type--caption {
   font-size: 10px;
-  font-size: var(--font-size-tiny);
-  line-height: 1.6;
+  font-size: var(--font-size-xs);
+  line-height: 1.8;
   line-height: var(--font-lineHeight-smallText);
+  text-rendering: optimizeLegibility; /* stylelint-disable-line */
 }
 /*---
 title: Links
@@ -1237,23 +1283,23 @@ section: Typesetting
 
 ```example:html
 <div>
-  <a class="typeset--link" href="#">This is an actual link with the link class</a>
+  <a class="type--link" href="#">This is an actual link with the link class</a>
 </div>
 <div>
-  <button class="resetButton typeset--link">This reset button looks like a link</button>
+  <button class="resetButton type--link">This reset button looks like a link</button>
 </div>
 <p>
-  This paragraph as a <span class="typeset--link">span</span> that looks like a link.
+  This paragraph as a <span class="type--link">span</span> that looks like a link.
 </p>
 ```
 */
-.typeset--link {
+.type--link {
   color: #4cabce;
   color: var(--font-color-link);
 }
-.typeset--link:hover,
-.typeset--link:focus,
-.typeset--link:active {
+.type--link:hover,
+.type--link:focus,
+.type--link:active {
   cursor: pointer;
   color: #006699;
   color: var(--color-blue);
@@ -1268,48 +1314,65 @@ section: Type Modifiers
 Modifies size of text and adjusts leading accordingly.
 
 ```example:html
-<p class="typemod--huge">Huge text</p>
-<p class="typemod--xxlarge">XXL text</p>
-<p class="typemod--xlarge">XL text</p>
-<p class="typemod--large">Large text</p>
-<p>Default body text</p>
-<p class="typemod--small">Small text</p>
-<p class="typemod--tiny">Tiny text</p>
+<p class="fontSize--4xl">4XL Text</p>
+<p class="fontSize--3xl">3XL Text</p>
+<p class="fontSize--2xl">2XL Text</p>
+<p class="fontSize--xl">XL Text</p>
+<p class="fontSize--l">L Text</p>
+<p class="fontSize--default">Default text (default)</p>
+<p class="fontSize--s">S text</p>
+<p class="fontSize--xs">XS text</p>
 ```
 */
-.typemod--huge {
-  font-size: 39px !important;
-  font-size: var(--font-size-heading1) !important;
-  line-height: 1.1 !important;
+.fontSize--4xl,
+.fontSize--3xl,
+.fontSize--2xl,
+.fontSize--xl {
+  line-height: 1.2 !important;
   line-height: var(--font-lineHeight-bigText) !important;
 }
-.typemod--xxlarge {
-  font-size: 31px !important;
-  font-size: var(--font-size-heading2) !important;
-  line-height: 1.1 !important;
-  line-height: var(--font-lineHeight-bigText) !important;
+.fontSize--l,
+.fontSize--default {
+  line-height: 1.5 !important;
+  line-height: var(--font-lineHeight-default) !important;
 }
-.typemod--xlarge {
-  font-size: 25px !important;
-  font-size: var(--font-size-heading3) !important;
-  line-height: 1.1 !important;
-  line-height: var(--font-lineHeight-bigText) !important;
+.fontSize--s,
+.fontSize--xs {
+  line-height: 1.8 !important;
+  line-height: var(--font-lineHeight-smallText) !important;
 }
-.typemod--large {
+.fontSize--4xl {
+  font-size: 38px !important;
+  font-size: var(--font-size-4xl) !important;
+}
+.fontSize--3xl {
+  font-size: 32px !important;
+  font-size: var(--font-size-3xl) !important;
+}
+.fontSize--2xl {
+  font-size: 24px !important;
+  font-size: var(--font-size-2xl) !important;
+}
+.fontSize--xl {
   font-size: 20px !important;
-  font-size: var(--font-size-big) !important;
+  font-size: var(--font-size-xl) !important;
 }
-.typemod--small {
-  font-size: 13px !important;
-  font-size: var(--font-size-small) !important;
-  line-height: 1.6 !important;
-  line-height: var(--font-lineHeight-smallText) !important;
+.fontSize--l {
+  font-size: 16px !important;
+  font-size: var(--font-size-l) !important;
 }
-.typemod--tiny {
+.fontSize--default {
+  font-size: 14px !important;
+  font-size: var(--font-size-default) !important;
+}
+.fontSize--s {
+  font-size: 12px !important;
+  font-size: var(--font-size-s) !important;
+}
+.fontSize--xs {
   font-size: 10px !important;
-  font-size: var(--font-size-tiny) !important;
-  line-height: 1.6 !important;
-  line-height: var(--font-lineHeight-smallText) !important;
+  font-size: var(--font-size-xs) !important;
+  text-rendering: optimizeLegibility; /* stylelint-disable-line */
 }
 /*----
 title: Weight Modifiers
@@ -1319,16 +1382,16 @@ section: Type Modifiers
 Modifies weight of text.
 
 ```example:html
-<p class="typemod--bold">Bold Text</p>
-<p class="typemod--book">Book Text</p>
-<p class="typeset--head3">Modifiers <span class="typemod--book">override</span> default styles</p>
+<p class="fontWeight--bold">Bold Text</p>
+<p class="fontWeight--book">Book Text</p>
+<p class="type--head3">Modifiers <span class="fontWeight--book">override</span> default styles</p>
 ```
 */
-.typemod--bold {
+.fontWeight--bold {
   font-weight: 700 !important;
   font-weight: var(--font-weight-bold) !important;
 }
-.typemod--book {
+.fontWeight--book {
   font-weight: 400 !important;
   font-weight: var(--font-weight-default) !important;
 }
@@ -1340,73 +1403,144 @@ section: Type Modifiers
 Modifies color of text.
 
 ### Standard text colors
+
 ```example:html
-<p class="typemod--dark">Dark Text</p>
-<p>Default body text</p>
-<p class="typemod--light">Light Text</p>
+<div class="padding--all">
+  <p class="color--heading">Heading text color</p>
+  <p class="color--primary">Primary text color (default)</p>
+  <p class="color--secondary">Secondary text color</p>
+  <p class="color--hint">Hint text color</p>
+  <p class="color--success">Success text color</p>
+  <p class="color--error">Error text color</p>
+</div>
+```
+
+### Inverted standard text colors
+
+When using standard text color classes (`heading`,
+`primary`, `secondary`, `hint`), a parent element with the
+`inverted` class will switch the text to tints of white.
+
+```example:html
+<div class="padding--all inverted" style="background: var(--color-navy);">
+  <p class="color--heading">Heading text color</p>
+  <p class="color--primary">Primary text color (default)</p>
+  <p class="color--secondary">Secondary text color</p>
+  <p class="color--hint">Hint text color</p>
+  <p class="color--success">Success text color</p>
+  <p class="color--error">Error text color</p>
+</div>
 ```
 
 ### Fancy text colors
 If you don't see the color you need here, please notify UI Platform.
-_Examples set in heading level 4_
+_Text in this example is set in `fontWeight--bold`_
 ```example:html
-<p class="typeset--head4 typemod--slate">Slate text (default body color)</p>
-<p class="typeset--head4 typemod--green">Green text</p>
-<p class="typeset--head4 typemod--mint">Mint text</p>
-<p class="typeset--head4 typemod--navy">Navy text</p>
-<p class="typeset--head4 typemod--blue">Blue text</p>
-<p class="typeset--head4 typemod--sky">Sky text</p>
-<p class="typeset--head4 typemod--purple">Purple text</p>
-<p class="typeset--head4 typemod--red">Red text</p>
-<p class="typeset--head4 typemod--orange">Orange text</p>
-<p class="typeset--head4 typemod--white">White text</p>
+<ul class="fontWeight--bold">
+  <li class="color--slate">Slate text</li>
+  <li class="color--green">Green text</li>
+  <li class="color--mint">Mint text</li>
+  <li class="color--navy">Navy text</li>
+  <li class="color--blue">Blue text</li>
+  <li class="color--aqua">Aqua text</li>
+  <li class="color--sky">Sky text</li>
+  <li class="color--violet">Purple text</li>
+  <li class="color--purple">Purple text</li>
+  <li class="color--red">Red text</li>
+  <li class="color--orange">Orange text</li>
+  <li class="color--white">White text</li>
+</ul>
 ```
 */
-.typemod--dark {
+.color--heading {
   color: #404040 !important;
-  color: var(--font-color-dark) !important;
+  color: var(--font-color-heading) !important;
 }
-.typemod--light {
-  color: #a2a0a0 !important;
-  color: var(--font-color-light) !important;
+.inverted .color--heading {
+  color: #ffffff !important;
+  color: var(--font-color-headingInverted) !important;
 }
-.typemod--slate {
-  color: #757575 !important;
-  color: var(--color-slate) !important;
+.color--primary {
+  color: rgba(64, 64, 64, 0.87) !important;
+  color: var(--font-color-primary) !important;
 }
-.typemod--green {
+.inverted .color--primary {
+  color: rgba(255, 255, 255, 0.87) !important;
+  color: var(--font-color-primaryInverted) !important;
+}
+.color--secondary {
+  color: rgba(64, 64, 64, 0.60) !important;
+  color: var(--font-color-secondary) !important;
+}
+.inverted .color--secondary {
+  color: rgba(255, 255, 255, 0.60) !important;
+  color: var(--font-color-secondaryInverted) !important;
+}
+.color--hint {
+  color: rgba(64, 64, 64, 0.38) !important;
+  color: var(--font-color-hint) !important;
+}
+.inverted .color--hint {
+  color: rgba(255, 255, 255, 0.38) !important;
+  color: var(--font-color-hintInverted) !important;
+}
+.color--success {
+  color: #00986b !important;
+  color: var(--font-color-success) !important;
+}
+.inverted .color--success {
+  color: #70c390 !important;
+  color: var(--font-color-successInverted) !important;
+}
+.color--error {
+  color: #e5323e !important;
+  color: var(--font-color-error) !important;
+}
+.inverted .color--error {
+  color: #e5323e !important;
+  color: var(--font-color-errorInverted) !important;
+}
+.color--green {
   color: #00986b !important;
   color: var(--color-green) !important;
 }
-.typemod--mint {
+.color--mint {
   color: #70c390 !important;
   color: var(--color-mint) !important;
 }
-.typemod--navy {
+.color--navy {
   color: #003366 !important;
   color: var(--color-navy) !important;
 }
-.typemod--blue {
+.color--blue {
   color: #006699 !important;
   color: var(--color-blue) !important;
 }
-.typemod--sky {
+.color--aqua {
+  color: #4cabce !important;
+  color: var(--color-aqua) !important;
+}
+.color--sky {
   color: #bbdbe5 !important;
   color: var(--color-sky) !important;
 }
-.typemod--purple {
+.color--violet {
+  color: #d772ad !important;
+  color: var(--color-violet) !important;
+}
+.color--purple {
   color: #a02385 !important;
   color: var(--color-purple) !important;
 }
-.typemod--red {
+.color--red {
   color: #e5323e !important;
   color: var(--color-red) !important;
 }
-.typemod--orange {
+.color--orange {
   color: #ff6633 !important;
   color: var(--color-orange) !important;
 }
-.typemod--white {
+.color--white {
   color: #ffffff !important;
   color: var(--color-white) !important;
 }
@@ -1418,18 +1552,18 @@ section: Type Modifiers
 Modifies style, decoration, or transform of text
 
 ```example:html
-<p class="typemod--italic">Italic text</p>
-<p class="typemod--underline">Underline text</p>
-<p class="typemod--caps">Uppercase text</p>
+<p class="fontStyle--italic">Italic text</p>
+<p class="fontStyle--underline">Underline text</p>
+<p class="fontStyle--caps">Uppercase text</p>
 ```
 */
-.typemod--italic {
+.fontStyle--italic {
   font-style: italic;
 }
-.typemod--underline {
+.fontStyle--underline {
   text-decoration: underline;
 }
-.typemod--caps {
+.fontStyle--caps {
   text-transform: uppercase;
 }
 /* Form field modifiers */

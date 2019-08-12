@@ -6,73 +6,145 @@ section: Type Modifiers
 Modifies color of text.
 
 ### Standard text colors
+
 ```example:html
-<p class="typemod--dark">Dark Text</p>
-<p>Default body text</p>
-<p class="typemod--light">Light Text</p>
+<div class="padding--all">
+  <p class="color--heading">Heading text color</p>
+  <p class="color--primary">Primary text color (default)</p>
+  <p class="color--secondary">Secondary text color</p>
+  <p class="color--hint">Hint text color</p>
+  <p class="color--success">Success text color</p>
+  <p class="color--error">Error text color</p>
+</div>
+```
+
+### Inverted standard text colors
+
+When using standard text color classes (`heading`,
+`primary`, `secondary`, `hint`), a parent element with the
+`inverted` class will switch the text to tints of white.
+
+```example:html
+<div class="padding--all inverted" style="background: var(--color-navy);">
+  <p class="color--heading">Heading text color</p>
+  <p class="color--primary">Primary text color (default)</p>
+  <p class="color--secondary">Secondary text color</p>
+  <p class="color--hint">Hint text color</p>
+  <p class="color--success">Success text color</p>
+  <p class="color--error">Error text color</p>
+</div>
 ```
 
 ### Fancy text colors
 If you don't see the color you need here, please notify UI Platform.
-_Examples set in heading level 4_
+_Text in this example is set in `fontWeight--bold`_
 ```example:html
-<p class="typeset--head4 typemod--slate">Slate text (default body color)</p>
-<p class="typeset--head4 typemod--green">Green text</p>
-<p class="typeset--head4 typemod--mint">Mint text</p>
-<p class="typeset--head4 typemod--navy">Navy text</p>
-<p class="typeset--head4 typemod--blue">Blue text</p>
-<p class="typeset--head4 typemod--sky">Sky text</p>
-<p class="typeset--head4 typemod--purple">Purple text</p>
-<p class="typeset--head4 typemod--red">Red text</p>
-<p class="typeset--head4 typemod--orange">Orange text</p>
-<p class="typeset--head4 typemod--white">White text</p>
+<ul class="fontWeight--bold">
+  <li class="color--slate">Slate text</li>
+  <li class="color--green">Green text</li>
+  <li class="color--mint">Mint text</li>
+  <li class="color--navy">Navy text</li>
+  <li class="color--blue">Blue text</li>
+  <li class="color--aqua">Aqua text</li>
+  <li class="color--sky">Sky text</li>
+  <li class="color--violet">Purple text</li>
+  <li class="color--purple">Purple text</li>
+  <li class="color--red">Red text</li>
+  <li class="color--orange">Orange text</li>
+  <li class="color--white">White text</li>
+</ul>
 ```
 */
-.typemod--dark {
-  color: var(--font-color-dark) !important;
+
+.color--heading {
+  color: var(--font-color-heading) !important;
 }
 
-.typemod--light {
-  color: var(--font-color-light) !important;
+.inverted .color--heading {
+  color: var(--font-color-headingInverted) !important;
 }
 
-.typemod--slate {
-  color: var(--color-slate) !important;
+.color--primary {
+  color: var(--font-color-primary) !important;
 }
 
-.typemod--green {
+.inverted .color--primary {
+  color: var(--font-color-primaryInverted) !important;
+}
+
+.color--secondary {
+  color: var(--font-color-secondary) !important;
+}
+
+.inverted .color--secondary {
+  color: var(--font-color-secondaryInverted) !important;
+}
+
+.color--hint {
+  color: var(--font-color-hint) !important;
+}
+
+.inverted .color--hint {
+  color: var(--font-color-hintInverted) !important;
+}
+
+.color--success {
+  color: var(--font-color-success) !important;
+}
+
+.inverted .color--success {
+  color: var(--font-color-successInverted) !important;
+}
+
+.color--error {
+  color: var(--font-color-error) !important;
+}
+
+.inverted .color--error {
+  color: var(--font-color-errorInverted) !important;
+}
+
+.color--green {
   color: var(--color-green) !important;
 }
 
-.typemod--mint {
+.color--mint {
   color: var(--color-mint) !important;
 }
 
-.typemod--navy {
+.color--navy {
   color: var(--color-navy) !important;
 }
 
-.typemod--blue {
+.color--blue {
   color: var(--color-blue) !important;
 }
 
-.typemod--sky {
+.color--aqua {
+  color: var(--color-aqua) !important;
+}
+
+.color--sky {
   color: var(--color-sky) !important;
 }
 
-.typemod--purple {
+.color--violet {
+  color: var(--color-violet) !important;
+}
+
+.color--purple {
   color: var(--color-purple) !important;
 }
 
-.typemod--red {
+.color--red {
   color: var(--color-red) !important;
 }
 
-.typemod--orange {
+.color--orange {
   color: var(--color-orange) !important;
 }
 
-.typemod--white {
+.color--white {
   color: var(--color-white) !important;
 }
 

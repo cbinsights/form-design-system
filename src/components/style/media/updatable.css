@@ -18,5 +18,5 @@
   padding: 0 var(--space-half);
   height: var(--space-default);
   white-space: nowrap;
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-xs);
 }

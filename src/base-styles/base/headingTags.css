@@ -11,6 +11,16 @@ h5,
 h6 {
   font-size: 1rem;
   font-weight: var(--font-weight-default);
+  color: var(--font-color-heading);
   margin: 0;
   padding: 0;
+}
+
+.inverted h1,
+.inverted h2,
+.inverted h3,
+.inverted h4,
+.inverted h5,
+.inverted h6 {
+  color: var(--font-color-headingInverted);
 }

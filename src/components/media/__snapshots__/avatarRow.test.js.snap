@@ -41,7 +41,7 @@ exports[`AvatarRow component matches snapshot 1`] = `
       className="avatarRow-avatar avatarRow-avatar--count"
     >
       <span
-        className="typemod--book typemod--small"
+        className="fontWeight--default fontSize--s"
       >
         +
         2

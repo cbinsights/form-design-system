@@ -24,9 +24,9 @@ module.exports = {
     secondary: COLORS.navy,
     accent: COLORS.orange,
     error: COLORS.red,
-    divider: FDS.FONT_COLOR_LIGHT,
+    divider: FDS.FONT_COLOR_HINT,
     text: {
-      primary: FDS.FONT_COLOR_DEFAULT,
+      primary: FDS.FONT_COLOR_PRIMARY,
     },
   },
   typography: {

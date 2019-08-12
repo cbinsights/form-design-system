@@ -5,10 +5,11 @@ module.exports = {
       {
         targets: {
           node: 'current',
-          ie: "11", /* transform arrow functions */
+          ie: '11' /* transform arrow functions */,
         },
       },
     ],
-	 ["@babel/preset-react"]
+    ['@babel/preset-react'],
   ],
+  plugins: ['@babel/plugin-transform-modules-commonjs'],
 };

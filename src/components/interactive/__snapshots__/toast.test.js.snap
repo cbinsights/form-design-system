@@ -29,7 +29,7 @@ exports[`Toast component matches snapshot (error) 1`] = `
             className="toast-icon media--s"
           >
             <div
-              className="typemod--white"
+              className="fontWeight--bold color--white"
               role="image"
             >
               !
@@ -60,7 +60,6 @@ exports[`Toast component matches snapshot (error) 1`] = `
             duration={4000}
             icon={
               <DenyIcon
-                color="#757575"
                 size="xs"
               />
             }
@@ -130,7 +129,6 @@ exports[`Toast component matches snapshot (info) 1`] = `
             duration={4000}
             icon={
               <DenyIcon
-                color="#757575"
                 size="xs"
               />
             }
@@ -239,7 +237,6 @@ exports[`Toast component matches snapshot (success) 1`] = `
             duration={4000}
             icon={
               <DenyIcon
-                color="#757575"
                 size="xs"
               />
             }
@@ -280,7 +277,7 @@ exports[`Toast component matches snapshot (warn) 1`] = `
             className="toast-icon media--s"
           >
             <div
-              className="typemod--white"
+              className="fontWeight--bold color--white"
               role="image"
             >
               !
@@ -311,7 +308,6 @@ exports[`Toast component matches snapshot (warn) 1`] = `
             duration={4000}
             icon={
               <DenyIcon
-                color="#757575"
                 size="xs"
               />
             }

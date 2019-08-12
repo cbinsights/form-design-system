@@ -12,7 +12,11 @@ html {
   line-height: var(--font-lineHeight-default);
   font-family: var(--font-family-default);
   font-size: var(--font-size-default);
-  color: var(--font-color-default);
+  color: var(--font-color-primary);
   text-rendering: geometricPrecision; /* stylelint-disable-line property-blacklist */
   overflow-y: scroll;
+}
+
+.inverted {
+  color: var(--font-color-primaryInverted);
 }
