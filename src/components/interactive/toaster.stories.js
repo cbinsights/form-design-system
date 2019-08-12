@@ -16,7 +16,7 @@ const ReusableToaster = (props) => {
           <Toast
             content={
               <p>
-                Check out this <strong className="typemod--dark">toast</strong>
+                Check out this <strong className="color--heading">toast</strong>
               </p>
             }
             actionLabel="Action"
@@ -36,7 +36,7 @@ const ReusableToaster = (props) => {
           <Toast
             content={
               <p>
-                Check out this <strong className="typemod--dark">toast</strong>
+                Check out this <strong className="color--heading">toast</strong>
               </p>
             }
             actionLabel="Action"
@@ -60,7 +60,7 @@ const ReusableToaster = (props) => {
             }}
             content={
               <p>
-                This is an <strong className="typemod--dark">important message</strong>{' '}
+                This is an <strong className="color--heading">important message</strong>{' '}
                 that does not go away until a user dismisses it with the close button
               </p>
             }

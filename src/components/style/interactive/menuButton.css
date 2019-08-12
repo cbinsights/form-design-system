@@ -4,23 +4,23 @@ Important styles override material-ui inline styles.
 
 .menuButton {
   padding: 4px !important;
-  color: var(--font-color-default) !important;
+  color: var(--font-color-primary) !important;
   text-transform: none !important;
   min-height: var(--media-l) !important;
   max-width: var(--media-m);
 }
 
 .menuButton--active {
-  color: var(--font-color-dark) !important;
+  color: var(--font-color-heading) !important;
   font-weight: var(--font-weight-bold) !important;
 }
 
 .menuButton--disabled .menuButton-label {
-  color: var(--font-color-disabled) !important;
+  color: var(--font-color-hint) !important;
 }
 
 .menuButton--disabled svg {
-  fill: var(--font-color-disabled) !important;
+  fill: var(--font-color-hint) !important;
 }
 
 .menuButton-inner {
