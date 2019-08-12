@@ -1134,10 +1134,8 @@
           _extends({}, restBtnGroup, { className: 'btngroup' }),
           buttons.map(function(_ref2) {
             var value = _ref2.value,
-              content = _ref2.content,
-              key = _ref2.key,
+              key = (_ref2.content, _ref2.key),
               Icon = _ref2.Icon,
-              icon = _ref2.icon,
               onClick = _ref2.onClick,
               label = _ref2.label,
               restBtn = _objectWithoutProperties(_ref2, [
@@ -1145,7 +1143,6 @@
                 'content',
                 'key',
                 'Icon',
-                'icon',
                 'onClick',
                 'label',
               ]);
@@ -1153,14 +1150,14 @@
               _GroupButton.default,
               _extends(
                 {
-                  key: key || label || value,
+                  key: key || label,
                   onClick: onChange
                     ? (0, _combine.default)(function() {
                         return onChange(label || value);
                       }, onClick)
                     : onClick,
-                  label: label || content || value,
-                  Icon: Icon || icon,
+                  label: label,
+                  Icon: Icon,
                 },
                 restBtn
               )
@@ -1179,7 +1176,6 @@
               ]),
               isActive: _propTypes.default.bool,
               label: _propTypes.default.string,
-              icon: _propTypes.default.func,
               Icon: _propTypes.default.func,
             })
           ).isRequired,
@@ -1211,16 +1207,7 @@
                       required: !1,
                     },
                     isActive: { name: 'bool', required: !1 },
-                    label: {
-                      name: 'string',
-                      description: '`content` & `value` props are deprecated',
-                      required: !1,
-                    },
-                    icon: {
-                      name: 'func',
-                      description: 'deprecated (use `Icon` instead)',
-                      required: !1,
-                    },
+                    label: { name: 'string', required: !1 },
                     Icon: { name: 'func', required: !1 },
                   },
                 },
@@ -3285,4 +3272,4 @@
   },
   [[346, 1, 2]],
 ]);
-//# sourceMappingURL=main.66857bf2a1052b76c4fb.bundle.js.map
+//# sourceMappingURL=main.aa9ac4287fb452bd237f.bundle.js.map
