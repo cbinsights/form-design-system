@@ -11,7 +11,7 @@
 - [x] (rey) add knobs addon and try it on chips story
 - [x] canvas positioning/spacing is consistent and good
 - [x] set up global decorators globally instead of declaring them on each story (e.g. - `centered`)
-- [ ] all components have stories
+- [x] all components have stories
   - [x] ButtonGroup.jsx
     - [x] knobs story
     - [x] variations story
