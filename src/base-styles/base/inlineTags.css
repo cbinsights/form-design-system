@@ -37,7 +37,7 @@ samp {
 }
 
 small {
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-xs);
 }
 
 img {

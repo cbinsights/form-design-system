@@ -6,40 +6,64 @@ section: Type Modifiers
 Modifies size of text and adjusts leading accordingly.
 
 ```example:html
-<p class="typemod--huge">Huge text</p>
-<p class="typemod--xxlarge">XXL text</p>
-<p class="typemod--xlarge">XL text</p>
-<p class="typemod--large">Large text</p>
-<p>Default body text</p>
-<p class="typemod--small">Small text</p>
-<p class="typemod--tiny">Tiny text</p>
+<p class="fontSize--4xl">4XL Text</p>
+<p class="fontSize--3xl">3XL Text</p>
+<p class="fontSize--2xl">2XL Text</p>
+<p class="fontSize--xl">XL Text</p>
+<p class="fontSize--l">L Text</p>
+<p class="fontSize--default">Default text (default)</p>
+<p class="fontSize--s">S text</p>
+<p class="fontSize--xs">XS text</p>
 ```
 */
-.typemod--huge {
-  font-size: var(--font-size-heading1) !important;
+
+.fontSize--4xl,
+.fontSize--3xl,
+.fontSize--2xl,
+.fontSize--xl {
   line-height: var(--font-lineHeight-bigText) !important;
 }
 
-.typemod--xxlarge {
-  font-size: var(--font-size-heading2) !important;
-  line-height: var(--font-lineHeight-bigText) !important;
+.fontSize--l,
+.fontSize--default {
+  line-height: var(--font-lineHeight-default) !important;
 }
 
-.typemod--xlarge {
-  font-size: var(--font-size-heading3) !important;
-  line-height: var(--font-lineHeight-bigText) !important;
-}
-
-.typemod--large {
-  font-size: var(--font-size-big) !important;
-}
-
-.typemod--small {
-  font-size: var(--font-size-small) !important;
+.fontSize--s,
+.fontSize--xs {
   line-height: var(--font-lineHeight-smallText) !important;
 }
 
-.typemod--tiny {
-  font-size: var(--font-size-tiny) !important;
-  line-height: var(--font-lineHeight-smallText) !important;
+.fontSize--4xl {
+  font-size: var(--font-size-4xl) !important;
 }
+
+.fontSize--3xl {
+  font-size: var(--font-size-3xl) !important;
+}
+
+.fontSize--2xl {
+  font-size: var(--font-size-2xl) !important;
+}
+
+.fontSize--xl {
+  font-size: var(--font-size-xl) !important;
+}
+
+.fontSize--l {
+  font-size: var(--font-size-l) !important;
+}
+
+.fontSize--default {
+  font-size: var(--font-size-default) !important;
+}
+
+.fontSize--s {
+  font-size: var(--font-size-s) !important;
+}
+
+.fontSize--xs {
+  font-size: var(--font-size-xs) !important;
+  text-rendering: optimizeLegibility; /* stylelint-disable-line */
+}
+

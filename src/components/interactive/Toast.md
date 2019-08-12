@@ -1,3 +1,3 @@
-# Toast
+# 🍞 Toast
 
 Used to display alerts

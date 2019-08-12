@@ -22,7 +22,7 @@ storiesOf('Interactive/Toast', module)
         content={text(
           'label',
           <p>
-            Check out this <strong className="typemod--dark">toast</strong>
+            Check out this <strong className="color--heading">toast</strong>
           </p>
         )}
         actionLabel={text('actionLabel', 'Action')}
@@ -58,7 +58,7 @@ storiesOf('Interactive/Toast', module)
       <Toast
         content={
           <p>
-            Check out this <strong className="typemod--dark">toast</strong>
+            Check out this <strong className="color--heading">toast</strong>
           </p>
         }
         actionLabel="Action"
@@ -69,7 +69,7 @@ storiesOf('Interactive/Toast', module)
       <Toast
         content={
           <p>
-            You better <strong className="typemod--dark">watch out</strong>
+            You better <strong className="color--heading">watch out</strong>
           </p>
         }
         actionLabel="run away"
@@ -80,7 +80,7 @@ storiesOf('Interactive/Toast', module)
       <Toast
         content={
           <p>
-            You <strong className="typemod--dark">Did it!</strong>
+            You <strong className="color--heading">Did it!</strong>
           </p>
         }
         type="success"
@@ -89,7 +89,7 @@ storiesOf('Interactive/Toast', module)
       <Toast
         content={
           <p>
-            Failed to <strong className="typemod--dark">do a thing</strong>
+            Failed to <strong className="color--heading">do a thing</strong>
           </p>
         }
         actionLabel="Retry"
@@ -100,7 +100,7 @@ storiesOf('Interactive/Toast', module)
       <Toast
         content={
           <p>
-            Uploading a photo of your <strong className="typemod--dark">your cat</strong>
+            Uploading a photo of your <strong className="color--heading">your cat</strong>
           </p>
         }
         type="progress"
@@ -109,7 +109,7 @@ storiesOf('Interactive/Toast', module)
       <Toast
         content={
           <p>
-            <strong className="typemod--dark">42%</strong> complete uploading your cat
+            <strong className="color--heading">42%</strong> complete uploading your cat
             photo
           </p>
         }

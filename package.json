@@ -130,7 +130,7 @@
         "stylelint --fix",
         "git add"
       ],
-      "*.{js,jsx}": [
+      "src/**/*.{js,jsx}": [
         "prettier --write",
         "eslint --no-ignore",
         "git add"

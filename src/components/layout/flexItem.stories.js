@@ -26,9 +26,7 @@ storiesOf('Layout/FlexItem', module)
     () => (
       <div style={parentStyle}>
         <Flex className="debug--boxModel">
-          <FlexItem
-            shrink={boolean('add `shrink` prop to "image" item', false)}
-          >
+          <FlexItem shrink={boolean('add `shrink` prop to "image" item', false)}>
             <img src="https://place-hold.it/40x40/a02385/fff&text=IMG" />
           </FlexItem>
           <FlexItem

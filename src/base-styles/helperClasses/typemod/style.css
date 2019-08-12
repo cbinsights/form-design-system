@@ -6,19 +6,19 @@ section: Type Modifiers
 Modifies style, decoration, or transform of text
 
 ```example:html
-<p class="typemod--italic">Italic text</p>
-<p class="typemod--underline">Underline text</p>
-<p class="typemod--caps">Uppercase text</p>
+<p class="fontStyle--italic">Italic text</p>
+<p class="fontStyle--underline">Underline text</p>
+<p class="fontStyle--caps">Uppercase text</p>
 ```
 */
-.typemod--italic {
+.fontStyle--italic {
   font-style: italic;
 }
 
-.typemod--underline {
+.fontStyle--underline {
   text-decoration: underline;
 }
 
-.typemod--caps {
+.fontStyle--caps {
   text-transform: uppercase;
 }

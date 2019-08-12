@@ -29,9 +29,9 @@ const AvatarRow = (props) => {
   const classNames = cx('avatarRow', `avatarRow--${size}`, className);
 
   const fontClass = cx({
-    'typemod--tiny': size === 's',
-    'typemod--small': size === 'm',
-    'typemod--xxlarge': size === 'xl',
+    'fontSize--xs': size === 's',
+    'fontSize--s': size === 'm',
+    'fontSize--2xl': size === 'xl',
   });
 
   const StyledAvatar = withStyles({ root: { borderColor } })(Avatar);
@@ -59,7 +59,9 @@ const AvatarRow = (props) => {
       {renderConfig.count > 0 && (
         <li className="avatarRow-item">
           <StyledAvatar className="avatarRow-avatar avatarRow-avatar--count">
-            <span className={cx('typemod--book', fontClass)}>+{renderConfig.count}</span>
+            <span className={cx('fontWeight--default', fontClass)}>
+              +{renderConfig.count}
+            </span>
           </StyledAvatar>
         </li>
       )}

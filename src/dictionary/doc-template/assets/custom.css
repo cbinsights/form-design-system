@@ -76,7 +76,7 @@ code {
 }
 
 .propertiesTable td {
-  border-top: 1px solid #efefef;
+  border-top: 1px solid rgba(255, 255, 255, 0.38);
 }
 
 .propertiesTable th,

@@ -26,23 +26,23 @@ storiesOf('Interactive/MenuButton', module)
   .add('Variations', () => (
     <React.Fragment>
       <MenuButton
-        iconComponent={<span className="typemod--xlarge">🔥</span>}
+        iconComponent={<span className="fontSize--xl">🔥</span>}
         label="Set on fire"
         onClick={() => {
           action('clicked');
         }}
       />
       <MenuButton
-        iconComponent={<span className="typemod--xlarge">🍕</span>}
+        iconComponent={<span className="fontSize--xl">🍕</span>}
         label="Long pizza button label"
       />
       <MenuButton
-        iconComponent={<span className="typemod--xlarge">📞</span>}
+        iconComponent={<span className="fontSize--xl">📞</span>}
         label="Call"
         disabled
       />
       <MenuButton
-        iconComponent={<span className="typemod--xlarge">✏️</span>}
+        iconComponent={<span className="fontSize--xl">✏️</span>}
         label="Edit Mode"
         active
       />

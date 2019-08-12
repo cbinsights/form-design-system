@@ -80,7 +80,7 @@ const CountdownButton = ({ icon, duration, onClick }) => {
               r={r}
               strokeWidth={strokeWidth}
               fill="transparent"
-              stroke={FDS.FONT_COLOR_LIGHT}
+              stroke={FDS.FONT_COLOR_HINT}
               style={{
                 ...defaultCircleStyle,
                 ...transitionStyles[state],
@@ -94,7 +94,7 @@ const CountdownButton = ({ icon, duration, onClick }) => {
 };
 
 CountdownButton.defaultProps = {
-  icon: <DenyIcon size="xs" color={FDS.FONT_COLOR_DEFAULT} />,
+  icon: <DenyIcon size="xs" color={FDS.FONT_COLOR_PRIMARY} />,
 };
 
 CountdownButton.propTypes = {
