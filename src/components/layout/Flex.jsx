@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 /**
  * @description map of alignment prop values to class names
  */
-const DirectionPropMap = {
+export const DirectionPropMap = {
   row: 'flex--row',
   column: 'flex--column',
 };
@@ -13,7 +13,7 @@ const DirectionPropMap = {
 /**
  * @description map of justify prop values to class names
  */
-const JustifyPropMap = {
+export const JustifyPropMap = {
   end: 'flex--justifyEnd',
   center: 'flex--justifyCenter',
   spaceBetween: 'flex--justifySpaceBetween',
@@ -23,7 +23,7 @@ const JustifyPropMap = {
 /**
  * @description map of align prop values to class names
  */
-const AlignPropMap = {
+export const AlignPropMap = {
   start: 'flex--alignStart',
   end: 'flex--alignEnd',
   center: 'flex--alignCenter',

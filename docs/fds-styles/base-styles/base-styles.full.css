@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Fri, 09 Aug 2019 22:08:42 GMT
+ * Generated on Mon, 12 Aug 2019 21:11:25 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -489,6 +489,10 @@ h6 {
 /**
 Form tag defaults
 */
+:-ms-input-placeholder {
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
+}
 ::-ms-input-placeholder {
   color: rgba(64, 64, 64, 0.38);
   color: var(--font-color-hint);
@@ -1269,7 +1273,7 @@ Tiny text for captions and legalese.
   font-size: var(--font-size-xs);
   line-height: 1.8;
   line-height: var(--font-lineHeight-smallText);
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility; /* stylelint-disable-line */
 }
 /*---
 title: Links
@@ -1368,7 +1372,7 @@ Modifies size of text and adjusts leading accordingly.
 .fontSize--xs {
   font-size: 10px !important;
   font-size: var(--font-size-xs) !important;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility; /* stylelint-disable-line */
 }
 /*----
 title: Weight Modifiers

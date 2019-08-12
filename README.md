@@ -55,11 +55,11 @@ Command             | Description
 ------------------- | -------------------------------------
 `icons:export`      | Runs [export script](https://github.com/cbinsights/form-design-system/blob/master/src/icons/README.md#updating-icons-from-a-sketch-file)
 
-#### Styleguidist
+#### Storybook
 
 Command             | Description
 ------------------- | -------------------------------------
-`comp:serve`        | Runs local dev server of styleguidist
+`storybook`        | Runs local dev storybook server
 
 
 #### Other
