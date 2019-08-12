@@ -32271,15 +32271,13 @@ object-assign
                   (previousViewMode = viewMode),
                   forceRender || (_global.document.documentElement.scrollTop = 0);
               } else
-                _addons.default
-                  .getChannel()
-                  .emit(_coreEvents.default.STORY_UNCHANGED, {
-                    id: id,
-                    revision: revision,
-                    kind: kind,
-                    name: name,
-                    viewMode: viewMode,
-                  });
+                _addons.default.getChannel().emit(_coreEvents.default.STORY_UNCHANGED, {
+                  id: id,
+                  revision: revision,
+                  kind: kind,
+                  name: name,
+                  viewMode: viewMode,
+                });
             },
             renderUI = function renderUI(forceRender) {
               if (isBrowser)
@@ -32588,12 +32586,10 @@ object-assign
       function showError(_ref3) {
         var title = _ref3.title,
           description = _ref3.description;
-        _addons.default
-          .getChannel()
-          .emit(_coreEvents.default.STORY_ERRORED, {
-            title: title,
-            description: description,
-          }),
+        _addons.default.getChannel().emit(_coreEvents.default.STORY_ERRORED, {
+          title: title,
+          description: description,
+        }),
           showErrorDisplay({ message: title, stack: description });
       }
       function showException(exception) {
