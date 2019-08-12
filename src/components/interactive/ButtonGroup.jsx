@@ -22,10 +22,11 @@ ButtonGroup.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       /**
-       * This allows for overriding of the Chip root element
-       * (Meant to accomodate `<Link />`)
+       * Pass **only** react-router `Link` here. You may **not**
+       * pass anything else here: SFC, Class Component, etc (even
+       * if they use react-router `Link` underneath the hood).
        */
-      as: PropTypes.func,
+      Link: PropTypes.func,
       /**
        * Use if labels are not unique
        */

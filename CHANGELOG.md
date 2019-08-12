@@ -64,6 +64,15 @@ a special `assets` dir in `./lib` that includes combined styles:
 
 `@cbinsights/fds/lib/assets/all-styles.min.css`
 
+#### Removed components
+
+- `Chips` was removed from codebase
+
+#### Prop interface changes
+
+- `ButtonGroup` prop `as` was removed in favor of `Link`
+- `Chip` prop `as` was removed in favor of `Link`
+
 #### Removed deprecated fields
 
 - Removed `value` and `content` deprecated fields on `ButtonGroup`
