@@ -7,6 +7,11 @@
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 All Major and Minor changes to this project will be documented in this file.
 
+#### What is considered a "breaking change"?
+Any code change in this software that requires consumers to update their usage is
+considered a breaking change (e.g. prop name changes, deletions, interface/argument
+changes, etc).
+
 ---
 
 ## [Major.Minor] _(example)_
@@ -67,3 +72,7 @@ a special `assets` dir in `./lib` that includes combined styles:
 
 - `ButtonGroup` prop `as` was removed in favor of `Link`
 - `Chip` prop `as` was removed in favor of `Link`
+
+#### Removed deprecated fields
+
+- Removed `value` and `content` deprecated fields on `ButtonGroup`

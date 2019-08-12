@@ -8,12 +8,12 @@ import TableIcon from '../../../lib/icons/react/TableIcon';
 import MarketMapIcon from '../../../lib/icons/react/MarketMapIcon';
 import StarEmptyIcon from '../../../lib/icons/react/StarEmptyIcon';
 
-import { Link } from '../util/react-router';
+import { MockLink } from '../util/mock-react-router';
 
 const buttons = [
   { label: 'Feed', Icon: FeedIcon, isActive: true, isActive: true, href: "#" },
   { label: 'Table', Icon: TableIcon, disabled: true, isActive: false,  },
-  { label: 'Map', Icon: MarketMapIcon, isActive: false, Link: Link, to: '#example' },
+  { label: 'Map', Icon: MarketMapIcon, isActive: false, Link: MockLink, to: '#example' },
   { label: 'Suggested', Icon: StarEmptyIcon, onClick: () => console.log('more custom logic here'), isActive: false },
 ];
 
