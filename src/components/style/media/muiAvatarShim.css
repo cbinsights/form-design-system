@@ -15,9 +15,9 @@
 }
 
 .media--l .fdsAvatar-initial {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
 }
 
 .media--xl .fdsAvatar-initial {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
 }

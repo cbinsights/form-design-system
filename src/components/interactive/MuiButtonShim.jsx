@@ -13,10 +13,14 @@ import FlexItem from '../layout/FlexItem';
  * button component).
  * Renders a `button` element with some basic style overrides.
  */
-const MuiButtonShim = ({ label, Icon, isRound }) => {
+const MuiButtonShim = ({ label, Icon, isRound, onClick, className }) => {
   let buttonContent = label;
 
-  if (Icon) {
+  if (Icon && !label) {
+    buttonContent = Icon;
+  }
+
+  if (Icon && label) {
     buttonContent = (
       <Flex align="center" noGutters>
         <FlexItem shrink>
@@ -27,11 +31,17 @@ const MuiButtonShim = ({ label, Icon, isRound }) => {
     );
   }
 
-  const classNames = cx('fdsButton alignChild--center--center padding--all--half', {
-    'fdsButton--round': isRound,
-  });
+  const classNames = cx(
+    'fdsButton alignChild--center--center padding--all--half',
+    { 'fdsButton--round': isRound },
+    className
+  );
 
-  return <button className={classNames}>{buttonContent}</button>;
+  return (
+    <button className={classNames} onClick={onClick}>
+      {buttonContent}
+    </button>
+  );
 };
 
 MuiButtonShim.propTypes = {
@@ -43,6 +53,12 @@ MuiButtonShim.propTypes = {
 
   /** Makes the button a circle */
   isRound: PropTypes.bool,
+
+  /** click handler */
+  onClick: PropTypes.func,
+
+  /** custom class name */
+  className: PropTypes.string,
 };
 
 export default MuiButtonShim;

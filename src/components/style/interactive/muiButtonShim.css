@@ -3,6 +3,7 @@
   border-width: 0;
   padding: calc(var(--space-half) / 2) var(--space-half) !important;
   border-radius: var(--border-radius-default);
+  cursor: pointer;
 }
 
 .fdsButton--round {
@@ -10,9 +11,9 @@
 }
 
 .fdsButton:hover {
-  background: var(--button-group-hover-color);
+  background: rgba(0, 0, 0, 0.08); /* match material-ui */
 }
 
 .fdsButton:active {
-  background: var(--button-group-pressed-color);
+  background: rgba(0, 0, 0, 0.18); /* match material-ui */
 }
