@@ -2,9 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-import Flex from '../layout/Flex';
-import FlexItem from '../layout/FlexItem';
-
 /**
  * @module MuiButtonShim
  * DO NOT DOCUMENT (not for public use)
@@ -13,52 +10,38 @@ import FlexItem from '../layout/FlexItem';
  * button component).
  * Renders a `button` element with some basic style overrides.
  */
-const MuiButtonShim = ({ label, Icon, isRound, onClick, className }) => {
-  let buttonContent = label;
-
-  if (Icon && !label) {
-    buttonContent = Icon;
-  }
-
-  if (Icon && label) {
-    buttonContent = (
-      <Flex align="center" noGutters>
-        <FlexItem shrink>
-          <div className="margin--right--half">{Icon}</div>
-        </FlexItem>
-        {label && <FlexItem>{label}</FlexItem>}
-      </Flex>
-    );
-  }
-
-  const classNames = cx(
-    'fdsButton alignChild--center--center padding--all--half',
-    { 'fdsButton--round': isRound },
-    className
-  );
-
-  return (
-    <button className={classNames} onClick={onClick}>
-      {buttonContent}
-    </button>
-  );
-};
+const MuiButtonShim = ({ children, disabled, isRound, onClick, className }) => (
+  <button
+    className={cx(
+      'fdsButton alignChild--center--center padding--all--half',
+      {
+        'fdsButton--round': isRound,
+        'fdsButton--disabled': disabled,
+      },
+      className
+    )}
+    onClick={onClick}
+    disabled={disabled}
+  >
+    {children}
+  </button>
+);
 
 MuiButtonShim.propTypes = {
-  /** Optional `Icon` component to render */
-  Icon: PropTypes.element,
-
-  /** Button label */
-  label: PropTypes.string,
-
   /** Makes the button a circle */
   isRound: PropTypes.bool,
+
+  /** is the button disabled? */
+  disabled: PropTypes.bool,
 
   /** click handler */
   onClick: PropTypes.func,
 
   /** custom class name */
   className: PropTypes.string,
+
+  /** react children */
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 export default MuiButtonShim;

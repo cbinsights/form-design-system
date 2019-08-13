@@ -55,12 +55,9 @@ const CountdownButton = ({ icon, duration, onClick }) => {
         height: `${circleSize}px`,
       }}
     >
-      <MuiButtonShim
-        className="countdownButton-button"
-        onClick={onClick}
-        Icon={icon}
-        isRound
-      />
+      <MuiButtonShim className="countdownButton-button" onClick={onClick} isRound>
+        {icon}
+      </MuiButtonShim>
       <Transition
         in={true}
         appear
