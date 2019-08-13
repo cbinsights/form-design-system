@@ -10,24 +10,34 @@
   overflow: visible;
 }
 
-/* importants override material ui */
-.avatarRow-avatar {
+.avatarRow-count {
   box-sizing: border-box;
-  display: inline-flex !important;
-  justify-content: center;
-  align-items: center;
-  background-clip: content-box;
-  background-color: var(--color-sky) !important;
-
-  /* border color set by component inline */
-  border-width: 2px;
-  border-style: solid;
-}
-
-.avatarRow-avatar--count {
+  border-radius: 100%;
   background-color: var(--color-navy) !important;
+  background-clip: padding-box;
   border-color: inherit;
   color: var(--color-white);
+}
+
+/**
+ * Because `MuiAvatarShim` is designed to only render one
+ * letter for no-photo avatars, we need to customize font
+ * size for the count
+ */
+.media--s.avatarRow-count {
+  font-size: var(--font-size-s);
+}
+
+.media--m.avatarRow-count {
+  font-size: var(--font-size-m);
+}
+
+.media--l.avatarRow-count {
+  font-size: var(--font-size-xl);
+}
+
+.media--xl.avatarRow-count {
+  font-size: var(--font-size-3xl);
 }
 
 /**
@@ -41,35 +51,29 @@
   width: 16px;
 }
 
-.avatarRow--s .avatarRow-avatar {
-  border-width: 1px;
-  width: var(--media-s) !important;
-  height: var(--media-s) !important;
+.avatarRow--s .avatarRow-avatar,
+.avatarRow--s .avatarRow-count {
+  border-width: 1px !important;
 }
 
 .avatarRow--m .avatarRow-item {
   width: 26px;
 }
 
-.avatarRow--m .avatarRow-avatar {
-  width: var(--media-m) !important;
-  height: var(--media-m) !important;
-}
-
 .avatarRow--l .avatarRow-item {
   width: 40px;
 }
 
-.avatarRow--l .avatarRow-avatar {
-  width: var(--media-l) !important;
-  height: var(--media-l) !important;
+.avatarRow--l .avatarRow-avatar,
+.avatarRow--l .avatarRow-count {
+  border-width: 3px !important;
 }
 
 .avatarRow--xl .avatarRow-item {
   width: 55px;
 }
 
-.avatarRow--xl .avatarRow-avatar {
-  width: var(--media-xl) !important;
-  height: var(--media-xl) !important;
+.avatarRow--xl .avatarRow-avatar,
+.avatarRow--xl .avatarRow-count {
+  border-width: 4px !important;
 }
