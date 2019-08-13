@@ -33,6 +33,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - All modules in the Form Design System are now published as a single package, `@cbinsights/fds`.
 - Brand new typography defaults with updated dictionary and CSS utilities.
+- Removed some components
+- Changed some prop interfaces
 
 
 ### **BREAKING CHANGES**
