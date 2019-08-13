@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
  * button component).
  * Renders a `button` element with some basic style overrides.
  */
-const MuiButtonShim = ({ children, disabled, isRound, onClick, className }) => (
+const MuiButtonShim = ({ children, disabled, isRound, className, ...otherProps }) => (
   <button
     className={cx(
       'fdsButton alignChild--center--center padding--all--half',
@@ -20,8 +20,8 @@ const MuiButtonShim = ({ children, disabled, isRound, onClick, className }) => (
       },
       className
     )}
-    onClick={onClick}
     disabled={disabled}
+    {...otherProps}
   >
     {children}
   </button>

@@ -4,6 +4,11 @@
   padding: calc(var(--space-half) / 2) var(--space-half) !important;
   border-radius: var(--border-radius-default);
   cursor: pointer;
+  color: var(--font-color-secondary);
+  fill: var(--font-color-secondary);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .fdsButton--round {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import IconButton from '@material-ui/core/IconButton';
+import MuiButtonShim from './MuiButtonShim';
 import CountdownButton from '../media/CountdownButton';
 
 import Toast from './Toast';
@@ -77,7 +77,7 @@ describe('Toast component', () => {
       isAutoDismiss: false,
     });
     const countdownButton = component.find(CountdownButton);
-    const standardButton = component.find(IconButton);
+    const standardButton = component.find(MuiButtonShim);
     expect(countdownButton).toHaveLength(0);
     expect(standardButton).toHaveLength(1);
   });

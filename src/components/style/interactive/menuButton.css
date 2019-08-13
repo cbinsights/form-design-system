@@ -1,12 +1,8 @@
-/**
-Important styles override material-ui inline styles.
-*/
-
 .menuButton {
-  padding: 4px !important;
-  color: var(--font-color-primary) !important;
-  text-transform: none !important;
-  min-height: var(--media-l) !important;
+  padding: 4px;
+  color: var(--font-color-primary);
+  text-transform: none;
+  min-height: var(--media-l);
   max-width: var(--media-m);
 }
 
@@ -20,7 +16,7 @@ Important styles override material-ui inline styles.
 }
 
 .menuButton--disabled svg {
-  fill: var(--font-color-hint) !important;
+  fill: var(--font-color-hint);
 }
 
 .menuButton-inner {

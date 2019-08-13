@@ -8,45 +8,68 @@ exports[`AvatarRow component matches snapshot 1`] = `
     className="avatarRow-item"
     key="MOCKNAME-0"
   >
-    <WithStyles(WithStyles(Avatar))
-      alt="MOCK NAME"
+    <MuiAvatarShim
       className="avatarRow-avatar"
+      name="MOCK NAME"
+      size="m"
       src="https://placeimg.com/40/41/animals"
+      style={
+        Object {
+          "border": "2px solid #f1f5f7",
+        }
+      }
     />
   </li>
   <li
     className="avatarRow-item"
     key="MOCKNAME-1"
   >
-    <WithStyles(WithStyles(Avatar))
-      alt="MOCK NAME"
+    <MuiAvatarShim
       className="avatarRow-avatar"
+      name="MOCK NAME"
+      size="m"
       src="https://placeimg.com/40/41/animals"
+      style={
+        Object {
+          "border": "2px solid #f1f5f7",
+        }
+      }
     />
   </li>
   <li
     className="avatarRow-item"
     key="MOCKNAME-2"
   >
-    <WithStyles(WithStyles(Avatar))
-      alt="MOCK NAME"
+    <MuiAvatarShim
       className="avatarRow-avatar"
+      name="MOCK NAME"
+      size="m"
       src="https://placeimg.com/40/41/animals"
+      style={
+        Object {
+          "border": "2px solid #f1f5f7",
+        }
+      }
     />
   </li>
   <li
     className="avatarRow-item"
   >
-    <WithStyles(WithStyles(Avatar))
-      className="avatarRow-avatar avatarRow-avatar--count"
+    <div
+      className="avatarRow-count alignChild--center--center media--m"
+      style={
+        Object {
+          "border": "2px solid #f1f5f7",
+        }
+      }
     >
       <span
-        className="fontWeight--default fontSize--s"
+        className="fontWeight--bold"
       >
         +
         2
       </span>
-    </WithStyles(WithStyles(Avatar))>
+    </div>
   </li>
 </ul>
 `;

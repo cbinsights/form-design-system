@@ -60,6 +60,7 @@ exports[`Toast component matches snapshot (error) 1`] = `
             duration={4000}
             icon={
               <DenyIcon
+                color="rgba(64, 64, 64, 0.87)"
                 size="xs"
               />
             }
@@ -129,6 +130,7 @@ exports[`Toast component matches snapshot (info) 1`] = `
             duration={4000}
             icon={
               <DenyIcon
+                color="rgba(64, 64, 64, 0.87)"
                 size="xs"
               />
             }
@@ -237,6 +239,7 @@ exports[`Toast component matches snapshot (success) 1`] = `
             duration={4000}
             icon={
               <DenyIcon
+                color="rgba(64, 64, 64, 0.87)"
                 size="xs"
               />
             }
@@ -308,6 +311,7 @@ exports[`Toast component matches snapshot (warn) 1`] = `
             duration={4000}
             icon={
               <DenyIcon
+                color="rgba(64, 64, 64, 0.87)"
                 size="xs"
               />
             }

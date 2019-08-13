@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
+import MuiButtonShim from './MuiButtonShim';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 import CheckIcon from '../../../lib/icons/react/CheckIcon';
 import InformationIcon from '../../../lib/icons/react/InformationIcon';
@@ -87,13 +86,13 @@ const Toast = ({
           {actionLabel && onAction && (
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
-                <Button
+                <MuiButtonShim
                   className="toast-action"
                   onClick={onActionDismiss}
                   data-test="toast-action"
                 >
                   {actionLabel}
-                </Button>
+                </MuiButtonShim>
               </div>
             </FlexItem>
           )}
@@ -103,9 +102,9 @@ const Toast = ({
                 {isAutoDismiss ? (
                   <CountdownButton onClick={dismissToast} duration={dismissDelay} />
                 ) : (
-                  <IconButton onClick={dismissToast}>
+                  <MuiButtonShim onClick={dismissToast}>
                     <DenyIcon size="xs" color={FDS.FONT_COLOR_PRIMARY} />
-                  </IconButton>
+                  </MuiButtonShim>
                 )}
               </div>
             </FlexItem>
