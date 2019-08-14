@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 const VALID_SIZES = ['s', 'm', 'l', 'xl'];
@@ -11,12 +12,12 @@ const VALID_SIZES = ['s', 'm', 'l', 'xl'];
  * Renders a basic avatar.
  */
 const MuiAvatarShim = ({ name, src, size, className, style }) => {
-  const classNames = [
+  const classNames = cx(
     'fdsAvatar',
     'alignChild--center--center',
     `media--${size}`,
-    className,
-  ].join(' ');
+    className
+  );
 
   const inlineStyles = { ...style };
   if (src) {
