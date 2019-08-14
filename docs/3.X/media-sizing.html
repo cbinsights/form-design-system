@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Media Sizing: Form Design System</title>
+    <link rel="stylesheet" type="text/css" href="fds-styles/lib/fds-styles.css" />
+
+    <style type="text/css">
+      body {
+        padding: 2rem;
+        line-height: 1;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        width: 100%;
+      }
+
+      .row-item {
+        box-sizing: border-box;
+        padding: var(--space-default);
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 0;
+        width: auto;
+      }
+
+      .type {
+        display: inline-flex;
+        align-items: center;
+        vertical-align: middle;
+        margin-left: 0.25em;
+        color: var(--color-charcoal);
+        background: rgba(228, 63, 63, 0.1);
+        background-clip: border-box;
+        border-top: 1px dotted rgba(173, 158, 158, 0.66);
+        border-bottom: 1px dotted rgba(173, 158, 158, 0.66);
+      }
+
+      .heading {
+        font-family: var(--font-family-condensed);
+        font-weight: var(--font-weight-bold);
+      }
+
+      .text--tiny {
+        font-size: var(--font-size-tiny);
+      }
+
+      .text--default {
+        font-size: var(--font-size-default);
+      }
+
+      .text--big {
+        font-size: var(--font-size-big);
+      }
+
+      .text--head3 {
+        font-size: var(--font-size-heading3);
+      }
+
+      .text--head2 {
+        font-size: var(--font-size-heading2);
+      }
+
+      .text--head1 {
+        font-size: var(--font-size-heading1);
+      }
+
+      .media-label {
+        font-size: var(--font-size-small);
+        font-family: var(--font-family-mono);
+        margin: 0.33rem 0;
+        color: var(--color-purple);
+      }
+
+      .media--xs,
+      .media--s,
+      .media--m,
+      .media--l,
+      .media--xl {
+        display: inline-block;
+        vertical-align: middle;
+        background: var(--color-red);
+      }
+
+      .media--xs {
+        width: 16px;
+        height: 16px;
+      }
+
+      .media--s {
+        width: 24px;
+        height: 24px;
+      }
+
+      .media--m {
+        width: 40px;
+        height: 40px;
+      }
+
+      .media--l {
+        width: 60px;
+        height: 60px;
+      }
+
+      .media--xl {
+        width: 86px;
+        height: 86px;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <h1 class="typeset--head1">Media sizes</h1>
+    <div class="row">
+      <div class="row-item">
+        <div class="media-label">media--xs</div>
+        <div class="media--xs"></div>
+        <div class="media-label">16px</div>
+      </div>
+      <div class="row-item">
+        <div class="media-label">media--s</div>
+        <div class="media--s"></div>
+        <div class="media-label">24px</div>
+      </div>
+      <div class="row-item">
+        <div class="media-label">media--m</div>
+        <div class="media--m"></div>
+        <div class="media-label">40px</div>
+      </div>
+      <div class="row-item">
+        <div class="media-label">media--l</div>
+        <div class="media--l"></div>
+        <div class="media-label">60px</div>
+      </div>
+      <div class="row-item">
+        <div class="media-label">media--xl</div>
+        <div class="media--xl"></div>
+        <div class="media-label">86px</div>
+      </div>
+    </div>
+
+    <h2 class="typeset--head2">Inline XS</h2>
+    <div class="row">
+      <div class="row-item">
+        <div class="media--xs"></div>
+        <div class="type text--tiny">Tiny text no leading</div>
+      </div>
+      <div class="row-item">
+        <div class="media--xs"></div>
+        <div class="type text--tiny" style="height: 14px;">Tiny text with leading</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-item">
+        <div class="media--xs"></div>
+        <div class="type text--default">Default text no leading</div>
+      </div>
+      <div class="row-item">
+        <div class="media--xs"></div>
+        <div class="type text--default" style="height: 22.4px;">Default text with leading</div>
+      </div>
+    </div>
+
+    <h2 class="typeset--head2">Inline S</h2>
+    <div class="row">
+      <div class="row-item">
+        <div class="media--s"></div>
+        <div class="type text--default">Default text no leading</div>
+      </div>
+      <div class="row-item">
+        <div class="media--s"></div>
+        <div class="type text--default" style="height: 23.4px;">Default text with leading</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-item">
+        <div class="media--s"></div>
+        <div class="type text--big">Big text no leading</div>
+      </div>
+      <div class="row-item">
+        <div class="media--s"></div>
+        <div class="type text--big" style="height: 28px;">Big text with leading</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-item">
+        <div class="media--s"></div>
+        <div class="type heading text--head3">Head3 text no leading</div>
+      </div>
+      <div class="row-item">
+        <div class="media--s"></div>
+        <div class="type heading text--head3" style="height: 27.5px;">Head3 text with leading</div>
+      </div>
+    </div>
+
+    <h2 class="typeset--head2">Inline M</h2>
+    <div class="row">
+      <div class="row-item">
+        <div class="media--m"></div>
+        <div class="type heading text--head3">Head3 text no leading</div>
+      </div>
+      <div class="row-item">
+        <div class="media--m"></div>
+        <div class="type heading text--head3" style="height: 27.5px;">Head3 text with leading</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-item">
+        <div class="media--m"></div>
+        <div class="type heading text--head2">Head2 text no leading</div>
+      </div>
+      <div class="row-item">
+        <div class="media--m"></div>
+        <div class="type heading text--head2" style="height: 34.1px;">Head2 text with leading</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-item">
+        <div class="media--m"></div>
+        <div class="type heading text--head1">Head1 text no leading</div>
+      </div>
+      <div class="row-item">
+        <div class="media--m"></div>
+        <div class="type heading text--head1" style="height: 42.9px;">Head1 text with leading</div>
+      </div>
+    </div>
+
+    <h2 class="typeset--head2">Inline L</h2>
+    <div class="row">
+      <div class="row-item">
+        <div class="media--l"></div>
+        <div class="type heading text--head1">Head1 text no leading</div>
+      </div>
+      <div class="row-item">
+        <div class="media--l"></div>
+        <div class="type heading text--head1" style="height: 42.9px;">Head1 text with leading</div>
+      </div>
+    </div>
+
+  </body>
+</html>
