@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed, 14 Aug 2019 14:17:16 GMT
+ * Generated on Wed, 14 Aug 2019 14:28:33 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -816,7 +816,7 @@ name: positionAlign
 section: Position Helpers
 ---
 
-eets `text-align`.
+Sets `text-align`.
 
 class           | description
 --------------- | ---------------------------------
