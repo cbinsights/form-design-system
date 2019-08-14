@@ -140,5 +140,6 @@
       "src/**/*.test.{js,jsx}",
       "src/**/assets/*.css"
     ]
-  }
+  },
+  "version": "4.0.0"
 }
