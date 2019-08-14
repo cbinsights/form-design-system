@@ -14,6 +14,7 @@ exports[`CountdownButton matches snapshot 1`] = `
     className="countdownButton-button"
   >
     <DenyIcon
+      color="rgba(64, 64, 64, 0.87)"
       size="xs"
     />
   </WithStyles(IconButton)>
