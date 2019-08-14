@@ -36,7 +36,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - Removed some components
 - Changed some prop interfaces
 - Switched to Storybook for docs
-
+- Added `display` classes
 
 ### **BREAKING CHANGES**
 
