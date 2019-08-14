@@ -20,13 +20,7 @@
 }
 
 .toast-action {
-  color: var(--font-color-light) !important;
-  font-size: var(--font-size-s) !important;
   letter-spacing: 0.12em;
-}
-
-.toast-action:hover {
-  color: var(--font-color-primary) !important;
 }
 
 .toast-bar {

@@ -5,19 +5,20 @@ exports[`CountdownButton matches snapshot 1`] = `
   className="countdownButton"
   style={
     Object {
-      "height": "40px",
-      "width": "40px",
+      "height": "34px",
+      "width": "34px",
     }
   }
 >
-  <WithStyles(IconButton)
+  <MuiButtonShim
     className="countdownButton-button"
+    isRound={true}
   >
     <DenyIcon
       color="rgba(64, 64, 64, 0.87)"
       size="xs"
     />
-  </WithStyles(IconButton)>
+  </MuiButtonShim>
   <Transition
     appear={true}
     enter={true}

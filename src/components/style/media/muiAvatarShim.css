@@ -1,0 +1,23 @@
+.fdsAvatar {
+  box-sizing: border-box;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-color: var(--color-sky);
+}
+
+.media--s .fdsAvatar-initial {
+  font-size: var(--font-size-m);
+}
+
+.media--m .fdsAvatar-initial {
+  font-size: var(--font-size-l);
+}
+
+.media--l .fdsAvatar-initial {
+  font-size: var(--font-size-2xl);
+}
+
+.media--xl .fdsAvatar-initial {
+  font-size: var(--font-size-3xl);
+}

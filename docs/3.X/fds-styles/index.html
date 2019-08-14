@@ -1,0 +1,986 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>fds-styles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="primer.css" rel="stylesheet"><link href="style.css" rel="stylesheet"><link href="octicons/octicons.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"><link href="assets/doc.css" rel="stylesheet">
+    <script>examples={"base":"","target":"_self","css":["lib/fds-styles.css","./assets/webfont.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
+    
+  </head>
+  <body>
+    <header class="masthead" style="background-color: #4078c0;">
+      <div class="container">
+        <a href="/" class="masthead-logo">
+          <img src="assets/logo.png" alt="fds-styles" height="32"> fds-styles
+        </a>
+        <nav class="masthead-nav">
+            
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="columns docs-layout">
+        <div class="one-fourth column">
+          <nav class="menu docs-menu">
+            
+    
+        <a class="menu-heading" href="#spacing-helpers"><span>Spacing Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#spacingFlush"><span>Flush</span></a>
+        
+        
+        <a class="menu-item" href="#spacingMargin"><span>Margin</span></a>
+        
+        
+        <a class="menu-item" href="#spacingPadding"><span>Padding</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#position-helpers"><span>Position Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#positionAlign"><span>Align</span></a>
+        
+        
+        <a class="menu-item" href="#positionVAlign"><span>Vertical Align</span></a>
+        
+        
+        <a class="menu-item" href="#positionChildAlign"><span>Child Align</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#layout-helpers"><span>Layout Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#layoutMedia"><span>Media Sizing</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#shadow-helpers"><span>Shadow Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#elevationShadows"><span>Elevation shadows</span></a>
+        
+        
+        <a class="menu-item" href="#depthShadows"><span>Depth shadows</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#typesetting"><span>Typesetting</span></a>
+        
+    
+        <a class="menu-item" href="#headingTags"><span>Heading Tags</span></a>
+        
+        
+        <a class="menu-item" href="#heading1"><span>Heading 1</span></a>
+        
+        
+        <a class="menu-item" href="#heading2"><span>Heading 2</span></a>
+        
+        
+        <a class="menu-item" href="#heading3"><span>Heading 3</span></a>
+        
+        
+        <a class="menu-item" href="#heading4"><span>Heading 4</span></a>
+        
+        
+        <a class="menu-item" href="#bodyText"><span>Body</span></a>
+        
+        
+        <a class="menu-item" href="#dataText"><span>Data</span></a>
+        
+        
+        <a class="menu-item" href="#captionText"><span>Caption</span></a>
+        
+        
+        <a class="menu-item" href="#links"><span>Links</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#type-modifiers"><span>Type Modifiers</span></a>
+        
+    
+        <a class="menu-item" href="#typeSizeModifiers"><span>Size Modifiers</span></a>
+        
+        
+        <a class="menu-item" href="#typeWeightModifiers"><span>Weight Modifiers</span></a>
+        
+        
+        <a class="menu-item" href="#typeColorModifiers"><span>Color Modifiers</span></a>
+        
+        
+        <a class="menu-item" href="#typeStyleModifiers"><span>Type Style Modifiers</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#form-helpers"><span>Form Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#inputError"><span>Input error</span></a>
+        
+        
+        <a class="menu-item" href="#resetInput"><span>Reset Input</span></a>
+        
+        
+        <a class="menu-item" href="#resetButton"><span>Reset Button</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#text-flow"><span>Text flow</span></a>
+        
+    
+        <a class="menu-item" href="#truncate"><span>Truncate text</span></a>
+        
+        
+        <a class="menu-item" href="#wrap"><span>Text wrap control</span></a>
+        
+        
+  
+        
+  
+          </nav>
+        </div>
+
+        <main class="three-fourths column markdown-body">
+          
+    <section id="spacing-helpers">
+      <h1 class="page-title">Spacing Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="spacingFlush">
+      <h2 class="page-title">Flush</h2>
+
+      <div class="markdown-body">
+        <p>Removes spacing from the given side of an element.
+Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flush--top</code></td>
+<td>Removes top spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--right</code></td>
+<td>Removes right spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--bottom</code></td>
+<td>Removes bottom spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--left</code></td>
+<td>Removes left spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--all</code></td>
+<td>Removes spacing from all sides of an element</td>
+</tr>
+</tbody>
+</table>
+<h4 id="overriding-flush">Overriding <code>flush</code></h4>
+<p>Margin and padding utility classes can override a flush class:</p>
+<pre><code class="lang-html">  &lt;div class=&quot;flush--all padding--left&quot;&gt;
+    Removes all padding, then sets padding left.
+  &lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="spacingMargin">
+      <h2 class="page-title">Margin</h2>
+
+      <div class="markdown-body">
+        <p>Adds margin to the given side of an element.</p>
+<h4 id="full-margin">Full margin</h4>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>margin--top</code></td>
+<td>Adds standard margin to top of element</td>
+</tr>
+<tr>
+<td><code>margin--right</code></td>
+<td>Adds standard margin to right of element</td>
+</tr>
+<tr>
+<td><code>margin--bottom</code></td>
+<td>Adds standard margin to bottom of element</td>
+</tr>
+<tr>
+<td><code>margin--left</code></td>
+<td>Adds standard margin to left of element</td>
+</tr>
+<tr>
+<td><code>margin--all</code></td>
+<td>Adds standard margin to all sides</td>
+</tr>
+</tbody>
+</table>
+<h4 id="half-margin">Half margin</h4>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>margin--top--half</code></td>
+<td>Adds half margin to top of element</td>
+</tr>
+<tr>
+<td><code>margin--right--half</code></td>
+<td>Adds half margin to right of element</td>
+</tr>
+<tr>
+<td><code>margin--bottom--half</code></td>
+<td>Adds half margin to bottom of element</td>
+</tr>
+<tr>
+<td><code>margin--left--half</code></td>
+<td>Adds half margin to left of element</td>
+</tr>
+<tr>
+<td><code>margin--all--half</code></td>
+<td>Adds half margin to all sides</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+    <section id="spacingPadding">
+      <h2 class="page-title">Padding</h2>
+
+      <div class="markdown-body">
+        <p>Adds padding to the given side of an element.</p>
+<h4 id="full-padding">Full padding</h4>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>padding--top</code></td>
+<td>Adds standard padding to top of element</td>
+</tr>
+<tr>
+<td><code>padding--right</code></td>
+<td>Adds standard padding to right of element</td>
+</tr>
+<tr>
+<td><code>padding--bottom</code></td>
+<td>Adds standard padding to bottom of element</td>
+</tr>
+<tr>
+<td><code>padding--left</code></td>
+<td>Adds standard padding to left of element</td>
+</tr>
+<tr>
+<td><code>padding--all</code></td>
+<td>Adds standard padding to all sides</td>
+</tr>
+</tbody>
+</table>
+<h4 id="half-padding">Half padding</h4>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>padding--top--half</code></td>
+<td>Adds half padding to top of element</td>
+</tr>
+<tr>
+<td><code>padding--right--half</code></td>
+<td>Adds half padding to right of element</td>
+</tr>
+<tr>
+<td><code>padding--bottom--half</code></td>
+<td>Adds half padding to bottom of element</td>
+</tr>
+<tr>
+<td><code>padding--left--half</code></td>
+<td>Adds half padding to left of element</td>
+</tr>
+<tr>
+<td><code>padding--all--half</code></td>
+<td>Adds half padding to all sides</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="position-helpers">
+      <h1 class="page-title">Position Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="positionAlign">
+      <h2 class="page-title">Align</h2>
+
+      <div class="markdown-body">
+        <p>eets <code>text-align</code>.</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>align--left</code></td>
+<td>Sets <code>text-align</code> to <code>left</code></td>
+</tr>
+<tr>
+<td><code>align--center</code></td>
+<td>Sets <code>text-align</code> to <code>center</code></td>
+</tr>
+<tr>
+<td><code>align--right</code></td>
+<td>Sets <code>text-align</code> to <code>right</code></td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+    <section id="positionVAlign">
+      <h2 class="page-title">Vertical Align</h2>
+
+      <div class="markdown-body">
+        <p>Sets <code>vertical-align</code> property. Note that <code>vertical-align</code>
+<strong>only applies to elements displayed <code>inline</code>, <code>inline-block</code>,
+<code>table-cell</code> or <code>inline-flex</code>.</strong></p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>valign--top</code></td>
+<td>Sets <code>vertical-align</code> to <code>top</code></td>
+</tr>
+<tr>
+<td><code>valign--center</code></td>
+<td>Sets <code>vertical-align</code> to <code>middle</code></td>
+</tr>
+<tr>
+<td><code>valign--bottom</code></td>
+<td>Sets <code>vertical-align</code> to <code>bottom</code></td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+    <section id="positionChildAlign">
+      <h2 class="page-title">Child Align</h2>
+
+      <div class="markdown-body">
+        <p>Positions direct child(s) of element using flex properties.
+<strong>These classes modify <code>flex</code> properties</strong>. Avoid combining
+<code>alignChild</code> classes with flexbox layout elements.</p>
+<p>Classes follow this signature:</p>
+<pre><code class="lang-css">.alignChild--(left|right|center)--(top|bottom|center)
+</code></pre>
+<pre><code class="lang-example:html">&lt;div
+  class=&quot;alignChild--center--center&quot;
+  style=&quot;border: 1px dotted red; height: 100px; width: 100px;&quot;
+&gt;
+  &lt;div style=&quot;background: pink;&quot;&gt;child&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="layout-helpers">
+      <h1 class="page-title">Layout Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="layoutMedia">
+      <h2 class="page-title">Media Sizing</h2>
+
+      <div class="markdown-body">
+        <p>For standard media like avatars and icons, these classes set square
+dimenions on the selected element to match standard media sizes.</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>media--xs</code></td>
+<td>Sets height and width of element to <code>var(--media-xs)</code></td>
+</tr>
+<tr>
+<td><code>media--s</code></td>
+<td>Sets height and width of element to <code>var(--media-s)</code></td>
+</tr>
+<tr>
+<td><code>media--m</code></td>
+<td>Sets height and width of element to <code>var(--media-m)</code></td>
+</tr>
+<tr>
+<td><code>media--l</code></td>
+<td>Sets height and width of element to <code>var(--media-l)</code></td>
+</tr>
+<tr>
+<td><code>media--xl</code></td>
+<td>Sets height and width of element to <code>var(--media-xl)</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-example:html">&lt;style&gt;
+  .DOC_MEDIA {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    background: var(--color-violet);
+    color: var(--color-purple);
+  }
+&lt;/style&gt;
+&lt;div class=&quot;DOC_MEDIA media--xs&quot;&gt;xs&lt;/div&gt;
+&lt;div class=&quot;DOC_MEDIA media--s&quot;&gt;s&lt;/div&gt;
+&lt;div class=&quot;DOC_MEDIA media--m&quot;&gt;m&lt;/div&gt;
+&lt;div class=&quot;DOC_MEDIA media--l&quot;&gt;l&lt;/div&gt;
+&lt;div class=&quot;DOC_MEDIA media--xl&quot;&gt;xl&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="shadow-helpers">
+      <h1 class="page-title">Shadow Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="elevationShadows">
+      <h2 class="page-title">Elevation shadows</h2>
+
+      <div class="markdown-body">
+        <p>These <code>elevation</code> classes set a <code>box-shadow</code> based on
+<a href="https://material.io/design/environment/light-shadows.html#shadows">material design shadows</a>.</p>
+<p>Signature: <code>elevation--&lt;level&gt;</code></p>
+<pre><code class="lang-example:html">&lt;style&gt;
+._example {
+  width: var(--media-xl);
+  height: var(--media-m);
+  padding: 0.25rem;
+  margin: 1rem 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-mono);
+  color: var(--color-violet);
+}
+&lt;/style&gt;
+
+&lt;div class=&quot;_example elevation--1&quot;&gt;1 (2dp)&lt;/div&gt;
+&lt;div class=&quot;_example elevation--2&quot;&gt;2 (4dp)&lt;/div&gt;
+&lt;div class=&quot;_example elevation--3&quot;&gt;3 (8dp)&lt;/div&gt;
+&lt;div class=&quot;_example elevation--4&quot;&gt;4 (12dp)&lt;/div&gt;
+&lt;div class=&quot;_example elevation--5&quot;&gt;5 (16dp)&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="depthShadows">
+      <h2 class="page-title">Depth shadows</h2>
+
+      <div class="markdown-body">
+        <p>These <code>depth</code> classes set an <code>inset</code> <code>box-shadow</code> to
+illustrate depth below &quot;page surface&quot;.</p>
+<p>Signature: <code>depth--&lt;level&gt;</code></p>
+<pre><code class="lang-example:html">&lt;style&gt;
+._example {
+  width: 25%;
+  height: var(--media-m);
+  padding: 0.25rem;
+  margin: 1rem 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-mono);
+  color: var(--color-violet);
+}
+&lt;/style&gt;
+
+&lt;div class=&quot;_example depth--1&quot;&gt;1 (1dp)&lt;/div&gt;
+&lt;div class=&quot;_example depth--2&quot;&gt;2 (2dp)&lt;/div&gt;
+&lt;div class=&quot;_example depth--3&quot;&gt;3 (4dp)&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="typesetting">
+      <h1 class="page-title">Typesetting</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="headingTags">
+      <h2 class="page-title">Heading Tags</h2>
+
+      <div class="markdown-body">
+        <p>By default, HTML heading tags are set to match the default
+body text. To set the display of a given heading tag, use one
+of the typesetting classes below.</p>
+<pre><code class="lang-example:html">&lt;h1&gt;Heading1&lt;/h1&gt;
+&lt;h2&gt;Heading2&lt;/h2&gt;
+&lt;h3&gt;Heading3&lt;/h3&gt;
+&lt;h4&gt;Heading4&lt;/h4&gt;
+&lt;h5&gt;Heading5&lt;/h5&gt;
+&lt;h6&gt;Heading6&lt;/h6&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="heading1">
+      <h2 class="page-title">Heading 1</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head1&quot;&gt;This is a top-level heading&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="heading2">
+      <h2 class="page-title">Heading 2</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head2&quot;&gt;This is a secondary heading&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="heading3">
+      <h2 class="page-title">Heading 3</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head3&quot;&gt;This is a tertiary heading&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="heading4">
+      <h2 class="page-title">Heading 4</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head4&quot;&gt;This is a minor heading&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="bodyText">
+      <h2 class="page-title">Body</h2>
+
+      <div class="markdown-body">
+        <p>Default body text. No classes necessary.</p>
+<pre><code class="lang-example:html">&lt;p&gt;This is default body text&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="dataText">
+      <h2 class="page-title">Data</h2>
+
+      <div class="markdown-body">
+        <p>Typsetting for data (e.g. tables).</p>
+<pre><code class="lang-example:html">&lt;p class=&quot;typeset--data&quot;&gt;This is data text. Good for tables.&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="captionText">
+      <h2 class="page-title">Caption</h2>
+
+      <div class="markdown-body">
+        <p>Tiny text for captions and legalese.
+<strong>This is not very readable; only use in special circumstances.</strong></p>
+<pre><code class="lang-example:html">&lt;p class=&quot;typeset--caption&quot;&gt;This is a caption. &amp;copy; 2018&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="links">
+      <h2 class="page-title">Links</h2>
+
+      <div class="markdown-body">
+        <pre><code class="lang-example:html">&lt;div&gt;
+  &lt;a class=&quot;typeset--link&quot; href=&quot;#&quot;&gt;This is an actual link with the link class&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;button class=&quot;resetButton typeset--link&quot;&gt;This reset button looks like a link&lt;/button&gt;
+&lt;/div&gt;
+&lt;p&gt;
+  This paragraph as a &lt;span class=&quot;typeset--link&quot;&gt;span&lt;/span&gt; that looks like a link.
+&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="type-modifiers">
+      <h1 class="page-title">Type Modifiers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="typeSizeModifiers">
+      <h2 class="page-title">Size Modifiers</h2>
+
+      <div class="markdown-body">
+        <p>Modifies size of text and adjusts leading accordingly.</p>
+<pre><code class="lang-example:html">&lt;p class=&quot;typemod--huge&quot;&gt;Huge text&lt;/p&gt;
+&lt;p class=&quot;typemod--xxlarge&quot;&gt;XXL text&lt;/p&gt;
+&lt;p class=&quot;typemod--xlarge&quot;&gt;XL text&lt;/p&gt;
+&lt;p class=&quot;typemod--large&quot;&gt;Large text&lt;/p&gt;
+&lt;p&gt;Default body text&lt;/p&gt;
+&lt;p class=&quot;typemod--small&quot;&gt;Small text&lt;/p&gt;
+&lt;p class=&quot;typemod--tiny&quot;&gt;Tiny text&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="typeWeightModifiers">
+      <h2 class="page-title">Weight Modifiers</h2>
+
+      <div class="markdown-body">
+        <p>Modifies weight of text.</p>
+<pre><code class="lang-example:html">&lt;p class=&quot;typemod--bold&quot;&gt;Bold Text&lt;/p&gt;
+&lt;p class=&quot;typemod--book&quot;&gt;Book Text&lt;/p&gt;
+&lt;p class=&quot;typeset--head3&quot;&gt;Modifiers &lt;span class=&quot;typemod--book&quot;&gt;override&lt;/span&gt; default styles&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="typeColorModifiers">
+      <h2 class="page-title">Color Modifiers</h2>
+
+      <div class="markdown-body">
+        <p>Modifies color of text.</p>
+<h3 id="standard-text-colors">Standard text colors</h3>
+<pre><code class="lang-example:html">&lt;p class=&quot;typemod--dark&quot;&gt;Dark Text&lt;/p&gt;
+&lt;p&gt;Default body text&lt;/p&gt;
+&lt;p class=&quot;typemod--light&quot;&gt;Light Text&lt;/p&gt;
+</code></pre>
+<h3 id="fancy-text-colors">Fancy text colors</h3>
+<p>If you don&#39;t see the color you need here, please notify UI Platform.
+<em>Examples set in heading level 4</em></p>
+<pre><code class="lang-example:html">&lt;p class=&quot;typeset--head4 typemod--slate&quot;&gt;Slate text (default body color)&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--green&quot;&gt;Green text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--mint&quot;&gt;Mint text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--navy&quot;&gt;Navy text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--blue&quot;&gt;Blue text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--sky&quot;&gt;Sky text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--purple&quot;&gt;Purple text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--red&quot;&gt;Red text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--orange&quot;&gt;Orange text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--white&quot;&gt;White text&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="typeStyleModifiers">
+      <h2 class="page-title">Type Style Modifiers</h2>
+
+      <div class="markdown-body">
+        <p>Modifies style, decoration, or transform of text</p>
+<pre><code class="lang-example:html">&lt;p class=&quot;typemod--italic&quot;&gt;Italic text&lt;/p&gt;
+&lt;p class=&quot;typemod--underline&quot;&gt;Underline text&lt;/p&gt;
+&lt;p class=&quot;typemod--caps&quot;&gt;Uppercase text&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="form-helpers">
+      <h1 class="page-title">Form Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="inputError">
+      <h2 class="page-title">Input error</h2>
+
+      <div class="markdown-body">
+        <p>By default, any form input that is <code>:invalid</code> will show a
+red border. You can also force the appearance of an
+<code>:invalid</code> state by adding the <code>error</code> class.</p>
+<pre><code class="lang-example:html">&lt;input class=&quot;error&quot; value=&quot;invalid entry&quot; /&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="resetInput">
+      <h2 class="page-title">Reset Input</h2>
+
+      <div class="markdown-body">
+        <p>Sometimes we need to place an input inside another visual
+element, like a chip or a token editor. The <code>resetInput</code>
+class will strip away margin and border styles.</p>
+<pre><code class="lang-example:html">&lt;input value=&quot;Normal input&quot; /&gt;
+&lt;input class=&quot;resetInput&quot; value=&quot;&#39;Reset&#39; input&quot; /&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="resetButton">
+      <h2 class="page-title">Reset Button</h2>
+
+      <div class="markdown-body">
+        <p>Removes default user agent styling from <code>button</code> elements.</p>
+<pre><code class="lang-example:html">&lt;button class=&quot;resetButton&quot;&gt;This is a button&lt;/button&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="text-flow">
+      <h1 class="page-title">Text flow</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="truncate">
+      <h2 class="page-title">Truncate text</h2>
+
+      <div class="markdown-body">
+        <p>Helpers to adjust text wrapping with CSS.</p>
+<p>Allows compontents to render full strings while CSS does the job
+of clamping text to one line.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.wrap--singleLine</code></td>
+<td>forces text to a single line (nowrap)</td>
+</tr>
+<tr>
+<td><code>.wrap--singleLine--truncate</code></td>
+<td>forces text to a single line (nowrap) and truncates with &quot;&hellip;&quot; entity</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+    <section id="wrap">
+      <h2 class="page-title">Text wrap control</h2>
+
+      <div class="markdown-body">
+        <p>Helpers to adjust text wrapping with CSS.</p>
+<p>Allows compontents to render full strings while CSS does the job
+of clamping text to one line.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.wrap--hyphenate</code></td>
+<td>Allows breaking on word with hyphenation</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+        </main>
+      </div>
+      <footer class="footer">
+        Last modified Wednesday, 14 August 2019 13:58
+      </footer>
+    </div>
+    <script src="prism.js?871234"></script>
+    <script src="examples.js?873428"></script>
+    <script src="script.js?02359872"></script>
+    <script src="anchor.min.js?225234"></script>
+    <script src="interact.min.js?8552934"></script>
+    <script>
+     anchors.options = {
+         placement: 'left',
+         visible: 'hover',
+         class: 'anchor-link'
+     };
+     anchors.add('h2, h3');
+
+     /* interact('.docs-resize')
+      *   .resizable({
+      *     edges: {
+      *       left: '.c-resize--left',
+      *       right: '.c-resize--right',
+      *       bottom: false,
+      *       top: false
+      *     },
+      *     onmove: function (e) {
+      *       var width = e.rect.width,
+      *         windowWidth = $(window).width();
+
+      *       if (width < 160) {
+      *         width = 160;
+      *       } else if ((width * 2) + 100 > windowWidth) {
+      *         width = (windowWidth - 100) / 2;
+      *       }
+
+      *       $('.docs-example').find('docs-resize').addClass('resize-overlay');
+      *       $('.docs-resize').style.width = (width * 2) + 'px';
+      *     },
+      *     onend: function () {
+      *       $('.docs-example').find('docs-resize').removeClass('resize-overlay');
+      *     }
+      *   })
+      *   .on('resizemove', function (event) {
+      *     var target = event.target,
+      *         x = (parseFloat(target.getAttribute('data-x')) || 0);
+
+      *     // update the element's style
+      *     target.style.width  = event.rect.width + 'px';
+
+      *     // translate when resizing from top or left edges
+      *     x += event.deltaRect.left;
+
+      *     target.style.webkitTransform = target.style.transform =
+      *       'translateX(' + x + 'px)';
+
+      *     target.setAttribute('data-x', x);
+      *     target.textContent = Math.round(event.rect.width);
+      *   });*/
+    </script>
+    
+  
+  </body>
+</html>
+
+
