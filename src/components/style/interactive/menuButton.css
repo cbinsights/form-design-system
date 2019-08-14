@@ -3,7 +3,8 @@
   color: var(--font-color-primary);
   text-transform: none;
   min-height: var(--media-l);
-  max-width: var(--media-m);
+  min-width: var(--media-l);
+  max-width: var(--media-xl);
 }
 
 .menuButton--active {

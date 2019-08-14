@@ -1,4 +1,7 @@
 .fdsButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border-width: 0;
   padding: calc(var(--space-half) / 2) var(--space-half) !important;

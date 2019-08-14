@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 const MuiButtonShim = ({ children, disabled, isRound, className, ...otherProps }) => (
   <button
     className={cx(
-      'fdsButton alignChild--center--center padding--all--half',
+      'fdsButton padding--all--half',
       {
         'fdsButton--round': isRound,
         'fdsButton--disabled': disabled,
