@@ -20,8 +20,8 @@
 @import "./helperClasses/position/childAlign";
 
 /* Layout Helpers */
-@import "./helperclasses/layout/media";
-@import "./helperclasses/layout/display";
+@import "./helperClasses/layout/media";
+@import "./helperClasses/layout/display";
 
 /* Shadow Helpers */
 @import "./helperClasses/shadow/elevation";
