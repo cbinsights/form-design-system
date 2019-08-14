@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Tue, 13 Aug 2019 21:54:47 GMT
+ * Generated on Wed, 14 Aug 2019 18:41:05 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -816,7 +816,7 @@ name: positionAlign
 section: Position Helpers
 ---
 
-eets `text-align`.
+Sets `text-align`.
 
 class           | description
 --------------- | ---------------------------------
@@ -996,6 +996,31 @@ class           | description
   width: 72px !important;
   width: var(--media-xl) !important;
 }
+/*---
+title: Display
+name: layoutDisplay
+section: Layout Helpers
+---
+
+Modifies display property of element
+
+class                     | description
+------------------------- | ---------------------------------
+`display--none`           | Sets `display` to `none`
+`display--block`          | Sets `display` to `block`
+`display--flex`           | Sets `display` to `flex`
+`display--inline`         | Sets `display` to `inline`
+`display--inlineBlock`    | Sets `display` to `inline-block`
+`display--inlineFlex`     | Sets `display` to `inline-flex`
+`display--grid`           | Sets `display` to `grid`
+*/
+.display--none { display: none; }
+.display--block { display: block; }
+.display--flex { display: flex; }
+.display--inline { display: inline; }
+.display--inlineBlock { display: inline-block; }
+.display--inlineFlex { display: inline-flex; }
+.display--grid { display: grid; }
 /* Shadow Helpers */
 /*---
 title: Elevation shadows

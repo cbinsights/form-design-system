@@ -5,15 +5,15 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>fds-styles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="primer.css" rel="stylesheet"><link href="style.css" rel="stylesheet"><link href="octicons/octicons.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"><link href="public/doc.css" rel="stylesheet"><link href="base-styles/base-styles.full.css" rel="stylesheet">
-    <script>examples={"base":"","target":"_self","css":["base-styles/base-styles.min.css","public/webfont.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
+    <link href="primer.css" rel="stylesheet"><link href="style.css" rel="stylesheet"><link href="octicons/octicons.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"><link href="assets/doc.css" rel="stylesheet">
+    <script>examples={"base":"","target":"_self","css":["lib/fds-styles.css","./assets/webfont.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
     
   </head>
   <body>
     <header class="masthead" style="background-color: #4078c0;">
       <div class="container">
         <a href="/" class="masthead-logo">
-          <img src="public/logo.png" alt="fds-styles" height="32"> fds-styles
+          <img src="assets/logo.png" alt="fds-styles" height="32"> fds-styles
         </a>
         <nav class="masthead-nav">
             
@@ -61,9 +61,6 @@
         <a class="menu-item" href="#layoutMedia"><span>Media Sizing</span></a>
         
         
-        <a class="menu-item" href="#layoutDisplay"><span>Display</span></a>
-        
-        
   
         
         <a class="menu-heading" href="#shadow-helpers"><span>Shadow Helpers</span></a>
@@ -96,9 +93,6 @@
         
         
         <a class="menu-item" href="#bodyText"><span>Body</span></a>
-        
-        
-        <a class="menu-item" href="#bigText"><span>Big</span></a>
         
         
         <a class="menu-item" href="#dataText"><span>Data</span></a>
@@ -370,7 +364,7 @@ Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
       <h2 class="page-title">Align</h2>
 
       <div class="markdown-body">
-        <p>Sets <code>text-align</code>.</p>
+        <p>eets <code>text-align</code>.</p>
 <table>
 <thead>
 <tr>
@@ -520,54 +514,6 @@ dimenions on the selected element to match standard media sizes.</p>
       </div>
     </section>
     
-    <section id="layoutDisplay">
-      <h2 class="page-title">Display</h2>
-
-      <div class="markdown-body">
-        <p>Modifies display property of element</p>
-<table>
-<thead>
-<tr>
-<th>class</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>display--none</code></td>
-<td>Sets <code>display</code> to <code>none</code></td>
-</tr>
-<tr>
-<td><code>display--block</code></td>
-<td>Sets <code>display</code> to <code>block</code></td>
-</tr>
-<tr>
-<td><code>display--flex</code></td>
-<td>Sets <code>display</code> to <code>flex</code></td>
-</tr>
-<tr>
-<td><code>display--inline</code></td>
-<td>Sets <code>display</code> to <code>inline</code></td>
-</tr>
-<tr>
-<td><code>display--inlineBlock</code></td>
-<td>Sets <code>display</code> to <code>inline-block</code></td>
-</tr>
-<tr>
-<td><code>display--inlineFlex</code></td>
-<td>Sets <code>display</code> to <code>inline-flex</code></td>
-</tr>
-<tr>
-<td><code>display--grid</code></td>
-<td>Sets <code>display</code> to <code>grid</code></td>
-</tr>
-</tbody>
-</table>
-
-        
-      </div>
-    </section>
-    
       </div>
     </section>
     
@@ -593,7 +539,7 @@ dimenions on the selected element to match standard media sizes.</p>
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: var(--font-size-s);
+  font-size: var(--font-size-small);
   font-family: var(--font-family-mono);
   color: var(--color-violet);
 }
@@ -626,7 +572,7 @@ illustrate depth below &quot;page surface&quot;.</p>
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: var(--font-size-s);
+  font-size: var(--font-size-small);
   font-family: var(--font-family-mono);
   color: var(--color-violet);
 }
@@ -673,7 +619,7 @@ of the typesetting classes below.</p>
       <h2 class="page-title">Heading 1</h2>
 
       <div class="markdown-body">
-        <pre><code class="lang-example:html">&lt;p class=&quot;type--head1&quot;&gt;This is a top-level heading&lt;/p&gt;
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head1&quot;&gt;This is a top-level heading&lt;/p&gt;
 </code></pre>
 
         
@@ -684,7 +630,7 @@ of the typesetting classes below.</p>
       <h2 class="page-title">Heading 2</h2>
 
       <div class="markdown-body">
-        <pre><code class="lang-example:html">&lt;p class=&quot;type--head2&quot;&gt;This is a secondary heading&lt;/p&gt;
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head2&quot;&gt;This is a secondary heading&lt;/p&gt;
 </code></pre>
 
         
@@ -695,7 +641,7 @@ of the typesetting classes below.</p>
       <h2 class="page-title">Heading 3</h2>
 
       <div class="markdown-body">
-        <pre><code class="lang-example:html">&lt;p class=&quot;type--head3&quot;&gt;This is a tertiary heading&lt;/p&gt;
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head3&quot;&gt;This is a tertiary heading&lt;/p&gt;
 </code></pre>
 
         
@@ -706,7 +652,7 @@ of the typesetting classes below.</p>
       <h2 class="page-title">Heading 4</h2>
 
       <div class="markdown-body">
-        <pre><code class="lang-example:html">&lt;p class=&quot;type--head4&quot;&gt;This is a minor heading&lt;/p&gt;
+        <pre><code class="lang-example:html">&lt;p class=&quot;typeset--head4&quot;&gt;This is a minor heading&lt;/p&gt;
 </code></pre>
 
         
@@ -725,25 +671,12 @@ of the typesetting classes below.</p>
       </div>
     </section>
     
-    <section id="bigText">
-      <h2 class="page-title">Big</h2>
-
-      <div class="markdown-body">
-        <p>Big body text. Conceptually, this maps to the <code>&lt;big&gt;</code>
-non-heading element.</p>
-<pre><code class="lang-example:html">&lt;p class=&quot;type--big&quot;&gt;This is big body text&lt;/p&gt;
-</code></pre>
-
-        
-      </div>
-    </section>
-    
     <section id="dataText">
       <h2 class="page-title">Data</h2>
 
       <div class="markdown-body">
         <p>Typsetting for data (e.g. tables).</p>
-<pre><code class="lang-example:html">&lt;p class=&quot;type--data&quot;&gt;This is data text. Good for tables.&lt;/p&gt;
+<pre><code class="lang-example:html">&lt;p class=&quot;typeset--data&quot;&gt;This is data text. Good for tables.&lt;/p&gt;
 </code></pre>
 
         
@@ -756,7 +689,7 @@ non-heading element.</p>
       <div class="markdown-body">
         <p>Tiny text for captions and legalese.
 <strong>This is not very readable; only use in special circumstances.</strong></p>
-<pre><code class="lang-example:html">&lt;p class=&quot;type--caption&quot;&gt;This is a caption. &amp;copy; 2018&lt;/p&gt;
+<pre><code class="lang-example:html">&lt;p class=&quot;typeset--caption&quot;&gt;This is a caption. &amp;copy; 2018&lt;/p&gt;
 </code></pre>
 
         
@@ -768,13 +701,13 @@ non-heading element.</p>
 
       <div class="markdown-body">
         <pre><code class="lang-example:html">&lt;div&gt;
-  &lt;a class=&quot;type--link&quot; href=&quot;#&quot;&gt;This is an actual link with the link class&lt;/a&gt;
+  &lt;a class=&quot;typeset--link&quot; href=&quot;#&quot;&gt;This is an actual link with the link class&lt;/a&gt;
 &lt;/div&gt;
 &lt;div&gt;
-  &lt;button class=&quot;resetButton type--link&quot;&gt;This reset button looks like a link&lt;/button&gt;
+  &lt;button class=&quot;resetButton typeset--link&quot;&gt;This reset button looks like a link&lt;/button&gt;
 &lt;/div&gt;
 &lt;p&gt;
-  This paragraph as a &lt;span class=&quot;type--link&quot;&gt;span&lt;/span&gt; that looks like a link.
+  This paragraph as a &lt;span class=&quot;typeset--link&quot;&gt;span&lt;/span&gt; that looks like a link.
 &lt;/p&gt;
 </code></pre>
 
@@ -796,14 +729,13 @@ non-heading element.</p>
 
       <div class="markdown-body">
         <p>Modifies size of text and adjusts leading accordingly.</p>
-<pre><code class="lang-example:html">&lt;p class=&quot;fontSize--4xl&quot;&gt;4XL Text&lt;/p&gt;
-&lt;p class=&quot;fontSize--3xl&quot;&gt;3XL Text&lt;/p&gt;
-&lt;p class=&quot;fontSize--2xl&quot;&gt;2XL Text&lt;/p&gt;
-&lt;p class=&quot;fontSize--xl&quot;&gt;XL Text&lt;/p&gt;
-&lt;p class=&quot;fontSize--l&quot;&gt;L Text&lt;/p&gt;
-&lt;p class=&quot;fontSize--default&quot;&gt;Default text (default)&lt;/p&gt;
-&lt;p class=&quot;fontSize--s&quot;&gt;S text&lt;/p&gt;
-&lt;p class=&quot;fontSize--xs&quot;&gt;XS text&lt;/p&gt;
+<pre><code class="lang-example:html">&lt;p class=&quot;typemod--huge&quot;&gt;Huge text&lt;/p&gt;
+&lt;p class=&quot;typemod--xxlarge&quot;&gt;XXL text&lt;/p&gt;
+&lt;p class=&quot;typemod--xlarge&quot;&gt;XL text&lt;/p&gt;
+&lt;p class=&quot;typemod--large&quot;&gt;Large text&lt;/p&gt;
+&lt;p&gt;Default body text&lt;/p&gt;
+&lt;p class=&quot;typemod--small&quot;&gt;Small text&lt;/p&gt;
+&lt;p class=&quot;typemod--tiny&quot;&gt;Tiny text&lt;/p&gt;
 </code></pre>
 
         
@@ -815,9 +747,9 @@ non-heading element.</p>
 
       <div class="markdown-body">
         <p>Modifies weight of text.</p>
-<pre><code class="lang-example:html">&lt;p class=&quot;fontWeight--bold&quot;&gt;Bold Text&lt;/p&gt;
-&lt;p class=&quot;fontWeight--book&quot;&gt;Book Text&lt;/p&gt;
-&lt;p class=&quot;type--head3&quot;&gt;Modifiers &lt;span class=&quot;fontWeight--book&quot;&gt;override&lt;/span&gt; default styles&lt;/p&gt;
+<pre><code class="lang-example:html">&lt;p class=&quot;typemod--bold&quot;&gt;Bold Text&lt;/p&gt;
+&lt;p class=&quot;typemod--book&quot;&gt;Book Text&lt;/p&gt;
+&lt;p class=&quot;typeset--head3&quot;&gt;Modifiers &lt;span class=&quot;typemod--book&quot;&gt;override&lt;/span&gt; default styles&lt;/p&gt;
 </code></pre>
 
         
@@ -830,45 +762,23 @@ non-heading element.</p>
       <div class="markdown-body">
         <p>Modifies color of text.</p>
 <h3 id="standard-text-colors">Standard text colors</h3>
-<pre><code class="lang-example:html">&lt;div class=&quot;padding--all&quot;&gt;
-  &lt;p class=&quot;color--heading&quot;&gt;Heading text color&lt;/p&gt;
-  &lt;p class=&quot;color--primary&quot;&gt;Primary text color (default)&lt;/p&gt;
-  &lt;p class=&quot;color--secondary&quot;&gt;Secondary text color&lt;/p&gt;
-  &lt;p class=&quot;color--hint&quot;&gt;Hint text color&lt;/p&gt;
-  &lt;p class=&quot;color--success&quot;&gt;Success text color&lt;/p&gt;
-  &lt;p class=&quot;color--error&quot;&gt;Error text color&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
-<h3 id="inverted-standard-text-colors">Inverted standard text colors</h3>
-<p>When using standard text color classes (<code>heading</code>,
-<code>primary</code>, <code>secondary</code>, <code>hint</code>), a parent element with the
-<code>inverted</code> class will switch the text to tints of white.</p>
-<pre><code class="lang-example:html">&lt;div class=&quot;padding--all inverted&quot; style=&quot;background: var(--color-navy);&quot;&gt;
-  &lt;p class=&quot;color--heading&quot;&gt;Heading text color&lt;/p&gt;
-  &lt;p class=&quot;color--primary&quot;&gt;Primary text color (default)&lt;/p&gt;
-  &lt;p class=&quot;color--secondary&quot;&gt;Secondary text color&lt;/p&gt;
-  &lt;p class=&quot;color--hint&quot;&gt;Hint text color&lt;/p&gt;
-  &lt;p class=&quot;color--success&quot;&gt;Success text color&lt;/p&gt;
-  &lt;p class=&quot;color--error&quot;&gt;Error text color&lt;/p&gt;
-&lt;/div&gt;
+<pre><code class="lang-example:html">&lt;p class=&quot;typemod--dark&quot;&gt;Dark Text&lt;/p&gt;
+&lt;p&gt;Default body text&lt;/p&gt;
+&lt;p class=&quot;typemod--light&quot;&gt;Light Text&lt;/p&gt;
 </code></pre>
 <h3 id="fancy-text-colors">Fancy text colors</h3>
 <p>If you don&#39;t see the color you need here, please notify UI Platform.
-<em>Text in this example is set in <code>fontWeight--bold</code></em></p>
-<pre><code class="lang-example:html">&lt;ul class=&quot;fontWeight--bold&quot;&gt;
-  &lt;li class=&quot;color--slate&quot;&gt;Slate text&lt;/li&gt;
-  &lt;li class=&quot;color--green&quot;&gt;Green text&lt;/li&gt;
-  &lt;li class=&quot;color--mint&quot;&gt;Mint text&lt;/li&gt;
-  &lt;li class=&quot;color--navy&quot;&gt;Navy text&lt;/li&gt;
-  &lt;li class=&quot;color--blue&quot;&gt;Blue text&lt;/li&gt;
-  &lt;li class=&quot;color--aqua&quot;&gt;Aqua text&lt;/li&gt;
-  &lt;li class=&quot;color--sky&quot;&gt;Sky text&lt;/li&gt;
-  &lt;li class=&quot;color--violet&quot;&gt;Purple text&lt;/li&gt;
-  &lt;li class=&quot;color--purple&quot;&gt;Purple text&lt;/li&gt;
-  &lt;li class=&quot;color--red&quot;&gt;Red text&lt;/li&gt;
-  &lt;li class=&quot;color--orange&quot;&gt;Orange text&lt;/li&gt;
-  &lt;li class=&quot;color--white&quot;&gt;White text&lt;/li&gt;
-&lt;/ul&gt;
+<em>Examples set in heading level 4</em></p>
+<pre><code class="lang-example:html">&lt;p class=&quot;typeset--head4 typemod--slate&quot;&gt;Slate text (default body color)&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--green&quot;&gt;Green text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--mint&quot;&gt;Mint text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--navy&quot;&gt;Navy text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--blue&quot;&gt;Blue text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--sky&quot;&gt;Sky text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--purple&quot;&gt;Purple text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--red&quot;&gt;Red text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--orange&quot;&gt;Orange text&lt;/p&gt;
+&lt;p class=&quot;typeset--head4 typemod--white&quot;&gt;White text&lt;/p&gt;
 </code></pre>
 
         
@@ -880,9 +790,9 @@ non-heading element.</p>
 
       <div class="markdown-body">
         <p>Modifies style, decoration, or transform of text</p>
-<pre><code class="lang-example:html">&lt;p class=&quot;fontStyle--italic&quot;&gt;Italic text&lt;/p&gt;
-&lt;p class=&quot;fontStyle--underline&quot;&gt;Underline text&lt;/p&gt;
-&lt;p class=&quot;fontStyle--caps&quot;&gt;Uppercase text&lt;/p&gt;
+<pre><code class="lang-example:html">&lt;p class=&quot;typemod--italic&quot;&gt;Italic text&lt;/p&gt;
+&lt;p class=&quot;typemod--underline&quot;&gt;Underline text&lt;/p&gt;
+&lt;p class=&quot;typemod--caps&quot;&gt;Uppercase text&lt;/p&gt;
 </code></pre>
 
         
@@ -1010,7 +920,7 @@ of clamping text to one line.</p>
         </main>
       </div>
       <footer class="footer">
-        Last modified Wednesday, 14 August 2019 14:41
+        Last modified Wednesday, 14 August 2019 13:58
       </footer>
     </div>
     <script src="prism.js?871234"></script>
