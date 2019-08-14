@@ -1,8 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import Avatar from '@material-ui/core/Avatar';
-import { withStyles } from '@material-ui/core/styles';
+import MuiAvatarShim from './MuiAvatarShim';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 
 /**
@@ -28,41 +27,34 @@ const AvatarRow = (props) => {
 
   const classNames = cx('avatarRow', `avatarRow--${size}`, className);
 
-  const fontClass = cx({
-    'fontSize--xs': size === 's',
-    'fontSize--s': size === 'm',
-    'fontSize--2xl': size === 'xl',
-  });
-
-  const StyledAvatar = withStyles({ root: { borderColor } })(Avatar);
+  const borderStyle = {
+    border: `2px solid ${borderColor}`,
+  };
 
   return (
     <ul className={classNames}>
       {/* avatars */}
       {renderConfig.renderList.map((member, i) => (
         <li className="avatarRow-item" key={`${member.name.replace(/\s/g, '')}-${i}`}>
-          {member.src ? (
-            <StyledAvatar
-              alt={member.name}
-              src={member.src}
-              className="avatarRow-avatar"
-            />
-          ) : (
-            <StyledAvatar alt={member.name} className={cx('avatarRow-avatar', fontClass)}>
-              {member.name.charAt(0).toUpperCase()}
-            </StyledAvatar>
-          )}
+          <MuiAvatarShim
+            name={member.name}
+            src={member.src}
+            size={size}
+            className="avatarRow-avatar"
+            style={borderStyle}
+          />
         </li>
       ))}
 
       {/* overflow count bubble */}
       {renderConfig.count > 0 && (
         <li className="avatarRow-item">
-          <StyledAvatar className="avatarRow-avatar avatarRow-avatar--count">
-            <span className={cx('fontWeight--default', fontClass)}>
-              +{renderConfig.count}
-            </span>
-          </StyledAvatar>
+          <div
+            className={cx('avatarRow-count alignChild--center--center', `media--${size}`)}
+            style={borderStyle}
+          >
+            <span className="fontWeight--bold">+{renderConfig.count}</span>
+          </div>
         </li>
       )}
     </ul>

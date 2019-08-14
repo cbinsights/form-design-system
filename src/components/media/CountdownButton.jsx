@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Transition } from 'react-transition-group';
-import IconButton from '@material-ui/core/IconButton';
+import MuiButtonShim from '../interactive/MuiButtonShim';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 
@@ -21,7 +21,7 @@ export const getCircleInfo = (circleSize, strokeWidth) => {
 };
 
 const CountdownButton = ({ icon, duration, onClick }) => {
-  const circleSize = 40; // match MUI IconButton with xs icon inside
+  const circleSize = 34; // match size to MuiButtonShim size
   const strokeWidth = '2';
   const { r, c, centerOffset } = getCircleInfo(circleSize, strokeWidth);
 
@@ -55,9 +55,9 @@ const CountdownButton = ({ icon, duration, onClick }) => {
         height: `${circleSize}px`,
       }}
     >
-      <IconButton className="countdownButton-button" onClick={onClick}>
+      <MuiButtonShim className="countdownButton-button" onClick={onClick} isRound>
         {icon}
-      </IconButton>
+      </MuiButtonShim>
       <Transition
         in={true}
         appear

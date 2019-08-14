@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
+import MuiButtonShim from './MuiButtonShim';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 
@@ -22,7 +22,7 @@ const MenuButton = (props) => {
   } = props;
 
   return (
-    <Button
+    <MuiButtonShim
       className={cx(
         'menuButton',
         {
@@ -44,7 +44,7 @@ const MenuButton = (props) => {
           {label}
         </FlexItem>
       </Flex>
-    </Button>
+    </MuiButtonShim>
   );
 };
 

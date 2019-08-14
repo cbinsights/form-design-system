@@ -1,0 +1,33 @@
+.fdsButton {
+  background: transparent;
+  border-width: 0;
+  padding: calc(var(--space-half) / 2) var(--space-half) !important;
+  border-radius: var(--border-radius-default);
+  cursor: pointer;
+  color: var(--font-color-secondary);
+  fill: var(--font-color-secondary);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.fdsButton--round {
+  border-radius: 100%;
+}
+
+.fdsButton--disabled {
+  cursor: initial;
+}
+
+.fdsButton:hover {
+  background: rgba(0, 0, 0, 0.08); /* match material-ui */
+}
+
+.fdsButton:active {
+  background: rgba(0, 0, 0, 0.18); /* match material-ui */
+}
+
+.fdsButton--disabled:hover,
+.fdsButton--disabled:active {
+  background: transparent;
+}
