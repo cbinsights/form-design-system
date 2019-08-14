@@ -121,7 +121,8 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test && yarn build:full && git add docs && git commit -m 'build docs'"
     }
   },
   "lint-staged": {
