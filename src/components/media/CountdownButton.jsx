@@ -55,7 +55,11 @@ const CountdownButton = ({ icon, duration, onClick }) => {
         height: `${circleSize}px`,
       }}
     >
-      <MuiButtonShim className="countdownButton-button" onClick={onClick} isRound>
+      <MuiButtonShim
+        className="countdownButton-button color--secondary"
+        onClick={onClick}
+        isRound
+      >
         {icon}
       </MuiButtonShim>
       <Transition
@@ -94,7 +98,7 @@ const CountdownButton = ({ icon, duration, onClick }) => {
 };
 
 CountdownButton.defaultProps = {
-  icon: <DenyIcon size="xs" color={FDS.FONT_COLOR_PRIMARY} />,
+  icon: <DenyIcon size="xs" color={FDS.FONT_COLOR_SECONDARY} />,
 };
 
 CountdownButton.propTypes = {
