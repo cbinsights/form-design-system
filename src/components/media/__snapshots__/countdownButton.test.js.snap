@@ -11,11 +11,11 @@ exports[`CountdownButton matches snapshot 1`] = `
   }
 >
   <MuiButtonShim
-    className="countdownButton-button"
+    className="countdownButton-button color--secondary"
     isRound={true}
   >
     <DenyIcon
-      color="rgba(64, 64, 64, 0.87)"
+      color="rgba(64, 64, 64, 0.60)"
       size="xs"
     />
   </MuiButtonShim>
