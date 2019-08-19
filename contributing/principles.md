@@ -60,7 +60,8 @@ Each component or utility class should strive to do one, and only one thing.
 
 ## "Worse is Better"
 
-**tl;dr** Releasing an imperfect component is better than not releasing it.
+**tl;dr** Releasing an imperfect component is better than not releasing it. Components
+should provide as little functionality as possible.
 
 Building a generic component that can accommodate all future use cases is hard. To
 optimize for building components and gaining contributors, we can ease the burden of

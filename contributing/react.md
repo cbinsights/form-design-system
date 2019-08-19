@@ -13,10 +13,8 @@ We want components to follow the same rules of a pure function:
 
 Consider [this chip component](http://mbootstrap.com/docs/forms/chips). It only renders a
 chip. A consumer may have a business requirement to render the chip as a link, a button,
-or an input... the possibilities are endless. By constraining `Chip` to be a [small, sharp too](./principles.md#small-sharp-tools),
-consumers are held responsible for meeting business requirements with composition. This
-keeps the bussiness-related complexity out of our component library and maximizes
-flexibility in consumers.
+or an input... the possibilities are endless. By constraining `Chip` to be a [small, sharp tool](./principles.md#small-sharp-tools),
+consumers are held responsible for meeting business requirements via composition.
 
 
 ## Prop interface guidelines
