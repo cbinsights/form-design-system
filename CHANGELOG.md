@@ -115,7 +115,7 @@ Old CSS color var        | New CSS color var
 `--font-color-dark`      | `--font-color-heading`
 `--font-color-default`   | `--font-color-primary`
 `--font-color-light`     | `--font-color-secondary`
-`--font-color-diabled`   | `--font-color-hint`
+`--font-color-disabled`   | `--font-color-hint`
 
 `fds-dictionary` size migration:
 
@@ -146,7 +146,7 @@ Old size CSS class  | New size CSS class
 `typemod--xxlarge`  | `fontSize--3xl`
 `typemod--xlarge`   | `fontSize--xl`
 `typemod--large`    | `fontSize--l`
-`typemod--small`    | `fontSize-s-`
+`typemod--small`    | `fontSize--s`
 `typemod--tiny`     | `fontSize--xs`
 
 `fds-styles` color migration:
