@@ -11,6 +11,23 @@ The design system is comprised of a number of modules published as a single npm 
 yarn add form-design-system
 ```
 
+### Importing
+
+```js
+// JS constants like FDS.COLOR_MINT
+import FDS from '@cbinsights/fds/lib/js/styleConstants';
+
+// React components
+import FDS from '@cbinsights/fds/lib/components/layout/Flex';
+
+// Icons
+import CloudIcon from '@cbinsights/fds/lib/react/CloudIcon';
+```
+
+**Use [this unpkg link](https://unpkg.com/browse/@cbinsights/fds/) to see all files
+published to the npm package.**
+
+
 ### Documentation
 [https://cbinsights.github.io/form-design-system/](https://cbinsights.github.io/form-design-system/)
 
