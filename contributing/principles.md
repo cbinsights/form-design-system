@@ -26,6 +26,17 @@ the FDS library within `cbi-site`, admins, and any other front end CB Insights m
 - Components that are tied to a specific application or feature
 - Components that are not "small and sharp" (see below)
 
+## Alignment with design
+When it comes to standard UI components, Engineering and Design should speak the same
+language. In practice, this means:
+
+- Publicly exposed components in FDS should be named based on how design refers to the
+component in their sketch library
+- Component structure and semantic grouping should reflect design intention
+
+When someone refers to a "Chip", we should have a shared understanding across design,
+engineering, and product.
+
 ## Small, sharp tools
 Components, CSS classes, and other tools in FDS follow what could be called the ["Unix
 Philosphy"](https://en.wikipedia.org/wiki/Unix_philosophy). There is no formal definition, but this summary fits well:
@@ -41,6 +52,8 @@ the flexibility to compose those smaller pieces into more complex patterns.
 
 Each individual component or class should behave the same way no matter where it lives in a
 consumer application.
+
+Each component should define only the props it needs for presentation.
 
 Each component or utility class should strive to do one, and only one thing.
 
@@ -61,7 +74,6 @@ Here are some key points of this method as it applies to FDS:
 In short, this means that a component only needs to support the absolute minimum functionality
 before shipping. **Favor software designs that can be iterated on as needed instead of optimizing for
 complexity up-front.**
-
 
 ## Native web standards preferred
 You can do almost anything in javascript, but that doesn't mean you should. Components

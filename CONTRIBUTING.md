@@ -5,6 +5,7 @@ Guidelines for contributing to Form Design System.
 ## [Guiding principles](contributing/principles.md)
   - [Purpose of FDS](contributing/principles.md##purpose-of-the-design-system)
   - [What belongs in FDS?](contributing/principles.md#what-belongs-in-fds)
+  - [Alignment with design](contributing/principles.md#alignment-with-design)
   - [Small, sharp tools](contributing/principles.md#small-sharp-tools)
   - ["Worse is Better"](contributing/principles.md#worse-is-better)
   - [Native web standards preferred](contributing/principles.md#native-web-standards-preferred)
@@ -35,7 +36,7 @@ Guidelines for contributing to Form Design System.
   - [Prop interface guidelines](contributing/react.md#prop-interface-guidelines)
 
 ## [Styling guidelines](contributing/styling.md)
+  - [Styling components](contributing/styling.md#styling-components)
   - [Managing specificity](contributing/styling.md#managing-specificity)
-  - [Conditional styling](contributing/styling.md#conditional-styling)
   - [Managing layout and spacing](contributing/styling.md#managing-layout-and-spacing)
   - [Styling typography](contributing/styling.md#styling-typography)

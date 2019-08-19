@@ -3,6 +3,28 @@
 # Styling Guidelines
 🎨 How to CSS in FDS
 
+## Styling components
+
+Prefer CSS custom properties over hard coded values. The [style dictionary](https://cbinsights.github.io/form-design-system/fds-dictionary/) in fds lists available custom properties.
+
+```diff
+.foo {
+-  background-color: #ff6633;
++  background-color: var(--color-orange);
+}
+```
+
+Prefer existing utility classes over writing new CSS
+
+```diff
+-.fooComponent {
+-  padding-top: var(--space-default);
+-  color: var(--color-secondary);
+-  display: inline-block;
+-}
++<div className="padding--top color--secondary display--inlineBlock">
+```
+
 ## Managing specificity
 **Aim to keep selectors to a single class**. Avoid ancestry and combinators.
 
@@ -14,12 +36,19 @@ styles of an element, and additional classes can be added to modify style proper
 <Component className="base base--variant base--anotherVariant" />
 ```
 
-### Conditional styling
-**Avoid binary class switching. Use an additive class pattern instead.**
+**Avoid binary class switching**. Use an additive class pattern instead.
 
 ```diff
 -className={isSelected ? 'menu-item-selected' : 'menu-item-normal'}
 +className=cx('menu-item', { 'menu-item--selected': isSelected })
+```
+
+**Avoid ancestry.** Instead, use a single class that is directly applied to the element that must be
+styled.
+
+```diff
+-.flex .flexItem {}
++.flex-flexItem {}
 ```
 
 ## Managing layout and spacing
