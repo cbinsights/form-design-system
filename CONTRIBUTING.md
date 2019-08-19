@@ -3,10 +3,10 @@
 Guidelines for contributing to Form Design System.
 
 ## [Guiding principles](contributing/principles.md)
-  - [Purpose of FDS](contributing/principles.md#purpose)
-  - [What belongs in FDS?](contributing/principles.md#what-belongs)
-  - [Small, sharp tools](contributing/principles.md#unix-philosophy)
-  - [Native web standards preferred](contributing/principles.md#native)
+  - [Purpose of FDS](contributing/principles.md##purpose-of-the-design-system)
+  - [What belongs in FDS?](contributing/principles.md#what-belongs-in-fds)
+  - [Small, sharp tools](contributing/principles.md#small-sharp-tools)
+  - [Native web standards preferred](contributing/principles.md#native-web-standards-preferred)
   - ["Worse is Better"](contributing/principles.md#worse-is-better)
 
 ## [Editor settings](contributing/editor.md)

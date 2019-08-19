@@ -1,6 +1,8 @@
+[&larr; Table of Contents](../CONTRIBUTING.md)
+-----
+
 # Guiding Principles
 💡 The _what_ and _why_ of Form Design System software.
------
 
 ## Purpose of the design system
 At CB Insights, our design system has a number of goals that aim to help us build a
@@ -9,11 +11,11 @@ world-class UI:
 - _Record design and implementation decisions for reusable UI_
 - _Foster consistency in visual design and behavior of UI_
 - _Enable front end engineers to pool their knowledge into a single point of truth for UI components_
-- _Provide the basic building blocks of a CB Insights UI so that feature teams can spend less time on UI details and more time on solving business problems_
+- _Help feature teams spend less time on UI details and more time on solving business problems_
 
 ## What belongs in FDS?
 All styles and components in FDS should be application-agnostic. We should be able to use
-these projects within `cbi-site`, admins, and any other front end CB Insights may build.
+the FDS library within `cbi-site`, admins, and any other front end CB Insights may build.
 
 ### ✅ Belongs in FDS
 - Low specificity, global utility classes
@@ -36,9 +38,12 @@ Consider the design of `cat`:
 > The design of cat is typical of most UNIX programs: it implements one simple but general function that can be used in many different applications (including many not envisioned by the original author).
 
 Making our CSS classes and React components as small and sharp as possible gives consumers
-the flexibility to compose those smaller pieces into more complex patterns. Each
-individual component or class should behave the same way no matter where it lives in a
+the flexibility to compose those smaller pieces into more complex patterns.
+
+Each individual component or class should behave the same way no matter where it lives in a
 consumer application.
+
+Each component or utility class should strive to do one, and only one thing.
 
 
 ## Native web standards preferred

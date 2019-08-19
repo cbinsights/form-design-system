@@ -1,6 +1,8 @@
+[&larr; Table of Contents](../CONTRIBUTING.md)
+-----
+
 # Releases and Publishing
 🛠 How the build and publish pipeline works
------
 
 ## Managing [semver](https://semver.org/) in FDS
 When making changes, bump the semantic version in your branch `Jenkinsfile`.

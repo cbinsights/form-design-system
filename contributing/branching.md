@@ -1,6 +1,8 @@
+[&larr; Table of Contents](../CONTRIBUTING.md)
+-----
+
 # Branching
 ⑃ Branching conventions in Form Design System
------
 
 Form Design System is published as an npm package. **There are no `develop` or `staging`
 environments.**
