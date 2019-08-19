@@ -1,5 +1,4 @@
 [&larr; Table of Contents](../CONTRIBUTING.md)
------
 
 # Releases and Publishing
 🛠 How the build and publish pipeline works

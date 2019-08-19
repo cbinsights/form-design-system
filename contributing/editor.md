@@ -1,5 +1,4 @@
 [&larr; Table of Contents](../CONTRIBUTING.md)
------
 
 # Editor Settings
 ⚙️ How to make your editor work well with FDS

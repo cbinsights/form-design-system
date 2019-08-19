@@ -1,5 +1,4 @@
 [&larr; Table of Contents](../CONTRIBUTING.md)
------
 
 # Guiding Principles
 💡 The _what_ and _why_ of Form Design System software.
@@ -46,23 +45,6 @@ consumer application.
 Each component or utility class should strive to do one, and only one thing.
 
 
-## Native web standards preferred
-You can do almost anything in javascript, but that doesn't mean you should. Components
-should leverage as much as possible from native web standards supported by modern
-browsers.
-
-It is unlikely that a custom JS solution will perform as reliably as something implemented
-natively in a browser.
-
-For example, `position: sticky` should be preferred over a JS solution to fixing content
-during scroll.
-
-### JS-in-JS, CSS-in-CSS
-In FDS, we have opted for keeping styling as close to native web standards as possible.
-We do not use any CSS-in-JS libraries. We do not use CSS preprocessors. CSS is written
-based on the latest CSS standards (with help from PostCSS for polyfills and vendor sugar).
-
-
 ## "Worse is Better"
 
 **tl;dr** Releasing an imperfect component is better than not releasing it.
@@ -79,4 +61,21 @@ Here are some key points of this method as it applies to FDS:
 In short, this means that a component only needs to support the absolute minimum functionality
 before shipping. **Favor software designs that can be iterated on as needed instead of optimizing for
 complexity up-front.**
+
+
+## Native web standards preferred
+You can do almost anything in javascript, but that doesn't mean you should. Components
+should leverage as much as possible from native web standards supported by modern
+browsers.
+
+It is unlikely that a custom JS solution will perform as reliably as something implemented
+natively in a browser.
+
+For example, `position: sticky` should be preferred over a JS solution to fixing content
+during scroll.
+
+### JS-in-JS, CSS-in-CSS
+In FDS, we have opted for keeping styling as close to native web standards as possible.
+We do not use any CSS-in-JS libraries. We do not use CSS preprocessors. CSS is written
+based on the latest CSS standards (with help from PostCSS for polyfills and vendor sugar).
 

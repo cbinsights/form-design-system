@@ -1,5 +1,4 @@
 [&larr; Table of Contents](../CONTRIBUTING.md)
------
 
 # Styling Guidelines
 🎨 How to CSS in FDS

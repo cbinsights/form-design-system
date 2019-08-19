@@ -1,5 +1,4 @@
 [&larr; Table of Contents](../CONTRIBUTING.md)
------
 
 # Branching
 ⑃ Branching conventions in Form Design System

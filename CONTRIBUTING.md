@@ -6,8 +6,8 @@ Guidelines for contributing to Form Design System.
   - [Purpose of FDS](contributing/principles.md##purpose-of-the-design-system)
   - [What belongs in FDS?](contributing/principles.md#what-belongs-in-fds)
   - [Small, sharp tools](contributing/principles.md#small-sharp-tools)
-  - [Native web standards preferred](contributing/principles.md#native-web-standards-preferred)
   - ["Worse is Better"](contributing/principles.md#worse-is-better)
+  - [Native web standards preferred](contributing/principles.md#native-web-standards-preferred)
 
 ## [Editor settings](contributing/editor.md)
   - [EditorConfig](contributing/editor.md#editorconfig)
@@ -16,11 +16,11 @@ Guidelines for contributing to Form Design System.
   - [Stylelint](contributing/editor.md#stylelint)
 
 ## [Branching](contributing/branching.md)
-  - [Features, enhancements, and bug fixes](contributing/branching.md#feature)
-  - [Major release branches](contributing/branching.md#release)
+  - [Features, enhancements, and bug fixes](contributing/branching.md#eatures-enhancements-and-bug-fixes)
+  - [Major release branches](contributing/branching.md#major-release-branches)
 
 ## [Releases and publishing](contributing/release-and-publish.md)
-  - [Managing semver in FDS](contributing/release-and-publish.md#semver)
+  - [Managing semver in FDS](contributing/release-and-publish.md#managing-semver-in-fds)
   - [Build pipeline](contributing/release-and-publish.md#build-pipeline)
   - [Publishing docs](contributing/release-and-publish.md#publishing-docs)
 
