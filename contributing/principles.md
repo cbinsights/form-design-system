@@ -72,9 +72,10 @@ Here are some key points of this method as it applies to FDS:
 - Components should be consistent, **but not at the sacrifice of simplicity**.
 - Components should cover as many use cases as possible, but **completeness is not as important as simplicity**
 
-In short, this means that a component only needs to support the absolute minimum functionality
-before shipping. **Favor software designs that can be iterated on as needed instead of optimizing for
-complexity up-front.**
+This means that a component only needs to support the absolute minimum functionality
+before shipping.
+
+**Favor software designs that can be iterated on as needed instead of optimizing for complexity up-front.**
 
 ## Native web standards preferred
 You can do almost anything in javascript, but that doesn't mean you should. Components
