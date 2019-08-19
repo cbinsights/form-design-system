@@ -25,7 +25,7 @@ Guidelines for contributing to Form Design System.
   - [Publishing docs](contributing/release-and-publish.md#publishing-docs)
 
 ## [Naming conventions](contributing/naming-conventions.md)
-  - [Dictionary variables](contributing/naming-conventions.md#variables)
+  - [Dictionary variables](contributing/naming-conventions.md#dictionary-variables)
   - [Components](contributing/naming-conventions.md#components)
   - [Props](contributing/naming-conventions.md#props)
   - [CSS classes](contributing/naming-conventions.md#classes)
