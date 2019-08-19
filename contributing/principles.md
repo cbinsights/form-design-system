@@ -59,10 +59,6 @@ Each component or utility class should strive to do one, and only one thing.
 
 
 ## "Worse is Better"
-
-**tl;dr** Releasing an imperfect component is better than not releasing it. Components
-should provide as little functionality as possible.
-
 Building a generic component that can accommodate all future use cases is hard. To
 optimize for building components and gaining contributors, we can ease the burden of
 designing a generic component by following the ["Worse is Better"](https://en.wikipedia.org/wiki/Worse_is_better) method.
@@ -72,8 +68,7 @@ Here are some key points of this method as it applies to FDS:
 - Components should be consistent, **but not at the sacrifice of simplicity**.
 - Components should cover as many use cases as possible, but **completeness is not as important as simplicity**
 
-This means that a component only needs to support the absolute minimum functionality
-before shipping.
+This means that a component only needs to support the absolute minimum functionality before shipping.
 
 **Favor software designs that can be iterated on as needed instead of optimizing for complexity up-front.**
 
