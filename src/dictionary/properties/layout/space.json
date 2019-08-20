@@ -3,7 +3,7 @@
     "space": {
 
       "double":  { "value": "32px" },
-      "default": { "value": "{font.size.default.value}" },
+      "default": { "value": "16px" },
       "half":    { "value": "8px" }
 
     }
