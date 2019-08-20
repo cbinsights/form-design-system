@@ -40,7 +40,7 @@ styles of an element, and additional classes can be added to modify style proper
 
 ```diff
 -className={isSelected ? 'menu-item-selected' : 'menu-item-normal'}
-+className=cx('menu-item', { 'menu-item--selected': isSelected })
++className={`menu-item ${isSelected && menu-item--selected}`}
 ```
 
 **Avoid ancestry.** Instead, use a single class that is directly applied to the element that must be
