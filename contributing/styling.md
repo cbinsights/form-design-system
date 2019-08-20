@@ -65,13 +65,22 @@ component.
 
 ## Styling typography
 
-**Avoid setting font properties in CSS**. Prefer utility classes provided by FDS:
+**Avoid setting font properties in CSS**. Prefer utility classes provided by FDS.
 
 CSS rule                                   | utility class
 ------------------------------------------ | --------------------
 🚫 `font-size: var(--font-size-xl)`        | ✅ `.fontSize--xl`
 🚫 `font-weight: var(--font-weight-bold)`  | ✅ `.fontWeight--bold`
 🚫 `color: var(--font-color-secondary)`    | ✅ `.color--secondary`
+
+**Use `type--` classes for design-approved font value combinations**. While it's perfectly
+acceptable to mix and match type modifiers, always prefer the `type--` classes, which
+follow the [type scale](https://cbinsights.github.io/form-design-system/type-specimen/) used by our design team.
+
+```diff
+-className="color--primary fontSize--s"
++className="type--data"
+```
 
 **Avoid setting `line-height`.** The utility classes provided by FDS set an appropriate
 line height for type based on font size.
