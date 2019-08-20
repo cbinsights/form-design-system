@@ -144,6 +144,8 @@ Some classes may apply their styles conditionally based on browser support, view
 or other contextual condition. We indicate this with a prefix and underscore at the
 beginning of the class name.
 
+⚠️  The classes below are examples only. For a full list of available utility classes, see [base styles documentation](https://cbinsights.github.io/form-design-system/fds-styles/).
+
 - **`.atMedium_`**`margin--all` (adds margin to all sides when the viewport reaches the
 - medium breakpoint)
 - **`.atLarge_`**`display--block` (sets display to block when the viewport reaches the
