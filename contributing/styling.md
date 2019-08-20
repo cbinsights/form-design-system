@@ -5,7 +5,7 @@
 
 ## Styling components
 
-Prefer CSS custom properties over hard coded values. The [style dictionary](https://cbinsights.github.io/form-design-system/fds-dictionary/) in fds lists available custom properties.
+Prefer CSS custom properties defined by our [style dictionary](https://help.github.com/en/articles/customizing-how-changed-files-appear-on-github) over hard coded values.
 
 ```diff
 .foo {

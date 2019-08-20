@@ -85,6 +85,7 @@ during scroll.
 
 ### JS-in-JS, CSS-in-CSS
 In FDS, we have opted for keeping styling as close to native web standards as possible.
-We do not use any CSS-in-JS libraries. We do not use CSS preprocessors. CSS is written
-based on the latest CSS standards (with help from PostCSS for polyfills and vendor sugar).
+We do not use any CSS-in-JS libraries. We do not use any special superset syntax like Less
+or Sass. CSS is written "vanilla", based on the latest CSS standards. PostCSS handles
+polyfills and vendor prefixing.
 

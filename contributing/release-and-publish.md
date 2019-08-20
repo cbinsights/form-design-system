@@ -22,8 +22,9 @@ On every push to `master`, a CI tool will perform these actions:
 ## Publishing docs
 All FDS documentation is published to [Github Pages](https://pages.github.com/).
 
-The publishing source is the `docs/` directory in repo root. Documentation is regenerated
-on every full build and **we commit generated documentation**.
+The publishing source is the `docs/` directory in repo root on `master`. This means that
+we can not .gitignore these files.
 
-Generated documentation is suppressed in pull requests diffs by the `linguist-generated`
-gitattribute.
+Documentation is regenerated on every full build and **we commit generated documentation**.
+
+Generated documentation is suppressed in pull requests diffs by the [`linguist-generated` gitattribute](https://help.github.com/en/articles/customizing-how-changed-files-appear-on-github).
