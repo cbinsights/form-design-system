@@ -2,16 +2,16 @@
 * @akdetrick
 
 # style dictionary
-/packages/fds-dictionary/ @akdetrick
+/src/fds-dictionary/ @akdetrick
 
 # utility stylesheet
-/packages/fds-styles/ @akdetrick
+/src/base-styles/ @akdetrick
 
 # component library
-/packages/fds-components/ @akdetrick
+/src/components/ @akdetrick
 
 # material ui theme
-/packages/fds-mui-theme/ @akdetrick
+/src/mui-theme/ @akdetrick
 
 # svg/react icon set
-/packages/fds-icons/ @akdetrick
+/src/icons/ @akdetrick
