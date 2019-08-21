@@ -16,7 +16,7 @@ module.exports = require('mdcss')({
 
   /* theme options paths are relative to PATH_DEST */
   theme: require('mdcss-theme-github')({
-    title: 'fds-styles',
+    title: 'Base styles',
     css: [
       'primer.css',
       'style.css',
