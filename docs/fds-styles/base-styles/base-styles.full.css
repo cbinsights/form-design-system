@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Fri, 23 Aug 2019 14:55:40 GMT
+ * Generated on Fri, 23 Aug 2019 15:17:23 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -508,9 +508,6 @@ label {
   font-weight: var(--font-weight-default);
   color: #404040;
   color: var(--font-color-heading);
-}
-body { 
-  background: #f09 !important;
 }
 button,
 input,
