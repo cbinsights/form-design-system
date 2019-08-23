@@ -1,0 +1,39 @@
+:root {
+  --button-blue: 0, 102, 153;
+  --button-red: 229, 50, 62;
+  --button-orange: 229, 50, 62;
+}
+
+.niceButton {
+  border: 0 none;
+  padding: 8px 16px;
+  line-height: 1;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  transition: background-color var(--button-group-timeout) var(--motion-easing-default),
+    box-shadow var(--button-group-timeout) var(--motion-easing-default),;
+}
+
+.niceButton:focus {
+  outline: 0;
+}
+
+.niceButton--primary {
+  color: #FFFFFF;
+  background: rgba(var(--button-blue), 1);
+}
+
+.niceButton--primary:hover {
+  background: rgba(var(--button-blue), 0.8);
+}
+
+.niceButton--primary:focus {
+  box-shadow: 0 0 0 3px rgba(var(--button-blue), 0.6);
+}
+
+.niceButton--primary:disabled {
+  box-shadow: 0 0 0 3px rgba(var(--button-blue), 0.6);
+}
