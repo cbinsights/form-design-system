@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed, 21 Aug 2019 22:30:59 GMT
+ * Generated on Fri, 23 Aug 2019 14:55:40 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -509,15 +509,15 @@ label {
   color: #404040;
   color: var(--font-color-heading);
 }
+body { 
+  background: #f09 !important;
+}
 button,
 input,
 select,
 textarea {
-  line-height: 1.5;
-  line-height: var(--font-lineHeight-default);
   font-weight: normal;
   vertical-align: middle;
-  margin-bottom: 4px;
 }
 select,
 textarea,

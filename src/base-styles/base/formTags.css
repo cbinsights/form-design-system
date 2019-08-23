@@ -17,10 +17,8 @@ button,
 input,
 select,
 textarea {
-  line-height: var(--font-lineHeight-default);
   font-weight: normal;
   vertical-align: middle;
-  margin-bottom: 4px;
 }
 
 select,
