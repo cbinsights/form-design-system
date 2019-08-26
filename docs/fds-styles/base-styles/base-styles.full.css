@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu, 22 Aug 2019 21:06:51 GMT
+ * Generated on Fri, 23 Aug 2019 15:17:23 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -513,11 +513,8 @@ button,
 input,
 select,
 textarea {
-  line-height: 1.5;
-  line-height: var(--font-lineHeight-default);
   font-weight: normal;
   vertical-align: middle;
-  margin-bottom: 4px;
 }
 select,
 textarea,

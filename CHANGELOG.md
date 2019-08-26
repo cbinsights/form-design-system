@@ -28,6 +28,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [4.1] Removing some global button css
+
+- Removed global button line-height
+- Removed global button margin bottom
 
 ## [4.0] MAJOR
 
