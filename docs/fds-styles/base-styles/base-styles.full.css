@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Fri, 23 Aug 2019 15:17:23 GMT
+ * Generated on Mon, 26 Aug 2019 22:02:33 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -25,11 +25,6 @@
  --color-mint: #70c390;
  --color-purple: #a02385;
  --color-violet: #d772ad;
- --xs: (min-width: 320px);
- --s: (min-width: 480px);
- --m: (min-width: 768px);
- --l: (min-width: 1024px);
- --xl: (min-width: 1280px);
  --font-color-link: #4cabce;
  --font-color-heading: #404040;
  --font-color-primary: rgba(64, 64, 64, 0.87);
