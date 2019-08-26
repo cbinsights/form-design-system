@@ -13,6 +13,8 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 14px;
+  display: inline-flex;
+  align-items: center;
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
     box-shadow var(--button-group-timeout) var(--motion-easing-default),;
 }
@@ -36,4 +38,20 @@
 
 .niceButton--primary:disabled {
   box-shadow: 0 0 0 3px rgba(var(--button-blue), 0.6);
+}
+
+.niceButton-icon {
+  margin-top: -1px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: 0.15em solid;
+  border-right: 0.15em solid transparent;
+  border-radius: 50%;
+  -webkit-animation: spinner-border 0.75s linear infinite;
+  animation: spinner-border 0.75s linear infinite;
 }
