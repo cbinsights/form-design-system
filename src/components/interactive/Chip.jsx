@@ -4,7 +4,7 @@ import cx from 'classnames';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
 import baseElement from '../../util/baseElement';
 
-const Chip = ({ size, Link, theme, isActive, label, subtitle, hasClose, ...rest }) => {
+const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }) => {
   const Element = baseElement({ href: rest.href, as: Link });
 
   const rootClass = cx('fdsChip', {
@@ -18,10 +18,10 @@ const Chip = ({ size, Link, theme, isActive, label, subtitle, hasClose, ...rest 
     <Element {...rest} className={rootClass}>
       {label}
       {subtitle && <span className="fdsChip-subtitle">{subtitle}</span>}
-      {hasClose && (
-        <span className="fdsChip-close">
+      {onClose && (
+        <button className="resetButton fdsChip-close" onClick={onClose}>
           <DenyIcon size="xs" />
-        </span>
+        </button>
       )}
     </Element>
   );
@@ -37,7 +37,7 @@ Chip.propTypes = {
   Link: PropTypes.func,
   isActive: PropTypes.bool,
   subtitle: PropTypes.string,
-  hasClose: PropTypes.bool,
+  onClose: PropTypes.func,
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
