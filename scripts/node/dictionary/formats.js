@@ -160,11 +160,11 @@ const formatRgbComponents = (filteredDictionary) =>
     `/**
 * Use these RGB values to compose 'rgba()' colors with a custom alpha channel.
 *
-* color: rgba( var(--rgbVals-purple), 0.38);
+* color: rgba( var(--rgb-purple), 0.38);
 */`,
     ':root {',
     ...filteredDictionary.allProperties.map((prop) =>
-      `  --rgbVals-${prop.name}: ${prop.value};`
+      `  --rgb-${prop.name}: ${prop.value};`
     ),
     '}'
   ].join('\n');
