@@ -24,6 +24,13 @@ a:active {
   color: #fff;
 }
 
+hr {
+  border-top: 0;
+  border-color: #006699;
+  border-style: dotted;
+  margin: 32px 0;
+}
+
 h1,
 h2,
 h3,
@@ -36,13 +43,47 @@ code {
   padding: 0;
 }
 
-h1 {
+h1, caption {
   margin-bottom: 16px;
   color: #bbdbe5;
 }
 
+caption {
+  font-weight: bold;
+  text-align: left;
+}
+
 code {
   font-family: var(--font-family-mono);
+}
+
+table {
+  text-align: left;
+  margin: 32px auto;
+}
+
+th, td {
+  padding: 8px 16px;
+}
+
+tr {
+  border-bottom: 1px solid #a2a0a0;
+}
+
+thead tr {
+  border-color: #fff;
+}
+
+tbody tr:last-child {
+  border-width: 0;
+}
+
+thead {
+  color: #fff;
+}
+
+table code {
+  color: #70c390;
 }
 
 .shapeList {
