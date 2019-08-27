@@ -35,6 +35,7 @@
       ],
       "buildPath": "./lib/dictionary/css/",
       "files": [{
+        "filter": "excludeCustomMedia",
         "destination": "customProperties.css",
         "format": "css/variables"
       }]
@@ -61,6 +62,7 @@
       ],
       "buildPath": "./lib/dictionary/js/",
       "files": [{
+        "filter": "excludeCustomMedia",
         "destination": "cssCustomProperties.js",
         "format": "js/customProperties"
       }]
@@ -74,6 +76,7 @@
       ],
       "buildPath": "./lib/dictionary/js/",
       "files": [{
+        "filter": "excludeCustomMedia",
         "destination": "styleConstants.js",
         "format": "javascript/commonJs"
       }]
@@ -103,6 +106,7 @@
       ],
       "buildPath": "./docs/fds-dictionary/",
       "files": [{
+        "filter": "excludeCustomMedia",
         "destination": "index.html",
         "format": "html/doc"
       }],
