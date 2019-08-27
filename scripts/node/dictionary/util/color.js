@@ -109,3 +109,9 @@ exports.getMaterialAccents = (base) => ({
     .saturate(satScale(base, [15, 36]))
     .toHexString(),
 });
+
+/**
+ * @param {String} base color from which get R,G,B components
+ * @returns {Object} channel values by key
+ */
+exports.getRgbComponents = (color) => Color(color).toRgb();
