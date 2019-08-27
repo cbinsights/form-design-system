@@ -1,5 +1,10 @@
 const _ = require('lodash');
-const { materialTint, materialShade, getMaterialAccents } = require('./util/color');
+const {
+  materialTint,
+  materialShade,
+  getMaterialAccents,
+  getRgbComponents,
+} = require('./util/color');
 
 /**
  * @param {Object} prop style-dictionary prop
@@ -86,6 +91,15 @@ const toVarNames = (prop) => ({
 
 /**
  * @param {Object} prop style-dictionary prop
+ * @returns {String} raw RGB color value
+ */
+const toRgbComponents = (prop) => {
+  const { r, g, b } = getRgbComponents(prop.original.value);
+  return `${r}, ${g}, ${b}`;
+};
+
+/**
+ * @param {Object} prop style-dictionary prop
  * @returns {Object} object representing material UI palette color values
  */
 const toMaterialPalette = (prop) => {
@@ -147,6 +161,11 @@ module.exports = [
     name: 'attribute/varNames',
     type: 'attribute',
     transformer: toVarNames,
+  },
+  {
+    name: 'value/rgbComponents',
+    type: 'value',
+    transformer: toRgbComponents,
   },
   {
     name: 'attribute/materialPalette',

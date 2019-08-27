@@ -54,6 +54,19 @@
       }]
     },
 
+    "CssRawRgb": {
+      "transforms": [
+        "attribute/cti",
+        "value/rgbComponents"
+      ],
+      "buildPath": "./lib/dictionary/css/",
+      "files": [{
+        "filter": "isColor",
+        "destination": "rawRgbColors.css",
+        "format": "css/rgbComponents"
+      }]
+    },
+
     "JSCustomProperties": {
       "transforms": [
         "attribute/cti",

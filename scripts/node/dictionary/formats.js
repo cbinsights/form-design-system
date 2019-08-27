@@ -150,6 +150,25 @@ const formatCssCustomMedia = (filteredDictionary) =>
     ),
   ].join('\n');
 
+/**
+ * @param {Object} filteredDictionary dictionary category-filtered by config
+ * @return {String} css file with custom properties defining RGB components for each color
+ */
+const formatRgbComponents = (filteredDictionary) =>
+  [
+    `${jsComment()}`,
+    `/**
+* Use these RGB values to compose 'rgba()' colors with a custom alpha channel.
+*
+* color: rgba( var(--rgbVals-purple), 0.38);
+*/`,
+    ':root {',
+    ...filteredDictionary.allProperties.map((prop) =>
+      `  --rgbVals-${prop.name}: ${prop.value};`
+    ),
+    '}'
+  ].join('\n');
+
 // Custom formats
 module.exports = [
   {
@@ -175,5 +194,9 @@ module.exports = [
   {
     name: 'css/customMedia',
     formatter: formatCssCustomMedia,
+  },
+  {
+    name: 'css/rgbComponents',
+    formatter: formatRgbComponents,
   },
 ];
