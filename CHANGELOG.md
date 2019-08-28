@@ -29,6 +29,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.3] Add double spacing helpers
+
+- Add `--double` variants for `margin` helper classes
+- Add `--double` variants for `padding` helper classes
+
 ## [4.2] Support alpha mod in colors
 
 - Add `value/rgbComponents` transform to dictionary

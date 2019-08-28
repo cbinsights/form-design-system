@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Tue, 27 Aug 2019 22:04:02 GMT
+ * Generated on Wed, 28 Aug 2019 16:01:45 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -692,6 +692,17 @@ class                  | description
 `margin--bottom--half` | Adds half margin to bottom of element
 `margin--left--half`   | Adds half margin to left of element
 `margin--all--half`    | Adds half margin to all sides
+
+#### Double margin
+
+class                  | description
+---------------------- | ---------------------------------
+`margin--top--double`    | Adds double margin to top of element
+`margin--right--double`  | Adds double margin to right of element
+`margin--bottom--double` | Adds double margin to bottom of element
+`margin--left--double`   | Adds double margin to left of element
+`margin--all--double`    | Adds double margin to all sides
+
 */
 .margin--top {
   margin-top: 16px;
@@ -733,6 +744,26 @@ class                  | description
   margin: 8px;
   margin: var(--space-half);
 }
+.margin--top--double {
+  margin-top: 32px;
+  margin-top: var(--space-double);
+}
+.margin--right--double {
+  margin-right: 32px;
+  margin-right: var(--space-double);
+}
+.margin--bottom--double {
+  margin-bottom: 32px;
+  margin-bottom: var(--space-double);
+}
+.margin--left--double {
+  margin-left: 32px;
+  margin-left: var(--space-double);
+}
+.margin--all--double {
+  margin: 32px;
+  margin: var(--space-double);
+}
 /*---
 title: Padding
 name: spacingPadding
@@ -760,6 +791,17 @@ class                   | description
 `padding--bottom--half` | Adds half padding to bottom of element
 `padding--left--half`   | Adds half padding to left of element
 `padding--all--half`    | Adds half padding to all sides
+
+#### Double padding
+
+class                   | description
+----------------------- | ---------------------------------
+`padding--top--double`    | Adds double padding to top of element
+`padding--right--double`  | Adds double padding to right of element
+`padding--bottom--double` | Adds double padding to bottom of element
+`padding--left--double`   | Adds double padding to left of element
+`padding--all--double`    | Adds double padding to all sides
+
 */
 .padding--top {
   padding-top: 16px;
@@ -800,6 +842,26 @@ class                   | description
 .padding--all--half {
   padding: 8px;
   padding: var(--space-half);
+}
+.padding--top--double {
+  padding-top: 32px;
+  padding-top: var(--space-double);
+}
+.padding--right--double {
+  padding-right: 32px;
+  padding-right: var(--space-double);
+}
+.padding--bottom--double {
+  padding-bottom: 32px;
+  padding-bottom: var(--space-double);
+}
+.padding--left--double {
+  padding-left: 32px;
+  padding-left: var(--space-double);
+}
+.padding--all--double {
+  padding: 32px;
+  padding: var(--space-double);
 }
 /* Position Helpers */
 /*---
