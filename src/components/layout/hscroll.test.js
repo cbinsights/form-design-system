@@ -34,7 +34,6 @@ describe('Hscroll component', () => {
 
   describe('getScrollAttributes', () => {
 
-    /*
     it('returns correct attributes for partially scrolling', () => {
       const MOCK_EVENT = {
         target: {
@@ -51,7 +50,7 @@ describe('Hscroll component', () => {
     it('returns correct attributes for scrolling completely to the end', () => {
       const MOCK_EVENT = {
         target: {
-          scrollLeft: WIDTH_CONTAINER - WIDTH_CONTENT, // content width minus visible area
+          scrollLeft: WIDTH_CONTAINER,
           clientWidth: WIDTH_CONTAINER
         }
       };
@@ -60,7 +59,6 @@ describe('Hscroll component', () => {
       expect(scrolled).toBe(true);
       expect(scrollEnd).toBe(true);
     });
-    */
 
     it('returns correct attributes for scrolling to the beginning', () => {
       const MOCK_EVENT = {
@@ -76,19 +74,5 @@ describe('Hscroll component', () => {
     })
 
   });
-
-
-  /*
-  it('right fade hidden on scroll to end', () => {
-    const wrapper = renderComponent();
-    const scrollContainer = wrapper.find('.hscroll-overflowEl');
-    const MOCK_EVENT = { target: { scrollLeft: WIDTH_CONTENT - WIDTH_CONTAINER } };
-
-    expect(wrapper.hasClass('hscroll--scrollEnd')).toBe(false);
-    wrapper.instance().onScroll(MOCK_EVENT);
-    wrapper.update();
-    expect(wrapper.hasClass('hscroll--scrollEnd')).toBe(true);
-  });
-  */
 
 });
