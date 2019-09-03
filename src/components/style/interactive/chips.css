@@ -7,7 +7,6 @@
 }
 
 .fdsChip {
-  display: inline-block;
   background-color: var(--chip-bg);
   color: var(--font-color-heading);
   border-radius: 20px;
@@ -30,7 +29,7 @@
   height: 10px;
 }
 
-button.fdsChip-close {
+.fdsChip-close {
   margin-left: var(--space-half);
   font-size: var(--font-size-xs);
   line-height: inherit;

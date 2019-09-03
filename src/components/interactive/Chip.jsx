@@ -16,12 +16,22 @@ const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }
   });
   return (
     <Element {...rest} className={rootClass}>
-      {label}
-      {subtitle && <span className="fdsChip-subtitle">{subtitle}</span>}
+      <span>
+        {label}
+        {subtitle && <span className="fdsChip-subtitle">{subtitle}</span>}
+      </span>
       {onClose && (
-        <button className="resetButton fdsChip-close" onClick={onClose}>
+        <span
+          role="button"
+          tabIndex="-1"
+          className="fdsChip-close"
+          onClick={(e) => {
+            onClose();
+            e.stopPropagation();
+          }}
+        >
           <DenyIcon size="xs" />
-        </button>
+        </span>
       )}
     </Element>
   );
