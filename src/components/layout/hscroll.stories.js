@@ -28,7 +28,7 @@ storiesOf('Layout/Hscroll', module)
     () => (
       <Hscroll
         enableFade={boolean('Enable Fade', true)}
-        enableGutter={boolean('Enable scrollbar gutter background', true)}
+        enableGutter={boolean('Enable scrollbar gutter background', false)}
         bgColor={radios('Background Color', { haze: 'haze', white: 'white' }, 'white')}
         style={{ width: '400px' }}
       >

@@ -4,6 +4,25 @@ import PropTypes from 'prop-types';
 import rafSchd from 'raf-schd';
 
 /**
+ * @function getScrollAtributes
+ * Returns attributes about user scroll position.
+ *
+ * @param {Object} e - scroll event from overflow element
+ * @param {Number} contentScrollWidth - scrollWidth of inner content element
+ */
+export const getScrollAtributes = (e, contentScrollWidth) => {
+  const { scrollLeft, clientWidth } = e.target;
+
+  /* "end" of scroll is the total width minus the visible area */
+  const scrollEnd = contentScrollWidth - clientWidth;
+
+  return {
+    scrolled: Boolean(scrollLeft),
+    scrollEnd: Boolean(scrollLeft === scrollEnd),
+  };
+};
+
+/**
  * @param {Object} props react props
  * @returns {ReactElement}
  */
@@ -22,12 +41,9 @@ const Hscroll = (props) => {
   });
 
   const onScroll = (e) => {
-    const { scrollLeft, clientWidth } = e.target;
-    const { scrollWidth } = contentEl.current;
-    const scrollEnd = scrollWidth - clientWidth;
-
-    rafSchd(setIsScrolled(Boolean(scrollLeft)));
-    rafSchd(setIsAtScrollEnd(Boolean(scrollLeft === scrollEnd)));
+    const { scrolled, scrollEnd } = getScrollAtributes(e, contentEl.current.scrollWidth);
+    rafSchd(setIsScrolled(scrolled));
+    rafSchd(setIsAtScrollEnd(scrollEnd));
   };
 
   return (
