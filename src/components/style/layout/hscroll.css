@@ -1,0 +1,71 @@
+@import "../../../../lib/dictionary/css/rawRgbColors";
+
+.hscroll {
+  position: relative;
+  width: 200px;
+}
+
+.hscroll-overflowEl {
+  overflow-x: scroll;
+  position: relative;
+}
+
+.hscroll-overflowEl::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.hscroll-overflowEl::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+.hscroll-overflowEl::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hscroll-content {
+  box-sizing: content-box;
+  white-space: nowrap;
+}
+
+.hscroll--enableFade::before,
+.hscroll--enableFade::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 11px;
+  width: var(--space-default);
+  z-index: 1; /* fade elements should appear above content */
+}
+
+
+.hscroll--fadeColor--white {
+  --hscroll-fadeColor: var(--color-white);
+  --hscroll-fadeColor-rgb: var(--rgb-white);
+}
+
+.hscroll--fadeColor--haze {
+  --hscroll-fadeColor: var(--color-haze);
+  --hscroll-fadeColor-rgb: var(--rgb-haze);
+}
+
+.hscroll--enableFade::before {
+  display: none;
+  background-image: linear-gradient(to right, var(--hscroll-fadeColor), rgba(var(--hscroll-fadeColor-rgb), 0));
+  left: 0;
+}
+
+.hscroll--enableFade::after {
+  background-image: linear-gradient(to left, var(--hscroll-fadeColor), rgba(var(--hscroll-fadeColor-rgb), 0));
+  right: 0;
+}
+
+.hscroll--scrolled::before {
+  display: block;
+}
+
+.hscroll--scrollEnd::after {
+  display: none;
+}
