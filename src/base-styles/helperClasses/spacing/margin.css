@@ -25,6 +25,17 @@ class                  | description
 `margin--bottom--half` | Adds half margin to bottom of element
 `margin--left--half`   | Adds half margin to left of element
 `margin--all--half`    | Adds half margin to all sides
+
+#### Double margin
+
+class                  | description
+---------------------- | ---------------------------------
+`margin--top--double`    | Adds double margin to top of element
+`margin--right--double`  | Adds double margin to right of element
+`margin--bottom--double` | Adds double margin to bottom of element
+`margin--left--double`   | Adds double margin to left of element
+`margin--all--double`    | Adds double margin to all sides
+
 */
 
 .margin--top {
@@ -65,4 +76,24 @@ class                  | description
 
 .margin--all--half {
   margin: var(--space-half);
+}
+
+.margin--top--double {
+  margin-top: var(--space-double);
+}
+
+.margin--right--double {
+  margin-right: var(--space-double);
+}
+
+.margin--bottom--double {
+  margin-bottom: var(--space-double);
+}
+
+.margin--left--double {
+  margin-left: var(--space-double);
+}
+
+.margin--all--double {
+  margin: var(--space-double);
 }

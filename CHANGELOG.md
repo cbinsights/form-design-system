@@ -29,6 +29,23 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.3] Add double spacing helpers
+
+- Add `--double` variants for `margin` helper classes
+- Add `--double` variants for `padding` helper classes
+
+## [4.2] Support alpha mod in colors
+
+- Add `value/rgbComponents` transform to dictionary
+- Add `css/rgbComponents` format to dictionary
+- Add new distribution to dictionary, `lib/dictionary/css/rawRgbColors.css`
+
+
+## [4.1] Removing some global button css
+
+- Removed global button line-height
+- Removed global button margin bottom
+
 ## [4.0] MAJOR
 
 - All modules in the Form Design System are now published as a single package, `@cbinsights/fds`.

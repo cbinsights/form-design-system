@@ -8,4 +8,8 @@ module.exports = [
     name: 'isCustomMedia',
     matcher: (prop) => prop.attributes.category === 'customMedia',
   },
+  {
+    name: 'excludeCustomMedia',
+    matcher: (prop) => prop.attributes.category !== 'customMedia',
+  },
 ];
