@@ -1,15 +1,22 @@
 @import "../../../../lib/dictionary/css/rawRgbColors";
 
 .hscroll {
-  position: relative;
-  width: 200px;
+  position: relative; /* context for fade elements */
+}
+
+.hscroll-content {
+  box-sizing: content-box;
+  white-space: nowrap;
 }
 
 .hscroll-overflowEl {
   overflow-x: scroll;
-  position: relative;
 }
 
+/**
+ * _always_ show the horizontal scrollbar.
+ * mimic default osx/webkit styles.
+ */
 .hscroll-overflowEl::-webkit-scrollbar {
   -webkit-appearance: none;
 }
@@ -24,48 +31,67 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.hscroll-content {
-  box-sizing: content-box;
-  white-space: nowrap;
+/* adds faux gutter for scrollbar */
+.hscroll--enableGutter {
+  background: var(--color-lightGray);
 }
 
+
+/**
+ * background color in content area must be specified
+ * instead of inheriting from container, which could have
+ * a background color for the faux gutter
+ */
+.hscroll--bgColor--white .hscroll-content {
+  background: var(--color-white);
+}
+
+.hscroll--bgColor--haze .hscroll-content {
+  background: var(--color-haze);
+}
+
+
+/* fade gradients positioned relative to outmost container */
 .hscroll--enableFade::before,
 .hscroll--enableFade::after {
   content: "";
   display: block;
   position: absolute;
   top: 0;
-  bottom: 11px;
+  bottom: 0;
   width: var(--space-default);
   z-index: 1; /* fade elements should appear above content */
 }
 
 
-.hscroll--fadeColor--white {
-  --hscroll-fadeColor: var(--color-white);
-  --hscroll-fadeColor-rgb: var(--rgb-white);
+/* local vars set the fade color based on class */
+.hscroll--bgColor--white {
+  --hscroll-bgColor: var(--color-white);
+  --hscroll-bgColor-rgb: var(--rgb-white);
 }
 
-.hscroll--fadeColor--haze {
-  --hscroll-fadeColor: var(--color-haze);
-  --hscroll-fadeColor-rgb: var(--rgb-haze);
+.hscroll--bgColor--haze {
+  --hscroll-bgColor: var(--color-haze);
+  --hscroll-bgColor-rgb: var(--rgb-haze);
 }
+
 
 .hscroll--enableFade::before {
-  display: none;
-  background-image: linear-gradient(to right, var(--hscroll-fadeColor), rgba(var(--hscroll-fadeColor-rgb), 0));
+  display: none; /* scrolLeft defaults to 0; hide the fade until relevant */
+  background-image: linear-gradient(to right, var(--hscroll-bgColor), rgba(var(--hscroll-bgColor-rgb), 0));
   left: 0;
 }
 
 .hscroll--enableFade::after {
-  background-image: linear-gradient(to left, var(--hscroll-fadeColor), rgba(var(--hscroll-fadeColor-rgb), 0));
+  background-image: linear-gradient(to left, var(--hscroll-bgColor), rgba(var(--hscroll-bgColor-rgb), 0));
   right: 0;
 }
 
 .hscroll--scrolled::before {
-  display: block;
+  display: block; /* show the left fade when scrolling */
 }
 
 .hscroll--scrollEnd::after {
-  display: none;
+  display: none; /* hide the right fade when scrolled to end */
 }
+

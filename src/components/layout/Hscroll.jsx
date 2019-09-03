@@ -8,14 +8,15 @@ import rafSchd from 'raf-schd';
  * @returns {ReactElement}
  */
 const Hscroll = (props) => {
-  const { enableFade, fadeColor, children, ...otherProps } = props;
+  const { enableFade, enableGutter, bgColor, children, ...otherProps } = props;
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAtScrollEnd, setIsAtScrollEnd] = useState(false);
   const contentEl = useRef(null);
 
-  const containerClassNames = cx('hscroll', `hscroll--fadeColor--${fadeColor}`, {
+  const containerClassNames = cx('hscroll', `hscroll--bgColor--${bgColor}`, {
     'hscroll--enableFade': enableFade,
+    'hscroll--enableGutter': enableGutter,
     'hscroll--scrolled': isScrolled,
     'hscroll--scrollEnd': isAtScrollEnd,
   });
@@ -42,15 +43,19 @@ const Hscroll = (props) => {
 
 Hscroll.defaultProps = {
   enableFade: true,
-  fadeColor: 'white',
+  enableGutter: false,
+  bgColor: 'white',
 };
 
 Hscroll.propTypes = {
   /** adds gradient fades on overflowed sides */
   enableFade: PropTypes.bool,
 
-  /** color of side gradients */
-  fadeColor: PropTypes.oneOf(['white', 'haze']),
+  /** adds background to scrollbar gutter */
+  enableGutter: PropTypes.bool,
+
+  /** match to the background color of the parent */
+  bgColor: PropTypes.oneOf(['white', 'haze']),
 
   /** React children */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
