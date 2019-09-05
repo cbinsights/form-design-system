@@ -104,6 +104,10 @@ _Text in this example is set in `fontWeight--bold`_
   color: var(--font-color-errorInverted) !important;
 }
 
+.color--slate {
+  color: var(--color-slate) !important;
+}
+
 .color--green {
   color: var(--color-green) !important;
 }
