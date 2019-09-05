@@ -1,0 +1,83 @@
+.fdsCard {
+  color: inherit;
+  text-decoration: none;
+  width: 215px;
+  border-bottom-left-radius: var(--border-radius-default);
+  border-bottom-right-radius: var(--border-radius-default);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  background-color: var(--color-white);
+}
+
+.fdsCard-cover {
+  height: 130px;
+  position: relative;
+  padding: var(--space-half);
+}
+
+.fdsCard-cover--purple {
+  background-color: var(--color-purple);
+}
+
+.fdsCard-cover--aqua {
+  background-color: var(--color-aqua);
+}
+
+.fdsCard-cover--darkPurple {
+  /* are these one off colors, are these standards, can we replace with standards, etc */
+  background-color: #783983;
+}
+
+.fdsCard-cover--pink {
+  /* are these one off colors, are these standards, can we replace with standards, etc */
+  background-color: #D3346F;
+}
+
+.fdsCard-cover-hover {
+  text-align: center;
+  padding: 0 var(--space-half);
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-charcoal);
+  opacity: 0.95;
+  font-family: var(--font-family-default);
+  color: var(--color-white);
+  letter-spacing: 2px;
+}
+
+.fdsCard-label {
+  overflow: hidden;
+  line-height: 1.2;
+  /* the height here is to force rendering to 3 lines */
+  height: 48px;
+}
+
+.fdsCard:hover .fdsCard-cover-hover {
+  display: flex;
+}
+
+.fdsCard-footer {
+  border-top: 1px solid transparent;
+  height: 75px;
+  padding: var(--space-half);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fdsCard-footer--border {
+  border-top: 1px solid var(--color-lightGray);
+}
+
+.fdsCard-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fdsCard-infoText {
+  font-size: var(--font-size-xs);
+}
