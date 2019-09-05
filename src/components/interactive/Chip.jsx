@@ -47,6 +47,10 @@ Chip.propTypes = {
   Link: PropTypes.func,
   isActive: PropTypes.bool,
   subtitle: PropTypes.string,
+  /**
+   * By passing this onClick handler, the close icon
+   * will automatically appear
+   */
   onClose: PropTypes.func,
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
