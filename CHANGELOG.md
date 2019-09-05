@@ -29,10 +29,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [4.4] Updated Chip
+## [4.5] Updated Chip
 
 - Replaced `hasClose` boolean with `onClose` click handler
 - Close icon now has a separate click handler from the main click handler
+
+## [4.4] Add color--slate class
+
+- Add `color--slate` class back to styles
 
 ## [4.3] Add double spacing helpers
 
