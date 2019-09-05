@@ -45,14 +45,18 @@ Chip.propTypes = {
    * if they use react-router `Link` underneath the hood).
    */
   Link: PropTypes.func,
+  /** Controls the isActive state of the chip, which changes colors */
   isActive: PropTypes.bool,
+  /** Text that appears to the right of the label */
   subtitle: PropTypes.string,
   /**
-   * By passing this onClick handler, the close icon
-   * will automatically appear
+   * onClick handler for close icon  (By passing this onClick handler, the close icon
+   * will automatically appear)
    */
   onClose: PropTypes.func,
+  /** Specify the size of the chip */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  /** Controls the color (look and feel) of the chip */
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
 
