@@ -47,7 +47,11 @@ const Hscroll = (props) => {
   };
 
   return (
-    <div className={containerClassNames} onScroll={onScroll} {...otherProps}>
+    <div
+      className={containerClassNames}
+      onScroll={enableFade ? onScroll : undefined}
+      {...otherProps}
+    >
       <div className="hscroll-overflowEl">
         <div ref={contentEl} className="hscroll-content">
           {children}
