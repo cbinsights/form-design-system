@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.5] `Hscroll` component
+
+- Added `Hscroll` component to layout utils
+
 ## [4.4] Add color--slate class
 
 - Add `color--slate` class back to styles
