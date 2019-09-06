@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Tue, 03 Sep 2019 21:57:26 GMT
+ * Generated on Fri, 06 Sep 2019 18:00:18 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -1578,6 +1578,10 @@ _Text in this example is set in `fontWeight--bold`_
 .inverted .color--error {
   color: #e5323e !important;
   color: var(--font-color-errorInverted) !important;
+}
+.color--slate {
+  color: #757575 !important;
+  color: var(--color-slate) !important;
 }
 .color--green {
   color: #00986b !important;
