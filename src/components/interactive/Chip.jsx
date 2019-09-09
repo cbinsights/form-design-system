@@ -4,7 +4,7 @@ import cx from 'classnames';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
 import baseElement from '../../util/baseElement';
 
-const Chip = ({ size, Link, theme, isActive, label, subtitle, hasClose, ...rest }) => {
+const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }) => {
   const Element = baseElement({ href: rest.href, as: Link });
 
   const rootClass = cx('fdsChip', {
@@ -16,10 +16,20 @@ const Chip = ({ size, Link, theme, isActive, label, subtitle, hasClose, ...rest 
   });
   return (
     <Element {...rest} className={rootClass}>
-      {label}
-      {subtitle && <span className="fdsChip-subtitle">{subtitle}</span>}
-      {hasClose && (
-        <span className="fdsChip-close">
+      <span>
+        {label}
+        {subtitle && <span className="fdsChip-subtitle">{subtitle}</span>}
+      </span>
+      {onClose && (
+        <span
+          role="button"
+          tabIndex="-1"
+          className="fdsChip-close"
+          onClick={(e) => {
+            onClose();
+            e.stopPropagation();
+          }}
+        >
           <DenyIcon size="xs" />
         </span>
       )}
@@ -35,10 +45,18 @@ Chip.propTypes = {
    * if they use react-router `Link` underneath the hood).
    */
   Link: PropTypes.func,
+  /** Controls the isActive state of the chip, which changes colors */
   isActive: PropTypes.bool,
+  /** Text that appears to the right of the label */
   subtitle: PropTypes.string,
-  hasClose: PropTypes.bool,
+  /**
+   * onClick handler for close icon  (By passing this onClick handler, the close icon
+   * will automatically appear)
+   */
+  onClose: PropTypes.func,
+  /** Specify the size of the chip */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  /** Controls the color (look and feel) of the chip */
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
 
