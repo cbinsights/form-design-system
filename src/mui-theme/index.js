@@ -1,6 +1,6 @@
 /* eslint-disable no-var */
-var COLORS = require('@cbinsights/fds/lib/dictionary/js/materialPalette');
-var FDS = require('@cbinsights/fds/lib/dictionary/js/styleConstants');
+import FDS from '../dictionary/js/styleConstants';
+import COLORS from '../dictionary/js/materialPalette';
 
 var MuiButton = {
   root: {
