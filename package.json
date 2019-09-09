@@ -138,5 +138,8 @@
       "src/**/assets/*.css"
     ]
   },
-  "version": "4.0.0"
+  "version": "4.0.0",
+  "dependencies": {
+    "raf-schd": "^4.0.2"
+  }
 }
