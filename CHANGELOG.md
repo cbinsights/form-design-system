@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.7] Added font smoothing
+
+- Added `font-smoothing` vendor declarations for `webkit` and `firefox`
+
 ## [4.6] Updated Chip
 
 - Replaced `hasClose` boolean with `onClose` click handler
