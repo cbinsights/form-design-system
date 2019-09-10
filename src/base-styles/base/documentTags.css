@@ -15,6 +15,8 @@ html {
   color: var(--font-color-primary);
   text-rendering: geometricPrecision; /* stylelint-disable-line property-blacklist */
   overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .inverted {
