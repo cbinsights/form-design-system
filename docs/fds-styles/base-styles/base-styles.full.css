@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Mon, 09 Sep 2019 22:39:31 GMT
+ * Generated on Tue, 10 Sep 2019 13:54:46 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -350,7 +350,7 @@ html {
   text-rendering: geometricPrecision; /* stylelint-disable-line property-blacklist */
   overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 }
 .inverted {
   color: rgba(255, 255, 255, 0.87);
@@ -1191,6 +1191,44 @@ Signature: `depth--<level>`
   box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     inset 0 1px 10px 0 rgba(0, 0, 0, 0.12),
     inset 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+/* Border Helpers */
+/*---
+title: Border Radius
+name: borderRadius
+section: Border Helpers
+---
+
+Rounds the corners of an element using a standard
+`border-radius` value.
+
+class            | description
+---------------- | ---------------------------------
+`rounded--top`   | Rounds the top corners of the element
+`rounded--right` | Rounds the right corners of the element
+`rounded--bottom`| Rounds the bottom corners of the element
+`rounded--left`  | Rounds the left corners of the element
+`rounded--all`   | Rounds all corners of the element
+*/
+.rounded--top {
+  border-radius: 4px 4px 0 0;
+  border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
+}
+.rounded--right {
+  border-radius: 0 4px 4px 0;
+  border-radius: 0 var(--border-radius-default) var(--border-radius-default) 0;
+}
+.rounded--bottom {
+  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+}
+.rounded--left {
+  border-radius: 4px 0 0 4px;
+  border-radius: var(--border-radius-default) 0 0 var(--border-radius-default);
+}
+.rounded--all {
+  border-radius: 4px;
+  border-radius: var(--border-radius-default);
 }
 /* Typesetting */
 /*---
