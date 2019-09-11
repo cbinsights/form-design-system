@@ -29,6 +29,44 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.8] Added border helpers
+
+- Added `rounded--<direction>` classes to base styles.
+
+## [4.7] Added font smoothing
+
+- Added `font-smoothing` vendor declarations for `webkit` and `firefox`
+
+## [4.6] Updated Chip
+
+- Replaced `hasClose` boolean with `onClose` click handler
+- Close icon now has a separate click handler from the main click handler
+
+## [4.5] `Hscroll` component
+
+- Added `Hscroll` component to layout utils
+
+## [4.4] Add color--slate class
+
+- Add `color--slate` class back to styles
+
+## [4.3] Add double spacing helpers
+
+- Add `--double` variants for `margin` helper classes
+- Add `--double` variants for `padding` helper classes
+
+## [4.2] Support alpha mod in colors
+
+- Add `value/rgbComponents` transform to dictionary
+- Add `css/rgbComponents` format to dictionary
+- Add new distribution to dictionary, `lib/dictionary/css/rawRgbColors.css`
+
+
+## [4.1] Removing some global button css
+
+- Removed global button line-height
+- Removed global button margin bottom
+
 ## [4.0] MAJOR
 
 - All modules in the Form Design System are now published as a single package, `@cbinsights/fds`.

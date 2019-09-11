@@ -21,8 +21,8 @@ describe('Chip component', () => {
             as: () => {},
             isActive: true,
             subtitle: 'bar',
-            hasClose: false,
-            size: 'large',
+            onClose: () => {},
+            size: 'lg',
             theme: 'blue'
         });
         expect(component).toMatchSnapshot();

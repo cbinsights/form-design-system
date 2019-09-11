@@ -7,7 +7,6 @@
 }
 
 .fdsChip {
-  display: inline-block;
   background-color: var(--chip-bg);
   color: var(--font-color-heading);
   border-radius: 20px;
@@ -30,14 +29,16 @@
   height: 10px;
 }
 
-.fdsChip-close,
-.fdsChip-subtitle {
-  padding-left: var(--space-half);
+.fdsChip-close {
+  margin-left: var(--space-half);
   font-size: var(--font-size-xs);
+  line-height: inherit;
 }
 
 .fdsChip-subtitle {
   color: var(--font-color-secondary);
+  padding-left: var(--space-half);
+  font-size: var(--font-size-xs);
 }
 
 .fdsChip--active {

@@ -10,7 +10,7 @@ import README from './Chip.md';
 const chips = [
   { label: 'Lorem', href: '#lorem' },
   { label: 'Ipsum', href: '#ipsum', isActive: true, subtitle: 'active' },
-  { label: 'Dolor', href: '#dolor', hasClose: true },
+  { label: 'Dolor', href: '#dolor', onClose: () => {} },
   { label: 'Sit', onClick: () => action('custom chip clicked'), isActive: false },
 ];
 
@@ -30,7 +30,7 @@ storiesOf('Interactive/Chip', module)
         isActive={boolean('isActive', false)}
         label={text('label', 'Hello World')}
         subtitle={text('subtitle', '')}
-        hasClose={boolean('hasClose', false)}
+        onClose={action('close')}
         onClick={action('clicked')}
         size={options(
           'size',
@@ -60,7 +60,7 @@ storiesOf('Interactive/Chip', module)
     <React.Fragment>
       <div>
         {chipsTwo.map((chip) => (
-          <Chip {...chip} key={chip.label} theme="outline" hasClose={true} />
+          <Chip {...chip} key={chip.label} theme="outline" />
         ))}
       </div>
       <br />
