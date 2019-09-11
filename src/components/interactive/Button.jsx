@@ -25,14 +25,15 @@ const Button = ({
       {...rest}
       disabled={disabled && Element === 'button'}
     >
-      {Icon && iconPlacement === 'left' && (
-        <div className="margin--right--half fdsButton-icon">
-          <Icon size="xs" />
-        </div>
-      )}
       <span className={cx({ 'fdsButton--hiddenLabel': isLoading })}>{children}</span>
-      {Icon && iconPlacement === 'right' && (
-        <div className="margin--left--half fdsButton-icon">
+      {Icon && (
+        <div
+          className={cx('fdsButton-icon', {
+            'fdsButton-icon--left': iconPlacement === 'left',
+            'margin--left--half': iconPlacement === 'right',
+            'margin--right--half': iconPlacement === 'left',
+          })}
+        >
           <Icon size="xs" />
         </div>
       )}

@@ -87,3 +87,7 @@
   margin-top: -3px;
   margin-bottom: -2px;
 }
+
+.fdsButton-icon--left {
+  order: -1;
+}
