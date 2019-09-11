@@ -43,7 +43,7 @@
   border-radius: 50%;
   border: 2px solid #FFF;
   border-top-color: transparent;
-  animation: spinner 0.6 linear infinite;
+  animation: spinner 600ms linear infinite;
 }
 
 .fdsButton--loading .fdsButton-icon {
