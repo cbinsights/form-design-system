@@ -7,7 +7,6 @@
 .niceButton {
   border: 0 none;
   padding: 8px 16px;
-  line-height: 1;
   border-radius: 4px;
   font-weight: 500;
   text-transform: uppercase;
@@ -15,43 +14,65 @@
   font-size: 14px;
   display: inline-flex;
   align-items: center;
+  position: relative;
+  line-height: normal;
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
     box-shadow var(--button-group-timeout) var(--motion-easing-default),;
 }
 
-.niceButton:focus {
-  outline: 0;
+.niceButton--hiddenLabel {
+  visibility: hidden;
 }
 
-.niceButton--primary {
+.niceButton:focus {
+  outline: 0;
+  z-index: 1;
+  box-shadow: 0 0 0 2px #B7D7E5;
+}
+
+.niceButton--contained-blue {
   color: #FFFFFF;
   background: rgba(var(--button-blue), 1);
 }
 
-.niceButton--primary:hover {
+.niceButton--contained-blue:hover {
   background: rgba(var(--button-blue), 0.8);
 }
 
-.niceButton--primary:focus {
-  box-shadow: 0 0 0 3px rgba(var(--button-blue), 0.6);
+
+.niceButton--contained-red {
+  color: #FFFFFF;
+  background: rgba(var(--button-red), 1);
 }
 
-.niceButton--primary:disabled {
-  box-shadow: 0 0 0 3px rgba(var(--button-blue), 0.6);
+.niceButton--contained-red:hover {
+  background: rgba(var(--button-red), 0.8);
 }
+
+/* .niceButton--primary:disabled {
+  box-shadow: 0 0 0 3px rgba(var(--button-blue), 0.6);
+} */
 
 .niceButton-icon {
   margin-top: -1px;
 }
 
 .spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  /* would like to figure out a resilient CSS approach to sizing this spinner,
+     no matter the size of the button*/
+  width: 12px;
+  height: 12px;
+  /* ------------------ */
   vertical-align: text-bottom;
-  border: 0.15em solid;
+  border: 2px solid;
   border-right: 0.15em solid transparent;
   border-radius: 50%;
   -webkit-animation: spinner-border 0.75s linear infinite;
   animation: spinner-border 0.75s linear infinite;
+  margin-top: -7px;
+  margin-left: -7px;
 }

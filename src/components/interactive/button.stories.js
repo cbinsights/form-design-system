@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
 
@@ -25,13 +24,35 @@ storiesOf('Interactive/Button', module)
         theme={options(
           'theme',
           {
-            blue: 'primary--blue',
-            red: 'primary--red',
-            orange: 'primary--orange',
+            'contained--blue': 'contained--blue',
+            'contained--red': 'contained--red',
           },
-          'primary--blue',
+          'contained--blue',
           { display: 'inline-radio' }
         )}
-      />
+      >
+        {text('Text', 'Button')}
+      </Button>
     );
-  });
+  })
+  .add('Variations', () => (
+    <div className="display--inlineFlex">
+      <div className="margin--right--half">
+        <Button theme="contained--blue">Button</Button>
+      </div>
+      <div className="margin--right--half">
+        <Button theme="contained--red">Button</Button>
+      </div>
+      <div className="margin--right--half">
+        <Button theme="contained--red" href="#">
+          Button
+        </Button>
+      </div>
+
+      <div className="margin--right--half">
+        <Button theme="contained--red" isLoading>
+          Button
+        </Button>
+      </div>
+    </div>
+  ));
