@@ -5,12 +5,12 @@
 
 .fdsButton {
   border: 0 none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: var(--space-half) var(--space-default);
+  border-radius: var(--border-radius-default);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: var(--fontSize--m);
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -19,14 +19,15 @@
     box-shadow var(--button-group-timeout) var(--motion-easing-default),;
 }
 
-@keyframes spinner {
-  to {transform: rotate(360deg);}
-}
 
 .fdsButton--loading,
 .fdsButton--disabled {
   opacity: 0.6;
   pointer-events: none;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
 }
 
 /* Spinner technique is from here: https://stephanwagner.me/only-css-loading-spinner */
@@ -36,12 +37,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 20px;
-  height: 20px;
-  margin-top: -10px;
-  margin-left: -10px;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  margin-left: -8px;
   border-radius: 50%;
-  border: 2px solid #FFF;
+  border: 2px solid var(--color-white);
   border-top-color: transparent;
   animation: spinner 600ms linear infinite;
 }
@@ -61,7 +62,7 @@
 }
 
 .fdsButton--contained-blue {
-  color: #FFFFFF;
+  color: var(--color-white);
   background: rgba(var(--button-blue), 1);
 }
 
@@ -69,9 +70,8 @@
   background: rgba(var(--button-blue), 0.8);
 }
 
-
 .fdsButton--contained-red {
-  color: #FFFFFF;
+  color: var(--color-white);
   background: rgba(var(--button-red), 1);
 }
 
@@ -79,10 +79,7 @@
   background: rgba(var(--button-red), 0.8);
 }
 
-/* .fdsButton--primary:disabled {
-  box-shadow: 0 0 0 3px rgba(var(--button-blue), 0.6);
-} */
-
+/* We're only using uppercase so we can shift the icon assuming there will not be any descenders */
 .fdsButton-icon {
   margin-top: -3px;
   margin-bottom: -2px;

@@ -6,41 +6,46 @@ import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
 import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
 
 import Button from './Button';
+import README from './Button.md';
 
 storiesOf('Interactive/Button', module)
   .addDecorator(withKnobs)
-  .add('Knobs', () => {
-    const iconOptions = options(
-      'Show sample icon?',
-      {
-        left: 'left',
-        right: 'right',
-        none: '',
-      },
-      '',
-      { display: 'inline-radio' }
-    );
+  .add(
+    'Knobs',
+    () => {
+      const iconOptions = options(
+        'Show sample icon?',
+        {
+          left: 'left',
+          right: 'right',
+          none: '',
+        },
+        '',
+        { display: 'inline-radio' }
+      );
 
-    return (
-      <Button
-        disabled={boolean('disabled', false)}
-        isLoading={boolean('isLoading', false)}
-        Icon={iconOptions && StarFilledIcon}
-        iconPlacement={iconOptions}
-        theme={options(
-          'theme',
-          {
-            'contained--blue': 'contained--blue',
-            'contained--red': 'contained--red',
-          },
-          'contained--blue',
-          { display: 'inline-radio' }
-        )}
-      >
-        {text('Text', 'Button')}
-      </Button>
-    );
-  })
+      return (
+        <Button
+          disabled={boolean('disabled', false)}
+          isLoading={boolean('isLoading', false)}
+          Icon={iconOptions && StarFilledIcon}
+          iconPlacement={iconOptions}
+          theme={options(
+            'theme',
+            {
+              'contained--blue': 'contained--blue',
+              'contained--red': 'contained--red',
+            },
+            'contained--blue',
+            { display: 'inline-radio' }
+          )}
+        >
+          {text('Text', 'Button')}
+        </Button>
+      );
+    },
+    { notes: { markdown: README } }
+  )
   .add('Variations', () => (
     <React.Fragment>
       <div className="display--inlineFlex" style={{ flexWrap: 'wrap' }}>
