@@ -16,13 +16,13 @@ const Button = ({
   const Element = baseElement({ href: rest.href, as: Link });
   return (
     <Element
+      {...rest}
       className={cx('fdsButton', {
         'fdsButton--contained-blue': theme === 'contained--blue',
         'fdsButton--contained-red': theme === 'contained--red',
         'fdsButton--loading': isLoading,
         'fdsButton--disabled': disabled,
       })}
-      {...rest}
       disabled={disabled && Element === 'button'}
     >
       <span className={cx({ 'fdsButton--hiddenLabel': isLoading })}>{children}</span>
