@@ -44,11 +44,7 @@
   animation: spinner 600ms linear infinite;
 }
 
-.fdsButton--loading .fdsButton-icon {
-  visibility: hidden;
-}
-
-.fdsButton--hiddenLabel {
+.fdsButton--hidden {
   visibility: hidden;
 }
 
