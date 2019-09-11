@@ -7,21 +7,21 @@ const Button = ({ theme, isLoading, iconPlacement, Icon, Link, children, ...rest
   const Element = baseElement({ href: rest.href, as: Link });
   return (
     <Element
-      className={cx('niceButton', {
-        'niceButton--contained-blue': theme === 'contained--blue',
-        'niceButton--contained-red': theme === 'contained--red',
-        'niceButton--loading': isLoading,
+      className={cx('fdsButton', {
+        'fdsButton--contained-blue': theme === 'contained--blue',
+        'fdsButton--contained-red': theme === 'contained--red',
+        'fdsButton--loading': isLoading,
       })}
       {...rest}
     >
       {Icon && iconPlacement === 'left' && (
-        <div className="margin--right--half niceButton-icon">
+        <div className="margin--right--half fdsButton-icon">
           <Icon size="xs" />
         </div>
       )}
-      <span className={cx({ 'niceButton--hiddenLabel': isLoading })}>{children}</span>
+      <span className={cx({ 'fdsButton--hiddenLabel': isLoading })}>{children}</span>
       {Icon && iconPlacement === 'right' && (
-        <div className="margin--left--half niceButton-icon">
+        <div className="margin--left--half fdsButton-icon">
           <Icon size="xs" />
         </div>
       )}

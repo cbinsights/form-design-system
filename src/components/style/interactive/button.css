@@ -3,7 +3,7 @@
   --button-red: 229, 50, 62;
 }
 
-.niceButton {
+.fdsButton {
   border: 0 none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -23,14 +23,14 @@
   to {transform: rotate(360deg);}
 }
 
-.niceButton--loading,
-.niceButton--disabled {
+.fdsButton--loading,
+.fdsButton--disabled {
   opacity: 0.6;
   pointer-events: none;
 }
 
 /* Spinner technique is from here: https://stephanwagner.me/only-css-loading-spinner */
-.niceButton--loading::before {
+.fdsButton--loading::before {
   content: "";
   box-sizing: border-box;
   position: absolute;
@@ -46,44 +46,44 @@
   animation: spinner 0.6 linear infinite;
 }
 
-.niceButton--loading .niceButton-icon {
+.fdsButton--loading .fdsButton-icon {
   visibility: hidden;
 }
 
-.niceButton--hiddenLabel {
+.fdsButton--hiddenLabel {
   visibility: hidden;
 }
 
-.niceButton:focus {
+.fdsButton:focus {
   outline: 0;
   z-index: 1;
   box-shadow: 0 0 0 2px #B7D7E5;
 }
 
-.niceButton--contained-blue {
+.fdsButton--contained-blue {
   color: #FFFFFF;
   background: rgba(var(--button-blue), 1);
 }
 
-.niceButton--contained-blue:hover {
+.fdsButton--contained-blue:hover {
   background: rgba(var(--button-blue), 0.8);
 }
 
 
-.niceButton--contained-red {
+.fdsButton--contained-red {
   color: #FFFFFF;
   background: rgba(var(--button-red), 1);
 }
 
-.niceButton--contained-red:hover {
+.fdsButton--contained-red:hover {
   background: rgba(var(--button-red), 0.8);
 }
 
-/* .niceButton--primary:disabled {
+/* .fdsButton--primary:disabled {
   box-shadow: 0 0 0 3px rgba(var(--button-blue), 0.6);
 } */
 
-.niceButton-icon {
+.fdsButton-icon {
   margin-top: -3px;
   margin-bottom: -2px;
 }
