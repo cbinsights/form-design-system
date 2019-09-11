@@ -1,7 +1,6 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
 import { withPropsTable } from 'storybook-addon-react-docgen';
-import { jsxDecorator } from 'storybook-addon-jsx';
 import { create } from '@storybook/theming';
 
 import '../src/components/style/index.css';
@@ -20,7 +19,6 @@ addParameters({
 
 addDecorator(centered);
 addDecorator(withPropsTable);
-addDecorator(jsxDecorator);
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src/components', true, /\.stories\.js$/);
