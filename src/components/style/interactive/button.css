@@ -1,9 +1,6 @@
-:root {
+.fdsButton {
   --button-blue: 0, 102, 153;
   --button-red: 229, 50, 62;
-}
-
-.fdsButton {
   border: 0 none;
   padding: var(--space-half) var(--space-default);
   border-radius: var(--border-radius-default);
