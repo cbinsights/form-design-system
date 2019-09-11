@@ -3,7 +3,16 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import baseElement from '../../util/baseElement';
 
-const Button = ({ theme, isLoading, iconPlacement, Icon, Link, children, ...rest }) => {
+const Button = ({
+  theme,
+  isLoading,
+  iconPlacement,
+  Icon,
+  Link,
+  disabled,
+  children,
+  ...rest
+}) => {
   const Element = baseElement({ href: rest.href, as: Link });
   return (
     <Element
@@ -11,8 +20,10 @@ const Button = ({ theme, isLoading, iconPlacement, Icon, Link, children, ...rest
         'fdsButton--contained-blue': theme === 'contained--blue',
         'fdsButton--contained-red': theme === 'contained--red',
         'fdsButton--loading': isLoading,
+        'fdsButton--disabled': disabled,
       })}
       {...rest}
+      disabled={disabled && Element === 'button'}
     >
       {Icon && iconPlacement === 'left' && (
         <div className="margin--right--half fdsButton-icon">
@@ -46,12 +57,18 @@ Button.propTypes = {
    * to preserve the space set, whilst hiding them
    */
   isLoading: PropTypes.bool,
+  /**
+   * Controls whether the button is disabled or not. Will control the disabled
+   * presentation of either an anchor or button rendered under the hood,
+   * but will only add a disabled attribute for buttons
+   */
+  disabled: PropTypes.bool,
   /** Controls which side the `Icon` renders on, assuming you pass it */
   iconPlacement: PropTypes.oneOf(['left', 'right']),
   /** Used to render a FDS Icon (should only be used for FDS Icons) */
   Icon: PropTypes.func,
   /** Used to control the display and theme of the button */
-  theme: PropTypes.oneOf(['container--blue', 'container--red']),
+  theme: PropTypes.oneOf(['contained--blue', 'contained--red']),
   /** Contents inside the button */
   children: PropTypes.node,
 };

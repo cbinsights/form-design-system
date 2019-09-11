@@ -23,6 +23,7 @@ storiesOf('Interactive/Button', module)
 
     return (
       <Button
+        disabled={boolean('disabled', false)}
         isLoading={boolean('isLoading', false)}
         Icon={iconOptions && StarFilledIcon}
         iconPlacement={iconOptions}
@@ -41,26 +42,62 @@ storiesOf('Interactive/Button', module)
     );
   })
   .add('Variations', () => (
-    <div className="display--inlineFlex">
-      <div className="margin--right--half">
-        <Button theme="contained--blue">Button</Button>
-      </div>
-      <div className="margin--right--half">
-        <Button theme="contained--red" href="#">
-          Button
-        </Button>
-      </div>
+    <React.Fragment>
+      <div className="display--inlineFlex" style={{ flexWrap: 'wrap' }}>
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="contained--blue">Button</Button>
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="contained--red" href="#">
+            Button
+          </Button>
+        </div>
 
-      <div className="margin--right--half">
-        <Button theme="contained--blue" isLoading>
-          Button
-        </Button>
-      </div>
+        <div className="margin--right--half margin--botton--half">
+          <Button theme="contained--blue" Icon={CaretDownIcon}>
+            Button
+          </Button>
+        </div>
 
-      <div className="margin--right--half">
-        <Button theme="contained--blue" Icon={CaretDownIcon}>
-          Button
-        </Button>
+        <div
+          className="margin--right--half margin--bottom--half"
+          style={{ width: '100px' }}
+        >
+          <Button theme="contained--blue">Text that wraps!</Button>
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="contained--blue" disabled>
+            Disabled
+          </Button>
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="contained--blue" disabled href="#">
+            Disabled Link
+          </Button>
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="contained--blue" isLoading>
+            Button
+          </Button>
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="contained--blue" isLoading>
+            Really long text!
+          </Button>
+        </div>
+
+        <div
+          className="margin--right--half margin--bottom--half"
+          style={{ width: '100px' }}
+        >
+          <Button theme="contained--blue" isLoading>
+            Text that wraps!
+          </Button>
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   ));
