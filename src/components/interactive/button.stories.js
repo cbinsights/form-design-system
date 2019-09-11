@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
+import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
 
 import Button from './Button';
 
@@ -22,6 +23,7 @@ storiesOf('Interactive/Button', module)
 
     return (
       <Button
+        isLoading={boolean('isLoading', false)}
         Icon={iconOptions && StarFilledIcon}
         iconPlacement={iconOptions}
         theme={options(
@@ -51,6 +53,12 @@ storiesOf('Interactive/Button', module)
 
       <div className="margin--right--half">
         <Button theme="contained--blue" isLoading>
+          Button
+        </Button>
+      </div>
+
+      <div className="margin--right--half">
+        <Button theme="contained--blue" Icon={CaretDownIcon}>
           Button
         </Button>
       </div>

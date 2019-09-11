@@ -1,7 +1,6 @@
 :root {
   --button-blue: 0, 102, 153;
   --button-red: 229, 50, 62;
-  --button-orange: 229, 50, 62;
 }
 
 .niceButton {
@@ -18,6 +17,37 @@
   line-height: normal;
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
     box-shadow var(--button-group-timeout) var(--motion-easing-default),;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.niceButton--loading,
+.niceButton--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Spinner technique is from here: https://stephanwagner.me/only-css-loading-spinner */
+.niceButton--loading::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  border-top-color: transparent;
+  animation: spinner 0.6 linear infinite;
+}
+
+.niceButton--loading .niceButton-icon {
+  visibility: hidden;
 }
 
 .niceButton--hiddenLabel {
@@ -54,25 +84,6 @@
 } */
 
 .niceButton-icon {
-  margin-top: -1px;
-}
-
-.spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: inline-block;
-  /* would like to figure out a resilient CSS approach to sizing this spinner,
-     no matter the size of the button*/
-  width: 12px;
-  height: 12px;
-  /* ------------------ */
-  vertical-align: text-bottom;
-  border: 2px solid;
-  border-right: 0.15em solid transparent;
-  border-radius: 50%;
-  -webkit-animation: spinner-border 0.75s linear infinite;
-  animation: spinner-border 0.75s linear infinite;
-  margin-top: -7px;
-  margin-left: -7px;
+  margin-top: -3px;
+  margin-bottom: -2px;
 }

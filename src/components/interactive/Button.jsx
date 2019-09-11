@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import baseElement from '../../util/baseElement';
 
@@ -9,6 +10,7 @@ const Button = ({ theme, isLoading, iconPlacement, Icon, Link, children, ...rest
       className={cx('niceButton', {
         'niceButton--contained-blue': theme === 'contained--blue',
         'niceButton--contained-red': theme === 'contained--red',
+        'niceButton--loading': isLoading,
       })}
       {...rest}
     >
@@ -17,7 +19,6 @@ const Button = ({ theme, isLoading, iconPlacement, Icon, Link, children, ...rest
           <Icon size="xs" />
         </div>
       )}
-      {isLoading && <div class="spinner"></div>}
       <span className={cx({ 'niceButton--hiddenLabel': isLoading })}>{children}</span>
       {Icon && iconPlacement === 'right' && (
         <div className="margin--left--half niceButton-icon">
@@ -31,6 +32,28 @@ const Button = ({ theme, isLoading, iconPlacement, Icon, Link, children, ...rest
 Button.defaultProps = {
   theme: 'primary--blue',
   iconPlacement: 'right',
+};
+
+Button.propTypes = {
+  /**
+   * Pass **only** react-router `Link` here. You may **not**
+   * pass anything else here: SFC, Class Component, etc (even
+   * if they use react-router `Link` underneath the hood).
+   */
+  Link: PropTypes.func,
+  /**
+   * Controls whether loading spinner displays. Button text and icons are set to visibility hidden
+   * to preserve the space set, whilst hiding them
+   */
+  isLoading: PropTypes.bool,
+  /** Controls which side the `Icon` renders on, assuming you pass it */
+  iconPlacement: PropTypes.oneOf(['left', 'right']),
+  /** Used to render a FDS Icon (should only be used for FDS Icons) */
+  Icon: PropTypes.func,
+  /** Used to control the display and theme of the button */
+  theme: PropTypes.oneOf(['container--blue', 'container--red']),
+  /** Contents inside the button */
+  children: PropTypes.node,
 };
 
 export default Button;
