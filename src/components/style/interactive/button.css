@@ -17,11 +17,11 @@
   pointer-events: none;
 }
 
+/* Spinner technique is from here: https://stephanwagner.me/only-css-loading-spinner */
 @keyframes spinner {
   to {transform: rotate(360deg);}
 }
 
-/* Spinner technique is from here: https://stephanwagner.me/only-css-loading-spinner */
 .fdsButton--loading::before {
   content: "";
   box-sizing: border-box;
