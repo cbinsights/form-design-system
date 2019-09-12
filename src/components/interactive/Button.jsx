@@ -17,12 +17,24 @@ const Button = ({
   return (
     <Element
       {...rest}
-      className={cx('fdsButton', {
-        'fdsButton--contained-blue': theme === 'contained--blue',
-        'fdsButton--contained-red': theme === 'contained--red',
-        'fdsButton--loading': isLoading,
-        'fdsButton--disabled': disabled,
-      })}
+      className={cx(
+        'fdsButton',
+        'fontStyle--caps',
+        'fontWeight--bold',
+        'display--inlineFlex',
+        'rounded--all',
+        'fontSize--m',
+        'padding--top--half',
+        'padding--bottom--half',
+        'padding--left',
+        'padding--right',
+        {
+          'fdsButton--contained-blue': theme === 'contained--blue',
+          'fdsButton--contained-red': theme === 'contained--red',
+          'fdsButton--loading': isLoading,
+          'fdsButton--disabled': disabled,
+        }
+      )}
       disabled={disabled && Element === 'button'}
     >
       <span className={cx({ 'fdsButton--hidden': isLoading })}>{children}</span>

@@ -2,13 +2,7 @@
   --button-blue: 0, 102, 153;
   --button-red: 229, 50, 62;
   border: 0 none;
-  padding: var(--space-half) var(--space-default);
-  border-radius: var(--border-radius-default);
-  font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: var(--fontSize--m);
-  display: inline-flex;
   align-items: center;
   position: relative;
   line-height: normal;
