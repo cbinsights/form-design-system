@@ -17,9 +17,19 @@
   pointer-events: none;
 }
 
-/* Spinner technique is from here: https://stephanwagner.me/only-css-loading-spinner */
+/*
+   Spinner technique is from the following:
+   https://stephanwagner.me/only-css-loading-spinner
+   https://codepen.io/stuartjnelson/pen/zjveOO
+*/
 @keyframes spinner {
-  to {transform: rotate(360deg);}
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
 }
 
 .fdsButton--loading::before {
@@ -30,12 +40,12 @@
   left: 50%;
   width: 16px;
   height: 16px;
-  margin-top: -8px;
-  margin-left: -8px;
   border-radius: 50%;
   border: 2px solid var(--color-white);
   border-top-color: transparent;
   animation: spinner 600ms linear infinite;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
 }
 
 .fdsButton--hidden {
