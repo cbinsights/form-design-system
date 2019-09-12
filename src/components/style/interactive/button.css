@@ -5,6 +5,7 @@
   letter-spacing: 1px;
   position: relative;
   line-height: normal;
+  user-select: none;
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
     box-shadow var(--button-group-timeout) var(--motion-easing-default),;
 }
