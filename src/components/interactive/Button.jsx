@@ -11,6 +11,7 @@ const Button = ({
   Link,
   disabled,
   children,
+  block,
   ...rest
 }) => {
   const Element = baseElement({ href: rest.href, as: Link });
@@ -33,6 +34,7 @@ const Button = ({
           'fdsButton--contained-red': theme === 'contained--red',
           'fdsButton--loading': isLoading,
           'fdsButton--disabled': disabled,
+          'fdsButton--block': block,
         }
       )}
       disabled={disabled && Element === 'button'}
@@ -81,6 +83,8 @@ Button.propTypes = {
   iconPlacement: PropTypes.oneOf(['left', 'right']),
   /** Used to render a FDS Icon (should only be used for FDS Icons) */
   Icon: PropTypes.func,
+  /** Controls the button going full width */
+  block: PropTypes.bool,
   /** Used to control the display and theme of the button */
   theme: PropTypes.oneOf(['contained--blue', 'contained--red']),
   /** Contents inside the button */

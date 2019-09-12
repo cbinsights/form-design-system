@@ -30,6 +30,7 @@ storiesOf('Interactive/Button', module)
           isLoading={boolean('isLoading', false)}
           Icon={iconOptions && StarFilledIcon}
           iconPlacement={iconOptions}
+          block={boolean('block', false)}
           theme={options(
             'theme',
             {

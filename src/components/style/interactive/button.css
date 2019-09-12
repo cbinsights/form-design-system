@@ -10,6 +10,10 @@
     box-shadow var(--button-group-timeout) var(--motion-easing-default),;
 }
 
+.fdsButton--block {
+  display: block;
+  width: 100%;
+}
 
 .fdsButton--loading,
 .fdsButton--disabled {
