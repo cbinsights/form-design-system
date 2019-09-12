@@ -3,7 +3,6 @@
   --button-red: 229, 50, 62;
   border: 0 none;
   letter-spacing: 1px;
-  align-items: center;
   position: relative;
   line-height: normal;
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
@@ -11,7 +10,6 @@
 }
 
 .fdsButton--block {
-  display: block;
   width: 100%;
 }
 

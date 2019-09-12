@@ -29,6 +29,7 @@ const Button = ({
         'padding--bottom--half',
         'padding--left',
         'padding--right',
+        'alignChild--center--center',
         {
           'fdsButton--contained-blue': theme === 'contained--blue',
           'fdsButton--contained-red': theme === 'contained--red',
