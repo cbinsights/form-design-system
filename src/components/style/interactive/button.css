@@ -170,6 +170,9 @@
   color: var(--button-secondary-destructive);
 }
 
+/* There's a very very unique design requirement here that requires
+   the following override. We only want the following design when all 3
+   of these cases are true */
 /* stylelint-disable-next-line selector-max-class  */
 .fdsButton--ghost.fdsButton--loading.fdsButton--isDestructive {
   border-color: var(--destructive);
