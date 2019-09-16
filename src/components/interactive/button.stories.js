@@ -53,10 +53,10 @@ storiesOf('Interactive/Button', module)
     <React.Fragment>
       <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
         <div className="margin--right--half margin--bottom--half">
-          <Button theme="blue">Button</Button>
+          <Button>Button</Button>
         </div>
         <div className="margin--right--half margin--bottom--half">
-          <Button theme="blue" isDestructive href="#">
+          <Button isDestructive href="#">
             Button
           </Button>
         </div>
