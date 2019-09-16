@@ -12,7 +12,7 @@ const Button = ({
   disabled,
   children,
   isDestructive,
-  block,
+  isFullWidth,
   ...rest
 }) => {
   const Element = baseElement({ href: rest.href, as: Link });
@@ -34,7 +34,7 @@ const Button = ({
           'fdsButton--isDestructive': isDestructive,
           'fdsButton--loading': isLoading,
           'fdsButton--disabled': disabled,
-          'fdsButton--block': block,
+          'fdsButton--isFullWidth': isFullWidth,
         }
       )}
       disabled={disabled && Element === 'button'}
@@ -90,7 +90,7 @@ Button.propTypes = {
   /** Used to render a FDS Icon (should only be used for FDS Icons) */
   Icon: PropTypes.func,
   /** Controls the button going full width */
-  block: PropTypes.bool,
+  isFullWidth: PropTypes.bool,
   /** Used to control the display and theme of the button */
   theme: PropTypes.oneOf(['blue', 'outlined', 'ghost']),
   /** Contents inside the button */
