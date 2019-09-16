@@ -156,11 +156,6 @@
   border-top-color: transparent;
 }
 
-.fdsButton--outlined.fdsButton--loading,
-.fdsButton--ghost.fdsButton--loading {
-  opacity: 1;
-}
-
 .fdsButton--outlined.fdsButton--isDestructive {
   border-color: var(--destructive);
 }
@@ -168,10 +163,6 @@
 .fdsButton--outlined.fdsButton--isDestructive,
 .fdsButton--ghost.fdsButton--isDestructive {
   color: var(--button-secondary-destructive);
-}
-
-/* stylelint-disable-next-line selector-max-class  */
-.fdsButton--ghost.fdsButton--loading.fdsButton--isDestructive {
   border-color: var(--destructive);
 }
 
@@ -179,6 +170,13 @@
 .fdsButton--ghost.fdsButton--isDestructive::before {
   border: 2px solid var(--destructive);
   border-top-color: transparent;
+}
+
+.fdsButton--outlined.fdsButton--loading,
+.fdsButton--ghost.fdsButton--loading {
+  border-width: 1px;
+  border-style: solid;
+  opacity: 1;
 }
 
 /* We're only using uppercase so we can shift the icon assuming there will not be any descenders */
