@@ -36,6 +36,8 @@ storiesOf('Interactive/Button', module)
             {
               'contained--blue': 'contained--blue',
               'contained--red': 'contained--red',
+              outlined: 'outlined',
+              ghost: 'ghost',
             },
             'contained--blue',
             { display: 'inline-radio' }

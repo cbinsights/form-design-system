@@ -33,6 +33,8 @@ const Button = ({
         {
           'fdsButton--contained-blue': theme === 'contained--blue',
           'fdsButton--contained-red': theme === 'contained--red',
+          'fdsButton--outlined': theme === 'outlined',
+          'fdsButton--ghost': theme === 'ghost',
           'fdsButton--loading': isLoading,
           'fdsButton--disabled': disabled,
           'fdsButton--block': block,

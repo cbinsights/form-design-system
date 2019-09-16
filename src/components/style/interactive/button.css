@@ -1,11 +1,35 @@
 .fdsButton {
-  --button-blue: 0, 102, 153;
-  --button-red: 229, 50, 62;
+  --button-blue: #1C6695;
+  --button-blue-hover: #29719D;
+  --button-blue-pressed: #5C96B6;
+
+  --button-red: #DA4544;
+  --button-red-hover: #DC5151;
+  --button-red-pressed: #E37B7E;
+
+  /*
+    calling the colors that outline and
+    ghost share by the name "secondary"
+  */
+
+  --button-secondary-hover: #E8EDF1;
+  --button-secondary-pressed: #CBD5DE;
+  --button-secondary-color: #868888;
+  --button-secondary-hover-color: #565656;
+  --button-secondary-pressed-color: #525355;
+
+  /* ---------------- */
+
+  --button-outlined-border: #C6C9CA;
+  --button-outlined-border-hover: #BFC3C7;
+  --button-outlined-border-pressed: #9EA5AA;
   border: 0 none;
   letter-spacing: 1px;
   position: relative;
   line-height: normal;
   user-select: none;
+  border: 1px solid transparent;
+  background-clip: padding-box;
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
     box-shadow var(--button-group-timeout) var(--motion-easing-default),;
 }
@@ -57,26 +81,55 @@
 
 .fdsButton:focus {
   outline: 0;
-  z-index: 1;
   box-shadow: 0 0 0 2px #B7D7E5;
 }
 
 .fdsButton--contained-blue {
   color: var(--color-white);
-  background: rgba(var(--button-blue), 1);
+  background-color: var(--button-blue);
 }
 
 .fdsButton--contained-blue:hover {
-  background: rgba(var(--button-blue), 0.8);
+  background-color: var(--button-blue-hover);
+}
+
+.fdsButton--contained-blue:active {
+  background-color: var(--button-blue-pressed);
 }
 
 .fdsButton--contained-red {
   color: var(--color-white);
-  background: rgba(var(--button-red), 1);
+  background-color: var(--button-red);
 }
 
 .fdsButton--contained-red:hover {
-  background: rgba(var(--button-red), 0.8);
+  background-color: var(--button-red-hover);
+}
+
+.fdsButton--contained-red:active {
+  background-color: var(--button-red-pressed);
+}
+
+.fdsButton--outlined {
+  border: 1px solid var(--button-outlined-border);
+}
+
+.fdsButton--ghost,
+ .fdsButton--outlined {
+  /* this isn't needed, just writing out for clarity */
+  color: var(--button-secondary-color);
+}
+
+.fdsButton--outlined:hover,
+ .fdsButton--ghost:hover {
+  background-color: var(--button-secondary-hover);
+  color: var(--button-secondary-hover-color);
+}
+
+.fdsButton--outlined:active,
+ .fdsButton--ghost:active {
+  background-color: var(--button-secondary-pressed);
+  color: var(--button-secondary-pressed-color);
 }
 
 /* We're only using uppercase so we can shift the icon assuming there will not be any descenders */
