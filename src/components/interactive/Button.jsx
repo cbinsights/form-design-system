@@ -57,7 +57,7 @@ const Button = ({
 };
 
 Button.defaultProps = {
-  theme: 'primary--blue',
+  theme: 'blue',
   iconPlacement: 'right',
 };
 
