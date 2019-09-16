@@ -31,7 +31,7 @@ storiesOf('Interactive/Button', module)
           isDestructive={boolean('isDestructive', false)}
           Icon={iconOptions && StarFilledIcon}
           iconPlacement={iconOptions}
-          block={boolean('block', false)}
+          isFullWidth={boolean('isFullWidth', false)}
           theme={options(
             'theme',
             {
