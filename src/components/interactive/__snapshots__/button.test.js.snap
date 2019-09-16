@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup component matches snapshot (default props) 1`] = `
+<button
+  className="fdsButton fontStyle--caps fontWeight--bold display--inlineFlex rounded--all fontSize--m alignChild--center--center fdsButton--blue"
+>
+  <span
+    className=""
+  >
+    Button
+  </span>
+</button>
+`;
+
+exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
+<Link
+  className="fdsButton fontStyle--caps fontWeight--bold display--inlineFlex rounded--all fontSize--m alignChild--center--center fdsButton--outlined fdsButton--isDestructive fdsButton--loading fdsButton--disabled fdsButton--block"
+  disabled={false}
+>
+  <span
+    className="fdsButton--hidden"
+  />
+  <div
+    className="fdsButton-icon fdsButton-icon--left margin--right--half fdsButton--hidden"
+  >
+    <Icon
+      size="xs"
+    />
+  </div>
+</Link>
+`;
