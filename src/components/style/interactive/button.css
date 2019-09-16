@@ -39,7 +39,7 @@
     box-shadow var(--button-group-timeout) var(--motion-easing-default),;
 }
 
-.fdsButton--block {
+.fdsButton--isFullWidth {
   width: 100%;
 }
 
