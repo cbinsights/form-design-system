@@ -124,25 +124,21 @@
   color: var(--button-secondary-color);
 }
 
-.fdsButton--outlined:hover,
-.fdsButton--ghost:hover {
+:hover:matches(.fdsButton--outlined, .fdsButton--ghost) {
   background-color: var(--button-secondary-hover);
   color: var(--button-secondary-hover-color);
 }
 
-.fdsButton--outlined:active,
-.fdsButton--ghost:active {
+:active:matches(.fdsButton--outlined, .fdsButton--ghost) {
   background-color: var(--button-secondary-pressed);
   color: var(--button-secondary-pressed-color);
 }
 
-.fdsButton--outlined.fdsButton--isDestructive:hover,
-.fdsButton--ghost.fdsButton--isDestructive:hover {
+.fdsButton--isDestructive:hover:matches(.fdsButton--outlined, .fdsButton--ghost) {
   background-color: var(--button-secondary-destructive-hover);
 }
 
-.fdsButton--outlined.fdsButton--isDestructive:active,
-.fdsButton--ghost.fdsButton--isDestructive:active {
+.fdsButton--isDestructive:active:matches(.fdsButton--outlined, .fdsButton--ghost) {
   background-color: var(--button-secondary-destructive-pressed);
 }
 
@@ -150,14 +146,12 @@
   border: 1px solid var(--button-outlined-border);
 }
 
-.fdsButton--ghost.fdsButton--loading::before,
-.fdsButton--outlined.fdsButton--loading::before {
+.fdsButton--loading:matches(.fdsButton--ghost, .fdsButton--outlined)::before {
   border: 2px solid var(--loader-color);
   border-top-color: transparent;
 }
 
-.fdsButton--outlined.fdsButton--loading,
-.fdsButton--ghost.fdsButton--loading {
+.fdsButton--loading:matches(.fdsButton--outlined, .fdsButton--ghost) {
   opacity: 1;
 }
 
@@ -165,8 +159,7 @@
   border-color: var(--destructive);
 }
 
-.fdsButton--outlined.fdsButton--isDestructive,
-.fdsButton--ghost.fdsButton--isDestructive {
+.fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost) {
   color: var(--button-secondary-destructive);
 }
 
@@ -178,8 +171,7 @@
   border-color: var(--destructive);
 }
 
-.fdsButton--outlined.fdsButton--isDestructive::before,
-.fdsButton--ghost.fdsButton--isDestructive::before {
+.fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost)::before {
   border: 2px solid var(--destructive);
   border-top-color: transparent;
 }
