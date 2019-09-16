@@ -35,11 +35,11 @@ storiesOf('Interactive/Button', module)
           theme={options(
             'theme',
             {
-              contained: 'contained',
+              blue: 'blue',
               outlined: 'outlined',
               ghost: 'ghost',
             },
-            'contained',
+            'blue',
             { display: 'inline-radio' }
           )}
         >
@@ -53,16 +53,16 @@ storiesOf('Interactive/Button', module)
     <React.Fragment>
       <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
         <div className="margin--right--half margin--bottom--half">
-          <Button theme="contained">Button</Button>
+          <Button theme="blue">Button</Button>
         </div>
         <div className="margin--right--half margin--bottom--half">
-          <Button theme="contained" isDestructive href="#">
+          <Button theme="blue" isDestructive href="#">
             Button
           </Button>
         </div>
 
         <div className="margin--right--half margin--botton--half">
-          <Button theme="contained" Icon={CaretDownIcon}>
+          <Button theme="blue" Icon={CaretDownIcon}>
             Button
           </Button>
         </div>
@@ -92,25 +92,25 @@ storiesOf('Interactive/Button', module)
         </div>
 
         <div className="margin--right--half margin--bottom--half">
-          <Button theme="contained" disabled>
+          <Button theme="blue" disabled>
             Disabled
           </Button>
         </div>
 
         <div className="margin--right--half margin--bottom--half">
-          <Button theme="contained" disabled href="#">
+          <Button theme="blue" disabled href="#">
             Disabled Link
           </Button>
         </div>
 
         <div className="margin--right--half margin--bottom--half">
-          <Button theme="contained" isLoading>
+          <Button theme="blue" isLoading>
             Button
           </Button>
         </div>
 
         <div className="margin--right--half margin--bottom--half">
-          <Button theme="contained" isLoading>
+          <Button theme="blue" isLoading>
             Really long text!
           </Button>
         </div>
@@ -137,7 +137,7 @@ storiesOf('Interactive/Button', module)
           className="margin--right--half margin--bottom--half"
           style={{ width: '100px' }}
         >
-          <Button theme="contained" isLoading>
+          <Button theme="blue" isLoading>
             Text that wraps!
           </Button>
         </div>
@@ -146,7 +146,7 @@ storiesOf('Interactive/Button', module)
           className="margin--right--half margin--bottom--half"
           style={{ width: '100px' }}
         >
-          <Button theme="contained">Text that wraps!</Button>
+          <Button theme="blue">Text that wraps!</Button>
         </div>
 
         <div
