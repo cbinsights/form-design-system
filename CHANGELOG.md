@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.9] Added Button
+
+- Added `Button` to components
+
 ## [4.8] Added border helpers
 
 - Added `rounded--<direction>` classes to base styles.

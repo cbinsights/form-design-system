@@ -1,4 +1,4 @@
-.fdsButton {
+.fdsMuiButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -14,23 +14,23 @@
   margin: 0;
 }
 
-.fdsButton--round {
+.fdsMuiButton--round {
   border-radius: 100%;
 }
 
-.fdsButton--disabled {
+.fdsMuiButton--disabled {
   cursor: initial;
 }
 
-.fdsButton:hover {
+.fdsMuiButton:hover {
   background: rgba(0, 0, 0, 0.08); /* match material-ui */
 }
 
-.fdsButton:active {
+.fdsMuiButton:active {
   background: rgba(0, 0, 0, 0.18); /* match material-ui */
 }
 
-.fdsButton--disabled:hover,
-.fdsButton--disabled:active {
+.fdsMuiButton--disabled:hover,
+.fdsMuiButton--disabled:active {
   background: transparent;
 }

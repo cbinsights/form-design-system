@@ -1,0 +1,187 @@
+.fdsButton {
+  --blue: #1C6695;
+  --blue-hover: #29719D;
+  --blue-pressed: #5C96B6;
+
+  --destructive: #DA4544;
+  --destructive-hover: #DC5151;
+  --destructive-pressed: #E37B7E;
+
+  --button-outlined-border: #C6C9CA;
+  --button-outlined-border-hover: #BFC3C7;
+  --button-outlined-border-pressed: #9EA5AA;
+
+  --loader-color: #5DABCB;
+  --focus-color: #B7D7E5;
+
+  /*
+    calling the colors that outline and
+    ghost share by the name "secondary"
+  */
+  --button-secondary-hover: #E8EDF1;
+  --button-secondary-pressed: #CBD5DE;
+  --button-secondary-color: #868888;
+  --button-secondary-hover-color: #565656;
+  --button-secondary-pressed-color: #525355;
+  --button-secondary-destructive: #DA4544;
+  --button-secondary-destructive-hover: #F0EDEF;
+  --button-secondary-destructive-pressed: #ECD6D9;
+  border: 0 none;
+  letter-spacing: 1px;
+  position: relative;
+  line-height: normal;
+  user-select: none;
+  /* We do this to make sure buttons with borders and without are the same dimensions */
+  border: 1px solid transparent;
+  /* we remove 1px off each side as there's a border we need to compensate for */
+  padding: calc(var(--space-half) - 1px) calc(var(--space-default) - 1px);
+  transition: background-color var(--button-group-timeout) var(--motion-easing-default),
+    box-shadow var(--button-group-timeout) var(--motion-easing-default),;
+}
+
+.fdsButton--block {
+  width: 100%;
+}
+
+.fdsButton--loading,
+.fdsButton--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/*
+   Spinner technique is from the following:
+   https://stephanwagner.me/only-css-loading-spinner
+   https://codepen.io/stuartjnelson/pen/zjveOO
+*/
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
+.fdsButton--loading::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  border-top-color: transparent;
+  animation: spinner 600ms linear infinite;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+}
+
+.fdsButton--hidden {
+  visibility: hidden;
+}
+
+.fdsButton:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--focus-color);
+}
+
+.fdsButton--blue {
+  color: var(--color-white);
+  background-color: var(--blue);
+}
+
+.fdsButton--blue:hover {
+  background-color: var(--blue-hover);
+}
+
+.fdsButton--blue:active {
+  background-color: var(--blue-pressed);
+}
+
+.fdsButton--blue.fdsButton--isDestructive {
+  background-color: var(--destructive);
+}
+
+.fdsButton--blue.fdsButton--isDestructive:hover {
+  background-color: var(--destructive-hover);
+}
+
+.fdsButton--blue.fdsButton--isDestructive:active {
+  background-color: var(--destructive-pressed);
+}
+
+.fdsButton--outlined {
+  border: 1px solid var(--button-outlined-border);
+}
+
+.fdsButton--ghost,
+.fdsButton--outlined {
+  /* this isn't needed, just writing out for clarity */
+  color: var(--button-secondary-color);
+}
+
+:hover:matches(.fdsButton--outlined, .fdsButton--ghost) {
+  background-color: var(--button-secondary-hover);
+  color: var(--button-secondary-hover-color);
+}
+
+:active:matches(.fdsButton--outlined, .fdsButton--ghost) {
+  background-color: var(--button-secondary-pressed);
+  color: var(--button-secondary-pressed-color);
+}
+
+.fdsButton--isDestructive:hover:matches(.fdsButton--outlined, .fdsButton--ghost) {
+  background-color: var(--button-secondary-destructive-hover);
+}
+
+.fdsButton--isDestructive:active:matches(.fdsButton--outlined, .fdsButton--ghost) {
+  background-color: var(--button-secondary-destructive-pressed);
+}
+
+.fdsButton--ghost.fdsButton--loading {
+  border: 1px solid var(--button-outlined-border);
+}
+
+.fdsButton--loading:matches(.fdsButton--ghost, .fdsButton--outlined)::before {
+  border: 2px solid var(--loader-color);
+  border-top-color: transparent;
+}
+
+.fdsButton--loading:matches(.fdsButton--outlined, .fdsButton--ghost) {
+  opacity: 1;
+}
+
+.fdsButton--outlined.fdsButton--isDestructive {
+  border-color: var(--destructive);
+}
+
+.fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost) {
+  color: var(--button-secondary-destructive);
+}
+
+/* There's a very very unique design requirement here that requires
+   the following override. We only want the following design when all 3
+   of these cases are true */
+/* stylelint-disable-next-line selector-max-class  */
+.fdsButton--ghost.fdsButton--loading.fdsButton--isDestructive {
+  border-color: var(--destructive);
+}
+
+.fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost)::before {
+  border: 2px solid var(--destructive);
+  border-top-color: transparent;
+}
+
+/* We're only using uppercase so we can shift the icon assuming there will not be any descenders */
+.fdsButton-icon {
+  margin-top: -4px;
+  margin-bottom: -2px;
+}
+
+.fdsButton-icon--left {
+  order: -1;
+}
