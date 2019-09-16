@@ -127,6 +127,12 @@ storiesOf('Interactive/Button', module)
           </Button>
         </div>
 
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="ghost" isLoading isDestructive>
+            Button
+          </Button>
+        </div>
+
         <div
           className="margin--right--half margin--bottom--half"
           style={{ width: '100px' }}

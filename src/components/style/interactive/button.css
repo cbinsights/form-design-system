@@ -1,7 +1,7 @@
 .fdsButton {
-  --contained: #1C6695;
-  --contained-hover: #29719D;
-  --contained-pressed: #5C96B6;
+  --blue: #1C6695;
+  --blue-hover: #29719D;
+  --blue-pressed: #5C96B6;
 
   --destructive: #DA4544;
   --destructive-hover: #DC5151;
@@ -89,28 +89,28 @@
   box-shadow: 0 0 0 2px #B7D7E5;
 }
 
-.fdsButton--contained {
+.fdsButton--blue {
   color: var(--color-white);
-  background-color: var(--contained);
+  background-color: var(--blue);
 }
 
-.fdsButton--contained:hover {
-  background-color: var(--contained-hover);
+.fdsButton--blue:hover {
+  background-color: var(--blue-hover);
 }
 
-.fdsButton--contained:active {
-  background-color: var(--contained-pressed);
+.fdsButton--blue:active {
+  background-color: var(--blue-pressed);
 }
 
-.fdsButton--contained.fdsButton--isDestructive {
+.fdsButton--blue.fdsButton--isDestructive {
   background-color: var(--destructive);
 }
 
-.fdsButton--contained.fdsButton--isDestructive:hover {
+.fdsButton--blue.fdsButton--isDestructive:hover {
   background-color: var(--destructive-hover);
 }
 
-.fdsButton--contained.fdsButton--isDestructive:active {
+.fdsButton--blue.fdsButton--isDestructive:active {
   background-color: var(--destructive-pressed);
 }
 
@@ -161,9 +161,17 @@
   opacity: 1;
 }
 
+.fdsButton--outlined.fdsButton--isDestructive {
+  border-color: var(--destructive);
+}
+
 .fdsButton--outlined.fdsButton--isDestructive,
 .fdsButton--ghost.fdsButton--isDestructive {
   color: var(--button-secondary-destructive);
+}
+
+/* stylelint-disable-next-line selector-max-class  */
+.fdsButton--ghost.fdsButton--loading.fdsButton--isDestructive {
   border-color: var(--destructive);
 }
 
