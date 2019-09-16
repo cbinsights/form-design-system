@@ -28,8 +28,7 @@ const Button = ({
         'fontSize--m',
         'alignChild--center--center',
         {
-          'fdsButton--contained-blue': theme === 'contained--blue',
-          'fdsButton--contained-red': theme === 'contained--red',
+          'fdsButton--contained': theme === 'contained',
           'fdsButton--outlined': theme === 'outlined',
           'fdsButton--ghost': theme === 'ghost',
           'fdsButton--isDestructive': isDestructive,
@@ -93,7 +92,7 @@ Button.propTypes = {
   /** Controls the button going full width */
   block: PropTypes.bool,
   /** Used to control the display and theme of the button */
-  theme: PropTypes.oneOf(['contained--blue', 'contained--red']),
+  theme: PropTypes.oneOf(['contained', 'outlined', 'ghost']),
   /** Contents inside the button */
   children: PropTypes.node,
 };

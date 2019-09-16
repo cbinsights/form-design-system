@@ -1,17 +1,23 @@
 .fdsButton {
-  --button-blue: #1C6695;
-  --button-blue-hover: #29719D;
-  --button-blue-pressed: #5C96B6;
+  --contained: #1C6695;
+  --contained-hover: #29719D;
+  --contained-pressed: #5C96B6;
 
-  --button-red: #DA4544;
-  --button-red-hover: #DC5151;
-  --button-red-pressed: #E37B7E;
+  --destructive: #DA4544;
+  --destructive-hover: #DC5151;
+  --destructive-pressed: #E37B7E;
+
+  --button-outlined-border: #C6C9CA;
+  --button-outlined-border-hover: #BFC3C7;
+  --button-outlined-border-pressed: #9EA5AA;
+
+  --loader-color: #5DABCB;
+  --focus-color: #B7D7E5;
 
   /*
     calling the colors that outline and
     ghost share by the name "secondary"
   */
-
   --button-secondary-hover: #E8EDF1;
   --button-secondary-pressed: #CBD5DE;
   --button-secondary-color: #868888;
@@ -20,15 +26,6 @@
   --button-secondary-destructive: #DA4544;
   --button-secondary-destructive-hover: #F0EDEF;
   --button-secondary-destructive-pressed: #ECD6D9;
-
-  /* ---------------- */
-
-  --button-outlined-border: #C6C9CA;
-  --button-outlined-border-hover: #BFC3C7;
-  --button-outlined-border-pressed: #9EA5AA;
-
-  --loader-color: #5DABCB;
-  --focus-color: #B7D7E5;
   border: 0 none;
   letter-spacing: 1px;
   position: relative;
@@ -92,30 +89,29 @@
   box-shadow: 0 0 0 2px #B7D7E5;
 }
 
-.fdsButton--contained-blue {
+.fdsButton--contained {
   color: var(--color-white);
-  background-color: var(--button-blue);
+  background-color: var(--contained);
 }
 
-.fdsButton--contained-blue:hover {
-  background-color: var(--button-blue-hover);
+.fdsButton--contained:hover {
+  background-color: var(--contained-hover);
 }
 
-.fdsButton--contained-blue:active {
-  background-color: var(--button-blue-pressed);
+.fdsButton--contained:active {
+  background-color: var(--contained-pressed);
 }
 
-.fdsButton--contained-red {
-  color: var(--color-white);
-  background-color: var(--button-red);
+.fdsButton--contained.fdsButton--isDestructive {
+  background-color: var(--destructive);
 }
 
-.fdsButton--contained-red:hover {
-  background-color: var(--button-red-hover);
+.fdsButton--contained.fdsButton--isDestructive:hover {
+  background-color: var(--destructive-hover);
 }
 
-.fdsButton--contained-red:active {
-  background-color: var(--button-red-pressed);
+.fdsButton--contained.fdsButton--isDestructive:active {
+  background-color: var(--destructive-pressed);
 }
 
 .fdsButton--outlined {
@@ -138,15 +134,6 @@
 .fdsButton--ghost:active {
   background-color: var(--button-secondary-pressed);
   color: var(--button-secondary-pressed-color);
-}
-
-.fdsButton--outlined.fdsButton--isDestructive {
-  border-color: var(--button-red);
-}
-
-.fdsButton--outlined.fdsButton--isDestructive,
-.fdsButton--ghost.fdsButton--isDestructive {
-  color: var(--button-secondary-destructive);
 }
 
 .fdsButton--outlined.fdsButton--isDestructive:hover,
@@ -174,9 +161,15 @@
   opacity: 1;
 }
 
+.fdsButton--outlined.fdsButton--isDestructive,
+.fdsButton--ghost.fdsButton--isDestructive {
+  color: var(--button-secondary-destructive);
+  border-color: var(--destructive);
+}
+
 .fdsButton--outlined.fdsButton--isDestructive::before,
 .fdsButton--ghost.fdsButton--isDestructive::before {
-  border: 2px solid var(--button-red);
+  border: 2px solid var(--destructive);
   border-top-color: transparent;
 }
 
