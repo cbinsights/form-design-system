@@ -86,7 +86,7 @@
 
 .fdsButton:focus {
   outline: 0;
-  box-shadow: 0 0 0 2px #B7D7E5;
+  box-shadow: 0 0 0 2px var(--focus-color);
 }
 
 .fdsButton--blue {
