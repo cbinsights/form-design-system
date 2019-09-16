@@ -17,19 +17,27 @@
   --button-secondary-color: #868888;
   --button-secondary-hover-color: #565656;
   --button-secondary-pressed-color: #525355;
+  --button-secondary-destructive: #DA4544;
+  --button-secondary-destructive-hover: #F0EDEF;
+  --button-secondary-destructive-pressed: #ECD6D9;
 
   /* ---------------- */
 
   --button-outlined-border: #C6C9CA;
   --button-outlined-border-hover: #BFC3C7;
   --button-outlined-border-pressed: #9EA5AA;
+
+  --loader-color: #5DABCB;
+  --focus-color: #B7D7E5;
   border: 0 none;
   letter-spacing: 1px;
   position: relative;
   line-height: normal;
   user-select: none;
+  /* We do this to make sure buttons with borders and without are the same dimensions */
   border: 1px solid transparent;
-  background-clip: padding-box;
+  /* we remove 1px off each side as there's a border we need to compensate for */
+  padding: calc(var(--space-half) - 1px) calc(var(--space-default) - 1px);
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
     box-shadow var(--button-group-timeout) var(--motion-easing-default),;
 }
@@ -115,21 +123,61 @@
 }
 
 .fdsButton--ghost,
- .fdsButton--outlined {
+.fdsButton--outlined {
   /* this isn't needed, just writing out for clarity */
   color: var(--button-secondary-color);
 }
 
 .fdsButton--outlined:hover,
- .fdsButton--ghost:hover {
+.fdsButton--ghost:hover {
   background-color: var(--button-secondary-hover);
   color: var(--button-secondary-hover-color);
 }
 
 .fdsButton--outlined:active,
- .fdsButton--ghost:active {
+.fdsButton--ghost:active {
   background-color: var(--button-secondary-pressed);
   color: var(--button-secondary-pressed-color);
+}
+
+.fdsButton--outlined.fdsButton--isDestructive {
+  border-color: var(--button-red);
+}
+
+.fdsButton--outlined.fdsButton--isDestructive,
+.fdsButton--ghost.fdsButton--isDestructive {
+  color: var(--button-secondary-destructive);
+}
+
+.fdsButton--outlined.fdsButton--isDestructive:hover,
+.fdsButton--ghost.fdsButton--isDestructive:hover {
+  background-color: var(--button-secondary-destructive-hover);
+}
+
+.fdsButton--outlined.fdsButton--isDestructive:active,
+.fdsButton--ghost.fdsButton--isDestructive:active {
+  background-color: var(--button-secondary-destructive-pressed);
+}
+
+.fdsButton--ghost.fdsButton--loading {
+  border: 1px solid var(--button-outlined-border);
+}
+
+.fdsButton--ghost.fdsButton--loading::before,
+.fdsButton--outlined.fdsButton--loading::before {
+  border: 2px solid var(--loader-color);
+  border-top-color: transparent;
+}
+
+.fdsButton--outlined.fdsButton--loading,
+.fdsButton--ghost.fdsButton--loading {
+  opacity: 1;
+}
+
+.fdsButton--outlined.fdsButton--isDestructive::before,
+.fdsButton--ghost.fdsButton--isDestructive::before {
+  border: 2px solid var(--button-red);
+  border-top-color: transparent;
 }
 
 /* We're only using uppercase so we can shift the icon assuming there will not be any descenders */

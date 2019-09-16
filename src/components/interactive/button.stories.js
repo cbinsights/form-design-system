@@ -28,6 +28,7 @@ storiesOf('Interactive/Button', module)
         <Button
           disabled={boolean('disabled', false)}
           isLoading={boolean('isLoading', false)}
+          isDestructive={boolean('isDestructive', false)}
           Icon={iconOptions && StarFilledIcon}
           iconPlacement={iconOptions}
           block={boolean('block', false)}
@@ -51,7 +52,7 @@ storiesOf('Interactive/Button', module)
   )
   .add('Variations', () => (
     <React.Fragment>
-      <div className="display--inlineFlex" style={{ flexWrap: 'wrap' }}>
+      <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
         <div className="margin--right--half margin--bottom--half">
           <Button theme="contained--blue">Button</Button>
         </div>
@@ -67,11 +68,28 @@ storiesOf('Interactive/Button', module)
           </Button>
         </div>
 
-        <div
-          className="margin--right--half margin--bottom--half"
-          style={{ width: '100px' }}
-        >
-          <Button theme="contained--blue">Text that wraps!</Button>
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="outlined" href="#">
+            Button
+          </Button>
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="ghost" href="#">
+            Button
+          </Button>
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="outlined" isDestructive href="#">
+            Button
+          </Button>
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="ghost" isDestructive href="#">
+            Button
+          </Button>
         </div>
 
         <div className="margin--right--half margin--bottom--half">
@@ -98,6 +116,18 @@ storiesOf('Interactive/Button', module)
           </Button>
         </div>
 
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="outlined" isLoading>
+            Button
+          </Button>
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <Button theme="outlined" isLoading isDestructive>
+            Button
+          </Button>
+        </div>
+
         <div
           className="margin--right--half margin--bottom--half"
           style={{ width: '100px' }}
@@ -105,6 +135,20 @@ storiesOf('Interactive/Button', module)
           <Button theme="contained--blue" isLoading>
             Text that wraps!
           </Button>
+        </div>
+
+        <div
+          className="margin--right--half margin--bottom--half"
+          style={{ width: '100px' }}
+        >
+          <Button theme="contained--blue">Text that wraps!</Button>
+        </div>
+
+        <div
+          className="margin--right--half margin--bottom--half"
+          style={{ width: '100px' }}
+        >
+          <Button theme="outlined">Text that wraps!</Button>
         </div>
       </div>
     </React.Fragment>

@@ -11,6 +11,7 @@ const Button = ({
   Link,
   disabled,
   children,
+  isDestructive,
   block,
   ...rest
 }) => {
@@ -25,16 +26,13 @@ const Button = ({
         'display--inlineFlex',
         'rounded--all',
         'fontSize--m',
-        'padding--top--half',
-        'padding--bottom--half',
-        'padding--left',
-        'padding--right',
         'alignChild--center--center',
         {
           'fdsButton--contained-blue': theme === 'contained--blue',
           'fdsButton--contained-red': theme === 'contained--red',
           'fdsButton--outlined': theme === 'outlined',
           'fdsButton--ghost': theme === 'ghost',
+          'fdsButton--isDestructive': isDestructive,
           'fdsButton--loading': isLoading,
           'fdsButton--disabled': disabled,
           'fdsButton--block': block,
@@ -76,6 +74,12 @@ Button.propTypes = {
    * to preserve the space set, whilst hiding them
    */
   isLoading: PropTypes.bool,
+  /**
+   * Controls whether button should be in a destructive UI state.
+   * This only influences UI, there is no functional differences enabled
+   * with this boolean
+   */
+  isDestructive: PropTypes.bool,
   /**
    * Controls whether the button is disabled or not. Will control the disabled
    * presentation of either an anchor or button rendered under the hood,
