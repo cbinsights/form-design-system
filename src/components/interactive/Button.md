@@ -2,6 +2,10 @@
 
 Displays standard Buttons.
 
+## Handling events
+The `Button` component passes through `...rest` props. You may add an `onClick` prop to
+handle click events.
+
 ## Themes
 Use the `theme` prop to chose the button style.
 
