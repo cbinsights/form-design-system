@@ -30,7 +30,6 @@ module.exports = {
     },
   },
   typography: {
-    useNextVariants: true,
     fontFamily: FDS.FONT_FAMILY_DEFAULT,
     fontSize: FDS.FONT_SIZE_DEFAULT,
   },
