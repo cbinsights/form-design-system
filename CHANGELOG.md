@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.10] Grid prefixing
+
+- Enabled prefixing for CSS Grid properties for IE11 support
+
 ## [4.9] Added Button
 
 - Added `Button` to components
