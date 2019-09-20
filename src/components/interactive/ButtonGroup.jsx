@@ -5,7 +5,6 @@ import combine from '../../util/combine';
 
 const ButtonGroup = ({ buttons, onChange, ...restBtnGroup }) => (
   <div {...restBtnGroup} className="btngroup">
-    {/* `isFirstButton` and `isLastButton` are removed to guard against them being passed in. */}
     {buttons.map(
       (
         {
@@ -15,6 +14,7 @@ const ButtonGroup = ({ buttons, onChange, ...restBtnGroup }) => (
           Icon,
           onClick,
           label,
+          // `isFirstButton` and `isLastButton` are private and can't being passed in.
           isFirstButton,
           isLastButton,
           ...restBtn
