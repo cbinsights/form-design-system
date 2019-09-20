@@ -63,10 +63,10 @@ GroupButton.propTypes = {
    */
   Wrapper: PropTypes.elementType,
 
-  /** For internal use: Assigns the first button styling. */
+  /** Assigns the first button styling. */
   isFirstButton: PropTypes.bool,
 
-  /** For internal use: Assigns the last button styling. */
+  /** Assigns the last button styling. */
   isLastButton: PropTypes.bool,
 };
 
