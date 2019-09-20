@@ -28,6 +28,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [4.12] Added Wrapper prop to GroupButton
+
+- Allows a `Wrapper` prop to be passed to `GroupButton` to suppo things like wrapping tooltips.
 
 ## [4.11] Added View and Date Picker icons
 
