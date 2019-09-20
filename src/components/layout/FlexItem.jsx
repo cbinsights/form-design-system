@@ -52,7 +52,9 @@ FlexItem.defaultProps = {
 };
 
 FlexItem.propTypes = {
+  /** Sets standard justify-content */
   justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),
+  /** Sets standard align-items */
   align: PropTypes.oneOf(Object.keys(AlignPropMap)),
 
   /** When set, the `FlexItem` will shrink to content size */

@@ -49,11 +49,14 @@ GroupButton.propTypes = {
    */
   Link: PropTypes.func,
 
+  /** Text that appears in GroupButton */
   label: PropTypes.string,
 
+  /** Controls whether button is disabled or not (works for
+   * anchor tags as well, visually) */
   disabled: PropTypes.bool,
 
-  /** Specify a fds-icon component */
+  /** Used to render a FDS Icon (should only be used for FDS Icons) */
   Icon: PropTypes.func,
 
   /**
