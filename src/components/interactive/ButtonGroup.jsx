@@ -5,20 +5,41 @@ import combine from '../../util/combine';
 
 const ButtonGroup = ({ buttons, onChange, ...restBtnGroup }) => (
   <div {...restBtnGroup} className="btngroup">
-    {buttons.map(({ value, content, key, Icon, onClick, label, ...restBtn }) => (
-      <GroupButton
-        key={key || label}
-        onClick={onChange ? combine(() => onChange(label || value), onClick) : onClick}
-        label={label}
-        Icon={Icon}
-        {...restBtn}
-      />
-    ))}
+    {/* `isFirstButton` and `isLastButton` are removed to guard against them being passed in. */}
+    {buttons.map(
+      (
+        {
+          value,
+          content,
+          key,
+          Icon,
+          onClick,
+          label,
+          isFirstButton,
+          isLastButton,
+          ...restBtn
+        },
+        index
+      ) => (
+        <GroupButton
+          key={key || label}
+          onClick={onChange ? combine(() => onChange(label || value), onClick) : onClick}
+          label={label}
+          Icon={Icon}
+          isFirstButton={index === 0}
+          isLastButton={index === buttons.length - 1}
+          {...restBtn}
+        />
+      )
+    )}
   </div>
 );
 
 ButtonGroup.propTypes = {
-  /** Each object in array accepts value, content, onClick, and icon, and also will pass through any extra props */
+  /**
+   * Each object in array accepts value, content, onClick, and icon, and also will pass through any extra props.
+   * An optional Wrapper component is supported to wrap a button in another component, ex. a tooltip.
+   */
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       /**
@@ -34,6 +55,12 @@ ButtonGroup.propTypes = {
       isActive: PropTypes.bool,
       label: PropTypes.string,
       Icon: PropTypes.func,
+      /**
+       * A component to wrap the entire group button. The
+       * `wrapper` must render the children prop passed into it
+       * to render the GroupButton.
+       */
+      Wrapper: PropTypes.elementType,
     })
   ).isRequired,
   onChange: PropTypes.func,

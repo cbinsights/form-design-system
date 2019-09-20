@@ -56,7 +56,7 @@ MuiAvatarShim.propTypes = {
   className: PropTypes.string,
 
   /** inline styles */
-  style: PropTypes.obj,
+  style: PropTypes.object,
 };
 
 export default MuiAvatarShim;
