@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.11] Fixed Chip
+
+- Corrected subtitle color for blue `Chip` (should be aqua)
+
 ## [4.10] Grid prefixing
 
 - Enabled prefixing for CSS Grid properties for IE11 support

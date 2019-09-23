@@ -4,7 +4,6 @@
   --chip-hover-bg: #D8D8D8;
   --chip-blue-bg: #E0EDF2;
   --chip-blue-hover-bg: #D4E7EE;
-  --chip-blue-subtitle: #4CABCE;
 }
 
 .fdsChip {
@@ -51,7 +50,7 @@
 }
 
 .fdsChip--blue .fdsChip-subtitle {
-  color: var(--chip-blue-subtitle);
+  color: var(--color-aqua);
 }
 
 .fdsChip--blue {
