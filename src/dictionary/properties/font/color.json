@@ -2,7 +2,9 @@
   "font": {
     "color": {
 
-      "link":     { "value": "{color.base.aqua.value}" },
+      "link":     { "value": "{color.base.blue.value}" },
+
+      "linkInverted":     { "value": "{color.base.aqua.value}" },
 
       "heading":    { "value": "{color.base.charcoal.value}" },
       "primary":    { "value": "rgba(64, 64, 64, 0.87)" },
