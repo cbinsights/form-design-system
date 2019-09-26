@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu, 26 Sep 2019 15:55:13 GMT
+ * Generated on Thu, 26 Sep 2019 15:58:56 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -25,7 +25,8 @@
  --color-mint: #70c390;
  --color-purple: #a02385;
  --color-violet: #d772ad;
- --font-color-link: #4cabce;
+ --font-color-link: #006699;
+ --font-color-linkInverted: #4cabce;
  --font-color-heading: #404040;
  --font-color-primary: rgba(64, 64, 64, 0.87);
  --font-color-secondary: rgba(64, 64, 64, 0.60);
@@ -1410,10 +1411,13 @@ section: Typesetting
 <p>
   This paragraph as a <span class="type--link">span</span> that looks like a link.
 </p>
+<div class="inverted padding--all" style="background-color: var(--color-navy)">
+  This is a <a class="type--link">link</a> in an inverted context.
+</div>
 ```
 */
 .type--link {
-  color: #4cabce;
+  color: #006699;
   color: var(--font-color-link);
 }
 .type--link:hover,
@@ -1423,6 +1427,10 @@ section: Typesetting
   color: #006699;
   color: var(--color-blue);
   text-decoration: underline;
+}
+.inverted .type--link {
+  color: #4cabce;
+  color: var(--font-color-linkInverted);
 }
 /* Text modifiers */
 /*----

@@ -14,6 +14,9 @@ section: Typesetting
 <p>
   This paragraph as a <span class="type--link">span</span> that looks like a link.
 </p>
+<div class="inverted padding--all" style="background-color: var(--color-navy)">
+  This is a <a class="type--link">link</a> in an inverted context.
+</div>
 ```
 */
 
@@ -27,4 +30,8 @@ section: Typesetting
   cursor: pointer;
   color: var(--color-blue);
   text-decoration: underline;
+}
+
+.inverted .type--link {
+  color: var(--font-color-linkInverted);
 }
