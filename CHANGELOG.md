@@ -29,9 +29,17 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [4.11] Fixed Chip
+## [4.13] Fixed Chip
 
 - Corrected subtitle color for blue `Chip` (should be aqua)
+
+## [4.12] Added Wrapper prop to GroupButton
+
+- Allows a `Wrapper` prop to be passed to `GroupButton` to support things like wrapping tooltips.
+
+## [4.11] Added View and Date Picker icons
+
+- Added `View` and `Date Picker` to icons
 
 ## [4.10] Grid prefixing
 

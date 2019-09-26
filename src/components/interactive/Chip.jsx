@@ -38,6 +38,9 @@ const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }
 };
 
 Chip.propTypes = {
+  /**
+   * Text that appears in the button
+   */
   label: PropTypes.string.isRequired,
   /**
    * Pass **only** react-router `Link` here. You may **not**

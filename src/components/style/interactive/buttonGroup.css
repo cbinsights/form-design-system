@@ -41,13 +41,13 @@ for a button being clicked on (:active) */
   z-index: 5;
 }
 
-.btngroup .groupbtn:first-child {
+.btngroup .groupbtn--first {
   border-top-left-radius: var(--border-radius-default);
   border-bottom-left-radius: var(--border-radius-default);
   margin-left: 0;
 }
 
-.btngroup .groupbtn:last-child {
+.btngroup .groupbtn--last {
   border-top-right-radius: var(--border-radius-default);
   border-bottom-right-radius: var(--border-radius-default);
 }

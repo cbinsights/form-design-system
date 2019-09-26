@@ -5,11 +5,14 @@ import GroupButton from './GroupButton';
 
 const Icon = () => (
   <span>🌭</span>
-)
+);
+const Wrapper = (props) => (
+  <div {...props} data-test="snapshot-wrapper" />
+);
 
 describe('GroupButton component', () => {
   it('matches snapshot (set all props)', () => {
-    expect(shallow(<GroupButton value='Feed' icon={Icon} isActive={true} />)).toMatchSnapshot();
+    expect(shallow(<GroupButton value='Feed' Icon={Icon} isActive={true} Wrapper={Wrapper} />)).toMatchSnapshot();
   });
 });
 

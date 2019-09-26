@@ -10,8 +10,8 @@ const Icon = () => (
 )
 
 const buttons = [
-  { value: 'Feed', icon: Icon, isActive: true },
-  { value: 'Table', icon: Icon, onClick: () => {}, disabled: true },
+  { label: 'Feed', Icon, isActive: true },
+  { label: 'Table', Icon, onClick: () => {}, disabled: true },
 ];
 
 describe('ButtonGroup component', () => {
@@ -26,8 +26,7 @@ describe('ButtonGroup component', () => {
   it('matches snapshot (set all props)', () => {
     const component = renderComponent({
       buttons,
-      className: 'foo',
-      onChange: () => {} 
+      onChange: () => {}
     });
     expect(component).toMatchSnapshot();
   });
