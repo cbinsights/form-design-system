@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 const IconComponent = (props) => (
   <div
     className={cx('fds-icon', `fds-icon--${props.size}`, props.className)}
-    style={{ fill: props.color, width: props.customSize, height: props.customSize }}
+    style={{
+      fill: props.color,
+      width: `${props.customSize}px`,
+      height: `${props.customSize}px`,
+    }}
   >
     {props.children}
   </div>
