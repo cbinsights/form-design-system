@@ -26,3 +26,5 @@ IconComponent.propTypes = {
   customSize: PropTypes.number,
   children: PropTypes.node,
 };
+
+export default IconComponent;
