@@ -50,7 +50,7 @@
 }
 
 .fdsChip--blue .fdsChip-subtitle {
-  color: inherit;
+  color: var(--color-aqua);
 }
 
 .fdsChip--blue {

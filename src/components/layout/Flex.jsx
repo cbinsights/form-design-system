@@ -66,8 +66,11 @@ Flex.defaultProps = {
 };
 
 Flex.propTypes = {
+  /** sets flex-direction (along with either 100% height or width) */
   direction: PropTypes.oneOf(Object.keys(DirectionPropMap)),
+  /** sets standard justify-content */
   justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),
+  /** sets standard align-items */
   align: PropTypes.oneOf(Object.keys(AlignPropMap)),
 
   /** When set, gutters are removed from `FlexItem` children */

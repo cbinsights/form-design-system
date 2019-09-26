@@ -37,8 +37,8 @@ const ButtonGroup = ({ buttons, onChange, ...restBtnGroup }) => (
 
 ButtonGroup.propTypes = {
   /**
-   * Each object in array accepts value, content, onClick, and icon, and also will pass through any extra props.
-   * An optional Wrapper component is supported to wrap a button in another component, ex. a tooltip.
+   * Each object in array renders a GroupButton, and (generally) passes all it's values through
+   * as props to GroupButton
    */
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
@@ -52,8 +52,13 @@ ButtonGroup.propTypes = {
        * Use if labels are not unique
        */
       key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
       isActive: PropTypes.bool,
+      /**
+       * The text that appears in the button
+       */
       label: PropTypes.string,
+      /** Used to render a FDS Icon (should only be used for FDS Icons) */
       Icon: PropTypes.func,
       /**
        * A component to wrap the entire group button. The
@@ -63,6 +68,10 @@ ButtonGroup.propTypes = {
       Wrapper: PropTypes.elementType,
     })
   ).isRequired,
+
+  /**
+   * Fires when any Button is clicked in ButtonGroup
+   */
   onChange: PropTypes.func,
 };
 

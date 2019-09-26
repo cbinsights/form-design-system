@@ -71,7 +71,9 @@ AvatarRow.propTypes = {
   /** List of members to render - `[ {name, src}, ... ]` */
   memberList: PropTypes.arrayOf(
     PropTypes.shape({
+      /** Sets name for member */
       name: PropTypes.string.isRequired,
+      /** Sets image source for member */
       src: PropTypes.string,
     })
   ).isRequired,
