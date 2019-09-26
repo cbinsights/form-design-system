@@ -18,33 +18,40 @@ storiesOf('Interactive/Button', module)
         {
           left: 'left',
           right: 'right',
-          none: '',
+          none: undefined,
         },
-        '',
+        undefined,
         { display: 'inline-radio' }
       );
 
       return (
-        <Button
-          disabled={boolean('disabled', false)}
-          isLoading={boolean('isLoading', false)}
-          isDestructive={boolean('isDestructive', false)}
-          Icon={iconOptions && StarFilledIcon}
-          iconPlacement={iconOptions}
-          isFullWidth={boolean('isFullWidth', false)}
-          theme={options(
-            'theme',
-            {
-              blue: 'blue',
-              outlined: 'outlined',
-              ghost: 'ghost',
-            },
-            'blue',
-            { display: 'inline-radio' }
-          )}
+        <div
+          className={boolean('Toggle Background', false) ? 'padding--all inverted' : ''}
+          style={
+            boolean('Toggle Background', false) ? { background: 'var(--color-navy)' } : {}
+          }
         >
-          {text('Text', 'Button')}
-        </Button>
+          <Button
+            disabled={boolean('disabled', false)}
+            isLoading={boolean('isLoading', false)}
+            isDestructive={boolean('isDestructive', false)}
+            Icon={iconOptions ? StarFilledIcon : undefined}
+            iconPlacement={iconOptions}
+            isFullWidth={boolean('isFullWidth', false)}
+            theme={options(
+              'theme',
+              {
+                blue: 'blue',
+                outlined: 'outlined',
+                ghost: 'ghost',
+              },
+              'blue',
+              { display: 'inline-radio' }
+            )}
+          >
+            {text('Text', 'Button')}
+          </Button>
+        </div>
       );
     },
     { notes: { markdown: README } }
