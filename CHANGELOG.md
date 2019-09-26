@@ -28,6 +28,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+
+## [4.13] Fixed Chip
+
+- Corrected subtitle color for blue `Chip` (should be aqua)
+
 ## [4.12] Added Wrapper prop to GroupButton
 
 - Allows a `Wrapper` prop to be passed to `GroupButton` to support things like wrapping tooltips.
