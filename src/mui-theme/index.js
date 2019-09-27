@@ -1,4 +1,4 @@
-/* eslint-disable no-var */
+/* eslint-disable no-var,object-shorthand */
 var COLORS = require('../dictionary/js/materialPalette');
 var FDS = require('../dictionary/js/styleConstants');
 
@@ -35,8 +35,8 @@ module.exports = {
     fontSize: FDS.FONT_SIZE_DEFAULT,
   },
   overrides: {
-    MuiButton,
-    MuiIconButton,
+    MuiButton: MuiButton,
+    MuiIconButton: MuiIconButton,
   },
   zIndex: {
     modal: 9999,
