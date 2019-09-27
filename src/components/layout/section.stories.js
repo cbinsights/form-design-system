@@ -1,22 +1,16 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
+import { withKnobs, select } from '@storybook/addon-knobs';
+import { arrayToOptions, storyBackgrounds } from '../util/storybook';
 
 import Section, { VALID_BG_NORMAL, VALID_BG_INVERTED, VALID_PADDING } from './Section';
 import README from './Flex.md';
 
 const ALL_BACKGROUNDS = [...VALID_BG_NORMAL, ...VALID_BG_INVERTED];
 
-// transform list of values into radio options
-const toOptions = (values) =>
-  values.reduce((o, value) => {
-    o[value] = value;
-    return o;
-  }, {});
-
 const parentStyle = {
-  background: 'var(--color-timberwolf)',
+  background: storyBackgrounds.diagonalLine,
   height: '100vh',
   width: '100vw',
 };
@@ -28,16 +22,19 @@ storiesOf('Layout/Section', module)
     () => (
       <div className="alignChild--center--center" style={parentStyle}>
         <Section
-          hPadding={radios('Horizontal padding', toOptions(VALID_PADDING))}
-          vPadding={radios('Vertical padding', toOptions(VALID_PADDING))}
-          bgColor={radios('Background color', toOptions(ALL_BACKGROUNDS))}
-          border={radios(
-            'Border',
-            toOptions(['top', 'right', 'bottom', 'left', 'h', 'v', 'all'])
+          hPadding={select(
+            'Horizontal padding',
+            arrayToOptions(VALID_PADDING),
+            'default'
           )}
-          elevation={radios('Elevation (shadow)', toOptions([1, 2, 3, 4, 5]))}
+          vPadding={select('Vertical padding', arrayToOptions(VALID_PADDING), 'default')}
+          bgColor={select('Background color', arrayToOptions(ALL_BACKGROUNDS), 'white')}
+          border={select(
+            'Border',
+            arrayToOptions(['top', 'right', 'bottom', 'left', 'h', 'v', 'all'])
+          )}
         >
-          <h1 class="type--head3 margin--bottom">Look at me</h1>
+          <h1 className="type--head3 margin--bottom">Look at me</h1>
           <p>I am the section content</p>
         </Section>
       </div>

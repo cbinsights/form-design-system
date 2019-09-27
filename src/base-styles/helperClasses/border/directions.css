@@ -1,0 +1,54 @@
+/*---
+title: Borders by side
+name: borderDirections
+section: Border Helpers
+---
+
+Adds standard borders to an element for a given side.
+
+class            | description
+---------------- | ---------------------------------
+`border--none`   | removes all borders
+`border--top`    | applies a standard top border
+`border--right`  | applies a standard right border
+`border--bottom` | applies a standard bottom border
+`border--left`   | applies a standard left border
+`border--all`    | applies a standard border to all sides
+*/
+
+:root {
+  --standardBorder: 1px solid var(--font-color-hint);
+}
+
+.border--none {
+  border-width: 0;
+}
+
+.border--top {
+  border-top: var(--standardBorder);
+}
+
+.border--right {
+  border-right: var(--standardBorder);
+}
+
+.border--bottom {
+  border-bottom: var(--standardBorder);
+}
+
+.border--left {
+  border-left: var(--standardBorder);
+}
+
+.border--all {
+  border: var(--standardBorder);
+}
+
+.inverted:matches(
+.border--top,
+.border--right,
+.border--bottom,
+.border--left,
+.border--all,) {
+  border-color: var(--font-color-hintInverted);
+}

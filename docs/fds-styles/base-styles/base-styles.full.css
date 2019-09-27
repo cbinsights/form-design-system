@@ -1,7 +1,7 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Thu, 26 Sep 2019 15:58:56 GMT
+ * Generated on Thu, 26 Sep 2019 21:32:18 GMT
  */
 :root {
  --border-radius-default: 4px;
@@ -1230,6 +1230,96 @@ class            | description
 .rounded--all {
   border-radius: 4px;
   border-radius: var(--border-radius-default);
+}
+/*---
+title: Borders by side
+name: borderDirections
+section: Border Helpers
+---
+
+Adds standard borders to an element for a given side.
+
+class            | description
+---------------- | ---------------------------------
+`border--none`   | removes all borders
+`border--top`    | applies a standard top border
+`border--right`  | applies a standard right border
+`border--bottom` | applies a standard bottom border
+`border--left`   | applies a standard left border
+`border--all`    | applies a standard border to all sides
+*/
+:root {
+  --standardBorder: 1px solid rgba(64, 64, 64, 0.38);
+  --standardBorder: 1px solid var(--font-color-hint);
+}
+.border--none {
+  border-width: 0;
+}
+.border--top {
+  border-top: 1px solid rgba(64, 64, 64, 0.38);
+  border-top: var(--standardBorder);
+}
+.border--right {
+  border-right: 1px solid rgba(64, 64, 64, 0.38);
+  border-right: var(--standardBorder);
+}
+.border--bottom {
+  border-bottom: 1px solid rgba(64, 64, 64, 0.38);
+  border-bottom: var(--standardBorder);
+}
+.border--left {
+  border-left: 1px solid rgba(64, 64, 64, 0.38);
+  border-left: var(--standardBorder);
+}
+.border--all {
+  border: 1px solid rgba(64, 64, 64, 0.38);
+  border: var(--standardBorder);
+}
+.inverted.border--top, .inverted.border--right, .inverted.border--bottom, .inverted.border--left, .inverted.border--all, .inverted {
+  border-color: rgba(64, 64, 64, 0.38);
+  border-color: var(--font-color-hint);
+}
+/* Background Helpers */
+/*---
+title: Background Colors
+name: backgroundColors
+section: Background helpers
+---
+
+Sets background color of an element.
+
+Signature: `bgColor--<color>`
+
+**💡 use the [`inverted`](https://github.com/GoogleChromeLabs/prerender-loader)
+class to flip text colors for dark backgrounds**
+
+```example:html
+<div class="bgColor--white">I have a background color</div>
+<div class="bgColor--haze">I have a background color</div>
+<div class="bgColor--navy inverted">I have a background color</div>
+<div class="bgColor--lightGray">I have a background color</div>
+<div class="bgColor--orange inverted">I have a background color</div>
+```
+*/
+.bgColor--white {
+  background-color: #ffffff;
+  background-color: var(--color-white);
+}
+.bgColor--haze {
+  background-color: #f1f5f7;
+  background-color: var(--color-haze);
+}
+.bgColor--lightGray {
+  background-color: #f2f2f2;
+  background-color: var(--color-lightGray);
+}
+.bgColor--navy {
+  background-color: #003366;
+  background-color: var(--color-navy);
+}
+.bgColor--orange {
+  background-color: #ff6633;
+  background-color: var(--color-orange);
 }
 /* Typesetting */
 /*---

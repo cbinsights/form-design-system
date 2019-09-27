@@ -44,18 +44,24 @@ export const getBorderClasses = (direction) => {
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Section = ({ hPadding, vPadding, bgColor, elevation, border, children }) => {
-  const classNames = cx(`bcColor--${bgColor}`, {
+const Section = ({ hPadding, vPadding, bgColor, border, children }) => {
+  const classNames = cx(`bgColor--${bgColor}`, {
     inverted: VALID_BG_INVERTED.includes(bgColor),
-    [`elevation--${elevation}`]: Boolean(elevation),
     [getBorderClasses(border)]: Boolean(border),
     [getPaddingClasses('h', hPadding)]: hPadding !== 'default',
     [getPaddingClasses('v', vPadding)]: vPadding !== 'default',
     'padding--left padding--right': hPadding === 'default',
     'padding--top padding--bottom': vPadding === 'default',
   });
+  const styles = {
+    backgroundClip: 'border-box',
+  };
 
-  return <div className={classNames}>{children}</div>;
+  return (
+    <div style={styles} className={classNames}>
+      {children}
+    </div>
+  );
 };
 
 Section.defaultProps = {
@@ -77,14 +83,8 @@ Section.propTypes = {
   /**
    * Background color.
    * Type classes (e.g. color--primary)  will automatically invert for dark backgrounds.
-   **/
+   */
   bgColor: PropTypes.oneOf([...VALID_BG_NORMAL, ...VALID_BG_INVERTED]),
-
-  /**
-   * Elevation shadow by height
-   * See also: https://cbinsights.github.io/form-design-system/fds-styles/#elevationShadows
-   **/
-  elevation: PropTypes.oneOf([1, 2, 3, 4, 5]),
 
   /**
    * Adds border to given side(s).

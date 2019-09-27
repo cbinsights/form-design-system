@@ -29,6 +29,10 @@
 
 /* Border Helpers */
 @import "./helperClasses/border/radius";
+@import "./helperClasses/border/directions";
+
+/* Background Helpers */
+@import "./helperClasses/background/color";
 
 /* Typesetting */
 @import "./helperClasses/typeset/scale";

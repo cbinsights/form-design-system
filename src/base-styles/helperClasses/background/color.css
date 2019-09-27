@@ -1,0 +1,41 @@
+/*---
+title: Background Colors
+name: backgroundColors
+section: Background helpers
+---
+
+Sets background color of an element.
+
+Signature: `bgColor--<color>`
+
+**💡 use the [`inverted`](https://github.com/GoogleChromeLabs/prerender-loader)
+class to flip text colors for dark backgrounds**
+
+```example:html
+<div class="bgColor--white">I have a background color</div>
+<div class="bgColor--haze">I have a background color</div>
+<div class="bgColor--navy inverted">I have a background color</div>
+<div class="bgColor--lightGray">I have a background color</div>
+<div class="bgColor--orange inverted">I have a background color</div>
+```
+*/
+
+.bgColor--white {
+  background-color: var(--color-white);
+}
+
+.bgColor--haze {
+  background-color: var(--color-haze);
+}
+
+.bgColor--lightGray {
+  background-color: var(--color-lightGray);
+}
+
+.bgColor--navy {
+  background-color: var(--color-navy);
+}
+
+.bgColor--orange {
+  background-color: var(--color-orange);
+}
