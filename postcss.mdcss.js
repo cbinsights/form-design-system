@@ -21,7 +21,7 @@ module.exports = require('mdcss')({
       'primer.css',
       'style.css',
       'octicons/octicons.css',
-      'https://fonts.googleapis.com/css?family=Roboto:300,400,700',
+      'https://fonts.googleapis.com/css?family=Roboto:400,500,700',
       `public/doc.css`,
       `base-styles/base-styles.full.css`,
     ],
