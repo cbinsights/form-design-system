@@ -3,6 +3,8 @@
  */
 
 /**
+ * Creates a knobs options object where labels match values.
+ *
  * @param {Array} values list of possible prop values
  * @returns {Object} options object for storybook knobs
  */

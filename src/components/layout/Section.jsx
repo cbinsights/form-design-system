@@ -2,11 +2,11 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-export const VALID_BG_NORMAL = ['white', 'haze', 'lightGray'];
+const VALID_BG_NORMAL = ['white', 'haze', 'lightGray'];
 
-export const VALID_BG_INVERTED = ['navy'];
+const VALID_BG_INVERTED = ['navy'];
 
-export const VALID_PADDING = ['default', 'double', 'half', 'none'];
+const VALID_PADDING = ['default', 'double', 'half', 'none'];
 
 /**
  * @param {String} axis 'h' or 'v'
@@ -15,7 +15,13 @@ export const VALID_PADDING = ['default', 'double', 'half', 'none'];
  */
 export const getPaddingClasses = (axis, amount) => {
   const sides = axis === 'h' ? ['left', 'right'] : ['top', 'bottom'];
-  return `padding--${sides[0]}--${amount} padding--${sides[1]}--${amount}`;
+
+  let classes = `padding--${sides[0]} padding--${sides[1]}`;
+  if (amount !== 'default') {
+    classes = `padding--${sides[0]}--${amount} padding--${sides[1]}--${amount}`;
+  }
+
+  return classes;
 };
 
 /**
@@ -25,9 +31,6 @@ export const getPaddingClasses = (axis, amount) => {
 export const getBorderClasses = (direction) => {
   let classes = '';
   switch (direction) {
-    case 'all':
-      classes = 'border--all';
-      break;
     case 'h':
       classes = 'border--left border--right';
       break;
@@ -45,14 +48,16 @@ export const getBorderClasses = (direction) => {
  * @returns {ReactElement}
  */
 const Section = ({ hPadding, vPadding, bgColor, border, children }) => {
-  const classNames = cx(`bgColor--${bgColor}`, 'display--block', {
-    inverted: VALID_BG_INVERTED.includes(bgColor),
-    [getBorderClasses(border)]: Boolean(border),
-    [getPaddingClasses('h', hPadding)]: hPadding !== 'default',
-    [getPaddingClasses('v', vPadding)]: vPadding !== 'default',
-    'padding--left padding--right': hPadding === 'default',
-    'padding--top padding--bottom': vPadding === 'default',
-  });
+  const classNames = cx(
+    `bgColor--${bgColor}`,
+    'display--block',
+    getPaddingClasses('h', hPadding),
+    getPaddingClasses('v', vPadding),
+    {
+      inverted: VALID_BG_INVERTED.includes(bgColor),
+      [getBorderClasses(border)]: Boolean(border),
+    }
+  );
   const styles = {
     backgroundClip: 'border-box',
   };
