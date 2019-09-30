@@ -7,10 +7,13 @@
  * @returns {Object} options object for storybook knobs
  */
 export const arrayToOptions = (values) =>
-  values.reduce((o, value) => ({
-    ...o,
-    ...{ [value]: value.toString() },
-  }));
+  values.reduce(
+    (o, val) => ({
+      ...o,
+      ...{ [val]: val.toString() },
+    }),
+    {}
+  );
 
 /**
  * @Object
@@ -18,7 +21,7 @@ export const arrayToOptions = (values) =>
  */
 export const storyBackgrounds = {
   diagonalLine:
-    'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVQoU2NkIAIcPnzYl5GQOpAiW1vbzXgVwhSBDMOpEFkRToXoirAqxKYIQyEuRSgK8SmCKySkCKyQGEUghQDUkiahD/fFjQAAAABJRU5ErkJggg==)',
+    'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJ0lEQVQYV2NkQAP/b///z4gsBhZQZWSEC8IEQIrAgsgCYEF0AZAgAAvKE968p7/mAAAAAElFTkSuQmCC)',
   check:
     'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQYV2M8fPiwLwMOwAiStLW13YxNftBJAgAx2BqeI9XcBAAAAABJRU5ErkJggg==)',
 };

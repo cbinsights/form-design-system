@@ -45,7 +45,7 @@ export const getBorderClasses = (direction) => {
  * @returns {ReactElement}
  */
 const Section = ({ hPadding, vPadding, bgColor, border, children }) => {
-  const classNames = cx(`bgColor--${bgColor}`, {
+  const classNames = cx(`bgColor--${bgColor}`, 'display--block', {
     inverted: VALID_BG_INVERTED.includes(bgColor),
     [getBorderClasses(border)]: Boolean(border),
     [getPaddingClasses('h', hPadding)]: hPadding !== 'default',

@@ -17,7 +17,7 @@ class            | description
 */
 
 :root {
-  --standardBorder: 1px solid var(--font-color-hint);
+  --standardBorder: 1px solid rgba(var(--rgb-charcoal), 0.12);
 }
 
 .border--none {
