@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.17] Updated Button
+
+- Button now has 500 font weight
+
 ## [4.16] Added CheckIndeterminate Icon
 
 - Added `CheckIndeterminate` Icon
