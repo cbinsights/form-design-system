@@ -22,7 +22,6 @@ const Button = ({
       className={cx(
         'fdsButton',
         'fontStyle--caps',
-        'fontWeight--bold',
         'display--inlineFlex',
         'rounded--all',
         'fontSize--m',
