@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.16] Added CheckIndeterminate Icon
+
+- Added `CheckIndeterminate` Icon
+
 ## [4.15] Updated Icons
 
 - Added `customSize` prop to icons to enable arbitrary sizes (we do not
