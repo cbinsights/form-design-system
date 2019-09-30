@@ -2,11 +2,11 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-const VALID_BG_NORMAL = ['white', 'haze', 'lightGray'];
+export const VALID_BG_NORMAL = ['white', 'haze', 'lightGray'];
 
-const VALID_BG_INVERTED = ['navy'];
+export const VALID_BG_INVERTED = ['navy'];
 
-const VALID_PADDING = ['default', 'double', 'half', 'none'];
+export const VALID_PADDING = ['default', 'double', 'half', 'none'];
 
 /**
  * @param {String} axis 'h' or 'v'
