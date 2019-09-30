@@ -17,16 +17,16 @@ class                     | description
 `display--grid`           | Sets `display` to `grid`
 */
 
-.display--none { display: none; }
+.display--none { display: none !important; }
 
-.display--block { display: block; }
+.display--block { display: block !important; }
 
-.display--flex { display: flex; }
+.display--flex { display: flex !important; }
 
-.display--inline { display: inline; }
+.display--inline { display: inline !important; }
 
-.display--inlineBlock { display: inline-block; }
+.display--inlineBlock { display: inline-block !important; }
 
-.display--inlineFlex { display: inline-flex; }
+.display--inlineFlex { display: inline-flex !important; }
 
-.display--grid { display: grid; }
+.display--grid { display: grid !important; }
