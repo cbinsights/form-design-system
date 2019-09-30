@@ -1071,13 +1071,13 @@ class                     | description
 `display--inlineFlex`     | Sets `display` to `inline-flex`
 `display--grid`           | Sets `display` to `grid`
 */
-.display--none { display: none; }
-.display--block { display: block; }
-.display--flex { display: flex; }
-.display--inline { display: inline; }
-.display--inlineBlock { display: inline-block; }
-.display--inlineFlex { display: inline-flex; }
-.display--grid { display: -ms-grid; display: grid; }
+.display--none { display: none !important; }
+.display--block { display: block !important; }
+.display--flex { display: flex !important; }
+.display--inline { display: inline !important; }
+.display--inlineBlock { display: inline-block !important; }
+.display--inlineFlex { display: inline-flex !important; }
+.display--grid { display: -ms-grid !important; display: grid !important; }
 /* Shadow Helpers */
 /*---
 title: Elevation shadows
