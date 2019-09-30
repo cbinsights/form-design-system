@@ -8,7 +8,7 @@ Sets background color of an element.
 
 Signature: `bgColor--<color>`
 
-**💡 use the [`inverted`](https://github.com/GoogleChromeLabs/prerender-loader)
+**💡 use the [`inverted`](https://cbinsights.github.io/form-design-system/fds-styles/#inverted-standard-text-colors)
 class to flip text colors for dark backgrounds**
 
 ```example:html
