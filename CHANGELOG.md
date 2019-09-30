@@ -31,6 +31,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ## [4.19] `Section` component
 
+- Added `.border--<side>` helper classes
+- Added `.bgColor--<color>` helper classes
+- Added `--double` variants for spacing helper classes
 - Added `Section` component to react component library.
 
 ## [4.18] Changed display helpers
