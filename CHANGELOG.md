@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.19] `Section` component
+
+- Added `Section` component to react component library.
+
 ## [4.18] Changed display helpers
 
 - Added `!important` to all display class helpers
