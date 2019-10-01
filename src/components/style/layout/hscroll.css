@@ -1,5 +1,3 @@
-@import "../../../../lib/dictionary/css/rawRgbColors";
-
 .hscroll {
   position: relative; /* context for fade elements */
 }
