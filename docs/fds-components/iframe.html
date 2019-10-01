@@ -1,13 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Storybook</title><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_parent"><style>html, body{
-    width: 100%;
-    height: 100%;
-  }
-  
-  body {
-    width: calc(100% - 16px);
-  }
-
-  :not(.sb-show-main) > .sb-main,
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Storybook</title><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_parent"><style>:not(.sb-show-main) > .sb-main,
   :not(.sb-show-nopreview) > .sb-nopreview,
   :not(.sb-show-errordisplay) > .sb-errordisplay {
     display: none;
@@ -30,6 +21,7 @@
     font-weight: 600;
     letter-spacing: 0.2px;
     margin: 10px 0;
+    padding-right: 25px;
   }
 
   .sb-nopreview {
@@ -53,6 +45,7 @@
     border: 20px solid rgb(187, 49, 49);
     background: #222;
     color: #fff;
+    z-index: 999999;
   }
 
   .sb-errordisplay_code {
@@ -60,6 +53,10 @@
     background: #000;
     color: #eee;
     font-family: "Operator Mono", "Fira Code Retina", "Fira Code", "FiraCode-Retina", "Andale Mono", "Lucida Console", Consolas, Monaco, monospace;
+  }
+
+  .sb-errordisplay pre {
+    white-space: pre-wrap;
   }</style><script>/* globals window */
   /* eslint-disable no-underscore-dangle */
   try {
@@ -153,4 +150,7 @@ Adds a border and margin around an element.
 */
 .debug--box {
   border: 1px dotted var(--debug-color-info);
-}</style></head><body><div class="sb-nopreview sb-wrapper"><div class="sb-nopreview_main"><h1 class="sb-nopreview_heading sb-heading">No Preview</h1><p>Sorry, but you either have no stories or none are selected somehow.</p><ul><li>Please check the Storybook config.</li><li>Try reloading the page.</li></ul><p>If the problem persists, check the browser console, or the terminal you've run Storybook from.</p></div></div><div class="sb-errordisplay sb-wrapper"><pre id="error-message" class="sb-heading"></pre><pre class="sb-errordisplay_code"><code id="error-stack"></code></pre></div><div id="root"></div><div id="docs-root"></div><script src="runtime~main.8b0e68ea8fd85ef8923f.bundle.js"></script><script src="vendors~main.8b0e68ea8fd85ef8923f.bundle.js"></script><script src="main.8b0e68ea8fd85ef8923f.bundle.js"></script></body></html>
+}</style><style>#root[hidden],
+      #docs-root[hidden] {
+        display: none !important;
+      }</style></head><body><div class="sb-nopreview sb-wrapper"><div class="sb-nopreview_main"><h1 class="sb-nopreview_heading sb-heading">No Preview</h1><p>Sorry, but you either have no stories or none are selected somehow.</p><ul><li>Please check the Storybook config.</li><li>Try reloading the page.</li></ul><p>If the problem persists, check the browser console, or the terminal you've run Storybook from.</p></div></div><div class="sb-errordisplay sb-wrapper"><pre id="error-message" class="sb-heading"></pre><pre class="sb-errordisplay_code"><code id="error-stack"></code></pre></div><div id="root"></div><div id="docs-root"></div><script src="runtime~main.70a2626f15ea6e8f03df.bundle.js"></script><script src="vendors~main.70a2626f15ea6e8f03df.bundle.js"></script><script src="main.70a2626f15ea6e8f03df.bundle.js"></script></body></html>

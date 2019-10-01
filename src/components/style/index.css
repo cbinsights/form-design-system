@@ -18,10 +18,3 @@
 @import "./interactive/buttonGroup.css";
 @import "./interactive/chips.css";
 @import "./interactive/button.css";
-
-/* Overrides (remove when possible) */
-img,
-p {
-  margin: 0;
-  padding: 0;
-}
