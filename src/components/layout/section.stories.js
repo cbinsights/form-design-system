@@ -25,16 +25,16 @@ storiesOf('Layout/Section', module)
     () => (
       <div className="alignChild--center--center" style={parentStyle}>
         <Section
-          hPadding={select(
+          xPadding={select(
             'Horizontal padding',
             arrayToOptions(VALID_PADDING),
             'default'
           )}
-          vPadding={select('Vertical padding', arrayToOptions(VALID_PADDING), 'default')}
+          yPadding={select('Vertical padding', arrayToOptions(VALID_PADDING), 'default')}
           bgColor={select('Background color', arrayToOptions(ALL_BACKGROUNDS), 'white')}
           border={options(
             'Border',
-            arrayToOptions(['top', 'right', 'bottom', 'left', 'h', 'v', 'all']),
+            arrayToOptions(['top', 'right', 'bottom', 'left', 'x', 'y', 'all']),
             undefined,
             { display: 'inline-radio' }
           )}
@@ -48,13 +48,13 @@ storiesOf('Layout/Section', module)
   )
   .add('Stacked Sections', () => (
     <div style={parentStyle}>
-      <Section hPadding="double" vPadding="double">
+      <Section xPadding="double" yPadding="double">
         <h1 className="type--head1">Title</h1>
         <p className="type--big">
           This title <code>Section</code> has extra padding
         </p>
       </Section>
-      <Section vPadding="half" hPadding="double" border="v">
+      <Section yPadding="half" xPadding="double" border="v">
         <Flex align="center" justify="end">
           <FlexItem>
             <div className="align--right">
@@ -72,7 +72,7 @@ storiesOf('Layout/Section', module)
   ))
   .add('Horizontal sectioning', () => (
     <div style={parentStyle}>
-      <Section vPadding="double" border="bottom">
+      <Section yPadding="double" border="bottom">
         <h1 className="type--head1">Horizontal sectioning</h1>
         <p className="type--big">
           You can also use <code>Section</code> to handle padding and borders of

@@ -18,19 +18,19 @@ describe('Section component', () => {
       hPadding: 'double',
       vPadding: 'half',
       bgColor: 'navy',
-      border: 'v',
+      border: 'y',
     });
     expect(section).toMatchSnapshot();
   });
 
   describe('getPaddingClasses', () => {
     it('handles default padding', () => {
-      const actual = getPaddingClasses('h', 'default');
+      const actual = getPaddingClasses('x', 'default');
       const expected = 'padding--left padding--right';
       expect(actual).toBe(expected);
     });
     it('handles double padding', () => {
-      const actual = getPaddingClasses('v', 'double');
+      const actual = getPaddingClasses('y', 'double');
       const expected = 'padding--top--double padding--bottom--double';
       expect(actual).toBe(expected);
     });
@@ -48,12 +48,12 @@ describe('Section component', () => {
       expect(actual).toBe(expected);
     });
     it('sets border class for "h" sides', () => {
-      const actual = getBorderClasses('h');
+      const actual = getBorderClasses('x');
       const expected = 'border--left border--right';
       expect(actual).toBe(expected);
     });
     it('sets border class for "v" sides', () => {
-      const actual = getBorderClasses('v');
+      const actual = getBorderClasses('y');
       const expected = 'border--top border--bottom';
       expect(actual).toBe(expected);
     });
