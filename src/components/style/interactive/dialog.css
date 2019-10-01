@@ -1,3 +1,7 @@
+:root {
+  --modal-border-color: #E8E8E8;
+}
+
 .dialog-overlay {
   top: 0;
   left: 0;
@@ -6,7 +10,7 @@
   position: fixed;
   /* leaving the zero addition here for now */
   z-index: calc(var(--zindex-modal) + 0);
-  background: black;
+  background: var(--color-charcoal);
   opacity: 0.3;
 }
 
@@ -23,8 +27,8 @@
   top: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
-  background-color: white;
-  border-radius: 4px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-default);
   z-index: calc(var(--zindex-modal) + 1);
   max-width: 500px;
   width: 100%;
@@ -49,7 +53,7 @@
 .dialog-footer {
   background-color: var(--color-lightGray);
   padding: var(--space-default);
-  border-top: 1px solid #E8E8E8;
+  border-top: 1px solid var(--modal-border-color);
 }
 
 .dialog-divider {
@@ -59,6 +63,6 @@
   padding: 0;
   padding: 0;
   display: block;
-  background-color: #E8E8E8;
+  background-color: var(--modal-border-color);
   zoom: 1;
 }
