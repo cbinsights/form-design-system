@@ -54,7 +54,7 @@ storiesOf('Layout/Section', module)
           This title <code>Section</code> has extra padding
         </p>
       </Section>
-      <Section yPadding="half" xPadding="double" border="v">
+      <Section yPadding="half" xPadding="double" border="y">
         <Flex align="center" justify="end">
           <FlexItem>
             <div className="align--right">
