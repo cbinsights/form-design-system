@@ -45,6 +45,7 @@
 .dialog-icon {
   cursor: pointer;
   border: 0 none;
+  min-height: auto;
 }
 
 .dialog-title {
