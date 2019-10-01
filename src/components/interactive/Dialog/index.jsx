@@ -7,26 +7,24 @@ const Dialog = (props) => (
     {props.isOpen && (
       <React.Fragment>
         <div className="dialog-overlay"></div>
-        <div className="margin--all">
-          <div className="dialog elevation--3">
-            {(props.title || props.canDismiss) && (
-              <React.Fragment>
-                <div className="dialog-header">
-                  <div className="dialog-title fontSize--xl">{props.title}</div>
-                  {props.canDismiss && (
-                    <div className="dialog-icon">
-                      <DenyIcon size="xs" />
-                    </div>
-                  )}
-                </div>
-                <div className="dialog-divider" />
-              </React.Fragment>
-            )}
-            <div className="dialog-content">{props.content}</div>
-            {props.footerContent && (
-              <div className="dialog-footer">{props.footerContent}</div>
-            )}
-          </div>
+        <div className="dialog elevation--3" role="dialog">
+          {(props.title || props.canDismiss) && (
+            <React.Fragment>
+              <div className="dialog-header">
+                <div className="dialog-title fontSize--xl">{props.title}</div>
+                {props.canDismiss && (
+                  <div className="dialog-icon">
+                    <DenyIcon size="xs" />
+                  </div>
+                )}
+              </div>
+              <div className="dialog-divider" />
+            </React.Fragment>
+          )}
+          <div className="dialog-content">{props.content}</div>
+          {props.footerContent && (
+            <div className="dialog-footer">{props.footerContent}</div>
+          )}
         </div>
       </React.Fragment>
     )}
