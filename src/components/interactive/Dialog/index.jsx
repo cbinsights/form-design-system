@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import DenyIcon from '../../../../lib/icons/react/DenyIcon';
 
 const Dialog = (props) => (
   <React.Fragment>
@@ -12,6 +13,11 @@ const Dialog = (props) => (
               <React.Fragment>
                 <div className="dialog-header">
                   <div className="dialog-title fontSize--xl">{props.title}</div>
+                  {props.canDismiss && (
+                    <div className="dialog-icon">
+                      <DenyIcon size="xs" />
+                    </div>
+                  )}
                 </div>
                 <div className="dialog-divider" />
               </React.Fragment>

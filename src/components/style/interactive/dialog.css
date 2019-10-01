@@ -10,6 +10,13 @@
   opacity: 0.3;
 }
 
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-default);
+}
+
 .dialog {
   position: fixed;
   left: 50%;
@@ -22,15 +29,22 @@
   z-index: calc(var(--zindex-modal) + 1);
   max-width: 500px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
 }
 
 .dialog-content {
   padding: var(--space-default);
+  overflow-y: auto;
+}
+
+.dialog-icon {
+  cursor: pointer;
 }
 
 .dialog-title {
   font-family: var(--font-family-condensed);
-  padding: var(--space-default);
 }
 
 .dialog-footer {

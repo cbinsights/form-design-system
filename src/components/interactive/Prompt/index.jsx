@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Dialog from '../Dialog';
 import Button from '../Button';
-import { text } from '@storybook/addon-knobs';
 
 const Prompt = (props) => (
   <Dialog
@@ -16,16 +15,31 @@ const Prompt = (props) => (
         )}
       </div>
     }
-    content={props.content}
+    content={
+      <React.Fragment>
+        <div>{props.content}</div>
+        <div className="align--right margin--top prompt-footer">
+          <Button {...props.primaryButton} />
+          {props.secondaryButton && (
+            <div className="margin--right display--inlineBlock">
+              <Button {...props.secondaryButton} />
+            </div>
+          )}
+        </div>
+      </React.Fragment>
+    }
     title={props.title}
     isOpen={props.isOpen}
+    canDismiss
   />
 );
 
 Prompt.propTypes = {
   title: PropTypes.string,
+  content: PropTypes.oneOf([PropTypes.node, PropTypes.string]),
   primaryButton: PropTypes.any.isRequired,
   secondaryButton: PropTypes.any,
+  isOpen: PropTypes.boolean,
 };
 
 export default Prompt;
