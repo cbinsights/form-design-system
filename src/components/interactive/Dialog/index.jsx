@@ -38,8 +38,8 @@ const Dialog = (props) =>
 Dialog.propTypes = {
   isOpen: PropTypes.bool,
   canDismiss: PropTypes.bool,
-  footerContent: PropTypes.oneOf([PropTypes.node, PropTypes.string]),
-  content: PropTypes.oneOf([PropTypes.node, PropTypes.string]),
+  footerContent: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   title: PropTypes.string,
 };
 

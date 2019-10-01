@@ -37,7 +37,7 @@ const Prompt = (props) => (
 
 Prompt.propTypes = {
   title: PropTypes.string,
-  content: PropTypes.oneOf([PropTypes.node, PropTypes.string]),
+  content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   primaryButton: PropTypes.any.isRequired,
   secondaryButton: PropTypes.any,
   isOpen: PropTypes.bool,
