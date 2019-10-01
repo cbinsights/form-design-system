@@ -58,15 +58,8 @@ const Section = ({ xPadding, yPadding, bgColor, border, children }) => {
       [getBorderClasses(border)]: Boolean(border),
     }
   );
-  const styles = {
-    backgroundClip: 'border-box',
-  };
 
-  return (
-    <div style={styles} className={classNames}>
-      {children}
-    </div>
-  );
+  return <div className={classNames}>{children}</div>;
 };
 
 Section.defaultProps = {
