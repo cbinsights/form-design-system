@@ -24,9 +24,9 @@ const Dialog = (props) =>
                   <div className="dialog-header">
                     <div className="dialog-title fontSize--xl">{props.title}</div>
                     {props.canDismiss && (
-                      <div className="dialog-icon" onClick={props.onDismiss}>
+                      <button className="dialog-icon" onClick={props.onDismiss}>
                         <DenyIcon size="xs" />
-                      </div>
+                      </button>
                     )}
                   </div>
                   <div className="dialog-divider" />
