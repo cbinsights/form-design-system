@@ -1,0 +1,52 @@
+.dialog-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  /* leaving the zero addition here for now */
+  z-index: calc(var(--zindex-modal) + 0);
+  background: black;
+  opacity: 0.3;
+}
+
+.dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 4px;
+  z-index: calc(var(--zindex-modal) + 1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.dialog-content {
+  padding: var(--space-default);
+}
+
+.dialog-title {
+  font-family: var(--font-family-condensed);
+  padding: var(--space-default);
+}
+
+.dialog-footer {
+  background-color: var(--color-lightGray);
+  padding: var(--space-default);
+  text-align: right;
+  border-top: 1px solid #E8E8E8;
+}
+
+.dialog-divider {
+  height: 1px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  padding: 0;
+  display: block;
+  background-color: #E8E8E8;
+  zoom: 1;
+}
