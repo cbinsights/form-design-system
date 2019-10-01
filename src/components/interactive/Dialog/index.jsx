@@ -49,7 +49,7 @@ Dialog.propTypes = {
   isOpen: PropTypes.bool,
   canDismiss: PropTypes.bool,
   footerContent: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   title: PropTypes.string,
 };
 
