@@ -30,6 +30,7 @@ const Prompt = (props) => (
     }
     title={props.title}
     isOpen={props.isOpen}
+    onDismiss={props.onDismiss}
     canDismiss
   />
 );
@@ -39,7 +40,8 @@ Prompt.propTypes = {
   content: PropTypes.oneOf([PropTypes.node, PropTypes.string]),
   primaryButton: PropTypes.any.isRequired,
   secondaryButton: PropTypes.any,
-  isOpen: PropTypes.boolean,
+  isOpen: PropTypes.bool,
+  onDismiss: PropTypes.func,
 };
 
 export default Prompt;

@@ -5,10 +5,14 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import Dialog from '.';
 
-storiesOf('Interactive/Dialog', module)
+storiesOf('Modals/Dialog', module)
   .addDecorator(withKnobs)
   .add('Knobs', () => (
     <Dialog
+      onDismiss={() => {
+        // eslint-disable-next-line no-console
+        console.log('close modal');
+      }}
       isOpen={boolean('isOpen', true)}
       footerContent={text('footerContent', '')}
       content={text('content', 'Modal content here')}

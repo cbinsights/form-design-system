@@ -3,12 +3,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, object } from '@storybook/addon-knobs';
 
-import Dialog from '.';
+import Prompt from '.';
 
-storiesOf('Interactive/Prompt', module)
+storiesOf('Modals/Prompt', module)
   .addDecorator(withKnobs)
   .add('Knobs', () => (
-    <Dialog
+    <Prompt
+      onDismiss={() => {
+        // eslint-disable-next-line no-console
+        console.log('close modal');
+      }}
       isOpen={boolean('isOpen', true)}
       content={text('content', 'This change will be permanent and cannot be undone.')}
       title={text('title', 'Are you sure you want to delete this collection?')}
