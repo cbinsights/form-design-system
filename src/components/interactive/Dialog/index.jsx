@@ -22,44 +22,42 @@ const Dialog = (props) => {
   return ReactDOM.createPortal(
     <CSSTransition timeout={200} in={props.isOpen} classNames="dialog" unmountOnExit>
       <div>
-        {props.isOpen && (
-          <React.Fragment>
-            <div className="dialog-overlay" onClick={handleClick}></div>
-            <div
-              className="dialog elevation--3"
-              role={props.role}
-              aria-labelledby="a11y-dialog-title"
-              tabIndex="-1"
-              onKeyDown={handleKeyDown}
-            >
-              {(props.title || props.canDismiss) && (
-                <React.Fragment>
-                  <div className="dialog-header">
-                    <Flex justify="spaceBetween" align="start">
-                      <FlexItem>
-                        <div className="dialog-title type--head4" id="a11y-dialog-title">
-                          {props.title}
-                        </div>
+        <React.Fragment>
+          <div className="dialog-overlay" onClick={handleClick}></div>
+          <div
+            className="dialog elevation--3"
+            role={props.role}
+            aria-labelledby="a11y-dialog-title"
+            tabIndex="-1"
+            onKeyDown={handleKeyDown}
+          >
+            {(props.title || props.canDismiss) && (
+              <React.Fragment>
+                <div className="dialog-header">
+                  <Flex justify="spaceBetween" align="start">
+                    <FlexItem>
+                      <div className="dialog-title type--head4" id="a11y-dialog-title">
+                        {props.title}
+                      </div>
+                    </FlexItem>
+                    {props.canDismiss && (
+                      <FlexItem shrink>
+                        <button className="dialog-icon" onClick={handleClick}>
+                          <DenyIcon size="xs" />
+                        </button>
                       </FlexItem>
-                      {props.canDismiss && (
-                        <FlexItem shrink>
-                          <button className="dialog-icon" onClick={handleClick}>
-                            <DenyIcon size="xs" />
-                          </button>
-                        </FlexItem>
-                      )}
-                    </Flex>
-                  </div>
-                  <div className="dialog-divider" />
-                </React.Fragment>
-              )}
-              <div className="dialog-content">{props.content}</div>
-              {props.footerContent && (
-                <div className="dialog-footer">{props.footerContent}</div>
-              )}
-            </div>
-          </React.Fragment>
-        )}
+                    )}
+                  </Flex>
+                </div>
+                <div className="dialog-divider" />
+              </React.Fragment>
+            )}
+            <div className="dialog-content">{props.content}</div>
+            {props.footerContent && (
+              <div className="dialog-footer">{props.footerContent}</div>
+            )}
+          </div>
+        </React.Fragment>
       </div>
     </CSSTransition>,
     // eslint-disable-next-line no-undef
