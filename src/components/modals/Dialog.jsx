@@ -16,9 +16,8 @@ const Dialog = (props) => {
    * - Returning focus back to the element that invoked modal
    * - Scroll Locking
    * - Set up standards around what gets focused first inside modals
-   * - Un-nest interactive
-   * - Everything lives in the subfolder, ungroup
    * - use event.key (esc) vs event.keyCode (27) (figure out how to polyfill)
+   * - import and pass buttons directly to PromptModal
    *
    */
 
