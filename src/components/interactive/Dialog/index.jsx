@@ -14,6 +14,7 @@ const Dialog = (props) => {
    * - Adding descriptions to all propTypes
    * - Returning focus back to the element that invoked modal
    * - Scroll Locking
+   * - Set up standards around what gets focused first inside modals
    */
 
   useEffect(() => {
