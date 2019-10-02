@@ -28,6 +28,7 @@ const Dialog = (props) => {
             <div
               className="dialog elevation--3"
               role="dialog"
+              aria-labelledby="a11y-dialog-title"
               tabIndex="-1"
               onKeyDown={handleKeyDown}
             >
@@ -36,7 +37,9 @@ const Dialog = (props) => {
                   <div className="dialog-header">
                     <Flex justify="spaceBetween" align="start">
                       <FlexItem>
-                        <div className="dialog-title type--head4">{props.title}</div>
+                        <div className="dialog-title type--head4" id="a11y-dialog-title">
+                          {props.title}
+                        </div>
                       </FlexItem>
                       {props.canDismiss && (
                         <FlexItem shrink>
