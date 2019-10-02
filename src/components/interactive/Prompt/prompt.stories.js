@@ -26,6 +26,10 @@ storiesOf('Modals/Prompt', module)
         isDestructive: true,
         children: 'Yes, delete',
       })}
+      secondaryButton={object('secondaryButton', {
+        theme: 'ghost',
+        children: 'Keep Collection',
+      })}
       buttonPosition={options(
         'buttonPosition',
         {
@@ -36,9 +40,5 @@ storiesOf('Modals/Prompt', module)
         undefined,
         { display: 'inline-radio' }
       )}
-      secondaryButton={object('secondaryButton', {
-        theme: 'ghost',
-        children: 'Keep Collection',
-      })}
     />
   ));
