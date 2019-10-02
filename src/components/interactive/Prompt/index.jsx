@@ -2,15 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Dialog from '../Dialog';
 import Button from '../Button';
+import Flex from '../../layout/Flex';
+import FlexItem from '../../layout/FlexItem';
 
 const Reusable = (props) => (
-  <div className="align--right prompt-footer">
-    <Button {...props.primaryButton} />
-    {props.secondaryButton && (
-      <div className="margin--right display--inlineBlock">
-        <Button {...props.secondaryButton} />
-      </div>
-    )}
+  <div className="">
+    <Flex justify="end" wrap>
+      {props.secondaryButton && (
+        <FlexItem shrink>
+          <Button {...props.secondaryButton} />
+        </FlexItem>
+      )}
+      <FlexItem shrink>
+        <Button {...props.primaryButton} />
+      </FlexItem>
+    </Flex>
   </div>
 );
 
