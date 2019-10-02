@@ -29,6 +29,7 @@ const Dialog = (props) => {
             role={props.role}
             aria-labelledby="a11y-dialog-title"
             tabIndex="-1"
+            aria-modal="true"
             onKeyDown={handleKeyDown}
           >
             {(props.title || props.canDismiss) && (
