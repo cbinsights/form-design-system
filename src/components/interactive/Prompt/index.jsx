@@ -41,7 +41,7 @@ const Prompt = (props) => (
     title={props.title}
     isOpen={props.isOpen}
     onDismiss={props.onDismiss}
-    canDismiss
+    canDismiss={false}
   />
 );
 
