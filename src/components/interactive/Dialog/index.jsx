@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
+import FocusTrap from 'focus-trap-react/dist/focus-trap-react';
 import DenyIcon from '../../../../lib/icons/react/DenyIcon';
 import Flex from '../../layout/Flex';
 import FlexItem from '../../layout/FlexItem';
@@ -24,41 +25,43 @@ const Dialog = (props) => {
       <div>
         <React.Fragment>
           <div className="dialog-overlay" onClick={handleClick}></div>
-          <div
-            className="dialog elevation--3"
-            role={props.role}
-            aria-labelledby="a11y-dialog-title"
-            aria-describedby="a11y-dialog-desc"
-            tabIndex="-1"
-            aria-modal="true"
-            onKeyDown={handleKeyDown}
-          >
-            {(props.title || props.canDismiss) && (
-              <React.Fragment>
-                <div className="dialog-header">
-                  <Flex justify="spaceBetween" align="start">
-                    <FlexItem>
-                      <div className="dialog-title type--head4" id="a11y-dialog-title">
-                        {props.title}
-                      </div>
-                    </FlexItem>
-                    {props.canDismiss && (
-                      <FlexItem shrink>
-                        <button className="dialog-icon" onClick={handleClick}>
-                          <DenyIcon size="xs" />
-                        </button>
+          <FocusTrap>
+            <div
+              className="dialog elevation--3"
+              role={props.role}
+              aria-labelledby="a11y-dialog-title"
+              aria-describedby="a11y-dialog-desc"
+              tabIndex="-1"
+              aria-modal="true"
+              onKeyDown={handleKeyDown}
+            >
+              {(props.title || props.canDismiss) && (
+                <React.Fragment>
+                  <div className="dialog-header">
+                    <Flex justify="spaceBetween" align="start">
+                      <FlexItem>
+                        <div className="dialog-title type--head4" id="a11y-dialog-title">
+                          {props.title}
+                        </div>
                       </FlexItem>
-                    )}
-                  </Flex>
-                </div>
-                <div className="dialog-divider" />
-              </React.Fragment>
-            )}
-            <div className="dialog-content">{props.content}</div>
-            {props.footerContent && (
-              <div className="dialog-footer">{props.footerContent}</div>
-            )}
-          </div>
+                      {props.canDismiss && (
+                        <FlexItem shrink>
+                          <button className="dialog-icon" onClick={handleClick}>
+                            <DenyIcon size="xs" />
+                          </button>
+                        </FlexItem>
+                      )}
+                    </Flex>
+                  </div>
+                  <div className="dialog-divider" />
+                </React.Fragment>
+              )}
+              <div className="dialog-content">{props.content}</div>
+              {props.footerContent && (
+                <div className="dialog-footer">{props.footerContent}</div>
+              )}
+            </div>
+          </FocusTrap>
         </React.Fragment>
       </div>
     </CSSTransition>,
