@@ -54,7 +54,7 @@ Prompt.propTypes = {
   title: PropTypes.string,
   content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   primaryButton: PropTypes.any.isRequired,
-  secondaryButton: PropTypes.any,
+  secondaryButton: PropTypes.any.isRequired,
   isOpen: PropTypes.bool,
   onDismiss: PropTypes.func,
   buttonPosition: PropTypes.oneOf(['content', 'footer']),
