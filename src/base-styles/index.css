@@ -1,5 +1,6 @@
 /* Custom properties */
 @import "../../lib/dictionary/css/customProperties";
+@import "../../lib/dictionary/css/rawRgbColors";
 
 /* Base styles */
 @import "./base/customNormalize";
@@ -29,6 +30,10 @@
 
 /* Border Helpers */
 @import "./helperClasses/border/radius";
+@import "./helperClasses/border/sides";
+
+/* Background Helpers */
+@import "./helperClasses/background/color";
 
 /* Typesetting */
 @import "./helperClasses/typeset/scale";

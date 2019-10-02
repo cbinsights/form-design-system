@@ -4,13 +4,18 @@
 /* Icon Styles */
 @import "../../icons/style/icons.css";
 
-/* Components */
+/* Layout components */
 @import "./layout/flex.css";
+@import "./layout/section.css";
 @import "./layout/hscroll.css";
+
+/* Media components */
 @import "./media/muiAvatarShim.css";
 @import "./media/avatarRow.css";
 @import "./media/updatable.css";
 @import "./media/countdownButton.css";
+
+/* Interactive components */
 @import "./interactive/muiButtonShim.css";
 @import "./interactive/menuButton.css";
 @import "./interactive/toast.css";

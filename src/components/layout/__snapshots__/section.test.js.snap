@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section component matches snapshot (all props set to user value) 1`] = `
+<div
+  className="bgColor--navy display--block padding--left padding--right padding--top padding--bottom inverted border--top border--bottom"
+>
+  Content
+</div>
+`;
+
+exports[`Section component matches snapshot (default props) 1`] = `
+<div
+  className="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+>
+  Content
+</div>
+`;
