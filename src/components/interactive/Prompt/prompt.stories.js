@@ -1,13 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import {
-  withKnobs,
-  text,
-  boolean,
-  object,
-  optionsKnob as options,
-} from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, object } from '@storybook/addon-knobs';
 
 import Prompt from '.';
 
@@ -30,15 +24,5 @@ storiesOf('Modals/Prompt', module)
         theme: 'ghost',
         children: 'Keep Collection',
       })}
-      buttonPosition={options(
-        'buttonPosition',
-        {
-          content: 'content',
-          footer: 'footer',
-          none: undefined,
-        },
-        undefined,
-        { display: 'inline-radio' }
-      )}
     />
   ));

@@ -6,6 +6,7 @@ import FocusTrap from 'focus-trap-react';
 import DenyIcon from '../../../../lib/icons/react/DenyIcon';
 import Flex from '../../layout/Flex';
 import FlexItem from '../../layout/FlexItem';
+import Section from '../../layout/Section';
 
 const Dialog = (props) => {
   /**
@@ -15,6 +16,10 @@ const Dialog = (props) => {
    * - Returning focus back to the element that invoked modal
    * - Scroll Locking
    * - Set up standards around what gets focused first inside modals
+   * - Un-nest interactive
+   * - Everything lives in the subfolder, ungroup
+   * - use event.key (esc) vs event.keyCode (27) (figure out how to polyfill)
+   *
    */
 
   useEffect(() => {
@@ -52,32 +57,39 @@ const Dialog = (props) => {
               {(props.title || props.canDismiss) && (
                 <React.Fragment>
                   <div className="dialog-header">
-                    <Flex justify="spaceBetween" align="start">
-                      <FlexItem>
-                        {props.title && (
-                          <div
-                            className="dialog-title type--head4"
-                            id="a11y-dialog-title"
-                          >
-                            {props.title}
-                          </div>
-                        )}
-                      </FlexItem>
-                      {props.canDismiss && (
-                        <FlexItem shrink>
-                          <button className="dialog-icon" onClick={handleClick}>
-                            <DenyIcon size="xs" />
-                          </button>
+                    <Section border="bottom">
+                      <Flex justify="spaceBetween" align="start">
+                        <FlexItem>
+                          {props.title && (
+                            <div
+                              className="dialog-title type--head4"
+                              id="a11y-dialog-title"
+                            >
+                              {props.title}
+                            </div>
+                          )}
                         </FlexItem>
-                      )}
-                    </Flex>
+                        {props.canDismiss && (
+                          <FlexItem shrink>
+                            <button className="dialog-icon" onClick={handleClick}>
+                              <DenyIcon size="xs" />
+                            </button>
+                          </FlexItem>
+                        )}
+                      </Flex>
+                    </Section>
                   </div>
-                  <div className="dialog-divider" />
                 </React.Fragment>
               )}
-              <div className="dialog-content">{props.content}</div>
+              <div className="dialog-content">
+                <Section>{props.content}</Section>
+              </div>
               {props.footerContent && (
-                <div className="dialog-footer">{props.footerContent}</div>
+                <div className="dialog-footer">
+                  <Section border="top" bgColor="lightGray">
+                    {props.footerContent}
+                  </Section>
+                </div>
               )}
             </div>
           </div>

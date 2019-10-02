@@ -1,7 +1,3 @@
-:root {
-  --modal-border-color: #E8E8E8;
-}
-
 .dialog-enter {
   opacity: 0;
 }
@@ -32,13 +28,6 @@
   opacity: 0.3;
 }
 
-.dialog-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 24px;
-}
-
 .dialog {
   position: fixed;
   left: 50%;
@@ -57,7 +46,6 @@
 }
 
 .dialog-content {
-  padding: 24px;
   overflow-y: auto;
 }
 
@@ -67,17 +55,7 @@
   min-height: auto;
 }
 
-.dialog-title {
-  font-family: var(--font-family-condensed);
-}
-
-.dialog-footer {
-  background-color: var(--color-lightGray);
-  padding: 24px;
-  border-top: 1px solid var(--modal-border-color);
-}
-
-.dialog-divider {
+/* .dialog-divider {
   height: 1px;
   min-height: 1px;
   border: 0;
@@ -87,4 +65,4 @@
   display: block;
   background-color: var(--modal-border-color);
   zoom: 1;
-}
+} */

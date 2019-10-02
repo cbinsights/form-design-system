@@ -5,37 +5,25 @@ import Button from '../Button';
 import Flex from '../../layout/Flex';
 import FlexItem from '../../layout/FlexItem';
 
-const Reusable = (props) => (
-  <div className="">
-    <Flex justify="end" wrap>
-      {props.secondaryButton && (
-        <FlexItem shrink>
-          <Button {...props.secondaryButton} />
-        </FlexItem>
-      )}
-      <FlexItem shrink>
-        <Button {...props.primaryButton} />
-      </FlexItem>
-    </Flex>
-  </div>
-);
-
-Reusable.propTypes = {
-  primaryButton: PropTypes.any.isRequired,
-  secondaryButton: PropTypes.any,
-};
-
 const Prompt = (props) => (
   <Dialog
-    footerContent={props.buttonPosition === 'footer' && <Reusable {...props} />}
     content={
       <React.Fragment>
         <div id="a11y-dialog-desc">{props.desc}</div>
-        {props.buttonPosition === 'content' && (
-          <div className="margin--top--double">
-            <Reusable {...props} />
+        <div className="margin--top--double">
+          <div className="">
+            <Flex justify="end" wrap>
+              {props.secondaryButton && (
+                <FlexItem shrink>
+                  <Button {...props.secondaryButton} />
+                </FlexItem>
+              )}
+              <FlexItem shrink>
+                <Button {...props.primaryButton} />
+              </FlexItem>
+            </Flex>
           </div>
-        )}
+        </div>
       </React.Fragment>
     }
     role="alertdialog"
