@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
-import FocusTrap from 'focus-trap-react/dist/focus-trap-react';
+import FocusTrap from 'focus-trap-react';
 import DenyIcon from '../../../../lib/icons/react/DenyIcon';
 import Flex from '../../layout/Flex';
 import FlexItem from '../../layout/FlexItem';
 
 const Dialog = (props) => {
+  useEffect(() => {
+    // Placeholder to return focus back to the button that invoked this moal
+    // console.log(document.activeElement);
+  });
+
   const handleClick = () => {
     if (props.canDismiss) {
       props.onDismiss();
@@ -22,10 +27,10 @@ const Dialog = (props) => {
 
   return ReactDOM.createPortal(
     <CSSTransition timeout={200} in={props.isOpen} classNames="dialog" unmountOnExit>
-      <div>
-        <React.Fragment>
-          <div className="dialog-overlay" onClick={handleClick}></div>
-          <FocusTrap>
+      <React.Fragment>
+        <FocusTrap>
+          <div>
+            <div className="dialog-overlay" onClick={handleClick}></div>
             <div
               className="dialog elevation--3"
               role={props.role}
@@ -61,9 +66,9 @@ const Dialog = (props) => {
                 <div className="dialog-footer">{props.footerContent}</div>
               )}
             </div>
-          </FocusTrap>
-        </React.Fragment>
-      </div>
+          </div>
+        </FocusTrap>
+      </React.Fragment>
     </CSSTransition>,
     // eslint-disable-next-line no-undef
     document.body
