@@ -6,20 +6,30 @@ import DenyIcon from '../../../../lib/icons/react/DenyIcon';
 import Flex from '../../layout/Flex';
 import FlexItem from '../../layout/FlexItem';
 
-const onKeyDown = (e) => e.keyCode === 27;
+const Dialog = (props) => {
+  const handleClick = () => {
+    if (props.canDismiss) {
+      props.onDismiss();
+    }
+  };
 
-const Dialog = (props) =>
-  ReactDOM.createPortal(
+  const handleKeyDown = (e) => {
+    if (props.canDismiss && e.keyCode === 27) {
+      props.onDismiss();
+    }
+  };
+
+  return ReactDOM.createPortal(
     <CSSTransition timeout={200}>
       <React.Fragment>
         {props.isOpen && (
           <React.Fragment>
-            <div className="dialog-overlay" onClick={props.onDismiss}></div>
+            <div className="dialog-overlay" onClick={handleClick}></div>
             <div
               className="dialog elevation--3"
               role="dialog"
               tabIndex="-1"
-              onKeyDown={(e) => onKeyDown(e) && props.onDismiss()}
+              onKeyDown={handleKeyDown}
             >
               {(props.title || props.canDismiss) && (
                 <React.Fragment>
@@ -28,11 +38,13 @@ const Dialog = (props) =>
                       <FlexItem>
                         <div className="dialog-title type--head4">{props.title}</div>
                       </FlexItem>
-                      <FlexItem shrink>
-                        <button className="dialog-icon" onClick={props.onDismiss}>
-                          <DenyIcon size="xs" />
-                        </button>
-                      </FlexItem>
+                      {props.canDismiss && (
+                        <FlexItem shrink>
+                          <button className="dialog-icon" onClick={handleClick}>
+                            <DenyIcon size="xs" />
+                          </button>
+                        </FlexItem>
+                      )}
                     </Flex>
                   </div>
                   <div className="dialog-divider" />
@@ -50,6 +62,7 @@ const Dialog = (props) =>
     // eslint-disable-next-line no-undef
     document.body
   );
+};
 
 Dialog.propTypes = {
   isOpen: PropTypes.bool,
