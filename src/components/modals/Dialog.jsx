@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import FocusTrap from 'focus-trap-react';
-import DenyIcon from '../../../../lib/icons/react/DenyIcon';
-import Flex from '../../layout/Flex';
-import FlexItem from '../../layout/FlexItem';
-import Section from '../../layout/Section';
+import DenyIcon from '../../../lib/icons/react/DenyIcon';
+import Flex from '../layout/Flex';
+import FlexItem from '../layout/FlexItem';
+import Section from '../layout/Section';
 
 const Dialog = (props) => {
   /**

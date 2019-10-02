@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, object } from '@storybook/addon-knobs';
 
-import Prompt from '.';
+import Prompt from './Prompt';
 
 storiesOf('Modals/Prompt', module)
   .addDecorator(withKnobs)

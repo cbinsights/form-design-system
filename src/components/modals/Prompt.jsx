@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Dialog from '../Dialog';
-import Button from '../Button';
-import Flex from '../../layout/Flex';
-import FlexItem from '../../layout/FlexItem';
+import Dialog from './Dialog';
+import Button from '../interactive/Button';
+import Flex from '../layout/Flex';
+import FlexItem from '../layout/FlexItem';
 
 const Prompt = (props) => (
   <Dialog

@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
-import Dialog from '.';
+import Dialog from './Dialog';
 
 storiesOf('Modals/Dialog', module)
   .addDecorator(withKnobs)
