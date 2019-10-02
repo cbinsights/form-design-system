@@ -2,6 +2,24 @@
   --modal-border-color: #E8E8E8;
 }
 
+.dialog-enter {
+  opacity: 0;
+}
+
+.dialog-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.dialog-exit {
+  opacity: 1;
+}
+
+.dialog-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
 .dialog-overlay {
   top: 0;
   left: 0;

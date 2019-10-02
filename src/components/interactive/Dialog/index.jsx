@@ -20,8 +20,8 @@ const Dialog = (props) => {
   };
 
   return ReactDOM.createPortal(
-    <CSSTransition timeout={200}>
-      <React.Fragment>
+    <CSSTransition timeout={200} in={props.isOpen} classNames="dialog" unmountOnExit>
+      <div>
         {props.isOpen && (
           <React.Fragment>
             <div className="dialog-overlay" onClick={handleClick}></div>
@@ -60,7 +60,7 @@ const Dialog = (props) => {
             </div>
           </React.Fragment>
         )}
-      </React.Fragment>
+      </div>
     </CSSTransition>,
     // eslint-disable-next-line no-undef
     document.body
