@@ -27,7 +27,7 @@ const Dialog = (props) => {
             <div className="dialog-overlay" onClick={handleClick}></div>
             <div
               className="dialog elevation--3"
-              role="dialog"
+              role={props.role}
               aria-labelledby="a11y-dialog-title"
               tabIndex="-1"
               onKeyDown={handleKeyDown}
@@ -67,7 +67,12 @@ const Dialog = (props) => {
   );
 };
 
+Dialog.defaultProps = {
+  role: 'dialog',
+};
+
 Dialog.propTypes = {
+  role: PropTypes.oneOf(['dialog', 'alertdialog']),
   isOpen: PropTypes.bool,
   canDismiss: PropTypes.bool,
   footerContent: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
