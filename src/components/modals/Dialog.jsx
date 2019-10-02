@@ -17,8 +17,6 @@ const Dialog = (props) => {
    * - Scroll Locking
    * - Set up standards around what gets focused first inside modals
    * - use event.key (esc) vs event.keyCode (27) (figure out how to polyfill)
-   * - import and pass buttons directly to PromptModal
-   *
    */
 
   useEffect(() => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dialog from './Dialog';
-import Button from '../interactive/Button';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 
@@ -14,13 +13,9 @@ const Prompt = (props) => (
           <div className="">
             <Flex justify="end" wrap>
               {props.secondaryButton && (
-                <FlexItem shrink>
-                  <Button {...props.secondaryButton} />
-                </FlexItem>
+                <FlexItem shrink>{props.secondaryButton}</FlexItem>
               )}
-              <FlexItem shrink>
-                <Button {...props.primaryButton} />
-              </FlexItem>
+              <FlexItem shrink>{props.primaryButton}</FlexItem>
             </Flex>
           </div>
         </div>
