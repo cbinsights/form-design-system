@@ -8,8 +8,16 @@ import Flex from '../../layout/Flex';
 import FlexItem from '../../layout/FlexItem';
 
 const Dialog = (props) => {
+  /**
+   * Things left to implement:
+   *
+   * - Adding descriptions to all propTypes
+   * - Returning focus back to the element that invoked modal
+   * - Scroll Locking
+   */
+
   useEffect(() => {
-    // Placeholder to return focus back to the button that invoked this moal
+    // Placeholder to return focus back to the button that invoked this modal
     // console.log(document.activeElement);
   });
 
@@ -34,7 +42,7 @@ const Dialog = (props) => {
             <div
               className="dialog elevation--3"
               role={props.role}
-              aria-labelledby="a11y-dialog-title"
+              aria-labelledby={props.title && 'a11y-dialog-title'}
               aria-describedby="a11y-dialog-desc"
               tabIndex="-1"
               aria-modal="true"
@@ -45,9 +53,14 @@ const Dialog = (props) => {
                   <div className="dialog-header">
                     <Flex justify="spaceBetween" align="start">
                       <FlexItem>
-                        <div className="dialog-title type--head4" id="a11y-dialog-title">
-                          {props.title}
-                        </div>
+                        {props.title && (
+                          <div
+                            className="dialog-title type--head4"
+                            id="a11y-dialog-title"
+                          >
+                            {props.title}
+                          </div>
+                        )}
                       </FlexItem>
                       {props.canDismiss && (
                         <FlexItem shrink>
