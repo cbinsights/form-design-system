@@ -20,7 +20,7 @@ storiesOf('Modals/Prompt', module)
         console.log('close modal');
       }}
       isOpen={boolean('isOpen', true)}
-      content={text('content', 'This change will be permanent and cannot be undone.')}
+      desc={text('content', 'This change will be permanent and cannot be undone.')}
       title={text('title', 'Are you sure you want to delete this collection?')}
       primaryButton={object('primaryButton', {
         isDestructive: true,

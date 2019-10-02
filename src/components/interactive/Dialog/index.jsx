@@ -28,6 +28,7 @@ const Dialog = (props) => {
             className="dialog elevation--3"
             role={props.role}
             aria-labelledby="a11y-dialog-title"
+            aria-describedby="a11y-dialog-desc"
             tabIndex="-1"
             aria-modal="true"
             onKeyDown={handleKeyDown}

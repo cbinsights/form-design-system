@@ -30,7 +30,7 @@ const Prompt = (props) => (
     footerContent={props.buttonPosition === 'footer' && <Reusable {...props} />}
     content={
       <React.Fragment>
-        <div>{props.content}</div>
+        <div id="a11y-dialog-desc">{props.desc}</div>
         {props.buttonPosition === 'content' && (
           <div className="margin--top--double">
             <Reusable {...props} />
@@ -52,7 +52,7 @@ Prompt.defaultProps = {
 
 Prompt.propTypes = {
   title: PropTypes.string,
-  content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  desc: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   primaryButton: PropTypes.any.isRequired,
   secondaryButton: PropTypes.any.isRequired,
   isOpen: PropTypes.bool,
