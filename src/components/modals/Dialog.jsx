@@ -1,22 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import FocusTrap from 'focus-trap-react';
+import noScroll from 'no-scroll';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import Section from '../layout/Section';
 
 const Dialog = (props) => {
-  /**
-   * Things left to implement:
-   *
-   * - Returning focus back to the element that invoked modal
-   * - Scroll Locking
-   * - Set up standards around what gets focused first inside modals
-   */
-
   useEffect(() => {
     // Placeholder to return focus back to the button that invoked this modal
     // console.log(document.activeElement);
@@ -33,6 +26,13 @@ const Dialog = (props) => {
       props.onDismiss();
     }
   };
+
+  useLayoutEffect(() => {
+    // This toggles scrolling on and off based on whether the modal
+    // is shown or not
+    if (props.isOpen) noScroll.on();
+    noScroll.off();
+  }, [props.isOpen]);
 
   return ReactDOM.createPortal(
     <CSSTransition timeout={200} in={props.isOpen} classNames="dialog" unmountOnExit>

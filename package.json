@@ -140,6 +140,7 @@
   "version": "4.0.0",
   "dependencies": {
     "focus-trap-react": "^6.0.0",
+    "no-scroll": "^2.1.1",
     "raf-schd": "^4.0.2"
   }
 }
