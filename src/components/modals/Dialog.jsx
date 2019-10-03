@@ -12,11 +12,9 @@ const Dialog = (props) => {
   /**
    * Things left to implement:
    *
-   * - Adding descriptions to all propTypes
    * - Returning focus back to the element that invoked modal
    * - Scroll Locking
    * - Set up standards around what gets focused first inside modals
-   * - use event.key (esc) vs event.keyCode (27) (figure out how to polyfill)
    */
 
   useEffect(() => {
@@ -31,7 +29,7 @@ const Dialog = (props) => {
   };
 
   const handleKeyDown = (e) => {
-    if (props.canDismiss && e.keyCode === 27) {
+    if (props.canDismiss && e.key === 'Escape') {
       props.onDismiss();
     }
   };
@@ -103,12 +101,25 @@ Dialog.defaultProps = {
 };
 
 Dialog.propTypes = {
+  /** Controls the role of the modal */
   role: PropTypes.oneOf(['dialog', 'alertdialog']),
+  /** Controls whether the modal (and overlay) are shown or not */
   isOpen: PropTypes.bool,
+  /** Controls whether the modal can be cleared passively (esc key, clicking
+   * backdrop, showing x on modal, clicking on modal x to close) */
   canDismiss: PropTypes.bool,
+  /** Add into bottom portion of modal */
+
   footerContent: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** Add into content (middle) portion of modal */
+
   content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+  /** Controls text displayed in modal header */
+
   title: PropTypes.string,
+  /** Callback that user can pass in, to be conditionally fired (based on canDismiss) when user attempts to close modal */
+
+  onDismiss: PropTypes.func,
 };
 
 export default Dialog;

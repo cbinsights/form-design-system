@@ -25,7 +25,6 @@ const Prompt = (props) => (
     canDismiss={false}
     title={props.title}
     isOpen={props.isOpen}
-    onDismiss={props.onDismiss}
   />
 );
 
@@ -34,13 +33,16 @@ Prompt.defaultProps = {
 };
 
 Prompt.propTypes = {
+  /** Controls text in header */
   title: PropTypes.string,
+  /** Controls string displayed in content area */
   desc: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** Represents primary button (MUST be an FDS Button) */
   primaryButton: PropTypes.any.isRequired,
+  /** Represents secondary button (MUST be an FDS Button) */
   secondaryButton: PropTypes.any.isRequired,
+  /** Controls whether modal (and backdrop) are visible or not */
   isOpen: PropTypes.bool,
-  onDismiss: PropTypes.func,
-  buttonPosition: PropTypes.oneOf(['content', 'footer']),
 };
 
 export default Prompt;
