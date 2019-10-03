@@ -1,0 +1,25 @@
+.fdsInlineBlockList {
+  --inlineBlockList-gutter: var(--space-half);
+  display: block;
+  vertical-align: middle;
+}
+
+/* spacing */
+.fdsInlineBlockList li {
+  margin-right: var(--inlineBlockList-gutter);
+}
+
+.fdsInlineBlockList li:last-child {
+  margin-right: 0;
+}
+
+/* separators */
+.fdsInlineBlockList--separators li::after {
+  content: attr(data-separator);
+  margin-left: var(--inlineBlockList-gutter);
+  color: var(--font-color-secondary);
+}
+
+.fdsInlineBlockList--separators li:last-child::after {
+  display: none;
+}
