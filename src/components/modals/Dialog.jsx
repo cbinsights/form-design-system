@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
@@ -10,11 +10,6 @@ import FlexItem from '../layout/FlexItem';
 import Section from '../layout/Section';
 
 const Dialog = (props) => {
-  useEffect(() => {
-    // Placeholder to return focus back to the button that invoked this modal
-    // console.log(document.activeElement);
-  });
-
   const handleClick = () => {
     if (props.canDismiss) {
       props.onDismiss();

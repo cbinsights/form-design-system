@@ -29,6 +29,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.21] Added Dialog and Prompt components
+
+- Added `Dialog` to components
+- Added `Prompt` to components
+
 ## [4.20] `Section` component
 
 - Added `.border--<side>` helper classes
