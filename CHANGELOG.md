@@ -29,6 +29,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [5.0] MAJOR
+
+### Changes
+
+### **BREAKING CHANGES**
+
+
 ## [4.20] `Section` component
 
 - Added `.border--<side>` helper classes
