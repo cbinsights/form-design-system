@@ -15,6 +15,9 @@ const primaryButtonProps = object('primaryButton', {
 const secondaryButtonProps = object('secondaryButton', {
   theme: 'ghost',
   children: 'Keep Collection',
+  onClick: () => {
+    console.log('close modal');
+  },
 });
 
 storiesOf('Modals/Prompt', module)
@@ -23,10 +26,6 @@ storiesOf('Modals/Prompt', module)
     'Knobs',
     () => (
       <Prompt
-        onDismiss={() => {
-          // eslint-disable-next-line no-console
-          console.log('close modal');
-        }}
         isOpen={boolean('isOpen', true)}
         desc={text('content', 'This change will be permanent and cannot be undone.')}
         title={text('title', 'Are you sure you want to delete this collection?')}
