@@ -18,7 +18,6 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
       <div>
         <div
           className="dialog-overlay"
-          onClick={[Function]}
         />
         <div
           aria-describedby="a11y-dialog-desc"
@@ -65,7 +64,6 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
       <div>
         <div
           className="dialog-overlay"
-          onClick={[Function]}
         />
         <div
           aria-describedby="a11y-dialog-desc"
