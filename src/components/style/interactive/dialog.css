@@ -22,8 +22,7 @@
   right: 0;
   bottom: 0;
   position: fixed;
-  /* leaving the zero addition here for now */
-  z-index: calc(var(--zindex-modal) + 0);
+  z-index: var(--zindex-shim);
   background: var(--color-charcoal);
   opacity: 0.3;
 }
