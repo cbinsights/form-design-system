@@ -19,8 +19,11 @@ const Dialog = (props) => {
   useLayoutEffect(() => {
     // This toggles scrolling on and off based on whether the modal
     // is shown or not
-    if (props.isOpen) noScroll.on();
-    noScroll.off();
+    if (props.isOpen) {
+      noScroll.on();
+    } else {
+      noScroll.off();
+    }
   }, [props.isOpen]);
 
   return ReactDOM.createPortal(
