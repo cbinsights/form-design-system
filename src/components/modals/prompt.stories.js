@@ -7,18 +7,20 @@ import Button from '../interactive/Button';
 import Prompt from './Prompt';
 import README from './Prompt.md';
 
-const primaryButtonProps = object('primaryButton', {
-  isDestructive: true,
-  children: 'Yes, delete',
-});
+const primaryButtonProps = () =>
+  object('primaryButton', {
+    isDestructive: true,
+    children: 'Yes, delete',
+  });
 
-const secondaryButtonProps = object('secondaryButton', {
-  theme: 'ghost',
-  children: 'Keep Collection',
-  onClick: () => {
-    console.log('close modal');
-  },
-});
+const secondaryButtonProps = () =>
+  object('secondaryButton', {
+    theme: 'ghost',
+    children: 'Keep Collection',
+    onClick: () => {
+      console.log('close modal');
+    },
+  });
 
 storiesOf('Modals/Prompt', module)
   .addDecorator(withKnobs)
@@ -29,8 +31,8 @@ storiesOf('Modals/Prompt', module)
         isOpen={boolean('isOpen', true)}
         desc={text('content', 'This change will be permanent and cannot be undone.')}
         title={text('title', 'Are you sure you want to delete this collection?')}
-        primaryButton={<Button {...primaryButtonProps} />}
-        secondaryButton={<Button {...secondaryButtonProps} />}
+        primaryButton={<Button {...primaryButtonProps()} />}
+        secondaryButton={<Button {...secondaryButtonProps()} />}
       />
     ),
     { notes: { markdown: README } }
