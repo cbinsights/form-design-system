@@ -12,14 +12,17 @@ storiesOf('Modals/Dialog', module)
     'Knobs',
     () => (
       <Dialog
-        onDismiss={() => {
-          // eslint-disable-next-line no-console
-          console.log('close modal');
-        }}
         isOpen={boolean('isOpen', true)}
         footerContent={text('footerContent', '')}
         content={text('content', 'Modal content here')}
-        canDismiss={boolean('canDismiss', true)}
+        // eslint-disable-next-line no-console
+        onDismiss={
+          boolean('onDismiss', true)
+            ? () => {
+                console.log('close modal');
+              }
+            : undefined
+        }
         title={text('title', 'Modal title here')}
       />
     ),

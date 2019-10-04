@@ -18,7 +18,6 @@ const Prompt = (props) => (
       </React.Fragment>
     }
     role="alertdialog"
-    canDismiss={false}
     title={props.title}
     isOpen={props.isOpen}
   />

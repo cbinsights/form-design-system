@@ -10,14 +10,8 @@ import FlexItem from '../layout/FlexItem';
 import Section from '../layout/Section';
 
 const Dialog = (props) => {
-  const handleClick = () => {
-    if (props.canDismiss) {
-      props.onDismiss();
-    }
-  };
-
   const handleKeyDown = (e) => {
-    if (props.canDismiss && e.key === 'Escape') {
+    if (props.onDismiss && e.key === 'Escape') {
       props.onDismiss();
     }
   };
@@ -34,7 +28,7 @@ const Dialog = (props) => {
       <React.Fragment>
         <FocusTrap>
           <div>
-            <div className="dialog-overlay" onClick={handleClick}></div>
+            <div className="dialog-overlay" onClick={props.onDimiss}></div>
             <div
               className="dialog elevation--3"
               role={props.role}
@@ -44,7 +38,7 @@ const Dialog = (props) => {
               aria-modal="true"
               onKeyDown={handleKeyDown}
             >
-              {(props.title || props.canDismiss) && (
+              {(props.title || props.onDismiss) && (
                 <React.Fragment>
                   <div className="dialog-header">
                     <Section border="bottom">
@@ -59,9 +53,9 @@ const Dialog = (props) => {
                             </div>
                           )}
                         </FlexItem>
-                        {props.canDismiss && (
+                        {props.onDismiss && (
                           <FlexItem shrink>
-                            <button className="dialog-icon" onClick={handleClick}>
+                            <button className="dialog-icon" onClick={props.onDismiss}>
                               <DenyIcon size="xs" />
                             </button>
                           </FlexItem>
@@ -100,9 +94,6 @@ Dialog.propTypes = {
   role: PropTypes.oneOf(['dialog', 'alertdialog']),
   /** Controls whether the modal (and overlay) are shown or not */
   isOpen: PropTypes.bool,
-  /** Controls whether the modal can be cleared passively (esc key, clicking
-   * backdrop, showing x on modal, clicking on modal x to close) */
-  canDismiss: PropTypes.bool,
   /** Add into bottom portion of modal */
 
   footerContent: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
@@ -112,8 +103,10 @@ Dialog.propTypes = {
   /** Controls text displayed in modal header */
 
   title: PropTypes.string,
-  /** Callback that user can pass in, to be conditionally fired (based on canDismiss) when user attempts to close modal */
-
+  /**
+   * Callback that user can pass in, to be conditionally fired when
+   * user attempts to close modal. Also controls modal x
+   */
   onDismiss: PropTypes.func,
 };
 
