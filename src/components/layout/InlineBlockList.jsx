@@ -13,8 +13,12 @@ const InlineBlockList = ({ items, separator }) => {
 
   return (
     <ul className={classNames}>
-      {items.map((item) => (
-        <li className="display--inlineBlock" data-separator={separator || null}>
+      {items.map((item, i) => (
+        <li
+          key={`${separator}-${i}`}
+          className="display--inlineBlock"
+          data-separator={separator || null}
+        >
           {item}
         </li>
       ))}
