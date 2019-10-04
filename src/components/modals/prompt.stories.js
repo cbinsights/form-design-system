@@ -18,6 +18,7 @@ const secondaryButtonProps = () =>
     theme: 'ghost',
     children: 'Keep Collection',
     onClick: () => {
+      // eslint-disable-next-line no-console
       console.log('close modal');
     },
   });

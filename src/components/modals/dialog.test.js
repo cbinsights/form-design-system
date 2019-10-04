@@ -6,6 +6,7 @@ describe('Dialog component', () => {
 
   // Dialog component uses a library that uses window.scroll underneath the hood
   // so we just need to add this here to avoid errors
+  // eslint-disable-next-line no-undef 
   window.scroll = () => {}
 
   it('dismisses modal when close icon is clicked', () => {
@@ -17,11 +18,13 @@ describe('Dialog component', () => {
 
   it('locks scrolling when visible', () => {
     mount(<Dialog isOpen={true} content={<button>hey</button>} />);
+    // eslint-disable-next-line no-undef 
     expect(document.documentElement.style.overflow).toBe('hidden');
   });
 
   it('does not lock scrolling when not visible', () => {
     mount(<Dialog content={<button>hey</button>} />);
+    // eslint-disable-next-line no-undef 
     expect(document.documentElement.style.overflow).toBe('');
   });
 
@@ -38,7 +41,6 @@ describe('Dialog component', () => {
         isOpen={true} 
         canDismiss={true} 
         footerContent={<div>foo</div>} 
-        content={<p>bar</p>} 
         title="hey" 
         onDismiss={(() => {})} 
       />

@@ -15,10 +15,10 @@ storiesOf('Modals/Dialog', module)
         isOpen={boolean('isOpen', true)}
         footerContent={text('footerContent', '')}
         content={text('content', 'Modal content here')}
-        // eslint-disable-next-line no-console
         onDismiss={
           boolean('onDismiss', true)
             ? () => {
+                // eslint-disable-next-line no-console
                 console.log('close modal');
               }
             : undefined
