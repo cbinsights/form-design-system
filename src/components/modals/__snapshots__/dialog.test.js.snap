@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog component matches snapshot (default props) 1`] = `
+<Portal
+  containerInfo={<body />}
+>
+  <CSSTransition
+    classNames="dialog"
+    timeout={200}
+    unmountOnExit={true}
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={true}
+      focusTrapOptions={Object {}}
+      paused={false}
+    >
+      <div>
+        <div
+          className="dialog-overlay"
+          onClick={[Function]}
+        />
+        <div
+          aria-describedby="a11y-dialog-desc"
+          aria-modal="true"
+          className="dialog elevation--3"
+          onKeyDown={[Function]}
+          role="dialog"
+          tabIndex="-1"
+        >
+          <div
+            className="dialog-content"
+          >
+            <Section
+              bgColor="white"
+              xPadding="default"
+              yPadding="default"
+            >
+              foo
+            </Section>
+          </div>
+        </div>
+      </div>
+    </FocusTrap>
+  </CSSTransition>
+</Portal>
+`;
+
+exports[`Dialog component matches snapshot (set all props) 1`] = `
+<Portal
+  containerInfo={<body />}
+>
+  <CSSTransition
+    classNames="dialog"
+    in={true}
+    timeout={200}
+    unmountOnExit={true}
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={true}
+      focusTrapOptions={Object {}}
+      paused={false}
+    >
+      <div>
+        <div
+          className="dialog-overlay"
+          onClick={[Function]}
+        />
+        <div
+          aria-describedby="a11y-dialog-desc"
+          aria-labelledby="a11y-dialog-title"
+          aria-modal="true"
+          className="dialog elevation--3"
+          onKeyDown={[Function]}
+          role="alertdialog"
+          tabIndex="-1"
+        >
+          <div
+            className="dialog-header"
+          >
+            <Section
+              bgColor="white"
+              border="bottom"
+              xPadding="default"
+              yPadding="default"
+            >
+              <Flex
+                align="start"
+                dataTest=""
+                direction="row"
+                justify="spaceBetween"
+              >
+                <FlexItem
+                  dataTest=""
+                  shrink={false}
+                >
+                  <div
+                    className="dialog-title type--head4"
+                    id="a11y-dialog-title"
+                  >
+                    hey
+                  </div>
+                </FlexItem>
+                <FlexItem
+                  dataTest=""
+                  shrink={true}
+                >
+                  <button
+                    className="dialog-icon"
+                    onClick={[Function]}
+                  >
+                    <DenyIcon
+                      size="xs"
+                    />
+                  </button>
+                </FlexItem>
+              </Flex>
+            </Section>
+          </div>
+          <div
+            className="dialog-content"
+          >
+            <Section
+              bgColor="white"
+              xPadding="default"
+              yPadding="default"
+            >
+              <p>
+                bar
+              </p>
+            </Section>
+          </div>
+          <div
+            className="dialog-footer"
+          >
+            <Section
+              bgColor="lightGray"
+              border="top"
+              xPadding="default"
+              yPadding="default"
+            >
+              <div>
+                foo
+              </div>
+            </Section>
+          </div>
+        </div>
+      </div>
+    </FocusTrap>
+  </CSSTransition>
+</Portal>
+`;
