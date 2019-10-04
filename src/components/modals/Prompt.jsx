@@ -10,14 +10,10 @@ const Prompt = (props) => (
       <React.Fragment>
         <div id="a11y-dialog-desc">{props.desc}</div>
         <div className="margin--top--double">
-          <div className="">
-            <Flex justify="end" wrap>
-              {props.secondaryButton && (
-                <FlexItem shrink>{props.secondaryButton}</FlexItem>
-              )}
-              <FlexItem shrink>{props.primaryButton}</FlexItem>
-            </Flex>
-          </div>
+          <Flex justify="end" wrap>
+            {props.secondaryButton && <FlexItem shrink>{props.secondaryButton}</FlexItem>}
+            <FlexItem shrink>{props.primaryButton}</FlexItem>
+          </Flex>
         </div>
       </React.Fragment>
     }
