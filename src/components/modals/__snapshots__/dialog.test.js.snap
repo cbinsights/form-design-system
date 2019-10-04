@@ -313,9 +313,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
               xPadding="default"
               yPadding="default"
             >
-              <p>
-                bar
-              </p>
+              foo
             </Section>
           </div>
           <div
