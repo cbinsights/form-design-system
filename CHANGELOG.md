@@ -32,9 +32,18 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ## [5.0] MAJOR
 
 ### Changes
+- Added `InlineBlockList` layout component.
 
 ### **BREAKING CHANGES**
 
+#### `Chip`
+The `Chip` component no longer provides margin. Use the `InlineBlockList` layout component
+to create a list of chips.
+
+```diff
+-<Chip /><Chip /><Chip />
++<InlineBlockList items={[<Chip />, <Chip />, <Chip />]} />
+```
 
 ## [4.20] `Section` component
 

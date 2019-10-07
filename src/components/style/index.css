@@ -7,6 +7,7 @@
 /* Layout components */
 @import "./layout/flex.css";
 @import "./layout/section.css";
+@import "./layout/inlineBlockList.css";
 @import "./layout/hscroll.css";
 
 /* Media components */
