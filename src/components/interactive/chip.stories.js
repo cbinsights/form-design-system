@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 
 import Chip from './Chip';
+import InlineBlockList from '../layout/InlineBlockList';
 import README from './Chip.md';
 
 const chips = [
@@ -58,27 +59,34 @@ storiesOf('Interactive/Chip', module)
   )
   .add('Variations', () => (
     <React.Fragment>
-      <div>
-        {chipsTwo.map((chip) => (
+      <InlineBlockList
+        items={chipsTwo.map((chip) => (
           <Chip {...chip} key={chip.label} theme="outline" />
         ))}
-      </div>
+      />
       <br />
-      {chips.map((chip) => (
-        <Chip {...chip} key={chip.label} size="sm" />
-      ))}
+      <InlineBlockList
+        items={chips.map((chip) => (
+          <Chip {...chip} key={chip.label} size="sm" />
+        ))}
+      />
       <br />
-      {chips.map((chip) => (
-        <Chip {...chip} key={chip.label} theme="blue" size="sm" />
-      ))}
+      <InlineBlockList
+        items={chips.map((chip) => (
+          <Chip {...chip} key={chip.label} theme="blue" size="sm" />
+        ))}
+      />
       <br />
+      <InlineBlockList
+        items={chips.map((chip) => (
+          <Chip {...chip} key={chip.label} />
+        ))}
+      />
       <br />
-      {chips.map((chip) => (
-        <Chip {...chip} key={chip.label} />
-      ))}
-      <br />
-      {chips.map((chip) => (
-        <Chip {...chip} key={chip.label} theme="blue" />
-      ))}
+      <InlineBlockList
+        items={chips.map((chip) => (
+          <Chip {...chip} key={chip.label} theme="blue" />
+        ))}
+      />
     </React.Fragment>
   ));
