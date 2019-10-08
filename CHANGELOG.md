@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.21] 🐛 Bugfix: IE11 `Button` and `Hscroll`
+
+- Fixes IE11 issues with `Button` and `Hscroll` styling.
+
 ## [4.20] `Section` component
 
 - Added `.border--<side>` helper classes
