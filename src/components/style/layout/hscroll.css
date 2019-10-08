@@ -49,7 +49,16 @@
 }
 
 
-/* fade gradients positioned relative to outmost container */
+
+/**
+ * Fade management
+ *
+ * pseudo-elements with linear gradients create the fade
+ * effect on the edges of `hscroll`
+ *
+ * `before` - left fade
+ * `after` - right fade
+ */
 .hscroll--enableFade::before,
 .hscroll--enableFade::after {
   content: "";
@@ -61,35 +70,40 @@
   z-index: 1; /* fade elements should appear above content */
 }
 
-
-/* local vars set the fade color based on class */
-.hscroll--bgColor--white {
-  --hscroll-bgColor: var(--color-white);
-  --hscroll-bgColor-rgb: var(--rgb-white);
-}
-
-.hscroll--bgColor--haze {
-  --hscroll-bgColor: var(--color-haze);
-  --hscroll-bgColor-rgb: var(--rgb-haze);
-}
-
-
 .hscroll--enableFade::before {
   display: none; /* scrolLeft defaults to 0; hide the fade until relevant */
-  background-image: linear-gradient(to right, var(--hscroll-bgColor), rgba(var(--hscroll-bgColor-rgb), 0));
   left: 0;
 }
 
 .hscroll--enableFade::after {
-  background-image: linear-gradient(to left, var(--hscroll-bgColor), rgba(var(--hscroll-bgColor-rgb), 0));
   right: 0;
 }
 
+/* show the left fade when scrolling */
 .hscroll--scrolled::before {
-  display: block; /* show the left fade when scrolling */
+  display: block;
 }
 
+/* hide the right fade when scrolled to end */
 .hscroll--scrollEnd::after {
-  display: none; /* hide the right fade when scrolled to end */
+  display: none;
+}
+
+/* white fades */
+.hscroll--bgColor--white.hscroll--enableFade::before {
+  background-image: linear-gradient(to right, var(--color-white), rgba(var(--rgb-white), 0));
+}
+
+.hscroll--bgColor--white.hscroll--enableFade::after {
+  background-image: linear-gradient(to left, var(--color-white), rgba(var(--rgb-white), 0));
+}
+
+/* haze fades */
+.hscroll--bgColor--haze.hscroll--enableFade::before {
+  background-image: linear-gradient(to right, var(--color-haze), rgba(var(--rgb-haze), 0));
+}
+
+.hscroll--bgColor--haze.hscroll--enableFade::after {
+  background-image: linear-gradient(to left, var(--color-haze), rgba(var(--rgb-haze), 0));
 }
 
