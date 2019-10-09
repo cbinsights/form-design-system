@@ -63,6 +63,7 @@
 }
 
 .dialog-icon {
+  background-color: transparent;
   cursor: pointer;
   border: 0 none;
   min-height: auto;
