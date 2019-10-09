@@ -73,7 +73,7 @@ const Dialog = (props) => {
               </div>
               {props.footerContent && (
                 <div className="dialog-footer">
-                  <Section border="top" bgColor="lightGray">
+                  <Section border="top" bgColor="white">
                     {props.footerContent}
                   </Section>
                 </div>
