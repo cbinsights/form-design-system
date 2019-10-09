@@ -57,27 +57,29 @@ storiesOf('Modals/Dialog', module)
   .add('Variation: customizable footer', () => (
     <Dialog
       isOpen={true}
-      content={<Button>Hello world</Button>}
-      title="Footer is customizable"
+      content={<Button>Customizable footer</Button>}
       onDismiss={() => {
         // eslint-disable-next-line no-console
         console.log('close modal');
       }}
       footerContent={
-        <Flex align="center">
-          <FlexItem shrink>
-            <Button>Anything</Button>
-          </FlexItem>
-          <FlexItem shrink>
-            <Button theme="outlined">Can go</Button>
-          </FlexItem>
-          <FlexItem shrink>
-            <p>in the</p>
-          </FlexItem>
-          <FlexItem shrink>
-            <input placeholder="footer" />
-          </FlexItem>
-        </Flex>
+        <div>
+          <Flex align="center">
+            <FlexItem shrink>
+              <Button>Anything</Button>
+            </FlexItem>
+            <FlexItem shrink>
+              <Button theme="outlined">Can go</Button>
+            </FlexItem>
+            <FlexItem shrink>
+              <p>in the</p>
+            </FlexItem>
+            <FlexItem shrink>
+              <input placeholder="footer" />
+            </FlexItem>
+          </Flex>
+          <p className="margin--top">Lorem ipsum dolor</p>
+        </div>
       }
     />
   ));
