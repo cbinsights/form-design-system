@@ -4,11 +4,6 @@ import Dialog from './Dialog'
 
 describe('Dialog component', () => {
 
-  // Dialog component uses a library that uses window.scroll underneath the hood
-  // so we just need to add this here to avoid errors
-  // eslint-disable-next-line no-undef 
-  window.scroll = () => {}
-
   it('dismisses modal when close icon is clicked', () => {
     const dismissFn = jest.fn()
     const wrapper = mount(<Dialog isOpen={true} onDismiss={dismissFn} content={<button>hey</button>} />);

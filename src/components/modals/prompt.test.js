@@ -5,11 +5,6 @@ import Button from '../interactive/Button'
 
 describe('Prompt component', () => {
 
-  // Dialog component uses a library that uses window.scroll underneath the hood
-  // so we just need to add this here to avoid errors
-  // eslint-disable-next-line no-undef
-  window.scroll = () => { }
-
   it('matches snapshot (default props)', () => {
     const component = shallow(<Prompt primaryButton={<Button>foo</Button>} secondaryButton={<Button>bar</Button>} />);
     expect(component).toMatchSnapshot();
