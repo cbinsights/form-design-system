@@ -455,7 +455,6 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
           >
             <Section
               bgColor="white"
-              border="top"
               xPadding="default"
               yPadding="default"
             >

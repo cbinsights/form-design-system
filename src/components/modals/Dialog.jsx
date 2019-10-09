@@ -10,8 +10,14 @@ import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import Section from '../layout/Section';
 
-export const isElementOverflowing = ({ current }) =>
-  current.scrollHeight > current.clientHeight;
+export const isElementOverflowing = ({ current }) => {
+  // Checking for current first is safer just in case,
+  // and will also fail gracefully in tests
+  if (current) {
+    return current.scrollHeight > current.clientHeight;
+  }
+  return false;
+};
 
 const Dialog = (props) => {
   const contentEl = useRef(null);
