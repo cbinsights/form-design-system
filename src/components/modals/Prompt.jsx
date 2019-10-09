@@ -6,16 +6,12 @@ import FlexItem from '../layout/FlexItem';
 
 const Prompt = (props) => (
   <Dialog
-    content={
-      <React.Fragment>
-        <div id="a11y-dialog-desc">{props.desc}</div>
-        <div className="margin--top--double">
-          <Flex justify="end" wrap>
-            {props.secondaryButton && <FlexItem shrink>{props.secondaryButton}</FlexItem>}
-            <FlexItem shrink>{props.primaryButton}</FlexItem>
-          </Flex>
-        </div>
-      </React.Fragment>
+    content={<div id="a11y-dialog-desc">{props.desc}</div>}
+    footerContent={
+      <Flex justify="end" wrap>
+        {props.secondaryButton && <FlexItem shrink>{props.secondaryButton}</FlexItem>}
+        {props.primaryButton && <FlexItem shrink>{props.primaryButton}</FlexItem>}
+      </Flex>
     }
     role="alertdialog"
     title={props.title}
