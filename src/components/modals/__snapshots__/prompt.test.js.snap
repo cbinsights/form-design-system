@@ -3,45 +3,41 @@
 exports[`Prompt component matches snapshot (default props) 1`] = `
 <Dialog
   content={
-    <React.Fragment>
-      <div
-        id="a11y-dialog-desc"
-      />
-      <div
-        className="margin--top--double"
+    <div
+      id="a11y-dialog-desc"
+    />
+  }
+  footerContent={
+    <Flex
+      align="stretch"
+      dataTest=""
+      direction="row"
+      justify="end"
+      wrap={true}
+    >
+      <FlexItem
+        dataTest=""
+        shrink={true}
       >
-        <Flex
-          align="stretch"
-          dataTest=""
-          direction="row"
-          justify="end"
-          wrap={true}
+        <Button
+          iconPlacement="right"
+          theme="blue"
         >
-          <FlexItem
-            dataTest=""
-            shrink={true}
-          >
-            <Button
-              iconPlacement="right"
-              theme="blue"
-            >
-              bar
-            </Button>
-          </FlexItem>
-          <FlexItem
-            dataTest=""
-            shrink={true}
-          >
-            <Button
-              iconPlacement="right"
-              theme="blue"
-            >
-              foo
-            </Button>
-          </FlexItem>
-        </Flex>
-      </div>
-    </React.Fragment>
+          bar
+        </Button>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <Button
+          iconPlacement="right"
+          theme="blue"
+        >
+          foo
+        </Button>
+      </FlexItem>
+    </Flex>
   }
   role="alertdialog"
 />
@@ -50,45 +46,41 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
 exports[`Prompt component matches snapshot (default props) 2`] = `
 <Dialog
   content={
-    <React.Fragment>
-      <div
-        id="a11y-dialog-desc"
-      />
-      <div
-        className="margin--top--double"
+    <div
+      id="a11y-dialog-desc"
+    />
+  }
+  footerContent={
+    <Flex
+      align="stretch"
+      dataTest=""
+      direction="row"
+      justify="end"
+      wrap={true}
+    >
+      <FlexItem
+        dataTest=""
+        shrink={true}
       >
-        <Flex
-          align="stretch"
-          dataTest=""
-          direction="row"
-          justify="end"
-          wrap={true}
+        <Button
+          iconPlacement="right"
+          theme="blue"
         >
-          <FlexItem
-            dataTest=""
-            shrink={true}
-          >
-            <Button
-              iconPlacement="right"
-              theme="blue"
-            >
-              bar
-            </Button>
-          </FlexItem>
-          <FlexItem
-            dataTest=""
-            shrink={true}
-          >
-            <Button
-              iconPlacement="right"
-              theme="blue"
-            >
-              foo
-            </Button>
-          </FlexItem>
-        </Flex>
-      </div>
-    </React.Fragment>
+          bar
+        </Button>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <Button
+          iconPlacement="right"
+          theme="blue"
+        >
+          foo
+        </Button>
+      </FlexItem>
+    </Flex>
   }
   isOpen={true}
   role="alertdialog"
@@ -98,47 +90,43 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
 exports[`Prompt component matches snapshot (set all props) 1`] = `
 <Dialog
   content={
-    <React.Fragment>
-      <div
-        id="a11y-dialog-desc"
+    <div
+      id="a11y-dialog-desc"
+    >
+      desc
+    </div>
+  }
+  footerContent={
+    <Flex
+      align="stretch"
+      dataTest=""
+      direction="row"
+      justify="end"
+      wrap={true}
+    >
+      <FlexItem
+        dataTest=""
+        shrink={true}
       >
-        desc
-      </div>
-      <div
-        className="margin--top--double"
-      >
-        <Flex
-          align="stretch"
-          dataTest=""
-          direction="row"
-          justify="end"
-          wrap={true}
+        <Button
+          iconPlacement="right"
+          theme="blue"
         >
-          <FlexItem
-            dataTest=""
-            shrink={true}
-          >
-            <Button
-              iconPlacement="right"
-              theme="blue"
-            >
-              bar
-            </Button>
-          </FlexItem>
-          <FlexItem
-            dataTest=""
-            shrink={true}
-          >
-            <Button
-              iconPlacement="right"
-              theme="blue"
-            >
-              foo
-            </Button>
-          </FlexItem>
-        </Flex>
-      </div>
-    </React.Fragment>
+          bar
+        </Button>
+      </FlexItem>
+      <FlexItem
+        dataTest=""
+        shrink={true}
+      >
+        <Button
+          iconPlacement="right"
+          theme="blue"
+        >
+          foo
+        </Button>
+      </FlexItem>
+    </Flex>
   }
   isOpen={true}
   role="alertdialog"
