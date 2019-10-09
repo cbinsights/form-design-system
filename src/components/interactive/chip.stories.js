@@ -3,6 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
+import { arrayToOptions } from '../util/storybook';
 
 import Chip from './Chip';
 import README from './Chip.md';
@@ -32,16 +33,9 @@ storiesOf('Interactive/Chip', module)
         subtitle={text('subtitle', '')}
         onClose={action('close')}
         onClick={action('clicked')}
-        size={options(
-          'size',
-          {
-            sm: 'sm',
-            md: 'md',
-            lg: 'lg',
-          },
-          'sm',
-          { display: 'inline-radio' }
-        )}
+        size={options('size', arrayToOptions(['s', 'm', 'l']), 's', {
+          display: 'inline-radio',
+        })}
         theme={options(
           'theme',
           {
@@ -65,11 +59,11 @@ storiesOf('Interactive/Chip', module)
       </div>
       <br />
       {chips.map((chip) => (
-        <Chip {...chip} key={chip.label} size="sm" />
+        <Chip {...chip} key={chip.label} size="s" />
       ))}
       <br />
       {chips.map((chip) => (
-        <Chip {...chip} key={chip.label} theme="blue" size="sm" />
+        <Chip {...chip} key={chip.label} theme="blue" size="s" />
       ))}
       <br />
       <br />

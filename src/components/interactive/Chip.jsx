@@ -7,10 +7,8 @@ import baseElement from '../../util/baseElement';
 const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }) => {
   const Element = baseElement({ href: rest.href, as: Link });
 
-  const rootClass = cx('fdsChip', {
+  const rootClass = cx('fdsChip', `fdsChip--${size}`, {
     'fdsChip--active': isActive,
-    'fdsChip--small': size === 'sm',
-    'fdsChip--large': size === 'lg',
     'fdsChip--blue': theme === 'blue',
     'fdsChip--outline': theme === 'outline',
   });
@@ -58,14 +56,14 @@ Chip.propTypes = {
    */
   onClose: PropTypes.func,
   /** Specify the size of the chip */
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  size: PropTypes.oneOf(['s', 'm', 'l']),
   /** Controls the color (look and feel) of the chip */
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
 
 Chip.defaultProps = {
   theme: 'gray',
-  size: 'md',
+  size: 'm',
 };
 
 export default Chip;
