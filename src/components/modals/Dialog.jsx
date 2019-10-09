@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
@@ -34,7 +34,7 @@ const Dialog = (props) => {
     rafSchd(setIsOverflowing(isElementOverflowing(contentEl)));
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     handleResize(); // needs to fire once immediately on mount
     // eslint-disable-next-line no-undef
     window.addEventListener('resize', handleResize);
