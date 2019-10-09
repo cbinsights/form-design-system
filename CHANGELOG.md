@@ -29,10 +29,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [4.21] Added Dialog and Prompt components
+## [4.22] Added Dialog and Prompt components
 
 - Added `Dialog` to components
 - Added `Prompt` to components
+
+## [4.21] 🐛 Bugfix: IE11 `Button` and `Hscroll`
+
+- Fixes IE11 issues with `Button` and `Hscroll` styling.
 
 ## [4.20] `Section` component
 
