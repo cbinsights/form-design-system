@@ -1,20 +1,40 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import FocusTrap from 'focus-trap-react';
 import noScroll from 'no-scroll';
+import rafSchd from 'raf-schd';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import Section from '../layout/Section';
 
+export const isElementOverflowing = ({ current }) =>
+  current.scrollHeight > current.clientHeight;
+
 const Dialog = (props) => {
+  const contentEl = useRef(null);
+
   const handleKeyDown = (e) => {
     if (props.onDismiss && e.key === 'Escape') {
       props.onDismiss();
     }
   };
+
+  const [isOverflowing, setIsOverflowing] = useState(false);
+
+  const handleResize = () => {
+    rafSchd(setIsOverflowing(isElementOverflowing(contentEl)));
+  };
+
+  useLayoutEffect(() => {
+    handleResize(); // needs to fire once immediately on mount
+    // eslint-disable-next-line no-undef
+    window.addEventListener('resize', handleResize);
+    // eslint-disable-next-line no-undef
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useLayoutEffect(() => {
     // This toggles scrolling on and off based on whether the modal
@@ -68,12 +88,12 @@ const Dialog = (props) => {
                   </div>
                 </React.Fragment>
               )}
-              <div className="dialog-content">
+              <div className="dialog-content" ref={contentEl}>
                 <Section>{props.content}</Section>
               </div>
               {props.footerContent && (
                 <div className="dialog-footer">
-                  <Section border="top" bgColor="white">
+                  <Section border={isOverflowing ? 'top' : undefined} bgColor="white">
                     {props.footerContent}
                   </Section>
                 </div>
