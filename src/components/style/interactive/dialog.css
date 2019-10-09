@@ -48,6 +48,20 @@
   overflow-y: auto;
 }
 
+.dialog-content::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.dialog-content::-webkit-scrollbar:vertical {
+  width: 12px;
+}
+
+.dialog-content::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white; /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .dialog-icon {
   cursor: pointer;
   border: 0 none;
