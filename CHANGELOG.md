@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.23] Fix Dialog component
+
+- Add transparency to close icon (fixes background for Safari)
+
 ## [4.22] Added Dialog and Prompt components
 
 - Added `Dialog` to components
