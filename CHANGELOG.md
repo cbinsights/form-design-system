@@ -45,6 +45,10 @@ to create a list of chips.
 +<InlineBlockList items={[<Chip />, <Chip />, <Chip />]} />
 ```
 
+## [4.21] 🐛 Bugfix: IE11 `Button` and `Hscroll`
+
+- Fixes IE11 issues with `Button` and `Hscroll` styling.
+
 ## [4.20] `Section` component
 
 - Added `.border--<side>` helper classes
