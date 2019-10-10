@@ -23,6 +23,7 @@
 /* Layout Helpers */
 @import "./helperClasses/layout/media";
 @import "./helperClasses/layout/display";
+@import "./helperClasses/layout/width";
 
 /* Shadow Helpers */
 @import "./helperClasses/shadow/elevation";
