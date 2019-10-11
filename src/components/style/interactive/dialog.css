@@ -1,0 +1,69 @@
+.dialog-enter {
+  opacity: 0;
+}
+
+.dialog-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.dialog-exit {
+  opacity: 1;
+}
+
+.dialog-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.dialog-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: var(--zindex-shim);
+  background: var(--color-charcoal);
+  opacity: 0.3;
+}
+
+.dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-default);
+  z-index: calc(var(--zindex-modal) + 1);
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  box-sizing: border-box;
+}
+
+.dialog-content {
+  overflow-y: auto;
+}
+
+.dialog-content::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.dialog-content::-webkit-scrollbar:vertical {
+  width: 12px;
+}
+
+.dialog-content::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white; /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-icon {
+  cursor: pointer;
+  border: 0 none;
+  min-height: auto;
+}

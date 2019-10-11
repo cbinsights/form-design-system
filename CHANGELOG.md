@@ -53,6 +53,12 @@ size values](https://github.com/cbinsights/form-design-system/blob/master/contri
 +<Chip size="m" />
 ```
 
+## [4.22] Added Dialog and Prompt components
+
+- Added `Dialog` to components
+- Added `Prompt` to components
+>>>>>>> release/5.0
+
 ## [4.21] 🐛 Bugfix: IE11 `Button` and `Hscroll`
 
 - Fixes IE11 issues with `Button` and `Hscroll` styling.
