@@ -33,7 +33,7 @@ storiesOf('Interactive/Chip', module)
         subtitle={text('subtitle', '')}
         onClose={action('close')}
         onClick={action('clicked')}
-        size={options('size', arrayToOptions(['s', 'm', 'l']), 's', {
+        size={options('size', arrayToOptions(['s', 'm']), 's', {
           display: 'inline-radio',
         })}
         theme={options(
