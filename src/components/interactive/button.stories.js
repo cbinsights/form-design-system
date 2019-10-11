@@ -19,7 +19,7 @@ storiesOf('Interactive/Button', module)
         {
           left: 'left',
           right: 'right',
-          none: undefined,
+          none: null,
         },
         undefined,
         { display: 'inline-radio' }
@@ -44,12 +44,8 @@ storiesOf('Interactive/Button', module)
             })}
             theme={options(
               'theme',
-              {
-                blue: 'blue',
-                outlined: 'outlined',
-                ghost: 'ghost',
-              },
-              'blue',
+              arrayToOptions(['blue', 'outlined', 'ghost']),
+              undefined,
               { display: 'inline-radio' }
             )}
           >
