@@ -45,6 +45,11 @@ to create a list of chips.
 +<InlineBlockList items={[<Chip />, <Chip />, <Chip />]} />
 ```
 
+## [4.22] Added Dialog and Prompt components
+
+- Added `Dialog` to components
+- Added `Prompt` to components
+
 ## [4.21] 🐛 Bugfix: IE11 `Button` and `Hscroll`
 
 - Fixes IE11 issues with `Button` and `Hscroll` styling.

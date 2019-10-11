@@ -1,0 +1,471 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog component matches snapshot (default props) 1`] = `
+<Portal
+  containerInfo={
+    <body>
+      <div>
+        <div
+          class="dialog-overlay"
+        />
+        <div
+          aria-describedby="a11y-dialog-desc"
+          aria-modal="true"
+          class="dialog elevation--3"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="dialog-header"
+          >
+            <div
+              class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+            >
+              <div
+                class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                data-test=""
+              >
+                <div
+                  class="flexItem"
+                  data-test=""
+                />
+                <div
+                  class="flexItem flexItem--shrink"
+                  data-test=""
+                >
+                  <button
+                    class="dialog-icon"
+                  >
+                    <div
+                      class="fds-icon fds-icon--xs"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                      >
+                        <g
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="dialog-content"
+          >
+            <div
+              class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+            >
+              <button>
+                hey
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="dialog-overlay"
+        />
+        <div
+          aria-describedby="a11y-dialog-desc"
+          aria-modal="true"
+          class="dialog elevation--3"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="dialog-header"
+          >
+            <div
+              class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+            >
+              <div
+                class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                data-test=""
+              >
+                <div
+                  class="flexItem"
+                  data-test=""
+                />
+                <div
+                  class="flexItem flexItem--shrink"
+                  data-test=""
+                >
+                  <button
+                    class="dialog-icon"
+                  >
+                    <div
+                      class="fds-icon fds-icon--xs"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                      >
+                        <g
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="dialog-content"
+          >
+            <div
+              class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+            >
+              <button>
+                hey
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="dialog-overlay"
+        />
+        <div
+          aria-describedby="a11y-dialog-desc"
+          aria-modal="true"
+          class="dialog elevation--3"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="dialog-content"
+          >
+            <div
+              class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+            >
+              <button>
+                hey
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  }
+>
+  <CSSTransition
+    classNames="dialog"
+    in={true}
+    timeout={200}
+    unmountOnExit={true}
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={true}
+      focusTrapOptions={Object {}}
+      paused={false}
+    >
+      <div>
+        <div
+          className="dialog-overlay"
+        />
+        <div
+          aria-describedby="a11y-dialog-desc"
+          aria-modal="true"
+          className="dialog elevation--3"
+          onKeyDown={[Function]}
+          role="dialog"
+          tabIndex="-1"
+        >
+          <div
+            className="dialog-content"
+          >
+            <Section
+              bgColor="white"
+              xPadding="default"
+              yPadding="default"
+            >
+              foo
+            </Section>
+          </div>
+        </div>
+      </div>
+    </FocusTrap>
+  </CSSTransition>
+</Portal>
+`;
+
+exports[`Dialog component matches snapshot (set all props) 1`] = `
+<Portal
+  containerInfo={
+    <body>
+      <div>
+        <div
+          class="dialog-overlay"
+        />
+        <div
+          aria-describedby="a11y-dialog-desc"
+          aria-modal="true"
+          class="dialog elevation--3"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="dialog-header"
+          >
+            <div
+              class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+            >
+              <div
+                class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                data-test=""
+              >
+                <div
+                  class="flexItem"
+                  data-test=""
+                />
+                <div
+                  class="flexItem flexItem--shrink"
+                  data-test=""
+                >
+                  <button
+                    class="dialog-icon"
+                  >
+                    <div
+                      class="fds-icon fds-icon--xs"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                      >
+                        <g
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="dialog-content"
+          >
+            <div
+              class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+            >
+              <button>
+                hey
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="dialog-overlay"
+        />
+        <div
+          aria-describedby="a11y-dialog-desc"
+          aria-modal="true"
+          class="dialog elevation--3"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="dialog-header"
+          >
+            <div
+              class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+            >
+              <div
+                class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                data-test=""
+              >
+                <div
+                  class="flexItem"
+                  data-test=""
+                />
+                <div
+                  class="flexItem flexItem--shrink"
+                  data-test=""
+                >
+                  <button
+                    class="dialog-icon"
+                  >
+                    <div
+                      class="fds-icon fds-icon--xs"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                      >
+                        <g
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="dialog-content"
+          >
+            <div
+              class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+            >
+              <button>
+                hey
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="dialog-overlay"
+        />
+        <div
+          aria-describedby="a11y-dialog-desc"
+          aria-modal="true"
+          class="dialog elevation--3"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="dialog-content"
+          >
+            <div
+              class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+            >
+              <button>
+                hey
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  }
+>
+  <CSSTransition
+    classNames="dialog"
+    in={true}
+    timeout={200}
+    unmountOnExit={true}
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={true}
+      focusTrapOptions={Object {}}
+      paused={false}
+    >
+      <div>
+        <div
+          className="dialog-overlay"
+        />
+        <div
+          aria-describedby="a11y-dialog-desc"
+          aria-labelledby="a11y-dialog-title"
+          aria-modal="true"
+          className="dialog elevation--3"
+          onKeyDown={[Function]}
+          role="alertdialog"
+          tabIndex="-1"
+        >
+          <div
+            className="dialog-header"
+          >
+            <Section
+              bgColor="white"
+              border="bottom"
+              xPadding="default"
+              yPadding="default"
+            >
+              <Flex
+                align="start"
+                dataTest=""
+                direction="row"
+                justify="spaceBetween"
+              >
+                <FlexItem
+                  dataTest=""
+                  shrink={false}
+                >
+                  <div
+                    className="dialog-title type--head4"
+                    id="a11y-dialog-title"
+                  >
+                    hey
+                  </div>
+                </FlexItem>
+                <FlexItem
+                  dataTest=""
+                  shrink={true}
+                >
+                  <button
+                    className="dialog-icon"
+                    onClick={[Function]}
+                  >
+                    <DenyIcon
+                      size="xs"
+                    />
+                  </button>
+                </FlexItem>
+              </Flex>
+            </Section>
+          </div>
+          <div
+            className="dialog-content"
+          >
+            <Section
+              bgColor="white"
+              xPadding="default"
+              yPadding="default"
+            >
+              foo
+            </Section>
+          </div>
+          <div
+            className="dialog-footer"
+          >
+            <Section
+              bgColor="white"
+              xPadding="default"
+              yPadding="default"
+            >
+              <div>
+                foo
+              </div>
+            </Section>
+          </div>
+        </div>
+      </div>
+    </FocusTrap>
+  </CSSTransition>
+</Portal>
+`;
