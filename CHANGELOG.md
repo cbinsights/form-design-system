@@ -40,7 +40,16 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 The material-ui theme object has been removed from FDS. Consumers are now responsible for
 declaring theme values for the material-ui framework.
 
-#### `Chip`
+#### Icons
+The `className` prop in all icon components will be ignored. Use `customSize` or `color`
+to customize the size or color of the icon.
+
+```diff
+-<CloudIcon className="customSizingClass customColorClass" />
++<CloudIcon color={FDS.COLOR_TIMBERWOLF} customSize={42} />
+```
+
+#### `Chip` Component
 The `Chip` component no longer provides margin. Use the `InlineBlockList` layout component
 to create a list of chips.
 
