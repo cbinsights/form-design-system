@@ -21,6 +21,7 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
       >
         <Button
           iconPlacement="right"
+          size="m"
           theme="blue"
         >
           bar
@@ -32,6 +33,7 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
       >
         <Button
           iconPlacement="right"
+          size="m"
           theme="blue"
         >
           foo
@@ -64,6 +66,7 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
       >
         <Button
           iconPlacement="right"
+          size="m"
           theme="blue"
         >
           bar
@@ -75,6 +78,7 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
       >
         <Button
           iconPlacement="right"
+          size="m"
           theme="blue"
         >
           foo
@@ -110,6 +114,7 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
       >
         <Button
           iconPlacement="right"
+          size="m"
           theme="blue"
         >
           bar
@@ -121,6 +126,7 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
       >
         <Button
           iconPlacement="right"
+          size="m"
           theme="blue"
         >
           foo
