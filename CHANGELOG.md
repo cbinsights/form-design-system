@@ -53,11 +53,18 @@ size values](https://github.com/cbinsights/form-design-system/blob/master/contri
 +<Chip size="m" />
 ```
 
+## [4.24] Fix Dialog component
+
+- Add transparency to close icon (fixes background for Safari)
+
+## [4.23] Added width helpers
+
+- Added `span--100` & `span--50` classes to base styles.
+
 ## [4.22] Added Dialog and Prompt components
 
 - Added `Dialog` to components
 - Added `Prompt` to components
->>>>>>> release/5.0
 
 ## [4.21] 🐛 Bugfix: IE11 `Button` and `Hscroll`
 
