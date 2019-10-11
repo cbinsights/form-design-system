@@ -35,6 +35,11 @@
   background-color: transparent;
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
     box-shadow var(--button-group-timeout) var(--motion-easing-default);
+  min-height: auto;
+}
+
+.fdsButton--s {
+  padding: calc(6px - 1px) calc(var(--space-half) - 1px);
 }
 
 .fdsButton--isFullWidth {
