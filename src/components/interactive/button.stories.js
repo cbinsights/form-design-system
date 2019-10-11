@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
 import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
+import { arrayToOptions } from '../util/storybook';
 
 import Button from './Button';
 import README from './Button.md';
@@ -18,7 +19,7 @@ storiesOf('Interactive/Button', module)
         {
           left: 'left',
           right: 'right',
-          none: undefined,
+          none: null,
         },
         undefined,
         { display: 'inline-radio' }
@@ -38,14 +39,13 @@ storiesOf('Interactive/Button', module)
             Icon={iconOptions ? StarFilledIcon : undefined}
             iconPlacement={iconOptions}
             isFullWidth={boolean('isFullWidth', false)}
+            size={options('size', arrayToOptions(['s', 'm']), undefined, {
+              display: 'inline-radio',
+            })}
             theme={options(
               'theme',
-              {
-                blue: 'blue',
-                outlined: 'outlined',
-                ghost: 'ghost',
-              },
-              'blue',
+              arrayToOptions(['blue', 'outlined', 'ghost']),
+              undefined,
               { display: 'inline-radio' }
             )}
           >
@@ -59,6 +59,10 @@ storiesOf('Interactive/Button', module)
   .add('Variations', () => (
     <React.Fragment>
       <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+        <div className="margin--right--half margin--bottom--half">
+          <Button size="s">Button</Button>
+        </div>
+
         <div className="margin--right--half margin--bottom--half">
           <Button>Button</Button>
         </div>
