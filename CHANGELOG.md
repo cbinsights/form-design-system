@@ -29,11 +29,19 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [4.23] Updated Button components
+## [4.25] Updated Button components
 
 - Added size prop to `Button` to component
 - Added new small variant (`s`) to Button.
 - Existing Button variant is now medium (`m`)
+
+## [4.24] Fix Dialog component
+
+- Add transparency to close icon (fixes background for Safari)
+
+## [4.23] Added width helpers
+
+- Added `span--100` & `span--50` classes to base styles.
 
 ## [4.22] Added Dialog and Prompt components
 
