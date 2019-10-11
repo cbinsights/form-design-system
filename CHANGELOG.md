@@ -42,7 +42,8 @@ declaring theme values for the material-ui framework.
 
 #### Icons
 The `className` prop in all icon components will be ignored. Use `customSize` or `color`
-to customize the size or color of the icon.
+to customize the size or color of the icon. Prefer the `size` prop, which takes tee shirt
+sizes and sets the icon to a _standard_ media size.
 
 ```diff
 -<CloudIcon className="customSizingClass customColorClass" />
