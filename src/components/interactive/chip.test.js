@@ -22,7 +22,7 @@ describe('Chip component', () => {
             isActive: true,
             subtitle: 'bar',
             onClose: () => {},
-            size: 'lg',
+            size: 'm',
             theme: 'blue'
         });
         expect(component).toMatchSnapshot();

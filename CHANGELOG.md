@@ -45,10 +45,19 @@ to create a list of chips.
 +<InlineBlockList items={[<Chip />, <Chip />, <Chip />]} />
 ```
 
+The `size` prop value in `Chip` has been changed to align values with the [FDS standard
+size values](https://github.com/cbinsights/form-design-system/blob/master/contributing/naming-conventions.md#sizes).
+
+```diff
+-<Chip size="md" />
++<Chip size="m" />
+```
+
 ## [4.22] Added Dialog and Prompt components
 
 - Added `Dialog` to components
 - Added `Prompt` to components
+>>>>>>> release/5.0
 
 ## [4.21] 🐛 Bugfix: IE11 `Button` and `Hscroll`
 
