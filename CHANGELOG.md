@@ -29,6 +29,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.23] Updated Button components
+
+- Added size prop to `Button` to component
+- Added new small variant (`s`) to Button.
+- Existing Button variant is now medium (`m`)
+
 ## [4.22] Added Dialog and Prompt components
 
 - Added `Dialog` to components

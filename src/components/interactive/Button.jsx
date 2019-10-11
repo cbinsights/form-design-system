@@ -13,6 +13,7 @@ const Button = ({
   children,
   isDestructive,
   isFullWidth,
+  size,
   ...rest
 }) => {
   const Element = baseElement({ href: rest.href, as: Link });
@@ -27,6 +28,8 @@ const Button = ({
         'fontSize--m',
         'alignChild--center--center',
         {
+          'fdsButton--s': size === 's',
+          'fdsButton--m': size === 'm',
           'fdsButton--blue': theme === 'blue',
           'fdsButton--outlined': theme === 'outlined',
           'fdsButton--ghost': theme === 'ghost',
@@ -58,6 +61,7 @@ const Button = ({
 Button.defaultProps = {
   theme: 'blue',
   iconPlacement: 'right',
+  size: 'm',
 };
 
 Button.propTypes = {
@@ -92,6 +96,8 @@ Button.propTypes = {
   isFullWidth: PropTypes.bool,
   /** Used to control the display and theme of the button */
   theme: PropTypes.oneOf(['blue', 'outlined', 'ghost']),
+  /** Used to control the size of the button */
+  size: PropTypes.oneOf(['s', 'm']),
   /** Contents inside the button */
   children: PropTypes.node,
 };
