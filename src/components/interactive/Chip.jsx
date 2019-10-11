@@ -56,7 +56,7 @@ Chip.propTypes = {
    */
   onClose: PropTypes.func,
   /** Specify the size of the chip */
-  size: PropTypes.oneOf(['s', 'm', 'l']),
+  size: PropTypes.oneOf(['s', 'm']),
   /** Controls the color (look and feel) of the chip */
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
