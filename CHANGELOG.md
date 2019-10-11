@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.23] Added width helpers
+
+- Added `span--100` & `span--50` classes to base styles.
+
 ## [4.22] Added Dialog and Prompt components
 
 - Added `Dialog` to components
