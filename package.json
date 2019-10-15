@@ -41,7 +41,8 @@
     "prop-types": "^15",
     "react": "^16",
     "react-dom": "^16",
-    "react-transition-group": "^2.6"
+    "react-transition-group": "^2.6",
+    "raf-schd": "^4"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -138,8 +139,7 @@
   },
   "version": "4.0.0",
   "dependencies": {
-    "focus-trap-react": "^6.0.0",
     "no-scroll": "^2.1.1",
-    "raf-schd": "^4.0.2"
+    "focus-trap-react": "^6.0.0"
   }
 }
