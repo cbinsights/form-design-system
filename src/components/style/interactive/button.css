@@ -19,6 +19,12 @@
   --button-secondary-destructive: #DA4544;
   --button-secondary-destructive-hover: #F0EDEF;
   --button-secondary-destructive-pressed: #ECD6D9;
+
+  /*
+   * custom properties must be file-local thanks to our IE11
+   * pollyfill. This timeout is copied from buttonGroup.css
+   */
+  --button-timeout: 250ms;
 }
 
 .fdsButton {
@@ -33,8 +39,8 @@
   /* we remove 1px off each side as there's a border we need to compensate for */
   padding: calc(var(--space-half) - 1px) calc(var(--space-default) - 1px);
   background-color: transparent;
-  transition: background-color var(--button-group-timeout) var(--motion-easing-default),
-    box-shadow var(--button-group-timeout) var(--motion-easing-default);
+  transition: background-color var(--button-timeout) var(--motion-easing-default),
+    box-shadow var(--button-timeout) var(--motion-easing-default);
   min-height: auto;
 }
 

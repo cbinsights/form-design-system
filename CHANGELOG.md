@@ -43,7 +43,17 @@ declaring theme values for the material-ui framework.
 #### `raf-schd` is now a peer dependency
 Consumers must add version `^4` of the `raf-schd` package as a dependency.
 
-#### `Chip`
+#### Icons
+The `className` prop in all icon components will be ignored. Use `customSize` or `color`
+to customize the size or color of the icon. Prefer the `size` prop, which takes tee shirt
+sizes and sets the icon to a _standard_ media size.
+
+```diff
+-<CloudIcon className="customSizingClass customColorClass" />
++<CloudIcon color={FDS.COLOR_TIMBERWOLF} customSize={42} />
+```
+
+#### `Chip` Component
 The `Chip` component no longer provides margin. Use the `InlineBlockList` layout component
 to create a list of chips.
 
