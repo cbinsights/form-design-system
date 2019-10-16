@@ -39,6 +39,17 @@ const FlexItem = (props) => {
     props.className
   );
 
+  if (
+    process.env.NODE_ENV === 'development' &&
+    // eslint-disable-next-line react/prop-types
+    (props.dataTest || props['data-test'] || props.className)
+  ) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'You can no longer put data attributes or classNames on FlexItem (Try putting these on a div inside FlexItem)'
+    );
+  }
+
   return (
     <div className={classNames} data-test={props.dataTest}>
       {props.children}

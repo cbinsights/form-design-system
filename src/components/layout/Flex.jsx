@@ -52,6 +52,17 @@ const Flex = (props) => {
     props.className
   );
 
+  if (
+    process.env.NODE_ENV === 'development' &&
+    // eslint-disable-next-line react/prop-types
+    (props.dataTest || props['data-test'] || props.className)
+  ) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'You can no longer put data attributes or classNames on Flex (Try putting these on a div above Flex)'
+    );
+  }
+
   return (
     <div className={classNames} data-test={props.dataTest}>
       {props.children}
