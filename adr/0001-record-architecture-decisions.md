@@ -1,9 +1,9 @@
 # Record Architecture Decisions
 
----
-Status: Accepted
-Deciders: Adam Detrick
-Date: 2019.10.15
+- **Status:** Accepted
+- **Deciders:** Adam Detrick
+- **Date:** 2019.10.15
+
 ---
 
 Technical Story: <https://cbinsights.atlassian.net/browse/UIP-417>

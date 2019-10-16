@@ -1,9 +1,9 @@
 # Components Ignore `classNames`
 
----
-Status: Accepted
-Deciders: Adam Detrick, Rey Wright
-Date: 2015-10-01
+- **Status:** Accepted
+- **Deciders:** Adam Detrick, Rey Wright
+- **Date:** 2015-10-01
+
 ---
 
 ## Context and Problem Statement

@@ -1,9 +1,9 @@
 # Remove `mui-theme`
 
----
-Status: Accepted
-Deciders: Adam Detrick, Rey Wright
-Date: 2019-10-14
+- **Status:** Accepted
+- **Deciders:** Adam Detrick, Rey Wright
+- **Date:** 2019-10-14
+
 ---
 
 ## Context and Problem Statement
