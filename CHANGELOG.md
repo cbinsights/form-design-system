@@ -40,6 +40,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 The material-ui theme object has been removed from FDS. Consumers are now responsible for
 declaring theme values for the material-ui framework.
 
+#### `raf-schd` is now a peer dependency
+Consumers must add version `^4` of the `raf-schd` package as a dependency.
+
 #### Icons
 The `className` prop in all icon components will be ignored. Use `customSize` or `color`
 to customize the size or color of the icon. Prefer the `size` prop, which takes tee shirt
