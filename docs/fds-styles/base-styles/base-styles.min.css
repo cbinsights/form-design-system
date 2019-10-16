@@ -1,2 +1,1945 @@
-:root{--border-radius-default:4px;--color-charcoal:#404040;--color-slate:#757575;--color-gray:#a2a0a0;--color-silver:#c2bfbf;--color-timberwolf:#d6d4d4;--color-lightGray:#f2f2f2;--color-white:#fff;--color-navy:#036;--color-blue:#069;--color-aqua:#4cabce;--color-sky:#bbdbe5;--color-haze:#f1f5f7;--color-red:#e5323e;--color-orange:#f63;--color-sienna:#f9a862;--color-sand:#fcc89a;--color-green:#00986b;--color-mint:#70c390;--color-purple:#a02385;--color-violet:#d772ad;--font-color-link:#069;--font-color-linkInverted:#4cabce;--font-color-heading:#404040;--font-color-primary:rgba(64,64,64,0.87);--font-color-secondary:rgba(64,64,64,0.6);--font-color-hint:rgba(64,64,64,0.38);--font-color-headingInverted:#fff;--font-color-primaryInverted:hsla(0,0%,100%,0.87);--font-color-secondaryInverted:hsla(0,0%,100%,0.6);--font-color-hintInverted:hsla(0,0%,100%,0.38);--font-color-error:#e5323e;--font-color-success:#00986b;--font-color-errorInverted:#e5323e;--font-color-successInverted:#70c390;--font-family-condensed:"Roboto Condensed","Helvetica Neue",Helvetica,"Segoe UI",Arial,sans-serif;--font-family-default:Roboto,"Helvetica Neue",Helvetica,"Segoe UI",Arial,sans-serif;--font-family-mono:Monaco,Consolas,monospace;--font-lineHeight-bigText:1.2;--font-lineHeight-default:1.5;--font-lineHeight-smallText:1.8;--font-size-xs:10px;--font-size-s:12px;--font-size-m:14px;--font-size-default:14px;--font-size-l:16px;--font-size-xl:20px;--font-size-2xl:24px;--font-size-3xl:32px;--font-size-4xl:38px;--font-weight-default:400;--font-weight-bold:700;--media-xs:18px;--media-s:24px;--media-m:34px;--media-l:50px;--media-xl:72px;--space-double:32px;--space-default:16px;--space-half:8px;--zindex-main:10;--zindex-navigation:20;--zindex-popover:30;--zindex-banner:40;--zindex-floatingAction:50;--zindex-shim:60;--zindex-modal:70;--zindex-crazy:80;--motion-easing-default:cubic-bezier(0.4,0,0.2,1);--motion-easing-decelerate:cubic-bezier(0,0,0.2,1);--motion-easing-accelerate:cubic-bezier(0.4,0,1,1);--rgb-charcoal:64,64,64;--rgb-slate:117,117,117;--rgb-gray:162,160,160;--rgb-silver:194,191,191;--rgb-timberwolf:214,212,212;--rgb-lightGray:242,242,242;--rgb-white:255,255,255;--rgb-navy:0,51,102;--rgb-blue:0,102,153;--rgb-aqua:76,171,206;--rgb-sky:187,219,229;--rgb-haze:241,245,247;--rgb-red:229,50,62;--rgb-orange:255,102,51;--rgb-sienna:249,168,98;--rgb-sand:252,200,154;--rgb-green:0,152,107;--rgb-mint:112,195,144;--rgb-purple:160,35,133;--rgb-violet:215,114,173}html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:0;margin:0;border:0}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto;height:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}body,html{margin:0;padding:0}html{line-height:1.5;line-height:var(--font-lineHeight-default);font-family:Roboto,Helvetica Neue,Helvetica,Segoe UI,Arial,sans-serif;font-family:var(--font-family-default);font-size:14px;font-size:var(--font-size-default);color:rgba(64,64,64,.87);color:var(--font-color-primary);text-rendering:geometricPrecision;overflow-y:scroll;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.inverted{color:hsla(0,0%,100%,.87);color:var(--font-color-primaryInverted)}a,abbr,acronym,em,kbd,samp,small,span,strike,strong,sub,sup,time,var{display:inline}abbr,acronym{border-width:0;outline-width:0}b,strong{font-weight:700;font-weight:var(--font-weight-bold)}kbd,samp,var{font-family:Monaco,Consolas,monospace;font-family:var(--font-family-mono)}small{font-size:10px;font-size:var(--font-size-xs)}img{display:inline-block;vertical-align:middle;max-width:100%;line-height:0;margin:0;padding:0}a{text-decoration:none}a:focus{outline:5px auto -webkit-focus-ring-color}article,aside,blockquote,dd,details,dl,fieldset,figcaption,figure,footer,form,header,hgroup,legend,nav,ol,p,section,ul{display:block;margin:0;padding:0}audio,canvas,video{display:inline-block;margin:0;padding:0}ol,ul{margin-left:0;padding-left:0;list-style-type:none}li{margin:0;padding:0}address{display:inline-block;font-style:normal}h1,h2,h3,h4,h5,h6{font-size:1rem;font-weight:400;font-weight:var(--font-weight-default);color:#404040;color:var(--font-color-heading);margin:0;padding:0}.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6{color:#fff;color:var(--font-color-headingInverted)}:-ms-input-placeholder{color:rgba(64,64,64,.38);color:var(--font-color-hint)}::-ms-input-placeholder{color:rgba(64,64,64,.38);color:var(--font-color-hint)}::placeholder{color:rgba(64,64,64,.38);color:var(--font-color-hint)}label{display:block;margin-bottom:4px;font-weight:400;font-weight:var(--font-weight-default);color:#404040;color:var(--font-color-heading)}button,input,select,textarea{font-weight:400;vertical-align:middle}input[type=color],input[type=date],input[type=datetime-local],input[type=datetime],input[type=email],input[type=month],input[type=number],input[type=password],input[type=search],input[type=tel],input[type=text],input[type=time],input[type=url],input[type=week],input[type=year],select,textarea{display:inline-block;padding:4px 8px;padding:calc(var(--space-half)/2) var(--space-half);border-radius:4px;border:1px solid #c2bfbf;border:1px solid var(--color-silver);background:#fff;background:var(--color-white);min-width:32px;min-width:var(--space-double)}button,input[type=color],input[type=reset],input[type=submit]{box-sizing:border-box;min-height:32px;min-height:var(--space-double)}button,input[type=checkbox],input[type=color],input[type=radio],input[type=reset],input[type=submit],label,select{cursor:pointer}button[disabled],input[disabled],label[disabled],select[disabled]{cursor:default}input[type=checkbox],input[type=radio]{font-size:14px;font-size:var(--font-size-default);margin-right:8px;margin-right:var(--space-half);vertical-align:text-top;margin-bottom:0}select{border-color:#f2f2f2;border-color:var(--color-lightGray);background:#f2f2f2;background:var(--color-lightGray);height:32px;height:var(--space-double)}select[multiple]{background:#fff;background:var(--color-white);height:auto}textarea{box-sizing:content-box;vertical-align:top}input[type=seach]{box-sizing:content-box;-webkit-appearance:textfield}input[type=file]{font-size:12px;font-size:var(--font-size-s)}input:not([type=submit]):invalid,select:invalid,textarea:invalid{border-color:#e5323e;border-color:var(--color-red)}input:not([type=submit]):disabled,select:disabled,textarea:disabled{color:rgba(64,64,64,.38);color:var(--font-color-hint);border-color:#f2f2f2;border-color:var(--color-lightGray)}.flush--top{margin-top:0!important;padding-top:0!important}.flush--right{margin-right:0!important;padding-right:0!important}.flush--bottom{margin-bottom:0!important;padding-bottom:0!important}.flush--left{margin-left:0!important;padding-left:0!important}.flush--all{margin:0!important;padding:0!important}.margin--top{margin-top:16px;margin-top:var(--space-default)}.margin--right{margin-right:16px;margin-right:var(--space-default)}.margin--bottom{margin-bottom:16px;margin-bottom:var(--space-default)}.margin--left{margin-left:16px;margin-left:var(--space-default)}.margin--all{margin:16px;margin:var(--space-default)}.margin--top--half{margin-top:8px;margin-top:var(--space-half)}.margin--right--half{margin-right:8px;margin-right:var(--space-half)}.margin--bottom--half{margin-bottom:8px;margin-bottom:var(--space-half)}.margin--left--half{margin-left:8px;margin-left:var(--space-half)}.margin--all--half{margin:8px;margin:var(--space-half)}.margin--top--double{margin-top:32px;margin-top:var(--space-double)}.margin--right--double{margin-right:32px;margin-right:var(--space-double)}.margin--bottom--double{margin-bottom:32px;margin-bottom:var(--space-double)}.margin--left--double{margin-left:32px;margin-left:var(--space-double)}.margin--all--double{margin:32px;margin:var(--space-double)}.padding--top{padding-top:16px;padding-top:var(--space-default)}.padding--right{padding-right:16px;padding-right:var(--space-default)}.padding--bottom{padding-bottom:16px;padding-bottom:var(--space-default)}.padding--left{padding-left:16px;padding-left:var(--space-default)}.padding--all{padding:16px;padding:var(--space-default)}.padding--top--half{padding-top:8px;padding-top:var(--space-half)}.padding--right--half{padding-right:8px;padding-right:var(--space-half)}.padding--bottom--half{padding-bottom:8px;padding-bottom:var(--space-half)}.padding--left--half{padding-left:8px;padding-left:var(--space-half)}.padding--all--half{padding:8px;padding:var(--space-half)}.padding--top--double{padding-top:32px;padding-top:var(--space-double)}.padding--right--double{padding-right:32px;padding-right:var(--space-double)}.padding--bottom--double{padding-bottom:32px;padding-bottom:var(--space-double)}.padding--left--double{padding-left:32px;padding-left:var(--space-double)}.padding--all--double{padding:32px;padding:var(--space-double)}.align--left{text-align:left}.align--center{text-align:center}.align--right{text-align:right}.valign--top{vertical-align:top}.valign--bottom{vertical-align:bottom}.valign--center,.valign--middle{vertical-align:middle}.alignChild--center--bottom,.alignChild--center--center,.alignChild--center--top,.alignChild--left--bottom,.alignChild--left--center,.alignChild--left--top,.alignChild--right--bottom,.alignChild--right--center,.alignChild--right--top{display:flex}.alignChild--center--center{justify-content:center;align-items:center}.alignChild--center--top{justify-content:center;align-items:flex-start}.alignChild--center--bottom{justify-content:center;align-items:flex-end}.alignChild--left--center{justify-content:flex-start;align-items:center}.alignChild--left--top{justify-content:flex-start;align-items:flex-start}.alignChild--left--bottom{justify-content:flex-start;align-items:flex-end}.alignChild--right--center{justify-content:flex-end;align-items:center}.alignChild--right--top{justify-content:flex-end;align-items:flex-start}.alignChild--right--bottom{justify-content:flex-end;align-items:flex-end}.media--xs{height:18px!important;height:var(--media-xs)!important;width:18px!important;width:var(--media-xs)!important}.media--s{height:24px!important;height:var(--media-s)!important;width:24px!important;width:var(--media-s)!important}.media--m{height:34px!important;height:var(--media-m)!important;width:34px!important;width:var(--media-m)!important}.media--l{height:50px!important;height:var(--media-l)!important;width:50px!important;width:var(--media-l)!important}.media--xl{height:72px!important;height:var(--media-xl)!important;width:72px!important;width:var(--media-xl)!important}.display--none{display:none!important}.display--block{display:block!important}.display--flex{display:flex!important}.display--inline{display:inline!important}.display--inlineBlock{display:inline-block!important}.display--inlineFlex{display:inline-flex!important}.display--grid{display:-ms-grid!important;display:grid!important}.span--100{width:100%!important}.span--50{width:50%!important}.elevation--1{box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 3px 0 rgba(0,0,0,.2)}.elevation--2{box-shadow:0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2)}.elevation--3{box-shadow:0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12),0 5px 5px -3px rgba(0,0,0,.2)}.elevation--4{box-shadow:0 12px 17px 2px rgba(0,0,0,.14),0 5px 22px 4px rgba(0,0,0,.12),0 7px 8px -4px rgba(0,0,0,.2)}.elevation--5{box-shadow:0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2)}.depth--1{box-shadow:inset 0 1px 1px 0 rgba(0,0,0,.14),inset 0 2px 1px -1px rgba(0,0,0,.12),inset 0 1px 3px 0 rgba(0,0,0,.2)}.depth--2{box-shadow:inset 0 2px 2px 0 rgba(0,0,0,.14),inset 0 3px 1px -2px rgba(0,0,0,.12),inset 0 1px 5px 0 rgba(0,0,0,.2)}.depth--3{box-shadow:inset 0 4px 5px 0 rgba(0,0,0,.14),inset 0 1px 10px 0 rgba(0,0,0,.12),inset 0 2px 4px -1px rgba(0,0,0,.2)}.rounded--top{border-radius:4px 4px 0 0;border-radius:var(--border-radius-default) var(--border-radius-default) 0 0}.rounded--right{border-radius:0 4px 4px 0;border-radius:0 var(--border-radius-default) var(--border-radius-default) 0}.rounded--bottom{border-radius:0 0 4px 4px;border-radius:0 0 var(--border-radius-default) var(--border-radius-default)}.rounded--left{border-radius:4px 0 0 4px;border-radius:var(--border-radius-default) 0 0 var(--border-radius-default)}.rounded--all{border-radius:4px;border-radius:var(--border-radius-default)}:root{--standardBorder:1px solid rgba(64,64,64,0.12);--standardBorder:1px solid rgba(var(--rgb-charcoal),0.12)}.border--none{border-width:0}.border--top{border-top:1px solid rgba(64,64,64,.12);border-top:var(--standardBorder)}.border--right{border-right:1px solid rgba(64,64,64,.12);border-right:var(--standardBorder)}.border--bottom{border-bottom:1px solid rgba(64,64,64,.12);border-bottom:var(--standardBorder)}.border--left{border-left:1px solid rgba(64,64,64,.12);border-left:var(--standardBorder)}.border--all{border:1px solid rgba(64,64,64,.12);border:var(--standardBorder)}.inverted,.inverted.border--all,.inverted.border--bottom,.inverted.border--left,.inverted.border--right,.inverted.border--top{border-color:hsla(0,0%,100%,.38);border-color:var(--font-color-hintInverted)}.bgColor--white{background-color:#fff;background-color:var(--color-white)}.bgColor--haze{background-color:#f1f5f7;background-color:var(--color-haze)}.bgColor--lightGray{background-color:#f2f2f2;background-color:var(--color-lightGray)}.bgColor--navy{background-color:#036;background-color:var(--color-navy)}.bgColor--orange{background-color:#f63;background-color:var(--color-orange)}.type--head1,.type--head2,.type--head3,.type--head4{color:#404040;color:var(--font-color-heading);font-family:Roboto Condensed,Helvetica Neue,Helvetica,Segoe UI,Arial,sans-serif;font-family:var(--font-family-condensed)}.type--head1{font-size:38px;font-size:var(--font-size-4xl)}.type--head1,.type--head2{font-weight:700;font-weight:var(--font-weight-bold);line-height:1.2;line-height:var(--font-lineHeight-bigText)}.type--head2{font-size:32px;font-size:var(--font-size-3xl)}.type--head3{font-size:24px;font-size:var(--font-size-2xl)}.type--head3,.type--head4{font-weight:700;font-weight:var(--font-weight-bold);line-height:1.2;line-height:var(--font-lineHeight-bigText)}.type--head4{font-size:20px;font-size:var(--font-size-xl)}.type--big{font-size:16px;font-size:var(--font-size-l)}.type--data{font-size:12px;font-size:var(--font-size-s)}.type--caption,.type--data{line-height:1.8;line-height:var(--font-lineHeight-smallText)}.type--caption{font-size:10px;font-size:var(--font-size-xs);text-rendering:optimizeLegibility}.type--link{color:#069;color:var(--font-color-link)}.type--link:active,.type--link:focus,.type--link:hover{cursor:pointer;color:#069;color:var(--color-blue);text-decoration:underline}.inverted .type--link{color:#4cabce;color:var(--font-color-linkInverted)}.fontSize--2xl,.fontSize--3xl,.fontSize--4xl,.fontSize--xl{line-height:1.2!important;line-height:var(--font-lineHeight-bigText)!important}.fontSize--default,.fontSize--l{line-height:1.5!important;line-height:var(--font-lineHeight-default)!important}.fontSize--s,.fontSize--xs{line-height:1.8!important;line-height:var(--font-lineHeight-smallText)!important}.fontSize--4xl{font-size:38px!important;font-size:var(--font-size-4xl)!important}.fontSize--3xl{font-size:32px!important;font-size:var(--font-size-3xl)!important}.fontSize--2xl{font-size:24px!important;font-size:var(--font-size-2xl)!important}.fontSize--xl{font-size:20px!important;font-size:var(--font-size-xl)!important}.fontSize--l{font-size:16px!important;font-size:var(--font-size-l)!important}.fontSize--default{font-size:14px!important;font-size:var(--font-size-default)!important}.fontSize--s{font-size:12px!important;font-size:var(--font-size-s)!important}.fontSize--xs{font-size:10px!important;font-size:var(--font-size-xs)!important;text-rendering:optimizeLegibility}.fontWeight--bold{font-weight:700!important;font-weight:var(--font-weight-bold)!important}.fontWeight--book{font-weight:400!important;font-weight:var(--font-weight-default)!important}.color--heading{color:#404040!important;color:var(--font-color-heading)!important}.inverted .color--heading{color:#fff!important;color:var(--font-color-headingInverted)!important}.color--primary{color:rgba(64,64,64,.87)!important;color:var(--font-color-primary)!important}.inverted .color--primary{color:hsla(0,0%,100%,.87)!important;color:var(--font-color-primaryInverted)!important}.color--secondary{color:rgba(64,64,64,.6)!important;color:var(--font-color-secondary)!important}.inverted .color--secondary{color:hsla(0,0%,100%,.6)!important;color:var(--font-color-secondaryInverted)!important}.color--hint{color:rgba(64,64,64,.38)!important;color:var(--font-color-hint)!important}.inverted .color--hint{color:hsla(0,0%,100%,.38)!important;color:var(--font-color-hintInverted)!important}.color--success{color:#00986b!important;color:var(--font-color-success)!important}.inverted .color--success{color:#70c390!important;color:var(--font-color-successInverted)!important}.color--error{color:#e5323e!important;color:var(--font-color-error)!important}.inverted .color--error{color:#e5323e!important;color:var(--font-color-errorInverted)!important}.color--slate{color:#757575!important;color:var(--color-slate)!important}.color--green{color:#00986b!important;color:var(--color-green)!important}.color--mint{color:#70c390!important;color:var(--color-mint)!important}.color--navy{color:#036!important;color:var(--color-navy)!important}.color--blue{color:#069!important;color:var(--color-blue)!important}.color--aqua{color:#4cabce!important;color:var(--color-aqua)!important}.color--sky{color:#bbdbe5!important;color:var(--color-sky)!important}.color--violet{color:#d772ad!important;color:var(--color-violet)!important}.color--purple{color:#a02385!important;color:var(--color-purple)!important}.color--red{color:#e5323e!important;color:var(--color-red)!important}.color--orange{color:#f63!important;color:var(--color-orange)!important}.color--white{color:#fff!important;color:var(--color-white)!important}.fontStyle--italic{font-style:italic}.fontStyle--underline{text-decoration:underline}.fontStyle--caps{text-transform:uppercase}input.error,select.error{border-color:#e5323e;border-color:var(--color-red)}button.resetButton,input.resetInput,select.resetInput{border-width:0;background:transparent;margin:0}button.resetButton{padding:0;min-height:0}.wrap--singleLine,.wrap--singleLine--truncate{white-space:nowrap!important}.wrap--singleLine--truncate{overflow:hidden!important;text-overflow:ellipsis!important}.wrap--hyphenate{word-break:break-word;word-wrap:break-word}
-/*# sourceMappingURL=base-styles.min.css.map */
+/* Custom properties */
+/**
+ * Do not edit directly
+ * Generated on Tue, 15 Oct 2019 20:38:19 GMT
+ */
+:root {
+ --border-radius-default: 4px;
+ --color-charcoal: #404040;
+ --color-slate: #757575;
+ --color-gray: #a2a0a0;
+ --color-silver: #c2bfbf;
+ --color-timberwolf: #d6d4d4;
+ --color-lightGray: #f2f2f2;
+ --color-white: #ffffff;
+ --color-navy: #003366;
+ --color-blue: #006699;
+ --color-aqua: #4cabce;
+ --color-sky: #bbdbe5;
+ --color-haze: #f1f5f7;
+ --color-red: #e5323e;
+ --color-orange: #ff6633;
+ --color-sienna: #f9a862;
+ --color-sand: #fcc89a;
+ --color-green: #00986b;
+ --color-mint: #70c390;
+ --color-purple: #a02385;
+ --color-violet: #d772ad;
+ --font-color-link: #006699;
+ --font-color-linkInverted: #4cabce;
+ --font-color-heading: #404040;
+ --font-color-primary: rgba(64, 64, 64, 0.87);
+ --font-color-secondary: rgba(64, 64, 64, 0.60);
+ --font-color-hint: rgba(64, 64, 64, 0.38);
+ --font-color-headingInverted: #ffffff;
+ --font-color-primaryInverted: rgba(255, 255, 255, 0.87);
+ --font-color-secondaryInverted: rgba(255, 255, 255, 0.60);
+ --font-color-hintInverted: rgba(255, 255, 255, 0.38);
+ --font-color-error: #e5323e;
+ --font-color-success: #00986b;
+ --font-color-errorInverted: #e5323e;
+ --font-color-successInverted: #70c390;
+ --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+ --font-family-default: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+ --font-family-mono: Monaco, Consolas, monospace;
+ --font-lineHeight-bigText: 1.2;
+ --font-lineHeight-default: 1.5;
+ --font-lineHeight-smallText: 1.8;
+ --font-size-xs: 10px;
+ --font-size-s: 12px;
+ --font-size-m: 14px;
+ --font-size-default: 14px;
+ --font-size-l: 16px;
+ --font-size-xl: 20px;
+ --font-size-2xl: 24px;
+ --font-size-3xl: 32px;
+ --font-size-4xl: 38px;
+ --font-weight-default: 400;
+ --font-weight-bold: 700;
+ --media-xs: 18px;
+ --media-s: 24px;
+ --media-m: 34px;
+ --media-l: 50px;
+ --media-xl: 72px;
+ --space-double: 32px;
+ --space-default: 16px;
+ --space-half: 8px;
+ --zindex-main: 10;
+ --zindex-navigation: 20;
+ --zindex-popover: 30;
+ --zindex-banner: 40;
+ --zindex-floatingAction: 50;
+ --zindex-shim: 60;
+ --zindex-modal: 70;
+ --zindex-crazy: 80;
+ --motion-easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+ --motion-easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+ --motion-easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+}
+/**
+* DO NOT EDIT
+* Generated by fds-dictionary on Tue Oct 15 2019 16:38:19 GMT-0400 (Eastern Daylight Time)
+* github.com/cbinsights/form-design-system/
+*/
+/**
+* Use these RGB values to compose 'rgba()' colors with a custom alpha channel.
+*
+* color: rgba( var(--rgb-purple), 0.38);
+*/
+:root {
+  --rgb-charcoal: 64, 64, 64;
+  --rgb-slate: 117, 117, 117;
+  --rgb-gray: 162, 160, 160;
+  --rgb-silver: 194, 191, 191;
+  --rgb-timberwolf: 214, 212, 212;
+  --rgb-lightGray: 242, 242, 242;
+  --rgb-white: 255, 255, 255;
+  --rgb-navy: 0, 51, 102;
+  --rgb-blue: 0, 102, 153;
+  --rgb-aqua: 76, 171, 206;
+  --rgb-sky: 187, 219, 229;
+  --rgb-haze: 241, 245, 247;
+  --rgb-red: 229, 50, 62;
+  --rgb-orange: 255, 102, 51;
+  --rgb-sienna: 249, 168, 98;
+  --rgb-sand: 252, 200, 154;
+  --rgb-green: 0, 152, 107;
+  --rgb-mint: 112, 195, 144;
+  --rgb-purple: 160, 35, 133;
+  --rgb-violet: 215, 114, 173;
+}
+/* Base styles */
+/* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/* CUSTOMIZED FOR FORM DESIGN SYSTEM */
+/* stylelint-disable */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 3. CUSTOM: also set ms adjust
+ */
+html {
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -ms-text-size-adjust: 100%; /* 2 */
+}
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  margin: 0; /* 2 */
+}
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+}
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+/**
+ * Reset all browser defaults for fieldset.
+ */
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+/**
+ * 1. Remove the default vertical scrollbar in IE 10+.
+ * 2. Allow textarea to grow to fit content
+ */
+textarea {
+  overflow: auto; /* 1 */
+  height: auto; /* 2 */
+}
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+/**
+Document-level defaults
+*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  line-height: 1.5;
+  line-height: var(--font-lineHeight-default);
+  font-family: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+  font-family: var(--font-family-default);
+  font-size: 14px;
+  font-size: var(--font-size-default);
+  color: rgba(64, 64, 64, 0.87);
+  color: var(--font-color-primary);
+  text-rendering: geometricPrecision; /* stylelint-disable-line property-blacklist */
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.inverted {
+  color: rgba(255, 255, 255, 0.87);
+  color: var(--font-color-primaryInverted);
+}
+/**
+Inline tag defaults
+*/
+a,
+abbr,
+acronym,
+em,
+kbd,
+samp,
+small,
+span,
+strike,
+strong,
+time,
+sub,
+sup,
+var {
+  display: inline;
+}
+abbr,
+acronym {
+  border-width: 0;
+  outline-width: 0;
+}
+b,
+strong {
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+}
+kbd,
+var,
+samp {
+  font-family: Monaco, Consolas, monospace;
+  font-family: var(--font-family-mono);
+}
+small {
+  font-size: 10px;
+  font-size: var(--font-size-xs);
+}
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+/**
+Block tag defaults
+*/
+p,
+ul,
+ol,
+blockquote,
+form,
+fieldset,
+legend,
+dl,
+dd,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+li {
+  margin: 0;
+  padding: 0;
+}
+address {
+  display: inline-block;
+  font-style: normal;
+}
+/**
+Heading defaults
+(Set all headings to standard text size and kill spacing)
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: 400;
+  font-weight: var(--font-weight-default);
+  color: #404040;
+  color: var(--font-color-heading);
+  margin: 0;
+  padding: 0;
+}
+.inverted h1,
+.inverted h2,
+.inverted h3,
+.inverted h4,
+.inverted h5,
+.inverted h6 {
+  color: #ffffff;
+  color: var(--font-color-headingInverted);
+}
+/**
+Form tag defaults
+*/
+::-ms-input-placeholder {
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
+}
+::placeholder {
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
+}
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-weight: var(--font-weight-default);
+  color: #404040;
+  color: var(--font-color-heading);
+}
+button,
+input,
+select,
+textarea {
+  font-weight: normal;
+  vertical-align: middle;
+}
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="year"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  display: inline-block;
+  padding: calc(8px / 2) 8px;
+  padding: calc(var(--space-half) / 2) var(--space-half);
+  border-radius: 4px;
+  border: 1px solid #c2bfbf;
+  border: 1px solid var(--color-silver);
+  background: #ffffff;
+  background: var(--color-white);
+  min-width: 32px;
+  min-width: var(--space-double);
+}
+button,
+input[type="color"],
+input[type="reset"],
+input[type="submit"] {
+  box-sizing: border-box;
+  min-height: 32px;
+  min-height: var(--space-double);
+}
+button,
+label,
+select,
+input[type="color"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
+button[disabled],
+label[disabled],
+select[disabled],
+input[disabled] {
+  cursor: default;
+}
+/**
+ * Specific input overrides
+ */
+input[type="radio"],
+input[type="checkbox"] {
+  font-size: 14px;
+  font-size: var(--font-size-default);
+  margin-right: 8px;
+  margin-right: var(--space-half);
+  vertical-align: text-top;
+  margin-bottom: 0;
+}
+select {
+  border-color: #f2f2f2;
+  border-color: var(--color-lightGray);
+  background: #f2f2f2;
+  background: var(--color-lightGray);
+  height: 32px;
+  height: var(--space-double);
+}
+select[multiple] {
+  background: #ffffff;
+  background: var(--color-white);
+  height: auto;
+}
+textarea {
+  box-sizing: content-box;
+  vertical-align: top;
+}
+input[type="seach"] {
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+input[type="file"] {
+  font-size: 12px;
+  font-size: var(--font-size-s);
+}
+/**
+ * Input states
+ */
+select:invalid,
+textarea:invalid,
+input:not([type="submit"]):invalid {
+  border-color: #e5323e;
+  border-color: var(--color-red);
+}
+select:disabled,
+textarea:disabled,
+input:not([type="submit"]):disabled {
+  color: rgba(64, 64, 64, 0.38);
+  color: var(--font-color-hint);
+  border-color: #f2f2f2;
+  border-color: var(--color-lightGray);
+}
+/* Spacing Helpers */
+/*---
+title: Flush
+name: spacingFlush
+section: Spacing Helpers
+---
+
+Removes spacing from the given side of an element.
+Sets both `padding` and `margin` to `0`;
+
+class           | description
+--------------- | ---------------------------------
+`flush--top`    | Removes top spacing from element
+`flush--right`  | Removes right spacing from element
+`flush--bottom` | Removes bottom spacing from element
+`flush--left`   | Removes left spacing from element
+`flush--all`    | Removes spacing from all sides of an element
+
+#### Overriding `flush`
+
+Margin and padding utility classes can override a flush class:
+
+```html
+  <div class="flush--all padding--left">
+    Removes all padding, then sets padding left.
+  </div>
+```
+*/
+.flush--top {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.flush--right {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+.flush--bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.flush--left {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+.flush--all {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/*---
+title: Margin
+name: spacingMargin
+section: Spacing Helpers
+---
+
+Adds margin to the given side of an element.
+
+#### Full margin
+
+class            | description
+---------------- | ---------------------------------
+`margin--top`    | Adds standard margin to top of element
+`margin--right`  | Adds standard margin to right of element
+`margin--bottom` | Adds standard margin to bottom of element
+`margin--left`   | Adds standard margin to left of element
+`margin--all`    | Adds standard margin to all sides
+
+#### Half margin
+
+class                  | description
+---------------------- | ---------------------------------
+`margin--top--half`    | Adds half margin to top of element
+`margin--right--half`  | Adds half margin to right of element
+`margin--bottom--half` | Adds half margin to bottom of element
+`margin--left--half`   | Adds half margin to left of element
+`margin--all--half`    | Adds half margin to all sides
+
+#### Double margin
+
+class                  | description
+---------------------- | ---------------------------------
+`margin--top--double`    | Adds double margin to top of element
+`margin--right--double`  | Adds double margin to right of element
+`margin--bottom--double` | Adds double margin to bottom of element
+`margin--left--double`   | Adds double margin to left of element
+`margin--all--double`    | Adds double margin to all sides
+
+*/
+.margin--top {
+  margin-top: 16px;
+  margin-top: var(--space-default);
+}
+.margin--right {
+  margin-right: 16px;
+  margin-right: var(--space-default);
+}
+.margin--bottom {
+  margin-bottom: 16px;
+  margin-bottom: var(--space-default);
+}
+.margin--left {
+  margin-left: 16px;
+  margin-left: var(--space-default);
+}
+.margin--all {
+  margin: 16px;
+  margin: var(--space-default);
+}
+.margin--top--half {
+  margin-top: 8px;
+  margin-top: var(--space-half);
+}
+.margin--right--half {
+  margin-right: 8px;
+  margin-right: var(--space-half);
+}
+.margin--bottom--half {
+  margin-bottom: 8px;
+  margin-bottom: var(--space-half);
+}
+.margin--left--half {
+  margin-left: 8px;
+  margin-left: var(--space-half);
+}
+.margin--all--half {
+  margin: 8px;
+  margin: var(--space-half);
+}
+.margin--top--double {
+  margin-top: 32px;
+  margin-top: var(--space-double);
+}
+.margin--right--double {
+  margin-right: 32px;
+  margin-right: var(--space-double);
+}
+.margin--bottom--double {
+  margin-bottom: 32px;
+  margin-bottom: var(--space-double);
+}
+.margin--left--double {
+  margin-left: 32px;
+  margin-left: var(--space-double);
+}
+.margin--all--double {
+  margin: 32px;
+  margin: var(--space-double);
+}
+/*---
+title: Padding
+name: spacingPadding
+section: Spacing Helpers
+---
+
+Adds padding to the given side of an element.
+
+#### Full padding
+
+class            | description
+---------------- | ---------------------------------
+`padding--top`    | Adds standard padding to top of element
+`padding--right`  | Adds standard padding to right of element
+`padding--bottom` | Adds standard padding to bottom of element
+`padding--left`   | Adds standard padding to left of element
+`padding--all`    | Adds standard padding to all sides
+
+#### Half padding
+
+class                   | description
+----------------------- | ---------------------------------
+`padding--top--half`    | Adds half padding to top of element
+`padding--right--half`  | Adds half padding to right of element
+`padding--bottom--half` | Adds half padding to bottom of element
+`padding--left--half`   | Adds half padding to left of element
+`padding--all--half`    | Adds half padding to all sides
+
+#### Double padding
+
+class                   | description
+----------------------- | ---------------------------------
+`padding--top--double`    | Adds double padding to top of element
+`padding--right--double`  | Adds double padding to right of element
+`padding--bottom--double` | Adds double padding to bottom of element
+`padding--left--double`   | Adds double padding to left of element
+`padding--all--double`    | Adds double padding to all sides
+
+*/
+.padding--top {
+  padding-top: 16px;
+  padding-top: var(--space-default);
+}
+.padding--right {
+  padding-right: 16px;
+  padding-right: var(--space-default);
+}
+.padding--bottom {
+  padding-bottom: 16px;
+  padding-bottom: var(--space-default);
+}
+.padding--left {
+  padding-left: 16px;
+  padding-left: var(--space-default);
+}
+.padding--all {
+  padding: 16px;
+  padding: var(--space-default);
+}
+.padding--top--half {
+  padding-top: 8px;
+  padding-top: var(--space-half);
+}
+.padding--right--half {
+  padding-right: 8px;
+  padding-right: var(--space-half);
+}
+.padding--bottom--half {
+  padding-bottom: 8px;
+  padding-bottom: var(--space-half);
+}
+.padding--left--half {
+  padding-left: 8px;
+  padding-left: var(--space-half);
+}
+.padding--all--half {
+  padding: 8px;
+  padding: var(--space-half);
+}
+.padding--top--double {
+  padding-top: 32px;
+  padding-top: var(--space-double);
+}
+.padding--right--double {
+  padding-right: 32px;
+  padding-right: var(--space-double);
+}
+.padding--bottom--double {
+  padding-bottom: 32px;
+  padding-bottom: var(--space-double);
+}
+.padding--left--double {
+  padding-left: 32px;
+  padding-left: var(--space-double);
+}
+.padding--all--double {
+  padding: 32px;
+  padding: var(--space-double);
+}
+/* Position Helpers */
+/*---
+title: Align
+name: positionAlign
+section: Position Helpers
+---
+
+Sets `text-align`.
+
+class           | description
+--------------- | ---------------------------------
+`align--left `  | Sets `text-align` to `left`
+`align--center` | Sets `text-align` to `center`
+`align--right`  | Sets `text-align` to `right`
+*/
+.align--left {
+  text-align: left;
+}
+.align--center {
+  text-align: center;
+}
+.align--right {
+  text-align: right;
+}
+/*---
+title: Vertical Align
+name: positionVAlign
+section: Position Helpers
+---
+
+Sets `vertical-align` property. Note that `vertical-align`
+**only applies to elements displayed `inline`, `inline-block`,
+`table-cell` or `inline-flex`.**
+
+class                     | description
+------------------------- | ---------------------------------
+`valign--top`             | Sets `vertical-align` to `top`
+`valign--center`          | Sets `vertical-align` to `middle`
+`valign--bottom`          | Sets `vertical-align` to `bottom`
+*/
+.valign--top {
+  vertical-align: top;
+}
+.valign--bottom {
+  vertical-align: bottom;
+}
+.valign--middle,
+.valign--center {
+  vertical-align: middle;
+}
+/*---
+title: Child Align
+name: positionChildAlign
+section: Position Helpers
+---
+
+Positions direct child(s) of element using flex properties.
+**These classes modify `flex` properties**. Avoid combining
+`alignChild` classes with flexbox layout elements.
+
+Classes follow this signature:
+```css
+.alignChild--(left|right|center)--(top|bottom|center)
+```
+
+```example:html
+<div
+  class="alignChild--center--center"
+  style="border: 1px dotted red; height: 100px; width: 100px;"
+>
+  <div style="background: pink;">child</div>
+</div>
+```
+*/
+.alignChild--center--center,
+.alignChild--center--top,
+.alignChild--center--bottom,
+.alignChild--left--center,
+.alignChild--left--top,
+.alignChild--left--bottom,
+.alignChild--right--center,
+.alignChild--right--top,
+.alignChild--right--bottom {
+  display: flex;
+}
+.alignChild--center--center {
+  justify-content: center;
+  align-items: center;
+}
+.alignChild--center--top {
+  justify-content: center;
+  align-items: flex-start;
+}
+.alignChild--center--bottom {
+  justify-content: center;
+  align-items: flex-end;
+}
+.alignChild--left--center {
+  justify-content: flex-start;
+  align-items: center;
+}
+.alignChild--left--top {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.alignChild--left--bottom {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.alignChild--right--center {
+  justify-content: flex-end;
+  align-items: center;
+}
+.alignChild--right--top {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.alignChild--right--bottom {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+/* Layout Helpers */
+/*---
+title: Media Sizing
+name: layoutMedia
+section: Layout Helpers
+---
+
+For standard media like avatars and icons, these classes set square
+dimenions on the selected element to match standard media sizes.
+
+class           | description
+--------------- | ---------------------------------
+`media--xs `    | Sets height and width of element to `var(--media-xs)`
+`media--s `     | Sets height and width of element to `var(--media-s)`
+`media--m `     | Sets height and width of element to `var(--media-m)`
+`media--l `     | Sets height and width of element to `var(--media-l)`
+`media--xl `    | Sets height and width of element to `var(--media-xl)`
+
+```example:html
+<style>
+  .DOC_MEDIA {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    background: var(--color-violet);
+    color: var(--color-purple);
+  }
+</style>
+<div class="DOC_MEDIA media--xs">xs</div>
+<div class="DOC_MEDIA media--s">s</div>
+<div class="DOC_MEDIA media--m">m</div>
+<div class="DOC_MEDIA media--l">l</div>
+<div class="DOC_MEDIA media--xl">xl</div>
+```
+*/
+.media--xs {
+  height: 18px !important;
+  height: var(--media-xs) !important;
+  width: 18px !important;
+  width: var(--media-xs) !important;
+}
+.media--s {
+  height: 24px !important;
+  height: var(--media-s) !important;
+  width: 24px !important;
+  width: var(--media-s) !important;
+}
+.media--m {
+  height: 34px !important;
+  height: var(--media-m) !important;
+  width: 34px !important;
+  width: var(--media-m) !important;
+}
+.media--l {
+  height: 50px !important;
+  height: var(--media-l) !important;
+  width: 50px !important;
+  width: var(--media-l) !important;
+}
+.media--xl {
+  height: 72px !important;
+  height: var(--media-xl) !important;
+  width: 72px !important;
+  width: var(--media-xl) !important;
+}
+/*---
+title: Display
+name: layoutDisplay
+section: Layout Helpers
+---
+
+Modifies display property of element
+
+class                     | description
+------------------------- | ---------------------------------
+`display--none`           | Sets `display` to `none`
+`display--block`          | Sets `display` to `block`
+`display--flex`           | Sets `display` to `flex`
+`display--inline`         | Sets `display` to `inline`
+`display--inlineBlock`    | Sets `display` to `inline-block`
+`display--inlineFlex`     | Sets `display` to `inline-flex`
+`display--grid`           | Sets `display` to `grid`
+*/
+.display--none { display: none !important; }
+.display--block { display: block !important; }
+.display--flex { display: flex !important; }
+.display--inline { display: inline !important; }
+.display--inlineBlock { display: inline-block !important; }
+.display--inlineFlex { display: inline-flex !important; }
+.display--grid { display: -ms-grid !important; display: grid !important; }
+/*---
+title: Width
+name: layoutWidth
+section: Layout Helpers
+---
+
+Sets element width in percentage.
+
+class        | description
+------------ | ---------------------------------
+`span--100`  | Sets `width` to `100%`
+`span--50`   | Sets `width` to `50%`
+
+```example:html
+<p class="span--100" style="background: pink;">100% width</p>
+<p class="span--50" style="background: pink;">50% width</p>
+```
+
+*/
+.span--100 { width: 100% !important; }
+.span--50 { width: 50% !important; }
+/* Shadow Helpers */
+/*---
+title: Elevation shadows
+name: elevationShadows
+section: Shadow Helpers
+---
+
+These `elevation` classes set a `box-shadow` based on
+[material design shadows](https://material.io/design/environment/light-shadows.html#shadows).
+
+Signature: `elevation--<level>`
+
+```example:html
+<style>
+._example {
+  width: var(--media-xl);
+  height: var(--media-m);
+  padding: 0.25rem;
+  margin: 1rem 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-s);
+  font-family: var(--font-family-mono);
+  color: var(--color-violet);
+}
+</style>
+
+<div class="_example elevation--1">1 (2dp)</div>
+<div class="_example elevation--2">2 (4dp)</div>
+<div class="_example elevation--3">3 (8dp)</div>
+<div class="_example elevation--4">4 (12dp)</div>
+<div class="_example elevation--5">5 (16dp)</div>
+```
+*/
+/* Shadow 1.5dp */
+.elevation--1 {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+/* Shadow 4dp */
+.elevation--2 {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+/* Shadow 8dp */
+.elevation--3 {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12),
+    0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+/* Shadow 12dp */
+.elevation--4 {
+  box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14),
+    0 5px 22px 4px rgba(0, 0, 0, 0.12),
+    0 7px 8px -4px rgba(0, 0, 0, 0.2);
+}
+/* Shadow 16dp */
+.elevation--5 {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12),
+    0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+/*---
+title: Depth shadows
+name: depthShadows
+section: Shadow Helpers
+---
+
+These `depth` classes set an `inset` `box-shadow` to
+illustrate depth below "page surface".
+
+Signature: `depth--<level>`
+
+```example:html
+<style>
+._example {
+  width: 25%;
+  height: var(--media-m);
+  padding: 0.25rem;
+  margin: 1rem 2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-s);
+  font-family: var(--font-family-mono);
+  color: var(--color-violet);
+}
+</style>
+
+<div class="_example depth--1">1 (1dp)</div>
+<div class="_example depth--2">2 (2dp)</div>
+<div class="_example depth--3">3 (4dp)</div>
+```
+*/
+/* Shadow 1dp */
+.depth--1 {
+  box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    inset 0 2px 1px -1px rgba(0, 0, 0, 0.12),
+    inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+/* Shadow 2dp */
+.depth--2 {
+  box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    inset 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    inset 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+/* Shadow 4dp */
+.depth--3 {
+  box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    inset 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    inset 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+/* Border Helpers */
+/*---
+title: Border Radius
+name: borderRadius
+section: Border Helpers
+---
+
+Rounds the corners of an element using a standard
+`border-radius` value.
+
+class            | description
+---------------- | ---------------------------------
+`rounded--top`   | Rounds the top corners of the element
+`rounded--right` | Rounds the right corners of the element
+`rounded--bottom`| Rounds the bottom corners of the element
+`rounded--left`  | Rounds the left corners of the element
+`rounded--all`   | Rounds all corners of the element
+*/
+.rounded--top {
+  border-radius: 4px 4px 0 0;
+  border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
+}
+.rounded--right {
+  border-radius: 0 4px 4px 0;
+  border-radius: 0 var(--border-radius-default) var(--border-radius-default) 0;
+}
+.rounded--bottom {
+  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+}
+.rounded--left {
+  border-radius: 4px 0 0 4px;
+  border-radius: var(--border-radius-default) 0 0 var(--border-radius-default);
+}
+.rounded--all {
+  border-radius: 4px;
+  border-radius: var(--border-radius-default);
+}
+/*---
+title: Borders by side
+name: borderDirections
+section: Border Helpers
+---
+
+Adds standard borders to an element for a given side.
+
+class            | description
+---------------- | ---------------------------------
+`border--none`   | removes all borders
+`border--top`    | applies a standard top border
+`border--right`  | applies a standard right border
+`border--bottom` | applies a standard bottom border
+`border--left`   | applies a standard left border
+`border--all`    | applies a standard border to all sides
+*/
+:root {
+  --standardBorder: 1px solid rgba(64, 64, 64, 0.12);
+  --standardBorder: 1px solid rgba(var(--rgb-charcoal), 0.12);
+}
+.border--none {
+  border-width: 0;
+}
+.border--top {
+  border-top: 1px solid rgba(64, 64, 64, 0.12);
+  border-top: var(--standardBorder);
+}
+.border--right {
+  border-right: 1px solid rgba(64, 64, 64, 0.12);
+  border-right: var(--standardBorder);
+}
+.border--bottom {
+  border-bottom: 1px solid rgba(64, 64, 64, 0.12);
+  border-bottom: var(--standardBorder);
+}
+.border--left {
+  border-left: 1px solid rgba(64, 64, 64, 0.12);
+  border-left: var(--standardBorder);
+}
+.border--all {
+  border: 1px solid rgba(64, 64, 64, 0.12);
+  border: var(--standardBorder);
+}
+.inverted.border--top, .inverted.border--right, .inverted.border--bottom, .inverted.border--left, .inverted.border--all, .inverted {
+  border-color: rgba(255, 255, 255, 0.38);
+  border-color: var(--font-color-hintInverted);
+}
+/* Background Helpers */
+/*---
+title: Background Colors
+name: backgroundColors
+section: Background helpers
+---
+
+Sets background color of an element.
+
+Signature: `bgColor--<color>`
+
+**💡 use the [`inverted`](https://cbinsights.github.io/form-design-system/fds-styles/#inverted-standard-text-colors)
+class to flip text colors for dark backgrounds**
+
+```example:html
+<div class="bgColor--white">I have a background color</div>
+<div class="bgColor--haze">I have a background color</div>
+<div class="bgColor--navy inverted">I have a background color</div>
+<div class="bgColor--lightGray">I have a background color</div>
+<div class="bgColor--orange inverted">I have a background color</div>
+```
+*/
+.bgColor--white {
+  background-color: #ffffff;
+  background-color: var(--color-white);
+}
+.bgColor--haze {
+  background-color: #f1f5f7;
+  background-color: var(--color-haze);
+}
+.bgColor--lightGray {
+  background-color: #f2f2f2;
+  background-color: var(--color-lightGray);
+}
+.bgColor--navy {
+  background-color: #003366;
+  background-color: var(--color-navy);
+}
+.bgColor--orange {
+  background-color: #ff6633;
+  background-color: var(--color-orange);
+}
+/* Typesetting */
+/*---
+title: Heading Tags
+name: headingTags
+section: Typesetting
+---
+By default, HTML heading tags are set to match the default
+body text. To set the display of a given heading tag, use one
+of the typesetting classes below.
+
+```example:html
+<h1>Heading1</h1>
+<h2>Heading2</h2>
+<h3>Heading3</h3>
+<h4>Heading4</h4>
+<h5>Heading5</h5>
+<h6>Heading6</h6>
+```
+*/
+.type--head1,
+.type--head2,
+.type--head3,
+.type--head4 {
+  color: #404040;
+  color: var(--font-color-heading);
+  font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+  font-family: var(--font-family-condensed);
+}
+/*---
+title: Heading 1
+name: heading1
+section: Typesetting
+---
+
+```example:html
+<h2 class="type--head1">This is a top-level heading</h2>
+```
+*/
+.type--head1 {
+  font-size: 38px;
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  line-height: var(--font-lineHeight-bigText);
+}
+/*---
+title: Heading 2
+name: heading2
+section: Typesetting
+---
+
+```example:html
+<h2 class="type--head2">This is a secondary heading</h2>
+```
+*/
+.type--head2 {
+  font-size: 32px;
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  line-height: var(--font-lineHeight-bigText);
+}
+/*---
+title: Heading 3
+name: heading3
+section: Typesetting
+---
+
+```example:html
+<h2 class="type--head3">This is a tertiary heading</h2>
+```
+*/
+.type--head3 {
+  font-size: 24px;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  line-height: var(--font-lineHeight-bigText);
+}
+/*---
+title: Heading 4
+name: heading4
+section: Typesetting
+---
+
+```example:html
+<h2 class="type--head4">This is a minor heading</h2>
+```
+*/
+.type--head4 {
+  font-size: 20px;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  line-height: var(--font-lineHeight-bigText);
+}
+/*---
+title: Body
+name: bodyText
+section: Typesetting
+---
+Default body text. No classes necessary.
+
+```example:html
+<p>This is default body text</p>
+```
+*/
+/* see documentTags.css */
+/*---
+title: Big
+name: bigText
+section: Typesetting
+---
+Big body text. Conceptually, this maps to the `<big>`
+non-heading element.
+
+```example:html
+<p class="type--big">This is big body text</p>
+```
+*/
+.type--big {
+  font-size: 16px;
+  font-size: var(--font-size-l);
+}
+/*---
+title: Data
+name: dataText
+section: Typesetting
+---
+Typsetting for data (e.g. tables).
+
+```example:html
+<p class="type--data">This is data text. Good for tables.</p>
+```
+*/
+.type--data {
+  font-size: 12px;
+  font-size: var(--font-size-s);
+  line-height: 1.8;
+  line-height: var(--font-lineHeight-smallText);
+}
+/*---
+title: Caption
+name: captionText
+section: Typesetting
+---
+Tiny text for captions and legalese.
+**This is not very readable; only use in special circumstances.**
+
+```example:html
+<p class="type--caption">This is a caption. &copy; 2018</p>
+```
+*/
+.type--caption {
+  font-size: 10px;
+  font-size: var(--font-size-xs);
+  line-height: 1.8;
+  line-height: var(--font-lineHeight-smallText);
+  text-rendering: optimizeLegibility; /* stylelint-disable-line */
+}
+/*---
+title: Links
+name: links
+section: Typesetting
+---
+
+```example:html
+<div>
+  <a class="type--link" href="#">This is an actual link with the link class</a>
+</div>
+<div>
+  <button class="resetButton type--link">This reset button looks like a link</button>
+</div>
+<p>
+  This paragraph as a <span class="type--link">span</span> that looks like a link.
+</p>
+<div class="inverted padding--all" style="background-color: var(--color-navy)">
+  This is a <a class="type--link">link</a> in an inverted context.
+</div>
+```
+*/
+.type--link {
+  color: #006699;
+  color: var(--font-color-link);
+}
+.type--link:hover,
+.type--link:focus,
+.type--link:active {
+  cursor: pointer;
+  color: #006699;
+  color: var(--color-blue);
+  text-decoration: underline;
+}
+.inverted .type--link {
+  color: #4cabce;
+  color: var(--font-color-linkInverted);
+}
+/* Text modifiers */
+/*----
+title: Size Modifiers
+name: typeSizeModifiers
+section: Type Modifiers
+----
+Modifies size of text and adjusts leading accordingly.
+
+```example:html
+<p class="fontSize--4xl">4XL Text</p>
+<p class="fontSize--3xl">3XL Text</p>
+<p class="fontSize--2xl">2XL Text</p>
+<p class="fontSize--xl">XL Text</p>
+<p class="fontSize--l">L Text</p>
+<p class="fontSize--default">Default text (default)</p>
+<p class="fontSize--s">S text</p>
+<p class="fontSize--xs">XS text</p>
+```
+*/
+.fontSize--4xl,
+.fontSize--3xl,
+.fontSize--2xl,
+.fontSize--xl {
+  line-height: 1.2 !important;
+  line-height: var(--font-lineHeight-bigText) !important;
+}
+.fontSize--l,
+.fontSize--default {
+  line-height: 1.5 !important;
+  line-height: var(--font-lineHeight-default) !important;
+}
+.fontSize--s,
+.fontSize--xs {
+  line-height: 1.8 !important;
+  line-height: var(--font-lineHeight-smallText) !important;
+}
+.fontSize--4xl {
+  font-size: 38px !important;
+  font-size: var(--font-size-4xl) !important;
+}
+.fontSize--3xl {
+  font-size: 32px !important;
+  font-size: var(--font-size-3xl) !important;
+}
+.fontSize--2xl {
+  font-size: 24px !important;
+  font-size: var(--font-size-2xl) !important;
+}
+.fontSize--xl {
+  font-size: 20px !important;
+  font-size: var(--font-size-xl) !important;
+}
+.fontSize--l {
+  font-size: 16px !important;
+  font-size: var(--font-size-l) !important;
+}
+.fontSize--default {
+  font-size: 14px !important;
+  font-size: var(--font-size-default) !important;
+}
+.fontSize--s {
+  font-size: 12px !important;
+  font-size: var(--font-size-s) !important;
+}
+.fontSize--xs {
+  font-size: 10px !important;
+  font-size: var(--font-size-xs) !important;
+  text-rendering: optimizeLegibility; /* stylelint-disable-line */
+}
+/*----
+title: Weight Modifiers
+name: typeWeightModifiers
+section: Type Modifiers
+----
+Modifies weight of text.
+
+```example:html
+<p class="fontWeight--bold">Bold Text</p>
+<p class="fontWeight--book">Book Text</p>
+<p class="type--head3">Modifiers <span class="fontWeight--book">override</span> default styles</p>
+```
+*/
+.fontWeight--bold {
+  font-weight: 700 !important;
+  font-weight: var(--font-weight-bold) !important;
+}
+.fontWeight--book {
+  font-weight: 400 !important;
+  font-weight: var(--font-weight-default) !important;
+}
+/*----
+title: Color Modifiers
+name: typeColorModifiers
+section: Type Modifiers
+----
+Modifies color of text.
+
+### Standard text colors
+
+```example:html
+<div class="padding--all">
+  <p class="color--heading">Heading text color</p>
+  <p class="color--primary">Primary text color (default)</p>
+  <p class="color--secondary">Secondary text color</p>
+  <p class="color--hint">Hint text color</p>
+  <p class="color--success">Success text color</p>
+  <p class="color--error">Error text color</p>
+</div>
+```
+
+### Inverted standard text colors
+
+When using standard text color classes (`heading`,
+`primary`, `secondary`, `hint`), a parent element with the
+`inverted` class will switch the text to tints of white.
+
+```example:html
+<div class="padding--all inverted" style="background: var(--color-navy);">
+  <p class="color--heading">Heading text color</p>
+  <p class="color--primary">Primary text color (default)</p>
+  <p class="color--secondary">Secondary text color</p>
+  <p class="color--hint">Hint text color</p>
+  <p class="color--success">Success text color</p>
+  <p class="color--error">Error text color</p>
+</div>
+```
+
+### Fancy text colors
+If you don't see the color you need here, please notify UI Platform.
+_Text in this example is set in `fontWeight--bold`_
+```example:html
+<ul class="fontWeight--bold">
+  <li class="color--slate">Slate text</li>
+  <li class="color--green">Green text</li>
+  <li class="color--mint">Mint text</li>
+  <li class="color--navy">Navy text</li>
+  <li class="color--blue">Blue text</li>
+  <li class="color--aqua">Aqua text</li>
+  <li class="color--sky">Sky text</li>
+  <li class="color--violet">Purple text</li>
+  <li class="color--purple">Purple text</li>
+  <li class="color--red">Red text</li>
+  <li class="color--orange">Orange text</li>
+  <li class="color--white">White text</li>
+</ul>
+```
+*/
+.color--heading {
+  color: #404040 !important;
+  color: var(--font-color-heading) !important;
+}
+.inverted .color--heading {
+  color: #ffffff !important;
+  color: var(--font-color-headingInverted) !important;
+}
+.color--primary {
+  color: rgba(64, 64, 64, 0.87) !important;
+  color: var(--font-color-primary) !important;
+}
+.inverted .color--primary {
+  color: rgba(255, 255, 255, 0.87) !important;
+  color: var(--font-color-primaryInverted) !important;
+}
+.color--secondary {
+  color: rgba(64, 64, 64, 0.60) !important;
+  color: var(--font-color-secondary) !important;
+}
+.inverted .color--secondary {
+  color: rgba(255, 255, 255, 0.60) !important;
+  color: var(--font-color-secondaryInverted) !important;
+}
+.color--hint {
+  color: rgba(64, 64, 64, 0.38) !important;
+  color: var(--font-color-hint) !important;
+}
+.inverted .color--hint {
+  color: rgba(255, 255, 255, 0.38) !important;
+  color: var(--font-color-hintInverted) !important;
+}
+.color--success {
+  color: #00986b !important;
+  color: var(--font-color-success) !important;
+}
+.inverted .color--success {
+  color: #70c390 !important;
+  color: var(--font-color-successInverted) !important;
+}
+.color--error {
+  color: #e5323e !important;
+  color: var(--font-color-error) !important;
+}
+.inverted .color--error {
+  color: #e5323e !important;
+  color: var(--font-color-errorInverted) !important;
+}
+.color--slate {
+  color: #757575 !important;
+  color: var(--color-slate) !important;
+}
+.color--green {
+  color: #00986b !important;
+  color: var(--color-green) !important;
+}
+.color--mint {
+  color: #70c390 !important;
+  color: var(--color-mint) !important;
+}
+.color--navy {
+  color: #003366 !important;
+  color: var(--color-navy) !important;
+}
+.color--blue {
+  color: #006699 !important;
+  color: var(--color-blue) !important;
+}
+.color--aqua {
+  color: #4cabce !important;
+  color: var(--color-aqua) !important;
+}
+.color--sky {
+  color: #bbdbe5 !important;
+  color: var(--color-sky) !important;
+}
+.color--violet {
+  color: #d772ad !important;
+  color: var(--color-violet) !important;
+}
+.color--purple {
+  color: #a02385 !important;
+  color: var(--color-purple) !important;
+}
+.color--red {
+  color: #e5323e !important;
+  color: var(--color-red) !important;
+}
+.color--orange {
+  color: #ff6633 !important;
+  color: var(--color-orange) !important;
+}
+.color--white {
+  color: #ffffff !important;
+  color: var(--color-white) !important;
+}
+/*----
+title: Type Style Modifiers
+name: typeStyleModifiers
+section: Type Modifiers
+----
+Modifies style, decoration, or transform of text
+
+```example:html
+<p class="fontStyle--italic">Italic text</p>
+<p class="fontStyle--underline">Underline text</p>
+<p class="fontStyle--caps">Uppercase text</p>
+```
+*/
+.fontStyle--italic {
+  font-style: italic;
+}
+.fontStyle--underline {
+  text-decoration: underline;
+}
+.fontStyle--caps {
+  text-transform: uppercase;
+}
+/* Form field modifiers */
+/*---
+title: Input error
+name: inputError
+section: Form Helpers
+---
+
+By default, any form input that is `:invalid` will show a
+red border. You can also force the appearance of an
+`:invalid` state by adding the `error` class.
+
+```example:html
+<input class="error" value="invalid entry" />
+```
+*/
+input.error,
+select.error {
+  border-color: #e5323e;
+  border-color: var(--color-red);
+}
+/*---
+title: Reset Input
+name: resetInput
+section: Form Helpers
+---
+
+Sometimes we need to place an input inside another visual
+element, like a chip or a token editor. The `resetInput`
+class will strip away margin and border styles.
+
+```example:html
+<input value="Normal input" />
+<input class="resetInput" value="'Reset' input" />
+```
+*/
+select.resetInput,
+input.resetInput {
+  border-width: 0;
+  background: transparent;
+  margin: 0;
+}
+/*---
+title: Reset Button
+name: resetButton
+section: Form Helpers
+---
+
+Removes default user agent styling from `button` elements.
+
+```example:html
+<button class="resetButton">This is a button</button>
+```
+*/
+button.resetButton {
+  background: transparent;
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  min-height: initial;
+}
+/* Whitespace helpers */
+/*---
+title: Truncate text
+name: truncate
+section: Text flow
+---
+
+Helpers to adjust text wrapping with CSS.
+
+Allows compontents to render full strings while CSS does the job
+of clamping text to one line.
+
+Class                         | Description
+----------------------------- | --------------------------------
+`.wrap--singleLine`           | forces text to a single line (nowrap)
+`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with "&hellip;" entity
+*/
+.wrap--singleLine--truncate,
+.wrap--singleLine {
+  white-space: nowrap !important;
+}
+.wrap--singleLine--truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+/*---
+title: Text wrap control
+name: wrap
+section: Text flow
+---
+
+Helpers to adjust text wrapping with CSS.
+
+Allows compontents to render full strings while CSS does the job
+of clamping text to one line.
+
+Class                   | Description
+----------------------- | --------------------------------
+`.wrap--hyphenate`      | Allows breaking on word with hyphenation
+*/
+.wrap--hyphenate {
+  word-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+

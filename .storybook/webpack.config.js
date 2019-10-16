@@ -18,8 +18,18 @@ module.exports = async ({ config }) => {
   config.module.rules = newConfig;
   config.module.rules.push({
     test: /\.css$/,
-    use: ['style-loader', 'postcss-loader'],
     include: path.resolve(__dirname, '../'),
+    use: [
+      'style-loader',
+      {
+        loader: 'postcss-loader',
+        options: {
+          config: {
+            path: './'
+          }
+        }
+      }
+    ],
   });
   return config;
 };
