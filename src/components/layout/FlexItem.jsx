@@ -44,10 +44,21 @@ const FlexItem = (props) => {
     // eslint-disable-next-line react/prop-types
     (props.dataTest || props['data-test'] || props.className)
   ) {
+    let warning = '';
+    // eslint-disable-next-line react/prop-types
+    if (props.dataTest || props['data-test']) {
+      warning = `You attempted to pass a dataTest prop with the following value: (${props.dataTest ||
+        // eslint-disable-next-line react/prop-types
+        props[
+          // eslint-disable-next-line react/prop-types
+          'data-test'
+        ]}) to Flex. This is no longer supported. Try making a div above Flex and putting a data-test attribute on that.`;
+    }
+    if (props.className) {
+      warning = `You attempted to pass a className prop with the following value: (${props.className}) to Flex. This is no longer supported. Try either putting className on a div above, or opt to use custom css for your flex needs.`;
+    }
     // eslint-disable-next-line no-console
-    console.warn(
-      'You can no longer put data attributes or classNames on FlexItem (Try putting these on a div inside FlexItem)'
-    );
+    console.warn(warning);
   }
 
   return (
