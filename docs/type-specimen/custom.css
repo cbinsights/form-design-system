@@ -11,20 +11,11 @@ html, body {
   border-bottom-width: 0;
 }
 
-.stripe--navy {
-  background: var(--color-navy);
-}
-
-.stripe--white {
-  background: var(--color-white);
-}
-
 .stripe-title,
 .stripe-description {
   font-family: var(--font-family-mono);
   color: var(--color-aqua);
 }
-
 
 .stripe-title {
   font-size: var(--font-size-2xl);
