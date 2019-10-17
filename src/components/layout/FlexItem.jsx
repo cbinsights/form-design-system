@@ -35,39 +35,28 @@ const FlexItem = (props) => {
     {
       [JustifyPropMap[props.justify]]: props.justify,
       [AlignPropMap[props.align]]: props.align,
-    },
-    props.className
+    }
   );
 
-  return (
-    <div className={classNames} data-test={props.dataTest}>
-      {props.children}
-    </div>
-  );
+  return <div className={classNames}>{props.children}</div>;
 };
 
 FlexItem.defaultProps = {
   shrink: false,
-  dataTest: '',
 };
 
 FlexItem.propTypes = {
   /** Sets standard justify-content */
   justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),
+
   /** Sets standard align-items */
   align: PropTypes.oneOf(Object.keys(AlignPropMap)),
 
   /** When set, the `FlexItem` will shrink to content size */
   shrink: PropTypes.bool,
 
-  /** Classes to pass to flex child */
-  className: PropTypes.string,
-
   /** React children */
   children: PropTypes.node,
-
-  /** data-test to pass to flex child */
-  dataTest: PropTypes.string,
 };
 
 export default FlexItem;

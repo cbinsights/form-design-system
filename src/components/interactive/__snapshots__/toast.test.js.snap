@@ -15,11 +15,9 @@ exports[`Toast component matches snapshot (error) 1`] = `
   >
     <Flex
       align="stretch"
-      dataTest=""
       direction="row"
     >
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <div
@@ -38,7 +36,6 @@ exports[`Toast component matches snapshot (error) 1`] = `
         </div>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={false}
       >
         <div
@@ -50,7 +47,6 @@ exports[`Toast component matches snapshot (error) 1`] = `
         </div>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <div
@@ -87,11 +83,9 @@ exports[`Toast component matches snapshot (info) 1`] = `
   >
     <Flex
       align="stretch"
-      dataTest=""
       direction="row"
     >
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <div
@@ -108,7 +102,6 @@ exports[`Toast component matches snapshot (info) 1`] = `
         </div>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={false}
       >
         <div
@@ -120,7 +113,6 @@ exports[`Toast component matches snapshot (info) 1`] = `
         </div>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <div
@@ -161,11 +153,9 @@ exports[`Toast component matches snapshot (progress) 1`] = `
   >
     <Flex
       align="stretch"
-      dataTest=""
       direction="row"
     >
       <FlexItem
-        dataTest=""
         shrink={false}
       >
         <div
@@ -196,11 +186,9 @@ exports[`Toast component matches snapshot (success) 1`] = `
   >
     <Flex
       align="stretch"
-      dataTest=""
       direction="row"
     >
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <div
@@ -217,7 +205,6 @@ exports[`Toast component matches snapshot (success) 1`] = `
         </div>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={false}
       >
         <div
@@ -229,7 +216,6 @@ exports[`Toast component matches snapshot (success) 1`] = `
         </div>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <div
@@ -266,11 +252,9 @@ exports[`Toast component matches snapshot (warn) 1`] = `
   >
     <Flex
       align="stretch"
-      dataTest=""
       direction="row"
     >
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <div
@@ -289,7 +273,6 @@ exports[`Toast component matches snapshot (warn) 1`] = `
         </div>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={false}
       >
         <div
@@ -301,7 +284,6 @@ exports[`Toast component matches snapshot (warn) 1`] = `
         </div>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <div
