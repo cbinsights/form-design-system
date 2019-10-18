@@ -21,7 +21,7 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
     className="fdsButton--hidden"
   />
   <div
-    className="fdsButton-icon fdsButton-icon--left margin--right--half fdsButton--hidden"
+    className="fdsButton-icon--left margin--right--half fdsButton--hidden"
   >
     <Icon
       size="xs"
