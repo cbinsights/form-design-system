@@ -26,8 +26,9 @@ const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }
           tabIndex="-1"
           className="fdsChip-close"
           onClick={(e) => {
-            onClose();
+            onClose(e);
             e.stopPropagation();
+            e.preventDefault();
           }}
         >
           <DenyIcon size="xs" />
