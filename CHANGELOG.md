@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.27] Fixed Button component
+
+- Updated Button Icon alignment to be centered
+
 ## [4.26] `ol`/`ul` decoration
 
 - Added `list--decorated` class to add bullets/numbers to ordered or unordered lists.
