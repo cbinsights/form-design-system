@@ -185,12 +185,6 @@
   border-top-color: transparent;
 }
 
-/* We're only using uppercase so we can shift the icon assuming there will not be any descenders */
-.fdsButton-icon {
-  margin-top: -4px;
-  margin-bottom: -2px;
-}
-
 .fdsButton-icon--left {
   order: -1;
 }

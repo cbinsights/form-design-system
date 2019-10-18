@@ -44,7 +44,7 @@ const Button = ({
       <span className={cx({ 'fdsButton--hidden': isLoading })}>{children}</span>
       {Icon && (
         <div
-          className={cx('fdsButton-icon', {
+          className={cx({
             'fdsButton-icon--left': iconPlacement === 'left',
             'margin--left--half': iconPlacement === 'right',
             'margin--right--half': iconPlacement === 'left',
