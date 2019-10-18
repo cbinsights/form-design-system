@@ -25,7 +25,6 @@ const Button = ({
         'fontStyle--caps',
         'display--inlineFlex',
         'rounded--all',
-        'fontSize--m',
         'alignChild--center--center',
         {
           'fdsButton--s': size === 's',
