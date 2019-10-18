@@ -1,0 +1,42 @@
+/*----
+title: Decorated Lists
+name: typeSizeModifiers
+section: List Helpers
+----
+
+By default, `ul` and `ol` lists have their styles reset.
+
+To enable standard list decoration (bullet or number
+markers), use the `list--decorated` class.
+
+```example:html
+<ul>
+  <li>item one</li>
+  <li>item two</li>
+</ul>
+
+<ol>
+  <li>item one</li>
+  <li>item two</li>
+</ol>
+```
+
+With `list--decorated`:
+
+```example:html
+<ul class="list--decorated">
+  <li>item one</li>
+  <li>item two</li>
+</ul>
+
+<ol class="list--decorated">
+  <li>item one</li>
+  <li>item two</li>
+</ol>
+```
+*/
+
+.list--decorated {
+  list-style-type: initial;
+  list-style-position: outside;
+}
