@@ -8,13 +8,11 @@ exports[`MenuButton component matches snapshot (default props) 1`] = `
   <Flex
     align="stretch"
     className="menuButton-inner"
-    dataTest=""
     direction="column"
     noGutters={true}
   >
     <FlexItem
       className="menuButton-icon"
-      dataTest=""
       shrink={false}
     >
       <span>
@@ -23,7 +21,6 @@ exports[`MenuButton component matches snapshot (default props) 1`] = `
     </FlexItem>
     <FlexItem
       className="fontSize--xs color--primary menuButton-label"
-      dataTest=""
       shrink={true}
     >
       My Label
@@ -42,13 +39,11 @@ exports[`MenuButton component matches snapshot (set all props) 1`] = `
   <Flex
     align="stretch"
     className="menuButton-inner"
-    dataTest=""
     direction="column"
     noGutters={true}
   >
     <FlexItem
       className="menuButton-icon"
-      dataTest=""
       shrink={false}
     >
       <span>
@@ -57,7 +52,6 @@ exports[`MenuButton component matches snapshot (set all props) 1`] = `
     </FlexItem>
     <FlexItem
       className="fontSize--xs color--primary menuButton-label myCustomClass"
-      dataTest=""
       shrink={true}
     >
       My Label

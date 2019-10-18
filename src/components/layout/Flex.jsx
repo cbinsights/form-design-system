@@ -48,28 +48,24 @@ const Flex = (props) => {
     {
       'flex--wrap': props.wrap,
       'flex--noGutters': props.noGutters,
-    },
-    props.className
+    }
   );
 
-  return (
-    <div className={classNames} data-test={props.dataTest}>
-      {props.children}
-    </div>
-  );
+  return <div className={classNames}>{props.children}</div>;
 };
 
 Flex.defaultProps = {
   direction: 'row',
   align: 'stretch',
-  dataTest: '',
 };
 
 Flex.propTypes = {
   /** sets flex-direction (along with either 100% height or width) */
   direction: PropTypes.oneOf(Object.keys(DirectionPropMap)),
+
   /** sets standard justify-content */
   justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),
+
   /** sets standard align-items */
   align: PropTypes.oneOf(Object.keys(AlignPropMap)),
 
@@ -82,15 +78,9 @@ Flex.propTypes = {
   /** When set, `FlexItem` order is rendered in reverse */
   reverse: PropTypes.bool,
 
-  /** Classes to pass to flex parent */
-  className: PropTypes.string,
-
   /** React children (should be of type `FlexItem`) */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
     .isRequired,
-
-  /** data-test to pass to flex parent */
-  dataTest: PropTypes.string,
 };
 
 export default Flex;
