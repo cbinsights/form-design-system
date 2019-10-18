@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.26] `ol`/`ul` decoration
+
+- Added `list--decorated` class to add bullets/numbers to ordered or unordered lists.
+
 ## [4.25] Updated Button components
 
 - Added size prop to `Button` to component
