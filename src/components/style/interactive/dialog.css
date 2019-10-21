@@ -42,7 +42,6 @@
 }
 
 .dialog {
-  position: fixed;
   overflow: hidden;
   background-color: var(--color-white);
   border-radius: var(--border-radius-default);
