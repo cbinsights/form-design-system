@@ -25,7 +25,6 @@ const Button = ({
         'fontStyle--caps',
         'display--inlineFlex',
         'rounded--all',
-        'fontSize--m',
         'alignChild--center--center',
         {
           'fdsButton--s': size === 's',
@@ -44,7 +43,7 @@ const Button = ({
       <span className={cx({ 'fdsButton--hidden': isLoading })}>{children}</span>
       {Icon && (
         <div
-          className={cx('fdsButton-icon', {
+          className={cx({
             'fdsButton-icon--left': iconPlacement === 'left',
             'margin--left--half': iconPlacement === 'right',
             'margin--right--half': iconPlacement === 'left',

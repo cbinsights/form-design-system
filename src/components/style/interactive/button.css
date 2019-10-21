@@ -31,6 +31,7 @@
   border: 0 none;
   letter-spacing: 1px;
   font-weight: 500;
+  font-size: var(--font-size-default);
   position: relative;
   line-height: normal;
   user-select: none;
@@ -42,6 +43,7 @@
   transition: background-color var(--button-timeout) var(--motion-easing-default),
     box-shadow var(--button-timeout) var(--motion-easing-default);
   min-height: auto;
+  box-sizing: border-box;
 }
 
 .fdsButton--s {
@@ -183,12 +185,6 @@
 .fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost)::before {
   border: 2px solid var(--button-destructive);
   border-top-color: transparent;
-}
-
-/* We're only using uppercase so we can shift the icon assuming there will not be any descenders */
-.fdsButton-icon {
-  margin-top: -4px;
-  margin-bottom: -2px;
 }
 
 .fdsButton-icon--left {
