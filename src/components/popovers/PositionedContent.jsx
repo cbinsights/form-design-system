@@ -1,6 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const getContainerStyle = (refRect, xPosition, yPosition, xOffset, yOffset) => {
+  let top, left;
+
+  refRect.centerY = refRect.height / 2 + refRect.top;
+  refRect.centerX = refRect.width / 2 + refRect.left;
+
+  if (yPosition === 'center') {
+    top = refRect.centerY + yOffset;
+  } else {
+    top = refRect[yPosition] + yOffset;
+  }
+
+  if (xPosition === 'center') {
+    left = refRect.centerX + xOffset;
+  } else {
+    left = refRect[xPosition] + xOffset;
+  }
+
+  top = `${top}px`;
+  left = `${left}px`;
+
+  console.warn('top', top);
+  console.warn('left', left);
+  return { top, left };
+};
+
 /**
  * Component responsible for positioning itself relative to `referenceRect`
  */
@@ -12,15 +38,11 @@ const PositionedContent = ({
   xOffset,
   yOffset,
 }) => {
-  const { x, y, height, width } = referenceRect;
-
-  let containerStyle = {
-    top: `${y + height + yOffset}px`,
-    left: `${x + xOffset}px`,
-  };
+  // const style = getContainerStyle(referenceRect, xPosition, yPosition, xOffset, yOffset);
+  const style = getContainerStyle(referenceRect, 'right', 'top', xOffset, yOffset);
 
   return (
-    <div className="fdsPopover-content" style={containerStyle}>
+    <div className="fdsPopover-content" style={style}>
       {children}
     </div>
   );
