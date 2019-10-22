@@ -23,4 +23,7 @@
 @import "./interactive/buttonGroup.css";
 @import "./interactive/chips.css";
 @import "./interactive/button.css";
-@import "./interactive/dialog.css";
+
+/* Modal (Dialogs/Popovers) */
+@import "./modals/dialog.css";
+@import "./modals/popover.css";

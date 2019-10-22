@@ -1,0 +1,7 @@
+.fdsPopover {
+  position: relative; /* for non-portaled popovers */
+}
+
+.fdsPopover-content {
+  position: absolute;
+}

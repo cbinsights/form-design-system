@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import PositionedContent from './PositionedContent';
 
 /**
  * :TODO:
+ * - styles
+ * - dev story
  * - ARIA for hover vs click modes
  * - positioning logic
- * - dev story
  * - isActive handling
  * - events!
+ * - disablePortal
  */
 
 /**
@@ -17,26 +20,40 @@ import PropTypes from 'prop-types';
  * @returns {ReactElement}
  */
 const Popover = ({
-  isActive,
   trigger,
   content,
   interactionMode,
   disablePortal,
   xPosition,
   yPosition,
+  xOffset,
+  yOffset,
+  ...otherProps
 }) => {
-  const initialActiveState = (interactionMode === 'controlled' && isActive) || false;
+  const positionProps = { xPosition, yPosition, xOffset, yOffset };
+  const initialActiveState = interactionMode === 'controlled' && otherProps.isActive;
   const [isActive, setIsActive] = useState(initialActiveState);
   const refTrigger = useRef(null);
 
-  const contentContainer = <div className="fdsPopover-content">{content}</div>;
+  const handleTriggerClick = () => {
+    setIsActive(true);
+  };
 
   return (
     <div className="fdsPopover">
-      <div ref={refTrigger} className="fdsPopover-trigger">
+      <div ref={refTrigger} className="fdsPopover-trigger" onClick={handleTriggerClick}>
         {trigger}
       </div>
-      {disablePortal ? contentContainer : ReactDOM.createPortal(contentContainer)}
+      {isActive &&
+        ReactDOM.createPortal(
+          <PositionedContent
+            referenceRect={refTrigger.current.getBoundingClientRect()}
+            {...positionProps}
+          >
+            {content}
+          </PositionedContent>,
+          document.body
+        )}
     </div>
   );
 };
@@ -45,6 +62,8 @@ Popover.defaultProps = {
   interactionMode: 'click',
   xPosition: 'left',
   yPosition: 'bottom',
+  xOffset: 0,
+  yOffset: 4,
 };
 
 Popover.propTypes = {
@@ -81,6 +100,12 @@ Popover.propTypes = {
 
   /** positioning preference for vertical alignment of popover relative to trigger */
   yPosition: PropTypes.oneOf(['bottom', 'center', 'top']),
+
+  /** Number of pixes (negative or positive) to offset horizontal position */
+  xOffset: PropTypes.number,
+
+  /** Number of pixes (negative or positive) to offset vertical position */
+  yOffset: PropTypes.number,
 };
 
 export default Popover;
