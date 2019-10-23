@@ -1,19 +1,34 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import PositionedContent from './PositionedContent';
+import { Manager, Reference, Popper } from 'react-popper';
+import { isNotRefsEvent } from '../util/events';
+
+export const VALID_POSITIONS = ['auto', 'top', 'right', 'bottom', 'left'];
+export const VALID_ALIGNMENTS = ['start', 'end', 'center'];
+export const VALID_INTERACTION_MODES = ['hover', 'click', 'controlled'];
 
 /**
  * :TODO:
- * - styles
- * - dev story
- * - ARIA for hover vs click modes
- * - positioning logic
- * - isActive handling
- * - events!
- * - disablePortal
+ *
+ * - aria roles
+ * - tests
  */
+
+/**
+ * https://popper.js.org/popper-documentation.html#Popper.placements
+ *
+ * @param {String} position prop value
+ * @param {String} alignment prop value
+ * @returns {String} valid `placement` value for PopperJS `Popper` component
+ */
+const getPopperPlacement = (position, alignment) => {
+  // Popperjs does not have a "center" alignment option. It centers by default.
+  // Our component explicitly accepts a `center` value for alignment.
+  const calculatedAlign = alignment === 'center' ? '' : `-${alignment}`;
+  return `${position}${calculatedAlign}`;
+};
 
 /**
  * @param {Object} props react props
@@ -21,49 +36,124 @@ import PositionedContent from './PositionedContent';
  */
 const Popover = ({
   trigger,
-  content,
+  children,
   interactionMode,
   disablePortal,
-  xPosition,
-  yPosition,
-  xOffset,
-  yOffset,
-  ...otherProps
+  position,
+  alignment,
+  distance,
+  isOpen,
 }) => {
-  const positionProps = { xPosition, yPosition, xOffset, yOffset };
-  const initialActiveState = interactionMode === 'controlled' && otherProps.isActive;
-  const [isActive, setIsActive] = useState(initialActiveState);
-  const refTrigger = useRef(null);
+  const [isActive, setIsActive] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  let refTrigger = useRef(null);
+  let refContent = null; // must be assigned via getter in `Popper`
 
-  const handleTriggerClick = () => {
-    setIsActive(true);
+  // update active state on props change to accommodate fully controlled popovers
+  useEffect(() => {
+    setIsActive(interactionMode === 'controlled' && isOpen);
+  }, [interactionMode, isOpen]);
+
+  useEffect(() => {
+    document.body.addEventListener('mousedown', handleBodyClick, false);
+    if (interactionMode === 'hover') {
+      document.body.addEventListener('mousemove', handleBodyMouseMove, false);
+    }
+
+    return () => {
+      document.body.removeEventListener('mousedown', handleBodyClick, false);
+      if (interactionMode === 'hover') {
+        document.body.removeEventListener('mousemove', handleBodyMouseMove, false);
+      }
+    };
+  });
+
+  /**
+   * Closes popover when user clicks outside of content or trigger
+   * @param {Event} e DOMEvent
+   */
+  const handleBodyMouseMove = (e) => {
+    const isNotPopoverHover = isNotRefsEvent([refTrigger, refContent], e);
+    if (!isFocused && isNotPopoverHover) setIsActive(false);
+  };
+
+  /**
+   * Closes popover when user clicks outside of content or trigger
+   * @param {Event} e DOMEvent
+   */
+  const handleBodyClick = (e) => {
+    const isNotPopoverClick = isNotRefsEvent([refTrigger, refContent], e);
+    if (isNotPopoverClick) setIsActive(false);
+  };
+
+  let triggerProps = {};
+  switch (interactionMode) {
+    case 'hover':
+      triggerProps.onMouseEnter = () => {
+        setIsActive(true);
+      };
+      triggerProps.onFocus = () => {
+        setIsActive(true);
+        setIsFocused(true);
+      };
+      triggerProps.onBlur = () => {
+        setIsActive(false);
+        setIsFocused(false);
+      };
+      triggerProps.tabindex = '1';
+      break;
+    case 'click':
+      triggerProps.onClick = () => {
+        setIsActive(!isActive);
+      };
+      break;
+    default:
+      triggerProps = {};
+  }
+
+  // https://popper.js.org/popper-documentation.html#modifiers
+  const popperModifiers = {
+    offset: {
+      enabled: interactionMode !== 'hover',
+      offset: `0,${distance}`,
+    },
   };
 
   return (
-    <div className="fdsPopover">
-      <div ref={refTrigger} className="fdsPopover-trigger" onClick={handleTriggerClick}>
-        {trigger}
-      </div>
+    <Manager>
+      <Reference>
+        {({ ref }) => (
+          <div ref={ref}>
+            <div ref={refTrigger} {...triggerProps}>
+              {trigger}
+            </div>
+          </div>
+        )}
+      </Reference>
       {isActive &&
         ReactDOM.createPortal(
-          <PositionedContent
-            referenceRect={refTrigger.current.getBoundingClientRect()}
-            {...positionProps}
+          <Popper
+            innerRef={(node) => (refContent = node)}
+            modifiers={popperModifiers}
+            placement={getPopperPlacement(position, alignment)}
           >
-            {content}
-          </PositionedContent>,
+            {({ placement, ref, style }) => (
+              <div ref={ref} style={style} data-placement={placement}>
+                {children}
+              </div>
+            )}
+          </Popper>,
           document.body
         )}
-    </div>
+    </Manager>
   );
 };
 
 Popover.defaultProps = {
   interactionMode: 'click',
-  xPosition: 'left',
-  yPosition: 'bottom',
-  xOffset: 0,
-  yOffset: 4,
+  position: 'auto',
+  alignment: 'start',
+  distance: 4,
 };
 
 Popover.propTypes = {
@@ -75,7 +165,7 @@ Popover.propTypes = {
    * does not provide any default styling; content should be styled with background,
    * borders, and shadows as appropriate.
    */
-  content: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
 
   /**
    * What mode of interaction triggers the active/inactive state of the popover.
@@ -87,25 +177,25 @@ Popover.propTypes = {
    * `controlled` - enables "fully controlled" mode in which the popover is only active
    * when the `isActive` prop is set to `true`
    */
-  interactionMode: PropTypes.oneOf(['hover', 'click', 'controlled']),
+  interactionMode: PropTypes.oneOf(VALID_INTERACTION_MODES),
 
   /** Controlls active state of popover when in fully controlled interaction mode */
-  isActive: PropTypes.bool,
+  isOpen: PropTypes.bool,
 
   /** disables portaling the popover to `document.body` */
   disablePortal: PropTypes.bool,
 
-  /** positioning preference for horizontal alignment of popover relative to trigger */
-  xPosition: PropTypes.oneOf(['left', 'center', 'right']),
+  /**
+   * Places the popover content on the given side of the trigger.
+   * `top` for example, will place the popover content above the trigger.
+   */
+  position: PropTypes.oneOf(VALID_POSITIONS),
 
-  /** positioning preference for vertical alignment of popover relative to trigger */
-  yPosition: PropTypes.oneOf(['bottom', 'center', 'top']),
+  /** Controls alignment of popover content relative to trigger */
+  alignment: PropTypes.oneOf(VALID_ALIGNMENTS),
 
-  /** Number of pixes (negative or positive) to offset horizontal position */
-  xOffset: PropTypes.number,
-
-  /** Number of pixes (negative or positive) to offset vertical position */
-  yOffset: PropTypes.number,
+  /** Offset distance from trigger. Ignored in 'hover' interaction mode. */
+  distance: PropTypes.number,
 };
 
 export default Popover;
