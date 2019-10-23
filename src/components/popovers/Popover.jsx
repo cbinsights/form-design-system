@@ -9,13 +9,6 @@ export const VALID_ALIGNMENTS = ['start', 'end', 'center'];
 export const VALID_INTERACTION_MODES = ['hover', 'click', 'controlled'];
 
 /**
- * :TODO:
- * - disablePortal
- * - tests
- * - ESC key
- */
-
-/**
  * https://popper.js.org/popper-documentation.html#Popper.placements
  *
  * @param {String} position prop value
