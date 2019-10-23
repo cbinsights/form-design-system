@@ -58,7 +58,6 @@ const Popover = ({
   /**
    * Closes popover when user is mousing over a non-popover element if the
    * trigger is not focused.
-   *
    * 🎶 function should be sung to the tune of: https://youtu.be/LaTGrV58wec
    * @param {Event} e DOMEvent
    */
