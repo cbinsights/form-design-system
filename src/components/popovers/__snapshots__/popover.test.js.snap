@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover component matches snapshot (default props) 1`] = `
+<Manager>
+  <Reference>
+    <Component />
+  </Reference>
+</Manager>
+`;
+
+exports[`Popover component matches snapshot for disabled portal 1`] = `
+<Manager>
+  <Reference>
+    <Component />
+  </Reference>
+</Manager>
+`;

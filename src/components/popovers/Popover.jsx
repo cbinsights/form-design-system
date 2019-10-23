@@ -22,11 +22,11 @@ export const VALID_INTERACTION_MODES = ['hover', 'click', 'controlled'];
  * @param {String} alignment prop value
  * @returns {String} valid `placement` value for PopperJS `Popper` component
  */
-const getPopperPlacement = (position, alignment) => {
-  // Popperjs does not have a "center" alignment option. It centers by default.
+export const getPopperPlacement = (position, alignment) => {
+  // Popperjs does not have a "center" placement variation. It centers by default.
   // Our component explicitly accepts a `center` value for alignment.
-  const calculatedAlign = alignment === 'center' ? '' : `-${alignment}`;
-  return `${position}${calculatedAlign}`;
+  const variation = !alignment || alignment === 'center' ? '' : `-${alignment}`;
+  return `${position}${variation}`;
 };
 
 /**
@@ -114,7 +114,7 @@ const Popover = ({
         setIsActive(false);
         setIsFocused(false);
       };
-      triggerProps.tabindex = '1';
+      triggerProps.tabIndex = '1';
       break;
     case 'click':
       triggerProps.onClick = () => {
@@ -160,14 +160,15 @@ const Popover = ({
           </div>
         )}
       </Reference>
-      {isActive && disablePortal ? (
-        <PopperContent />
-      ) : (
-        ReactDOM.createPortal(
-          <PopperContent />,
-          document.body /* eslint-disable-line no-undef */
-        )
-      )}
+      {isActive &&
+        (disablePortal ? (
+          <PopperContent />
+        ) : (
+          ReactDOM.createPortal(
+            <PopperContent />,
+            document.body /* eslint-disable-line no-undef */
+          )
+        ))}
     </Manager>
   );
 };
