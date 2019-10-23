@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.28] Updated Button components
+
+- Adjusted icon size to be as high as text size
+
 ## [4.27] Fixed Button component
 
 - Updated Button Icon alignment to be centered
