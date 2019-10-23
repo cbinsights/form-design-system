@@ -9,13 +9,6 @@ export const VALID_ALIGNMENTS = ['start', 'end', 'center'];
 export const VALID_INTERACTION_MODES = ['hover', 'click', 'controlled'];
 
 /**
- * :TODO:
- * - disablePortal
- * - tests
- * - ESC key
- */
-
-/**
  * https://popper.js.org/popper-documentation.html#Popper.placements
  *
  * @param {String} position prop value
@@ -64,6 +57,7 @@ const Popover = ({
 
   /**
    * Closes popover when user clicks outside of content or trigger
+   * 🎶 function should be sang to the tune of: https://youtu.be/LaTGrV58wec
    * @param {Event} e DOMEvent
    */
   const handleBodyMouseMove = (e) => {
