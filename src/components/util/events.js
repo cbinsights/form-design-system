@@ -1,5 +1,12 @@
+/* eslint-disable import/prefer-default-export */
+
 /**
- * Checks if a DOMEvent is NOT on any of the given refs
+ * Checks if a DOMEvent is NOT on any of the given refs.
+ *
+ * For example:
+ * ```
+ * const isNotButtonClick = isNotRefsEvent([myButtonRef], e);
+ * ```
  *
  * @param {Array} refs react refs
  * @param {DOMEvent} e

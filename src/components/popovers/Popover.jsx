@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 import { isNotRefsEvent } from '../util/events';
@@ -11,9 +10,9 @@ export const VALID_INTERACTION_MODES = ['hover', 'click', 'controlled'];
 
 /**
  * :TODO:
- *
- * - aria roles
+ * - disablePortal
  * - tests
+ * - ESC key
  */
 
 /**
@@ -46,27 +45,22 @@ const Popover = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-  let refTrigger = useRef(null);
-  let refContent = null; // must be assigned via getter in `Popper`
+  const refTrigger = useRef(null);
+  let refContent = null; // must be assigned via setter fn in `Popper`
 
   // update active state on props change to accommodate fully controlled popovers
   useEffect(() => {
     setIsActive(interactionMode === 'controlled' && isOpen);
   }, [interactionMode, isOpen]);
 
-  useEffect(() => {
-    document.body.addEventListener('mousedown', handleBodyClick, false);
-    if (interactionMode === 'hover') {
-      document.body.addEventListener('mousemove', handleBodyMouseMove, false);
-    }
-
-    return () => {
-      document.body.removeEventListener('mousedown', handleBodyClick, false);
-      if (interactionMode === 'hover') {
-        document.body.removeEventListener('mousemove', handleBodyMouseMove, false);
-      }
-    };
-  });
+  /**
+   * Closes popover when user presses ESC
+   * @param {Event} e DOMEvent
+   */
+  const handleKeyPress = (e) => {
+    const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
+    if (isEscapeKey) setIsActive(false);
+  };
 
   /**
    * Closes popover when user clicks outside of content or trigger
@@ -85,6 +79,26 @@ const Popover = ({
     const isNotPopoverClick = isNotRefsEvent([refTrigger, refContent], e);
     if (isNotPopoverClick) setIsActive(false);
   };
+
+  useEffect(() => {
+    /* eslint-disable no-undef */
+    document.body.addEventListener('mousedown', handleBodyClick, false);
+    document.body.addEventListener('keyup', handleKeyPress, false);
+
+    if (interactionMode === 'hover') {
+      document.body.addEventListener('mousemove', handleBodyMouseMove, false);
+    }
+
+    return () => {
+      document.body.removeEventListener('mousedown', handleBodyClick, false);
+      document.body.removeEventListener('keyup', handleKeyPress, false);
+
+      if (interactionMode === 'hover') {
+        document.body.removeEventListener('mousemove', handleBodyMouseMove, false);
+      }
+    };
+    /* eslint-enable no-undef */
+  });
 
   let triggerProps = {};
   switch (interactionMode) {
@@ -119,32 +133,41 @@ const Popover = ({
     },
   };
 
+  const PopperContent = () => (
+    <Popper
+      innerRef={(node) => {
+        refContent = node;
+      }}
+      modifiers={popperModifiers}
+      placement={getPopperPlacement(position, alignment)}
+    >
+      {({ placement, ref, style }) => (
+        <div ref={ref} style={style} data-placement={placement}>
+          {children}
+        </div>
+      )}
+    </Popper>
+  );
+
   return (
     <Manager>
       <Reference>
         {({ ref }) => (
-          <div ref={ref}>
+          <div ref={ref} aria-haspopup="true" aria-expanded={isActive.toString()}>
             <div ref={refTrigger} {...triggerProps}>
               {trigger}
             </div>
           </div>
         )}
       </Reference>
-      {isActive &&
+      {isActive && disablePortal ? (
+        <PopperContent />
+      ) : (
         ReactDOM.createPortal(
-          <Popper
-            innerRef={(node) => (refContent = node)}
-            modifiers={popperModifiers}
-            placement={getPopperPlacement(position, alignment)}
-          >
-            {({ placement, ref, style }) => (
-              <div ref={ref} style={style} data-placement={placement}>
-                {children}
-              </div>
-            )}
-          </Popper>,
-          document.body
-        )}
+          <PopperContent />,
+          document.body /* eslint-disable-line no-undef */
+        )
+      )}
     </Manager>
   );
 };
@@ -157,7 +180,7 @@ Popover.defaultProps = {
 };
 
 Popover.propTypes = {
-  /** JSX - Acts as a positioning reference for the popover and triggers active state*/
+  /** JSX - Acts as a positioning reference for the popover and triggers active state */
   trigger: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
 
   /**

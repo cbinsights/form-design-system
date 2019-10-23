@@ -27,7 +27,7 @@ storiesOf('Popovers/Popover', module)
           arrayToOptions(VALID_INTERACTION_MODES),
           'click'
         )}
-        isOpen={boolean('isActive (only works in controlled mode)', false)}
+        isOpen={boolean('isOpen (only works in controlled mode)', false)}
       >
         <div className="bgColor--white rounded--all elevation--2 padding--all">
           <p>
