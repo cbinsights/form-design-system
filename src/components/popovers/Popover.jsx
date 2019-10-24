@@ -56,8 +56,8 @@ const Popover = ({
   };
 
   /**
-   * Closes popover when user is mousing over a non-popover element if the
-   * trigger is not focused.
+   * Closes popover when user is mousing over a non-popover element while the trigger
+   * is not focused.
    * 🎶 function should be sung to the tune of: https://youtu.be/LaTGrV58wec
    * @param {Event} e DOMEvent
    */
@@ -194,7 +194,7 @@ Popover.propTypes = {
    * `click` - popover opens on trigger click
    *
    * `controlled` - enables "fully controlled" mode in which the popover is only active
-   * when the `isActive` prop is set to `true`
+   * when the `isOpen` prop is set to `true`
    */
   interactionMode: PropTypes.oneOf(VALID_INTERACTION_MODES),
 

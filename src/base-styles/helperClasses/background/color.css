@@ -14,14 +14,19 @@ class to flip text colors for dark backgrounds**
 ```example:html
 <div class="bgColor--white">I have a background color</div>
 <div class="bgColor--haze">I have a background color</div>
-<div class="bgColor--navy inverted">I have a background color</div>
 <div class="bgColor--lightGray">I have a background color</div>
 <div class="bgColor--orange inverted">I have a background color</div>
+<div class="bgColor--charcoal inverted">I have a background color (and <code>inverted</code>)</div>
+<div class="bgColor--navy inverted">I have a background color (and <code>inverted</code>)</div>
 ```
 */
 
 .bgColor--white {
   background-color: var(--color-white);
+}
+
+.bgColor--charcoal {
+  background-color: var(--color-charcoal);
 }
 
 .bgColor--haze {
