@@ -1,17 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popover component matches snapshot (default props) 1`] = `
-<Manager>
-  <Reference>
-    <Component />
-  </Reference>
-</Manager>
-`;
-
-exports[`Popover component matches snapshot for disabled portal 1`] = `
-<Manager>
-  <Reference>
-    <Component />
-  </Reference>
-</Manager>
+<Popover
+  alignment="start"
+  distance={4}
+  interactionMode="click"
+  position="auto"
+  trigger={<Trigger />}
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        setReferenceNode={[Function]}
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          <div
+            onClick={[Function]}
+          >
+            <Trigger>
+              <button>
+                trigger
+              </button>
+            </Trigger>
+          </div>
+        </div>
+      </InnerReference>
+    </Reference>
+  </Manager>
+</Popover>
 `;

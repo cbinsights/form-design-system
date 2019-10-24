@@ -27,15 +27,6 @@ describe('Popover component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('matches snapshot for disabled portal', () => {
-    const wrapper = mount(
-      <Popover trigger={<Trigger />} disablePortal>
-        <Content />
-      </Popover>
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('ignores `isOpen` prop when not in controlled mode', () => {
     const wrapper = shallow(
       <Popover
