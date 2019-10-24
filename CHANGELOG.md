@@ -29,6 +29,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.26] Popovers
+
+- Added `.bgColor--charcoal` helper class
+- Added base `Popover` component
+- Added `Tooltip` component composed from `Popover`
+
 ## [4.25] Updated Button components
 
 - Added size prop to `Button` to component

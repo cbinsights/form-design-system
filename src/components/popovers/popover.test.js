@@ -19,7 +19,7 @@ const isPopperOpen = (w) => w.exists(SELECTOR_CONTENT);
 describe('Popover component', () => {
 
   it('matches snapshot (default props)', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Popover trigger={<Trigger />}>
         <Content />
       </Popover>
@@ -28,7 +28,7 @@ describe('Popover component', () => {
   });
 
   it('matches snapshot for disabled portal', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Popover trigger={<Trigger />} disablePortal>
         <Content />
       </Popover>

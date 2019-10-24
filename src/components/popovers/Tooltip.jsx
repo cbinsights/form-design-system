@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Popover from './Popover';
 
+export const DEFAULT_WIDTH = '240px';
+
 const Tooltip = ({ trigger, message, maxWidth }) => (
   <Popover
     interactionMode="hover"

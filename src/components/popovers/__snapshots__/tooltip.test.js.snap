@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
+<Tooltip
+  message="lol"
+  trigger={<Trigger />}
+>
+  <Popover
+    alignment="center"
+    distance={4}
+    interactionMode="hover"
+    position="bottom"
+    trigger={
+      <span
+        style={
+          Object {
+            "cursor": "help",
+          }
+        }
+      >
+        <Trigger />
+      </span>
+    }
+  >
+    <Manager>
+      <Reference>
+        <InnerReference
+          setReferenceNode={[Function]}
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <div
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              tabIndex="1"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "help",
+                  }
+                }
+              >
+                <Trigger>
+                  <p>
+                    trigger
+                  </p>
+                </Trigger>
+              </span>
+            </div>
+          </div>
+        </InnerReference>
+      </Reference>
+    </Manager>
+  </Popover>
+</Tooltip>
+`;
