@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.30] Updated Star Icons
+- Updated `StarEmpty` Icon
+- Updated `StarFilled` Icon
+
 ## [4.29] Added UserFilled Icon
 
 - Added `UserFilled` Icon
