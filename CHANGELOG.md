@@ -29,6 +29,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.31] Add background classes for gray and aqua.
+- Added bgColor--gray and bgColor--aqua helper classes
+
 ## [4.30] Updated Star Icons
 - Updated `StarEmpty` Icon
 - Updated `StarFilled` Icon
