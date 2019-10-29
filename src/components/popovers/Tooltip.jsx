@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FDS from '../../../lib/dictionary/js/styleConstants';
 import Popover from './Popover';
 
 export const DEFAULT_WIDTH = '240px';
@@ -8,6 +9,7 @@ const Tooltip = ({ trigger, message, maxWidth }) => (
   <Popover
     interactionMode="hover"
     trigger={<span style={{ cursor: 'help' }}>{trigger}</span>}
+    distance={FDS.SPACE_DEFAULT}
     position="bottom"
     alignment="center"
   >

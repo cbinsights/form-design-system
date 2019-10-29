@@ -62,7 +62,9 @@ const Popover = ({
    * @param {Event} e DOMEvent
    */
   const handleBodyMouseMove = (e) => {
-    const isNotPopoverHover = isNotRefsEvent([refTrigger, refContent], e);
+    // in hover mode, only treat the trigger as the popover zone
+    const refs = interactionMode === 'hover' ? [refTrigger] : [refTrigger, refContent];
+    const isNotPopoverHover = isNotRefsEvent(refs, e);
     if (!isFocused && isNotPopoverHover) setIsActive(false);
   };
 
@@ -123,7 +125,7 @@ const Popover = ({
   // https://popper.js.org/popper-documentation.html#modifiers
   const popperModifiers = {
     offset: {
-      enabled: interactionMode !== 'hover',
+      enabled: true,
       offset: `0,${distance}`,
     },
   };
@@ -213,7 +215,7 @@ Popover.propTypes = {
   /** Controls alignment of popover content relative to trigger */
   alignment: PropTypes.oneOf(VALID_ALIGNMENTS),
 
-  /** Offset distance from trigger. Ignored in 'hover' interaction mode. */
+  /** Offset distance from trigger. */
   distance: PropTypes.number,
 };
 

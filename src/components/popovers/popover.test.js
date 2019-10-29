@@ -122,12 +122,6 @@ describe('Popover component', () => {
       });
     });
 
-    it('ignores `distance` prop in hover mode', () => {
-      triggerEl.simulate('focus');
-      const modifiers = wrapper.find(SELECTOR_CONTENT).prop('modifiers');
-      expect(modifiers.offset.enabled).toBe(false);
-    });
-
     it('opens and closes popover on focus/blur', () => {
       expect(isPopperOpen(wrapper)).toBe(false);
       triggerEl.simulate('focus');
