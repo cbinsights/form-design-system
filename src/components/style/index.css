@@ -4,6 +4,9 @@
 /* Icon Styles */
 @import "../../icons/style/icons.css";
 
+/* Button Colors */
+@import "./buttonColors.css";
+
 /* Layout components */
 @import "./layout/flex.css";
 @import "./layout/section.css";
