@@ -29,6 +29,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.31] Added IconButton and StackedButton components
+
+- Added `IconButton` to components
+- Added `StackedButton` to components
+
 ## [4.30] Updated Star Icons
 - Updated `StarEmpty` Icon
 - Updated `StarFilled` Icon
