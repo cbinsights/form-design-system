@@ -44,13 +44,13 @@ IconButton.propTypes = {
   /** Controls spinner showing for icon button (normal icon is hidden) */
   isLoading: PropTypes.bool,
   /** Controls look and feel of button */
-  theme: PropTypes.oneOf('ghost', 'aqua'),
+  theme: PropTypes.oneOf(['ghost', 'aqua']),
   /** Controls destructive look and feel of button */
   isDestructive: PropTypes.bool,
   /** Controls whether the button is disabled or not. */
   disabled: PropTypes.bool,
   /** Used to render a FDS Icon (should only be used for FDS Icons) */
-  Icon: PropTypes.func.isRequred,
+  Icon: PropTypes.func,
 };
 
 export default IconButton;
