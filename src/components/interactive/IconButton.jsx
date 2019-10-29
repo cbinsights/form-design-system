@@ -5,7 +5,6 @@ import cx from 'classnames';
 const IconButton = ({
   Icon,
   disabled,
-  children,
   isActive,
   radius,
   theme,
@@ -52,8 +51,6 @@ IconButton.propTypes = {
   disabled: PropTypes.bool,
   /** Used to render a FDS Icon (should only be used for FDS Icons) */
   Icon: PropTypes.func.isRequred,
-  /** Contents inside the button */
-  children: PropTypes.node,
 };
 
 export default IconButton;

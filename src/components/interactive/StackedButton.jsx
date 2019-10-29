@@ -41,7 +41,7 @@ StackedButton.propTypes = {
   /** Used to render a FDS Icon (should only be used for FDS Icons) */
   Icon: PropTypes.func,
   /** Text inside the button */
-  label: PropTypes.node,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   /** Controls the active state, which changes UI (colors) */
   isActive: PropTypes.bool,
 };

@@ -3,22 +3,21 @@ import { shallow } from 'enzyme';
 
 import IconButton from './IconButton';
 
-const renderComponent = (props) => shallow(<Button {...props} />);
+const renderComponent = (props) => shallow(<IconButton {...props} />);
 
-const buttons = {
-  Link: () => {}, isLoading: true, isDestructive: true, disabled: true, iconPlacement: 'left',
-  Icon: () => {}, isFullWidth: true, theme: 'outlined'
+const props = {
+  Icon: () => {}, isActive: true, radius: 'circle', isLoading: true, theme: 'aqua', isDestructive: true, disabled: true
 };
 
 describe('ButtonGroup component', () => {
 
   it('matches snapshot (default props)', () => {
-    const component = renderComponent({ children: 'Button' });
+    const component = renderComponent({ Icon: () => {} });
     expect(component).toMatchSnapshot();
   });
 
   it('matches snapshot (set all props)', () => {
-    const component = renderComponent(buttons);
+    const component = renderComponent(props);
     expect(component).toMatchSnapshot();
   });
 });

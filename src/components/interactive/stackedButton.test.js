@@ -6,14 +6,13 @@ import Button from './Button';
 const renderComponent = (props) => shallow(<Button {...props} />);
 
 const buttons = {
-  Link: () => {}, isLoading: true, isDestructive: true, disabled: true, iconPlacement: 'left',
-  Icon: () => {}, isFullWidth: true, theme: 'outlined'
+  Link: () => {}, disabled: true, Icon: () => {}, label: 'button', isActive: true
 };
 
 describe('ButtonGroup component', () => {
 
   it('matches snapshot (default props)', () => {
-    const component = renderComponent({ children: 'Button' });
+    const component = renderComponent({ label: 'Button' });
     expect(component).toMatchSnapshot();
   });
 
