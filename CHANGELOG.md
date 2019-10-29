@@ -29,11 +29,34 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [4.26] Popovers
+## [4.31] Popovers
 
 - Added `.bgColor--charcoal` helper class
 - Added base `Popover` component
 - Added `Tooltip` component composed from `Popover`
+
+## [4.30] Updated Star Icons
+- Updated `StarEmpty` Icon
+- Updated `StarFilled` Icon
+
+## [4.29] Added UserFilled Icon
+
+- Added `UserFilled` Icon
+
+## [4.28] Updated Button components
+
+- Adjusted icon size to be as high as text size
+
+## [4.27] Fixed Button component
+
+- Updated Button Icon alignment to be centered
+- Added box-sizing: border-box to button
+- added correct font-size (was using fontSize--m which isn't a thing)
+
+## [4.26] `ol`/`ul` decoration
+
+- Added `list--decorated` class to add bullets/numbers to ordered or unordered lists.
+>>>>>>> master
 
 ## [4.25] Updated Button components
 
