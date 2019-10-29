@@ -7,7 +7,7 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
 >
   <Popover
     alignment="center"
-    distance={4}
+    distance="16px"
     interactionMode="hover"
     position="bottom"
     trigger={

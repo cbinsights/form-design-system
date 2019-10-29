@@ -4,6 +4,9 @@
 /* Icon Styles */
 @import "../../icons/style/icons.css";
 
+/* Transitions (for `react-transition-group`) */
+@import "./rtg/growFast";
+
 /* Layout components */
 @import "./layout/flex.css";
 @import "./layout/section.css";

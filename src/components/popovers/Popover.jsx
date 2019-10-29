@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
+import { CSSTransition } from 'react-transition-group';
 import { isNotRefsEvent } from '../util/events';
 
 export const VALID_POSITIONS = ['auto', 'top', 'right', 'bottom', 'left'];
@@ -35,6 +36,7 @@ const Popover = ({
   alignment,
   distance,
   isOpen,
+  transitionName,
 }) => {
   const [isActive, setIsActive] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
@@ -128,22 +130,40 @@ const Popover = ({
       enabled: true,
       offset: `0,${distance}`,
     },
+    computeStyle: {
+      // When gpuAcceleration is enabled, `react-popper` always
+      // positions content to top/left 0 and uses `translate3d` to
+      // nudge it into place.
+      //
+      // This can cause issues with CSS transitions because it sets
+      // `will-change: transform`, which forces transitions to also
+      // ease the `translate3d`, which causes an unintended
+      // "diagonal slide" effect as the content appears.
+      gpuAcceleration: false,
+    },
   };
 
-  const PopperContent = () => (
-    <Popper
-      innerRef={(node) => {
-        refContent = node;
-      }}
-      modifiers={popperModifiers}
-      placement={getPopperPlacement(position, alignment)}
+  const popperContent = (
+    <CSSTransition
+      in={isActive}
+      unmountOnExit
+      timeout={transitionName ? 200 : 0}
+      classNames={transitionName ? `rtg${transitionName}` : undefined}
     >
-      {({ placement, ref, style }) => (
-        <div ref={ref} style={style} data-placement={placement}>
-          {children}
-        </div>
-      )}
-    </Popper>
+      <Popper
+        innerRef={(node) => {
+          refContent = node;
+        }}
+        modifiers={popperModifiers}
+        placement={getPopperPlacement(position, alignment)}
+      >
+        {({ placement, ref, style }) => (
+          <div ref={ref} style={style} data-placement={placement}>
+            {children}
+          </div>
+        )}
+      </Popper>
+    </CSSTransition>
   );
 
   return (
@@ -157,15 +177,12 @@ const Popover = ({
           </div>
         )}
       </Reference>
-      {isActive &&
-        (disablePortal ? (
-          <PopperContent />
-        ) : (
-          ReactDOM.createPortal(
-            <PopperContent />,
+      {disablePortal
+        ? popperContent
+        : ReactDOM.createPortal(
+            popperContent,
             document.body /* eslint-disable-line no-undef */
-          )
-        ))}
+          )}
     </Manager>
   );
 };
@@ -217,6 +234,9 @@ Popover.propTypes = {
 
   /** Offset distance from trigger. */
   distance: PropTypes.number,
+
+  /** Name of transition for popover content */
+  transitionName: PropTypes.oneOf(['GrowFast']),
 };
 
 export default Popover;

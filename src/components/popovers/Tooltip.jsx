@@ -12,6 +12,7 @@ const Tooltip = ({ trigger, message, maxWidth }) => (
     distance={FDS.SPACE_DEFAULT}
     position="bottom"
     alignment="center"
+    transitionName="GrowFast"
   >
     <div
       role="tooltip"

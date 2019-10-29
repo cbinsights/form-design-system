@@ -1,0 +1,37 @@
+/**
+ * GrowFast transition.
+ *
+ * Classes to support CSSTransition
+ * from `react-transition-group`.
+ */
+
+:root {
+  --rtgGrowFast-timeout: 200ms;
+  --rtgGrowFast-easing: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.rtgGrowFast-enter {
+  opacity: 0.01;
+  transform: scale(0.75);
+}
+
+.rtgGrowFast-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform var(--rtgGrowFast-timeout) var(--rtgGrowFast-easing),
+    opacity var(--rtgGrowFast-timeout) var(--rtgGrowFast-easing);
+}
+
+/* BEGIN EXIT transition */
+.rtgGrowFast-exit {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform var(--rtgGrowFast-timeout) var(--rtgGrowFast-easing),
+    opacity var(--rtgGrowFast-timeout) var(--rtgGrowFast-easing);
+}
+
+/* END EXIT transition */
+.rtgGrowFast-exit-active {
+  opacity: 0.01;
+  transform: scale(0.75);
+}
