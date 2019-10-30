@@ -20,7 +20,7 @@ storiesOf('Popovers/Popover', module)
       <Popover
         trigger={<Button>Click Me</Button>}
         position={select('Position', arrayToOptions(VALID_POSITIONS), 'bottom')}
-        alignment={select('Alignment', arrayToOptions(VALID_ALIGNMENTS, 'start'))}
+        alignment={select('Alignment', arrayToOptions(VALID_ALIGNMENTS), 'start')}
         distance={number('Distance', 4)}
         interactionMode={select(
           'Interaction mode',
@@ -28,6 +28,8 @@ storiesOf('Popovers/Popover', module)
           'click'
         )}
         isOpen={boolean('isOpen (only works in controlled mode)', false)}
+        disablePortal={boolean('Disable portal', false)}
+        transitionName={select('Transition name', arrayToOptions(['GrowFast', '']), '')}
       >
         <div className="padding--all" style={{ outline: '3px dotted red' }}>
           popover content
