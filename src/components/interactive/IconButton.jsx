@@ -14,13 +14,11 @@ const IconButton = ({
 }) => (
   <button
     {...rest}
-    className={cx('fdsIconButton', 'rounded--all', {
+    className={cx('fdsIconButton', 'rounded--all', `fdsIconButton--${theme}`, {
       'fdsIconButton--disabled': disabled,
       'fdsIconButton--active': isActive,
       'fdsIconButton--circle': radius === 'circle',
       'fdsIconButton--isDestructive': isDestructive,
-      'fdsIconButton--aqua': theme === 'aqua',
-      'fdsIconButton--ghost': theme === 'ghost',
       'fdsIconButton--loading': isLoading,
     })}
     disabled={disabled}
