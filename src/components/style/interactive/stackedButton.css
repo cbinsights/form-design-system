@@ -4,7 +4,9 @@
   position: relative;
   line-height: normal;
   user-select: none;
-  display: flex;
+  display: inline-flex;
+  text-align: center;
+  vertical-align: top;
   flex-direction: column;
   padding: 5px 16px 9px;
   background-color: transparent;
