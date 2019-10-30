@@ -21,6 +21,7 @@
   --button-secondary-destructive-pressed: #ECD6D9;
 
   --button-focus: #B7D7E5;
+  --button-opacity: 0.38;
 
   /*
      * custom properties must be file-local thanks to our IE11
