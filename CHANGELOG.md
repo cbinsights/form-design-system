@@ -30,7 +30,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ---
 
 ## [4.33] Updated buttons
-- Updated buttons to have lower opacity for disabled states
+- Updated `IconButton`, `StackedButton`, and `Button` to have lower opacity for disabled states
 
 ## [4.32] Added IconButton and StackedButton components
 
