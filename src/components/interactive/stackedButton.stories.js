@@ -27,6 +27,7 @@ storiesOf('Interactive/StackedButton', module)
           disabled={boolean('disabled', false)}
           Icon={StarFilledIcon}
           label={text('Text', 'Button')}
+          isMulti={boolean('isMulti', false)}
         />
       </div>
     ),
