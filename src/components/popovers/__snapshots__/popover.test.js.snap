@@ -29,6 +29,32 @@ exports[`Popover component matches snapshot (default props) 1`] = `
         </div>
       </InnerReference>
     </Reference>
+    <Portal
+      containerInfo={<body />}
+    >
+      <CSSTransition
+        classNames=""
+        in={false}
+        timeout={0}
+        unmountOnExit={true}
+      >
+        <Transition
+          appear={false}
+          enter={true}
+          exit={true}
+          in={false}
+          mountOnEnter={false}
+          onEnter={[Function]}
+          onEntered={[Function]}
+          onEntering={[Function]}
+          onExit={[Function]}
+          onExited={[Function]}
+          onExiting={[Function]}
+          timeout={0}
+          unmountOnExit={true}
+        />
+      </CSSTransition>
+    </Portal>
   </Manager>
 </Popover>
 `;

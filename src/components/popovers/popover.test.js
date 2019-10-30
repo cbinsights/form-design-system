@@ -7,24 +7,28 @@ const Trigger = () => (<button>trigger</button>);
 const Content = () => (<p>popover content</p>);
 
 const SELECTOR_TRIGGER = '[aria-haspopup] > div';
-const SELECTOR_CONTENT = 'Popper'; // react-popper content displayName
 
 /**
  * @param {ReactWrapper} w enzyme react wrapper
- * @returns {Boolean} if the popper exists in the DOM
+ * @returns {Boolean} if the CSSTransition `in` prop is allowing the content to display
  */
-const isPopperOpen = (w) => w.exists(SELECTOR_CONTENT);
-
+const isPopperOpen = (w) => w.find('CSSTransition').prop('in');
 
 describe('Popover component', () => {
 
   it('matches snapshot (default props)', () => {
-    const wrapper = mount(
-      <Popover trigger={<Trigger />}>
-        <Content />
-      </Popover>
-    );
+    const wrapper = mount(<Popover trigger={<Trigger />}><Content /></Popover>);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('uses Portal by default', () => {
+    const wrapper = mount(<Popover trigger={<Trigger />}><Content /></Popover>);
+    expect(wrapper.exists('Portal')).toBe(true);
+  });
+
+  it('does NOT use Portal when disablePortal is set', () => {
+    const wrapper = mount(<Popover trigger={<Trigger />} disablePortal><Content /></Popover>);
+    expect(wrapper.exists('Portal')).toBe(false);
   });
 
   it('ignores `isOpen` prop when not in controlled mode', () => {
