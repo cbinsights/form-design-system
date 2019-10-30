@@ -6,7 +6,7 @@
   user-select: none;
   display: flex;
   flex-direction: column;
-  padding: 5px 16px;
+  padding: 5px 16px 9px;
   background-color: transparent;
   transition: background-color var(--button-timeout) var(--motion-easing-default),
     box-shadow var(--button-timeout) var(--motion-easing-default);
