@@ -4,6 +4,9 @@
 /* Icon Styles */
 @import "../../icons/style/icons.css";
 
+/* Variables */
+@import "./vars/buttonColors.css";
+
 /* Layout components */
 @import "./layout/flex.css";
 @import "./layout/section.css";
@@ -23,4 +26,6 @@
 @import "./interactive/buttonGroup.css";
 @import "./interactive/chips.css";
 @import "./interactive/button.css";
+@import "./interactive/stackedButton.css";
+@import "./interactive/iconButton.css";
 @import "./interactive/dialog.css";
