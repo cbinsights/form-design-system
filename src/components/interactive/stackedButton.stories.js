@@ -27,7 +27,7 @@ storiesOf('Interactive/StackedButton', module)
           disabled={boolean('disabled', false)}
           Icon={StarFilledIcon}
           label={text('Text', 'Button')}
-          isMulti={boolean('isMulti', false)}
+          hasCaret={boolean('hasCaret', false)}
         />
       </div>
     ),
@@ -49,7 +49,11 @@ storiesOf('Interactive/StackedButton', module)
           <StackedButton Icon={StarFilledIcon} label="Lorem Ipsum Dolor Sit Amet" />
         </div>
         <div className="margin--bottom--half">
-          <StackedButton Icon={CollectionPublicIcon} label="Add to Collections" isMulti />
+          <StackedButton
+            Icon={CollectionPublicIcon}
+            label="Add to Collections"
+            hasCaret
+          />
         </div>
         <div className="margin--bottom--half">
           <StackedButton Icon={StoryAddIcon} label="Add to Stories" />
