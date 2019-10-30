@@ -35,39 +35,37 @@ storiesOf('Interactive/StackedButton', module)
   .add('Variations', () => (
     <React.Fragment>
       <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
-        <div className="margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
           <StackedButton Icon={CaretDownIcon} label="Lorem" />
         </div>
-        <div className="margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
           <StackedButton Icon={StarFilledIcon} label="Lorem Ipsum" />
         </div>
-        <div className="margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
           <StackedButton Icon={StarFilledIcon} label="Lorem Ipsum Dolor" />
         </div>
-        <div className="margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
           <StackedButton Icon={StarFilledIcon} label="Lorem Ipsum Dolor Sit Amet" />
         </div>
-      </div>
-      <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
-        <div className="margin--right--half margin--bottom--half">
-          <StackedButton Icon={CollectionPublicIcon} label="Add to Collections" />
+        <div className="margin--bottom--half">
+          <StackedButton Icon={CollectionPublicIcon} label="Add to Collections" isMulti />
         </div>
-        <div className="margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
           <StackedButton Icon={StoryAddIcon} label="Add to Stories" />
         </div>
-        <div className="margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
           <StackedButton Icon={WorkFasterIcon} label="View Dossier" />
         </div>
-        <div className="margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
           <StackedButton Icon={SalesforceIcon} label="Salesforce Sync" />
         </div>
-        <div className="margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
           <StackedButton Icon={SalesforceIcon} label="Lorem" />
         </div>
-        <div className="margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
           <StackedButton Icon={SalesforceIcon} disabled label="Lorem Ipsum (Disabled)" />
         </div>
-        <div className="margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
           <StackedButton Icon={SalesforceIcon} isActive label="Lorem Ipsum (Active)" />
         </div>
       </div>

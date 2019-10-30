@@ -10,8 +10,8 @@
   background-color: transparent;
   transition: background-color var(--button-timeout) var(--motion-easing-default),
     box-shadow var(--button-timeout) var(--motion-easing-default);
-  min-height: 58px;
-  width: 60px;
+  min-height: 64px;
+  width: 64px;
   box-sizing: border-box;
   align-items: center;
   color: var(--button-secondary-color);
@@ -42,6 +42,8 @@
   color: var(--button-secondary-pressed-color);
 }
 
-.fdsStackedButton-icon {
-  min-height: 24px;
+.fdsStackedButton-iconWrapper {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
 }
