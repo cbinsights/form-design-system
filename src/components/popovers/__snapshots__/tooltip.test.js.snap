@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
+<Tooltip
+  message="lol"
+  trigger={<Trigger />}
+>
+  <Popover
+    alignment="center"
+    distance="16px"
+    interactionMode="hover"
+    position="bottom"
+    transitionName="GrowFast"
+    trigger={
+      <span
+        style={
+          Object {
+            "cursor": "help",
+          }
+        }
+      >
+        <Trigger />
+      </span>
+    }
+  >
+    <Manager>
+      <Reference>
+        <InnerReference
+          setReferenceNode={[Function]}
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <div
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              tabIndex="1"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "help",
+                  }
+                }
+              >
+                <Trigger>
+                  <p>
+                    trigger
+                  </p>
+                </Trigger>
+              </span>
+            </div>
+          </div>
+        </InnerReference>
+      </Reference>
+      <Portal
+        containerInfo={<body />}
+      >
+        <CSSTransition
+          classNames="rtgGrowFast"
+          in={false}
+          timeout={200}
+          unmountOnExit={true}
+        >
+          <Transition
+            appear={false}
+            enter={true}
+            exit={true}
+            in={false}
+            mountOnEnter={false}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            timeout={200}
+            unmountOnExit={true}
+          />
+        </CSSTransition>
+      </Portal>
+    </Manager>
+  </Popover>
+</Tooltip>
+`;
