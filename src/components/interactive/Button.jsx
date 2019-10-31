@@ -2,18 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import baseElement from '../../util/baseElement';
+import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
 
 const Button = ({
   theme,
-  isLoading,
   iconPlacement,
   Icon,
   Link,
+  size,
   disabled,
   children,
+  isLoading,
   isDestructive,
   isFullWidth,
-  size,
+  hasCaret,
   ...rest
 }) => {
   const Element = baseElement({ href: rest.href, as: Link });
@@ -62,6 +64,11 @@ const Button = ({
           <Icon customSize={iconSize} />
         </div>
       )}
+      {hasCaret && (
+        <div className="margin--left--half alignChild--center--center">
+          <CaretDownIcon customSize={12} />
+        </div>
+      )}
     </Element>
   );
 };
@@ -102,6 +109,8 @@ Button.propTypes = {
   Icon: PropTypes.func,
   /** Controls the button going full width */
   isFullWidth: PropTypes.bool,
+  /** Controls showing CaretDown icon (right aligned) */
+  hasCaret: PropTypes.bool,
   /** Used to control the display and theme of the button */
   theme: PropTypes.oneOf(['blue', 'outlined', 'ghost']),
   /** Used to control the size of the button */

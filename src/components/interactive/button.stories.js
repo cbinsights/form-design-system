@@ -3,7 +3,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
-import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
 import { arrayToOptions } from '../util/storybook';
 
 import Button from './Button';
@@ -36,6 +35,7 @@ storiesOf('Interactive/Button', module)
             disabled={boolean('disabled', false)}
             isLoading={boolean('isLoading', false)}
             isDestructive={boolean('isDestructive', false)}
+            hasCaret={boolean('hasCaret', false)}
             Icon={iconOptions ? StarFilledIcon : undefined}
             iconPlacement={iconOptions}
             isFullWidth={boolean('isFullWidth', false)}
@@ -64,7 +64,13 @@ storiesOf('Interactive/Button', module)
         </div>
 
         <div className="margin--right--half margin--botton--half">
-          <Button theme="blue" Icon={CaretDownIcon} size="s" iconPlacement="left">
+          <Button
+            theme="blue"
+            Icon={StarFilledIcon}
+            hasCaret
+            size="s"
+            iconPlacement="left"
+          >
             Button
           </Button>
         </div>
@@ -79,7 +85,7 @@ storiesOf('Interactive/Button', module)
         </div>
 
         <div className="margin--right--half margin--botton--half">
-          <Button theme="blue" Icon={CaretDownIcon}>
+          <Button theme="blue" hasCaret>
             Button
           </Button>
         </div>
