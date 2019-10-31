@@ -36,6 +36,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
+#### `MenuButton` component
+MenuButton component was removed. Please use
+StackedButton instead
+
 #### `mui-theme` Removed
 The material-ui theme object has been removed from FDS. Consumers are now responsible for
 declaring theme values for the material-ui framework.
