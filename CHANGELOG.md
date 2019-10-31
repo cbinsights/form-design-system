@@ -70,6 +70,12 @@ size values](https://github.com/cbinsights/form-design-system/blob/master/contri
 +<Chip size="m" />
 ```
 
+## [4.34] Popovers
+
+- Added `.bgColor--charcoal` helper class
+- Added base `Popover` component
+- Added `Tooltip` component composed from `Popover`
+
 ## [4.33] Updated buttons
 - Updated `IconButton`, `StackedButton`, and `Button` to have lower opacity for disabled states
 

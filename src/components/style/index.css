@@ -4,6 +4,9 @@
 /* Icon Styles */
 @import "../../icons/style/icons.css";
 
+/* Transitions (for `react-transition-group`) */
+@import "./rtg/growFast";
+
 /* Variables */
 @import "./vars/buttonColors.css";
 
@@ -22,11 +25,13 @@
 /* Interactive components */
 @import "./interactive/muiButtonShim.css";
 @import "./interactive/menuButton.css";
-@import "./interactive/toast.css";
-@import "./interactive/toaster.css";
 @import "./interactive/buttonGroup.css";
-@import "./interactive/chips.css";
 @import "./interactive/button.css";
 @import "./interactive/stackedButton.css";
 @import "./interactive/iconButton.css";
-@import "./interactive/dialog.css";
+@import "./interactive/chips.css";
+@import "./interactive/toast.css";
+@import "./interactive/toaster.css";
+
+/* Modal (Dialogs/Popovers) */
+@import "./modals/dialog.css";
