@@ -1,7 +1,13 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select, number, boolean } from '@storybook/addon-knobs';
+import {
+  withKnobs,
+  optionsKnob as options,
+  select,
+  number,
+  boolean,
+} from '@storybook/addon-knobs';
 import { arrayToOptions } from '../util/storybook';
 
 import Popover, {
@@ -19,13 +25,18 @@ storiesOf('Popovers/Popover', module)
     () => (
       <Popover
         trigger={<Button>Click Me</Button>}
-        position={select('Position', arrayToOptions(VALID_POSITIONS), 'bottom')}
-        alignment={select('Alignment', arrayToOptions(VALID_ALIGNMENTS), 'start')}
+        position={options('Position', arrayToOptions(VALID_POSITIONS), 'bottom', {
+          display: 'inline-radio',
+        })}
+        alignment={options('Alignment', arrayToOptions(VALID_ALIGNMENTS), 'start', {
+          display: 'inline-radio',
+        })}
         distance={number('Distance', 4)}
-        interactionMode={select(
+        interactionMode={options(
           'Interaction mode',
           arrayToOptions(VALID_INTERACTION_MODES),
-          'click'
+          'click',
+          { display: 'inline-radio' }
         )}
         isOpen={boolean('isOpen (only works in controlled mode)', false)}
         disablePortal={boolean('Disable portal', false)}
