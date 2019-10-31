@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Transition } from 'react-transition-group';
-import MuiButtonShim from '../interactive/MuiButtonShim';
-import DenyIcon from '../../../lib/icons/react/DenyIcon';
 import FDS from '../../../lib/dictionary/js/styleConstants';
+import IconButton from '../interactive/IconButton';
+import DenyIcon from '../../../lib/icons/react/DenyIcon';
 
 /**
  *
@@ -20,7 +20,7 @@ export const getCircleInfo = (circleSize, strokeWidth) => {
   };
 };
 
-const CountdownButton = ({ icon, duration, onClick }) => {
+const CountdownButton = ({ Icon, duration, onClick }) => {
   const circleSize = 34; // match size to MuiButtonShim size
   const strokeWidth = '2';
   const { r, c, centerOffset } = getCircleInfo(circleSize, strokeWidth);
@@ -55,13 +55,9 @@ const CountdownButton = ({ icon, duration, onClick }) => {
         height: `${circleSize}px`,
       }}
     >
-      <MuiButtonShim
-        className="countdownButton-button color--secondary"
-        onClick={onClick}
-        isRound
-      >
-        {icon}
-      </MuiButtonShim>
+      <div className="countdownButton-button">
+        <IconButton onClick={onClick} radius="circle" Icon={Icon} />
+      </div>
       <Transition
         in={true}
         appear
@@ -98,15 +94,15 @@ const CountdownButton = ({ icon, duration, onClick }) => {
 };
 
 CountdownButton.defaultProps = {
-  icon: <DenyIcon size="xs" color={FDS.FONT_COLOR_SECONDARY} />,
+  Icon: DenyIcon,
 };
 
 CountdownButton.propTypes = {
   /** Duration in ms of countdown animation */
   duration: PropTypes.number.isRequired,
 
-  /** Icon component to render inside the radial countdown */
-  icon: PropTypes.element,
+  /** Used to render a FDS Icon (should only be used for FDS Icons, e.g. Icon={DenyIcon}) */
+  Icon: PropTypes.func,
 
   /** Click callback for button */
   onClick: PropTypes.func,

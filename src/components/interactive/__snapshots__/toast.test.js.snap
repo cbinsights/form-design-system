@@ -53,13 +53,8 @@ exports[`Toast component matches snapshot (error) 1`] = `
           className="toast-constrainGrowth alignChild--center--center"
         >
           <CountdownButton
+            Icon={[Function]}
             duration={4000}
-            icon={
-              <DenyIcon
-                color="rgba(64, 64, 64, 0.60)"
-                size="xs"
-              />
-            }
           />
         </div>
       </FlexItem>
@@ -119,13 +114,8 @@ exports[`Toast component matches snapshot (info) 1`] = `
           className="toast-constrainGrowth alignChild--center--center"
         >
           <CountdownButton
+            Icon={[Function]}
             duration={4000}
-            icon={
-              <DenyIcon
-                color="rgba(64, 64, 64, 0.60)"
-                size="xs"
-              />
-            }
           />
         </div>
       </FlexItem>
@@ -222,13 +212,8 @@ exports[`Toast component matches snapshot (success) 1`] = `
           className="toast-constrainGrowth alignChild--center--center"
         >
           <CountdownButton
+            Icon={[Function]}
             duration={4000}
-            icon={
-              <DenyIcon
-                color="rgba(64, 64, 64, 0.60)"
-                size="xs"
-              />
-            }
           />
         </div>
       </FlexItem>
@@ -290,13 +275,8 @@ exports[`Toast component matches snapshot (warn) 1`] = `
           className="toast-constrainGrowth alignChild--center--center"
         >
           <CountdownButton
+            Icon={[Function]}
             duration={4000}
-            icon={
-              <DenyIcon
-                color="rgba(64, 64, 64, 0.60)"
-                size="xs"
-              />
-            }
           />
         </div>
       </FlexItem>

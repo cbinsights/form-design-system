@@ -10,7 +10,7 @@ import Button from './Button';
 import README from './Button.md';
 
 storiesOf('Interactive/Button', module)
-  .addDecorator(withKnobs)
+  .addDecorator(withKnobs({ escapeHTML: false }))
   .add(
     'Knobs',
     () => {
@@ -54,7 +54,10 @@ storiesOf('Interactive/Button', module)
         </div>
       );
     },
-    { notes: { markdown: README } }
+    {
+      notes: { markdown: README },
+      knobs: { escapeHTML: false },
+    }
   )
   .add('Variations', () => (
     <React.Fragment>

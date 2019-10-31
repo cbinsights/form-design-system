@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import MuiButtonShim from './MuiButtonShim';
+import IconButton from './IconButton';
 import CountdownButton from '../media/CountdownButton';
 
 import Toast from './Toast';
@@ -48,7 +48,7 @@ describe('Toast component', () => {
       onAction: () => {},
       actionLabel: 'action',
     });
-    const actionButton = component.find('.toast-action');
+    const actionButton = component.find('[data-test="toast-action"]');
     expect(actionButton).toHaveLength(1);
   });
 
@@ -76,8 +76,9 @@ describe('Toast component', () => {
     const component = renderByType('info', {
       isAutoDismiss: false,
     });
+
     const countdownButton = component.find(CountdownButton);
-    const standardButton = component.find(MuiButtonShim);
+    const standardButton = component.find(IconButton);
     expect(countdownButton).toHaveLength(0);
     expect(standardButton).toHaveLength(1);
   });
