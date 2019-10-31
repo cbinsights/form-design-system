@@ -64,13 +64,7 @@ storiesOf('Interactive/Button', module)
         </div>
 
         <div className="margin--right--half margin--botton--half">
-          <Button
-            theme="blue"
-            Icon={StarFilledIcon}
-            hasCaret
-            size="s"
-            iconPlacement="left"
-          >
+          <Button theme="blue" Icon={StarFilledIcon} size="s" iconPlacement="left">
             Button
           </Button>
         </div>
