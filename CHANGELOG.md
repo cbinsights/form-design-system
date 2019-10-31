@@ -29,11 +29,22 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [4.31] Popovers
+## [4.34] Popovers
 
 - Added `.bgColor--charcoal` helper class
 - Added base `Popover` component
 - Added `Tooltip` component composed from `Popover`
+
+## [4.33] Updated buttons
+- Updated `IconButton`, `StackedButton`, and `Button` to have lower opacity for disabled states
+
+## [4.32] Added IconButton and StackedButton components
+
+- Added `IconButton` to components
+- Added `StackedButton` to components
+
+## [4.31] Add background classes for gray and aqua.
+- Added bgColor--gray and bgColor--aqua helper classes
 
 ## [4.30] Updated Star Icons
 - Updated `StarEmpty` Icon
