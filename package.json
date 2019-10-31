@@ -141,6 +141,7 @@
   "dependencies": {
     "focus-trap-react": "^6.0.0",
     "no-scroll": "^2.1.1",
-    "raf-schd": "^4.0.2"
+    "raf-schd": "^4.0.2",
+    "snake-case": "^2.1.0"
   }
 }
