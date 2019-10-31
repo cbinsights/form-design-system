@@ -36,6 +36,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
+#### `Countdown` Component
+This component no longer accepts text as an icon. You must pass it
+a component (it will render the DenyIcon by default though)
+
 #### `mui-theme` Removed
 The material-ui theme object has been removed from FDS. Consumers are now responsible for
 declaring theme values for the material-ui framework.
