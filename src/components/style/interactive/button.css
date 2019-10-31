@@ -1,36 +1,8 @@
-:root {
-  --button-destructive: #DA4544;
-  --button-destructive-hover: #DC5151;
-  --button-destructive-pressed: #E37B7E;
-
-  --button-outlined-border: #C6C9CA;
-  --button-outlined-border-hover: #BFC3C7;
-  --button-outlined-border-pressed: #9EA5AA;
-
-  /*
-    calling the colors that outline and
-    ghost share by the name "secondary"
-  */
-  --button-secondary-hover: #E8EDF1;
-  --button-secondary-pressed: #CBD5DE;
-  --button-secondary-color: #868888;
-  --button-secondary-hover-color: #565656;
-  --button-secondary-pressed-color: #525355;
-  --button-secondary-destructive: #DA4544;
-  --button-secondary-destructive-hover: #F0EDEF;
-  --button-secondary-destructive-pressed: #ECD6D9;
-
-  /*
-   * custom properties must be file-local thanks to our IE11
-   * pollyfill. This timeout is copied from buttonGroup.css
-   */
-  --button-timeout: 250ms;
-}
-
 .fdsButton {
   border: 0 none;
   letter-spacing: 1px;
   font-weight: 500;
+  font-size: var(--font-size-default);
   position: relative;
   line-height: normal;
   user-select: none;
@@ -42,6 +14,7 @@
   transition: background-color var(--button-timeout) var(--motion-easing-default),
     box-shadow var(--button-timeout) var(--motion-easing-default);
   min-height: auto;
+  box-sizing: border-box;
 }
 
 .fdsButton--s {
@@ -54,7 +27,7 @@
 
 .fdsButton--loading,
 .fdsButton--disabled {
-  opacity: 0.6;
+  opacity: var(--button-opacity);
   pointer-events: none;
 }
 
@@ -95,7 +68,7 @@
 
 .fdsButton:focus {
   outline: 0;
-  box-shadow: 0 0 0 2px #B7D7E5;
+  box-shadow: 0 0 0 2px var(--button-focus);
 }
 
 .fdsButton--blue {
@@ -183,12 +156,6 @@
 .fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost)::before {
   border: 2px solid var(--button-destructive);
   border-top-color: transparent;
-}
-
-/* We're only using uppercase so we can shift the icon assuming there will not be any descenders */
-.fdsButton-icon {
-  margin-top: -4px;
-  margin-bottom: -2px;
 }
 
 .fdsButton-icon--left {

@@ -36,6 +36,9 @@
 /* Background Helpers */
 @import "./helperClasses/background/color";
 
+/* List Helpers */
+@import "./helperClasses/list/decorated";
+
 /* Typesetting */
 @import "./helperClasses/typeset/scale";
 @import "./helperClasses/typeset/links";

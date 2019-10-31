@@ -70,6 +70,40 @@ size values](https://github.com/cbinsights/form-design-system/blob/master/contri
 +<Chip size="m" />
 ```
 
+## [4.33] Updated buttons
+- Updated `IconButton`, `StackedButton`, and `Button` to have lower opacity for disabled states
+
+## [4.32] Added IconButton and StackedButton components
+
+- Added `IconButton` to components
+- Added `StackedButton` to components
+
+## [4.31] Add background classes for gray and aqua.
+- Added bgColor--gray and bgColor--aqua helper classes
+
+## [4.30] Updated Star Icons
+- Updated `StarEmpty` Icon
+- Updated `StarFilled` Icon
+
+## [4.29] Added UserFilled Icon
+
+- Added `UserFilled` Icon
+
+## [4.28] Updated Button components
+
+- Adjusted icon size to be as high as text size
+
+## [4.27] Fixed Button component
+
+- Updated Button Icon alignment to be centered
+- Added box-sizing: border-box to button
+- added correct font-size (was using fontSize--m which isn't a thing)
+
+## [4.26] `ol`/`ul` decoration
+
+- Added `list--decorated` class to add bullets/numbers to ordered or unordered lists.
+>>>>>>> master
+
 ## [4.25] Updated Button components
 
 - Added size prop to `Button` to component
