@@ -98,6 +98,7 @@
     "react-dom": "^16",
     "react-transition-group": "^2.6",
     "rimraf": "^2.6.2",
+    "snake-case": "^2.1.0",
     "storybook-addon-react-docgen": "^1.2.28",
     "style-dictionary": "^2.8.1",
     "stylelint": "^9.5.0",
