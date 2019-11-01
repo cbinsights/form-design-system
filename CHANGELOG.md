@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [4.35] Updated Button component
+
+- Added `hasCaret` prop to visually toggle right aligned caret
+
 ## [4.34] Popovers
 
 - Added `.bgColor--charcoal` helper class
