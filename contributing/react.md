@@ -30,12 +30,26 @@ reasons:
 
 ## Prop interface guidelines
 
+### `className`
+
+Do not accept `className`. Components should be customizable via props, not via code. This
+helps us maintain design standards.
+
+```diff
+-<FDSComponent className="customClassToMakeItBigger"
++<FDSComponent size="xl" />
+```
+
+### Size
+
 Always abstract size-related props into shirt sizes.
 
 ```diff
 -size: PropTypes.number,
 +size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl', '2xl', '3xl'])
 ```
+
+### Boolean props
 
 Avoid declaring variations of a component via boolean props. Use a `oneOf` prop type
 instead. This makes it easier to add or deprecate options in the future.
@@ -44,3 +58,24 @@ instead. This makes it easier to add or deprecate options in the future.
 -<Button isPrimary />
 +<Button type="primary" />
 ```
+
+If we know that an option will only ever have two options, it's okay to use a boolean
+prop.
+
+```diff
++disablePortal: PropTypes.bool
+```
+
+### Rest props (spreading)
+
+Avoid spreading props. Most components should be explicit about what they accept and
+ignore any other props passed in. Exceptions can be made for components that render
+attribute-heavy native DOM elements like buttons or inputs.
+
+**Good examples for spreading props**
+- `Button`
+- `TextInput`
+- `Form`
+
+**Bad components for spreading props**
+Everything else.
