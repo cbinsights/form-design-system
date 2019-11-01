@@ -7,7 +7,7 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
 >
   <Popover
     alignment="center"
-    distance="16px"
+    distance="8px"
     interactionMode="hover"
     position="bottom"
     transitionName="GrowFast"
