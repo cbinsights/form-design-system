@@ -257,9 +257,9 @@ Old JS color var       | New JS color var
 
 Old JS size var        | New JS size var
 ---------------------- | ----------------------
-`FONT_SIZE_HEADING1`   | `FONT_SIZE_4XL`
-`FONT_SIZE_HEADING2`   | `FONT_SIZE_3XL`
-`FONT_SIZE_HEADING3`   | `FONT_SIZE_2XL`
+`FONT_SIZE_HEADING1`   | `FONT_SIZE_4_XL`
+`FONT_SIZE_HEADING2`   | `FONT_SIZE_3_XL`
+`FONT_SIZE_HEADING3`   | `FONT_SIZE_2_XL`
 `FONT_SIZE_BIG`        | `FONT_SIZE_XL`
 `FONT_SIZE_SMALL`      | `FONT_SIZE_S`
 `FONT_SIZE_TINY`       | `FONT_SIZE_XS`
