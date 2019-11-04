@@ -20,7 +20,7 @@ describe('Section component', () => {
       <InlineBlockList
         separator="🎃"
         items={[
-          <a href="#">Spooky</a>,
+          <a key="👻" href="#">Spooky</a>,
           'snapshot',
         ]}
       />
