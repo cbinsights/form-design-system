@@ -21,12 +21,13 @@ textarea {
   vertical-align: middle;
 }
 
+input,
 select,
 textarea,
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
-input[type="datetime-local"],
+input[type="date-time-local"],
 input[type="date"],
 input[type="month"],
 input[type="time"],
@@ -49,9 +50,13 @@ input[type="color"] {
 button,
 input[type="color"],
 input[type="reset"],
+input[type="button"],
 input[type="submit"] {
+  border-width: 0;
   box-sizing: border-box;
-  min-height: var(--space-double);
+  color: var(--color-white);
+  background: var(--color-navy);
+  font-weight: var(--font-weight-bold);
 }
 
 button,
