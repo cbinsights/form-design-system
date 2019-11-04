@@ -34,10 +34,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
-#### `MenuButton` component
-MenuButton component was removed. Please use
-StackedButton instead
-
 #### `mui-theme` Removed
 The material-ui theme object has been removed from FDS. Consumers are now responsible for
 declaring theme values for the material-ui framework.
@@ -71,6 +67,32 @@ size values](https://github.com/cbinsights/form-design-system/blob/master/contri
 -<Chip size="md" />
 +<Chip size="m" />
 ```
+
+#### `MenuButton` component
+MenuButton component was removed. Please use StackedButton instead.
+
+```diff
+-<MenuButton />
++<StackedButton />
+```
+
+#### `Flex` and `FlexItem` components
+
+`className` is no longer supported. Move your custom classes to a parent or child.
+
+```diff
+-<FlexItem className="type--caption" />
++<FlexItem><div className="type--caption" /></FlexItem>
+```
+
+`dataTest` props are now ignored. Move your test data attributes to a parent or child.
+
+```diff
+-<Flex dataTest="lol" />
++<div data-test="lol"><Flex>...</Flex></div>
+```
+
+
 ## [4.35] Updated Button component
 
 - Added `hasCaret` prop to visually toggle right aligned caret
