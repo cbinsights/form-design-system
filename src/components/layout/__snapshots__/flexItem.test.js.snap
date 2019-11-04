@@ -3,13 +3,11 @@
 exports[`Flex component matches snapshot (default props) 1`] = `
 <div
   className="flexItem"
-  data-test=""
 />
 `;
 
 exports[`Flex component matches snapshot (set all props) 1`] = `
 <div
-  className="flexItem flexItem--shrink flexItem--justifySpaceBetween flexItem--alignCenter foo"
-  data-test=""
+  className="flexItem flexItem--shrink flexItem--justifySpaceBetween flexItem--alignCenter"
 />
 `;

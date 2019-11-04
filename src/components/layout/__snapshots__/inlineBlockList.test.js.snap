@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section component matches snapshot for mixed strings and components 1`] = `
+<ul
+  className="fdsInlineBlockList fdsInlineBlockList--separators"
+>
+  <li
+    className="display--inlineBlock"
+    data-separator="🎃"
+    key="🎃-0"
+  >
+    <a
+      href="#"
+      key="👻"
+    >
+      Spooky
+    </a>
+  </li>
+  <li
+    className="display--inlineBlock"
+    data-separator="🎃"
+    key="🎃-1"
+  >
+    snapshot
+  </li>
+</ul>
+`;
+
+exports[`Section component matches snapshot for string items 1`] = `
+<ul
+  className="fdsInlineBlockList fdsInlineBlockList--separators"
+>
+  <li
+    className="display--inlineBlock"
+    data-separator="🐍"
+    key="🐍-0"
+  >
+    why
+  </li>
+  <li
+    className="display--inlineBlock"
+    data-separator="🐍"
+    key="🐍-1"
+  >
+    did
+  </li>
+  <li
+    className="display--inlineBlock"
+    data-separator="🐍"
+    key="🐍-2"
+  >
+    it
+  </li>
+  <li
+    className="display--inlineBlock"
+    data-separator="🐍"
+    key="🐍-3"
+  >
+    have
+  </li>
+  <li
+    className="display--inlineBlock"
+    data-separator="🐍"
+    key="🐍-4"
+  >
+    to
+  </li>
+  <li
+    className="display--inlineBlock"
+    data-separator="🐍"
+    key="🐍-5"
+  >
+    be
+  </li>
+  <li
+    className="display--inlineBlock"
+    data-separator="🐍"
+    key="🐍-6"
+  >
+    snakes?
+  </li>
+</ul>
+`;
