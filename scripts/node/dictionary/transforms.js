@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const snakeCase = require('snake-case')
 const {
   materialTint,
   materialShade,
@@ -69,7 +69,7 @@ const toKebab = (prop) => getNameParts(prop).join('-');
  * @param {Object} prop style-dictionary prop
  * @returns {String} name string in constant (snake) format
  */
-const toConstant = (prop) => _.snakeCase(getNameParts(prop).join(' ')).toUpperCase();
+const toConstant = (prop) => snakeCase(getNameParts(prop).join(' ')).toUpperCase();
 
 /**
  * @param {Object} prop style-dictionary prop
