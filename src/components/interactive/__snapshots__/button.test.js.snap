@@ -27,5 +27,12 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
       customSize={16}
     />
   </div>
+  <div
+    className="margin--left--half alignChild--center--center"
+  >
+    <CaretDownIcon
+      customSize={12}
+    />
+  </div>
 </Link>
 `;

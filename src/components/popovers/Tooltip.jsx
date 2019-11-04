@@ -9,7 +9,7 @@ const Tooltip = ({ trigger, message, maxWidth }) => (
   <Popover
     interactionMode="hover"
     trigger={<span style={{ cursor: 'help' }}>{trigger}</span>}
-    distance={FDS.SPACE_DEFAULT}
+    distance={FDS.SPACE_HALF}
     position="bottom"
     alignment="center"
     transitionName="GrowFast"
