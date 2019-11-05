@@ -44,7 +44,7 @@ ButtonGroup.propTypes = {
     PropTypes.shape({
       /**
        * Takes in a react-router `Link` reference and sets it
-       * as the base element. You may ONLY  use it like the
+       * as the base element. You may ONLY use it like the
        * following:
        * ```
        * import { Link } from 'react-router'
