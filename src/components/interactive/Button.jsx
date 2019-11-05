@@ -81,9 +81,13 @@ Button.defaultProps = {
 
 Button.propTypes = {
   /**
-   * Pass **only** react-router `Link` here. You may **not**
-   * pass anything else here: SFC, Class Component, etc (even
-   * if they use react-router `Link` underneath the hood).
+   * Takes in a react-router `Link` reference and sets it
+   * as the base element. You may ONLY use it like the
+   * following:
+   * ```
+   * import { Link } from 'react-router'
+   * Link={Link}
+   * ```
    */
   Link: PropTypes.func,
   /**
@@ -105,7 +109,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   /** Controls which side the `Icon` renders on, assuming you pass it */
   iconPlacement: PropTypes.oneOf(['left', 'right']),
-  /** Used to render a FDS Icon (should only be used for FDS Icons) */
+  /**  Pass in "only" a FDS Icon reference to display it (e.g. Icon={ApproveIcon}) */
   Icon: PropTypes.func,
   /** Controls the button going full width */
   isFullWidth: PropTypes.bool,

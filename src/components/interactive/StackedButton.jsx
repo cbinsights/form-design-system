@@ -29,9 +29,13 @@ const StackedButton = ({ Icon, Link, label, disabled, isActive, hasCaret, ...res
 
 StackedButton.propTypes = {
   /**
-   * Pass **only** react-router `Link` here. You may **not**
-   * pass anything else here: SFC, Class Component, etc (even
-   * if they use react-router `Link` underneath the hood).
+   * Takes in a react-router `Link` reference and sets it
+   * as the base element. You may ONLY use it like the
+   * following:
+   * ```
+   * import { Link } from 'react-router'
+   * Link={Link}
+   * ```
    */
   Link: PropTypes.func,
   /**
@@ -40,7 +44,7 @@ StackedButton.propTypes = {
    * but will only add a disabled attribute for buttons
    */
   disabled: PropTypes.bool,
-  /** Used to render a FDS Icon (should only be used for FDS Icons) */
+  /**  Pass in "only" a FDS Icon reference to display it (e.g. Icon={ApproveIcon}) */
   Icon: PropTypes.func,
   /** Text inside the button */
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
