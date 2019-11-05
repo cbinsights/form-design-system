@@ -12,8 +12,6 @@
   border-radius: 20px;
   font-size: var(--font-size-s);
   line-height: 1;
-  margin-right: var(--space-half);
-  margin-bottom: calc(var(--space-half) / 2);
   display: inline-flex;
   align-items: center;
   padding: 5px 7px;
@@ -77,7 +75,7 @@
   color: var(--color-charcoal);
 }
 
-.fdsChip--small {
+.fdsChip--s {
   padding-top: 1px;
   padding-bottom: 1px;
 }

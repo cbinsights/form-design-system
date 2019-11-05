@@ -10,13 +10,11 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
   footerContent={
     <Flex
       align="stretch"
-      dataTest=""
       direction="row"
       justify="end"
       wrap={true}
     >
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <Button
@@ -28,7 +26,6 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
         </Button>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <Button
@@ -55,13 +52,11 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
   footerContent={
     <Flex
       align="stretch"
-      dataTest=""
       direction="row"
       justify="end"
       wrap={true}
     >
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <Button
@@ -73,7 +68,6 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
         </Button>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <Button
@@ -103,13 +97,11 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
   footerContent={
     <Flex
       align="stretch"
-      dataTest=""
       direction="row"
       justify="end"
       wrap={true}
     >
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <Button
@@ -121,7 +113,6 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
         </Button>
       </FlexItem>
       <FlexItem
-        dataTest=""
         shrink={true}
       >
         <Button
