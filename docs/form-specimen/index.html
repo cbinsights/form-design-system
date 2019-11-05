@@ -7,135 +7,149 @@
     <title>FDS Form Specimen</title>
     <link rel="stylesheet" href="../../lib/assets/all-styles.min.css" />
     <link rel="stylesheet" href="./custom.css" />
+
+    <style type="text/css">
+      .disabled--alphaBg {
+        background: rgba(var(--rgb-lightGray), 0.33) !important;
+      }
+      .disabled--lightBorder {
+        border-color: rgba(var(--rgb-timberwolf), 0.5) !important;
+      }
+    </style>
+
   </head>
   <body>
     <section class="padding--all--double flush--bottom">
       <h1 class="type--head1 color--navy">Form styles</h1>
     </section>
     <section class="padding--all--double">
-      <h2 class="type--head2 margin--bottom">Text-like <code>input</code> types</h2>
+      <h2 class="type--head3 margin--bottom">Text-like <code>input</code> types</h2>
 
       <div class="flex flex--row flex--wrap flex--noGutters">
 
         <div class="flexItem flexItem--shrink">
           <label for="text">Text</label>
-          <input id="text" type="text" />
+          <input id="text" type="text" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
           <label for="color">Color</label>
-          <input id="color" type="color" />
+          <input id="color" type="color" placeholder="Placeholder" />
         </div>
 
 
         <div class="flexItem flexItem--shrink">
           <label for="email">Email</label>
-          <input id="email" type="email" />
+          <input id="email" type="email" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
           <label for="file">File</label>
-          <input id="file" type="file" />
-        </div>
-
-        <div class="flexItem flexItem--shrink">
-          <label for="image">Image</label>
-          <input id="image" type="image" />
+          <input id="file" type="file" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
           <label for="number">Number</label>
-          <input id="number" type="number" />
+          <input id="number" type="number" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
           <label for="password">Password</label>
-          <input id="password" type="password" />
+          <input id="password" type="password" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
           <label for="search">Search</label>
-          <input id="search" type="search" />
+          <input id="search" type="search" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
           <label for="tel">Telephone</label>
-          <input id="tel" type="tel" />
+          <input id="tel" type="tel" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
           <label for="url">Url</label>
-          <input id="url" type="url" />
+          <input id="url" type="url" placeholder="Placeholder" />
         </div>
 
       </div>
     </section>
 
     <section class="padding--all--double">
-      <h2 class="type--head2 margin--bottom">Time <code>input</code> types</h2>
+      <h2 class="type--head3 margin--bottom">Time <code>input</code> types</h2>
 
       <div class="flex flex--row flex--wrap flex--noGutters">
         <div class="flexItem flexItem--shrink">
           <label for="date">Date</label>
-          <input id="date" type="date" />
+          <input id="date" type="date" placeholder="Placeholder" />
         </div>
         <div class="flexItem flexItem--shrink">
           <label for="datetime">Datetime</label>
-          <input id="datetime" type="datetime" />
+          <input id="datetime" type="datetime" placeholder="Placeholder" />
         </div>
         <div class="flexItem flexItem--shrink">
           <label for="datetime-local">Datetime local</label>
-          <input id="datetime-local" type="date-time-local" />
+          <input id="datetime-local" type="date-time-local" placeholder="Placeholder" />
         </div>
         <div class="flexItem flexItem--shrink">
           <label for="time">Time</label>
-          <input id="time" type="time" />
+          <input id="time" type="time" placeholder="Placeholder" />
         </div>
         <div class="flexItem flexItem--shrink">
           <label for="month">Month</label>
-          <input id="month" type="month" />
+          <input id="month" type="month" placeholder="Placeholder" />
         </div>
         <div class="flexItem flexItem--shrink">
           <label for="week">Week</label>
-          <input id="week" type="week" />
+          <input id="week" type="week" placeholder="Placeholder" />
+        </div>
+        <div class="flexItem flexItem--shrink">
+          <label for="year">Year</label>
+          <input id="year" type="year" placeholder="Placeholder" />
         </div>
       </div>
     </section>
 
     <!-- radios, checkboxes -->
     <section class="padding--all--double">
-      <h2 class="type--head2 margin--bottom">Special <code>input</code> types</h2>
+      <h2 class="type--head3 margin--bottom">Special <code>input</code> types</h2>
 
       <div class="flex flex--row flex--wrap flex--noGutters">
 
         <div class="flexItem flexItem--shrink">
           <label for="range">Range</label>
-          <input id="range" type="range" />
+          <input id="range" type="range" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
           <label for="radio">Radio</label>
-          <input id="radio" type="radio" />
+          <input id="radio" type="radio" placeholder="Placeholder" />
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="checkbox">Checkbox</label>
+          <input id="checkbox" type="checkbox" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
           <label for="reset">Reset</label>
-          <input id="reset" type="reset" />
+          <input id="reset" type="reset" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
-          <label for="range">Range</label>
-          <input id="password" type="password" />
+          <label for="button">Button</label>
+          <input id="button" type="button" value="Button" />
         </div>
 
         <div class="flexItem flexItem--shrink">
-          <label for="button">Input type button</label>
-          <input id="button" type="button" value="button" />
+          <label for="image">Image</label>
+          <input id="image" type="image" placeholder="Placeholder" />
         </div>
 
         <div class="flexItem flexItem--shrink">
           <label for="submit">Submit</label>
-          <input id="submit" type="submit" />
+          <input id="submit" type="submit" placeholder="Placeholder" />
         </div>
 
 
@@ -143,7 +157,7 @@
     </section>
 
     <section class="padding--all--double">
-      <h2 class="type--head2 margin--bottom">Other input types</h2>
+      <h2 class="type--head3 margin--bottom">Other input types</h2>
 
       <div class="flex flex--row flex--wrap flex--noGutters">
         <div class="flexItem flexItem--shrink">
@@ -163,7 +177,7 @@
 
         <div class="flexItem flexItem--shrink">
           <label for="datalist">Datalist</label>
-          <input list="datalist-list" id="datalist" />
+          <input list="datalist-list" id="datalist" placeholder="Placeholder" />
           <datalist id="datalist-list">
             <option value="Chrome">Chrome</option>
             <option value="Firefox">Firefox</option>
@@ -173,6 +187,162 @@
         </div>
 
       </div>
+    </section>
+
+    <section class="padding--all--double">
+      <h2 class="type--head3 margin--bottom">Disabled inputs</h2>
+
+      <div class="flex flex--row flex--wrap flex--noGutters">
+
+        <div class="flexItem flexItem--shrink">
+          <label for="text">Text</label>
+          <input id="text" type="text" placeholder="Placeholder" disabled />
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="color">Color</label>
+          <input id="color" type="color" placeholder="Placeholder" disabled />
+        </div>
+
+
+        <div class="flexItem flexItem--shrink">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Placeholder" disabled />
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="file">File</label>
+          <input id="file" type="file" placeholder="Placeholder" disabled />
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="number">Number</label>
+          <input id="number" type="number" placeholder="Placeholder" disabled />
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Placeholder" disabled />
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="Placeholder" disabled />
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="tel">Telephone</label>
+          <input id="tel" type="tel" placeholder="Placeholder" disabled />
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="url">Url</label>
+          <input id="url" type="url" placeholder="Placeholder" disabled />
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="textarea">Textarea</label>
+          <textarea id="textarea" type="textarea" disabled>disabled textarea</textarea>
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="select">Select</label>
+          <select id="select" disabled>
+            <option value="Chrome">Chrome</option>
+            <option value="Firefox">Firefox</option>
+            <option value="Safari">Safari</option>
+            <option value="💩 Internet Explorer 💩" />💩 Internet Explorer 💩</option>
+          </select>
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="radio">Radio</label>
+          <input id="radio" type="radio" placeholder="Placeholder" disabled />
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <label for="checkbox">Checkbox</label>
+          <input id="checkbox" type="checkbox" placeholder="Placeholder" disabled />
+        </div>
+
+      </div>
+    </section>
+
+    <section class="padding--all--double">
+      <h2 class="type--head3 margin--bottom">Options for disabled inputs</h2>
+
+      <div class="flex flex--row">
+
+        <div class="flexItem flexItem--shrink">
+          <div class="flex flex--column flex--noGutters padding--all border--all">
+            <div class="flexItem flexItem--shrink">
+              <h3 class="type--head4">0.33 Alpha lightGray</h3>
+            </div>
+            <div class="flexItem flexItem--shrink">
+              <label for="text">Text</label>
+              <input id="text" type="text" placeholder="Normal" />
+            </div>
+            <div class="flex flex--row flex--wrap flex--noGutters">
+              <div class="flexItem flexItem--shrink">
+                <label for="text">Text</label>
+                <input class="disabled--alphaBg" id="text" type="text" placeholder="Disabled" disabled />
+              </div>
+            </div>
+            <div class="flex flex--row flex--wrap flex--noGutters">
+              <div class="flexItem flexItem--shrink">
+                <div class="bgColor--white padding--all--half">
+                  <label for="text">Text</label>
+                  <input id="text" type="text" placeholder="Disabled" />
+                </div>
+              </div>
+            </div>
+            <div class="flex flex--row flex--wrap flex--noGutters">
+              <div class="flexItem flexItem--shrink">
+                <div class="bgColor--white padding--all--half">
+                  <label for="text">Text</label>
+                  <input class="disabled--alphaBg" id="text" type="text" placeholder="Normal" disabled />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flexItem flexItem--shrink">
+          <div class="flex flex--column flex--noGutters padding--all border--all">
+            <div class="flexItem flexItem--shrink">
+              <h3 class="type--head4">0.33 Alpha lightGray / lighter border</h3>
+            </div>
+            <div class="flexItem flexItem--shrink">
+              <label for="text">Text</label>
+              <input id="text" type="text" placeholder="Normal" />
+            </div>
+            <div class="flex flex--row flex--wrap flex--noGutters">
+              <div class="flexItem flexItem--shrink">
+                <label for="text">Text</label>
+                <input class="disabled--alphaBg disabled--lightBorder" id="text" type="text" placeholder="Disabled" disabled />
+              </div>
+            </div>
+            <div class="flex flex--row flex--wrap flex--noGutters">
+              <div class="flexItem flexItem--shrink">
+                <div class="bgColor--white padding--all--half">
+                  <label for="text">Text</label>
+                  <input id="text" type="text" placeholder="Disabled" />
+                </div>
+              </div>
+            </div>
+            <div class="flex flex--row flex--wrap flex--noGutters">
+              <div class="flexItem flexItem--shrink">
+                <div class="bgColor--white padding--all--half">
+                  <label for="text">Text</label>
+                  <input class="disabled--alphaBg disabled--lightBorder" id="text" type="text" placeholder="Normal" disabled />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   </body>
 </html>
