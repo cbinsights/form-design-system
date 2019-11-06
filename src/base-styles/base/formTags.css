@@ -24,6 +24,7 @@ textarea {
 
 select,
 textarea,
+input:not([type]),
 input[list],
 input[type="text"],
 input[type="password"],
@@ -39,12 +40,7 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"],
-input[type="file"],
-input[type="image"],
-input[type="color"],
-input[type="reset"],
-input[type="button"],
-input[type="submit"] {
+input[type="file"] {
   box-sizing: border-box;
   display: inline-block;
   padding: 4px var(--space-half);
@@ -53,18 +49,6 @@ input[type="submit"] {
   background: var(--color-white);
   min-width: var(--space-double);
   min-height: var(--space-double);
-}
-
-button,
-input[type="image"],
-input[type="reset"],
-input[type="button"],
-input[type="submit"] {
-  border-width: 0;
-  box-sizing: border-box;
-  color: var(--color-white);
-  background: var(--color-navy);
-  font-weight: var(--font-weight-bold);
 }
 
 
