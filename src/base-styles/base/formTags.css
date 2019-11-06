@@ -9,7 +9,6 @@ Form tag defaults
 label {
   display: block;
   margin-bottom: 4px;
-  font-weight: var(--font-weight-bold);
   color: var(--font-color-heading);
 }
 
@@ -50,7 +49,7 @@ input[type="submit"] {
   display: inline-block;
   padding: 4px var(--space-half);
   border-radius: 4px;
-  border: 1px solid var(--color-silver);
+  border: 1px solid rgba(var(--rgb-charcoal), 0.24);
   background: var(--color-white);
   min-width: var(--space-double);
   min-height: var(--space-double);
@@ -136,12 +135,12 @@ select:disabled,
 textarea:disabled,
 input:not([type="submit"]):disabled {
   color: var(--font-color-hint);
-  /*border-color: var(--color-lightGray);*/
+  background-color: var(--color-lightGray);
 }
 
 input[type="checkbox"]:disabled,
 input[type="radio"]:disabled {
-  background: var(--color-silver);
+  background: var(--color-lightGray);
 }
 
 /**
@@ -152,12 +151,14 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
 select:focus,
 textarea:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-aqua);
+  border-color: var(--color-aqua);
+  box-shadow: 0 0 0 2px rgba(var(--rgb-aqua), 0.6);
 }
 
 /* stylelint-disable selector-max-specific */
 :invalid:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
 .error:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus {
+  border-color: var(--color-red);
   box-shadow: 0 0 0 2px var(--color-red);
 }
 /* stylelint-enable */
