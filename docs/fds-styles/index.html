@@ -38,13 +38,13 @@
         <a class="menu-heading" href="#spacing-helpers"><span>Spacing Helpers</span></a>
         
     
-        <a class="menu-item" href="#spacingFlush"><span>Flush</span></a>
-        
-        
         <a class="menu-item" href="#spacingMargin"><span>Margin</span></a>
         
         
         <a class="menu-item" href="#spacingPadding"><span>Padding</span></a>
+        
+        
+        <a class="menu-item" href="#spacingFlush"><span>Flush</span></a>
         
         
   
@@ -55,10 +55,10 @@
         <a class="menu-item" href="#layoutMedia"><span>Media Sizing</span></a>
         
         
-        <a class="menu-item" href="#layoutDisplay"><span>Display</span></a>
-        
-        
         <a class="menu-item" href="#layoutWidth"><span>Width</span></a>
+        
+        
+        <a class="menu-item" href="#layoutDisplay"><span>Display</span></a>
         
         
   
@@ -88,13 +88,13 @@
         <a class="menu-heading" href="#position-helpers"><span>Position Helpers</span></a>
         
     
+        <a class="menu-item" href="#positionChildAlign"><span>Child Align</span></a>
+        
+        
         <a class="menu-item" href="#positionAlign"><span>Align</span></a>
         
         
         <a class="menu-item" href="#positionVAlign"><span>Vertical Align</span></a>
-        
-        
-        <a class="menu-item" href="#positionChildAlign"><span>Child Align</span></a>
         
         
   
@@ -196,6 +196,28 @@
       <div class="markdown-body">
         
         
+    <section id="positionChildAlign">
+      <h2 class="page-title">Child Align</h2>
+
+      <div class="markdown-body">
+        <p>Positions direct child(s) of element using flex properties.
+<strong>These classes modify <code>flex</code> properties</strong>. Avoid combining
+<code>alignChild</code> classes with flexbox layout elements.</p>
+<p>Classes follow this signature:</p>
+<pre><code class="lang-css">.alignChild--(left|right|center)--(top|bottom|center)
+</code></pre>
+<pre><code class="lang-example:html">&lt;div
+  class=&quot;alignChild--center--center&quot;
+  style=&quot;border: 1px dotted red; height: 100px; width: 100px;&quot;
+&gt;
+  &lt;div style=&quot;background: pink;&quot;&gt;child&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
     <section id="positionAlign">
       <h2 class="page-title">Align</h2>
 
@@ -257,28 +279,6 @@
 </tr>
 </tbody>
 </table>
-
-        
-      </div>
-    </section>
-    
-    <section id="positionChildAlign">
-      <h2 class="page-title">Child Align</h2>
-
-      <div class="markdown-body">
-        <p>Positions direct child(s) of element using flex properties.
-<strong>These classes modify <code>flex</code> properties</strong>. Avoid combining
-<code>alignChild</code> classes with flexbox layout elements.</p>
-<p>Classes follow this signature:</p>
-<pre><code class="lang-css">.alignChild--(left|right|center)--(top|bottom|center)
-</code></pre>
-<pre><code class="lang-example:html">&lt;div
-  class=&quot;alignChild--center--center&quot;
-  style=&quot;border: 1px dotted red; height: 100px; width: 100px;&quot;
-&gt;
-  &lt;div style=&quot;background: pink;&quot;&gt;child&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
 
         
       </div>
@@ -381,6 +381,37 @@ dimenions on the selected element to match standard media sizes.</p>
       </div>
     </section>
     
+    <section id="layoutWidth">
+      <h2 class="page-title">Width</h2>
+
+      <div class="markdown-body">
+        <p>Sets element width in percentage.</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>span--100</code></td>
+<td>Sets <code>width</code> to <code>100%</code></td>
+</tr>
+<tr>
+<td><code>span--50</code></td>
+<td>Sets <code>width</code> to <code>50%</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-example:html">&lt;p class=&quot;span--100&quot; style=&quot;background: pink;&quot;&gt;100% width&lt;/p&gt;
+&lt;p class=&quot;span--50&quot; style=&quot;background: pink;&quot;&gt;50% width&lt;/p&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
     <section id="layoutDisplay">
       <h2 class="page-title">Display</h2>
 
@@ -424,37 +455,6 @@ dimenions on the selected element to match standard media sizes.</p>
 </tr>
 </tbody>
 </table>
-
-        
-      </div>
-    </section>
-    
-    <section id="layoutWidth">
-      <h2 class="page-title">Width</h2>
-
-      <div class="markdown-body">
-        <p>Sets element width in percentage.</p>
-<table>
-<thead>
-<tr>
-<th>class</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>span--100</code></td>
-<td>Sets <code>width</code> to <code>100%</code></td>
-</tr>
-<tr>
-<td><code>span--50</code></td>
-<td>Sets <code>width</code> to <code>50%</code></td>
-</tr>
-</tbody>
-</table>
-<pre><code class="lang-example:html">&lt;p class=&quot;span--100&quot; style=&quot;background: pink;&quot;&gt;100% width&lt;/p&gt;
-&lt;p class=&quot;span--50&quot; style=&quot;background: pink;&quot;&gt;50% width&lt;/p&gt;
-</code></pre>
 
         
       </div>
@@ -636,53 +636,6 @@ illustrate depth below &quot;page surface&quot;.</p>
       <div class="markdown-body">
         
         
-    <section id="spacingFlush">
-      <h2 class="page-title">Flush</h2>
-
-      <div class="markdown-body">
-        <p>Removes spacing from the given side of an element.
-Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
-<table>
-<thead>
-<tr>
-<th>class</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>flush--top</code></td>
-<td>Removes top spacing from element</td>
-</tr>
-<tr>
-<td><code>flush--right</code></td>
-<td>Removes right spacing from element</td>
-</tr>
-<tr>
-<td><code>flush--bottom</code></td>
-<td>Removes bottom spacing from element</td>
-</tr>
-<tr>
-<td><code>flush--left</code></td>
-<td>Removes left spacing from element</td>
-</tr>
-<tr>
-<td><code>flush--all</code></td>
-<td>Removes spacing from all sides of an element</td>
-</tr>
-</tbody>
-</table>
-<h4 id="overriding-flush">Overriding <code>flush</code></h4>
-<p>Margin and padding utility classes can override a flush class:</p>
-<pre><code class="lang-html">  &lt;div class=&quot;flush--all padding--left&quot;&gt;
-    Removes all padding, then sets padding left.
-  &lt;/div&gt;
-</code></pre>
-
-        
-      </div>
-    </section>
-    
     <section id="spacingMargin">
       <h2 class="page-title">Margin</h2>
 
@@ -884,6 +837,53 @@ Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
 </tr>
 </tbody>
 </table>
+
+        
+      </div>
+    </section>
+    
+    <section id="spacingFlush">
+      <h2 class="page-title">Flush</h2>
+
+      <div class="markdown-body">
+        <p>Removes spacing from the given side of an element.
+Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flush--top</code></td>
+<td>Removes top spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--right</code></td>
+<td>Removes right spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--bottom</code></td>
+<td>Removes bottom spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--left</code></td>
+<td>Removes left spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--all</code></td>
+<td>Removes spacing from all sides of an element</td>
+</tr>
+</tbody>
+</table>
+<h4 id="overriding-flush">Overriding <code>flush</code></h4>
+<p>Margin and padding utility classes can override a flush class:</p>
+<pre><code class="lang-html">  &lt;div class=&quot;flush--all padding--left&quot;&gt;
+    Removes all padding, then sets padding left.
+  &lt;/div&gt;
+</code></pre>
 
         
       </div>
@@ -1303,7 +1303,7 @@ of clamping text to one line.</p>
         </main>
       </div>
       <footer class="footer">
-        Last modified Monday, 4 November 2019 17:20
+        Last modified Friday, 8 November 2019 15:21
       </footer>
     </div>
     <script src="prism.js?871234"></script>
