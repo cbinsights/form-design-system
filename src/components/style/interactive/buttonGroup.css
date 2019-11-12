@@ -73,8 +73,7 @@ for a button being clicked on (:active) */
 }
 
 .groupbtn-label {
-  padding-top: 7px;
-  padding-bottom: 6px;
+  padding: 8px 0;
 }
 
 .groupbtn:focus,
