@@ -6,6 +6,8 @@ import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
 import { arrayToOptions } from '../util/storybook';
 
 import Button from './Button';
+import IconButton from './IconButton';
+import ButtonGroup from './ButtonGroup';
 import README from './Button.md';
 
 storiesOf('Interactive/Button', module)
@@ -174,4 +176,31 @@ storiesOf('Interactive/Button', module)
         </div>
       </div>
     </React.Fragment>
+  ))
+  .add('Button Alignment', () => (
+    <div>
+      <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+        <div className="margin--right--half margin--bottom--half">
+          <Button>Button</Button>
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <Button Icon={StarFilledIcon}>Button</Button>
+        </div>
+
+        <div className="margin--right--half margin--botton--half">
+          <IconButton Icon={StarFilledIcon} theme="aqua" />
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <ButtonGroup buttons={[{ label: 'Lorem' }, { label: 'Ipsum' }]} />
+        </div>
+
+        <div className="margin--right--half margin--bottom--half">
+          <ButtonGroup
+            buttons={[{ label: 'Lorem', Icon: StarFilledIcon }, { label: 'Ipsum' }]}
+          />
+        </div>
+      </div>
+    </div>
   ));
