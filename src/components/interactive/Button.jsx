@@ -20,14 +20,6 @@ const Button = ({
 }) => {
   const Element = baseElement({ href: rest.href, as: Link });
 
-  // We want icon to be the same size as the text. This means it needs
-  // to be (fontsize + (font size * line-height)). Currently we use 14px font size,
-  // with normal line-height (normal line-height is 20% of font size).
-  // Buttons right now only have one font size, making this a bit easier,
-  // but this will need to be adapted if we start changing font size when
-  // the button changes size.
-  const iconSize = Math.floor(14 + 14 * 0.2);
-
   return (
     <Element
       {...rest}
@@ -51,7 +43,9 @@ const Button = ({
       )}
       disabled={disabled && Element === 'button'}
     >
-      <span className={cx({ 'fdsButton--hidden': isLoading })}>{children}</span>
+      <span className={cx('fdsButton-label', { 'fdsButton--hidden': isLoading })}>
+        {children}
+      </span>
       {Icon && (
         <div
           className={cx('alignChild--center--center', {
@@ -61,7 +55,7 @@ const Button = ({
             'fdsButton--hidden': isLoading,
           })}
         >
-          <Icon customSize={iconSize} />
+          <Icon customSize={size === 's' ? 16 : 18} />
         </div>
       )}
       {hasCaret && (

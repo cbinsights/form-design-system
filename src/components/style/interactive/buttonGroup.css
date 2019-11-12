@@ -1,6 +1,5 @@
 :root {
   --button-group-timeout: 250ms;
-  --button-group-focus-color: rgba(0, 51, 102, 0.32);
   --button-group-hover-color: #DEE5EB;
   --button-group-pressed-color: #C2CEDA;
   --button-group-active-color: #DBE2E9;
@@ -55,7 +54,7 @@ for a button being clicked on (:active) */
 .groupbtn {
   border: 1px solid var(--color-silver);
   border-radius: var(--border-radius-default);
-  padding: 8px 12px;
+  padding: 0 12px;
   font-size: 12px;
   color: var(--color-slate);
   font-weight: var(--font-weight-bold);
@@ -64,6 +63,7 @@ for a button being clicked on (:active) */
   display: inline-flex;
   align-items: center;
   user-select: none;
+  min-height: auto;
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
     box-shadow var(--button-group-timeout) var(--motion-easing-default),
     border var(--button-group-timeout) var(--motion-easing-default),
@@ -72,8 +72,9 @@ for a button being clicked on (:active) */
   background-color: transparent;
 }
 
-.groupbtn .fds-icon {
-  fill: currentColor;
+.groupbtn-label {
+  padding-top: 7px;
+  padding-bottom: 6px;
 }
 
 .groupbtn:focus,
@@ -86,7 +87,7 @@ for a button being clicked on (:active) */
   background-color: none;
   /* this box-shadow acts as outline that conforms
   to border-radius, unlike outline  */
-  box-shadow: 0 0 0 3px var(--button-group-focus-color);
+  box-shadow: 0 0 0 2px var(--button-focus);
   outline: 0;
   color: var(--color-charcoal);
 }
