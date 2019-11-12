@@ -8,6 +8,7 @@ import StoryAddIcon from '../../../lib/icons/react/StoryAddIcon';
 import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
 import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
 import { arrayToOptions } from '../util/storybook';
+import { MockLink } from '../util/mock-react-router';
 
 import IconButton from './IconButton';
 import Button from './Button';
@@ -44,10 +45,10 @@ storiesOf('Interactive/IconButton', module)
     <React.Fragment>
       <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
         <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={CollectionPublicIcon} />
+          <IconButton Icon={CollectionPublicIcon} href="#" />
         </div>
         <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={StoryAddIcon} />
+          <IconButton Icon={StoryAddIcon} Link={MockLink} />
         </div>
         <div className="margin--right--half margin--bottom--half">
           <IconButton Icon={WorkFasterIcon} />
