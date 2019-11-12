@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import baseElement from '../../util/baseElement';
 
 const IconButton = ({
   Icon,
@@ -10,24 +11,28 @@ const IconButton = ({
   theme,
   isLoading,
   isDestructive,
+  Link,
   ...rest
-}) => (
-  <button
-    {...rest}
-    className={cx('fdsIconButton', 'rounded--all', `fdsIconButton--${theme}`, {
-      'fdsIconButton--disabled': disabled,
-      'fdsIconButton--active': isActive,
-      'fdsIconButton--circle': radius === 'circle',
-      'fdsIconButton--isDestructive': isDestructive,
-      'fdsIconButton--loading': isLoading,
-    })}
-    disabled={disabled}
-  >
-    <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
-      <Icon size="xs" />
-    </span>
-  </button>
-);
+}) => {
+  const Element = baseElement({ href: rest.href, as: Link });
+  return (
+    <Element
+      {...rest}
+      className={cx('fdsIconButton', 'rounded--all', `fdsIconButton--${theme}`, {
+        'fdsIconButton--disabled': disabled,
+        'fdsIconButton--active': isActive,
+        'fdsIconButton--circle': radius === 'circle',
+        'fdsIconButton--isDestructive': isDestructive,
+        'fdsIconButton--loading': isLoading,
+      })}
+      disabled={disabled && Element === 'button'}
+    >
+      <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
+        <Icon size="xs" />
+      </span>
+    </Element>
+  );
+};
 
 IconButton.defaultProps = {
   radius: 'square',
@@ -35,6 +40,16 @@ IconButton.defaultProps = {
 };
 
 IconButton.propTypes = {
+  /**
+   * Takes in a react-router `Link` reference and sets it
+   * as the base element. You may ONLY use it like the
+   * following:
+   * ```
+   * import { Link } from 'react-router'
+   * Link={Link}
+   * ```
+   */
+  Link: PropTypes.func,
   /** Controls active style UI of button */
   isActive: PropTypes.bool,
   /** Controls radius of button (slightly rounded square, or circle) */

@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [5.2] Update IconButton
+
+- Added ability to pass `href` or `Link` prop to `IconButton` component
+
 ## [5.1] Helper class specificity
 
 - Change source order for some helper classes in `base-styles`
