@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 import { CSSTransition } from 'react-transition-group';
+import FDS from '../../../lib/dictionary/js/styleConstants';
 import { isNotRefsEvent } from '../util/events';
 
 export const VALID_POSITIONS = ['auto', 'top', 'right', 'bottom', 'left'];
@@ -143,6 +144,10 @@ const Popover = ({
     },
   };
 
+  const contentStyle = {
+    zIndex: FDS.ZINDEX_POPOVER,
+  };
+
   const popperContent = (
     <CSSTransition
       in={isActive}
@@ -158,7 +163,14 @@ const Popover = ({
         placement={getPopperPlacement(position, alignment)}
       >
         {({ placement, ref, style }) => (
-          <div ref={ref} style={style} data-placement={placement}>
+          <div
+            ref={ref}
+            style={{
+              ...contentStyle,
+              ...style,
+            }}
+            data-placement={placement}
+          >
             {children}
           </div>
         )}
