@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [5.3] Updated IconButton
+
+- Added small IconButton: `size="s"`
+- Default IconButton size now becomes medium: `size="m"`
+
 ## [5.2] Updated Interactive Button components
 
 - Make all default interactive buttons be 32px computed height: `Button`, `IconButton`, and `GroupButton`

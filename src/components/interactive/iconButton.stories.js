@@ -10,7 +10,6 @@ import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
 import { arrayToOptions } from '../util/storybook';
 
 import IconButton from './IconButton';
-import Button from './Button';
 import README from './IconButton.md';
 
 storiesOf('Interactive/IconButton', module)
@@ -31,6 +30,9 @@ storiesOf('Interactive/IconButton', module)
           theme={options('theme', arrayToOptions(['ghost', 'aqua']), undefined, {
             display: 'inline-radio',
           })}
+          size={options('size', arrayToOptions(['s', 'm']), undefined, {
+            display: 'inline-radio',
+          })}
           radius={options('radius', arrayToOptions(['square', 'circle']), undefined, {
             display: 'inline-radio',
           })}
@@ -44,28 +46,16 @@ storiesOf('Interactive/IconButton', module)
     <React.Fragment>
       <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
         <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={CollectionPublicIcon} />
-        </div>
-        <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={StoryAddIcon} />
-        </div>
-        <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={WorkFasterIcon} />
-        </div>
-        <div className="margin--right--half margin--bottom--half">
           <IconButton Icon={SalesforceIcon} />
         </div>
         <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={SalesforceIcon} />
+          <IconButton Icon={CollectionPublicIcon} disabled />
         </div>
         <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={SalesforceIcon} disabled />
+          <IconButton Icon={StoryAddIcon} isActive />
         </div>
         <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={SalesforceIcon} isActive />
-        </div>
-        <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={SalesforceIcon} isActive isDestructive />
+          <IconButton Icon={WorkFasterIcon} isActive isDestructive />
         </div>
         <div className="margin--right--half margin--bottom--half">
           <IconButton theme="aqua" Icon={SalesforceIcon} />
@@ -73,12 +63,6 @@ storiesOf('Interactive/IconButton', module)
         <div className="margin--right--half margin--bottom--half">
           <IconButton theme="aqua" disabled Icon={SalesforceIcon} />
         </div>
-        <div className="margin--right--half margin--bottom--half">
-          <Button>Button</Button>
-        </div>
-      </div>
-      <br />
-      <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
         <div className="margin--right--half margin--bottom--half">
           <IconButton Icon={CollectionPublicIcon} radius="circle" />
         </div>
@@ -118,8 +102,25 @@ storiesOf('Interactive/IconButton', module)
         <div className="margin--right--half margin--bottom--half">
           <IconButton Icon={SalesforceIcon} radius="circle" isLoading isDestructive />
         </div>
+        <br />
+      </div>
+      <br />
+      <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+        <p className="margin--right">small:</p>
         <div className="margin--right--half margin--bottom--half">
-          <Button>Button</Button>
+          <IconButton size="s" theme="aqua" Icon={SalesforceIcon} />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <IconButton radius="circle" size="s" theme="aqua" Icon={SalesforceIcon} />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <IconButton
+            size="s"
+            theme="aqua"
+            Icon={SalesforceIcon}
+            radius="circle"
+            isLoading
+          />
         </div>
       </div>
     </React.Fragment>
