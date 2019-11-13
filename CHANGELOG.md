@@ -27,6 +27,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [5.3] Updated Button
+- Adjusted padding on small button
+
 ## [5.2] Updated Interactive Button components
 
 - Make all default interactive buttons be 32px computed height: `Button`, `IconButton`, and `GroupButton`
