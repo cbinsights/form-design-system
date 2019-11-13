@@ -27,6 +27,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [5.2] Medium weight font
+Adds full support to FDS for medium weight Roboto.
+
+- Adds `medium` weight to dictionary font weights
+- Adds `fontWeight--medium` helper class
+- Replaces hard coded `500` weights in components to use new dictionary var
+
 ## [5.2] Updated Interactive Button components
 
 - Make all default interactive buttons be 32px computed height: `Button`, `IconButton`, and `GroupButton`

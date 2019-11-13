@@ -7,12 +7,17 @@ Modifies weight of text.
 
 ```example:html
 <p class="fontWeight--bold">Bold Text</p>
+<p class="fontWeight--medium">Medium</p>
 <p class="fontWeight--book">Book Text</p>
 <p class="type--head3">Modifiers <span class="fontWeight--book">override</span> default styles</p>
 ```
 */
 .fontWeight--bold {
   font-weight: var(--font-weight-bold) !important;
+}
+
+.fontWeight--medium {
+  font-weight: var(--font-weight-medium) !important;
 }
 
 .fontWeight--book {
