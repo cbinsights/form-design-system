@@ -27,7 +27,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [5.2] Medium weight font
+## [5.3] Medium weight font
 Adds full support to FDS for medium weight Roboto.
 
 - Adds `medium` weight to dictionary font weights
