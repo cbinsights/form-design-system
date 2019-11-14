@@ -9,7 +9,7 @@
   /* We do this to make sure buttons with borders and without are the same dimensions */
   border: 1px solid transparent;
   /* we remove 1px off each side as there's a border we need to compensate for */
-  padding: calc(var(--space-half) - 1px) calc(var(--space-default) - 1px);
+  padding: 0 calc(var(--space-default) - 1px);
   background-color: transparent;
   transition: background-color var(--button-timeout) var(--motion-easing-default),
     box-shadow var(--button-timeout) var(--motion-easing-default);
@@ -17,8 +17,18 @@
   box-sizing: border-box;
 }
 
+.fdsButton-label {
+  padding: 7px 0;
+}
+
 .fdsButton--s {
-  padding: calc(6px - 1px) calc(var(--space-half) - 1px);
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.fdsButton--s .fdsButton-label {
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .fdsButton--isFullWidth {

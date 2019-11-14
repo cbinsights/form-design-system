@@ -5,7 +5,7 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
   className="fdsButton fontStyle--caps display--inlineFlex rounded--all alignChild--center--center fdsButton--m fdsButton--blue"
 >
   <span
-    className=""
+    className="fdsButton-label"
   >
     Button
   </span>
@@ -18,13 +18,13 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
   disabled={false}
 >
   <span
-    className="fdsButton--hidden"
+    className="fdsButton-label fdsButton--hidden"
   />
   <div
     className="alignChild--center--center fdsButton-icon--left margin--right--half fdsButton--hidden"
   >
     <Icon
-      customSize={16}
+      customSize={18}
     />
   </div>
   <div
