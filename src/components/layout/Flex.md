@@ -1,5 +1,3 @@
-# Flex
-
 Flex is an abstraction of CSS flexbox that provides a subset of flexbox functionality.
 
 **A `Flex` should only contain `FlexItem` children**.
