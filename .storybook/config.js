@@ -18,11 +18,6 @@ addParameters({
 });
 
 addDecorator(withPropsTable);
-addDecorator(story => (
-  <div className="margin--all">
-    {story()}
-  </div>
-));
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src/components', true, /\.stories\.js$/);
