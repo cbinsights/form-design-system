@@ -26,6 +26,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [5.2] Updated Sort Icons
+- Updated `SortUp` Icon
+- Updated `SortDown` Icon
 
 ## [5.2] Updated Interactive Button components
 
