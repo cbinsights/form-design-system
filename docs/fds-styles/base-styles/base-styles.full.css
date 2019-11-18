@@ -1,85 +1,85 @@
 /* Custom properties */
 /**
  * Do not edit directly
- * Generated on Wed, 13 Nov 2019 16:42:01 GMT
+ * Generated on Mon, 18 Nov 2019 22:19:50 GMT
  */
 :root {
- --border-radius-default: 4px;
- --color-charcoal: #404040;
- --color-slate: #757575;
- --color-gray: #a2a0a0;
- --color-silver: #c2bfbf;
- --color-timberwolf: #d6d4d4;
- --color-lightGray: #f2f2f2;
- --color-white: #ffffff;
- --color-navy: #003366;
- --color-blue: #006699;
- --color-aqua: #4cabce;
- --color-sky: #bbdbe5;
- --color-haze: #f1f5f7;
- --color-red: #e5323e;
- --color-orange: #ff6633;
- --color-sienna: #f9a862;
- --color-sand: #fcc89a;
- --color-green: #00986b;
- --color-mint: #70c390;
- --color-purple: #a02385;
- --color-violet: #d772ad;
- --font-color-link: #006699;
- --font-color-linkInverted: #4cabce;
- --font-color-heading: #404040;
- --font-color-primary: rgba(64, 64, 64, 0.87);
- --font-color-secondary: rgba(64, 64, 64, 0.60);
- --font-color-hint: rgba(64, 64, 64, 0.38);
- --font-color-headingInverted: #ffffff;
- --font-color-primaryInverted: rgba(255, 255, 255, 0.87);
- --font-color-secondaryInverted: rgba(255, 255, 255, 0.60);
- --font-color-hintInverted: rgba(255, 255, 255, 0.38);
- --font-color-error: #e5323e;
- --font-color-success: #00986b;
- --font-color-errorInverted: #e5323e;
- --font-color-successInverted: #70c390;
- --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
- --font-family-default: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
- --font-family-mono: Monaco, Consolas, monospace;
- --font-lineHeight-bigText: 1.2;
- --font-lineHeight-default: 1.5;
- --font-lineHeight-smallText: 1.8;
- --font-size-xs: 10px;
- --font-size-s: 12px;
- --font-size-m: 14px;
- --font-size-default: 14px;
- --font-size-l: 16px;
- --font-size-xl: 20px;
- --font-size-2xl: 24px;
- --font-size-3xl: 32px;
- --font-size-4xl: 38px;
- --font-weight-default: 400;
- --font-weight-medium: 500;
- --font-weight-bold: 700;
- --media-xs: 18px;
- --media-s: 24px;
- --media-m: 34px;
- --media-l: 50px;
- --media-xl: 72px;
- --space-double: 32px;
- --space-default: 16px;
- --space-half: 8px;
- --zindex-main: 10;
- --zindex-navigation: 20;
- --zindex-popover: 30;
- --zindex-banner: 40;
- --zindex-floatingAction: 50;
- --zindex-shim: 60;
- --zindex-modal: 70;
- --zindex-crazy: 80;
- --motion-easing-default: cubic-bezier(0.4, 0, 0.2, 1);
- --motion-easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
- --motion-easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --border-radius-default: 4px;
+  --color-charcoal: #404040;
+  --color-slate: #757575;
+  --color-gray: #a2a0a0;
+  --color-silver: #c2bfbf;
+  --color-timberwolf: #d6d4d4;
+  --color-lightGray: #f2f2f2;
+  --color-white: #ffffff;
+  --color-navy: #003366;
+  --color-blue: #006699;
+  --color-aqua: #4cabce;
+  --color-sky: #bbdbe5;
+  --color-haze: #f1f5f7;
+  --color-red: #e5323e;
+  --color-orange: #ff6633;
+  --color-sienna: #f9a862;
+  --color-sand: #fcc89a;
+  --color-green: #00986b;
+  --color-mint: #70c390;
+  --color-purple: #a02385;
+  --color-violet: #d772ad;
+  --font-color-link: #006699;
+  --font-color-linkInverted: #4cabce;
+  --font-color-heading: #404040;
+  --font-color-primary: rgba(64, 64, 64, 0.87);
+  --font-color-secondary: rgba(64, 64, 64, 0.60);
+  --font-color-hint: rgba(64, 64, 64, 0.38);
+  --font-color-headingInverted: #ffffff;
+  --font-color-primaryInverted: rgba(255, 255, 255, 0.87);
+  --font-color-secondaryInverted: rgba(255, 255, 255, 0.60);
+  --font-color-hintInverted: rgba(255, 255, 255, 0.38);
+  --font-color-error: #e5323e;
+  --font-color-success: #00986b;
+  --font-color-errorInverted: #e5323e;
+  --font-color-successInverted: #70c390;
+  --font-family-condensed: 'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+  --font-family-default: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+  --font-family-mono: Monaco, Consolas, monospace;
+  --font-lineHeight-bigText: 1.2;
+  --font-lineHeight-default: 1.5;
+  --font-lineHeight-smallText: 1.8;
+  --font-size-xs: 10px;
+  --font-size-s: 12px;
+  --font-size-m: 14px;
+  --font-size-default: 14px;
+  --font-size-l: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 32px;
+  --font-size-4xl: 38px;
+  --font-weight-default: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --media-xs: 18px;
+  --media-s: 24px;
+  --media-m: 34px;
+  --media-l: 50px;
+  --media-xl: 72px;
+  --space-double: 32px;
+  --space-default: 16px;
+  --space-half: 8px;
+  --zindex-main: 10;
+  --zindex-navigation: 20;
+  --zindex-popover: 30;
+  --zindex-banner: 40;
+  --zindex-floatingAction: 50;
+  --zindex-shim: 60;
+  --zindex-modal: 70;
+  --zindex-crazy: 80;
+  --motion-easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
 }
 /**
 * DO NOT EDIT
-* Generated by fds-dictionary on Wed Nov 13 2019 11:42:01 GMT-0500 (Eastern Standard Time)
+* Generated by fds-dictionary on Mon Nov 18 2019 17:19:50 GMT-0500 (Eastern Standard Time)
 * github.com/cbinsights/form-design-system/
 */
 /**
@@ -158,8 +158,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
@@ -1708,7 +1707,6 @@ Modifies weight of text.
 
 ```example:html
 <p class="fontWeight--bold">Bold Text</p>
-<p class="fontWeight--medium">Medium</p>
 <p class="fontWeight--book">Book Text</p>
 <p class="type--head3">Modifiers <span class="fontWeight--book">override</span> default styles</p>
 ```
@@ -1717,6 +1715,7 @@ Modifies weight of text.
   font-weight: 700 !important;
   font-weight: var(--font-weight-bold) !important;
 }
+/* Intentionally left undocumented for now (via design) */
 .fontWeight--medium {
   font-weight: 500 !important;
   font-weight: var(--font-weight-medium) !important;
