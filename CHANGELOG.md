@@ -27,8 +27,18 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [5.2] Updated Interactive Button components
+## [5.4] Form field styles
 
+- Added default styles to all form elements, including box-shadow focus ring
+- `resetInput` helper class now removes `box-shadow`
+
+## [5.3] Updated Button
+- Adjusted padding on small button
+
+## [5.2] Update Buttons / Icons
+
+- Updated `SortUp` Icon
+- Updated `SortDown` Icon
 - Make all default interactive buttons be 32px computed height: `Button`, `IconButton`, and `GroupButton`
 - Make small button 24px height
 - Apply focus states for interactive buttons to ButtonGroup
