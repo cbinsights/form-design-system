@@ -50,8 +50,7 @@ const Button = ({
         <div
           className={cx('alignChild--center--center', {
             'fdsButton-icon--left': iconPlacement === 'left',
-            'margin--left--half': iconPlacement === 'right',
-            'margin--right--half': iconPlacement === 'left',
+            'fdsButton-icon--right': iconPlacement === 'right',
             'fdsButton--hidden': isLoading,
           })}
         >
