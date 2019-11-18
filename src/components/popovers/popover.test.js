@@ -126,7 +126,7 @@ describe('Popover component', () => {
       });
     });
 
-    it('opens and closes popover on focus/blur', () => {
+    it('opens and closes popover on keyboard navigating in and out via Tab', () => {
       expect(isPopperOpen(wrapper)).toBe(false);
       triggerEl.simulate('keyup', { key: 'Tab' });
       expect(isPopperOpen(wrapper)).toBe(true);
