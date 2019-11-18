@@ -1,0 +1,44 @@
+/*
+Custom styles for documentation
+*/
+
+/* TODO: import custom properties from fds-dictionary */
+:root {
+  --color-charcoal: #404040;
+  --color-sky: #bbdbe5;
+  --color-navy: #003366;
+  --color-purple: #a02385;
+  --color-orange: #ff6633;
+}
+
+a {
+  color: var(--color-orange);
+}
+
+.menu,
+.markdown-body {
+  font-family: Roboto, sans-serif;
+}
+
+.masthead {
+  background-color: var(--color-sky) !important;
+  position: relative;
+  padding-left: 48px;
+}
+
+.masthead-logo {
+  color: var(--color-navy) !important;
+  font-weight: 700;
+}
+
+.masthead-logo img {
+  width: 88px;
+  height: 88px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.markdown-body code {
+  color: var(--color-purple);
+}

@@ -7,10 +7,8 @@ import baseElement from '../../util/baseElement';
 const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }) => {
   const Element = baseElement({ href: rest.href, as: Link });
 
-  const rootClass = cx('fdsChip', {
+  const rootClass = cx('fdsChip', `fdsChip--${size}`, {
     'fdsChip--active': isActive,
-    'fdsChip--small': size === 'sm',
-    'fdsChip--large': size === 'lg',
     'fdsChip--blue': theme === 'blue',
     'fdsChip--outline': theme === 'outline',
   });
@@ -44,9 +42,13 @@ Chip.propTypes = {
    */
   label: PropTypes.string.isRequired,
   /**
-   * Pass **only** react-router `Link` here. You may **not**
-   * pass anything else here: SFC, Class Component, etc (even
-   * if they use react-router `Link` underneath the hood).
+   * Takes in a react-router `Link` reference and sets it
+   * as the base element. You may ONLY use it like the
+   * following:
+   * ```
+   * import { Link } from 'react-router'
+   * Link={Link}
+   * ```
    */
   Link: PropTypes.func,
   /** Controls the isActive state of the chip, which changes colors */
@@ -59,14 +61,14 @@ Chip.propTypes = {
    */
   onClose: PropTypes.func,
   /** Specify the size of the chip */
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  size: PropTypes.oneOf(['s', 'm']),
   /** Controls the color (look and feel) of the chip */
   theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
 };
 
 Chip.defaultProps = {
   theme: 'gray',
-  size: 'md',
+  size: 'm',
 };
 
 export default Chip;

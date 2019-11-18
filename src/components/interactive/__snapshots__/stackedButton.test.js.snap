@@ -6,7 +6,7 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
   label="Button"
 >
   <span
-    className=""
+    className="fdsButton-label"
   />
 </button>
 `;
@@ -19,13 +19,13 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
   label="button"
 >
   <span
-    className=""
+    className="fdsButton-label"
   />
   <div
     className="alignChild--center--center margin--left--half"
   >
     <Icon
-      customSize={16}
+      customSize={18}
     />
   </div>
 </Link>

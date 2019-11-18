@@ -26,15 +26,12 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
               >
                 <div
                   class="flex flex--alignStart flex--row flex--justifySpaceBetween"
-                  data-test=""
                 >
                   <div
                     class="flexItem"
-                    data-test=""
                   />
                   <div
                     class="flexItem flexItem--shrink"
-                    data-test=""
                   >
                     <button
                       class="dialog-icon"
@@ -97,15 +94,12 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
               >
                 <div
                   class="flex flex--alignStart flex--row flex--justifySpaceBetween"
-                  data-test=""
                 >
                   <div
                     class="flexItem"
-                    data-test=""
                   />
                   <div
                     class="flexItem flexItem--shrink"
-                    data-test=""
                   >
                     <button
                       class="dialog-icon"
@@ -249,15 +243,12 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
               >
                 <div
                   class="flex flex--alignStart flex--row flex--justifySpaceBetween"
-                  data-test=""
                 >
                   <div
                     class="flexItem"
-                    data-test=""
                   />
                   <div
                     class="flexItem flexItem--shrink"
-                    data-test=""
                   >
                     <button
                       class="dialog-icon"
@@ -320,15 +311,12 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
               >
                 <div
                   class="flex flex--alignStart flex--row flex--justifySpaceBetween"
-                  data-test=""
                 >
                   <div
                     class="flexItem"
-                    data-test=""
                   />
                   <div
                     class="flexItem flexItem--shrink"
-                    data-test=""
                   >
                     <button
                       class="dialog-icon"
@@ -439,12 +427,10 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
               >
                 <Flex
                   align="start"
-                  dataTest=""
                   direction="row"
                   justify="spaceBetween"
                 >
                   <FlexItem
-                    dataTest=""
                     shrink={false}
                   >
                     <div
@@ -455,7 +441,6 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                     </div>
                   </FlexItem>
                   <FlexItem
-                    dataTest=""
                     shrink={true}
                   >
                     <button

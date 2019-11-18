@@ -54,8 +54,16 @@ export PATH=$PATH:SKETCHTOOL_PATH
 ```
 
 #### 2) Getting the icons sketch file
-Talk to your friendly local product designer for a google drive link to our `Icons.sketch`
-file.
+Our design team is now using [Abstract](https://app.goabstract.com/organizations/0bd48624-8826-4447-a082-1957932b89b8/projects)
+to version Sketch files for the design system. To pull down the latest `Icons.sketch` file...
+
+1. Ask the design team for credentials to [our project](https://app.goabstract.com/organizations/0bd48624-8826-4447-a082-1957932b89b8/projects)
+2. Download the Abstract desktop app
+3. In the desktop app, navigate to "CB Insights Design System"
+4. Select `Master` in the sidebar
+5. Select "Export files" from the kebab menu
+
+![export files menu selection](./readme-img-abstract.png)
 
 ##### Known issues
 - Icons should be contained in _exportable artboards_

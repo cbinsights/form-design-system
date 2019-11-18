@@ -43,9 +43,13 @@ ButtonGroup.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       /**
-       * Pass **only** react-router `Link` here. You may **not**
-       * pass anything else here: SFC, Class Component, etc (even
-       * if they use react-router `Link` underneath the hood).
+       * Takes in a react-router `Link` reference and sets it
+       * as the base element. You may ONLY use it like the
+       * following:
+       * ```
+       * import { Link } from 'react-router'
+       * Link={Link}
+       * ```
        */
       Link: PropTypes.func,
       /**
@@ -58,7 +62,7 @@ ButtonGroup.propTypes = {
        * The text that appears in the button
        */
       label: PropTypes.string,
-      /** Used to render a FDS Icon (should only be used for FDS Icons) */
+      /**  Pass in "only" a FDS Icon reference to display it (e.g. Icon={ApproveIcon}) */
       Icon: PropTypes.func,
       /**
        * A component to wrap the entire group button. The

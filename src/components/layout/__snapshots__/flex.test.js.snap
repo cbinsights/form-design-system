@@ -3,10 +3,8 @@
 exports[`Flex component matches snapshot (default props) 1`] = `
 <div
   className="flex flex--alignStretch flex--row"
-  data-test=""
 >
   <FlexItem
-    dataTest=""
     shrink={false}
   />
 </div>
@@ -14,11 +12,9 @@ exports[`Flex component matches snapshot (default props) 1`] = `
 
 exports[`Flex component matches snapshot (set all props) 1`] = `
 <div
-  className="flex flex--alignEnd flex--column flex--column--reverse flex--justifySpaceBetween flex--wrap flex--noGutters foo"
-  data-test=""
+  className="flex flex--alignEnd flex--column flex--column--reverse flex--justifySpaceBetween flex--wrap flex--noGutters"
 >
   <FlexItem
-    dataTest=""
     shrink={false}
   />
 </div>

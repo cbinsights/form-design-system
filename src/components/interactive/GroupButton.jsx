@@ -27,8 +27,12 @@ export const GroupButton = (props) => {
   return (
     <Wrapper>
       <Element {...rest} className={rootClass}>
-        {Icon && <Icon size="xs" className="groupbtn-icon" />}
-        {label}
+        {Icon && (
+          <div className="margin--right--half">
+            <Icon size="xs" />
+          </div>
+        )}
+        <span className="groupbtn-label">{label}</span>
       </Element>
     </Wrapper>
   );
@@ -43,9 +47,13 @@ GroupButton.propTypes = {
   isActive: PropTypes.bool,
 
   /**
-   * Pass **only** react-router `Link` here. You may **not**
-   * pass anything else here: SFC, Class Component, etc (even
-   * if they use react-router `Link` underneath the hood).
+   * Takes in a react-router `Link` reference and sets it
+   * as the base element. You may ONLY use it like the
+   * following:
+   * ```
+   * import { Link } from 'react-router'
+   * Link={Link}
+   * ```
    */
   Link: PropTypes.func,
 
