@@ -62,7 +62,7 @@ const Popover = ({
    * @param {Event} e DOMEvent
    */
   const handleBodyClick = (e) => {
-    const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent.current], e);
+    const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
     if (isNotPopoverClick) setIsActive(false);
   };
 
