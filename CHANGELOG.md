@@ -27,9 +27,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [5.8] Form field styles
+## [6.0] MAJOR
 
-**May cause minor visual regressions with form inputs**
+### **BREAKING CHANGES**
+
+#### Form inputs
+This release may introduce minor visual regressions on inputs in consumer applications.
 
 - Added default styles to all form elements, including box-shadow focus ring
 - `resetInput` helper class now removes `box-shadow`
