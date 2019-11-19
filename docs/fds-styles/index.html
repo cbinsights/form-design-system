@@ -33,6 +33,9 @@
         <a class="menu-item" href="#backgroundColors"><span>Background Colors</span></a>
         
         
+        <a class="menu-item" href="#backgroundFade"><span>Fade gradients</span></a>
+        
+        
   
         
         <a class="menu-heading" href="#spacing-helpers"><span>Spacing Helpers</span></a>
@@ -309,6 +312,35 @@ class to flip text colors for dark backgrounds</strong></p>
 &lt;div class=&quot;bgColor--navy inverted&quot;&gt;I have a background color&lt;/div&gt;
 &lt;div class=&quot;bgColor--aqua&quot;&gt;I have a background color&lt;/div&gt;
 &lt;div class=&quot;bgColor--gray inverted&quot;&gt;I have a background color&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="backgroundFade">
+      <h2 class="page-title">Fade gradients</h2>
+
+      <div class="markdown-body">
+        <p>Sets background of an element to a linear gradient
+simulating a fade effect.</p>
+<p>Signature: <code>bgFade--&lt;direction&gt;--&lt;color&gt;</code></p>
+<pre><code class="lang-example:html">&lt;div style=&quot;float: left; background-color: #f7f7f7; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQYV2M8fPiwLwMOwAiStLW13YxNftBJAgAx2BqeI9XcBAAAAABJRU5ErkJggg==)&quot;&gt;
+  &lt;div style=&quot;display: flex; align-items: center;&quot;&gt;
+    &lt;code class=&quot;color--purple media--xl alignChild--center--center&quot;&gt;white&lt;/code&gt;
+    &lt;div class=&quot;media--xl bgFade--left--white&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--top--white&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--bottom--white&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--right--white&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div style=&quot;display: flex;&quot;&gt;
+    &lt;code class=&quot;color--purple media--xl alignChild--center--center&quot;&gt;haze&lt;/code&gt;
+    &lt;div class=&quot;media--xl bgFade--left--haze&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--top--haze&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--bottom--haze&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--right--haze&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
 
         
@@ -1303,7 +1335,7 @@ of clamping text to one line.</p>
         </main>
       </div>
       <footer class="footer">
-        Last modified Tuesday, 19 November 2019 10:37
+        Last modified Tuesday, 19 November 2019 11:26
       </footer>
     </div>
     <script src="prism.js?871234"></script>

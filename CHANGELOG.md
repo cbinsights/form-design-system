@@ -27,6 +27,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [5.5] Fade helpers
+Adds `bgFade--<direction>--<color>` helper classes to base stylesheet.
+
 ## [5.5] Medium weight font
 Adds full support to FDS for medium weight Roboto.
 
