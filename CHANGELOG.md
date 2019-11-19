@@ -27,12 +27,19 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [5.4] Form field styles
+## [5.5] Form field styles
 
 - Added default styles to all form elements, including box-shadow focus ring
 - `resetInput` helper class now removes `box-shadow`
 
+## [5.4] Update hover Popovers
+
+- In `Popover`, `focus` and `blur` events were replaced with `keyUp` and `keyDown` events.
+  This allows hover-triggered popovers to show the popover content on keyboard navigation
+  without side effects from focus events on the trigger itself.
+
 ## [5.3] Updated Button
+
 - Adjusted padding on small button
 
 ## [5.2] Update Buttons / Icons
