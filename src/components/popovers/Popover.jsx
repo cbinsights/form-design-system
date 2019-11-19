@@ -144,21 +144,21 @@ const Popover = ({
         modifiers={popperModifiers}
         placement={getPopperPlacement(position, alignment)}
       >
-        {({ placement, ref, style }) => {
-          refContent.current = ref;
-          return (
-            <div
-              ref={ref}
-              style={{
-                ...contentStyle,
-                ...style,
-              }}
-              data-placement={placement}
-            >
-              {children}
-            </div>
-          );
-        }}
+        {({ placement, ref, style }) => (
+          <div
+            ref={(wrapperRef) => {
+              ref(wrapperRef);
+              refContent(wrapperRef);
+            }}
+            style={{
+              ...contentStyle,
+              ...style,
+            }}
+            data-placement={placement}
+          >
+            {children}
+          </div>
+        )}
       </Popper>
     </CSSTransition>
   );
