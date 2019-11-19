@@ -15,15 +15,19 @@ const IconButton = ({
 }) => (
   <button
     {...rest}
-    className={cx('fdsIconButton', 'rounded--all', `fdsIconButton--${theme}`, {
-      'fdsIconButton--s': size === 's',
-      'fdsIconButton--m': size === 'm',
-      'fdsIconButton--disabled': disabled,
-      'fdsIconButton--active': isActive,
-      'fdsIconButton--circle': radius === 'circle',
-      'fdsIconButton--isDestructive': isDestructive,
-      'fdsIconButton--loading': isLoading,
-    })}
+    className={cx(
+      'fdsIconButton',
+      'rounded--all',
+      `fdsIconButton--${theme}`,
+      `fdsIconButton--${size}`,
+      {
+        'fdsIconButton--disabled': disabled,
+        'fdsIconButton--active': isActive,
+        'fdsIconButton--circle': radius === 'circle',
+        'fdsIconButton--isDestructive': isDestructive,
+        'fdsIconButton--loading': isLoading,
+      }
+    )}
     disabled={disabled}
   >
     <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
