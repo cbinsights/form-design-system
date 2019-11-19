@@ -41,7 +41,7 @@ const Popover = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
   const refTriggerWrap = useRef(null);
-  let refContent = null; // must be assigned via setter fn in `Popper`
+  const refContent = useRef(null);
 
   // update active state on props change to accommodate fully controlled popovers
   useEffect(() => {
@@ -62,7 +62,7 @@ const Popover = ({
    * @param {Event} e DOMEvent
    */
   const handleBodyClick = (e) => {
-    const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
+    const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent.current], e);
     if (isNotPopoverClick) setIsActive(false);
   };
 
@@ -141,24 +141,24 @@ const Popover = ({
       classNames={transitionName ? `rtg${transitionName}` : undefined}
     >
       <Popper
-        innerRef={(node) => {
-          refContent = node;
-        }}
         modifiers={popperModifiers}
         placement={getPopperPlacement(position, alignment)}
       >
-        {({ placement, ref, style }) => (
-          <div
-            ref={ref}
-            style={{
-              ...contentStyle,
-              ...style,
-            }}
-            data-placement={placement}
-          >
-            {children}
-          </div>
-        )}
+        {({ placement, ref, style }) => {
+          refContent.current = ref;
+          return (
+            <div
+              ref={ref}
+              style={{
+                ...contentStyle,
+                ...style,
+              }}
+              data-placement={placement}
+            >
+              {children}
+            </div>
+          );
+        }}
       </Popper>
     </CSSTransition>
   );
