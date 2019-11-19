@@ -9,7 +9,7 @@
 
 .btngroup {
   display: inline-flex;
-  z-index: 0;
+  z-index: var(--zindex-main);
   position: relative;
 }
 
@@ -17,7 +17,7 @@
   margin-left: -1px;
   position: relative;
   border-radius: 0;
-  z-index: 2;
+  z-index: calc(var(--zindex-main) + 1);
 }
 
 /* z-index is used here to manage the border for those button
@@ -25,19 +25,19 @@ states and their stacking order (whether they display or not).
 The border for a disabled button should appear below a border
 for a button being clicked on (:active) */
 .btngroup .groupbtn--disabled {
-  z-index: 1;
+  z-index: var(--zindex-main);
 }
 
 .btngroup .groupbtn--active {
-  z-index: 3;
+  z-index: calc(var(--zindex-main) + 2);
 }
 
 .btngroup .groupbtn:focus {
-  z-index: 4;
+  z-index: calc(var(--zindex-main) + 3);
 }
 
 .btngroup .groupbtn:active {
-  z-index: 5;
+  z-index: calc(var(--zindex-main) + 4);
 }
 
 .btngroup .groupbtn--first {

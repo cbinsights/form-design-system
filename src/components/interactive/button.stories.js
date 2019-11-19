@@ -178,29 +178,56 @@ storiesOf('Interactive/Button', module)
     </React.Fragment>
   ))
   .add('Button Alignment', () => (
-    <div>
-      <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
-        <div className="margin--right--half margin--bottom--half">
-          <Button>Button</Button>
-        </div>
+    <React.Fragment>
+      <div>
+        <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+          <div className="margin--right--half margin--bottom--half">
+            <Button>Button</Button>
+          </div>
 
-        <div className="margin--right--half margin--bottom--half">
-          <Button Icon={StarFilledIcon}>Button</Button>
-        </div>
+          <div className="margin--right--half margin--bottom--half">
+            <Button Icon={StarFilledIcon}>Button</Button>
+          </div>
 
-        <div className="margin--right--half margin--botton--half">
-          <IconButton Icon={StarFilledIcon} theme="aqua" />
-        </div>
+          <div className="margin--right--half margin--botton--half">
+            <IconButton Icon={StarFilledIcon} theme="aqua" />
+          </div>
 
-        <div className="margin--right--half margin--bottom--half">
-          <ButtonGroup buttons={[{ label: 'Lorem' }, { label: 'Ipsum' }]} />
-        </div>
+          <div className="margin--right--half margin--bottom--half">
+            <ButtonGroup buttons={[{ label: 'Lorem' }, { label: 'Ipsum' }]} />
+          </div>
 
-        <div className="margin--right--half margin--bottom--half">
-          <ButtonGroup
-            buttons={[{ label: 'Lorem', Icon: StarFilledIcon }, { label: 'Ipsum' }]}
-          />
+          <div className="margin--right--half margin--bottom--half">
+            <ButtonGroup
+              buttons={[{ label: 'Lorem', Icon: StarFilledIcon }, { label: 'Ipsum' }]}
+            />
+          </div>
         </div>
       </div>
-    </div>
+      <div>
+        <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+          <div className="margin--right--half margin--bottom--half">
+            <Button size="s">Button</Button>
+          </div>
+
+          <div className="margin--right--half margin--bottom--half">
+            <Button size="s" Icon={StarFilledIcon}>
+              Button
+            </Button>
+          </div>
+
+          <div className="margin--right--half margin--botton--half">
+            <IconButton size="s" Icon={StarFilledIcon} theme="aqua" />
+          </div>
+
+          <div className="margin--right--half margin--botton--half">
+            <IconButton size="s" Icon={StarFilledIcon} theme="aqua" radius="circle" />
+          </div>
+
+          <div className="margin--right--half margin--botton--half">
+            <IconButton size="s" Icon={StarFilledIcon} radius="circle" />
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
   ));

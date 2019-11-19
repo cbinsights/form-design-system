@@ -27,14 +27,6 @@
           <nav class="menu docs-menu">
             
     
-        <a class="menu-heading" href="#background-helpers"><span>Background helpers</span></a>
-        
-    
-        <a class="menu-item" href="#backgroundColors"><span>Background Colors</span></a>
-        
-        
-  
-        
         <a class="menu-heading" href="#spacing-helpers"><span>Spacing Helpers</span></a>
         
     
@@ -45,6 +37,20 @@
         
         
         <a class="menu-item" href="#spacingFlush"><span>Flush</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#position-helpers"><span>Position Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#positionChildAlign"><span>Child Align</span></a>
+        
+        
+        <a class="menu-item" href="#positionAlign"><span>Align</span></a>
+        
+        
+        <a class="menu-item" href="#positionVAlign"><span>Vertical Align</span></a>
         
         
   
@@ -85,16 +91,10 @@
         
   
         
-        <a class="menu-heading" href="#position-helpers"><span>Position Helpers</span></a>
+        <a class="menu-heading" href="#background-helpers"><span>Background helpers</span></a>
         
     
-        <a class="menu-item" href="#positionChildAlign"><span>Child Align</span></a>
-        
-        
-        <a class="menu-item" href="#positionAlign"><span>Align</span></a>
-        
-        
-        <a class="menu-item" href="#positionVAlign"><span>Vertical Align</span></a>
+        <a class="menu-item" href="#backgroundColors"><span>Background Colors</span></a>
         
         
   
@@ -190,6 +190,268 @@
 
         <main class="three-fourths column markdown-body">
           
+    <section id="spacing-helpers">
+      <h1 class="page-title">Spacing Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="spacingMargin">
+      <h2 class="page-title">Margin</h2>
+
+      <div class="markdown-body">
+        <p>Adds margin to the given side of an element.</p>
+<h4 id="full-margin">Full margin</h4>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>margin--top</code></td>
+<td>Adds standard margin to top of element</td>
+</tr>
+<tr>
+<td><code>margin--right</code></td>
+<td>Adds standard margin to right of element</td>
+</tr>
+<tr>
+<td><code>margin--bottom</code></td>
+<td>Adds standard margin to bottom of element</td>
+</tr>
+<tr>
+<td><code>margin--left</code></td>
+<td>Adds standard margin to left of element</td>
+</tr>
+<tr>
+<td><code>margin--all</code></td>
+<td>Adds standard margin to all sides</td>
+</tr>
+</tbody>
+</table>
+<h4 id="half-margin">Half margin</h4>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>margin--top--half</code></td>
+<td>Adds half margin to top of element</td>
+</tr>
+<tr>
+<td><code>margin--right--half</code></td>
+<td>Adds half margin to right of element</td>
+</tr>
+<tr>
+<td><code>margin--bottom--half</code></td>
+<td>Adds half margin to bottom of element</td>
+</tr>
+<tr>
+<td><code>margin--left--half</code></td>
+<td>Adds half margin to left of element</td>
+</tr>
+<tr>
+<td><code>margin--all--half</code></td>
+<td>Adds half margin to all sides</td>
+</tr>
+</tbody>
+</table>
+<h4 id="double-margin">Double margin</h4>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>margin--top--double</code></td>
+<td>Adds double margin to top of element</td>
+</tr>
+<tr>
+<td><code>margin--right--double</code></td>
+<td>Adds double margin to right of element</td>
+</tr>
+<tr>
+<td><code>margin--bottom--double</code></td>
+<td>Adds double margin to bottom of element</td>
+</tr>
+<tr>
+<td><code>margin--left--double</code></td>
+<td>Adds double margin to left of element</td>
+</tr>
+<tr>
+<td><code>margin--all--double</code></td>
+<td>Adds double margin to all sides</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+    <section id="spacingPadding">
+      <h2 class="page-title">Padding</h2>
+
+      <div class="markdown-body">
+        <p>Adds padding to the given side of an element.</p>
+<h4 id="full-padding">Full padding</h4>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>padding--top</code></td>
+<td>Adds standard padding to top of element</td>
+</tr>
+<tr>
+<td><code>padding--right</code></td>
+<td>Adds standard padding to right of element</td>
+</tr>
+<tr>
+<td><code>padding--bottom</code></td>
+<td>Adds standard padding to bottom of element</td>
+</tr>
+<tr>
+<td><code>padding--left</code></td>
+<td>Adds standard padding to left of element</td>
+</tr>
+<tr>
+<td><code>padding--all</code></td>
+<td>Adds standard padding to all sides</td>
+</tr>
+</tbody>
+</table>
+<h4 id="half-padding">Half padding</h4>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>padding--top--half</code></td>
+<td>Adds half padding to top of element</td>
+</tr>
+<tr>
+<td><code>padding--right--half</code></td>
+<td>Adds half padding to right of element</td>
+</tr>
+<tr>
+<td><code>padding--bottom--half</code></td>
+<td>Adds half padding to bottom of element</td>
+</tr>
+<tr>
+<td><code>padding--left--half</code></td>
+<td>Adds half padding to left of element</td>
+</tr>
+<tr>
+<td><code>padding--all--half</code></td>
+<td>Adds half padding to all sides</td>
+</tr>
+</tbody>
+</table>
+<h4 id="double-padding">Double padding</h4>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>padding--top--double</code></td>
+<td>Adds double padding to top of element</td>
+</tr>
+<tr>
+<td><code>padding--right--double</code></td>
+<td>Adds double padding to right of element</td>
+</tr>
+<tr>
+<td><code>padding--bottom--double</code></td>
+<td>Adds double padding to bottom of element</td>
+</tr>
+<tr>
+<td><code>padding--left--double</code></td>
+<td>Adds double padding to left of element</td>
+</tr>
+<tr>
+<td><code>padding--all--double</code></td>
+<td>Adds double padding to all sides</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+    <section id="spacingFlush">
+      <h2 class="page-title">Flush</h2>
+
+      <div class="markdown-body">
+        <p>Removes spacing from the given side of an element.
+Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flush--top</code></td>
+<td>Removes top spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--right</code></td>
+<td>Removes right spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--bottom</code></td>
+<td>Removes bottom spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--left</code></td>
+<td>Removes left spacing from element</td>
+</tr>
+<tr>
+<td><code>flush--all</code></td>
+<td>Removes spacing from all sides of an element</td>
+</tr>
+</tbody>
+</table>
+<h4 id="overriding-flush">Overriding <code>flush</code></h4>
+<p>Margin and padding utility classes can override a flush class:</p>
+<pre><code class="lang-html">  &lt;div class=&quot;flush--all padding--left&quot;&gt;
+    Removes all padding, then sets padding left.
+  &lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
     <section id="position-helpers">
       <h1 class="page-title">Position Helpers</h1>
 
@@ -279,37 +541,6 @@
 </tr>
 </tbody>
 </table>
-
-        
-      </div>
-    </section>
-    
-      </div>
-    </section>
-    
-    <section id="background-helpers">
-      <h1 class="page-title">Background helpers</h1>
-
-      <div class="markdown-body">
-        
-        
-    <section id="backgroundColors">
-      <h2 class="page-title">Background Colors</h2>
-
-      <div class="markdown-body">
-        <p>Sets background color of an element.</p>
-<p>Signature: <code>bgColor--&lt;color&gt;</code></p>
-<p><strong>💡 use the <a href="https://cbinsights.github.io/form-design-system/fds-styles/#inverted-standard-text-colors"><code>inverted</code></a>
-class to flip text colors for dark backgrounds</strong></p>
-<pre><code class="lang-example:html">&lt;div class=&quot;bgColor--white&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--haze&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--lightGray&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--orange inverted&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--charcoal inverted&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--navy inverted&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--aqua&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--gray inverted&quot;&gt;I have a background color&lt;/div&gt;
-</code></pre>
 
         
       </div>
@@ -630,259 +861,28 @@ illustrate depth below &quot;page surface&quot;.</p>
       </div>
     </section>
     
-    <section id="spacing-helpers">
-      <h1 class="page-title">Spacing Helpers</h1>
+    <section id="background-helpers">
+      <h1 class="page-title">Background helpers</h1>
 
       <div class="markdown-body">
         
         
-    <section id="spacingMargin">
-      <h2 class="page-title">Margin</h2>
+    <section id="backgroundColors">
+      <h2 class="page-title">Background Colors</h2>
 
       <div class="markdown-body">
-        <p>Adds margin to the given side of an element.</p>
-<h4 id="full-margin">Full margin</h4>
-<table>
-<thead>
-<tr>
-<th>class</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>margin--top</code></td>
-<td>Adds standard margin to top of element</td>
-</tr>
-<tr>
-<td><code>margin--right</code></td>
-<td>Adds standard margin to right of element</td>
-</tr>
-<tr>
-<td><code>margin--bottom</code></td>
-<td>Adds standard margin to bottom of element</td>
-</tr>
-<tr>
-<td><code>margin--left</code></td>
-<td>Adds standard margin to left of element</td>
-</tr>
-<tr>
-<td><code>margin--all</code></td>
-<td>Adds standard margin to all sides</td>
-</tr>
-</tbody>
-</table>
-<h4 id="half-margin">Half margin</h4>
-<table>
-<thead>
-<tr>
-<th>class</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>margin--top--half</code></td>
-<td>Adds half margin to top of element</td>
-</tr>
-<tr>
-<td><code>margin--right--half</code></td>
-<td>Adds half margin to right of element</td>
-</tr>
-<tr>
-<td><code>margin--bottom--half</code></td>
-<td>Adds half margin to bottom of element</td>
-</tr>
-<tr>
-<td><code>margin--left--half</code></td>
-<td>Adds half margin to left of element</td>
-</tr>
-<tr>
-<td><code>margin--all--half</code></td>
-<td>Adds half margin to all sides</td>
-</tr>
-</tbody>
-</table>
-<h4 id="double-margin">Double margin</h4>
-<table>
-<thead>
-<tr>
-<th>class</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>margin--top--double</code></td>
-<td>Adds double margin to top of element</td>
-</tr>
-<tr>
-<td><code>margin--right--double</code></td>
-<td>Adds double margin to right of element</td>
-</tr>
-<tr>
-<td><code>margin--bottom--double</code></td>
-<td>Adds double margin to bottom of element</td>
-</tr>
-<tr>
-<td><code>margin--left--double</code></td>
-<td>Adds double margin to left of element</td>
-</tr>
-<tr>
-<td><code>margin--all--double</code></td>
-<td>Adds double margin to all sides</td>
-</tr>
-</tbody>
-</table>
-
-        
-      </div>
-    </section>
-    
-    <section id="spacingPadding">
-      <h2 class="page-title">Padding</h2>
-
-      <div class="markdown-body">
-        <p>Adds padding to the given side of an element.</p>
-<h4 id="full-padding">Full padding</h4>
-<table>
-<thead>
-<tr>
-<th>class</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>padding--top</code></td>
-<td>Adds standard padding to top of element</td>
-</tr>
-<tr>
-<td><code>padding--right</code></td>
-<td>Adds standard padding to right of element</td>
-</tr>
-<tr>
-<td><code>padding--bottom</code></td>
-<td>Adds standard padding to bottom of element</td>
-</tr>
-<tr>
-<td><code>padding--left</code></td>
-<td>Adds standard padding to left of element</td>
-</tr>
-<tr>
-<td><code>padding--all</code></td>
-<td>Adds standard padding to all sides</td>
-</tr>
-</tbody>
-</table>
-<h4 id="half-padding">Half padding</h4>
-<table>
-<thead>
-<tr>
-<th>class</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>padding--top--half</code></td>
-<td>Adds half padding to top of element</td>
-</tr>
-<tr>
-<td><code>padding--right--half</code></td>
-<td>Adds half padding to right of element</td>
-</tr>
-<tr>
-<td><code>padding--bottom--half</code></td>
-<td>Adds half padding to bottom of element</td>
-</tr>
-<tr>
-<td><code>padding--left--half</code></td>
-<td>Adds half padding to left of element</td>
-</tr>
-<tr>
-<td><code>padding--all--half</code></td>
-<td>Adds half padding to all sides</td>
-</tr>
-</tbody>
-</table>
-<h4 id="double-padding">Double padding</h4>
-<table>
-<thead>
-<tr>
-<th>class</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>padding--top--double</code></td>
-<td>Adds double padding to top of element</td>
-</tr>
-<tr>
-<td><code>padding--right--double</code></td>
-<td>Adds double padding to right of element</td>
-</tr>
-<tr>
-<td><code>padding--bottom--double</code></td>
-<td>Adds double padding to bottom of element</td>
-</tr>
-<tr>
-<td><code>padding--left--double</code></td>
-<td>Adds double padding to left of element</td>
-</tr>
-<tr>
-<td><code>padding--all--double</code></td>
-<td>Adds double padding to all sides</td>
-</tr>
-</tbody>
-</table>
-
-        
-      </div>
-    </section>
-    
-    <section id="spacingFlush">
-      <h2 class="page-title">Flush</h2>
-
-      <div class="markdown-body">
-        <p>Removes spacing from the given side of an element.
-Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
-<table>
-<thead>
-<tr>
-<th>class</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>flush--top</code></td>
-<td>Removes top spacing from element</td>
-</tr>
-<tr>
-<td><code>flush--right</code></td>
-<td>Removes right spacing from element</td>
-</tr>
-<tr>
-<td><code>flush--bottom</code></td>
-<td>Removes bottom spacing from element</td>
-</tr>
-<tr>
-<td><code>flush--left</code></td>
-<td>Removes left spacing from element</td>
-</tr>
-<tr>
-<td><code>flush--all</code></td>
-<td>Removes spacing from all sides of an element</td>
-</tr>
-</tbody>
-</table>
-<h4 id="overriding-flush">Overriding <code>flush</code></h4>
-<p>Margin and padding utility classes can override a flush class:</p>
-<pre><code class="lang-html">  &lt;div class=&quot;flush--all padding--left&quot;&gt;
-    Removes all padding, then sets padding left.
-  &lt;/div&gt;
+        <p>Sets background color of an element.</p>
+<p>Signature: <code>bgColor--&lt;color&gt;</code></p>
+<p><strong>💡 use the <a href="https://cbinsights.github.io/form-design-system/fds-styles/#inverted-standard-text-colors"><code>inverted</code></a>
+class to flip text colors for dark backgrounds</strong></p>
+<pre><code class="lang-example:html">&lt;div class=&quot;bgColor--white&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--haze&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--lightGray&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--orange inverted&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--charcoal inverted&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--navy inverted&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--aqua&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--gray inverted&quot;&gt;I have a background color&lt;/div&gt;
 </code></pre>
 
         
@@ -1303,7 +1303,7 @@ of clamping text to one line.</p>
         </main>
       </div>
       <footer class="footer">
-        Last modified Wednesday, 13 November 2019 15:30
+        Last modified Tuesday, 19 November 2019 11:28
       </footer>
     </div>
     <script src="prism.js?871234"></script>

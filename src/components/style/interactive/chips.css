@@ -68,7 +68,7 @@
   color: var(--color-slate);
   border-color: var(--color-gray);
   background-color: transparent;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
 }
 
 .fdsChip--outline:hover {
