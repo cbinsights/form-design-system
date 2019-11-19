@@ -148,7 +148,7 @@ const Popover = ({
           <div
             ref={(wrapperRef) => {
               ref(wrapperRef);
-              refContent(wrapperRef);
+              refContent.current = wrapperRef;
             }}
             style={{
               ...contentStyle,
