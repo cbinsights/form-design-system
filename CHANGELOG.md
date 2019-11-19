@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.0] Form style updates
+
+### **BREAKING CHANGES**
+TK
+
 ## [5.7] Fade helpers
 Adds `bgFade--<direction>--<color>` helper classes to base stylesheet.
 
