@@ -1,7 +1,7 @@
 .fdsButton {
   border: 0 none;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   font-size: var(--font-size-default);
   position: relative;
   line-height: normal;

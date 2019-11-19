@@ -9,7 +9,7 @@
   cursor: pointer;
   color: var(--font-color-secondary);
   fill: var(--font-color-secondary);
-  font-weight: 500; /* match material-ui */
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   margin: 0;
 }

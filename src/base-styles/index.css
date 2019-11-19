@@ -35,6 +35,7 @@
 
 /* Background Helpers */
 @import "./helperClasses/background/color";
+@import "./helperClasses/background/fade";
 
 /* List Helpers */
 @import "./helperClasses/list/decorated";

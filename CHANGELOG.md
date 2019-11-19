@@ -27,10 +27,27 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [5.5] Form field styles
+## [5.8] Form field styles
+
+**May cause minor visual regressions with form inputs**
 
 - Added default styles to all form elements, including box-shadow focus ring
 - `resetInput` helper class now removes `box-shadow`
+
+## [5.7] Fade helpers
+Adds `bgFade--<direction>--<color>` helper classes to base stylesheet.
+
+## [5.6] Updated IconButton
+
+- Added small IconButton: `size="s"`
+- Default IconButton size now becomes medium: `size="m"`
+
+## [5.5] Medium weight font
+Adds full support to FDS for medium weight Roboto.
+
+- Adds `medium` weight to dictionary font weights
+- Adds `fontWeight--medium` helper class
+- Replaces hard coded `500` weights in components to use new dictionary var
 
 ## [5.4] Update hover Popovers
 
