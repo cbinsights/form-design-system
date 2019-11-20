@@ -6,6 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 import { isNotRefsEvent } from '../util/events';
 
+const noop = () => {};
 export const VALID_POSITIONS = ['auto', 'top', 'right', 'bottom', 'left'];
 export const VALID_ALIGNMENTS = ['start', 'end', 'center'];
 export const VALID_INTERACTION_MODES = ['hover', 'click', 'controlled'];
@@ -38,14 +39,27 @@ const Popover = ({
   distance,
   isOpen,
   transitionName,
+  onOpen,
+  onClose,
 }) => {
   const [isActive, setIsActive] = useState(false);
   const refTriggerWrap = useRef(null);
   const refContent = useRef(null);
 
+  const handleSetIsActive = (newValue) => {
+    setIsActive(() => {
+      if (newValue) {
+        onOpen();
+      } else {
+        onClose();
+      }
+      return newValue;
+    });
+  };
+
   // update active state on props change to accommodate fully controlled popovers
   useEffect(() => {
-    setIsActive(interactionMode === 'controlled' && isOpen);
+    handleSetIsActive(interactionMode === 'controlled' && isOpen);
   }, [interactionMode, isOpen]);
 
   /**
@@ -54,7 +68,7 @@ const Popover = ({
    */
   const handleKeyPress = (e) => {
     const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
-    if (isEscapeKey) setIsActive(false);
+    if (isEscapeKey) handleSetIsActive(false);
   };
 
   /**
@@ -63,7 +77,7 @@ const Popover = ({
    */
   const handleBodyClick = (e) => {
     const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
-    if (isNotPopoverClick) setIsActive(false);
+    if (isNotPopoverClick) handleSetIsActive(false);
   };
 
   useEffect(() => {
@@ -82,26 +96,26 @@ const Popover = ({
   switch (interactionMode) {
     case 'hover':
       triggerProps.onMouseEnter = () => {
-        setIsActive(true);
+        handleSetIsActive(true);
       };
       triggerProps.onMouseLeave = () => {
-        setIsActive(false);
+        handleSetIsActive(false);
       };
       triggerProps.onKeyUp = (e) => {
         if (e.key === 'Tab') {
-          setIsActive(true);
+          handleSetIsActive(true);
         }
       };
       triggerProps.onKeyDown = (e) => {
         if (e.key === 'Tab') {
-          setIsActive(false);
+          handleSetIsActive(false);
         }
       };
       triggerProps.tabIndex = '1';
       break;
     case 'click':
       triggerProps.onClick = () => {
-        setIsActive(!isActive);
+        handleSetIsActive(!isActive);
       };
       break;
     default:
@@ -187,6 +201,8 @@ Popover.defaultProps = {
   position: 'auto',
   alignment: 'start',
   distance: 4,
+  onOpen: noop,
+  onClose: noop,
 };
 
 Popover.propTypes = {
@@ -232,6 +248,12 @@ Popover.propTypes = {
 
   /** Name of transition for popover content */
   transitionName: PropTypes.oneOf(['GrowFast']),
+
+  /** Callback called when popover opens */
+  onOpen: PropTypes.func,
+
+  /** Callback called when popover closes */
+  onClose: PropTypes.func,
 };
 
 export default Popover;
