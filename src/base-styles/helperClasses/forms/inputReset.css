@@ -18,5 +18,6 @@ select.resetInput,
 input.resetInput {
   border-width: 0;
   background: transparent;
+  box-shadow: none !important;
   margin: 0;
 }

@@ -11,6 +11,7 @@ exports[`Section component matches snapshot for mixed strings and components 1`]
   >
     <a
       href="#"
+      key="👻"
     >
       Spooky
     </a>

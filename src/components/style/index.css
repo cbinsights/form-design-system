@@ -24,7 +24,6 @@
 
 /* Interactive components */
 @import "./interactive/muiButtonShim.css";
-@import "./interactive/menuButton.css";
 @import "./interactive/buttonGroup.css";
 @import "./interactive/button.css";
 @import "./interactive/stackedButton.css";

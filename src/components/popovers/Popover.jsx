@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 import { CSSTransition } from 'react-transition-group';
+import FDS from '../../../lib/dictionary/js/styleConstants';
 import { isNotRefsEvent } from '../util/events';
 
 export const VALID_POSITIONS = ['auto', 'top', 'right', 'bottom', 'left'];
@@ -39,8 +40,7 @@ const Popover = ({
   transitionName,
 }) => {
   const [isActive, setIsActive] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  const refTrigger = useRef(null);
+  const refTriggerWrap = useRef(null);
   let refContent = null; // must be assigned via setter fn in `Popper`
 
   // update active state on props change to accommodate fully controlled popovers
@@ -58,24 +58,11 @@ const Popover = ({
   };
 
   /**
-   * Closes popover when user is mousing over a non-popover element while the trigger
-   * is not focused.
-   * 🎶 function name should be sung to the tune of: https://youtu.be/LaTGrV58wec
-   * @param {Event} e DOMEvent
-   */
-  const handleBodyMouseMove = (e) => {
-    // in hover mode, only treat the trigger as the popover zone
-    const refs = interactionMode === 'hover' ? [refTrigger] : [refTrigger, refContent];
-    const isNotPopoverHover = isNotRefsEvent(refs, e);
-    if (!isFocused && isNotPopoverHover) setIsActive(false);
-  };
-
-  /**
    * Closes popover when user clicks outside of content or trigger
    * @param {Event} e DOMEvent
    */
   const handleBodyClick = (e) => {
-    const isNotPopoverClick = isNotRefsEvent([refTrigger, refContent], e);
+    const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
     if (isNotPopoverClick) setIsActive(false);
   };
 
@@ -84,17 +71,9 @@ const Popover = ({
     document.body.addEventListener('mousedown', handleBodyClick, false);
     document.body.addEventListener('keyup', handleKeyPress, false);
 
-    if (interactionMode === 'hover') {
-      document.body.addEventListener('mousemove', handleBodyMouseMove, false);
-    }
-
     return () => {
       document.body.removeEventListener('mousedown', handleBodyClick, false);
       document.body.removeEventListener('keyup', handleKeyPress, false);
-
-      if (interactionMode === 'hover') {
-        document.body.removeEventListener('mousemove', handleBodyMouseMove, false);
-      }
     };
     /* eslint-enable no-undef */
   });
@@ -105,13 +84,18 @@ const Popover = ({
       triggerProps.onMouseEnter = () => {
         setIsActive(true);
       };
-      triggerProps.onFocus = () => {
-        setIsActive(true);
-        setIsFocused(true);
-      };
-      triggerProps.onBlur = () => {
+      triggerProps.onMouseLeave = () => {
         setIsActive(false);
-        setIsFocused(false);
+      };
+      triggerProps.onKeyUp = (e) => {
+        if (e.key === 'Tab') {
+          setIsActive(true);
+        }
+      };
+      triggerProps.onKeyDown = (e) => {
+        if (e.key === 'Tab') {
+          setIsActive(false);
+        }
       };
       triggerProps.tabIndex = '1';
       break;
@@ -123,6 +107,8 @@ const Popover = ({
     default:
       triggerProps = {};
   }
+
+  const clonedTrigger = React.cloneElement(trigger, triggerProps);
 
   // https://popper.js.org/popper-documentation.html#modifiers
   const popperModifiers = {
@@ -143,6 +129,10 @@ const Popover = ({
     },
   };
 
+  const contentStyle = {
+    zIndex: FDS.ZINDEX_POPOVER,
+  };
+
   const popperContent = (
     <CSSTransition
       in={isActive}
@@ -158,7 +148,14 @@ const Popover = ({
         placement={getPopperPlacement(position, alignment)}
       >
         {({ placement, ref, style }) => (
-          <div ref={ref} style={style} data-placement={placement}>
+          <div
+            ref={ref}
+            style={{
+              ...contentStyle,
+              ...style,
+            }}
+            data-placement={placement}
+          >
             {children}
           </div>
         )}
@@ -171,9 +168,7 @@ const Popover = ({
       <Reference>
         {({ ref }) => (
           <div ref={ref} aria-haspopup="true" aria-expanded={isActive.toString()}>
-            <div ref={refTrigger} {...triggerProps}>
-              {trigger}
-            </div>
+            <div ref={refTriggerWrap}>{clonedTrigger}</div>
           </div>
         )}
       </Reference>

@@ -2,29 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import baseElement from '../../util/baseElement';
+import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
 
 const Button = ({
   theme,
-  isLoading,
   iconPlacement,
   Icon,
   Link,
+  size,
   disabled,
   children,
+  isLoading,
   isDestructive,
   isFullWidth,
-  size,
+  hasCaret,
   ...rest
 }) => {
   const Element = baseElement({ href: rest.href, as: Link });
-
-  // We want icon to be the same size as the text. This means it needs
-  // to be (fontsize + (font size * line-height)). Currently we use 14px font size,
-  // with normal line-height (normal line-height is 20% of font size).
-  // Buttons right now only have one font size, making this a bit easier,
-  // but this will need to be adapted if we start changing font size when
-  // the button changes size.
-  const iconSize = Math.floor(14 + 14 * 0.2);
 
   return (
     <Element
@@ -49,17 +43,23 @@ const Button = ({
       )}
       disabled={disabled && Element === 'button'}
     >
-      <span className={cx({ 'fdsButton--hidden': isLoading })}>{children}</span>
+      <span className={cx('fdsButton-label', { 'fdsButton--hidden': isLoading })}>
+        {children}
+      </span>
       {Icon && (
         <div
           className={cx('alignChild--center--center', {
             'fdsButton-icon--left': iconPlacement === 'left',
-            'margin--left--half': iconPlacement === 'right',
-            'margin--right--half': iconPlacement === 'left',
+            'fdsButton-icon--right': iconPlacement === 'right',
             'fdsButton--hidden': isLoading,
           })}
         >
-          <Icon customSize={iconSize} />
+          <Icon customSize={size === 's' ? 16 : 18} />
+        </div>
+      )}
+      {hasCaret && (
+        <div className="margin--left--half alignChild--center--center">
+          <CaretDownIcon customSize={12} />
         </div>
       )}
     </Element>
@@ -74,9 +74,13 @@ Button.defaultProps = {
 
 Button.propTypes = {
   /**
-   * Pass **only** react-router `Link` here. You may **not**
-   * pass anything else here: SFC, Class Component, etc (even
-   * if they use react-router `Link` underneath the hood).
+   * Takes in a react-router `Link` reference and sets it
+   * as the base element. You may ONLY use it like the
+   * following:
+   * ```
+   * import { Link } from 'react-router'
+   * Link={Link}
+   * ```
    */
   Link: PropTypes.func,
   /**
@@ -98,10 +102,12 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   /** Controls which side the `Icon` renders on, assuming you pass it */
   iconPlacement: PropTypes.oneOf(['left', 'right']),
-  /** Used to render a FDS Icon (should only be used for FDS Icons) */
+  /**  Pass in "only" a FDS Icon reference to display it (e.g. Icon={ApproveIcon}) */
   Icon: PropTypes.func,
   /** Controls the button going full width */
   isFullWidth: PropTypes.bool,
+  /** Controls showing CaretDown icon (right aligned) */
+  hasCaret: PropTypes.bool,
   /** Used to control the display and theme of the button */
   theme: PropTypes.oneOf(['blue', 'outlined', 'ghost']),
   /** Used to control the size of the button */

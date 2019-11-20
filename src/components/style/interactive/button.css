@@ -1,15 +1,13 @@
 .fdsButton {
   border: 0 none;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   font-size: var(--font-size-default);
   position: relative;
   line-height: normal;
   user-select: none;
   /* We do this to make sure buttons with borders and without are the same dimensions */
   border: 1px solid transparent;
-  /* we remove 1px off each side as there's a border we need to compensate for */
-  padding: calc(var(--space-half) - 1px) calc(var(--space-default) - 1px);
   background-color: transparent;
   transition: background-color var(--button-timeout) var(--motion-easing-default),
     box-shadow var(--button-timeout) var(--motion-easing-default);
@@ -17,9 +15,17 @@
   box-sizing: border-box;
 }
 
-.fdsButton--s {
-  padding: calc(6px - 1px) calc(var(--space-half) - 1px);
-}
+/* Button padding */
+/* we remove 1px off each side as there's a border we need to compensate for */
+/* we apply vertical padding on the label only, so that the bigger icon
+    doesn't change the button dimensions */
+.fdsButton--m { padding: 0 15px; }
+
+.fdsButton--m .fdsButton-label { padding: 7px 0; }
+
+.fdsButton--s { padding: 0 6px; }
+
+.fdsButton--s .fdsButton-label { padding: 3px 0; }
 
 .fdsButton--isFullWidth {
   width: 100%;
@@ -32,9 +38,9 @@
 }
 
 /*
-   Spinner technique is from the following:
-   https://stephanwagner.me/only-css-loading-spinner
-   https://codepen.io/stuartjnelson/pen/zjveOO
+  Spinner technique is from the following:
+  https://stephanwagner.me/only-css-loading-spinner
+  https://codepen.io/stuartjnelson/pen/zjveOO
 */
 @keyframes spinner {
   0% {
@@ -156,6 +162,22 @@
 .fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost)::before {
   border: 2px solid var(--button-destructive);
   border-top-color: transparent;
+}
+
+.fdsButton--m .fdsButton-icon--left {
+  margin-right: var(--space-half);
+}
+
+.fdsButton--m .fdsButton-icon--right {
+  margin-left: var(--space-half);
+}
+
+.fdsButton--s .fdsButton-icon--left {
+  margin-right: 6px;
+}
+
+.fdsButton--s .fdsButton-icon--right {
+  margin-left: 6px;
 }
 
 .fdsButton-icon--left {

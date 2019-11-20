@@ -24,7 +24,7 @@
   position: fixed;
   z-index: var(--zindex-shim);
   background: var(--color-charcoal);
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 .dialog-wrapper {

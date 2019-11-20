@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 
 import InlineBlockList from './InlineBlockList';
 import Chip from '../interactive/Chip';
@@ -30,10 +30,10 @@ storiesOf('Layout/InlineBlockList', module)
   .add('Chips list', () => (
     <InlineBlockList
       items={[
-        <Chip size="lg" onClose={noop} label="Horses" theme="outline" />,
-        <Chip size="lg" onClose={noop} label="Wombats" theme="outline" />,
-        <Chip size="lg" onClose={noop} label="Seals" theme="outline" />,
-        <Chip size="lg" onClose={noop} label="Dogs" theme="outline" />,
+        <Chip key="horses" size="lg" onClose={noop} label="Horses" theme="outline" />,
+        <Chip key="wombats" size="lg" onClose={noop} label="Wombats" theme="outline" />,
+        <Chip key="seals" size="lg" onClose={noop} label="Seals" theme="outline" />,
+        <Chip key="dogs" size="lg" onClose={noop} label="Dogs" theme="outline" />,
       ]}
     />
   ))
@@ -53,11 +53,21 @@ storiesOf('Layout/InlineBlockList', module)
               '|'
             )}
             items={[
-              <a className="type--link">Some</a>,
-              <a className="type--link">Footer</a>,
-              <a className="type--link">Links</a>,
-              <a className="type--link">Or</a>,
-              <a className="type--link">Something</a>,
+              <a key="some" className="type--link">
+                Some
+              </a>,
+              <a key="footer" className="type--link">
+                Footer
+              </a>,
+              <a key="links" className="type--link">
+                Links
+              </a>,
+              <a key="or" className="type--link">
+                Or
+              </a>,
+              <a key="something" className="type--link">
+                Something
+              </a>,
             ]}
           />
         </div>
@@ -72,7 +82,12 @@ storiesOf('Layout/InlineBlockList', module)
         <div className="padding--all">
           <InlineBlockList
             separator="/"
-            items={[<a className="type--link">Main</a>, 'Retail']}
+            items={[
+              <a key="main" className="type--link">
+                Main
+              </a>,
+              'Retail',
+            ]}
           />
         </div>
         <div className="padding--all">

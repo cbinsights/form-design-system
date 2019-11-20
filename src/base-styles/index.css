@@ -11,19 +11,19 @@
 @import "./base/formTags";
 
 /* Spacing Helpers */
-@import "./helperClasses/spacing/flush";
 @import "./helperClasses/spacing/margin";
 @import "./helperClasses/spacing/padding";
+@import "./helperClasses/spacing/flush";
 
 /* Position Helpers */
+@import "./helperClasses/position/childAlign";
 @import "./helperClasses/position/align";
 @import "./helperClasses/position/valign";
-@import "./helperClasses/position/childAlign";
 
 /* Layout Helpers */
 @import "./helperClasses/layout/media";
-@import "./helperClasses/layout/display";
 @import "./helperClasses/layout/width";
+@import "./helperClasses/layout/display";
 
 /* Shadow Helpers */
 @import "./helperClasses/shadow/elevation";
@@ -35,6 +35,7 @@
 
 /* Background Helpers */
 @import "./helperClasses/background/color";
+@import "./helperClasses/background/fade";
 
 /* List Helpers */
 @import "./helperClasses/list/decorated";

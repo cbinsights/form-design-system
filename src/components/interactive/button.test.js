@@ -7,7 +7,7 @@ const renderComponent = (props) => shallow(<Button {...props} />);
 
 const buttons = {
   Link: () => {}, isLoading: true, isDestructive: true, disabled: true, iconPlacement: 'left',
-  Icon: () => {}, isFullWidth: true, theme: 'outlined'
+  Icon: () => {}, isFullWidth: true, theme: 'outlined', hasCaret: true
 };
 
 describe('ButtonGroup component', () => {
