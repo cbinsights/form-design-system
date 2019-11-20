@@ -41,7 +41,7 @@ const Popover = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
   const refTriggerWrap = useRef(null);
-  let refContent = null; // must be assigned via setter fn in `Popper`
+  const refContent = useRef(null);
 
   // update active state on props change to accommodate fully controlled popovers
   useEffect(() => {
@@ -142,7 +142,7 @@ const Popover = ({
     >
       <Popper
         innerRef={(node) => {
-          refContent = node;
+          refContent.current = node;
         }}
         modifiers={popperModifiers}
         placement={getPopperPlacement(position, alignment)}
