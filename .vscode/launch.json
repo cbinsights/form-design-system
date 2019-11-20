@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "env": {
+        "NODE_ENV": "test file"
+      },
+      "name": "Debug",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest",
+      "runtimeArgs": [
+        "--inspect-brk",
+      ],
+      "args": [
+        "--no-timeouts",
+        "${file}",
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229
+    },
+  ]
+}
