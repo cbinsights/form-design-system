@@ -21,7 +21,7 @@ export const getCircleInfo = (circleSize, strokeWidth) => {
 };
 
 const CountdownButton = ({ Icon, duration, onClick }) => {
-  const circleSize = 34; // match size to MuiButtonShim size
+  const circleSize = 34;
   const strokeWidth = '2';
   const { r, c, centerOffset } = getCircleInfo(circleSize, strokeWidth);
 
