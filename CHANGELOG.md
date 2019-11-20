@@ -27,10 +27,15 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [6.0] Form style updates
+## [6.0] MAJOR
 
 ### **BREAKING CHANGES**
-TK
+
+#### Form inputs
+This release may introduce minor visual regressions on inputs in consumer applications.
+
+- Added default styles to all form elements, including box-shadow focus ring
+- `resetInput` helper class now removes `box-shadow`
 
 ## [5.7] Fade helpers
 Adds `bgFade--<direction>--<color>` helper classes to base stylesheet.
