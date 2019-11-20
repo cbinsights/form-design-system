@@ -141,17 +141,15 @@ const Popover = ({
       classNames={transitionName ? `rtg${transitionName}` : undefined}
     >
       <Popper
+        innerRef={(node) => {
+          refContent.current = node;
+        }}
         modifiers={popperModifiers}
         placement={getPopperPlacement(position, alignment)}
       >
         {({ placement, ref, style }) => (
           <div
-            ref={(wrapperRef) => {
-              ref(wrapperRef);
-              if (wrapperRef) {
-                refContent.current = wrapperRef;
-              }
-            }}
+            ref={ref}
             style={{
               ...contentStyle,
               ...style,
