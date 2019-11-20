@@ -1,6 +1,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,500,700&display=swap" rel="stylesheet">
 
 <style type="text/css">
+
 /**
 * (styles specific to doc examples)
 */
@@ -84,5 +85,19 @@ Adds a border and margin around an element.
 */
 .debug--box {
   border: 1px dotted var(--debug-color-info);
+}
+
+/**
+<div class="debug--flex">(flex components)</div>
+
+Adds debug outlines to child Flex/FlexItem components.
+*/
+.debug--flex .flex {
+  outline: 1px solid var(--color-orange);
+}
+.debug--flex .flexItem {
+  outline: 1px dotted var(--debug-color-info);
+  background-color: var(--debug-color-content);
+  background-clip: content-box;
 }
 </style>

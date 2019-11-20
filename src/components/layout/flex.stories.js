@@ -9,13 +9,12 @@ import README from './Flex.md';
 
 const parentStyle = {
   width: '600px',
-  background: 'var(--color-haze)',
 };
 
 /* eslint-disable */
 const ConditionalItemsExample = ({ show1, show2, show3, show4 }) => (
-  <div style={parentStyle}>
-    <Flex className="debug--boxModel fontSize--xl fontWeight--bold">
+  <div style={parentStyle} className="debug--flex fontSize--xl fontWeight--bold">
+    <Flex>
       {show1 && (
         <FlexItem shrink>
           <p>1</p>
@@ -46,9 +45,8 @@ storiesOf('Layout/Flex', module)
   .add(
     'Knobs',
     () => (
-      <div style={parentStyle}>
+      <div style={parentStyle} className="debug--flex">
         <Flex
-          className="debug--boxModel"
           direction={radios(
             'direction',
             {
@@ -89,8 +87,8 @@ storiesOf('Layout/Flex', module)
   .add(
     'Classic media block',
     () => (
-      <div style={parentStyle}>
-        <Flex className="debug--boxModel">
+      <div style={parentStyle} className="debug--flex">
+        <Flex>
           <FlexItem shrink>
             <img src="https://place-hold.it/40x40/a02385/fff&text=:)" />
           </FlexItem>
@@ -130,8 +128,8 @@ storiesOf('Layout/Flex', module)
   .add(
     'Auto-sized content area',
     () => (
-      <div style={{ height: '300px' }}>
-        <Flex direction="column" className="debug--boxModel">
+      <div style={{ height: '300px' }} className="debug--flex">
+        <Flex direction="column">
           <FlexItem shrink>
             <p>
               This is the header, in a <code>FlexItem</code> set to <code>shrink</code>
