@@ -28,7 +28,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ---
 
 ## [5.9] `FloatingAction`
-Adds `FloatingAction` component for [floating action buttons](https://material.io/components/buttons-floating-action-button/).
+
+- Adds `shape--circle` helper class
+- Adds `FloatingAction` component for [floating action buttons](https://material.io/components/buttons-floating-action-button/)
 
 ## [5.8] `Popover` callbacks
 Adds onClose and onOpen callbacks to Popover
