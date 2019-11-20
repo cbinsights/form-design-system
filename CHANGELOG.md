@@ -26,6 +26,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [5.8] onClose and onOpen
+Adds onClose and onOpen callbacks to Popover
 
 ## [5.7] Fade helpers
 Adds `bgFade--<direction>--<color>` helper classes to base stylesheet.
