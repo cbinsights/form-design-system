@@ -16,6 +16,9 @@
 @import "./layout/inlineBlockList.css";
 @import "./layout/hscroll.css";
 
+/* Forms */
+@import "./forms/decoratedInput.css";
+
 /* Media components */
 @import "./media/muiAvatarShim.css";
 @import "./media/avatarRow.css";

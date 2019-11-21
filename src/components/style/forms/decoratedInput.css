@@ -1,0 +1,55 @@
+
+.fdsDecoratedInput {
+  display: flex;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+
+/* Grow the input */
+.fdsDecoratedInput input {
+  z-index: 2;
+  flex-basis: 1;
+  flex-grow: 1;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Shrink the side labels */
+.fdsDecoratedInput::before,
+.fdsDecoratedInput::after {
+  z-index: 1;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: initial;
+  background: var(--color-lightGray);
+  color: var(--font-color-primary);
+  border: 1px solid rgba(var(--rgb-charcoal), 0.24);
+  padding: 4px var(--space-half);
+}
+
+
+.fdsDecoratedInput[data-before] input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.fdsDecoratedInput[data-after] input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.fdsDecoratedInput[data-before]::before {
+  content: attr(data-before);
+  border-top-left-radius: var(--border-radius-default);
+  border-bottom-left-radius: var(--border-radius-default);
+  border-right-width: 0;
+}
+
+.fdsDecoratedInput[data-after]::after {
+  content: attr(data-after);
+  border-top-right-radius: var(--border-radius-default);
+  border-bottom-right-radius: var(--border-radius-default);
+  border-left-width: 0;
+}
