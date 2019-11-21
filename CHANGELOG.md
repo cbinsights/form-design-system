@@ -29,6 +29,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ## [6.0] MAJOR
 
+- Adds `DecoratedInput` component
+
 ### **BREAKING CHANGES**
 
 #### Form inputs
