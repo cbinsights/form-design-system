@@ -38,7 +38,6 @@ const Dialog = (props) => {
     handleResize(); // needs to fire once immediately on mount
     // eslint-disable-next-line no-undef
     window.addEventListener('resize', handleResize);
-    noScroll.off();
     return () => {
       noScroll.off();
       // eslint-disable-next-line no-undef
