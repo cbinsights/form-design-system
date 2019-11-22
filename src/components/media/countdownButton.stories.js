@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, number } from '@storybook/addon-knobs';
+import { withKnobs, number } from '@storybook/addon-knobs';
 
 import CountdownButton from './CountdownButton';
 import README from './CountdownButton.md';
@@ -12,11 +12,7 @@ storiesOf('Interactive/CountdownButton', module)
   .add(
     'Knobs',
     () => (
-      <CountdownButton
-        duration={number('duration', 4000)}
-        icon={text('icon', undefined)}
-        onClick={action('clicked')}
-      />
+      <CountdownButton duration={number('duration', 4000)} onClick={action('clicked')} />
     ),
     { notes: { markdown: README } }
   )

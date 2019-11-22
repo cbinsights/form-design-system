@@ -31,6 +31,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
+#### `MuiButtonShim` Component
+Component removed (was not publicly documented).
+
+#### `CountdownButton` Component
+This component no longer accepts text as an icon. You must pass it
+a component. It will render a `DenyIcon` by default.
+
 #### Form inputs
 This release may introduce minor visual regressions on inputs in consumer applications.
 
