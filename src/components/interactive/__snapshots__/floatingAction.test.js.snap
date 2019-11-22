@@ -9,7 +9,7 @@ exports[`FloatingAction component matches snapshot (set all props) 1`] = `
     label="delete the internet"
     radius="circle"
     size="m"
-    theme="purple"
+    theme="aqua"
   />
 </div>
 `;

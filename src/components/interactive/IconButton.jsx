@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-export const VALID_THEMES = ['aqua', 'purple', 'ghost'];
+export const VALID_THEMES = ['aqua', 'ghost'];
 
 const IconButton = ({
   Icon,

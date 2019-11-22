@@ -46,17 +46,10 @@
   color: var(--color-white);
 }
 
-.fdsIconButton--purple {
-  background-color: var(--color-purple);
-  color: var(--color-white);
-}
-
-.fdsIconButton--purple:hover,
 .fdsIconButton--aqua:hover {
   opacity: 0.9;
 }
 
-.fdsIconButton--purple:active,
 .fdsIconButton--aqua:active {
   opacity: 0.8;
 }
