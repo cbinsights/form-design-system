@@ -3,10 +3,10 @@ import { shallow, mount } from 'enzyme';
 
 import Popover, { getPopperPlacement } from './Popover';
 
-const Trigger = () => (<button>trigger</button>);
 const Content = () => (<p>popover content</p>);
+const triggerJsx = (<button>trigger</button>);
 
-const SELECTOR_TRIGGER = '[aria-haspopup] > div';
+const SELECTOR_TRIGGER = '[aria-haspopup] button';
 
 /**
  * @param {ReactWrapper} w enzyme react wrapper
@@ -17,24 +17,24 @@ const isPopperOpen = (w) => w.find('CSSTransition').prop('in');
 describe('Popover component', () => {
 
   it('matches snapshot (default props)', () => {
-    const wrapper = mount(<Popover trigger={<Trigger />}><Content /></Popover>);
+    const wrapper = mount(<Popover trigger={triggerJsx}><Content /></Popover>);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('uses Portal by default', () => {
-    const wrapper = mount(<Popover trigger={<Trigger />}><Content /></Popover>);
+    const wrapper = mount(<Popover trigger={triggerJsx}><Content /></Popover>);
     expect(wrapper.exists('Portal')).toBe(true);
   });
 
   it('does NOT use Portal when disablePortal is set', () => {
-    const wrapper = mount(<Popover trigger={<Trigger />} disablePortal><Content /></Popover>);
+    const wrapper = mount(<Popover trigger={triggerJsx} disablePortal><Content /></Popover>);
     expect(wrapper.exists('Portal')).toBe(false);
   });
 
   it('ignores `isOpen` prop when not in controlled mode', () => {
     const wrapper = shallow(
       <Popover
-        trigger={<Trigger />}
+        trigger={triggerJsx}
         isOpen
       >
         <Content />
@@ -64,10 +64,14 @@ describe('Popover component', () => {
   describe('interactionMode="click"', () => {
     let wrapper;
     let triggerEl;
+    let onOpen;
+    let onClose;
 
     beforeEach(() => {
+      onOpen = jest.fn()
+      onClose = jest.fn()
       wrapper = mount(
-        <Popover trigger={<Trigger />} interactionMode="click">
+        <Popover trigger={triggerJsx} interactionMode="click" onOpen={onOpen} onClose={onClose} >
           <Content />
         </Popover>
       );
@@ -86,28 +90,40 @@ describe('Popover component', () => {
 
     it('opens and closes popover on trigger clicks', () => {
       expect(isPopperOpen(wrapper)).toBe(false);
+
       triggerEl.simulate('click');
       expect(isPopperOpen(wrapper)).toBe(true);
+      expect(onOpen).toHaveBeenCalled()
+
       triggerEl.simulate('click');
       expect(isPopperOpen(wrapper)).toBe(false);
+      expect(onClose).toHaveBeenCalled()
     });
 
     it('closes on clicks away from popover', () => {
       expect(isPopperOpen(wrapper)).toBe(false);
+
       triggerEl.simulate('click');
       expect(isPopperOpen(wrapper)).toBe(true);
+      expect(onOpen).toHaveBeenCalled()
+
       triggerEl.simulate('click', { target: '<p>lol not the popover</p>' });
       expect(isPopperOpen(wrapper)).toBe(false);
+      expect(onClose).toHaveBeenCalled()
     });
   });
 
   describe('interactionMode="hover"', () => {
     let wrapper;
     let triggerEl;
+    let onOpen;
+    let onClose;
 
     beforeEach(() => {
+      onOpen = jest.fn()
+      onClose = jest.fn()
       wrapper = mount(
-        <Popover trigger={<Trigger />} interactionMode="hover">
+        <Popover trigger={triggerJsx} interactionMode="hover"  onOpen={onOpen} onClose={onClose} >
           <Content />
         </Popover>
       );
@@ -121,30 +137,33 @@ describe('Popover component', () => {
 
     it('adds hover-related props to trigger', () => {
       const triggerPropNames = Object.keys(triggerEl.props());
-      ['onMouseEnter', 'onFocus', 'onBlur', 'tabIndex'].forEach((prop) => {
+      ['onMouseEnter', 'onKeyUp', 'onKeyDown', 'tabIndex'].forEach((prop) => {
         expect(triggerPropNames).toContain(prop);
       });
     });
 
-    it('opens and closes popover on focus/blur', () => {
+    it('opens and closes popover on keyboard navigating in and out via Tab', () => {
       expect(isPopperOpen(wrapper)).toBe(false);
-      triggerEl.simulate('focus');
+
+      triggerEl.simulate('keyup', { key: 'Tab' });
       expect(isPopperOpen(wrapper)).toBe(true);
-      triggerEl.simulate('blur');
+      expect(onOpen).toHaveBeenCalled()
+
+      triggerEl.simulate('keydown', { key: 'Tab' });
       expect(isPopperOpen(wrapper)).toBe(false);
+      expect(onClose).toHaveBeenCalled()
     });
 
-    it('opens on hover', () => {
+    it('closes on mouseleave outside of Popover elements', () => {
       expect(isPopperOpen(wrapper)).toBe(false);
-      triggerEl.simulate('mouseenter');
-      expect(isPopperOpen(wrapper)).toBe(true);
-    });
 
-    it('closes on mousemove outside of Popover elements', () => {
-      expect(isPopperOpen(wrapper)).toBe(false);
       triggerEl.simulate('mouseenter');
       expect(isPopperOpen(wrapper)).toBe(true);
-      triggerEl.simulate('mousemove', { target: '<p>lol not the popover</p>' });
+      expect(onOpen).toHaveBeenCalled()
+      
+      triggerEl.simulate('mouseleave', { target: '<p>lol not the popover</p>' });
+      expect(isPopperOpen(wrapper)).toBe(false);
+      expect(onClose).toHaveBeenCalled()
     });
 
   });

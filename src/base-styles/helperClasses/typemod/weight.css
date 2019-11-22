@@ -15,6 +15,11 @@ Modifies weight of text.
   font-weight: var(--font-weight-bold) !important;
 }
 
+/* Intentionally left undocumented for now (via design) */
+.fontWeight--medium {
+  font-weight: var(--font-weight-medium) !important;
+}
+
 .fontWeight--book {
   font-weight: var(--font-weight-default) !important;
 }

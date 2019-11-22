@@ -5,8 +5,14 @@ exports[`Popover component matches snapshot (default props) 1`] = `
   alignment="start"
   distance={4}
   interactionMode="click"
+  onClose={[Function]}
+  onOpen={[Function]}
   position="auto"
-  trigger={<Trigger />}
+  trigger={
+    <button>
+      trigger
+    </button>
+  }
 >
   <Manager>
     <Reference>
@@ -17,14 +23,12 @@ exports[`Popover component matches snapshot (default props) 1`] = `
           aria-expanded="false"
           aria-haspopup="true"
         >
-          <div
-            onClick={[Function]}
-          >
-            <Trigger>
-              <button>
-                trigger
-              </button>
-            </Trigger>
+          <div>
+            <button
+              onClick={[Function]}
+            >
+              trigger
+            </button>
           </div>
         </div>
       </InnerReference>

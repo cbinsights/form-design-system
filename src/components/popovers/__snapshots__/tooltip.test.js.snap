@@ -7,8 +7,10 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
 >
   <Popover
     alignment="center"
-    distance="8px"
+    distance={8}
     interactionMode="hover"
+    onClose={[Function]}
+    onOpen={[Function]}
     position="bottom"
     transitionName="GrowFast"
     trigger={
@@ -32,18 +34,18 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
             aria-expanded="false"
             aria-haspopup="true"
           >
-            <div
-              onBlur={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              tabIndex="1"
-            >
+            <div>
               <span
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 style={
                   Object {
                     "cursor": "help",
                   }
                 }
+                tabIndex="1"
               >
                 <Trigger>
                   <p>

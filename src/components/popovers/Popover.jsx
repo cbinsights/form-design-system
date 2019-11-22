@@ -6,6 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 import { isNotRefsEvent } from '../util/events';
 
+const noop = () => {};
 export const VALID_POSITIONS = ['auto', 'top', 'right', 'bottom', 'left'];
 export const VALID_ALIGNMENTS = ['start', 'end', 'center'];
 export const VALID_INTERACTION_MODES = ['hover', 'click', 'controlled'];
@@ -38,15 +39,27 @@ const Popover = ({
   distance,
   isOpen,
   transitionName,
+  onOpen,
+  onClose,
 }) => {
   const [isActive, setIsActive] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  const refTrigger = useRef(null);
-  let refContent = null; // must be assigned via setter fn in `Popper`
+  const refTriggerWrap = useRef(null);
+  const refContent = useRef(null);
+
+  const handleSetIsActive = (newValue) => {
+    setIsActive(() => {
+      if (newValue) {
+        onOpen();
+      } else {
+        onClose();
+      }
+      return newValue;
+    });
+  };
 
   // update active state on props change to accommodate fully controlled popovers
   useEffect(() => {
-    setIsActive(interactionMode === 'controlled' && isOpen);
+    handleSetIsActive(interactionMode === 'controlled' && isOpen);
   }, [interactionMode, isOpen]);
 
   /**
@@ -55,20 +68,7 @@ const Popover = ({
    */
   const handleKeyPress = (e) => {
     const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
-    if (isEscapeKey) setIsActive(false);
-  };
-
-  /**
-   * Closes popover when user is mousing over a non-popover element while the trigger
-   * is not focused.
-   * 🎶 function name should be sung to the tune of: https://youtu.be/LaTGrV58wec
-   * @param {Event} e DOMEvent
-   */
-  const handleBodyMouseMove = (e) => {
-    // in hover mode, only treat the trigger as the popover zone
-    const refs = interactionMode === 'hover' ? [refTrigger] : [refTrigger, refContent];
-    const isNotPopoverHover = isNotRefsEvent(refs, e);
-    if (!isFocused && isNotPopoverHover) setIsActive(false);
+    if (isEscapeKey) handleSetIsActive(false);
   };
 
   /**
@@ -76,8 +76,8 @@ const Popover = ({
    * @param {Event} e DOMEvent
    */
   const handleBodyClick = (e) => {
-    const isNotPopoverClick = isNotRefsEvent([refTrigger, refContent], e);
-    if (isNotPopoverClick) setIsActive(false);
+    const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
+    if (isNotPopoverClick) handleSetIsActive(false);
   };
 
   useEffect(() => {
@@ -85,17 +85,9 @@ const Popover = ({
     document.body.addEventListener('mousedown', handleBodyClick, false);
     document.body.addEventListener('keyup', handleKeyPress, false);
 
-    if (interactionMode === 'hover') {
-      document.body.addEventListener('mousemove', handleBodyMouseMove, false);
-    }
-
     return () => {
       document.body.removeEventListener('mousedown', handleBodyClick, false);
       document.body.removeEventListener('keyup', handleKeyPress, false);
-
-      if (interactionMode === 'hover') {
-        document.body.removeEventListener('mousemove', handleBodyMouseMove, false);
-      }
     };
     /* eslint-enable no-undef */
   });
@@ -104,26 +96,33 @@ const Popover = ({
   switch (interactionMode) {
     case 'hover':
       triggerProps.onMouseEnter = () => {
-        setIsActive(true);
+        handleSetIsActive(true);
       };
-      triggerProps.onFocus = () => {
-        setIsActive(true);
-        setIsFocused(true);
+      triggerProps.onMouseLeave = () => {
+        handleSetIsActive(false);
       };
-      triggerProps.onBlur = () => {
-        setIsActive(false);
-        setIsFocused(false);
+      triggerProps.onKeyUp = (e) => {
+        if (e.key === 'Tab') {
+          handleSetIsActive(true);
+        }
+      };
+      triggerProps.onKeyDown = (e) => {
+        if (e.key === 'Tab') {
+          handleSetIsActive(false);
+        }
       };
       triggerProps.tabIndex = '1';
       break;
     case 'click':
       triggerProps.onClick = () => {
-        setIsActive(!isActive);
+        handleSetIsActive(!isActive);
       };
       break;
     default:
       triggerProps = {};
   }
+
+  const clonedTrigger = React.cloneElement(trigger, triggerProps);
 
   // https://popper.js.org/popper-documentation.html#modifiers
   const popperModifiers = {
@@ -157,7 +156,7 @@ const Popover = ({
     >
       <Popper
         innerRef={(node) => {
-          refContent = node;
+          refContent.current = node;
         }}
         modifiers={popperModifiers}
         placement={getPopperPlacement(position, alignment)}
@@ -183,9 +182,7 @@ const Popover = ({
       <Reference>
         {({ ref }) => (
           <div ref={ref} aria-haspopup="true" aria-expanded={isActive.toString()}>
-            <div ref={refTrigger} {...triggerProps}>
-              {trigger}
-            </div>
+            <div ref={refTriggerWrap}>{clonedTrigger}</div>
           </div>
         )}
       </Reference>
@@ -204,6 +201,8 @@ Popover.defaultProps = {
   position: 'auto',
   alignment: 'start',
   distance: 4,
+  onOpen: noop,
+  onClose: noop,
 };
 
 Popover.propTypes = {
@@ -249,6 +248,12 @@ Popover.propTypes = {
 
   /** Name of transition for popover content */
   transitionName: PropTypes.oneOf(['GrowFast']),
+
+  /** Callback called when popover opens */
+  onOpen: PropTypes.func,
+
+  /** Callback called when popover closes */
+  onClose: PropTypes.func,
 };
 
 export default Popover;
