@@ -12,6 +12,10 @@ const theme = create({
 });
 
 addParameters({
+  backgrounds: [
+    { name: 'White', value: '#fff' },
+    { name: 'Navy', value: '#003366' },
+  ],
   options: {
     theme,
   },

@@ -30,39 +30,28 @@ export const iconOptions = options(
 Displays standard Buttons.
 
 <Story name="Knobs">
-  <div
-    className={
-      boolean("Toggle Background", false) ? "padding--all inverted" : ""
-    }
-    style={
-      boolean("Toggle Background", false)
-        ? { background: "var(--color-navy)" }
-        : {}
-    }
-  >
-    <Button
-      disabled={boolean("disabled", false)}
-      isLoading={boolean("isLoading", false)}
-      isDestructive={boolean("isDestructive", false)}
-      hasCaret={boolean("hasCaret", false)}
-      Icon={iconOptions ? StarFilledIcon : undefined}
-      iconPlacement={iconOptions}
-      isFullWidth={boolean("isFullWidth", false)}
-      size={options("size", arrayToOptions(["s", "m"]), undefined, {
+  <Button
+    disabled={boolean("disabled", false)}
+    isLoading={boolean("isLoading", false)}
+    isDestructive={boolean("isDestructive", false)}
+    hasCaret={boolean("hasCaret", false)}
+    Icon={iconOptions ? StarFilledIcon : undefined}
+    iconPlacement={iconOptions}
+    isFullWidth={boolean("isFullWidth", false)}
+    size={options("size", arrayToOptions(["s", "m"]), undefined, {
+      display: "inline-radio"
+    })}
+    theme={options(
+      "theme",
+      arrayToOptions(["blue", "outlined", "ghost"]),
+      undefined,
+      {
         display: "inline-radio"
-      })}
-      theme={options(
-        "theme",
-        arrayToOptions(["blue", "outlined", "ghost"]),
-        undefined,
-        {
-          display: "inline-radio"
-        }
-      )}
-    >
-      {text("Text", "Button")}
-    </Button>
-  </div>
+      }
+    )}
+  >
+    {text("Text", "Button")}
+  </Button>
 </Story>
 
 ## Handling events
