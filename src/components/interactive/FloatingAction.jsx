@@ -19,7 +19,7 @@ const FloatingAction = ({ Icon, label, isActive, isLoading, ...otherProps }) => 
 );
 
 FloatingAction.defaultProps = {
-  theme: 'purple',
+  theme: 'aqua',
 };
 
 FloatingAction.propTypes = {
