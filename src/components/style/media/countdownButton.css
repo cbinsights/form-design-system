@@ -17,5 +17,7 @@
 }
 
 .countdownButton-button {
+  margin-left: 1px;
+  margin-top: 1px;
   z-index: calc(var(--zindex-main) + 1);
 }

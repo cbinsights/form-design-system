@@ -14,16 +14,6 @@ describe('CountdownButton', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('renders a custom icon', () => {
-    const testClass = 'customIcon';
-    const component = renderComponent({
-      icon: <div className={testClass} />,
-      ...MOCK_PROPS
-    });
-
-    expect(component.find(`.${testClass}`)).toHaveLength(1);
-  });
-
   it('calculates circle dimensions correctly', () => {
     const actual = getCircleInfo(90, 10);
     const expected = {
