@@ -33,17 +33,17 @@ storiesOf('Forms/DecoratedInput', module)
     () => (
       <Flex direction="column">
         <FlexItem>
-          <DecoratedInput key="both" before="£" after="GBP">
+          <DecoratedInput before="£" after="GBP">
             <input type="number" placeholder="Price of lorry" step="0.01" min="0.01" />
           </DecoratedInput>
         </FlexItem>
         <FlexItem>
-          <DecoratedInput key="first" before="£">
+          <DecoratedInput before="£">
             <input type="number" placeholder="Price of lorry" step="0.01" min="0.01" />
           </DecoratedInput>
         </FlexItem>
         <FlexItem>
-          <DecoratedInput key="last" after="GBP">
+          <DecoratedInput after="GBP">
             <input type="number" placeholder="Price of lorry" step="0.01" min="0.01" />
           </DecoratedInput>
         </FlexItem>
