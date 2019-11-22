@@ -36,5 +36,8 @@ storiesOf('Modals/Prompt', module)
         secondaryButton={<Button {...secondaryButtonProps()} />}
       />
     ),
-    { notes: { markdown: README } }
+    {
+      notes: { markdown: README },
+      docs: { disable: true },
+    }
   );

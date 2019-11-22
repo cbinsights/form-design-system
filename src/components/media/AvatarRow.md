@@ -1,3 +1,1 @@
-# AvatarRow
-
 Render an overlapping list of avatars with an overflow count.

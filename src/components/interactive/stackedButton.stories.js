@@ -35,7 +35,7 @@ storiesOf('Interactive/StackedButton', module)
   )
   .add('Variations', () => (
     <React.Fragment>
-      <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+      <div className="display--inlineFlex" style={{ flexWrap: 'wrap' }}>
         <div className="margin--bottom--half">
           <StackedButton Icon={CaretDownIcon} label="Lorem" />
         </div>
