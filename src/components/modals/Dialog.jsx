@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import FocusTrap from 'focus-trap-react';
-import noScroll from 'no-scroll';
 import rafSchd from 'raf-schd';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
 import Flex from '../layout/Flex';
@@ -18,6 +17,8 @@ export const isElementOverflowing = ({ current }) => {
   }
   return false;
 };
+
+const noScroll = () => null;
 
 const Dialog = (props) => {
   const contentEl = useRef(null);
