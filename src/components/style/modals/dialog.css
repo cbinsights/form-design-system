@@ -1,5 +1,6 @@
 .dialog-enter {
   opacity: 0;
+  z-index: var(--zindex-shim);
 }
 
 .dialog-enter-active {
@@ -9,6 +10,7 @@
 
 .dialog-exit {
   opacity: 1;
+  z-index: var(--zindex-shim);
 }
 
 .dialog-exit-active {
