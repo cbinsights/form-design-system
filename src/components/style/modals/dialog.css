@@ -27,6 +27,15 @@
   opacity: 0.6;
 }
 
+.fix-full-width {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: calc(var(--zindex-modal) + 1);
+}
+
 .dialog-wrapper {
   display: flex;
   flex-direction: column;
