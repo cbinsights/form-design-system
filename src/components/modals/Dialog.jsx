@@ -64,7 +64,7 @@ const Dialog = (props) => {
               className="dialog-overlay dialogfullScreen"
               onClick={props.onDimiss}
             ></div>
-            <div className="dialogfullScreen">
+            <div className="dialogfullScreen dialog-zIndex">
               <div className="dialog-wrapper">
                 <div
                   className="dialog elevation--3"

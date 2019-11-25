@@ -9,7 +9,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
           class="dialog-overlay dialogfullScreen"
         />
         <div
-          class="dialogfullScreen"
+          class="dialogfullScreen dialog-zIndex"
         >
           <div
             class="dialog-wrapper"
@@ -81,7 +81,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
           class="dialog-overlay dialogfullScreen"
         />
         <div
-          class="dialogfullScreen"
+          class="dialogfullScreen dialog-zIndex"
         >
           <div
             class="dialog-wrapper"
@@ -153,7 +153,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
           class="dialog-overlay dialogfullScreen"
         />
         <div
-          class="dialogfullScreen"
+          class="dialogfullScreen dialog-zIndex"
         >
           <div
             class="dialog-wrapper"
@@ -200,7 +200,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
           className="dialog-overlay dialogfullScreen"
         />
         <div
-          className="dialogfullScreen"
+          className="dialogfullScreen dialog-zIndex"
         >
           <div
             className="dialog-wrapper"
@@ -242,7 +242,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
           class="dialog-overlay dialogfullScreen"
         />
         <div
-          class="dialogfullScreen"
+          class="dialogfullScreen dialog-zIndex"
         >
           <div
             class="dialog-wrapper"
@@ -314,7 +314,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
           class="dialog-overlay dialogfullScreen"
         />
         <div
-          class="dialogfullScreen"
+          class="dialogfullScreen dialog-zIndex"
         >
           <div
             class="dialog-wrapper"
@@ -386,7 +386,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
           class="dialog-overlay dialogfullScreen"
         />
         <div
-          class="dialogfullScreen"
+          class="dialogfullScreen dialog-zIndex"
         >
           <div
             class="dialog-wrapper"
@@ -433,7 +433,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
           className="dialog-overlay dialogfullScreen"
         />
         <div
-          className="dialogfullScreen"
+          className="dialogfullScreen dialog-zIndex"
         >
           <div
             className="dialog-wrapper"
