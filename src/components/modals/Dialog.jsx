@@ -18,6 +18,8 @@ export const isElementOverflowing = ({ current }) => {
   return false;
 };
 
+const blah = () => 2 + 2;
+
 const Dialog = (props) => {
   const contentEl = useRef(null);
 
@@ -47,9 +49,9 @@ const Dialog = (props) => {
     // This toggles scrolling on and off based on whether the modal
     // is shown or not
     if (props.isOpen) {
-      console.log('blah');
+      blah();
     } else {
-      console.log('blah');
+      blah();
     }
   }, [props.isOpen]);
 
