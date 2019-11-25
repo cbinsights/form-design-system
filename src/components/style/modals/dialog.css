@@ -1,21 +1,23 @@
 .dialog-enter {
   opacity: 0;
   z-index: var(--zindex-shim);
+  position: relative;
 }
 
 .dialog-enter-active {
   opacity: 1;
-  transition: opacity 10000ms;
+  transition: opacity 200ms;
 }
 
 .dialog-exit {
   opacity: 1;
   z-index: var(--zindex-shim);
+  position: relative;
 }
 
 .dialog-exit-active {
   opacity: 0;
-  transition: opacity 10000ms;
+  transition: opacity 200ms;
 }
 
 .dialog-overlay {

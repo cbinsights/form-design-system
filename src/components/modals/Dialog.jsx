@@ -57,7 +57,7 @@ const Dialog = (props) => {
 
   return ReactDOM.createPortal(
     <CSSTransition
-      timeout={10000}
+      timeout={200}
       in={props.isOpen}
       classNames="dialog"
       className="blah"
