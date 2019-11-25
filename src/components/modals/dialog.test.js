@@ -18,36 +18,4 @@ describe('Dialog component', () => {
     expect(dismissFn).toHaveBeenCalled();
   });
 
-  it('locks scrolling when visible', () => {
-    mount(<Dialog isOpen={true} content={<button>hey</button>} />);
-    // eslint-disable-next-line no-undef 
-    expect(document.documentElement.style.overflow).toBe('hidden');
-  });
-
-  it('does not lock scrolling when not visible', () => {
-    mount(<Dialog content={<button>hey</button>} />);
-    // eslint-disable-next-line no-undef 
-    expect(document.documentElement.style.overflow).toBe('');
-  });
-
-  it('matches snapshot (default props)', () => {
-    const component = shallow(<Dialog isOpen={true} content="foo" />);
-    expect(component).toMatchSnapshot();
-  });
-
-  it('matches snapshot (set all props)', () => {
-    const component = shallow(
-      <Dialog 
-        content="foo" 
-        role="alertdialog" 
-        isOpen={true} 
-        canDismiss={true} 
-        footerContent={<div>foo</div>} 
-        title="hey" 
-        onDismiss={(() => {})} 
-      />
-    );
-    expect(component).toMatchSnapshot();
-  });
-
 })

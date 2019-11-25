@@ -18,8 +18,6 @@ export const isElementOverflowing = ({ current }) => {
   return false;
 };
 
-const noScroll = () => null;
-
 const Dialog = (props) => {
   const contentEl = useRef(null);
 
@@ -40,7 +38,6 @@ const Dialog = (props) => {
     // eslint-disable-next-line no-undef
     window.addEventListener('resize', handleResize);
     return () => {
-      noScroll.off();
       // eslint-disable-next-line no-undef
       window.removeEventListener('resize', handleResize);
     };
@@ -50,9 +47,9 @@ const Dialog = (props) => {
     // This toggles scrolling on and off based on whether the modal
     // is shown or not
     if (props.isOpen) {
-      noScroll.on();
+      console.log('blah');
     } else {
-      noScroll.off();
+      console.log('blah');
     }
   }, [props.isOpen]);
 
