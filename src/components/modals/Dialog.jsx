@@ -56,7 +56,7 @@ const Dialog = (props) => {
   }, [props.isOpen]);
 
   return ReactDOM.createPortal(
-    <CSSTransition timeout={200} in={props.isOpen} classNames="dialog" unmountOnExit>
+    <CSSTransition timeout={10000} in={props.isOpen} classNames="dialog" unmountOnExit>
       <React.Fragment>
         <FocusTrap>
           <div>

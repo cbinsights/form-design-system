@@ -4,7 +4,7 @@
 
 .dialog-enter-active {
   opacity: 1;
-  transition: opacity 200ms;
+  transition: opacity 10000ms;
 }
 
 .dialog-exit {
@@ -13,7 +13,7 @@
 
 .dialog-exit-active {
   opacity: 0;
-  transition: opacity 200ms;
+  transition: opacity 10000ms;
 }
 
 .dialog-overlay {

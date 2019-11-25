@@ -19,10 +19,6 @@ const Prompt = (props) => (
   />
 );
 
-Prompt.defaultProps = {
-  buttonPosition: 'content',
-};
-
 Prompt.propTypes = {
   /** Controls text in header */
   title: PropTypes.string,
