@@ -6,71 +6,67 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
     <body>
       <div>
         <div
-          class="dialog-overlay dialogfullScreen"
+          class="dialog-overlay"
         />
         <div
-          class="dialogfullScreen dialog-zIndex"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
-            class="dialog-wrapper"
+            aria-describedby="a11y-dialog-desc"
+            aria-modal="true"
+            class="dialog elevation--3"
+            role="dialog"
+            tabindex="-1"
           >
             <div
-              aria-describedby="a11y-dialog-desc"
-              aria-modal="true"
-              class="dialog elevation--3"
-              role="dialog"
-              tabindex="-1"
+              class="dialog-header"
             >
               <div
-                class="dialog-header"
+                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
               >
                 <div
-                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+                  class="flex flex--alignStart flex--row flex--justifySpaceBetween"
                 >
                   <div
-                    class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                    class="flexItem"
+                  />
+                  <div
+                    class="flexItem flexItem--shrink"
                   >
-                    <div
-                      class="flexItem"
-                    />
-                    <div
-                      class="flexItem flexItem--shrink"
+                    <button
+                      class="dialog-icon"
                     >
-                      <button
-                        class="dialog-icon"
+                      <div
+                        class="fds-icon fds-icon--xs"
                       >
-                        <div
-                          class="fds-icon fds-icon--xs"
+                        <svg
+                          viewBox="0 0 24 24"
                         >
-                          <svg
-                            viewBox="0 0 24 24"
+                          <g
+                            fill-rule="evenodd"
                           >
-                            <g
-                              fill-rule="evenodd"
-                            >
-                              <g>
-                                <polygon
-                                  points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
-                                />
-                              </g>
+                            <g>
+                              <polygon
+                                points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                              />
                             </g>
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
+                          </g>
+                        </svg>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
+            </div>
+            <div
+              class="dialog-content"
+            >
               <div
-                class="dialog-content"
+                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
               >
-                <div
-                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-                >
-                  <button>
-                    hey
-                  </button>
-                </div>
+                <button>
+                  hey
+                </button>
               </div>
             </div>
           </div>
@@ -78,71 +74,67 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
       </div>
       <div>
         <div
-          class="dialog-overlay dialogfullScreen"
+          class="dialog-overlay"
         />
         <div
-          class="dialogfullScreen dialog-zIndex"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
-            class="dialog-wrapper"
+            aria-describedby="a11y-dialog-desc"
+            aria-modal="true"
+            class="dialog elevation--3"
+            role="dialog"
+            tabindex="-1"
           >
             <div
-              aria-describedby="a11y-dialog-desc"
-              aria-modal="true"
-              class="dialog elevation--3"
-              role="dialog"
-              tabindex="-1"
+              class="dialog-header"
             >
               <div
-                class="dialog-header"
+                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
               >
                 <div
-                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+                  class="flex flex--alignStart flex--row flex--justifySpaceBetween"
                 >
                   <div
-                    class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                    class="flexItem"
+                  />
+                  <div
+                    class="flexItem flexItem--shrink"
                   >
-                    <div
-                      class="flexItem"
-                    />
-                    <div
-                      class="flexItem flexItem--shrink"
+                    <button
+                      class="dialog-icon"
                     >
-                      <button
-                        class="dialog-icon"
+                      <div
+                        class="fds-icon fds-icon--xs"
                       >
-                        <div
-                          class="fds-icon fds-icon--xs"
+                        <svg
+                          viewBox="0 0 24 24"
                         >
-                          <svg
-                            viewBox="0 0 24 24"
+                          <g
+                            fill-rule="evenodd"
                           >
-                            <g
-                              fill-rule="evenodd"
-                            >
-                              <g>
-                                <polygon
-                                  points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
-                                />
-                              </g>
+                            <g>
+                              <polygon
+                                points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                              />
                             </g>
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
+                          </g>
+                        </svg>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
+            </div>
+            <div
+              class="dialog-content"
+            >
               <div
-                class="dialog-content"
+                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
               >
-                <div
-                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-                >
-                  <button>
-                    hey
-                  </button>
-                </div>
+                <button>
+                  hey
+                </button>
               </div>
             </div>
           </div>
@@ -150,31 +142,27 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
       </div>
       <div>
         <div
-          class="dialog-overlay dialogfullScreen"
+          class="dialog-overlay"
         />
         <div
-          class="dialogfullScreen dialog-zIndex"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
-            class="dialog-wrapper"
+            aria-describedby="a11y-dialog-desc"
+            aria-modal="true"
+            class="dialog elevation--3"
+            role="dialog"
+            tabindex="-1"
           >
             <div
-              aria-describedby="a11y-dialog-desc"
-              aria-modal="true"
-              class="dialog elevation--3"
-              role="dialog"
-              tabindex="-1"
+              class="dialog-content"
             >
               <div
-                class="dialog-content"
+                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
               >
-                <div
-                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-                >
-                  <button>
-                    hey
-                  </button>
-                </div>
+                <button>
+                  hey
+                </button>
               </div>
             </div>
           </div>
@@ -197,33 +185,29 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
     >
       <div>
         <div
-          className="dialog-overlay dialogfullScreen"
+          className="dialog-overlay"
         />
         <div
-          className="dialogfullScreen dialog-zIndex"
+          className="dialog-zIndex dialog-wrapper"
         >
           <div
-            className="dialog-wrapper"
+            aria-describedby="a11y-dialog-desc"
+            aria-modal="true"
+            className="dialog elevation--3"
+            onKeyDown={[Function]}
+            role="dialog"
+            tabIndex="-1"
           >
             <div
-              aria-describedby="a11y-dialog-desc"
-              aria-modal="true"
-              className="dialog elevation--3"
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="-1"
+              className="dialog-content"
             >
-              <div
-                className="dialog-content"
+              <Section
+                bgColor="white"
+                xPadding="default"
+                yPadding="default"
               >
-                <Section
-                  bgColor="white"
-                  xPadding="default"
-                  yPadding="default"
-                >
-                  foo
-                </Section>
-              </div>
+                foo
+              </Section>
             </div>
           </div>
         </div>
@@ -239,71 +223,67 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
     <body>
       <div>
         <div
-          class="dialog-overlay dialogfullScreen"
+          class="dialog-overlay"
         />
         <div
-          class="dialogfullScreen dialog-zIndex"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
-            class="dialog-wrapper"
+            aria-describedby="a11y-dialog-desc"
+            aria-modal="true"
+            class="dialog elevation--3"
+            role="dialog"
+            tabindex="-1"
           >
             <div
-              aria-describedby="a11y-dialog-desc"
-              aria-modal="true"
-              class="dialog elevation--3"
-              role="dialog"
-              tabindex="-1"
+              class="dialog-header"
             >
               <div
-                class="dialog-header"
+                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
               >
                 <div
-                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+                  class="flex flex--alignStart flex--row flex--justifySpaceBetween"
                 >
                   <div
-                    class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                    class="flexItem"
+                  />
+                  <div
+                    class="flexItem flexItem--shrink"
                   >
-                    <div
-                      class="flexItem"
-                    />
-                    <div
-                      class="flexItem flexItem--shrink"
+                    <button
+                      class="dialog-icon"
                     >
-                      <button
-                        class="dialog-icon"
+                      <div
+                        class="fds-icon fds-icon--xs"
                       >
-                        <div
-                          class="fds-icon fds-icon--xs"
+                        <svg
+                          viewBox="0 0 24 24"
                         >
-                          <svg
-                            viewBox="0 0 24 24"
+                          <g
+                            fill-rule="evenodd"
                           >
-                            <g
-                              fill-rule="evenodd"
-                            >
-                              <g>
-                                <polygon
-                                  points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
-                                />
-                              </g>
+                            <g>
+                              <polygon
+                                points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                              />
                             </g>
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
+                          </g>
+                        </svg>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
+            </div>
+            <div
+              class="dialog-content"
+            >
               <div
-                class="dialog-content"
+                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
               >
-                <div
-                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-                >
-                  <button>
-                    hey
-                  </button>
-                </div>
+                <button>
+                  hey
+                </button>
               </div>
             </div>
           </div>
@@ -311,71 +291,67 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
       </div>
       <div>
         <div
-          class="dialog-overlay dialogfullScreen"
+          class="dialog-overlay"
         />
         <div
-          class="dialogfullScreen dialog-zIndex"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
-            class="dialog-wrapper"
+            aria-describedby="a11y-dialog-desc"
+            aria-modal="true"
+            class="dialog elevation--3"
+            role="dialog"
+            tabindex="-1"
           >
             <div
-              aria-describedby="a11y-dialog-desc"
-              aria-modal="true"
-              class="dialog elevation--3"
-              role="dialog"
-              tabindex="-1"
+              class="dialog-header"
             >
               <div
-                class="dialog-header"
+                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
               >
                 <div
-                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+                  class="flex flex--alignStart flex--row flex--justifySpaceBetween"
                 >
                   <div
-                    class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                    class="flexItem"
+                  />
+                  <div
+                    class="flexItem flexItem--shrink"
                   >
-                    <div
-                      class="flexItem"
-                    />
-                    <div
-                      class="flexItem flexItem--shrink"
+                    <button
+                      class="dialog-icon"
                     >
-                      <button
-                        class="dialog-icon"
+                      <div
+                        class="fds-icon fds-icon--xs"
                       >
-                        <div
-                          class="fds-icon fds-icon--xs"
+                        <svg
+                          viewBox="0 0 24 24"
                         >
-                          <svg
-                            viewBox="0 0 24 24"
+                          <g
+                            fill-rule="evenodd"
                           >
-                            <g
-                              fill-rule="evenodd"
-                            >
-                              <g>
-                                <polygon
-                                  points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
-                                />
-                              </g>
+                            <g>
+                              <polygon
+                                points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                              />
                             </g>
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
+                          </g>
+                        </svg>
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
+            </div>
+            <div
+              class="dialog-content"
+            >
               <div
-                class="dialog-content"
+                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
               >
-                <div
-                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-                >
-                  <button>
-                    hey
-                  </button>
-                </div>
+                <button>
+                  hey
+                </button>
               </div>
             </div>
           </div>
@@ -383,31 +359,27 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
       </div>
       <div>
         <div
-          class="dialog-overlay dialogfullScreen"
+          class="dialog-overlay"
         />
         <div
-          class="dialogfullScreen dialog-zIndex"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
-            class="dialog-wrapper"
+            aria-describedby="a11y-dialog-desc"
+            aria-modal="true"
+            class="dialog elevation--3"
+            role="dialog"
+            tabindex="-1"
           >
             <div
-              aria-describedby="a11y-dialog-desc"
-              aria-modal="true"
-              class="dialog elevation--3"
-              role="dialog"
-              tabindex="-1"
+              class="dialog-content"
             >
               <div
-                class="dialog-content"
+                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
               >
-                <div
-                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-                >
-                  <button>
-                    hey
-                  </button>
-                </div>
+                <button>
+                  hey
+                </button>
               </div>
             </div>
           </div>
@@ -430,86 +402,82 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
     >
       <div>
         <div
-          className="dialog-overlay dialogfullScreen"
+          className="dialog-overlay"
         />
         <div
-          className="dialogfullScreen dialog-zIndex"
+          className="dialog-zIndex dialog-wrapper"
         >
           <div
-            className="dialog-wrapper"
+            aria-describedby="a11y-dialog-desc"
+            aria-labelledby="a11y-dialog-title"
+            aria-modal="true"
+            className="dialog elevation--3"
+            onKeyDown={[Function]}
+            role="alertdialog"
+            tabIndex="-1"
           >
             <div
-              aria-describedby="a11y-dialog-desc"
-              aria-labelledby="a11y-dialog-title"
-              aria-modal="true"
-              className="dialog elevation--3"
-              onKeyDown={[Function]}
-              role="alertdialog"
-              tabIndex="-1"
+              className="dialog-header"
             >
-              <div
-                className="dialog-header"
+              <Section
+                bgColor="white"
+                border="bottom"
+                xPadding="default"
+                yPadding="default"
               >
-                <Section
-                  bgColor="white"
-                  border="bottom"
-                  xPadding="default"
-                  yPadding="default"
+                <Flex
+                  align="start"
+                  direction="row"
+                  justify="spaceBetween"
                 >
-                  <Flex
-                    align="start"
-                    direction="row"
-                    justify="spaceBetween"
+                  <FlexItem
+                    shrink={false}
                   >
-                    <FlexItem
-                      shrink={false}
+                    <div
+                      className="dialog-title type--head4"
+                      id="a11y-dialog-title"
                     >
-                      <div
-                        className="dialog-title type--head4"
-                        id="a11y-dialog-title"
-                      >
-                        hey
-                      </div>
-                    </FlexItem>
-                    <FlexItem
-                      shrink={true}
+                      hey
+                    </div>
+                  </FlexItem>
+                  <FlexItem
+                    shrink={true}
+                  >
+                    <button
+                      className="dialog-icon"
+                      onClick={[Function]}
                     >
-                      <button
-                        className="dialog-icon"
-                        onClick={[Function]}
-                      >
-                        <DenyIcon
-                          size="xs"
-                        />
-                      </button>
-                    </FlexItem>
-                  </Flex>
-                </Section>
-              </div>
-              <div
-                className="dialog-content"
+                      <DenyIcon
+                        size="xs"
+                      />
+                    </button>
+                  </FlexItem>
+                </Flex>
+              </Section>
+            </div>
+            <div
+              className="dialog-content"
+            >
+              <Section
+                bgColor="white"
+                xPadding="default"
+                yPadding="default"
               >
-                <Section
-                  bgColor="white"
-                  xPadding="default"
-                  yPadding="default"
-                >
+                foo
+              </Section>
+            </div>
+            <div
+              className="dialog-footer"
+            >
+              <Section
+                bgColor="white"
+                xPadding="default"
+                yPadding="default"
+              >
+                <div>
                   foo
-                </Section>
-              </div>
-              <div
-                className="dialog-footer"
-              >
-                <Section
-                  bgColor="white"
-                  xPadding="default"
-                  yPadding="default"
-                >
-                  <div>
-                    foo
-                  </div>
-                </Section>
-              </div>
+                </div>
+              </Section>
             </div>
           </div>
         </div>
