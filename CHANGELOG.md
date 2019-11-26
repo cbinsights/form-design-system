@@ -29,6 +29,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ## [6.0] MAJOR
 
+- Adds `DecoratedInput` component
+- right-aligns number-like inputs (time, date, number, etc.)
+
 ### **BREAKING CHANGES**
 
 #### `MuiButtonShim` Component

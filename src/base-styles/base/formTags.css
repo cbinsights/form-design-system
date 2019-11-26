@@ -105,6 +105,15 @@ input[type="file"] {
   padding-top: 6px; /* offset smaller font size */
 }
 
+input[type="date"],
+input[type="time"],
+input[type="date-time-local"],
+input[type="month"],
+input[type="year"],
+input[type="number"] {
+  text-align: right;
+}
+
 
 /**
  * Invalid/disabled
