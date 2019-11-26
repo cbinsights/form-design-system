@@ -6,7 +6,7 @@ import IconButton from './IconButton';
 const renderComponent = (props) => shallow(<IconButton {...props} />);
 
 const props = {
-  Icon: () => {}, isActive: true, radius: 'circle', isLoading: true, theme: 'aqua', isDestructive: true, disabled: true
+  Icon: () => {}, isActive: true, radius: 'circle', size: 's', isLoading: true, theme: 'aqua', isDestructive: true, disabled: true
 };
 
 describe('ButtonGroup component', () => {

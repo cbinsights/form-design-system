@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, optionsKnob as options } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
 import CollectionPublicIcon from '../../../lib/icons/react/CollectionPublicIcon';
 import StoryAddIcon from '../../../lib/icons/react/StoryAddIcon';
@@ -10,8 +10,7 @@ import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
 import { arrayToOptions } from '../util/storybook';
 import { MockLink } from '../util/mock-react-router';
 
-import IconButton from './IconButton';
-import Button from './Button';
+import IconButton, { VALID_THEMES } from './IconButton';
 import README from './IconButton.md';
 
 storiesOf('Interactive/IconButton', module)
@@ -19,25 +18,22 @@ storiesOf('Interactive/IconButton', module)
   .add(
     'Knobs',
     () => (
-      <div
-        className={boolean('Toggle Background', false) ? 'padding--all inverted' : ''}
-        style={
-          boolean('Toggle Background', false) ? { background: 'var(--color-navy)' } : {}
-        }
-      >
-        <IconButton
-          isDestructive={boolean('isDestructive', false)}
-          disabled={boolean('disabled', false)}
-          isLoading={boolean('isLoading', false)}
-          theme={options('theme', arrayToOptions(['ghost', 'aqua']), undefined, {
-            display: 'inline-radio',
-          })}
-          radius={options('radius', arrayToOptions(['square', 'circle']), undefined, {
-            display: 'inline-radio',
-          })}
-          Icon={StarFilledIcon}
-        />
-      </div>
+      <IconButton
+        isDestructive={boolean('isDestructive', false)}
+        disabled={boolean('disabled', false)}
+        isLoading={boolean('isLoading', false)}
+        theme={options('theme', arrayToOptions(VALID_THEMES), undefined, {
+          display: 'inline-radio',
+        })}
+        size={options('size', arrayToOptions(['s', 'm']), undefined, {
+          display: 'inline-radio',
+        })}
+        radius={options('radius', arrayToOptions(['square', 'circle']), undefined, {
+          display: 'inline-radio',
+        })}
+        label={text('label', undefined)}
+        Icon={StarFilledIcon}
+      />
     ),
     { notes: { markdown: README } }
   )
@@ -57,16 +53,13 @@ storiesOf('Interactive/IconButton', module)
           <IconButton Icon={SalesforceIcon} />
         </div>
         <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={SalesforceIcon} />
+          <IconButton Icon={CollectionPublicIcon} disabled />
         </div>
         <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={SalesforceIcon} disabled />
+          <IconButton Icon={StoryAddIcon} isActive />
         </div>
         <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={SalesforceIcon} isActive />
-        </div>
-        <div className="margin--right--half margin--bottom--half">
-          <IconButton Icon={SalesforceIcon} isActive isDestructive />
+          <IconButton Icon={WorkFasterIcon} isActive isDestructive />
         </div>
         <div className="margin--right--half margin--bottom--half">
           <IconButton theme="aqua" Icon={SalesforceIcon} />
@@ -74,12 +67,6 @@ storiesOf('Interactive/IconButton', module)
         <div className="margin--right--half margin--bottom--half">
           <IconButton theme="aqua" disabled Icon={SalesforceIcon} />
         </div>
-        <div className="margin--right--half margin--bottom--half">
-          <Button>Button</Button>
-        </div>
-      </div>
-      <br />
-      <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
         <div className="margin--right--half margin--bottom--half">
           <IconButton Icon={CollectionPublicIcon} radius="circle" />
         </div>
@@ -119,8 +106,25 @@ storiesOf('Interactive/IconButton', module)
         <div className="margin--right--half margin--bottom--half">
           <IconButton Icon={SalesforceIcon} radius="circle" isLoading isDestructive />
         </div>
+        <br />
+      </div>
+      <br />
+      <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+        <p className="margin--right">small:</p>
         <div className="margin--right--half margin--bottom--half">
-          <Button>Button</Button>
+          <IconButton size="s" theme="aqua" Icon={SalesforceIcon} />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <IconButton radius="circle" size="s" theme="aqua" Icon={SalesforceIcon} />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <IconButton
+            size="s"
+            theme="aqua"
+            Icon={SalesforceIcon}
+            radius="circle"
+            isLoading
+          />
         </div>
       </div>
     </React.Fragment>

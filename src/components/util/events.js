@@ -15,5 +15,5 @@
 export const isNotRefsEvent = (refs, e) =>
   refs.every((ref) => {
     const validRef = ref && (ref.current || ref);
-    return validRef && !validRef.contains(e.target);
+    return validRef && validRef.contains && !validRef.contains(e.target);
   });

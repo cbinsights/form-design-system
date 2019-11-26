@@ -9,12 +9,20 @@
   line-height: normal;
   user-select: none;
   display: flex;
-  padding: 7px;
   flex-direction: column;
   background-color: transparent;
   transition: background-color var(--button-timeout) var(--motion-easing-default),
     box-shadow var(--button-timeout) var(--motion-easing-default);
   box-sizing: border-box;
+  min-height: auto;
+}
+
+.fdsIconButton--s {
+  padding: 4px;
+}
+
+.fdsIconButton--m {
+  padding: 7px;
 }
 
 

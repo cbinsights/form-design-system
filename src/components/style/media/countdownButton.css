@@ -13,9 +13,9 @@
 }
 
 .countdownButton-animation {
-  z-index: 1;
+  z-index: var(--zindex-main);
 }
 
 .countdownButton-button {
-  z-index: 2;
+  z-index: calc(var(--zindex-main) + 1);
 }

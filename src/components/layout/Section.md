@@ -1,5 +1,3 @@
-# Section
-
 Section is a layout component that can be used for sectioning content either vertically or
 horizontally.
 

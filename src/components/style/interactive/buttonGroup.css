@@ -1,6 +1,5 @@
 :root {
   --button-group-timeout: 250ms;
-  --button-group-focus-color: rgba(0, 51, 102, 0.32);
   --button-group-hover-color: #DEE5EB;
   --button-group-pressed-color: #C2CEDA;
   --button-group-active-color: #DBE2E9;
@@ -10,7 +9,7 @@
 
 .btngroup {
   display: inline-flex;
-  z-index: 0;
+  z-index: var(--zindex-main);
   position: relative;
 }
 
@@ -18,7 +17,7 @@
   margin-left: -1px;
   position: relative;
   border-radius: 0;
-  z-index: 2;
+  z-index: calc(var(--zindex-main) + 1);
 }
 
 /* z-index is used here to manage the border for those button
@@ -26,19 +25,19 @@ states and their stacking order (whether they display or not).
 The border for a disabled button should appear below a border
 for a button being clicked on (:active) */
 .btngroup .groupbtn--disabled {
-  z-index: 1;
+  z-index: var(--zindex-main);
 }
 
 .btngroup .groupbtn--active {
-  z-index: 3;
+  z-index: calc(var(--zindex-main) + 2);
 }
 
 .btngroup .groupbtn:focus {
-  z-index: 4;
+  z-index: calc(var(--zindex-main) + 3);
 }
 
 .btngroup .groupbtn:active {
-  z-index: 5;
+  z-index: calc(var(--zindex-main) + 4);
 }
 
 .btngroup .groupbtn--first {
@@ -55,7 +54,7 @@ for a button being clicked on (:active) */
 .groupbtn {
   border: 1px solid var(--color-silver);
   border-radius: var(--border-radius-default);
-  padding: 8px 12px;
+  padding: 0 12px;
   font-size: 12px;
   color: var(--color-slate);
   font-weight: var(--font-weight-bold);
@@ -64,6 +63,7 @@ for a button being clicked on (:active) */
   display: inline-flex;
   align-items: center;
   user-select: none;
+  min-height: auto;
   transition: background-color var(--button-group-timeout) var(--motion-easing-default),
     box-shadow var(--button-group-timeout) var(--motion-easing-default),
     border var(--button-group-timeout) var(--motion-easing-default),
@@ -72,8 +72,8 @@ for a button being clicked on (:active) */
   background-color: transparent;
 }
 
-.groupbtn .fds-icon {
-  fill: currentColor;
+.groupbtn-label {
+  padding: 8px 0;
 }
 
 .groupbtn:focus,
@@ -86,7 +86,7 @@ for a button being clicked on (:active) */
   background-color: none;
   /* this box-shadow acts as outline that conforms
   to border-radius, unlike outline  */
-  box-shadow: 0 0 0 3px var(--button-group-focus-color);
+  box-shadow: 0 0 0 2px var(--button-focus);
   outline: 0;
   color: var(--color-charcoal);
 }
