@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, optionsKnob as options } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
 import CollectionPublicIcon from '../../../lib/icons/react/CollectionPublicIcon';
 import StoryAddIcon from '../../../lib/icons/react/StoryAddIcon';
 import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
 import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
 import { arrayToOptions } from '../util/storybook';
+import { MockLink } from '../util/mock-react-router';
 
 import IconButton, { VALID_THEMES } from './IconButton';
 import README from './IconButton.md';
@@ -30,6 +31,7 @@ storiesOf('Interactive/IconButton', module)
         radius={options('radius', arrayToOptions(['square', 'circle']), undefined, {
           display: 'inline-radio',
         })}
+        label={text('label', undefined)}
         Icon={StarFilledIcon}
       />
     ),
@@ -38,6 +40,15 @@ storiesOf('Interactive/IconButton', module)
   .add('Variations', () => (
     <React.Fragment>
       <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+        <div className="margin--right--half margin--bottom--half">
+          <IconButton Icon={CollectionPublicIcon} href="#" />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <IconButton Icon={StoryAddIcon} Link={MockLink} />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <IconButton Icon={WorkFasterIcon} />
+        </div>
         <div className="margin--right--half margin--bottom--half">
           <IconButton Icon={SalesforceIcon} />
         </div>

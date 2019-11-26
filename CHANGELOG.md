@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [5.10] Update IconButton
+
+- Added ability to pass `href` or `Link` prop to `IconButton` component
+
 ## [5.9] `FloatingAction`
 
 - Adds `shape--circle` helper class
