@@ -47,6 +47,38 @@ This release may introduce minor visual regressions on inputs in consumer applic
 - Added default styles to all form elements, including box-shadow focus ring
 - `resetInput` helper class now removes `box-shadow`
 
+#### `z-index` changes in dictionary
+
+Removed some `z-index` values:
+
+- main
+- banner
+- floatingAction
+
+Changed some existing `z-index` values (see migration tables below).
+
+##### Updated JS vars
+
+`fds-dictionary` `z-index`  migration:
+
+Old JS var          | New JS var
+------------------- | ----------------------
+`ZINDEX_MAIN`       | `ZINDEX_NAVIGATION` OR remove `z-index`
+`ZINDEX_BANNER`     | `ZINDEX_NAVIGATION`
+`ZINDEX_FLOATING_ACTION`     | `ZINDEX_NAVIGATION`
+
+
+##### Updated CSS vars
+
+`fds-dictionary` `z-index` migration:
+
+Old CSS var       | New CSS color var
+----------------- | ----------------------
+`--zindex-main`   | `--zindex-navigation` OR remove the property
+`--zindex-banner` | `--zindex-navigation`
+`--zindex-floatingAction` | `--zindex-navigation`
+
+
 ## [5.7] Fade helpers
 Adds `bgFade--<direction>--<color>` helper classes to base stylesheet.
 
