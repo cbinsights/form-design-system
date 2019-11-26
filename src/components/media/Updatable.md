@@ -1,3 +1,1 @@
-# Updatable
-
 Wraps children in an "updatable" container with a `message` displayed as a notification-style red bubble.

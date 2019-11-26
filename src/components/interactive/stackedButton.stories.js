@@ -17,25 +17,18 @@ storiesOf('Interactive/StackedButton', module)
   .add(
     'Knobs',
     () => (
-      <div
-        className={boolean('Toggle Background', false) ? 'padding--all inverted' : ''}
-        style={
-          boolean('Toggle Background', false) ? { background: 'var(--color-navy)' } : {}
-        }
-      >
-        <StackedButton
-          disabled={boolean('disabled', false)}
-          Icon={StarFilledIcon}
-          label={text('Text', 'Button')}
-          hasCaret={boolean('hasCaret', false)}
-        />
-      </div>
+      <StackedButton
+        disabled={boolean('disabled', false)}
+        Icon={StarFilledIcon}
+        label={text('Text', 'Button')}
+        hasCaret={boolean('hasCaret', false)}
+      />
     ),
     { notes: { markdown: README } }
   )
   .add('Variations', () => (
     <React.Fragment>
-      <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+      <div className="display--inlineFlex" style={{ flexWrap: 'wrap' }}>
         <div className="margin--bottom--half">
           <StackedButton Icon={CaretDownIcon} label="Lorem" />
         </div>

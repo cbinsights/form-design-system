@@ -1,5 +1,3 @@
-# Popover
-
 Base popover component. Bring your own trigger and popover content.
 
 ## What this component does

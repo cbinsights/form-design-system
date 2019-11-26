@@ -1,0 +1,16 @@
+/*---
+title: Border Shape
+name: borderShape
+section: Border Helpers
+---
+
+Creates a shape with CSS borders
+
+class            | description
+---------------- | ---------------------------------
+`shape--circle`  | Makes the element a circle
+*/
+
+.shape--circle {
+  border-radius: 100%;
+}

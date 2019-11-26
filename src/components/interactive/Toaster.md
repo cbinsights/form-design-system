@@ -1,5 +1,3 @@
-# Toaster
-
 Controller for positioning, transition, and dismissal of toasts.
 
 Timer starts immediately on mount.

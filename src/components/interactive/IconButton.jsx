@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+export const VALID_THEMES = ['aqua', 'ghost'];
+
 const IconButton = ({
   Icon,
   disabled,
@@ -11,10 +13,12 @@ const IconButton = ({
   isLoading,
   size,
   isDestructive,
+  label,
   ...rest
 }) => (
   <button
     {...rest}
+    title={label}
     className={cx(
       'fdsIconButton',
       'rounded--all',
@@ -50,7 +54,7 @@ IconButton.propTypes = {
   /** Controls spinner showing for icon button (normal icon is hidden) */
   isLoading: PropTypes.bool,
   /** Controls look and feel of button */
-  theme: PropTypes.oneOf(['ghost', 'aqua']),
+  theme: PropTypes.oneOf(VALID_THEMES),
   /** Controls destructive look and feel of button */
   isDestructive: PropTypes.bool,
   /** Used to control the size of the button */
@@ -59,6 +63,8 @@ IconButton.propTypes = {
   disabled: PropTypes.bool,
   /** Used to render a FDS Icon (should only be used for FDS Icons) */
   Icon: PropTypes.func,
+  /** Accessibility label */
+  label: PropTypes.string,
 };
 
 export default IconButton;
