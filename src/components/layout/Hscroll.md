@@ -1,5 +1,3 @@
-# Hscroll
-
 Standard horizontal scrolling that:
 
 - always shows a scrollbar
