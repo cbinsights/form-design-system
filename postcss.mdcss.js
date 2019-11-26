@@ -23,7 +23,7 @@ module.exports = require('mdcss')({
       'octicons/octicons.css',
       'https://fonts.googleapis.com/css?family=Roboto:400,500,700',
       `public/doc.css`,
-      `base-styles/base-styles.full.css`,
+      `base-styles.full.css`,
     ],
     logo: 'public/logo.png',
     examples: {
