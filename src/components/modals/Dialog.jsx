@@ -60,59 +60,54 @@ const Dialog = (props) => {
       <React.Fragment>
         <FocusTrap>
           <div>
-            <div
-              className="dialog-overlay dialogfullScreen"
-              onClick={props.onDimiss}
-            ></div>
-            <div className="dialogfullScreen dialog-zIndex">
-              <div className="dialog-wrapper">
-                <div
-                  className="dialog elevation--3"
-                  role={props.role}
-                  aria-labelledby={props.title && 'a11y-dialog-title'}
-                  aria-describedby="a11y-dialog-desc"
-                  tabIndex="-1"
-                  aria-modal="true"
-                  onKeyDown={handleKeyDown}
-                >
-                  {(props.title || props.onDismiss) && (
-                    <React.Fragment>
-                      <div className="dialog-header">
-                        <Section border="bottom">
-                          <Flex justify="spaceBetween" align="start">
-                            <FlexItem>
-                              {props.title && (
-                                <div
-                                  className="dialog-title type--head4"
-                                  id="a11y-dialog-title"
-                                >
-                                  {props.title}
-                                </div>
-                              )}
-                            </FlexItem>
-                            {props.onDismiss && (
-                              <FlexItem shrink>
-                                <button className="dialog-icon" onClick={props.onDismiss}>
-                                  <DenyIcon size="xs" />
-                                </button>
-                              </FlexItem>
+            <div className="dialog-overlay" onClick={props.onDimiss}></div>
+            <div className="dialog-zIndex dialog-wrapper">
+              <div
+                className="dialog elevation--3"
+                role={props.role}
+                aria-labelledby={props.title && 'a11y-dialog-title'}
+                aria-describedby="a11y-dialog-desc"
+                tabIndex="-1"
+                aria-modal="true"
+                onKeyDown={handleKeyDown}
+              >
+                {(props.title || props.onDismiss) && (
+                  <React.Fragment>
+                    <div className="dialog-header">
+                      <Section border="bottom">
+                        <Flex justify="spaceBetween" align="start">
+                          <FlexItem>
+                            {props.title && (
+                              <div
+                                className="dialog-title type--head4"
+                                id="a11y-dialog-title"
+                              >
+                                {props.title}
+                              </div>
                             )}
-                          </Flex>
-                        </Section>
-                      </div>
-                    </React.Fragment>
-                  )}
-                  <div className="dialog-content" ref={contentEl}>
-                    <Section>{props.content}</Section>
-                  </div>
-                  {props.footerContent && (
-                    <div className="dialog-footer">
-                      <Section border={isOverflowing ? 'top' : undefined} bgColor="white">
-                        {props.footerContent}
+                          </FlexItem>
+                          {props.onDismiss && (
+                            <FlexItem shrink>
+                              <button className="dialog-icon" onClick={props.onDismiss}>
+                                <DenyIcon size="xs" />
+                              </button>
+                            </FlexItem>
+                          )}
+                        </Flex>
                       </Section>
                     </div>
-                  )}
+                  </React.Fragment>
+                )}
+                <div className="dialog-content" ref={contentEl}>
+                  <Section>{props.content}</Section>
                 </div>
+                {props.footerContent && (
+                  <div className="dialog-footer">
+                    <Section border={isOverflowing ? 'top' : undefined} bgColor="white">
+                      {props.footerContent}
+                    </Section>
+                  </div>
+                )}
               </div>
             </div>
           </div>

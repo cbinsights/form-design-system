@@ -24,9 +24,6 @@
   z-index: var(--zindex-shim);
   background: var(--color-charcoal);
   opacity: 0.6;
-}
-
-.dialogfullScreen {
   top: 0;
   left: 0;
   right: 0;
@@ -34,11 +31,13 @@
   position: fixed;
 }
 
-.dialog-zIndex {
-  z-index: calc(var(--zindex-modal) + 1);
-}
-
 .dialog-wrapper {
+  z-index: calc(var(--zindex-modal) + 1);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
