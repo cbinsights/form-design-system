@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FloatingAction component matches snapshot (set all props) 1`] = `
+<div
+  className="shape--circle elevation--3"
+>
+  <IconButton
+    Icon={[Function]}
+    label="delete the internet"
+    radius="circle"
+    size="m"
+    theme="aqua"
+  />
+</div>
+`;

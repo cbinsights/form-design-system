@@ -9,7 +9,7 @@ import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
 import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
 import { arrayToOptions } from '../util/storybook';
 
-import IconButton from './IconButton';
+import IconButton, { VALID_THEMES } from './IconButton';
 import README from './IconButton.md';
 
 storiesOf('Interactive/IconButton', module)
@@ -21,7 +21,7 @@ storiesOf('Interactive/IconButton', module)
         isDestructive={boolean('isDestructive', false)}
         disabled={boolean('disabled', false)}
         isLoading={boolean('isLoading', false)}
-        theme={options('theme', arrayToOptions(['ghost', 'aqua']), undefined, {
+        theme={options('theme', arrayToOptions(VALID_THEMES), undefined, {
           display: 'inline-radio',
         })}
         size={options('size', arrayToOptions(['s', 'm']), undefined, {

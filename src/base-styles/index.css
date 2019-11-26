@@ -32,6 +32,7 @@
 /* Border Helpers */
 @import "./helperClasses/border/radius";
 @import "./helperClasses/border/sides";
+@import "./helperClasses/border/shape";
 
 /* Background Helpers */
 @import "./helperClasses/background/color";
