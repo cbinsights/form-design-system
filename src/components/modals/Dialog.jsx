@@ -61,7 +61,7 @@ const Dialog = (props) => {
         <FocusTrap>
           <div>
             <div className="dialog-overlay" onClick={props.onDimiss}></div>
-            <div className="dialog-wrapper">
+            <div className="dialog-zIndex dialog-wrapper">
               <div
                 className="dialog elevation--3"
                 role={props.role}

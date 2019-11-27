@@ -9,7 +9,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
           class="dialog-overlay"
         />
         <div
-          class="dialog-wrapper"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
             aria-describedby="a11y-dialog-desc"
@@ -77,7 +77,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
           class="dialog-overlay"
         />
         <div
-          class="dialog-wrapper"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
             aria-describedby="a11y-dialog-desc"
@@ -145,7 +145,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
           class="dialog-overlay"
         />
         <div
-          class="dialog-wrapper"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
             aria-describedby="a11y-dialog-desc"
@@ -188,7 +188,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
           className="dialog-overlay"
         />
         <div
-          className="dialog-wrapper"
+          className="dialog-zIndex dialog-wrapper"
         >
           <div
             aria-describedby="a11y-dialog-desc"
@@ -226,7 +226,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
           class="dialog-overlay"
         />
         <div
-          class="dialog-wrapper"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
             aria-describedby="a11y-dialog-desc"
@@ -294,7 +294,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
           class="dialog-overlay"
         />
         <div
-          class="dialog-wrapper"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
             aria-describedby="a11y-dialog-desc"
@@ -362,7 +362,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
           class="dialog-overlay"
         />
         <div
-          class="dialog-wrapper"
+          class="dialog-zIndex dialog-wrapper"
         >
           <div
             aria-describedby="a11y-dialog-desc"
@@ -405,7 +405,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
           className="dialog-overlay"
         />
         <div
-          className="dialog-wrapper"
+          className="dialog-zIndex dialog-wrapper"
         >
           <div
             aria-describedby="a11y-dialog-desc"
