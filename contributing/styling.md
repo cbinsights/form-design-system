@@ -102,6 +102,8 @@ For components that must manage stacking order of elements it renders, use low `
 numbers so the component can rely on surrounding stacking context.
 
 ```diff
--z-index: calc(var(--zindex-popover) + 1);
-+z-index: 1; /* popovers already create a stacking context, you can just use 1 */
+.thingInsideAPopover {
+  -z-index: calc(var(--zindex-popover) + 1);
+  +z-index: 1; /* popovers already create a stacking context, you can just use 1 */
+}
 ```
