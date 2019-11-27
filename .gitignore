@@ -19,6 +19,8 @@ TODO.md
 #
 react-syntax-highlighter_languages_highlight_*.*.bundle.js
 react-syntax-highlighter_languages_highlight_*.*.bundle.js.map
+vendors~react-syntax-highlighter_languages_highlight_*.*.bundle.js
+vendors~react-syntax-highlighter_languages_highlight_*.*.bundle.js.map
 
 !react-syntax-highlighter_languages_highlight_jsx.*.bundle.js.map
 !react-syntax-highlighter_languages_highlight_bash.*.bundle.js.map
