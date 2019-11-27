@@ -70,6 +70,7 @@ const Dialog = (props) => {
                 tabIndex="-1"
                 aria-modal="true"
                 onKeyDown={handleKeyDown}
+                style={{ maxWidth: `${props.width}px` }}
               >
                 {(props.title || props.onDismiss) && (
                   <React.Fragment>
@@ -121,27 +122,33 @@ const Dialog = (props) => {
 
 Dialog.defaultProps = {
   role: 'dialog',
+  width: 500,
 };
 
 Dialog.propTypes = {
   /** Controls the role of the modal */
   role: PropTypes.oneOf(['dialog', 'alertdialog']),
+
   /** Controls whether the modal (and overlay) are shown or not */
   isOpen: PropTypes.bool,
+
   /** Add into bottom portion of modal */
-
   footerContent: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+
   /** Add into content (middle) portion of modal */
-
   content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-  /** Controls text displayed in modal header */
 
+  /** Controls text displayed in modal header */
   title: PropTypes.string,
+
   /**
    * Callback that user can pass in, to be conditionally fired when
    * user attempts to close modal. Also controls modal x
    */
   onDismiss: PropTypes.func,
+
+  /** Custom modal width */
+  width: PropTypes.number,
 };
 
 export default Dialog;
