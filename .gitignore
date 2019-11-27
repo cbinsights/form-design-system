@@ -17,15 +17,15 @@ TODO.md
 # Until Storybook can resolve this issue, we ignore all of these chunks except for the
 # language support needed for MDX docs.
 #
-react-syntax-highlighter_languages_highlight_*.*.bundle.js
-react-syntax-highlighter_languages_highlight_*.*.bundle.js.map
-vendors~react-syntax-highlighter_languages_highlight_*.*.bundle.js
-vendors~react-syntax-highlighter_languages_highlight_*.*.bundle.js.map
+docs/fds-components/react-syntax-highlighter_languages_highlight_*.*.bundle.js
+docs/fds-components/react-syntax-highlighter_languages_highlight_*.*.bundle.js.map
+docs/fds-components/vendors~react-syntax-highlighter_languages_highlight_*.*.bundle.js
+docs/fds-components/vendors~react-syntax-highlighter_languages_highlight_*.*.bundle.js.map
 
-!react-syntax-highlighter_languages_highlight_jsx.*.bundle.js.map
-!react-syntax-highlighter_languages_highlight_bash.*.bundle.js.map
-!react-syntax-highlighter_languages_highlight_css.*.bundle.js.map
-!react-syntax-highlighter_languages_highlight_html.*.bundle.js.map
-!react-syntax-highlighter_languages_highlight_tsx.*.bundle.js.map
-!react-syntax-highlighter_languages_highlight_typescript.*.bundle.js.map
+!docs/fds-components/react-syntax-highlighter_languages_highlight_jsx.*.bundle.js.map
+!docs/fds-components/react-syntax-highlighter_languages_highlight_bash.*.bundle.js.map
+!docs/fds-components/react-syntax-highlighter_languages_highlight_css.*.bundle.js.map
+!docs/fds-components/react-syntax-highlighter_languages_highlight_html.*.bundle.js.map
+!docs/fds-components/react-syntax-highlighter_languages_highlight_tsx.*.bundle.js.map
+!docs/fds-components/react-syntax-highlighter_languages_highlight_typescript.*.bundle.js.map
 
