@@ -7,11 +7,7 @@
 * Jenkins populates the patch version depending on the branch.
 */
 
-<<<<<<< HEAD
 String VERSION = "6.0"
-=======
-String VERSION = "5.10"
->>>>>>> master
 
 /* ---- DO NOT EDIT BELOW (unless you really know what you're doing) ---- */
 

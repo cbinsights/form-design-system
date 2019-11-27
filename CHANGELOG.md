@@ -27,7 +27,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-<<<<<<< HEAD
 ## [6.0] MAJOR
 
 - Adds `DecoratedInput` component
@@ -79,7 +78,7 @@ Old CSS var       | New CSS color var
 `--zindex-banner` | `--zindex-navigation`
 `--zindex-floatingAction` | `--zindex-navigation`
 
-=======
+
 ## [5.10] Update IconButton
 
 - Added ability to pass `href` or `Link` prop to `IconButton` component
@@ -91,7 +90,6 @@ Old CSS var       | New CSS color var
 
 ## [5.8] `Popover` callbacks
 Adds onClose and onOpen callbacks to Popover
->>>>>>> master
 
 ## [5.7] Fade helpers
 Adds `bgFade--<direction>--<color>` helper classes to base stylesheet.
@@ -239,7 +237,6 @@ MenuButton component was removed. Please use StackedButton instead.
 ## [4.26] `ol`/`ul` decoration
 
 - Added `list--decorated` class to add bullets/numbers to ordered or unordered lists.
->>>>>>> master
 
 ## [4.25] Updated Button components
 
