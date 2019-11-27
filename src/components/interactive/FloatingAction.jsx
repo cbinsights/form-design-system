@@ -24,7 +24,7 @@ FloatingAction.defaultProps = {
 
 FloatingAction.propTypes = {
   /** Used to render a FDS Icon (should only be used for FDS Icons) */
-  Icon: PropTypes.func.isRequied,
+  Icon: PropTypes.func.isRequired,
 
   /** Accessibility label */
   label: PropTypes.string.isRequired,
