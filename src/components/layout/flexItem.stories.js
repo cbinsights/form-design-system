@@ -9,7 +9,6 @@ import README from './FlexItem.md';
 
 const parentStyle = {
   width: '600px',
-  background: 'var(--color-haze)',
 };
 
 const getAlignKnob = (label) =>
@@ -24,8 +23,8 @@ storiesOf('Layout/FlexItem', module)
   .add(
     'Knobs',
     () => (
-      <div style={parentStyle}>
-        <Flex className="debug--boxModel">
+      <div style={parentStyle} className="debug--flex">
+        <Flex>
           <FlexItem shrink={boolean('add `shrink` prop to "image" item', false)}>
             <img src="https://place-hold.it/40x40/a02385/fff&text=IMG" />
           </FlexItem>

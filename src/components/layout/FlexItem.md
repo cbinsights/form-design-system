@@ -1,5 +1,3 @@
-# FlexItem
-
 ## Shrinking & growing a `FlexItem`
 By default, all `FlexItem` components will grow to fill remaining space within the parent
 `Flex`. The boolean prop `shrink` will cause a `FlexItem` to shrink to its content size.

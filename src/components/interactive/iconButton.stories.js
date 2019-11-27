@@ -1,15 +1,16 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, optionsKnob as options } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
 import CollectionPublicIcon from '../../../lib/icons/react/CollectionPublicIcon';
 import StoryAddIcon from '../../../lib/icons/react/StoryAddIcon';
 import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
 import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
 import { arrayToOptions } from '../util/storybook';
+import { MockLink } from '../util/mock-react-router';
 
-import IconButton from './IconButton';
+import IconButton, { VALID_THEMES } from './IconButton';
 import README from './IconButton.md';
 
 storiesOf('Interactive/IconButton', module)
@@ -17,34 +18,37 @@ storiesOf('Interactive/IconButton', module)
   .add(
     'Knobs',
     () => (
-      <div
-        className={boolean('Toggle Background', false) ? 'padding--all inverted' : ''}
-        style={
-          boolean('Toggle Background', false) ? { background: 'var(--color-navy)' } : {}
-        }
-      >
-        <IconButton
-          isDestructive={boolean('isDestructive', false)}
-          disabled={boolean('disabled', false)}
-          isLoading={boolean('isLoading', false)}
-          theme={options('theme', arrayToOptions(['ghost', 'aqua']), undefined, {
-            display: 'inline-radio',
-          })}
-          size={options('size', arrayToOptions(['s', 'm']), undefined, {
-            display: 'inline-radio',
-          })}
-          radius={options('radius', arrayToOptions(['square', 'circle']), undefined, {
-            display: 'inline-radio',
-          })}
-          Icon={StarFilledIcon}
-        />
-      </div>
+      <IconButton
+        isDestructive={boolean('isDestructive', false)}
+        disabled={boolean('disabled', false)}
+        isLoading={boolean('isLoading', false)}
+        theme={options('theme', arrayToOptions(VALID_THEMES), undefined, {
+          display: 'inline-radio',
+        })}
+        size={options('size', arrayToOptions(['s', 'm']), undefined, {
+          display: 'inline-radio',
+        })}
+        radius={options('radius', arrayToOptions(['square', 'circle']), undefined, {
+          display: 'inline-radio',
+        })}
+        label={text('label', undefined)}
+        Icon={StarFilledIcon}
+      />
     ),
     { notes: { markdown: README } }
   )
   .add('Variations', () => (
     <React.Fragment>
       <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+        <div className="margin--right--half margin--bottom--half">
+          <IconButton Icon={CollectionPublicIcon} href="#" />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <IconButton Icon={StoryAddIcon} Link={MockLink} />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <IconButton Icon={WorkFasterIcon} />
+        </div>
         <div className="margin--right--half margin--bottom--half">
           <IconButton Icon={SalesforceIcon} />
         </div>

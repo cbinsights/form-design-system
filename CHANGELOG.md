@@ -27,6 +27,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+<<<<<<< HEAD
 ## [6.0] MAJOR
 
 - Adds `DecoratedInput` component
@@ -78,6 +79,19 @@ Old CSS var       | New CSS color var
 `--zindex-banner` | `--zindex-navigation`
 `--zindex-floatingAction` | `--zindex-navigation`
 
+=======
+## [5.10] Update IconButton
+
+- Added ability to pass `href` or `Link` prop to `IconButton` component
+
+## [5.9] `FloatingAction`
+
+- Adds `shape--circle` helper class
+- Adds `FloatingAction` component for [floating action buttons](https://material.io/components/buttons-floating-action-button/)
+
+## [5.8] `Popover` callbacks
+Adds onClose and onOpen callbacks to Popover
+>>>>>>> master
 
 ## [5.7] Fade helpers
 Adds `bgFade--<direction>--<color>` helper classes to base stylesheet.
