@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import MuiButtonShim from './MuiButtonShim';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 import CheckIcon from '../../../lib/icons/react/CheckIcon';
 import InformationIcon from '../../../lib/icons/react/InformationIcon';
@@ -10,6 +9,8 @@ import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import CountdownButton from '../media/CountdownButton';
 import customPropTypes from '../util/customPropTypes';
+import Button from './Button';
+import IconButton from './IconButton';
 
 const Toast = ({
   content,
@@ -86,13 +87,9 @@ const Toast = ({
           {actionLabel && onAction && (
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
-                <MuiButtonShim
-                  className="toast-action"
-                  onClick={onActionDismiss}
-                  data-test="toast-action"
-                >
+                <Button onClick={onActionDismiss} data-test="toast-action" theme="ghost">
                   {actionLabel}
-                </MuiButtonShim>
+                </Button>
               </div>
             </FlexItem>
           )}
@@ -102,9 +99,7 @@ const Toast = ({
                 {isAutoDismiss ? (
                   <CountdownButton onClick={dismissToast} duration={dismissDelay} />
                 ) : (
-                  <MuiButtonShim onClick={dismissToast}>
-                    <DenyIcon size="xs" color={FDS.FONT_COLOR_PRIMARY} />
-                  </MuiButtonShim>
+                  <IconButton Icon={DenyIcon} onClick={dismissToast} radius="circle" />
                 )}
               </div>
             </FlexItem>

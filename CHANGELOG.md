@@ -27,6 +27,58 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.0] MAJOR
+
+- Adds `DecoratedInput` component
+- right-aligns number-like inputs (time, date, number, etc.)
+
+### **BREAKING CHANGES**
+
+#### `MuiButtonShim` Component
+Component removed (was not publicly documented).
+
+#### `CountdownButton` Component
+This component no longer accepts text as an icon. You must pass it
+a component. It will render a `DenyIcon` by default.
+
+#### Form inputs
+This release may introduce minor visual regressions on inputs in consumer applications.
+
+- Added default styles to all form elements, including box-shadow focus ring
+- `resetInput` helper class now removes `box-shadow`
+
+#### `z-index` changes in dictionary
+
+Removed some `z-index` values:
+
+- main
+- banner
+- floatingAction
+
+Changed some existing `z-index` values (see migration tables below).
+
+##### Updated JS vars
+
+`fds-dictionary` `z-index`  migration:
+
+Old JS var          | New JS var
+------------------- | ----------------------
+`ZINDEX_MAIN`       | `ZINDEX_NAVIGATION` OR remove `z-index`
+`ZINDEX_BANNER`     | `ZINDEX_NAVIGATION`
+`ZINDEX_FLOATING_ACTION`     | `ZINDEX_NAVIGATION`
+
+
+##### Updated CSS vars
+
+`fds-dictionary` `z-index` migration:
+
+Old CSS var       | New CSS color var
+----------------- | ----------------------
+`--zindex-main`   | `--zindex-navigation` OR remove the property
+`--zindex-banner` | `--zindex-navigation`
+`--zindex-floatingAction` | `--zindex-navigation`
+
+
 ## [5.10] Update IconButton
 
 - Added ability to pass `href` or `Link` prop to `IconButton` component
@@ -185,7 +237,6 @@ MenuButton component was removed. Please use StackedButton instead.
 ## [4.26] `ol`/`ul` decoration
 
 - Added `list--decorated` class to add bullets/numbers to ordered or unordered lists.
->>>>>>> master
 
 ## [4.25] Updated Button components
 

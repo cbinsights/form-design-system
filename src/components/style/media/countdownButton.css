@@ -12,10 +12,8 @@
   right: 0;
 }
 
-.countdownButton-animation {
-  z-index: var(--zindex-main);
-}
-
 .countdownButton-button {
-  z-index: calc(var(--zindex-main) + 1);
+  margin-left: 1px;
+  margin-top: 1px;
+  z-index: 1;
 }

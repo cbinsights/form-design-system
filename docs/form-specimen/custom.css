@@ -1,0 +1,12 @@
+html, body {
+  background: var(--color-haze);
+}
+
+/**
+ * use right margin instead of left padding for gutters
+ * because we let them wrap
+ */
+.flexItem {
+  margin-right: var(--space-default);
+  margin-bottom: var(--space-default);
+}

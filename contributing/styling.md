@@ -92,3 +92,18 @@ line height for type based on font size.
 -}
 +<Foo className="fontSize--xl" /> /* FDS adds less leading for larger text; more leading for smaller text */
 ```
+
+## Using `z-index`
+
+**Prefer integers below 10**.
+
+Values of `z-index` [are not absolute](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
+For components that must manage stacking order of elements it renders, use low `z-index`
+numbers so the component can rely on surrounding stacking context.
+
+```diff
+.thingInsideAPopover {
+  -z-index: calc(var(--zindex-popover) + 1);
+  +z-index: 1; /* popovers already create a stacking context, you can just use 1 */
+}
+```
