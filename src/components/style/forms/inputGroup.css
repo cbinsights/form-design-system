@@ -18,6 +18,10 @@
   z-index: 2; /* allow focus ring to overlap siblings */
 }
 
+/**
+ * borders are removed from `input` and `select` elements
+ */
+
 .fdsInputGroup input {
   border-width: 0;
   border-radius: 0;
@@ -26,6 +30,11 @@
 .fdsInputGroup select {
   border-color: transparent;
 }
+
+/**
+ * the `flexItem` elements in `InputGroup` are responsible
+ * for managing borders between inputs
+ */
 
 .fdsInputGroup .flexItem {
   border-right: 1px solid rgba(var(--rgb-charcoal), 0.24);
