@@ -1,6 +1,7 @@
 /* stylelint-disable selector-max-compound-selectors */
 /* stylelint-disable selector-max-combinators */
 /* stylelint-disable number-max-precision */
+/* stylelint-disable selector-max-class */
 
 .fdsInputGroup {
   border-radius: 4px;
@@ -60,7 +61,7 @@
   }
 }
 
-/* Overrides for decorated inputs */
+/* Overrides for `DecoratedInput` */
 .fdsInputGroup .fdsDecoratedInput::before {
   border-top-width: 0;
   border-bottom-width: 0;
@@ -73,3 +74,7 @@
   border-right-width: 0;
 }
 
+/* Overrides for `IconInput` */
+.fdsInputGroup .fdsIconInput .fds-icon {
+  z-index: 3;
+}

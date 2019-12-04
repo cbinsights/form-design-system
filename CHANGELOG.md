@@ -32,6 +32,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - Fixes alignment of side labels in `DecoratedInput`
 - Adds `InputGroup` component for visually grouping multiple form fields
 
+## [6.2] `IconInput`
+
+- Adds `IconInput` component for input elements with icons inside them
+
 ## [6.1] Dialog width
 
 - Adds `width` prop to `Dialog` for custom widths

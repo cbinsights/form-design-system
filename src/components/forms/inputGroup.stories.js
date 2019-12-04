@@ -3,6 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import InputGroup from './InputGroup';
 import DecoratedInput from './DecoratedInput';
+import IconInput from './IconInput';
+import SearchIcon from '../../../lib/icons/react/SearchIcon';
+
 import README from './DecoratedInput.md';
 
 storiesOf('Forms/InputGroup', module)
@@ -68,6 +71,22 @@ storiesOf('Forms/InputGroup', module)
       </InputGroup>
       <p className="margin--top">
         You can place a <code>DecoratedInput</code> inside <code>InputGroup</code>
+      </p>
+    </React.Fragment>
+  ))
+  .add('With IconInput', () => (
+    <React.Fragment>
+      <InputGroup>
+        <IconInput IconLeft={SearchIcon}>
+          <input type="search" placeholder="Search" />
+        </IconInput>
+        <select name="unit">
+          <option value="1">Companies</option>
+          <option value="2">Investors</option>
+        </select>
+      </InputGroup>
+      <p className="margin--top">
+        You can place an <code>IconInput</code> inside <code>InputGroup</code>
       </p>
     </React.Fragment>
   ));
