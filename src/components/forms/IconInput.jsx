@@ -17,13 +17,13 @@ const IconInput = ({ IconLeft, IconRight, children }) => {
   return (
     <div className={classNames}>
       {IconLeft && (
-        <span className="fdsIconInput-icon fdsIconInput-icon--start">
+        <span className="fdsIconInput-icon fdsIconInput-icon--start alignChild--center--center">
           <IconLeft size="xs" color={FDS.FONT_COLOR_SECONDARY} />
         </span>
       )}
       {children}
       {IconRight && (
-        <span className="fdsIconInput-icon fdsIconInput-icon--end">
+        <span className="fdsIconInput-icon fdsIconInput-icon--end alignChild--center--center">
           <IconRight size="xs" color={FDS.FONT_COLOR_SECONDARY} />
         </span>
       )}

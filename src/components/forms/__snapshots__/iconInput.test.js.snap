@@ -5,7 +5,7 @@ exports[`IconInput component matches snapshot (set all props) 1`] = `
   className="fdsIconInput fdsIconInput--hasStartIcon fdsIconInput--hasEndIcon"
 >
   <span
-    className="fdsIconInput-icon fdsIconInput-icon--start"
+    className="fdsIconInput-icon fdsIconInput-icon--start alignChild--center--center"
   >
     <StarFilledIcon
       color="rgba(64, 64, 64, 0.60)"
@@ -16,7 +16,7 @@ exports[`IconInput component matches snapshot (set all props) 1`] = `
     type="text"
   />
   <span
-    className="fdsIconInput-icon fdsIconInput-icon--end"
+    className="fdsIconInput-icon fdsIconInput-icon--end alignChild--center--center"
   >
     <StarFilledIcon
       color="rgba(64, 64, 64, 0.60)"

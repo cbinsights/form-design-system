@@ -16,8 +16,6 @@
   position: absolute;
   top: 1px;
   bottom: 1px;
-  display: flex;
-  align-items: center;
 }
 
 .fdsIconInput-icon--start {
