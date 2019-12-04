@@ -1,0 +1,29 @@
+
+.fdsIconInput {
+  position: relative;
+  width: min-content;
+}
+
+.fdsIconInput--hasStartIcon input {
+  padding-left: var(--space-double);
+}
+
+.fdsIconInput--hasEndIcon input {
+  padding-right: var(--space-double);
+}
+
+.fdsIconInput-icon {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.fdsIconInput-icon--start {
+  left: var(--space-half);
+}
+
+.fdsIconInput-icon--end {
+  right: var(--space-half);
+}

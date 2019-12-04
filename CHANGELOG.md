@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.1] `IconInput`
+
+- Adds `IconInput` component for input elements with icons inside them
+
 ## [6.0] MAJOR
 
 - Adds `DecoratedInput` component
