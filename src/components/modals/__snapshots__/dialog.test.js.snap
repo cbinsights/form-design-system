@@ -16,6 +16,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
             aria-modal="true"
             class="dialog elevation--3"
             role="dialog"
+            style="max-width: 500px;"
             tabindex="-1"
           >
             <div
@@ -84,6 +85,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
             aria-modal="true"
             class="dialog elevation--3"
             role="dialog"
+            style="max-width: 500px;"
             tabindex="-1"
           >
             <div
@@ -152,6 +154,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
             aria-modal="true"
             class="dialog elevation--3"
             role="dialog"
+            style="max-width: 500px;"
             tabindex="-1"
           >
             <div
@@ -196,6 +199,11 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
             className="dialog elevation--3"
             onKeyDown={[Function]}
             role="dialog"
+            style={
+              Object {
+                "maxWidth": "500px",
+              }
+            }
             tabIndex="-1"
           >
             <div
@@ -233,6 +241,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
             aria-modal="true"
             class="dialog elevation--3"
             role="dialog"
+            style="max-width: 500px;"
             tabindex="-1"
           >
             <div
@@ -301,6 +310,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
             aria-modal="true"
             class="dialog elevation--3"
             role="dialog"
+            style="max-width: 500px;"
             tabindex="-1"
           >
             <div
@@ -369,6 +379,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
             aria-modal="true"
             class="dialog elevation--3"
             role="dialog"
+            style="max-width: 500px;"
             tabindex="-1"
           >
             <div
@@ -414,6 +425,11 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
             className="dialog elevation--3"
             onKeyDown={[Function]}
             role="alertdialog"
+            style={
+              Object {
+                "maxWidth": "500px",
+              }
+            }
             tabIndex="-1"
           >
             <div
