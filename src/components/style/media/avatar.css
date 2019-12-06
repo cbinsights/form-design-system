@@ -1,0 +1,29 @@
+.fdsAvatar {
+  border: 0 none;
+  font-size: var(--font-size-xs);
+  user-select: none;
+  transition: background-color var(--button-timeout) var(--motion-easing-default),
+    box-shadow var(--button-timeout) var(--motion-easing-default);
+  box-sizing: border-box;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.fdsAvatar--s {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+
+.fdsAvatar--m {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+}
+
+.fdsAvatar:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--button-focus);
+}

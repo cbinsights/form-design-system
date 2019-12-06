@@ -13,7 +13,7 @@ const VALID_SIZES = ['s', 'm', 'l', 'xl'];
  */
 const MuiAvatarShim = ({ name, src, size, className, style }) => {
   const classNames = cx(
-    'fdsAvatar',
+    'fdsMUIAvatar',
     'alignChild--center--center',
     `media--${size}`,
     className
@@ -27,7 +27,7 @@ const MuiAvatarShim = ({ name, src, size, className, style }) => {
   return (
     <div role="img" title={name} className={classNames} style={inlineStyles}>
       {!src && (
-        <span className="fdsAvatar-initial fontWeight--bold color--white">
+        <span className="fdsMUIAvatar-initial fontWeight--bold color--white">
           {name.charAt(0).toUpperCase()}
         </span>
       )}
