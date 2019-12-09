@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.3] `InputGroup`
+
+- Fixes alignment of side labels in `DecoratedInput`
+- Adds `InputGroup` component for visually grouping multiple form fields
+
 ## [6.2] `IconInput`
 
 - Adds `IconInput` component for input elements with icons inside them
