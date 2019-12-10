@@ -15,7 +15,7 @@ export const VALID_BG_COLORS = [
   'red',
 ];
 
-const INVERTED_BG_COLORS = ['gray', 'charcoal', 'navy', 'orange'];
+const NON_INVERTED_BG_COLORS = ['white', 'haze', 'lightGray'];
 
 const grabInitials = (str) =>
   str
@@ -30,7 +30,7 @@ const Avatar = ({ bgColor, imgUrl, size, name, Link, ...rest }) => {
       {...rest}
       title={name}
       className={cx('fdsAvatar', `bgColor--${bgColor}`, `fdsAvatar--${size}`, {
-        'color--white': INVERTED_BG_COLORS.includes(bgColor),
+        'color--white': !NON_INVERTED_BG_COLORS.includes(bgColor),
       })}
     >
       {imgUrl && (
