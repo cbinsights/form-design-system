@@ -27,6 +27,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.3] `Avatar`
+
+- Adds `Avatar` component for displaying avatar initials and images
+
+## [6.2] `IconInput`
+
+- Adds `IconInput` component for input elements with icons inside them
+
 ## [6.2] `IconInput`
 
 - Adds `IconInput` component for input elements with icons inside them
