@@ -2,7 +2,6 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
-import CollectionPublicIcon from '../../../lib/icons/react/CollectionPublicIcon';
 import { arrayToOptions } from '../util/storybook';
 
 import Avatar, { VALID_BG_COLORS } from './Avatar';
@@ -30,7 +29,27 @@ storiesOf('Media/Avatar', module)
     <React.Fragment>
       <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
         <div className="margin--right--half margin--bottom--half">
-          <Avatar Icon={CollectionPublicIcon} href="#" />
+          <Avatar name="Lorem Ipsum" />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <Avatar name="Dolor Sit" imgUrl="https://placeimg.com/80/81/animals" />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <Avatar name="Amet" bgColor="aqua" />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <Avatar name="Ipsum Dolor" bgColor="red" size="s" />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <Avatar
+            name="Lorem"
+            bgColor="red"
+            size="s"
+            imgUrl="https://placeimg.com/81/80/animals"
+          />
+        </div>
+        <div className="margin--right--half margin--bottom--half">
+          <Avatar name="Lorem Ipsum Dolor Sit Amet" bgColor="navy" size="s" />
         </div>
         <br />
       </div>
