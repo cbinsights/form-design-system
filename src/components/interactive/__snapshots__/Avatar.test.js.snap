@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Avatar component matches snapshot (default props) 1`] = `
-<button
+<div
+  aria-title="Joey Tribbiani"
   className="fdsAvatar bgColor--gray fdsAvatar--m color--white"
-  title="Joey Tribbiani"
 >
   JT
-</button>
+</div>
 `;
 
 exports[`Avatar component matches snapshot (set all props) 1`] = `
-<MockLink
-  className="fdsAvatar bgColor--aqua fdsAvatar--s"
-  title="Ross Gellar"
+<div
+  aria-title="Ross Gellar"
+  className="fdsAvatar bgColor--aqua fdsAvatar--s color--white"
 >
   <span
     className="fdsAvatar-img"
@@ -23,5 +23,5 @@ exports[`Avatar component matches snapshot (set all props) 1`] = `
     }
   />
   RG
-</MockLink>
+</div>
 `;

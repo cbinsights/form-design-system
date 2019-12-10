@@ -1,13 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { MockLink } from '../util/mock-react-router';
 
 import Avatar from './Avatar';
 
 const renderComponent = (props) => shallow(<Avatar {...props} />);
 
 const props = {
-  name: 'Ross Gellar', bgColor: 'aqua', Link: MockLink, size: 's', imgUrl: 'lol.png', 
+  name: 'Ross Gellar', bgColor: 'aqua', size: 's', imgUrl: 'lol.png', 
 };
 
 describe('Avatar component', () => {
