@@ -101,7 +101,7 @@
     "style-dictionary": "^2.8.1",
     "stylelint": "^9.5.0",
     "tinycolor2": "^1.4.1",
-    "webpack": "^4.17.1"
+    "webpack": "^4.38"
   },
   "repository": {
     "type": "git",

@@ -19,6 +19,7 @@
 /* Forms */
 @import "./forms/decoratedInput.css";
 @import "./forms/iconInput.css";
+@import "./forms/inputGroup.css";
 
 /* Media components */
 @import "./media/muiAvatarShim.css";
