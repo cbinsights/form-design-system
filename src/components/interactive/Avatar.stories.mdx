@@ -13,6 +13,9 @@ export const bgColorOptions = options('bgColor', arrayToOptions(VALID_BG_COLORS)
 
 # Avatar
 
+Displays an Avatar, consisting of a background image and intials as a baseline, or
+an image displayed at the same dimensions (the initials being a fallback if the image does not load)
+
 
 <Story name="Knobs">
   <Avatar
@@ -26,8 +29,6 @@ export const bgColorOptions = options('bgColor', arrayToOptions(VALID_BG_COLORS)
     imgUrl={text('imgUrl', undefined)}
   />
 </Story>
-
-If the image does not load, Avatar will fallback to the initials.
 
 <Preview>
   <Story name="Variations">
