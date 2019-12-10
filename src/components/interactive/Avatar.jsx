@@ -61,7 +61,7 @@ Avatar.propTypes = {
   bgColor: PropTypes.oneOf(VALID_BG_COLORS),
   /** Controls the size of the button */
   size: PropTypes.oneOf(['s', 'm']),
-  /** Control initials displayed, and also used for title accessibility attribute */
+  /** Control initials displayed, and also used for title accessibility attribute (uses 2 words max for initials) */
   name: PropTypes.string.isRequired,
   /** Sets background image over initials */
   imgUrl: PropTypes.string,
