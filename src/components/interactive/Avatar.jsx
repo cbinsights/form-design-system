@@ -34,7 +34,7 @@ const Avatar = ({ bgColor, imgUrl, size, name, Link, ...rest }) => {
       })}
     >
       {imgUrl && (
-        <div className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
+        <span className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
       )}
       {name && grabInitials(name)}
     </Element>

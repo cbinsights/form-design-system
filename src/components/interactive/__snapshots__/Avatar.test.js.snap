@@ -14,7 +14,7 @@ exports[`Avatar component matches snapshot (set all props) 1`] = `
   className="fdsAvatar bgColor--aqua fdsAvatar--s"
   title="Ross Gellar"
 >
-  <div
+  <span
     className="fdsAvatar-img"
     style={
       Object {
