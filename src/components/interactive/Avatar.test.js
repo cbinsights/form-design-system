@@ -1,18 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { MockLink } from '../util/mock-react-router';
 
 import Avatar from './Avatar';
 
 const renderComponent = (props) => shallow(<Avatar {...props} />);
 
 const props = {
-  Icon: () => {}, isActive: true, radius: 'circle', size: 's', isLoading: true, theme: 'aqua', isDestructive: true, disabled: true
+  name: 'Ross Gellar', bgColor: 'aqua', Link: MockLink, size: 's', imgUrl: 'lol.png', 
 };
 
-describe('ButtonGroup component', () => {
+describe('Avatar component', () => {
 
   it('matches snapshot (default props)', () => {
-    const component = renderComponent({ Icon: () => {} });
+    const component = renderComponent({ name: 'Joey Tribbiani' });
     expect(component).toMatchSnapshot();
   });
 

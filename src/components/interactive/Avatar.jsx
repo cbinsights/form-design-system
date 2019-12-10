@@ -33,7 +33,9 @@ const Avatar = ({ bgColor, imgUrl, size, name, Link, ...rest }) => {
         'color--white': INVERTED_BG_COLORS.includes(bgColor),
       })}
     >
-      <div className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
+      {imgUrl && (
+        <div className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
+      )}
       {name && grabInitials(name)}
     </Element>
   );
@@ -60,7 +62,7 @@ Avatar.propTypes = {
   /** Controls the size of the button */
   size: PropTypes.oneOf(['s', 'm']),
   /** Control initials displayed, and also used for title accessibility attribute */
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   /** Sets background image over initials */
   imgUrl: PropTypes.string,
 };
