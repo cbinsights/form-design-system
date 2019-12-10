@@ -37,15 +37,3 @@
   /* stylelint-disable-next-line declaration-property-unit-whitelist */
   line-height: 24px;
 }
-
-.fdsButton-focus {
-  border: 0 none;
-  border-radius: 50%;
-  padding: 0;
-  margin: 0;
-}
-
-.fdsButton-focus:focus {
-  outline: 0;
-  box-shadow: 0 0 0 2px var(--button-focus);
-}
