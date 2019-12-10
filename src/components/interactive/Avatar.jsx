@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import baseElement from '../../util/baseElement';
 
-export const VALID_COLORS = [
+export const VALID_BG_COLORS = [
   'white',
   'haze',
   'lightGray',
@@ -15,28 +15,32 @@ export const VALID_COLORS = [
   'red',
 ];
 
-const INVERTED_COLORS = ['gray', 'charcoal', 'navy', 'orange'];
+const INVERTED_BG_COLORS = ['gray', 'charcoal', 'navy', 'orange'];
 
 const grabInitials = (str) =>
-  str.split(' ').reduce((prev, curr) => prev + curr.charAt(0), '');
+  str
+    .split(' ')
+    .splice(0, 2)
+    .reduce((prev, curr) => prev + curr.charAt(0), '');
 
-const Avatar = ({ color, size, label, Link, ...rest }) => {
+const Avatar = ({ bgColor, imgUrl, size, name, Link, ...rest }) => {
   const Element = baseElement({ href: rest.href, as: Link });
   return (
     <Element
       {...rest}
-      title={label}
-      className={cx('fdsAvatar', `bgColor--${color}`, `fdsAvatar--${size}`, {
-        'color--white': INVERTED_COLORS.includes(color),
+      title={name}
+      className={cx('fdsAvatar', `bgColor--${bgColor}`, `fdsAvatar--${size}`, {
+        'color--white': INVERTED_BG_COLORS.includes(bgColor),
       })}
     >
-      {label && grabInitials(label)}
+      <div className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
+      {name && grabInitials(name)}
     </Element>
   );
 };
 
 Avatar.defaultProps = {
-  color: 'gray',
+  bgColor: 'gray',
   size: 'm',
 };
 
@@ -52,11 +56,13 @@ Avatar.propTypes = {
    */
   Link: PropTypes.func,
   /** Controls color of button */
-  color: PropTypes.oneOf(VALID_COLORS),
-  /** Used to control the size of the button */
+  bgColor: PropTypes.oneOf(VALID_BG_COLORS),
+  /** Controls the size of the button */
   size: PropTypes.oneOf(['s', 'm']),
-  /** Accessibility label */
-  label: PropTypes.string,
+  /** Control initials displayed, and also used for title accessibility attribute */
+  name: PropTypes.string,
+  /** Sets background image over initials */
+  imgUrl: PropTypes.string,
 };
 
 export default Avatar;

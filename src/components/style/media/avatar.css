@@ -9,17 +9,32 @@
   text-align: center;
   padding: 0;
   margin: 0;
+  position: relative;
+}
+
+.fdsAvatar-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  border-radius: 50%;
 }
 
 .fdsAvatar--s {
+  font-size: var(--font-size-xs);
   width: 24px;
   height: 24px;
+  /* stylelint-disable-next-line declaration-property-unit-whitelist */
   line-height: 24px;
 }
 
 .fdsAvatar--m {
+  font-size: var(--font-size-s);
   width: 32px;
   height: 32px;
+  /* stylelint-disable-next-line declaration-property-unit-whitelist */
   line-height: 32px;
 }
 
