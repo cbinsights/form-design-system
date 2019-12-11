@@ -21,6 +21,7 @@ class to flip text colors for dark backgrounds**
 <div class="bgColor--aqua">I have a background color</div>
 <div class="bgColor--gray inverted">I have a background color</div>
 <div class="bgColor--red inverted">I have a background color</div>
+<div class="bgColor--purple inverted">I have a background color</div>
 ```
 */
 
@@ -58,4 +59,8 @@ class to flip text colors for dark backgrounds**
 
 .bgColor--red {
   background-color: var(--color-red);
+}
+
+.bgColor--purple {
+  background-color: var(--color-purple);
 }
