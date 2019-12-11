@@ -3,7 +3,7 @@
 exports[`Avatar component matches snapshot (default props) 1`] = `
 <div
   aria-title="Joey Tribbiani"
-  className="fdsAvatar bgColor--gray fdsAvatar--m color--white"
+  className="fdsAvatar bgColor--purple fdsAvatar--m color--white"
 >
   JT
 </div>
