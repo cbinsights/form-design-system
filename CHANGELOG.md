@@ -30,6 +30,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ## [6.4] `Avatar`
 
 - Adds `Avatar` component for displaying avatar initials and images
+- Added bgColor--red and bgColor--purple helper classes
 
 ## [6.3] `InputGroup`
 

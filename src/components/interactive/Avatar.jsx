@@ -12,6 +12,7 @@ export const VALID_BG_COLORS = [
   'aqua',
   'gray',
   'red',
+  'purple',
 ];
 
 const NON_INVERTED_BG_COLORS = ['white', 'haze', 'lightGray'];
@@ -38,7 +39,7 @@ const Avatar = ({ bgColor, imgUrl, size, name, ...rest }) => (
 );
 
 Avatar.defaultProps = {
-  bgColor: 'gray',
+  bgColor: 'purple',
   size: 'm',
 };
 
