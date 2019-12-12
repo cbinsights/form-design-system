@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-export const VALID_BG_COLORS = [
+const VALID_LIGHT_COLORS = ['white', 'haze', 'lightGray'];
+
+export const VALID_DARK_COLORS = [
   'white',
   'haze',
   'lightGray',
@@ -15,7 +17,7 @@ export const VALID_BG_COLORS = [
   'purple',
 ];
 
-const NON_INVERTED_BG_COLORS = ['white', 'haze', 'lightGray'];
+const VALID_BG_COLORS = [...VALID_LIGHT_COLORS, ...VALID_DARK_COLORS];
 
 const grabInitials = (str) =>
   str
@@ -26,9 +28,10 @@ const grabInitials = (str) =>
 const Avatar = ({ bgColor, imgUrl, size, name, ...rest }) => (
   <div
     {...rest}
+    role="img"
     aria-title={name}
     className={cx('fdsAvatar', `bgColor--${bgColor}`, `fdsAvatar--${size}`, {
-      'color--white': !NON_INVERTED_BG_COLORS.includes(bgColor),
+      'color--white': VALID_DARK_COLORS.includes(bgColor),
     })}
   >
     {imgUrl && (
