@@ -1,18 +1,17 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
 import { arrayToOptions } from '../util/storybook';
 
-import Avatar, { VALID_BG_COLORS } from './Avatar';
+import Avatar, { VALID_BG_COLORS, SIZES } from './Avatar';
 import README from './Avatar.md';
 
 export const bgColorOptions = options('bgColor', arrayToOptions(VALID_BG_COLORS), undefined, {
-        display: 'inline-radio',
-      });
+  display: 'inline-radio',
+});
 
 <Meta title="Media|Avatar" decorators={[withKnobs]} component={Avatar} />
 
 # Avatar
-
 
 <Story name="Knobs">
   <Avatar
@@ -27,35 +26,54 @@ export const bgColorOptions = options('bgColor', arrayToOptions(VALID_BG_COLORS)
   />
 </Story>
 
-Displays an Avatar. Renders an image, or intials based on the name (either if no image is specified, or the image does not load).
-Accepted colors are based off FDS background color classes: https://cbinsights.github.io/form-design-system/fds-styles/#background-colors
+<Props of={Avatar} />
+
+### Colors
+Accepted colors are based off FDS `bgColor--{color}` classes: https://cbinsights.github.io/form-design-system/fds-styles/#background-colors
+
+<Preview>
+  <Story name="Colors">
+    <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+      <div className="margin--right--half margin--bottom--half">
+        <Avatar name="default" />
+      </div>
+      {VALID_BG_COLORS.map(bgColor => (
+        <div className="margin--right--half margin--bottom--half">
+          <Avatar name={`${bgColor.slice(0,1)} ${bgColor.slice(1,2)}`} bgColor={bgColor} />
+        </div>
+      ))}
+      <br />
+    </div>
+  </Story>
+</Preview>
+
+### Images
+Initials will show either if you don't pass an image, the image doesn't load, or it hasn't loaded yet.
 
 <Preview>
   <Story name="Variations">
     <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
       <div className="margin--right--half margin--bottom--half">
-        <Avatar name="Lorem Ipsum" />
+        <Avatar name="Hello Impecable" imgUrl="http://placeimg.com/80/81/animals" />
       </div>
       <div className="margin--right--half margin--bottom--half">
-        <Avatar name="Dolor Sit" imgUrl="https://placeimg.com/80/81/animals" />
+        <Avatar name="Hello Impecable" imgUrl="invalid url" />
       </div>
-      <div className="margin--right--half margin--bottom--half">
-        <Avatar name="Amet" bgColor="aqua" />
-      </div>
-      <div className="margin--right--half margin--bottom--half">
-        <Avatar name="Ipsum Dolor" bgColor="red" size="s" />
-      </div>
-      <div className="margin--right--half margin--bottom--half">
-        <Avatar
-          name="Lorem"
-          bgColor="red"
-          size="s"
-          imgUrl="https://placeimg.com/81/80/animals"
-        />
-      </div>
-      <div className="margin--right--half margin--bottom--half">
-        <Avatar name="Lorem Ipsum Dolor Sit Amet" bgColor="navy" size="s" />
-      </div>
+      <br />
+    </div>
+  </Story>
+</Preview>
+
+### Sizes
+
+<Preview>
+  <Story name="Sizes">
+    <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+      {SIZES.map(size => (
+        <div className="margin--right--half margin--bottom--half">
+          <Avatar name="Hello Impecable " size={size} />
+        </div>
+      ))}
       <br />
     </div>
   </Story>
