@@ -4,18 +4,7 @@ import cx from 'classnames';
 
 const VALID_LIGHT_COLORS = ['white', 'haze', 'lightGray'];
 
-const VALID_DARK_COLORS = [
-  'white',
-  'haze',
-  'lightGray',
-  'orange',
-  'charcoal',
-  'navy',
-  'aqua',
-  'gray',
-  'red',
-  'purple',
-];
+const VALID_DARK_COLORS = ['orange', 'charcoal', 'navy', 'aqua', 'gray', 'red', 'purple'];
 
 export const VALID_BG_COLORS = [...VALID_LIGHT_COLORS, ...VALID_DARK_COLORS];
 
