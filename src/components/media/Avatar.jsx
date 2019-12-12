@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 const VALID_LIGHT_COLORS = ['white', 'haze', 'lightGray'];
 
-export const VALID_DARK_COLORS = [
+const VALID_DARK_COLORS = [
   'white',
   'haze',
   'lightGray',
@@ -17,13 +17,14 @@ export const VALID_DARK_COLORS = [
   'purple',
 ];
 
-const VALID_BG_COLORS = [...VALID_LIGHT_COLORS, ...VALID_DARK_COLORS];
+export const VALID_BG_COLORS = [...VALID_LIGHT_COLORS, ...VALID_DARK_COLORS];
 
-const grabInitials = (str) =>
+export const grabInitials = (str) =>
   str
     .split(' ')
-    .splice(0, 2)
-    .reduce((prev, curr) => prev + curr.charAt(0), '');
+    .slice(0, 2)
+    .reduce((prev, curr) => prev + curr.charAt(0), '')
+    .toUpperCase();
 
 const Avatar = ({ bgColor, imgUrl, size, name, ...rest }) => (
   <div
