@@ -19,7 +19,7 @@ const Avatar = ({ bgColor, imgUrl, size, name, ...rest }) => (
   <div
     {...rest}
     role="img"
-    aria-title={name}
+    title={name}
     className={cx('fdsAvatar', `bgColor--${bgColor}`, `fdsAvatar--${size}`, {
       'color--white': VALID_DARK_COLORS.includes(bgColor),
     })}
