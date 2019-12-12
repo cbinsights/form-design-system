@@ -18,7 +18,7 @@ export const bgColorOptions = options('bgColor', arrayToOptions(VALID_BG_COLORS)
     bgColor={options('bgColor', arrayToOptions(VALID_BG_COLORS), undefined, {
       display: 'inline-radio',
     })}
-    size={options('size', arrayToOptions(['s', 'm']), undefined, {
+    size={options('size', arrayToOptions(SIZES), undefined, {
       display: 'inline-radio',
     })}
     name={text('name', 'Samuel Jackson')}
