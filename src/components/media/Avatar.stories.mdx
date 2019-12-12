@@ -13,9 +13,6 @@ export const bgColorOptions = options('bgColor', arrayToOptions(VALID_BG_COLORS)
 
 # Avatar
 
-Displays an Avatar, consisting of a background image and intials as a baseline, or
-an image displayed at the same dimensions (the initials being a fallback if the image does not load)
-
 
 <Story name="Knobs">
   <Avatar
@@ -29,6 +26,9 @@ an image displayed at the same dimensions (the initials being a fallback if the 
     imgUrl={text('imgUrl', undefined)}
   />
 </Story>
+
+Displays an Avatar. Renders an image, or intials based on the name (either if no image is specified, or the image does not load).
+Accepted colors are based off FDS background color classes: https://cbinsights.github.io/form-design-system/fds-styles/#background-colors
 
 <Preview>
   <Story name="Variations">
