@@ -82,9 +82,9 @@ input[disabled] {
  */
 
 select {
-  appearance: menulist-button;
-  -moz-appearance: menulist-button;
-  -webkit-appearance: menulist-button;
+  appearance: menulist;
+  -moz-appearance: menulist;
+  -webkit-appearance: menulist;
   height: var(--space-double);
 }
 
