@@ -60,7 +60,7 @@ object-assign
  * https://github.com/paulmillr/es6-shim/
  */
 
-/** @license React v16.12.0
+/** @license React v16.11.0
  * react.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -103,11 +103,13 @@ object-assign
  * @license  MIT
  */
 
-/*!
- * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
+/** @license React v16.11.0
+ * react-is.production.min.js
  *
- * Copyright (c) 2014-2017, Jon Schlinkert.
- * Released under the MIT License.
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 /*!
@@ -132,4 +134,11 @@ object-assign
  * Copyright(c) 2015 Andreas Lubbe
  * Copyright(c) 2015 Tiancheng "Timothy" Gu
  * MIT Licensed
+ */
+
+/*!
+ * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
  */
