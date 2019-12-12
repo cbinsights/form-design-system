@@ -1,9 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Avatar component matches snapshot (default props) 1`] = `
+exports[`Avatar component has an image 1`] = `
 <div
   aria-title="Joey Tribbiani"
   className="fdsAvatar bgColor--purple fdsAvatar--m color--white"
+  role="img"
+>
+  <span
+    className="fdsAvatar-img"
+    style={
+      Object {
+        "backgroundImage": "url(lol.png)",
+      }
+    }
+  />
+  JT
+</div>
+`;
+
+exports[`Avatar component has no image 1`] = `
+<div
+  aria-title="Joey Tribbiani"
+  className="fdsAvatar bgColor--purple fdsAvatar--m color--white"
+  role="img"
 >
   JT
 </div>
@@ -13,6 +32,7 @@ exports[`Avatar component matches snapshot (set all props) 1`] = `
 <div
   aria-title="Ross Gellar"
   className="fdsAvatar bgColor--aqua fdsAvatar--s color--white"
+  role="img"
 >
   <span
     className="fdsAvatar-img"
