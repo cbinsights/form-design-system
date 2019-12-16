@@ -6,6 +6,7 @@
 .fdsInputGroup {
   border-radius: 4px;
   border: 1px solid rgba(var(--rgb-charcoal), 0.24);
+  max-width: 100%;
   width: min-content;
 }
 
