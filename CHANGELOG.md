@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.5] `border-focus`
+
+- Added `border-focus` helper class for standard focus styles
+
 ## [6.4] `Avatar`
 
 - Adds `Avatar` component for displaying avatar initials and images

@@ -29,11 +29,6 @@
   color: var(--color-white);
 }
 
-.fdsStackedButton:focus {
-  outline: 0;
-  box-shadow: 0 0 0 2px var(--button-focus);
-}
-
 .fdsStackedButton:hover {
   background-color: var(--button-secondary-hover);
   color: var(--button-secondary-hover-color);

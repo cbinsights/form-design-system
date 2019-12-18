@@ -29,6 +29,7 @@ const Button = ({
         'display--inlineFlex',
         'rounded--all',
         'alignChild--center--center',
+        'border-focus',
         {
           'fdsButton--s': size === 's',
           'fdsButton--m': size === 'm',

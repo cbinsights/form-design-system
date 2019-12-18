@@ -85,8 +85,6 @@ for a button being clicked on (:active) */
   background-color: none;
   /* this box-shadow acts as outline that conforms
   to border-radius, unlike outline  */
-  box-shadow: 0 0 0 2px var(--button-focus);
-  outline: 0;
   color: var(--color-charcoal);
 }
 
