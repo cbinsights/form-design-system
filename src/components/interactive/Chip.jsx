@@ -7,7 +7,7 @@ import baseElement from '../../util/baseElement';
 const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }) => {
   const Element = baseElement({ href: rest.href, as: Link });
 
-  const rootClass = cx('fdsChip', `fdsChip--${size}`, {
+  const rootClass = cx('fdsChip', 'border-focus', `fdsChip--${size}`, {
     'fdsChip--active': isActive,
     'fdsChip--blue': theme === 'blue',
     'fdsChip--outline': theme === 'outline',
