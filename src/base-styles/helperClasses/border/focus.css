@@ -6,13 +6,19 @@ section: Border Helpers
 
 Adds standard focus style to elements
 
-class            | description
----------------- | ---------------------------------
-`border--focus`  | Adds standard box shadow focus style
+class                    | description
+------------------------ | -------------------------------------------------------
+`border--focus`          | Adds standard box shadow focus style
+`border--focus--notrsn`  | Adds standard box shadow focus style without transition
 */
 
 .border-focus:focus {
   outline: 0;
   box-shadow: 0 0 0 2px #B7D7E5;
   transition: box-shadow 250ms var(--motion-easing-default);
+}
+
+.border-focus--notrsn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px #B7D7E5;
 }
