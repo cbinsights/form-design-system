@@ -1,107 +1,108 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,500,700&display=swap" rel="stylesheet">
 
 <style type="text/css">
-body {
-  padding: 16px !important;
-}
 
-/**
-* (styles specific to doc examples)
-*/
+  body {
+    padding: 16px !important;
+  }
 
-/**
-Debug styles
----------------
+  /**
+  * (styles specific to doc examples)
+  */
 
-This file contains debugging utility classes that are
-loaded only in styleguidist.
-*/
+  /**
+  Debug styles
+  ---------------
 
-:root {
-  --debug-font: monaco, consolas, monospace;
-  --debug-color-layer: rgba(187, 219, 229, 0.33);
-  --debug-color-layerBorder: rgba(0, 51, 102, 0.2);
-  --debug-color-info: rgba(229, 50, 62, 1);
-  --debug-color-content: rgba(255, 192, 203, 0.33);
-}
+  This file contains debugging utility classes that are
+  loaded only in styleguidist.
+  */
 
-/**
-<element class="debug--layers">
+  :root {
+    --debug-font: monaco, consolas, monospace;
+    --debug-color-layer: rgba(187, 219, 229, 0.33);
+    --debug-color-layerBorder: rgba(0, 51, 102, 0.2);
+    --debug-color-info: rgba(229, 50, 62, 1);
+    --debug-color-content: rgba(255, 192, 203, 0.33);
+  }
 
-Adds transparent backgrounds to all elements.
-Helps show stacking depth.
-*/
-.debug--layers * {
-  background-color: var(--debug-color-layer) !important;
-  border: 1px solid var(--debug-color-layerBorder) !important;
-}
+  /**
+  <element class="debug--layers">
+
+  Adds transparent backgrounds to all elements.
+  Helps show stacking depth.
+  */
+  .debug--layers * {
+    background-color: var(--debug-color-layer) !important;
+    border: 1px solid var(--debug-color-layerBorder) !important;
+  }
 
 
-/**
-<element class="debug-classes">
+  /**
+  <element class="debug-classes">
 
-Applies a style to every child element that activates
-information about class names on hover.
-*/
-.debug--classes [class]:hover {
-  cursor: help;
-  position: relative !important;
-  outline: 2px dotted var(--debug-color-info);
-}
+  Applies a style to every child element that activates
+  information about class names on hover.
+  */
+  .debug--classes [class]:hover {
+    cursor: help;
+    position: relative !important;
+    outline: 2px dotted var(--debug-color-info);
+  }
 
-.debug--classes [class]:hover::after {
-  content: attr(class);
-  display: block;
-  position: absolute;
-  bottom: 100%;
-  left: -2px;
-  padding: 4px;
-  font-size: 12px;
-  font-family: var(--debug-font);
-  color: #fff;
-  background-color: var(--debug-color-info);
-}
+  .debug--classes [class]:hover::after {
+    content: attr(class);
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: -2px;
+    padding: 4px;
+    font-size: 12px;
+    font-family: var(--debug-font);
+    color: #fff;
+    background-color: var(--debug-color-info);
+  }
 
-.debug--classes [class]:hover > [class]:hover::after {
-  bottom: initial;
-  left: initial;
-  top: 100%;
-  right: -2px;
-}
+  .debug--classes [class]:hover > [class]:hover::after {
+    bottom: initial;
+    left: initial;
+    top: 100%;
+    right: -2px;
+  }
 
-/**
-<element class="debug--boxModel">
+  /**
+  <element class="debug--boxModel">
 
-Adds colors to direct child elements to highlight
-border and content box.
-*/
-.debug--boxModel > * {
-  outline: 1px dotted var(--debug-color-info);
-  background-color: var(--debug-color-content);
-  background-clip: content-box;
-}
+  Adds colors to direct child elements to highlight
+  border and content box.
+  */
+  .debug--boxModel > * {
+    outline: 1px dotted var(--debug-color-info);
+    background-color: var(--debug-color-content);
+    background-clip: content-box;
+  }
 
-/**
-<div class="debug--box">
+  /**
+  <div class="debug--box">
 
-Adds a border and margin around an element.
-*/
-.debug--box {
-  border: 1px dotted var(--debug-color-info);
-}
+  Adds a border and margin around an element.
+  */
+  .debug--box {
+    border: 1px dotted var(--debug-color-info);
+  }
 
-<<<<<<< HEAD
-/**
-<div class="debug--flex">(flex components)</div>
+  /**
+  <div class="debug--flex">(flex components)</div>
 
-Adds debug outlines to child Flex/FlexItem components.
-*/
-.debug--flex .flex {
-  outline: 1px solid var(--color-orange);
-}
-.debug--flex .flexItem {
-  outline: 1px dotted var(--debug-color-info);
-  background-color: var(--debug-color-content);
-  background-clip: content-box;
-}
+  Adds debug outlines to child Flex/FlexItem components.
+  */
+  .debug--flex .flex {
+    outline: 1px solid var(--color-orange);
+  }
+  .debug--flex .flexItem {
+    outline: 1px dotted var(--debug-color-info);
+    background-color: var(--debug-color-content);
+    background-clip: content-box;
+  }
+
 </style>
