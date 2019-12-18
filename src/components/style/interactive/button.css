@@ -13,12 +13,6 @@
   box-sizing: border-box;
 }
 
-.trsn-default {
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: var(--motion-easing-default);
-}
-
 /* Button padding */
 /* we remove 1px off each side as there's a border we need to compensate for */
 /* we apply vertical padding on the label only, so that the bigger icon

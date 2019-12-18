@@ -61,3 +61,7 @@
 @import "./helperClasses/whitespace/truncate";
 @import "./helperClasses/whitespace/wrap";
 
+
+/* Animation helpers */
+@import "./helperClasses/animations/transitions";
+

@@ -63,10 +63,6 @@ for a button being clicked on (:active) */
   align-items: center;
   user-select: none;
   min-height: auto;
-  transition: background-color var(--button-group-timeout) var(--motion-easing-default),
-    box-shadow var(--button-group-timeout) var(--motion-easing-default),
-    border var(--button-group-timeout) var(--motion-easing-default),
-    z-index var(--button-group-timeout) var(--motion-easing-default);
   margin-bottom: 0;
   background-color: transparent;
 }

@@ -14,7 +14,8 @@ const StackedButton = ({ Icon, Link, label, disabled, isActive, hasCaret, ...res
         'fdsStackedButton',
         'rounded--all',
         'fdsStackedButton--ghost',
-        'border-focus',
+        'border-focus--notrsn',
+        'trsn-default',
         {
           'fdsStackedButton--disabled': disabled,
           'fdsStackedButton--active': isActive,
