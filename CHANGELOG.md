@@ -27,9 +27,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [6.5] `border--focus`
+## [6.5] border focus and transition
 
-- Added `border--focus` and `border--focus--no-trsn' helper classes for standard focus styles
+- Added `border--focus` and `border--focus--notransition' helper classes for standard focus styles
 - Added `transition-default` helper class for default transition
 
 ## [6.4] `Avatar`

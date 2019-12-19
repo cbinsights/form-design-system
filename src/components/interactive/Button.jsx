@@ -29,7 +29,7 @@ const Button = ({
         'display--inlineFlex',
         'rounded--all',
         'alignChild--center--center',
-        'border--focus--notrsn',
+        'border--focus--notransition',
         'transition-default',
         {
           'fdsButton--s': size === 's',
