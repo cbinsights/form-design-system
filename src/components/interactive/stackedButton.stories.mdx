@@ -1,0 +1,54 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
+import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
+import CollectionPublicIcon from '../../../lib/icons/react/CollectionPublicIcon';
+import StoryAddIcon from '../../../lib/icons/react/StoryAddIcon';
+import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
+import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
+
+import StackedButton from './StackedButton';
+import README from './StackedButton.md';
+
+
+<Meta title="Interactive|StackedButton" decorators={[withKnobs]} component={StackedButton} />
+
+# StackedButton
+
+<Story name="Knobs">
+  <StackedButton
+    disabled={boolean('disabled', false)}
+    Icon={StarFilledIcon}
+    label={text('Text', 'Stacked Button')}
+    hasCaret={boolean('hasCaret', false)}
+  />
+</Story>
+
+<Props of={StackedButton} />
+
+### States
+
+<Story name="States">
+  <React.Fragment>
+    <div className="margin--bottom--half margin--right--half display--inlineBlock">
+      <StackedButton Icon={SalesforceIcon} label="Lorem" />
+    </div>
+    <div className="margin--bottom--half margin--right--half display--inlineBlock">
+      <StackedButton Icon={SalesforceIcon} disabled label="Lorem Ipsum (Disabled)" />
+    </div>
+    <div className="margin--bottom--half margin--right--half display--inlineBlock">
+      <StackedButton Icon={SalesforceIcon} isActive label="Lorem Ipsum (Active)" />
+    </div>
+  </React.Fragment>
+</Story>
+
+
+### Misc
+
+<Story name="Miscellaneous">
+  <StackedButton
+    Icon={CollectionPublicIcon}
+    label="Add to Collections"
+    hasCaret
+  />
+</Story>

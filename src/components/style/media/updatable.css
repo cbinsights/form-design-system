@@ -19,4 +19,5 @@
   height: var(--space-default);
   white-space: nowrap;
   font-size: var(--font-size-xs);
+  z-index: 9;
 }

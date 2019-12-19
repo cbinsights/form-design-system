@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { Meta, Preview, Story, Props } from "@storybook/addon-docs/blocks";
 import {
   withKnobs,
   text,
@@ -6,7 +6,7 @@ import {
   optionsKnob as options
 } from "@storybook/addon-knobs";
 import { arrayToOptions } from "../util/storybook";
-import Button from "./Button";
+import Button, { SIZES, THEMES, ICON_PLACEMENTS } from "./Button";
 import StarFilledIcon from "../../../lib/icons/react/StarFilledIcon";
 import IconButton from "./IconButton";
 import ButtonGroup from "./ButtonGroup";
@@ -27,8 +27,6 @@ export const iconOptions = options(
 
 # Button
 
-Displays standard Buttons.
-
 <Story name="Knobs">
   <Button
     disabled={boolean("disabled", false)}
@@ -38,12 +36,12 @@ Displays standard Buttons.
     Icon={iconOptions ? StarFilledIcon : undefined}
     iconPlacement={iconOptions}
     isFullWidth={boolean("isFullWidth", false)}
-    size={options("size", arrayToOptions(["s", "m"]), undefined, {
+    size={options("size", arrayToOptions(SIZES), undefined, {
       display: "inline-radio"
     })}
     theme={options(
       "theme",
-      arrayToOptions(["blue", "outlined", "ghost"]),
+      arrayToOptions(THEMES),
       undefined,
       {
         display: "inline-radio"
@@ -54,125 +52,110 @@ Displays standard Buttons.
   </Button>
 </Story>
 
-## Handling events
-The `Button` component passes through `...rest` props. You may add an `onClick` prop to
-handle click events.
+<Props of={Button} />
 
-## Themes
-Use the `theme` prop to chose the button style.
+### Themes
 
-### Colors
-Themes named by color will render a button with a filled background. These buttons should
-be reserved for primary actions (e.g. `theme="blue"`).
+<Preview>
+  <Story name="Themes">
+    {THEMES.map(theme => (
+      <div className="display--inlineBlock margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
+          <Button
+            theme={theme}
+          >
+            {theme} 
+          </Button>
+        </div>
+      </div>
+    ))}
+  </Story>
+</Preview>
 
-### Outline and "Ghost" buttons
-The `outline` and `ghost` themes will render an outlined button or a text button
-respectively.
+### isDestructive
 
-## Destructive buttons
-The `isDestructive` prop is reserved for buttons that take a destructive action of some
-kind (e.g. "Delete"). This prop can be applied to a button of any theme.
+Modifies the theme. Should only be used when the interaction involves data loss, and should also prompt the user to confirm the action.
+
+<Preview>
+  <Story name="Destructive">
+    {THEMES.map(theme => (
+      <div className="display--inlineBlock margin--right--half margin--bottom--half">
+        <div className="margin--bottom--half">
+          <Button
+            theme={theme}
+            isDestructive
+          >
+            {theme} 
+          </Button>
+        </div>
+      </div>
+    ))}
+  </Story>
+</Preview>
+
+### Sizes
+
+<Preview>
+  <Story name="Sizes">
+    {SIZES.map(size => (
+      <div className="display--inlineBlock margin--right--half margin--bottom--half">
+        <Button
+          size={size}
+        >
+          size: {size} 
+        </Button>
+      </div>
+    ))}
+  </Story>
+</Preview>
 
 
-# Variations
+### Full width button
 
-<Story name="Variations">
-  <div className="display--inlineFlex" style={{ flexWrap: 'wrap' }}>
-    <div className="margin--right--half margin--bottom--half">
-      <Button size="s">Button</Button>
-    </div>
-    <div className="margin--right--half margin--botton--half">
-      <Button theme="blue" Icon={StarFilledIcon} size="s" iconPlacement="left">
-        Button
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button>Button</Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button isDestructive href="#">
-        Button
-      </Button>
-    </div>
-    <div className="margin--right--half margin--botton--half">
-      <Button theme="blue" hasCaret>
-        Button
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="outlined" href="#">
-        Button
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="ghost" href="#">
-        Button
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="outlined" isDestructive href="#">
-        Button
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="ghost" isDestructive href="#">
-        Button
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="blue" disabled>
-        Disabled
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="blue" disabled href="#">
-        Disabled Link
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="blue" isLoading>
-        Button
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="blue" isLoading>
-        Really long text!
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="outlined" isLoading>
-        Button
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="outlined" isLoading isDestructive>
-        Button
-      </Button>
-    </div>
-    <div className="margin--right--half margin--bottom--half">
-      <Button theme="ghost" isLoading isDestructive>
-        Button
-      </Button>
-    </div>
-    <div
-      className="margin--right--half margin--bottom--half"
-      style={{ width: '100px' }}
+<Preview>
+  <Story name="Full Width">
+    <Button
+      isFullWidth
     >
-      <Button theme="blue" isLoading>
-        Text that wraps!
-      </Button>
+      Button
+    </Button>
+  </Story>
+</Preview>
+
+### Icons
+
+Only should pass in FDS Icon references (refer to code sample)
+
+<Preview>
+  <Story name="Icons">
+    {ICON_PLACEMENTS.map(placement => (
+      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+        <Button Icon={StarFilledIcon} iconPlacement={placement}>
+          Button
+        </Button>
+      </div>
+    ))}
+  </Story>
+</Preview>
+
+### Misc
+
+<Preview>
+  <Story name="Misc">
+    <div>
+      <div
+        className="margin--right--half margin--bottom--half display--inlineBlock"
+        style={{ width: '100px' }}
+      >
+        <Button>
+          Text can wrap
+        </Button>
+      </div>
+      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+        <Button theme="blue" hasCaret>
+          Caret
+        </Button>
+      </div>
     </div>
-    <div
-      className="margin--right--half margin--bottom--half"
-      style={{ width: '100px' }}
-    >
-      <Button theme="blue">Text that wraps!</Button>
-    </div>
-    <div
-      className="margin--right--half margin--bottom--half"
-      style={{ width: '100px' }}
-    >
-      <Button theme="outlined">Text that wraps!</Button>
-    </div>
-  </div>
-</Story>
+  </Story>
+</Preview>
