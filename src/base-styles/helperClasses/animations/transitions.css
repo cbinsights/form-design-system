@@ -6,13 +6,12 @@ section: Animation Helpers
 
 Adds standard transitions
 
-class          | description
--------------- | ---------------------------------------------------------
-`trsn-default` | transitions all properties to default duration and timing
+class                | description
+-------------------- | -----------------------------------------------------
+`transition-default` | transitions properties to default duration and timing
 */
 
-.trsn-default {
-  transition-property: all;
+.transition-default {
   transition-duration: 250ms;
   transition-timing-function: var(--motion-easing-default);
 }

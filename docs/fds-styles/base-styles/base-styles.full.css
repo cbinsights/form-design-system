@@ -1333,13 +1333,13 @@ class                    | description
 `border--focus`          | Adds standard box shadow focus style
 `border--focus--notrsn`  | Adds standard box shadow focus style without transition
 */
-.border-focus:focus {
+.border--focus:focus {
   outline: 0;
   box-shadow: 0 0 0 2px #B7D7E5;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 250ms var(--motion-easing-default);
 }
-.border-focus--notrsn:focus {
+.border--focus--notrsn:focus {
   outline: 0;
   box-shadow: 0 0 0 2px #B7D7E5;
 }
@@ -2169,9 +2169,9 @@ Adds standard transitions
 
 class          | description
 -------------- | ---------------------------------------------------------
-`trsn-default` | transitions all properties to default duration and timing
+`transition-default` | transitions all properties to default duration and timing
 */
-.trsn-default {
+.transition-default {
   transition-property: all;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
