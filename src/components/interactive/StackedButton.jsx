@@ -10,10 +10,17 @@ const StackedButton = ({ Icon, Link, label, disabled, isActive, hasCaret, ...res
   return (
     <Element
       {...rest}
-      className={cx('fdsStackedButton', 'rounded--all', 'fdsStackedButton--ghost', {
-        'fdsStackedButton--disabled': disabled,
-        'fdsStackedButton--active': isActive,
-      })}
+      className={cx(
+        'fdsStackedButton',
+        'rounded--all',
+        'fdsStackedButton--ghost',
+        'border--focus--noTransition',
+        'transition-default',
+        {
+          'fdsStackedButton--disabled': disabled,
+          'fdsStackedButton--active': isActive,
+        }
+      )}
       disabled={disabled && Element === 'button'}
     >
       {Icon && (

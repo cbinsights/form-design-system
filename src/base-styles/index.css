@@ -31,6 +31,7 @@
 
 /* Border Helpers */
 @import "./helperClasses/border/radius";
+@import "./helperClasses/border/focus";
 @import "./helperClasses/border/sides";
 @import "./helperClasses/border/shape";
 
@@ -59,4 +60,8 @@
 /* Whitespace helpers */
 @import "./helperClasses/whitespace/truncate";
 @import "./helperClasses/whitespace/wrap";
+
+
+/* Animation helpers */
+@import "./helperClasses/animations/transitions";
 

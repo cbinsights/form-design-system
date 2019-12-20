@@ -26,6 +26,8 @@ const IconButton = ({
       className={cx(
         'fdsIconButton',
         'rounded--all',
+        'border--focus--noTransition',
+        'transition-default',
         `fdsIconButton--${theme}`,
         `fdsIconButton--${size}`,
         {

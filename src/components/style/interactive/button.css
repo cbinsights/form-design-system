@@ -9,8 +9,6 @@
   /* We do this to make sure buttons with borders and without are the same dimensions */
   border: 1px solid transparent;
   background-color: transparent;
-  transition: background-color var(--button-timeout) var(--motion-easing-default),
-    box-shadow var(--button-timeout) var(--motion-easing-default);
   min-height: auto;
   box-sizing: border-box;
 }
@@ -70,11 +68,6 @@
 
 .fdsButton--hidden {
   visibility: hidden;
-}
-
-.fdsButton:focus {
-  outline: 0;
-  box-shadow: 0 0 0 2px var(--button-focus);
 }
 
 .fdsButton--blue {

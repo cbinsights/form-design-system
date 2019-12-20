@@ -1,8 +1,6 @@
 .fdsAvatar {
   font-size: var(--font-size-xs);
   user-select: none;
-  transition: background-color var(--button-timeout) var(--motion-easing-default),
-    box-shadow var(--button-timeout) var(--motion-easing-default);
   box-sizing: border-box;
   border-radius: 50%;
   text-align: center;
