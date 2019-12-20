@@ -4,6 +4,9 @@ import cx from 'classnames';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
 import baseElement from '../../util/baseElement';
 
+export const THEMES = ['blue', 'gray', 'outline'];
+export const SIZES = ['s', 'm'];
+
 const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }) => {
   const Element = baseElement({ href: rest.href, as: Link });
 
@@ -45,10 +48,9 @@ Chip.propTypes = {
    * Takes in a react-router `Link` reference and sets it
    * as the base element. You may ONLY use it like the
    * following:
-   * ```
-   * import { Link } from 'react-router'
-   * Link={Link}
-   * ```
+   *
+   * - `import { Link } from 'react-router'`
+   * - `Link={Link}`
    */
   Link: PropTypes.func,
   /** Controls the isActive state of the chip, which changes colors */
@@ -61,9 +63,9 @@ Chip.propTypes = {
    */
   onClose: PropTypes.func,
   /** Specify the size of the chip */
-  size: PropTypes.oneOf(['s', 'm']),
+  size: PropTypes.oneOf(SIZES),
   /** Controls the color (look and feel) of the chip */
-  theme: PropTypes.oneOf(['blue', 'gray', 'outline']),
+  theme: PropTypes.oneOf(THEMES),
 };
 
 Chip.defaultProps = {

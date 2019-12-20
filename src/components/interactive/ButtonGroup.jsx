@@ -40,38 +40,7 @@ ButtonGroup.propTypes = {
    * Each object in array renders a GroupButton, and (generally) passes all it's values through
    * as props to GroupButton
    */
-  buttons: PropTypes.arrayOf(
-    PropTypes.shape({
-      /**
-       * Takes in a react-router `Link` reference and sets it
-       * as the base element. You may ONLY use it like the
-       * following:
-       * ```
-       * import { Link } from 'react-router'
-       * Link={Link}
-       * ```
-       */
-      Link: PropTypes.func,
-      /**
-       * Use if labels are not unique
-       */
-      key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-
-      isActive: PropTypes.bool,
-      /**
-       * The text that appears in the button
-       */
-      label: PropTypes.string,
-      /**  Pass in "only" a FDS Icon reference to display it (e.g. Icon={ApproveIcon}) */
-      Icon: PropTypes.func,
-      /**
-       * A component to wrap the entire group button. The
-       * `wrapper` must render the children prop passed into it
-       * to render the GroupButton.
-       */
-      Wrapper: PropTypes.elementType,
-    })
-  ).isRequired,
+  buttons: PropTypes.arrayOf(GroupButton.propTypes).isRequired,
 
   /**
    * Fires when any Button is clicked in ButtonGroup

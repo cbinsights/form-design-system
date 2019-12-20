@@ -58,10 +58,9 @@ IconButton.propTypes = {
    * Takes in a react-router `Link` reference and sets it
    * as the base element. You may ONLY use it like the
    * following:
-   * ```
-   * import { Link } from 'react-router'
-   * Link={Link}
-   * ```
+   *
+   * - `import { Link } from 'react-router'`
+   * - `Link={Link}`
    */
   Link: PropTypes.func,
   /** Controls active style UI of button */

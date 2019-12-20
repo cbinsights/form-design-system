@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { storiesOf } from '@storybook/react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { action } from '@storybook/addon-actions';
 import {
   number,
@@ -11,49 +9,52 @@ import {
 } from '@storybook/addon-knobs';
 
 import Toast from './Toast';
-import README from './Toast.md';
 
-storiesOf('Interactive/Toast', module)
-  .addDecorator(withKnobs)
-  .add(
-    'Knobs',
-    () => (
-      <Toast
-        content={text(
-          'label',
-          <p>
-            Check out this <strong className="color--heading">toast</strong>
-          </p>
-        )}
-        actionLabel={text('actionLabel', 'Action')}
-        onAction={action('action button clicked')}
-        onDismiss={action('Toast dismissed')}
-        canDismiss={boolean('canDismiss', true)}
-        dismissDelay={number('dismissDelay', 4000)}
-        isAutoDismiss={boolean('isAutoDismiss', true)}
-        progress={number('progress', 42, {
-          range: true,
-          min: 1,
-          max: 100,
-          step: 1,
-        })}
-        type={options(
-          'type',
-          {
-            info: 'info',
-            error: 'error',
-            success: 'success',
-            warn: 'warn',
-            progress: 'progress',
-          },
-          'info',
-          { display: 'inline-radio' }
-        )}
-      />
-    ),
-    { notes: { markdown: README } }
-  )
-  .add('Variations', () => (
+<Meta title="Interactive|Toast" decorators={[withKnobs]} component={Toast} />
+
+# Toast
+
+<Story name="Knobs">
+  <Toast
+    content={text(
+      'label',
+      <p>
+        Check out this <strong className="color--heading">toast</strong>
+      </p>
+    )}
+    actionLabel={text('actionLabel', 'Action')}
+    onAction={action('action button clicked')}
+    onDismiss={action('Toast dismissed')}
+    canDismiss={boolean('canDismiss', true)}
+    dismissDelay={number('dismissDelay', 4000)}
+    isAutoDismiss={boolean('isAutoDismiss', true)}
+    progress={number('progress', 42, {
+      range: true,
+      min: 1,
+      max: 100,
+      step: 1,
+    })}
+    type={options(
+      'type',
+      {
+        info: 'info',
+        error: 'error',
+        success: 'success',
+        warn: 'warn',
+        progress: 'progress',
+      },
+      'info',
+      { display: 'inline-radio' }
+    )}
+  />
+</Story>
+
+<Props of={Toast} />
+
+# Variations
+
+<Preview>
+<Story name="Variations">
     <React.Fragment>
       <Toast
         content={
@@ -117,4 +118,5 @@ storiesOf('Interactive/Toast', module)
         type="progress"
       />
     </React.Fragment>
-  ));
+</Story>
+</Preview>

@@ -1,0 +1,148 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+import {
+  withKnobs,
+  text,
+  boolean,
+  optionsKnob as options
+} from "@storybook/addon-knobs";
+import { arrayToOptions } from "../util/storybook";
+
+import Chip, { THEMES, SIZES } from "./Chip";
+
+export const chips = [
+  { label: "Lorem", href: "#lorem" },
+  { label: "Ipsum", href: "#ipsum", isActive: true, subtitle: "active" },
+  { label: "Dolor", href: "#dolor", onClose: () => {} },
+  {
+    label: "Sit",
+    onClick: () => action("custom chip clicked"),
+    isActive: false
+  }
+];
+
+export const chipsTwo = [
+  { label: "Lorem Ipsum" },
+  { label: "Dolor Sit" },
+  { label: "Sit Amet" },
+  { label: "Consectetur", onClick: () => action("custom chip clicked") }
+];
+
+<Meta title="Interactive|Chip" decorators={[withKnobs]} component={Chip} />
+
+# Chip
+
+<Story name="Knobs">
+  <Chip
+    isActive={boolean("isActive", false)}
+    label={text("label", "Hello World")}
+    subtitle={text("subtitle", "")}
+    onClose={action("close")}
+    onClick={action("clicked")}
+    size={options("size", arrayToOptions(SIZES), undefined, {
+      display: "inline-radio"
+    })}
+    theme={options("theme", THEMES, undefined, { display: "inline-radio" })}
+  />
+</Story>
+
+<Props of={Chip} />
+
+### Themes / States
+
+<Preview>
+  <Story name="Themes">
+    <div>
+    {THEMES.map(theme => (
+      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+        <Chip theme={theme} label={theme} />
+      </div>
+    ))}
+    <br />
+    {THEMES.map(theme => (
+      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+        <Chip theme={theme} label={theme} isActive />
+      </div>
+    ))}
+    </div>
+  </Story>
+</Preview>
+
+### Sizes
+
+<Preview>
+  <Story name="Sizes">
+    {SIZES.map(size => (
+      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+        <Chip size={size} label={`Size: ${size}`} />
+      </div>
+    ))}
+  </Story>
+</Preview>
+
+### Subtitle
+
+<Preview>
+  <Story name="Subtitle">
+    {SIZES.map(size => (
+      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+        <Chip size={size} label="Chip" subtitle="subtitle" />
+      </div>
+    ))}
+  </Story>
+</Preview>
+
+<!-- storiesOf('Interactive/Chip', module)
+  .addDecorator(withKnobs)
+  .add(
+    'Knobs',
+    () => (
+      <Chip
+        isActive={boolean('isActive', false)}
+        label={text('label', 'Hello World')}
+        subtitle={text('subtitle', '')}
+        onClose={action('close')}
+        onClick={action('clicked')}
+        size={options('size', arrayToOptions(['s', 'm']), 's', {
+          display: 'inline-radio',
+        })}
+        theme={options(
+          'theme',
+          {
+            gray: 'gray',
+            blue: 'blue',
+            outline: 'outline',
+          },
+          'gray',
+          { display: 'inline-radio' }
+        )}
+      />
+    ),
+    { notes: { markdown: README } }
+  )
+  .add('Variations', () => (
+    <React.Fragment>
+      <div>
+        {chipsTwo.map((chip) => (
+          <Chip {...chip} key={chip.label} theme="outline" />
+        ))}
+      </div>
+      <br />
+      {chips.map((chip) => (
+        <Chip {...chip} key={chip.label} size="s" />
+      ))}
+      <br />
+      {chips.map((chip) => (
+        <Chip {...chip} key={chip.label} theme="blue" size="s" />
+      ))}
+      <br />
+      <br />
+      {chips.map((chip) => (
+        <Chip {...chip} key={chip.label} />
+      ))}
+      <br />
+      {chips.map((chip) => (
+        <Chip {...chip} key={chip.label} theme="blue" />
+      ))}
+    </React.Fragment>
+  )); -->
