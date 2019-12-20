@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { storiesOf } from '@storybook/react';
@@ -8,7 +9,7 @@ import Toaster from './Toaster';
 import Toast from './Toast';
 import README from './Toaster.md';
 
-const ReusableToaster = (props) => {
+export const ReusableToaster = (props) => {
   if (props.toastType === 'error') {
     return (
       <Toaster
@@ -73,12 +74,7 @@ const ReusableToaster = (props) => {
   return null;
 };
 
-ReusableToaster.propTypes = {
-  toastType: PropTypes.string,
-  toggleToast: PropTypes.func,
-};
-
-const ToasterStory = () => {
+export const ToasterStory = () => {
   const [isToastShowing, toggleToast] = useState(false);
   const niceSelect = select(
     'Select pre-build toast type',
@@ -109,6 +105,30 @@ const ToasterStory = () => {
   );
 };
 
-storiesOf('Interactive/Toaster', module)
-  .addDecorator(withKnobs)
-  .add('Knobs', () => <ToasterStory />, { notes: { markdown: README } });
+<Meta title="Interactive|Toaster" decorators={[withKnobs]} component={Toaster} />
+
+# Toaster
+
+<Story name="Knobs">
+  <ToasterStory />
+</Story>
+
+It's currently not possible to easily document this components props easily, sorry. Toast takes one `toast` prop,
+and displays that toast as an alert. Simple code example.
+
+```
+<Toaster
+  toast={
+    <Toast
+      isAutoDismiss={false}
+      onDismiss={() => {
+        props.toggleToast(false);
+      }}
+      content="blah"
+      type="info"
+    />
+  }
+/>
+```
+
+Due to the dynamic nature of this component, no examples can be provided 
