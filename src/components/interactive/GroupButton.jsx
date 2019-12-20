@@ -17,7 +17,7 @@ export const GroupButton = (props) => {
 
   const Element = baseElement({ href: rest.href, as: Link });
 
-  const rootClass = cx('groupbtn', 'border--focus--notransition', 'transition-default', {
+  const rootClass = cx('groupbtn', 'border--focus--noTransition', 'transition-default', {
     'groupbtn--disabled': props.disabled,
     'groupbtn--active': isActive,
     'groupbtn--first': isFirstButton,

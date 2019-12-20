@@ -1331,7 +1331,7 @@ Adds standard focus style to elements
 class                    | description
 ------------------------ | -------------------------------------------------------
 `border--focus`          | Adds standard box shadow focus style
-`border--focus--notransition`  | Adds standard box shadow focus style without transition
+`border--focus--noTransition`  | Adds standard box shadow focus style without transition
 */
 .border--focus:focus {
   outline: 0;
@@ -1339,7 +1339,7 @@ class                    | description
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 250ms var(--motion-easing-default);
 }
-.border--focus--notransition:focus {
+.border--focus--noTransition:focus {
   outline: 0;
   box-shadow: 0 0 0 2px #B7D7E5;
 }

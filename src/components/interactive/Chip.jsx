@@ -9,7 +9,7 @@ const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }
 
   const rootClass = cx(
     'fdsChip',
-    'border--focus--notransition',
+    'border--focus--noTransition',
     'transition-default',
     `fdsChip--${size}`,
     {
