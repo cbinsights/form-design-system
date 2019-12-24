@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.6] Refactor `Toaster` transition
+
+- Moves `Toaster` transition into a generic set of CSS classes to use with `react-transition-group`
+
 ## [6.5] border focus and transition
 
 - Added `border--focus` and `border--focus--noTransition' helper classes for standard focus styles
