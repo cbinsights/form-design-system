@@ -15,6 +15,7 @@
   display: inline-flex;
   align-items: center;
   padding: 5px 7px;
+  position: relative;
   border: 1px solid transparent;
   /* button element specific */
   vertical-align: top;
@@ -83,4 +84,8 @@
 .fdsChip-ul,
 .fdsChip-li {
   display: inline-block;
+}
+
+.fdsChip:focus {
+  z-index: 1;
 }
