@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.6] New dictionary properties
+
+- Added `--border-color-input` and `--border-color-focusRing` properties
+- Use standard focus ring color in `border--focus` class
+
 ## [6.5] border focus and transition
 
 - Added `border--focus` and `border--focus--noTransition' helper classes for standard focus styles
