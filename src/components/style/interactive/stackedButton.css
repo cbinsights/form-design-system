@@ -10,8 +10,6 @@
   flex-direction: column;
   padding: 5px 16px 9px;
   background-color: transparent;
-  transition: background-color var(--button-timeout) var(--motion-easing-default),
-    box-shadow var(--button-timeout) var(--motion-easing-default);
   min-height: 64px;
   width: 64px;
   box-sizing: border-box;
@@ -27,11 +25,6 @@
 .fdsStackedButton--active {
   background-color: var(--color-aqua);
   color: var(--color-white);
-}
-
-.fdsStackedButton:focus {
-  outline: 0;
-  box-shadow: 0 0 0 2px var(--button-focus);
 }
 
 .fdsStackedButton:hover {

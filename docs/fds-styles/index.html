@@ -27,13 +27,10 @@
           <nav class="menu docs-menu">
             
     
-        <a class="menu-heading" href="#background-helpers"><span>Background helpers</span></a>
+        <a class="menu-heading" href="#list-helpers"><span>List Helpers</span></a>
         
     
-        <a class="menu-item" href="#backgroundColors"><span>Background Colors</span></a>
-        
-        
-        <a class="menu-item" href="#backgroundFade"><span>Fade gradients</span></a>
+        <a class="menu-item" href="#typeSizeModifiers"><span>Decorated Lists</span></a>
         
         
   
@@ -83,10 +80,24 @@
         <a class="menu-item" href="#borderRadius"><span>Border Radius</span></a>
         
         
+        <a class="menu-item" href="#focusStyle"><span>Focus Style</span></a>
+        
+        
         <a class="menu-item" href="#borderDirections"><span>Borders by side</span></a>
         
         
         <a class="menu-item" href="#borderShape"><span>Border Shape</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#background-helpers"><span>Background helpers</span></a>
+        
+    
+        <a class="menu-item" href="#backgroundColors"><span>Background Colors</span></a>
+        
+        
+        <a class="menu-item" href="#backgroundFade"><span>Fade gradients</span></a>
         
         
   
@@ -101,14 +112,6 @@
         
         
         <a class="menu-item" href="#positionVAlign"><span>Vertical Align</span></a>
-        
-        
-  
-        
-        <a class="menu-heading" href="#list-helpers"><span>List Helpers</span></a>
-        
-    
-        <a class="menu-item" href="#typeSizeModifiers"><span>Decorated Lists</span></a>
         
         
   
@@ -186,6 +189,14 @@
         
         
         <a class="menu-item" href="#wrap"><span>Text wrap control</span></a>
+        
+        
+  
+        
+        <a class="menu-heading" href="#animation-helpers"><span>Animation Helpers</span></a>
+        
+    
+        <a class="menu-item" href="#transitions"><span>Transitions</span></a>
         
         
   
@@ -293,59 +304,39 @@
       </div>
     </section>
     
-    <section id="background-helpers">
-      <h1 class="page-title">Background helpers</h1>
+    <section id="list-helpers">
+      <h1 class="page-title">List Helpers</h1>
 
       <div class="markdown-body">
         
         
-    <section id="backgroundColors">
-      <h2 class="page-title">Background Colors</h2>
+    <section id="typeSizeModifiers">
+      <h2 class="page-title">Decorated Lists</h2>
 
       <div class="markdown-body">
-        <p>Sets background color of an element.</p>
-<p>Signature: <code>bgColor--&lt;color&gt;</code></p>
-<p><strong>💡 use the <a href="https://cbinsights.github.io/form-design-system/fds-styles/#inverted-standard-text-colors"><code>inverted</code></a>
-class to flip text colors for dark backgrounds</strong></p>
-<pre><code class="lang-example:html">&lt;div class=&quot;bgColor--white&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--haze&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--lightGray&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--orange inverted&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--charcoal inverted&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--navy inverted&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--aqua&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--gray inverted&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--red inverted&quot;&gt;I have a background color&lt;/div&gt;
-&lt;div class=&quot;bgColor--purple inverted&quot;&gt;I have a background color&lt;/div&gt;
+        <p>By default, <code>ul</code> and <code>ol</code> lists have their styles reset.</p>
+<p>To enable standard list decoration (bullet or number
+markers), use the <code>list--decorated</code> class.</p>
+<pre><code class="lang-example:html">&lt;ul&gt;
+  &lt;li&gt;item one&lt;/li&gt;
+  &lt;li&gt;item two&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;item one&lt;/li&gt;
+  &lt;li&gt;item two&lt;/li&gt;
+&lt;/ol&gt;
 </code></pre>
+<p>With <code>list--decorated</code>:</p>
+<pre><code class="lang-example:html">&lt;ul class=&quot;list--decorated&quot;&gt;
+  &lt;li&gt;item one&lt;/li&gt;
+  &lt;li&gt;item two&lt;/li&gt;
+&lt;/ul&gt;
 
-        
-      </div>
-    </section>
-    
-    <section id="backgroundFade">
-      <h2 class="page-title">Fade gradients</h2>
-
-      <div class="markdown-body">
-        <p>Sets background of an element to a linear gradient
-simulating a fade effect.</p>
-<p>Signature: <code>bgFade--&lt;direction&gt;--&lt;color&gt;</code></p>
-<pre><code class="lang-example:html">&lt;div style=&quot;float: left; background-color: #f7f7f7; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQYV2M8fPiwLwMOwAiStLW13YxNftBJAgAx2BqeI9XcBAAAAABJRU5ErkJggg==)&quot;&gt;
-  &lt;div style=&quot;display: flex; align-items: center;&quot;&gt;
-    &lt;code class=&quot;color--purple media--xl alignChild--center--center&quot;&gt;white&lt;/code&gt;
-    &lt;div class=&quot;media--xl bgFade--left--white&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;media--xl bgFade--top--white&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;media--xl bgFade--bottom--white&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;media--xl bgFade--right--white&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div style=&quot;display: flex;&quot;&gt;
-    &lt;code class=&quot;color--purple media--xl alignChild--center--center&quot;&gt;haze&lt;/code&gt;
-    &lt;div class=&quot;media--xl bgFade--left--haze&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;media--xl bgFade--top--haze&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;media--xl bgFade--bottom--haze&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;media--xl bgFade--right--haze&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;ol class=&quot;list--decorated&quot;&gt;
+  &lt;li&gt;item one&lt;/li&gt;
+  &lt;li&gt;item two&lt;/li&gt;
+&lt;/ol&gt;
 </code></pre>
 
         
@@ -620,6 +611,34 @@ illustrate depth below &quot;page surface&quot;.</p>
       </div>
     </section>
     
+    <section id="focusStyle">
+      <h2 class="page-title">Focus Style</h2>
+
+      <div class="markdown-body">
+        <p>Adds standard focus style to elements (only on :focus state)</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>border--focus</code></td>
+<td>Adds standard box shadow focus style</td>
+</tr>
+<tr>
+<td><code>border--focus--noTransition</code></td>
+<td>Adds standard box shadow focus style without transition</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
     <section id="borderDirections">
       <h2 class="page-title">Borders by side</h2>
 
@@ -683,6 +702,68 @@ illustrate depth below &quot;page surface&quot;.</p>
 </tr>
 </tbody>
 </table>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
+    <section id="background-helpers">
+      <h1 class="page-title">Background helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="backgroundColors">
+      <h2 class="page-title">Background Colors</h2>
+
+      <div class="markdown-body">
+        <p>Sets background color of an element.</p>
+<p>Signature: <code>bgColor--&lt;color&gt;</code></p>
+<p><strong>💡 use the <a href="https://cbinsights.github.io/form-design-system/fds-styles/#inverted-standard-text-colors"><code>inverted</code></a>
+class to flip text colors for dark backgrounds</strong></p>
+<pre><code class="lang-example:html">&lt;div class=&quot;bgColor--white&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--haze&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--lightGray&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--orange inverted&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--charcoal inverted&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--navy inverted&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--aqua&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--gray inverted&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--red inverted&quot;&gt;I have a background color&lt;/div&gt;
+&lt;div class=&quot;bgColor--purple inverted&quot;&gt;I have a background color&lt;/div&gt;
+</code></pre>
+
+        
+      </div>
+    </section>
+    
+    <section id="backgroundFade">
+      <h2 class="page-title">Fade gradients</h2>
+
+      <div class="markdown-body">
+        <p>Sets background of an element to a linear gradient
+simulating a fade effect.</p>
+<p>Signature: <code>bgFade--&lt;direction&gt;--&lt;color&gt;</code></p>
+<pre><code class="lang-example:html">&lt;div style=&quot;float: left; background-color: #f7f7f7; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQYV2M8fPiwLwMOwAiStLW13YxNftBJAgAx2BqeI9XcBAAAAABJRU5ErkJggg==)&quot;&gt;
+  &lt;div style=&quot;display: flex; align-items: center;&quot;&gt;
+    &lt;code class=&quot;color--purple media--xl alignChild--center--center&quot;&gt;white&lt;/code&gt;
+    &lt;div class=&quot;media--xl bgFade--left--white&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--top--white&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--bottom--white&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--right--white&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div style=&quot;display: flex;&quot;&gt;
+    &lt;code class=&quot;color--purple media--xl alignChild--center--center&quot;&gt;haze&lt;/code&gt;
+    &lt;div class=&quot;media--xl bgFade--left--haze&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--top--haze&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--bottom--haze&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;media--xl bgFade--right--haze&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
 
         
       </div>
@@ -944,48 +1025,6 @@ Sets both <code>padding</code> and <code>margin</code> to <code>0</code>;</p>
 <pre><code class="lang-html">  &lt;div class=&quot;flush--all padding--left&quot;&gt;
     Removes all padding, then sets padding left.
   &lt;/div&gt;
-</code></pre>
-
-        
-      </div>
-    </section>
-    
-      </div>
-    </section>
-    
-    <section id="list-helpers">
-      <h1 class="page-title">List Helpers</h1>
-
-      <div class="markdown-body">
-        
-        
-    <section id="typeSizeModifiers">
-      <h2 class="page-title">Decorated Lists</h2>
-
-      <div class="markdown-body">
-        <p>By default, <code>ul</code> and <code>ol</code> lists have their styles reset.</p>
-<p>To enable standard list decoration (bullet or number
-markers), use the <code>list--decorated</code> class.</p>
-<pre><code class="lang-example:html">&lt;ul&gt;
-  &lt;li&gt;item one&lt;/li&gt;
-  &lt;li&gt;item two&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;item one&lt;/li&gt;
-  &lt;li&gt;item two&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre>
-<p>With <code>list--decorated</code>:</p>
-<pre><code class="lang-example:html">&lt;ul class=&quot;list--decorated&quot;&gt;
-  &lt;li&gt;item one&lt;/li&gt;
-  &lt;li&gt;item two&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol class=&quot;list--decorated&quot;&gt;
-  &lt;li&gt;item one&lt;/li&gt;
-  &lt;li&gt;item two&lt;/li&gt;
-&lt;/ol&gt;
 </code></pre>
 
         
@@ -1361,10 +1400,43 @@ of clamping text to one line.</p>
       </div>
     </section>
     
+    <section id="animation-helpers">
+      <h1 class="page-title">Animation Helpers</h1>
+
+      <div class="markdown-body">
+        
+        
+    <section id="transitions">
+      <h2 class="page-title">Transitions</h2>
+
+      <div class="markdown-body">
+        <p>Adds standard transitions</p>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transition-default</code></td>
+<td>transitions properties to default duration and timing</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    </section>
+    
+      </div>
+    </section>
+    
         </main>
       </div>
       <footer class="footer">
-        Last modified Friday, 20 December 2019 15:56
+        Last modified Tuesday, 24 December 2019 11:38
       </footer>
     </div>
     <script src="prism.js?871234"></script>
