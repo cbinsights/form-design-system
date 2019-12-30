@@ -1,0 +1,18 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, number } from '@storybook/addon-knobs';
+
+import Tooltip from './Tooltip';
+
+<Meta title="Popovers|Tooltip" decorators={[withKnobs]} component={Tooltip} />
+
+# Tooltip
+
+<Story name="Knobs">
+  <Tooltip
+    trigger={<p>ℹ️Hover Here!</p>}
+    message={text('Message', 'lol, you are very bad at hovering!')}
+    maxWidth={number('max width', 240)}
+  />
+</Story>
+
+<Props of={Tooltip} />
