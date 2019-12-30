@@ -1,0 +1,61 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+
+import Flex from '../layout/Flex';
+import FlexItem from '../layout/FlexItem';
+import SearchIcon from '../../../lib/icons/react/SearchIcon';
+import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
+
+import IconInput from './IconInput';
+
+<Meta title="Forms|IconInput" decorators={[withKnobs]} component={IconInput} />
+
+# IconInput
+
+<Story name="Knobs">
+  <React.Fragment>
+    <IconInput
+      IconLeft={boolean('Left star', true) ? StarFilledIcon : undefined}
+      IconRight={boolean('Right star', true) ? StarFilledIcon : undefined}
+    >
+      <input type="text" placeholder={text('Placeholder text', '')} />
+    </IconInput>
+  </React.Fragment>
+</Story>
+
+My god, it's full of stars!
+
+<Props of={IconInput} />
+
+### Left Icon
+
+<Preview>
+  <Story name="Left Icon">
+    <React.Fragment>
+      <label htmlFor="storyInput">label</label>
+      <IconInput IconLeft={SearchIcon}>
+        <input type="search" placeholder="Search" />
+      </IconInput>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+### Right Icon
+
+<Preview>
+  <Story name="Right Icon">
+    <IconInput IconRight={StarFilledIcon}>
+      <input type="search" placeholder="Search" />
+    </IconInput>
+  </Story>
+</Preview>
+
+### Left & Right Icon
+
+<Preview>
+  <Story name="Left & Right Icon">
+    <IconInput IconLeft={SearchIcon} IconRight={StarFilledIcon}>
+      <input type="search" placeholder="Search" />
+    </IconInput>
+  </Story>
+</Preview>
