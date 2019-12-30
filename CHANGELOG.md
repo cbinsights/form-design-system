@@ -35,7 +35,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - Added `--border-color-input` and `--border-color-focusRing` properties
 - Use standard focus ring color in `border--focus` class
->>>>>>> master
 
 ## [6.5] border focus and transition
 
