@@ -1,8 +1,18 @@
 /**
- * GrowFast transition.
- *
  * Classes to support CSSTransition
  * from `react-transition-group`.
+ *
+ * GrowFast transition.
+ *
+ * Scale up and fade in on appear.
+ * Scale down and fade out on exit.
+ *
+ * @usage
+ * <CSSTransition
+ *   classNames="rtgGrowFast"
+ *   timeout=<match CSS timeout property>
+ *   ...
+ * >
  */
 
 :root {

@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.7] Refactor `Toaster` transition
+
+- Moves `Toaster` transition into a generic set of CSS classes to use with `react-transition-group`
+
 ## [6.6] New dictionary properties
 
 - Added `--border-color-input` and `--border-color-focusRing` properties

@@ -6,6 +6,7 @@
 
 /* Transitions (for `react-transition-group`) */
 @import "./rtg/growFast";
+@import "./rtg/slideIn";
 
 /* Variables */
 @import "./vars/buttonColors.css";

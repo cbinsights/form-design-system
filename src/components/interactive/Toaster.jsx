@@ -47,7 +47,7 @@ const Toaster = ({ toast }) => {
         appear
         unmountOnExit
         timeout={380}
-        classNames="toast"
+        classNames="rtgSlideIn"
         onExited={onExited}
       >
         {clonedToast}

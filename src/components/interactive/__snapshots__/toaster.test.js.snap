@@ -10,7 +10,7 @@ exports[`Toaster component matches snapshot 1`] = `
   >
     <CSSTransition
       appear={true}
-      classNames="toast"
+      classNames="rtgSlideIn"
       in={true}
       onExited={[Function]}
       timeout={380}
