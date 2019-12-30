@@ -1,0 +1,47 @@
+/**
+ * Classes to support CSSTransition
+ * from `react-transition-group`.
+ *
+ * SlideIn transition.
+ *
+ * Fade in and slide up on component mount.
+ * Fade out and slide down on component unmount.
+ *
+ * @usage
+ * <CSSTransition
+ *   classNames="rtgSlideIn"
+ *   timeout=<match CSS timeout property>
+ *   ...
+ * >
+ */
+
+:root {
+  --rtgSlideIn-timeout: 380ms;
+}
+
+.rtgSlideIn-appear,
+.rtgSlideIn-enter {
+  opacity: 0.01;
+  transform: translateY(100px);
+  transition: transform var(--toast-timeout) var(--motion-easing-default),
+    opacity var(--toast-timeout) var(--motion-easing-default);
+}
+
+.rtgSlideIn-appear-active,
+.rtgSlideIn-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rtgSlideIn-exit {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform var(--toast-timeout) var(--motion-easing-default),
+    opacity var(--toast-timeout) var(--motion-easing-default);
+}
+
+.rtgSlideIn-exit-active {
+  opacity: 0.01; /* removed from DOM on duration complete */
+  transform: translateY(100px);
+}
+

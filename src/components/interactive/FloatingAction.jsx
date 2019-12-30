@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconButton, { VALID_THEMES } from './IconButton';
+import IconButton, { THEMES } from './IconButton';
 
-export const VALID_FAB_THEMES = VALID_THEMES.filter((t) => t !== 'ghost');
+export const VALID_FAB_THEMES = THEMES.filter((t) => t !== 'ghost');
 
 const FloatingAction = ({ Icon, label, isActive, isLoading, ...otherProps }) => (
   <div className="shape--circle elevation--3 display--inlineBlock">

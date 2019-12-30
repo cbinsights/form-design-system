@@ -1,0 +1,75 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, object } from '@storybook/addon-knobs';
+
+import ButtonGroup from './ButtonGroup';
+import GroupButton from './GroupButton';
+import Updatable from '../media/Updatable'
+import Tooltip from '../popovers/Tooltip'
+import FeedIcon from '../../../lib/icons/react/FeedIcon';
+
+export const buttons = [
+  { label: 'Lorem', Icon: FeedIcon, isActive: true },
+  { label: 'Ipsum', Icon: FeedIcon, disabled: true },
+  { label: 'Dolor', Icon: FeedIcon },
+  { label: 'Sit', Icon: FeedIcon },
+];
+
+export const buttonsNoIcons = [
+  { label: 'Lorem', disabled: true },
+  { label: 'Ipsum' },
+  { label: 'Dolor', isActive: true },
+  { label: 'Sit' },
+];
+
+
+<Meta title="Interactive|ButtonGroup" decorators={[withKnobs]} component={ButtonGroup} />
+
+# ButtonGroup
+
+<Story name="Knobs">
+  <ButtonGroup buttons={object('buttons', buttonsNoIcons)} />
+</Story>
+
+<Props of={ButtonGroup} />
+<Props of={GroupButton} />
+
+### Button States
+
+<Preview>
+  <Story name="States">
+    <ButtonGroup buttons={[
+      { label: 'Lorem', isActive: true },
+      { label: 'Sit' },
+      { label: 'Ipsum', disabled: true },
+    ]} />
+  </Story>
+</Preview>
+
+### Wrapper
+Allows you to render a component around any of the individual buttons
+
+<Preview>
+  <Story name="Wrapper">
+    <ButtonGroup buttons={[
+      { label: 'Updatable', Wrapper: (props) => (<Updatable message="42">{props.children}</Updatable>) },
+      { label: 'Tooltip',  Wrapper: (props) => (
+        <Tooltip trigger={props.children} message="hey" maxWidth={240} />
+      )},
+    ]} 
+    />
+  </Story>
+</Preview>
+
+
+
+### Icons
+(Displays on the left)
+
+<Preview>
+  <Story name="Icons">
+    <ButtonGroup buttons={[
+      { label: 'Lorem', Icon: FeedIcon },
+      { label: 'Sit', Icon: FeedIcon  },
+    ]} />
+  </Story>
+</Preview>

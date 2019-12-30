@@ -1,5 +1,5 @@
 /**
- * Toast transition styles, set by `Toaster` via `CSSTransition`
+ * Toaster positioning styles
  */
 
 :root {
@@ -24,37 +24,3 @@ body {
   z-index: var(--zindex-modal);
 }
 
-/* begin ENTER transition */
-.toast-appear,
-.toast-enter {
-  opacity: 0.01;
-  transform: translateY(100px);
-  transition: transform var(--toast-timeout) var(--motion-easing-default),
-    opacity var(--toast-timeout) var(--motion-easing-default);
-}
-
-/* end ENTER transition */
-.toast-appear-active,
-.toast-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* begin EXIT transition */
-.toast-exit {
-  opacity: 1;
-  transform: translateY(0);
-  transition: transform var(--toast-timeout) var(--motion-easing-default),
-    opacity var(--toast-timeout) var(--motion-easing-default);
-}
-
-/* end EXIT transition */
-.toast-exit-active {
-  opacity: 0.01; /* removed from DOM on duration complete */
-  transform: translateY(100px);
-}
-
-/* Targeting a nested item isn't ideal, but material may block us from targeting this directly */
-.toast-action span {
-  line-height: 1;
-}
