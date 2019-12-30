@@ -4,6 +4,10 @@ import cx from 'classnames';
 import baseElement from '../../util/baseElement';
 import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
 
+export const SIZES = ['s', 'm'];
+export const THEMES = ['blue', 'outlined', 'ghost'];
+export const ICON_PLACEMENTS = ['left', 'right'];
+
 const Button = ({
   theme,
   iconPlacement,
@@ -79,10 +83,9 @@ Button.propTypes = {
    * Takes in a react-router `Link` reference and sets it
    * as the base element. You may ONLY use it like the
    * following:
-   * ```
-   * import { Link } from 'react-router'
-   * Link={Link}
-   * ```
+   *
+   * - `import { Link } from 'react-router'`
+   * - `Link={Link}`
    */
   Link: PropTypes.func,
   /**
@@ -103,7 +106,7 @@ Button.propTypes = {
    */
   disabled: PropTypes.bool,
   /** Controls which side the `Icon` renders on, assuming you pass it */
-  iconPlacement: PropTypes.oneOf(['left', 'right']),
+  iconPlacement: PropTypes.oneOf(ICON_PLACEMENTS),
   /**  Pass in "only" a FDS Icon reference to display it (e.g. Icon={ApproveIcon}) */
   Icon: PropTypes.func,
   /** Controls the button going full width */
@@ -111,9 +114,9 @@ Button.propTypes = {
   /** Controls showing CaretDown icon (right aligned) */
   hasCaret: PropTypes.bool,
   /** Used to control the display and theme of the button */
-  theme: PropTypes.oneOf(['blue', 'outlined', 'ghost']),
+  theme: PropTypes.oneOf(THEMES),
   /** Used to control the size of the button */
-  size: PropTypes.oneOf(['s', 'm']),
+  size: PropTypes.oneOf(SIZES),
   /** Contents inside the button */
   children: PropTypes.node,
 };

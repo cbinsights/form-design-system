@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { storiesOf } from '@storybook/react';
@@ -6,9 +7,8 @@ import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Toaster from './Toaster';
 import Toast from './Toast';
-import README from './Toaster.md';
 
-const ReusableToaster = (props) => {
+export const ReusableToaster = (props) => {
   if (props.toastType === 'error') {
     return (
       <Toaster
@@ -73,12 +73,7 @@ const ReusableToaster = (props) => {
   return null;
 };
 
-ReusableToaster.propTypes = {
-  toastType: PropTypes.string,
-  toggleToast: PropTypes.func,
-};
-
-const ToasterStory = () => {
+export const ToasterStory = () => {
   const [isToastShowing, toggleToast] = useState(false);
   const niceSelect = select(
     'Select pre-build toast type',
@@ -109,6 +104,40 @@ const ToasterStory = () => {
   );
 };
 
-storiesOf('Interactive/Toaster', module)
-  .addDecorator(withKnobs)
-  .add('Knobs', () => <ToasterStory />, { notes: { markdown: README } });
+<Meta title="Interactive|Toaster" decorators={[withKnobs]} component={Toaster} />
+
+# Toaster
+
+<Story name="Knobs">
+  <ToasterStory />
+</Story>
+
+Controller for positioning, transition, and dismissal of toasts.
+
+Timer starts immediately on mount.
+
+**⚠️ Include only one `Toaster` component per page/container** to ensure that only one toast is rendered at a time.
+
+### New toasts replace existing toasts
+Currently, `Toaster` only shows one toast at a time. If a new toast is rendered, it should immediately replace the existing toast.
+
+### Persisting a `Toast`
+Use the `isAutoDismiss` prop of `Toast` to disable the dismiss timer.
+
+It's currently not possible to easily document this components props easily, sorry. Toast takes one `toast` prop,
+and displays that toast as an alert. Simple code example.
+
+```
+<Toaster
+  toast={
+    <Toast
+      isAutoDismiss={false}
+      onDismiss={() => {
+        props.toggleToast(false);
+      }}
+      content="blah"
+      type="info"
+    />
+  }
+/>
+```

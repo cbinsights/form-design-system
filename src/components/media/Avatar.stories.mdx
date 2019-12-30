@@ -3,7 +3,6 @@ import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs'
 import { arrayToOptions } from '../util/storybook';
 
 import Avatar, { VALID_BG_COLORS, SIZES } from './Avatar';
-import README from './Avatar.md';
 
 export const bgColorOptions = options('bgColor', arrayToOptions(VALID_BG_COLORS), undefined, {
   display: 'inline-radio',
