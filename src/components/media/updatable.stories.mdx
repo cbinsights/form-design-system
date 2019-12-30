@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { storiesOf } from '@storybook/react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 import CheckIcon from '../../../lib/icons/react/CheckIcon';
@@ -8,18 +6,24 @@ import CheckIcon from '../../../lib/icons/react/CheckIcon';
 import Updatable from './Updatable';
 import README from './Updatable.md';
 
-storiesOf('Media/Updatable', module)
-  .addDecorator(withKnobs)
-  .add(
-    'Knobs',
-    () => (
-      <Updatable message={text('message', 42)}>
-        <button>lorem ipsum</button>
-      </Updatable>
-    ),
-    { notes: { markdown: README } }
-  )
-  .add('Variations', () => (
+<Meta title="Media|Updatable" decorators={[withKnobs]} component={Updatable} />
+
+# Updatable
+
+Wraps children in an "updatable" container with a `message` displayed as a notification-style red bubble.
+
+<Story name="Knobs">
+  <Updatable message={text('message', 42)}>
+    <button>lorem ipsum</button>
+  </Updatable>
+</Story>
+
+<Props of={Updatable} />
+
+### Different Variations
+
+<Preview>
+  <Story name="Variations">
     <React.Fragment>
       <Updatable message="alert">
         <div
@@ -37,4 +41,5 @@ storiesOf('Media/Updatable', module)
         <img src="https://placeimg.com/80/81/animals" />
       </Updatable>
     </React.Fragment>
-  ));
+  </Story>
+</Preview>
