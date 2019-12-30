@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.8] `IconInput` fixes
+
+- `input` elements inside of `IconInput` are now set to 100% width. Use a parent container
+  `IconInput` to constrict width as needed.
+
 ## [6.7] Refactor `Toaster` transition
 
 - Moves `Toaster` transition into a generic set of CSS classes to use with `react-transition-group`
