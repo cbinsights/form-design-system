@@ -2,17 +2,23 @@ import { Meta, Story, Preview, Props, Description } from "@storybook/addon-docs/
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import Dialog from './Dialog';
+
 import Button from '../interactive/Button';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 
-<Meta title="Modals/Dialog" decorators={[withKnobs]} component={Dialog} parameters={{ docs: { disable: true } }}/>
+<Meta title="Modals|Dialog" decorators={[withKnobs]} component={Dialog} parameters={{ docs: { disable: true } }}/>
 
 # Dialog
 
 *Please click **"Canvas"** to view examples.*
 
 An accessible base modal for all other modals to be built upon (either your own, or other FDS modals like `<Prompt />`)
+
+*PropType table is broken for this component at the moment. 
+Theres tons of reported regressions of this table not working
+that need to be fixed: *
+https://github.com/storybookjs/storybook/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22block%3A+props%22+label%3Abug
 
 <Props of={Dialog} />
 

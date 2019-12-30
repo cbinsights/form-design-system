@@ -27,7 +27,7 @@ export const secondaryButtonProps = () =>
   });
 
 <Meta
-  title="Modals/Prompt"
+  title="Modals|Prompt"
   decorators={[withKnobs]}
   component={Prompt}
   parameters={{ docs: { disable: true } }}
@@ -37,7 +37,8 @@ export const secondaryButtonProps = () =>
 
 *Please click **"Canvas"** to view examples.*
 
-A confirm modal that displays a simple message, with 2 buttons to either confirm the action, or deny it (does not show close icon, and
+A confirm modal that:
+-  Displays a simple message, with 2 buttons to either confirm the action, or deny it (does not show close icon, and
 can't be dismissed by pressing ESC or clicking backdrop)
 
 <Props of={Prompt} />
