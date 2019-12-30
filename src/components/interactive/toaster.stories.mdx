@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -127,17 +127,20 @@ Use the `isAutoDismiss` prop of `Toast` to disable the dismiss timer.
 It's currently not possible to easily document this components props easily, sorry. Toast takes one `toast` prop,
 and displays that toast as an alert. Simple code example.
 
-```
-<Toaster
-  toast={
-    <Toast
-      isAutoDismiss={false}
-      onDismiss={() => {
-        props.toggleToast(false);
-      }}
-      content="blah"
-      type="info"
+<Source
+  code={`
+    <Toaster
+      toast={
+        <Toast
+          isAutoDismiss={false}
+          onDismiss={() => {
+            props.toggleToast(false);
+          }}
+          content="blah"
+          type="info"
+        />
+      }
     />
-  }
+  `} 
+  language="jsx"
 />
-```
