@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import baseElement from '../../util/baseElement';
 
-export const VALID_THEMES = ['aqua', 'ghost'];
+export const THEMES = ['aqua', 'ghost'];
+export const RADII = ['square', 'circle'];
+export const SIZES = ['s', 'm'];
 
 const IconButton = ({
   Icon,
@@ -58,24 +60,23 @@ IconButton.propTypes = {
    * Takes in a react-router `Link` reference and sets it
    * as the base element. You may ONLY use it like the
    * following:
-   * ```
-   * import { Link } from 'react-router'
-   * Link={Link}
-   * ```
+   *
+   * - `import { Link } from 'react-router'`
+   * - `Link={Link}`
    */
   Link: PropTypes.func,
   /** Controls active style UI of button */
   isActive: PropTypes.bool,
   /** Controls radius of button (slightly rounded square, or circle) */
-  radius: PropTypes.oneOf(['square', 'circle']),
+  radius: PropTypes.oneOf(RADII),
   /** Controls spinner showing for icon button (normal icon is hidden) */
   isLoading: PropTypes.bool,
   /** Controls look and feel of button */
-  theme: PropTypes.oneOf(VALID_THEMES),
+  theme: PropTypes.oneOf(THEMES),
   /** Controls destructive look and feel of button */
   isDestructive: PropTypes.bool,
   /** Used to control the size of the button */
-  size: PropTypes.oneOf(['s', 'm']),
+  size: PropTypes.oneOf(SIZES),
   /** Controls whether the button is disabled or not. */
   disabled: PropTypes.bool,
   /** Used to render a FDS Icon (should only be used for FDS Icons) */
