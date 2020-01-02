@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.9] Updated `Chip`
+
+- Added `border--focus` to Chip close button
+
 ## [6.8] `IconInput` fixes
 
 - `input` elements inside of `IconInput` are now set to 100% width. Use a parent container
