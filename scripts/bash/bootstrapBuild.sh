@@ -2,13 +2,15 @@
 
 # pre-build tasks
 
-mkdir -p ./lib
-mkdir -p ./lib/dictionary
-mkdir -p ./lib/components
-mkdir -p ./lib/icons
-mkdir -p ./lib/icons/raw
-mkdir -p ./lib/icons/react
-mkdir -p ./lib/icons/style
-mkdir -p ./lib/mui-theme
-mkdir -p ./lib/base-styles
-mkdir -p ./lib/assets
+DIR_LIB=./lib
+
+mkdir -p $DIR_LIB
+mkdir -p $DIR_LIB/dictionary
+mkdir -p $DIR_LIB/components
+mkdir -p $DIR_LIB/icons
+mkdir -p $DIR_LIB/icons/raw
+mkdir -p $DIR_LIB/icons/react
+mkdir -p $DIR_LIB/icons/style
+mkdir -p $DIR_LIB/mui-theme
+mkdir -p $DIR_LIB/base-styles
+mkdir -p $DIR_LIB/assets
