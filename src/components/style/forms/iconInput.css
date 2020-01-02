@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.fdsIconInput input {
+  width: 100%; /* fill width of relative container */
+}
+
 .fdsIconInput--hasStartIcon input {
   padding-left: var(--space-double);
 }
