@@ -26,6 +26,7 @@
 .fdsInputGroup input {
   border-width: 0;
   border-radius: 0;
+  width: auto;
 }
 
 .fdsInputGroup select {
