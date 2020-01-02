@@ -31,7 +31,7 @@ const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }
         <span
           role="button"
           tabIndex="-1"
-          className="fdsChip-close"
+          className="fdsChip-close border--focus"
           onClick={(e) => {
             onClose(e);
             e.stopPropagation();
