@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.10] `color--gray`
+
+- Added `color-gray` helper class
+
 ## [6.9] Updated `Chip`
 
 - Added `border--focus` to Chip close button
