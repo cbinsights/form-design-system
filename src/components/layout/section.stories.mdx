@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { storiesOf } from '@storybook/react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, optionsKnob as options, select } from '@storybook/addon-knobs';
 import { arrayToOptions, storyBackgrounds } from '../util/storybook';
 
@@ -10,43 +8,64 @@ import FlexItem from './FlexItem';
 import Button from '../interactive/Button';
 import README from './Section.md';
 
-const ALL_BACKGROUNDS = [...VALID_BG_NORMAL, ...VALID_BG_INVERTED];
+export const ALL_BACKGROUNDS = [...VALID_BG_NORMAL, ...VALID_BG_INVERTED];
 
-const parentStyle = {
+export const parentStyle = {
   background: storyBackgrounds.diagonalLine,
-  height: '100vh',
-  width: '100vw',
+  height: '300px',
 };
 
-storiesOf('Layout/Section', module)
-  .addDecorator(withKnobs)
-  .add(
-    'Knobs',
-    () => (
-      <div className="alignChild--center--center" style={parentStyle}>
-        <Section
-          xPadding={select(
-            'Horizontal padding',
-            arrayToOptions(VALID_PADDING),
-            'default'
-          )}
-          yPadding={select('Vertical padding', arrayToOptions(VALID_PADDING), 'default')}
-          bgColor={select('Background color', arrayToOptions(ALL_BACKGROUNDS), 'white')}
-          border={options(
-            'Border',
-            arrayToOptions(['top', 'right', 'bottom', 'left', 'x', 'y', 'all']),
-            undefined,
-            { display: 'inline-radio' }
-          )}
-        >
-          <h1 className="type--head3 margin--bottom">Look at me</h1>
-          <p>I am the section content</p>
-        </Section>
-      </div>
-    ),
-    { notes: { markdown: README } }
-  )
-  .add('Stacked Sections', () => (
+<Meta title="Layout|Section" decorators={[withKnobs]} component={Section} />
+
+# Section
+
+Section is a layout component that can be used for sectioning content either vertically or
+horizontally.
+
+<Story name="Knobs">
+  <div className="alignChild--center--center" style={parentStyle}>
+    <Section
+      xPadding={select(
+        'Horizontal padding',
+        arrayToOptions(VALID_PADDING),
+        'default'
+      )}
+      yPadding={select('Vertical padding', arrayToOptions(VALID_PADDING), 'default')}
+      bgColor={select('Background color', arrayToOptions(ALL_BACKGROUNDS), 'white')}
+      border={options(
+        'Border',
+        arrayToOptions(['top', 'right', 'bottom', 'left', 'x', 'y', 'all']),
+        undefined,
+        { display: 'inline-radio' }
+      )}
+    >
+      <h1 className="type--head3 margin--bottom">Look at me</h1>
+      <p>I am the section content</p>
+    </Section>
+  </div>
+</Story>
+
+
+## Responsibilities of <code>Section</code>
+
+* applying standard background colors
+* inverting text for dark backgrounds
+* applying standard padding values
+* applying standard borders
+
+## Limitations
+
+Padding must be specified by axis. `Section` does not accept padding for specific sides. 
+
+In other words, this component enforces that the top/bottom or the left/right padding
+always match.
+
+<Props of={Section} />
+
+### Stacked Sections
+
+<Preview>
+  <Story name="Stacked Sections">
     <div style={parentStyle}>
       <Section xPadding="double" yPadding="double">
         <h1 className="type--head1">Title</h1>
@@ -69,8 +88,13 @@ storiesOf('Layout/Section', module)
         </Flex>
       </Section>
     </div>
-  ))
-  .add('Horizontal sectioning', () => (
+  </Story>
+</Preview>
+
+### Horizontal sectioning
+
+<Preview>
+  <Story name="Horizontal Sectioning">
     <div style={parentStyle}>
       <Section yPadding="double" border="bottom">
         <h1 className="type--head1">Horizontal sectioning</h1>
@@ -101,4 +125,5 @@ storiesOf('Layout/Section', module)
         </FlexItem>
       </Flex>
     </div>
-  ));
+  </Story>
+</Preview>
