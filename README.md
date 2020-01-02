@@ -51,19 +51,20 @@ for details on each major and minor release.
 
 Incomplete list of yarn targets.
 
-#### Builds
+#### Building
 
 Some modules rely on others to be built first. It's a good idea to start with a `yarn
 build:full` before running focused builds.
 
 Command             | Description
 ------------------- | -------------------------------------
+`clean`             | Cleans build artifacts in `lib`
 `build:dictionary`  | Builds dictionary docs and `lib`
 `build:styles`      | Builds base styles docs and `lib`
 `build:icons`       | Builds icons docs and `lib`
 `build:comp`        | Builds React component docs and `lib`
 `build:mui`         | Builds material-ui theme `lib`
-`build:full`        | Builds docs and `lib` for everything
+`build:full`        | Cleans all, then builds docs and `lib` for everything
 `build:distCSS`     | Creates CSS rollup in `lib/assets/`
 
 #### Icons
