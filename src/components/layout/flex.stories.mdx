@@ -1,0 +1,159 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
+
+import Flex from './Flex';
+import FlexItem from './FlexItem';
+import README from './Flex.md';
+
+export const parentStyle = {
+  width: '600px',
+};
+
+export const ConditionalItemsExample = (props) => (
+  <div style={parentStyle} className="debug--flex fontSize--xl fontWeight--bold">
+    <Flex>
+      {props.show1 && (
+        <FlexItem shrink>
+          <p>1</p>
+        </FlexItem>
+      )}
+      {props.show2 && (
+        <FlexItem>
+          <p>2</p>
+        </FlexItem>
+      )}
+      {props.show3 && (
+        <FlexItem shrink>
+          <p>3</p>
+        </FlexItem>
+      )}
+      {props.show4 && (
+        <FlexItem shrink>
+          <p>4</p>
+        </FlexItem>
+      )}
+    </Flex>
+  </div>
+);
+
+<Meta title="Layout|Flex" decorators={[withKnobs]} component={Flex} />
+
+# Flex
+
+Flex is an abstraction of CSS flexbox that provides a subset of flexbox functionality. **A `Flex` should only contain `FlexItem` children**.
+
+<Story name="Knobs">
+  <div style={parentStyle} className="debug--flex">
+    <Flex
+      direction={radios(
+        'direction',
+        {
+          row: 'row',
+          column: 'column',
+        },
+        'row'
+      )}
+      justify={radios('justify', {
+        end: 'end',
+        center: 'center',
+        spaceBetween: 'spaceBetween',
+        spaceAround: 'spaceAround',
+      })}
+      align={radios('align', {
+        start: 'start',
+        end: 'end',
+        center: 'center',
+        stretch: 'stretch',
+      })}
+      noGutters={boolean('noGutters', false)}
+      reverse={boolean('reverse', false)}
+    >
+      <FlexItem shrink>
+        <img src="https://place-hold.it/40x40/a02385/fff&text=IMG" />
+      </FlexItem>
+      <FlexItem shrink>
+        <h4>Look at this cool content</h4>
+      </FlexItem>
+      <FlexItem shrink>
+        <p className="color--link">edit</p>
+      </FlexItem>
+    </Flex>
+  </div>
+</Story>
+
+## Flex direction
+`Flex` renders in row orientation by default. Use the `direction` prop to change flex direction. To reverse the row or column, use the boolean prop `reverse`.
+
+## Flex alignment/justification
+Following the flexbox spec, `align` controls cross-axis alignment and `justify` controls main axis alignment. In this example, both `align` and `justify` are set to `end`. The child
+`FlexItem` components here are set to `shrink` to their content width.
+
+_See `FlexItem` documentation for more information on the `FlexItem` `shrink` prop_
+
+<Props of={Flex} />
+
+
+### Classic media block
+Making the imge `FlexItem` `shrink` and allowing the description `FlexItem` to grow creates the classic "media block" layout pattern.
+
+<Preview>
+  <Story name="Classic media block">
+    <div style={parentStyle} className="debug--flex">
+      <Flex>
+        <FlexItem shrink>
+          <img src="https://place-hold.it/40x40/a02385/fff&text=:)" />
+        </FlexItem>
+        <FlexItem>
+          Look at this media block. Notice how this area grows to fill the remaining
+          space of the fixed width parent container. When this content wraps, it will
+          not wrap below the figure the same way it would when positioning the image
+          with a<code>float</code>.
+        </FlexItem>
+      </Flex>
+    </div>
+  </Story>
+</Preview>
+
+### Conditional items
+💡 `Flex` is great for conditionaly rendering items. 
+When an item is added or removed, the other items just flow around it!
+
+<Preview>
+  <Story name="Conditional items">
+    <ConditionalItemsExample
+      show1={boolean('Render item 1', true)}
+      show2={boolean('Render item 2', true)}
+      show3={boolean('Render item 3', false)}
+      show4={boolean('Render item 4', true)}
+    />
+  </Story>
+</Preview>
+
+### Auto-sized content area
+Within a fixed height container, this `Flex` creates a fixed height 
+header and footer which allows the content area to expand to fill the remaining space.
+
+<Preview>
+  <Story name="Auto-sized content area">
+    <div style={{ height: '300px' }} className="debug--flex">
+      <Flex direction="column">
+        <FlexItem shrink>
+          <p>
+            This is the header, in a <code>FlexItem</code> set to <code>shrink</code>
+          </p>
+        </FlexItem>
+        <FlexItem>
+          <p>
+            This is the content area, in a <code>FlexItem</code> that will grow to fill
+            remaining space
+          </p>
+        </FlexItem>
+        <FlexItem shrink>
+          <p>
+            This is the footer, in a <code>FlexItem</code> set to <code>shrink</code>
+          </p>
+        </FlexItem>
+      </Flex>
+    </div>
+  </Story>
+</Preview>

@@ -1,1 +1,0 @@
-An icon button that shows a radial countdown animation immediately on mount.
