@@ -1,1 +1,0 @@
-An accessible base modal for all other modals to be built upon (either your own, or other FDS modals like `<Prompt />`)
