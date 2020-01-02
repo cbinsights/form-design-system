@@ -1,5 +1,4 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withPropsTable } from 'storybook-addon-react-docgen';
 import { create } from '@storybook/theming';
 import React from 'react'
 
@@ -20,8 +19,6 @@ addParameters({
     theme,
   },
 });
-
-addDecorator(withPropsTable);
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src/components', true, /\.stories\.js$/);
