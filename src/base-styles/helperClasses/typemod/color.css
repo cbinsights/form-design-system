@@ -40,6 +40,7 @@ If you don't see the color you need here, please notify UI Platform.
 _Text in this example is set in `fontWeight--bold`_
 ```example:html
 <ul class="fontWeight--bold">
+  <li class="color--gray">Gray text</li>
   <li class="color--slate">Slate text</li>
   <li class="color--green">Green text</li>
   <li class="color--mint">Mint text</li>
@@ -106,6 +107,10 @@ _Text in this example is set in `fontWeight--bold`_
 
 .color--slate {
   color: var(--color-slate) !important;
+}
+
+.color--gray {
+  color: var(--color-gray) !important;
 }
 
 .color--green {
