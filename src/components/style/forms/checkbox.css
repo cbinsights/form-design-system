@@ -1,0 +1,27 @@
+
+.fdsCheckbox {
+  height: var(--font-lineHeight-default);
+  display: inline-block;
+}
+
+.fdsCheckbox :matches(label,button,.fds-icon) {
+  vertical-align: text-top;
+}
+
+.fdsCheckbox button {
+  color: var(--font-color-secondary);
+}
+
+.fdsCheckbox--checked button {
+  color: var(--color-blue);
+}
+
+.fdsCheckbox--disabled,
+.fdsCheckbox--disabled button {
+  color: var(--font-color-hint);
+}
+
+.fdsCheckbox input {
+  outline: 1px dotted red;
+}
+

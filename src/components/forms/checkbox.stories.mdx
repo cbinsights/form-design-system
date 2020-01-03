@@ -1,0 +1,43 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+
+import Checkbox from './Checkbox';
+
+<Meta title="Forms|Checkbox" decorators={[withKnobs]} component={Checkbox} />
+
+# Checkbox
+
+Renders a hidden `input type="checkbox"` element that reflects checked state and adds FDS
+icons to customize visual display.
+
+<Story name="test">
+  <React.Fragment>
+    <div>
+      <Checkbox name="test" label="I agree to the terms carefully, consulted with my lawyer, and read all relevant case law on the matter" />
+    </div>
+    <div>
+      <Checkbox name="test2" label="Indeterminate" indeterminate />
+    </div>
+    <div>
+      <Checkbox name="test3" label="Indeterminate Checked" indeterminate checked />
+    </div>
+    <div>
+      <Checkbox name="test4" label="Indeterminate Checked Disabled" indeterminate checked disabled />
+    </div>
+    <div>
+      <Checkbox name="test5" label="Checked Disabled" checked disabled />
+    </div>
+    <div>
+      <Checkbox name="test6" label="Disabled" disabled />
+    </div>
+    <div>
+      <Checkbox name="test7" label="Checked" checked />
+    </div>
+    <div className="margin--top">
+      <p className="type--caption">No label</p>
+      <Checkbox name="test7" checked />
+    </div>
+  </React.Fragment>
+</Story>
+
+<Props of={Checkbox} />
