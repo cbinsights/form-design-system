@@ -81,11 +81,20 @@ Initials will show either if you don't pass an image, the image doesn't load, or
 
 ### Button
 
+Avatar will render as a button if you pass it a href, onClick, or Link to it.
+
 <Preview>
   <Story name="Button">
-    <React.Fragment>
-      <Avatar name="Hello Impecable" href="#" />
-      <Avatar name="Hello Impecable" onClick={action('avatar-click')} />
-    </React.Fragment>
+    <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+      <div className="margin--right--half margin--bottom--half">
+        <Avatar name="Hello Impecable" href="#" />
+      </div>
+      <div className="margin--right--half margin--bottom--half">
+        <Avatar name="Hello Impecable" onClick={action('avatar-click')} />
+      </div>
+      <div className="margin--right--half margin--bottom--half">
+        <Avatar name="Hello Impecable" imgUrl="http://placeimg.com/80/81/animals" href="#" />
+      </div>
+    </div>
   </Story>
 </Preview>
