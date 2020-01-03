@@ -8,10 +8,10 @@ const baseElement = ({ href, onClick, as }) => {
   let Element;
   if (as) {
     Element = as;
-  } else if (href) {
-    Element = 'a';
   } else if (onClick) {
     Element = 'button';
+  } else if (href) {
+    Element = 'a';
   } else {
     Element = 'div';
   }
