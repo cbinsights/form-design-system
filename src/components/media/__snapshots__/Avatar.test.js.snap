@@ -2,7 +2,7 @@
 
 exports[`Avatar component has an image 1`] = `
 <div
-  className="fdsAvatar border--focus bgColor--purple fdsAvatar--m color--white"
+  className="fdsAvatar bgColor--purple fdsAvatar--m color--white"
   role="img"
   title="Joey Tribbiani"
 >
@@ -20,7 +20,7 @@ exports[`Avatar component has an image 1`] = `
 
 exports[`Avatar component has no image 1`] = `
 <div
-  className="fdsAvatar border--focus bgColor--purple fdsAvatar--m color--white"
+  className="fdsAvatar bgColor--purple fdsAvatar--m color--white"
   role="img"
   title="Joey Tribbiani"
 >
@@ -30,7 +30,7 @@ exports[`Avatar component has no image 1`] = `
 
 exports[`Avatar component matches snapshot (set all props) 1`] = `
 <div
-  className="fdsAvatar border--focus bgColor--aqua fdsAvatar--s color--white"
+  className="fdsAvatar bgColor--aqua fdsAvatar--s color--white"
   role="img"
   title="Ross Gellar"
 >

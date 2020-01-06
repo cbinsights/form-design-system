@@ -22,15 +22,10 @@ const Avatar = ({ bgColor, imgUrl, size, name, Link, ...rest }) => {
       {...rest}
       role="img"
       title={name}
-      className={cx(
-        'fdsAvatar',
-        'border--focus',
-        `bgColor--${bgColor}`,
-        `fdsAvatar--${size}`,
-        {
-          'color--white': VALID_DARK_COLORS.includes(bgColor),
-        }
-      )}
+      className={cx('fdsAvatar', `bgColor--${bgColor}`, `fdsAvatar--${size}`, {
+        'border--focus': Element !== 'div',
+        'color--white': VALID_DARK_COLORS.includes(bgColor),
+      })}
     >
       {imgUrl && (
         <span className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
