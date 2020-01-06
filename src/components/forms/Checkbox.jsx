@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import CheckEmptyIcon from '../../../lib/icons/react/CheckEmptyIcon';
+import CheckFilledIcon from '../../../lib/icons/react/CheckFilledIcon';
+import CheckIndeterminateIcon from '../../../lib/icons/react/CheckIndeterminateIcon';
+
+
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
@@ -10,39 +15,50 @@ const Checkbox = ({ name, label, value, onChange, indeterminate, checked, disabl
   const [isChecked, setIsChecked] = useState(checked);
 
   const classNames = cx('fdsCheckbox', {
-    'fdsCheckbox--checked': isChecked,
     'fdsCheckbox--disabled': disabled,
-    'fdsCheckbox--indeterminate': indeterminate,
   });
 
   const handleChange = () => {
-    const newState = !isChecked;
     if (!disabled) {
+      const newState = !isChecked;
       setIsChecked(newState);
       onChange(newState);
     }
   };
 
-  const input = (
-    <input
-      type="checkbox"
-      className={classNames}
-      name={name}
-      value={value}
-      disabled={disabled}
-    />
-  );
+  let Icon = CheckEmptyIcon;
+  if (indeterminate && isChecked) {
+    Icon = CheckIndeterminateIcon;
+  } else if (isChecked) {
+    Icon = CheckFilledIcon;
+  }
 
   return (
     <div className={classNames}>
-      {label ? (
-        <label htmlFor={name}>
-          {input}
+      <input
+        type="checkbox"
+        name={name}
+        id={name}
+        value={value}
+        className="fdsCheckbox-input media--xs"
+        onChange={handleChange}
+        checked={isChecked}
+        disabled={disabled}
+      />
+      <label
+        className="fdsCheckbox-label"
+        htmlFor={name}
+      >
+        <div
+          role="checkbox"
+          aria-checked={isChecked}
+        >
+          <Icon size="xs" />
+        </div>
+        {label && (
           <span className="padding--left--half">{label}</span>
-        </label>
-      ) : (
-        input
-      )}
+        )}
+      </label>
     </div>
   );
 };
@@ -65,7 +81,11 @@ Checkbox.propTypes = {
   /** optional `value` attribute of input element*/
   value: PropTypes.string,
 
-  /** onChange callback */
+  /** onChange callback - invoked with the checked state of the checkbox:
+   * ```
+   * <Checkbox onChange={(isChecked) => {}} ... />
+   * ```
+   */
   onChange: PropTypes.func,
 
   /** Sets type `indeterminate` to `true` */

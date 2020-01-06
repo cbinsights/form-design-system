@@ -1,27 +1,34 @@
 
 .fdsCheckbox {
-  height: var(--font-lineHeight-default);
-  display: inline-block;
+  position: relative;
 }
 
-.fdsCheckbox :matches(label,button,.fds-icon) {
-  vertical-align: text-top;
+.fdsCheckbox-input {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
 }
 
-.fdsCheckbox button {
+.fdsCheckbox-label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.fdsCheckbox--disabled :matches(.fdsCheckbox-label,.fds-icon) {
+  color: var(--font-color-hint) !important;
+}
+
+.fdsCheckbox .fds-icon {
   color: var(--font-color-secondary);
 }
 
-.fdsCheckbox--checked button {
+.fdsCheckbox-input:checked + .fdsCheckbox-label .fds-icon {
   color: var(--color-blue);
 }
 
-.fdsCheckbox--disabled,
-.fdsCheckbox--disabled button {
-  color: var(--font-color-hint);
+.fdsCheckbox-input:focus + .fdsCheckbox-label .fds-icon {
+  border-radius: var(--border-radius-default);
+  box-shadow: inset 0 0 0 3px var(--border-color-focusRing);
+  transition: box-shadow 250ms var(--motion-easing-default);
 }
-
-.fdsCheckbox input {
-  outline: 1px dotted red;
-}
-
