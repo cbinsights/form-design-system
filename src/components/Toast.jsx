@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import FDS from '../../../lib/dictionary/js/styleConstants';
-import CheckIcon from '../../../lib/icons/react/CheckIcon';
-import InformationIcon from '../../../lib/icons/react/InformationIcon';
-import DenyIcon from '../../../lib/icons/react/DenyIcon';
-import Flex from '../layout/Flex';
-import FlexItem from '../layout/FlexItem';
-import CountdownButton from '../media/CountdownButton';
-import customPropTypes from '../util/customPropTypes';
-import Button from './Button';
-import IconButton from './IconButton';
+import IconButton from './buttons/IconButton';
+import Button from './buttons/Button';
+import CountdownButton from './buttons/CountdownButton';
+import Flex from './layout/Flex';
+import FlexItem from './layout/FlexItem';
+import customPropTypes from './util/customPropTypes';
+import FDS from '../../lib/dictionary/js/styleConstants';
+import CheckIcon from '../../lib/icons/react/CheckIcon';
+import InformationIcon from '../../lib/icons/react/InformationIcon';
+import DenyIcon from '../../lib/icons/react/DenyIcon';
 
 const Toast = ({
   content,

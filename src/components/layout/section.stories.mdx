@@ -5,7 +5,7 @@ import { arrayToOptions, storyBackgrounds } from '../util/storybook';
 import Section, { VALID_BG_NORMAL, VALID_BG_INVERTED, VALID_PADDING } from './Section';
 import Flex from './Flex';
 import FlexItem from './FlexItem';
-import Button from '../interactive/Button';
+import Button from '../buttons/Button';
 import README from './Section.md';
 
 export const ALL_BACKGROUNDS = [...VALID_BG_NORMAL, ...VALID_BG_INVERTED];
@@ -15,7 +15,7 @@ export const parentStyle = {
   height: '300px',
 };
 
-<Meta title="Layout|Section" decorators={[withKnobs]} component={Section} />
+<Meta title="Components|Layout/Section" decorators={[withKnobs]} component={Section} />
 
 # Section
 

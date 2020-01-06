@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Transition } from 'react-transition-group';
 import FDS from '../../../lib/dictionary/js/styleConstants';
-import IconButton from '../interactive/IconButton';
+import IconButton from './IconButton';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
 
 /**

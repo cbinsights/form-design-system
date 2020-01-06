@@ -6,7 +6,7 @@ import {
   boolean,
   optionsKnob as options
 } from "@storybook/addon-knobs";
-import { arrayToOptions } from "../util/storybook";
+import { arrayToOptions } from "./util/storybook";
 
 import Chip, { THEMES, SIZES } from "./Chip";
 
@@ -28,7 +28,7 @@ export const chipsTwo = [
   { label: "Consectetur", onClick: () => action("custom chip clicked") }
 ];
 
-<Meta title="Interactive|Chip" decorators={[withKnobs]} component={Chip} />
+<Meta title="Components|Chip" decorators={[withKnobs]} component={Chip} />
 
 # Chip
 

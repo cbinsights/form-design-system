@@ -1,6 +1,6 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
-import { arrayToOptions } from '../util/storybook';
+import { arrayToOptions } from './util/storybook';
 
 import Avatar, { VALID_BG_COLORS, SIZES } from './Avatar';
 
@@ -8,7 +8,7 @@ export const bgColorOptions = options('bgColor', arrayToOptions(VALID_BG_COLORS)
   display: 'inline-radio',
 });
 
-<Meta title="Media|Avatar" decorators={[withKnobs]} component={Avatar} />
+<Meta title="Components|Avatar" decorators={[withKnobs]} component={Avatar} />
 
 # Avatar
 
