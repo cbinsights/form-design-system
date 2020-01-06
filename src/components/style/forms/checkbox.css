@@ -23,6 +23,7 @@
 
 .fdsCheckbox--disabled :matches(label,svg) {
   color: var(--font-color-hint) !important;
+  fill: var(--font-color-hint) !important;
 }
 
 .fdsCheckbox-input:checked + label svg {
