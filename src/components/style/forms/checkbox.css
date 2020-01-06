@@ -1,3 +1,5 @@
+/* stylelint-disable selector-max-combinators */
+/* stylelint-disable selector-max-compound-selectors */
 
 .fdsCheckbox {
   position: relative;
@@ -10,25 +12,26 @@
   top: 0;
 }
 
-.fdsCheckbox-label {
+.fdsCheckbox label {
   display: inline-flex;
-  align-items: center;
-}
-
-.fdsCheckbox--disabled :matches(.fdsCheckbox-label,.fds-icon) {
-  color: var(--font-color-hint) !important;
 }
 
 .fdsCheckbox .fds-icon {
   color: var(--font-color-secondary);
+  align-self: top;
 }
 
-.fdsCheckbox-input:checked + .fdsCheckbox-label .fds-icon {
+.fdsCheckbox--disabled :matches(label,svg) {
+  color: var(--font-color-hint) !important;
+}
+
+.fdsCheckbox-input:checked + label svg {
   color: var(--color-blue);
 }
 
-.fdsCheckbox-input:focus + .fdsCheckbox-label .fds-icon {
+.fdsCheckbox-input:focus + label svg {
   border-radius: var(--border-radius-default);
   box-shadow: inset 0 0 0 3px var(--border-color-focusRing);
   transition: box-shadow 250ms var(--motion-easing-default);
 }
+

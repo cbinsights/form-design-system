@@ -6,7 +6,6 @@ import CheckEmptyIcon from '../../../lib/icons/react/CheckEmptyIcon';
 import CheckFilledIcon from '../../../lib/icons/react/CheckFilledIcon';
 import CheckIndeterminateIcon from '../../../lib/icons/react/CheckIndeterminateIcon';
 
-
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
@@ -45,19 +44,11 @@ const Checkbox = ({ name, label, value, onChange, indeterminate, checked, disabl
         checked={isChecked}
         disabled={disabled}
       />
-      <label
-        className="fdsCheckbox-label"
-        htmlFor={name}
-      >
-        <div
-          role="checkbox"
-          aria-checked={isChecked}
-        >
+      <label className="flush--bottom" htmlFor={name}>
+        <div role="checkbox" aria-checked={isChecked}>
           <Icon size="xs" />
         </div>
-        {label && (
-          <span className="padding--left--half">{label}</span>
-        )}
+        {label && <span className="padding--left--half">{label}</span>}
       </label>
     </div>
   );
@@ -78,7 +69,7 @@ Checkbox.propTypes = {
   /** optional label for checkbox */
   label: PropTypes.string,
 
-  /** optional `value` attribute of input element*/
+  /** optional `value` attribute of input element */
   value: PropTypes.string,
 
   /** onChange callback - invoked with the checked state of the checkbox:
