@@ -49,6 +49,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.5.0",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-a11y": "^5.2.8",
     "@storybook/addon-actions": "^5.3.0-rc.7",
     "@storybook/addon-backgrounds": "^5.3.0-rc.7",
     "@storybook/addon-centered": "^5.3.0-rc.7",
