@@ -22,22 +22,19 @@
 @import "./forms/iconInput.css";
 @import "./forms/inputGroup.css";
 
-/* Media components */
-@import "./media/muiAvatarShim.css";
-@import "./media/avatarRow.css";
-@import "./media/avatar.css";
-@import "./media/updatable.css";
-@import "./media/countdownButton.css";
+/* Root components */
+@import "./avatar.css";
+@import "./updatable.css";
+@import "./chips.css";
+@import "./toast.css";
+@import "./toaster.css";
 
-/* Interactive components */
-@import "./interactive/muiButtonShim.css";
-@import "./interactive/buttonGroup.css";
-@import "./interactive/button.css";
-@import "./interactive/stackedButton.css";
-@import "./interactive/iconButton.css";
-@import "./interactive/chips.css";
-@import "./interactive/toast.css";
-@import "./interactive/toaster.css";
+/* Button components */
+@import "./buttons/countdownButton.css";
+@import "./buttons/buttonGroup.css";
+@import "./buttons/button.css";
+@import "./buttons/stackedButton.css";
+@import "./buttons/iconButton.css";
 
 /* Modal (Dialogs/Popovers) */
 @import "./modals/dialog.css";
