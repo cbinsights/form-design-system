@@ -26,7 +26,7 @@
 }
 
 .fdsCheckbox-input:checked + label svg {
-  color: var(--color-blue);
+  fill: var(--color-blue);
 }
 
 .fdsCheckbox-input:focus + label svg {
