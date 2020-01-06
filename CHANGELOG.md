@@ -27,6 +27,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.0] MAJOR
+
 ## [6.10] `color--gray`
 
 - Added `color--gray` helper class
