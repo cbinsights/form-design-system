@@ -1,0 +1,14 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+
+import DatePicker from './DatePicker';
+
+<Meta title="Forms|DatePicker" decorators={[withKnobs]} component={DatePicker} />
+
+# DatePicker
+
+<Story name="Knobs">
+  <DatePicker />
+</Story>
+
+<Props of={DatePicker} />
