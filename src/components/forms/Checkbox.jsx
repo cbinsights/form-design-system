@@ -13,10 +13,6 @@ import CheckIndeterminateIcon from '../../../lib/icons/react/CheckIndeterminateI
 const Checkbox = ({ name, label, value, onChange, indeterminate, checked, disabled }) => {
   const [isChecked, setIsChecked] = useState(checked);
 
-  const classNames = cx('fdsCheckbox', {
-    'fdsCheckbox--disabled': disabled,
-  });
-
   const handleChange = () => {
     if (!disabled) {
       const newState = !isChecked;
@@ -33,13 +29,18 @@ const Checkbox = ({ name, label, value, onChange, indeterminate, checked, disabl
   }
 
   return (
-    <div className={classNames}>
+    <div className={cx('fdsCheckbox', { 'fdsCheckbox--disabled': disabled })}>
       <input
+        ref={(el) => {
+          /* eslint-disable no-unused-expressions,no-param-reassign */
+          el && isChecked && (el.indeterminate = indeterminate);
+          /* eslint-enable */
+        }}
         type="checkbox"
         name={name}
         id={name}
         value={value}
-        className="fdsCheckbox-input media--xs"
+        className="media--xs"
         onChange={handleChange}
         checked={isChecked}
         disabled={disabled}

@@ -7,38 +7,64 @@ import Checkbox from './Checkbox';
 
 # Checkbox
 
-Renders a hidden `input type="checkbox"` element that reflects checked state and adds FDS
-icons to customize visual display.
+Renders an FDS Icon in place of the user agent checkbox. The user agent `input
+type="checkbox"` is visually hidden behind the icon.
+
+The `name` prop is required, as it is used to create a reference between the `label` and
+`input` elements.
+
+<hr />
 
 <Story name="test">
   <React.Fragment>
-    <div>
-      <Checkbox name="test" label="I agree to the terms, have read them carefully,
-      consulted with my lawyer, and have reviewed all relevant case law on the matter" />
-    </div>
-    <div>
-      <Checkbox name="test2" label="Indeterminate" indeterminate />
-    </div>
-    <div>
-      <Checkbox name="test3" label="Indeterminate Checked" indeterminate checked />
-    </div>
-    <div>
-      <Checkbox name="test4" label="Indeterminate Checked Disabled" indeterminate checked disabled />
-    </div>
-    <div>
-      <Checkbox name="test5" label="Checked Disabled" checked disabled />
-    </div>
-    <div>
-      <Checkbox name="test6" label="Disabled" disabled />
-    </div>
-    <div>
-      <Checkbox name="test7" label="Checked" checked />
-    </div>
-    <div className="margin--top">
-      <p className="type--caption">No label</p>
-      <Checkbox name="test7" checked />
-    </div>
+      <Checkbox name="spam" label="I agree to get spam in my inbox" />
   </React.Fragment>
 </Story>
 
+<hr />
+
 <Props of={Checkbox} />
+
+## Managing checked state
+
+Just like a native `input type="checkbox"`, this component will render an unchecked box by
+default. Use the `checked` prop to render the checkbox as checked.
+
+**Users can still uncheck the box.** To "freeze" checked state, use a disabled checkbox
+(see below).
+
+<Preview>
+  <Story name="Managing checked state">
+    <Checkbox checked name="default-checked" label="Checked by default" />
+  </Story>
+</Preview>
+
+## Preventing user interaction
+
+Use the `disabled` prop to prevent the user from changing the chekced state of the
+checkbox.
+
+<Preview>
+  <Story name="Disabled checkboxes">
+    <React.Fragment>
+      <div>
+        <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
+      </div>
+      <div>
+        <Checkbox disabled checked name="disabled-checked" label="Disabled checked" />
+      </div>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Indeterminate checkbox
+
+HTML checkboxes [natively support an indeterminate state](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Using_checkbox_inputs).
+This can be useful when dealing with parent/child checkboxes. Pass the boolean
+`indeterminate` prop to use the indeterminate variant of the checkbox.
+
+<Preview>
+  <Story name="Indeterminate checkboxes">
+    <Checkbox indeterminate name="notsureif" label="Indeterminate checkbox" />
+  </Story>
+</Preview>

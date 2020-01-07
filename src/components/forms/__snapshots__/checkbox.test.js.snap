@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component matches snapshot (disabled) 1`] = `
+<div
+  className="fdsCheckbox fdsCheckbox--disabled"
+>
+  <input
+    checked={false}
+    className="media--xs"
+    disabled={true}
+    id="snapshot_checkbox"
+    name="snapshot_checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="flush--bottom"
+    htmlFor="snapshot_checkbox"
+  >
+    <div
+      aria-checked={false}
+      role="checkbox"
+    >
+      <CheckEmptyIcon
+        size="xs"
+      />
+    </div>
+    <span
+      className="padding--left--half"
+    >
+      Snapshot Label
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox component matches snapshot (with label) 1`] = `
+<div
+  className="fdsCheckbox"
+>
+  <input
+    checked={false}
+    className="media--xs"
+    disabled={false}
+    id="snapshot_checkbox"
+    name="snapshot_checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="flush--bottom"
+    htmlFor="snapshot_checkbox"
+  >
+    <div
+      aria-checked={false}
+      role="checkbox"
+    >
+      <CheckEmptyIcon
+        size="xs"
+      />
+    </div>
+    <span
+      className="padding--left--half"
+    >
+      Snapshot Label
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox component matches snapshot (without label) 1`] = `
+<div
+  className="fdsCheckbox"
+>
+  <input
+    checked={false}
+    className="media--xs"
+    disabled={false}
+    id="snapshot_checkbox"
+    name="snapshot_checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="flush--bottom"
+    htmlFor="snapshot_checkbox"
+  >
+    <div
+      aria-checked={false}
+      role="checkbox"
+    >
+      <CheckEmptyIcon
+        size="xs"
+      />
+    </div>
+  </label>
+</div>
+`;
