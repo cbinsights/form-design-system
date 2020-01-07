@@ -8,7 +8,7 @@ export const THEMES = ['blue', 'gray', 'outline'];
 export const SIZES = ['s', 'm'];
 
 const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }) => {
-  const Element = baseElement({ href: rest.href, as: Link });
+  const Element = baseElement({ href: rest.href, onClick: true, as: Link });
 
   const rootClass = cx(
     'fdsChip',
