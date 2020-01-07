@@ -8,10 +8,7 @@ const baseElement = ({ href, onClick, as }) => {
   let Element;
   if (as) {
     Element = as;
-  } else if (href && onClick) {
-    // This may seem unnecessary but needs to be here to enable the right priority
-    Element = 'button';
-  } else if (href) {
+  } else if (href || (href && onClick)) {
     Element = 'a';
   } else if (onClick) {
     Element = 'button';

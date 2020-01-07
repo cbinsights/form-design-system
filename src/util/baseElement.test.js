@@ -14,9 +14,9 @@ describe('baseElement', () => {
     expect(Element).toBe('button');
   });
 
-  it('returns a button when onClick and href are passed', () => {
+  it('returns an anchor when onClick and href are passed', () => {
     const Element = baseElement({ onClick: () => {}, href: "#" })
-    expect(Element).toBe('button');
+    expect(Element).toBe('a');
   });
 
   it('returns a div when neither onClick nor href are passed', () => {
