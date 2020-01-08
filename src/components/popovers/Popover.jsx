@@ -81,10 +81,12 @@ const Popover = ({
   };
 
   useEffect(() => {
+    if (interactionMode !== 'click') return;
     /* eslint-disable no-undef */
     document.body.addEventListener('mousedown', handleBodyClick, false);
     document.body.addEventListener('keyup', handleKeyPress, false);
 
+    // eslint-disable-next-line consistent-return
     return () => {
       document.body.removeEventListener('mousedown', handleBodyClick, false);
       document.body.removeEventListener('keyup', handleKeyPress, false);
