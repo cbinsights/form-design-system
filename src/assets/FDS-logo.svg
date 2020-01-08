@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="394px" height="293px" viewBox="0 0 394 293" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="394px" height="285px" viewBox="0 0 394 285" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
     <title>Untitled 2</title>
     <desc>Created with Sketch.</desc>
@@ -19,8 +19,8 @@
             <use fill="#FBFEFF" fill-opacity="1" stroke-opacity="1" xlink:href="#text-1"></use>
             <use xlink:href="#text-1"></use>
         </g>
-        <text id="Form-Design-System" font-family="Roboto-Light, Roboto Light" font-size="40" font-weight="normal" fill="#287BA3">
-            <tspan x="2.29492188" y="276">Form Design System</tspan>
+        <text id="Form-Design-System" font-family="Roboto-Light, Roboto Light" font-size="40" font-weight="normal" fill="#006799" fill-opacity="0.79335118">
+            <tspan x="2.29492188" y="275">Form Design System</tspan>
         </text>
     </g>
 </svg>

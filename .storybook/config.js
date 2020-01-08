@@ -8,7 +8,7 @@ import '../src/components/style/index.css';
 addDecorator(withA11y)
 
 const theme = create({
-  brandTitle: 'FDS',
+  brandTitle: 'Form Design System',
   brandUrl: 'cbinsights.github.io/form-design-system',
   brandImage: logo, // We can add an actual logo later,
 });
