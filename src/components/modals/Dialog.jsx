@@ -6,8 +6,7 @@ import FocusTrap from 'focus-trap-react';
 import noScroll from 'no-scroll';
 import rafSchd from 'raf-schd';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
-import Flex from '../layout/Flex';
-import FlexItem from '../layout/FlexItem';
+import IconButton from '../interactive/IconButton';
 import Section from '../layout/Section';
 
 export const isElementOverflowing = ({ current }) => {
@@ -76,25 +75,19 @@ const Dialog = (props) => {
                   <React.Fragment>
                     <div className="dialog-header">
                       <Section border="bottom">
-                        <Flex justify="spaceBetween" align="start">
-                          <FlexItem>
-                            {props.title && (
-                              <div
-                                className="dialog-title type--head4"
-                                id="a11y-dialog-title"
-                              >
-                                {props.title}
-                              </div>
-                            )}
-                          </FlexItem>
-                          {props.onDismiss && (
-                            <FlexItem shrink>
-                              <button className="dialog-icon" onClick={props.onDismiss}>
-                                <DenyIcon size="xs" />
-                              </button>
-                            </FlexItem>
-                          )}
-                        </Flex>
+                        <div className="padding--right--double type--head4">
+                          {props.title ? (
+                            <span id="a11y-dialog-title">{props.title}</span>
+                          ) : (
+                            '\u00A0'
+                          )}{' '}
+                          {/* There always needs to be something (even a space) in the header for display reasons */}
+                        </div>
+                        {props.onDismiss && (
+                          <div className="dialog-icon">
+                            <IconButton Icon={DenyIcon} onClick={props.onDismiss} />
+                          </div>
+                        )}
                       </Section>
                     </div>
                   </React.Fragment>
