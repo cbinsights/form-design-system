@@ -6,7 +6,6 @@ import { CSSTransition } from 'react-transition-group';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 import { isNotRefsEvent } from '../util/events';
 
-const noop = () => {};
 export const VALID_POSITIONS = ['auto', 'top', 'right', 'bottom', 'left'];
 export const VALID_ALIGNMENTS = ['start', 'end', 'center'];
 export const VALID_INTERACTION_MODES = ['hover', 'click', 'controlled'];
@@ -201,8 +200,8 @@ Popover.defaultProps = {
   position: 'auto',
   alignment: 'start',
   distance: 4,
-  onOpen: noop,
-  onClose: noop,
+  onOpen: () => {},
+  onClose: () => {},
 };
 
 Popover.propTypes = {
