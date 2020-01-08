@@ -1,15 +1,16 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { create } from '@storybook/theming';
 import { withA11y } from '@storybook/addon-a11y';
+import logo from "../src/assets/FDS-logo.svg"
 
 import '../src/components/style/index.css';
 
 addDecorator(withA11y)
 
 const theme = create({
-  brandTitle: 'fds-components',
+  brandTitle: 'FDS',
   brandUrl: 'cbinsights.github.io/form-design-system',
-  brandImage: '', // We can add an actual logo later,
+  brandImage: logo, // We can add an actual logo later,
 });
 
 addParameters({
