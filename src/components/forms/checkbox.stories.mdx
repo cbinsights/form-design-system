@@ -15,10 +15,13 @@ The `name` prop is required, as it is used to create a reference between the `la
 
 <hr />
 
-<Story name="test">
-  <React.Fragment>
-      <Checkbox name="spam" label="I agree to get spam in my inbox" />
-  </React.Fragment>
+<Story name="Knobs">
+  <Checkbox
+    indeterminate={boolean('indeterminate', false)}
+    disabled={boolean('disabled', false)}
+    name="default-checked"
+    label={text('label', 'Checkbox label')}
+  />
 </Story>
 
 <hr />
