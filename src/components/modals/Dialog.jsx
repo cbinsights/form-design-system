@@ -85,7 +85,11 @@ const Dialog = (props) => {
                         </div>
                         {props.onDismiss && (
                           <div className="dialog-icon">
-                            <IconButton Icon={DenyIcon} onClick={props.onDismiss} />
+                            <IconButton
+                              Icon={DenyIcon}
+                              onClick={props.onDismiss}
+                              aria-label="close"
+                            />
                           </div>
                         )}
                       </Section>
