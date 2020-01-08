@@ -7,20 +7,21 @@
         <text id="text-1" font-family="RobotoCondensed-Bold, Roboto Condensed" font-size="270" font-style="condensed" font-weight="bold" letter-spacing="-11" fill="#FBFEFF">
             <tspan x="-6.37646484" y="200">FDS</tspan>
         </text>
-        <filter x="-1.6%" y="-1.4%" width="103.6%" height="104.1%" filterUnits="objectBoundingBox" id="filter-2">
+        <filter x="-1.8%" y="-1.6%" width="103.8%" height="104.4%" filterUnits="objectBoundingBox" id="filter-2">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0.337607563   0 0 0 0 0.332660532   0 0 0 0 0.332660532  0 0 0 0.386172421 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="FDS" stroke="#006799" stroke-width="5">
+        <g id="FDS" stroke="#006799" stroke-width="6">
             <use fill="#FBFEFF" fill-opacity="1" stroke-opacity="1" filter="url(#filter-2)" xlink:href="#text-1"></use>
             <use fill="#FBFEFF" fill-opacity="1" stroke-opacity="1" xlink:href="#text-1"></use>
             <use xlink:href="#text-1"></use>
         </g>
-        <text id="Form-Design-System" font-family="Roboto-Light, Roboto Light" font-size="40" font-weight="normal" fill="#006799" fill-opacity="0.79335118">
-            <tspan x="2.29492188" y="275">Form Design System</tspan>
+        <text id="Form-Design-System" font-family="Roboto-Light, Roboto Light" font-size="35" font-weight="normal" fill="#006799" fill-opacity="0.845307037">
+            <tspan x="0.133056641" y="272">Form Design System</tspan>
         </text>
+        <line x1="2.5" y1="226.5" x2="320.5" y2="226.5" id="Line" stroke="#D8E2E6" stroke-width="2" stroke-linecap="square"></line>
     </g>
 </svg>
