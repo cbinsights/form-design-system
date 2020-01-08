@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="394px" height="285px" viewBox="0 0 394 285" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Untitled 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <text id="text-1" font-family="RobotoCondensed-Bold, Roboto Condensed" font-size="270" font-style="condensed" font-weight="bold" letter-spacing="-11" fill="#FBFEFF">
+            <tspan x="-6.37646484" y="200">FDS</tspan>
+        </text>
+        <filter x="-1.6%" y="-1.4%" width="103.6%" height="104.1%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.337607563   0 0 0 0 0.332660532   0 0 0 0 0.332660532  0 0 0 0.386172421 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FDS" stroke="#006799" stroke-width="5">
+            <use fill="#FBFEFF" fill-opacity="1" stroke-opacity="1" filter="url(#filter-2)" xlink:href="#text-1"></use>
+            <use fill="#FBFEFF" fill-opacity="1" stroke-opacity="1" xlink:href="#text-1"></use>
+            <use xlink:href="#text-1"></use>
+        </g>
+        <text id="Form-Design-System" font-family="Roboto-Light, Roboto Light" font-size="40" font-weight="normal" fill="#006799" fill-opacity="0.79335118">
+            <tspan x="2.29492188" y="275">Form Design System</tspan>
+        </text>
+    </g>
+</svg>
