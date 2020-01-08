@@ -29,6 +29,18 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ## [7.0] MAJOR
 
+### **BREAKING CHANGES**
+
+#### `AvatarRow` Component
+Component removed (was not publicly documented).
+
+#### `MuiAvatarShim` Component
+Component removed (was not publicly documented).
+
+## [6.11] Updated `Avatar`
+
+- Avatar will now render as a button underneath the hood if passed a `href`, `onClick`, or `Link`
+
 ## [6.10] `color--gray`
 
 - Added `color--gray` helper class

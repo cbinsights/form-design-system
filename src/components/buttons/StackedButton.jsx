@@ -5,7 +5,7 @@ import baseElement from '../../util/baseElement';
 import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
 
 const StackedButton = ({ Icon, Link, label, disabled, isActive, hasCaret, ...rest }) => {
-  const Element = baseElement({ href: rest.href, as: Link });
+  const Element = baseElement({ href: rest.href, onClick: true, as: Link });
 
   return (
     <Element

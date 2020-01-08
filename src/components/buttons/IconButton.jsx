@@ -20,7 +20,7 @@ const IconButton = ({
   Link,
   ...rest
 }) => {
-  const Element = baseElement({ href: rest.href, as: Link });
+  const Element = baseElement({ href: rest.href, onClick: true, as: Link });
   return (
     <Element
       {...rest}

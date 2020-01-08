@@ -4,7 +4,6 @@ import { withKnobs, text, select } from '@storybook/addon-knobs';
 import InlineBlockList from './InlineBlockList';
 import Chip from '../Chip';
 
-export const noop = () => {};
 export const parentStyle = {
   height: '100vh',
   width: '100vw',
@@ -44,10 +43,10 @@ attribute on each list item.
   <Story name="Chips list">
     <InlineBlockList
       items={[
-        <Chip key="horses" size="lg" onClose={noop} label="Horses" theme="outline" />,
-        <Chip key="wombats" size="lg" onClose={noop} label="Wombats" theme="outline" />,
-        <Chip key="seals" size="lg" onClose={noop} label="Seals" theme="outline" />,
-        <Chip key="dogs" size="lg" onClose={noop} label="Dogs" theme="outline" />,
+        <Chip key="horses" onClose={() => {}} label="Horses" theme="outline" />,
+        <Chip key="wombats" onClose={() => {}} label="Wombats" theme="outline" />,
+        <Chip key="seals" onClose={() => {}} label="Seals" theme="outline" />,
+        <Chip key="dogs" onClose={() => {}} label="Dogs" theme="outline" />,
       ]}
     />
   </Story>
