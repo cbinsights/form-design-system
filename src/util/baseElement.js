@@ -4,14 +4,16 @@
  * override where you can specify any element / component as
  * the root
  */
-const baseElement = ({ href, as }) => {
+const baseElement = ({ href, onClick, as }) => {
   let Element;
   if (as) {
     Element = as;
-  } else if (href) {
+  } else if (href || (href && onClick)) {
     Element = 'a';
-  } else {
+  } else if (onClick) {
     Element = 'button';
+  } else {
+    Element = 'div';
   }
   return Element;
 };
