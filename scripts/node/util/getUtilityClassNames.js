@@ -46,5 +46,5 @@ const utilityClasses = allSelectors
 // write out a commonJS module with the array of utility classes
 fs.writeFileSync(
   path.resolve(LIB_ROOT, 'stats', 'utilityClassNames.js'),
-  `module.exports = ${JSON.stringify(utilityClasses, null, 2)}\n`
+  `module.exports = ${JSON.stringify(utilityClasses, null, 2)};\n`
 );
