@@ -4,6 +4,10 @@
   position: relative;
 }
 
+.dialog-header {
+  position: relative;
+}
+
 .dialog-enter-active {
   opacity: 1;
   transition: opacity 200ms;
@@ -77,8 +81,7 @@
 }
 
 .dialog-icon {
-  background-color: transparent;
-  cursor: pointer;
-  border: 0 none;
-  min-height: auto;
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
