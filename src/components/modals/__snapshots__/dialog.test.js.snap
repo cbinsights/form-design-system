@@ -26,19 +26,25 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                 class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
               >
                 <div
-                  class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                  class="padding--right--double type--head4"
                 >
-                  <div
-                    class="flexItem"
-                  />
-                  <div
-                    class="flexItem flexItem--shrink"
+                   
+                   
+                </div>
+                <div
+                  class="dialog-icon"
+                >
+                  <button
+                    aria-label="close"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition-default fdsIconButton--ghost fdsIconButton--m"
+                    role="img"
                   >
-                    <button
-                      class="dialog-icon"
+                    <span
+                      class=""
                     >
                       <div
-                        class="fds-icon fds-icon--xs"
+                        class="fds-icon fds-icon--s"
+                        style="width: 18px; height: 18px;"
                       >
                         <svg
                           viewBox="0 0 24 24"
@@ -54,8 +60,8 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                           </g>
                         </svg>
                       </div>
-                    </button>
-                  </div>
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -95,19 +101,25 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                 class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
               >
                 <div
-                  class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                  class="padding--right--double type--head4"
                 >
-                  <div
-                    class="flexItem"
-                  />
-                  <div
-                    class="flexItem flexItem--shrink"
+                   
+                   
+                </div>
+                <div
+                  class="dialog-icon"
+                >
+                  <button
+                    aria-label="close"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition-default fdsIconButton--ghost fdsIconButton--m"
+                    role="img"
                   >
-                    <button
-                      class="dialog-icon"
+                    <span
+                      class=""
                     >
                       <div
-                        class="fds-icon fds-icon--xs"
+                        class="fds-icon fds-icon--s"
+                        style="width: 18px; height: 18px;"
                       >
                         <svg
                           viewBox="0 0 24 24"
@@ -123,8 +135,8 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                           </g>
                         </svg>
                       </div>
-                    </button>
-                  </div>
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -251,19 +263,25 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                 class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
               >
                 <div
-                  class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                  class="padding--right--double type--head4"
                 >
-                  <div
-                    class="flexItem"
-                  />
-                  <div
-                    class="flexItem flexItem--shrink"
+                   
+                   
+                </div>
+                <div
+                  class="dialog-icon"
+                >
+                  <button
+                    aria-label="close"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition-default fdsIconButton--ghost fdsIconButton--m"
+                    role="img"
                   >
-                    <button
-                      class="dialog-icon"
+                    <span
+                      class=""
                     >
                       <div
-                        class="fds-icon fds-icon--xs"
+                        class="fds-icon fds-icon--s"
+                        style="width: 18px; height: 18px;"
                       >
                         <svg
                           viewBox="0 0 24 24"
@@ -279,8 +297,8 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                           </g>
                         </svg>
                       </div>
-                    </button>
-                  </div>
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -320,19 +338,25 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                 class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
               >
                 <div
-                  class="flex flex--alignStart flex--row flex--justifySpaceBetween"
+                  class="padding--right--double type--head4"
                 >
-                  <div
-                    class="flexItem"
-                  />
-                  <div
-                    class="flexItem flexItem--shrink"
+                   
+                   
+                </div>
+                <div
+                  class="dialog-icon"
+                >
+                  <button
+                    aria-label="close"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition-default fdsIconButton--ghost fdsIconButton--m"
+                    role="img"
                   >
-                    <button
-                      class="dialog-icon"
+                    <span
+                      class=""
                     >
                       <div
-                        class="fds-icon fds-icon--xs"
+                        class="fds-icon fds-icon--s"
+                        style="width: 18px; height: 18px;"
                       >
                         <svg
                           viewBox="0 0 24 24"
@@ -348,8 +372,8 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                           </g>
                         </svg>
                       </div>
-                    </button>
-                  </div>
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -441,34 +465,28 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                 xPadding="default"
                 yPadding="default"
               >
-                <Flex
-                  align="start"
-                  direction="row"
-                  justify="spaceBetween"
+                <div
+                  className="padding--right--double type--head4"
                 >
-                  <FlexItem
-                    shrink={false}
+                  <span
+                    id="a11y-dialog-title"
                   >
-                    <div
-                      className="dialog-title type--head4"
-                      id="a11y-dialog-title"
-                    >
-                      hey
-                    </div>
-                  </FlexItem>
-                  <FlexItem
-                    shrink={true}
-                  >
-                    <button
-                      className="dialog-icon"
-                      onClick={[Function]}
-                    >
-                      <DenyIcon
-                        size="xs"
-                      />
-                    </button>
-                  </FlexItem>
-                </Flex>
+                    hey
+                  </span>
+                   
+                </div>
+                <div
+                  className="dialog-icon"
+                >
+                  <IconButton
+                    Icon={[Function]}
+                    aria-label="close"
+                    onClick={[Function]}
+                    radius="square"
+                    size="m"
+                    theme="ghost"
+                  />
+                </div>
               </Section>
             </div>
             <div
