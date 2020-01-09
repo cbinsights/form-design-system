@@ -29,7 +29,7 @@ const IconButton = ({
         'fdsIconButton',
         'rounded--all',
         'border--focus--noTransition',
-        'transition-default',
+        'transition--default',
         `fdsIconButton--${theme}`,
         `fdsIconButton--${size}`,
         {

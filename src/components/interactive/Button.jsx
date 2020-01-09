@@ -34,7 +34,7 @@ const Button = ({
         'rounded--all',
         'alignChild--center--center',
         'border--focus--noTransition',
-        'transition-default',
+        'transition--default',
         {
           'fdsButton--s': size === 's',
           'fdsButton--m': size === 'm',

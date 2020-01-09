@@ -37,6 +37,9 @@ Component removed (was not publicly documented).
 #### `MuiAvatarShim` Component
 Component removed (was not publicly documented).
 
+#### `transition-default renamed`
+`transition-default` is now `transition--default`
+
 ## [6.10] `color--gray`
 
 - Added `color--gray` helper class
