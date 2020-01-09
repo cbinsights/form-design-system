@@ -1,0 +1,61 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { useState } from 'react';
+import Popover from './Popover';
+
+<Meta title="Popovers|Popover" component={Popover} />
+
+
+# Controlled bug
+
+This version of the popover has `interactionMode="controlled"` and it `isOpen` if
+the input has content. This works as expected if you click the button in the popover
+when it shows. If you type into the text area, then click th body to leave it, then
+click the text area again the popover will not show. Typing more does not get it to
+show either. It will only show if you clear out the text in the input and start
+typing again.
+
+export const ControlledPopoverWithState = () => {
+  const [value, setValue] = useState('');
+  return (
+    <Popover
+      interactionMode="controlled"
+      isOpen={value}
+      trigger={(
+        <input value={value} onChange={(e) => setValue(e.target.value)} />
+      )}
+    >
+      <button onClick={() => setValue('')}>{value}</button>
+    </Popover>
+  )
+};
+
+<Story name="Controlled Bug">
+  <ControlledPopoverWithState />
+</Story>
+
+## Uncontrolled Bug
+
+This is a similar attempt at the same funcitonality but using `interactionMode="click"`
+and conditionally rendering the popover. You can reproduce the bug in several different
+ways here. Generally trying different combinations of the steps above will yield
+unexpected results.
+
+export const UncontrolledPopoverWithState = () => {
+  const [value, setValue] = useState('');
+  return (
+    <Popover
+      trigger={(
+        <input value={value} onChange={(e) => setValue(e.target.value)} />
+      )}
+    >
+      {value
+        ? <button onClick={() => setValue('')}>{value}</button>
+        : <div />
+      }
+    </Popover>
+  )
+};
+
+<Story name="Uncontrolled Bug">
+  <UncontrolledPopoverWithState />
+</Story>
