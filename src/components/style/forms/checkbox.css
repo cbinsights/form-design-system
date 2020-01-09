@@ -16,11 +16,12 @@
 .fdsCheckbox label {
   /* contains checkbox icon and text label */
   display: inline-flex;
+  align-items: center;
 }
 
 .fdsCheckbox .fds-icon {
   color: var(--font-color-secondary);
-  align-self: top;
+  transform: translateY(-1px);
 }
 
 .fdsCheckbox input:focus + label svg {
