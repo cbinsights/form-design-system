@@ -73,7 +73,10 @@ Checkbox.defaultProps = {
 };
 
 Checkbox.propTypes = {
-  /** `name` attribute of input element */
+  /**
+   * `name` attribute of input element.
+   * Also used for the `htmlFor` prop of the `label`.
+   */
   name: PropTypes.string.isRequired,
 
   /** optional label for checkbox */
