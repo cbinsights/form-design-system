@@ -7,7 +7,7 @@ describe('Dialog component', () => {
   it('dismisses modal when close icon is clicked', () => {
     const dismissFn = jest.fn()
     const wrapper = mount(<Dialog isOpen={true} onDismiss={dismissFn} content={<button>hey</button>} />);
-    wrapper.find('.dialog-icon').prop('onClick')();
+    wrapper.find('IconButton').prop('onClick')();
     expect(dismissFn).toHaveBeenCalled();
   });
 
