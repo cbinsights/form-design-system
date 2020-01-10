@@ -30,8 +30,8 @@ The `name` prop is required, as it is used to create a reference between the `la
 
 ## Managing checked state
 
-Just like a native `input type="checkbox"`, this component will render an unchecked box by
-default. Use the `checked` prop to render the checkbox as checked.
+This component uses the `onChange` event of the underlying `input type="checkbox"` to
+manage checked state. To check the box by default, pass the `checked` boolean prop.
 
 **Users can still uncheck the box.** To "freeze" checked state, use a disabled checkbox
 (see below).
@@ -62,9 +62,9 @@ checkbox.
 
 ## Indeterminate checkbox
 
-HTML checkboxes [natively support an indeterminate state](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Using_checkbox_inputs).
-This can be useful when dealing with parent/child checkboxes. Pass the boolean
-`indeterminate` prop to use the indeterminate variant of the checkbox.
+Passing the `indeterminate` boolean prop will set `indeterminate` attribute of the
+underlying input element and render the `CheckIndeterminate` icon when the checkbox is
+checked.
 
 <Preview>
   <Story name="Indeterminate checkboxes">

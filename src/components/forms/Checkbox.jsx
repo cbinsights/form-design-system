@@ -10,14 +10,23 @@ import CheckIndeterminateIcon from '../../../lib/icons/react/CheckIndeterminateI
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Checkbox = ({ name, label, value, onChange, indeterminate, checked, disabled }) => {
+const Checkbox = ({
+  name,
+  label,
+  value,
+  onChange,
+  indeterminate,
+  checked,
+  disabled,
+  ...otherProps
+}) => {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = () => {
     if (!disabled) {
-      const newState = !isChecked;
-      setIsChecked(newState);
-      onChange(newState);
+      const updatedCheckedState = !isChecked;
+      setIsChecked(updatedCheckedState);
+      onChange(updatedCheckedState);
     }
   };
 
@@ -32,9 +41,8 @@ const Checkbox = ({ name, label, value, onChange, indeterminate, checked, disabl
     <div className={cx('fdsCheckbox', { 'fdsCheckbox--disabled': disabled })}>
       <input
         ref={(el) => {
-          /* eslint-disable no-unused-expressions,no-param-reassign */
+          /* eslint-disable-next-line no-unused-expressions,no-param-reassign */
           el && isChecked && (el.indeterminate = indeterminate);
-          /* eslint-enable */
         }}
         type="checkbox"
         name={name}
@@ -44,6 +52,7 @@ const Checkbox = ({ name, label, value, onChange, indeterminate, checked, disabl
         onChange={handleChange}
         checked={isChecked}
         disabled={disabled}
+        {...otherProps}
       />
       <label className="flush--bottom" htmlFor={name}>
         <div role="checkbox" aria-checked={isChecked}>
