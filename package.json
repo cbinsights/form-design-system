@@ -102,6 +102,7 @@
     "rimraf": "^2.6.2",
     "snake-case": "^2.1.0",
     "style-dictionary": "^2.8.1",
+    "style-loader": "^1.1.2",
     "stylelint": "^9.5.0",
     "tinycolor2": "^1.4.1",
     "webpack": "^4.38"
