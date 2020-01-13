@@ -1462,7 +1462,7 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@storybook/addon-a11y@^5.2.8":
+"@storybook/addon-a11y@5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.3.2.tgz#9bc8031c809012c2a0427b5b46be0d688f44da6d"
   integrity sha512-JOx4GZl8ZDxPlYnMTiBNnzE6GQzojlJobcbJiXWXJP1P7YnOL7IwVS5zNxtGAtN0npL2I0ZhhSSsaG2Si5IoLQ==
@@ -1484,7 +1484,7 @@
     ts-dedent "^1.1.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-actions@^5.3.0-rc.7":
+"@storybook/addon-actions@5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.3.2.tgz#3efc82356ef212ba345034c044ef9bf1d43cb800"
   integrity sha512-K3hLPek5ruz/ZvQVQtmCJO4PzNNfvXeXVKP6Fj1izqDK6vtQZUyy4V2YvgclHRwovL6ZzojSjDMq4dPKABYWhA==
@@ -1504,7 +1504,7 @@
     react-inspector "^4.0.0"
     uuid "^3.3.2"
 
-"@storybook/addon-backgrounds@^5.3.0-rc.7":
+"@storybook/addon-backgrounds@5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-5.3.2.tgz#e2d3d99230d3ae2bd3380ffbb4c42e73f957602f"
   integrity sha512-ok1EgW+qVWw45nz0zwwCNDmw5fJ18s6deF0errOsGSjO/XcmTLgV4GkJHFSNi6Gx6rgGHGOppSGtzTik+AeQTg==
@@ -1520,7 +1520,7 @@
     react "^16.8.3"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-centered@^5.3.0-rc.7":
+"@storybook/addon-centered@5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-5.3.2.tgz#485c59b8b271c9eaad6cceca4904bd461167fecc"
   integrity sha512-rnQw1IAM3co/QN5o7l8sdOhri6+1a/IOgrK08yJHRcsalUPrgBMDXrnpucOrMFfMor9t/8VRrPBa+YT5pfrT4g==
@@ -1530,7 +1530,7 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-docs@^5.3.0-rc.7":
+"@storybook/addon-docs@5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-5.3.2.tgz#287c181d1f93fbf27cd12644a6aead6c69a4df2a"
   integrity sha512-gGxDYP2VMl2Js3eSR0FM/QCf8PULLoZq57LIA8mxX38oxOydC3mIG1970sUM/g6MDtP4TV4F6rjd++eY4Gc07g==
@@ -1570,7 +1570,7 @@
     vue-docgen-api "^4.1.0"
     vue-docgen-loader "^1.3.0-beta.0"
 
-"@storybook/addon-knobs@^5.3.0-rc.7":
+"@storybook/addon-knobs@5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.3.2.tgz#0d8caeb3a30d0b7647bda51445e59c57033d62e4"
   integrity sha512-5enTXIoVzepQDDe55wTQOfqT1cOwngjlakKar7lYWqww2ixVJJ3xMZ9dLqnYZkROMsN67sDwmuawvze+W5lbEA==
@@ -1594,7 +1594,7 @@
     react-lifecycles-compat "^3.0.4"
     react-select "^3.0.8"
 
-"@storybook/addon-links@^5.3.0-rc.7":
+"@storybook/addon-links@5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-5.3.2.tgz#cc873293f92c5ef9f8d7220cd58b4b21f942b404"
   integrity sha512-uIswAUttAU564WYfgjMl15Z0ojlbnMNY8CiNWA/cYDbfI/EGHluxNZQ0HRX0vgD+BmxLYJCzR6utTmEjInkYuQ==
@@ -1610,7 +1610,7 @@
     qs "^6.6.0"
     ts-dedent "^1.1.0"
 
-"@storybook/addons@5.3.2", "@storybook/addons@^5.3.0-rc.7":
+"@storybook/addons@5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.2.tgz#1fa382a44cef43bdf428c0a922d6bfd14fbe6758"
   integrity sha512-vSByVK0yQJ8kjYmw8Ayj7cmCIOEdQKNjV7OLTXmLMpde+hUBqmDbCzwT0m5kZjzSFRTvB8bz0WBPavE02ZBN8A==
@@ -1834,7 +1834,7 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/react@^5.3.0-rc.7":
+"@storybook/react@5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-5.3.2.tgz#1b3f6b16dff9c62df9e5295a1f9f8da94d23ff88"
   integrity sha512-Nw8K/sKjq/9iIz5fdspIWRjJa6tzHhHderdBHBmZ4oTeLGux5tU/tMs+WEZQGtRi7mmLWbpoksUpsny75XiP+w==
@@ -1892,7 +1892,7 @@
     prop-types "^15.7.2"
     regenerator-runtime "^0.13.3"
 
-"@storybook/theming@5.3.2", "@storybook/theming@^5.3.0-rc.7":
+"@storybook/theming@5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.2.tgz#02aa04eb93cba8359061c50ebc4a350f96720846"
   integrity sha512-WzFVgE2v/0mlK/5CqM9kSDdCMag7uqFsjI5oe3HCWEpwrUH70ndhuVZTVpyx0fscdL74vT5XZieoy2WwpVBl5Q==
