@@ -41,6 +41,7 @@ const IconButton = ({
         }
       )}
       disabled={disabled && Element === 'button'}
+      role="img"
     >
       <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
         <Icon customSize={size === 's' ? 16 : 18} />
