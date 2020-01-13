@@ -20,7 +20,7 @@ const IconButton = ({
   Link,
   ...rest
 }) => {
-  const Element = baseElement({ href: rest.href, as: Link });
+  const Element = baseElement({ href: rest.href, onClick: true, as: Link });
   return (
     <Element
       {...rest}
@@ -41,6 +41,7 @@ const IconButton = ({
         }
       )}
       disabled={disabled && Element === 'button'}
+      role="img"
     >
       <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
         <Icon customSize={size === 's' ? 16 : 18} />

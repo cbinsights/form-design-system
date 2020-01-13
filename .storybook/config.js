@@ -1,8 +1,10 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { create } from '@storybook/theming';
-import React from 'react'
+import { withA11y } from '@storybook/addon-a11y';
 
 import '../src/components/style/index.css';
+
+addDecorator(withA11y)
 
 const theme = create({
   brandTitle: 'fds-components',

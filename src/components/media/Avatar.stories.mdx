@@ -1,6 +1,7 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
 import { arrayToOptions } from '../util/storybook';
+import { action } from '@storybook/addon-actions';
 
 import Avatar, { VALID_BG_COLORS, SIZES } from './Avatar';
 
@@ -74,6 +75,26 @@ Initials will show either if you don't pass an image, the image doesn't load, or
         </div>
       ))}
       <br />
+    </div>
+  </Story>
+</Preview>
+
+### Button
+
+Avatar will render as a button if you pass it a href, onClick, or Link to it.
+
+<Preview>
+  <Story name="Button">
+    <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+      <div className="margin--right--half margin--bottom--half">
+        <Avatar name="Hello Impecable" href="#" />
+      </div>
+      <div className="margin--right--half margin--bottom--half">
+        <Avatar name="Hello Impecable" onClick={action('avatar-click')} />
+      </div>
+      <div className="margin--right--half margin--bottom--half">
+        <Avatar name="Hello Impecable" imgUrl="http://placeimg.com/80/81/animals" href="#" />
+      </div>
     </div>
   </Story>
 </Preview>
