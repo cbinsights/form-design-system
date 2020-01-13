@@ -46,9 +46,6 @@ export const bgColorOptions = options('bgColor', arrayToOptions(BG_COLORS), unde
         })}
         name={text('name', 'Samuel Jackson')}
         imgUrl="http://placeimg.com/80/81/animals"
-        initialsLength={options('initials', arrayToOptions(INITIALS_LENGTH), undefined, {
-          display: 'inline-radio',
-        })}
       />
     </StoryItem>
   </StoryWrapper>
@@ -57,6 +54,29 @@ export const bgColorOptions = options('bgColor', arrayToOptions(BG_COLORS), unde
 _Displaying an Avatar with an image, and without an image, for visualization purposes_
 
 <Props of={Avatar} />
+
+### Product Cases
+
+_Pay note to `initialsLength` in the examples._
+
+<Preview>
+  <Story name="Product Cases">
+    <StoryWrapper>
+      <StoryItem>
+        <p>Entity Avatar</p>
+      </StoryItem>
+      <StoryItem>
+        <Avatar name="Hello Impecable" bgColor="navy" initialsLength={1} radius="square" />
+      </StoryItem>
+      <StoryItem>
+        <p>User Avatar</p>
+      </StoryItem>
+      <StoryItem>
+        <Avatar name="Hello Impecable" />
+      </StoryItem>
+    </StoryWrapper>
+  </Story>
+</Preview>
 
 ### Colors
 Accepted colors are based off FDS `bgColor--{color}` classes: https://cbinsights.github.io/form-design-system/fds-styles/#background-colors
@@ -142,3 +162,4 @@ Avatar will render as a button if you pass it a href, onClick, or Link to it.
     </StoryWrapper>
   </Story>
 </Preview>
+

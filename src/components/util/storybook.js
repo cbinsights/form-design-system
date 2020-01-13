@@ -39,6 +39,7 @@ export const StoryWrapper = ({ children }) => (
       flexWrap: 'wrap',
       marginBottom: `-${FDS.SPACE_HALF}px`,
       marginRight: `-${FDS.SPACE_HALF}px`,
+      alignItems: 'center',
     }}
   >
     {children}
