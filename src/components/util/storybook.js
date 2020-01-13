@@ -37,8 +37,8 @@ export const StoryWrapper = ({ children }) => (
     className="display--inlineFlex"
     style={{
       flexWrap: 'wrap',
-      marginBottom: `-${FDS.SPACE_HALF}px`,
-      marginRight: `-${FDS.SPACE_HALF}px`,
+      marginBottom: `-${FDS.SPACE_HALF}`,
+      marginRight: `-${FDS.SPACE_HALF}`,
       alignItems: 'center',
     }}
   >
