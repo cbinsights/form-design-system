@@ -2,21 +2,19 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import CheckEmptyIcon from '../../../lib/icons/react/CheckEmptyIcon';
-import CheckFilledIcon from '../../../lib/icons/react/CheckFilledIcon';
-import CheckIndeterminateIcon from '../../../lib/icons/react/CheckIndeterminateIcon';
+import RadioEmptyIcon from '../../../lib/icons/react/RadioEmptyIcon';
+import RadioFilledIcon from '../../../lib/icons/react/RadioFilledIcon';
 
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Checkbox = ({
+const Radio = ({
   name,
   label,
   showLabel,
   value,
   onChange,
-  indeterminate,
   checked,
   disabled,
   ...otherProps
@@ -31,23 +29,12 @@ const Checkbox = ({
     }
   };
 
-  let Icon = CheckEmptyIcon;
-  if (indeterminate && isChecked) {
-    Icon = CheckIndeterminateIcon;
-  } else if (isChecked) {
-    Icon = CheckFilledIcon;
-  }
+  let Icon = isChecked ? RadioFilledIcon : RadioEmptyIcon;
 
   return (
-    <div
-      className={cx('fdsCheckable fdsCheckbox', { 'fdsCheckable--disabled': disabled })}
-    >
+    <div className={cx('fdsCheckable fdsRadio', { 'fdsCheckable--disabled': disabled })}>
       <input
-        ref={(el) => {
-          /* eslint-disable-next-line no-unused-expressions,no-param-reassign */
-          el && isChecked && (el.indeterminate = indeterminate);
-        }}
-        type="checkbox"
+        type="radio"
         name={name}
         id={name}
         value={value}
@@ -58,7 +45,7 @@ const Checkbox = ({
         {...otherProps}
       />
       <label className="flush--bottom" htmlFor={name}>
-        <div role="checkbox" aria-checked={isChecked} aria-label={label}>
+        <div role="radio" aria-checked={isChecked} aria-label={label}>
           <Icon size="xs" />
         </div>
         {showLabel && <span className="padding--left--half">{label}</span>}
@@ -67,16 +54,15 @@ const Checkbox = ({
   );
 };
 
-Checkbox.defaultProps = {
+Radio.defaultProps = {
   value: undefined,
   checked: false,
-  indeterminate: false,
   disabled: false,
   showLabel: true,
   onChange: () => {},
 };
 
-Checkbox.propTypes = {
+Radio.propTypes = {
   /**
    * `name` attribute of input element.
    * Also used for the `htmlFor` prop of the `label`.
@@ -95,21 +81,18 @@ Checkbox.propTypes = {
   /** optional `value` attribute of input element */
   value: PropTypes.string,
 
-  /** onChange callback - invoked with the checked state of the checkbox:
+  /** onChange callback - invoked with the checked state of the radio:
    * ```
-   * <Checkbox onChange={(isChecked) => {}} ... />
+   * <Radio onChange={(isChecked) => {}} ... />
    * ```
    */
   onChange: PropTypes.func,
 
-  /** Sets type `indeterminate` to `true` */
-  indeterminate: PropTypes.bool,
-
-  /** Sets `checked` state (for both default and indeterminate types) */
+  /** Sets `checked` state */
   checked: PropTypes.bool,
 
   /** Disables form field when `true` */
   disabled: PropTypes.bool,
 };
 
-export default Checkbox;
+export default Radio;

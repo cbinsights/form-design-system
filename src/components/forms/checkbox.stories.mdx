@@ -65,6 +65,17 @@ checkbox.
   </Story>
 </Preview>
 
+## Checkboxes without labels
+
+You can prevent the label from showing by setting `showLabel` to `false`.
+The value of the `label` prop will be used to set an ARIA attribute.
+
+<Preview>
+  <Story name="Checkbox without label">
+    <Checkbox name="no-label" label="I don't have a label" showLabel={false} />
+  </Story>
+</Preview>
+
 ## Indeterminate checkbox
 
 Passing the `indeterminate` boolean prop will set `indeterminate` attribute of the

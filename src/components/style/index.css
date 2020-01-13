@@ -18,7 +18,9 @@
 @import "./layout/hscroll.css";
 
 /* Forms */
+@import "./forms/checkable.css";
 @import "./forms/checkbox.css";
+@import "./forms/radio.css";
 @import "./forms/decoratedInput.css";
 @import "./forms/iconInput.css";
 @import "./forms/inputGroup.css";

@@ -1,0 +1,16 @@
+/* stylelint-disable selector-max-combinators */
+/* stylelint-disable selector-max-compound-selectors */
+
+/**
+ * Radio-specific styles.
+ * Most styling for this component is handled by `checkable.css`
+ */
+
+.fdsRadio .fds-icon {
+  outline: 2px solid orange;
+}
+
+.fdsRadio input:focus + label svg {
+  border-radius: 100%;
+}
+
