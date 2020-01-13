@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import DecoratedInput from './DecoratedInput';
 
-describe('FloatingAction component', () => {
+describe('DecoratedInput component', () => {
   it('matches snapshot (set all props)', () => {
     const wrapper = shallow(
       <DecoratedInput

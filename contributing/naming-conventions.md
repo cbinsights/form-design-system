@@ -74,7 +74,8 @@ Props for event handlers should include an `on` prefix:
 +onHover
 ```
 
-Boolean props should have an auxiliary verb prefix:
+Boolean props should have an auxiliary verb prefix _unless_ the boolean prop maps directly
+to a boolean html attribute:
 
 ```diff
 -selected
@@ -85,6 +86,11 @@ Boolean props should have an auxiliary verb prefix:
 
 -portal
 +usePortal
+```
+
+```diff
++checked
++disabled
 ```
 
 When a prop expects a React component instead of a primitive, use `PascalCase`:
