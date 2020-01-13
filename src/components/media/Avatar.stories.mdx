@@ -28,7 +28,7 @@ export const bgColorOptions = options('bgColor', arrayToOptions(BG_COLORS), unde
         })}
         name={text('name', 'Samuel Jackson')}
         imgUrl={text('imgUrl', undefined)}
-        initials={options('initials', arrayToOptions(INITIALS_LENGTH), undefined, {
+        initialsLength={options('initials', arrayToOptions(INITIALS_LENGTH), undefined, {
           display: 'inline-radio',
         })}
       />
@@ -46,6 +46,9 @@ export const bgColorOptions = options('bgColor', arrayToOptions(BG_COLORS), unde
         })}
         name={text('name', 'Samuel Jackson')}
         imgUrl="http://placeimg.com/80/81/animals"
+        initialsLength={options('initials', arrayToOptions(INITIALS_LENGTH), undefined, {
+          display: 'inline-radio',
+        })}
       />
     </StoryItem>
   </StoryWrapper>
