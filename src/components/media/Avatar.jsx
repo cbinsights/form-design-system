@@ -8,15 +8,16 @@ const DARK_COLORS = ['orange', 'charcoal', 'navy', 'aqua', 'gray', 'red', 'purpl
 export const RADII = ['square', 'circle'];
 export const BG_COLORS = [...LIGHT_COLORS, ...DARK_COLORS];
 export const SIZES = ['s', 'm'];
+export const INITIALS_LENGTH = [1, 2];
 
-export const grabInitials = (str) =>
+export const grabInitials = (str, initialCount) =>
   str
     .split(' ')
-    .slice(0, 2)
+    .slice(0, initialCount)
     .reduce((prev, curr) => prev + curr.charAt(0), '')
     .toUpperCase();
 
-const Avatar = ({ bgColor, imgUrl, size, name, radius, Link, ...rest }) => {
+const Avatar = ({ bgColor, imgUrl, size, name, initials, radius, Link, ...rest }) => {
   const Element = baseElement({ href: rest.href, onClick: rest.onClick, as: Link });
   return (
     <Element
@@ -37,7 +38,7 @@ const Avatar = ({ bgColor, imgUrl, size, name, radius, Link, ...rest }) => {
       {imgUrl && (
         <span className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
       )}
-      {name && grabInitials(name)}
+      {name && grabInitials(name, initials)}
     </Element>
   );
 };
@@ -46,6 +47,7 @@ Avatar.defaultProps = {
   bgColor: 'purple',
   size: 'm',
   radius: 'circle',
+  initials: 2,
 };
 
 Avatar.propTypes = {
@@ -59,6 +61,8 @@ Avatar.propTypes = {
   name: PropTypes.string.isRequired,
   /** Sets background image over initials */
   imgUrl: PropTypes.string,
+  /** Controls how many intials can be displayed */
+  initials: PropTypes.oneOf(INITIALS_LENGTH),
   /**
    * Takes in a react-router `Link` reference and sets it
    * as the base element. You may ONLY use it like the
