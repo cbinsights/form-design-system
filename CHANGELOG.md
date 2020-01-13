@@ -41,7 +41,6 @@ Component removed (was not publicly documented).
 
 - Avatar will now render as a button underneath the hood if passed a `href`, `onClick`, or `Link`
 
-
 ## [6.10] `color--gray`
 
 - Added `color--gray` helper class
