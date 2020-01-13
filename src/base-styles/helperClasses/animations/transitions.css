@@ -8,10 +8,10 @@ Adds standard transitions
 
 class                | description
 -------------------- | -----------------------------------------------------
-`transition-default` | transitions properties to default duration and timing
+`transition--default` | transitions properties to default duration and timing
 */
 
-.transition-default {
+.transition--default {
   transition-property: all;
   transition-duration: 250ms;
   transition-timing-function: var(--motion-easing-default);
