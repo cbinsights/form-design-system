@@ -1,11 +1,11 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
-import { arrayToOptions } from '../util/storybook';
+import { arrayToOptions, StoryWrapper, StoryItem } from '../util/storybook';
 import { action } from '@storybook/addon-actions';
 
-import Avatar, { VALID_BG_COLORS, SIZES } from './Avatar';
+import Avatar, { BG_COLORS, SIZES, RADII } from './Avatar';
 
-export const bgColorOptions = options('bgColor', arrayToOptions(VALID_BG_COLORS), undefined, {
+export const bgColorOptions = options('bgColor', arrayToOptions(BG_COLORS), undefined, {
   display: 'inline-radio',
 });
 
@@ -14,17 +14,41 @@ export const bgColorOptions = options('bgColor', arrayToOptions(VALID_BG_COLORS)
 # Avatar
 
 <Story name="Knobs">
-  <Avatar
-    bgColor={options('bgColor', arrayToOptions(VALID_BG_COLORS), undefined, {
-      display: 'inline-radio',
-    })}
-    size={options('size', arrayToOptions(SIZES), undefined, {
-      display: 'inline-radio',
-    })}
-    name={text('name', 'Samuel Jackson')}
-    imgUrl={text('imgUrl', undefined)}
-  />
+  <StoryWrapper>
+    <StoryItem>
+      <Avatar
+        bgColor={options('bgColor', arrayToOptions(BG_COLORS), undefined, {
+          display: 'inline-radio',
+        })}
+        radius={options('radius', arrayToOptions(RADII), undefined, {
+          display: 'inline-radio',
+        })}
+        size={options('size', arrayToOptions(SIZES), undefined, {
+          display: 'inline-radio',
+        })}
+        name={text('name', 'Samuel Jackson')}
+        imgUrl={text('imgUrl', undefined)}
+      />
+    </StoryItem>
+    <StoryItem>
+      <Avatar
+        bgColor={options('bgColor', arrayToOptions(BG_COLORS), undefined, {
+          display: 'inline-radio',
+        })}
+        radius={options('radius', arrayToOptions(RADII), undefined, {
+          display: 'inline-radio',
+        })}
+        size={options('size', arrayToOptions(SIZES), undefined, {
+          display: 'inline-radio',
+        })}
+        name={text('name', 'Samuel Jackson')}
+        imgUrl="http://placeimg.com/80/81/animals"
+      />
+    </StoryItem>
+  </StoryWrapper>
 </Story>
+
+_Displaying an Avatar with an image, and without an image, for visualization purposes_
 
 <Props of={Avatar} />
 
@@ -33,17 +57,17 @@ Accepted colors are based off FDS `bgColor--{color}` classes: https://cbinsights
 
 <Preview>
   <Story name="Colors">
-    <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
-      <div className="margin--right--half margin--bottom--half">
+    <StoryWrapper>
+      <StoryItem>
         <Avatar name="default" />
-      </div>
-      {VALID_BG_COLORS.map(bgColor => (
-        <div className="margin--right--half margin--bottom--half">
+      </StoryItem>
+      {BG_COLORS.map(bgColor => (
+        <StoryItem>
           <Avatar name={`${bgColor.slice(0,1)} ${bgColor.slice(1,2)}`} bgColor={bgColor} />
-        </div>
+        </StoryItem>
       ))}
       <br />
-    </div>
+    </StoryWrapper>
   </Story>
 </Preview>
 
@@ -52,15 +76,15 @@ Initials will show either if you don't pass an image, the image doesn't load, or
 
 <Preview>
   <Story name="Variations">
-    <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
-      <div className="margin--right--half margin--bottom--half">
+    <StoryWrapper>
+      <StoryItem>
         <Avatar name="Hello Impecable" imgUrl="http://placeimg.com/80/81/animals" />
-      </div>
-      <div className="margin--right--half margin--bottom--half">
+      </StoryItem>
+      <StoryItem>
         <Avatar name="Hello Impecable" imgUrl="invalid url" />
-      </div>
+      </StoryItem>
       <br />
-    </div>
+    </StoryWrapper>
   </Story>
 </Preview>
 
@@ -68,14 +92,28 @@ Initials will show either if you don't pass an image, the image doesn't load, or
 
 <Preview>
   <Story name="Sizes">
-    <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
+    <StoryWrapper>
       {SIZES.map(size => (
-        <div className="margin--right--half margin--bottom--half">
+        <StoryItem>
           <Avatar name="Hello Impecable " size={size} />
-        </div>
+        </StoryItem>
       ))}
       <br />
-    </div>
+    </StoryWrapper>
+  </Story>
+</Preview>
+
+### Radii
+
+<Preview>
+  <Story name="Radii">
+    <StoryWrapper>
+      {RADII.map(radius => (
+        <StoryItem>
+          <Avatar name="Hello Impecable " radius={radius} />
+        </StoryItem>
+      ))}
+    </StoryWrapper>
   </Story>
 </Preview>
 
@@ -85,16 +123,16 @@ Avatar will render as a button if you pass it a href, onClick, or Link to it.
 
 <Preview>
   <Story name="Button">
-    <div className="display--inlineFlex margin--all" style={{ flexWrap: 'wrap' }}>
-      <div className="margin--right--half margin--bottom--half">
+    <StoryWrapper>
+      <StoryItem>
         <Avatar name="Hello Impecable" href="#" />
-      </div>
-      <div className="margin--right--half margin--bottom--half">
+      </StoryItem>
+      <StoryItem>
         <Avatar name="Hello Impecable" onClick={action('avatar-click')} />
-      </div>
-      <div className="margin--right--half margin--bottom--half">
+      </StoryItem>
+      <StoryItem>
         <Avatar name="Hello Impecable" imgUrl="http://placeimg.com/80/81/animals" href="#" />
-      </div>
-    </div>
+      </StoryItem>
+    </StoryWrapper>
   </Story>
 </Preview>

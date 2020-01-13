@@ -5,7 +5,7 @@ import {
   boolean,
   optionsKnob as options
 } from "@storybook/addon-knobs";
-import { arrayToOptions } from "../util/storybook";
+import { arrayToOptions, StoryWrapper, StoryItem } from "../util/storybook";
 import Button, { SIZES, THEMES, ICON_PLACEMENTS } from "./Button";
 import StarFilledIcon from "../../../lib/icons/react/StarFilledIcon";
 import IconButton from "./IconButton";
@@ -59,17 +59,17 @@ Displays standard Buttons.
 
 <Preview>
   <Story name="Themes">
+    <StoryWrapper>
     {THEMES.map(theme => (
-      <div className="display--inlineBlock margin--right--half margin--bottom--half">
-        <div className="margin--bottom--half">
-          <Button
-            theme={theme}
-          >
-            {theme} 
-          </Button>
-        </div>
-      </div>
+      <StoryItem>
+        <Button
+          theme={theme}
+        >
+          {theme} 
+        </Button>
+      </StoryItem>
     ))}
+    </StoryWrapper>
   </Story>
 </Preview>
 
@@ -79,18 +79,18 @@ Modifies the theme. Should only be used when the interaction involves data loss,
 
 <Preview>
   <Story name="Destructive">
+    <StoryWrapper>
     {THEMES.map(theme => (
-      <div className="display--inlineBlock margin--right--half margin--bottom--half">
-        <div className="margin--bottom--half">
-          <Button
-            theme={theme}
-            isDestructive
-          >
-            {theme} 
-          </Button>
-        </div>
-      </div>
+      <StoryItem>
+        <Button
+          theme={theme}
+          isDestructive
+        >
+          {theme} 
+        </Button>
+      </StoryItem>
     ))}
+    </StoryWrapper>
   </Story>
 </Preview>
 

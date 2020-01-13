@@ -2,7 +2,6 @@
   font-size: var(--font-size-xs);
   user-select: none;
   box-sizing: border-box;
-  border-radius: 50%;
   text-align: center;
   padding: 0;
   margin: 0;
@@ -20,11 +19,11 @@
   right: 0;
   bottom: 0;
   background-size: cover;
-  border-radius: 50%;
 }
 
 .fdsAvatar--m {
   font-size: var(--font-size-m);
+  font-family: var(--font-family-condensed);
   width: 32px;
   height: 32px;
   /* stylelint-disable-next-line declaration-property-unit-whitelist */
@@ -37,4 +36,14 @@
   height: 24px;
   /* stylelint-disable-next-line declaration-property-unit-whitelist */
   line-height: 24px;
+}
+
+.fdsAvatar--square,
+ .fdsAvatar--square .fdsAvatar-img {
+  border-radius: var(--border-radius-default);
+}
+
+.fdsAvatar--circle,
+ .fdsAvatar--circle .fdsAvatar-img {
+  border-radius: 50%;
 }
