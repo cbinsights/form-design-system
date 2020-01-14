@@ -5,6 +5,8 @@ import cx from 'classnames';
 import RadioEmptyIcon from '../../../lib/icons/react/RadioEmptyIcon';
 import RadioFilledIcon from '../../../lib/icons/react/RadioFilledIcon';
 
+// :TODO: uuid for id in checkbox and this; `name` should be reserved for, you know, name
+
 /**
  * @param {Object} props react props
  * @returns {ReactElement}

@@ -2,31 +2,32 @@ import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/block
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import Info from '../../util/Info.jsx';
 
-import Checkbox from './Checkbox';
+import Radio from './Radio';
 
-<Meta title="Forms|Checkbox" decorators={[withKnobs]} component={Checkbox} />
+<Meta title="Forms|Radio" decorators={[withKnobs]} component={Radio} />
 
-# Checkbox
+# Radio
 
 <Story name="Knobs">
-  <Checkbox
-    indeterminate={boolean('indeterminate', false)}
+  <Radio
     disabled={boolean('disabled', false)}
     name="knobs"
-    label={text('label', 'I agree to receive spam')}
+    label={text('label', 'Option one')}
   />
 </Story>
 
 <Source
   language="jsx"
-  code='<Checkbox name="unique-name" label="I agree to receive spam" />'
+  code='<Radio name="unique-name" label="Option one" />'
 />
 
 <Info type="warn">
   The <code>name</code> prop must be unique. This prop is used to set the <code>name</code> and <code>id</code> attributes of the input.
 </Info>
 
-<Props of={Checkbox} />
+<Props of={Radio} />
+
+<!--
 
 ## Managing checked state
 
@@ -82,3 +83,4 @@ checked.
     <Checkbox indeterminate name="notsureif" label="Indeterminate checkbox" />
   </Story>
 </Preview>
+-->
