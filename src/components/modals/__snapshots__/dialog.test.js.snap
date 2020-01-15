@@ -36,7 +36,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                 >
                   <button
                     aria-label="close"
-                    class="fdsIconButton rounded--all border--focus--noTransition transition-default fdsIconButton--ghost fdsIconButton--m"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                     role="img"
                   >
                     <span
@@ -111,7 +111,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                 >
                   <button
                     aria-label="close"
-                    class="fdsIconButton rounded--all border--focus--noTransition transition-default fdsIconButton--ghost fdsIconButton--m"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                     role="img"
                   >
                     <span
@@ -273,7 +273,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                 >
                   <button
                     aria-label="close"
-                    class="fdsIconButton rounded--all border--focus--noTransition transition-default fdsIconButton--ghost fdsIconButton--m"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                     role="img"
                   >
                     <span
@@ -348,7 +348,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                 >
                   <button
                     aria-label="close"
-                    class="fdsIconButton rounded--all border--focus--noTransition transition-default fdsIconButton--ghost fdsIconButton--m"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                     role="img"
                   >
                     <span

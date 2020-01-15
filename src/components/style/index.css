@@ -26,15 +26,12 @@
 @import "./forms/inputGroup.css";
 
 /* Media components */
-@import "./media/muiAvatarShim.css";
-@import "./media/avatarRow.css";
 @import "./media/avatar.css";
 @import "./media/badge.css";
 @import "./media/updatable.css";
 @import "./media/countdownButton.css";
 
 /* Interactive components */
-@import "./interactive/muiButtonShim.css";
 @import "./interactive/buttonGroup.css";
 @import "./interactive/button.css";
 @import "./interactive/stackedButton.css";

@@ -2,7 +2,7 @@
 
 exports[`ButtonGroup component matches snapshot (default props) 1`] = `
 <button
-  className="fdsButton fontStyle--caps display--inlineFlex rounded--all alignChild--center--center border--focus--noTransition transition-default fdsButton--m fdsButton--blue"
+  className="fdsButton fontStyle--caps display--inlineFlex rounded--all alignChild--center--center border--focus--noTransition transition--default fdsButton--m fdsButton--blue"
   label="Button"
 >
   <span
@@ -13,7 +13,7 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
 
 exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
 <Link
-  className="fdsButton fontStyle--caps display--inlineFlex rounded--all alignChild--center--center border--focus--noTransition transition-default fdsButton--m fdsButton--blue fdsButton--disabled"
+  className="fdsButton fontStyle--caps display--inlineFlex rounded--all alignChild--center--center border--focus--noTransition transition--default fdsButton--m fdsButton--blue fdsButton--disabled"
   disabled={false}
   isActive={true}
   label="button"
