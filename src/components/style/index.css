@@ -18,12 +18,14 @@
 @import "./layout/hscroll.css";
 
 /* Forms */
+@import "./forms/checkbox.css";
 @import "./forms/decoratedInput.css";
 @import "./forms/iconInput.css";
 @import "./forms/inputGroup.css";
 
 /* Media components */
 @import "./media/avatar.css";
+@import "./media/badge.css";
 @import "./media/updatable.css";
 @import "./media/countdownButton.css";
 

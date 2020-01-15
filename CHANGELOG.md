@@ -40,6 +40,15 @@ Component removed (was not publicly documented).
 #### `transition-default renamed`
 `transition-default` is now `transition--default`
 
+## [6.13] Updated `Avatar`
+
+- Avatar now accepts a `radius` prop, to render as a circle or a square. Renders
+  as a circle by default
+
+## [6.12] Checkbox
+
+- Added `Checkbox` component
+
 ## [6.11] Updated `Avatar`
 
 - Avatar will now render as a button underneath the hood if passed a `href`, `onClick`, or `Link`

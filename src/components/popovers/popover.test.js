@@ -160,7 +160,7 @@ describe('Popover component', () => {
       triggerEl.simulate('mouseenter');
       expect(isPopperOpen(wrapper)).toBe(true);
       expect(onOpen).toHaveBeenCalled()
-      
+
       triggerEl.simulate('mouseleave', { target: '<p>lol not the popover</p>' });
       expect(isPopperOpen(wrapper)).toBe(false);
       expect(onClose).toHaveBeenCalled()
