@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
@@ -11,10 +12,8 @@ import CheckIndeterminateIcon from '../../../lib/icons/react/CheckIndeterminateI
  * @returns {ReactElement}
  */
 const Checkbox = ({
-  name,
   label,
   showLabel,
-  value,
   onChange,
   indeterminate,
   checked,
@@ -22,6 +21,7 @@ const Checkbox = ({
   ...otherProps
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
+  const id = uuidv4();
 
   const handleChange = () => {
     if (!disabled) {
@@ -48,16 +48,14 @@ const Checkbox = ({
           el && isChecked && (el.indeterminate = indeterminate);
         }}
         type="checkbox"
-        name={name}
-        id={name}
-        value={value}
+        id={id}
         className="media--xs"
         onChange={handleChange}
         checked={isChecked}
         disabled={disabled}
         {...otherProps}
       />
-      <label className="flush--bottom" htmlFor={name}>
+      <label className="flush--bottom" htmlFor={id}>
         <div role="checkbox" aria-checked={isChecked} aria-label={label}>
           <Icon size="xs" />
         </div>
@@ -77,12 +75,6 @@ Checkbox.defaultProps = {
 };
 
 Checkbox.propTypes = {
-  /**
-   * `name` attribute of input element.
-   * Also used for the `htmlFor` prop of the `label`.
-   */
-  name: PropTypes.string.isRequired,
-
   /** Label used for a11y attributes _and_ the rendered `label` element */
   label: PropTypes.string.isRequired,
 
@@ -91,9 +83,6 @@ Checkbox.propTypes = {
 
   /** optional accessibility label - will not render any text */
   a11yLabel: PropTypes.string,
-
-  /** optional `value` attribute of input element */
-  value: PropTypes.string,
 
   /** onChange callback - invoked with the checked state of the checkbox:
    * ```
