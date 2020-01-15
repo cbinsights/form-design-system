@@ -23,6 +23,10 @@ describe('grabInitials', () => {
     expect(grabInitials('George Wallace Kennedy')).toBe('GW');
   });
 
+  it('Only outputs one initial when we pass initialsCount of 1 in', () => {
+    expect(grabInitials('George Wallace Kennedy', 1)).toBe('G');
+  });
+
 });
 
 describe('Avatar component', () => {
