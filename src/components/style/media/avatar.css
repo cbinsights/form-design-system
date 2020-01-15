@@ -39,11 +39,11 @@
 }
 
 .fdsAvatar--square,
- .fdsAvatar--square .fdsAvatar-img {
+.fdsAvatar--square .fdsAvatar-img {
   border-radius: var(--border-radius-default);
 }
 
 .fdsAvatar--circle,
- .fdsAvatar--circle .fdsAvatar-img {
+.fdsAvatar--circle .fdsAvatar-img {
   border-radius: 50%;
 }
