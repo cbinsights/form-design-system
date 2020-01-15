@@ -1,6 +1,5 @@
 .fdsBadge {
   font-family: var(--font-family-default);
-  font-size: var(--font-size-xs);
   line-height: var(--font-lineHeight-bigText);
   font-weight: var(--font-weight-bold);
   color: rgba(var(--rgb-navy, inherit), 0.6);
