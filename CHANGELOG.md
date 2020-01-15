@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.13] Updated `Avatar`
+
+- Avatar now accepts a `radius` prop, to render as a circle or a square. Renders
+  as a circle by default
+
 ## [6.12] Checkbox
 
 - Added `Checkbox` component
