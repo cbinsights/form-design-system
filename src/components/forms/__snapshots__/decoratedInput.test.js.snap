@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FloatingAction component matches snapshot (set all props) 1`] = `
+exports[`DecoratedInput component matches snapshot (set all props) 1`] = `
 <div
   className="fdsDecoratedInput"
   data-after="right boi"

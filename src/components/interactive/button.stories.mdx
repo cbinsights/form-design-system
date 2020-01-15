@@ -13,11 +13,7 @@ import ButtonGroup from "./ButtonGroup";
 
 export const iconOptions = options(
   "Show sample icon?",
-  {
-    left: "left",
-    right: "right",
-    none: null
-  },
+  arrayToOptions(ICON_PLACEMENTS),
   undefined,
   { display: "inline-radio" }
 );
@@ -125,7 +121,7 @@ Modifies the theme. Should only be used when the interaction involves data loss,
 
 ### Icons
 
-Only should pass in FDS Icon references (refer to code sample)
+ONLY pass in FDS Icon references to `Icon`. Very important. (refer to code sample)
 
 <Preview>
   <Story name="Icons">
@@ -139,24 +135,41 @@ Only should pass in FDS Icon references (refer to code sample)
   </Story>
 </Preview>
 
-### Misc
+### Caret
 
 <Preview>
-  <Story name="Misc">
+  <Story name="Caret">
     <div>
-      <div
-        className="margin--right--half margin--bottom--half display--inlineBlock"
-        style={{ width: '100px' }}
-      >
-        <Button>
-          Text can wrap
-        </Button>
-      </div>
       <div className="margin--right--half margin--bottom--half display--inlineBlock">
         <Button theme="blue" hasCaret>
           Caret
         </Button>
       </div>
+      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+        <Button theme="blue" iconPlacement="left" hasCaret  Icon={StarFilledIcon}>
+          Caret
+        </Button>
+      </div>
+      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+        <Button theme="blue" iconPlacement="right" hasCaret  Icon={StarFilledIcon}>
+          Caret
+        </Button>
+      </div>
+    </div>
+  </Story>
+</Preview>
+
+### Misc
+
+<Preview>
+  <Story name="Misc">
+    <div
+      className="margin--right--half margin--bottom--half display--inlineBlock"
+      style={{ width: '100px' }}
+    >
+      <Button>
+        Text can wrap
+      </Button>
     </div>
   </Story>
 </Preview>
