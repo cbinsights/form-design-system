@@ -40,7 +40,7 @@ ButtonGroup.propTypes = {
    * Each object in array renders a GroupButton, and (generally) passes all it's values through
    * as props to GroupButton
    */
-  buttons: PropTypes.arrayOf(GroupButton.propTypes).isRequired,
+  buttons: PropTypes.arrayOf(PropTypes.shape(GroupButton.propTypes)).isRequired,
 
   /**
    * Fires when any Button is clicked in ButtonGroup
