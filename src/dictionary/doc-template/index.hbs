@@ -27,7 +27,7 @@
         <li><a href="#layout">Layout</a></li>
         <li><a href="#font">Font</a></li>
         <li><a href="#border">Border</a></li>
-        <li><a href="#motion">motion</a></li>
+        <li><a href="#motion">Motion</a></li>
       </ul>
     </section>
 
@@ -145,36 +145,6 @@
           {{/each}}
         </tbody>
       </table>
-    </section>
-
-    <section class="bounds">
-      <h2>Material UI Palette</h2>
-
-      <p>Palette objects following <a href="https://material.io/design/color/the-color-system.html#">material design convention of light and dark variants</a>.</p>
-      <p><strong>Import statement example:</strong><br />
-      <code>import { timberwolf, sienna, blue, violet } from '@cbinsights/fds/lib/js/materialPalette';</code></p>
-
-      <div class="palettes">
-        {{#each this.color}}
-          <div class="palette">
-            <p class="palette-name"><code>{{this.varNames.human}}</code></p>
-            <ul class="palette-swatches">
-              {{#each this.materialPalette}}
-                {{!-- Disabling accent colors in docs to discourage use --}}
-                {{#unless this.isAccent}}
-                <li>
-                  <div
-                    class="swatch swatch--material {{#if this.isBase}}swatch--base{{/if}} {{#if this.isAccent}}swatch--accent{{/if}}"
-                    style="background-color: {{this.value}};"
-                  ></div>
-                  <div class="swatch-key">{{this.key}}</div>
-                </li>
-                {{/unless}}
-              {{/each}}
-            </ul>
-          </div>
-        {{/each}}
-      </div>
     </section>
 
   <script
