@@ -14,13 +14,13 @@ import Prompt from "./Prompt";
 export const primaryButtonProps = () =>
   object("primaryButton", {
     isDestructive: true,
-    children: "Yes, delete"
+    label: "Yes, delete"
   });
 
 export const secondaryButtonProps = () =>
   object("secondaryButton", {
     theme: "ghost",
-    children: "Keep Collection",
+    label: "Keep Collection",
     onClick: action("close modal"),
     }
   );
