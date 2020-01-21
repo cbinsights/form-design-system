@@ -81,10 +81,10 @@ export const Info = ({ type, children }) => {
   return (
     <blockquote
       style={style}
-      className={`padding--top--half padding--bottom--half padding--left padding--right rounded--all`}
+      className={`margin--bottom padding--top--half padding--bottom--half padding--left padding--right rounded--all`}
     >
       <span className="padding--right fontSize--2xl">{emojiMap[type]}</span>
-      <span className="fontSize--l color--heading">{children}</span>
+      <span className="color--heading">{children}</span>
     </blockquote>
   );
 };

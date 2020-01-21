@@ -1,12 +1,14 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import Info from '../../util/Info.jsx';
+import { Info } from '../util/storybook';
 
 import Radio from './Radio';
 
 <Meta title="Forms|Radio" decorators={[withKnobs]} component={Radio} />
 
 # Radio
+
+Uncontrolled custom radio component with label.
 
 <Story name="Knobs">
   <Radio
@@ -18,69 +20,26 @@ import Radio from './Radio';
 
 <Source
   language="jsx"
-  code='<Radio name="unique-name" label="Option one" />'
+  code='<Radio name="radio-group-name" label="I agree to receive spam" />'
 />
 
-<Info type="warn">
-  The <code>name</code> prop must be unique. This prop is used to set the <code>name</code> and <code>id</code> attributes of the input.
+<Info type="info">
+  Additional props will be spread on the `input` element.
 </Info>
 
 <Props of={Radio} />
 
-<!--
+## Radio Groups
 
-## Managing checked state
-
-`Checkbox` will render as unchecked by default. Use the `checked` boolean prop to set the
-initial state to checked.
-
-**Using the `checked` prop will not prevent a user from changing the value of the
-checkbox.** To "freeze" checked state, use a disabled checkbox (see below).
+You can create radio groups by rendering `Radio` components that share the same `name`
+prop.
 
 <Preview>
-  <Story name="Managing checked state">
-    <Checkbox checked name="default-checked" label="Checked by default" />
-  </Story>
-</Preview>
-
-## Preventing user interaction
-
-Use the `disabled` prop to prevent the user from changing the chekced state of the
-checkbox.
-
-<Preview>
-  <Story name="Disabled checkboxes">
+  <Story name="Radio Groups">
     <React.Fragment>
-      <div>
-        <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
-      </div>
-      <div>
-        <Checkbox disabled checked name="disabled-checked" label="Disabled checked" />
-      </div>
+      <Radio name="radio-group-story" label="Option one" />
+      <Radio name="radio-group-story" label="Option two" />
+      <Radio name="radio-group-story" label="Option three" />
     </React.Fragment>
   </Story>
 </Preview>
-
-## Checkboxes without labels
-
-You can prevent the label from showing by setting `showLabel` to `false`.
-The value of the `label` prop will be used to set an ARIA attribute.
-
-<Preview>
-  <Story name="Checkbox without label">
-    <Checkbox name="no-label" label="I don't have a label" showLabel={false} />
-  </Story>
-</Preview>
-
-## Indeterminate checkbox
-
-Passing the `indeterminate` boolean prop will set `indeterminate` attribute of the
-underlying input element and render the `CheckIndeterminate` icon when the checkbox is
-checked.
-
-<Preview>
-  <Story name="Indeterminate checkboxes">
-    <Checkbox indeterminate name="notsureif" label="Indeterminate checkbox" />
-  </Story>
-</Preview>
--->
