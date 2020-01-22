@@ -29,6 +29,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ## [7.0] MAJOR
 
+### Changes / Additions
+
+- Added `Radio` component
+
 ### **BREAKING CHANGES**
 
 #### `AvatarRow` Component
@@ -37,7 +41,12 @@ Component removed (was not publicly documented).
 #### `MuiAvatarShim` Component
 Component removed (was not publicly documented).
 
-#### `transition-default renamed`
+#### `Checkbox` Component
+- `onChange` callback now receives the entire event object
+- `name` is no longer a required prop
+- `label` is now required - to hide the label, set `showLabel` to `false`
+
+#### `transition-default` class renamed
 `transition-default` is now `transition--default`
 
 ## [6.13] Updated `Avatar`
