@@ -1,3 +1,4 @@
+/* styleline-disable selector-max-specificity */
 /* stylelint-disable selector-max-combinators */
 /* stylelint-disable selector-max-compound-selectors */
 
@@ -6,11 +7,22 @@
  * Most styling for this component is handled by `checkable.css`
  */
 
-.fdsRadio .fds-icon {
-  outline: 2px solid orange;
-}
-
 .fdsRadio input:focus + label svg {
   border-radius: 100%;
 }
 
+.fdsRadio input + label .fdsRadio-checkedIcon {
+  display: none;
+}
+
+.fdsRadio input:checked + label .fdsRadio-checkedIcon {
+  display: block;
+}
+
+.fdsRadio input + label .fdsRadio-uncheckedIcon {
+  display: block;
+}
+
+.fdsRadio input:checked + label .fdsRadio-uncheckedIcon {
+  display: none;
+}

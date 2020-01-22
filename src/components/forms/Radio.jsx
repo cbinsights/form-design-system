@@ -10,8 +10,17 @@ import RadioFilledIcon from '../../../lib/icons/react/RadioFilledIcon';
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Radio = ({ name, label, disabled, ...otherProps }) => {
+const Radio = ({ name, label, checked, disabled, onChange, ...otherProps }) => {
   const id = uuidv4();
+  const [isChecked, setIsChecked] = useState(checked);
+
+  const handleChange = () => {
+    if (!disabled) {
+      const updatedCheckedState = !isChecked;
+      setIsChecked(updatedCheckedState);
+      onChange(updatedCheckedState);
+    }
+  };
 
   return (
     <div className={cx('fdsCheckable fdsRadio', { 'fdsCheckable--disabled': disabled })}>
@@ -21,14 +30,16 @@ const Radio = ({ name, label, disabled, ...otherProps }) => {
         id={id}
         className="media--xs"
         onChange={handleChange}
-        checked={isChecked}
-        disabled={disabled}
         {...otherProps}
       />
       <label className="flush--bottom" htmlFor={id}>
         <div role="radio" aria-checked={isChecked} aria-label={label}>
-          <RadioFilledIcon className="fdsRadio-checkedIcon" size="xs" />
-          <RadioEmptyIcon className="fdsRadio-uncheckedIcon" size="xs" />
+          <span className="fdsRadio-checkedIcon">
+            <RadioFilledIcon size="xs" />
+          </span>
+          <span className="fdsRadio-uncheckedIcon">
+            <RadioEmptyIcon size="xs" />
+          </span>
         </div>
         <span className="padding--left--half">{label}</span>
       </label>
@@ -38,6 +49,7 @@ const Radio = ({ name, label, disabled, ...otherProps }) => {
 
 Radio.defaultProps = {
   disabled: false,
+  checked: false,
   onChange: () => {},
 };
 
@@ -53,6 +65,16 @@ Radio.propTypes = {
 
   /** Disables form field when `true` */
   disabled: PropTypes.bool,
+
+  /** Sets `checked` state */
+  checked: PropTypes.bool,
+
+  /** onChange callback - invoked with the checked state of the checkbox:
+   * ```
+   * <Radio onChange={(isChecked) => {}} ... />
+   * ```
+   */
+  onChange: PropTypes.func,
 };
 
 export default Radio;

@@ -33,8 +33,7 @@
   transition: box-shadow 250ms var(--motion-easing-default);
 }
 
-.fdsCheckable input:checked + label svg,
-.fdsCheckable input:indeterminate + label svg {
+.fdsCheckable input:checked + label svg {
   fill: var(--color-blue);
 }
 
