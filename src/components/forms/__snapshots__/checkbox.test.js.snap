@@ -8,14 +8,14 @@ exports[`Checkbox component matches snapshot (disabled) 1`] = `
     checked={false}
     className="media--xs"
     disabled={true}
-    id="0ae455c1-53b4-4767-ab39-75a2b3f5c18d"
+    id="mock-universal-unique-identifier"
     name="snapshot_checkbox"
     onChange={[Function]}
     type="checkbox"
   />
   <label
     className="flush--bottom"
-    htmlFor="0ae455c1-53b4-4767-ab39-75a2b3f5c18d"
+    htmlFor="mock-universal-unique-identifier"
   >
     <div
       aria-checked={false}
@@ -43,14 +43,14 @@ exports[`Checkbox component matches snapshot (with label) 1`] = `
     checked={false}
     className="media--xs"
     disabled={false}
-    id="de3bff09-e47f-4ccc-a78e-7ef670fa0c61"
+    id="mock-universal-unique-identifier"
     name="snapshot_checkbox"
     onChange={[Function]}
     type="checkbox"
   />
   <label
     className="flush--bottom"
-    htmlFor="de3bff09-e47f-4ccc-a78e-7ef670fa0c61"
+    htmlFor="mock-universal-unique-identifier"
   >
     <div
       aria-checked={false}
@@ -78,17 +78,18 @@ exports[`Checkbox component matches snapshot (without label) 1`] = `
     checked={false}
     className="media--xs"
     disabled={false}
-    id="2c1ecf46-fcd2-4d1e-bbaf-96a9e15948d4"
+    id="mock-universal-unique-identifier"
     name="snapshot_checkbox"
     onChange={[Function]}
     type="checkbox"
   />
   <label
     className="flush--bottom"
-    htmlFor="2c1ecf46-fcd2-4d1e-bbaf-96a9e15948d4"
+    htmlFor="mock-universal-unique-identifier"
   >
     <div
       aria-checked={false}
+      aria-label="snapshot checkbox"
       role="checkbox"
     >
       <CheckEmptyIcon
@@ -97,7 +98,9 @@ exports[`Checkbox component matches snapshot (without label) 1`] = `
     </div>
     <span
       className="padding--left--half"
-    />
+    >
+      snapshot checkbox
+    </span>
   </label>
 </div>
 `;

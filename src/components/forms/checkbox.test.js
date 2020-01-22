@@ -1,5 +1,8 @@
 import React from 'react';
+import uuidv4 from 'uuid/v4';
 import { shallow } from 'enzyme';
+
+jest.mock('uuid/v4', () => jest.fn().mockReturnValue('mock-universal-unique-identifier'));
 
 import Checkbox from './Checkbox';
 
@@ -27,7 +30,7 @@ describe('Checkbox component', () => {
 
     expect(changeFn).not.toHaveBeenCalled();
     input.simulate('change', { target: { checked: true } })
-    expect(changeFn).toHaveBeenCalledWith(true);
+    expect(changeFn).toHaveBeenCalled();
   });
 
   it('fires change callback when unchecking', () => {
@@ -37,7 +40,7 @@ describe('Checkbox component', () => {
 
     expect(changeFn).not.toHaveBeenCalled();
     input.simulate('change', { target: { checked: false } })
-    expect(changeFn).toHaveBeenCalledWith(false);
+    expect(changeFn).toHaveBeenCalled();
   });
 
   describe('`checked` prop', () => {
