@@ -81,9 +81,6 @@ Checkbox.propTypes = {
   /** If the supplied `label` prop should be rendered to the screen. */
   showLabel: PropTypes.bool,
 
-  /** optional accessibility label - will not render any text */
-  a11yLabel: PropTypes.string,
-
   /** onChange callback:
    * ```
    * <Checkbox onChange={(e) => {}} ... />

@@ -10,7 +10,15 @@ import RadioFilledIcon from '../../../lib/icons/react/RadioFilledIcon';
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Radio = ({ name, label, checked, disabled, onChange, ...otherProps }) => {
+const Radio = ({
+  name,
+  label,
+  showLabel,
+  checked,
+  disabled,
+  onChange,
+  ...otherProps
+}) => {
   const id = uuidv4();
   const [isChecked, setIsChecked] = useState(checked);
 
@@ -41,13 +49,14 @@ const Radio = ({ name, label, checked, disabled, onChange, ...otherProps }) => {
             <RadioEmptyIcon size="xs" />
           </span>
         </div>
-        <span className="padding--left--half">{label}</span>
+        {showLabel && <span className="padding--left--half">{label}</span>}
       </label>
     </div>
   );
 };
 
 Radio.defaultProps = {
+  showLabel: true,
   disabled: false,
   checked: false,
   onChange: () => {},
@@ -62,6 +71,9 @@ Radio.propTypes = {
 
   /** html `label` element content */
   label: PropTypes.string.isRequired,
+
+  /** If the supplied `label` prop should be rendered to the screen. */
+  showLabel: PropTypes.bool,
 
   /** Disables form field when `true` */
   disabled: PropTypes.bool,
