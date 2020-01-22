@@ -14,11 +14,11 @@ const Radio = ({ name, label, checked, disabled, onChange, ...otherProps }) => {
   const id = uuidv4();
   const [isChecked, setIsChecked] = useState(checked);
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     if (!disabled) {
       const updatedCheckedState = !isChecked;
       setIsChecked(updatedCheckedState);
-      onChange(updatedCheckedState);
+      onChange(e);
     }
   };
 
@@ -69,9 +69,9 @@ Radio.propTypes = {
   /** Sets `checked` state */
   checked: PropTypes.bool,
 
-  /** onChange callback - invoked with the checked state of the checkbox:
+  /** onChange callback:
    * ```
-   * <Radio onChange={(isChecked) => {}} ... />
+   * <Radio onChange={(e) => {}} ... />
    * ```
    */
   onChange: PropTypes.func,

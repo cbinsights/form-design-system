@@ -11,6 +11,12 @@
   border-radius: 100%;
 }
 
+/**
+ * The event model in React does not follow DOM standards
+ * for radio groups. To get around this, we use the
+ * underlying DOM to determine which icon to show based on
+ * the `input` checked state.
+ */
 .fdsRadio input + label .fdsRadio-checkedIcon {
   display: none;
 }

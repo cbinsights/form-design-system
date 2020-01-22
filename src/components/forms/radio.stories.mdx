@@ -43,3 +43,37 @@ prop.
     </React.Fragment>
   </Story>
 </Preview>
+
+## Reading selected value in a radio group
+
+Place the `onChange` event on a parent element to read which radio of the group has been
+selected.
+
+<Preview>
+  <Story name="Reading selected value in a radio group">
+    <div onChange={(e) => { console.warn(`value is ${e.target.value}`) }}>
+      <Radio name="radio-group-onchange" label="Option one" value="1" />
+      <Radio name="radio-group-onchange" label="Option two" value="2" />
+      <Radio name="radio-group-onchange" label="Option three" value="3" />
+    </div>
+  </Story>
+</Preview>
+
+## Reading an individual radio value
+
+You can also add an `onChange` handler to an individual radio field. This function will be
+invoked only when the radio is selected.
+
+<Preview>
+  <Story name="Reading individual radio values">
+    <React.Fragment>
+      <Radio name="radio-single-onchange" label="does not have a change handler" value="spiderperson" />
+      <Radio
+        name="radio-single-onchange"
+        label="has a change handler"
+        value="batsguy"
+        onChange={(e) => { console.warn(`The radio is ${e.target.checked} with a value of ${e.target.value}`) }}
+      />
+    </React.Fragment>
+  </Story>
+</Preview>

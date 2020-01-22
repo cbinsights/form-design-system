@@ -23,11 +23,11 @@ const Checkbox = ({
   const [isChecked, setIsChecked] = useState(checked);
   const id = uuidv4();
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     if (!disabled) {
       const updatedCheckedState = !isChecked;
       setIsChecked(updatedCheckedState);
-      onChange(updatedCheckedState);
+      onChange(e);
     }
   };
 
@@ -84,9 +84,9 @@ Checkbox.propTypes = {
   /** optional accessibility label - will not render any text */
   a11yLabel: PropTypes.string,
 
-  /** onChange callback - invoked with the checked state of the checkbox:
+  /** onChange callback:
    * ```
-   * <Checkbox onChange={(isChecked) => {}} ... />
+   * <Checkbox onChange={(e) => {}} ... />
    * ```
    */
   onChange: PropTypes.func,
