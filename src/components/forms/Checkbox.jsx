@@ -66,7 +66,6 @@ const Checkbox = ({
 };
 
 Checkbox.defaultProps = {
-  value: undefined,
   checked: false,
   indeterminate: false,
   disabled: false,
