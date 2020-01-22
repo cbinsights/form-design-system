@@ -2,23 +2,24 @@
 
 exports[`Checkbox component matches snapshot (disabled) 1`] = `
 <div
-  className="fdsCheckbox fdsCheckbox--disabled"
+  className="fdsCheckable fdsCheckbox fdsCheckable--disabled"
 >
   <input
     checked={false}
     className="media--xs"
     disabled={true}
-    id="snapshot_checkbox"
+    id="0ae455c1-53b4-4767-ab39-75a2b3f5c18d"
     name="snapshot_checkbox"
     onChange={[Function]}
     type="checkbox"
   />
   <label
     className="flush--bottom"
-    htmlFor="snapshot_checkbox"
+    htmlFor="0ae455c1-53b4-4767-ab39-75a2b3f5c18d"
   >
     <div
       aria-checked={false}
+      aria-label="Snapshot Label"
       role="checkbox"
     >
       <CheckEmptyIcon
@@ -36,23 +37,24 @@ exports[`Checkbox component matches snapshot (disabled) 1`] = `
 
 exports[`Checkbox component matches snapshot (with label) 1`] = `
 <div
-  className="fdsCheckbox"
+  className="fdsCheckable fdsCheckbox"
 >
   <input
     checked={false}
     className="media--xs"
     disabled={false}
-    id="snapshot_checkbox"
+    id="de3bff09-e47f-4ccc-a78e-7ef670fa0c61"
     name="snapshot_checkbox"
     onChange={[Function]}
     type="checkbox"
   />
   <label
     className="flush--bottom"
-    htmlFor="snapshot_checkbox"
+    htmlFor="de3bff09-e47f-4ccc-a78e-7ef670fa0c61"
   >
     <div
       aria-checked={false}
+      aria-label="Snapshot Label"
       role="checkbox"
     >
       <CheckEmptyIcon
@@ -70,20 +72,20 @@ exports[`Checkbox component matches snapshot (with label) 1`] = `
 
 exports[`Checkbox component matches snapshot (without label) 1`] = `
 <div
-  className="fdsCheckbox"
+  className="fdsCheckable fdsCheckbox"
 >
   <input
     checked={false}
     className="media--xs"
     disabled={false}
-    id="snapshot_checkbox"
+    id="2c1ecf46-fcd2-4d1e-bbaf-96a9e15948d4"
     name="snapshot_checkbox"
     onChange={[Function]}
     type="checkbox"
   />
   <label
     className="flush--bottom"
-    htmlFor="snapshot_checkbox"
+    htmlFor="2c1ecf46-fcd2-4d1e-bbaf-96a9e15948d4"
   >
     <div
       aria-checked={false}
@@ -93,6 +95,9 @@ exports[`Checkbox component matches snapshot (without label) 1`] = `
         size="xs"
       />
     </div>
+    <span
+      className="padding--left--half"
+    />
   </label>
 </div>
 `;

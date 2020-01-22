@@ -6,7 +6,7 @@ import Checkbox from './Checkbox';
 describe('Checkbox component', () => {
 
   it('matches snapshot (without label)', () => {
-    const wrapper = shallow(<Checkbox name="snapshot_checkbox" onChange={() => {}} />);
+    const wrapper = shallow(<Checkbox name="snapshot_checkbox" label="snapshot checkbox" onChange={() => {}} />);
     expect(wrapper).toMatchSnapshot();
   });
 
