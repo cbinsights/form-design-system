@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [6.14] Updated `Prompt`
+
+- Prompt can now be dismissed (displays a x icon, and can press esc to dismiss it)
+
 ## [6.13] Updated `Avatar`
 
 - Avatar now accepts a `radius` prop, to render as a circle or a square. Renders
