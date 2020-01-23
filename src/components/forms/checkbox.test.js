@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
+import Checkbox from './Checkbox';
+
 // uuid will break snapshots, so we must mock it.
 jest.mock('uuid/v4', () => jest.fn().mockReturnValue('mock-universal-unique-identifier'));
-
-import Checkbox from './Checkbox';
 
 describe('Checkbox component', () => {
 
