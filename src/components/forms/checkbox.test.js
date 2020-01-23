@@ -1,5 +1,4 @@
 import React from 'react';
-import uuidv4 from 'uuid/v4';
 import { shallow } from 'enzyme';
 
 // uuid will break snapshots, so we must mock it.
