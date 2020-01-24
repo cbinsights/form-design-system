@@ -26,6 +26,7 @@ Displays standard Buttons.
 
 <Story name="Knobs">
   <Button
+    label={text("Text", "Button")}
     disabled={boolean("disabled", false)}
     isLoading={boolean("isLoading", false)}
     isDestructive={boolean("isDestructive", false)}
@@ -44,9 +45,7 @@ Displays standard Buttons.
         display: "inline-radio"
       }
     )}
-  >
-    {text("Text", "Button")}
-  </Button>
+  />
 </Story>
 
 <Props of={Button} />
@@ -60,9 +59,8 @@ Displays standard Buttons.
       <StoryItem>
         <Button
           theme={theme}
-        >
-          {theme} 
-        </Button>
+          label={theme}
+        />
       </StoryItem>
     ))}
     </StoryWrapper>
@@ -81,9 +79,8 @@ Modifies the theme. Should only be used when the interaction involves data loss,
         <Button
           theme={theme}
           isDestructive
-        >
-          {theme} 
-        </Button>
+          label={theme}
+        />
       </StoryItem>
     ))}
     </StoryWrapper>
@@ -98,9 +95,8 @@ Modifies the theme. Should only be used when the interaction involves data loss,
       <div className="display--inlineBlock margin--right--half margin--bottom--half">
         <Button
           size={size}
-        >
-          size: {size} 
-        </Button>
+          label={`Button (${size})`}
+        />
       </div>
     ))}
   </Story>
@@ -113,9 +109,8 @@ Modifies the theme. Should only be used when the interaction involves data loss,
   <Story name="Full Width">
     <Button
       isFullWidth
-    >
-      Button
-    </Button>
+      label="Button"
+    />
   </Story>
 </Preview>
 
@@ -127,9 +122,7 @@ ONLY pass in FDS Icon references to `Icon`. Very important. (refer to code sampl
   <Story name="Icons">
     {ICON_PLACEMENTS.map(placement => (
       <div className="margin--right--half margin--bottom--half display--inlineBlock">
-        <Button Icon={StarFilledIcon} iconPlacement={placement}>
-          Button
-        </Button>
+        <Button Icon={StarFilledIcon} iconPlacement={placement} label="Button" />
       </div>
     ))}
   </Story>
@@ -141,19 +134,13 @@ ONLY pass in FDS Icon references to `Icon`. Very important. (refer to code sampl
   <Story name="Caret">
     <div>
       <div className="margin--right--half margin--bottom--half display--inlineBlock">
-        <Button theme="blue" hasCaret>
-          Caret
-        </Button>
+        <Button theme="blue" hasCaret label="Caret" />
       </div>
       <div className="margin--right--half margin--bottom--half display--inlineBlock">
-        <Button theme="blue" iconPlacement="left" hasCaret  Icon={StarFilledIcon}>
-          Caret
-        </Button>
+        <Button theme="blue" iconPlacement="left" hasCaret  Icon={StarFilledIcon} label="Caret" />
       </div>
       <div className="margin--right--half margin--bottom--half display--inlineBlock">
-        <Button theme="blue" iconPlacement="right" hasCaret  Icon={StarFilledIcon}>
-          Caret
-        </Button>
+        <Button theme="blue" iconPlacement="right" hasCaret  Icon={StarFilledIcon} label="Caret" />
       </div>
     </div>
   </Story>
@@ -167,9 +154,7 @@ ONLY pass in FDS Icon references to `Icon`. Very important. (refer to code sampl
       className="margin--right--half margin--bottom--half display--inlineBlock"
       style={{ width: '100px' }}
     >
-      <Button>
-        Text can wrap
-      </Button>
+      <Button label="Text can wrap" />
     </div>
   </Story>
 </Preview>
