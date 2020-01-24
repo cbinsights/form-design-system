@@ -19,7 +19,9 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
 >
   <span
     className="fdsButton-label fdsButton--hidden"
-  />
+  >
+    Button
+  </span>
   <div
     className="alignChild--center--center fdsButton-icon--left fdsButton--hidden"
   >
