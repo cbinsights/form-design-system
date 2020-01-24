@@ -20,13 +20,15 @@ addParameters({
   ],
   options: {
     theme,
+    storySort: (a, b) =>
+      a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, { numeric: true })
   },
 });
 
-// automatically import all files ending in *.stories.js
-const req = require.context('../src/components', true, /\.stories\.js$/);
-function loadStories() {
-  req.keys().forEach((filename) => req(filename));
-}
-
-configure(require.context('../src/components', true, /\.stories\.(js|mdx)$/), module);
+configure(
+  [
+    require.context('../src/components', true, /\.docs\.stories\.(js|mdx)$/),
+    require.context('../src/components', true, /\.stories\.(js|mdx)$/),
+  ],
+  module
+);
