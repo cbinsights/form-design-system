@@ -64,7 +64,7 @@ StoryItem.propTypes = {
 export const Info = ({ type, children }) => {
   const accentMap = {
     warn: FDS.COLOR_ORANGE,
-    info: FDS.COLOR_AQUA,
+    info: FDS.COLOR_SKY,
   };
   const emojiMap = {
     warn: '⚠️',
@@ -81,7 +81,7 @@ export const Info = ({ type, children }) => {
   return (
     <blockquote
       style={style}
-      className={`margin--bottom padding--top--half padding--bottom--half padding--left padding--right rounded--all`}
+      className="margin--bottom padding--top--half padding--bottom--half padding--left padding--right rounded--all"
     >
       <span className="padding--right fontSize--2xl">{emojiMap[type]}</span>
       <span className="color--heading">{children}</span>

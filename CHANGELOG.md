@@ -49,6 +49,10 @@ Component removed (was not publicly documented).
 #### `transition-default` class renamed
 `transition-default` is now `transition--default`
 
+## [6.14] Updated `Prompt`
+
+- Prompt can now be dismissed (displays a x icon, and can press esc to dismiss it)
+
 ## [6.13] Updated `Avatar`
 
 - Avatar now accepts a `radius` prop, to render as a circle or a square. Renders
