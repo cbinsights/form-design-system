@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
@@ -11,9 +12,8 @@ import CheckIndeterminateIcon from '../../../lib/icons/react/CheckIndeterminateI
  * @returns {ReactElement}
  */
 const Checkbox = ({
-  name,
   label,
-  value,
+  showLabel,
   onChange,
   indeterminate,
   checked,
@@ -21,12 +21,13 @@ const Checkbox = ({
   ...otherProps
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
+  const id = uuidv4();
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     if (!disabled) {
       const updatedCheckedState = !isChecked;
       setIsChecked(updatedCheckedState);
-      onChange(updatedCheckedState);
+      onChange(e);
     }
   };
 
@@ -38,56 +39,46 @@ const Checkbox = ({
   }
 
   return (
-    <div className={cx('fdsCheckbox', { 'fdsCheckbox--disabled': disabled })}>
+    <div
+      className={cx('fdsCheckable fdsCheckbox', { 'fdsCheckable--disabled': disabled })}
+    >
       <input
-        ref={(el) => {
-          /* eslint-disable-next-line no-unused-expressions,no-param-reassign */
-          el && isChecked && (el.indeterminate = indeterminate);
-        }}
         type="checkbox"
-        name={name}
-        id={name}
-        value={value}
+        id={id}
         className="media--xs"
         onChange={handleChange}
-        checked={isChecked}
+        defaultChecked={checked}
         disabled={disabled}
         {...otherProps}
       />
-      <label className="flush--bottom" htmlFor={name}>
-        <div role="checkbox" aria-checked={isChecked}>
+      <label className="flush--bottom" htmlFor={id}>
+        <div role="checkbox" aria-checked={isChecked} aria-label={label}>
           <Icon size="xs" />
         </div>
-        {label && <span className="padding--left--half">{label}</span>}
+        {showLabel && <span className="padding--left--half">{label}</span>}
       </label>
     </div>
   );
 };
 
 Checkbox.defaultProps = {
-  value: undefined,
   checked: false,
   indeterminate: false,
   disabled: false,
+  showLabel: true,
   onChange: () => {},
 };
 
 Checkbox.propTypes = {
-  /**
-   * `name` attribute of input element.
-   * Also used for the `htmlFor` prop of the `label`.
-   */
-  name: PropTypes.string.isRequired,
+  /** Label used for a11y attributes _and_ the rendered `label` element */
+  label: PropTypes.string.isRequired,
 
-  /** optional label for checkbox */
-  label: PropTypes.string,
+  /** If the supplied `label` prop should be rendered to the screen. */
+  showLabel: PropTypes.bool,
 
-  /** optional `value` attribute of input element */
-  value: PropTypes.string,
-
-  /** onChange callback - invoked with the checked state of the checkbox:
+  /** onChange callback:
    * ```
-   * <Checkbox onChange={(isChecked) => {}} ... />
+   * <Checkbox onChange={(e) => {}} ... />
    * ```
    */
   onChange: PropTypes.func,

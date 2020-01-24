@@ -26,8 +26,15 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                 <div
                   class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
                 >
+<<<<<<< HEAD
                   <div
                     class="padding--right--double type--head4"
+=======
+                  <button
+                    aria-label="close"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
+                    role="img"
+>>>>>>> @{-1}
                   >
                      
                      
@@ -101,8 +108,21 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                 <div
                   class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
                 >
+<<<<<<< HEAD
                   <div
                     class="padding--right--double type--head4"
+=======
+                   
+                   
+                </div>
+                <div
+                  class="dialog-icon"
+                >
+                  <button
+                    aria-label="close"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
+                    role="img"
+>>>>>>> @{-1}
                   >
                      
                      
@@ -265,8 +285,21 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                 <div
                   class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
                 >
+<<<<<<< HEAD
                   <div
                     class="padding--right--double type--head4"
+=======
+                   
+                   
+                </div>
+                <div
+                  class="dialog-icon"
+                >
+                  <button
+                    aria-label="close"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
+                    role="img"
+>>>>>>> @{-1}
                   >
                      
                      
@@ -340,8 +373,15 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                 <div
                   class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
                 >
+<<<<<<< HEAD
                   <div
                     class="padding--right--double type--head4"
+=======
+                  <button
+                    aria-label="close"
+                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
+                    role="img"
+>>>>>>> @{-1}
                   >
                      
                      

@@ -8,10 +8,7 @@ import Checkbox from './Checkbox';
 
 # Checkbox
 
-Renders an FDS Icon in place of the user agent checkbox. The user agent `input
-type="checkbox"` is visually hidden behind the icon.
-
-<hr />
+Uncontrolled custom checkbox component with optional label.
 
 <Story name="Knobs">
   <Checkbox
@@ -24,11 +21,11 @@ type="checkbox"` is visually hidden behind the icon.
 
 <Source
   language="jsx"
-  code='<Checkbox name="unique-name" label="I agree to receive spam" />'
+  code='<Checkbox label="I agree to receive spam" />'
 />
 
-<Info type="warn">
-  The <code>name</code> prop must be unique. This prop is used to set the <code>name</code> and <code>id</code> attributes of the input.
+<Info type="info">
+  Additional props will be spread on the `input` element.
 </Info>
 
 <Props of={Checkbox} />
@@ -62,6 +59,17 @@ checkbox.
         <Checkbox disabled checked name="disabled-checked" label="Disabled checked" />
       </div>
     </React.Fragment>
+  </Story>
+</Preview>
+
+## Checkboxes without labels
+
+You can prevent the label from showing by setting `showLabel` to `false`.
+The value of the `label` prop will be used to set an ARIA attribute.
+
+<Preview>
+  <Story name="Checkbox without label">
+    <Checkbox name="no-label" label="I don't have a label" showLabel={false} />
   </Story>
 </Preview>
 
