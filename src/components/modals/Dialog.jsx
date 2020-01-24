@@ -140,7 +140,7 @@ Dialog.propTypes = {
 
   /**
    * Callback that user can pass in, to be conditionally fired when
-   * user attempts to close modal. Also controls modal x
+   * user attempts to close modal. When defined, the modal close button appears
    */
   onDismiss: PropTypes.func,
 

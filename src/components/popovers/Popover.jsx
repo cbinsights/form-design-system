@@ -234,12 +234,12 @@ Popover.propTypes = {
   disablePortal: PropTypes.bool,
 
   /**
-   * Places the popover content on the given side of the trigger.
+   * Vertical position preference of popover content.
    * `top` for example, will place the popover content above the trigger.
    */
   position: PropTypes.oneOf(VALID_POSITIONS),
 
-  /** Controls alignment of popover content relative to trigger */
+  /** Horizontal alignment preference of popover content relative to trigger */
   alignment: PropTypes.oneOf(VALID_ALIGNMENTS),
 
   /** Offset distance from trigger. */
