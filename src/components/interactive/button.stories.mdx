@@ -41,14 +41,13 @@ import ButtonGroup from "./ButtonGroup";
           display: "inline-radio"
         }
       )}
-    >
-      {text("text", "Button")}
-    </Button>
+      label={text("text", "Button")}
+    />
   </div>
 </Story>
 
 <Preview isExpanded>
-  <Button>Button</Button>
+  <Button label="Button" />
 </Preview>
 
 <Props of={Button} />
@@ -62,9 +61,8 @@ import ButtonGroup from "./ButtonGroup";
       <StoryItem>
         <Button
           theme={theme}
-        >
-          {theme} 
-        </Button>
+          label={theme}
+        />
       </StoryItem>
     ))}
     </StoryWrapper>
@@ -83,9 +81,8 @@ Modifies the theme. Should only be used when the interaction involves data loss,
         <Button
           theme={theme}
           isDestructive
-        >
-          {theme} 
-        </Button>
+          label={theme}
+        />
       </StoryItem>
     ))}
     </StoryWrapper>
@@ -100,14 +97,12 @@ Modifies the theme. Should only be used when the interaction involves data loss,
       <div className="display--inlineBlock margin--right--half margin--bottom--half">
         <Button
           size={size}
-        >
-          Button
-        </Button>
+          label="Button"
+        />
       </div>
     ))}
   </Story>
 </Preview>
-
 
 ### Full width button
 
@@ -115,9 +110,8 @@ Modifies the theme. Should only be used when the interaction involves data loss,
   <Story name="Full Width">
     <Button
       isFullWidth
-    >
-      Button
-    </Button>
+      label="Button"
+    />
   </Story>
 </Preview>
 
@@ -130,9 +124,7 @@ ONLY pass in FDS Icon references to `Icon`. Very important. (refer to code sampl
     <StoryWrapper>
       {ICON_PLACEMENTS.map(placement => (
         <StoryItem>
-          <Button Icon={StarFilledIcon} iconPlacement={placement}>
-            Button
-          </Button>
+          <Button Icon={StarFilledIcon} iconPlacement={placement} label="Button" />
         </StoryItem>
       ))}
     </StoryWrapper>
@@ -145,19 +137,13 @@ ONLY pass in FDS Icon references to `Icon`. Very important. (refer to code sampl
   <Story name="Caret">
     <StoryWrapper>
       <StoryItem>
-        <Button theme="blue" hasCaret>
-          Caret
-        </Button>
+        <Button theme="blue" hasCaret label="Caret" />
       </StoryItem>
       <StoryItem>
-        <Button theme="blue" iconPlacement="left" hasCaret  Icon={StarFilledIcon}>
-          Caret
-        </Button>
+        <Button theme="blue" iconPlacement="left" hasCaret Icon={StarFilledIcon} label="Caret" />
       </StoryItem>
       <StoryItem>
-        <Button theme="blue" iconPlacement="right" hasCaret  Icon={StarFilledIcon}>
-          Caret
-        </Button>
+        <Button theme="blue" iconPlacement="right" hasCaret  Icon={StarFilledIcon} label="Caret" />
       </StoryItem>
     </StoryWrapper>
   </Story>
@@ -176,9 +162,8 @@ to take more than a couple of seconds of loading time
         <Button
           theme={theme}
           isLoading
-        >
-          Button
-        </Button>
+          label="Button"
+        />
       </StoryItem>
     ))}
     {THEMES.map(theme => (
@@ -187,9 +172,8 @@ to take more than a couple of seconds of loading time
           theme={theme}
           isDestructive
           isLoading
-        >
-          Button
-        </Button>
+          label="Button"
+        />
       </StoryItem>
     ))}
     </StoryWrapper>
@@ -206,39 +190,25 @@ buttons. Simply surround the button(s) with an `.inverted` class.
     <div class="inverted bgColor--navy padding--all rounded--all">
       <StoryWrapper>
         <StoryItem>
-          <Button theme="ghost">
-            Button
-          </Button>
+          <Button theme="ghost" label="Button" />
         </StoryItem>
         <StoryItem>
-          <Button theme="outlined">
-            Button
-          </Button>
+          <Button theme="outlined" label="Button" />
         </StoryItem>
         <StoryItem>
-          <Button theme="outlined" Icon={StarFilledIcon}>
-            Button
-          </Button>
+          <Button theme="outlined" Icon={StarFilledIcon} label="Button" />
         </StoryItem>
         <StoryItem>
-          <Button theme="ghost" disabled>
-            Button
-          </Button>
+          <Button theme="ghost" disabled label="Button" />
         </StoryItem>
         <StoryItem>
-          <Button theme="outlined" disabled>
-            Button
-          </Button>
+          <Button theme="outlined" disabled label="Button" />
         </StoryItem>
         <StoryItem>
-          <Button theme="ghost" isLoading>
-            Button
-          </Button>
+          <Button theme="ghost" isLoading label="Button" />
         </StoryItem>
         <StoryItem>
-          <Button theme="outlined" isLoading>
-            Button
-          </Button>
+          <Button theme="outlined" isLoading label="Button" />
         </StoryItem>
       </StoryWrapper>
     </div>
@@ -252,9 +222,7 @@ buttons. Simply surround the button(s) with an `.inverted` class.
     <StoryWrapper>
       <StoryItem>
         <div style={{ width: '100px' }}>
-          <Button>
-            Text can wrap
-          </Button>
+          <Button label="Text can wrap" />
         </div>
       </StoryItem>
     </StoryWrapper>

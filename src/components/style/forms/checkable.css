@@ -1,0 +1,43 @@
+/* stylelint-disable selector-max-combinators */
+/* stylelint-disable selector-max-compound-selectors */
+
+/**
+ * Component helper classes for styling checkable inputs.
+ * Replaces user agent input with an FDS icon.
+ */
+
+.fdsCheckable {
+  position: relative;
+}
+
+.fdsCheckable input {
+  /* visually hide UA checkbox */
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+}
+
+.fdsCheckable label {
+  /* contains checkbox icon and text label */
+  display: inline-flex;
+  align-items: center;
+}
+
+.fdsCheckable .fds-icon {
+  color: var(--font-color-secondary);
+}
+
+.fdsCheckable input:focus + label svg {
+  box-shadow: inset 0 0 0 3px var(--border-color-focusRing);
+  transition: box-shadow 250ms var(--motion-easing-default);
+}
+
+.fdsCheckable input:checked + label svg {
+  fill: var(--color-blue);
+}
+
+.fdsCheckable--disabled :matches(label,svg) {
+  color: var(--font-color-hint) !important;
+  fill: var(--font-color-hint) !important;
+}
