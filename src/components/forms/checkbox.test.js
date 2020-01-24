@@ -48,13 +48,13 @@ describe('Checkbox component', () => {
     it('sets initial state to unchecked when `checked` prop is NOT passed', () => {
       const input = shallow(<Checkbox name="unchecked-initial" />)
         .find('input');
-      expect(input.prop('checked')).toBe(false);
+      expect(input.prop('defaultChecked')).toBe(false);
     });
 
     it('sets initial state to checked when `checked` prop is passed', () => {
       const input = shallow(<Checkbox name="checked-initial" checked />)
         .find('input');
-      expect(input.prop('checked')).toBe(true);
+      expect(input.prop('defaultChecked')).toBe(true);
     });
 
   });

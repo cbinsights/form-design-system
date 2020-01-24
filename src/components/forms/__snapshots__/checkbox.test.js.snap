@@ -5,8 +5,8 @@ exports[`Checkbox component matches snapshot (disabled) 1`] = `
   className="fdsCheckable fdsCheckbox fdsCheckable--disabled"
 >
   <input
-    checked={false}
     className="media--xs"
+    defaultChecked={false}
     disabled={true}
     id="mock-universal-unique-identifier"
     name="snapshot_checkbox"
@@ -40,8 +40,8 @@ exports[`Checkbox component matches snapshot (with label) 1`] = `
   className="fdsCheckable fdsCheckbox"
 >
   <input
-    checked={false}
     className="media--xs"
+    defaultChecked={false}
     disabled={false}
     id="mock-universal-unique-identifier"
     name="snapshot_checkbox"
@@ -75,8 +75,8 @@ exports[`Checkbox component matches snapshot (without label) 1`] = `
   className="fdsCheckable fdsCheckbox"
 >
   <input
-    checked={false}
     className="media--xs"
+    defaultChecked={false}
     disabled={false}
     id="mock-universal-unique-identifier"
     name="snapshot_checkbox"

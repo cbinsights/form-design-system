@@ -40,4 +40,20 @@ describe('Radio component', () => {
     });
   });
 
+  describe('`checked` prop', () => {
+
+    it('sets initial state to unchecked when `checked` prop is NOT passed', () => {
+      const input = shallow(<Radio name="unchecked-initial" />)
+        .find('input');
+      expect(input.prop('defaultChecked')).toBe(false);
+    });
+
+    it('sets initial state to checked when `checked` prop is passed', () => {
+      const input = shallow(<Radio name="checked-initial" checked />)
+        .find('input');
+      expect(input.prop('defaultChecked')).toBe(true);
+    });
+
+  });
+
 });

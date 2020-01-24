@@ -6,6 +6,7 @@ exports[`Radio component matches snapshot (disabled) 1`] = `
 >
   <input
     className="media--xs"
+    defaultChecked={false}
     id="mock-universal-unique-identifier"
     name="snapshot-radio"
     onChange={[Function]}
@@ -50,6 +51,7 @@ exports[`Radio component matches snapshot 1`] = `
 >
   <input
     className="media--xs"
+    defaultChecked={false}
     id="mock-universal-unique-identifier"
     name="snapshot-radio"
     onChange={[Function]}
