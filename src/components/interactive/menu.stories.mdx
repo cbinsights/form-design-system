@@ -1,0 +1,32 @@
+import { Meta, Preview, Story, Props } from "@storybook/addon-docs/blocks";
+import {
+  withKnobs,
+  text,
+  boolean,
+  optionsKnob as options
+} from "@storybook/addon-knobs";
+import { arrayToOptions, StoryWrapper, StoryItem } from "../util/storybook";
+import Menu from "./Menu";
+import { useState } from 'react';
+
+<Meta title="Interactive|Menu" decorators={[withKnobs]} component={Menu} />
+
+export const data = ['hey', 'there', 'hey', 'there', 'hey', 'there']
+
+# Menu
+
+<Story name="Knobs">
+  <React.Fragment>
+  <h2>Internal state:</h2>
+  <br />
+  {data.map(item => (
+    <p className="display--inlineBlock margin--right--half">{item}</p>
+  ))}
+  <Menu
+    items={data}
+    label='hey'
+  />
+  </React.Fragment>
+</Story>
+
+<Props of={Menu} />

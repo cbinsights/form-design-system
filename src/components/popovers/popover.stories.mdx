@@ -25,7 +25,7 @@ Base popover component. Bring your own trigger and popover content.
 
 <Story name="Knobs">
   <Popover
-    trigger={<div className="margin--bottom"><Button>Click Me</Button></div>}
+    trigger={<div className="margin--bottom"><Button label="Click Me" /></div>}
     position={options('Position', arrayToOptions(VALID_POSITIONS), 'bottom', {
       display: 'inline-radio',
     })}
@@ -69,7 +69,7 @@ Base popover component. Bring your own trigger and popover content.
 <Preview>
   <Story name="Styled popover content" height={100}>
     <Popover
-      trigger={<Button theme="outlined">Open popover</Button>}
+      trigger={<Button theme="outlined" label="Open popover" />}
       position="bottom"
       alignment="start"
       distance={8}

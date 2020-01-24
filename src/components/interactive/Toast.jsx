@@ -87,9 +87,12 @@ const Toast = ({
           {actionLabel && onAction && (
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
-                <Button onClick={onActionDismiss} data-test="toast-action" theme="ghost">
-                  {actionLabel}
-                </Button>
+                <Button
+                  onClick={onActionDismiss}
+                  data-test="toast-action"
+                  theme="ghost"
+                  label={actionLabel}
+                />
               </div>
             </FlexItem>
           )}
