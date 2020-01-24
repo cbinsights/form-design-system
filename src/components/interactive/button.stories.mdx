@@ -11,43 +11,45 @@ import StarFilledIcon from "../../../lib/icons/react/StarFilledIcon";
 import IconButton from "./IconButton";
 import ButtonGroup from "./ButtonGroup";
 
-export const iconOptions = options(
-  "Show sample icon?",
-  arrayToOptions(ICON_PLACEMENTS),
-  undefined,
-  { display: "inline-radio" }
-);
-
 <Meta title="Interactive|Button" decorators={[withKnobs]} component={Button} />
 
 # Button
 
-Displays standard Buttons.
-
-<Story name="Knobs">
-  <Button
-    disabled={boolean("disabled", false)}
-    isLoading={boolean("isLoading", false)}
-    isDestructive={boolean("isDestructive", false)}
-    hasCaret={boolean("hasCaret", false)}
-    Icon={iconOptions ? StarFilledIcon : undefined}
-    iconPlacement={iconOptions}
-    isFullWidth={boolean("isFullWidth", false)}
-    size={options("size", arrayToOptions(SIZES), undefined, {
-      display: "inline-radio"
-    })}
-    theme={options(
-      "theme",
-      arrayToOptions(THEMES),
-      undefined,
-      {
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
+  <div className={boolean("Inverted", false) ? 'inverted' : ''}>
+    <Button
+      disabled={boolean("disabled", false)}
+      isLoading={boolean("isLoading", false)}
+      isDestructive={boolean("isDestructive", false)}
+      hasCaret={boolean("hasCaret", false)}
+      Icon={boolean("Icon") ? StarFilledIcon : undefined}
+      iconPlacement={options(
+        "Show sample icon?",
+        arrayToOptions(ICON_PLACEMENTS),
+        undefined,
+        { display: "inline-radio" }
+      )}
+      isFullWidth={boolean("isFullWidth", false)}
+      size={options("size", arrayToOptions(SIZES), undefined, {
         display: "inline-radio"
-      }
-    )}
-  >
-    {text("Text", "Button")}
-  </Button>
+      })}
+      theme={options(
+        "theme",
+        arrayToOptions(THEMES),
+        undefined,
+        {
+          display: "inline-radio"
+        }
+      )}
+    >
+      {text("text", "Button")}
+    </Button>
+  </div>
 </Story>
+
+<Preview isExpanded>
+  <Button>Button</Button>
+</Preview>
 
 <Props of={Button} />
 
@@ -99,7 +101,7 @@ Modifies the theme. Should only be used when the interaction involves data loss,
         <Button
           size={size}
         >
-          size: {size} 
+          Button
         </Button>
       </div>
     ))}
@@ -125,13 +127,15 @@ ONLY pass in FDS Icon references to `Icon`. Very important. (refer to code sampl
 
 <Preview>
   <Story name="Icons">
-    {ICON_PLACEMENTS.map(placement => (
-      <div className="margin--right--half margin--bottom--half display--inlineBlock">
-        <Button Icon={StarFilledIcon} iconPlacement={placement}>
-          Button
-        </Button>
-      </div>
-    ))}
+    <StoryWrapper>
+      {ICON_PLACEMENTS.map(placement => (
+        <StoryItem>
+          <Button Icon={StarFilledIcon} iconPlacement={placement}>
+            Button
+          </Button>
+        </StoryItem>
+      ))}
+    </StoryWrapper>
   </Story>
 </Preview>
 
@@ -139,37 +143,125 @@ ONLY pass in FDS Icon references to `Icon`. Very important. (refer to code sampl
 
 <Preview>
   <Story name="Caret">
-    <div>
-      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+    <StoryWrapper>
+      <StoryItem>
         <Button theme="blue" hasCaret>
           Caret
         </Button>
-      </div>
-      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+      </StoryItem>
+      <StoryItem>
         <Button theme="blue" iconPlacement="left" hasCaret  Icon={StarFilledIcon}>
           Caret
         </Button>
-      </div>
-      <div className="margin--right--half margin--bottom--half display--inlineBlock">
+      </StoryItem>
+      <StoryItem>
         <Button theme="blue" iconPlacement="right" hasCaret  Icon={StarFilledIcon}>
           Caret
         </Button>
-      </div>
-    </div>
+      </StoryItem>
+    </StoryWrapper>
   </Story>
 </Preview>
+
+### Loading
+
+Loading states should be shown whenever an action has the ability 
+to take more than a couple of seconds of loading time
+
+<Preview>
+  <Story name="Loading">
+    <StoryWrapper>
+    {THEMES.map(theme => (
+      <StoryItem>
+        <Button
+          theme={theme}
+          isLoading
+        >
+          Button
+        </Button>
+      </StoryItem>
+    ))}
+    {THEMES.map(theme => (
+      <StoryItem>
+        <Button
+          theme={theme}
+          isDestructive
+          isLoading
+        >
+          Button
+        </Button>
+      </StoryItem>
+    ))}
+    </StoryWrapper>
+  </Story>
+</Preview>
+
+ ### Inverted
+
+We currently supported inverting of both `ghost` and `outlined` theme
+buttons. Simply surround the button with a class called `.inverted`.
+
+<Preview>
+  <Story name="Inverted">
+    <div class="inverted bgColor--navy padding--all rounded--all">
+      <StoryWrapper>
+        <StoryItem>
+          <Button theme="ghost">
+            Button
+          </Button>
+        </StoryItem>
+        <StoryItem>
+          <Button theme="outlined">
+            Button
+          </Button>
+        </StoryItem>
+        <StoryItem>
+          <Button theme="outlined" Icon={StarFilledIcon}>
+            Button
+          </Button>
+        </StoryItem>
+        <StoryItem>
+          <Button theme="ghost" disabled>
+            Button
+          </Button>
+        </StoryItem>
+        <StoryItem>
+          <Button theme="outlined" disabled>
+            Button
+          </Button>
+        </StoryItem>
+        <StoryItem>
+          <Button theme="ghost" isLoading>
+            Button
+          </Button>
+        </StoryItem>
+        <StoryItem>
+          <Button theme="outlined" isLoading>
+            Button
+          </Button>
+        </StoryItem>
+      </StoryWrapper>
+    </div>
+  </Story>
+</Preview> 
 
 ### Misc
 
 <Preview>
   <Story name="Misc">
-    <div
-      className="margin--right--half margin--bottom--half display--inlineBlock"
-      style={{ width: '100px' }}
-    >
-      <Button>
-        Text can wrap
-      </Button>
-    </div>
+    <StoryWrapper>
+      <StoryItem>
+        <div style={{ width: '100px' }}>
+          <Button>
+            Text can wrap
+          </Button>
+        </div>
+      </StoryItem>
+      <StoryItem>
+        <Button isLoading>
+          Button
+        </Button>
+      </StoryItem>
+    </StoryWrapper>
   </Story>
 </Preview>
