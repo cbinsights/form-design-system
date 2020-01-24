@@ -32,6 +32,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ### Changes / Additions
 
 - Added `Radio` component
+- Added `.inverted` support for `ghost` and `outlined` theme FDS buttons
 
 ### **BREAKING CHANGES**
 
