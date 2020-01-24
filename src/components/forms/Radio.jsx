@@ -16,7 +16,7 @@ const Radio = ({
   showLabel,
   checked,
   disabled,
-  onChange,
+  onSelect,
   ...otherProps
 }) => {
   const id = uuidv4();
@@ -26,7 +26,7 @@ const Radio = ({
     if (!disabled) {
       const updatedCheckedState = !isChecked;
       setIsChecked(updatedCheckedState);
-      onChange(e);
+      onSelect(e);
     }
   };
 
@@ -38,6 +38,7 @@ const Radio = ({
         id={id}
         className="media--xs"
         onChange={handleChange}
+        defaultChecked={checked}
         {...otherProps}
       />
       <label className="flush--bottom" htmlFor={id}>
@@ -59,7 +60,7 @@ Radio.defaultProps = {
   showLabel: true,
   disabled: false,
   checked: false,
-  onChange: () => {},
+  onSelect: () => {},
 };
 
 Radio.propTypes = {
@@ -81,12 +82,12 @@ Radio.propTypes = {
   /** Sets `checked` state */
   checked: PropTypes.bool,
 
-  /** onChange callback:
+  /** Selection callback. Only fires when radio gets checked.
    * ```
-   * <Radio onChange={(e) => {}} ... />
+   * <Radio onSelect={(e) => {}} ... />
    * ```
    */
-  onChange: PropTypes.func,
+  onSelect: PropTypes.func,
 };
 
 export default Radio;

@@ -43,15 +43,11 @@ const Checkbox = ({
       className={cx('fdsCheckable fdsCheckbox', { 'fdsCheckable--disabled': disabled })}
     >
       <input
-        ref={(el) => {
-          /* eslint-disable-next-line no-unused-expressions,no-param-reassign */
-          el && isChecked && (el.indeterminate = indeterminate);
-        }}
         type="checkbox"
         id={id}
         className="media--xs"
         onChange={handleChange}
-        checked={isChecked}
+        defaultChecked={checked}
         disabled={disabled}
         {...otherProps}
       />
