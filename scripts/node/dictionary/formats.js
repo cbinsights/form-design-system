@@ -4,11 +4,6 @@ const Handlebars = require('handlebars');
 const { toHsla } = require('./util/color');
 const { DICTIONARY_ROOT } = require('../constants');
 
-// import prop value transformer for ad-hoc material ui colors in docs
-const toMaterialPaletteColor = require('./transforms').filter(
-  (t) => t.name === 'attribute/materialPalette'
-)[0].transformer;
-
 Handlebars.registerHelper('json', (c) => JSON.stringify(c, null, 2));
 const templatePath = path.resolve(DICTIONARY_ROOT, 'doc-template/index.hbs');
 const template = Handlebars.compile(fs.readFileSync(templatePath).toString());
@@ -40,7 +35,6 @@ const jsComment = () =>
 const formatHtmlDoc = (dictionary) => {
   const color = filterByCategory(dictionary.allProperties, 'color').map((p) => {
     const { name, hex, rgb, hsl, varNames } = p.attributes;
-    const { materialPalette } = toMaterialPaletteColor(p);
     return {
       name,
       varNames,
@@ -49,13 +43,7 @@ const formatHtmlDoc = (dictionary) => {
         hex,
         rgba: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
         hsla: toHsla(hsl),
-      },
-      materialPalette: Object.keys(materialPalette).map((key) => ({
-        key,
-        value: materialPalette[key],
-        isBase: Boolean(key.toString() === '500'),
-        isAccent: Boolean(key.toString().includes('A')),
-      })),
+      }
     };
   });
 
@@ -115,24 +103,6 @@ const formatReactNativeColors = (filteredDictionary) =>
 
 /**
  * @param {Object} filteredDictionary dictionary category-filtered by config
- * @return {String} js file with commonjs export of tint/shade objects for each color
- */
-const formatMaterialPalette = (filteredDictionary) =>
-  [
-    `${jsComment()}`,
-    'module.exports = {',
-    ...filteredDictionary.allProperties.map((prop) => {
-      const paletteProps = Object.keys(prop.attributes.materialPalette)
-        .map((k) => `    ${k}: '${prop.attributes.materialPalette[k]}',`)
-        .join('\n');
-
-      return `  ${prop.name}: {\n${paletteProps}\n  },`;
-    }),
-    '};',
-  ].join('\n');
-
-/**
- * @param {Object} filteredDictionary dictionary category-filtered by config
  * @return {String} css file with "custom media" declarations (uses PostCSS to polyfill)
  */
 const formatCssCustomMedia = (filteredDictionary) =>
@@ -186,10 +156,6 @@ module.exports = [
   {
     name: 'javascript/reactNativeColors',
     formatter: formatReactNativeColors,
-  },
-  {
-    name: 'javascript/materialPalette',
-    formatter: formatMaterialPalette,
   },
   {
     name: 'css/customMedia',

@@ -11,7 +11,6 @@ mkdir -p $DIR_LIB/icons
 mkdir -p $DIR_LIB/icons/raw
 mkdir -p $DIR_LIB/icons/react
 mkdir -p $DIR_LIB/icons/style
-mkdir -p $DIR_LIB/mui-theme
 mkdir -p $DIR_LIB/base-styles
 mkdir -p $DIR_LIB/assets
 mkdir -p $DIR_LIB/stats
