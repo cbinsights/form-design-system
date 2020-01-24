@@ -16,6 +16,7 @@ const Prompt = (props) => (
     role="alertdialog"
     title={props.title}
     isOpen={props.isOpen}
+    onDismiss={props.onDismiss}
   />
 );
 
@@ -30,6 +31,11 @@ Prompt.propTypes = {
   secondaryButton: PropTypes.any.isRequired,
   /** Controls whether modal (and backdrop) are visible or not */
   isOpen: PropTypes.bool,
+  /**
+   * Callback that user can pass in, to be conditionally fired when
+   * user attempts to close modal. When defined, the modal close button appears
+   */
+  onDismiss: PropTypes.func,
 };
 
 export default Prompt;

@@ -14,13 +14,13 @@ import Prompt from "./Prompt";
 export const primaryButtonProps = () =>
   object("primaryButton", {
     isDestructive: true,
-    children: "Yes, delete"
+    label: "Yes, delete"
   });
 
 export const secondaryButtonProps = () =>
   object("secondaryButton", {
     theme: "ghost",
-    children: "Keep Collection",
+    label: "Keep Collection",
     onClick: action("close modal"),
     }
   );
@@ -36,9 +36,7 @@ export const secondaryButtonProps = () =>
 
 *Please click **"Canvas"** to view examples.*
 
-A confirm modal that:
--  Displays a simple message, with 2 buttons to either confirm the action, or deny it (does not show close icon, and
-can't be dismissed by pressing ESC or clicking backdrop)
+A confirm modal that displays a simple message, with 2 buttons to either confirm the action, or deny it.
 
 <Props of={Prompt} />
 
@@ -52,5 +50,6 @@ can't be dismissed by pressing ESC or clicking backdrop)
     title={text("title", "Are you sure you want to delete this collection?")}
     primaryButton={<Button {...primaryButtonProps()} />}
     secondaryButton={<Button {...secondaryButtonProps()} />}
+    onDismiss={action('close modal')}
   />
 </Story>

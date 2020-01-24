@@ -3,10 +3,13 @@ import { shallow } from 'enzyme';
 
 import Checkbox from './Checkbox';
 
+// uuid will break snapshots, so we must mock it.
+jest.mock('uuid/v4', () => jest.fn().mockReturnValue('mock-universal-unique-identifier'));
+
 describe('Checkbox component', () => {
 
   it('matches snapshot (without label)', () => {
-    const wrapper = shallow(<Checkbox name="snapshot_checkbox" onChange={() => {}} />);
+    const wrapper = shallow(<Checkbox name="snapshot_checkbox" label="snapshot checkbox" onChange={() => {}} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -27,7 +30,7 @@ describe('Checkbox component', () => {
 
     expect(changeFn).not.toHaveBeenCalled();
     input.simulate('change', { target: { checked: true } })
-    expect(changeFn).toHaveBeenCalledWith(true);
+    expect(changeFn).toHaveBeenCalled();
   });
 
   it('fires change callback when unchecking', () => {
@@ -37,7 +40,7 @@ describe('Checkbox component', () => {
 
     expect(changeFn).not.toHaveBeenCalled();
     input.simulate('change', { target: { checked: false } })
-    expect(changeFn).toHaveBeenCalledWith(false);
+    expect(changeFn).toHaveBeenCalled();
   });
 
   describe('`checked` prop', () => {
@@ -45,13 +48,13 @@ describe('Checkbox component', () => {
     it('sets initial state to unchecked when `checked` prop is NOT passed', () => {
       const input = shallow(<Checkbox name="unchecked-initial" />)
         .find('input');
-      expect(input.prop('checked')).toBe(false);
+      expect(input.prop('defaultChecked')).toBe(false);
     });
 
     it('sets initial state to checked when `checked` prop is passed', () => {
       const input = shallow(<Checkbox name="checked-initial" checked />)
         .find('input');
-      expect(input.prop('checked')).toBe(true);
+      expect(input.prop('defaultChecked')).toBe(true);
     });
 
   });
