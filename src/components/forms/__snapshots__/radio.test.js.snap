@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio component matches snapshot (disabled) 1`] = `
+<div
+  className="fdsCheckable fdsRadio fdsCheckable--disabled"
+>
+  <input
+    className="media--xs"
+    defaultChecked={false}
+    id="mock-universal-unique-identifier"
+    name="snapshot-radio"
+    onChange={[Function]}
+    type="radio"
+  />
+  <label
+    className="flush--bottom"
+    htmlFor="mock-universal-unique-identifier"
+  >
+    <div
+      aria-checked={false}
+      aria-label="Snapshot Label"
+      role="radio"
+    >
+      <span
+        className="fdsRadio-checkedIcon"
+      >
+        <RadioFilledIcon
+          size="xs"
+        />
+      </span>
+      <span
+        className="fdsRadio-uncheckedIcon"
+      >
+        <RadioEmptyIcon
+          size="xs"
+        />
+      </span>
+    </div>
+    <span
+      className="padding--left--half"
+    >
+      Snapshot Label
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Radio component matches snapshot 1`] = `
+<div
+  className="fdsCheckable fdsRadio"
+>
+  <input
+    className="media--xs"
+    defaultChecked={false}
+    id="mock-universal-unique-identifier"
+    name="snapshot-radio"
+    onChange={[Function]}
+    type="radio"
+    value="test-value"
+  />
+  <label
+    className="flush--bottom"
+    htmlFor="mock-universal-unique-identifier"
+  >
+    <div
+      aria-checked={false}
+      aria-label="Snapshot Label"
+      role="radio"
+    >
+      <span
+        className="fdsRadio-checkedIcon"
+      >
+        <RadioFilledIcon
+          size="xs"
+        />
+      </span>
+      <span
+        className="fdsRadio-uncheckedIcon"
+      >
+        <RadioEmptyIcon
+          size="xs"
+        />
+      </span>
+    </div>
+    <span
+      className="padding--left--half"
+    >
+      Snapshot Label
+    </span>
+  </label>
+</div>
+`;

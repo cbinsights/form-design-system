@@ -64,7 +64,7 @@ StoryItem.propTypes = {
 export const Info = ({ type, children }) => {
   const accentMap = {
     warn: FDS.COLOR_ORANGE,
-    info: FDS.COLOR_AQUA,
+    info: FDS.COLOR_SKY,
   };
   const emojiMap = {
     warn: '⚠️',
