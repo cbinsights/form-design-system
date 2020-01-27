@@ -11,5 +11,16 @@ module.exports = {
     ],
     ['@babel/preset-react'],
   ],
-  plugins: ['@babel/plugin-transform-modules-commonjs'],
+  plugins: [
+    '@babel/plugin-transform-modules-commonjs', 
+    [
+      "module-resolver", {
+        "root": ["./src"],
+        "alias": {
+          "icons": "./lib/icons/react",
+          "underscore": "lodash"
+        }
+      }
+    ]
+  ],
 };

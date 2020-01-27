@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import baseElement from '../../util/baseElement';
-import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
+import baseElement from 'util/baseElement';
+import CaretDownIcon from 'icons/CaretDownIcon';
 
 export const SIZES = ['s', 'm'];
 export const THEMES = ['blue', 'outlined', 'ghost'];
