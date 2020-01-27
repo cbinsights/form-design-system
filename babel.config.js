@@ -18,7 +18,6 @@ module.exports = {
         "root": ["./src"],
         "alias": {
           "icons": "./lib/icons/react",
-          "underscore": "lodash"
         }
       }
     ]
