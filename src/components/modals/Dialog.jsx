@@ -6,8 +6,7 @@ import FocusTrap from 'focus-trap-react';
 import noScroll from 'no-scroll';
 import rafSchd from 'raf-schd';
 import DenyIcon from '../../../lib/icons/react/DenyIcon';
-import Flex from '../layout/Flex';
-import FlexItem from '../layout/FlexItem';
+import IconButton from '../interactive/IconButton';
 import Section from '../layout/Section';
 
 export const isElementOverflowing = ({ current }) => {
@@ -55,68 +54,73 @@ const Dialog = (props) => {
     }
   }, [props.isOpen]);
 
-  return ReactDOM.createPortal(
-    <CSSTransition timeout={200} in={props.isOpen} classNames="dialog" unmountOnExit>
-      <React.Fragment>
-        <FocusTrap>
-          <div>
-            <div className="dialog-overlay" onClick={props.onDimiss}></div>
-            <div className="dialog-zIndex dialog-wrapper">
-              <div
-                className="dialog elevation--3"
-                role={props.role}
-                aria-labelledby={props.title && 'a11y-dialog-title'}
-                aria-describedby="a11y-dialog-desc"
-                tabIndex="-1"
-                aria-modal="true"
-                onKeyDown={handleKeyDown}
-                style={{ maxWidth: `${props.width}px` }}
-              >
-                {(props.title || props.onDismiss) && (
-                  <React.Fragment>
-                    <div className="dialog-header">
-                      <Section border="bottom">
-                        <Flex justify="spaceBetween" align="start">
-                          <FlexItem>
-                            {props.title && (
-                              <div
-                                className="dialog-title type--head4"
-                                id="a11y-dialog-title"
-                              >
-                                {props.title}
+  return (
+    <React.Fragment>
+      {ReactDOM.createPortal(
+        <CSSTransition timeout={200} in={props.isOpen} classNames="dialog" unmountOnExit>
+          <React.Fragment>
+            <FocusTrap>
+              <div>
+                <div className="dialog-overlay"></div>
+                <div className="dialog-zIndex dialog-wrapper">
+                  <div
+                    className="dialog elevation--3"
+                    role={props.role}
+                    aria-labelledby={props.title && 'a11y-dialog-title'}
+                    aria-describedby="a11y-dialog-desc"
+                    tabIndex="-1"
+                    aria-modal="true"
+                    onKeyDown={handleKeyDown}
+                    style={{ maxWidth: `${props.width}px` }}
+                  >
+                    {(props.title || props.onDismiss) && (
+                      <React.Fragment>
+                        <div className="dialog-header">
+                          <Section border="bottom">
+                            <div className="padding--right--double type--head4">
+                              {props.title ? (
+                                <span id="a11y-dialog-title">{props.title}</span>
+                              ) : (
+                                '\u00A0'
+                              )}{' '}
+                              {/* There always needs to be something (even a space) in the header for display reasons */}
+                            </div>
+                            {props.onDismiss && (
+                              <div className="dialog-icon">
+                                <IconButton
+                                  Icon={DenyIcon}
+                                  onClick={props.onDismiss}
+                                  aria-label="close"
+                                />
                               </div>
                             )}
-                          </FlexItem>
-                          {props.onDismiss && (
-                            <FlexItem shrink>
-                              <button className="dialog-icon" onClick={props.onDismiss}>
-                                <DenyIcon size="xs" />
-                              </button>
-                            </FlexItem>
-                          )}
-                        </Flex>
-                      </Section>
+                          </Section>
+                        </div>
+                      </React.Fragment>
+                    )}
+                    <div className="dialog-content" ref={contentEl}>
+                      <Section>{props.content}</Section>
                     </div>
-                  </React.Fragment>
-                )}
-                <div className="dialog-content" ref={contentEl}>
-                  <Section>{props.content}</Section>
-                </div>
-                {props.footerContent && (
-                  <div className="dialog-footer">
-                    <Section border={isOverflowing ? 'top' : undefined} bgColor="white">
-                      {props.footerContent}
-                    </Section>
+                    {props.footerContent && (
+                      <div className="dialog-footer">
+                        <Section
+                          border={isOverflowing ? 'top' : undefined}
+                          bgColor="white"
+                        >
+                          {props.footerContent}
+                        </Section>
+                      </div>
+                    )}
                   </div>
-                )}
+                </div>
               </div>
-            </div>
-          </div>
-        </FocusTrap>
-      </React.Fragment>
-    </CSSTransition>,
-    // eslint-disable-next-line no-undef
-    document.body
+            </FocusTrap>
+          </React.Fragment>
+        </CSSTransition>,
+        // eslint-disable-next-line no-undef
+        document.body
+      )}
+    </React.Fragment>
   );
 };
 
@@ -143,7 +147,7 @@ Dialog.propTypes = {
 
   /**
    * Callback that user can pass in, to be conditionally fired when
-   * user attempts to close modal. Also controls modal x
+   * user attempts to close modal. When defined, the modal close button appears
    */
   onDismiss: PropTypes.func,
 

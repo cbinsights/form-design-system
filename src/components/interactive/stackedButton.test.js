@@ -1,23 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Button from './Button';
+import StackedButton from './StackedButton';
 
-const renderComponent = (props) => shallow(<Button {...props} />);
-
-const buttons = {
-  Link: () => {}, disabled: true, Icon: () => {}, label: 'button', isActive: true
-};
-
-describe('ButtonGroup component', () => {
+describe('StackedButton component', () => {
 
   it('matches snapshot (default props)', () => {
-    const component = renderComponent({ label: 'Button' });
+    const component = shallow(<StackedButton label="Button" />);
     expect(component).toMatchSnapshot();
   });
 
   it('matches snapshot (set all props)', () => {
-    const component = renderComponent(buttons);
+    const component = shallow(<StackedButton 
+      Link={() => {}} disabled Icon={() => {}} label='button' isActive
+    />);
     expect(component).toMatchSnapshot();
   });
 });

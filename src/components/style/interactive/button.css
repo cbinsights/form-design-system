@@ -1,3 +1,6 @@
+/* stylelint-disable selector-max-combinators */
+/* stylelint-disable selector-max-compound-selectors */
+
 .fdsButton {
   border: 0 none;
   letter-spacing: 1px;
@@ -52,7 +55,6 @@
 
 .fdsButton--loading::before {
   content: "";
-  box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -134,6 +136,27 @@
 
 .fdsButton--loading:matches(.fdsButton--outlined, .fdsButton--ghost) {
   opacity: 1;
+}
+
+.inverted .fdsButton--ghost,
+.inverted .fdsButton--outlined {
+  color: var(--color-white);
+}
+
+.inverted .fdsButton--outlined:hover,
+.inverted .fdsButton--ghost:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.inverted .fdsButton--outlined:active,
+.inverted .fdsButton--ghost:active {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.inverted .fdsButton--ghost.fdsButton--loading::before,
+.inverted .fdsButton--outlined.fdsButton--loading::before {
+  border: 2px solid var(--color-white);
+  border-top-color: transparent;
 }
 
 .fdsButton--outlined.fdsButton--isDestructive {

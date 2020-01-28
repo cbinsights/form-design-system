@@ -13,7 +13,7 @@ const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }
   const rootClass = cx(
     'fdsChip',
     'border--focus--noTransition',
-    'transition-default',
+    'transition--default',
     `fdsChip--${size}`,
     {
       'fdsChip--active': isActive,
@@ -50,6 +50,19 @@ Chip.propTypes = {
    * Text that appears in the button
    */
   label: PropTypes.string.isRequired,
+  /** Controls the color (look and feel) of the chip */
+  theme: PropTypes.oneOf(THEMES),
+  /** Controls the isActive state of the chip, which changes colors */
+  /** Specify the size of the chip */
+  size: PropTypes.oneOf(SIZES),
+  isActive: PropTypes.bool,
+  /** Text that appears to the right of the label */
+  subtitle: PropTypes.string,
+  /**
+   * onClick handler for close icon  (By passing this onClick handler, the close icon
+   * will automatically appear)
+   */
+  onClose: PropTypes.func,
   /**
    * Takes in a react-router `Link` reference and sets it
    * as the base element. You may ONLY use it like the
@@ -59,19 +72,6 @@ Chip.propTypes = {
    * - `Link={Link}`
    */
   Link: PropTypes.func,
-  /** Controls the isActive state of the chip, which changes colors */
-  isActive: PropTypes.bool,
-  /** Text that appears to the right of the label */
-  subtitle: PropTypes.string,
-  /**
-   * onClick handler for close icon  (By passing this onClick handler, the close icon
-   * will automatically appear)
-   */
-  onClose: PropTypes.func,
-  /** Specify the size of the chip */
-  size: PropTypes.oneOf(SIZES),
-  /** Controls the color (look and feel) of the chip */
-  theme: PropTypes.oneOf(THEMES),
 };
 
 Chip.defaultProps = {

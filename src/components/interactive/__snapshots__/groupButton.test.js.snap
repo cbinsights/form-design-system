@@ -3,7 +3,7 @@
 exports[`GroupButton component matches snapshot (set all props) 1`] = `
 <Wrapper>
   <button
-    className="groupbtn border--focus--noTransition transition-default groupbtn--active"
+    className="groupbtn border--focus--noTransition transition--default groupbtn--active"
     value="Feed"
   >
     <div

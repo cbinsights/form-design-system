@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component matches snapshot (disabled) 1`] = `
+<div
+  className="fdsCheckable fdsCheckbox fdsCheckable--disabled"
+>
+  <input
+    className="media--xs"
+    defaultChecked={false}
+    disabled={true}
+    id="mock-universal-unique-identifier"
+    name="snapshot_checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="flush--bottom"
+    htmlFor="mock-universal-unique-identifier"
+  >
+    <div
+      aria-checked={false}
+      aria-label="Snapshot Label"
+      role="checkbox"
+    >
+      <CheckEmptyIcon
+        size="xs"
+      />
+    </div>
+    <span
+      className="padding--left--half"
+    >
+      Snapshot Label
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox component matches snapshot (with label) 1`] = `
+<div
+  className="fdsCheckable fdsCheckbox"
+>
+  <input
+    className="media--xs"
+    defaultChecked={false}
+    disabled={false}
+    id="mock-universal-unique-identifier"
+    name="snapshot_checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="flush--bottom"
+    htmlFor="mock-universal-unique-identifier"
+  >
+    <div
+      aria-checked={false}
+      aria-label="Snapshot Label"
+      role="checkbox"
+    >
+      <CheckEmptyIcon
+        size="xs"
+      />
+    </div>
+    <span
+      className="padding--left--half"
+    >
+      Snapshot Label
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox component matches snapshot (without label) 1`] = `
+<div
+  className="fdsCheckable fdsCheckbox"
+>
+  <input
+    className="media--xs"
+    defaultChecked={false}
+    disabled={false}
+    id="mock-universal-unique-identifier"
+    name="snapshot_checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="flush--bottom"
+    htmlFor="mock-universal-unique-identifier"
+  >
+    <div
+      aria-checked={false}
+      aria-label="snapshot checkbox"
+      role="checkbox"
+    >
+      <CheckEmptyIcon
+        size="xs"
+      />
+    </div>
+    <span
+      className="padding--left--half"
+    >
+      snapshot checkbox
+    </span>
+  </label>
+</div>
+`;

@@ -27,6 +27,45 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.1] Button updates (inverted)
+
+- Added `.inverted` support for `ghost` and `outlined` theme FDS buttons
+
+## [7.0] MAJOR
+
+### Changes / Additions
+
+- Added `Radio` component
+
+### **BREAKING CHANGES**
+
+#### `AvatarRow` Component
+Component removed (was not publicly documented).
+
+#### `MuiAvatarShim` Component
+Component removed (was not publicly documented).
+
+#### `Checkbox` Component
+- `onChange` callback now receives the entire event object
+- `name` is no longer a required prop
+- `label` is now required - to hide the label, set `showLabel` to `false`
+
+#### `transition-default` class renamed
+`transition-default` is now `transition--default`
+
+## [6.14] Updated `Prompt`
+
+- Prompt can now be dismissed (displays a x icon, and can press esc to dismiss it)
+
+## [6.13] Updated `Avatar`
+
+- Avatar now accepts a `radius` prop, to render as a circle or a square. Renders
+  as a circle by default
+
+## [6.12] Checkbox
+
+- Added `Checkbox` component
+
 ## [6.11] Updated `Avatar`
 
 - Avatar will now render as a button underneath the hood if passed a `href`, `onClick`, or `Link`
