@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.1] Button updates (inverted)
+
+- Added `.inverted` support for `ghost` and `outlined` theme FDS buttons
+
 ## [7.0] MAJOR
 
 ### Changes / Additions
