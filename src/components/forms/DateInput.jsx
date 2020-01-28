@@ -7,7 +7,7 @@ import Popover from '../popovers/Popover';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
-// :TODO: curry this from DatePicker render (via props)
+// :TODO: curry this from DateInput render (via props)
 const currentYear = new Date().getFullYear(); // this year
 const fromMonth = new Date(currentYear, 0); // this january
 const toMonth = new Date(currentYear + 10, 11); // 10 years of decembers into the future
@@ -63,7 +63,7 @@ const YearAndMonthSelector = ({ date, localeUtils, onChange }) => {
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const DatePicker = ({}) => {
+const DateInput = ({}) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [month, setMonth] = useState(new Date().getMonth());
 
@@ -81,7 +81,7 @@ const DatePicker = ({}) => {
         <div className="elevation--2 rounded--all bgColor--white">
           <DayPicker
             month={month}
-            className="fdsDatePicker"
+            className="fdsDateInput"
             onDayClick={setSelectedDate}
             selectedDays={selectedDate}
             captionElement={({ date, localeUtils }) => (
@@ -100,6 +100,6 @@ const DatePicker = ({}) => {
 
 // :TODO: number of past years prop
 // :TODO: number of future years prop
-DatePicker.propTypes = {};
+DateInput.propTypes = {};
 
-export default DatePicker;
+export default DateInput;
