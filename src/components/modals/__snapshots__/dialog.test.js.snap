@@ -1,522 +1,526 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dialog component matches snapshot (default props) 1`] = `
-<Portal
-  containerInfo={
-    <body>
-      <div>
-        <div
-          class="dialog-overlay"
-        />
-        <div
-          class="dialog-zIndex dialog-wrapper"
-        >
+<Fragment>
+  <Portal
+    containerInfo={
+      <body>
+        <div>
           <div
-            aria-describedby="a11y-dialog-desc"
-            aria-modal="true"
-            class="dialog elevation--3"
-            role="dialog"
-            style="max-width: 500px;"
-            tabindex="-1"
+            class="dialog-overlay"
+          />
+          <div
+            class="dialog-zIndex dialog-wrapper"
           >
             <div
-              class="dialog-header"
+              aria-describedby="a11y-dialog-desc"
+              aria-modal="true"
+              class="dialog elevation--3"
+              role="dialog"
+              style="max-width: 500px;"
+              tabindex="-1"
             >
               <div
-                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+                class="dialog-header"
               >
                 <div
-                  class="padding--right--double type--head4"
+                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
                 >
-                   
-                   
-                </div>
-                <div
-                  class="dialog-icon"
-                >
-                  <button
-                    aria-label="close"
-                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
-                    role="img"
+                  <div
+                    class="padding--right--double type--head4"
                   >
-                    <span
-                      class=""
+                     
+                     
+                  </div>
+                  <div
+                    class="dialog-icon"
+                  >
+                    <button
+                      aria-label="close"
+                      class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
+                      role="img"
                     >
-                      <div
-                        class="fds-icon fds-icon--s"
-                        style="width: 18px; height: 18px;"
+                      <span
+                        class=""
                       >
-                        <svg
-                          viewBox="0 0 24 24"
+                        <div
+                          class="fds-icon fds-icon--s"
+                          style="width: 18px; height: 18px;"
                         >
-                          <g
-                            fill-rule="evenodd"
+                          <svg
+                            viewBox="0 0 24 24"
                           >
-                            <g>
-                              <polygon
-                                points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
-                              />
+                            <g
+                              fill-rule="evenodd"
+                            >
+                              <g>
+                                <polygon
+                                  points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                                />
+                              </g>
                             </g>
-                          </g>
-                        </svg>
-                      </div>
-                    </span>
+                          </svg>
+                        </div>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="dialog-content"
+              >
+                <div
+                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+                >
+                  <button>
+                    hey
                   </button>
                 </div>
               </div>
             </div>
-            <div
-              class="dialog-content"
-            >
-              <div
-                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-              >
-                <button>
-                  hey
-                </button>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div
-          class="dialog-overlay"
-        />
-        <div
-          class="dialog-zIndex dialog-wrapper"
-        >
+        <div>
           <div
-            aria-describedby="a11y-dialog-desc"
-            aria-modal="true"
-            class="dialog elevation--3"
-            role="dialog"
-            style="max-width: 500px;"
-            tabindex="-1"
+            class="dialog-overlay"
+          />
+          <div
+            class="dialog-zIndex dialog-wrapper"
           >
             <div
-              class="dialog-header"
+              aria-describedby="a11y-dialog-desc"
+              aria-modal="true"
+              class="dialog elevation--3"
+              role="dialog"
+              style="max-width: 500px;"
+              tabindex="-1"
             >
               <div
-                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+                class="dialog-header"
               >
                 <div
-                  class="padding--right--double type--head4"
+                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
                 >
-                   
-                   
-                </div>
-                <div
-                  class="dialog-icon"
-                >
-                  <button
-                    aria-label="close"
-                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
-                    role="img"
+                  <div
+                    class="padding--right--double type--head4"
                   >
-                    <span
-                      class=""
+                     
+                     
+                  </div>
+                  <div
+                    class="dialog-icon"
+                  >
+                    <button
+                      aria-label="close"
+                      class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
+                      role="img"
                     >
-                      <div
-                        class="fds-icon fds-icon--s"
-                        style="width: 18px; height: 18px;"
+                      <span
+                        class=""
                       >
-                        <svg
-                          viewBox="0 0 24 24"
+                        <div
+                          class="fds-icon fds-icon--s"
+                          style="width: 18px; height: 18px;"
                         >
-                          <g
-                            fill-rule="evenodd"
+                          <svg
+                            viewBox="0 0 24 24"
                           >
-                            <g>
-                              <polygon
-                                points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
-                              />
+                            <g
+                              fill-rule="evenodd"
+                            >
+                              <g>
+                                <polygon
+                                  points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                                />
+                              </g>
                             </g>
-                          </g>
-                        </svg>
-                      </div>
-                    </span>
+                          </svg>
+                        </div>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="dialog-content"
+              >
+                <div
+                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+                >
+                  <button>
+                    hey
                   </button>
                 </div>
               </div>
             </div>
-            <div
-              class="dialog-content"
-            >
-              <div
-                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-              >
-                <button>
-                  hey
-                </button>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div
-          class="dialog-overlay"
-        />
-        <div
-          class="dialog-zIndex dialog-wrapper"
-        >
+        <div>
           <div
-            aria-describedby="a11y-dialog-desc"
-            aria-modal="true"
-            class="dialog elevation--3"
-            role="dialog"
-            style="max-width: 500px;"
-            tabindex="-1"
+            class="dialog-overlay"
+          />
+          <div
+            class="dialog-zIndex dialog-wrapper"
           >
             <div
-              class="dialog-content"
+              aria-describedby="a11y-dialog-desc"
+              aria-modal="true"
+              class="dialog elevation--3"
+              role="dialog"
+              style="max-width: 500px;"
+              tabindex="-1"
             >
               <div
-                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+                class="dialog-content"
               >
-                <button>
-                  hey
-                </button>
+                <div
+                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+                >
+                  <button>
+                    hey
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </body>
-  }
->
-  <CSSTransition
-    classNames="dialog"
-    in={true}
-    timeout={200}
-    unmountOnExit={true}
+      </body>
+    }
   >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={true}
-      focusTrapOptions={Object {}}
-      paused={false}
+    <CSSTransition
+      classNames="dialog"
+      in={true}
+      timeout={200}
+      unmountOnExit={true}
     >
-      <div>
-        <div
-          className="dialog-overlay"
-        />
-        <div
-          className="dialog-zIndex dialog-wrapper"
-        >
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={true}
+        focusTrapOptions={Object {}}
+        paused={false}
+      >
+        <div>
           <div
-            aria-describedby="a11y-dialog-desc"
-            aria-modal="true"
-            className="dialog elevation--3"
-            onKeyDown={[Function]}
-            role="dialog"
-            style={
-              Object {
-                "maxWidth": "500px",
-              }
-            }
-            tabIndex="-1"
+            className="dialog-overlay"
+          />
+          <div
+            className="dialog-zIndex dialog-wrapper"
           >
             <div
-              className="dialog-content"
+              aria-describedby="a11y-dialog-desc"
+              aria-modal="true"
+              className="dialog elevation--3"
+              onKeyDown={[Function]}
+              role="dialog"
+              style={
+                Object {
+                  "maxWidth": "500px",
+                }
+              }
+              tabIndex="-1"
             >
-              <Section
-                bgColor="white"
-                xPadding="default"
-                yPadding="default"
+              <div
+                className="dialog-content"
               >
-                foo
-              </Section>
+                <Section
+                  bgColor="white"
+                  xPadding="default"
+                  yPadding="default"
+                >
+                  foo
+                </Section>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </FocusTrap>
-  </CSSTransition>
-</Portal>
+      </FocusTrap>
+    </CSSTransition>
+  </Portal>
+</Fragment>
 `;
 
 exports[`Dialog component matches snapshot (set all props) 1`] = `
-<Portal
-  containerInfo={
-    <body>
-      <div>
-        <div
-          class="dialog-overlay"
-        />
-        <div
-          class="dialog-zIndex dialog-wrapper"
-        >
+<Fragment>
+  <Portal
+    containerInfo={
+      <body>
+        <div>
           <div
-            aria-describedby="a11y-dialog-desc"
-            aria-modal="true"
-            class="dialog elevation--3"
-            role="dialog"
-            style="max-width: 500px;"
-            tabindex="-1"
+            class="dialog-overlay"
+          />
+          <div
+            class="dialog-zIndex dialog-wrapper"
           >
             <div
-              class="dialog-header"
+              aria-describedby="a11y-dialog-desc"
+              aria-modal="true"
+              class="dialog elevation--3"
+              role="dialog"
+              style="max-width: 500px;"
+              tabindex="-1"
             >
               <div
-                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+                class="dialog-header"
               >
                 <div
-                  class="padding--right--double type--head4"
+                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
                 >
-                   
-                   
-                </div>
-                <div
-                  class="dialog-icon"
-                >
-                  <button
-                    aria-label="close"
-                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
-                    role="img"
+                  <div
+                    class="padding--right--double type--head4"
                   >
-                    <span
-                      class=""
+                     
+                     
+                  </div>
+                  <div
+                    class="dialog-icon"
+                  >
+                    <button
+                      aria-label="close"
+                      class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
+                      role="img"
                     >
-                      <div
-                        class="fds-icon fds-icon--s"
-                        style="width: 18px; height: 18px;"
+                      <span
+                        class=""
                       >
-                        <svg
-                          viewBox="0 0 24 24"
+                        <div
+                          class="fds-icon fds-icon--s"
+                          style="width: 18px; height: 18px;"
                         >
-                          <g
-                            fill-rule="evenodd"
+                          <svg
+                            viewBox="0 0 24 24"
                           >
-                            <g>
-                              <polygon
-                                points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
-                              />
+                            <g
+                              fill-rule="evenodd"
+                            >
+                              <g>
+                                <polygon
+                                  points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                                />
+                              </g>
                             </g>
-                          </g>
-                        </svg>
-                      </div>
-                    </span>
-                  </button>
+                          </svg>
+                        </div>
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="dialog-content"
-            >
               <div
-                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-              >
-                <button>
-                  hey
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          class="dialog-overlay"
-        />
-        <div
-          class="dialog-zIndex dialog-wrapper"
-        >
-          <div
-            aria-describedby="a11y-dialog-desc"
-            aria-modal="true"
-            class="dialog elevation--3"
-            role="dialog"
-            style="max-width: 500px;"
-            tabindex="-1"
-          >
-            <div
-              class="dialog-header"
-            >
-              <div
-                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+                class="dialog-content"
               >
                 <div
-                  class="padding--right--double type--head4"
+                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
                 >
-                   
-                   
-                </div>
-                <div
-                  class="dialog-icon"
-                >
-                  <button
-                    aria-label="close"
-                    class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
-                    role="img"
-                  >
-                    <span
-                      class=""
-                    >
-                      <div
-                        class="fds-icon fds-icon--s"
-                        style="width: 18px; height: 18px;"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                        >
-                          <g
-                            fill-rule="evenodd"
-                          >
-                            <g>
-                              <polygon
-                                points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
-                              />
-                            </g>
-                          </g>
-                        </svg>
-                      </div>
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="dialog-content"
-            >
-              <div
-                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-              >
-                <button>
-                  hey
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          class="dialog-overlay"
-        />
-        <div
-          class="dialog-zIndex dialog-wrapper"
-        >
-          <div
-            aria-describedby="a11y-dialog-desc"
-            aria-modal="true"
-            class="dialog elevation--3"
-            role="dialog"
-            style="max-width: 500px;"
-            tabindex="-1"
-          >
-            <div
-              class="dialog-content"
-            >
-              <div
-                class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
-              >
-                <button>
-                  hey
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </body>
-  }
->
-  <CSSTransition
-    classNames="dialog"
-    in={true}
-    timeout={200}
-    unmountOnExit={true}
-  >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={true}
-      focusTrapOptions={Object {}}
-      paused={false}
-    >
-      <div>
-        <div
-          className="dialog-overlay"
-        />
-        <div
-          className="dialog-zIndex dialog-wrapper"
-        >
-          <div
-            aria-describedby="a11y-dialog-desc"
-            aria-labelledby="a11y-dialog-title"
-            aria-modal="true"
-            className="dialog elevation--3"
-            onKeyDown={[Function]}
-            role="alertdialog"
-            style={
-              Object {
-                "maxWidth": "500px",
-              }
-            }
-            tabIndex="-1"
-          >
-            <div
-              className="dialog-header"
-            >
-              <Section
-                bgColor="white"
-                border="bottom"
-                xPadding="default"
-                yPadding="default"
-              >
-                <div
-                  className="padding--right--double type--head4"
-                >
-                  <span
-                    id="a11y-dialog-title"
-                  >
+                  <button>
                     hey
-                  </span>
-                   
+                  </button>
                 </div>
-                <div
-                  className="dialog-icon"
-                >
-                  <IconButton
-                    Icon={[Function]}
-                    aria-label="close"
-                    onClick={[Function]}
-                    radius="square"
-                    size="m"
-                    theme="ghost"
-                  />
-                </div>
-              </Section>
-            </div>
-            <div
-              className="dialog-content"
-            >
-              <Section
-                bgColor="white"
-                xPadding="default"
-                yPadding="default"
-              >
-                foo
-              </Section>
-            </div>
-            <div
-              className="dialog-footer"
-            >
-              <Section
-                bgColor="white"
-                xPadding="default"
-                yPadding="default"
-              >
-                <div>
-                  foo
-                </div>
-              </Section>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </FocusTrap>
-  </CSSTransition>
-</Portal>
+        <div>
+          <div
+            class="dialog-overlay"
+          />
+          <div
+            class="dialog-zIndex dialog-wrapper"
+          >
+            <div
+              aria-describedby="a11y-dialog-desc"
+              aria-modal="true"
+              class="dialog elevation--3"
+              role="dialog"
+              style="max-width: 500px;"
+              tabindex="-1"
+            >
+              <div
+                class="dialog-header"
+              >
+                <div
+                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom border--bottom"
+                >
+                  <div
+                    class="padding--right--double type--head4"
+                  >
+                     
+                     
+                  </div>
+                  <div
+                    class="dialog-icon"
+                  >
+                    <button
+                      aria-label="close"
+                      class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
+                      role="img"
+                    >
+                      <span
+                        class=""
+                      >
+                        <div
+                          class="fds-icon fds-icon--s"
+                          style="width: 18px; height: 18px;"
+                        >
+                          <svg
+                            viewBox="0 0 24 24"
+                          >
+                            <g
+                              fill-rule="evenodd"
+                            >
+                              <g>
+                                <polygon
+                                  points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                        </div>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="dialog-content"
+              >
+                <div
+                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+                >
+                  <button>
+                    hey
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="dialog-overlay"
+          />
+          <div
+            class="dialog-zIndex dialog-wrapper"
+          >
+            <div
+              aria-describedby="a11y-dialog-desc"
+              aria-modal="true"
+              class="dialog elevation--3"
+              role="dialog"
+              style="max-width: 500px;"
+              tabindex="-1"
+            >
+              <div
+                class="dialog-content"
+              >
+                <div
+                  class="bgColor--white display--block padding--left padding--right padding--top padding--bottom"
+                >
+                  <button>
+                    hey
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+    }
+  >
+    <CSSTransition
+      classNames="dialog"
+      in={true}
+      timeout={200}
+      unmountOnExit={true}
+    >
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={true}
+        focusTrapOptions={Object {}}
+        paused={false}
+      >
+        <div>
+          <div
+            className="dialog-overlay"
+          />
+          <div
+            className="dialog-zIndex dialog-wrapper"
+          >
+            <div
+              aria-describedby="a11y-dialog-desc"
+              aria-labelledby="a11y-dialog-title"
+              aria-modal="true"
+              className="dialog elevation--3"
+              onKeyDown={[Function]}
+              role="alertdialog"
+              style={
+                Object {
+                  "maxWidth": "500px",
+                }
+              }
+              tabIndex="-1"
+            >
+              <div
+                className="dialog-header"
+              >
+                <Section
+                  bgColor="white"
+                  border="bottom"
+                  xPadding="default"
+                  yPadding="default"
+                >
+                  <div
+                    className="padding--right--double type--head4"
+                  >
+                    <span
+                      id="a11y-dialog-title"
+                    >
+                      hey
+                    </span>
+                     
+                  </div>
+                  <div
+                    className="dialog-icon"
+                  >
+                    <IconButton
+                      Icon={[Function]}
+                      aria-label="close"
+                      onClick={[Function]}
+                      radius="square"
+                      size="m"
+                      theme="ghost"
+                    />
+                  </div>
+                </Section>
+              </div>
+              <div
+                className="dialog-content"
+              >
+                <Section
+                  bgColor="white"
+                  xPadding="default"
+                  yPadding="default"
+                >
+                  foo
+                </Section>
+              </div>
+              <div
+                className="dialog-footer"
+              >
+                <Section
+                  bgColor="white"
+                  xPadding="default"
+                  yPadding="default"
+                >
+                  <div>
+                    foo
+                  </div>
+                </Section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </FocusTrap>
+    </CSSTransition>
+  </Portal>
+</Fragment>
 `;
