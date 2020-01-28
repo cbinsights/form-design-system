@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import combine from 'util/combine';
-import GroupButton from './GroupButton';
+import GroupButton from 'components/interactive/GroupButton';
 
 const ButtonGroup = ({ buttons, onChange, ...restBtnGroup }) => (
   <div {...restBtnGroup} className="btngroup">

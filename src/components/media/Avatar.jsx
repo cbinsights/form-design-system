@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import baseElement from '../../util/baseElement';
+import baseElement from 'util/baseElement';
 
 const LIGHT_COLORS = ['white', 'haze', 'lightGray'];
 const DARK_COLORS = ['orange', 'charcoal', 'navy', 'aqua', 'gray', 'red', 'purple'];

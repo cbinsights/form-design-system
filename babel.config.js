@@ -17,7 +17,7 @@ module.exports = {
       "module-resolver", {
         "root": ["./src"],
         "alias": {
-          "icons": "./lib/icons/react",
+          "lib": "./lib",
         }
       }
     ]

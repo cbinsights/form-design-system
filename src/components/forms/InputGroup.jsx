@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Flex from '../layout/Flex';
-import FlexItem from '../layout/FlexItem';
+import Flex from 'components/layout/Flex';
+import FlexItem from 'components/layout/FlexItem';
 
 /**
  * @param {Object} props react props
