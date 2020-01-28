@@ -1,0 +1,22 @@
+.fdsDropdown {
+  background: transparent;
+  border: 0 none;
+  font-size: var(--font-size-default);
+  user-select: none;
+  font-size: var(--font-size-default);
+  padding: var(--space-half) 6px;
+  border: 1px solid #C6C9CA;
+  color: var(--font-color-primary);
+  align-items: center;
+  justify-content: space-between;
+  min-width: 170px;
+}
+
+.fdsDropdown:hover {
+  background-color: #E8EDF1;
+}
+
+.fdsDropdown:active {
+  background-color: #CBD5DE;
+}
+
