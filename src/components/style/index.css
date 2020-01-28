@@ -24,6 +24,7 @@
 @import "./forms/decoratedInput.css";
 @import "./forms/iconInput.css";
 @import "./forms/inputGroup.css";
+@import "./forms/datePicker.css";
 
 /* Media components */
 @import "./media/avatar.css";
