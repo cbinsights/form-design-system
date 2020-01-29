@@ -27,6 +27,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.3] Updated Buttons
+
+- `outlined` Button now has updated presentation (white background,
+   different pseudo state colors)
+-  Button, StackedButton and IconButton all have updated text color
+   (--button-secondary-color updated to --button-primary-color)
+
 ## [7.2] DropdownButton
 
 - Added `DropdownButton` component
