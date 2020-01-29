@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import baseElement from '../../util/baseElement';
+import baseElement from 'util/baseElement';
 
 export const THEMES = ['aqua', 'ghost'];
 export const RADII = ['square', 'circle'];

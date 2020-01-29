@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
+import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
 
 const DropdownButton = ({ children, ...rest }) => (
   <button

@@ -3,9 +3,9 @@ import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import CheckEmptyIcon from '../../../lib/icons/react/CheckEmptyIcon';
-import CheckFilledIcon from '../../../lib/icons/react/CheckFilledIcon';
-import CheckIndeterminateIcon from '../../../lib/icons/react/CheckIndeterminateIcon';
+import CheckEmptyIcon from 'lib/icons/react/CheckEmptyIcon';
+import CheckFilledIcon from 'lib/icons/react/CheckFilledIcon';
+import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
 
 /**
  * @param {Object} props react props

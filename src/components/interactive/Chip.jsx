@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import DenyIcon from '../../../lib/icons/react/DenyIcon';
-import baseElement from '../../util/baseElement';
+import DenyIcon from 'lib/icons/react/DenyIcon';
+import baseElement from 'util/baseElement';
 
 export const THEMES = ['blue', 'gray', 'outline'];
 export const SIZES = ['s', 'm'];
