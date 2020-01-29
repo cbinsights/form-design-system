@@ -18,6 +18,7 @@ const Checkbox = ({
   indeterminate,
   checked,
   disabled,
+  inputRef,
   ...otherProps
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
@@ -49,6 +50,7 @@ const Checkbox = ({
         onChange={handleChange}
         defaultChecked={checked}
         disabled={disabled}
+        ref={inputRef}
         {...otherProps}
       />
       <label className="flush--bottom" htmlFor={id}>
@@ -75,6 +77,9 @@ Checkbox.propTypes = {
 
   /** If the supplied `label` prop should be rendered to the screen. */
   showLabel: PropTypes.bool,
+
+  /** Ref for input element */
+  inputRef: PropTypes.func,
 
   /** onChange callback:
    * ```
