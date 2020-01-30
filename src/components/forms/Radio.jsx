@@ -10,12 +10,19 @@ import RadioFilledIcon from 'lib/icons/react/RadioFilledIcon';
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Radio = ({ name, label, showLabel, disabled, ...otherProps }) => {
+const Radio = ({ inputRef, name, label, showLabel, disabled, ...otherProps }) => {
   const id = uuidv4();
 
   return (
     <div className={cx('fdsCheckable fdsRadio', { 'fdsCheckable--disabled': disabled })}>
-      <input type="radio" name={name} id={id} className="media--xs" {...otherProps} />
+      <input
+        ref={inputRef}
+        type="radio"
+        name={name}
+        id={id}
+        className="media--xs"
+        {...otherProps}
+      />
       <label className="flush--bottom" htmlFor={id}>
         <span className="fdsCheckable-icon--checked">
           <RadioFilledIcon size="xs" />
@@ -46,6 +53,9 @@ Radio.propTypes = {
 
   /** If the supplied `label` prop should be rendered to the screen. */
   showLabel: PropTypes.bool,
+
+  /** Ref for input element */
+  inputRef: PropTypes.func,
 
   /** `true` checks the radio by default */
   defaultChecked: PropTypes.bool,
