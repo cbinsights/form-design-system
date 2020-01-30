@@ -16,12 +16,12 @@ const Checkbox = ({
   showLabel,
   onChange,
   indeterminate,
-  checked,
   disabled,
   inputRef,
+  defaultChecked,
   ...otherProps
 }) => {
-  const [isChecked, setIsChecked] = useState(checked);
+  const [isChecked, setIsChecked] = useState(defaultChecked);
   const id = uuidv4();
 
   const handleChange = (e) => {
@@ -48,7 +48,6 @@ const Checkbox = ({
         id={id}
         className="media--xs"
         onChange={handleChange}
-        defaultChecked={checked}
         disabled={disabled}
         ref={inputRef}
         {...otherProps}
@@ -68,7 +67,6 @@ Checkbox.defaultProps = {
   indeterminate: false,
   disabled: false,
   showLabel: true,
-  onChange: () => {},
 };
 
 Checkbox.propTypes = {
@@ -91,8 +89,8 @@ Checkbox.propTypes = {
   /** Sets type `indeterminate` to `true` */
   indeterminate: PropTypes.bool,
 
-  /** Sets `checked` state (for both default and indeterminate types) */
-  checked: PropTypes.bool,
+  /** `true` checks the radio by default */
+  defaultChecked: PropTypes.bool,
 
   /** Disables form field when `true` */
   disabled: PropTypes.bool,
