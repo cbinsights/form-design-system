@@ -6,10 +6,8 @@ exports[`Radio component matches snapshot (disabled) 1`] = `
 >
   <input
     className="media--xs"
-    defaultChecked={false}
     id="mock-universal-unique-identifier"
     name="snapshot-radio"
-    onChange={[Function]}
     type="radio"
   />
   <label
@@ -17,19 +15,18 @@ exports[`Radio component matches snapshot (disabled) 1`] = `
     htmlFor="mock-universal-unique-identifier"
   >
     <div
-      aria-checked={false}
       aria-label="Snapshot Label"
       role="radio"
     >
       <span
-        className="fdsRadio-checkedIcon"
+        className="fdsCheckable-icon--checked"
       >
         <RadioFilledIcon
           size="xs"
         />
       </span>
       <span
-        className="fdsRadio-uncheckedIcon"
+        className="fdsCheckable-icon--unchecked"
       >
         <RadioEmptyIcon
           size="xs"
@@ -51,10 +48,8 @@ exports[`Radio component matches snapshot 1`] = `
 >
   <input
     className="media--xs"
-    defaultChecked={false}
     id="mock-universal-unique-identifier"
     name="snapshot-radio"
-    onChange={[Function]}
     type="radio"
     value="test-value"
   />
@@ -63,19 +58,18 @@ exports[`Radio component matches snapshot 1`] = `
     htmlFor="mock-universal-unique-identifier"
   >
     <div
-      aria-checked={false}
       aria-label="Snapshot Label"
       role="radio"
     >
       <span
-        className="fdsRadio-checkedIcon"
+        className="fdsCheckable-icon--checked"
       >
         <RadioFilledIcon
           size="xs"
         />
       </span>
       <span
-        className="fdsRadio-uncheckedIcon"
+        className="fdsCheckable-icon--unchecked"
       >
         <RadioEmptyIcon
           size="xs"
