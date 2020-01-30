@@ -17,18 +17,12 @@ const Radio = ({ name, label, showLabel, disabled, ...otherProps }) => {
     <div className={cx('fdsCheckable fdsRadio', { 'fdsCheckable--disabled': disabled })}>
       <input type="radio" name={name} id={id} className="media--xs" {...otherProps} />
       <label className="flush--bottom" htmlFor={id}>
-        <div
-          role="radio"
-          aria-checked={otherProps.defaultChecked || otherProps.checked}
-          aria-label={label}
-        >
-          <span className="fdsCheckable-icon--checked">
-            <RadioFilledIcon size="xs" />
-          </span>
-          <span className="fdsCheckable-icon--unchecked">
-            <RadioEmptyIcon size="xs" />
-          </span>
-        </div>
+        <span className="fdsCheckable-icon--checked">
+          <RadioFilledIcon size="xs" />
+        </span>
+        <span className="fdsCheckable-icon--unchecked">
+          <RadioEmptyIcon size="xs" />
+        </span>
         {showLabel && <span className="padding--left--half">{label}</span>}
       </label>
     </div>

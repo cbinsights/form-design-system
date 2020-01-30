@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -14,30 +14,15 @@ import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
 const Checkbox = ({
   label,
   showLabel,
-  onChange,
   indeterminate,
   disabled,
   inputRef,
-  defaultChecked,
   ...otherProps
 }) => {
-  const [isChecked, setIsChecked] = useState(defaultChecked);
   const id = uuidv4();
 
-  const handleChange = (e) => {
-    if (!disabled) {
-      const updatedCheckedState = !isChecked;
-      setIsChecked(updatedCheckedState);
-      onChange(e);
-    }
-  };
-
-  let Icon = CheckEmptyIcon;
-  if (indeterminate && isChecked) {
-    Icon = CheckIndeterminateIcon;
-  } else if (isChecked) {
-    Icon = CheckFilledIcon;
-  }
+  const IconUnchecked = CheckEmptyIcon;
+  const IconChecked = indeterminate ? CheckIndeterminateIcon : CheckFilledIcon;
 
   return (
     <div
@@ -47,15 +32,17 @@ const Checkbox = ({
         type="checkbox"
         id={id}
         className="media--xs"
-        onChange={handleChange}
         disabled={disabled}
         ref={inputRef}
         {...otherProps}
       />
       <label className="flush--bottom" htmlFor={id}>
-        <div role="checkbox" aria-checked={isChecked} aria-label={label}>
-          <Icon size="xs" />
-        </div>
+        <span className="fdsCheckable-icon--checked">
+          <IconChecked size="xs" />
+        </span>
+        <span className="fdsCheckable-icon--unchecked">
+          <IconUnchecked size="xs" />
+        </span>
         {showLabel && <span className="padding--left--half">{label}</span>}
       </label>
     </div>
@@ -63,7 +50,6 @@ const Checkbox = ({
 };
 
 Checkbox.defaultProps = {
-  checked: false,
   indeterminate: false,
   disabled: false,
   showLabel: true,
@@ -78,13 +64,6 @@ Checkbox.propTypes = {
 
   /** Ref for input element */
   inputRef: PropTypes.func,
-
-  /** onChange callback:
-   * ```
-   * <Checkbox onChange={(e) => {}} ... />
-   * ```
-   */
-  onChange: PropTypes.func,
 
   /** Sets type `indeterminate` to `true` */
   indeterminate: PropTypes.bool,
