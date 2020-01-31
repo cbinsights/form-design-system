@@ -100,6 +100,7 @@
 .fdsButton--outlined {
   border: 1px solid var(--button-outlined-border);
   background-color: white;
+  color: var(--font-color-dark);
 }
 
 .fdsButton--ghost {
