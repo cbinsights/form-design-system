@@ -27,6 +27,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.3] `react-hook-form` fixes
+Makes `Checkbox` and `Radio` compatible with `react-hook-form`.
+
+- Removed `Checkbox` and `Radio` internal state; these components are now fully uncontrolled
+- `Checkbox` and `Radio` now both accept an `inputRef` prop that places a ref on the `input` element they render
+
 ## [7.2] DropdownButton
 
 - Added `DropdownButton` component
