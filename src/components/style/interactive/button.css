@@ -102,8 +102,7 @@
   background-color: white;
 }
 
-.fdsButton--ghost,
-.fdsButton--outlined {
+.fdsButton--ghost {
   /* this isn't needed, just writing out for clarity */
   color: var(--button-primary-color);
 }
@@ -150,24 +149,20 @@
   opacity: 1;
 }
 
-.inverted .fdsButton--ghost,
-.inverted .fdsButton--outlined {
+.inverted .fdsButton--ghost {
   color: var(--color-white);
   background: transparent;
 }
 
-.inverted .fdsButton--outlined:hover,
 .inverted .fdsButton--ghost:hover {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-.inverted .fdsButton--outlined:active,
 .inverted .fdsButton--ghost:active {
   background-color: rgba(255, 255, 255, 0.16);
 }
 
-.inverted .fdsButton--ghost.fdsButton--loading::before,
-.inverted .fdsButton--outlined.fdsButton--loading::before {
+.inverted .fdsButton--ghost.fdsButton--loading::before {
   border: 2px solid var(--color-white);
   border-top-color: transparent;
 }
