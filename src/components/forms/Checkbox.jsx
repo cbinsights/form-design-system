@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -14,29 +14,15 @@ import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
 const Checkbox = ({
   label,
   showLabel,
-  onChange,
   indeterminate,
-  checked,
   disabled,
+  inputRef,
   ...otherProps
 }) => {
-  const [isChecked, setIsChecked] = useState(checked);
   const id = uuidv4();
 
-  const handleChange = (e) => {
-    if (!disabled) {
-      const updatedCheckedState = !isChecked;
-      setIsChecked(updatedCheckedState);
-      onChange(e);
-    }
-  };
-
-  let Icon = CheckEmptyIcon;
-  if (indeterminate && isChecked) {
-    Icon = CheckIndeterminateIcon;
-  } else if (isChecked) {
-    Icon = CheckFilledIcon;
-  }
+  const IconUnchecked = CheckEmptyIcon;
+  const IconChecked = indeterminate ? CheckIndeterminateIcon : CheckFilledIcon;
 
   return (
     <div
@@ -46,15 +32,17 @@ const Checkbox = ({
         type="checkbox"
         id={id}
         className="media--xs"
-        onChange={handleChange}
-        defaultChecked={checked}
         disabled={disabled}
+        ref={inputRef}
         {...otherProps}
       />
       <label className="flush--bottom" htmlFor={id}>
-        <div role="checkbox" aria-checked={isChecked} aria-label={label}>
-          <Icon size="xs" />
-        </div>
+        <span className="fdsCheckable-icon--checked">
+          <IconChecked size="xs" />
+        </span>
+        <span className="fdsCheckable-icon--unchecked">
+          <IconUnchecked size="xs" />
+        </span>
         {showLabel && <span className="padding--left--half">{label}</span>}
       </label>
     </div>
@@ -62,11 +50,9 @@ const Checkbox = ({
 };
 
 Checkbox.defaultProps = {
-  checked: false,
   indeterminate: false,
   disabled: false,
   showLabel: true,
-  onChange: () => {},
 };
 
 Checkbox.propTypes = {
@@ -76,18 +62,14 @@ Checkbox.propTypes = {
   /** If the supplied `label` prop should be rendered to the screen. */
   showLabel: PropTypes.bool,
 
-  /** onChange callback:
-   * ```
-   * <Checkbox onChange={(e) => {}} ... />
-   * ```
-   */
-  onChange: PropTypes.func,
+  /** Ref for input element */
+  inputRef: PropTypes.func,
 
   /** Sets type `indeterminate` to `true` */
   indeterminate: PropTypes.bool,
 
-  /** Sets `checked` state (for both default and indeterminate types) */
-  checked: PropTypes.bool,
+  /** `true` checks the radio by default */
+  defaultChecked: PropTypes.bool,
 
   /** Disables form field when `true` */
   disabled: PropTypes.bool,
