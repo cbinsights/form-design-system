@@ -1,0 +1,271 @@
+import { Meta, Story, Preview, Props, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
+import { ColorSwatchWrapper } from "components/util/storybook";
+import ColorSwatch from "components/util/ColorSwatch"
+import Table, { TableBody, TableCell } from "components/util/Table"
+
+<Meta title="FDS|Dictionary" />
+
+# Colors
+
+<Story name="Colors">
+  <ColorSwatchWrapper>
+      <ColorSwatch hex="404040" cssVar="var(--color-charcoal)" jsVar="COLOR_CHARCOAL" />
+      <ColorSwatch hex="757575" cssVar="var(--color-slate)" jsVar="COLOR_SLATE" />
+      <ColorSwatch hex="a2a0a0" cssVar="var(--color-gray)" jsVar="COLOR_GRAY" />
+      <ColorSwatch hex="c2bfbf" cssVar="var(--color-silver)" jsVar="COLOR_SILVER" />
+      <ColorSwatch hex="d6d4d4" cssVar="var(--color-timberwolf)" jsVar="COLOR_TIMBERWOLF" />
+      <ColorSwatch hex="f2f2f2" cssVar="var(--color-lightGray)" jsVar="COLOR_LIGHT_GRAY" />
+      <ColorSwatch hex="ffffff" cssVar="var(--color-white)" jsVar="COLOR_WHITE" />
+      <ColorSwatch hex="003366" cssVar="var(--color-navy)" jsVar="COLOR_NAVY" />
+      <ColorSwatch hex="006699" cssVar="var(--color-blue)" jsVar="COLOR_BLUE" />
+      <ColorSwatch hex="4cabce" cssVar="var(--color-aqua)" jsVar="COLOR_AQUA" />
+      <ColorSwatch hex="bbdbe5" cssVar="var(--color-sky)" jsVar="COLOR_SKY" />
+      <ColorSwatch hex="f1f5f7" cssVar="var(--color-haze)" jsVar="COLOR_HAZE" />
+      <ColorSwatch hex="e5323e" cssVar="var(--color-red)" jsVar="COLOR_RED" />
+      <ColorSwatch hex="ff6633" cssVar="var(--color-orange)" jsVar="COLOR_ORANGE" />
+      <ColorSwatch hex="f9a862" cssVar="var(--color-sienna)" jsVar="COLOR_SIENNA" />
+      <ColorSwatch hex="fcc89a" cssVar="var(--color-sand)" jsVar="COLOR_SAND" />
+      <ColorSwatch hex="00986b" cssVar="var(--color-green)" jsVar="COLOR_GREEN" />
+      <ColorSwatch hex="70c390" cssVar="var(--color-mint)" jsVar="COLOR_MINT" />
+      <ColorSwatch hex="a02385" cssVar="var(--color-purple)" jsVar="COLOR_PURPLE" />
+      <ColorSwatch hex="d772ad" cssVar="var(--color-violet)" jsVar="COLOR_VIOLET" />
+  </ColorSwatchWrapper>
+</Story>
+
+# Layout
+
+<Story name="Layout">
+  <Table>
+    <thead>
+      <tr>
+        <th>CSS VAR</th>
+        <th>JS VAR</th>
+        <th>VALUE</th>
+      </tr>
+    </thead>
+    <TableBody>
+        <tr>
+          <TableCell>var(--font-color-link)</TableCell>
+          <TableCell>FONT_COLOR_LINK</TableCell>
+          <TableCell>#006699</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-linkInverted)</TableCell>
+          <TableCell>FONT_COLOR_LINK_INVERTED</TableCell>
+          <TableCell>#4cabce</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-heading)</TableCell>
+          <TableCell>FONT_COLOR_HEADING</TableCell>
+          <TableCell>#404040</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-primary)</TableCell>
+          <TableCell>FONT_COLOR_PRIMARY</TableCell>
+          <TableCell>rgba(64, 64, 64, 0.87)</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-secondary)</TableCell>
+          <TableCell>FONT_COLOR_SECONDARY</TableCell>
+          <TableCell>rgba(64, 64, 64, 0.60)</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-hint)</TableCell>
+          <TableCell>FONT_COLOR_HINT</TableCell>
+          <TableCell>rgba(64, 64, 64, 0.38)</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-headingInverted)</TableCell>
+          <TableCell>FONT_COLOR_HEADING_INVERTED</TableCell>
+          <TableCell>#ffffff</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-primaryInverted)</TableCell>
+          <TableCell>FONT_COLOR_PRIMARY_INVERTED</TableCell>
+          <TableCell>rgba(255, 255, 255, 0.87)</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-secondaryInverted)</TableCell>
+          <TableCell>FONT_COLOR_SECONDARY_INVERTED</TableCell>
+          <TableCell>rgba(255, 255, 255, 0.60)</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-hintInverted)</TableCell>
+          <TableCell>FONT_COLOR_HINT_INVERTED</TableCell>
+          <TableCell>rgba(255, 255, 255, 0.38)</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-error)</TableCell>
+          <TableCell>FONT_COLOR_ERROR</TableCell>
+          <TableCell>#e5323e</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-success)</TableCell>
+          <TableCell>FONT_COLOR_SUCCESS</TableCell>
+          <TableCell>#00986b</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-errorInverted)</TableCell>
+          <TableCell>FONT_COLOR_ERROR_INVERTED</TableCell>
+          <TableCell>#e5323e</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-color-successInverted)</TableCell>
+          <TableCell>FONT_COLOR_SUCCESS_INVERTED</TableCell>
+          <TableCell>#70c390</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-family-condensed)</TableCell>
+          <TableCell>FONT_FAMILY_CONDENSED</TableCell>
+          <TableCell>&#x27;Roboto Condensed&#x27;, &#x27;Helvetica Neue&#x27;, Helvetica, &#x27;Segoe UI&#x27;, Arial, sans-serif</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-family-default)</TableCell>
+          <TableCell>FONT_FAMILY_DEFAULT</TableCell>
+          <TableCell>Roboto, &#x27;Helvetica Neue&#x27;, Helvetica, &#x27;Segoe UI&#x27;, Arial, sans-serif</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-family-mono)</TableCell>
+          <TableCell>FONT_FAMILY_MONO</TableCell>
+          <TableCell>Monaco, Consolas, monospace</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-lineHeight-bigText)</TableCell>
+          <TableCell>FONT_LINE_HEIGHT_BIG_TEXT</TableCell>
+          <TableCell>1.2</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-lineHeight-default)</TableCell>
+          <TableCell>FONT_LINE_HEIGHT_DEFAULT</TableCell>
+          <TableCell>1.5</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-lineHeight-smallText)</TableCell>
+          <TableCell>FONT_LINE_HEIGHT_SMALL_TEXT</TableCell>
+          <TableCell>1.8</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-size-xs)</TableCell>
+          <TableCell>FONT_SIZE_XS</TableCell>
+          <TableCell>10px</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-size-s)</TableCell>
+          <TableCell>FONT_SIZE_S</TableCell>
+          <TableCell>12px</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-size-m)</TableCell>
+          <TableCell>FONT_SIZE_M</TableCell>
+          <TableCell>14px</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-size-default)</TableCell>
+          <TableCell>FONT_SIZE_DEFAULT</TableCell>
+          <TableCell>14px</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-size-l)</TableCell>
+          <TableCell>FONT_SIZE_L</TableCell>
+          <TableCell>16px</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-size-xl)</TableCell>
+          <TableCell>FONT_SIZE_XL</TableCell>
+          <TableCell>20px</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-size-2xl)</TableCell>
+          <TableCell>FONT_SIZE_2XL</TableCell>
+          <TableCell>24px</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-size-3xl)</TableCell>
+          <TableCell>FONT_SIZE_3XL</TableCell>
+          <TableCell>32px</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-size-4xl)</TableCell>
+          <TableCell>FONT_SIZE_4XL</TableCell>
+          <TableCell>38px</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-weight-default)</TableCell>
+          <TableCell>FONT_WEIGHT_DEFAULT</TableCell>
+          <TableCell>400</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-weight-medium)</TableCell>
+          <TableCell>FONT_WEIGHT_MEDIUM</TableCell>
+          <TableCell>500</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--font-weight-bold)</TableCell>
+          <TableCell>FONT_WEIGHT_BOLD</TableCell>
+          <TableCell>700</TableCell>
+        </tr>
+    </TableBody>
+  </Table>
+</Story>
+
+# Border
+
+<Story name="Border">
+  <Table>
+    <thead>
+      <tr>
+        <th>CSS VAR</th>
+        <th>JS VAR</th>
+        <th>VALUE</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <TableCell>var(--border-color-input)</TableCell>
+          <TableCell>BORDER_COLOR_INPUT</TableCell>
+          <TableCell>rgba(64, 64, 64, 0.24)</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--border-color-focusRing)</TableCell>
+          <TableCell>BORDER_COLOR_FOCUS_RING</TableCell>
+          <TableCell>rgba(76, 171, 206, 0.6)</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--border-radius-default)</TableCell>
+          <TableCell>BORDER_RADIUS_DEFAULT</TableCell>
+          <TableCell>4px</TableCell>
+        </tr>
+    </tbody>
+  </Table>
+</Story>
+
+# Motion
+
+<Story name="Motion">
+  <Table>
+    <thead>
+      <tr>
+        <th>CSS VAR</th>
+        <th>JS VAR</th>
+        <th>VALUE</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <TableCell>var(--motion-easing-default)</TableCell>
+          <TableCell>MOTION_EASING_DEFAULT</TableCell>
+          <TableCell>cubic-bezier(0.4, 0, 0.2, 1)</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--motion-easing-decelerate)</TableCell>
+          <TableCell>MOTION_EASING_DECELERATE</TableCell>
+          <TableCell>cubic-bezier(0, 0, 0.2, 1)</TableCell>
+        </tr>
+        <tr>
+          <TableCell>var(--motion-easing-accelerate)</TableCell>
+          <TableCell>MOTION_EASING_ACCELERATE</TableCell>
+          <TableCell>cubic-bezier(0.4, 0, 1, 1)</TableCell>
+        </tr>
+    </tbody>
+  </Table>
+</Story>
