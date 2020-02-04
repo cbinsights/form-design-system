@@ -31,8 +31,9 @@ Chosen option: "Only add utility classes that are useful on their own"
 ```html
 <div class="position--relative">
   <div>
-    if this element is absolutely positioned, we need ad-hoc CSS rules anyway.
-    `position--relative` is not helpful on its own
+    If this element is absolutely positioned, we need additional ad-hoc CSS rules beyond
+    what the utility class above provides.
+    `position--relative` is not helpful on its own.
   </div>
 </div>
 ```
@@ -42,8 +43,8 @@ Chosen option: "Only add utility classes that are useful on their own"
 ```html
 <div class="color--red">
   <div>
-    this text will be red.
-    no additional CSS rules are needed for the above utility class to be useful.
+    This text will be red.
+    No additional CSS rules are needed for the above utility class to be useful.
   </div>
 </div>
 ```
