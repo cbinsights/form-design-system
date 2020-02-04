@@ -1,109 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>fds-icons</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i" rel="stylesheet">
-  <link rel="stylesheet" href="assets/icons.css" type="text/css">
-  <link rel="stylesheet" href="assets/pure-min.css" type="text/css">
-  <link rel="stylesheet" href="assets/custom.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" type="text/css">
-</head>
-<body>
-  <section class="bounds">
-    <p><a href="https://cbinsights.github.io/form-design-system/">&larr; docs index</a></p>
-    <p><a href="https://github.com/cbinsights/form-design-system">&larr; github</a></p>
-  </section>
-  <header class="bounds">
-    <h1><code>fds-icons</code></h1>
-    <p>React components are generated for all icons shown below.</p>
-    <p>Click on an import statement to copy it.</p>
+import { useState } from 'react'
+import { Meta, Story, Preview, Props, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
 
-    <hr />
-
-    <table>
-      <caption>All icon components accept the following React props</caption>
-      <thead>
-        <tr>
-          <th id="prop" scope="col">Prop</th>
-          <th id="type" scope="col">Type</th>
-          <th id="default" scope="col">Default</th>
-          <th id="description" scope="col">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th id="colorProp" headers="prop" scope="row"><code>color</code></th>
-          <td headers="type colorProp"><code>String</code></td>
-          <td headers="default colorProp"><code>COLOR_CHARCOAL</code></td>
-          <td headers="description colorProp">Color of <code>fill</code> for SVG</td>
-        </tr>
-        <tr>
-          <th id="sizeProp" headers="prop" scope="row"><code>size</code></th>
-          <td headers="type sizeProp">one of: <code>'xs'</code>, <code>'s'</code>, <code>'m'</code>, <code>'l'</code>, <code>'xl'</code></td>
-          <td headers="default sizeProp"><code>s</code></td>
-          <td headers="description sizeProp">Standard media size of icon</td>
-        </tr>
-        <tr>
-          <th id="customSizeProp" headers="prop" scope="row"><code>customSize</code></th>
-          <td headers="type customSizeProp"><code>Number</code></td>
-          <td headers="default customSizeProp">-</td>
-          <td headers="description customSizeProp">Sets a non-standard size for the icon. Prefer using the <code>size</code> prop.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <hr />
-
-  </header>
-  <section class="bounds">
-    <ul class="shapeList">
+export const Icons = () => (
+  <div>
+    <ul className="icon-list">
       {{#each this}}
-        <li class="shapeList-shape">
-          <div class="shape-svg">
-            <span class="fds-icon">{{{this.svg}}}</span>
-          </div>
-          <div class="shape-desc">
-            <code class="desc-name">{{this.name}}</code>
-            <code
-              class="desc-import js-clipboard"
-              data-clipboard-text="{{this.importName}}"
-            >
-              {{this.importName}}
-            </code>
-          </div>
+        <li>
+          <div
+            dangerouslySetInnerHTML=\{{ __html: '{{{ this.svg }}}'  }}
+          />
+          <p>{{this.name}}</p>
         </li>
       {{/each}}
     </ul>
-  </section>
+  </div>
+)
 
-  <script
-    src="https://code.jquery.com/jquery-1.12.4.min.js"
-    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-  <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
-  <script type="text/javascript">
-    function autorun() {
-      toastr.options.preventDuplicates = true;
+<Meta title="FDS|Icons" />
 
-      var clipboard = new ClipboardJS('.js-clipboard');
+# Icons
 
-      clipboard.on('success', function(e) {
-        toastr.clear();
-        toastr.info(`Copied <code style='color: #003366'>"${e.text}"</code>`);
-      });
-      clipboard.on('error', function(e) {
-        toastr.clear();
-        toastr.error('Failed to copy to clipboard 😓')
-      });
+Click on an icon to copy it's path to your clipboard
 
-    }
-    if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
-    else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
-    else window.onload = autorun;
-  </script>
-</body>
-</html>
+<Icons />
