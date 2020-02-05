@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconButton, { THEMES } from './IconButton';
+import IconButton, { THEMES } from 'components/interactive/IconButton';
 
 export const VALID_FAB_THEMES = THEMES.filter((t) => t !== 'ghost');
 

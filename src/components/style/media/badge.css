@@ -6,6 +6,7 @@
   background-color: rgba(var(--rgb-navy, inherit), 0.08);
   text-align: center;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .fdsBadge--xs {

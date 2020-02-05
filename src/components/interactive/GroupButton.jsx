@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import baseElement from '../../util/baseElement';
+import baseElement from 'util/baseElement';
 
 export const GroupButton = (props) => {
   const {
