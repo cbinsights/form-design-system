@@ -1,11 +1,40 @@
-import { Meta, Story, Preview, Props, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
-import { ColorSwatchWrapper } from "components/util/storybook";
-import ColorSwatch from "components/util/ColorSwatch"
+import { Meta, Source, Story } from "@storybook/addon-docs/blocks";
+import ColorSwatch, { ColorSwatchWrapper } from "components/util/ColorSwatch";
 import Table, { TableBody, TableCell } from "components/util/Table"
 
-<Meta title="FDS|Dictionary" />
+export const TableLayout = ({ data, headers }) => (
+    <Table>
+      <thead>
+        <tr>
+          {headers.map(header => (
+            <th>{header}</th>
+          ))}
+        </tr>
+      </thead>
+      <TableBody>
+        {data.map(row => (
+          <tr>
+            {row.map(item => (
+              <TableCell>{item}</TableCell>
+            ))}
+          </tr>
+        ))}
+      </TableBody>
+    </Table>
+)
 
-# Colors
+<Meta title="FDS|1 - Dictionary" />
+
+# Dictionary
+
+Using JS Vars: 
+`import FDS from '@cbinsights/fds/lib/dictionary/js/styleConstants'`
+`<div style=\{{ color: FDS.COLOR_MINT }} />`
+
+Using CSS Vars:
+`.foo { color: var(--color-mint) }`
+
+## Colors
 
 <Story name="Colors">
   <ColorSwatchWrapper>
@@ -15,71 +44,55 @@ import Table, { TableBody, TableCell } from "components/util/Table"
   </ColorSwatchWrapper>
 </Story>
 
-# Layout
+## Layout
 
 <Story name="Layout">
-  <Table>
-    <thead>
-      <tr>
-        <th>CSS VAR</th>
-        <th>JS VAR</th>
-        <th>VALUE</th>
-      </tr>
-    </thead>
-    <TableBody>
-      {{#each this.font}}
-        <tr>
-          <TableCell>{{this.varNames.css}}</TableCell>
-          <TableCell>{{this.varNames.js}}</TableCell>
-          <TableCell>{{this.value}}</TableCell>
-        </tr>
+  <TableLayout
+    headers={['CSS Var', 'JS Var', 'Value']}
+    data={[
+      {{#each this.layout}}
+        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}" ],
       {{/each}}
-    </TableBody>
-  </Table>
+    ]} 
+  />
 </Story>
 
-# Border
+
+## Font
+
+<Story name="Font">
+  <TableLayout
+    headers={['CSS Var', 'JS Var', 'Value']}
+    data={[
+      {{#each this.font}}
+        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}" ],
+      {{/each}}
+    ]} 
+  />
+</Story>
+
+## Border
 
 <Story name="Border">
-  <Table>
-    <thead>
-      <tr>
-        <th>CSS VAR</th>
-        <th>JS VAR</th>
-        <th>VALUE</th>
-      </tr>
-    </thead>
-    <tbody>
+  <TableLayout
+    headers={['CSS Var', 'JS Var', 'Value']}
+    data={[
       {{#each this.border}}
-        <tr>
-          <TableCell>{{this.varNames.css}}</TableCell>
-          <TableCell>{{this.varNames.js}}</TableCell>
-          <TableCell>{{this.value}}</TableCell>
-        </tr>
+        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}" ],
       {{/each}}
-    </tbody>
-  </Table>
+    ]} 
+  />
 </Story>
 
-# Motion
+## Motion
 
 <Story name="Motion">
-  <Table>
-    <thead>
-      <tr>
-        <th>CSS VAR</th>
-        <th>JS VAR</th>
-        <th>VALUE</th>
-      </tr>
-    </thead>
-    <tbody>
+  <TableLayout
+    headers={['CSS Var', 'JS Var', 'Value']}
+    data={[
       {{#each this.motion}}
-        <tr>
-          <TableCell>{{this.varNames.css}}</TableCell>
-          <TableCell>{{this.varNames.js}}</TableCell>
-          <TableCell>{{this.value}}</TableCell>
-        </tr>
+        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{ this.value }}" ],
       {{/each}}
-    </tbody>
-  </Table>
+    ]} 
+  />
 </Story>
