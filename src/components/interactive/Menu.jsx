@@ -2,27 +2,25 @@ import React from 'react';
 import { useSelect } from 'downshift';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import Button from './Button';
 
-function Menu({ items, label }) {
+// TODO:
+// - [x] prop name cleanup
+// - [ ] custom trigger support
+// - [ ] popover
+// - [ ] jsdoc it
+
+const Menu = ({ items, trigger }) => {
   const {
     isOpen,
-    selectedItem,
     getToggleButtonProps,
-    getLabelProps,
     getMenuProps,
     highlightedIndex,
     getItemProps,
   } = useSelect({ items });
+
   return (
     <div>
-      <label {...getLabelProps()}>Choose an element:</label>
-      <Button
-        size="s"
-        hasCaret
-        label={selectedItem || 'Sheet'}
-        {...getToggleButtonProps()}
-      />
+      <div {...getToggleButtonProps()}>{trigger}</div>
       <ul className={cx('fdsMenu', 'rounded--all', 'elevation--2')} {...getMenuProps()}>
         {isOpen &&
           items.map((item, index) => (
@@ -39,12 +37,15 @@ function Menu({ items, label }) {
       </ul>
     </div>
   );
-}
-
-Menu.defaultProps = {
-  items: PropTypes.any,
 };
 
-Menu.propTypes = {};
+Menu.defaultProps = {};
+
+Menu.propTypes = {
+  /** JSX - Acts as a positioning reference for the popover and triggers active state */
+  trigger: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
+
+  items: PropTypes.any,
+};
 
 export default Menu;
