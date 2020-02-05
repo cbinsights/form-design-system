@@ -8,12 +8,13 @@ import { MOCK_ITEMS } from './menu.test';
 # Menu
 
 <Story name="Test">
-  <React.Fragment>
+  <div className="alignChild--center--center" style={{ height: '100%', width: '100%' }}>
     <Menu
       items={MOCK_ITEMS}
       trigger={<button className="padding--all--half bgColor--red inverted">JSX lol</button>}
+      onChange={(wat) => {console.dir(wat)}}
     />
-  </React.Fragment>
+  </div>
 </Story>
 
 <Props of={Menu} />
