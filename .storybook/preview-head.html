@@ -99,7 +99,8 @@
   .swatch-container {
     margin: 6px;
     border-radius: 3px;
-    width: 120px;
+    min-width: 110px;
+    max-width: 230px;
     flex-grow: 1;
     cursor: pointer;
     position: relative;
@@ -108,30 +109,24 @@
     transition: box-shadow 150ms var(--motion-easing-default);
   }
 
-  .swatch-container:hover {
-    z-index: 2;
-    margin-bottom: -58px;
-  }
-
-  .swatch-container .content {
-    display: none;
-  }
-
-  .swatch-container:hover .content {
-    display: block;
-  }
-
   .swatch {
     position: relative;
-    height: 100px;
+    height: 90px;
   }
 
   .swatchCopyButton {
-    font-Size: 11px;
+    font-Size: 9px;
+    color: #444;
     width: 100%;
-    height: 21px;
-    padding: 4px;
+    padding: 3px;
+    border-right: 0 none;
+    border-left: 0 none;
     display: block;
+    margin-bottom: -1px;
+  }
+
+  .swatchCopyButton:first-child {
+    border-top: 0 none;
   }
 
   .swatch .hex {
