@@ -96,12 +96,13 @@
     display: block;
   }
 
-  .swatch-container {
+  .swatchContainer {
     margin: 6px;
     border-radius: 3px;
     min-width: 110px;
     max-width: 230px;
     flex-grow: 1;
+    align-self: flex-start;
     cursor: pointer;
     position: relative;
     background-color: white;
@@ -109,12 +110,12 @@
     transition: box-shadow 150ms var(--motion-easing-default);
   }
 
-  .swatch {
+  .swatchContainer-swatch {
     position: relative;
     height: 90px;
   }
 
-  .swatchCopyButton {
+  .swatchContainer-copyButton {
     font-Size: 10px;
     color: #444;
     width: 100%;
@@ -125,14 +126,24 @@
     margin-bottom: -1px;
   }
 
-  .swatchCopyButton:first-child {
+  .swatchContainer-copyButton:first-child {
     border-top: 0 none;
   }
 
-  .swatch .hex {
+  .swatchContainer-hex {
     color: inherit;
     font-size: 10px;
     opacity: .4;
+  }
+
+  .swatchContainer-name {
+    text-transform: capitalize;
+  }
+
+  .swatchWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -6px;
   }
 
   /**

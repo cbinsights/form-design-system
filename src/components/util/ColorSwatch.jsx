@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import { mostReadable } from 'tinycolor2';
 import cx from 'classnames';
 
-const CopyButton = ({ value, position, copyToClipboard }) => (
-  <button
-    onClick={() => copyToClipboard(value)}
-    className={`swatchCopyButton swatchCopyButton--${position}`}
-  >
+const CopyButton = ({ value, copyToClipboard }) => (
+  <button onClick={() => copyToClipboard(value)} className="swatchContainer-copyButton">
     {value}
   </button>
 );
@@ -32,7 +29,11 @@ export const ColorSwatch = (props) => {
     setTimeout(() => setCopiedText(''), 2000);
   };
 
-  const colorName = props.jsVar.split('_')[1];
+  const colorName = props.jsVar
+    .split('_')
+    .slice(1)
+    .join(' ')
+    .toLowerCase();
   const hexName = `#${props.hex.toUpperCase()}`;
   const { cssVar, jsVar } = props;
 
@@ -44,7 +45,7 @@ export const ColorSwatch = (props) => {
 
   return (
     <div
-      className={cx('display--inlineBlock', 'rounded--all', 'swatch-container', {
+      className={cx('rounded--all', 'swatchContainer', {
         'elevation--1': !isHovered,
         'elevation--3': isHovered,
       })}
@@ -52,14 +53,14 @@ export const ColorSwatch = (props) => {
       onMouseLeave={() => setIsHovered(!isHovered)}
     >
       <div
-        className="alignChild--center--center span--100 swatch"
+        className="alignChild--center--center span--100 swatchContainer-swatch"
         style={{ backgroundColor: hexName, color: mostReadableConfig(hexName) }}
       >
         <div className="align--center">
           {!copiedText ? (
             <React.Fragment>
-              <b>{colorName}</b>
-              <div className="hex">{hexName}</div>
+              <b className="swatchContainer-name">{colorName}</b>
+              <div className="swatchContainer-hex">{hexName}</div>
             </React.Fragment>
           ) : (
             <b>COPIED</b>
@@ -86,7 +87,7 @@ ColorSwatch.propTypes = {
 };
 
 export const ColorSwatchWrapper = (props) => (
-  <div style={{ display: 'flex', flexWrap: 'wrap', margin: -6 }}>{props.children}</div>
+  <div className="swatchWrapper">{props.children}</div>
 );
 
 ColorSwatchWrapper.propTypes = {
