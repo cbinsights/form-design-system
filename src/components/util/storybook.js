@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 
 /**
- * Storybook helpers
- */
-
-/**
  * Creates a knobs options object where labels match values.
  *
  * @param {Array} values list of possible prop values
@@ -20,43 +16,6 @@ export const arrayToOptions = (values) =>
     }),
     {}
   );
-
-/**
- * @Object
- * useful background images for stories
- */
-export const storyBackgrounds = {
-  diagonalLine:
-    'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJ0lEQVQYV2NkQAP/b///z4gsBhZQZWSEC8IEQIrAgsgCYEF0AZAgAAvKE968p7/mAAAAAElFTkSuQmCC)',
-  check:
-    'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQYV2M8fPiwLwMOwAiStLW13YxNftBJAgAx2BqeI9XcBAAAAABJRU5ErkJggg==)',
-};
-
-export const StoryWrapper = ({ children }) => (
-  <div
-    className="display--inlineFlex"
-    style={{
-      flexWrap: 'wrap',
-      marginBottom: `-${FDS.SPACE_HALF}`,
-      marginRight: `-${FDS.SPACE_HALF}`,
-      alignItems: 'center',
-    }}
-  >
-    {children}
-  </div>
-);
-
-StoryWrapper.propTypes = {
-  children: PropTypes.node,
-};
-
-export const StoryItem = ({ children }) => (
-  <div className="margin--right--half margin--bottom--half">{children}</div>
-);
-
-StoryItem.propTypes = {
-  children: PropTypes.node,
-};
 
 /**
  * For displaying important info in MDX docs
@@ -97,4 +56,39 @@ Info.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
     .isRequired,
   type: PropTypes.oneOf(['warn', 'info']),
+};
+
+export default Info;
+
+export const StoryWrapper = ({ children }) => (
+  <div
+    className="display--inlineFlex"
+    style={{
+      flexWrap: 'wrap',
+      marginBottom: `-${FDS.SPACE_HALF}`,
+      marginRight: `-${FDS.SPACE_HALF}`,
+      alignItems: 'center',
+    }}
+  >
+    {children}
+  </div>
+);
+
+StoryWrapper.propTypes = {
+  children: PropTypes.node,
+};
+
+export const StoryItem = ({ children }) => (
+  <div className="margin--right--half margin--bottom--half">{children}</div>
+);
+
+StoryItem.propTypes = {
+  children: PropTypes.node,
+};
+
+export const storyBackgrounds = {
+  diagonalLine:
+    'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJ0lEQVQYV2NkQAP/b///z4gsBhZQZWSEC8IEQIrAgsgCYEF0AZAgAAvKE968p7/mAAAAAElFTkSuQmCC)',
+  check:
+    'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQYV2M8fPiwLwMOwAiStLW13YxNftBJAgAx2BqeI9XcBAAAAABJRU5ErkJggg==)',
 };

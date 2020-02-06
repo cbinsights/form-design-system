@@ -10,6 +10,142 @@
     list-style-type: initial;
   }
 
+  .doctable {
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #333333;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+
+  .doctable tr {
+    border: none;
+    background: none;
+  }
+
+  .doctable td, .doctable th {
+    padding: 0;
+    border: none;
+  }
+
+  .doctable th:first-of-type, .doctable td:first-of-type {
+    padding-left: 20px;
+  }
+
+  .doctable th:last-of-type, .doctable td:last-of-type {
+    padding-right: 20px;
+    width: 20%;
+  }
+
+  .doctable th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .doctable th:not(:first-of-type) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .doctable tbody {
+    box-shadow: rgba(0,0,0,0.10) 0 1px 3px 1px, rgba(0,0,0,0.065) 0 0 0 1px;
+    border-radius: 4px;
+  }
+
+  .doctable tr:first-child td:first-child {
+    border-top-left-radius: 4px;
+  }
+
+  .doctable td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .doctable td:not(:first-of-type) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .doctable td:last-of-type {
+    padding-right: 20px;
+  }
+
+  .doctable td:hover {
+    background-color: rgba(202, 228, 234, .38);
+  }
+
+  .doctable td span {
+    background-color: rgba(0,0,0,.2);
+    font-size: 9px;
+    padding: 1px 4px;
+    line-height: normal;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .doctable td:hover span {
+    display: block;
+  }
+
+  .swatchContainer {
+    margin: 6px;
+    border-radius: 3px;
+    min-width: 110px;
+    max-width: 230px;
+    flex-grow: 1;
+    align-self: flex-start;
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    transition: box-shadow 150ms var(--motion-easing-default);
+  }
+
+  .swatchContainer-swatch {
+    position: relative;
+    height: 90px;
+  }
+
+  .swatchContainer-copyButton {
+    font-Size: 10px;
+    color: #444;
+    width: 100%;
+    padding: 4px;
+    border-right: 0 none;
+    border-left: 0 none;
+    display: block;
+    margin-bottom: -1px;
+  }
+
+  .swatchContainer-copyButton:first-child {
+    border-top: 0 none;
+  }
+
+  .swatchContainer-hex {
+    color: inherit;
+    font-size: 10px;
+    opacity: .4;
+  }
+
+  .swatchContainer-name {
+    text-transform: capitalize;
+  }
+
+  .swatchWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -6px;
+  }
+
   /**
   * (styles specific to doc examples)
   */
