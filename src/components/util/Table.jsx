@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { readableColor } from 'polished';
+import { mostReadable } from 'tinycolor2';
 
 export const Table = (props) => <table className="doctable">{props.children}</table>;
 
@@ -20,10 +20,14 @@ TableRow.propTypes = {
   children: PropTypes.node,
 };
 
+const mostReadableConfig = (hexName) =>
+  mostReadable(hexName, '#333', { includeFallbackColors: true, level: 'AAA' });
+
 export const TableCell = (props) => {
   const [copiedText, setCopiedText] = useState('');
 
   const copyToClipboard = (value) => {
+    // eslint-disable-next-line no-undef
     window.navigator.clipboard.writeText(value);
     setCopiedText(value);
     setTimeout(() => setCopiedText(''), 2000);
@@ -37,12 +41,12 @@ export const TableCell = (props) => {
     <td
       style={{
         background,
-        color: readableColor(background || '#FFF', '#333'),
+        color: mostReadableConfig(background || '#FFF'),
       }}
       onClick={() => copyToClipboard(props.children)}
     >
       {props.children}
-      <span style={{ color: readableColor(background || '#FFF', '#333') }}>
+      <span style={{ color: 'inherit' }}>
         {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
       </span>
     </td>
