@@ -46,9 +46,7 @@ export const TableCell = (props) => {
       onClick={() => copyToClipboard(props.children)}
     >
       {props.children}
-      <span style={{ color: 'inherit' }}>
-        {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
-      </span>
+      <span>{copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}</span>
     </td>
   );
 };
