@@ -130,7 +130,7 @@ const Popover = ({
       offset: `0,${distance}`,
     },
     preventOverflow: {
-      boundariesElement: 'window',
+      boundariesElement: 'viewport',
     },
     computeStyle: {
       // When gpuAcceleration is enabled, `react-popper` always
