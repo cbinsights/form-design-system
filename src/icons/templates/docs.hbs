@@ -1,25 +1,47 @@
-import { useState } from 'react'
-import { Meta, Story, Preview, Props, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
+import { Meta } from "@storybook/addon-docs/blocks";
+import { useClipboard, useToggleHover } from 'components/util/storybook'
+import cx from 'classnames';
 
-export const Icons = () => (
-  <div>
-    <ul className="icon-list">
-      {{#each this}}
-        <li>
-          <div
-            dangerouslySetInnerHTML=\{{ __html: '{{{ this.svg }}}'  }}
-          />
-          <p>{{this.name}}</p>
-        </li>
-      {{/each}}
-    </ul>
-  </div>
-)
+export const importPath = iconName => (
+  `import ${iconName}Icon from '@cbinsights/fds/lib/icons/react/${iconName}Icon';`
+);
 
-<Meta title="FDS|Icons" />
+export const Icon = ({ name, svg }) => {
+  const [copiedText, copyToClipboard] = useClipboard();
+  const [isHovered, toggleHover] = useToggleHover();
+  return (
+    <li>
+      <div
+        onClick={() => copyToClipboard(importPath(name))}
+        className={cx('rounded--all', {
+          'elevation--1': !isHovered,
+          'elevation--3': isHovered,
+        })}
+        onMouseEnter={toggleHover}
+        onMouseLeave={toggleHover}
+      >
+        <div
+          dangerouslySetInnerHTML=\{{ __html: svg }}
+        />
+        <span
+          className={cx("copyNotice", { 'display--block': isHovered })}
+        >
+          {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
+        </span>
+      </div>
+      <p>{name}</p>
+    </li>
+  )
+}
+
+<Meta title="FDS|2 - Icons" />
 
 # Icons
 
 Click on an icon to copy it's path to your clipboard
 
-<Icons />
+<ul className="icon-list">
+  {{#each this}}
+    <Icon name='{{this.name}}' svg='{{{ this.svg }}}' />
+  {{/each}}
+</ul>

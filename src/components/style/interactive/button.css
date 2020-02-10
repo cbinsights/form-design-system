@@ -99,31 +99,43 @@
 
 .fdsButton--outlined {
   border: 1px solid var(--button-outlined-border);
+  background-color: white;
+  color: var(--font-color-primary);
 }
 
-.fdsButton--ghost,
-.fdsButton--outlined {
+.fdsButton--ghost {
   /* this isn't needed, just writing out for clarity */
-  color: var(--button-secondary-color);
+  color: var(--button-primary-color);
 }
 
-:hover:matches(.fdsButton--outlined, .fdsButton--ghost) {
+.fdsButton--outlined:hover {
+  background-color: #F2F2F2;
+}
+
+.fdsButton--ghost:hover {
   background-color: var(--button-secondary-hover);
   color: var(--button-secondary-hover-color);
 }
 
-:active:matches(.fdsButton--outlined, .fdsButton--ghost) {
+.fdsButton--outlined:active {
+  background-color: #E0E0E0;
+}
+
+.fdsButton--ghost:active {
   background-color: var(--button-secondary-pressed);
   color: var(--button-secondary-pressed-color);
 }
 
-.fdsButton--isDestructive:hover:matches(.fdsButton--outlined, .fdsButton--ghost) {
+.fdsButton--outlined.fdsButton--isDestructive:hover,
+.fdsButton--ghost.fdsButton--isDestructive:hover {
   background-color: var(--button-secondary-destructive-hover);
 }
 
-.fdsButton--isDestructive:active:matches(.fdsButton--outlined, .fdsButton--ghost) {
+.fdsButton--outlined.fdsButton--isDestructive:active,
+.fdsButton--ghost.fdsButton--isDestructive:active {
   background-color: var(--button-secondary-destructive-pressed);
 }
+
 
 .fdsButton--ghost.fdsButton--loading {
   border: 1px solid var(--button-outlined-border);
@@ -138,23 +150,20 @@
   opacity: 1;
 }
 
-.inverted .fdsButton--ghost,
-.inverted .fdsButton--outlined {
+.inverted .fdsButton--ghost {
   color: var(--color-white);
+  background: transparent;
 }
 
-.inverted .fdsButton--outlined:hover,
 .inverted .fdsButton--ghost:hover {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-.inverted .fdsButton--outlined:active,
 .inverted .fdsButton--ghost:active {
   background-color: rgba(255, 255, 255, 0.16);
 }
 
-.inverted .fdsButton--ghost.fdsButton--loading::before,
-.inverted .fdsButton--outlined.fdsButton--loading::before {
+.inverted .fdsButton--ghost.fdsButton--loading::before {
   border: 2px solid var(--color-white);
   border-top-color: transparent;
 }
