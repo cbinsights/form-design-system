@@ -29,7 +29,7 @@ export const Icon = ({ name, svg }) => {
           {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
         </span>
       </div>
-      <p>{name}</p>
+      <p className="align--center wrap--singleLine--truncate type--data padding--top--half">{name}</p>
     </li>
   )
 }
@@ -40,7 +40,7 @@ export const Icon = ({ name, svg }) => {
 
 Click on an icon to copy it's path to your clipboard
 
-<ul className="icon-list">
+<ul className="iconList">
     <Icon name='ActionsArrowDown' svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill-rule="evenodd"><g><polygon points="18.6600501 7.09699258 20.8785213 9.31546382 13.2995504 16.8944348 13.3157158 16.9106002 12.0161654 18.2101506 12 18.1939852 11.9838346 18.2101506 10.6842842 16.9106002 10.7004496 16.8944348 2.97598979 9.16997495 5.19446103 6.95150371 12 13.7570427 18.6600501 7.09699258"/></g></g></svg>' />
     <Icon name='ActionsArrowLeft' svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill-rule="evenodd"><g><polygon points="16.4030074 19.1600501 14.1845362 21.3785213 6.6055652 13.7995504 6.58939977 13.8157158 5.28984941 12.5161654 5.30601484 12.5 5.28984941 12.4838346 6.58939977 11.1842842 6.6055652 11.2004496 14.3300251 3.47598979 16.5484963 5.69446103 9.74295732 12.5"/></g></g></svg>' />
     <Icon name='ActionsArrowRight' svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill-rule="evenodd"><g><polygon points="7.59699258 5.8399499 9.81546382 3.62147866 17.3944348 11.2004496 17.4106002 11.1842842 18.7101506 12.4838346 18.6939852 12.5 18.7101506 12.5161654 17.4106002 13.8157158 17.3944348 13.7995504 9.66997495 21.5240102 7.45150371 19.305539 14.2570427 12.5"/></g></g></svg>' />

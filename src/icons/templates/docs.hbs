@@ -29,7 +29,7 @@ export const Icon = ({ name, svg }) => {
           {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
         </span>
       </div>
-      <p>{name}</p>
+      <p className="align--center wrap--singleLine--truncate type--data padding--top--half">{name}</p>
     </li>
   )
 }
@@ -40,7 +40,7 @@ export const Icon = ({ name, svg }) => {
 
 Click on an icon to copy it's path to your clipboard
 
-<ul className="icon-list">
+<ul className="iconList">
   {{#each this}}
     <Icon name='{{this.name}}' svg='{{{ this.svg }}}' />
   {{/each}}
