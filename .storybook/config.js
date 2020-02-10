@@ -29,6 +29,7 @@ configure(
   [
     require.context('../src/components', true, /\.docs\.stories\.(js|mdx)$/),
     require.context('../src/components', true, /\.stories\.(js|mdx)$/),
+    require.context('../docs/icons', true, /\.stories\.(js|mdx)$/),
     require.context('../docs/dictionary', true, /\.stories\.(js|mdx)$/),
   ],
   module

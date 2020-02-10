@@ -92,6 +92,18 @@
     right: 0;
   }
 
+  .copyNotice {
+    background-color: rgba(0,0,0,.2);
+    font-size: 9px !important;
+    padding: 1px 4px;
+    line-height: normal;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #333;
+  }
+
   .doctable td:hover span {
     display: block;
   }
@@ -164,6 +176,36 @@
     --debug-color-layerBorder: rgba(0, 51, 102, 0.2);
     --debug-color-info: rgba(229, 50, 62, 1);
     --debug-color-content: rgba(255, 192, 203, 0.33);
+  }
+
+  .iconList {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 !important;
+    margin: -8px !important;
+  }
+
+  .iconList svg {
+    width: 50px;
+  }
+
+  .iconList li {
+    list-style-type: none;
+    margin: 8px;
+    min-width: 110px;
+    max-width: 140px;
+    flex-grow: 1;
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .iconList li > div {
+    padding: 16px;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 150ms var(--motion-easing-default);
   }
 
   /**

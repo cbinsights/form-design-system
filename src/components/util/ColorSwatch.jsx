@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { mostReadable } from 'tinycolor2';
+import { useClipboard, useToggleHover } from 'components/util/storybook';
 import cx from 'classnames';
 
 const CopyButton = ({ value, copyToClipboard }) => (
@@ -19,15 +20,8 @@ const mostReadableConfig = (hexName) =>
   mostReadable(hexName, '#333', { includeFallbackColors: true, level: 'AAA' });
 
 export const ColorSwatch = (props) => {
-  const [copiedText, setCopiedText] = useState('');
-  const [isHovered, setIsHovered] = useState(false);
-
-  const copyToClipboard = (value) => {
-    // eslint-disable-next-line no-undef
-    window.navigator.clipboard.writeText(value);
-    setCopiedText(value);
-    setTimeout(() => setCopiedText(''), 2000);
-  };
+  const [copiedText, copyToClipboard] = useClipboard('');
+  const [isHovered, toggleHover] = useToggleHover();
 
   const colorName = props.jsVar
     .split('_')
@@ -49,8 +43,8 @@ export const ColorSwatch = (props) => {
         'elevation--1': !isHovered,
         'elevation--3': isHovered,
       })}
-      onMouseEnter={() => setIsHovered(!isHovered)}
-      onMouseLeave={() => setIsHovered(!isHovered)}
+      onMouseEnter={toggleHover}
+      onMouseLeave={toggleHover}
     >
       <div
         className="alignChild--center--center span--100 swatchContainer-swatch"

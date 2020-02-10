@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 
@@ -16,6 +16,23 @@ export const arrayToOptions = (values) =>
     }),
     {}
   );
+
+export const useClipboard = () => {
+  const [copiedText, setCopiedText] = useState('');
+  const copyToClipboard = (value) => {
+    // eslint-disable-next-line no-undef
+    window.navigator.clipboard.writeText(value);
+    setCopiedText(value);
+    setTimeout(() => setCopiedText(''), 2000);
+  };
+  return [copiedText, copyToClipboard];
+};
+
+export const useToggleHover = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const toggleHover = () => setIsHovered(!isHovered);
+  return [isHovered, toggleHover];
+};
 
 /**
  * For displaying important info in MDX docs

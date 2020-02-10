@@ -1,27 +1,6 @@
 import { Meta, Source, Story } from "@storybook/addon-docs/blocks";
 import ColorSwatch, { ColorSwatchWrapper } from "components/util/ColorSwatch";
-import Table, { TableBody, TableCell } from "components/util/Table"
-
-export const TableLayout = ({ data, headers }) => (
-    <Table>
-      <thead>
-        <tr>
-          {headers.map(header => (
-            <th>{header}</th>
-          ))}
-        </tr>
-      </thead>
-      <TableBody>
-        {data.map(row => (
-          <tr>
-            {row.map(item => (
-              <TableCell>{item}</TableCell>
-            ))}
-          </tr>
-        ))}
-      </TableBody>
-    </Table>
-)
+import { TableLayout } from "components/util/Table"
 
 <Meta title="FDS|1 - Dictionary" />
 
