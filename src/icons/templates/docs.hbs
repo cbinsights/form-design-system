@@ -1,6 +1,7 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 import { useClipboard, useToggleHover } from 'components/util/storybook'
 import cx from 'classnames';
+import { TableLayout } from "components/util/Table"
 
 export const importPath = iconName => (
   `import ${iconName}Icon from '@cbinsights/fds/lib/icons/react/${iconName}Icon';`
@@ -38,7 +39,17 @@ export const Icon = ({ name, svg }) => {
 
 # Icons
 
-Click on an icon to copy it's path to your clipboard
+<TableLayout
+  copy={false}
+  headers={['Prop', 'Type', 'Default', 'Description']}
+  data={[
+      [<code>color</code>, <code>String</code>, <code>COLOR_CHARCOAL</code>, <>Color of <code>fill</code> for SVG</>],
+      [<code>size</code>, <>One of: <code>'xs', 's', 'm', 'l', 'xl'</code></>, <code>s</code>, 'Standard media size of icon'],
+      [<code>customSize</code>, <code>Number</code>, <code>-</code>, 'Sets a non-standard size for the icon. Prefer using the size prop.'],
+  ]} 
+/>
+
+Click on an import statement to copy it.
 
 <ul className="iconList">
   {{#each this}}

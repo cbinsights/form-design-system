@@ -1,6 +1,7 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 import { useClipboard, useToggleHover } from 'components/util/storybook'
 import cx from 'classnames';
+import { TableLayout } from "components/util/Table"
 
 export const importPath = iconName => (
   `import ${iconName}Icon from '@cbinsights/fds/lib/icons/react/${iconName}Icon';`
@@ -38,7 +39,17 @@ export const Icon = ({ name, svg }) => {
 
 # Icons
 
-Click on an icon to copy it's path to your clipboard
+<TableLayout
+  copy={false}
+  headers={['Prop', 'Type', 'Default', 'Description']}
+  data={[
+      [<code>color</code>, <code>String</code>, <code>COLOR_CHARCOAL</code>, <>Color of <code>fill</code> for SVG</>],
+      [<code>size</code>, <>One of: <code>'xs', 's', 'm', 'l', 'xl'</code></>, <code>s</code>, 'Standard media size of icon'],
+      [<code>customSize</code>, <code>Number</code>, <code>-</code>, 'Sets a non-standard size for the icon. Prefer using the size prop.'],
+  ]} 
+/>
+
+Click on an import statement to copy it.
 
 <ul className="iconList">
     <Icon name='ActionsArrowDown' svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill-rule="evenodd"><g><polygon points="18.6600501 7.09699258 20.8785213 9.31546382 13.2995504 16.8944348 13.3157158 16.9106002 12.0161654 18.2101506 12 18.1939852 11.9838346 18.2101506 10.6842842 16.9106002 10.7004496 16.8944348 2.97598979 9.16997495 5.19446103 6.95150371 12 13.7570427 18.6600501 7.09699258"/></g></g></svg>' />
