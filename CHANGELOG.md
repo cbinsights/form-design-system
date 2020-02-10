@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.5] Popover positioning
+
+- 🐛 Fixed bug where `Popover` boundary was the nearest parent with `overflow` set. `Popover`
+  will now use `window` as the reference element to avoid content overflow.
+
 ## [7.4] Updated Buttons
 
 - `outlined` Button now has updated presentation (white background,

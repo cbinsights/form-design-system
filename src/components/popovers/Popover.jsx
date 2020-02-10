@@ -129,6 +129,9 @@ const Popover = ({
       enabled: true,
       offset: `0,${distance}`,
     },
+    preventOverflow: {
+      boundariesElement: 'window',
+    },
     computeStyle: {
       // When gpuAcceleration is enabled, `react-popper` always
       // positions content to top/left 0 and uses `translate3d` to
