@@ -1,0 +1,18 @@
+import Menu, { MenuItem } from './Menu';
+import Button from '../interactive/Button';
+
+<Meta title="Popovers|Menu" component={Menu} />
+
+# Menu
+
+<Story name="Test">
+  <div style={{ padding: '12rem' }}>
+    <Menu
+      trigger={<Button label="Menu" hasCaret />}
+    >
+      {['Scoot', 'Boot', 'Loot', 'Toot'].map((item) => (
+        <MenuItem onSelect={() => { console.warn(`It's ${item} time!`) }}><p>{item}</p></MenuItem>
+      ))}
+    </Menu>
+  </div>
+</Story>
