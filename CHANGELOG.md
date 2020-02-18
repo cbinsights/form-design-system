@@ -27,9 +27,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [7.6] Menu component
+## [7.7] Menu component
 
 - Added `Menu` component for building accessible dropdown menus
+
+## [7.6] Import Icon
+
+- Added `ImportIcon`
 
 ## [7.5] Popover positioning
 
