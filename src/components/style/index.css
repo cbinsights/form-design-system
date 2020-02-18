@@ -11,6 +11,9 @@
 /* Variables */
 @import "./vars/buttonColors.css";
 
+/* Reach framework styles */
+@import "@reach/menu-button/styles.css";
+
 /* Layout components */
 @import "./layout/flex.css";
 @import "./layout/section.css";
@@ -43,3 +46,4 @@
 
 /* Modal (Dialogs/Popovers) */
 @import "./modals/dialog.css";
+@import "./modals/menu.css";
