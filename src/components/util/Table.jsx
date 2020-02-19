@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { mostReadable } from 'tinycolor2';
 import { useClipboard } from 'components/util/storybook';
 
+const camelToCaps = (camelCase) =>
+  camelCase.replace(/([A-Z])/g, (match) => ` ${match}`).toUpperCase();
+
 export const Table = (props) => <table className="doctable">{props.children}</table>;
 
 Table.propTypes = {
@@ -69,12 +72,12 @@ TableCell.propTypes = {
   cellType: PropTypes.string,
 };
 
-export const DictionaryTableLayout = ({ data, headers, copy = true }) => (
+export const DictionaryTableLayout = ({ data, copy = true }) => (
   <Table>
     <thead>
       <tr>
-        {headers.map((header, idx) => (
-          <th key={idx}>{header}</th>
+        {Object.keys(data[0]).map((header, idx) => (
+          <th key={idx}>{camelToCaps(header)}</th>
         ))}
       </tr>
     </thead>
@@ -94,7 +97,6 @@ export const DictionaryTableLayout = ({ data, headers, copy = true }) => (
 
 DictionaryTableLayout.propTypes = {
   data: PropTypes.any,
-  headers: PropTypes.any,
   copy: PropTypes.bool,
 };
 
