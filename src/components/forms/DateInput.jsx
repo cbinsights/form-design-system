@@ -7,25 +7,21 @@ import Popover from '../popovers/Popover';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
-// :TODO: curry this from DateInput render (via props)
-const currentYear = new Date().getFullYear(); // this year
-const fromMonth = new Date(currentYear, 0); // this january
-const toMonth = new Date(currentYear + 10, 11); // 10 years of decembers into the future
+// :TODO: clean up logging shit
+// :TODO: convert value to ISO-8601 string? Check with Monica.
+// :TODO: custom next/prev icons?
+// :TODO: styling (see ticket for Nectar's mock)
+// :TODO: tests
+// :TODO: stories
 
 const LogArgs = (args) => (
   <div className="fontFamily--mono color--red">{JSON.stringify(args, null, 2)}</div>
 );
 
-const YearAndMonthSelector = ({ date, localeUtils, onChange }) => {
+const YearAndMonthSelector = ({ date, localeUtils, onChange, startYear, endYear }) => {
   const months = localeUtils.getMonths();
-  const years = [];
 
-  // :TODO: can probably use past/future props to do a `arr.map` to get this
-  for (let i = fromMonth.getFullYear(); i <= toMonth.getFullYear(); i++) {
-    years.push(i);
-  }
-
-  console.warn(years);
+  const years = Array.from({ length: endYear - startYear }, (year, i) => i + startYear);
 
   const handleChange = (e) => {
     const { year, month } = e.target.form;
@@ -59,13 +55,34 @@ const YearAndMonthSelector = ({ date, localeUtils, onChange }) => {
   );
 };
 
+YearAndMonthSelector.propTypes = {
+  /** current date (provided by DayPicker arguments) */
+  date: PropTypes.instanceOf(Date),
+
+  /** date utilities (provided by DayPicker arguments) */
+  localeUtils: PropTypes.object,
+
+  /** change callback for year OR month selection*/
+  onChange: PropTypes.any,
+
+  /** starting year for year select */
+  startYear: PropTypes.instanceOf(Date),
+
+  /** ending year for year select */
+  endYear: PropTypes.instanceOf(Date),
+};
+
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const DateInput = ({}) => {
+const DateInput = ({ futureYears, pastYears, defaultDate, onChange }) => {
   const [selectedDate, setSelectedDate] = useState(null);
-  const [month, setMonth] = useState(new Date().getMonth());
+  const [month, setMonth] = useState(new Date());
+
+  const currentYear = new Date().getFullYear();
+  const startYear = new Date(currentYear - pastYears, 0).getFullYear(); // Full year from Jan
+  const endYear = new Date(currentYear + futureYears + 1, 11).getFullYear(); // Full year to Dec
 
   const handleYearMonthChange = (month) => {
     setMonth(month);
@@ -75,7 +92,11 @@ const DateInput = ({}) => {
     <React.Fragment>
       <Popover
         trigger={
-          <input type="text" value={selectedDate && selectedDate.toLocaleDateString()} />
+          <input
+            type="text"
+            value={selectedDate ? selectedDate.toLocaleDateString() : undefined}
+            onChange={onChange}
+          />
         }
       >
         <div className="elevation--2 rounded--all bgColor--white">
@@ -89,6 +110,8 @@ const DateInput = ({}) => {
                 date={date}
                 localeUtils={localeUtils}
                 onChange={handleYearMonthChange}
+                startYear={startYear}
+                endYear={endYear}
               />
             )}
           />
@@ -98,8 +121,25 @@ const DateInput = ({}) => {
   );
 };
 
-// :TODO: number of past years prop
-// :TODO: number of future years prop
-DateInput.propTypes = {};
+// :TODO: make past/future years work
+DateInput.defaultProps = {
+  futureYears: 1,
+  pastYears: 1000,
+};
+
+// :TODO: selectedDate prop
+DateInput.propTypes = {
+  /** Input change callback */
+  onChange: PropTypes.func,
+
+  /** Number of past years to show */
+  futureYears: PropTypes.number,
+
+  /** Number of future years to show */
+  pastYears: PropTypes.number,
+
+  /** Default date selection */
+  defaultDate: PropTypes.instanceOf(Date),
+};
 
 export default DateInput;
