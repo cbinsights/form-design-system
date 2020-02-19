@@ -1,6 +1,6 @@
-/* styleline-disable selector-max-specificity */
 /* stylelint-disable selector-max-combinators */
 /* stylelint-disable selector-max-compound-selectors */
+/* stylelint-disable selector-max-specificity */
 
 /**
  * Component helper classes for styling checkable inputs.
