@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 import { CSSTransition } from 'react-transition-group';
-import FDS from '../../../lib/dictionary/js/styleConstants';
-import { isNotRefsEvent } from '../util/events';
+import FDS from 'lib/dictionary/js/styleConstants';
+import { isNotRefsEvent } from 'components/util/events';
 
 export const VALID_POSITIONS = ['auto', 'top', 'right', 'bottom', 'left'];
 export const VALID_ALIGNMENTS = ['start', 'end', 'center'];
@@ -128,6 +128,9 @@ const Popover = ({
     offset: {
       enabled: true,
       offset: `0,${distance}`,
+    },
+    preventOverflow: {
+      boundariesElement: 'viewport',
     },
     computeStyle: {
       // When gpuAcceleration is enabled, `react-popper` always

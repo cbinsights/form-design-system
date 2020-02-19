@@ -1,5 +1,6 @@
 /* stylelint-disable selector-max-combinators */
 /* stylelint-disable selector-max-compound-selectors */
+/* stylelint-disable selector-max-specificity */
 
 /**
  * Component helper classes for styling checkable inputs.
@@ -40,4 +41,27 @@
 .fdsCheckable--disabled :matches(label,svg) {
   color: var(--font-color-hint) !important;
   fill: var(--font-color-hint) !important;
+}
+
+/**
+ * Icon switching
+ *
+ * Both icons for checked/unchecked state are rendered in
+ * the DOM; we use checked state selectors on the `input`
+ * element to determine which one to show
+ */
+.fdsCheckable input + label .fdsCheckable-icon--checked {
+  display: none;
+}
+
+.fdsCheckable input:checked + label .fdsCheckable-icon--checked {
+  display: block;
+}
+
+.fdsCheckable input + label .fdsCheckable-icon--unchecked {
+  display: block;
+}
+
+.fdsCheckable input:checked + label .fdsCheckable-icon--unchecked {
+  display: none;
 }

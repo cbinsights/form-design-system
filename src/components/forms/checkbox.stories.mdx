@@ -32,15 +32,12 @@ Uncontrolled custom checkbox component with optional label.
 
 ## Managing checked state
 
-`Checkbox` will render as unchecked by default. Use the `checked` boolean prop to set the
+`Checkbox` will render as unchecked by default. Use the `defaultChecked` boolean prop to set the
 initial state to checked.
-
-**Using the `checked` prop will not prevent a user from changing the value of the
-checkbox.** To "freeze" checked state, use a disabled checkbox (see below).
 
 <Preview>
   <Story name="Managing checked state">
-    <Checkbox checked name="default-checked" label="Checked by default" />
+    <Checkbox defaultChecked name="default-checked" label="Checked by default" />
   </Story>
 </Preview>
 
@@ -56,7 +53,7 @@ checkbox.
         <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
       </div>
       <div>
-        <Checkbox disabled checked name="disabled-checked" label="Disabled checked" />
+        <Checkbox disabled defaultChecked name="disabled-checked" label="Disabled checked" />
       </div>
     </React.Fragment>
   </Story>
@@ -82,5 +79,16 @@ checked.
 <Preview>
   <Story name="Indeterminate checkboxes">
     <Checkbox indeterminate name="notsureif" label="Indeterminate checkbox" />
+  </Story>
+</Preview>
+
+## Reading the value of a `Checkbox`
+
+The `onChange` prop will be spread on the `input` element the `Checkbox` component
+renders. Read the `checked` attribute of the event `currentTarget`.
+
+<Preview>
+  <Story name="Reading the value of a Checkbox">
+    <Checkbox label="Option one" onChange={(e) => { console.log(e.currentTarget.checked) }} />
   </Story>
 </Preview>

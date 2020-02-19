@@ -5,9 +5,9 @@ import { CSSTransition } from 'react-transition-group';
 import FocusTrap from 'focus-trap-react';
 import noScroll from 'no-scroll';
 import rafSchd from 'raf-schd';
-import DenyIcon from '../../../lib/icons/react/DenyIcon';
-import IconButton from '../interactive/IconButton';
-import Section from '../layout/Section';
+import DenyIcon from 'lib/icons/react/DenyIcon';
+import IconButton from 'components/interactive/IconButton';
+import Section from 'components/layout/Section';
 
 export const isElementOverflowing = ({ current }) => {
   // Checking for current first is safer just in case,

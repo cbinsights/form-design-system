@@ -1,5 +1,7 @@
 # Form Design System
 
+[![npm](https://img.shields.io/npm/v/@cbinsights/fds.svg?style=flat-square&color=blue)](http://www.npmjs.com/package/@cbinsights/fds)
+
 A design system by CB Insights.
 
 ## Getting started
@@ -8,9 +10,13 @@ A design system by CB Insights.
 The design system is comprised of a number of modules published as a single npm package.
 
 ```bash
-yarn add form-design-system
+yarn add @cbinsights/fds
 ```
+or
 
+```
+npm i @cbinsights/fds
+```
 ### Importing
 
 ```js
@@ -18,7 +24,7 @@ yarn add form-design-system
 import FDS from '@cbinsights/fds/lib/js/styleConstants';
 
 // React components
-import FDS from '@cbinsights/fds/lib/components/layout/Flex';
+import Flex from '@cbinsights/fds/lib/components/layout/Flex';
 
 // Icons
 import CloudIcon from '@cbinsights/fds/lib/react/CloudIcon';
@@ -29,7 +35,8 @@ published to the npm package.**
 
 
 ### Documentation
-[https://cbinsights.github.io/form-design-system/](https://cbinsights.github.io/form-design-system/)
+- Version 7+: [https://cbinsights.github.io/form-design-system/fds-components/?path=/docs/fds-intro--page](https://cbinsights.github.io/form-design-system/fds-components/?path=/docs/fds-intro--page)
+- Version 3, 4, 5: [https://cbinsights.github.io/form-design-system/](https://cbinsights.github.io/form-design-system/)
 
 ### Versions
 This project uses [semantic versioning](https://semver.org/spec/v2.0.0.html).

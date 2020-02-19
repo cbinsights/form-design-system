@@ -3,7 +3,7 @@
   --button-destructive-hover: #DC5151;
   --button-destructive-pressed: #E37B7E;
 
-  --button-outlined-border: #C6C9CA;
+  --button-outlined-border: #C2C2C2;
   --button-outlined-border-hover: #BFC3C7;
   --button-outlined-border-pressed: #9EA5AA;
 
@@ -27,4 +27,4 @@
      * pollyfill. This timeout is copied from buttonGroup.css
      */
   --button-timeout: 250ms;
-} 
+}

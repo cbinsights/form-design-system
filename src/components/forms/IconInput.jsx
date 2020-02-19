@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import FDS from '../../../lib/dictionary/js/styleConstants';
+import FDS from 'lib/dictionary/js/styleConstants';
 
 /**
  * @param {Object} props react props

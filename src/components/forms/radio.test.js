@@ -18,6 +18,11 @@ describe('Radio component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('matches snapshot (checked)', () => {
+    const wrapper = shallow(<Radio defaultChecked label="Snapshot Label" name="snapshot-radio" />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('fires change callback when checking', () => {
     const changeFn = jest.fn();
     const input = shallow(<Radio name="callback-test" onChange={changeFn} label="Test change" />)
@@ -26,34 +31,6 @@ describe('Radio component', () => {
     expect(changeFn).not.toHaveBeenCalled();
     input.simulate('change', { target: { checked: true } })
     expect(changeFn).toHaveBeenCalled();
-  });
-
-  describe('Radio icons', () => {
-    it('uses unchecked icon when unchecked', () => {
-      const wrapper = shallow(<Radio name="unchecked-icon" label="unchecked" />);
-      expect(wrapper.exists('RadioEmptyIcon')).toBe(true);
-    });
-
-    it('uses checked icon when checked', () => {
-      const wrapper = shallow(<Radio name="checked-icon" checked label="checked" />);
-      expect(wrapper.exists('RadioFilledIcon')).toBe(true);
-    });
-  });
-
-  describe('`checked` prop', () => {
-
-    it('sets initial state to unchecked when `checked` prop is NOT passed', () => {
-      const input = shallow(<Radio name="unchecked-initial" />)
-        .find('input');
-      expect(input.prop('defaultChecked')).toBe(false);
-    });
-
-    it('sets initial state to checked when `checked` prop is passed', () => {
-      const input = shallow(<Radio name="checked-initial" checked />)
-        .find('input');
-      expect(input.prop('defaultChecked')).toBe(true);
-    });
-
   });
 
 });
