@@ -2,17 +2,23 @@ import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/block
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { Info } from '../util/storybook';
 
+import { useState } from 'react'
+
+export const State = ({ render, children, initialValue }) => {
+  const [value, setValue] = useState(initialValue)
+  return render(value, setValue)
+}
+
 import Checkbox from './Checkbox';
 
 <Meta title="Forms|Checkbox" decorators={[withKnobs]} component={Checkbox} />
 
 # Checkbox
 
-Uncontrolled custom checkbox component with optional label.
+Custom checkbox component with optional label.
 
 <Story name="Knobs">
   <Checkbox
-    indeterminate={boolean('indeterminate', false)}
     disabled={boolean('disabled', false)}
     name="knobs"
     label={text('label', 'I agree to receive spam')}
@@ -29,6 +35,8 @@ Uncontrolled custom checkbox component with optional label.
 </Info>
 
 <Props of={Checkbox} />
+
+Component is uncontrolled by default, but you can utilize the `checked` prop to turn it into a controlled component.
 
 ## Managing checked state
 
@@ -61,12 +69,11 @@ checkbox.
 
 ## Checkboxes without labels
 
-You can prevent the label from showing by setting `showLabel` to `false`.
-The value of the `label` prop will be used to set an ARIA attribute.
+You should always render a label, but you can bring your own
 
 <Preview>
   <Story name="Checkbox without label">
-    <Checkbox name="no-label" label="I don't have a label" showLabel={false} />
+    <Checkbox name="no-label" />
   </Story>
 </Preview>
 
@@ -78,7 +85,7 @@ checked.
 
 <Preview>
   <Story name="Indeterminate checkboxes">
-    <Checkbox indeterminate name="notsureif" label="Indeterminate checkbox" />
+    <Checkbox checked="mixed" name="notsureif" label="Indeterminate checkbox" />
   </Story>
 </Preview>
 
@@ -92,3 +99,44 @@ renders. Read the `checked` attribute of the event `currentTarget`.
     <Checkbox label="Option one" onChange={(e) => { console.log(e.currentTarget.checked) }} />
   </Story>
 </Preview>
+
+<Story name="Controlled Checked">
+  <State
+    initialValue={true}
+    render={(value, setValue) => (
+      <Checkbox label="thing" checked={value} onChange={() => setValue(!value)}/>
+    )}
+  />
+</Story>
+
+<Story name="Controlled Unchecked">
+  <State
+    initialValue={false}
+    render={(value, setValue) => (
+      <Checkbox label="thing" checked={value} onChange={() => setValue(!value)}/>
+    )}
+  />
+</Story>
+
+<Story name="Uncontrolled">
+  <Checkbox label="thing" />
+</Story>
+
+<Story name="Uncontrolled Default Checked">
+  <Checkbox label="thing" defaultChecked />
+</Story>
+
+<Story name="Custom label">
+  <label>
+    <Checkbox />
+    <span className="padding--left--half">thing</span>
+  </label>
+</Story>
+
+<Story name="Custom label pt.2">
+  <>
+    <Checkbox id="blah" />
+    <label className="padding--left--half display--inlineBlock" htmlFor="blah">thing</label>
+  </>
+</Story>
+

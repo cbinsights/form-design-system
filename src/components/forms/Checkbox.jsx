@@ -1,78 +1,65 @@
-import React from 'react';
-import uuidv4 from 'uuid/v4';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import FDS from 'lib/dictionary/js/styleConstants';
 
 import CheckEmptyIcon from 'lib/icons/react/CheckEmptyIcon';
 import CheckFilledIcon from 'lib/icons/react/CheckFilledIcon';
 import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
 
-/**
- * @param {Object} props react props
- * @returns {ReactElement}
- */
-const Checkbox = ({
-  label,
-  showLabel,
-  indeterminate,
-  disabled,
-  inputRef,
-  ...otherProps
-}) => {
-  const id = uuidv4();
+import { CustomCheckboxInput, CustomCheckboxContainer } from '@reach/checkbox';
 
-  const IconUnchecked = CheckEmptyIcon;
-  const IconChecked = indeterminate ? CheckIndeterminateIcon : CheckFilledIcon;
+const Checkbox = ({ label, defaultChecked, ...props }) => {
+  const [checkedState, setChecked] = useState(props.checked || defaultChecked || false);
+  const checked = props.checked != null ? props.checked : checkedState;
+
+  // We should maybe fire onChange in "addition" to setChecked, based on whether we
+  // interpret checkbox as being "controlled" or not
+  const onChange = props.onChange ? props.onChange : (e) => setChecked(e.target.checked);
+
+  const CheckboxIcon = (() => {
+    if (checked) {
+      if (checked === 'mixed') {
+        return CheckIndeterminateIcon;
+      }
+      return CheckFilledIcon;
+    }
+    return CheckEmptyIcon;
+  })();
+
+  const Element = label ? 'label' : 'div';
 
   return (
-    <div
-      className={cx('fdsCheckable fdsCheckbox', { 'fdsCheckable--disabled': disabled })}
-    >
-      <input
-        type="checkbox"
-        id={id}
-        className="media--xs"
-        disabled={disabled}
-        ref={inputRef}
-        {...otherProps}
-      />
-      <label className="flush--bottom" htmlFor={id}>
-        <span className="fdsCheckable-icon--checked">
-          <IconChecked size="xs" />
+    <Element className="flush--bottom display--inlineBlock">
+      <CustomCheckboxContainer
+        checked={props.checked != null ? props.checked : checked}
+        onChange={onChange}
+      >
+        <CustomCheckboxInput {...props} />
+        <span aria-hidden style={{ pointerEvents: 'none' }}>
+          <CheckboxIcon size="xs" color={checked ? FDS.COLOR_BLUE : undefined} />
         </span>
-        <span className="fdsCheckable-icon--unchecked">
-          <IconUnchecked size="xs" />
-        </span>
-        {showLabel && <span className="padding--left--half">{label}</span>}
-      </label>
-    </div>
+      </CustomCheckboxContainer>
+      {label && <span className="padding--left--half">{label}</span>}
+    </Element>
   );
 };
 
-Checkbox.defaultProps = {
-  indeterminate: false,
-  disabled: false,
-  showLabel: true,
-};
-
 Checkbox.propTypes = {
-  /** Label used for a11y attributes _and_ the rendered `label` element */
+  /**
+   * Setting any one of the 3 values here will turn component into controlled component.
+   * */
+  checked: PropTypes.oneOf([true, false, 'mixed']),
+
+  /** Label used for `label` element */
   label: PropTypes.string.isRequired,
 
-  /** If the supplied `label` prop should be rendered to the screen. */
-  showLabel: PropTypes.bool,
-
-  /** Ref for input element */
-  inputRef: PropTypes.func,
-
-  /** Sets type `indeterminate` to `true` */
-  indeterminate: PropTypes.bool,
-
-  /** `true` checks the radio by default */
+  /** `true` checks the checkbox by default */
   defaultChecked: PropTypes.bool,
 
   /** Disables form field when `true` */
   disabled: PropTypes.bool,
+
+  onChange: PropTypes.func,
 };
 
 export default Checkbox;

@@ -1,19 +1,73 @@
-/* stylelint-disable selector-max-combinators */
-/* stylelint-disable selector-max-compound-selectors */
-
-/**
- * Checkbox-specific styles.
- * Most styling for this component is handled by `checkable.css`
- */
-
-.fdsCheckbox .fds-icon {
-  transform: translateY(-1px);
+.example-custom-checkbox label {
+  display: inline-block;
 }
 
-.fdsCheckbox input:focus + label svg {
-  border-radius: var(--border-radius-default);
+.example-custom-checkbox [data-reach-custom-checkbox-container]::after,
+.example-custom-checkbox [data-reach-custom-checkbox-container]::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  content: "";
 }
 
-.fdsCheckbox input:indeterminate + label svg {
-  fill: var(--color-blue);
+.example-custom-checkbox [data-reach-custom-checkbox-container]::before {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid #b8b8b8;
+  border-radius: 1px;
+}
+
+.example-custom-checkbox [data-reach-custom-checkbox-container]:focus-within {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.example-custom-checkbox [data-reach-custom-checkbox-container]:focus-within::before {
+  -webkit-box-shadow: 0 0 0 2px rgba(63, 148, 191, 0.65);
+  box-shadow: 0 0 0 2px rgba(63, 148, 191, 0.65);
+}
+
+.example-custom-checkbox [data-reach-custom-checkbox-container][data-state=checked]::before,
+.example-custom-checkbox [data-reach-custom-checkbox-container][data-state=mixed]::before {
+  border-color: #1159a6;
+  background-color: #3f94bf;
+}
+
+.example-custom-checkbox.orange [data-reach-custom-checkbox-container]:focus-within::before {
+  -webkit-box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.65);
+  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.65);
+}
+
+.example-custom-checkbox.orange [data-reach-custom-checkbox-container][data-state=checked]::before,
+.example-custom-checkbox.orange [data-reach-custom-checkbox-container][data-state=mixed]::before {
+  border-color: #a7600b;
+  background-color: #ff8c00;
+}
+
+
+.example-custom-checkbox [data-reach-custom-checkbox-container][data-state=checked]::after {
+  display: block;
+  width: calc(45% - 2px);
+  height: calc(90% - 4px);
+  border: solid #fff;
+  border-width: 0 1.5px 1.5px 0;
+  -webkit-transform: translateY(-65%) translateX(-50%) rotate(45deg);
+  transform: translateY(-65%) translateX(-50%) rotate(45deg);
+}
+
+.example-custom-checkbox [data-reach-custom-checkbox-container][data-state=mixed]::after {
+  display: block;
+  width: calc(100% - 6px);
+  border-bottom: 0.125em solid #fff;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+}
+
+.example-custom-checkbox [data-reach-custom-checkbox][data-custom-checkmarks]::after {
+  display: none;
 }

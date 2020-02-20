@@ -1451,6 +1451,17 @@
   dependencies:
     tslib "^1.10.0"
 
+"@reach/checkbox@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@reach/checkbox/-/checkbox-0.8.4.tgz#56e6fc11b413031af81a946b1306ab06ba481eb2"
+  integrity sha512-Dj4MNi9mCuJwimI4mFyWcRhWKvxTD1M2JlQMrTj7KqKB9OmY2ZlaFZ+IZXWUgiQ31ysjCc7SUumLhM7SJEHGGQ==
+  dependencies:
+    "@reach/auto-id" "^0.8.2"
+    "@reach/utils" "^0.8.4"
+    "@xstate/fsm" "^1.3.0"
+    tslib "^1.10.0"
+    warning "^4.0.3"
+
 "@reach/descendants@^0.8.2":
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/@reach/descendants/-/descendants-0.8.2.tgz#ffb87d18be4e62f344429dd5c7293f386e3da8a2"
@@ -1519,6 +1530,14 @@
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.8.2.tgz#0adb27de5038a9c9d1c302aee7ae7de4260a36b8"
   integrity sha512-JrQC5nTr0pS0FR9qLKinBViRhQ75hdjr+rLROfqtT8QljnalvlmN6hkibap5YJRe4cOQtpjUplioCErQ4zBxJw==
+  dependencies:
+    tslib "^1.10.0"
+    warning "^4.0.3"
+
+"@reach/utils@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.8.4.tgz#c5045637401beff8fa5e8e278fafc5af226c2fee"
+  integrity sha512-RZq5Y5K5+CakM5zzecNypP28U60/9sm3PraZznCsfcB/O3+3O0kgg5X+a7IHD3GnRqJVYTzAjA6sral6kPYLKQ==
   dependencies:
     tslib "^1.10.0"
     warning "^4.0.3"
@@ -2465,6 +2484,11 @@
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
+
+"@xstate/fsm@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@xstate/fsm/-/fsm-1.3.0.tgz#2a9c2627961473d23c7f4ad4d2db011e76d3975e"
+  integrity sha512-dDXp0zEa3r6MzSM1UhqqGlxHna4CH1F2DttmZVpWk7tK33E1bBfV9EAaekmdD091YZs+kaI65oNQhWA55HgJOg==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
