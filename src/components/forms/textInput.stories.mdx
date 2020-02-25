@@ -1,0 +1,110 @@
+import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import Flex from '../layout/Flex';
+import FlexItem from '../layout/FlexItem';
+import { action } from "@storybook/addon-actions";
+
+import TextInput from './TextInput';
+
+<Meta title="Forms|TextInput" decorators={[withKnobs]} component={TextInput} />
+
+# TextInput
+
+<Story name="Knobs">
+  <TextInput
+    label={text("label", "Label")}
+    errorText={text("errorText", undefined)}
+    required={boolean("required", undefined)}
+    type={text("type", undefined)}
+    onChange={action("changed")}
+  />
+</Story>
+
+## Example Layout
+
+<Story name="Example Layout">
+  <>
+    <div className="margin--bottom margin--top">
+      <Flex>
+        <FlexItem>
+          <TextInput label="First Name" required />
+        </FlexItem>
+        <FlexItem>
+          <TextInput label="Last Name" required />
+        </FlexItem >
+      </Flex>
+    </div>
+    <Flex>
+      <FlexItem>
+        <TextInput
+          type="email"
+          label="Email"
+          errorText="Enter a valid email address"
+          placeholder="e.g. anand@cbinsights.com"
+        />
+      </FlexItem>
+      <FlexItem>
+        <TextInput type="password" label="Password" />
+      </FlexItem>
+      <FlexItem>
+        <TextInput type="number" label="Zipcode" />
+      </FlexItem>
+    </Flex>
+  </>
+</Story>
+
+### Example Layout (w/ labels)
+
+<Story name="Example Layout (w/labels)">
+  <>
+    <div className="margin--bottom margin--top">
+      <Flex>
+        <FlexItem>
+          <TextInput placeholder="First Name *" />
+        </FlexItem>
+        <FlexItem>
+          <TextInput placeholder="Last Name *" />
+        </FlexItem>
+      </Flex>
+    </div>
+    <Flex>
+      <FlexItem>
+        <TextInput type="email" placeholder="Email" errorText="Enter a valid email address" />
+      </FlexItem>
+      <FlexItem>
+        <TextInput type="password" placeholder="Password" />
+      </FlexItem>
+      <FlexItem>
+        <TextInput placeholder="Zipcode" type="number" />
+      </FlexItem>
+    </Flex>
+  </>
+</Story>
+
+### Throttle
+
+The prop `onThrottleChange` fires a callback that throttles less than 5 characters,
+and debounces 5 or more characters.
+https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-in-react
+
+View this story in Canvas, in the action tab, to see how the callback is throttled.
+
+<Story name="Throttle">
+  <TextInput
+    label={text("label", "Label")}
+    errorText={text("errorText", undefined)}
+    required={boolean("required", undefined)}
+    type={text("type", undefined)}
+    throttleOnChange={action("changed")}
+  />
+</Story>
+
+
+### Controlled Input
+
+<Story name="Controlled Input">
+  <TextInput
+    label="Controlled"
+    value="Controlled"
+  />
+</Story>

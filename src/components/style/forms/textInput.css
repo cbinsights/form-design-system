@@ -1,0 +1,8 @@
+.fdsTextInput {
+  flex-grow: 1;
+}
+
+.fdsTextInput-label {
+  display: flex;
+  flex-direction: column;
+}
