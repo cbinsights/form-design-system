@@ -71,7 +71,14 @@ const Dialog = (props) => {
                     tabIndex="-1"
                     aria-modal="true"
                     onKeyDown={handleKeyDown}
-                    style={{ maxWidth: `${props.width}px` }}
+                    style={{
+                      maxWidth: `${props.width}${
+                        typeof props.width === 'number' ? 'px' : ''
+                      } `,
+                      maxHeight: `${props.height}${
+                        typeof props.height === 'number' ? 'px' : ''
+                      }`,
+                    }}
                   >
                     {(props.title || props.onDismiss) && (
                       <React.Fragment>
@@ -95,6 +102,11 @@ const Dialog = (props) => {
                               </div>
                             )}
                           </Section>
+                          {props.subheader && (
+                            <Section border="bottom" yPadding="half">
+                              {props.subheader}
+                            </Section>
+                          )}
                         </div>
                       </React.Fragment>
                     )}
@@ -104,7 +116,9 @@ const Dialog = (props) => {
                     {props.footerContent && (
                       <div className="dialog-footer">
                         <Section
-                          border={isOverflowing ? 'top' : undefined}
+                          border={
+                            props.alwaysShowBorder || isOverflowing ? 'top' : undefined
+                          }
                           bgColor="white"
                         >
                           {props.footerContent}
@@ -126,7 +140,8 @@ const Dialog = (props) => {
 
 Dialog.defaultProps = {
   role: 'dialog',
-  width: 500,
+  width: '500px',
+  height: '80vh',
 };
 
 Dialog.propTypes = {
@@ -153,6 +168,21 @@ Dialog.propTypes = {
 
   /** Custom modal width */
   width: PropTypes.number,
+
+  /** Custom modal height */
+  height: PropTypes.number,
+
+  /**
+   * Border currently renders only if there is scrollable content. Set this boolean
+   * so that the border always renders no matter what.
+   */
+  alwaysShowBorder: PropTypes.bool,
+
+  /**
+   * Renders below header with established padding & border, and accepts any custom JSX.
+   * Note: will NOT render if header does not render.
+   */
+  subheader: PropTypes.node,
 };
 
 export default Dialog;
