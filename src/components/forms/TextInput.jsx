@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { throttle, debounce } from 'throttle-debounce';
+import IconInput from 'components/forms/IconInput';
+import DecoratedInput from 'components/forms/DecoratedInput';
 
 export const throttleValue = 500;
 
@@ -11,6 +13,10 @@ const TextInput = ({
   required,
   onChange,
   type,
+  IconLeft,
+  IconRight,
+  after,
+  before,
   ...props
 }) => {
   // Refer to the following for an explanation on
@@ -20,11 +26,14 @@ const TextInput = ({
   let throttleOnChangeDebounced;
 
   useEffect(() => {
-    throttleOnChangeThrottled = throttle(throttleValue, throttleOnChange);
-    throttleOnChangeDebounced = debounce(throttleValue, throttleOnChange);
+    if (throttleOnChange) {
+      throttleOnChangeThrottled = throttle(throttleValue, throttleOnChange);
+      throttleOnChangeDebounced = debounce(throttleValue, throttleOnChange);
+    }
   }, [throttleOnChange]);
 
   const inputOnChange = (e) => {
+    e.persist();
     onChange(e);
     if (e.target.value.length < 5) {
       throttleOnChangeThrottled(e);
@@ -37,14 +46,23 @@ const TextInput = ({
 
   return (
     <>
-      <Element className="fdsTextInput-label">
+      <Element className="fdsTextInput-root">
         {label && (
-          <div style={{ marginBottom: '4px' }}>
+          <div className="fdsTextInput-label">
             {label}
             {required && <span className="color--red">&nbsp;*</span>}
           </div>
         )}
-        <input {...props} onChange={inputOnChange} type={type} className="fdsTextInput" />
+        <DecoratedInput after={after} before={before}>
+          <IconInput IconLeft={IconLeft} IconRight={IconRight}>
+            <input
+              {...props}
+              onChange={inputOnChange}
+              type={type}
+              className="fdsTextInput"
+            />
+          </IconInput>
+        </DecoratedInput>
       </Element>
       {errorText && <div className="color--red type--data">{errorText}</div>}
     </>
@@ -63,17 +81,35 @@ TextInput.propTypes = {
   /** Label used for `label` element */
   label: PropTypes.string,
 
+  /**
+   * FDS Icon _reference_
+   * `IconLeft={StarFilledIcon}`
+   */
+  IconLeft: PropTypes.func,
+
+  /**
+   * FDS Icon _reference_
+   * `IconRight={StarFilledIcon}`
+   */
+  IconRight: PropTypes.func,
+
   /** Standard input type */
   type: PropTypes.string,
 
   /** Controls showing asterisk on label, signifying field is required */
-  required: PropTypes.boolean,
+  required: PropTypes.bool,
 
   /** Standard React onChange event */
   onChange: PropTypes.func,
 
-  /** Custom onChange event that throttles / debounces. Callback is called with event (same as onChange) */
+  /** Custom onChange event that throttles / debounces. */
   throttleOnChange: PropTypes.func,
+
+  /** String to place to the left of the input */
+  before: PropTypes.string,
+
+  /** String to place to the right of the input */
+  after: PropTypes.string,
 };
 
 export default TextInput;

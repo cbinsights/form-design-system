@@ -1,5 +1,6 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import { action } from "@storybook/addon-actions";
@@ -20,11 +21,13 @@ import TextInput from './TextInput';
   />
 </Story>
 
+<Props of={TextInput} />
+
 ## Example Layout
 
-<Story name="Example Layout">
-  <>
-    <div className="margin--bottom margin--top">
+<Preview>
+  <Story name="Example Layout">
+    <>
       <Flex>
         <FlexItem>
           <TextInput label="First Name" required />
@@ -33,53 +36,55 @@ import TextInput from './TextInput';
           <TextInput label="Last Name" required />
         </FlexItem >
       </Flex>
-    </div>
-    <Flex>
-      <FlexItem>
-        <TextInput
-          type="email"
-          label="Email"
-          errorText="Enter a valid email address"
-          placeholder="e.g. anand@cbinsights.com"
-        />
-      </FlexItem>
-      <FlexItem>
-        <TextInput type="password" label="Password" />
-      </FlexItem>
-      <FlexItem>
-        <TextInput type="number" label="Zipcode" />
-      </FlexItem>
-    </Flex>
-  </>
-</Story>
+      <Flex>
+        <FlexItem>
+          <TextInput
+            type="email"
+            label="Email"
+            errorText="Enter a valid email address"
+            placeholder="e.g. anand@cbinsights.com"
+          />
+        </FlexItem>
+        <FlexItem>
+          <TextInput type="password" label="Password" />
+        </FlexItem>
+        <FlexItem>
+          <TextInput type="number" label="Zipcode" after="90210" />
+        </FlexItem>
+      </Flex>
+    </>
+  </Story>
+</Preview>
 
 ### Example Layout (w/ labels)
 
-<Story name="Example Layout (w/labels)">
-  <>
-    <div className="margin--bottom margin--top">
+<Preview>
+  <Story name="Example Layout (w/labels)">
+    <>
+      <div className="margin--bottom">
+        <Flex>
+          <FlexItem>
+            <TextInput placeholder="First Name *" />
+          </FlexItem>
+          <FlexItem>
+            <TextInput placeholder="Last Name *" />
+          </FlexItem>
+        </Flex>
+      </div>
       <Flex>
         <FlexItem>
-          <TextInput placeholder="First Name *" />
+          <TextInput type="email" placeholder="Email" errorText="Enter a valid email address" />
         </FlexItem>
         <FlexItem>
-          <TextInput placeholder="Last Name *" />
+          <TextInput type="password" placeholder="Password" />
+        </FlexItem>
+        <FlexItem>
+          <TextInput placeholder="Zipcode" type="number" />
         </FlexItem>
       </Flex>
-    </div>
-    <Flex>
-      <FlexItem>
-        <TextInput type="email" placeholder="Email" errorText="Enter a valid email address" />
-      </FlexItem>
-      <FlexItem>
-        <TextInput type="password" placeholder="Password" />
-      </FlexItem>
-      <FlexItem>
-        <TextInput placeholder="Zipcode" type="number" />
-      </FlexItem>
-    </Flex>
-  </>
-</Story>
+    </>
+  </Story>
+</Preview>
 
 ### Throttle
 
@@ -89,22 +94,71 @@ https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-
 
 View this story in Canvas, in the action tab, to see how the callback is throttled.
 
-<Story name="Throttle">
-  <TextInput
-    label={text("label", "Label")}
-    errorText={text("errorText", undefined)}
-    required={boolean("required", undefined)}
-    type={text("type", undefined)}
-    throttleOnChange={action("changed")}
-  />
-</Story>
+<Preview>
+  <Story name="Throttle">
+    <TextInput
+      throttleOnChange={action("changed")}
+    />
+  </Story>
+</Preview>
 
 
 ### Controlled Input
 
 <Story name="Controlled Input">
   <TextInput
-    label="Controlled"
     value="Controlled"
   />
 </Story>
+
+### Icons
+
+<Story name="Icons">
+  <TextInput
+    IconLeft={CaretDownIcon}
+    IconRight={CaretDownIcon}
+  />
+</Story>
+
+### Side label
+
+<Story name="Before & After">
+  <TextInput
+    before="before"
+    after="after"
+  />
+</Story>
+
+### Side Labels + Icon
+
+<Story name="Side + Icon">
+  <TextInput
+    label="Label"
+    placeholder="placeholder"
+    before="before"
+    after="after"
+    IconLeft={CaretDownIcon}
+    IconRight={CaretDownIcon}
+  />
+</Story>
+
+
+### Custom Supplied Labels
+
+Putting the input inside the label is easier and preferred. If you have
+a more difficult case where it's not desirable to do this, pairing htmlFor
+with the input id is available to you.
+
+<Preview>
+  <Story name="Custom Supplied Labels">
+    <>
+      <label>
+        Foo
+        <TextInput />
+      </label>
+      <label htmlFor="bar">Bar</label>
+      <TextInput id="bar" />
+    </>
+  </Story>
+</Preview>
+

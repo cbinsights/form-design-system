@@ -2,7 +2,11 @@
   flex-grow: 1;
 }
 
-.fdsTextInput-label {
+.fdsTextInput-root {
   display: flex;
   flex-direction: column;
+}
+
+.fdsTextInput-label {
+  margin-bottom: 4px;
 }
