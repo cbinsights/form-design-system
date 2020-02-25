@@ -1,25 +1,54 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
+import { Info } from 'components/util/storybook';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import { action } from "@storybook/addon-actions";
 
 import TextInput from './TextInput';
+import InputGroup from 'components/forms/InputGroup';
 
 <Meta title="Forms|TextInput" decorators={[withKnobs]} component={TextInput} />
 
 # TextInput
 
-<Story name="Knobs">
+Standard recommended input component. Can be used for simple no frills inputs, as well as complex inputs
+complete with accessibile labels, Icons, side labels, errorText, throttled events, and more.
+
+<Story name="Knobs" parameters={{ docs: { disable: true } }}>
   <TextInput
     label={text("label", "Label")}
     errorText={text("errorText", undefined)}
     required={boolean("required", undefined)}
     type={text("type", undefined)}
     onChange={action("changed")}
+    IconRight={boolean("Show IconRight", undefined) ? CaretDownIcon : undefined}
+    IconLeft={boolean("Show IconLeft", undefined) ? CaretDownIcon : undefined}
+    before={text("before", undefined)}
+    after={text("after", undefined)}
   />
 </Story>
+
+<Preview isExpanded>
+  <>
+    <TextInput />
+    <br />
+    <TextInput
+      label="First Name"
+      required
+      errorText="Custom error text"
+      placeholder="Placeholder text"
+      IconRight={CaretDownIcon}
+      before="$"
+      after=".com"
+    />
+  </>
+</Preview>
+
+<Info type="info">
+  Additional props will be spread on the `input` element.
+</Info> 
 
 <Props of={TextInput} />
 
@@ -145,9 +174,12 @@ View this story in Canvas, in the action tab, to see how the callback is throttl
 
 ### Custom Supplied Labels
 
-Putting the input inside the label is easier and preferred. If you have
-a more difficult case where it's not desirable to do this, pairing htmlFor
-with the input id is available to you.
+This component can generate a label for you, so in most cases you shouldn't need
+to supply your own label. But here's how to if you do: 
+
+Putting TextInput inside your own supplied label is easier and preferred. If you have
+a more difficult case where it's not desirable to do this, use htmlFor and link it 
+to the input id.
 
 <Preview>
   <Story name="Custom Supplied Labels">
@@ -158,6 +190,41 @@ with the input id is available to you.
       </label>
       <label htmlFor="bar">Bar</label>
       <TextInput id="bar" />
+    </>
+  </Story>
+</Preview>
+
+
+### Misc
+
+Can be used with InputGroup (why don't these stretch full width?)
+
+<Preview>
+  <Story name="Misc">
+    <>
+      <InputGroup>
+        <TextInput before="$" type="number" value="666" />
+        <select name="unit">
+          <option value="1">Million</option>
+          <option value="2">Thousand</option>
+        </select>
+      </InputGroup>
+      <br />
+      <InputGroup>
+        <TextInput IconLeft={CaretDownIcon} type="number" value="666" />
+        <select name="unit">
+          <option value="1">Million</option>
+          <option value="2">Thousand</option>
+        </select>
+      </InputGroup>
+      <br />
+      <InputGroup>
+        <TextInput IconRight={CaretDownIcon} type="number" value="666" />
+        <select name="unit">
+          <option value="1">Million</option>
+          <option value="2">Thousand</option>
+        </select>
+      </InputGroup>
     </>
   </Story>
 </Preview>
