@@ -27,6 +27,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [8.0] MAJOR
+
+### **BREAKING CHANGES**
+
+#### `Thing` Component
+Component was updated / removed.
+
 ## [7.7] Menu component
 
 - Added `Menu` component for building accessible dropdown menus
