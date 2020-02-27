@@ -2,7 +2,6 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
-import FocusTrap from 'focus-trap-react';
 import noScroll from 'no-scroll';
 import rafSchd from 'raf-schd';
 import DenyIcon from 'lib/icons/react/DenyIcon';
@@ -59,62 +58,57 @@ const Dialog = (props) => {
       {ReactDOM.createPortal(
         <CSSTransition timeout={200} in={props.isOpen} classNames="dialog" unmountOnExit>
           <React.Fragment>
-            <FocusTrap>
-              <div>
-                <div className="dialog-overlay"></div>
-                <div className="dialog-zIndex dialog-wrapper">
-                  <div
-                    className="dialog elevation--3"
-                    role={props.role}
-                    aria-labelledby={props.title && 'a11y-dialog-title'}
-                    aria-describedby="a11y-dialog-desc"
-                    tabIndex="-1"
-                    aria-modal="true"
-                    onKeyDown={handleKeyDown}
-                    style={{ maxWidth: `${props.width}px` }}
-                  >
-                    {(props.title || props.onDismiss) && (
-                      <React.Fragment>
-                        <div className="dialog-header">
-                          <Section border="bottom">
-                            <div className="padding--right--double type--head4">
-                              {props.title ? (
-                                <span id="a11y-dialog-title">{props.title}</span>
-                              ) : (
-                                '\u00A0'
-                              )}{' '}
-                              {/* There always needs to be something (even a space) in the header for display reasons */}
+            <div>
+              <div className="dialog-overlay"></div>
+              <div className="dialog-zIndex dialog-wrapper">
+                <div
+                  className="dialog elevation--3"
+                  role={props.role}
+                  aria-labelledby={props.title && 'a11y-dialog-title'}
+                  aria-describedby="a11y-dialog-desc"
+                  tabIndex="-1"
+                  aria-modal="true"
+                  onKeyDown={handleKeyDown}
+                  style={{ maxWidth: `${props.width}px` }}
+                >
+                  {(props.title || props.onDismiss) && (
+                    <React.Fragment>
+                      <div className="dialog-header">
+                        <Section border="bottom">
+                          <div className="padding--right--double type--head4">
+                            {props.title ? (
+                              <span id="a11y-dialog-title">{props.title}</span>
+                            ) : (
+                              '\u00A0'
+                            )}{' '}
+                            {/* There always needs to be something (even a space) in the header for display reasons */}
+                          </div>
+                          {props.onDismiss && (
+                            <div className="dialog-icon">
+                              <IconButton
+                                Icon={DenyIcon}
+                                onClick={props.onDismiss}
+                                aria-label="close"
+                              />
                             </div>
-                            {props.onDismiss && (
-                              <div className="dialog-icon">
-                                <IconButton
-                                  Icon={DenyIcon}
-                                  onClick={props.onDismiss}
-                                  aria-label="close"
-                                />
-                              </div>
-                            )}
-                          </Section>
-                        </div>
-                      </React.Fragment>
-                    )}
-                    <div className="dialog-content" ref={contentEl}>
-                      <Section>{props.content}</Section>
-                    </div>
-                    {props.footerContent && (
-                      <div className="dialog-footer">
-                        <Section
-                          border={isOverflowing ? 'top' : undefined}
-                          bgColor="white"
-                        >
-                          {props.footerContent}
+                          )}
                         </Section>
                       </div>
-                    )}
+                    </React.Fragment>
+                  )}
+                  <div className="dialog-content" ref={contentEl}>
+                    <Section>{props.content}</Section>
                   </div>
+                  {props.footerContent && (
+                    <div className="dialog-footer">
+                      <Section border={isOverflowing ? 'top' : undefined} bgColor="white">
+                        {props.footerContent}
+                      </Section>
+                    </div>
+                  )}
                 </div>
               </div>
-            </FocusTrap>
+            </div>
           </React.Fragment>
         </CSSTransition>,
         // eslint-disable-next-line no-undef
