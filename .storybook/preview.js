@@ -1,14 +1,6 @@
-import { addDecorator, addParameters } from '@storybook/react';
-import { create, themes } from '@storybook/theming';
-import logo from "/assets/FDS-logo.svg"
+import { addParameters } from '@storybook/react';
 
 import '../src/components/style/index.css';
-
-const theme = create({
-  brandTitle: 'Form Design System',
-  brandUrl: 'cbinsights.github.io/form-design-system',
-  brandImage: logo, // We can add an actual logo later,
-});
 
 addParameters({
   backgrounds: [
@@ -17,7 +9,6 @@ addParameters({
   ],
   options: {
     showRoots: true,
-    theme,
     storySort: (a, b) => {
 
       if (a[1].kind === b[1].kind){
