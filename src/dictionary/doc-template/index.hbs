@@ -1,6 +1,6 @@
 import { Meta, Source, Story } from "@storybook/addon-docs/blocks";
 import ColorSwatch, { ColorSwatchWrapper } from "components/util/ColorSwatch";
-import { TableLayout } from "components/util/Table"
+import { DictionaryTableLayout } from "components/util/Table"
 
 <Meta title="FDS|1 - Dictionary" />
 
@@ -26,11 +26,14 @@ Using CSS Vars:
 ## Layout
 
 <Story name="Layout">
-  <TableLayout
-    headers={['CSS Var', 'JS Var', 'Value']}
+  <DictionaryTableLayout
     data={[
       {{#each this.layout}}
-        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}" ],
+        {
+          cssVar: '{{ this.varNames.css }}',
+          jsVar: '{{ this.varNames.js }}',
+          value: "{{{ this.value }}}",
+        },
       {{/each}}
     ]} 
   />
@@ -40,11 +43,14 @@ Using CSS Vars:
 ## Font
 
 <Story name="Font">
-  <TableLayout
-    headers={['CSS Var', 'JS Var', 'Value']}
+  <DictionaryTableLayout
     data={[
       {{#each this.font}}
-        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}" ],
+        {
+          cssVar: '{{ this.varNames.css }}',
+          jsVar: '{{ this.varNames.js }}',
+          value: "{{{ this.value }}}",
+        },
       {{/each}}
     ]} 
   />
@@ -53,11 +59,14 @@ Using CSS Vars:
 ## Border
 
 <Story name="Border">
-  <TableLayout
-    headers={['CSS Var', 'JS Var', 'Value']}
+  <DictionaryTableLayout
     data={[
       {{#each this.border}}
-        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}" ],
+        {
+          cssVar: '{{ this.varNames.css }}',
+          jsVar: '{{ this.varNames.js }}',
+          value: "{{{ this.value }}}",
+        },
       {{/each}}
     ]} 
   />
@@ -66,11 +75,14 @@ Using CSS Vars:
 ## Motion
 
 <Story name="Motion">
-  <TableLayout
-    headers={['CSS Var', 'JS Var', 'Value']}
+  <DictionaryTableLayout
     data={[
       {{#each this.motion}}
-        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{ this.value }}" ],
+        {
+          cssVar: '{{ this.varNames.css }}',
+          jsVar: '{{ this.varNames.js }}',
+          value: "{{{ this.value }}}",
+        },
       {{/each}}
     ]} 
   />

@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { mostReadable } from 'tinycolor2';
 import { useClipboard } from 'components/util/storybook';
 
+const camelToCaps = (camelCase) =>
+  camelCase.replace(/([A-Z])/g, (match) => ` ${match}`).toUpperCase();
+
 export const Table = (props) => <table className="doctable">{props.children}</table>;
 
 Table.propTypes = {
@@ -27,18 +30,31 @@ const mostReadableConfig = (hexName) =>
 export const TableCell = (props) => {
   const [copiedText, copyToClipboard] = useClipboard();
 
-  // Checks to see if a color string is passed, and sets it to a background color to be applied
   const background =
-    typeof props.children === 'string' &&
-    (props.children.startsWith('#') || props.children.startsWith('rgba'))
+    props.cellType &&
+    (props.cellType.startsWith('FONT_COLOR') || props.cellType.startsWith('BORDER_COLOR'))
       ? props.children
       : undefined;
+
+  const color = mostReadableConfig(background || '#FFF');
+
+  const fontFamily =
+    props.cellType && props.cellType.startsWith('FONT_FAMILY') && props.children;
+
+  const fontSize =
+    props.cellType && props.cellType.startsWith('FONT_SIZE') && props.children;
+
+  const fontWeight =
+    props.cellType && props.cellType.startsWith('FONT_WEIGHT') && props.children;
 
   return (
     <td
       style={{
+        fontFamily,
+        fontWeight,
+        fontSize,
         background,
-        color: mostReadableConfig(background || '#FFF'),
+        color,
       }}
       onClick={() => copyToClipboard(props.children)}
     >
@@ -52,6 +68,35 @@ export const TableCell = (props) => {
 
 TableCell.propTypes = {
   children: PropTypes.node,
+  copy: PropTypes.bool,
+  cellType: PropTypes.string,
+};
+
+export const DictionaryTableLayout = ({ data, copy = true }) => (
+  <Table>
+    <thead>
+      <tr>
+        {Object.keys(data[0]).map((header, idx) => (
+          <th key={idx}>{camelToCaps(header)}</th>
+        ))}
+      </tr>
+    </thead>
+    <TableBody>
+      {data.map((row, idx) => (
+        <tr key={idx}>
+          <TableCell copy={copy}>{row.cssVar}</TableCell>
+          <TableCell copy={copy}>{row.jsVar}</TableCell>
+          <TableCell copy={copy} cellType={row.jsVar}>
+            {row.value}
+          </TableCell>
+        </tr>
+      ))}
+    </TableBody>
+  </Table>
+);
+
+DictionaryTableLayout.propTypes = {
+  data: PropTypes.any,
   copy: PropTypes.bool,
 };
 
