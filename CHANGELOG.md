@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.8] Add TextInput
+
+- Added `TextInput` form component for inputs
+
 ## [7.7] Menu component
 
 - Added `Menu` component for building accessible dropdown menus

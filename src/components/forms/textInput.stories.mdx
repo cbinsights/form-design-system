@@ -1,0 +1,177 @@
+import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
+import { Info } from 'components/util/storybook';
+import Flex from '../layout/Flex';
+import FlexItem from '../layout/FlexItem';
+import { action } from "@storybook/addon-actions";
+
+import TextInput from './TextInput';
+import InputGroup from 'components/forms/InputGroup';
+
+<Meta title="Forms|TextInput" decorators={[withKnobs]} component={TextInput} />
+
+# TextInput
+
+Standard recommended input component. Can be used for simple no frills inputs, as well as complex inputs
+complete with accessibile labels, Icons, side labels, errorText, throttled events, and more.
+
+<Story name="Knobs" parameters={{ docs: { disable: true } }}>
+  <TextInput
+    label={text("label", "Label")}
+    errorText={text("errorText", undefined)}
+    required={boolean("required", undefined)}
+    type={text("type", undefined)}
+    onChange={action("changed")}
+    IconRight={boolean("Show IconRight", undefined) ? CaretDownIcon : undefined}
+    IconLeft={boolean("Show IconLeft", undefined) ? CaretDownIcon : undefined}
+    before={text("before", undefined)}
+    after={text("after", undefined)}
+  />
+</Story>
+
+<Preview isExpanded>
+  <>
+    <TextInput />
+    <br />
+    <TextInput
+      label="First Name"
+      required
+      errorText="Custom error text"
+      placeholder="Placeholder text"
+      IconRight={CaretDownIcon}
+      before="$"
+      after=".com"
+    />
+  </>
+</Preview>
+
+<Info type="info">
+  Additional props will be spread on the `input` element.
+</Info> 
+
+<Props of={TextInput} />
+
+## Example Layout
+
+<Preview>
+  <Story name="Example Layout">
+    <>
+      <Flex>
+        <FlexItem>
+          <TextInput label="First Name" required />
+        </FlexItem>
+        <FlexItem>
+          <TextInput label="Last Name" required />
+        </FlexItem >
+      </Flex>
+      <Flex>
+        <FlexItem>
+          <TextInput
+            type="email"
+            label="Email"
+            errorText="Enter a valid email address"
+            placeholder="e.g. anand@cbinsights.com"
+          />
+        </FlexItem>
+        <FlexItem>
+          <TextInput type="password" label="Password" />
+        </FlexItem>
+        <FlexItem>
+          <TextInput type="number" label="Zipcode" after="90210" />
+        </FlexItem>
+      </Flex>
+    </>
+  </Story>
+</Preview>
+
+### Throttle
+
+The prop `onThrottleChange` fires a callback that throttles less than 5 characters,
+and debounces 5 or more characters.
+https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-in-react
+
+View this story in Canvas, in the action tab, to see how the callback is throttled.
+
+<Preview>
+  <Story name="Throttle">
+    <TextInput
+      throttleOnChange={action("changed")}
+    />
+  </Story>
+</Preview>
+
+
+### Controlled Input
+
+<Story name="Controlled Input">
+  <TextInput
+    value="Controlled"
+  />
+</Story>
+
+### Icons
+
+<Story name="Icons">
+  <TextInput
+    IconLeft={CaretDownIcon}
+    IconRight={CaretDownIcon}
+  />
+</Story>
+
+### Side label
+
+<Story name="Before & After">
+  <TextInput
+    before="before"
+    after="after"
+  />
+</Story>
+
+### Side Labels + Icon
+
+<Story name="Side + Icon">
+  <TextInput
+    label="Label"
+    placeholder="placeholder"
+    before="before"
+    after="after"
+    IconLeft={CaretDownIcon}
+    IconRight={CaretDownIcon}
+  />
+</Story>
+
+### Misc
+
+Can be used with InputGroup (why don't these stretch full width?)
+
+<Preview>
+  <Story name="Misc">
+    <>
+      <InputGroup>
+        <TextInput before="$" type="number" value="666" />
+        <select name="unit">
+          <option value="1">Million</option>
+          <option value="2">Thousand</option>
+        </select>
+      </InputGroup>
+      <br />
+      <InputGroup>
+        <TextInput IconLeft={CaretDownIcon} type="number" value="666" />
+        <select name="unit">
+          <option value="1">Million</option>
+          <option value="2">Thousand</option>
+        </select>
+      </InputGroup>
+      <br />
+      <InputGroup>
+        <TextInput IconRight={CaretDownIcon} type="number" value="666" />
+        <select name="unit">
+          <option value="1">Million</option>
+          <option value="2">Thousand</option>
+        </select>
+      </InputGroup>
+    </>
+  </Story>
+</Preview>
+

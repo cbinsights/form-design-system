@@ -5,10 +5,6 @@ import { action } from '@storybook/addon-actions';
 
 import Avatar, { BG_COLORS, SIZES, RADII, INITIALS_LENGTH } from './Avatar';
 
-export const bgColorOptions = options('bgColor', arrayToOptions(BG_COLORS), undefined, {
-  display: 'inline-radio',
-});
-
 <Meta title="Media|Avatar" decorators={[withKnobs]} component={Avatar} />
 
 # Avatar

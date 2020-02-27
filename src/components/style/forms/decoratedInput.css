@@ -29,7 +29,8 @@
 
   /* use line box to center text and match input height */
   padding: 0 var(--space-half);
-  line-height: var(--space-double);
+  display: inline-flex;
+  align-items: center;
 }
 
 
