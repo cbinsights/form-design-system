@@ -38,8 +38,8 @@
 /* } */
 
 .swatch {
-  padding: .25em;
-  margin: 0 .3em .3em 0;
+  padding: 0.25em;
+  margin: 0 0.3em 0.3em 0;
   word-break: break-all;
   word-wrap: break-word;
   overflow: hidden;
@@ -88,44 +88,44 @@ section: mdcss GitHub
 Options control the look and feel of the mdcss GitHub theme as well as any
 iframe examples that may be used.
 #### `title`
-Type: `String`  
+Type: `String`
 Default: `'Style Guide'`
 The page title to be used by the style guide.
 #### `logo`
-Type: `String`  
+Type: `String`
 Default: `'mdcss-logo.png'`
 
 <img src="https://jonathantneal.github.io/mdcss-theme-github/demo/logo.png" height="32">
 
 The page logo to be used by the style guide.
 #### `examples.base`
-Type:    `String`  
+Type:    `String`
 Default: `null`
 The base URL to use for all relative URLs contained within an example,
 including CSS and JavaScript references.
 #### `examples.target`
-Type:    `String`  
+Type:    `String`
 Default: `'_self'`
 The frame to open example hyperlinks from within an example.
 #### `examples.css`
-Type:    `Array`  
+Type:    `Array`
 Default: `['style.css']`
 A list of CSS files to be used by examples.
 #### `examples.js`
-Type:    `Array`  
+Type:    `Array`
 Default: `null`
 A list of JavaScript files to be used by examples.
 #### `examples.bodyjs`
-Type:    `Array`  
+Type:    `Array`
 Default: `null`
 A list of JavaScript files to be used by examples, inserted after the example.
 #### `examples.htmlcss`
-Type:    `String`  
+Type:    `String`
 Default: `'background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto'`
 A string of styles applied to the `<html>` wrapping the example. These default
 styles are used to create a seamless effect with the styleguide.
 #### `examples.bodycss`
-Type:    `String`  
+Type:    `String`
 Default: `'background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto'`
 A string of styles applied to the `<body>` wrapping the example. These default
 styles are used to create a seamless effect with the styleguide.
