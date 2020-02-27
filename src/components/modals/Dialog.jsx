@@ -102,11 +102,6 @@ const Dialog = (props) => {
                               </div>
                             )}
                           </Section>
-                          {props.subheader && (
-                            <Section border="bottom" yPadding="half">
-                              {props.subheader}
-                            </Section>
-                          )}
                         </div>
                       </React.Fragment>
                     )}
@@ -177,12 +172,6 @@ Dialog.propTypes = {
    * so that the border always renders no matter what.
    */
   alwaysShowBorder: PropTypes.bool,
-
-  /**
-   * Renders below header with established padding & border, and accepts any custom JSX.
-   * Note: will NOT render if header does not render.
-   */
-  subheader: PropTypes.node,
 };
 
 export default Dialog;

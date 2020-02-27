@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.8] Updated Dialog
+
+- Dialog now takes a `height` prop (that's applied as `max-height internally)
+- Dialog now has the option to always render the footer border via `alwaysShowBorder`
+
 ## [7.7] Menu component
 
 - Added `Menu` component for building accessible dropdown menus

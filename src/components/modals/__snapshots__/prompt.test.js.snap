@@ -36,8 +36,9 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
       </FlexItem>
     </Flex>
   }
+  height="80vh"
   role="alertdialog"
-  width={500}
+  width="500px"
 />
 `;
 
@@ -77,9 +78,10 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
       </FlexItem>
     </Flex>
   }
+  height="80vh"
   isOpen={true}
   role="alertdialog"
-  width={500}
+  width="500px"
 />
 `;
 
@@ -121,9 +123,10 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
       </FlexItem>
     </Flex>
   }
+  height="80vh"
   isOpen={true}
   role="alertdialog"
   title="title"
-  width={500}
+  width="500px"
 />
 `;
