@@ -3,9 +3,11 @@
 exports[`Popover component matches snapshot (JSX items) 1`] = `
 <Menu
   trigger={
-    <button>
+    <a
+      href="#"
+    >
       trigger
-    </button>
+    </a>
   }
 >
   <Menu>
@@ -55,9 +57,11 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
           onMouseDown={[Function]}
           type="button"
         >
-          <button>
+          <a
+            href="#"
+          >
             trigger
-          </button>
+          </a>
         </button>
       </MenuButton>
       <MenuList
@@ -73,9 +77,11 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
 exports[`Popover component matches snapshot (string items) 1`] = `
 <Menu
   trigger={
-    <button>
+    <a
+      href="#"
+    >
       trigger
-    </button>
+    </a>
   }
 >
   <Menu>
@@ -125,9 +131,11 @@ exports[`Popover component matches snapshot (string items) 1`] = `
           onMouseDown={[Function]}
           type="button"
         >
-          <button>
+          <a
+            href="#"
+          >
             trigger
-          </button>
+          </a>
         </button>
       </MenuButton>
       <MenuList
