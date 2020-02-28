@@ -1,0 +1,125 @@
+import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { arrayToOptions, StoryWrapper, StoryItem } from 'components/util/storybook';
+import { TableLayout } from "components/util/Table"
+import FDS from 'lib/dictionary/js/styleConstants';
+
+<Meta title="FDS|3 - Styles"  />
+
+# Styles
+
+export const generalStyles = {
+  width: 150,
+  borderWidth: "2px",
+  height: FDS.MEDIA_XL,
+  fontSize: FDS.FONT_SIZE_S,
+  fontFamily: FDS.FONT_FAMILY_MONO,
+  padding: "0.25rem",
+  margin: ".5rem",
+  display: "inline-flex",
+  justifyContent: "center",
+  borderColor: FDS.COLOR_SLATE,
+  alignItems: "center",
+};
+
+export const generalContainer = {
+  margin: "-.5em"
+}
+
+## Elevation
+
+export const containerStyles = {
+  margin: "-1rem"
+};
+
+export const elevationStyles = {
+  ...generalStyles,
+  margin: "1rem",
+};
+
+export const elevations = [1,2,3,4,5];
+
+<Story name="Elevation">
+  <div style={containerStyles}>
+    {elevations.map(elevation => (
+      <div className={`elevation--${elevation}`} style={elevationStyles}>.elevation--{elevation}</div>
+    ))}
+  </div>
+</Story>
+
+## Display
+
+<TableLayout
+  headers={['class', 'description']}
+  data={[
+    ['`display--none`', 'Sets `display` to `none`'],
+    ['`display--block`', 'Sets `display` to `block`'],
+    ['`display--flex`', 'Sets `display` to `flex`'],
+    ['`display--inline`', 'Sets `display` to `inline`'],
+    ['`display--inline-block`', 'Sets `display` to `inline-block`'],
+    ['`display--inline-flex`', 'Sets `display` to `inline-flex`'],
+    ['`display--grid`', 'Sets `display` to `grid`'],
+  ]} 
+/>
+
+## Depth
+
+export const depths = [1,2,3] ;
+
+<Story name="Depth">
+  <div style={generalContainer}>
+    {depths.map(depth => (
+      <div className={`depth--${depth}`} style={generalStyles}>.depth--{depth}</div>
+    ))}
+  </div>
+</Story>
+
+export const backgroundColorStyle = {
+  ...generalStyles,
+  borderRadius: "3px"
+}
+
+## Background Colors
+
+export const bgColors = [
+  { name: 'bgColor--white' },
+  { name: 'bgColor--haze' },
+  { name: 'bgColor--lightGray' },
+  { name: 'bgColor--aqua' },
+  { name: 'bgColor--orange', inverted: "true" },
+  { name: 'bgColor--charcoal', inverted: "true", },
+  { name: 'bgColor--navy', inverted: "true", },
+  { name: 'bgColor--gray', inverted: "true", },
+  { name: 'bgColor--red', inverted: "true", },
+  { name: 'bgColor--purple', inverted: "true" },
+];
+
+<Story name="Background Colors">
+  <div style={generalContainer}>
+    {bgColors.map(bgColor => (
+    <div
+      className={`${bgColor.name} ${bgColor.inverted ? 'inverted' : ''} rounded-all`}
+      style={backgroundColorStyle}
+    >
+      .{bgColor.name}
+    </div>
+    ))}
+  </div>
+</Story>
+
+## Rounded
+
+export const box = { 
+  ...generalStyles,
+  borderStyle: "solid",
+}
+
+export const roundDirections = ['top', 'right', 'bottom', 'left', 'all'];
+
+<Story name="Rounded">
+  <div style={generalContainer}>
+    {roundDirections.map(direction => (
+      <div style={box} className={`border--all rounded--${direction}`}>.rounded--{direction}</div>
+    ))}
+  </div>
+</Story>
