@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.8] Menu + Dialog fixes
+
+- Added `disableFocusTrap` prop to `Dialog`
+- Adjusted `z-index` value of the popover in `Menu`
+
 ## [7.7] Menu component
 
 - Added `Menu` component for building accessible dropdown menus

@@ -54,67 +54,66 @@ const Dialog = (props) => {
     }
   }, [props.isOpen]);
 
+  const dialogNode = (
+    <div>
+      <div className="dialog-overlay"></div>
+      <div className="dialog-zIndex dialog-wrapper">
+        <div
+          className="dialog elevation--3"
+          role={props.role}
+          aria-labelledby={props.title && 'a11y-dialog-title'}
+          aria-describedby="a11y-dialog-desc"
+          tabIndex="-1"
+          aria-modal="true"
+          onKeyDown={handleKeyDown}
+          style={{ maxWidth: `${props.width}px` }}
+        >
+          {(props.title || props.onDismiss) && (
+            <React.Fragment>
+              <div className="dialog-header">
+                <Section border="bottom">
+                  <div className="padding--right--double type--head4">
+                    {props.title ? (
+                      <span id="a11y-dialog-title">{props.title}</span>
+                    ) : (
+                      '\u00A0'
+                    )}{' '}
+                    {/* There always needs to be something (even a space) in the header for display reasons */}
+                  </div>
+                  {props.onDismiss && (
+                    <div className="dialog-icon">
+                      <IconButton
+                        Icon={DenyIcon}
+                        onClick={props.onDismiss}
+                        aria-label="close"
+                      />
+                    </div>
+                  )}
+                </Section>
+              </div>
+            </React.Fragment>
+          )}
+          <div className="dialog-content" ref={contentEl}>
+            <Section>{props.content}</Section>
+          </div>
+          {props.footerContent && (
+            <div className="dialog-footer">
+              <Section border={isOverflowing ? 'top' : undefined} bgColor="white">
+                {props.footerContent}
+              </Section>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <React.Fragment>
       {ReactDOM.createPortal(
         <CSSTransition timeout={200} in={props.isOpen} classNames="dialog" unmountOnExit>
           <React.Fragment>
-            <FocusTrap>
-              <div>
-                <div className="dialog-overlay"></div>
-                <div className="dialog-zIndex dialog-wrapper">
-                  <div
-                    className="dialog elevation--3"
-                    role={props.role}
-                    aria-labelledby={props.title && 'a11y-dialog-title'}
-                    aria-describedby="a11y-dialog-desc"
-                    tabIndex="-1"
-                    aria-modal="true"
-                    onKeyDown={handleKeyDown}
-                    style={{ maxWidth: `${props.width}px` }}
-                  >
-                    {(props.title || props.onDismiss) && (
-                      <React.Fragment>
-                        <div className="dialog-header">
-                          <Section border="bottom">
-                            <div className="padding--right--double type--head4">
-                              {props.title ? (
-                                <span id="a11y-dialog-title">{props.title}</span>
-                              ) : (
-                                '\u00A0'
-                              )}{' '}
-                              {/* There always needs to be something (even a space) in the header for display reasons */}
-                            </div>
-                            {props.onDismiss && (
-                              <div className="dialog-icon">
-                                <IconButton
-                                  Icon={DenyIcon}
-                                  onClick={props.onDismiss}
-                                  aria-label="close"
-                                />
-                              </div>
-                            )}
-                          </Section>
-                        </div>
-                      </React.Fragment>
-                    )}
-                    <div className="dialog-content" ref={contentEl}>
-                      <Section>{props.content}</Section>
-                    </div>
-                    {props.footerContent && (
-                      <div className="dialog-footer">
-                        <Section
-                          border={isOverflowing ? 'top' : undefined}
-                          bgColor="white"
-                        >
-                          {props.footerContent}
-                        </Section>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </FocusTrap>
+            {props.disableFocusTrap ? dialogNode : <FocusTrap>{dialogNode}</FocusTrap>}
           </React.Fragment>
         </CSSTransition>,
         // eslint-disable-next-line no-undef
@@ -126,6 +125,7 @@ const Dialog = (props) => {
 
 Dialog.defaultProps = {
   role: 'dialog',
+  disableFocusTrap: false,
   width: 500,
 };
 
@@ -153,6 +153,12 @@ Dialog.propTypes = {
 
   /** Custom modal width */
   width: PropTypes.number,
+
+  /**
+   * Disables the focus trap on the Dialog.
+   * Useful when the Dialog contains components that manage focus (e.g. `Menu`)
+   */
+  disableFocusTrap: PropTypes.bool,
 };
 
 export default Dialog;
