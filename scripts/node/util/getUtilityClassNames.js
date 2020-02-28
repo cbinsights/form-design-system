@@ -20,6 +20,11 @@ const { LIB_ROOT } = require('../constants');
  */
 const SELECTOR_CHAR_BLACKLIST = [' ', ':', '+', '[']
 
+/**
+ * Exclude inverted. We get too many false positives.
+ */
+const CLASSNAME_BLACKLIST = ['inverted'];
+
 // Get CSS string from built file in `lib`
 const inputCss = fs.readFileSync(path.resolve(LIB_ROOT, 'base-styles/base-styles.full.css')).toString();
 
@@ -41,6 +46,9 @@ const utilityClasses = allSelectors
   .filter((s) =>                     // filter out blacklisted chars
     !SELECTOR_CHAR_BLACKLIST.some((ch) => s.includes(ch))
   )
+  .filter((s) =>                     // filter out blacklisted classes
+    !CLASSNAME_BLACKLIST.some((classname) => s.includes(classname))
+   )
   .map((s) => s.replace('.', ''));   // remove dot (we're checking usage, not definition)
 
 const fileContent = [
