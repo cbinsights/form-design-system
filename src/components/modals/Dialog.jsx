@@ -168,7 +168,7 @@ Dialog.propTypes = {
   height: PropTypes.string,
 
   /**
-   * Border currently renders only if there is scrollable content. Set this boolean
+   * Border between content area and footer currently renders only if there is scrollable content. Set this boolean
    * so that the border always renders no matter what.
    */
   alwaysShowBorder: PropTypes.bool,
