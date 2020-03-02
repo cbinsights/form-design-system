@@ -14,19 +14,19 @@ describe('Dialog component', () => {
   it('dismisses modal when esc is pressed', () => {
     const dismissFn = jest.fn()
     const wrapper = mount(<Dialog isOpen={true} onDismiss={dismissFn} content={<button>hey</button>} />);
-    wrapper.find('.dialog').prop('onKeyDown')({ key: 'Escape' })  
+    wrapper.find('.dialog').prop('onKeyDown')({ key: 'Escape' })
     expect(dismissFn).toHaveBeenCalled();
   });
 
   it('locks scrolling when visible', () => {
     mount(<Dialog isOpen={true} content={<button>hey</button>} />);
-    // eslint-disable-next-line no-undef 
+    // eslint-disable-next-line no-undef
     expect(document.documentElement.style.overflow).toBe('hidden');
   });
 
   it('does not lock scrolling when not visible', () => {
     mount(<Dialog content={<button>hey</button>} />);
-    // eslint-disable-next-line no-undef 
+    // eslint-disable-next-line no-undef
     expect(document.documentElement.style.overflow).toBe('');
   });
 
@@ -37,14 +37,18 @@ describe('Dialog component', () => {
 
   it('matches snapshot (set all props)', () => {
     const component = shallow(
-      <Dialog 
-        content="foo" 
-        role="alertdialog" 
-        isOpen={true} 
-        canDismiss={true} 
-        footerContent={<div>foo</div>} 
-        title="hey" 
-        onDismiss={(() => {})} 
+      <Dialog
+        content="foo"
+        role="alertdialog"
+        isOpen={true}
+        canDismiss={true}
+        footerContent={<div>foo</div>}
+        title="hey"
+        onDismiss={(() => {})}
+        height="1000px"
+        width="1000px"
+        alwaysShowBorder
+        disableFocusTrap
       />
     );
     expect(component).toMatchSnapshot();

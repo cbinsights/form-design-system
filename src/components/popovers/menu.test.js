@@ -5,10 +5,11 @@ import Menu from './Menu';
 import MenuItem from './MenuItem';
 
 // suppress CSS warnings
-jest.mock('@reach/utils', () => ({
-  ...jest.requireActual('@reach/utils'),
-  checkStyles: jest.fn(),
-}));
+jest.mock('@reach/utils', () => {
+  const reachUtils = jest.requireActual('@reach/utils');
+  const overrides = { checkStyles: jest.fn() };
+  return Object.assign(reachUtils, overrides);
+});
 
 describe('Popover component', () => {
 
