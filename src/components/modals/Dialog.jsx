@@ -34,15 +34,18 @@ const Dialog = (props) => {
   };
 
   useEffect(() => {
-    handleResize(); // needs to fire once immediately on mount
-    // eslint-disable-next-line no-undef
-    window.addEventListener('resize', handleResize);
-    return () => {
-      noScroll.off();
+    if (!props.alwaysShowBorder) {
+      handleResize(); // needs to fire once immediately on mount
       // eslint-disable-next-line no-undef
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+      window.addEventListener('resize', handleResize);
+      return () => {
+        noScroll.off();
+        // eslint-disable-next-line no-undef
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+    return undefined;
+  }, [props.alwaysShowBorder]);
 
   useLayoutEffect(() => {
     // This toggles scrolling on and off based on whether the modal
@@ -66,7 +69,10 @@ const Dialog = (props) => {
           tabIndex="-1"
           aria-modal="true"
           onKeyDown={handleKeyDown}
-          style={{ maxWidth: `${props.width}px` }}
+          style={{
+            maxWidth: `${props.width}${typeof props.width === 'number' ? 'px' : ''} `,
+            maxHeight: `${props.height}${typeof props.height === 'number' ? 'px' : ''}`,
+          }}
         >
           {(props.title || props.onDismiss) && (
             <React.Fragment>
@@ -98,7 +104,10 @@ const Dialog = (props) => {
           </div>
           {props.footerContent && (
             <div className="dialog-footer">
-              <Section border={isOverflowing ? 'top' : undefined} bgColor="white">
+              <Section
+                border={props.alwaysShowBorder || isOverflowing ? 'top' : undefined}
+                bgColor="white"
+              >
                 {props.footerContent}
               </Section>
             </div>
@@ -125,8 +134,9 @@ const Dialog = (props) => {
 
 Dialog.defaultProps = {
   role: 'dialog',
+  width: '500px',
+  height: '80vh',
   disableFocusTrap: false,
-  width: 500,
 };
 
 Dialog.propTypes = {
@@ -152,7 +162,16 @@ Dialog.propTypes = {
   onDismiss: PropTypes.func,
 
   /** Custom modal width */
-  width: PropTypes.number,
+  width: PropTypes.string,
+
+  /** Custom modal height */
+  height: PropTypes.string,
+
+  /**
+   * Border between content area and footer currently renders only if there is scrollable content. Set this boolean
+   * so that the border always renders no matter what.
+   */
+  alwaysShowBorder: PropTypes.bool,
 
   /**
    * Disables the focus trap on the Dialog.

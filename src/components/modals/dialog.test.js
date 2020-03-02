@@ -45,6 +45,9 @@ describe('Dialog component', () => {
         footerContent={<div>foo</div>}
         title="hey"
         onDismiss={(() => {})}
+        height="1000px"
+        width="1000px"
+        alwaysShowBorder
         disableFocusTrap
       />
     );
