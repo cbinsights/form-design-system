@@ -93,7 +93,7 @@ TextInput.propTypes = {
    */
   IconRight: PropTypes.func,
 
-  /** Standard input type */
+  /** Input element `type` attribute */
   type: PropTypes.string,
 
   /** Controls showing asterisk on label, signifying field is required */
