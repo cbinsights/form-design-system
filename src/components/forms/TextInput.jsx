@@ -35,7 +35,8 @@ const TextInput = ({
   const inputOnChange = (e) => {
     e.persist();
     onChange(e);
-    if (e.target.value.length < 5) {
+    const query = e.target.value;
+    if (query.length < 5 || query.endsWith(' ')) {
       throttleOnChangeThrottled(e);
     } else {
       throttleOnChangeDebounced(e);
