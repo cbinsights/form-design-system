@@ -7,6 +7,7 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
       id="a11y-dialog-desc"
     />
   }
+  disableFocusTrap={false}
   footerContent={
     <Flex
       align="stretch"
@@ -49,6 +50,7 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
       id="a11y-dialog-desc"
     />
   }
+  disableFocusTrap={false}
   footerContent={
     <Flex
       align="stretch"
@@ -94,6 +96,7 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
       desc
     </div>
   }
+  disableFocusTrap={false}
   footerContent={
     <Flex
       align="stretch"
