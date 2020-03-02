@@ -27,9 +27,19 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [7.8] Add TextInput
+## [7.10] Add TextInput
 
 - Added `TextInput` form component for inputs
+
+## [7.9] Updated Dialog
+
+- Dialog now takes a `height` prop (that's applied as `max-height internally)
+- Dialog now has the option to always render the footer border via `alwaysShowBorder`
+
+## [7.8] Menu + Dialog fixes
+
+- Added `disableFocusTrap` prop to `Dialog`
+- Adjusted `z-index` value of the popover in `Menu`
 
 ## [7.7] Menu component
 
