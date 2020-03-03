@@ -1,4 +1,65 @@
+/**
+ * DateInput styles
+ *
+ * Mostly `react-day-picker` overrides.
+ * Some styling is * handled in the component via the
+ * "style modifiers" API of `DayPicker`.
+ */
+
+:root {
+  --fdsDateInput-control-height: 26px;
+}
+
+.fdsDateInput {
+  position: relative;
+  margin: 0;
+  color: var(--font-color-primary);
+}
+
+.fdsDateInput-navArrows {
+  position: absolute;
+  height: var(--fdsDateInput-control-height);
+  top: var(--space-half);
+  right: var(--space-half);
+}
+
+.fdsDateInput .DayPicker-wrapper {
+  padding: 0;
+}
+
+.fdsDateInput .DayPicker-Caption {
+  padding-top: var(--space-half);
+  margin: -8px;
+  margin-bottom: var(--space-half);
+}
+
+.fdsDateInput select {
+  font-size: var(--font-size-s);
+  height: var(--fdsDateInput-control-height);
+}
+
+.fdsDateInput .fds-icon:last-child {
+  margin-left: 4px;
+}
+
+.fdsDateInput .DayPicker-Month {
+  margin: 0;
+}
+
+.fdsDateInput .DayPicker-Months {
+  display: block; /* disables flexbox centering of month box */
+  padding: var(--space-half);
+}
 
 .fdsDateInput .DayPicker-Day {
   line-height: 1;
+  padding: var(--space-half);
+}
+
+.fdsDateInput .DayPicker-Day--selected {
+  background-color: var(--color-aqua);
+}
+
+.fdsDateInput .DayPicker-Day--today {
+  color: var(--font-color-heading);
 }

@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
-
-import Popover from '../popovers/Popover';
+import moment from 'moment';
 
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
-// :TODO: clean up logging shit
-// :TODO: convert value to ISO-8601 string? Check with Monica.
-// :TODO: custom next/prev icons?
+import ActionsArrowLeftIcon from 'lib/icons/react/ActionsArrowLeftIcon';
+import ActionsArrowRightIcon from 'lib/icons/react/ActionsArrowRightIcon';
+import Popover from '../popovers/Popover';
+import Flex from '../layout/Flex';
+import FlexItem from '../layout/FlexItem';
+import IconButton from '../interactive/IconButton';
+
 // :TODO: styling (see ticket for Nectar's mock)
 // :TODO: tests
-// :TODO: stories
 
-const LogArgs = (args) => (
-  <div className="fontFamily--mono color--red">{JSON.stringify(args, null, 2)}</div>
-);
+const DATE_FORMAT = 'MM/DD/YYYY';
+const DATE_PATTERN = '[0-9/]*';
 
+/**
+ * Private component for DateInput that renders Month/Year select inputs.
+ * @param {Object} props react props
+ * @returns {ReactElement}
+ */
 const YearAndMonthSelector = ({ date, localeUtils, onChange, startYear, endYear }) => {
   const months = localeUtils.getMonths();
 
@@ -29,7 +34,7 @@ const YearAndMonthSelector = ({ date, localeUtils, onChange, startYear, endYear 
   };
 
   return (
-    <form className="DayPicker-Caption flush--all">
+    <form className="DayPicker-Caption border--bottom">
       <div className="padding--bottom--half">
         <select
           name="month"
@@ -54,38 +59,79 @@ const YearAndMonthSelector = ({ date, localeUtils, onChange, startYear, endYear 
     </form>
   );
 };
-
 YearAndMonthSelector.propTypes = {
   /** current date (provided by DayPicker arguments) */
-  date: PropTypes.instanceOf(Date),
+  date: PropTypes.instanceOf(Date).isRequired,
 
   /** date utilities (provided by DayPicker arguments) */
-  localeUtils: PropTypes.object,
+  localeUtils: PropTypes.object.isRequired,
 
-  /** change callback for year OR month selection*/
-  onChange: PropTypes.any,
+  /** change callback for year OR month selection */
+  onChange: PropTypes.any.isRequired,
 
   /** starting year for year select */
-  startYear: PropTypes.instanceOf(Date),
+  startYear: PropTypes.instanceOf(Date).isReqruied,
 
   /** ending year for year select */
-  endYear: PropTypes.instanceOf(Date),
+  endYear: PropTypes.instanceOf(Date).isRequired,
+};
+
+/**
+ * Private component for DateInput that renders prev/next arrows.
+ * @param {Object} props react props
+ * @returns {ReactElement}
+ */
+const NavArrows = ({ onPreviousClick, onNextClick }) => (
+  <div className="fdsDateInput-navArrows alignChild--right--center">
+    <Flex noGutters>
+      <FlexItem shrink>
+        <IconButton onClick={() => onPreviousClick()} Icon={ActionsArrowLeftIcon} />
+      </FlexItem>
+      <FlexItem shrink>
+        <IconButton onClick={() => onNextClick()} Icon={ActionsArrowRightIcon} />
+      </FlexItem>
+    </Flex>
+  </div>
+);
+NavArrows.propTypes = {
+  /** Previous click function provided by DayPicker */
+  onPreviousClick: PropTypes.func.isRequired,
+
+  /** Next click function provided by DayPicker */
+  onNextClick: PropTypes.func.isRequired,
 };
 
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const DateInput = ({ futureYears, pastYears, defaultDate, onChange }) => {
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [month, setMonth] = useState(new Date());
+const DateInput = ({ futureYears, pastYears, defaultDate, onDateChange }) => {
+  const today = new Date();
+  const [selectedDate, setSelectedDate] = useState(defaultDate || null);
+  const [month, setMonth] = useState(today);
 
-  const currentYear = new Date().getFullYear();
+  const selectedYear = selectedDate instanceof Date && selectedDate.getFullYear();
+  const currentYear = today.getFullYear();
   const startYear = new Date(currentYear - pastYears, 0).getFullYear(); // Full year from Jan
   const endYear = new Date(currentYear + futureYears + 1, 11).getFullYear(); // Full year to Dec
 
-  const handleYearMonthChange = (month) => {
-    setMonth(month);
+  const handleYearMonthChange = (date) => {
+    setMonth(date);
+  };
+
+  const handleDaySelect = (date) => {
+    setSelectedDate(date);
+    onDateChange(date);
+  };
+
+  const handleInputChange = (e) => {
+    const dateWrapper = moment(e.target.value, DATE_FORMAT);
+    const isYearWithinRage = dateWrapper.year().toString().length === 4; // years below 1000 are not useful
+
+    if (dateWrapper.isValid() && isYearWithinRage) {
+      setMonth(dateWrapper.toDate());
+      handleDaySelect(dateWrapper.toDate());
+    }
   };
 
   return (
@@ -94,8 +140,12 @@ const DateInput = ({ futureYears, pastYears, defaultDate, onChange }) => {
         trigger={
           <input
             type="text"
-            value={selectedDate ? selectedDate.toLocaleDateString() : undefined}
-            onChange={onChange}
+            defaultValue={
+              selectedDate ? moment(selectedDate).format(DATE_FORMAT) : undefined
+            }
+            onChange={handleInputChange}
+            placeholder={DATE_FORMAT}
+            pattern={DATE_PATTERN}
           />
         }
       >
@@ -103,15 +153,21 @@ const DateInput = ({ futureYears, pastYears, defaultDate, onChange }) => {
           <DayPicker
             month={month}
             className="fdsDateInput"
-            onDayClick={setSelectedDate}
+            onDayClick={handleDaySelect}
             selectedDays={selectedDate}
+            navbarElement={<NavArrows />}
             captionElement={({ date, localeUtils }) => (
               <YearAndMonthSelector
                 date={date}
                 localeUtils={localeUtils}
                 onChange={handleYearMonthChange}
-                startYear={startYear}
-                endYear={endYear}
+                /* adjust yearn range based on user input */
+                startYear={
+                  selectedYear && selectedYear < startYear ? selectedYear : startYear
+                }
+                endYear={
+                  selectedYear && selectedYear > endYear ? selectedYear + 1 : endYear
+                }
               />
             )}
           />
@@ -121,16 +177,17 @@ const DateInput = ({ futureYears, pastYears, defaultDate, onChange }) => {
   );
 };
 
-// :TODO: make past/future years work
 DateInput.defaultProps = {
-  futureYears: 1,
-  pastYears: 1000,
+  futureYears: 2,
+  pastYears: 40,
 };
 
-// :TODO: selectedDate prop
 DateInput.propTypes = {
-  /** Input change callback */
-  onChange: PropTypes.func,
+  /**
+   * Change callback for date selection.
+   * Called with the `Date` object of the selected date.
+   */
+  onDateChange: PropTypes.func,
 
   /** Number of past years to show */
   futureYears: PropTypes.number,
