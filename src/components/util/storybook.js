@@ -109,3 +109,35 @@ export const storyBackgrounds = {
   check:
     'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQYV2M8fPiwLwMOwAiStLW13YxNftBJAgAx2BqeI9XcBAAAAABJRU5ErkJggg==)',
 };
+
+export const generalStyles = {
+  width: FDS.MEDIA_XL,
+  height: FDS.MEDIA_XL,
+  padding: '0.25rem',
+};
+
+export const containerStyles = {
+  margin: '-.9rem',
+};
+
+export const layoutStyle = {
+  display: 'inline-flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  margin: '.9rem',
+};
+
+export const labelStyle = {
+  fontSize: 11,
+  marginBottom: 10,
+  fontFamily: FDS.FONT_FAMILY_MONO,
+  color: '#f09',
+};
+
+export const Item = (props) => (
+  <div style={layoutStyle}>
+    <div style={labelStyle}>{props.label}</div>
+    {props.children}
+  </div>
+);

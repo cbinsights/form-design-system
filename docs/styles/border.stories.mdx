@@ -1,0 +1,101 @@
+import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
+import { TableLayout } from "components/util/Table"
+import FDS from 'lib/dictionary/js/styleConstants';
+
+<Meta title="Style Utilities/Border"  />
+
+export const borderHelperStyles = {
+  ...generalStyles,
+  backgroundColor: "#fbfbfb"
+}
+
+## Border Radius
+
+<Story name="Border Radius">
+  <>
+    <TableLayout
+      copy={false}
+      headers={['class', 'description']}
+      shrinkLastColumn={false}
+      data={[
+        ['`rounded--top`', 'Rounds the top corners of the element'],
+        ['`rounded--bottom`', 'Rounds the bottom corners of the element'],
+        ['`rounded--right`', 'Rounds the right corners of the element'],
+        ['`rounded--left`', 'Rounds the left corners of the element'],
+        ['`rounded--all`', 'Rounds all corners of the element'],
+      ]} 
+    />
+    <div style={containerStyles}>
+      <Item label="rounded--top"><div className="rounded--top border--all bgColor--haze" style={borderHelperStyles} /></Item>
+      <Item label="rounded--bottom"><div className="rounded--bottom border--all" style={borderHelperStyles} /></Item>
+      <Item label="rounded--right"><div className="rounded--right border--all" style={borderHelperStyles} /></Item>
+      <Item label="rounded--left"><div className="rounded--left border--all" style={borderHelperStyles} /></Item>
+      <Item label="rounded--all"><div className="rounded--all border--all" style={borderHelperStyles} /></Item>
+    </div>
+  </>
+</Story>
+
+## Focus Style
+Adds standard focus style to elements (only on :focus state)
+
+<Story name="Focus Style">
+  <TableLayout
+    copy={false}
+    headers={['class', 'description']}
+    shrinkLastColumn={false}
+    data={[
+      ['`border--focus`', 'Adds standard box shadow focus style'],
+      ['`border--focus--noTransition`', 'Adds standard box shadow focus style without transition'],
+    ]} 
+  />
+</Story>
+
+## Borders by side
+Adds standard borders to an element for a given side.
+
+<Story name="Borders by side">
+  <>
+    <TableLayout
+      copy={false}
+      headers={['class', 'description']}
+      shrinkLastColumn={false}
+      data={[
+        ['`border--none`', 'removes all borders'],
+        ['`border--top`', 'applies a standard top border'],
+        ['`border--right`', 'applies a standard right border'],
+        ['`border--bottom`', 'applies a standard bottom border'],
+        ['`border--left`', 'applies a standard left border'],
+        ['`border--all`', 'applies a standard border to all sides'],
+      ]} 
+    />
+    <div style={containerStyles}>
+      <Item label="border--none"><div className="border--none" style={borderHelperStyles} /></Item>
+      <Item label="border--top"><div className="border--top" style={borderHelperStyles} /></Item>
+      <Item label="border--bottom"><div className="border--bottom" style={borderHelperStyles} /></Item>
+      <Item label="border--right"><div className="border--right" style={borderHelperStyles} /></Item>
+      <Item label="border--left"><div className="border--left" style={borderHelperStyles} /></Item>
+      <Item label="border--all"><div className="border--all" style={borderHelperStyles} /></Item>
+    </div>
+  </>
+</Story>
+
+## Border Shape
+Creates a shape with CSS border radius
+
+<Story name="Border Shape">
+  <>
+    <TableLayout
+      copy={false}
+      headers={['class', 'description']}
+      shrinkLastColumn={false}
+      data={[
+        ['`shape--circle`', 'Makes the element a circle'],
+      ]} 
+    />
+    <div style={containerStyles}>
+      <Item label="shape--circle"><div className="shape--circle border--all" style={{ ...borderHelperStyles, width: 72 }} /></Item>
+    </div>
+  </>
+</Story>

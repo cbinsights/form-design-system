@@ -15,20 +15,20 @@ addParameters({
       }
 
       const sectionSortOrder = [
-        "intro",
-        "ui",
-        "design",
-        "icons",
-        "components"
+        "Intro",
+        "UI Guidelines",
+        "Design Tokens",
+        "Icons",
+        "Style Utilities",
+        "Components"
       ].reduce((ordering, section, i) => {
         ordering[section] = i;
         return ordering;
       }, {});
 
-      // split on slashes and use that, as hyphens are also generated from spaces
       const sectionSort = () =>
-        sectionSortOrder[a[0].split("-")[0]] -
-        sectionSortOrder[b[0].split("-")[0]];
+        sectionSortOrder[a[1].kind.split("/")[0]] -
+        sectionSortOrder[b[1].kind.split("/")[0]];
 
       const alphabeticalSort = () =>
         a[1].id.localeCompare(b[1].id, { numeric: true });

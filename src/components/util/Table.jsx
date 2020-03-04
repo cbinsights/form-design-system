@@ -6,10 +6,15 @@ import { useClipboard } from 'components/util/storybook';
 const camelToCaps = (camelCase) =>
   camelCase.replace(/([A-Z])/g, (match) => ` ${match}`).toUpperCase();
 
-export const Table = (props) => <table className="doctable">{props.children}</table>;
+export const Table = (props) => (
+  <table className={`doctable ${props.shrinkLastColumn ? 'shrinkLastColumn' : ''}`}>
+    {props.children}
+  </table>
+);
 
 Table.propTypes = {
   children: PropTypes.node,
+  shrinkLastColumn: PropTypes.bool,
 };
 
 export const TableBody = (props) => <tbody>{props.children}</tbody>;
@@ -73,7 +78,7 @@ TableCell.propTypes = {
 };
 
 export const DictionaryTableLayout = ({ data, copy = true }) => (
-  <Table>
+  <Table shrinkLastColumn>
     <thead>
       <tr>
         {Object.keys(data[0]).map((header, idx) => (

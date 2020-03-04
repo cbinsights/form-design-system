@@ -1,0 +1,67 @@
+import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
+import { TableLayout } from "components/util/Table"
+import FDS from 'lib/dictionary/js/styleConstants';
+
+<Meta title="Style Utilities/Text flow"  />
+
+Allows components to render full strings while CSS
+does the job of clamping text to one line.
+
+## Truncate text
+
+<Story name="Truncate text">
+  <>
+    <TableLayout
+      copy={false}
+      headers={['class', 'description']}
+      shrinkLastColumn={false}
+      data={[
+        ['`wrap--singleLine`', 'Forces text to a single line (nowrap). Does NOT use overflow: hidden'],
+        ['`wrap--singleLine--truncate`', 'Forces text to a single line (nowrap) and truncates with "..." entity, using `overflow: hidden`'],
+      ]} 
+    />
+    <div style={labelStyle}>wrap--singleLine</div>
+    <div className="wrap--singleLine" style={{ overflow: "hidden" }}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud
+      exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit
+    </div>
+    <br />
+    <div style={labelStyle}>wrap--singleLine--truncate</div>
+    <div className="wrap--singleLine--truncate">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud
+      exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit
+    </div>
+  </>
+</Story>
+
+## Text Wrapping
+
+<Story name="Text Wrapping">
+  <>
+    <TableLayout
+      copy={false}
+      headers={['class', 'description']}
+      shrinkLastColumn={false}
+      data={[
+        ['`wrap--hyphenate`', 'Allows breaking on word with hyphenation'],
+      ]} 
+    />
+    <div style={labelStyle}>wrap--hyphenate</div>
+    <div className="wrap--hyphenate">
+      Lorem-ipsum-dolor-sit-amet,-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua.-Ut-enim-ad-minim-veniam,-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat.-Duis-aute-irure-dolor-in-reprehenderit-
+    </div>
+    <br />
+    <div>Default:</div>
+    <div>
+      Lorem-ipsum-dolor-sit-amet,-consectetur-adipiscing elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua.-Ut-enim-ad-minim-veniam,-quis nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat.-Duis-aute-irure-dolor-in-reprehenderit-
+    </div>
+  </>
+</Story>
