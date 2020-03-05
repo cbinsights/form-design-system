@@ -7,7 +7,14 @@ import FDS from 'lib/dictionary/js/styleConstants';
 export const positionStyles = {
   ...generalStyles,
   border: `1px solid ${FDS.COLOR_CHARCOAL}`,
-  padding: 1 
+  padding: 2 
+}
+
+export const boxStyles = {
+  height: 30,
+  width: 30,
+  background: FDS.COLOR_CHARCOAL,
+  borderRadius: 3
 }
 
 <Meta title="Style Utilities/Position"  />
@@ -38,15 +45,15 @@ Signature: `alignChild--(x-axis)--(y-axis)`
     ]} 
   />
   <div style={containerStyles}>
-    <Item label="center--center"><div className="alignChild--center--center" style={positionStyles}><div style={{ height: 30, width: 30, background: FDS.COLOR_CHARCOAL}}/></div></Item>
-    <Item label="center--top"><div className="alignChild--center--top" style={positionStyles}><div style={{ height: 30, width: 30, background: FDS.COLOR_CHARCOAL}}/></div></Item>
-    <Item label="center--bottom"><div className="alignChild--center--bottom" style={positionStyles}><div style={{ height: 30, width: 30, background: FDS.COLOR_CHARCOAL}}/></div></Item>
-    <Item label="left--center"><div className="alignChild--left--center" style={positionStyles}><div style={{ height: 30, width: 30, background: FDS.COLOR_CHARCOAL}}/></div></Item>
-    <Item label="left--top"><div className="alignChild--left--top" style={positionStyles}><div style={{ height: 30, width: 30, background: FDS.COLOR_CHARCOAL}}/></div></Item>
-    <Item label="left--bottom"><div className="alignChild--left--bottom" style={positionStyles}><div style={{ height: 30, width: 30, background: FDS.COLOR_CHARCOAL}}/></div></Item>
-    <Item label="right--center"><div className="alignChild--right--center" style={positionStyles}><div style={{ height: 30, width: 30, background: FDS.COLOR_CHARCOAL}}/></div></Item>
-    <Item label="right--top"><div className="alignChild--right--top" style={positionStyles}><div style={{ height: 30, width: 30, background: FDS.COLOR_CHARCOAL}}/></div></Item>
-    <Item label="right--bottom"><div className="alignChild--right--bottom" style={positionStyles}><div style={{ height: 30, width: 30, background: FDS.COLOR_CHARCOAL}}/></div></Item>
+    <Item label="center--center"><div className="alignChild--center--center" style={positionStyles}><div style={boxStyles}/></div></Item>
+    <Item label="center--top"><div className="alignChild--center--top" style={positionStyles}><div style={boxStyles}/></div></Item>
+    <Item label="center--bottom"><div className="alignChild--center--bottom" style={positionStyles}><div style={boxStyles}/></div></Item>
+    <Item label="left--center"><div className="alignChild--left--center" style={positionStyles}><div style={boxStyles}/></div></Item>
+    <Item label="left--top"><div className="alignChild--left--top" style={positionStyles}><div style={boxStyles}/></div></Item>
+    <Item label="left--bottom"><div className="alignChild--left--bottom" style={positionStyles}><div style={boxStyles}/></div></Item>
+    <Item label="right--center"><div className="alignChild--right--center" style={positionStyles}><div style={boxStyles}/></div></Item>
+    <Item label="right--top"><div className="alignChild--right--top" style={positionStyles}><div style={boxStyles}/></div></Item>
+    <Item label="right--bottom"><div className="alignChild--right--bottom" style={positionStyles}><div style={boxStyles}/></div></Item>
   </div>
   </>
 </Story>

@@ -6,11 +6,6 @@ import FDS from 'lib/dictionary/js/styleConstants';
 
 <Meta title="Style Utilities/Border"  />
 
-export const borderHelperStyles = {
-  ...generalStyles,
-  backgroundColor: "#fbfbfb"
-}
-
 ## Border Radius
 
 <Story name="Border Radius">
@@ -28,11 +23,11 @@ export const borderHelperStyles = {
       ]} 
     />
     <div style={containerStyles}>
-      <Item label="rounded--top"><div className="rounded--top border--all bgColor--haze" style={borderHelperStyles} /></Item>
-      <Item label="rounded--bottom"><div className="rounded--bottom border--all" style={borderHelperStyles} /></Item>
-      <Item label="rounded--right"><div className="rounded--right border--all" style={borderHelperStyles} /></Item>
-      <Item label="rounded--left"><div className="rounded--left border--all" style={borderHelperStyles} /></Item>
-      <Item label="rounded--all"><div className="rounded--all border--all" style={borderHelperStyles} /></Item>
+      <Item label="rounded--top"><div className="rounded--top bgColor--charcoal" style={generalStyles} /></Item>
+      <Item label="rounded--bottom"><div className="rounded--bottom bgColor--charcoal" style={generalStyles} /></Item>
+      <Item label="rounded--right"><div className="rounded--right bgColor--charcoal" style={generalStyles} /></Item>
+      <Item label="rounded--left"><div className="rounded--left bgColor--charcoal" style={generalStyles} /></Item>
+      <Item label="rounded--all"><div className="rounded--all bgColor--charcoal" style={generalStyles} /></Item>
     </div>
   </>
 </Story>
@@ -51,6 +46,11 @@ Adds standard focus style to elements (only on :focus state)
     ]} 
   />
 </Story>
+
+export const borderSideStyles = {
+  ...generalStyles,
+  backgroundColor: "#fbfbfb"
+}
 
 ## Borders by side
 Adds standard borders to an element for a given side.
@@ -71,12 +71,12 @@ Adds standard borders to an element for a given side.
       ]} 
     />
     <div style={containerStyles}>
-      <Item label="border--none"><div className="border--none" style={borderHelperStyles} /></Item>
-      <Item label="border--top"><div className="border--top" style={borderHelperStyles} /></Item>
-      <Item label="border--bottom"><div className="border--bottom" style={borderHelperStyles} /></Item>
-      <Item label="border--right"><div className="border--right" style={borderHelperStyles} /></Item>
-      <Item label="border--left"><div className="border--left" style={borderHelperStyles} /></Item>
-      <Item label="border--all"><div className="border--all" style={borderHelperStyles} /></Item>
+      <Item label="border--none"><div className="border--none" style={borderSideStyles} /></Item>
+      <Item label="border--top"><div className="border--top" style={borderSideStyles} /></Item>
+      <Item label="border--bottom"><div className="border--bottom" style={borderSideStyles} /></Item>
+      <Item label="border--right"><div className="border--right" style={borderSideStyles} /></Item>
+      <Item label="border--left"><div className="border--left" style={borderSideStyles} /></Item>
+      <Item label="border--all"><div className="border--all" style={borderSideStyles} /></Item>
     </div>
   </>
 </Story>
@@ -95,7 +95,7 @@ Creates a shape with CSS border radius
       ]} 
     />
     <div style={containerStyles}>
-      <Item label="shape--circle"><div className="shape--circle border--all" style={{ ...borderHelperStyles, width: 72 }} /></Item>
+      <Item label="shape--circle"><div className="shape--circle bgColor--charcoal" style={{ width: 72, height: 72 }} /></Item>
     </div>
   </>
 </Story>

@@ -4,6 +4,12 @@ import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, container
 import { TableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
+export const wrapBorderStyle = {
+  border: `1px dashed ${FDS.COLOR_GRAY}`
+}
+
+export const wrapWidth = 250
+
 <Meta title="Style Utilities/Text flow"  />
 
 Allows components to render full strings while CSS
@@ -18,12 +24,12 @@ does the job of clamping text to one line.
       headers={['class', 'description']}
       shrinkLastColumn={false}
       data={[
-        ['`wrap--singleLine`', 'Forces text to a single line (nowrap). Does NOT use overflow: hidden'],
-        ['`wrap--singleLine--truncate`', 'Forces text to a single line (nowrap) and truncates with "..." entity, using `overflow: hidden`'],
+        ['`wrap--singleLine`', 'Forces text to a single line (nowrap).'],
+        ['`wrap--singleLine--truncate`', 'Forces text to a single line (nowrap) and truncates with "..." entity.'],
       ]} 
     />
     <div style={labelStyle}>wrap--singleLine</div>
-    <div className="wrap--singleLine" style={{ overflow: "hidden" }}>
+    <div className="wrap--singleLine border--all" style={{ ...wrapBorderStyle, width: wrapWidth, overflow: "hidden" }}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
       sed do eiusmod tempor incididunt ut labore et dolore
       magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -32,7 +38,7 @@ does the job of clamping text to one line.
     </div>
     <br />
     <div style={labelStyle}>wrap--singleLine--truncate</div>
-    <div className="wrap--singleLine--truncate">
+    <div className="wrap--singleLine--truncate border--all" style={{ ...wrapBorderStyle, width: wrapWidth }}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
       sed do eiusmod tempor incididunt ut labore et dolore
       magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -51,17 +57,17 @@ does the job of clamping text to one line.
       headers={['class', 'description']}
       shrinkLastColumn={false}
       data={[
-        ['`wrap--hyphenate`', 'Allows breaking on word with hyphenation'],
+        ['`wrap--hyphenate`', 'Allows breaking on word, displaying hyphenation'],
       ]} 
     />
     <div style={labelStyle}>wrap--hyphenate</div>
-    <div className="wrap--hyphenate">
-      Lorem-ipsum-dolor-sit-amet,-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua.-Ut-enim-ad-minim-veniam,-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat.-Duis-aute-irure-dolor-in-reprehenderit-
+    <div className="wrap--hyphenate" style={{ ...wrapBorderStyle, overflow: "hidden", width: wrapWidth }}>
+      Loremipsumdolorsitamet,consecteturadipiscingelit,seddoeiusmodtemporincididuntutlaboreetdoloremagnaaliqua.
     </div>
     <br />
     <div>Default:</div>
-    <div>
-      Lorem-ipsum-dolor-sit-amet,-consectetur-adipiscing elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua.-Ut-enim-ad-minim-veniam,-quis nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat.-Duis-aute-irure-dolor-in-reprehenderit-
+    <div style={{ ...wrapBorderStyle, overflow: "hidden", width: wrapWidth }}>
+      Loremipsumdolorsitamet,consecteturadipiscingelit,seddoeiusmodtemporincididuntutlaboreetdoloremagnaaliqua.
     </div>
   </>
 </Story>

@@ -32,25 +32,21 @@ TableRow.propTypes = {
 const mostReadableConfig = (hexName) =>
   mostReadable(hexName, '#333', { includeFallbackColors: true, level: 'AAA' });
 
-export const TableCell = (props) => {
+export const TableCell = ({ cellType, children, copy, ...props }) => {
   const [copiedText, copyToClipboard] = useClipboard();
 
   const background =
-    props.cellType &&
-    (props.cellType.startsWith('FONT_COLOR') || props.cellType.startsWith('BORDER_COLOR'))
-      ? props.children
+    cellType && (cellType.startsWith('FONT_COLOR') || cellType.startsWith('BORDER_COLOR'))
+      ? children
       : undefined;
 
   const color = mostReadableConfig(background || '#FFF');
 
-  const fontFamily =
-    props.cellType && props.cellType.startsWith('FONT_FAMILY') && props.children;
+  const fontFamily = cellType && cellType.startsWith('FONT_FAMILY') && children;
 
-  const fontSize =
-    props.cellType && props.cellType.startsWith('FONT_SIZE') && props.children;
+  const fontSize = cellType && cellType.startsWith('FONT_SIZE') && children;
 
-  const fontWeight =
-    props.cellType && props.cellType.startsWith('FONT_WEIGHT') && props.children;
+  const fontWeight = cellType && cellType.startsWith('FONT_WEIGHT') && children;
 
   return (
     <td
@@ -61,10 +57,11 @@ export const TableCell = (props) => {
         background,
         color,
       }}
-      onClick={() => copyToClipboard(props.children)}
+      onClick={() => copyToClipboard(children)}
+      {...props}
     >
-      {props.children}
-      {props.copy && (
+      {children}
+      {copy && (
         <span>{copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}</span>
       )}
     </td>

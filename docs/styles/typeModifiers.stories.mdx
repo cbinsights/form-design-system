@@ -1,0 +1,167 @@
+import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
+import { TableLayout, Table, TableBody, TableCell } from "components/util/Table"
+import FDS from 'lib/dictionary/js/styleConstants';
+import { Typesetting, InvertedTypesetting, Headers } from './styleutils';
+
+<Meta title="Style Utilities/Type Modifiers"  />
+
+## Size Modifiers
+
+export const typeStyle = {
+    ...labelStyle,
+    marginBottom: 0
+}
+
+<Story name="Size Modifiers">
+  <>
+    <TableLayout
+      copy={false}
+      headers={['class', 'description']}
+      shrinkLastColumn={false}
+      data={[
+        ['`fontSize-4xl`', '4XL Text'],
+        ['`fontSize--3xl`', '3XL Text'],
+        ['`fontSize--2xl`', '2XL Text'],
+        ['`fontSize--xl`', 'XL Text'],
+        ['`fontSize--l`', 'L Text'],
+        ['`fontSize--default`', 'Default text (default)'],
+        ['`fontSize--s`', 'S Text'],
+        ['`fontSize--xs`', 'XS Text'],
+      ]} 
+    />
+    <div style={typeStyle}>fontSize--4xl</div>
+    <div className="fontSize--4xl margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>fontSize--3xl</div>
+    <div className="fontSize--3xl margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>fontSize--2xl</div>
+    <div className="fontSize--2xl margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>fontSize--xl</div>
+    <div className="fontSize--xl margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>fontSize--l</div>
+    <div className="fontSize--l margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>fontSize--def</div>
+    <div className="fontSize--def margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>fontSize--s</div>
+    <div className="fontSize--s margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>fontSize--xs</div>
+    <div className="fontSize--xs margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+  </>
+</Story>
+
+## Weight Modifiers
+
+<Story name="Weight Modifiers">
+  <>
+    <TableLayout
+      copy={false}
+      headers={['class', 'description']}
+      shrinkLastColumn={false}
+      data={[
+        ['`fontWeight--bold`', 'Bold text'],
+        ['`fontWeight--book`', 'Book text'],
+      ]} 
+    />
+    <div style={typeStyle}>fontWeight--bold</div>
+    <div className="fontWeight--bold margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>fontWeight--book</div>
+    <div className="fontWeight--book margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+  </>
+</Story>
+
+## Color Modifiers
+
+export const colorHeaders = ['class', 'description', 'color', 'inverted']
+export const rows = [
+  ['color--heading', 'Heading text color'],
+  ['color--primary', 'Primary text color (default)'],
+  ['color--secondary', 'Secondary text color'],
+  ['color--hint', 'Hint text color'],
+  ['color--success', 'Success text color'],
+  ['color--error', 'Error text color'],
+]
+
+<Table>
+  <thead>
+    <tr>
+      {colorHeaders.map(header => (
+        <th key={header}>{header}</th>
+      ))}
+    </tr>
+  </thead>
+  <TableBody>
+    {rows.map(row => (
+      <tr>
+        <TableCell>`{row[0]}`</TableCell>
+        <TableCell>{row[1]}</TableCell>
+        <TableCell><div className={row[0]}>Aa</div></TableCell>
+        <TableCell className="inverted" style={{ backgroundColor: FDS.COLOR_NAVY }}><div className={row[0]}>Aa</div></TableCell>
+      </tr>
+    ))}
+  </TableBody>
+</Table>
+
+
+<Story name="Color Modifiers">
+  <>
+    <TableLayout
+      copy={false}
+      headers={['class', 'description']}
+      shrinkLastColumn={false}
+      data={[
+        ['`color--slate`', 'Slate text'],
+        ['`color--green`', 'Green text'],
+        ['`color--mint`', 'Mint text'],
+        ['`color--navy`', 'Navy text'],
+        ['`color--blue`', 'Blue text'],
+        ['`color--aqua`', 'Aqua text'],
+        ['`color--sky`', 'Sky text'],
+        ['`color--violet`', 'Violet text'],
+        ['`color--purple`', 'Purple text'],
+        ['`color--red`', 'Red text'],
+        ['`color--orange`', 'Orange text'],
+        ['`color--white`', 'White text'],
+      ]} 
+    />
+    <div style={typeStyle}>color--heading</div>
+    <div className="color--heading margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>color--primary</div>
+    <div className="color--primary margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>color--secondary</div>
+    <div className="color--secondary margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>color--hint</div>
+    <div className="color--hint margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>color--success</div>
+    <div className="color--success margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>color--error</div>
+    <div className="color--error margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <br />
+    <div style={typeStyle}>color--slate</div>
+    <div className="color--slate margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>color--green</div>
+    <div className="color--green margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>color--mint</div>
+    <div className="color--mint margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>color--navy</div>
+    <div className="color--navy margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>color--blue</div>
+    <div className="color--blue margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>color--aqua</div>
+    <div className="color--aqua margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+  </>
+</Story>
+
+
+
+## Heading Tags
+To set the display of a given heading tag, use one of the typesetting classes below.
+(By default, HTML heading tags are set to match the default body text.)
+
+<Typesetting />
+
+## Inverted
+Select Typesetting classes can get an optimized display for
+dark backgrounds by being placed inside an `.inverted` context:
+
+<InvertedTypesetting />
