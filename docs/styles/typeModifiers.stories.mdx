@@ -70,10 +70,35 @@ export const typeStyle = {
   </>
 </Story>
 
+## Type Style Modifiers
+
+<p class="fontStyle--italic">Italic text</p>
+<p class="fontStyle--underline">Underline text</p>
+<p class="fontStyle--caps">Uppercase text</p>
+
+<Story name="Type Style Modifiers">
+  <>
+    <TableLayout
+      copy={false}
+      headers={['class', 'description']}
+      shrinkLastColumn={false}
+      data={[
+        ['`fontStyle--italic`', 'Italic text'],
+        ['`fontStyle--underline`', 'Underline text'],
+        ['`fontStyle--caps`', 'Uppercase text'],
+      ]} 
+    />
+    <div style={typeStyle}>fontWeight--bold</div>
+    <div className="fontWeight--bold margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div style={typeStyle}>fontWeight--book</div>
+    <div className="fontWeight--book margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+  </>
+</Story>
+
 ## Color Modifiers
 
-export const colorHeaders = ['class', 'description', 'color', 'inverted']
-export const rows = [
+export const colorModifierHeaders = ['class', 'description', 'color', 'inverted']
+export const colorModifierRows = [
   ['color--heading', 'Heading text color'],
   ['color--primary', 'Primary text color (default)'],
   ['color--secondary', 'Secondary text color'],
@@ -82,86 +107,65 @@ export const rows = [
   ['color--error', 'Error text color'],
 ]
 
-<Table>
-  <thead>
-    <tr>
-      {colorHeaders.map(header => (
-        <th key={header}>{header}</th>
-      ))}
-    </tr>
-  </thead>
-  <TableBody>
-    {rows.map(row => (
-      <tr>
-        <TableCell>`{row[0]}`</TableCell>
-        <TableCell>{row[1]}</TableCell>
-        <TableCell><div className={row[0]}>Aa</div></TableCell>
-        <TableCell className="inverted" style={{ backgroundColor: FDS.COLOR_NAVY }}><div className={row[0]}>Aa</div></TableCell>
-      </tr>
-    ))}
-  </TableBody>
-</Table>
-
-
 <Story name="Color Modifiers">
-  <>
-    <TableLayout
-      copy={false}
-      headers={['class', 'description']}
-      shrinkLastColumn={false}
-      data={[
-        ['`color--slate`', 'Slate text'],
-        ['`color--green`', 'Green text'],
-        ['`color--mint`', 'Mint text'],
-        ['`color--navy`', 'Navy text'],
-        ['`color--blue`', 'Blue text'],
-        ['`color--aqua`', 'Aqua text'],
-        ['`color--sky`', 'Sky text'],
-        ['`color--violet`', 'Violet text'],
-        ['`color--purple`', 'Purple text'],
-        ['`color--red`', 'Red text'],
-        ['`color--orange`', 'Orange text'],
-        ['`color--white`', 'White text'],
-      ]} 
-    />
-    <div style={typeStyle}>color--heading</div>
-    <div className="color--heading margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>color--primary</div>
-    <div className="color--primary margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>color--secondary</div>
-    <div className="color--secondary margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>color--hint</div>
-    <div className="color--hint margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>color--success</div>
-    <div className="color--success margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>color--error</div>
-    <div className="color--error margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <br />
-    <div style={typeStyle}>color--slate</div>
-    <div className="color--slate margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>color--green</div>
-    <div className="color--green margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>color--mint</div>
-    <div className="color--mint margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>color--navy</div>
-    <div className="color--navy margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>color--blue</div>
-    <div className="color--blue margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>color--aqua</div>
-    <div className="color--aqua margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-  </>
+  <Table>
+    <thead>
+      <tr>
+        {colorModifierHeaders.map(header => (
+          <th key={header}>{header}</th>
+        ))}
+      </tr>
+    </thead>
+    <TableBody>
+      {colorModifierRows.map(row => (
+        <tr>
+          <TableCell>`{row[0]}`</TableCell>
+          <TableCell>{row[1]}</TableCell>
+          <TableCell><div className={row[0]}>Aa</div></TableCell>
+          <TableCell className="inverted" style={{ backgroundColor: FDS.COLOR_NAVY }}><div className={row[0]}>Aa</div></TableCell>
+        </tr>
+      ))}
+    </TableBody>
+  </Table>
 </Story>
 
+export const fancyColorHeaders = ['class', 'description', 'color']
+export const fancyColorRows = [
+  ['color--slate', 'Slate text'],
+  ['color--green', 'Green text'],
+  ['color--mint', 'Mint text'],
+  ['color--navy', 'Navy text'],
+  ['color--blue', 'Blue text'],
+  ['color--aqua', 'Aqua text'],
+  ['color--sky', 'Sky text'],
+  ['color--violet', 'Violet text'],
+  ['color--purple', 'Purple text'],
+  ['color--red', 'Red text'],
+  ['color--orange', 'Orange text'],
+  ['color--white', 'White text'],
+]
 
+## Fancy Text Colors
 
-## Heading Tags
-To set the display of a given heading tag, use one of the typesetting classes below.
-(By default, HTML heading tags are set to match the default body text.)
-
-<Typesetting />
-
-## Inverted
-Select Typesetting classes can get an optimized display for
-dark backgrounds by being placed inside an `.inverted` context:
-
-<InvertedTypesetting />
+<Story name="Fancy Text Colors">
+  <>
+    <Table>
+      <thead>
+        <tr>
+          {fancyColorHeaders.map(header => (
+            <th key={header}>{header}</th>
+          ))}
+        </tr>
+      </thead>
+      <TableBody>
+        {fancyColorRows.map(row => (
+          <tr>
+            <TableCell>`{row[0]}`</TableCell>
+            <TableCell>{row[1]}</TableCell>
+            <TableCell><div className={row[0]}>Aa</div></TableCell>
+          </tr>
+        ))}
+      </TableBody>
+    </Table>
+  </>
+</Story>
