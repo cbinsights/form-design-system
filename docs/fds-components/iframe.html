@@ -104,7 +104,7 @@
     padding-left: 20px;
   }
 
-  .doctable th:last-of-type, .doctable td:last-of-type {
+  .doctable.shrinkLastColumn th:last-of-type, .doctable.shrinkLastColumn td:last-of-type {
     padding-right: 20px;
     width: 20%;
   }
@@ -133,7 +133,6 @@
   .doctable td {
     padding-top: var(--space-default);
     padding-bottom: var(--space-default);
-    cursor: pointer;
     position: relative;
     background-color:var(--color-white);
   }
@@ -147,7 +146,11 @@
     padding-right: 20px;
   }
 
-  .doctable td:hover {
+  .doctable td.hasCopy {
+    cursor: pointer;
+  }
+
+  .doctable td.hasCopy:hover {
     background-color: #cae4ea;
   }
 
@@ -162,6 +165,18 @@
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  .doctable td code {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-s);
+  }
+
+  .doctable td.hasCSS {
+    color: #F09 !important;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-book);
   }
 
   .copyNotice {
@@ -360,4 +375,4 @@
   }</style><style>#root[hidden],
       #docs-root[hidden] {
         display: none !important;
-      }</style></head><body><div class="sb-nopreview sb-wrapper"><div class="sb-nopreview_main"><h1 class="sb-nopreview_heading sb-heading">No Preview</h1><p>Sorry, but you either have no stories or none are selected somehow.</p><ul><li>Please check the Storybook config.</li><li>Try reloading the page.</li></ul><p>If the problem persists, check the browser console, or the terminal you've run Storybook from.</p></div></div><div class="sb-errordisplay sb-wrapper"><pre id="error-message" class="sb-heading"></pre><pre class="sb-errordisplay_code"><code id="error-stack"></code></pre></div><div id="root"></div><div id="docs-root"></div><script src="runtime~main.ed0b899f3dab3daaa1b5.bundle.js"></script><script src="vendors~main.ed0b899f3dab3daaa1b5.bundle.js"></script><script src="main.ed0b899f3dab3daaa1b5.bundle.js"></script></body></html>
+      }</style></head><body><div class="sb-nopreview sb-wrapper"><div class="sb-nopreview_main"><h1 class="sb-nopreview_heading sb-heading">No Preview</h1><p>Sorry, but you either have no stories or none are selected somehow.</p><ul><li>Please check the Storybook config.</li><li>Try reloading the page.</li></ul><p>If the problem persists, check the browser console, or the terminal you've run Storybook from.</p></div></div><div class="sb-errordisplay sb-wrapper"><pre id="error-message" class="sb-heading"></pre><pre class="sb-errordisplay_code"><code id="error-stack"></code></pre></div><div id="root"></div><div id="docs-root"></div><script src="runtime~main.434804183085a48bb83b.bundle.js"></script><script src="vendors~main.434804183085a48bb83b.bundle.js"></script><script src="main.434804183085a48bb83b.bundle.js"></script></body></html>
