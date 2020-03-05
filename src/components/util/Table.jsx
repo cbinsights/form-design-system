@@ -101,13 +101,9 @@ TableHeadLayout.propTypes = {
 
 export const DictionaryTableLayout = ({ data, copy = true }) => (
   <Table shrinkLastColumn>
-    <thead>
-      <tr>
-        {Object.keys(data[0]).map((header, idx) => (
-          <th key={idx}>{camelToCaps(header)}</th>
-        ))}
-      </tr>
-    </thead>
+    <TableHeadLayout
+      headers={Object.keys(data[0]).map((header) => camelToCaps(header))}
+    />
     <TableBody>
       {data.map((row, idx) => (
         <tr key={idx}>
@@ -129,13 +125,7 @@ DictionaryTableLayout.propTypes = {
 
 export const TableLayout = ({ data, headers, copy = true }) => (
   <Table>
-    <thead>
-      <tr>
-        {headers.map((header, idx) => (
-          <th key={idx}>{header}</th>
-        ))}
-      </tr>
-    </thead>
+    <TableHeadLayout headers={headers} />
     <TableBody>
       {data.map((row, idx) => (
         <tr key={idx}>
