@@ -1,14 +1,8 @@
-import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { Item, generalStyles, containerStyles, labelStyle } from 'components/util/storybook';
 import { ClassTableLayout } from "components/util/Table"
-import FDS from 'lib/dictionary/js/styleConstants';
 
 <Meta title="Style Utilities/Background"  />
-
-export const borderHelperStyles = {
-  ...generalStyles,
-}
 
 ## Background Colors
 Sets background color of an element. Signature: `bgColor--<color>`
@@ -31,16 +25,16 @@ Sets background color of an element. Signature: `bgColor--<color>`
       ]} 
     />
     <div style={containerStyles}>
-      <Item label="bgColor--white"><div className="bgColor--white rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="bgColor--haze"><div className="bgColor--haze rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="bgColor--lightGray"><div className="bgColor--lightGray rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="bgColor--orange"><div className="bgColor--orange rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="bgColor--charcoal"><div className="bgColor--charcoal rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="bgColor--navy"><div className="bgColor--navy rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="bgColor--aqua"><div className="bgColor--aqua rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="bgColor--gray"><div className="bgColor--gray rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="bgColor--red"><div className="bgColor--red rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="bgColor--purple"><div className="bgColor--purple rounded--all" style={borderHelperStyles} /></Item>
+      <Item label="bgColor--white"><div className="bgColor--white rounded--all" style={generalStyles} /></Item>
+      <Item label="bgColor--haze"><div className="bgColor--haze rounded--all" style={generalStyles} /></Item>
+      <Item label="bgColor--lightGray"><div className="bgColor--lightGray rounded--all" style={generalStyles} /></Item>
+      <Item label="bgColor--orange"><div className="bgColor--orange rounded--all" style={generalStyles} /></Item>
+      <Item label="bgColor--charcoal"><div className="bgColor--charcoal rounded--all" style={generalStyles} /></Item>
+      <Item label="bgColor--navy"><div className="bgColor--navy rounded--all" style={generalStyles} /></Item>
+      <Item label="bgColor--aqua"><div className="bgColor--aqua rounded--all" style={generalStyles} /></Item>
+      <Item label="bgColor--gray"><div className="bgColor--gray rounded--all" style={generalStyles} /></Item>
+      <Item label="bgColor--red"><div className="bgColor--red rounded--all" style={generalStyles} /></Item>
+      <Item label="bgColor--purple"><div className="bgColor--purple rounded--all" style={generalStyles} /></Item>
     </div>
   </>
 </Story>

@@ -1,8 +1,6 @@
-import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import { arrayToOptions, StoryWrapper, StoryItem, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
 import { ClassTableLayout } from "components/util/Table"
-import FDS from 'lib/dictionary/js/styleConstants';
 
 <Meta title="Style Utilities/Shadow"  />
 
@@ -18,13 +16,6 @@ import FDS from 'lib/dictionary/js/styleConstants';
     ['elevation--5', '16dp box shadow (largest elevated)'],
   ]} 
 />
-
-export const Item = (props) => (
-  <div style={layoutStyle}>
-    <div style={labelStyle}>{props.label}</div>
-    {props.children}
-  </div>
-)
 
 <Story name="Elevation">
   <div style={containerStyles}>
