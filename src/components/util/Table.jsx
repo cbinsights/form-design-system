@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { mostReadable } from 'tinycolor2';
 import { useClipboard } from 'components/util/storybook';
+import ReactMarkdown from 'react-markdown';
+import cx from 'classnames';
 
 const camelToCaps = (camelCase) =>
   camelCase.replace(/([A-Z])/g, (match) => ` ${match}`).toUpperCase();
@@ -32,7 +34,7 @@ TableRow.propTypes = {
 const mostReadableConfig = (hexName) =>
   mostReadable(hexName, '#333', { includeFallbackColors: true, level: 'AAA' });
 
-export const TableCell = ({ cellType, children, copy, ...props }) => {
+export const TableCell = ({ cellType, children, label, isCSS, copy, ...props }) => {
   const [copiedText, copyToClipboard] = useClipboard();
 
   const background =
@@ -40,13 +42,18 @@ export const TableCell = ({ cellType, children, copy, ...props }) => {
       ? children
       : undefined;
 
-  const color = mostReadableConfig(background || '#FFF');
+  const color = background && mostReadableConfig(background);
 
   const fontFamily = cellType && cellType.startsWith('FONT_FAMILY') && children;
 
   const fontSize = cellType && cellType.startsWith('FONT_SIZE') && children;
 
   const fontWeight = cellType && cellType.startsWith('FONT_WEIGHT') && children;
+  console.log('isCSS', isCSS);
+  // console.log(children.replace(/`(.*?)`/g, '<code>$1</code>'));
+
+  const newChildren =
+    typeof children === 'string' ? <ReactMarkdown source={children} /> : children;
 
   return (
     <td
@@ -57,10 +64,14 @@ export const TableCell = ({ cellType, children, copy, ...props }) => {
         background,
         color,
       }}
+      className={cx({
+        hasCopy: copy,
+        hasCSS: isCSS,
+      })}
       onClick={() => copyToClipboard(children)}
       {...props}
     >
-      {children}
+      {newChildren}
       {copy && (
         <span>{copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}</span>
       )}
@@ -132,3 +143,32 @@ TableLayout.propTypes = {
 };
 
 export default Table;
+
+export const TableHeadLayout = ({ headers }) => (
+  <thead>
+    <tr>
+      {headers.map((header) => (
+        <th key={header}>{header}</th>
+      ))}
+    </tr>
+  </thead>
+);
+
+export const ClassTableLayout = ({ headers, rows }) => (
+  <Table>
+    <TableHeadLayout headers={headers} />
+    <TableBody>
+      {rows.map((row) => (
+        <tr>
+          {row.map((cell, idx) =>
+            typeof cell === 'object' ? (
+              <TableCell {...cell} />
+            ) : (
+              <TableCell isCSS={idx === 0}>{cell}</TableCell>
+            )
+          )}
+        </tr>
+      ))}
+    </TableBody>
+  </Table>
+);

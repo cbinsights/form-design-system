@@ -1,21 +1,19 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
-import { TableLayout } from "components/util/Table"
+import { ClassTableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
 <Meta title="Style Utilities/Forms"  />
 
 # Forms
 
-<TableLayout
-  copy={false}
+<ClassTableLayout
   headers={['class', 'description']}
-  shrinkLastColumn={false}
-  data={[
-    ['`error`', 'Forces the appearance of an :invalid state on an input'],
-    ['`resetInput`', 'Strips away margin and border styles. Good for plaicng input inside a visual element'],
-    ['`resetButton`', 'Removes default user agent styling from button elements.'],
+  rows={[
+    ['error', 'Forces the appearance of an :invalid state on an input'],
+    ['resetInput', 'Strips away margin and border styles. Good for plaicng input inside a visual element'],
+    ['resetButton', 'Removes default user agent styling from button elements.'],
   ]} 
 />
 

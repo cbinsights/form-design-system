@@ -1,188 +1,116 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
-import { TableLayout, Table, TableBody, TableCell } from "components/util/Table"
+import { ClassTableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 import { Typesetting, InvertedTypesetting, Headers } from './styleutils';
 
 <Meta title="Style Utilities/Type Modifiers"  />
 
 ## Size Modifiers
-
-export const typeStyle = {
-    ...labelStyle,
-    marginBottom: 0
-}
+Modifies size of text and adjusts leading accordingly.
 
 <Story name="Size Modifiers">
-  <>
-    <TableLayout
-      copy={false}
-      headers={['class', 'description']}
-      shrinkLastColumn={false}
-      data={[
-        ['`fontSize-4xl`', '4XL Text'],
-        ['`fontSize--3xl`', '3XL Text'],
-        ['`fontSize--2xl`', '2XL Text'],
-        ['`fontSize--xl`', 'XL Text'],
-        ['`fontSize--l`', 'L Text'],
-        ['`fontSize--default`', 'Default text (default)'],
-        ['`fontSize--s`', 'S Text'],
-        ['`fontSize--xs`', 'XS Text'],
-      ]} 
-    />
-    <div style={typeStyle}>fontSize--4xl</div>
-    <div className="fontSize--4xl margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>fontSize--3xl</div>
-    <div className="fontSize--3xl margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>fontSize--2xl</div>
-    <div className="fontSize--2xl margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>fontSize--xl</div>
-    <div className="fontSize--xl margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>fontSize--l</div>
-    <div className="fontSize--l margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>fontSize--def</div>
-    <div className="fontSize--def margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>fontSize--s</div>
-    <div className="fontSize--s margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div style={typeStyle}>fontSize--xs</div>
-    <div className="fontSize--xs margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-  </>
+  <ClassTableLayout 
+    headers={['class', 'description', 'sample']}
+    rows={[
+      ['fontSize--4xl', '4XL Text'],
+      ['fontSize--3xl', '3XL Text'],
+      ['fontSize--2xl', '2XL Text'],
+      ['fontSize--xl', 'XL Text'],
+      ['fontSize--l', 'L Text'],
+      ['fontSize--default', 'Default text (default)'],
+      ['fontSize--s', 'S Text'],
+      ['fontSize--xs', 'XS Text'],
+    ].map(row => [
+      row[0],
+      row[1],
+      { children: <div className={row[0]}>Sphinx of black quartz, judge my vow</div> }
+    ])}
+  />
 </Story>
 
-
 ## Weight Modifiers
-
-export const weightModifierHeaders = ['class', 'description', 'sample']
-export const weightModifierRows = [
-  ['fontWeight--bold', 'Bold text'],
-  ['fontWeight--book', 'Book text'],
-]
+Modifies weight of text.
 
 <Story name="Weight Modifiers">
-  <>
-    <Table>
-      <thead>
-        <tr>
-          {weightModifierHeaders.map(header => (
-            <th key={header}>{header}</th>
-          ))}
-        </tr>
-      </thead>
-      <TableBody>
-        {weightModifierRows.map(row => (
-          <tr>
-            <TableCell>`{row[0]}`</TableCell>
-            <TableCell>{row[1]}</TableCell>
-            <TableCell><div className={row[0]}>Sphinx of black quartz, judge my vow</div></TableCell>
-          </tr>
-        ))}
-      </TableBody>
-    </Table>
-  </>
+  <ClassTableLayout 
+    headers={['class', 'description', 'sample']}
+    rows={[
+      ['fontWeight--bold', 'Bold text'],
+      ['fontWeight--book', 'Book text'],
+    ].map(row => [
+      row[0],
+      row[1],
+      { children: <div className={row[0]}>Sphinx of black quartz, judge my vow</div> }
+    ])}
+  />
 </Story>
 
 ## Type Style Modifiers
 
-export const typeStyleHeaders = ['class', 'description', 'sample']
-export const typeStyleRows = [
-  ['fontStyle--italic', 'Italic text'],
-  ['fontStyle--underline', 'Underline text'],
-  ['fontStyle--caps', 'Uppercase text'],
-]
-
 <Story name="Type Style Modifiers">
-  <Table>
-    <thead>
-      <tr>
-        {typeStyleHeaders.map(header => (
-          <th key={header}>{header}</th>
-        ))}
-      </tr>
-    </thead>
-    <TableBody>
-      {typeStyleRows.map(row => (
-        <tr>
-          <TableCell>`{row[0]}`</TableCell>
-          <TableCell>{row[1]}</TableCell>
-          <TableCell><div className={row[0]}>Sphinx of black quartz, judge my vow</div></TableCell>
-        </tr>
-      ))}
-    </TableBody>
-  </Table>
+  <ClassTableLayout 
+    headers={['class', 'description', 'sample']}
+    rows={[
+      ['fontStyle--italic', 'Italic text'],
+      ['fontStyle--underline', 'Underline text'],
+      ['fontStyle--caps', 'Uppercase text'],
+    ].map(row => [
+      row[0],
+      row[1],
+      { children: <div className={row[0]}>Sphinx of black quartz, judge my vow</div> }
+    ])}
+  />
 </Story>
 
 ## Color Modifiers
-
-export const colorModifierHeaders = ['class', 'description', 'color', 'inverted']
-export const colorModifierRows = [
-  ['color--heading', 'Heading text color'],
-  ['color--primary', 'Primary text color (default)'],
-  ['color--secondary', 'Secondary text color'],
-  ['color--hint', 'Hint text color'],
-  ['color--success', 'Success text color'],
-  ['color--error', 'Error text color'],
-]
+Modifies color of text.
+When using standard text color classes (`heading`, `primary`, `secondary`, `hint`),
+a parent element with the `inverted` class will switch the text to tints of white.
 
 <Story name="Color Modifiers">
-  <Table>
-    <thead>
-      <tr>
-        {colorModifierHeaders.map(header => (
-          <th key={header}>{header}</th>
-        ))}
-      </tr>
-    </thead>
-    <TableBody>
-      {colorModifierRows.map(row => (
-        <tr>
-          <TableCell>`{row[0]}`</TableCell>
-          <TableCell>{row[1]}</TableCell>
-          <TableCell><div className={row[0]}>Aa</div></TableCell>
-          <TableCell className="inverted" style={{ backgroundColor: FDS.COLOR_NAVY }}><div className={row[0]}>Aa</div></TableCell>
-        </tr>
-      ))}
-    </TableBody>
-  </Table>
+  <ClassTableLayout 
+    headers={['class', 'description', 'color', 'inverted']}
+    rows={[
+      ['color--heading', 'Heading text color'],
+      ['color--primary', 'Primary text color (default)'],
+      ['color--secondary', 'Secondary text color'],
+      ['color--hint', 'Hint text color'],
+      ['color--success', 'Success text color'],
+      ['color--error', 'Error text color'],
+    ].map(row => [
+      row[0],
+      row[1],
+      { children: "Aa", className: row[0] },
+      { className: "inverted", style: { backgroundColor: FDS.COLOR_NAVY }, children: <div className={row[0]}>Aa</div> }
+    ])}
+  />
 </Story>
 
-export const fancyColorHeaders = ['class', 'description', 'color']
-export const fancyColorRows = [
-  ['color--slate', 'Slate text'],
-  ['color--green', 'Green text'],
-  ['color--mint', 'Mint text'],
-  ['color--navy', 'Navy text'],
-  ['color--blue', 'Blue text'],
-  ['color--aqua', 'Aqua text'],
-  ['color--sky', 'Sky text'],
-  ['color--violet', 'Violet text'],
-  ['color--purple', 'Purple text'],
-  ['color--red', 'Red text'],
-  ['color--orange', 'Orange text'],
-  ['color--white', 'White text'],
-]
-
 ## Fancy Text Colors
+If you don't see the color you need here, please notify UI Platform.
 
 <Story name="Fancy Text Colors">
-  <>
-    <Table>
-      <thead>
-        <tr>
-          {fancyColorHeaders.map(header => (
-            <th key={header}>{header}</th>
-          ))}
-        </tr>
-      </thead>
-      <TableBody>
-        {fancyColorRows.map(row => (
-          <tr>
-            <TableCell>`{row[0]}`</TableCell>
-            <TableCell>{row[1]}</TableCell>
-            <TableCell><div className={row[0]}>Aa</div></TableCell>
-          </tr>
-        ))}
-      </TableBody>
-    </Table>
-  </>
+  <ClassTableLayout 
+    headers={['class', 'description', 'color']}
+    rows={[
+      ['color--slate', 'Slate text'],
+      ['color--green', 'Green text'],
+      ['color--mint', 'Mint text'],
+      ['color--navy', 'Navy text'],
+      ['color--blue', 'Blue text'],
+      ['color--aqua', 'Aqua text'],
+      ['color--sky', 'Sky text'],
+      ['color--violet', 'Violet text'],
+      ['color--purple', 'Purple text'],
+      ['color--red', 'Red text'],
+      ['color--orange', 'Orange text'],
+      ['color--white', 'White text'],
+    ].map(row => [
+      row[0],
+      row[1],
+      { children: "Aa", className: row[0], style: { backgroundColor: row[0] === 'color--white' ? FDS.COLOR_CHARCOAL : ''} },
+    ])}
+  />
 </Story>

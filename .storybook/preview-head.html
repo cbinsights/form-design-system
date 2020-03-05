@@ -67,7 +67,6 @@
   .doctable td {
     padding-top: var(--space-default);
     padding-bottom: var(--space-default);
-    cursor: pointer;
     position: relative;
     background-color:var(--color-white);
   }
@@ -81,7 +80,11 @@
     padding-right: 20px;
   }
 
-  .doctable td:hover {
+  .doctable td.hasCopy {
+    cursor: pointer;
+  }
+
+  .doctable td.hasCopy:hover {
     background-color: #cae4ea;
   }
 
@@ -96,6 +99,19 @@
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  .doctable td code {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .doctable td.hasCSS {
+    color: #F09 !important;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-book);
   }
 
   .copyNotice {

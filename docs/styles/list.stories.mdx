@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
-import { TableLayout } from "components/util/Table"
+import { ClassTableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
 export const positionStyles = {
@@ -16,12 +16,10 @@ export const positionStyles = {
 
 <Story name="Decorated Lists">
   <>
-    <TableLayout
-      copy={false}
+    <ClassTableLayout
       headers={['class', 'description']}
-      shrinkLastColumn={false}
-      data={[
-        ['`list--decorated`', 'Enables standard list decoration'],
+      rows={[
+        ['list--decorated', 'Enables standard list decoration'],
       ]} 
     />
     <div>With <span style={labelStyle}>list--decorated</span>:</div>

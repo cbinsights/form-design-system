@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
-import { TableLayout } from "components/util/Table"
+import { ClassTableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
 export const wrapBorderStyle = {
@@ -19,13 +19,11 @@ does the job of clamping text to one line.
 
 <Story name="Truncate text">
   <>
-    <TableLayout
-      copy={false}
+    <ClassTableLayout
       headers={['class', 'description']}
-      shrinkLastColumn={false}
-      data={[
-        ['`wrap--singleLine`', 'Forces text to a single line (nowrap).'],
-        ['`wrap--singleLine--truncate`', 'Forces text to a single line (nowrap) and truncates with "..." entity.'],
+      rows={[
+        ['wrap--singleLine', 'Forces text to a single line (nowrap).'],
+        ['wrap--singleLine--truncate', 'Forces text to a single line (nowrap) and truncates with "..." entity.'],
       ]} 
     />
     <div style={labelStyle}>wrap--singleLine</div>
@@ -52,12 +50,10 @@ does the job of clamping text to one line.
 
 <Story name="Text Wrapping">
   <>
-    <TableLayout
-      copy={false}
+    <ClassTableLayout
       headers={['class', 'description']}
-      shrinkLastColumn={false}
-      data={[
-        ['`wrap--hyphenate`', 'Allows breaking on word, displaying hyphenation'],
+      rows={[
+        ['wrap--hyphenate', 'Allows breaking on word, displaying hyphenation'],
       ]} 
     />
     <div style={labelStyle}>wrap--hyphenate</div>

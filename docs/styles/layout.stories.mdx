@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
-import { TableLayout } from "components/util/Table"
+import { ClassTableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
 <Meta title="Style Utilities/Layout"  />
@@ -19,16 +19,14 @@ element to match standard media sizes.
 
 <Story name="Media Sizing">
   <>
-    <TableLayout
-      copy={false}
+    <ClassTableLayout
       headers={['class', 'description']}
-      shrinkLastColumn={false}
-      data={[
-        ['`media--xs`', `Sets height & width to \`${FDS.MEDIA_XS}\` (\`var(--media-xs)\`)`],
-        ['`media--s`', `Sets height & width to \`${FDS.MEDIA_S}\` (\`var(--media-s)\`)`],
-        ['`media--m`', `Sets height & width to \`${FDS.MEDIA_M}\` (\`var(--media-m)\`)`],
-        ['`media--l`', `Sets height & width to \`${FDS.MEDIA_L}\` (\`var(--media-l)\`)`],
-        ['`media--xl`', `Sets height & width to \`${FDS.MEDIA_XL}\` (\`var(--media-xl)\`)`],
+      rows={[
+        ['media--xs', `Sets height & width to \`${FDS.MEDIA_XS}\` (\`var(--media-xs)\`)`],
+        ['media--s', `Sets height & width to \`${FDS.MEDIA_S}\` (\`var(--media-s)\`)`],
+        ['media--m', `Sets height & width to \`${FDS.MEDIA_M}\` (\`var(--media-m)\`)`],
+        ['media--l', `Sets height & width to \`${FDS.MEDIA_L}\` (\`var(--media-l)\`)`],
+        ['media--xl', `Sets height & width to \`${FDS.MEDIA_XL}\` (\`var(--media-xl)\`)`],
       ]} 
     />
     <div style={containerStyles}>
@@ -50,13 +48,11 @@ Sets element width in percentage.
 
 <Story name="Width">
   <>
-    <TableLayout
-      copy={false}
+    <ClassTableLayout
       headers={['class', 'description']}
-      shrinkLastColumn={false}
-      data={[
-        ['`span--100`', 'Sets `width` to `100%`'],
-        ['`span--50`', 'Sets `width` to `50%`'],
+      rows={[
+        ['span--100', 'Sets `width` to `100%`'],
+        ['span--50', 'Sets `width` to `50%`'],
       ]} 
     />
     <span style={labelStyle}>span--100</span>
@@ -70,18 +66,16 @@ Sets element width in percentage.
 ## Display
 
 <Story name="Display">
-  <TableLayout
-    copy={false}
+  <ClassTableLayout
     headers={['class', 'description']}
-    shrinkLastColumn={false}
-    data={[
-      ['`display--none`', 'Sets `display` to `none`'],
-      ['`display--block`', 'Sets `display` to `block`'],
-      ['`display--flex`', 'Sets `display` to `flex`'],
-      ['`display--inline`', 'Sets `display` to `inline`'],
-      ['`display--inline-block`', 'Sets `display` to `inline-block`'],
-      ['`display--inline-flex`', 'Sets `display` to `inline-flex`'],
-      ['`display--grid`', 'Sets `display` to `grid`'],
+    rows={[
+      ['display--none', 'Sets `display` to `none`'],
+      ['display--block', 'Sets `display` to `block`'],
+      ['display--flex', 'Sets `display` to `flex`'],
+      ['display--inline', 'Sets `display` to `inline`'],
+      ['display--inline-block', 'Sets `display` to `inline-block`'],
+      ['display--inline-flex', 'Sets `display` to `inline-flex`'],
+      ['display--grid', 'Sets `display` to `grid`'],
     ]} 
   />
 </Story>

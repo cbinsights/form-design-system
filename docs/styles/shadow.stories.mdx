@@ -1,23 +1,21 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { arrayToOptions, StoryWrapper, StoryItem, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
-import { TableLayout } from "components/util/Table"
+import { ClassTableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
 <Meta title="Style Utilities/Shadow"  />
 
 ## Elevation
 
-<TableLayout
-  copy={false}
+<ClassTableLayout
   headers={['class', 'description']}
-  shrinkLastColumn={false}
-  data={[
-    ['`elevation--1`', '2dp box shadow (smallest elevated)'],
-    ['`elevation--2`', '4dp box shadow'],
-    ['`elevation--3`', '8dp box shadow'],
-    ['`elevation--4`', '12dp box shadow'],
-    ['`elevation--5`', '16dp box shadow (largest elevated)'],
+  rows={[
+    ['elevation--1', '2dp box shadow (smallest elevated)'],
+    ['elevation--2', '4dp box shadow'],
+    ['elevation--3', '8dp box shadow'],
+    ['elevation--4', '12dp box shadow'],
+    ['elevation--5', '16dp box shadow (largest elevated)'],
   ]} 
 />
 
@@ -40,14 +38,12 @@ export const Item = (props) => (
 
 ## Depth
 
-<TableLayout
-  copy={false}
+<ClassTableLayout
   headers={['class', 'description']}
-  shrinkLastColumn={false}
-  data={[
-    ['`depth--1`', '1dp inset box shadow (most shallow depth)'],
-    ['`depth--2`', '2dp inset box shadow'],
-    ['`depth--3`', '3dp inset box shadow (deepest depth)'],
+  rows={[
+    ['depth--1', '1dp inset box shadow (most shallow depth)'],
+    ['depth--2', '2dp inset box shadow'],
+    ['depth--3', '3dp inset box shadow (deepest depth)'],
   ]} 
 />
 

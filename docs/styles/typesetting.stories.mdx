@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
-import { TableLayout } from "components/util/Table"
+import { ClassTableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 import { Typesetting, InvertedTypesetting, Headers } from './styleutils';
 
@@ -20,23 +20,22 @@ export const boxStyles = {
 
 <Meta title="Style Utilities/Typesetting"  />
 
-<TableLayout
-  copy={false}
+# Typesetting
+
+<ClassTableLayout
   headers={['class', 'description']}
-  shrinkLastColumn={false}
-  data={[
-    ['`type--head1`', 'Top level heading'],
-    ['`type--head2`', 'Secondary heading'],
-    ['`type--head3`', 'Tertiary heading'],
-    ['`type--head4`', 'Minor heading'],
-    ['`type--big`', 'Big body text'],
-    ['`type--data`', 'Adds standard margin to all sides'],
-    ['`type--caption`', 'Adds standard margin to all sides'],
-    ['`type--link`', 'Adds standard margin to all sides'],
+  rows={[
+    ['type--head1', 'Top level heading'],
+    ['type--head2', 'Secondary heading'],
+    ['type--head3', 'Tertiary heading'],
+    ['type--head4', 'Minor heading'],
+    ['type--big', 'Big body text'],
+    ['type--data', 'Adds standard margin to all sides'],
+    ['type--caption', 'Adds standard margin to all sides'],
+    ['type--link', 'Adds standard margin to all sides'],
   ]} 
 />
 
-## Heading Tags
 To set the display of a given heading tag, use one of the typesetting classes below.
 (By default, HTML heading tags are set to match the default body text.)
 

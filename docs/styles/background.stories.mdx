@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { arrayToOptions, StoryWrapper, StoryItem, Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
-import { TableLayout } from "components/util/Table"
+import { ClassTableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
 <Meta title="Style Utilities/Background"  />
@@ -15,21 +15,19 @@ Sets background color of an element. Signature: `bgColor--<color>`
 
 <Story name="Background Colors">
   <>
-    <TableLayout
-      copy={false}
+    <ClassTableLayout
       headers={['class', 'description']}
-      shrinkLastColumn={false}
-      data={[
-        ['`bgColor--white`', 'Sets background color `var(--color-white)`'],
-        ['`bgColor--haze`', 'Sets background color `var(--color-haze)`'],
-        ['`bgColor--lightGray`', 'Sets background color `var(--color-lightGray)`'],
-        ['`bgColor--orange`', 'Sets background color `var(--color-orange)`'],
-        ['`bgColor--charcoal`', 'Sets background color `var(--color-charcoal)`'],
-        ['`bgColor--navy`', 'Sets background color `var(--color-navy)`'],
-        ['`bgColor--aqua`', 'Sets background color `var(--color-aqua)`'],
-        ['`bgColor--gray`', 'Sets background color `var(--color-gray)`'],
-        ['`bgColor--red`', 'Sets background color `var(--color-red)`'],
-        ['`bgColor--purple`', 'Sets background color `var(--color-purple)`'],
+      rows={[
+        ['bgColor--white', 'Sets background color var(--color-white)'],
+        ['bgColor--haze', 'Sets background color var(--color-haze)'],
+        ['bgColor--lightGray', 'Sets background color var(--color-lightGray)'],
+        ['bgColor--orange', 'Sets background color var(--color-orange)'],
+        ['bgColor--charcoal', 'Sets background color var(--color-charcoal)'],
+        ['bgColor--navy', 'Sets background color var(--color-navy)'],
+        ['bgColor--aqua', 'Sets background color var(--color-aqua)'],
+        ['bgColor--gray', 'Sets background color var(--color-gray)'],
+        ['bgColor--red', 'Sets background color var(--color-red)'],
+        ['bgColor--purple', 'Sets background color var(--color-purple)'],
       ]} 
     />
     <div style={containerStyles}>
@@ -52,19 +50,17 @@ Sets background of an element to a linear gradient simulating a fade effect.
 
 <Story name="Fade gradients">
   <>
-    <TableLayout
-      copy={false}
+    <ClassTableLayout
       headers={['class', 'description']}
-      shrinkLastColumn={false}
-      data={[
-        ['`bgFade--left--white`', 'Sets linear gradient from left (white) to right (transparent)'],
-        ['`bgFade--top--white`', 'Sets linear gradient from top (white) to bottom (transparent)'],
-        ['`bgFade--bottom--white`', 'Sets linear gradient from bottom (white) to top (transparent)'],
-        ['`bgFade--right--white`', 'Sets linear gradient from right (white) to left (transparent)'],
-        ['`bgFade--left--haze`', 'Sets linear gradient from left (haze) to right (transparent)'],
-        ['`bgFade--top--haze`', 'Sets linear gradient from top (haze) to bottom (transparent)'],
-        ['`bgFade--bottom--haze`', 'Sets linear gradient from bottom (haze) to top (transparent)'],
-        ['`bgFade--right--haze`', 'Sets linear gradient from right (haze) to left (transparent)'],
+      rows={[
+        ['bgFade--left--white', 'Sets linear gradient from left (white) to right (transparent)'],
+        ['bgFade--top--white', 'Sets linear gradient from top (white) to bottom (transparent)'],
+        ['bgFade--bottom--white', 'Sets linear gradient from bottom (white) to top (transparent)'],
+        ['bgFade--right--white', 'Sets linear gradient from right (white) to left (transparent)'],
+        ['bgFade--left--haze', 'Sets linear gradient from left (haze) to right (transparent)'],
+        ['bgFade--top--haze', 'Sets linear gradient from top (haze) to bottom (transparent)'],
+        ['bgFade--bottom--haze', 'Sets linear gradient from bottom (haze) to top (transparent)'],
+        ['bgFade--right--haze', 'Sets linear gradient from right (haze) to left (transparent)'],
       ]} 
     />
   <div style={labelStyle}>white</div>
