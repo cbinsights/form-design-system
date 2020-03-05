@@ -11,9 +11,6 @@ import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import IconButton from '../interactive/IconButton';
 
-// :TODO: styling (arrow alignment)
-// :TODO: finish year/month selector tests
-
 const DATE_FORMAT = 'MM/DD/YYYY';
 const DATE_PATTERN = '[0-9/]*';
 
