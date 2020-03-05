@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.10] `DateInput`
+
+- Added `DateInput` component.
+
 ## [7.9] Updated Dialog
 
 - Dialog now takes a `height` prop (that's applied as `max-height internally)

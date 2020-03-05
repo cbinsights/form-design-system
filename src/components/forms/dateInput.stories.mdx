@@ -11,11 +11,14 @@ import DateInput from './DateInput';
 Component for inputting a single date. The `input` element will accept date entry in the
 "MM/DD/YYY" format, or the user can use the calendar popover.
 
+The display/input format of the date is not localized - it will always use the American
+English "MM/DD/YYYY" format.
+
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <DateInput
     onDateChange={action('change')}
-    futureYears={number('Future years', 5)}
-    pastYears={number('Past years', 10)}
+    futureYears={number('futureYears', 5)}
+    pastYears={number('pastYears', 10)}
   />
 </Story>
 

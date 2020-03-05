@@ -6,6 +6,8 @@
  * "style modifiers" API of `DayPicker`.
  */
 
+@import "react-day-picker/lib/style.css";
+
 :root {
   --fdsDateInput-control-height: 26px;
 }
