@@ -28,17 +28,6 @@ Signature: `alignChild--(x-axis)--(y-axis)`
 
 <Story name="Child Align">
   <>
-    <div style={containerStyles}>
-      <Item label="center--center"><div className="alignChild--center--center" style={positionStyles}><div style={boxStyles}/></div></Item>
-      <Item label="center--top"><div className="alignChild--center--top" style={positionStyles}><div style={boxStyles}/></div></Item>
-      <Item label="center--bottom"><div className="alignChild--center--bottom" style={positionStyles}><div style={boxStyles}/></div></Item>
-      <Item label="left--center"><div className="alignChild--left--center" style={positionStyles}><div style={boxStyles}/></div></Item>
-      <Item label="left--top"><div className="alignChild--left--top" style={positionStyles}><div style={boxStyles}/></div></Item>
-      <Item label="left--bottom"><div className="alignChild--left--bottom" style={positionStyles}><div style={boxStyles}/></div></Item>
-      <Item label="right--center"><div className="alignChild--right--center" style={positionStyles}><div style={boxStyles}/></div></Item>
-      <Item label="right--top"><div className="alignChild--right--top" style={positionStyles}><div style={boxStyles}/></div></Item>
-      <Item label="right--bottom"><div className="alignChild--right--bottom" style={positionStyles}><div style={boxStyles}/></div></Item>
-    </div>
     <ClassTableLayout
       headers={['class', 'description']}
       rows={[
@@ -53,6 +42,17 @@ Signature: `alignChild--(x-axis)--(y-axis)`
         ['alignChild--center--bottom', 'Adds standard margin to all sides'],
       ]} 
     />
+    <div style={containerStyles}>
+      <Item label="center--center"><div className="alignChild--center--center" style={positionStyles}><div style={boxStyles}/></div></Item>
+      <Item label="center--top"><div className="alignChild--center--top" style={positionStyles}><div style={boxStyles}/></div></Item>
+      <Item label="center--bottom"><div className="alignChild--center--bottom" style={positionStyles}><div style={boxStyles}/></div></Item>
+      <Item label="left--center"><div className="alignChild--left--center" style={positionStyles}><div style={boxStyles}/></div></Item>
+      <Item label="left--top"><div className="alignChild--left--top" style={positionStyles}><div style={boxStyles}/></div></Item>
+      <Item label="left--bottom"><div className="alignChild--left--bottom" style={positionStyles}><div style={boxStyles}/></div></Item>
+      <Item label="right--center"><div className="alignChild--right--center" style={positionStyles}><div style={boxStyles}/></div></Item>
+      <Item label="right--top"><div className="alignChild--right--top" style={positionStyles}><div style={boxStyles}/></div></Item>
+      <Item label="right--bottom"><div className="alignChild--right--bottom" style={positionStyles}><div style={boxStyles}/></div></Item>
+    </div>
   </>
 </Story>
 
