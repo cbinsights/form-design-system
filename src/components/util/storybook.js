@@ -141,3 +141,8 @@ export const Item = (props) => (
     {props.children}
   </div>
 );
+
+Item.propTypes = {
+  label: PropTypes.string,
+  children: PropTypes.node,
+};

@@ -49,8 +49,6 @@ export const TableCell = ({ cellType, children, label, isCSS, copy, ...props }) 
   const fontSize = cellType && cellType.startsWith('FONT_SIZE') && children;
 
   const fontWeight = cellType && cellType.startsWith('FONT_WEIGHT') && children;
-  console.log('isCSS', isCSS);
-  // console.log(children.replace(/`(.*?)`/g, '<code>$1</code>'));
 
   const newChildren =
     typeof children === 'string' ? <ReactMarkdown source={children} /> : children;
@@ -83,6 +81,22 @@ TableCell.propTypes = {
   children: PropTypes.node,
   copy: PropTypes.bool,
   cellType: PropTypes.string,
+  isCSS: PropTypes.bool,
+  label: PropTypes.string,
+};
+
+export const TableHeadLayout = ({ headers }) => (
+  <thead>
+    <tr>
+      {headers.map((header) => (
+        <th key={header}>{header}</th>
+      ))}
+    </tr>
+  </thead>
+);
+
+TableHeadLayout.propTypes = {
+  headers: PropTypes.array,
 };
 
 export const DictionaryTableLayout = ({ data, copy = true }) => (
@@ -144,27 +158,17 @@ TableLayout.propTypes = {
 
 export default Table;
 
-export const TableHeadLayout = ({ headers }) => (
-  <thead>
-    <tr>
-      {headers.map((header) => (
-        <th key={header}>{header}</th>
-      ))}
-    </tr>
-  </thead>
-);
-
 export const ClassTableLayout = ({ headers, rows }) => (
   <Table>
     <TableHeadLayout headers={headers} />
     <TableBody>
-      {rows.map((row) => (
-        <tr>
-          {row.map((cell, idx) =>
+      {rows.map((row, idx) => (
+        <tr key={idx}>
+          {row.map((cell, idx2) =>
             typeof cell === 'object' ? (
               <TableCell {...cell} />
             ) : (
-              <TableCell isCSS={idx === 0}>{cell}</TableCell>
+              <TableCell isCSS={idx2 === 0}>{cell}</TableCell>
             )
           )}
         </tr>
@@ -172,3 +176,10 @@ export const ClassTableLayout = ({ headers, rows }) => (
     </TableBody>
   </Table>
 );
+
+ClassTableLayout.propTypes = {
+  headers: PropTypes.array,
+  rows: PropTypes.arrayOf(PropTypes.array),
+  color: PropTypes.string,
+  fontSize: PropTypes.number,
+};
