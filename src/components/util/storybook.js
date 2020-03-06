@@ -141,7 +141,7 @@ export const ImportPath = ({ component, section }) => {
 };
 
 ImportPath.propTypes = {
-  component: PropTypes.string,
+  component: PropTypes.func,
   section: PropTypes.oneOf([
     'forms',
     'interactive',
