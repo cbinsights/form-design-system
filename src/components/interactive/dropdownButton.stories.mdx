@@ -5,11 +5,14 @@ import {
   boolean,
   optionsKnob as options
 } from "@storybook/addon-knobs";
+import { ImportPath } from '../util/storybook';
 import DropdownButton from "./DropdownButton";
 
 <Meta title="Components/Interactive/DropdownButton" decorators={[withKnobs]} component={DropdownButton} />
 
 # DropdownButton
+
+<ImportPath component={DropdownButton} section="interactive" />
 
 <Preview isExpanded>
   <DropdownButton>Filter by Analyst</DropdownButton>

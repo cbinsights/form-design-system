@@ -122,7 +122,7 @@ export const ImportPath = ({ component, section }) => {
 
   return (
     <p
-      className="importPath"
+      className="importPath margin--bottom"
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
       onClick={() => copyToClipboard(path)}

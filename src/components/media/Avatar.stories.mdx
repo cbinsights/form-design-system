@@ -1,6 +1,6 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
-import { arrayToOptions, StoryWrapper, StoryItem } from '../util/storybook';
+import { arrayToOptions, StoryWrapper, StoryItem, ImportPath } from '../util/storybook';
 import { action } from '@storybook/addon-actions';
 
 import Avatar, { BG_COLORS, SIZES, RADII, INITIALS_LENGTH } from './Avatar';
@@ -12,6 +12,8 @@ export const bgColorOptions = options('bgColor', arrayToOptions(BG_COLORS), unde
 <Meta title="Components/Media/Avatar" decorators={[withKnobs]} component={Avatar} />
 
 # Avatar
+
+<ImportPath component={Avatar} section="media" />
 
 <Story name="Knobs">
   <StoryWrapper>

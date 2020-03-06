@@ -1,12 +1,14 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
-import { arrayToOptions } from '../util/storybook';
+import { arrayToOptions, ImportPath } from '../util/storybook';
 
 import Badge, { SIZES } from './Badge';
 
 <Meta title="Components/Media/Badge" decorators={[withKnobs]} component={Badge} />
 
 # Badge
+
+<ImportPath component={Badge} section="layout" />
 
 <Story name="Badge">
   <Badge 
