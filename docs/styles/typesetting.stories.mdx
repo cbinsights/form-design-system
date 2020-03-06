@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 import { generalStyles, Typesetting, InvertedTypesetting, Headers  } from './styledocUtils';
 
@@ -20,7 +20,8 @@ export const boxStyles = {
 
 # Typesetting
 
-<ClassTableLayout
+<TableLayout
+  isCSS
   headers={['class', 'description']}
   rows={[
     ['type--head1', 'Top level heading'],

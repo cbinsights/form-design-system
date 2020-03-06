@@ -1,12 +1,13 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
 import { Item, generalStyles, containerStyles, layoutStyle, labelStyle } from 'components/util/storybook';
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 
 <Meta title="Style Utilities/Shadow"  />
 
 ## Elevation
 
-<ClassTableLayout
+<TableLayout
+  isCSS
   headers={['class', 'description']}
   rows={[
     ['elevation--1', '2dp box shadow (smallest elevated)'],
@@ -29,7 +30,8 @@ import { ClassTableLayout } from "components/util/Table"
 
 ## Depth
 
-<ClassTableLayout
+<TableLayout
+  isCSS
   headers={['class', 'description']}
   rows={[
     ['depth--1', '1dp inset box shadow (most shallow depth)'],

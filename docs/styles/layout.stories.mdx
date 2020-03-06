@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
 import { Item, generalStyles, containerStyles, labelStyle } from './styledocUtils';
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
 <Meta title="Style Utilities/Layout"  />
@@ -18,7 +18,8 @@ element to match standard media sizes.
 
 <Story name="Media Sizing">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['media--xs', `Sets height & width to \`${FDS.MEDIA_XS}\` (\`var(--media-xs)\`)`],
@@ -45,7 +46,8 @@ Sets element width in percentage.
 
 <Story name="Width">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['span--100', 'Sets `width` to `100%`'],
@@ -63,7 +65,8 @@ Sets element width in percentage.
 ## Display
 
 <Story name="Display">
-  <ClassTableLayout
+  <TableLayout
+    isCSS
     headers={['class', 'description']}
     rows={[
       ['display--none', 'Sets `display` to `none`'],

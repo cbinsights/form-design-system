@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
 import { Item, generalStyles, containerStyles, labelStyle } from './styledocUtils';
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 
 <Meta title="Style Utilities/Background"  />
 
@@ -9,7 +9,8 @@ Sets background color of an element. Signature: `bgColor--<color>`
 
 <Story name="Background Colors">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['bgColor--white', 'Sets background color `var(--color-white)`'],
@@ -44,7 +45,7 @@ Sets background of an element to a linear gradient simulating a fade effect.
 
 <Story name="Fade gradients">
   <>
-    <ClassTableLayout
+    <TableLayout
       headers={['class', 'description']}
       rows={[
         ['bgFade--left--white', 'Sets linear gradient from left (white) to right (transparent)'],

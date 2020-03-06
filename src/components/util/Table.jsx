@@ -123,17 +123,21 @@ DictionaryTableLayout.propTypes = {
   copy: PropTypes.bool,
 };
 
-export const TableLayout = ({ data, headers, copy = true }) => (
+export const TableLayout = ({ headers, rows, isCSS, copy = true }) => (
   <Table>
     <TableHeadLayout headers={headers} />
     <TableBody>
-      {data.map((row, idx) => (
+      {rows.map((row, idx) => (
         <tr key={idx}>
-          {row.map((item, idxCell) => (
-            <TableCell copy={copy} key={idxCell}>
-              {item}
-            </TableCell>
-          ))}
+          {row.map((cell, idx2) =>
+            typeof cell === 'object' ? (
+              <TableCell copy={!isCSS && copy} key={idx2} {...cell} />
+            ) : (
+              <TableCell copy={!isCSS && copy} key={idx2} isCSS={isCSS && idx2 === 0}>
+                {cell}
+              </TableCell>
+            )
+          )}
         </tr>
       ))}
     </TableBody>
@@ -141,9 +145,11 @@ export const TableLayout = ({ data, headers, copy = true }) => (
 );
 
 TableLayout.propTypes = {
-  data: PropTypes.any,
-  headers: PropTypes.any,
+  rows: PropTypes.array,
+  headers: PropTypes.array,
   copy: PropTypes.bool,
+  /* controls whether we consider the first column of a table to be CSS classes */
+  isCSS: PropTypes.bool,
 };
 
 export default Table;
@@ -156,9 +162,11 @@ export const ClassTableLayout = ({ headers, rows }) => (
         <tr key={idx}>
           {row.map((cell, idx2) =>
             typeof cell === 'object' ? (
-              <TableCell {...cell} />
+              <TableCell key={idx2} {...cell} />
             ) : (
-              <TableCell isCSS={idx2 === 0}>{cell}</TableCell>
+              <TableCell key={idx2} isCSS={idx2 === 0}>
+                {cell}
+              </TableCell>
             )
           )}
         </tr>

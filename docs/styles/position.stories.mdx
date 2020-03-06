@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 import { Item, generalStyles, containerStyles } from './styledocUtils';
 
@@ -27,7 +27,7 @@ Signature: `alignChild--(x-axis)--(y-axis)`
 
 <Story name="Child Align">
   <>
-    <ClassTableLayout
+    <TableLayout
       headers={['class', 'description']}
       rows={[
         ['alignChild--left--top', 'Adds standard margin to top of element'],
@@ -59,7 +59,8 @@ Signature: `alignChild--(x-axis)--(y-axis)`
 Sets `text-align`.
 
 <Story name="Align">
-  <ClassTableLayout
+  <TableLayout
+    isCSS
     headers={['class', 'description']}
     rows={[
       ['align--left', 'Sets `text-align` to `left`'],
@@ -76,7 +77,8 @@ Sets `vertical-align` property. Note that `vertical-align`
 
 <Story name="Flush">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['valign--top', 'Sets `vertical-align` to `top`'],

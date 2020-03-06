@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
 import { Item, generalStyles, containerStyles } from './styledocUtils';
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 
 <Meta title="Style Utilities/Border"  />
 
@@ -8,7 +8,8 @@ import { ClassTableLayout } from "components/util/Table"
 
 <Story name="Border Radius">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['rounded--top', 'Rounds the top corners of the element'],
@@ -33,7 +34,8 @@ Creates a shape with CSS border radius
 
 <Story name="Border Shape">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['shape--circle', 'Makes the element a circle'],
@@ -55,7 +57,8 @@ Adds standard borders to an element for a given side.
 
 <Story name="Borders by side">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['border--none', 'removes all borders'],
@@ -81,7 +84,8 @@ Adds standard borders to an element for a given side.
 Adds standard focus style to elements (only on :focus state)
 
 <Story name="Focus Style">
-  <ClassTableLayout
+  <TableLayout
+    isCSS
     headers={['class', 'description']}
     rows={[
       ['border--focus', 'Adds standard box shadow focus style'],

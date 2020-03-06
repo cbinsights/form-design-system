@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 import { generalStyles, labelStyle } from './styledocUtils';
 
@@ -15,7 +15,8 @@ export const positionStyles = {
 
 <Story name="Decorated Lists">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['list--decorated', 'Enables standard list decoration'],

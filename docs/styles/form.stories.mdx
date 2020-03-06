@@ -1,12 +1,13 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
 import { Item } from 'components/util/storybook';
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 
 <Meta title="Style Utilities/Forms"  />
 
 # Forms
 
-<ClassTableLayout
+<TableLayout
+  isCSS
   headers={['class', 'description']}
   rows={[
     ['error', 'Forces the appearance of an :invalid state on an input'],

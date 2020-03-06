@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
 import { labelStyle } from 'components/util/storybook';
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
 export const wrapBorderStyle = {
@@ -18,7 +18,8 @@ does the job of clamping text to one line.
 
 <Story name="Truncate text">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['wrap--singleLine', 'Forces text to a single line (nowrap).'],
@@ -49,7 +50,8 @@ does the job of clamping text to one line.
 
 <Story name="Text Wrapping">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['wrap--hyphenate', 'Allows breaking on word, displaying hyphenation'],

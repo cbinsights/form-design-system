@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 
 <Meta title="Style Utilities/Spacing"  />
 
@@ -8,7 +8,8 @@ Adds margin to the given side of an element.
 
 <Story name="Margin">
   <>
-  <ClassTableLayout
+  <TableLayout
+    isCSS
     headers={['class', 'description']}
     rows={[
       ['margin--top', 'Adds standard margin to top of element'],
@@ -18,7 +19,8 @@ Adds margin to the given side of an element.
       ['margin--all', 'Adds standard margin to all sides'],
     ]} 
   />
-  <ClassTableLayout
+  <TableLayout
+    isCSS
     headers={['class', 'description']}
     rows={[
       ['margin--top--half', 'Adds half margin to top of element'],
@@ -28,7 +30,8 @@ Adds margin to the given side of an element.
       ['margin--all--half', 'Adds half margin to all sides'],
     ]} 
   />
-  <ClassTableLayout
+  <TableLayout
+    isCSS
     headers={['class', 'description']}
     rows={[
       ['margin--top--double', 'Adds double margin to top of element'],
@@ -46,7 +49,8 @@ Adds padding to the given side of an element.
 
 <Story name="Padding">
   <>
-  <ClassTableLayout
+  <TableLayout
+    isCSS
     headers={['class', 'description']}
     rows={[
       ['padding--top', 'Adds standard padding to top of element'],
@@ -56,7 +60,8 @@ Adds padding to the given side of an element.
       ['padding--all', 'Adds standard padding to all sides'],
     ]} 
   />
-  <ClassTableLayout
+  <TableLayout
+    isCSS
     headers={['class', 'description']}
     rows={[
       ['padding--top--half', 'Adds half padding to top of element'],
@@ -66,7 +71,8 @@ Adds padding to the given side of an element.
       ['padding--all--half', 'Adds half padding to all sides'],
     ]} 
   />
-  <ClassTableLayout
+  <TableLayout
+    isCSS
     headers={['class', 'description']}
     rows={[
       ['padding--top--double', 'Adds double padding to top of element'],
@@ -84,7 +90,8 @@ Removes spacing from the given side of an element. Sets both `padding` and `marg
 
 <Story name="Flush">
   <>
-    <ClassTableLayout
+    <TableLayout
+      isCSS
       headers={['class', 'description']}
       rows={[
         ['flush--top', 'Removes top spacing from element'],

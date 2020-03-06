@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { ClassTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 
 <Meta title="Style Utilities/Animation"  />
 
@@ -7,7 +7,8 @@ import { ClassTableLayout } from "components/util/Table"
 Adds standard transitions.
 
 <Story name="Transitions">
-  <ClassTableLayout
+  <TableLayout
+    isCSS
     headers={['class', 'description']}
     rows={[
       ['transition--default', 'transitions properties to default duration and timing'],
