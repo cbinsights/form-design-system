@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import CloneIcon from 'lib/icons/react/CloneIcon';
+import CheckIcon from 'lib/icons/react/CheckIcon';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 
 /**
@@ -108,4 +110,44 @@ export const storyBackgrounds = {
     'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJ0lEQVQYV2NkQAP/b///z4gsBhZQZWSEC8IEQIrAgsgCYEF0AZAgAAvKE968p7/mAAAAAElFTkSuQmCC)',
   check:
     'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQYV2M8fPiwLwMOwAiStLW13YxNftBJAgAx2BqeI9XcBAAAAABJRU5ErkJggg==)',
+};
+
+export const ImportPath = ({ component, section }) => {
+  const [, toggleHover] = useToggleHover();
+  const [copiedText, copyToClipboard] = useClipboard();
+
+  const path = `import ${component.displayName} from '@cbinsights/fds/lib/components/${section}/${component.displayName}'`;
+
+  const pathParts = path.split(' ');
+
+  return (
+    <p
+      className="importPath"
+      onMouseEnter={toggleHover}
+      onMouseLeave={toggleHover}
+      onClick={() => copyToClipboard(path)}
+    >
+      <span>{pathParts[0]} </span>
+      <span className="importPath--highlight">{pathParts[1]} </span>
+      <span>{pathParts[2]} </span>
+      <span className="importPath--highlight">{pathParts[3]}</span>
+      {!copiedText ? (
+        <CloneIcon customSize={14} />
+      ) : (
+        <CheckIcon customSize={14} color="green" />
+      )}
+    </p>
+  );
+};
+
+ImportPath.propTypes = {
+  component: PropTypes.string,
+  section: PropTypes.oneOf([
+    'forms',
+    'interactive',
+    'layout',
+    'media',
+    'modals',
+    'popovers',
+  ]),
 };
