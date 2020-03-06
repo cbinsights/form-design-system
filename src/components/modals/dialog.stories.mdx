@@ -4,9 +4,12 @@ import { action } from '@storybook/addon-actions';
 
 import Dialog from './Dialog';
 
-import Button from '../interactive/Button';
-import Flex from '../layout/Flex';
-import FlexItem from '../layout/FlexItem';
+import Button from 'components/interactive/Button';
+import Flex from 'components/layout/Flex';
+import FlexItem from 'components/layout/FlexItem';
+import Chip from 'components/interactive/Chip';
+import Menu from '../popovers/Menu';
+import MenuItem from '../popovers/MenuItem';
 
 <Meta title="Components/Modals/Dialog" decorators={[withKnobs]} component={Dialog} parameters={{ docs: { disable: true } }}/>
 
@@ -29,6 +32,9 @@ An accessible base modal for all other modals to be built upon (either your own,
         : undefined
     }
     title={text('title', 'Modal title here')}
+    width={text('width', undefined)}
+    height={text('height', undefined)}
+    alwaysShowBorder={boolean('alwaysShowBorder', undefined)}
   />
 </Story>
 
@@ -50,6 +56,17 @@ An accessible base modal for all other modals to be built upon (either your own,
     title="Long content area w/footer"
   />
 </Story>
+
+<Story name="Scrolling content w/footer & permanent border">
+  <Dialog
+    isOpen={true}
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus."
+    onDismiss={action('close modal')}
+    footerContent={<Button label="Confirm" />}
+    title="Footer & permanent border"
+    alwaysShowBorder
+  />
+</Story> 
 
 <Story name="Customizable Footer">
   <Dialog
@@ -78,6 +95,46 @@ An accessible base modal for all other modals to be built upon (either your own,
   />
 </Story>
 
+<Story name="Custom dimensions">
+  <Dialog
+    isOpen={true}
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus. Neque laoreet suspendisse interdum consectetur. Ut porttitor leo a diam. Quisque egestas diam in arcu cursus euismod quis viverra. Eget nunc lobortis mattis aliquam. Mauris pharetra et ultrices neque ornare aenean euismod. Luctus accumsan tortor posuere ac. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Non arcu risus quis varius quam quisque id diam. Vel pharetra vel turpis nunc eget lorem dolor sed. Risus quis varius quam quisque id diam vel quam elementum. Velit ut tortor pretium viverra suspendisse potenti. Amet purus gravida quis blandit turpis cursus in hac. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Egestas maecenas pharetra convallis posuere morbi leo. Pellentesque pulvinar pellentesque habitant morbi tristique. Habitasse platea dictumst quisque sagittis purus. Fermentum dui faucibus in ornare quam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Turpis egestas integer eget aliquet. Bibendum est ultricies integer quis auctor elit sed vulputate. Scelerisque viverra mauris in aliquam sem fringilla ut morbi. Lectus urna duis convallis convallis tellus id interdum velit. A arcu cursus vitae congue mauris rhoncus aenean. Odio euismod lacinia at quis risus sed vulputate odio. Nibh tellus molestie nunc non. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor. A erat nam at lectus urna duis convallis convallis. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Mauris sit amet massa vitae tortor condimentum lacinia. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Risus quis varius quam quisque id diam vel. Id nibh tortor id aliquet. Nisi quis eleifend quam adipiscing vitae proin."
+    onDismiss={action('close modal')}
+    title="Custom Dimensions (800px x 640px)"
+    width="800px"
+    height="640px"
+  />
+</Story>
 
-
+<Story name="Disabling FocusTrap">
+  <Dialog
+    isOpen={true}
+    disableFocusTrap={true}
+    content={
+      <div>
+        <Menu trigger={<Button theme="outlined" label="Menu" hasCaret />}>
+          <MenuItem onSelect={() => { alert('copy') }}>
+            Copy
+          </MenuItem>
+          <MenuItem onSelect={() => { alert('delete') }}>
+            Delete
+          </MenuItem>
+          <MenuItem onSelect={() => { alert('edit') }}>
+            Edit
+          </MenuItem>
+          <MenuItem onSelect={() => { alert('hide') }}>
+            Hide
+          </MenuItem>
+        </Menu>
+        <p className="margin--bottom margin--top">
+          Because <code>Menu</code> needs to manage focus events,
+          this <code>Dialog</code> uses the <code>disableFocusTrap</code> prop to prevent
+          focus event conflicts between <code>Menu</code> and <code>Dialog</code>.
+        </p>
+      </div>
+    }
+    onDismiss={action('close modal')}
+    title="Focus trap disabled"
+  />
+</Story>
 

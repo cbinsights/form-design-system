@@ -43,7 +43,8 @@ code {
   padding: 0;
 }
 
-h1, caption {
+h1,
+caption {
   margin-bottom: 16px;
   color: #bbdbe5;
 }
@@ -62,7 +63,8 @@ table {
   margin: 32px auto;
 }
 
-th, td {
+th,
+td {
   padding: 8px 16px;
 }
 
@@ -134,7 +136,7 @@ table code {
 
 .desc-import:hover {
   cursor: pointer;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 }
 
