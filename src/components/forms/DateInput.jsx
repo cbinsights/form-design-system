@@ -62,8 +62,11 @@ const YearAndMonthSelector = ({ date, localeUtils, onChange, startYear, endYear 
 
   const years = Array.from({ length: endYear - startYear }, (year, i) => i + startYear);
 
-  const handleChange = (e) => {
-    const { year, month } = e.target.form;
+  const handleChange = ({
+    target: {
+      form: { year, month },
+    },
+  }) => {
     onChange(new Date(year.value, month.value));
   };
 
@@ -152,38 +155,36 @@ const DateInput = ({ futureYears, pastYears, defaultDate, onDateChange }) => {
   };
 
   return (
-    <React.Fragment>
-      <Popover
-        trigger={
-          <input
-            type="text"
-            value={inputValue}
-            onChange={handleInputChange}
-            placeholder={DATE_FORMAT}
-            pattern={DATE_PATTERN}
-          />
-        }
-      >
-        <div className="elevation--2 rounded--all bgColor--white">
-          <DayPicker
-            month={pickerMonth}
-            className="fdsDateInput"
-            onDayClick={handleDaySelect}
-            selectedDays={selectedDate}
-            navbarElement={<NavArrows />}
-            captionElement={({ date, localeUtils }) => (
-              <YearAndMonthSelector
-                date={date}
-                localeUtils={localeUtils}
-                onChange={handleYearMonthChange}
-                startYear={startYear}
-                endYear={endYear}
-              />
-            )}
-          />
-        </div>
-      </Popover>
-    </React.Fragment>
+    <Popover
+      trigger={
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder={DATE_FORMAT}
+          pattern={DATE_PATTERN}
+        />
+      }
+    >
+      <div className="elevation--2 rounded--all bgColor--white">
+        <DayPicker
+          month={pickerMonth}
+          className="fdsDateInput"
+          onDayClick={handleDaySelect}
+          selectedDays={selectedDate}
+          navbarElement={<NavArrows />}
+          captionElement={({ date, localeUtils }) => (
+            <YearAndMonthSelector
+              date={date}
+              localeUtils={localeUtils}
+              onChange={handleYearMonthChange}
+              startYear={startYear}
+              endYear={endYear}
+            />
+          )}
+        />
+      </div>
+    </Popover>
   );
 };
 

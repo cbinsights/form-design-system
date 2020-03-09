@@ -40,10 +40,6 @@
   height: var(--fdsDateInput-control-height);
 }
 
-.fdsDateInput .fds-icon:last-child {
-  margin-left: 4px;
-}
-
 .fdsDateInput .DayPicker-Month {
   margin: 0;
 }
