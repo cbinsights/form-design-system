@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { Item, generalStyles, containerStyles } from './styledocUtils';
+import { Example, generalStyles, containerStyles } from 'base-styles/styledocUtils';
 import { TableLayout } from "components/util/Table"
 
 <Meta title="Style Utilities/Border"  />
@@ -20,11 +20,11 @@ import { TableLayout } from "components/util/Table"
       ]} 
     />
     <div style={containerStyles}>
-      <Item label="rounded--top"><div className="rounded--top bgColor--charcoal" style={generalStyles} /></Item>
-      <Item label="rounded--bottom"><div className="rounded--bottom bgColor--charcoal" style={generalStyles} /></Item>
-      <Item label="rounded--right"><div className="rounded--right bgColor--charcoal" style={generalStyles} /></Item>
-      <Item label="rounded--left"><div className="rounded--left bgColor--charcoal" style={generalStyles} /></Item>
-      <Item label="rounded--all"><div className="rounded--all bgColor--charcoal" style={generalStyles} /></Item>
+      <Example label="rounded--top"><div className="rounded--top bgColor--charcoal" style={generalStyles} /></Example>
+      <Example label="rounded--bottom"><div className="rounded--bottom bgColor--charcoal" style={generalStyles} /></Example>
+      <Example label="rounded--right"><div className="rounded--right bgColor--charcoal" style={generalStyles} /></Example>
+      <Example label="rounded--left"><div className="rounded--left bgColor--charcoal" style={generalStyles} /></Example>
+      <Example label="rounded--all"><div className="rounded--all bgColor--charcoal" style={generalStyles} /></Example>
     </div>
   </>
 </Story>
@@ -42,7 +42,7 @@ Creates a shape with CSS border radius
       ]} 
     />
     <div style={containerStyles}>
-      <Item label="shape--circle"><div className="shape--circle bgColor--charcoal" style={{ width: 72, height: 72 }} /></Item>
+      <Example label="shape--circle"><div className="shape--circle bgColor--charcoal" style={{ width: 72, height: 72 }} /></Example>
     </div>
   </>
 </Story>
@@ -70,12 +70,12 @@ Adds standard borders to an element for a given side.
       ]} 
     />
     <div style={containerStyles}>
-      <Item label="border--none"><div className="border--none" style={borderSideStyles} /></Item>
-      <Item label="border--top"><div className="border--top" style={borderSideStyles} /></Item>
-      <Item label="border--bottom"><div className="border--bottom" style={borderSideStyles} /></Item>
-      <Item label="border--right"><div className="border--right" style={borderSideStyles} /></Item>
-      <Item label="border--left"><div className="border--left" style={borderSideStyles} /></Item>
-      <Item label="border--all"><div className="border--all" style={borderSideStyles} /></Item>
+      <Example label="border--none"><div className="border--none" style={borderSideStyles} /></Example>
+      <Example label="border--top"><div className="border--top" style={borderSideStyles} /></Example>
+      <Example label="border--bottom"><div className="border--bottom" style={borderSideStyles} /></Example>
+      <Example label="border--right"><div className="border--right" style={borderSideStyles} /></Example>
+      <Example label="border--left"><div className="border--left" style={borderSideStyles} /></Example>
+      <Example label="border--all"><div className="border--all" style={borderSideStyles} /></Example>
     </div>
   </>
 </Story>

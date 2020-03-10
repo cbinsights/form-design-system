@@ -27,22 +27,22 @@ export const labelStyle = {
   color: '#f09',
 };
 
-export const Item = (props) => (
+export const Example = (props) => (
   <div style={layoutStyle}>
     <div style={labelStyle}>{props.label}</div>
     {props.children}
   </div>
 );
 
-Item.propTypes = {
+Example.propTypes = {
   label: PropTypes.string,
   children: PropTypes.node,
 };
 
 const typeStyle = {
-    ...labelStyle,
-    marginBottom: 0
-}
+  ...labelStyle,
+  marginBottom: 0,
+};
 
 export const Headers = () => (
   <>
@@ -53,27 +53,45 @@ export const Headers = () => (
     <h5>Heading5</h5>
     <h6>Heading6</h6>
   </>
-)
+);
 
 export const Typesetting = () => (
-  <>
+  <div className="inverted">
     <div style={typeStyle}>type--head1</div>
-    <div className="type--head1 margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div className="type--head1 margin--bottom--half">
+      Sphinx of black quartz, judge my vow
+    </div>
     <div style={typeStyle}>type--head2</div>
-    <div className="type--head2 margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div className="type--head2 margin--bottom--half">
+      Sphinx of black quartz, judge my vow
+    </div>
     <div style={typeStyle}>type--head3</div>
-    <div className="type--head3 margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div className="type--head3 margin--bottom--half">
+      Sphinx of black quartz, judge my vow
+    </div>
     <div style={typeStyle}>type--head4</div>
-    <div className="type--head4 margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div className="type--head4 margin--bottom--half">
+      Sphinx of black quartz, judge my vow
+    </div>
     <div style={typeStyle}>type--big</div>
-    <div className="type--big margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div className="type--big margin--bottom--half">
+      Sphinx of black quartz, judge my vow
+    </div>
     <div style={typeStyle}>type--data</div>
-    <div className="type--data margin--bottom--half">Sphinx of black quartz, judge my vow</div>
+    <div className="type--data margin--bottom--half">
+      Sphinx of black quartz, judge my vow
+    </div>
     <div style={typeStyle}>type--caption</div>
-    <div className="type--caption margin--bottom--half">Sphinx of black quartz, judge my vow</div>
-    <div><span style={typeStyle}>type--link </span> (anchor)</div>
-    <a className="type--link margin--bottom--half display--block" href="#">Go to Homepage</a>
-  </>
+    <div className="type--caption margin--bottom--half">
+      Sphinx of black quartz, judge my vow
+    </div>
+    <div>
+      <span style={typeStyle}>type--link </span> (anchor)
+    </div>
+    <a className="type--link margin--bottom--half display--block" href="#">
+      Go to Homepage
+    </a>
+  </div>
 );
 
 export const InvertedTypesetting = () => (

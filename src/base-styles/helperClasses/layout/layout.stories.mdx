@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { Item, generalStyles, containerStyles, labelStyle } from './styledocUtils';
+import { Example, generalStyles, containerStyles, labelStyle } from 'base-styles/styledocUtils';
 import { TableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
@@ -30,11 +30,11 @@ element to match standard media sizes.
       ]} 
     />
     <div style={containerStyles}>
-      <Item label="media--xs"><div className="media--xs rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="media--s"><div className="media--s rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="media--m"><div className="media--m rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="media--l"><div className="media--l rounded--all" style={borderHelperStyles} /></Item>
-      <Item label="media--xl"><div className="media--xl rounded--all" style={borderHelperStyles} /></Item>
+      <Example label="media--xs"><div className="media--xs rounded--all" style={borderHelperStyles} /></Example>
+      <Example label="media--s"><div className="media--s rounded--all" style={borderHelperStyles} /></Example>
+      <Example label="media--m"><div className="media--m rounded--all" style={borderHelperStyles} /></Example>
+      <Example label="media--l"><div className="media--l rounded--all" style={borderHelperStyles} /></Example>
+      <Example label="media--xl"><div className="media--xl rounded--all" style={borderHelperStyles} /></Example>
     </div>
   </>
 </Story>
