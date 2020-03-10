@@ -2,11 +2,15 @@ import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { action } from '@storybook/addon-actions';
 import { withKnobs, number } from '@storybook/addon-knobs';
 
+import { ImportPath } from '../util/storybook';
+
 import CountdownButton from './CountdownButton';
 
-<Meta title="Components/Interactive/CountdownButton" decorators={[withKnobs]} component={CountdownButton} />
+<Meta title="Components/Media/CountdownButton" decorators={[withKnobs]} component={CountdownButton} />
 
 # CountdownButton
+
+<ImportPath component={CountdownButton} section="media" />
 
 An icon button that shows a radial countdown animation immediately on mount.
 
