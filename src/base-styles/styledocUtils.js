@@ -55,8 +55,8 @@ export const Headers = () => (
   </>
 );
 
-export const Typesetting = () => (
-  <div className="inverted">
+export const Typesetting = ({ isInverted }) => (
+  <div className={isInverted && 'inverted bgColor--navy padding--all'}>
     <div style={typeStyle}>type--head1</div>
     <div className="type--head1 margin--bottom--half">
       Sphinx of black quartz, judge my vow
@@ -94,11 +94,6 @@ export const Typesetting = () => (
   </div>
 );
 
-export const InvertedTypesetting = () => (
-  <>
-    <div className="inverted padding--all bgColor--navy">
-      <div style={typeStyle}>type--link</div>
-      <a className="type--link">Go to Homepage</a>
-    </div>
-  </>
-);
+Typesetting.propTypes = {
+  isInverted: PropTypes.bool,
+};

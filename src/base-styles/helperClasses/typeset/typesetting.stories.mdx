@@ -1,7 +1,7 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
 import { TableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
-import { generalStyles, Typesetting, InvertedTypesetting, Headers  } from 'base-styles/styledocUtils';
+import { generalStyles, Typesetting, Headers  } from 'base-styles/styledocUtils';
 
 export const positionStyles = {
   ...generalStyles,
@@ -44,4 +44,4 @@ To set the display of a given heading tag, use one of the typesetting classes be
 Select Typesetting classes can get an optimized display for
 dark backgrounds by being placed inside an `.inverted` context:
 
-<InvertedTypesetting />
+<Typesetting isInverted />
