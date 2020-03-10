@@ -6,10 +6,18 @@ import DecoratedInput from 'components/forms/DecoratedInput';
 
 export const throttleValue = 500;
 
+export const throttleInput = (input, throttleFn, debounceFn) => {
+  if (input.length < 5 || input.endsWith(' ')) {
+    throttleFn(input);
+  } else {
+    debounceFn(input);
+  }
+};
+
 const TextInput = ({
   label,
   errorText,
-  throttleOnChange,
+  onThrottledChange,
   required,
   onChange,
   type,
@@ -22,26 +30,23 @@ const TextInput = ({
   // Refer to the following for an explanation on
   // the throttling / debouncing approach:
   // https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-in-react
-  let throttleOnChangeThrottled;
-  let throttleOnChangeDebounced;
+  let onThrottledChangeThrottled;
+  let onThrottledChangeDebounced;
 
-  useEffect(() => {
-    if (throttleOnChange) {
-      throttleOnChangeThrottled = throttle(throttleValue, throttleOnChange);
-      throttleOnChangeDebounced = debounce(throttleValue, throttleOnChange);
+  const assignThrottleFunctions = () => {
+    if (onThrottledChange) {
+      onThrottledChangeThrottled = throttle(throttleValue, onThrottledChange);
+      onThrottledChangeDebounced = debounce(throttleValue, onThrottledChange);
     }
-  }, [throttleOnChange]);
+  };
 
   const inputOnChange = (e) => {
     e.persist();
     onChange(e);
-    const query = e.target.value;
-    if (query.length < 5 || query.endsWith(' ')) {
-      throttleOnChangeThrottled(e);
-    } else {
-      throttleOnChangeDebounced(e);
-    }
+    throttleInput(e.target.value, onThrottledChangeThrottled, onThrottledChangeDebounced);
   };
+
+  useEffect(assignThrottleFunctions, [onThrottledChange]);
 
   const Element = label ? 'label' : 'div';
 
@@ -58,6 +63,7 @@ const TextInput = ({
           <IconInput IconLeft={IconLeft} IconRight={IconRight}>
             <input
               {...props}
+              required={required}
               onChange={inputOnChange}
               type={type}
               className="fdsTextInput"
@@ -73,7 +79,7 @@ const TextInput = ({
 TextInput.defaultProps = {
   type: 'text',
   onChange: () => {},
-  throttleOnChange: () => {},
+  onThrottledChange: () => {},
 };
 
 TextInput.propTypes = {
@@ -104,7 +110,7 @@ TextInput.propTypes = {
   onChange: PropTypes.func,
 
   /** Custom onChange event that throttles / debounces. */
-  throttleOnChange: PropTypes.func,
+  onThrottledChange: PropTypes.func,
 
   /** String to place to the left of the input */
   before: PropTypes.string,
