@@ -1,12 +1,11 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, optionsKnob as options, select } from '@storybook/addon-knobs';
-import { arrayToOptions, storyBackgrounds } from '../util/storybook';
+import { arrayToOptions, storyBackgrounds, ImportPath } from '../util/storybook';
 
 import Section, { VALID_BG_NORMAL, VALID_BG_INVERTED, VALID_PADDING } from './Section';
 import Flex from './Flex';
 import FlexItem from './FlexItem';
 import Button from '../interactive/Button';
-import README from './Section.md';
 
 export const ALL_BACKGROUNDS = [...VALID_BG_NORMAL, ...VALID_BG_INVERTED];
 
@@ -18,6 +17,8 @@ export const parentStyle = {
 <Meta title="Components/Layout/Section" decorators={[withKnobs]} component={Section} />
 
 # Section
+
+<ImportPath component={Section} section="layout" />
 
 Section is a layout component that can be used for sectioning content either vertically or
 horizontally.

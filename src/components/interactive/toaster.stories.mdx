@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 
+import { ImportPath } from '../util/storybook';
+
 import Toaster from './Toaster';
 import Toast from './Toast';
 
@@ -107,6 +109,8 @@ export const ToasterStory = () => {
 <Meta title="Components/Interactive/Toaster" decorators={[withKnobs]} component={Toaster} />
 
 # Toaster
+
+<ImportPath component={Toaster} section="interactive" />
 
 Controller for positioning, transition, and dismissal of toasts.
 

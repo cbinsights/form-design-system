@@ -27,6 +27,29 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.9] Updated Dialog
+
+- Dialog now takes a `height` prop (that's applied as `max-height internally)
+- Dialog now has the option to always render the footer border via `alwaysShowBorder`
+
+## [7.8] Menu + Dialog fixes
+
+- Added `disableFocusTrap` prop to `Dialog`
+- Adjusted `z-index` value of the popover in `Menu`
+
+## [7.7] Menu component
+
+- Added `Menu` component for building accessible dropdown menus
+
+## [7.6] Import Icon
+
+- Added `ImportIcon`
+
+## [7.5] Popover positioning
+
+- 🐛 Fixed bug where `Popover` boundary was the nearest parent with `overflow` set. `Popover`
+  will now use the entire visible viewport area the reference to avoid content overflow.
+
 ## [7.4] Updated Buttons
 
 - `outlined` Button now has updated presentation (white background,

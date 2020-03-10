@@ -1,12 +1,14 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import { Info } from '../util/storybook';
+import { Info, ImportPath } from '../util/storybook';
 
 import Checkbox from './Checkbox';
 
 <Meta title="Components/Forms/Checkbox" decorators={[withKnobs]} component={Checkbox} />
 
 # Checkbox
+
+<ImportPath component={Checkbox} section="forms" />
 
 Uncontrolled custom checkbox component with optional label.
 
@@ -21,7 +23,7 @@ Uncontrolled custom checkbox component with optional label.
 
 <Source
   language="jsx"
-  code='<Checkbox label="I agree to receive spam" />'
+  code="import Button from 'button'"
 />
 
 <Info type="info">

@@ -1,11 +1,15 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, number } from '@storybook/addon-knobs';
 
+import { ImportPath } from '../util/storybook';
+
 import Tooltip from './Tooltip';
 
 <Meta title="Components/Popovers/Tooltip" decorators={[withKnobs]} component={Tooltip} />
 
 # Tooltip
+
+<ImportPath component={Tooltip} section="popovers" />
 
 <Story name="Knobs">
   <Tooltip

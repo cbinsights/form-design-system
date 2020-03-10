@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import CloneIcon from 'lib/icons/react/CloneIcon';
+import CheckIcon from 'lib/icons/react/CheckIcon';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 
 /**
@@ -145,4 +147,44 @@ export const Item = (props) => (
 Item.propTypes = {
   label: PropTypes.string,
   children: PropTypes.node,
+};
+
+export const ImportPath = ({ component, section }) => {
+  const toggleHover = useToggleHover()[1];
+  const [copiedText, copyToClipboard] = useClipboard();
+
+  const path = `import ${component.displayName} from '@cbinsights/fds/lib/components/${section}/${component.displayName}'`;
+
+  const pathParts = path.split(' ');
+
+  return (
+    <p
+      className="importPath margin--bottom"
+      onMouseEnter={toggleHover}
+      onMouseLeave={toggleHover}
+      onClick={() => copyToClipboard(path)}
+    >
+      <span>{pathParts[0]} </span>
+      <span className="importPath--highlight">{pathParts[1]} </span>
+      <span>{pathParts[2]} </span>
+      <span className="importPath--highlight">{pathParts[3]}</span>
+      {!copiedText ? (
+        <CloneIcon customSize={14} />
+      ) : (
+        <CheckIcon customSize={14} color="green" />
+      )}
+    </p>
+  );
+};
+
+ImportPath.propTypes = {
+  component: PropTypes.func,
+  section: PropTypes.oneOf([
+    'forms',
+    'interactive',
+    'layout',
+    'media',
+    'modals',
+    'popovers',
+  ]),
 };

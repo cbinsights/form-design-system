@@ -33,7 +33,7 @@
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "stats:css": "node ./scripts/node/util/getUtilityCLassNames.js"
+    "stats:css": "node ./scripts/node/util/getUtilityCLassNames.js && cat lib/stats/utilityClassRegex.txt"
   },
   "peerDependencies": {
     "classnames": "^2",
@@ -105,7 +105,7 @@
     "snake-case": "^2.1.0",
     "style-dictionary": "^2.8.1",
     "style-loader": "^1.1.2",
-    "stylelint": "^9.5.0",
+    "stylelint": "^13.2",
     "tinycolor2": "^1.4.1",
     "webpack": "^4.38"
   },
@@ -145,6 +145,7 @@
   },
   "version": "4.0.0",
   "dependencies": {
+    "@reach/menu-button": "^0.8.2",
     "focus-trap-react": "^6.0.0",
     "no-scroll": "^2.1.1",
     "raf-schd": "^4.0.2",

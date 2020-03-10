@@ -163,6 +163,7 @@
   background-color: rgba(255, 255, 255, 0.16);
 }
 
+/* stylelint-disable-next-line selector-max-class */
 .inverted .fdsButton--ghost.fdsButton--loading::before {
   border: 2px solid var(--color-white);
   border-top-color: transparent;

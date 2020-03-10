@@ -1,8 +1,8 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
+import { ImportPath } from '../util/storybook';
 
 import Hscroll from './Hscroll';
-import README from './Hscroll.md';
 
 export const ExampleItem = props => (
   <div
@@ -19,6 +19,8 @@ export const ExampleItem = props => (
 <Meta title="Components/Layout/Hscroll" decorators={[withKnobs]} component={Hscroll} />
 
 # Hscroll
+
+<ImportPath component={Hscroll} section="layout" />
 
 <Story name="Knobs">
   <Hscroll

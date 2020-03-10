@@ -1,9 +1,10 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
 
+import { ImportPath } from '../util/storybook';
+
 import Flex from './Flex';
 import FlexItem from './FlexItem';
-import README from './Flex.md';
 
 export const parentStyle = {
   width: '600px',
@@ -39,6 +40,8 @@ export const ConditionalItemsExample = (props) => (
 <Meta title="Components/Layout/Flex" decorators={[withKnobs]} component={Flex} />
 
 # Flex
+
+<ImportPath component={Flex} section="layout" />
 
 Flex is an abstraction of CSS flexbox that provides a subset of flexbox functionality. **A `Flex` should only contain `FlexItem` children**.
 
@@ -94,7 +97,7 @@ _See `FlexItem` documentation for more information on the `FlexItem` `shrink` pr
 
 
 ### Classic media block
-Making the imge `FlexItem` `shrink` and allowing the description `FlexItem` to grow creates the classic "media block" layout pattern.
+Making the image `FlexItem` `shrink` and allowing the description `FlexItem` to grow creates the classic "media block" layout pattern.
 
 <Preview>
   <Story name="Classic media block">
