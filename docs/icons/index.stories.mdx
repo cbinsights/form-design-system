@@ -42,10 +42,10 @@ export const Icon = ({ name, svg }) => {
 <TableLayout
   copy={false}
   headers={['Prop', 'Type', 'Default', 'Description']}
-  data={[
-      [<code>color</code>, <code>String</code>, <code>COLOR_CHARCOAL</code>, <>Color of <code>fill</code> for SVG</>],
-      [<code>size</code>, <>One of: <code>'xs', 's', 'm', 'l', 'xl'</code></>, <code>s</code>, 'Standard media size of icon'],
-      [<code>customSize</code>, <code>Number</code>, <code>-</code>, 'Sets a non-standard size for the icon. Prefer using the size prop.'],
+  rows={[
+      ['`color`', '`String`', '`COLOR_CHARCOAL`', 'Color of `fill` for SVG'],
+      ['`size`', 'One of: `\'xs\' | \'s\' | \'m\' | \'l\' | \'xl\'`', 's', 'Standard media size of icon'],
+      ['`customSize`', '`Number`', '`-`', 'Sets a non-standard size for the icon. Prefer using the size prop.'],
   ]} 
 />
 

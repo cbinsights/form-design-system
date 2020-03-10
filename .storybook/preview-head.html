@@ -29,6 +29,12 @@
     background: none;
   }
 
+  .doctable tbody tr:not(:first-child) {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #e6e6e6;
+  }
+
   .doctable td, .doctable th {
     padding: 0;
     border: none;
@@ -38,7 +44,7 @@
     padding-left: 20px;
   }
 
-  .doctable th:last-of-type, .doctable td:last-of-type {
+  .doctable.shrinkLastColumn th:last-of-type, .doctable.shrinkLastColumn td:last-of-type {
     padding-right: 20px;
     width: 20%;
   }
@@ -64,10 +70,21 @@
     border-top-left-radius: 4px;
   }
 
+  .doctable tr:last-child td:first-child, .doctable tr:last-child th:first-child {
+    border-bottom-left-radius: 4px;
+  }
+
+  .doctable tr:last-child td:last-child, .doctable tr:last-child th:last-child {
+    border-bottom-right-radius: 4px;
+  }
+
+  .doctable tr:first-child td:last-child, .doctable tr:first-child th:last-child {
+    border-top-right-radius: 4px;
+  }
+
   .doctable td {
     padding-top: var(--space-default);
     padding-bottom: var(--space-default);
-    cursor: pointer;
     position: relative;
     background-color:var(--color-white);
   }
@@ -81,7 +98,11 @@
     padding-right: 20px;
   }
 
-  .doctable td:hover {
+  .doctable td.hasCopy {
+    cursor: pointer;
+  }
+
+  .doctable td.hasCopy:hover {
     background-color: #cae4ea;
   }
 
@@ -96,6 +117,18 @@
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  .doctable td code {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-s);
+  }
+
+  .doctable td.hasCSS {
+    color: #F09 !important;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-book);
   }
 
   .copyNotice {
