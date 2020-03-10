@@ -25,6 +25,13 @@ of the typesetting classes below.
   font-family: var(--font-family-condensed);
 }
 
+.inverted .type--head1,
+.inverted .type--head2,
+.inverted .type--head3,
+.inverted .type--head4 {
+  color: var(--font-color-headingInverted);
+}
+
 /*---
 title: Heading 1
 name: heading1
