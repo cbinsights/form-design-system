@@ -8,22 +8,28 @@ import {
 } from "@storybook/addon-knobs";
 import { action } from '@storybook/addon-actions';
 
-import Menu from './Menu';
-import MenuItem from './MenuItem';
+import Button from 'components/interactive/Button';
 
-import Button from '../interactive/Button';
-
-import Flex from '../layout/Flex';
-import FlexItem from '../layout/FlexItem';
+import Flex from 'components/layout/Flex';
+import FlexItem from 'components/layout/FlexItem';
 
 import CloneIcon from 'lib/icons/react/CloneIcon';
 import TrashIcon from 'lib/icons/react/TrashIcon';
 import EditIcon from 'lib/icons/react/EditIcon';
 import FundingIcon from 'lib/icons/react/FundingIcon';
 
-<Meta title="Popovers|Menu" component={Menu} decorators={[withKnobs]} />
+import { ImportPath } from '../util/storybook';
+
+import Menu from './Menu';
+import MenuItem from './MenuItem';
+
+
+<Meta title="Components/Popovers/Menu" component={Menu} decorators={[withKnobs]} />
 
 # Menu
+
+<ImportPath component={Menu} section="popovers" />
+<ImportPath component={MenuItem} section="popovers" />
 
 Renders a basic keyboard navigable dropdown menu following the [WAI-ARIA pattern for "menubutton"](https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton).
 

@@ -5,16 +5,18 @@ import CollectionPublicIcon from '../../../lib/icons/react/CollectionPublicIcon'
 import StoryAddIcon from '../../../lib/icons/react/StoryAddIcon';
 import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
 import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
-import { arrayToOptions } from '../util/storybook';
+import { arrayToOptions, ImportPath } from '../util/storybook';
 import { MockLink } from '../util/mock-react-router';
 
 import IconButton, { THEMES, RADII, SIZES } from './IconButton';
 
 export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFasterIcon, SalesforceIcon]
 
-<Meta title="Interactive|IconButton" decorators={[withKnobs]} component={IconButton} />
+<Meta title="Components/Interactive/IconButton" decorators={[withKnobs]} component={IconButton} />
 
 # IconButton
+
+<ImportPath component={IconButton} section="interactive" />
 
 <Story name="Knobs">
   <IconButton

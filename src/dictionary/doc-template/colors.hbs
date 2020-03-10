@@ -1,0 +1,45 @@
+import { Meta, Story, Preview, Props, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
+import { ColorSwatch, ColorSwatchWrapper } from "components/util/storybook";
+
+<Meta title="FDS/Dictionary" />
+
+# Colors
+
+<ColorSwatchWrapper>
+  {{#each this.color}}
+    <ColorSwatch hex="{{this.values.hex}}" cssVar="{{this.varNames.css}}" jsVar="{{this.varNames.js}}" />
+  {{/each}}
+</ColorSwatchWrapper>
+
+# Layout
+
+| CSS var | JS var | value |
+|---------|--------|-------|
+{{#each this.layout}}
+| {{this.varNames.css}} | {{this.varNames.js}} | {{this.value}} |
+{{/each}}
+
+# Font
+
+| CSS var | JS var | value |
+|---------|--------|-------|
+{{#each this.font}}
+| {{this.varNames.css}} | {{this.varNames.js}} | {{this.value}} |
+{{/each}}
+
+
+# Border
+
+| CSS var | JS var | value |
+|---------|--------|-------|
+{{#each this.border}}
+| {{this.varNames.css}} | {{this.varNames.js}} | {{this.value}} |
+{{/each}}
+
+# Motion
+
+| CSS var | JS var | value |
+|---------|--------|-------|
+{{#each this.motion}}
+| {{this.varNames.css}} | {{this.varNames.js}} | {{this.value}} |
+{{/each}}

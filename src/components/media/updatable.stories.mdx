@@ -3,11 +3,15 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import CheckIcon from '../../../lib/icons/react/CheckIcon';
 
+import { ImportPath } from '../util/storybook';
+
 import Updatable from './Updatable';
 
-<Meta title="Media|Updatable" decorators={[withKnobs]} component={Updatable} />
+<Meta title="Components/Media/Updatable" decorators={[withKnobs]} component={Updatable} />
 
 # Updatable
+
+<ImportPath component={Updatable} section="layout" />
 
 Wraps children in an "updatable" container with a `message` displayed as a notification-style red bubble.
 

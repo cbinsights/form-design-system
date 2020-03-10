@@ -1,109 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>fds-icons</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i" rel="stylesheet">
-  <link rel="stylesheet" href="assets/icons.css" type="text/css">
-  <link rel="stylesheet" href="assets/pure-min.css" type="text/css">
-  <link rel="stylesheet" href="assets/custom.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" type="text/css">
-</head>
-<body>
-  <section class="bounds">
-    <p><a href="https://cbinsights.github.io/form-design-system/">&larr; docs index</a></p>
-    <p><a href="https://github.com/cbinsights/form-design-system">&larr; github</a></p>
-  </section>
-  <header class="bounds">
-    <h1><code>fds-icons</code></h1>
-    <p>React components are generated for all icons shown below.</p>
-    <p>Click on an import statement to copy it.</p>
+import { Meta } from "@storybook/addon-docs/blocks";
+import { useClipboard, useToggleHover } from 'components/util/storybook'
+import cx from 'classnames';
+import { TableLayout } from "components/util/Table"
 
-    <hr />
+export const importPath = iconName => (
+  `import ${iconName}Icon from '@cbinsights/fds/lib/icons/react/${iconName}Icon';`
+);
 
-    <table>
-      <caption>All icon components accept the following React props</caption>
-      <thead>
-        <tr>
-          <th id="prop" scope="col">Prop</th>
-          <th id="type" scope="col">Type</th>
-          <th id="default" scope="col">Default</th>
-          <th id="description" scope="col">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th id="colorProp" headers="prop" scope="row"><code>color</code></th>
-          <td headers="type colorProp"><code>String</code></td>
-          <td headers="default colorProp"><code>COLOR_CHARCOAL</code></td>
-          <td headers="description colorProp">Color of <code>fill</code> for SVG</td>
-        </tr>
-        <tr>
-          <th id="sizeProp" headers="prop" scope="row"><code>size</code></th>
-          <td headers="type sizeProp">one of: <code>'xs'</code>, <code>'s'</code>, <code>'m'</code>, <code>'l'</code>, <code>'xl'</code></td>
-          <td headers="default sizeProp"><code>s</code></td>
-          <td headers="description sizeProp">Standard media size of icon</td>
-        </tr>
-        <tr>
-          <th id="customSizeProp" headers="prop" scope="row"><code>customSize</code></th>
-          <td headers="type customSizeProp"><code>Number</code></td>
-          <td headers="default customSizeProp">-</td>
-          <td headers="description customSizeProp">Sets a non-standard size for the icon. Prefer using the <code>size</code> prop.</td>
-        </tr>
-      </tbody>
-    </table>
+export const Icon = ({ name, svg }) => {
+  const [copiedText, copyToClipboard] = useClipboard();
+  const [isHovered, toggleHover] = useToggleHover();
+  return (
+    <li>
+      <div
+        onClick={() => copyToClipboard(importPath(name))}
+        className={cx('rounded--all', {
+          'elevation--1': !isHovered,
+          'elevation--3': isHovered,
+        })}
+        onMouseEnter={toggleHover}
+        onMouseLeave={toggleHover}
+      >
+        <div
+          dangerouslySetInnerHTML=\{{ __html: svg }}
+        />
+        <span
+          className={cx("copyNotice", { 'display--block': isHovered })}
+        >
+          {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
+        </span>
+      </div>
+      <p className="align--center wrap--singleLine--truncate type--data padding--top--half">{name}</p>
+    </li>
+  )
+}
 
-    <hr />
+<Meta title="Icons/Icons" />
 
-  </header>
-  <section class="bounds">
-    <ul class="shapeList">
-      {{#each this}}
-        <li class="shapeList-shape">
-          <div class="shape-svg">
-            <span class="fds-icon">{{{this.svg}}}</span>
-          </div>
-          <div class="shape-desc">
-            <code class="desc-name">{{this.name}}</code>
-            <code
-              class="desc-import js-clipboard"
-              data-clipboard-text="{{this.importName}}"
-            >
-              {{this.importName}}
-            </code>
-          </div>
-        </li>
-      {{/each}}
-    </ul>
-  </section>
+# Icons
 
-  <script
-    src="https://code.jquery.com/jquery-1.12.4.min.js"
-    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-  <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
-  <script type="text/javascript">
-    function autorun() {
-      toastr.options.preventDuplicates = true;
+<TableLayout
+  copy={false}
+  headers={['Prop', 'Type', 'Default', 'Description']}
+  rows={[
+      ['`color`', '`String`', '`COLOR_CHARCOAL`', 'Color of `fill` for SVG'],
+      ['`size`', 'One of: `\'xs\' | \'s\' | \'m\' | \'l\' | \'xl\'`', 's', 'Standard media size of icon'],
+      ['`customSize`', '`Number`', '`-`', 'Sets a non-standard size for the icon. Prefer using the size prop.'],
+  ]} 
+/>
 
-      var clipboard = new ClipboardJS('.js-clipboard');
+Click on an import statement to copy it.
 
-      clipboard.on('success', function(e) {
-        toastr.clear();
-        toastr.info(`Copied <code style='color: #003366'>"${e.text}"</code>`);
-      });
-      clipboard.on('error', function(e) {
-        toastr.clear();
-        toastr.error('Failed to copy to clipboard 😓')
-      });
-
-    }
-    if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
-    else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
-    else window.onload = autorun;
-  </script>
-</body>
-</html>
+<ul className="iconList">
+  {{#each this}}
+    <Icon name='{{this.name}}' svg='{{{ this.svg }}}' />
+  {{/each}}
+</ul>

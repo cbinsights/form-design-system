@@ -10,9 +10,13 @@ import {
 
 import Toast from './Toast';
 
-<Meta title="Interactive|Toast" decorators={[withKnobs]} component={Toast} />
+import { ImportPath } from '../util/storybook';
+
+<Meta title="Components/Interactive/Toast" decorators={[withKnobs]} component={Toast} />
 
 # Toast
+
+<ImportPath component={Toast} section="interactive" />
 
 <Story name="Knobs">
   <Toast
