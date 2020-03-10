@@ -113,7 +113,7 @@ export const storyBackgrounds = {
 };
 
 export const ImportPath = ({ component, section }) => {
-  const [, toggleHover] = useToggleHover();
+  const toggleHover = useToggleHover()[1];
   const [copiedText, copyToClipboard] = useClipboard();
 
   const path = `import ${component.displayName} from '@cbinsights/fds/lib/components/${section}/${component.displayName}'`;
