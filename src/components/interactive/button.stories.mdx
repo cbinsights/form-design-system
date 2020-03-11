@@ -5,15 +5,17 @@ import {
   boolean,
   optionsKnob as options
 } from "@storybook/addon-knobs";
-import { arrayToOptions, StoryWrapper, StoryItem } from "components/util/storybook";
+import { arrayToOptions, StoryWrapper, StoryItem, ImportPath } from "components/util/storybook";
 import Button, { SIZES, THEMES, ICON_PLACEMENTS } from "./Button";
 import StarFilledIcon from "lib/icons/react/StarFilledIcon";
 import IconButton from "./IconButton";
 import ButtonGroup from "./ButtonGroup";
 
-<Meta title="Interactive|Button" decorators={[withKnobs]} component={Button} />
+<Meta title="Components/Interactive/Button" decorators={[withKnobs]} component={Button} />
 
 # Button
+
+<ImportPath component={Button} section="interactive" />
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <div className={boolean("Inverted", false) ? 'inverted' : ''}>

@@ -1,11 +1,13 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, object } from '@storybook/addon-knobs';
-
-import ButtonGroup from './ButtonGroup';
-import GroupButton from './GroupButton';
 import Updatable from 'components/media/Updatable'
 import Tooltip from 'components/popovers/Tooltip'
 import FeedIcon from 'lib/icons/react/FeedIcon';
+
+import ButtonGroup from './ButtonGroup';
+import GroupButton from './GroupButton';
+
+import { ImportPath } from '../util/storybook';
 
 export const buttons = [
   { label: 'Lorem', Icon: FeedIcon, isActive: true },
@@ -21,14 +23,25 @@ export const buttonsNoIcons = [
   { label: 'Sit' },
 ];
 
-
-<Meta title="Interactive|ButtonGroup" decorators={[withKnobs]} component={ButtonGroup} />
+<Meta title="Components/Interactive/ButtonGroup" decorators={[withKnobs]} component={ButtonGroup} />
 
 # ButtonGroup
 
-<Story name="Knobs">
+<ImportPath component={ButtonGroup} section="interactive" />
+
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <ButtonGroup buttons={object('buttons', buttonsNoIcons)} />
 </Story>
+
+<Preview isExpanded>
+  <ButtonGroup
+    buttons={[
+      { label: 'Lorem', disabled: true },
+      { label: 'Ipsum' },
+      { label: 'Dolor', isActive: true }
+    ]} 
+  />
+</Preview>
 
 <Props of={ButtonGroup} />
 <Props of={GroupButton} />

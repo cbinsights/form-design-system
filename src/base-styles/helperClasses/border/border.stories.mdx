@@ -1,0 +1,95 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { Example, generalStyles, containerStyles } from 'base-styles/styledocUtils';
+import { TableLayout } from "components/util/Table"
+
+<Meta title="Style Utilities/Border"  />
+
+## Border Radius
+
+<Story name="Border Radius">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[
+        ['rounded--top', 'Rounds the top corners of the element'],
+        ['rounded--bottom', 'Rounds the bottom corners of the element'],
+        ['rounded--right', 'Rounds the right corners of the element'],
+        ['rounded--left', 'Rounds the left corners of the element'],
+        ['rounded--all', 'Rounds all corners of the element'],
+      ]} 
+    />
+    <div style={containerStyles}>
+      <Example label="rounded--top"><div className="rounded--top bgColor--charcoal" style={generalStyles} /></Example>
+      <Example label="rounded--bottom"><div className="rounded--bottom bgColor--charcoal" style={generalStyles} /></Example>
+      <Example label="rounded--right"><div className="rounded--right bgColor--charcoal" style={generalStyles} /></Example>
+      <Example label="rounded--left"><div className="rounded--left bgColor--charcoal" style={generalStyles} /></Example>
+      <Example label="rounded--all"><div className="rounded--all bgColor--charcoal" style={generalStyles} /></Example>
+    </div>
+  </>
+</Story>
+
+## Border Radius Shape
+Creates a shape with CSS border radius
+
+<Story name="Border Shape">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[
+        ['shape--circle', 'Makes the element a circle'],
+      ]} 
+    />
+    <div style={containerStyles}>
+      <Example label="shape--circle"><div className="shape--circle bgColor--charcoal" style={{ width: 72, height: 72 }} /></Example>
+    </div>
+  </>
+</Story>
+
+export const borderSideStyles = {
+  ...generalStyles,
+  backgroundColor: "#fbfbfb"
+}
+
+## Borders by side
+Adds standard borders to an element for a given side.
+
+<Story name="Borders by side">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[
+        ['border--none', 'removes all borders'],
+        ['border--top', 'applies a standard top border'],
+        ['border--right', 'applies a standard right border'],
+        ['border--bottom', 'applies a standard bottom border'],
+        ['border--left', 'applies a standard left border'],
+        ['border--all', 'applies a standard border to all sides'],
+      ]} 
+    />
+    <div style={containerStyles}>
+      <Example label="border--none"><div className="border--none" style={borderSideStyles} /></Example>
+      <Example label="border--top"><div className="border--top" style={borderSideStyles} /></Example>
+      <Example label="border--bottom"><div className="border--bottom" style={borderSideStyles} /></Example>
+      <Example label="border--right"><div className="border--right" style={borderSideStyles} /></Example>
+      <Example label="border--left"><div className="border--left" style={borderSideStyles} /></Example>
+      <Example label="border--all"><div className="border--all" style={borderSideStyles} /></Example>
+    </div>
+  </>
+</Story>
+
+## Focus Style
+Adds standard focus style to elements (only on :focus state)
+
+<Story name="Focus Style">
+  <TableLayout
+    isCSS
+    headers={['class', 'description']}
+    rows={[
+      ['border--focus', 'Adds standard box shadow focus style'],
+      ['border--focus--noTransition', 'Adds standard box shadow focus style without transition'],
+    ]} 
+  />
+</Story>

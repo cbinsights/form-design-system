@@ -27,9 +27,21 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [7.10] `DateInput`
+## [7.12] `DateInput`
 
 - Added `DateInput` component.
+
+## [7.11] Disabled MenuItem
+
+- Adds support for `isDisabled` prop in `MenuItem`
+- Changes default z-index for `Menu` to `zindex-popover`
+- Adds `isInModal` prop to `Menu` for bumping up `z-index`
+
+## [7.10] Updated DropdownButton
+
+- DropdownButton now accepts an `isFullWidth`
+- It's background color is now white be default.
+>>>>>>> master
 
 ## [7.9] Updated Dialog
 
