@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MenuItem as ReachMenuItem } from '@reach/menu-button';
 
-// :TODO: hijack onSelect for disabled
-// :TODO: pass additional aria props
-// :TODO: conditional styling from disabled prop
-
 const MenuItem = ({ onSelect, children, isDisabled }) => (
   <ReachMenuItem
     className={isDisabled && 'fdsMenuItem--disabled'}
