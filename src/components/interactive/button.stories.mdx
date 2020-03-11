@@ -20,10 +20,11 @@ import ButtonGroup from "./ButtonGroup";
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <div className={boolean("Inverted", false) ? 'inverted' : ''}>
     <Button
-      disabled={boolean("disabled", false)}
-      isLoading={boolean("isLoading", false)}
-      isDestructive={boolean("isDestructive", false)}
-      hasCaret={boolean("hasCaret", false)}
+      disabled={boolean("disabled", undefined)}
+      isLoading={boolean("isLoading", undefined)}
+      isDestructive={boolean("isDestructive", undefined)}
+      isActive={boolean("isActive", undefined)}
+      hasCaret={boolean("hasCaret", undefined)}
       Icon={boolean("Icon") ? StarFilledIcon : undefined}
       iconPlacement={options(
         "Show sample icon?",
@@ -31,7 +32,7 @@ import ButtonGroup from "./ButtonGroup";
         undefined,
         { display: "inline-radio" }
       )}
-      isFullWidth={boolean("isFullWidth", false)}
+      isFullWidth={boolean("isFullWidth", undefined)}
       size={options("size", arrayToOptions(SIZES), undefined, {
         display: "inline-radio"
       })}
@@ -82,6 +83,36 @@ Modifies the theme. Should only be used when the interaction involves data loss,
       <StoryItem>
         <Button
           theme={theme}
+          isDestructive
+          label={theme}
+        />
+      </StoryItem>
+    ))}
+    </StoryWrapper>
+  </Story>
+</Preview>
+
+### Active
+
+`isActive` should be used on buttons to signify the button having some affect (applying a filter, causing a popover to be open)
+
+<Preview>
+  <Story name="Active">
+    <StoryWrapper>
+    {THEMES.map(theme => (
+      <StoryItem>
+        <Button
+          theme={theme}
+          isActive
+          label={theme}
+        />
+      </StoryItem>
+    ))}
+    {THEMES.map(theme => (
+      <StoryItem>
+        <Button
+          theme={theme}
+          isActive
           isDestructive
           label={theme}
         />
@@ -184,7 +215,7 @@ to take more than a couple of seconds of loading time
 
  ### Inverted
 
-We currently support inverting the `ghost` theme
+We currently support inverting `ghost` and `outlined` theme
 buttons. Simply surround the button(s) with an `.inverted` class.
 
 <Preview>
@@ -199,6 +230,15 @@ buttons. Simply surround the button(s) with an `.inverted` class.
         </StoryItem>
         <StoryItem>
           <Button theme="ghost" isLoading label="Button" />
+        </StoryItem>
+        <StoryItem>
+          <Button theme="outlined" label="Button" />
+        </StoryItem>
+        <StoryItem>
+          <Button theme="outlined" disabled label="Button" />
+        </StoryItem>
+        <StoryItem>
+          <Button theme="outlined" isLoading label="Button" />
         </StoryItem>
       </StoryWrapper>
     </div>

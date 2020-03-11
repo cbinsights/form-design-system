@@ -16,6 +16,7 @@ const Button = ({
   size,
   disabled,
   label,
+  isActive,
   isLoading,
   isDestructive,
   isFullWidth,
@@ -35,16 +36,14 @@ const Button = ({
         'alignChild--center--center',
         'border--focus--noTransition',
         'transition--default',
+        `fdsButton--${size}`,
+        `fdsButton--${theme}`,
         {
-          'fdsButton--s': size === 's',
-          'fdsButton--m': size === 'm',
-          'fdsButton--blue': theme === 'blue',
-          'fdsButton--outlined': theme === 'outlined',
-          'fdsButton--ghost': theme === 'ghost',
           'fdsButton--isDestructive': isDestructive,
           'fdsButton--loading': isLoading,
           'fdsButton--disabled': disabled,
           'fdsButton--isFullWidth': isFullWidth,
+          'fdsButton--isActive': isActive,
         }
       )}
       disabled={disabled && Element === 'button'}
@@ -105,6 +104,8 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   /** Controls the button going full width */
   isFullWidth: PropTypes.bool,
+  /** Controls showing of an active UI state for the button */
+  isActive: PropTypes.bool,
   /**
    * Controls whether loading spinner displays. Button text and icons are set to visibility hidden
    * to preserve the space set, whilst hiding them
