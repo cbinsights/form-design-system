@@ -12,7 +12,7 @@ import Radio from './Radio';
 
 Uncontrolled custom radio component with label.
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Radio
     disabled={boolean('disabled', false)}
     name="knobs"
@@ -20,10 +20,9 @@ Uncontrolled custom radio component with label.
   />
 </Story>
 
-<Source
-  language="jsx"
-  code='<Radio name="radio-group-name" label="I agree to receive spam" />'
-/>
+<Preview isExpanded>
+  <Radio name="radio-group-name" label="I agree to receive spam" />
+</Preview>
 
 <Info type="info">
   Additional props will be spread on the `input` element.

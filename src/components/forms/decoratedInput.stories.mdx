@@ -15,7 +15,7 @@ import DecoratedInput from './DecoratedInput';
 Wrapper for `input` elements to add contextual labels to either side of the
 input. **Side labels are not a substitute for `label` elements!**
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <React.Fragment>
     <p className="margin--bottom type--data color--purple fontStyle--italic">
       Use the knobs panel to change left and right labels
@@ -30,8 +30,19 @@ input. **Side labels are not a substitute for `label` elements!**
   </React.Fragment>
 </Story>
 
-<Props of={DecoratedInput} />
+<Preview isExpanded>
+  <React.Fragment>
+    <label htmlFor="horseName">Name your horse</label>
+    <DecoratedInput
+      before='before'
+      after='after'
+    >
+      <input id="horseName" type="text" />
+    </DecoratedInput>
+  </React.Fragment>
+</Preview>
 
+<Props of={DecoratedInput} />
 
 ### Before
 

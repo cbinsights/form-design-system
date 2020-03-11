@@ -11,12 +11,20 @@ import Tooltip from './Tooltip';
 
 <ImportPath component={Tooltip} section="popovers" />
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Tooltip
     trigger={<p>ℹ️Hover Here!</p>}
     message={text('Message', 'lol, you are very bad at hovering!')}
     maxWidth={number('max width', 240)}
   />
 </Story>
+
+<Preview isExpanded height={100}>
+  <Tooltip
+    trigger={<p>ℹ️Hover Here!</p>}
+    message='lol, you are very bad at hovering!'
+    maxWidth={240}
+  />
+</Preview>
 
 <Props of={Tooltip} />
