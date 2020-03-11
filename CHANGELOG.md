@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.10] Updated DropdownButton
+
+- DropdownButton now accepts an `isFullWidth`
+- It's background color is now white be default.
+
 ## [7.9] Updated Dialog
 
 - Dialog now takes a `height` prop (that's applied as `max-height internally)
