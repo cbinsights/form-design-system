@@ -30,7 +30,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ## [7.11] Updated Button
 
 - Button now has an `isActive` state
-- Button colors were completely overhauled (no breaking changes)
+- Added inverted outlined theme to Button
+- Button colors / look and feel were completely overhauled (no breaking changes)
 
 ## [7.10] Updated DropdownButton
 
