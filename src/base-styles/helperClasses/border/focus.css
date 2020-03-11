@@ -14,11 +14,11 @@ class                         | description
 
 .border--focus:focus {
   outline: 0;
-  box-shadow: 0 0 0 2px var(--border-color-focusRing);
+  box-shadow: 0 0 0 2px var(--border-color-focusRing) !important;
   transition: box-shadow 250ms var(--motion-easing-default);
 }
 
 .border--focus--noTransition:focus {
   outline: 0;
-  box-shadow: 0 0 0 2px var(--border-color-focusRing);
+  box-shadow: 0 0 0 2px var(--border-color-focusRing) !important;
 }
