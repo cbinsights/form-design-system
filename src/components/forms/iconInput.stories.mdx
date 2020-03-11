@@ -16,7 +16,7 @@ import { ImportPath } from '../util/storybook';
 
 <ImportPath component={IconInput} section="forms" />
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <React.Fragment>
     <IconInput
       IconLeft={boolean('Left star', true) ? StarFilledIcon : undefined}
@@ -26,6 +26,15 @@ import { ImportPath } from '../util/storybook';
     </IconInput>
   </React.Fragment>
 </Story>
+
+<Preview isExpanded>
+  <IconInput
+    IconLeft={StarFilledIcon}
+    IconRight={StarFilledIcon}
+  >
+    <input type="text" placeholder={text('Placeholder text', 'My god, its full of stars!')} />
+  </IconInput>
+</Preview>
 
 <Props of={IconInput} />
 

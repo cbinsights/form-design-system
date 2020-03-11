@@ -28,7 +28,7 @@ import Button from '../interactive/Button';
 
 Base popover component. Bring your own trigger and popover content.
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Popover
     trigger={<div className="margin--bottom"><Button label="Click Me" /></div>}
     position={options('Position', arrayToOptions(VALID_POSITIONS), 'bottom', {
@@ -53,6 +53,25 @@ Base popover component. Bring your own trigger and popover content.
     </div>
   </Popover>
 </Story>
+
+<Preview isExpanded>
+  <Popover
+    position='right'
+    alignment='start'
+    distance={4}
+    interactionMode='click'
+    transitionName="GrowFast"
+    trigger={<div className="margin--bottom"><Button label="Click Me" /></div>}
+  >
+    <div
+      className="padding--all" 
+      style={{ outline: '3px dotted red', background: "#FFFFFF" }}
+    >
+      popover content
+    </div>
+  </Popover>
+</Preview>
+
 
 ## What this component does
 

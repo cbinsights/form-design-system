@@ -10,7 +10,7 @@ import Badge, { SIZES } from './Badge';
 
 <ImportPath component={Badge} section="media" />
 
-<Story name="Badge">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Badge 
     label={text('label', 'Badge')} 
     size={options('size', arrayToOptions(SIZES), undefined, {
@@ -18,6 +18,12 @@ import Badge, { SIZES } from './Badge';
     })}
   />
 </Story>
+
+<Preview isExpanded>
+  <Badge 
+    label="Badge"
+  />
+</Preview>
 
 <Props of={Badge} />
 
@@ -27,7 +33,7 @@ import Badge, { SIZES } from './Badge';
   <Story name="Sizes">
     {SIZES.map(size => (
       <div className="margin--right--half display--inlineBlock">
-        <Badge size={size} label={`Size: ${size}`} />
+        <Badge size={size} label="Badge" />
       </div>
     ))}
   </Story>
