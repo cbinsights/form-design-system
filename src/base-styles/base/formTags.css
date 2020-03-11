@@ -53,6 +53,7 @@ input[type="file"] {
   background: var(--color-white);
   min-width: var(--space-double);
   min-height: var(--space-double);
+  color: var(--color-black);
 }
 
 
