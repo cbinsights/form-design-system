@@ -6,8 +6,8 @@ import {
   MenuButton as ReachMenuButton,
 } from '@reach/menu-button';
 
-const Menu = ({ children, trigger }) => (
-  <ReachMenu>
+const Menu = ({ children, trigger, isInModal }) => (
+  <ReachMenu className={isInModal && 'fdsMenu--inModal'}>
     <ReachMenuButton className="resetButton border--focus rounded--all">
       {trigger}
     </ReachMenuButton>
@@ -17,6 +17,10 @@ const Menu = ({ children, trigger }) => (
   </ReachMenu>
 );
 
+Menu.defaultProps = {
+  isInModal: false,
+};
+
 Menu.propTypes = {
   /** JSX node - the element that should trigger the menu */
   trigger: PropTypes.node.isRequired,
@@ -24,6 +28,9 @@ Menu.propTypes = {
   /** React children (should be of type `MenuItem`) */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
     .isRequired,
+
+  /** Sets `z-index` to `zindex-crazy` when inside a modal. */
+  isInModal: PropTypes.bool,
 };
 
 export default Menu;
