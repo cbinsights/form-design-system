@@ -15,7 +15,7 @@ export const bgColorOptions = options('bgColor', arrayToOptions(BG_COLORS), unde
 
 <ImportPath component={Avatar} section="media" />
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <StoryWrapper>
     <StoryItem>
       <Avatar
@@ -52,6 +52,11 @@ export const bgColorOptions = options('bgColor', arrayToOptions(BG_COLORS), unde
     </StoryItem>
   </StoryWrapper>
 </Story>
+
+<Preview isExpanded>
+  <Avatar name='Samuel Jackson' />
+</Preview>
+
 
 _Displaying an Avatar with an image, and without an image, for visualization purposes_
 

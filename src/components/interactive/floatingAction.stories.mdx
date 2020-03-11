@@ -11,7 +11,7 @@ import FloatingAction, { VALID_FAB_THEMES } from './FloatingAction';
 
 <ImportPath component={FloatingAction} section="interactive" />
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <FloatingAction
     disabled={boolean('disabled', false)}
     isLoading={boolean('isLoading', false)}
@@ -22,6 +22,14 @@ import FloatingAction, { VALID_FAB_THEMES } from './FloatingAction';
     label={text("label", "Add Column")}
   />
 </Story>
+
+<Preview isExpanded>
+  <FloatingAction
+    Icon={ApproveIcon}
+    label="Add Column"
+  />
+</Preview>
+
 
 <Props of={FloatingAction} />
 

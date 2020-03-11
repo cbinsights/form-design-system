@@ -14,8 +14,12 @@ import CountdownButton from './CountdownButton';
 
 An icon button that shows a radial countdown animation immediately on mount.
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <CountdownButton duration={number('duration', 4000)} onClick={action('clicked')} />
 </Story>
+
+<Preview isExpanded>
+  <CountdownButton duration={4000} />
+</Preview>
 
 <Props of={CountdownButton} />
