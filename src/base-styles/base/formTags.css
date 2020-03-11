@@ -53,7 +53,7 @@ input[type="file"] {
   background: var(--color-white);
   min-width: var(--space-double);
   min-height: var(--space-double);
-  color: var(--color-black);
+  color: var(--font-color-primary);
 }
 
 
@@ -169,4 +169,3 @@ textarea:focus {
   box-shadow: 0 0 0 2px var(--color-red);
 }
 /* stylelint-enable */
-
