@@ -27,10 +27,15 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [7.10] Updated Button
+## [7.11] Updated Button
 
 - Button now has an `isActive` state
 - Button colors were completely overhauled (no breaking changes)
+
+## [7.10] Updated DropdownButton
+
+- DropdownButton now accepts an `isFullWidth`
+- It's background color is now white by default.
 
 ## [7.9] Updated Dialog
 
