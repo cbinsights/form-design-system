@@ -27,6 +27,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.10] Disabled MenuItem
+
+- Adds support for `isDisabled` prop in `MenuItem`
+- Changes default z-index for `Menu` to `zindex-popover`
+- Adds `isInModal` prop to `Menu` for bumping up `z-index`
+
 ## [7.9] Updated Dialog
 
 - Dialog now takes a `height` prop (that's applied as `max-height internally)

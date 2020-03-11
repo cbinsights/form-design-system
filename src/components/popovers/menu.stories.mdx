@@ -1,4 +1,4 @@
-import { Meta, Preview, Story, Props } from "@storybook/addon-docs/blocks";
+import { Meta, Preview, Story, Props, Source } from "@storybook/addon-docs/blocks";
 import {
   withKnobs,
   array,
@@ -17,6 +17,7 @@ import CloneIcon from 'lib/icons/react/CloneIcon';
 import TrashIcon from 'lib/icons/react/TrashIcon';
 import EditIcon from 'lib/icons/react/EditIcon';
 import FundingIcon from 'lib/icons/react/FundingIcon';
+import Tooltip from './Tooltip';
 
 import { ImportPath } from '../util/storybook';
 
@@ -136,6 +137,33 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
             </Flex>
           </div>
         </MenuItem>
+    </Menu>
+  </Story>
+</Preview>
+
+## Disabled menu items
+
+When the `isDisabled` prop is passed to a `MenuItem`, the item will be styled as disabled
+and the `onSelect` handler will not be called.
+
+Prefer hiding actions instead of disabling them. Only disable a `MenuItem` if the
+disabling is only temporary (e.g. disabling a collections clone while a clone is in
+progress).
+
+When disabling a `MenuItem`, a `Tooltip` is recommended to explain why the action is disabled.
+
+<Preview>
+  <Story name="Disabled items">
+    <Menu
+      trigger={<Button theme="outlined" label="Menu with disbaled item" hasCaret />}>
+        <MenuItem isDisabled onSelect={() => { alert('🍰') }}>
+          <Tooltip
+            trigger="Cake"
+            message="Not your birthday"
+          />
+        </MenuItem>
+        <MenuItem onSelect={() => { alert('🍕') }}>Pizza</MenuItem>
+        <MenuItem onSelect={() => { alert('☠️') }}>Tide pod</MenuItem>
     </Menu>
   </Story>
 </Preview>
