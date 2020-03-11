@@ -18,7 +18,7 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
 
 <ImportPath component={IconButton} section="interactive" />
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <IconButton
     isDestructive={boolean('isDestructive', false)}
     disabled={boolean('disabled', false)}
@@ -36,6 +36,12 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
     Icon={StarFilledIcon}
   />
 </Story>
+
+<Preview isExpanded>
+  <IconButton
+    Icon={StarFilledIcon}
+  />
+</Preview>
 
 <Props of={IconButton} />
 

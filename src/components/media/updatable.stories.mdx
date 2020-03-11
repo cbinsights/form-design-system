@@ -15,11 +15,17 @@ import Updatable from './Updatable';
 
 Wraps children in an "updatable" container with a `message` displayed as a notification-style red bubble.
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Updatable message={text('message', 42)}>
     <button>lorem ipsum</button>
   </Updatable>
 </Story>
+
+<Preview isExpanded>
+  <Updatable message="42">
+    <button>lorem ipsum</button>
+  </Updatable>
+</Preview>
 
 <Props of={Updatable} />
 

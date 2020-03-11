@@ -34,7 +34,7 @@ export const chipsTwo = [
 
 <ImportPath component={Chip} section="interactive" />
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Chip
     isActive={boolean("isActive", false)}
     label={text("label", "Hello World")}
@@ -47,6 +47,12 @@ export const chipsTwo = [
     theme={options("theme", THEMES, undefined, { display: "inline-radio" })}
   />
 </Story>
+
+<Preview isExpanded>
+  <Chip
+    label="Hello world"
+  />
+</Preview>
 
 <Props of={Chip} />
 

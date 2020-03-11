@@ -14,8 +14,16 @@ import DropdownButton from "./DropdownButton";
 
 <ImportPath component={DropdownButton} section="interactive" />
 
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
+  <DropdownButton
+    isFullWidth={boolean("disabled", undefined)}
+  >
+    {text("children", 'DropdownButton')}
+  </DropdownButton>
+</Story>
+
 <Preview isExpanded>
-  <DropdownButton>Filter by Analyst</DropdownButton>
+  <DropdownButton>Dropdown Button</DropdownButton>
 </Preview>
 
 <Props of={DropdownButton} />
@@ -23,8 +31,10 @@ import DropdownButton from "./DropdownButton";
 DropDownButton will render any JSX passed to it
 
 <Preview>
-  <DropdownButton>
-    <span className="fontWeight--bold fontSize--default">Hello</span> world
-  </DropdownButton>
+  <Story name="JSX">
+    <DropdownButton>
+      <span className="fontWeight--bold fontSize--default">Hello</span> world
+    </DropdownButton>
+  </Story>
 </Preview>
 
