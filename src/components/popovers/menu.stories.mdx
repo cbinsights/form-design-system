@@ -44,7 +44,7 @@ The menu will automatically position above or below the trigger element based on
     <Menu
       trigger={<Button label={text('label', 'Menu trigger')} hasCaret />}>
       {array('Menu Items', ['First', 'Second', 'Third', 'Fourth']).map((item) => (
-        <MenuItem onSelect={ action(`clicked ${item}`)}>{item}</MenuItem>
+        <MenuItem onSelect={action(`clicked ${item}`)}>{item}</MenuItem>
       ))}
     </Menu>
   </div>
@@ -52,10 +52,10 @@ The menu will automatically position above or below the trigger element based on
 
 <Preview isExpanded>
   <Menu trigger={<Button label="Menu trigger" hasCaret />}>
-    <MenuItem onSelect={() => { alert('copy') }}>
+    <MenuItem onSelect={action('copy')}>
       Copy
     </MenuItem>
-    <MenuItem onSelect={() => { alert('delete') }}>
+    <MenuItem onSelect={action('delete')}>
       Delete
     </MenuItem>
   </Menu>
@@ -79,17 +79,17 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
       <FlexItem>
         <Menu
           trigger={<Button theme="outlined" label="Recommended trigger" hasCaret />}>
-            <MenuItem onSelect={() => { alert('🍰') }}>Cake</MenuItem>
-            <MenuItem onSelect={() => { alert('🍕') }}>Pizza</MenuItem>
-            <MenuItem onSelect={() => { alert('☠️') }}>Tide pod</MenuItem>
+            <MenuItem onSelect={action('🍰')}>Cake</MenuItem>
+            <MenuItem onSelect={action('🍕')}>Pizza</MenuItem>
+            <MenuItem onSelect={action('☠️')}>Tide pod</MenuItem>
         </Menu>
       </FlexItem>
       <FlexItem>
         <Menu
           trigger={<div className="bgColor--orange inverted padding--all--half">any jsx will work</div>}>
-            <MenuItem onSelect={() => { alert('🍰') }}>Cake</MenuItem>
-            <MenuItem onSelect={() => { alert('🍕') }}>Pizza</MenuItem>
-            <MenuItem onSelect={() => { alert('☠️') }}>Tide pod</MenuItem>
+            <MenuItem onSelect={action('🍰')}>Cake</MenuItem>
+            <MenuItem onSelect={action('🍕')}>Pizza</MenuItem>
+            <MenuItem onSelect={action('☠️')}>Tide pod</MenuItem>
         </Menu>
       </FlexItem>
     </Flex>
@@ -104,7 +104,7 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
   <Story name="Custom items">
     <Menu
       trigger={<Button hasCaret label="actions" theme="outlined" />}>
-        <MenuItem onSelect={() => { alert('Delete') }}>
+        <MenuItem onSelect={action('Delete')}>
           <div className="color--primary">
             <Flex align="center">
               <FlexItem shrink><TrashIcon /></FlexItem>
@@ -112,7 +112,7 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
             </Flex>
           </div>
         </MenuItem>
-        <MenuItem onSelect={() => { alert('Edit') }}>
+        <MenuItem onSelect={action('Edit')}>
           <div className="color--primary">
             <Flex align="center">
               <FlexItem shrink><EditIcon /></FlexItem>
@@ -120,7 +120,7 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
             </Flex>
           </div>
         </MenuItem>
-        <MenuItem onSelect={() => { alert('Clone') }}>
+        <MenuItem onSelect={action('Clone')}>
           <div className="color--primary">
             <Flex align="center">
               <FlexItem shrink><CloneIcon /></FlexItem>
@@ -128,7 +128,7 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
             </Flex>
           </div>
         </MenuItem>
-        <MenuItem onSelect={() => { alert('Bribe') }}>
+        <MenuItem onSelect={action('Bribe')}>
           <div className="color--primary">
             <Flex align="center">
               <FlexItem shrink><FundingIcon /></FlexItem>
