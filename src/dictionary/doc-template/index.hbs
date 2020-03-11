@@ -1,177 +1,89 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>fds-dictionary</title>
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
-    <link rel="stylesheet" href="assets/pure-min.css" type="text/css">
-    <link rel="stylesheet" href="assets/custom.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" type="text/css">
-  </head>
-  <body>
-    <section class="bounds">
-      <p><a href="https://cbinsights.github.io/form-design-system/">&larr; docs index</a></p>
-      <p><a href="https://github.com/cbinsights/form-design-system">&larr; github</a></p>
-    </section>
-    <section class="bounds">
-      <h1><code>fds-dictionary</code></h1>
-      <div style="font-size: 18px;">
-        <p><strong>For usage in CSS:</strong> all of the custom properties below should already be globally available in your app.</p>
-        <p class="js-clipboard js-import" data-clipboard-text="import FDS from
-        '@cbinsights/fds/lib/dictionary/js/styleConstants'"><strong>For usage in JS:</strong> <code>import FDS from '@cbinsights/fds/lib/dictionary/js/styleConstants'; /* usage: FDS.COLOR_MINT */</code></p>
-      </div>
-      <ul>
-        <li><a href="#color">Color</a></li>
-        <li><a href="#layout">Layout</a></li>
-        <li><a href="#font">Font</a></li>
-        <li><a href="#border">Border</a></li>
-        <li><a href="#motion">Motion</a></li>
-      </ul>
-    </section>
+import { Meta, Source, Story } from "@storybook/addon-docs/blocks";
+import ColorSwatch, { ColorSwatchWrapper } from "components/util/ColorSwatch";
+import { DictionaryTableLayout } from "components/util/Table"
+
+<Meta title="Design Tokens/Dictionary" />
+
+# Dictionary
+
+Using JS Vars: 
+`import FDS from '@cbinsights/fds/lib/dictionary/js/styleConstants'`
+`<CheckIcon color={FDS.COLOR_MINT} />`
+
+Using CSS Vars:
+`.foo { color: var(--color-mint) }`
+
+## Colors
+
+<Story name="Colors">
+  <ColorSwatchWrapper>
+    {{#each this.color}}
+      <ColorSwatch hex="{{this.values.hex}}" cssVar="{{this.varNames.css}}" jsVar="{{this.varNames.js}}" />
+    {{/each}}
+  </ColorSwatchWrapper>
+</Story>
+
+## Layout
+
+<Story name="Layout">
+  <DictionaryTableLayout
+    data={[
+      {{#each this.layout}}
+        {
+          cssVar: '{{ this.varNames.css }}',
+          jsVar: '{{ this.varNames.js }}',
+          value: "{{{ this.value }}}",
+        },
+      {{/each}}
+    ]} 
+  />
+</Story>
 
 
-    <section class="bounds">
-      <h2><a name="color">Color</a></h2>
-      <table class="propertiesTable">
-        <thead>
-          <tr>
-            <th style="padding-left: 22px;">🎨</th>
-            <th id="css">CSS var</th>
-            <th id="js">JS var</th>
-            <th id="hex">hex</th>
-            <th id="rgba">rgba</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each this.color}}
-            <tr>
-              <th><div class="swatch" style="background-color: {{this.values.rgba}}"></div></th>
-              <td class="js-clipboard" data-clipboard-text="{{this.varNames.css}}" headers="css">{{this.varNames.css}}</td>
-              <td class="js-clipboard" data-clipboard-text="{{this.varNames.js}}" headers="js">{{this.varNames.js}}</td>
-              <td class="js-clipboard" data-clipboard-text="#{{this.values.hex}}" headers="hex">#{{this.values.hex}}</td>
-              <td class="js-clipboard" data-clipboard-text="{{this.values.rgba}}" headers="rgba">{{this.values.rgba}}</td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </section>
+## Font
 
-    <section class="bounds">
-      <h2><a name="layout">Layout</a></h2>
-      <table class="propertiesTable">
-        <thead>
-          <tr>
-            <th id="css">CSS var</th>
-            <th id="js">JS var</th>
-            <th id="value">value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each this.layout}}
-            <tr>
-              <td class="js-clipboard" data-clipboard-text="{{this.varNames.css}}" headers="css">{{this.varNames.css}}</td>
-              <td class="js-clipboard" data-clipboard-text="{{this.varNames.js}}" headers="js">{{this.varNames.js}}</td>
-              <td class="js-clipboard" data-clipboard-text="{{this.value}}" headers="value">{{this.value}}</td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </section>
+<Story name="Font">
+  <DictionaryTableLayout
+    data={[
+      {{#each this.font}}
+        {
+          cssVar: '{{ this.varNames.css }}',
+          jsVar: '{{ this.varNames.js }}',
+          value: "{{{ this.value }}}",
+        },
+      {{/each}}
+    ]} 
+  />
+</Story>
 
-    <section class="bounds">
-      <h2><a name="font">Font</a></h1>
-      <table class="propertiesTable">
-        <thead>
-          <tr>
-            <th style="min-width: 360px;" id="css">CSS var</th>
-            <th id="js">JS var</th>
-            <th id="value">value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each this.font}}
-            <tr>
-              <td class="js-clipboard" data-clipboard-text="{{this.varNames.css}}" headers="css">{{this.varNames.css}}</td>
-              <td class="js-clipboard" data-clipboard-text="{{this.varNames.js}}" headers="js">{{this.varNames.js}}</td>
-              <td class="js-clipboard" data-clipboard-text="{{this.value}}" headers="value">{{this.value}}</td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </section>
+## Border
 
-    <section class="bounds">
-      <h2><a name="border">Border</a></h2>
-      <table class="propertiesTable">
-        <thead>
-          <tr>
-            <th id="css">CSS var</th>
-            <th id="js">JS var</th>
-            <th id="value">value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each this.border}}
-            <tr>
-              <td class="js-clipboard" data-clipboard-text="{{this.varNames.css}}" headers="css">{{this.varNames.css}}</td>
-              <td class="js-clipboard" data-clipboard-text="{{this.varNames.js}}" headers="js">{{this.varNames.js}}</td>
-              <td class="js-clipboard" data-clipboard-text="{{this.value}}" headers="rgba">{{this.value}}</td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </section>
+<Story name="Border">
+  <DictionaryTableLayout
+    data={[
+      {{#each this.border}}
+        {
+          cssVar: '{{ this.varNames.css }}',
+          jsVar: '{{ this.varNames.js }}',
+          value: "{{{ this.value }}}",
+        },
+      {{/each}}
+    ]} 
+  />
+</Story>
 
+## Motion
 
-    <section class="bounds">
-      <h2><a name="motion">Motion</a></h1>
-      <table class="propertiesTable">
-        <thead>
-          <tr>
-            <th style="min-width: 360px;" id="css">CSS var</th>
-            <th id="js">JS var</th>
-            <th id="value">value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each this.motion}}
-            <tr>
-              <td class="js-clipboard" data-clipboard-text="{{this.varNames.css}}" headers="css">{{this.varNames.css}}</td>
-              <td class="js-clipboard" data-clipboard-text="{{this.varNames.js}}" headers="js">{{this.varNames.js}}</td>
-              <td class="js-clipboard" data-clipboard-text="{{this.value}}" headers="value">{{this.value}}</td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </section>
-
-  <script
-    src="https://code.jquery.com/jquery-1.12.4.min.js"
-    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-  <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
-  <script type="text/javascript">
-    function autorun() {
-      toastr.options.preventDuplicates = true;
-
-      var clipboard = new ClipboardJS('.js-clipboard');
-
-      clipboard.on('success', function(e) {
-        toastr.clear();
-        toastr.info(`Copied <strong style='color: #003366'>"${e.text}"</strong>`);
-      });
-      clipboard.on('error', function(e) {
-        toastr.clear();
-        toastr.error('Failed to copy to clipboard 😓')
-      });
-
-    }
-    if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
-    else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
-    else window.onload = autorun;
-  </script>
-  </body>
-</html>
+<Story name="Motion">
+  <DictionaryTableLayout
+    data={[
+      {{#each this.motion}}
+        {
+          cssVar: '{{ this.varNames.css }}',
+          jsVar: '{{ this.varNames.js }}',
+          value: "{{{ this.value }}}",
+        },
+      {{/each}}
+    ]} 
+  />
+</Story>

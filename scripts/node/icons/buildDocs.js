@@ -29,7 +29,7 @@ glob(`${buildConfig.docs.input}/*.svg`, {}, (error, files) => {
     });
   });
 
-  fs.writeFileSync(`${buildConfig.docs.output}/index.html`, template(docsView));
+  fs.writeFileSync(`${buildConfig.docs.output}/index.stories.mdx`, template(docsView));
   fs.copySync(buildConfig.docs.assets, `${buildConfig.docs.output}/assets`);
   fs.copySync(buildConfig.docs.css, `${buildConfig.docs.output}/assets/icons.css`);
 });

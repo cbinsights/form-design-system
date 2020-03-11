@@ -102,10 +102,10 @@
         "attribute/varNames",
         "color/css"
       ],
-      "buildPath": "./docs/fds-dictionary/",
+      "buildPath": "./docs/dictionary/",
       "files": [{
         "filter": "excludeCustomMedia",
-        "destination": "index.html",
+        "destination": "index.stories.mdx",
         "format": "html/doc"
       }],
       "actions": ["doc_assets"]

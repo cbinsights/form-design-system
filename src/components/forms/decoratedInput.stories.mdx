@@ -1,13 +1,16 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text } from '@storybook/addon-knobs';
+import { ImportPath } from '../util/storybook';
 
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import DecoratedInput from './DecoratedInput';
 
-<Meta title="Forms|DecoratedInput" decorators={[withKnobs]} component={DecoratedInput} />
+<Meta title="Components/Forms/DecoratedInput" decorators={[withKnobs]} component={DecoratedInput} />
 
 # DecoratedInput
+
+<ImportPath component={DecoratedInput} section="forms" />
 
 Wrapper for `input` elements to add contextual labels to either side of the
 input. **Side labels are not a substitute for `label` elements!**

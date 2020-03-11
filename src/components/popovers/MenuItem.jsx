@@ -11,7 +11,8 @@ MenuItem.propTypes = {
   onSelect: PropTypes.func.isRequired,
 
   /** React children - any JSX can be used in a menu item */
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+    .isRequired,
 };
 
 export default MenuItem;

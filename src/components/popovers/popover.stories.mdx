@@ -14,11 +14,17 @@ import Popover, {
   VALID_POSITIONS,
   VALID_INTERACTION_MODES,
 } from './Popover';
+
+import { ImportPath } from '../util/storybook';
+
 import Button from '../interactive/Button';
 
-<Meta title="Popovers|Popover" decorators={[withKnobs]} component={Popover} />
+
+<Meta title="Components/Popovers/Popover" decorators={[withKnobs]} component={Popover} />
 
 # Popover
+
+<ImportPath component={Popover} section="popovers" />
 
 Base popover component. Bring your own trigger and popover content.
 
