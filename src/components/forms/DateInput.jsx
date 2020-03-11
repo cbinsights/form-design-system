@@ -172,6 +172,7 @@ const DateInput = ({ futureYears, pastYears, defaultDate, onDateChange }) => {
           className="fdsDateInput"
           onDayClick={handleDaySelect}
           selectedDays={selectedDate}
+          showOutsideDays={true}
           navbarElement={<NavArrows />}
           captionElement={({ date, localeUtils }) => (
             <YearAndMonthSelector

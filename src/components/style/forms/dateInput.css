@@ -54,8 +54,13 @@
   padding: var(--space-half);
 }
 
+.fdsDateInput .DayPicker-Day--outside {
+  color: var(--font-color-hint);
+}
+
 .fdsDateInput .DayPicker-Day--selected {
   background-color: var(--color-aqua);
+  color: var(--color-white) !important;
 }
 
 .fdsDateInput .DayPicker-Day--today {
