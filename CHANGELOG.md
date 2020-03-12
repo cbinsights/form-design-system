@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.12] `DateInput`
+
+- Added `DateInput` component.
+
 ## [7.11] Disabled MenuItem
 
 - Adds support for `isDisabled` prop in `MenuItem`
@@ -37,6 +41,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - DropdownButton now accepts an `isFullWidth`
 - It's background color is now white be default.
+>>>>>>> master
 
 ## [7.9] Updated Dialog
 
