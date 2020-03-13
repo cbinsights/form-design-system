@@ -14,14 +14,17 @@ export const VALID_PADDING = ['default', 'double', 'half', 'none'];
  * @returns {String} padding utility classes
  */
 export const getPaddingClasses = (axis, amount) => {
-  const sides = axis === 'x' ? ['left', 'right'] : ['top', 'bottom'];
-
-  let classes = `padding--${sides[0]} padding--${sides[1]}`;
-  if (amount !== 'default') {
-    classes = `padding--${sides[0]}--${amount} padding--${sides[1]}--${amount}`;
+  if (amount === 'none') {
+    return '';
   }
 
-  return classes;
+  const sides = axis === 'x' ? ['left', 'right'] : ['top', 'bottom'];
+
+  if (amount === 'double' || amount === 'half') {
+    return `padding--${sides[0]}--${amount} padding--${sides[1]}--${amount}`;
+  }
+
+  return `padding--${sides[0]} padding--${sides[1]}`;
 };
 
 /**
