@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import Checkbox from './Checkbox';
 
@@ -27,7 +27,7 @@ describe('Checkbox component', () => {
 
   it('fires change callback when checking', () => {
     const changeFn = jest.fn();
-    const input = shallow(<Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />)
+    const input = mount(<Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />)
       .find('input');
 
     expect(changeFn).not.toHaveBeenCalled();
@@ -37,7 +37,7 @@ describe('Checkbox component', () => {
 
   it('fires change callback when unchecking', () => {
     const changeFn = jest.fn();
-    const input = shallow(<Checkbox defaultChecked label="unchecking callback" name="uncheck-callback-test" onChange={changeFn} />)
+    const input = mount(<Checkbox defaultChecked label="unchecking callback" name="uncheck-callback-test" onChange={changeFn} />)
       .find('input');
 
     expect(changeFn).not.toHaveBeenCalled();

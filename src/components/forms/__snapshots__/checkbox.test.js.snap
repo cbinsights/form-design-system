@@ -1,110 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox component matches snapshot (disabled) 1`] = `
-<div
-  className="fdsCheckable fdsCheckbox fdsCheckable--disabled"
+<label
+  className="display--inlineBlock"
 >
-  <input
-    className="media--xs"
-    disabled={true}
-    id="mock-universal-unique-identifier"
-    name="snapshot_checkbox"
-    type="checkbox"
-  />
-  <label
-    className="flush--bottom"
-    htmlFor="mock-universal-unique-identifier"
+  <CustomCheckboxContainer
+    checked={false}
+    className="fdsCheckboxContainer"
+    onChange={[Function]}
   >
+    <CustomCheckboxInput
+      disabled={true}
+      name="snapshot_checkbox"
+    />
     <span
-      className="fdsCheckable-icon--checked"
-    >
-      <CheckFilledIcon
-        size="xs"
-      />
-    </span>
-    <span
-      className="fdsCheckable-icon--unchecked"
+      aria-hidden={true}
+      style={
+        Object {
+          "pointerEvents": "none",
+        }
+      }
     >
       <CheckEmptyIcon
         size="xs"
       />
     </span>
-    <span
-      className="padding--left--half"
-    >
-      Snapshot Label
-    </span>
-  </label>
-</div>
+  </CustomCheckboxContainer>
+  <span
+    className="padding--left--half"
+  >
+    Snapshot Label
+  </span>
+</label>
 `;
 
 exports[`Checkbox component matches snapshot (with label) 1`] = `
-<div
-  className="fdsCheckable fdsCheckbox"
+<label
+  className="display--inlineBlock"
 >
-  <input
-    className="media--xs"
-    disabled={false}
-    id="mock-universal-unique-identifier"
-    name="snapshot_checkbox"
-    type="checkbox"
-  />
-  <label
-    className="flush--bottom"
-    htmlFor="mock-universal-unique-identifier"
+  <CustomCheckboxContainer
+    checked={false}
+    className="fdsCheckboxContainer"
+    onChange={[Function]}
   >
+    <CustomCheckboxInput
+      name="snapshot_checkbox"
+    />
     <span
-      className="fdsCheckable-icon--checked"
-    >
-      <CheckFilledIcon
-        size="xs"
-      />
-    </span>
-    <span
-      className="fdsCheckable-icon--unchecked"
+      aria-hidden={true}
+      style={
+        Object {
+          "pointerEvents": "none",
+        }
+      }
     >
       <CheckEmptyIcon
         size="xs"
       />
     </span>
-    <span
-      className="padding--left--half"
-    >
-      Snapshot Label
-    </span>
-  </label>
-</div>
+  </CustomCheckboxContainer>
+  <span
+    className="padding--left--half"
+  >
+    Snapshot Label
+  </span>
+</label>
 `;
 
 exports[`Checkbox component matches snapshot (without label) 1`] = `
 <div
-  className="fdsCheckable fdsCheckbox"
+  className="display--inlineBlock"
 >
-  <input
-    className="media--xs"
-    disabled={false}
-    id="mock-universal-unique-identifier"
-    name="snapshot_checkbox"
-    type="checkbox"
-  />
-  <label
-    className="flush--bottom"
-    htmlFor="mock-universal-unique-identifier"
+  <CustomCheckboxContainer
+    checked={false}
+    className="fdsCheckboxContainer"
+    onChange={[Function]}
   >
+    <CustomCheckboxInput
+      aria-label="snapshot checkbox"
+      name="snapshot_checkbox"
+    />
     <span
-      className="fdsCheckable-icon--checked"
-    >
-      <CheckFilledIcon
-        size="xs"
-      />
-    </span>
-    <span
-      className="fdsCheckable-icon--unchecked"
+      aria-hidden={true}
+      style={
+        Object {
+          "pointerEvents": "none",
+        }
+      }
     >
       <CheckEmptyIcon
         size="xs"
       />
     </span>
-  </label>
+  </CustomCheckboxContainer>
 </div>
 `;
