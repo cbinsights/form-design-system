@@ -4,7 +4,7 @@ import IconButton, { THEMES } from 'components/interactive/IconButton';
 
 export const VALID_FAB_THEMES = THEMES.filter((t) => t !== 'ghost');
 
-const FloatingAction = ({ Icon, label, isActive, isLoading, ...otherProps }) => (
+const FloatingAction = ({ Icon, label, isActive, isLoading, ...rest }) => (
   <div className="shape--circle elevation--3 display--inlineBlock">
     <IconButton
       isActive={isActive}
@@ -13,7 +13,7 @@ const FloatingAction = ({ Icon, label, isActive, isLoading, ...otherProps }) => 
       label={label}
       size="m"
       radius="circle"
-      {...otherProps}
+      {...rest}
     />
   </div>
 );

@@ -27,7 +27,7 @@ export const getScrollAtributes = (e, contentScrollWidth) => {
  * @returns {ReactElement}
  */
 const Hscroll = (props) => {
-  const { enableFade, enableGutter, bgColor, children, ...otherProps } = props;
+  const { enableFade, enableGutter, bgColor, children, ...rest } = props;
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAtScrollEnd, setIsAtScrollEnd] = useState(false);
@@ -50,7 +50,7 @@ const Hscroll = (props) => {
     <div
       className={containerClassNames}
       onScroll={enableFade ? onScroll : undefined}
-      {...otherProps}
+      {...rest}
     >
       <div className="hscroll-overflowEl">
         <div ref={contentEl} className="hscroll-content">

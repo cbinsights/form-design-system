@@ -11,14 +11,7 @@ import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Checkbox = ({
-  label,
-  showLabel,
-  indeterminate,
-  disabled,
-  inputRef,
-  ...otherProps
-}) => {
+const Checkbox = ({ label, showLabel, indeterminate, disabled, inputRef, ...rest }) => {
   const id = uuidv4();
 
   const IconUnchecked = CheckEmptyIcon;
@@ -34,7 +27,7 @@ const Checkbox = ({
         className="media--xs"
         disabled={disabled}
         ref={inputRef}
-        {...otherProps}
+        {...rest}
       />
       <label className="flush--bottom" htmlFor={id}>
         <span className="fdsCheckable-icon--checked">
