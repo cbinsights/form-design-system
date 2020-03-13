@@ -31,7 +31,7 @@ const Avatar = ({
   return (
     <Element
       {...rest}
-      role="img"
+      role={Element === 'div' && 'img'}
       title={name}
       className={cx(
         'fdsAvatar',
