@@ -2,9 +2,12 @@
 
 exports[`TextInput component matches snapshot (default) 1`] = `
 <Fragment>
-  <div
+  <label
     className="fdsTextInput-root"
   >
+    <div
+      className="fdsTextInput-label"
+    />
     <DecoratedInput>
       <IconInput>
         <input
@@ -14,7 +17,7 @@ exports[`TextInput component matches snapshot (default) 1`] = `
         />
       </IconInput>
     </DecoratedInput>
-  </div>
+  </label>
 </Fragment>
 `;
 
@@ -27,11 +30,6 @@ exports[`TextInput component matches snapshot (default) 2`] = `
       className="fdsTextInput-label"
     >
       label
-      <span
-        className="color--red"
-      >
-         *
-      </span>
     </div>
     <DecoratedInput
       after="after"
@@ -42,7 +40,8 @@ exports[`TextInput component matches snapshot (default) 2`] = `
         IconRight={[Function]}
       >
         <input
-          className="fdsTextInput"
+          aria-label="label"
+          className="fdsTextInput error"
           onChange={[Function]}
           required={true}
           type="number"

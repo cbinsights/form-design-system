@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
-import { Info } from 'components/util/storybook';
+import { Info, arrayToOptions } from 'components/util/storybook';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import { action } from "@storybook/addon-actions";
@@ -28,6 +28,12 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
     IconLeft={boolean("Show IconLeft", undefined) ? CaretDownIcon : undefined}
     before={text("before", undefined)}
     after={text("after", undefined)}
+    orientation={options(
+      "orientation",
+      arrayToOptions(['vertical', 'horizontal']),
+      undefined,
+      { display: "inline-radio" }
+    )}
   />
 </Story>
 
@@ -143,31 +149,45 @@ View this story in Canvas, in the action tab, to see how the callback is throttl
 </Story>
 
 ### Form management library
-You can manually pass required
+You should be able to use this input in any form management library you'd like:
 
-<Story name="Form management library">
-  {() => {
+<Preview>
+  <Story name="Form management library">
+    {() => {
       const { register, handleSubmit, setValue, errors } = useForm();
       return <div>
-        <form onSubmit={handleSubmit(console.log)}>
+        <form onSubmit={handleSubmit(action('submitted'))}>
+          <div className="margin--bottom--half">
           <TextInput
-           name="email"
-           type="text"
-           required={errors.email}
-           ref={register({
-            required: 'Required',
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: "invalid email address"
-            }
-          })}
+            label="Username"
+            name="username"
+            type="text"
+            errorText={errors.username && errors.username.message}
+            ref={register({
+              validate: value => value !== "admin" || "Nice try!"
+            })}
           />
-          <p>{errors.email && errors.email.message}</p>
+          </div>
+          <TextInput
+            label="Email"
+            name="email"
+            type="text"
+            errorText={errors.email && errors.email.message}
+            ref={register({
+              required: 'Required',
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                message: "invalid email address"
+              }
+            })}
+          />
+          <br />
           <button type="submit">Submit</button>
         </form>
       </div>;
-  }}
-</Story>
+    }}
+  </Story>
+</Preview>
 
 ### Misc
 
@@ -202,4 +222,3 @@ Can be used with InputGroup
     </>
   </Story>
 </Preview>
-

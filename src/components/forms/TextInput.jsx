@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { throttle, debounce } from 'throttle-debounce';
 import IconInput from 'components/forms/IconInput';
 import DecoratedInput from 'components/forms/DecoratedInput';
+import cx from 'classnames';
 
 export const throttleValue = 500;
 
@@ -18,11 +19,13 @@ const TextInput = React.forwardRef(
   (
     {
       label,
+      orientation = 'vertical',
       errorText,
       onThrottledChange,
-      required,
-      onChange,
-      type,
+      showRequired,
+      showLabel = true,
+      onChange = () => {},
+      type = 'text',
       IconLeft,
       IconRight,
       after,
@@ -58,15 +61,19 @@ const TextInput = React.forwardRef(
 
     useEffect(assignThrottleFunctions, [onThrottledChange]);
 
-    const Element = label ? 'label' : 'div';
+    const Element = showLabel ? 'label' : 'div';
 
     return (
       <>
-        <Element className="fdsTextInput-root">
-          {label && (
+        <Element
+          className={cx('fdsTextInput-root', {
+            'fdsTextInput-root--horizontal': orientation === 'horizontal',
+          })}
+        >
+          {showLabel && (
             <div className="fdsTextInput-label">
               {label}
-              {required && <span className="color--red">&nbsp;*</span>}
+              {showRequired && <span className="color--red">&nbsp;*</span>}
             </div>
           )}
           <DecoratedInput after={after} before={before}>
@@ -74,10 +81,12 @@ const TextInput = React.forwardRef(
               <input
                 {...props}
                 ref={ref}
-                required={required}
+                aria-label={showLabel ? label : undefined}
                 onChange={inputOnChange}
                 type={type}
-                className="fdsTextInput"
+                className={cx('fdsTextInput', {
+                  error: errorText,
+                })}
               />
             </IconInput>
           </DecoratedInput>
@@ -90,16 +99,11 @@ const TextInput = React.forwardRef(
 
 TextInput.displayName = 'TextInput';
 
-TextInput.defaultProps = {
-  type: 'text',
-  onChange: () => {},
-};
-
 TextInput.propTypes = {
   errorText: PropTypes.string,
 
   /** Label used for `label` element */
-  label: PropTypes.string,
+  label: PropTypes.string.isReqiured,
 
   /**
    * FDS Icon _reference_
@@ -130,6 +134,10 @@ TextInput.propTypes = {
 
   /** String to place to the right of the input */
   after: PropTypes.string,
+
+  orientation: PropTypes.oneOf(['vertical', 'horizontal']),
+  showRequired: PropTypes.bool,
+  showLabel: PropTypes.bool,
 };
 
 export default TextInput;

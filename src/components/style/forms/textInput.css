@@ -7,6 +7,17 @@
   flex-direction: column;
 }
 
+.fdsTextInput-root--horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fdsTextInput-root--horizontal .fdsTextInput-label {
+  order: 1;
+  margin-left: var(--space-half);
+}
+
 .fdsTextInput-label {
   margin-bottom: 4px;
 }
