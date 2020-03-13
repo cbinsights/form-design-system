@@ -26,9 +26,13 @@ export const getScrollAtributes = (e, contentScrollWidth) => {
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Hscroll = (props) => {
-  const { enableFade, enableGutter, bgColor, children, ...otherProps } = props;
-
+const Hscroll = ({
+  enableFade = true,
+  enableGutter = false,
+  bgColor = 'white',
+  children,
+  ...otherProps
+}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAtScrollEnd, setIsAtScrollEnd] = useState(false);
   const contentEl = useRef(null);
@@ -59,12 +63,6 @@ const Hscroll = (props) => {
       </div>
     </div>
   );
-};
-
-Hscroll.defaultProps = {
-  enableFade: true,
-  enableGutter: false,
-  bgColor: 'white',
 };
 
 Hscroll.propTypes = {

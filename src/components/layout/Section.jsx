@@ -47,7 +47,13 @@ export const getBorderClasses = (direction) => {
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Section = ({ xPadding, yPadding, bgColor, border, children }) => {
+const Section = ({
+  xPadding = 'default',
+  yPadding = 'default',
+  bgColor = 'white',
+  border,
+  children,
+}) => {
   const classNames = cx(
     `bgColor--${bgColor}`,
     'display--block',
@@ -60,12 +66,6 @@ const Section = ({ xPadding, yPadding, bgColor, border, children }) => {
   );
 
   return <div className={classNames}>{children}</div>;
-};
-
-Section.defaultProps = {
-  xPadding: 'default',
-  yPadding: 'default',
-  bgColor: 'white',
 };
 
 Section.propTypes = {

@@ -6,7 +6,7 @@ import {
   MenuButton as ReachMenuButton,
 } from '@reach/menu-button';
 
-const Menu = ({ children, trigger, isInModal }) => (
+const Menu = ({ isInModal = false, children, trigger }) => (
   <ReachMenu className={isInModal && 'fdsMenu--inModal'}>
     <ReachMenuButton className="resetButton border--focus rounded--all">
       {trigger}
@@ -16,10 +16,6 @@ const Menu = ({ children, trigger, isInModal }) => (
     </ReachMenuList>
   </ReachMenu>
 );
-
-Menu.defaultProps = {
-  isInModal: false,
-};
 
 Menu.propTypes = {
   /** JSX node - the element that should trigger the menu */

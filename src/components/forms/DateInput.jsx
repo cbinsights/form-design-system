@@ -120,7 +120,7 @@ const NavArrows = ({ onPreviousClick, onNextClick }) => (
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const DateInput = ({ futureYears, pastYears, defaultDate, onDateChange }) => {
+const DateInput = ({ futureYears = 1, pastYears = 40, defaultDate, onDateChange }) => {
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
   const [pickerMonth, setPickerMonth] = useState(new Date());
   const [inputValue, setInputValue] = useState(
@@ -187,11 +187,6 @@ const DateInput = ({ futureYears, pastYears, defaultDate, onDateChange }) => {
       </div>
     </Popover>
   );
-};
-
-DateInput.defaultProps = {
-  futureYears: 1,
-  pastYears: 40,
 };
 
 DateInput.propTypes = {
