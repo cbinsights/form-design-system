@@ -5,6 +5,7 @@ import { Info } from 'components/util/storybook';
 import Flex from '../layout/Flex';
 import FlexItem from '../layout/FlexItem';
 import { action } from "@storybook/addon-actions";
+import { useForm } from "react-hook-form";
 
 import TextInput from './TextInput';
 import InputGroup from 'components/forms/InputGroup';
@@ -139,6 +140,33 @@ View this story in Canvas, in the action tab, to see how the callback is throttl
     IconLeft={CaretDownIcon}
     IconRight={CaretDownIcon}
   />
+</Story>
+
+### Form management library
+You can manually pass required
+
+<Story name="Form management library">
+  {() => {
+      const { register, handleSubmit, setValue, errors } = useForm();
+      return <div>
+        <form onSubmit={handleSubmit(console.log)}>
+          <TextInput
+           name="email"
+           type="text"
+           required={errors.email}
+           ref={register({
+            required: 'Required',
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+              message: "invalid email address"
+            }
+          })}
+          />
+          <p>{errors.email && errors.email.message}</p>
+          <button type="submit">Submit</button>
+        </form>
+      </div>;
+  }}
 </Story>
 
 ### Misc

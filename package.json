@@ -98,6 +98,7 @@
     "raf-schd": "^4",
     "react": "^16.11.0",
     "react-dom": "^16",
+    "react-hook-form": "^5.0.3",
     "react-is": "^16.11.0",
     "react-transition-group": "^2.6",
     "rimraf": "^2.6.2",

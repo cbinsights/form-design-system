@@ -14,72 +14,85 @@ export const throttleInput = (input, throttleFn, debounceFn) => {
   }
 };
 
-const TextInput = ({
-  label,
-  errorText,
-  onThrottledChange,
-  required,
-  onChange,
-  type,
-  IconLeft,
-  IconRight,
-  after,
-  before,
-  ...props
-}) => {
-  // Refer to the following for an explanation on
-  // the throttling / debouncing approach:
-  // https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-in-react
-  let onThrottledChangeThrottled;
-  let onThrottledChangeDebounced;
+const TextInput = React.forwardRef(
+  (
+    {
+      label,
+      errorText,
+      onThrottledChange,
+      required,
+      onChange,
+      type,
+      IconLeft,
+      IconRight,
+      after,
+      before,
+      ...props
+    },
+    ref
+  ) => {
+    // Refer to the following for an explanation on
+    // the throttling / debouncing approach:
+    // https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-in-react
+    let onThrottledChangeThrottled;
+    let onThrottledChangeDebounced;
 
-  const assignThrottleFunctions = () => {
-    if (onThrottledChange) {
-      onThrottledChangeThrottled = throttle(throttleValue, onThrottledChange);
-      onThrottledChangeDebounced = debounce(throttleValue, onThrottledChange);
-    }
-  };
+    const assignThrottleFunctions = () => {
+      if (onThrottledChange) {
+        onThrottledChangeThrottled = throttle(throttleValue, onThrottledChange);
+        onThrottledChangeDebounced = debounce(throttleValue, onThrottledChange);
+      }
+    };
 
-  const inputOnChange = (e) => {
-    e.persist();
-    onChange(e);
-    throttleInput(e.target.value, onThrottledChangeThrottled, onThrottledChangeDebounced);
-  };
+    const inputOnChange = (e) => {
+      e.persist();
+      onChange(e);
+      if (onThrottledChange) {
+        throttleInput(
+          e.target.value,
+          onThrottledChangeThrottled,
+          onThrottledChangeDebounced
+        );
+      }
+    };
 
-  useEffect(assignThrottleFunctions, [onThrottledChange]);
+    useEffect(assignThrottleFunctions, [onThrottledChange]);
 
-  const Element = label ? 'label' : 'div';
+    const Element = label ? 'label' : 'div';
 
-  return (
-    <>
-      <Element className="fdsTextInput-root">
-        {label && (
-          <div className="fdsTextInput-label">
-            {label}
-            {required && <span className="color--red">&nbsp;*</span>}
-          </div>
-        )}
-        <DecoratedInput after={after} before={before}>
-          <IconInput IconLeft={IconLeft} IconRight={IconRight}>
-            <input
-              {...props}
-              required={required}
-              onChange={inputOnChange}
-              type={type}
-              className="fdsTextInput"
-            />
-          </IconInput>
-        </DecoratedInput>
-      </Element>
-      {errorText && <div className="color--red type--data">{errorText}</div>}
-    </>
-  );
-};
+    return (
+      <>
+        <Element className="fdsTextInput-root">
+          {label && (
+            <div className="fdsTextInput-label">
+              {label}
+              {required && <span className="color--red">&nbsp;*</span>}
+            </div>
+          )}
+          <DecoratedInput after={after} before={before}>
+            <IconInput IconLeft={IconLeft} IconRight={IconRight}>
+              <input
+                {...props}
+                ref={ref}
+                required={required}
+                onChange={inputOnChange}
+                type={type}
+                className="fdsTextInput"
+              />
+            </IconInput>
+          </DecoratedInput>
+        </Element>
+        {errorText && <div className="color--red type--data">{errorText}</div>}
+      </>
+    );
+  }
+);
+
+TextInput.displayName = 'TextInput';
 
 TextInput.defaultProps = {
   type: 'text',
   onChange: () => {},
-  onThrottledChange: () => {},
 };
 
 TextInput.propTypes = {
