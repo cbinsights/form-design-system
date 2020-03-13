@@ -1,6 +1,7 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { Info, State } from 'components/util/storybook';
+import { action } from "@storybook/addon-actions";
 
 import Checkbox from './Checkbox';
 
@@ -89,7 +90,7 @@ renders. Read the `checked` attribute of the event `currentTarget`.
 
 <Preview>
   <Story name="Reading the value of a Checkbox">
-    <Checkbox label="Option one" onChange={(e) => { console.log(e.currentTarget.checked) }} />
+    <Checkbox label="Option one" onChange={action('clicked')} />
   </Story>
 </Preview>
 
