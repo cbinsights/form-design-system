@@ -8,7 +8,7 @@ import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
 
 import { CustomCheckboxInput, CustomCheckboxContainer } from '@reach/checkbox';
 
-const Checkbox = ({ label, defaultChecked, ...props }) => {
+const Checkbox = ({ label, defaultChecked, showLabel = true, ...props }) => {
   const [checkedState, setChecked] = useState(props.checked || defaultChecked || false);
   const checked = props.checked != null ? props.checked : checkedState;
 
@@ -26,20 +26,21 @@ const Checkbox = ({ label, defaultChecked, ...props }) => {
     return CheckEmptyIcon;
   })();
 
-  const Element = label ? 'label' : 'div';
+  const Element = showLabel ? 'label' : 'div';
 
   return (
-    <Element className="flush--bottom display--inlineBlock">
+    <Element className="display--inlineBlock">
       <CustomCheckboxContainer
         checked={props.checked != null ? props.checked : checked}
         onChange={onChange}
+        className="fdsCheckboxContainer"
       >
-        <CustomCheckboxInput {...props} />
+        <CustomCheckboxInput {...props} aria-label={!showLabel ? label : undefined} />
         <span aria-hidden style={{ pointerEvents: 'none' }}>
           <CheckboxIcon size="xs" color={checked ? FDS.COLOR_BLUE : undefined} />
         </span>
       </CustomCheckboxContainer>
-      {label && <span className="padding--left--half">{label}</span>}
+      {showLabel && <span className="padding--left--half">{label}</span>}
     </Element>
   );
 };
@@ -60,6 +61,9 @@ Checkbox.propTypes = {
   disabled: PropTypes.bool,
 
   onChange: PropTypes.func,
+
+  /** Controls whether the label surfaces as a text label, or is hidden and applied as an aria-label */
+  showLabel: PropTypes.bool,
 };
 
 export default Checkbox;

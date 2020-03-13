@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import FDS from '../../../lib/dictionary/js/styleConstants';
 
@@ -97,4 +97,9 @@ Info.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
     .isRequired,
   type: PropTypes.oneOf(['warn', 'info']),
+};
+
+export const State = ({ render, initialValue }) => {
+  const [value, setValue] = useState(initialValue);
+  return render(value, setValue);
 };

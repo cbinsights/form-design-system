@@ -1,13 +1,6 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import { Info } from '../util/storybook';
-
-import { useState } from 'react'
-
-export const State = ({ render, children, initialValue }) => {
-  const [value, setValue] = useState(initialValue)
-  return render(value, setValue)
-}
+import { Info, State } from 'components/util/storybook';
 
 import Checkbox from './Checkbox';
 
@@ -100,48 +93,33 @@ renders. Read the `checked` attribute of the event `currentTarget`.
   </Story>
 </Preview>
 
+## Variations
 
-<Story name="Indeterminate">
-  <Checkbox label="thing" checked="mixed" />
-</Story>
-
-<Story name="Controlled Checked">
-  <State
-    initialValue={true}
-    render={(value, setValue) => (
-      <Checkbox label="thing" checked={value} onChange={() => setValue(!value)}/>
-    )}
-  />
-</Story>
-
-<Story name="Controlled Unchecked">
-  <State
-    initialValue={false}
-    render={(value, setValue) => (
-      <Checkbox label="thing" checked={value} onChange={() => setValue(!value)}/>
-    )}
-  />
-</Story>
-
-<Story name="Uncontrolled">
-  <Checkbox label="thing" />
-</Story>
-
-<Story name="Uncontrolled Default Checked">
-  <Checkbox label="thing" defaultChecked />
-</Story>
-
-<Story name="Custom label">
-  <label>
-    <Checkbox />
-    <span className="padding--left--half">thing</span>
-  </label>
-</Story>
-
-<Story name="Custom label pt.2">
-  <>
-    <Checkbox id="blah" />
-    <label className="padding--left--half display--inlineBlock" htmlFor="blah">thing</label>
-  </>
-</Story>
-
+<Preview>
+  <Story name="Variations">
+    <>
+      <Checkbox label="Indeterminate" checked="mixed" />
+      <br />
+      <State
+        initialValue={true}
+        render={(value, setValue) => (
+          <Checkbox label="Controlled Checked" checked={value} onChange={() => setValue(!value)}/>
+        )}
+      />
+      <br />
+      <State
+        initialValue={false}
+        render={(value, setValue) => (
+          <Checkbox label="Controlled Unchecked" checked={value} onChange={() => setValue(!value)}/>
+        )}
+      />
+      <br />
+      <Checkbox label="Uncontrolled" />
+      <br />
+      <Checkbox label="Uncontrolled Default Checked" defaultChecked />
+      <br />
+      <Checkbox id="blah" />
+      <label className="display--inlineBlock" htmlFor="blah">Custom label (htmlFor)</label>
+    </>
+  </Story>
+</Preview>
