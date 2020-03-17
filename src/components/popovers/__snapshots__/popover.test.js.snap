@@ -2,12 +2,6 @@
 
 exports[`Popover component matches snapshot (default props) 1`] = `
 <Popover
-  alignment="start"
-  distance={4}
-  interactionMode="click"
-  onClose={[Function]}
-  onOpen={[Function]}
-  position="auto"
   trigger={
     <button>
       trigger

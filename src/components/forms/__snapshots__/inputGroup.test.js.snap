@@ -6,7 +6,6 @@ exports[`InputGroup component matches snapshot (set all props) 1`] = `
 >
   <Flex
     align="center"
-    direction="row"
     noGutters={true}
   >
     <FlexItem

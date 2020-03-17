@@ -34,29 +34,32 @@ export const AlignPropMap = {
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Flex = (props) => {
+const Flex = ({
+  align = 'stretch',
+  direction = 'row',
+  reverse,
+  justify,
+  wrap,
+  noGutters,
+  children,
+}) => {
   const classNames = cx(
     'flex',
-    AlignPropMap[props.align],
-    DirectionPropMap[props.direction],
+    AlignPropMap[align],
+    DirectionPropMap[direction],
     {
-      [`flex--${props.direction}--reverse`]: props.reverse,
+      [`flex--${direction}--reverse`]: reverse,
     },
     {
-      [JustifyPropMap[props.justify]]: props.justify,
+      [JustifyPropMap[justify]]: justify,
     },
     {
-      'flex--wrap': props.wrap,
-      'flex--noGutters': props.noGutters,
+      'flex--wrap': wrap,
+      'flex--noGutters': noGutters,
     }
   );
 
-  return <div className={classNames}>{props.children}</div>;
-};
-
-Flex.defaultProps = {
-  direction: 'row',
-  align: 'stretch',
+  return <div className={classNames}>{children}</div>;
 };
 
 Flex.propTypes = {

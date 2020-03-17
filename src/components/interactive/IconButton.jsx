@@ -8,13 +8,13 @@ export const RADII = ['square', 'circle'];
 export const SIZES = ['s', 'm'];
 
 const IconButton = ({
+  radius = 'square',
+  theme = 'ghost',
+  size = 'm',
   Icon,
   disabled,
   isActive,
-  radius,
-  theme,
   isLoading,
-  size,
   isDestructive,
   label,
   Link,
@@ -48,12 +48,6 @@ const IconButton = ({
       </span>
     </Element>
   );
-};
-
-IconButton.defaultProps = {
-  radius: 'square',
-  theme: 'ghost',
-  size: 'm',
 };
 
 IconButton.propTypes = {

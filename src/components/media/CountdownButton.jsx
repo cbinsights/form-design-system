@@ -20,7 +20,7 @@ export const getCircleInfo = (circleSize, strokeWidth) => {
   };
 };
 
-const CountdownButton = ({ Icon, duration, onClick }) => {
+const CountdownButton = ({ Icon = DenyIcon, duration, onClick }) => {
   const circleSize = 34;
   const strokeWidth = '2';
   const { r, c, centerOffset } = getCircleInfo(circleSize, strokeWidth);
@@ -91,10 +91,6 @@ const CountdownButton = ({ Icon, duration, onClick }) => {
       </Transition>
     </div>
   );
-};
-
-CountdownButton.defaultProps = {
-  Icon: DenyIcon,
 };
 
 CountdownButton.propTypes = {

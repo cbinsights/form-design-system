@@ -18,13 +18,13 @@ export const grabInitials = (str, initialsCount = 2) =>
     .toUpperCase();
 
 const Avatar = ({
-  bgColor,
-  imgUrl,
-  size,
-  name,
+  bgColor = 'purple',
+  size = 'm',
+  radius = 'circle',
   'aria-label': ariaLabel = 'Avatar',
-  initialsLength,
-  radius,
+  initialsLength = 2,
+  imgUrl,
+  name,
   Link,
   ...rest
 }) => {
@@ -52,13 +52,6 @@ const Avatar = ({
       {name && grabInitials(name, initialsLength)}
     </Element>
   );
-};
-
-Avatar.defaultProps = {
-  bgColor: 'purple',
-  size: 'm',
-  radius: 'circle',
-  initialsLength: 2,
 };
 
 Avatar.propTypes = {

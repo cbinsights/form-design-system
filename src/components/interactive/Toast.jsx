@@ -13,14 +13,14 @@ import Button from 'components/interactive/Button';
 import IconButton from 'components/interactive/IconButton';
 
 const Toast = ({
+  isAutoDismiss = true,
+  dismissDelay = 4000,
+  canDismiss = true,
   content,
   type,
   actionLabel,
   progress,
   onAction,
-  isAutoDismiss,
-  dismissDelay,
-  canDismiss,
   dismissToast /* Passed from Toaster */,
 }) => {
   const classNames = cx('toast', `toast--${type}`);
@@ -113,13 +113,6 @@ const Toast = ({
   );
 };
 
-Toast.defaultProps = {
-  dismissDelay: 4000,
-  canDismiss: true,
-  isAutoDismiss: true,
-  onDismiss: () => {},
-};
-
 Toast.propTypes = {
   /** JSX Content of Toast */
   content: PropTypes.element.isRequired,
@@ -132,9 +125,6 @@ Toast.propTypes = {
 
   /** Callback for action button click */
   onAction: PropTypes.func,
-
-  /** Callback invoked on dismissal of toast */
-  onDismiss: PropTypes.func,
 
   /** Time in ms to auto-dismiss toast */
   dismissDelay: PropTypes.number,

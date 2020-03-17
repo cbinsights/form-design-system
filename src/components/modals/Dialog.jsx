@@ -18,12 +18,23 @@ export const isElementOverflowing = ({ current }) => {
   return false;
 };
 
-const Dialog = (props) => {
+const Dialog = ({
+  role = 'dialog',
+  width = '500px',
+  height = '80vh',
+  disableFocusTrap = false,
+  onDismiss,
+  alwaysShowBorder,
+  isOpen,
+  title,
+  content,
+  footerContent,
+}) => {
   const contentEl = useRef(null);
 
   const handleKeyDown = (e) => {
-    if (props.onDismiss && e.key === 'Escape') {
-      props.onDismiss();
+    if (onDismiss && e.key === 'Escape') {
+      onDismiss();
     }
   };
 
@@ -34,7 +45,7 @@ const Dialog = (props) => {
   };
 
   useEffect(() => {
-    if (!props.alwaysShowBorder) {
+    if (!alwaysShowBorder) {
       handleResize(); // needs to fire once immediately on mount
       // eslint-disable-next-line no-undef
       window.addEventListener('resize', handleResize);
@@ -45,17 +56,17 @@ const Dialog = (props) => {
       };
     }
     return undefined;
-  }, [props.alwaysShowBorder]);
+  }, [alwaysShowBorder]);
 
   useLayoutEffect(() => {
     // This toggles scrolling on and off based on whether the modal
     // is shown or not
-    if (props.isOpen) {
+    if (isOpen) {
       noScroll.on();
     } else {
       noScroll.off();
     }
-  }, [props.isOpen]);
+  }, [isOpen]);
 
   const dialogNode = (
     <div>
@@ -63,34 +74,30 @@ const Dialog = (props) => {
       <div className="dialog-zIndex dialog-wrapper">
         <div
           className="dialog elevation--3"
-          role={props.role}
-          aria-labelledby={props.title && 'a11y-dialog-title'}
+          role={role}
+          aria-labelledby={title && 'a11y-dialog-title'}
           aria-describedby="a11y-dialog-desc"
           tabIndex="-1"
           aria-modal="true"
           onKeyDown={handleKeyDown}
           style={{
-            maxWidth: `${props.width}${typeof props.width === 'number' ? 'px' : ''} `,
-            maxHeight: `${props.height}${typeof props.height === 'number' ? 'px' : ''}`,
+            maxWidth: `${width}${typeof width === 'number' ? 'px' : ''} `,
+            maxHeight: `${height}${typeof height === 'number' ? 'px' : ''}`,
           }}
         >
-          {(props.title || props.onDismiss) && (
+          {(title || onDismiss) && (
             <React.Fragment>
               <div className="dialog-header">
                 <Section border="bottom">
                   <div className="padding--right--double type--head4">
-                    {props.title ? (
-                      <span id="a11y-dialog-title">{props.title}</span>
-                    ) : (
-                      '\u00A0'
-                    )}{' '}
+                    {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
                     {/* There always needs to be something (even a space) in the header for display reasons */}
                   </div>
-                  {props.onDismiss && (
+                  {onDismiss && (
                     <div className="dialog-icon">
                       <IconButton
                         Icon={DenyIcon}
-                        onClick={props.onDismiss}
+                        onClick={onDismiss}
                         aria-label="close"
                       />
                     </div>
@@ -100,15 +107,15 @@ const Dialog = (props) => {
             </React.Fragment>
           )}
           <div className="dialog-content" ref={contentEl}>
-            <Section>{props.content}</Section>
+            <Section>{content}</Section>
           </div>
-          {props.footerContent && (
+          {footerContent && (
             <div className="dialog-footer">
               <Section
-                border={props.alwaysShowBorder || isOverflowing ? 'top' : undefined}
+                border={alwaysShowBorder || isOverflowing ? 'top' : undefined}
                 bgColor="white"
               >
-                {props.footerContent}
+                {footerContent}
               </Section>
             </div>
           )}
@@ -120,9 +127,9 @@ const Dialog = (props) => {
   return (
     <React.Fragment>
       {ReactDOM.createPortal(
-        <CSSTransition timeout={200} in={props.isOpen} classNames="dialog" unmountOnExit>
+        <CSSTransition timeout={200} in={isOpen} classNames="dialog" unmountOnExit>
           <React.Fragment>
-            {props.disableFocusTrap ? dialogNode : <FocusTrap>{dialogNode}</FocusTrap>}
+            {disableFocusTrap ? dialogNode : <FocusTrap>{dialogNode}</FocusTrap>}
           </React.Fragment>
         </CSSTransition>,
         // eslint-disable-next-line no-undef
@@ -130,13 +137,6 @@ const Dialog = (props) => {
       )}
     </React.Fragment>
   );
-};
-
-Dialog.defaultProps = {
-  role: 'dialog',
-  width: '500px',
-  height: '80vh',
-  disableFocusTrap: false,
 };
 
 Dialog.propTypes = {
