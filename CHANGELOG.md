@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.13] Attachment Icon
+
+- Added `AttachmentIcon` to icons
+
 ## [7.12] `DateInput`
 
 - Added `DateInput` component.
