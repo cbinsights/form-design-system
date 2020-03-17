@@ -17,16 +17,12 @@ exports[`Toaster component matches snapshot 1`] = `
       unmountOnExit={true}
     >
       <Toast
-        canDismiss={true}
         content={
           <p>
             test
           </p>
         }
-        dismissDelay={4000}
         dismissToast={[Function]}
-        isAutoDismiss={true}
-        onDismiss={[Function]}
         type="info"
       />
     </CSSTransition>
