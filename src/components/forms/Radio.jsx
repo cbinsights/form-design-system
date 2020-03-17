@@ -10,38 +10,39 @@ import RadioFilledIcon from 'lib/icons/react/RadioFilledIcon';
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Radio = ({
-  showLabel = true,
-  disabled = false,
-  inputRef,
-  name,
-  label,
-  ...otherProps
-}) => {
-  const id = uuidv4();
+const Radio = React.forwardRef(
+  ({ showLabel = true, disabled = false, name, label, ...otherProps }, ref) => {
+    const id = uuidv4();
 
-  return (
-    <div className={cx('fdsCheckable fdsRadio', { 'fdsCheckable--disabled': disabled })}>
-      <input
-        ref={inputRef}
-        type="radio"
-        name={name}
-        id={id}
-        className="media--xs"
-        {...otherProps}
-      />
-      <label className="flush--bottom" htmlFor={id}>
-        <span className="fdsCheckable-icon--checked">
-          <RadioFilledIcon size="xs" />
-        </span>
-        <span className="fdsCheckable-icon--unchecked">
-          <RadioEmptyIcon size="xs" />
-        </span>
-        {showLabel && <span className="padding--left--half">{label}</span>}
-      </label>
-    </div>
-  );
-};
+    return (
+      <div
+        className={cx('fdsCheckable fdsRadio', {
+          'fdsCheckable--disabled': disabled,
+        })}
+      >
+        <input
+          ref={ref}
+          type="radio"
+          name={name}
+          id={id}
+          className="media--xs"
+          {...otherProps}
+        />
+        <label className="flush--bottom" htmlFor={id}>
+          <span className="fdsCheckable-icon--checked">
+            <RadioFilledIcon size="xs" />
+          </span>
+          <span className="fdsCheckable-icon--unchecked">
+            <RadioEmptyIcon size="xs" />
+          </span>
+          {showLabel && <span className="padding--left--half">{label}</span>}
+        </label>
+      </div>
+    );
+  }
+);
+
+Radio.displayName = 'Radio';
 
 Radio.propTypes = {
   /**
@@ -55,9 +56,6 @@ Radio.propTypes = {
 
   /** If the supplied `label` prop should be rendered to the screen. */
   showLabel: PropTypes.bool,
-
-  /** Ref for input element */
-  inputRef: PropTypes.func,
 
   /** `true` checks the radio by default */
   defaultChecked: PropTypes.bool,
