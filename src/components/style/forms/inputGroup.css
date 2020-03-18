@@ -73,7 +73,8 @@
   z-index: 3;
 }
 
-/* Safari 10+ Only */
+/* `select` styling overrides for Safari 10+ Only */
+/* All other browsers ignore this media query */
 @media not all and (min-resolution: 0.001dpcm) {
   @media {
     .fdsInputGroup select {
