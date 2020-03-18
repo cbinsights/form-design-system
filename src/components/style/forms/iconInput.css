@@ -1,6 +1,7 @@
 
 .fdsIconInput {
   position: relative;
+  width: 100%;
 }
 
 .fdsIconInput input {
