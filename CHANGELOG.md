@@ -27,6 +27,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.14] Configurable `InputGroup`
+
+- All `InputGroup` components will now fill their parent container using 100% width
+- Updated internal logic of `InputGroup` for setting shrink/grow defaults
+- Added `flexSettings` prop to `InputGroup` to allow for customization of shrink/grow for each input item
+
 ## [7.13] Attachment Icon
 
 - Added `AttachmentIcon` to icons

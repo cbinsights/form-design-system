@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import InputGroup from './InputGroup';
+import InputGroup, { getFlexSettings } from './InputGroup';
 
 describe('InputGroup component', () => {
   it('matches snapshot (set all props)', () => {
@@ -18,29 +18,23 @@ describe('InputGroup component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('Applies flex grow and shrink correctly', () => {
-    const flexItems = mount(
-      <InputGroup>
-        <input type="text" />
-        <input type="text" />
-        <input type="text" />
-        <input type="text" />
-      </InputGroup>
-    ).find('.flexItem');
-
-    it('applies shrink to first item', () => {
-      expect(flexItems.first().hasClass('flexItem--shrink')).toBe(true);
+  describe('getFlexSettings', () => {
+    it('sets expected default for 2 items', () => {
+      expect(getFlexSettings(2)).toStrictEqual(['grow', 'shrink']);
     });
 
-    it('applies shrink to last item', () => {
-      expect(flexItems.last().hasClass('flexItem--shrink')).toBe(true);
+    it('sets expected default for 3 items', () => {
+      expect(getFlexSettings(3)).toStrictEqual(['shrink', 'grow', 'shrink']);
     });
 
-    it('does NOT apply shrink to middle items', () => {
-      const itemsWithoutShrink = flexItems.filter(':not(.flexItem--shrink)');
-      expect(itemsWithoutShrink).toHaveLength(2);
+    it('sets expected default for 4 items', () => {
+      expect(getFlexSettings(4)).toStrictEqual(['shrink', 'grow', 'grow', 'shrink']);
     });
 
+    it('overrides default when user passes in their own settings', () => {
+      const userSetting = ['grow', 'grow', 'shrink', 'grow'];
+      expect(getFlexSettings(userSetting.length, userSetting)).toStrictEqual(userSetting);
+    });
   });
 
 });
