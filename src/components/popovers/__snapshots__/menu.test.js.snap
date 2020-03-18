@@ -2,7 +2,6 @@
 
 exports[`Popover component matches snapshot (JSX items) 1`] = `
 <Menu
-  isInModal={false}
   trigger={
     <a
       href="#"
@@ -156,7 +155,6 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
 
 exports[`Popover component matches snapshot (string items) 1`] = `
 <Menu
-  isInModal={false}
   trigger={
     <a
       href="#"

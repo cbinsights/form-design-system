@@ -4,7 +4,14 @@ import IconButton, { THEMES } from 'components/interactive/IconButton';
 
 export const VALID_FAB_THEMES = THEMES.filter((t) => t !== 'ghost');
 
-const FloatingAction = ({ Icon, label, isActive, isLoading, ...rest }) => (
+const FloatingAction = ({
+  theme = 'aqua',
+  Icon,
+  label,
+  isActive,
+  isLoading,
+  ...rest
+}) => (
   <div className="shape--circle elevation--3 display--inlineBlock">
     <IconButton
       isActive={isActive}
@@ -13,14 +20,11 @@ const FloatingAction = ({ Icon, label, isActive, isLoading, ...rest }) => (
       label={label}
       size="m"
       radius="circle"
+      theme={theme}
       {...rest}
     />
   </div>
 );
-
-FloatingAction.defaultProps = {
-  theme: 'aqua',
-};
 
 FloatingAction.propTypes = {
   /** Used to render a FDS Icon (should only be used for FDS Icons) */

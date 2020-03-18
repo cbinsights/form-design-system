@@ -11,7 +11,14 @@ import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Checkbox = ({ label, showLabel, indeterminate, disabled, inputRef, ...rest }) => {
+const Checkbox = ({
+  showLabel = true,
+  indeterminate = false,
+  disabled = false,
+  label,
+  inputRef,
+  ...rest
+}) => {
   const id = uuidv4();
 
   const IconUnchecked = CheckEmptyIcon;
@@ -40,12 +47,6 @@ const Checkbox = ({ label, showLabel, indeterminate, disabled, inputRef, ...rest
       </label>
     </div>
   );
-};
-
-Checkbox.defaultProps = {
-  indeterminate: false,
-  disabled: false,
-  showLabel: true,
 };
 
 Checkbox.propTypes = {

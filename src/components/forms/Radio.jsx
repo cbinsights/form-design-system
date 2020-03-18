@@ -10,7 +10,14 @@ import RadioFilledIcon from 'lib/icons/react/RadioFilledIcon';
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Radio = ({ inputRef, name, label, showLabel, disabled, ...rest }) => {
+const Radio = ({
+  showLabel = true,
+  disabled = false,
+  inputRef,
+  name,
+  label,
+  ...rest
+}) => {
   const id = uuidv4();
 
   return (
@@ -34,11 +41,6 @@ const Radio = ({ inputRef, name, label, showLabel, disabled, ...rest }) => {
       </label>
     </div>
   );
-};
-
-Radio.defaultProps = {
-  showLabel: true,
-  disabled: false,
 };
 
 Radio.propTypes = {

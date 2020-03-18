@@ -5,11 +5,11 @@ import baseElement from 'util/baseElement';
 
 export const GroupButton = (props) => {
   const {
+    Wrapper = (wrapperProps) => wrapperProps.children,
     isActive,
     Icon,
     label,
     Link,
-    Wrapper,
     isFirstButton,
     isLastButton,
     ...rest
@@ -36,10 +36,6 @@ export const GroupButton = (props) => {
       </Element>
     </Wrapper>
   );
-};
-
-GroupButton.defaultProps = {
-  Wrapper: (props) => props.children,
 };
 
 GroupButton.propTypes = {

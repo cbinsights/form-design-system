@@ -6,7 +6,6 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
 >
   <GroupButton
     Icon={[Function]}
-    Wrapper={[Function]}
     isActive={true}
     isFirstButton={true}
     isLastButton={false}
@@ -15,7 +14,6 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
   />
   <GroupButton
     Icon={[Function]}
-    Wrapper={[Function]}
     disabled={true}
     isFirstButton={false}
     isLastButton={true}
@@ -32,7 +30,6 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
 >
   <GroupButton
     Icon={[Function]}
-    Wrapper={[Function]}
     isActive={true}
     isFirstButton={true}
     isLastButton={false}
@@ -42,7 +39,6 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
   />
   <GroupButton
     Icon={[Function]}
-    Wrapper={[Function]}
     disabled={true}
     isFirstButton={false}
     isLastButton={true}

@@ -223,11 +223,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
               <div
                 className="dialog-content"
               >
-                <Section
-                  bgColor="white"
-                  xPadding="default"
-                  yPadding="default"
-                >
+                <Section>
                   foo
                 </Section>
               </div>
@@ -459,10 +455,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
               className="dialog-header"
             >
               <Section
-                bgColor="white"
                 border="bottom"
-                xPadding="default"
-                yPadding="default"
               >
                 <div
                   className="padding--right--double type--head4"
@@ -481,9 +474,6 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                     Icon={[Function]}
                     aria-label="close"
                     onClick={[Function]}
-                    radius="square"
-                    size="m"
-                    theme="ghost"
                   />
                 </div>
               </Section>
@@ -491,11 +481,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
             <div
               className="dialog-content"
             >
-              <Section
-                bgColor="white"
-                xPadding="default"
-                yPadding="default"
-              >
+              <Section>
                 foo
               </Section>
             </div>
@@ -505,8 +491,6 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
               <Section
                 bgColor="white"
                 border="top"
-                xPadding="default"
-                yPadding="default"
               >
                 <div>
                   foo

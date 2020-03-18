@@ -29,17 +29,17 @@ export const getPopperPlacement = (position, alignment) => {
  * @returns {ReactElement}
  */
 const Popover = ({
+  interactionMode = 'click',
+  disablePortal,
+  position = 'auto',
+  alignment = 'start',
+  distance = 4,
+  onOpen = () => {},
+  onClose = () => {},
   trigger,
   children,
-  interactionMode,
-  disablePortal,
-  position,
-  alignment,
-  distance,
   isOpen,
   transitionName,
-  onOpen,
-  onClose,
 }) => {
   const [isActive, setIsActive] = useState(false);
   const refTriggerWrap = useRef(null);
@@ -196,15 +196,6 @@ const Popover = ({
           )}
     </Manager>
   );
-};
-
-Popover.defaultProps = {
-  interactionMode: 'click',
-  position: 'auto',
-  alignment: 'start',
-  distance: 4,
-  onOpen: () => {},
-  onClose: () => {},
 };
 
 Popover.propTypes = {
