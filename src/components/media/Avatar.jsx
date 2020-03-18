@@ -21,6 +21,7 @@ const Avatar = ({
   bgColor = 'purple',
   size = 'm',
   radius = 'circle',
+  'aria-label': ariaLabel = 'Avatar',
   initialsLength = 2,
   imgUrl,
   name,
@@ -31,7 +32,8 @@ const Avatar = ({
   return (
     <Element
       {...rest}
-      role="img"
+      role={Element === 'div' && 'img'}
+      aria-label={ariaLabel}
       title={name}
       className={cx(
         'fdsAvatar',
@@ -74,6 +76,8 @@ Avatar.propTypes = {
    * - `Link={Link}`
    */
   Link: PropTypes.func,
+  /** Adds an aria-label to the component (we add a default one for you, but it's preferred to add one if you can.) */
+  'aria-label': PropTypes.string,
 };
 
 export default Avatar;
