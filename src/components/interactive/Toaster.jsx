@@ -6,18 +6,12 @@ import uuidv4 from 'uuid/v4';
 import Toast from './Toast';
 
 const Toaster = ({ toastProps = {}, dismissDelay = 4000 }) => {
-  const [toast, setToast] = useState(null);
+  const [isToastShowing, setIsToastShowing] = useState(false);
 
-  const dismissToast = () => setToast(null);
+  const dismissToast = () => setIsToastShowing(false);
 
   useEffect(() => {
-    setToast(
-      <Toast
-        type={toastProps.type}
-        dismissDelay={dismissDelay}
-        dismissToast={dismissToast}
-      />
-    );
+    setIsToastShowing(true);
 
     const timer = setTimeout(() => dismissToast(), dismissDelay);
 
@@ -36,7 +30,15 @@ const Toaster = ({ toastProps = {}, dismissDelay = 4000 }) => {
           timeout={380}
           classNames="rtgSlideIn"
         >
-          <div className="toaster">{toast}</div>
+          <div className="toaster">
+            {isToastShowing && (
+              <Toast
+                type={toastProps.type}
+                dismissDelay={dismissDelay}
+                dismissToast={dismissToast}
+              />
+            )}
+          </div>
         </CSSTransition>
       </TransitionGroup>
     </div>,
