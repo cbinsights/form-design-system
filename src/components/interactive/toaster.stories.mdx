@@ -3,7 +3,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, select, text } from '@storybook/addon-knobs';
 
 import { ImportPath, State } from '../util/storybook';
 
@@ -19,15 +19,18 @@ Controller for positioning, transition, and dismissal of toasts.
 
 <Story name="Knobs">
   <Toaster
-    toastProps={{ type: select(
-      'type',
-      {
-        Error: 'error',
-        Success: 'success',
-        Info: 'info',
-      },
-      'error'
-    ) }}
+    toastProps={{ 
+      type: select(
+        'type',
+        {
+          Error: 'error',
+          Success: 'success',
+          Info: 'info',
+        },
+        'error'
+      ),
+      content: text('content', undefined)
+    }}
     />
 </Story>
 

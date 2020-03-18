@@ -24,7 +24,7 @@ const Toaster = ({ toastProps = {}, dismissDelay = 4000 }) => {
     <div aria-live="assertive">
       <TransitionGroup>
         <CSSTransition
-          key={uuidv4()}
+          key={uuidv4()} // This is the key to the re-render. We may need to only generate a new uuid under specific circumstances like progress
           appear
           unmountOnExit
           timeout={380}
@@ -33,9 +33,11 @@ const Toaster = ({ toastProps = {}, dismissDelay = 4000 }) => {
           <div className="toaster">
             {isToastShowing && (
               <Toast
-                type={toastProps.type}
                 dismissDelay={dismissDelay}
                 dismissToast={dismissToast}
+                isAutoDismiss={toastProps.isAutoDismiss}
+                content={toastProps.content}
+                type={toastProps.type}
               />
             )}
           </div>
