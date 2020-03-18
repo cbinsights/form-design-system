@@ -1,8 +1,11 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import uuid from 'uuid/v4';
 
 import Toast from './Toast';
 import Toaster from './Toaster';
+
+jest.mock('uuid/v4');
 
 const renderToaster = (useShallow, props) => {
   const toast = <Toast type="info" content={<p>test</p>} />;
@@ -17,6 +20,8 @@ const renderToaster = (useShallow, props) => {
 
 
 describe('Toaster component', () => {
+
+  uuid.mockImplementation(() => 'testid');
 
   it('matches snapshot', () => {
     const component = renderToaster(true);

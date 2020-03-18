@@ -140,6 +140,8 @@ Toast.propTypes = {
 
   /** Passed by Toaster: function to dismiss the toast */
   dismissToast: PropTypes.func,
+
+  ActionButton: PropTypes.node,
 };
 
 export default Toast;

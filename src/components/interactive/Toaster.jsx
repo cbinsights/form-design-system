@@ -1,68 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { CSSTransition } from 'react-transition-group';
-import PropTypes from 'prop-types';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import uuidv4 from 'uuid/v4';
+// import PropTypes from 'prop-types';
+import Toast from './Toast';
 
-/**
- * @module Toaster
- * Controller for showing, dismissing and positioning Toast components.
- */
-const Toaster = ({ toast }) => {
-  const [isToasting, setIsToasting] = useState(Boolean(toast));
-  let clonedToast = null;
+const Toaster = ({ toastProps = {}, dismissDelay = 4000 }) => {
+  const [toast, setToast] = useState(null);
 
-  const dismissToast = () => {
-    setIsToasting(false);
-  };
+  const dismissToast = () => setToast(null);
 
-  // pass dismiss function down to toast
-  if (toast) {
-    clonedToast = React.cloneElement(toast, { dismissToast });
-  }
-
-  // when the value of toast prop goes from falsey to truthy, set isToasting to true
   useEffect(() => {
-    if (toast && !isToasting) {
-      setIsToasting(true);
-    }
-  }, [Boolean(toast)]);
+    setToast(
+      <Toast
+        type={toastProps.type}
+        dismissDelay={dismissDelay}
+        dismissToast={dismissToast}
+      />
+    );
 
-  // set a timeout for toast to dismiss itself
-  // eslint-disable-next-line consistent-return
-  useEffect(() => {
-    if (toast && toast.props.isAutoDismiss) {
-      const timer = setTimeout(dismissToast, toast.props.dismissDelay);
+    const timer = setTimeout(() => dismissToast(), dismissDelay);
 
-      return function cleanup() {
-        clearTimeout(timer);
-      };
-    }
-  });
-  const onExited = (toast && toast.props && toast.props.onDismiss) || (() => {});
+    return function cleanup() {
+      clearTimeout(timer);
+    };
+  }, [toastProps.type, toastProps.content]); // We can check for whatever we'd like here
 
   return ReactDOM.createPortal(
-    <div aria-live="assertive" className="toaster">
-      <CSSTransition
-        in={isToasting}
-        appear
-        unmountOnExit
-        timeout={380}
-        classNames="rtgSlideIn"
-        onExited={onExited}
-      >
-        {clonedToast}
-      </CSSTransition>
+    <div aria-live="assertive">
+      <TransitionGroup>
+        <CSSTransition
+          key={uuidv4()}
+          appear
+          unmountOnExit
+          timeout={380}
+          classNames="rtgSlideIn"
+        >
+          <div className="toaster">{toast}</div>
+        </CSSTransition>
+      </TransitionGroup>
     </div>,
     // eslint-disable-next-line no-undef
     document.body
   );
 };
 
-Toaster.displayName = 'Toaster';
-
-Toaster.propTypes = {
-  /** a `Toast` element */
-  toast: PropTypes.element,
-};
+Toaster.propTypes = {};
 
 export default Toaster;
