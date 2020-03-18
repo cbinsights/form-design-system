@@ -51,7 +51,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - DropdownButton now accepts an `isFullWidth`
 - It's background color is now white be default.
->>>>>>> master
 
 ## [7.9] Updated Dialog
 
