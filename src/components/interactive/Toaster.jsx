@@ -13,7 +13,7 @@ const Toaster = ({ toastProps = {}, dismissDelay = 4000 }) => {
 
   useEffect(() => {
     transitionID = uuidv4();
-  }, [toastProps.content]);
+  }, [toastProps.content, toastProps.type]);
 
   useEffect(() => {
     if (Object.keys(toastProps).length) {
@@ -32,6 +32,7 @@ const Toaster = ({ toastProps = {}, dismissDelay = 4000 }) => {
               isAutoDismiss={toastProps.isAutoDismiss}
               content={toastProps.content}
               type={toastProps.type}
+              progress={toastProps.progress}
             />
           </div>
         </CSSTransition>
@@ -45,7 +46,7 @@ const Toaster = ({ toastProps = {}, dismissDelay = 4000 }) => {
     return function cleanup() {
       clearTimeout(timer);
     };
-  }, [toastProps.content, toastProps.type]); // We can check for whatever we'd like here
+  }, [toastProps.content, toastProps.type, toastProps.progress]); // We can check for whatever we'd like here
 
   return ReactDOM.createPortal(
     <div aria-live="assertive">

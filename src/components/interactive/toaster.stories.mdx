@@ -1,15 +1,31 @@
-import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import {
+  Meta,
+  Story,
+  Preview,
+  Props,
+  Source
+} from "@storybook/addon-docs/blocks";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select, text } from '@storybook/addon-knobs';
+import { storiesOf } from "@storybook/react";
+import {
+  withKnobs,
+  select,
+  text,
+  number,
+  optionsKnob as options
+} from "@storybook/addon-knobs";
 
-import { ImportPath, State } from '../util/storybook';
+import { ImportPath, State, arrayToOptions } from "components/util/storybook";
 
-import Toaster from './Toaster';
+import Toaster from "components/interactive/Toaster";
 
-<Meta title="Components/Interactive/Toaster" decorators={[withKnobs]} component={Toaster} />
+<Meta
+  title="Components/Interactive/Toaster"
+  decorators={[withKnobs]}
+  component={Toaster}
+/>
 
 # Toaster
 
@@ -19,28 +35,32 @@ Controller for positioning, transition, and dismissal of toasts.
 
 <Story name="Knobs">
   <Toaster
-    toastProps={{ 
-      type: select(
-        'type',
-        {
-          Error: 'error',
-          Success: 'success',
-          Info: 'info',
-        },
-        'error'
+    toastProps={{
+      progress: number("progress", 42, {
+        range: true,
+        min: 1,
+        max: 100,
+        step: 1
+      }),
+      type: options(
+        "type",
+        arrayToOptions(['error', 'success', 'info', 'progress']),
+        undefined,
+        { display: "inline-radio" }
       ),
-      content: text('content', undefined)
+      content: text("content", undefined)
     }}
-    />
+  />
 </Story>
-
 
 Timer starts immediately on mount.
 
 **⚠️ Include only one `Toaster` component per page/container** to ensure that only one toast is rendered at a time.
 
 ### New toasts replace existing toasts
+
 Currently, `Toaster` only shows one toast at a time. If a new toast is rendered, it should immediately replace the existing toast.
 
 ### Persisting a `Toast`
+
 Use the `isAutoDismiss` prop of `Toast` to disable the dismiss timer.
