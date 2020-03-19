@@ -5,44 +5,48 @@ import uuidv4 from 'uuid/v4';
 // import PropTypes from 'prop-types';
 import Toast from './Toast';
 
-const Toaster = ({ toastProps = {}, dismissDelay = 4000 }) => {
-  const [isToastShowing, setIsToastShowing] = useState(false);
+let transitionID = uuidv4();
 
-  const dismissToast = () => setIsToastShowing(false);
+const Toaster = ({ toastProps = {}, dismissDelay = 4000 }) => {
+  const [toast, setToast] = useState(null);
+
+  const dismissToast = () => setToast(null);
 
   useEffect(() => {
-    setIsToastShowing(true);
+    transitionID = uuidv4();
+  }, [toastProps.content]);
+
+  useEffect(() => {
+    setToast(
+      <CSSTransition
+        key={transitionID}
+        appear
+        unmountOnExit
+        timeout={380}
+        classNames="rtgSlideIn"
+      >
+        <div className="toaster">
+          <Toast
+            dismissDelay={dismissDelay}
+            dismissToast={dismissToast}
+            isAutoDismiss={toastProps.isAutoDismiss}
+            content={toastProps.content}
+            type={toastProps.type}
+          />
+        </div>
+      </CSSTransition>
+    );
 
     const timer = setTimeout(() => dismissToast(), dismissDelay);
 
     return function cleanup() {
       clearTimeout(timer);
     };
-  }, [toastProps.type, toastProps.content]); // We can check for whatever we'd like here
+  }, [toastProps.content, toastProps.type]); // We can check for whatever we'd like here
 
   return ReactDOM.createPortal(
     <div aria-live="assertive">
-      <TransitionGroup>
-        <CSSTransition
-          key={uuidv4()} // This is the key to the re-render. We may need to only generate a new uuid under specific circumstances like progress
-          appear
-          unmountOnExit
-          timeout={380}
-          classNames="rtgSlideIn"
-        >
-          <div className="toaster">
-            {isToastShowing && (
-              <Toast
-                dismissDelay={dismissDelay}
-                dismissToast={dismissToast}
-                isAutoDismiss={toastProps.isAutoDismiss}
-                content={toastProps.content}
-                type={toastProps.type}
-              />
-            )}
-          </div>
-        </CSSTransition>
-      </TransitionGroup>
+      <TransitionGroup>{toast}</TransitionGroup>
     </div>,
     // eslint-disable-next-line no-undef
     document.body
