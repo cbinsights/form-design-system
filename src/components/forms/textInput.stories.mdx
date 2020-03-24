@@ -21,7 +21,7 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
   <TextInput
     label={text("label", "Label")}
     errorText={text("errorText", undefined)}
-    required={boolean("required", undefined)}
+    showRequired={boolean("required", undefined)}
     type={text("type", undefined)}
     onChange={action("changed")}
     IconRight={boolean("Show IconRight", undefined) ? CaretDownIcon : undefined}
@@ -43,7 +43,7 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
     <br />
     <TextInput
       label="First Name"
-      required
+      showRequired
       errorText="Custom error text"
       placeholder="Placeholder text"
       IconRight={CaretDownIcon}
@@ -66,10 +66,10 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
     <>
       <Flex>
         <FlexItem>
-          <TextInput label="First Name" required />
+          <TextInput label="First Name" showRequired />
         </FlexItem>
         <FlexItem>
-          <TextInput label="Last Name" required />
+          <TextInput label="Last Name" showRequired />
         </FlexItem >
       </Flex>
       <Flex>
