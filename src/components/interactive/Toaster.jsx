@@ -64,6 +64,7 @@ export const Toaster = ({
     // We need to check for all toastProps and all Toaster props here so that
     // an update of them re-renders the Toast (without animation).
     // Note: you "cannot" spread props here... do not attempt to do so :)
+    // You may be able to spread "propTypes" from Toast if you're ambitious.
   }, [
     toastProps.content,
     toastProps.type,
@@ -71,7 +72,9 @@ export const Toaster = ({
     toastProps.actionLabel,
     toastProps.canDismiss,
     toastProps.onAction,
+    toastProps.dismissOnAction,
     isAutoDismiss,
+    dismissDelay,
   ]);
 
   return (
