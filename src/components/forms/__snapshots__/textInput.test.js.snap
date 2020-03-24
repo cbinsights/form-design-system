@@ -5,9 +5,6 @@ exports[`TextInput component matches snapshot (default) 1`] = `
   <label
     className="fdsTextInput-root"
   >
-    <div
-      className="fdsTextInput-label"
-    />
     <DecoratedInput>
       <IconInput>
         <input
