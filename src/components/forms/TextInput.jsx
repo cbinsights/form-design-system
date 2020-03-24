@@ -70,7 +70,7 @@ const TextInput = React.forwardRef(
             'fdsTextInput-root--horizontal': orientation === 'horizontal',
           })}
         >
-          {showLabel && (
+          {showLabel && label && (
             <div className="fdsTextInput-label">
               {label}
               {showRequired && <span className="color--red">&nbsp;*</span>}
