@@ -31,8 +31,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
-#### `Thing` Component
-Component was updated / removed.
+#### `Toaster` Component
+- Toaster was refactored, and no longer uses *most* of it's previous props (`onDismiss`, `content`, and `type`). It still uses `isAutoDismiss`.
+- Toaster now manages the hiding and showing of Toast internally.
+- Toaster now renders its own Toast component, configured via `toastProps`
+- Toaster now also accepts a `dismissDelay` prop directly.
 
 ## [7.14] Configurable `InputGroup`
 
