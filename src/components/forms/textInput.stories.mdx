@@ -1,9 +1,9 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
 import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
-import { Info, arrayToOptions } from 'components/util/storybook';
-import Flex from '../layout/Flex';
-import FlexItem from '../layout/FlexItem';
+import { Info, State, arrayToOptions } from 'components/util/storybook';
+import Flex from 'components/layout/Flex';
+import FlexItem from 'components/layout/FlexItem';
 import { action } from "@storybook/addon-actions";
 import { useForm } from "react-hook-form";
 
@@ -112,9 +112,14 @@ View this story in Canvas, in the action tab, to see how the callback is throttl
 ### Controlled Input
 
 <Story name="Controlled Input">
-  <TextInput
-    value="Controlled"
-  />
+  <State
+    initialValue="Controlled"
+    render={(value, setValue) => (
+      <TextInput
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    )}
 </Story>
 
 ### Icons

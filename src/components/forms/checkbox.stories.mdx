@@ -1,16 +1,18 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import { Info } from '../util/storybook';
+import { Info, ImportPath } from '../util/storybook';
 
 import Checkbox from './Checkbox';
 
-<Meta title="Forms|Checkbox" decorators={[withKnobs]} component={Checkbox} />
+<Meta title="Components/Forms/Checkbox" decorators={[withKnobs]} component={Checkbox} />
 
 # Checkbox
 
+<ImportPath component={Checkbox} section="forms" />
+
 Uncontrolled custom checkbox component with optional label.
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Checkbox
     indeterminate={boolean('indeterminate', false)}
     disabled={boolean('disabled', false)}
@@ -19,10 +21,12 @@ Uncontrolled custom checkbox component with optional label.
   />
 </Story>
 
-<Source
-  language="jsx"
-  code='<Checkbox label="I agree to receive spam" />'
-/>
+<Preview isExpanded>
+  <Checkbox
+    name="knobs"
+    label='I agree to receive spam'
+  />
+</Preview>
 
 <Info type="info">
   Additional props will be spread on the `input` element.

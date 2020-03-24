@@ -1,22 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const IconComponent = (props) => (
+const IconComponent = ({ size = 's', color, customSize, children }) => (
   <div
-    className={`fds-icon fds-icon--${props.size}`}
+    className={`fds-icon fds-icon--${size}`}
     style={{
-      fill: props.color,
-      width: props.customSize && `${props.customSize}px`,
-      height: props.customSize && `${props.customSize}px`,
+      fill: color,
+      width: customSize && `${customSize}px`,
+      height: customSize && `${customSize}px`,
     }}
   >
-    {props.children}
+    {children}
   </div>
 );
-
-IconComponent.defaultProps = {
-  size: 's',
-};
 
 IconComponent.propTypes = {
   color: PropTypes.string,

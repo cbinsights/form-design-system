@@ -27,9 +27,34 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [7.10] Add TextInput
+## [7.15] Add TextInput
 
 - Added `TextInput` form component for inputs
+
+## [7.14] Configurable `InputGroup`
+
+- All `InputGroup` components will now fill their parent container using 100% width
+- Updated internal logic of `InputGroup` for setting shrink/grow defaults
+- Added `flexSettings` prop to `InputGroup` to allow for customization of shrink/grow for each input item
+
+## [7.13] Attachment Icon
+
+- Added `AttachmentIcon` to icons
+
+## [7.12] `DateInput`
+
+- Added `DateInput` component.
+
+## [7.11] Disabled MenuItem
+
+- Adds support for `isDisabled` prop in `MenuItem`
+- Changes default z-index for `Menu` to `zindex-popover`
+- Adds `isInModal` prop to `Menu` for bumping up `z-index`
+
+## [7.10] Updated DropdownButton
+
+- DropdownButton now accepts an `isFullWidth`
+- It's background color is now white be default.
 
 ## [7.9] Updated Dialog
 

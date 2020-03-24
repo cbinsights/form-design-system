@@ -1,4 +1,4 @@
-import { Meta, Preview, Story, Props } from "@storybook/addon-docs/blocks";
+import { Meta, Preview, Story, Props, Source } from "@storybook/addon-docs/blocks";
 import {
   withKnobs,
   array,
@@ -8,22 +8,29 @@ import {
 } from "@storybook/addon-knobs";
 import { action } from '@storybook/addon-actions';
 
-import Menu from './Menu';
-import MenuItem from './MenuItem';
+import Button from 'components/interactive/Button';
 
-import Button from '../interactive/Button';
-
-import Flex from '../layout/Flex';
-import FlexItem from '../layout/FlexItem';
+import Flex from 'components/layout/Flex';
+import FlexItem from 'components/layout/FlexItem';
 
 import CloneIcon from 'lib/icons/react/CloneIcon';
 import TrashIcon from 'lib/icons/react/TrashIcon';
 import EditIcon from 'lib/icons/react/EditIcon';
 import FundingIcon from 'lib/icons/react/FundingIcon';
+import Tooltip from './Tooltip';
 
-<Meta title="Popovers|Menu" component={Menu} decorators={[withKnobs]} />
+import { ImportPath } from '../util/storybook';
+
+import Menu from './Menu';
+import MenuItem from './MenuItem';
+
+
+<Meta title="Components/Popovers/Menu" component={Menu} decorators={[withKnobs]} />
 
 # Menu
+
+<ImportPath component={Menu} section="popovers" />
+<ImportPath component={MenuItem} section="popovers" />
 
 Renders a basic keyboard navigable dropdown menu following the [WAI-ARIA pattern for "menubutton"](https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton).
 
@@ -38,7 +45,7 @@ The menu will automatically position above or below the trigger element based on
     <Menu
       trigger={<Button label={text('label', 'Menu trigger')} hasCaret />}>
       {array('Menu Items', ['First', 'Second', 'Third', 'Fourth']).map((item) => (
-        <MenuItem onSelect={ action(`clicked ${item}`)}>{item}</MenuItem>
+        <MenuItem onSelect={action(`clicked ${item}`)}>{item}</MenuItem>
       ))}
     </Menu>
   </div>
@@ -46,10 +53,10 @@ The menu will automatically position above or below the trigger element based on
 
 <Preview isExpanded>
   <Menu trigger={<Button label="Menu trigger" hasCaret />}>
-    <MenuItem onSelect={() => { alert('copy') }}>
+    <MenuItem onSelect={action('copy')}>
       Copy
     </MenuItem>
-    <MenuItem onSelect={() => { alert('delete') }}>
+    <MenuItem onSelect={action('delete')}>
       Delete
     </MenuItem>
   </Menu>
@@ -73,17 +80,17 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
       <FlexItem>
         <Menu
           trigger={<Button theme="outlined" label="Recommended trigger" hasCaret />}>
-            <MenuItem onSelect={() => { alert('🍰') }}>Cake</MenuItem>
-            <MenuItem onSelect={() => { alert('🍕') }}>Pizza</MenuItem>
-            <MenuItem onSelect={() => { alert('☠️') }}>Tide pod</MenuItem>
+            <MenuItem onSelect={action('🍰')}>Cake</MenuItem>
+            <MenuItem onSelect={action('🍕')}>Pizza</MenuItem>
+            <MenuItem onSelect={action('☠️')}>Tide pod</MenuItem>
         </Menu>
       </FlexItem>
       <FlexItem>
         <Menu
           trigger={<div className="bgColor--orange inverted padding--all--half">any jsx will work</div>}>
-            <MenuItem onSelect={() => { alert('🍰') }}>Cake</MenuItem>
-            <MenuItem onSelect={() => { alert('🍕') }}>Pizza</MenuItem>
-            <MenuItem onSelect={() => { alert('☠️') }}>Tide pod</MenuItem>
+            <MenuItem onSelect={action('🍰')}>Cake</MenuItem>
+            <MenuItem onSelect={action('🍕')}>Pizza</MenuItem>
+            <MenuItem onSelect={action('☠️')}>Tide pod</MenuItem>
         </Menu>
       </FlexItem>
     </Flex>
@@ -98,7 +105,7 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
   <Story name="Custom items">
     <Menu
       trigger={<Button hasCaret label="actions" theme="outlined" />}>
-        <MenuItem onSelect={() => { alert('Delete') }}>
+        <MenuItem onSelect={action('Delete')}>
           <div className="color--primary">
             <Flex align="center">
               <FlexItem shrink><TrashIcon /></FlexItem>
@@ -106,7 +113,7 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
             </Flex>
           </div>
         </MenuItem>
-        <MenuItem onSelect={() => { alert('Edit') }}>
+        <MenuItem onSelect={action('Edit')}>
           <div className="color--primary">
             <Flex align="center">
               <FlexItem shrink><EditIcon /></FlexItem>
@@ -114,7 +121,7 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
             </Flex>
           </div>
         </MenuItem>
-        <MenuItem onSelect={() => { alert('Clone') }}>
+        <MenuItem onSelect={action('Clone')}>
           <div className="color--primary">
             <Flex align="center">
               <FlexItem shrink><CloneIcon /></FlexItem>
@@ -122,7 +129,7 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
             </Flex>
           </div>
         </MenuItem>
-        <MenuItem onSelect={() => { alert('Bribe') }}>
+        <MenuItem onSelect={action('Bribe')}>
           <div className="color--primary">
             <Flex align="center">
               <FlexItem shrink><FundingIcon /></FlexItem>
@@ -130,6 +137,33 @@ The Menu trigger can be any JSX, but a `Button` with the `hasCaret` prop enabled
             </Flex>
           </div>
         </MenuItem>
+    </Menu>
+  </Story>
+</Preview>
+
+## Disabled menu items
+
+When the `isDisabled` prop is passed to a `MenuItem`, the item will be styled as disabled
+and the `onSelect` handler will not be called.
+
+Prefer hiding actions instead of disabling them. Only disable a `MenuItem` if the
+disabling is only temporary (e.g. disabling a collections clone while a clone is in
+progress).
+
+When disabling a `MenuItem`, a `Tooltip` is recommended to explain why the action is disabled.
+
+<Preview>
+  <Story name="Disabled items">
+    <Menu
+      trigger={<Button theme="outlined" label="Menu with disabled item" hasCaret />}>
+        <MenuItem isDisabled onSelect={() => { alert('🍰') }}>
+          <Tooltip
+            trigger="Cake"
+            message="Not your birthday"
+          />
+        </MenuItem>
+        <MenuItem onSelect={() => { alert('🍕') }}>Pizza</MenuItem>
+        <MenuItem onSelect={() => { alert('☠️') }}>Tide pod</MenuItem>
     </Menu>
   </Story>
 </Preview>

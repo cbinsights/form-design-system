@@ -1,0 +1,47 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { TableLayout } from "components/util/Table"
+import FDS from 'lib/dictionary/js/styleConstants';
+import { generalStyles, Typesetting, Headers  } from 'base-styles/styledocUtils';
+
+export const positionStyles = {
+  ...generalStyles,
+  border: `1px solid ${FDS.COLOR_CHARCOAL}`,
+  padding: 2 
+}
+
+export const boxStyles = {
+  height: 30,
+  width: 30,
+  background: FDS.COLOR_CHARCOAL,
+  borderRadius: 3
+}
+
+<Meta title="Style Utilities/Typesetting"  />
+
+# Typesetting
+
+<TableLayout
+  isCSS
+  headers={['class', 'description']}
+  rows={[
+    ['type--head1', 'Top level heading'],
+    ['type--head2', 'Secondary heading'],
+    ['type--head3', 'Tertiary heading'],
+    ['type--head4', 'Minor heading'],
+    ['type--big', 'Big body text'],
+    ['type--data', 'Typesetting for data (e.g. tables)'],
+    ['type--caption', 'Tiny text for captions and legalese. **This is not very readable; only use in special circumstances.**'],
+    ['type--link', 'Sets text display to look like a link'],
+  ]} 
+/>
+
+To set the display of a given heading tag, use one of the typesetting classes below.
+(By default, HTML heading tags are set to match the default body text.)
+
+<Typesetting />
+
+## Inverted
+All Typesetting classes get an optimized display for
+dark backgrounds by being placed inside an `.inverted` context:
+
+<Typesetting isInverted />

@@ -12,12 +12,12 @@ import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
  * @returns {ReactElement}
  */
 const Checkbox = ({
+  showLabel = true,
+  indeterminate = false,
+  disabled = false,
   label,
-  showLabel,
-  indeterminate,
-  disabled,
   inputRef,
-  ...otherProps
+  ...rest
 }) => {
   const id = uuidv4();
 
@@ -34,7 +34,7 @@ const Checkbox = ({
         className="media--xs"
         disabled={disabled}
         ref={inputRef}
-        {...otherProps}
+        {...rest}
       />
       <label className="flush--bottom" htmlFor={id}>
         <span className="fdsCheckable-icon--checked">
@@ -47,12 +47,6 @@ const Checkbox = ({
       </label>
     </div>
   );
-};
-
-Checkbox.defaultProps = {
-  indeterminate: false,
-  disabled: false,
-  showLabel: true,
 };
 
 Checkbox.propTypes = {
