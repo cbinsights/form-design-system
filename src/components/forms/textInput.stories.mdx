@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 import TextInput from './TextInput';
 import InputGroup from 'components/forms/InputGroup';
 
-<Meta title="Forms|TextInput" decorators={[withKnobs]} component={TextInput} />
+<Meta title="Components/Forms/TextInput" decorators={[withKnobs]} component={TextInput} />
 
 # TextInput
 
@@ -111,47 +111,56 @@ View this story in Canvas, in the action tab, to see how the callback is throttl
 
 ### Controlled Input
 
-<Story name="Controlled Input">
-  <State
-    initialValue="Controlled"
-    render={(value, setValue) => (
-      <TextInput
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-    )}
-</Story>
+<Preview>
+  <Story name="Controlled Input">
+    <State
+      initialValue="Controlled"
+      render={(value, setValue) => (
+        <TextInput
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      )}
+    />
+  </Story>
+</Preview>
 
 ### Icons
 
-<Story name="Icons">
-  <TextInput
-    IconLeft={CaretDownIcon}
-    IconRight={CaretDownIcon}
-  />
-</Story>
+<Preview>
+  <Story name="Icons">
+    <TextInput
+      IconLeft={CaretDownIcon}
+      IconRight={CaretDownIcon}
+    />
+  </Story>
+</Preview>
 
 ### Side label
 
-<Story name="Before & After">
-  <TextInput
-    before="before"
-    after="after"
-  />
-</Story>
+<Preview>
+  <Story name="Before & After">
+    <TextInput
+      before="before"
+      after="after"
+    />
+  </Story>
+</Preview>
 
 ### Side Labels + Icon
 
-<Story name="Side + Icon">
-  <TextInput
-    label="Label"
-    placeholder="placeholder"
-    before="before"
-    after="after"
-    IconLeft={CaretDownIcon}
-    IconRight={CaretDownIcon}
-  />
-</Story>
+<Preview>
+  <Story name="Side + Icon">
+    <TextInput
+      label="Label"
+      placeholder="placeholder"
+      before="before"
+      after="after"
+      IconLeft={CaretDownIcon}
+      IconRight={CaretDownIcon}
+    />
+  </Story>
+</Preview>
 
 ### Form management library
 You should be able to use this input in any form management library you'd like:
