@@ -151,8 +151,3 @@ ImportPath.propTypes = {
     'popovers',
   ]),
 };
-
-export const State = ({ render, initialValue }) => {
-  const [value, setValue] = useState(initialValue);
-  return render(value, setValue);
-};
