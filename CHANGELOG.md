@@ -27,6 +27,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [8.0] MAJOR
+
+### **BREAKING CHANGES**
+
+#### `Thing` Component
+Component was updated / removed.
+
 ## [7.14] Configurable `InputGroup`
 
 - All `InputGroup` components will now fill their parent container using 100% width
