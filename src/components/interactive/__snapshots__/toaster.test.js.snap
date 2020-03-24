@@ -4,13 +4,15 @@ exports[`Toaster component matches snapshot 1`] = `
 <Portal
   containerInfo={<body />}
 >
-  <div
-    aria-live="assertive"
-  >
-    <TransitionGroup
-      childFactory={[Function]}
-      component="div"
-    />
-  </div>
+  <Toaster
+    toastProps={
+      Object {
+        "content": <p>
+          test
+        </p>,
+        "type": "info",
+      }
+    }
+  />
 </Portal>
 `;

@@ -21,7 +21,8 @@ import {
 
 import { ImportPath, State, arrayToOptions } from "components/util/storybook";
 
-import Toaster from "components/interactive/Toaster";
+import Toaster, { Toaster as RawToaster } from "components/interactive/Toaster";
+import Toast from "components/interactive/Toast";
 
 <Meta
   title="Components/Interactive/Toaster"
@@ -31,7 +32,7 @@ import Toaster from "components/interactive/Toaster";
 
 # Toaster
 
-<ImportPath component={Toaster} section="interactive" />
+<ImportPath component={RawToaster} section="interactive" />
 
 Controller for positioning, transition, and dismissal of toasts.
 
@@ -62,12 +63,10 @@ Controller for positioning, transition, and dismissal of toasts.
   />
 </Story>
 
-**⚠️ Include only one `Toaster` component per application** to ensure that only one toast is rendered at a time.
+<Props of={RawToaster} />
 
-### New toasts replace existing toasts
+Important notes:
 
-`Toaster` only shows one toast at a time. Anytime `content` or `type` is added or modified, the current Toast will slide
-down, and the new Toast with the updated content / type will slide up. Any other modified props will change the Toast in
-place, without triggering re-animation.
-
-**There's a lot you can do with Toast. Refer to the props of Toast for the full details.**
+- **⚠️ Include only one `Toaster` component per application** to ensure that only one toast is rendered at a time.
+- Anytime `content` or `type` is added or modified, the Toast will animate out, and a new Toast will take it's place. 
+- Any other modified props will change the Toast in place, without triggering re-animation.

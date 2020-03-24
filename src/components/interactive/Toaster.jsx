@@ -7,7 +7,11 @@ import Toast from './Toast';
 
 let transitionID = uuidv4();
 
-const Toaster = ({ toastProps = {}, dismissDelay = 4000, isAutoDismiss = true }) => {
+export const Toaster = ({
+  toastProps = {},
+  dismissDelay = 4000,
+  isAutoDismiss = true,
+}) => {
   const [toast, setToast] = useState(null);
 
   const dismissToast = () => setToast(null);
@@ -70,19 +74,27 @@ const Toaster = ({ toastProps = {}, dismissDelay = 4000, isAutoDismiss = true })
     isAutoDismiss,
   ]);
 
-  return ReactDOM.createPortal(
+  return (
     <div aria-live="assertive">
       <TransitionGroup>{toast}</TransitionGroup>
-    </div>,
-    // eslint-disable-next-line no-undef
-    document.body
+    </div>
   );
 };
 
-Toaster.displayName = 'Toaster';
+const ToasterWrapper = (props) =>
+  ReactDOM.createPortal(
+    <Toaster {...props} />,
+    // eslint-disable-next-line no-undef
+    document.body
+  );
 
 Toaster.propTypes = {
+  /** Accepts all props that `Toast` accepts. Refer to Toast component for full documentation */
+  toastProps: Toast.propTypes,
+  /** Should this toast auto-dismiss itself? */
+  isAutoDismiss: PropTypes.bool,
+  /** Time in ms to auto-dismiss toast */
   dismissDelay: PropTypes.number,
 };
 
-export default Toaster;
+export default ToasterWrapper;
