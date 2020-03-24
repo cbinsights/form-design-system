@@ -16,7 +16,7 @@ const Radio = ({
   inputRef,
   name,
   label,
-  ...otherProps
+  ...rest
 }) => {
   const id = uuidv4();
 
@@ -28,7 +28,7 @@ const Radio = ({
         name={name}
         id={id}
         className="media--xs"
-        {...otherProps}
+        {...rest}
       />
       <label className="flush--bottom" htmlFor={id}>
         <span className="fdsCheckable-icon--checked">

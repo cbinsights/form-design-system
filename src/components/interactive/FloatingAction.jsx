@@ -10,7 +10,7 @@ const FloatingAction = ({
   label,
   isActive,
   isLoading,
-  ...otherProps
+  ...rest
 }) => (
   <div className="shape--circle elevation--3 display--inlineBlock">
     <IconButton
@@ -21,7 +21,7 @@ const FloatingAction = ({
       size="m"
       radius="circle"
       theme={theme}
-      {...otherProps}
+      {...rest}
     />
   </div>
 );

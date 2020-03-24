@@ -107,6 +107,14 @@ Props that accept a list of items should always be plural:
 +listItems={['thing one', 'thing two']}
 ```
 
+Always name rest props `rest`:
+
+```diff
+-const Component = ({ foo, bar, ...props})
+-const Component = ({ foo, bar, ...otherProps})
++const Component = ({ foo, bar, ...rest})
+```
+
 ## CSS classes
 In FDS, we follow a modified BEM naming convention. With our convention, hyphens carry the
 meaning for block-element relationships and underscores are reserved for conditional

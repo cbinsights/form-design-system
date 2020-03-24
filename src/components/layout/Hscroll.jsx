@@ -31,7 +31,7 @@ const Hscroll = ({
   enableGutter = false,
   bgColor = 'white',
   children,
-  ...otherProps
+  ...rest
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAtScrollEnd, setIsAtScrollEnd] = useState(false);
@@ -54,7 +54,7 @@ const Hscroll = ({
     <div
       className={containerClassNames}
       onScroll={enableFade ? onScroll : undefined}
-      {...otherProps}
+      {...rest}
     >
       <div className="hscroll-overflowEl">
         <div ref={contentEl} className="hscroll-content">
