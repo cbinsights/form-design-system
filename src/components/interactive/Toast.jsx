@@ -16,6 +16,7 @@ const Toast = ({
   isAutoDismiss = true,
   dismissDelay = 4000,
   canDismiss = true,
+  dismissOnAction = true,
   type = 'info',
   content,
   actionLabel,
@@ -58,10 +59,8 @@ const Toast = ({
   );
 
   const onActionDismiss = (event) => {
-    dismissToast();
-    if (typeof onAction === 'function') {
-      onAction(event);
-    }
+    if (dismissOnAction) dismissToast();
+    if (onAction) onAction(event);
   };
 
   return (
@@ -84,7 +83,7 @@ const Toast = ({
           <FlexItem>
             <div className="toast-constrainGrowth">{content}</div>
           </FlexItem>
-          {actionLabel && onAction && (
+          {actionLabel && (
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
                 <Button
@@ -102,7 +101,12 @@ const Toast = ({
                 {isAutoDismiss ? (
                   <CountdownButton onClick={dismissToast} duration={dismissDelay} />
                 ) : (
-                  <IconButton Icon={DenyIcon} onClick={dismissToast} radius="circle" />
+                  <IconButton
+                    Icon={DenyIcon}
+                    onClick={dismissToast}
+                    radius="circle"
+                    label="Close"
+                  />
                 )}
               </div>
             </FlexItem>
@@ -115,7 +119,7 @@ const Toast = ({
 
 Toast.propTypes = {
   /** JSX Content of Toast */
-  content: PropTypes.element.isRequired,
+  content: PropTypes.node.isRequired,
 
   /** Type of toast */
   type: PropTypes.oneOf(['info', 'warn', 'error', 'success', 'progress']).isRequired,
@@ -131,6 +135,9 @@ Toast.propTypes = {
 
   /** Should this toast auto-dismiss itself? */
   isAutoDismiss: PropTypes.bool,
+
+  /* Controls if toast gets dismiss when the ActionButton is clicked */
+  dismissOnAction: PropTypes.bool,
 
   /** Is this toast user-dismissable? */
   canDismiss: PropTypes.bool,

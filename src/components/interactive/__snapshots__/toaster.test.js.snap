@@ -10,19 +10,7 @@ exports[`Toaster component matches snapshot 1`] = `
     <TransitionGroup
       childFactory={[Function]}
       component="div"
-    >
-      <CSSTransition
-        appear={true}
-        classNames="rtgSlideIn"
-        key="testid"
-        timeout={380}
-        unmountOnExit={true}
-      >
-        <div
-          className="toaster"
-        />
-      </CSSTransition>
-    </TransitionGroup>
+    />
   </div>
 </Portal>
 `;
