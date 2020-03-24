@@ -51,7 +51,13 @@ export const Toaster = ({
       setToast(null);
     }
 
-    if (isAutoDismiss && toastProps.type !== 'progress' && toastProps.canDismiss) {
+    // We need to explicitly check of canDismiss is NOT true, as it has a default
+    // parameter of true that this component does not know about
+    if (
+      isAutoDismiss &&
+      toastProps.type !== 'progress' &&
+      toastProps.canDismiss !== true
+    ) {
       const timer = setTimeout(() => dismissToast(), dismissDelay);
 
       return function cleanup() {
