@@ -24,14 +24,17 @@ export const getPopperPlacement = (position, alignment) => {
   return `${position}${variation}`;
 };
 
+let overflowStyle = null;
+
 const useDisableScroll = (disableScrollRef, isDisabled) => {
   useEffect(() => {
     if (disableScrollRef) {
       const domNode = disableScrollRef.current;
       if (isDisabled) {
+        overflowStyle = domNode.style.overflow;
         domNode.style.overflow = 'hidden';
-      } else {
-        domNode.style.overflow = 'scroll';
+      } else if (overflowStyle !== null) {
+        domNode.style.overflow = overflowStyle;
       }
       // We'll want to modify this to accommodate 2 use cases:
       // 1. The user is using classes to apply scrolling... in this case
@@ -42,11 +45,11 @@ const useDisableScroll = (disableScrollRef, isDisabled) => {
   }, [disableScrollRef, isDisabled]);
 };
 
-const useCloseOnScroll = (closeOnScrollRef, isActive, callback) => {
+const useCloseOnScroll = (closeOnScrollRef, isActive, closeCallback) => {
   useEffect(() => {
     if (closeOnScrollRef && isActive) {
       closeOnScrollRef.current.addEventListener('scroll', function scrollLogic() {
-        callback();
+        closeCallback();
         closeOnScrollRef.current.removeEventListener('scroll', scrollLogic);
       });
     }
@@ -282,8 +285,11 @@ Popover.propTypes = {
   /** Callback called when popover closes */
   onClose: PropTypes.func,
 
-  disableScrollRef: PropTypes.any,
-  closeOnScrollRef: PropTypes.any,
+  // When popover opens, this element should freeze scrolling. When the popover closes, the scrollability of this element should resume.
+  disableScrollRef: PropTypes.func,
+
+  // When the Popover detects scroll events from this ref, the popover should close.
+  closeOnScrollRef: PropTypes.func,
 };
 
 export default Popover;
