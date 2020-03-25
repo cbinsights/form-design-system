@@ -1,19 +1,25 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import {
   Menu as ReachMenu,
-  MenuList as ReachMenuList,
+  MenuItems as ReachMenuItems,
   MenuButton as ReachMenuButton,
+  MenuPopover as ReachMenuPopover,
 } from '@reach/menu-button';
 
 const Menu = ({ isInModal = false, children, trigger }) => (
-  <ReachMenu className={isInModal && 'fdsMenu--inModal'}>
+  <ReachMenu>
     <ReachMenuButton className="resetButton border--focus rounded--all">
       {trigger}
     </ReachMenuButton>
-    <ReachMenuList className="elevation--2 rounded--all bgColor--white">
-      {children}
-    </ReachMenuList>
+    <ReachMenuPopover
+      className={cx('elevation--2 rounded--all bgColor--white', {
+        'fdsMenu--inModal': isInModal,
+      })}
+    >
+      <ReachMenuItems>{children}</ReachMenuItems>
+    </ReachMenuPopover>
   </ReachMenu>
 );
 

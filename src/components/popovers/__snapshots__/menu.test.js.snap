@@ -10,9 +10,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
     </a>
   }
 >
-  <Menu
-    className={false}
-  >
+  <Menu>
     <DescendantProvider
       context={
         Object {
@@ -66,11 +64,9 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
           </a>
         </button>
       </MenuButton>
-      <MenuList
+      <MenuPopover
         className="elevation--2 rounded--all bgColor--white"
-      >
-        <MenuPopover />
-      </MenuList>
+      />
     </DescendantProvider>
   </Menu>
 </Menu>
@@ -87,9 +83,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
     </a>
   }
 >
-  <Menu
-    className="fdsMenu--inModal"
-  >
+  <Menu>
     <DescendantProvider
       context={
         Object {
@@ -143,11 +137,9 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
           </a>
         </button>
       </MenuButton>
-      <MenuList
-        className="elevation--2 rounded--all bgColor--white"
-      >
-        <MenuPopover />
-      </MenuList>
+      <MenuPopover
+        className="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+      />
     </DescendantProvider>
   </Menu>
 </Menu>
@@ -163,9 +155,7 @@ exports[`Popover component matches snapshot (string items) 1`] = `
     </a>
   }
 >
-  <Menu
-    className={false}
-  >
+  <Menu>
     <DescendantProvider
       context={
         Object {
@@ -219,11 +209,9 @@ exports[`Popover component matches snapshot (string items) 1`] = `
           </a>
         </button>
       </MenuButton>
-      <MenuList
+      <MenuPopover
         className="elevation--2 rounded--all bgColor--white"
-      >
-        <MenuPopover />
-      </MenuList>
+      />
     </DescendantProvider>
   </Menu>
 </Menu>

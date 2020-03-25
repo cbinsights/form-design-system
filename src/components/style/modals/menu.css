@@ -15,7 +15,7 @@
   z-index: var(--zindex-crazy);
 }
 
-[data-reach-menu-list] {
+[data-reach-menu-items] {
   border-width: 0;
   padding: 0;
   font-size: inherit;
