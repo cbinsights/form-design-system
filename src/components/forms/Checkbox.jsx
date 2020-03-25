@@ -17,7 +17,7 @@ const Checkbox = ({
   disabled = false,
   label,
   inputRef,
-  ...otherProps
+  ...rest
 }) => {
   const id = uuidv4();
 
@@ -34,7 +34,7 @@ const Checkbox = ({
         className="media--xs"
         disabled={disabled}
         ref={inputRef}
-        {...otherProps}
+        {...rest}
       />
       <label className="flush--bottom" htmlFor={id}>
         <span className="fdsCheckable-icon--checked">

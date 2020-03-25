@@ -34,6 +34,15 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### `Radio` Component
 Now uses `ref` instead of `inputRef` (new ref prop not in documentation)
 
+## [7.14] Configurable `InputGroup`
+
+- All `InputGroup` components will now fill their parent container using 100% width
+- Updated internal logic of `InputGroup` for setting shrink/grow defaults
+- Added `flexSettings` prop to `InputGroup` to allow for customization of shrink/grow for each input item
+
+## [7.13] Attachment Icon
+
+- Added `AttachmentIcon` to icons
 
 ## [7.12] `DateInput`
 
@@ -49,7 +58,6 @@ Now uses `ref` instead of `inputRef` (new ref prop not in documentation)
 
 - DropdownButton now accepts an `isFullWidth`
 - It's background color is now white be default.
->>>>>>> master
 
 ## [7.9] Updated Dialog
 

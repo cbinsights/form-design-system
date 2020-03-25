@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import DateInput, { getYearRange, isValidUserDate } from './DateInput';
 
@@ -43,24 +43,18 @@ describe('DateInput component', () => {
     let changeFn;
     let wrapper;
     let input;
-    let monthSelect;
-    let yearSelect;
 
     beforeEach(() => {
       changeFn = jest.fn();
       wrapper = mount(<DateInput onDateChange={changeFn} />);
       wrapper.find('input').simulate('click'); // open the picker for every test
       input = wrapper.find('input');
-      monthSelect = wrapper.find('select').at(0);
-      yearSelect = wrapper.find('select').at(1);
     });
 
     afterEach(() => {
       changeFn = null;
       wrapper = null;
       input = null;
-      monthSelect = null;
-      yearSelect = null;
     });
 
     it('calls onDateChange when user types a VALID freeform date', () => {

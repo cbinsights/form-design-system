@@ -11,7 +11,7 @@ import RadioFilledIcon from 'lib/icons/react/RadioFilledIcon';
  * @returns {ReactElement}
  */
 const Radio = React.forwardRef(
-  ({ showLabel = true, disabled = false, name, label, ...otherProps }, ref) => {
+  ({ showLabel = true, disabled = false, name, label, ...rest }, ref) => {
     const id = uuidv4();
 
     return (
@@ -26,7 +26,7 @@ const Radio = React.forwardRef(
           name={name}
           id={id}
           className="media--xs"
-          {...otherProps}
+          {...rest}
         />
         <label className="flush--bottom" htmlFor={id}>
           <span className="fdsCheckable-icon--checked">
