@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import {
   Menu as ReachMenu,
@@ -13,8 +14,9 @@ const Menu = ({ isInModal = false, children, trigger }) => (
       {trigger}
     </ReachMenuButton>
     <ReachMenuPopover
-      className={`elevation--2 rounded--all bgColor--white ${isInModal &&
-        'fdsMenu--inModal'}`}
+      className={cx('elevation--2 rounded--all bgColor--white', {
+        'fdsMenu--inModal': isInModal,
+      })}
     >
       <ReachMenuItems>{children}</ReachMenuItems>
     </ReachMenuPopover>

@@ -65,7 +65,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
         </button>
       </MenuButton>
       <MenuPopover
-        className="elevation--2 rounded--all bgColor--white false"
+        className="elevation--2 rounded--all bgColor--white"
       />
     </DescendantProvider>
   </Menu>
@@ -210,7 +210,7 @@ exports[`Popover component matches snapshot (string items) 1`] = `
         </button>
       </MenuButton>
       <MenuPopover
-        className="elevation--2 rounded--all bgColor--white false"
+        className="elevation--2 rounded--all bgColor--white"
       />
     </DescendantProvider>
   </Menu>
