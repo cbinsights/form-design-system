@@ -1,4 +1,5 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { useRef } from 'react'
 import {
   withKnobs,
   optionsKnob as options,
@@ -107,3 +108,32 @@ Base popover component. Bring your own trigger and popover content.
     </Popover>
   </Story>
 </Preview>
+
+<Preview>
+  <Story name="scrolling">
+    {() => { 
+      const containerEl = useRef(null); 
+      return (
+        <div ref={containerEl} style={{ height: 200, border: "1px dashed red", overflow: "scroll" }}>
+          <div style={{ height: 500, background: "yellow" }}>
+            <Popover
+              trigger={<Button theme="outlined" label="Open popover" />}
+              position="bottom"
+              alignment="start"
+              distance={8}
+              closeOnScrollRef={containerEl}
+            >
+              <div className="bgColor--white rounded--all elevation--2 padding--all">
+                <h3 className="type--head3">Look at me</h3>
+                <p>
+                  <em>i am the popover</em>
+                </p>
+              </div>
+            </Popover>
+          </div>
+        </div>
+      )
+    }}
+  </Story>
+</Preview>
+

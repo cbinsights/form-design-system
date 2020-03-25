@@ -24,6 +24,35 @@ export const getPopperPlacement = (position, alignment) => {
   return `${position}${variation}`;
 };
 
+const useDisableScroll = (disableScrollRef, isDisabled) => {
+  useEffect(() => {
+    if (disableScrollRef) {
+      const domNode = disableScrollRef.current;
+      if (isDisabled) {
+        domNode.style.overflow = 'hidden';
+      } else {
+        domNode.style.overflow = 'scroll';
+      }
+      // We'll want to modify this to accommodate 2 use cases:
+      // 1. The user is using classes to apply scrolling... in this case
+      //    we'd want to clear out all styles when un-disabling.
+      // 2. Overflow might not be just scroll. We should just save whatever
+      //    was there inside a closure here, and then re-assign it back.
+    }
+  }, [disableScrollRef, isDisabled]);
+};
+
+const useCloseOnScroll = (closeOnScrollRef, isActive, callback) => {
+  useEffect(() => {
+    if (closeOnScrollRef && isActive) {
+      closeOnScrollRef.current.addEventListener('scroll', function scrollLogic() {
+        callback();
+        closeOnScrollRef.current.removeEventListener('scroll', scrollLogic);
+      });
+    }
+  }, [closeOnScrollRef, isActive]);
+};
+
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
@@ -40,6 +69,8 @@ const Popover = ({
   children,
   isOpen,
   transitionName,
+  disableScrollRef,
+  closeOnScrollRef,
 }) => {
   const [isActive, setIsActive] = useState(false);
   const refTriggerWrap = useRef(null);
@@ -55,6 +86,9 @@ const Popover = ({
       return newValue;
     });
   };
+
+  useCloseOnScroll(closeOnScrollRef, isActive, () => handleSetIsActive(false));
+  useDisableScroll(disableScrollRef, isActive);
 
   // update active state on props change to accommodate fully controlled popovers
   useEffect(() => {
@@ -247,6 +281,9 @@ Popover.propTypes = {
 
   /** Callback called when popover closes */
   onClose: PropTypes.func,
+
+  disableScrollRef: PropTypes.any,
+  closeOnScrollRef: PropTypes.any,
 };
 
 export default Popover;
