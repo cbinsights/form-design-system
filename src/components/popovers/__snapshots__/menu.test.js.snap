@@ -59,6 +59,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
         >
           <a
             href="#"
+            tabIndex="-1"
           >
             trigger
           </a>
@@ -69,6 +70,25 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
       />
     </DescendantProvider>
   </Menu>
+</Menu>
+`;
+
+exports[`Popover component matches snapshot (disabled) 1`] = `
+<Menu
+  isDisabled={true}
+  trigger={
+    <a
+      href="#"
+    >
+      trigger
+    </a>
+  }
+>
+  <a
+    href="#"
+  >
+    trigger
+  </a>
 </Menu>
 `;
 
@@ -132,6 +152,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
         >
           <a
             href="#"
+            tabIndex="-1"
           >
             trigger
           </a>
@@ -204,6 +225,7 @@ exports[`Popover component matches snapshot (string items) 1`] = `
         >
           <a
             href="#"
+            tabIndex="-1"
           >
             trigger
           </a>
