@@ -38,6 +38,7 @@
   "peerDependencies": {
     "classnames": "^2",
     "prop-types": "^15",
+    "moment": "^2.20",
     "raf-schd": "^4",
     "react": "^16",
     "react-dom": "^16",
@@ -97,6 +98,7 @@
     "prop-types": "^15",
     "raf-schd": "^4",
     "react": "^16.11.0",
+    "react-day-picker": "^7.4.0",
     "react-dom": "^16",
     "react-is": "^16.11.0",
     "react-markdown": "^4.3.1",
@@ -123,7 +125,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
+      "pre-push": "yarn lint && yarn test"
     }
   },
   "lint-staged": {

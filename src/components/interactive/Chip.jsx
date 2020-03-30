@@ -7,7 +7,16 @@ import baseElement from 'util/baseElement';
 export const THEMES = ['blue', 'gray', 'outline'];
 export const SIZES = ['s', 'm'];
 
-const Chip = ({ size, Link, theme, isActive, label, subtitle, onClose, ...rest }) => {
+const Chip = ({
+  size = 'm',
+  theme = 'gray',
+  Link,
+  isActive,
+  label,
+  subtitle,
+  onClose,
+  ...rest
+}) => {
   const Element = baseElement({ href: rest.href, onClick: true, as: Link });
 
   const rootClass = cx(
@@ -72,11 +81,6 @@ Chip.propTypes = {
    * - `Link={Link}`
    */
   Link: PropTypes.func,
-};
-
-Chip.defaultProps = {
-  theme: 'gray',
-  size: 'm',
 };
 
 export default Chip;

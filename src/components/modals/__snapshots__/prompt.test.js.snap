@@ -7,11 +7,8 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
       id="a11y-dialog-desc"
     />
   }
-  disableFocusTrap={false}
   footerContent={
     <Flex
-      align="stretch"
-      direction="row"
       justify="end"
       wrap={true}
     >
@@ -19,27 +16,19 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
         shrink={true}
       >
         <Button
-          iconPlacement="right"
           label="bar"
-          size="m"
-          theme="blue"
         />
       </FlexItem>
       <FlexItem
         shrink={true}
       >
         <Button
-          iconPlacement="right"
           label="foo"
-          size="m"
-          theme="blue"
         />
       </FlexItem>
     </Flex>
   }
-  height="80vh"
   role="alertdialog"
-  width="500px"
 />
 `;
 
@@ -50,11 +39,8 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
       id="a11y-dialog-desc"
     />
   }
-  disableFocusTrap={false}
   footerContent={
     <Flex
-      align="stretch"
-      direction="row"
       justify="end"
       wrap={true}
     >
@@ -62,28 +48,20 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
         shrink={true}
       >
         <Button
-          iconPlacement="right"
           label="bar"
-          size="m"
-          theme="blue"
         />
       </FlexItem>
       <FlexItem
         shrink={true}
       >
         <Button
-          iconPlacement="right"
           label="foo"
-          size="m"
-          theme="blue"
         />
       </FlexItem>
     </Flex>
   }
-  height="80vh"
   isOpen={true}
   role="alertdialog"
-  width="500px"
 />
 `;
 
@@ -96,11 +74,8 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
       desc
     </div>
   }
-  disableFocusTrap={false}
   footerContent={
     <Flex
-      align="stretch"
-      direction="row"
       justify="end"
       wrap={true}
     >
@@ -108,28 +83,20 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
         shrink={true}
       >
         <Button
-          iconPlacement="right"
           label="bar"
-          size="m"
-          theme="blue"
         />
       </FlexItem>
       <FlexItem
         shrink={true}
       >
         <Button
-          iconPlacement="right"
           label="foo"
-          size="m"
-          theme="blue"
         />
       </FlexItem>
     </Flex>
   }
-  height="80vh"
   isOpen={true}
   role="alertdialog"
   title="title"
-  width="500px"
 />
 `;

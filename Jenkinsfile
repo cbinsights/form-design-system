@@ -7,7 +7,7 @@
 * Jenkins populates the patch version depending on the branch.
 */
 
-String VERSION = "7.11"
+String VERSION = "7.16"
 
 /* ---- DO NOT EDIT BELOW (unless you really know what you're doing) ---- */
 
@@ -84,7 +84,7 @@ pipeline {
     stage('Publish npm packages') {
       steps {
         ansiColor('xterm') {
-          sh "docker run ${DOCKER_IMAGE_NAME} yarn publish --new-version=${VERSION} --access=public"
+          sh "docker run ${DOCKER_IMAGE_NAME} yarn publish --tag=${NPM_TAG} --new-version=${VERSION} --access=public"
         }
       }
     }

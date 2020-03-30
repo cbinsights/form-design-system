@@ -18,7 +18,7 @@ import { ImportPath } from '../util/storybook';
 
 <ImportPath component={Toast} section="interactive" />
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Toast
     content={text(
       'label',
@@ -52,6 +52,10 @@ import { ImportPath } from '../util/storybook';
     )}
   />
 </Story>
+
+<Preview isExpanded>
+  <Toast content="Toast" type="success" />
+</Preview>
 
 <Props of={Toast} />
 

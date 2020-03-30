@@ -27,11 +27,35 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [7.11] Updated Button
+## [7.16] Updated Button
 
 - Button now has an `isActive` state
 - Added inverted outlined theme to Button
 - Button colors / look and feel were completely overhauled (no breaking changes)
+
+## [7.15] Disabled Menu
+
+- Added `isDisabled` prop to `Menu`
+
+## [7.14] Configurable `InputGroup`
+
+- All `InputGroup` components will now fill their parent container using 100% width
+- Updated internal logic of `InputGroup` for setting shrink/grow defaults
+- Added `flexSettings` prop to `InputGroup` to allow for customization of shrink/grow for each input item
+
+## [7.13] Attachment Icon
+
+- Added `AttachmentIcon` to icons
+
+## [7.12] `DateInput`
+
+- Added `DateInput` component.
+
+## [7.11] Disabled MenuItem
+
+- Adds support for `isDisabled` prop in `MenuItem`
+- Changes default z-index for `Menu` to `zindex-popover`
+- Adds `isInModal` prop to `Menu` for bumping up `z-index`
 
 ## [7.10] Updated DropdownButton
 
@@ -428,7 +452,7 @@ MenuButton component was removed. Please use StackedButton instead.
 - Added `customSize` prop to icons to enable arbitrary sizes (we do not
 want to encourage active use of this prop however)
 
-## [4.14] Updated / Added link colors 
+## [4.14] Updated / Added link colors
 
 - Increased link contrast by making default links appear as `blue` (instead of `aqua`)
 Added `linkInverted` property to dictionary and set up inverted link context in base-styles

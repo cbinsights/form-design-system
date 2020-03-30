@@ -12,7 +12,7 @@ import Checkbox from './Checkbox';
 
 Uncontrolled custom checkbox component with optional label.
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Checkbox
     indeterminate={boolean('indeterminate', false)}
     disabled={boolean('disabled', false)}
@@ -21,10 +21,12 @@ Uncontrolled custom checkbox component with optional label.
   />
 </Story>
 
-<Source
-  language="jsx"
-  code="import Button from 'button'"
-/>
+<Preview isExpanded>
+  <Checkbox
+    name="knobs"
+    label='I agree to receive spam'
+  />
+</Preview>
 
 <Info type="info">
   Additional props will be spread on the `input` element.

@@ -17,7 +17,7 @@ import { ImportPath } from '../util/storybook';
 
 <ImportPath component={StackedButton} section="interactive" />
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <StackedButton
     disabled={boolean('disabled', false)}
     Icon={StarFilledIcon}
@@ -25,6 +25,13 @@ import { ImportPath } from '../util/storybook';
     hasCaret={boolean('hasCaret', false)}
   />
 </Story>
+
+<Preview isExpanded>
+  <StackedButton
+    Icon={StarFilledIcon}
+    label='Stacked Button'
+  />
+</Preview>
 
 <Props of={StackedButton} />
 

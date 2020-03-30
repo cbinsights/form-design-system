@@ -3,6 +3,10 @@
  */
 
 [data-reach-popover] {
+  z-index: var(--zindex-popover);
+}
+
+.fdsMenu--inModal {
   /*
    * The Reach portaled popover can not be configured to use
    * a different positioning strategy, so we must set a high
@@ -11,7 +15,7 @@
   z-index: var(--zindex-crazy);
 }
 
-[data-reach-menu-list] {
+[data-reach-menu-items] {
   border-width: 0;
   padding: 0;
   font-size: inherit;
@@ -37,3 +41,11 @@
   color: inherit;
 }
 
+.fdsMenuItem--disabled {
+  color: var(--font-color-hint) !important;
+}
+
+.fdsMenuItem--disabled[data-selected] {
+  background: rgba(var(--rgb-lightGray), 0.25) !important;
+  cursor: not-allowed;
+}

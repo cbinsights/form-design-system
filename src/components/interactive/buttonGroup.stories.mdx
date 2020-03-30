@@ -29,9 +29,19 @@ export const buttonsNoIcons = [
 
 <ImportPath component={ButtonGroup} section="interactive" />
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <ButtonGroup buttons={object('buttons', buttonsNoIcons)} />
 </Story>
+
+<Preview isExpanded>
+  <ButtonGroup
+    buttons={[
+      { label: 'Lorem', disabled: true },
+      { label: 'Ipsum' },
+      { label: 'Dolor', isActive: true }
+    ]} 
+  />
+</Preview>
 
 <Props of={ButtonGroup} />
 <Props of={GroupButton} />

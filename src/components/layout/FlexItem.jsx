@@ -26,23 +26,19 @@ const AlignPropMap = {
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const FlexItem = (props) => {
+const FlexItem = ({ shrink = false, justify, align, children }) => {
   const classNames = cx(
     'flexItem',
     {
-      'flexItem--shrink': props.shrink,
+      'flexItem--shrink': shrink,
     },
     {
-      [JustifyPropMap[props.justify]]: props.justify,
-      [AlignPropMap[props.align]]: props.align,
+      [JustifyPropMap[justify]]: justify,
+      [AlignPropMap[align]]: align,
     }
   );
 
-  return <div className={classNames}>{props.children}</div>;
-};
-
-FlexItem.defaultProps = {
-  shrink: false,
+  return <div className={classNames}>{children}</div>;
 };
 
 FlexItem.propTypes = {
