@@ -1,22 +1,29 @@
 .fdsDropdown {
-  background: var(--color-white);
-  border: 0 none;
+  background-color: var(--color-white);
   font-size: var(--font-size-default);
   user-select: none;
   font-size: var(--font-size-default);
-  padding: var(--space-half) 6px;
-  border: 1px solid #C6C9CA;
+  padding: var(--space-half);
+  border: 1px solid #C4C4C4;
   color: var(--font-color-primary);
   align-items: center;
   justify-content: space-between;
   min-width: 170px;
 }
 
+.fdsDropdown--isActive {
+  background: #E8E8E8;
+}
+
+.fdsDropdown--isFullWidth {
+  width: 100%;
+}
+
 .fdsDropdown:hover {
-  background-color: #E8EDF1;
+  background-color: #f0f0f0;
 }
 
 .fdsDropdown:active {
-  background-color: #CBD5DE;
+  background-color: #D1D1D1;
 }
 

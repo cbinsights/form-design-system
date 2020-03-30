@@ -18,7 +18,7 @@ const StackedButton = ({ Icon, Link, label, disabled, isActive, hasCaret, ...res
         'transition--default',
         {
           'fdsStackedButton--disabled': disabled,
-          'fdsStackedButton--active': isActive,
+          'fdsStackedButton--isActive': isActive,
         }
       )}
       disabled={disabled && Element === 'button'}

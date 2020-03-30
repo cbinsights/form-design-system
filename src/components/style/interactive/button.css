@@ -14,7 +14,6 @@
   background-color: transparent;
   min-height: auto;
   box-sizing: border-box;
-  box-shadow: 0 1px 0 0 rgba(64, 64, 64, 0.08);
 }
 
 /* Button padding */
@@ -129,10 +128,6 @@
   background-color: #f0f0f0;
 }
 
-.fdsButton--ghost {
-  box-shadow: none;
-}
-
 .fdsButton--ghost.fdsButton--isActive {
   background-color: rgba(64, 64, 64, 0.12);
 }
@@ -185,7 +180,7 @@
 }
 
 .inverted .fdsButton--outlined {
-  box-shadow: none;
+  border-color: var(--color-white);
 }
 
 .inverted .fdsButton--ghost,
@@ -197,18 +192,19 @@
 /* stylelint-disable-next-line selector-max-class  */
 .inverted .fdsButton--ghost.fdsButton--isActive,
 .inverted .fdsButton--outlined.fdsButton--isActive {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+
+.inverted .fdsButton--ghost:hover,
+.inverted .fdsButton--outlined:hover {
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* stylelint-disable-next-line selector-max-class  */
 .inverted .fdsButton--ghost:active,
 .inverted .fdsButton--outlined:active {
   background-color: rgba(255, 255, 255, 0.32);
-}
-
-.inverted .fdsButton--ghost:hover,
-.inverted .fdsButton--outlined:hover {
-  background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* stylelint-disable-next-line selector-max-class */
@@ -223,7 +219,7 @@
 }
 
 .fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost) {
-  color: var(--button-secondary-destructive);
+  color: var(--color-red);
 }
 
 /* There's a very very unique design requirement here that requires

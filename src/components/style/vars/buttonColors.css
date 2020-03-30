@@ -1,22 +1,3 @@
 :root {
-  /*
-      calling the colors that outline and
-      ghost share by the name "secondary"
-    */
-  --button-secondary-hover: #E8EDF1;
-  --button-secondary-pressed: #CBD5DE;
-  --button-secondary-color: #868888;
-  --button-secondary-hover-color: #565656;
-  --button-secondary-pressed-color: #525355;
-  --button-secondary-destructive: #DA4544;
-  --button-secondary-destructive-hover: #F0EDEF;
-  --button-secondary-destructive-pressed: #ECD6D9;
-
   --button-opacity: 0.38;
-
-  /*
-     * custom properties must be file-local thanks to our IE11
-     * pollyfill. This timeout is copied from buttonGroup.css
-     */
-  --button-timeout: 250ms;
 }

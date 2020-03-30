@@ -16,7 +16,8 @@ import DropdownButton from "./DropdownButton";
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <DropdownButton
-    isFullWidth={boolean("disabled", undefined)}
+    isFullWidth={boolean("isFullWidth", undefined)}
+    isActive={boolean('isActive', undefined)}
   >
     {text("children", 'DropdownButton')}
   </DropdownButton>

@@ -8,10 +8,11 @@
   text-align: center;
   vertical-align: top;
   flex-direction: column;
-  padding: 5px 16px 9px;
+  padding: 5px var(--space-half) 9px;
   background-color: transparent;
+  font-weight: 500;
   min-height: 64px;
-  width: 64px;
+  max-width: 62px;
   box-sizing: border-box;
   align-items: center;
   color: var(--button-primary-color);
@@ -26,17 +27,18 @@
   pointer-events: none;
 }
 
-.fdsStackedButton--active {
+.fdsStackedButton--isActive {
   background-color: var(--color-aqua);
   color: var(--color-white);
 }
 
 .fdsStackedButton:hover {
-  background-color: var(--button-secondary-hover);
+  background-color: rgba(64, 64, 64, 0.08);
+  color: var(--button-primary-color);
 }
 
 .fdsStackedButton:active {
-  background-color: var(--button-secondary-pressed);
+  background-color: rgba(64, 64, 64, 0.24);
 }
 
 .fdsStackedButton-iconWrapper {

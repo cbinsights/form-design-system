@@ -43,7 +43,7 @@ const Button = ({
           'fdsButton--loading': isLoading,
           'fdsButton--disabled': disabled,
           'fdsButton--isFullWidth': isFullWidth,
-          'fdsButton--isActive': isActive,
+          'fdsButton--isActive': isActive && !disabled,
         }
       )}
       disabled={disabled && Element === 'button'}
