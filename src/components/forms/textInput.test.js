@@ -18,7 +18,7 @@ describe('TextInput component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('matches snapshot (default)', () => {
+  it('matches snapshot (all props)', () => {
     const wrapper = shallow(
       <TextInput 
         label="label"
@@ -30,6 +30,7 @@ describe('TextInput component', () => {
         before="before"
         after="after"
         type="number"
+        orientation="right"
         required
       />
     );

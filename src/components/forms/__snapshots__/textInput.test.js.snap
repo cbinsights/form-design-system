@@ -1,27 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextInput component matches snapshot (default) 1`] = `
+exports[`TextInput component matches snapshot (all props) 1`] = `
 <Fragment>
   <label
-    className="fdsTextInput-root"
-  >
-    <DecoratedInput>
-      <IconInput>
-        <input
-          className="fdsTextInput"
-          onChange={[Function]}
-          type="text"
-        />
-      </IconInput>
-    </DecoratedInput>
-  </label>
-</Fragment>
-`;
-
-exports[`TextInput component matches snapshot (default) 2`] = `
-<Fragment>
-  <label
-    className="fdsTextInput-root"
+    className="fdsTextInput-root fdsTextInput-root--rightLabel"
   >
     <div
       className="fdsTextInput-label"
@@ -51,5 +33,23 @@ exports[`TextInput component matches snapshot (default) 2`] = `
   >
     errorText
   </div>
+</Fragment>
+`;
+
+exports[`TextInput component matches snapshot (default) 1`] = `
+<Fragment>
+  <label
+    className="fdsTextInput-root fdsTextInput-root--topLabel"
+  >
+    <DecoratedInput>
+      <IconInput>
+        <input
+          className="fdsTextInput"
+          onChange={[Function]}
+          type="text"
+        />
+      </IconInput>
+    </DecoratedInput>
+  </label>
 </Fragment>
 `;
