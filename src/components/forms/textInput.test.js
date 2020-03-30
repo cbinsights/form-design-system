@@ -30,7 +30,7 @@ describe('TextInput component', () => {
         before="before"
         after="after"
         type="number"
-        orientation="right"
+        labelPosition="left"
         required
       />
     );

@@ -8,16 +8,10 @@
   margin-bottom: 0;
 }
 
-.fdsTextInput-root--rightLabel,
 .fdsTextInput-root--leftLabel {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.fdsTextInput-root--rightLabel .fdsTextInput-label {
-  order: 1;
-  margin-left: var(--space-half);
 }
 
 .fdsTextInput-root--leftLabel .fdsTextInput-label {

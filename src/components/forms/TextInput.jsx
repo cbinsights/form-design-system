@@ -19,7 +19,7 @@ const TextInput = React.forwardRef(
   (
     {
       label,
-      orientation = 'top',
+      labelPosition = 'top',
       errorText,
       onThrottledChange,
       showRequired,
@@ -66,7 +66,7 @@ const TextInput = React.forwardRef(
     return (
       <>
         <Element
-          className={cx('fdsTextInput-root', `fdsTextInput-root--${orientation}Label`)}
+          className={cx('fdsTextInput-root', `fdsTextInput-root--${labelPosition}Label`)}
         >
           {showLabel && label && (
             <div className="fdsTextInput-label">
@@ -133,7 +133,7 @@ TextInput.propTypes = {
   /** String to place to the right of the input */
   after: PropTypes.string,
 
-  orientation: PropTypes.oneOf(['top', 'left', 'right']),
+  labelPosition: PropTypes.oneOf(['top', 'left']),
   showRequired: PropTypes.bool,
   showLabel: PropTypes.bool,
 };

@@ -28,9 +28,9 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
     IconLeft={boolean("Show IconLeft", undefined) ? CaretDownIcon : undefined}
     before={text("before", undefined)}
     after={text("after", undefined)}
-    orientation={options(
-      "orientation",
-      arrayToOptions(['top', 'left', 'right']),
+    labelPosition={options(
+      "labelPosition",
+      arrayToOptions(['top', 'left']),
       undefined,
       { display: "inline-radio" }
     )}
