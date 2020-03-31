@@ -62,15 +62,9 @@ for a button being clicked on (:active) */
   padding: 8px 0;
 }
 
-.groupbtn:focus,
 .groupbtn:active {
   border-color: var(--color-slate);
   text-decoration: none;
-}
-
-.groupbtn:focus {
-  background-color: none;
-  color: var(--color-charcoal);
 }
 
 .groupbtn:hover {
@@ -82,6 +76,7 @@ for a button being clicked on (:active) */
 
 /* Activated */
 .groupbtn--active,
+.groupbtn--active:hover,
 .groupbtn:active {
   text-decoration: none;
   background-color: rgba(0, 102, 153, 0.12);

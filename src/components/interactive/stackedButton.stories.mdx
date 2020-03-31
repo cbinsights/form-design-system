@@ -23,6 +23,7 @@ import { ImportPath } from '../util/storybook';
     Icon={StarFilledIcon}
     label={text('Text', 'Stacked Button')}
     hasCaret={boolean('hasCaret', false)}
+    isActive={boolean('isActive', undefined)}
   />
 </Story>
 
@@ -43,10 +44,10 @@ import { ImportPath } from '../util/storybook';
       <StackedButton Icon={SalesforceIcon} label="Lorem" />
     </div>
     <div className="margin--bottom--half display--inlineBlock">
-      <StackedButton Icon={SalesforceIcon} label="Lorem Ipsum Dolor" />
+      <StackedButton Icon={WorkFasterIcon} label="Lorem Ipsum Dolor" />
     </div>
     <div className="margin--bottom--half display--inlineBlock">
-      <StackedButton Icon={SalesforceIcon} disabled label="Lorem Ipsum (Disabled)" />
+      <StackedButton Icon={StoryAddIcon} disabled label="Lorem Ipsum (Disabled)" />
     </div>
     <div className="margin--bottom--half display--inlineBlock">
       <StackedButton Icon={SalesforceIcon} isActive label="Lorem Ipsum (Active)" />

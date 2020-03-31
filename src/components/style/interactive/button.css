@@ -81,12 +81,12 @@
   background-color: #1f78a5;
 }
 
-.fdsButton--blue:active {
-  background-color: #5297b9;
-}
-
 .fdsButton--blue:hover {
   background-color: #1472a1;
+}
+
+.fdsButton--blue:active {
+  background-color: #5297b9;
 }
 
 .fdsButton--blue.fdsButton--isDestructive {
@@ -98,12 +98,12 @@
   background-color: #eb636c;
 }
 
-.fdsButton--blue.fdsButton--isDestructive:active {
-  background-color: #ed737c;
-}
-
 .fdsButton--blue.fdsButton--isDestructive:hover {
   background-color: #e7424d;
+}
+
+.fdsButton--blue.fdsButton--isDestructive:active {
+  background-color: #ed737c;
 }
 
 .fdsButton--outlined,
@@ -120,24 +120,24 @@
   background-color: #e8e8e8;
 }
 
-.fdsButton--outlined:active {
-  background-color: #d1d1d1;
-}
-
 .fdsButton--outlined:hover {
   background-color: #f0f0f0;
+}
+
+.fdsButton--outlined:active {
+  background-color: #d1d1d1;
 }
 
 .fdsButton--ghost.fdsButton--isActive {
   background-color: rgba(64, 64, 64, 0.12);
 }
 
-.fdsButton--ghost:active {
-  background-color: rgba(64, 64, 64, 0.24);
-}
-
 .fdsButton--ghost:hover {
   background-color: rgba(64, 64, 64, 0.08);
+}
+
+.fdsButton--ghost:active {
+  background-color: rgba(64, 64, 64, 0.24);
 }
 
 /* stylelint-disable-next-line selector-max-class  */
@@ -145,12 +145,12 @@
   background-color: #fbdee0;
 }
 
-.fdsButton--outlined.fdsButton--isDestructive:active {
-  background-color: #f9ced1;
-}
-
 .fdsButton--outlined.fdsButton--isDestructive:hover {
   background-color: #fdeff0;
+}
+
+.fdsButton--outlined.fdsButton--isDestructive:active {
+  background-color: #f9ced1;
 }
 
 /* stylelint-disable-next-line selector-max-class  */
@@ -158,16 +158,12 @@
   background-color: rgba(229, 50, 62, 0.12);
 }
 
-.fdsButton--ghost.fdsButton--isDestructive:active {
-  background-color: rgba(229, 50, 62, 0.24);
-}
-
 .fdsButton--ghost.fdsButton--isDestructive:hover {
   background-color: rgba(229, 50, 62, 0.08);
 }
 
-.fdsButton--ghost.fdsButton--loading {
-  border: 1px solid #c2c2c2;
+.fdsButton--ghost.fdsButton--isDestructive:active {
+  background-color: rgba(229, 50, 62, 0.24);
 }
 
 .fdsButton--loading:matches(.fdsButton--ghost, .fdsButton--outlined)::before {

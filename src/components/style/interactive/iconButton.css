@@ -50,15 +50,32 @@
 }
 
 .fdsIconButton--ghost:hover {
-  background-color: #f0f0f0;
+  background-color: rgba(64, 64, 64, 0.08);
 }
 
 .fdsIconButton--ghost:active {
-  background-color: #d1d1d1;
+  background-color: rgba(64, 64, 64, 0.24);
 }
 
 .fdsIconButton--ghost.fdsIconButton--isActive {
-  background-color: #e8e8e8;
+  background-color: rgba(64, 64, 64, 0.12);
+}
+
+.inverted .fdsIconButton--ghost {
+  color: var(--color-white);
+}
+
+/* stylelint-disable-next-line selector-max-class  */
+.inverted .fdsIconButton--ghost.fdsIconButton--isActive {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.inverted .fdsIconButton--ghost:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.inverted .fdsIconButton--ghost:active {
+  background-color: rgba(255, 255, 255, 0.32);
 }
 
 .fdsIconButton--isDestructive {
@@ -66,15 +83,15 @@
 }
 
 .fdsIconButton--isDestructive:hover {
-  background-color: #fdeff0;
+  background-color: rgba(229, 50, 62, 0.08);
 }
 
 .fdsIconButton--isDestructive:active {
-  background-color: #f9ced1;
+  background-color: rgba(229, 50, 62, 0.24);
 }
 
 .fdsIconButton--isDestructive.fdsIconButton--isActive {
-  background-color: #fbdee0;
+  background-color: rgba(229, 50, 62, 0.12);
 }
 
 .fdsIconButton--loading {

@@ -19,23 +19,25 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
 <ImportPath component={IconButton} section="interactive" />
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
-  <IconButton
-    isDestructive={boolean('isDestructive', false)}
-    isActive={boolean('isActive', false)}
-    disabled={boolean('disabled', false)}
-    isLoading={boolean('isLoading', false)}
-    theme={options('theme', arrayToOptions(THEMES), undefined, {
-      display: 'inline-radio',
-    })}
-    size={options('size', arrayToOptions(SIZES), undefined, {
-      display: 'inline-radio',
-    })}
-    radius={options('radius', arrayToOptions(RADII), undefined, {
-      display: 'inline-radio',
-    })}
-    label={text('label', undefined)}
-    Icon={StarFilledIcon}
-  />
+  <div className={boolean("Inverted", false) ? 'inverted' : ''}>
+    <IconButton
+      isDestructive={boolean('isDestructive', false)}
+      isActive={boolean('isActive', false)}
+      disabled={boolean('disabled', false)}
+      isLoading={boolean('isLoading', false)}
+      theme={options('theme', arrayToOptions(THEMES), undefined, {
+        display: 'inline-radio',
+      })}
+      size={options('size', arrayToOptions(SIZES), undefined, {
+        display: 'inline-radio',
+      })}
+      radius={options('radius', arrayToOptions(RADII), undefined, {
+        display: 'inline-radio',
+      })}
+      label={text('label', undefined)}
+      Icon={StarFilledIcon}
+    />
+  </div>
 </Story>
 
 <Preview isExpanded>
@@ -78,6 +80,39 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
     </StoryWrapper>
   </Story>
 </Preview>
+
+### Inverted
+
+<Preview>
+  <Story name="Inverted">
+    <div className="inverted bgColor--blue padding--all rounded--all">
+    <StoryWrapper>
+      <StoryItem>
+        <IconButton
+          theme="ghost"
+          Icon={Icons[0]}
+      />
+      </StoryItem>
+      <StoryItem>
+        <IconButton
+          theme="ghost"
+          isActive
+          Icon={Icons[0]}
+      />
+      </StoryItem>
+      <StoryItem>
+        <IconButton
+          disabled
+          theme="ghost"
+          Icon={Icons[0]}
+      />
+      </StoryItem>
+    </StoryWrapper>
+    </div>
+  </Story>
+</Preview>
+
+
 
 ### Destructive
 
