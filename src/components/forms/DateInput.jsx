@@ -121,10 +121,11 @@ const NavArrows = ({ onPreviousClick, onNextClick }) => (
  * @returns {ReactElement}
  */
 const DateInput = ({ futureYears = 1, pastYears = 40, defaultDate, onDateChange }) => {
+  console.warn(defaultDate);
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
   const [pickerMonth, setPickerMonth] = useState(new Date());
   const [inputValue, setInputValue] = useState(
-    moment(defaultDate).format(DATE_FORMAT) || ''
+    defaultDate ? moment(defaultDate).format(DATE_FORMAT) : ''
   );
 
   const { startYear, endYear } = getYearRange(
@@ -202,8 +203,8 @@ DateInput.propTypes = {
   /** Number of years into the future to show in the year dropdown */
   futureYears: PropTypes.number,
 
-  /** Default date selection */
-  defaultDate: PropTypes.instanceOf(Date),
+  /** Default date selection - accepts date string or instance of Date */
+  defaultDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
 };
 
 export default DateInput;
