@@ -1,15 +1,15 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
-import CaretDownIcon from '../../../lib/icons/react/CaretDownIcon';
-import CollectionPublicIcon from '../../../lib/icons/react/CollectionPublicIcon';
-import StoryAddIcon from '../../../lib/icons/react/StoryAddIcon';
-import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
-import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
+import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
+import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
+import CollectionPublicIcon from 'lib/icons/react/CollectionPublicIcon';
+import StoryAddIcon from 'lib/icons/react/StoryAddIcon';
+import WorkFasterIcon from 'lib/icons/react/WorkFasterIcon';
+import SalesforceIcon from 'lib/icons/react/SalesforceIcon';
 
 import StackedButton from './StackedButton';
 
-import { ImportPath } from '../util/storybook';
+import { ImportPath, State } from 'components/util/storybook';
 
 <Meta title="Components/Interactive/StackedButton" decorators={[withKnobs]} component={StackedButton} />
 
@@ -39,20 +39,29 @@ import { ImportPath } from '../util/storybook';
 ### States
 
 <Story name="States">
-  <React.Fragment>
-    <div className="margin--bottom--half display--inlineBlock">
-      <StackedButton Icon={SalesforceIcon} label="Lorem" />
-    </div>
-    <div className="margin--bottom--half display--inlineBlock">
-      <StackedButton Icon={WorkFasterIcon} label="Lorem Ipsum Dolor" />
-    </div>
-    <div className="margin--bottom--half display--inlineBlock">
-      <StackedButton Icon={StoryAddIcon} disabled label="Lorem Ipsum (Disabled)" />
-    </div>
-    <div className="margin--bottom--half display--inlineBlock">
-      <StackedButton Icon={SalesforceIcon} isActive label="Lorem Ipsum (Active)" />
-    </div>
-  </React.Fragment>
+  <State
+    initialValue={null}
+    render={((value, setValue) => {
+      return (
+        <>
+          {[{ label: "Lorem Ipsum", Icon: SalesforceIcon }, { label: "Dolor Sit Amet", Icon: StarFilledIcon }].map((item, idx) => (
+            <StackedButton
+              Icon={item.Icon}
+              label={item.label}
+              isActive={value === idx}
+              onClick={() => {
+                if (idx === value){
+                  setValue(null)
+                } else {
+                  setValue(idx)
+                }
+              }}
+            />
+          ))}
+        </>
+      )
+    })}
+  />
 </Story>
 
 

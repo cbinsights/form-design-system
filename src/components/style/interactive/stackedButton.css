@@ -8,7 +8,7 @@
   text-align: center;
   vertical-align: top;
   flex-direction: column;
-  padding: 5px var(--space-half) 9px;
+  padding: var(--space-half);
   background-color: transparent;
   font-weight: 500;
   max-width: 62px;
@@ -31,6 +31,7 @@
   color: var(--color-white);
 }
 
+
 .fdsStackedButton:hover {
   background-color: rgba(64, 64, 64, 0.08);
   color: var(--button-primary-color);
@@ -40,8 +41,18 @@
   background-color: rgba(64, 64, 64, 0.24);
 }
 
+.fdsStackedButton--isActive:hover {
+  background-color: #5ab1d1;
+  color: var(--color-white);
+}
+
+.fdsStackedButton--isActive:active {
+  background-color: transparent;
+  color: var(--button-primary-color);
+}
+
 .fdsStackedButton-iconWrapper {
-  min-height: 28px;
   display: inline-flex;
   align-items: center;
+  margin-bottom: 4px;
 }

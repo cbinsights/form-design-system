@@ -44,7 +44,7 @@ const IconButton = ({
       role="img"
     >
       <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
-        <Icon customSize={size === 's' ? 18 : 24} />
+        <Icon customSize={size === 's' ? 16 : 18} />
       </span>
     </Element>
   );

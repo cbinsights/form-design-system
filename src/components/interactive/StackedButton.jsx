@@ -24,10 +24,10 @@ const StackedButton = ({ Icon, Link, label, disabled, isActive, hasCaret, ...res
       disabled={disabled && Element === 'button'}
     >
       {Icon && (
-        <>
+        <div className="fdsStackedButton-iconWrapper">
           <Icon size="s" />
           {hasCaret && <CaretDownIcon customSize={10} />}
-        </>
+        </div>
       )}
       {label}
     </Element>
