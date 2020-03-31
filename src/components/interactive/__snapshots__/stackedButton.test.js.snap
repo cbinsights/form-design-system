@@ -17,7 +17,7 @@ exports[`StackedButton component matches snapshot (set all props) 1`] = `
     className="fdsStackedButton-iconWrapper"
   >
     <Icon
-      size="xs"
+      size="s"
     />
   </div>
   button

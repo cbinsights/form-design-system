@@ -45,7 +45,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                       >
                         <div
                           class="fds-icon fds-icon--s"
-                          style="width: 24px; height: 24px;"
+                          style="width: 18px; height: 18px;"
                         >
                           <svg
                             viewBox="0 0 24 24"
@@ -120,7 +120,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                       >
                         <div
                           class="fds-icon fds-icon--s"
-                          style="width: 24px; height: 24px;"
+                          style="width: 18px; height: 18px;"
                         >
                           <svg
                             viewBox="0 0 24 24"
@@ -281,7 +281,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                       >
                         <div
                           class="fds-icon fds-icon--s"
-                          style="width: 24px; height: 24px;"
+                          style="width: 18px; height: 18px;"
                         >
                           <svg
                             viewBox="0 0 24 24"
@@ -356,7 +356,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                       >
                         <div
                           class="fds-icon fds-icon--s"
-                          style="width: 24px; height: 24px;"
+                          style="width: 18px; height: 18px;"
                         >
                           <svg
                             viewBox="0 0 24 24"
