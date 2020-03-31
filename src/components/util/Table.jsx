@@ -71,7 +71,9 @@ export const TableCell = ({ cellType, children, label, isCSS, copy, ...props }) 
     >
       {newChildren}
       {copy && (
-        <span>{copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}</span>
+        <span className="cliptext">
+          {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
+        </span>
       )}
     </td>
   );
