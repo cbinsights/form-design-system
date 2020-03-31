@@ -121,7 +121,6 @@ const NavArrows = ({ onPreviousClick, onNextClick }) => (
  * @returns {ReactElement}
  */
 const DateInput = ({ futureYears = 1, pastYears = 40, defaultDate, onDateChange }) => {
-  console.warn(defaultDate);
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
   const [pickerMonth, setPickerMonth] = useState(new Date());
   const [inputValue, setInputValue] = useState(
