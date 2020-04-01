@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.17] Add TextInput
+
+- Added `TextInput` form component for inputs
+
 ## [7.16] Updated `Popover`
 
 - Added disableScrollRef to disable an elements scrolling while the popover is visible
