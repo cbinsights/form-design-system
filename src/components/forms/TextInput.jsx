@@ -101,7 +101,7 @@ TextInput.propTypes = {
   errorText: PropTypes.string,
 
   /** Label used for `label` element */
-  label: PropTypes.string.isReqiured,
+  label: PropTypes.string.isRequired,
 
   /**
    * FDS Icon _reference_
