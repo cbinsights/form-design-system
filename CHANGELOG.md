@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.16] Updated `Popover`
+
+- Added disableScrollRef to disable an elements scrolling while the popover is visible
+- Added closeOnScrollRef to close the popover when the user starts scrolling the given element
+
 ## [7.15] Disabled Menu
 
 - Added `isDisabled` prop to `Menu`
