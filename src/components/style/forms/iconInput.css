@@ -1,6 +1,8 @@
 
 .fdsIconInput {
   position: relative;
+  z-index: 2;
+  flex-grow: 1;
   width: 100%;
 }
 

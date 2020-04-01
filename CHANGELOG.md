@@ -34,6 +34,20 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### `Thing` Component
 Component was updated / removed.
 
+## [7.17] Add TextInput
+
+- Added `TextInput` form component for inputs
+
+## [7.16] Updated `Popover`
+
+- Added disableScrollRef to disable an elements scrolling while the popover is visible
+- Added closeOnScrollRef to close the popover when the user starts scrolling the given element
+
+## [7.15] Disabled Menu
+
+- Added `isDisabled` prop to `Menu`
+>>>>>>> @{-1}
+
 ## [7.14] Configurable `InputGroup`
 
 - All `InputGroup` components will now fill their parent container using 100% width
@@ -449,7 +463,7 @@ MenuButton component was removed. Please use StackedButton instead.
 - Added `customSize` prop to icons to enable arbitrary sizes (we do not
 want to encourage active use of this prop however)
 
-## [4.14] Updated / Added link colors 
+## [4.14] Updated / Added link colors
 
 - Increased link contrast by making default links appear as `blue` (instead of `aqua`)
 Added `linkInverted` property to dictionary and set up inverted link context in base-styles
