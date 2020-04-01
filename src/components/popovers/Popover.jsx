@@ -36,11 +36,6 @@ const useDisableScroll = (disableScrollRef, isDisabled) => {
       } else if (overflowStyle !== null) {
         domNode.style.overflow = overflowStyle;
       }
-      // We'll want to modify this to accommodate 2 use cases:
-      // 1. The user is using classes to apply scrolling... in this case
-      //    we'd want to clear out all styles when un-disabling.
-      // 2. Overflow might not be just scroll. We should just save whatever
-      //    was there inside a closure here, and then re-assign it back.
     }
   }, [disableScrollRef, isDisabled]);
 };
