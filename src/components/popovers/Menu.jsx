@@ -1,21 +1,33 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import {
   Menu as ReachMenu,
-  MenuList as ReachMenuList,
+  MenuItems as ReachMenuItems,
   MenuButton as ReachMenuButton,
+  MenuPopover as ReachMenuPopover,
 } from '@reach/menu-button';
 
-const Menu = ({ isInModal = false, children, trigger }) => (
-  <ReachMenu className={isInModal && 'fdsMenu--inModal'}>
-    <ReachMenuButton className="resetButton border--focus rounded--all">
-      {trigger}
-    </ReachMenuButton>
-    <ReachMenuList className="elevation--2 rounded--all bgColor--white">
-      {children}
-    </ReachMenuList>
-  </ReachMenu>
-);
+const Menu = ({ isDisabled = false, isInModal = false, children, trigger }) => {
+  if (isDisabled) return trigger;
+
+  const clonedTrigger = React.cloneElement(trigger, { tabIndex: '-1' });
+
+  return (
+    <ReachMenu>
+      <ReachMenuButton className="resetButton border--focus rounded--all">
+        {clonedTrigger}
+      </ReachMenuButton>
+      <ReachMenuPopover
+        className={cx('elevation--2 rounded--all bgColor--white', {
+          'fdsMenu--inModal': isInModal,
+        })}
+      >
+        <ReachMenuItems>{children}</ReachMenuItems>
+      </ReachMenuPopover>
+    </ReachMenu>
+  );
+};
 
 Menu.propTypes = {
   /** JSX node - the element that should trigger the menu */
@@ -24,6 +36,9 @@ Menu.propTypes = {
   /** React children (should be of type `MenuItem`) */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
     .isRequired,
+
+  /** Prevent trigger from opening menu */
+  isDisabled: PropTypes.bool,
 
   /** Sets `z-index` to `zindex-crazy` when inside a modal. */
   isInModal: PropTypes.bool,
