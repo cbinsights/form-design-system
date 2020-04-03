@@ -52,68 +52,68 @@ Using CSS Vars:
     headers={['CSS VAR', 'JS VAR', 'VALUE']}
     rows={[
         [ 
-          'var(--media-xs)',
-          'MEDIA_XS',
+          '`var(--media-xs)`',
+          '`MEDIA_XS`',
           "18px",
         ],
         [ 
-          'var(--media-s)',
-          'MEDIA_S',
+          '`var(--media-s)`',
+          '`MEDIA_S`',
           "24px",
         ],
         [ 
-          'var(--media-m)',
-          'MEDIA_M',
+          '`var(--media-m)`',
+          '`MEDIA_M`',
           "34px",
         ],
         [ 
-          'var(--media-l)',
-          'MEDIA_L',
+          '`var(--media-l)`',
+          '`MEDIA_L`',
           "50px",
         ],
         [ 
-          'var(--media-xl)',
-          'MEDIA_XL',
+          '`var(--media-xl)`',
+          '`MEDIA_XL`',
           "72px",
         ],
         [ 
-          'var(--space-double)',
-          'SPACE_DOUBLE',
+          '`var(--space-double)`',
+          '`SPACE_DOUBLE`',
           "32px",
         ],
         [ 
-          'var(--space-default)',
-          'SPACE_DEFAULT',
+          '`var(--space-default)`',
+          '`SPACE_DEFAULT`',
           "16px",
         ],
         [ 
-          'var(--space-half)',
-          'SPACE_HALF',
+          '`var(--space-half)`',
+          '`SPACE_HALF`',
           "8px",
         ],
         [ 
-          'var(--zindex-navigation)',
-          'ZINDEX_NAVIGATION',
+          '`var(--zindex-navigation)`',
+          '`ZINDEX_NAVIGATION`',
           "10",
         ],
         [ 
-          'var(--zindex-popover)',
-          'ZINDEX_POPOVER',
+          '`var(--zindex-popover)`',
+          '`ZINDEX_POPOVER`',
           "20",
         ],
         [ 
-          'var(--zindex-shim)',
-          'ZINDEX_SHIM',
+          '`var(--zindex-shim)`',
+          '`ZINDEX_SHIM`',
           "30",
         ],
         [ 
-          'var(--zindex-modal)',
-          'ZINDEX_MODAL',
+          '`var(--zindex-modal)`',
+          '`ZINDEX_MODAL`',
           "40",
         ],
         [ 
-          'var(--zindex-crazy)',
-          'ZINDEX_CRAZY',
+          '`var(--zindex-crazy)`',
+          '`ZINDEX_CRAZY`',
           "50",
         ],
     ]} 
@@ -221,8 +221,8 @@ Using CSS Vars:
         return row[2]
       }
       return [
-        row[0],
-        row[1],
+        `\`${row[0]}\``,
+        `\`${row[1]}\``,
         generateBorderValueCell()
       ]
     })} 
@@ -236,9 +236,9 @@ Using CSS Vars:
     shrinkLastColumn
     headers={['CSS VAR', 'JS VAR', 'VALUE']}
     rows={[
-        ['var(--motion-easing-default)', 'MOTION_EASING_DEFAULT', "cubic-bezier(0.4, 0, 0.2, 1)" ],
-        ['var(--motion-easing-decelerate)', 'MOTION_EASING_DECELERATE', "cubic-bezier(0, 0, 0.2, 1)" ],
-        ['var(--motion-easing-accelerate)', 'MOTION_EASING_ACCELERATE', "cubic-bezier(0.4, 0, 1, 1)" ],
+        ['`var(--motion-easing-default)`', '`MOTION_EASING_DEFAULT`', "cubic-bezier(0.4, 0, 0.2, 1)" ],
+        ['`var(--motion-easing-decelerate)`', '`MOTION_EASING_DECELERATE`', "cubic-bezier(0, 0, 0.2, 1)" ],
+        ['`var(--motion-easing-accelerate)`', '`MOTION_EASING_ACCELERATE`', "cubic-bezier(0.4, 0, 1, 1)" ],
     ]} 
   />
 </Story>

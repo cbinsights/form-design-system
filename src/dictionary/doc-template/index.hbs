@@ -36,8 +36,8 @@ Using CSS Vars:
     rows={[
       {{#each this.layout}}
         [ 
-          '{{ this.varNames.css }}',
-          '{{ this.varNames.js }}',
+          '`{{ this.varNames.css }}`',
+          '`{{ this.varNames.js }}`',
           "{{{ this.value }}}",
         ],
       {{/each}}
@@ -117,8 +117,8 @@ Using CSS Vars:
         return row[2]
       }
       return [
-        row[0],
-        row[1],
+        `\`${row[0]}\``,
+        `\`${row[1]}\``,
         generateBorderValueCell()
       ]
     })} 
@@ -133,7 +133,7 @@ Using CSS Vars:
     headers={['CSS VAR', 'JS VAR', 'VALUE']}
     rows={[
       {{#each this.motion}}
-        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}" ],
+        ['`{{ this.varNames.css }}`', '`{{ this.varNames.js }}`', "{{{ this.value }}}" ],
       {{/each}}
     ]} 
   />
