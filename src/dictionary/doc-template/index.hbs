@@ -1,6 +1,10 @@
 import { Meta, Source, Story } from "@storybook/addon-docs/blocks";
 import ColorSwatch, { ColorSwatchWrapper } from "components/util/ColorSwatch";
-import { DictionaryTableLayout } from "components/util/Table"
+import { DictionaryTableLayout, TableLayout } from "components/util/Table"
+import { mostReadable } from 'tinycolor2';
+
+export const mostReadableConfig = (hexName) =>
+  mostReadable(hexName, '#333', { includeFallbackColors: true, level: 'AAA' });
 
 <Meta title="Design Tokens/Dictionary" />
 
@@ -42,17 +46,52 @@ Using CSS Vars:
 
 ## Font
 
+
 <Story name="Font">
-  <DictionaryTableLayout
-    data={[
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS Var', 'JS Var', 'Value']}
+    rows={[
       {{#each this.font}}
-        {
-          cssVar: '{{ this.varNames.css }}',
-          jsVar: '{{ this.varNames.js }}',
-          value: "{{{ this.value }}}",
-        },
+        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}"],
       {{/each}}
-    ]} 
+    ].map(row => {
+      const generateFontValueCell = () => {
+        if (row[2].startsWith('rgba')){
+          return {
+            style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" }, 
+            copyValue: row[2], 
+            className: "transparentpattern", 
+            children: <div style=\{{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div> 
+          }
+        } else if (row[2].startsWith('#')){
+          return {
+            style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" }, 
+            copyValue: row[2], 
+            children: <div style=\{{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div> 
+          }
+        } else if (row[1].startsWith('FONT_FAMILY')){
+          return {
+            children: <div style=\{{ fontFamily: row[2] }}>{row[2]}</div> 
+          }
+        } else if (row[1].startsWith('FONT_SIZE')){
+          return {
+            children: <div style=\{{ fontSize: row[2] }}>{row[2]}</div> 
+          }
+        } else if (row[1].startsWith('FONT_WEIGHT')){
+          return {
+            children: <div style=\{{ fontWeight: row[2] }}>{row[2]}</div> 
+          }
+        } else {
+          return row[2]
+        }
+      }
+      return [
+        `\`${row[0]}\``,
+        `\`${row[1]}\``,
+        generateFontValueCell(),
+      ]
+    })} 
   />
 </Story>
 

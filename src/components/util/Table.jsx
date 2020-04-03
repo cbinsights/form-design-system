@@ -37,31 +37,19 @@ const mostReadableConfig = (hexName) =>
 export const TableCell = ({ cellType, children, label, isCSS, copy, ...props }) => {
   const [copiedText, copyToClipboard] = useClipboard();
 
-  const background =
-    cellType && (cellType.startsWith('FONT_COLOR') || cellType.startsWith('BORDER_COLOR'))
-      ? children
-      : undefined;
-
-  const color = background && mostReadableConfig(background);
-
-  const fontFamily = cellType && cellType.startsWith('FONT_FAMILY') && children;
-
-  const fontSize = cellType && cellType.startsWith('FONT_SIZE') && children;
-
-  const fontWeight = cellType && cellType.startsWith('FONT_WEIGHT') && children;
-
   const newChildren =
-    typeof children === 'string' ? <ReactMarkdown source={children} /> : children;
+    typeof children === 'string' ? (
+      children.startsWith('rgba') ? (
+        <div style={{ background: children }}>{children}</div>
+      ) : (
+        <ReactMarkdown source={children} />
+      )
+    ) : (
+      children
+    );
 
   return (
     <td
-      style={{
-        fontFamily,
-        fontWeight,
-        fontSize,
-        background,
-        color,
-      }}
       className={cx({
         hasCopy: copy,
         hasCSS: isCSS,
@@ -125,8 +113,8 @@ DictionaryTableLayout.propTypes = {
   copy: PropTypes.bool,
 };
 
-export const TableLayout = ({ headers, rows, isCSS, copy = true }) => (
-  <Table>
+export const TableLayout = ({ headers, shrinkLastColumn, rows, isCSS, copy = true }) => (
+  <Table shrinkLastColumn={shrinkLastColumn}>
     <TableHeadLayout headers={headers} />
     <TableBody>
       {rows.map((row, idx) => (
@@ -150,36 +138,9 @@ TableLayout.propTypes = {
   rows: PropTypes.array,
   headers: PropTypes.array,
   copy: PropTypes.bool,
+  shrinkLastColumn: PropTypes.bool,
   /* controls whether we consider the first column of a table to be CSS classes */
   isCSS: PropTypes.bool,
 };
 
 export default Table;
-
-export const ClassTableLayout = ({ headers, rows }) => (
-  <Table>
-    <TableHeadLayout headers={headers} />
-    <TableBody>
-      {rows.map((row, idx) => (
-        <tr key={idx}>
-          {row.map((cell, idx2) =>
-            typeof cell === 'object' ? (
-              <TableCell key={idx2} {...cell} />
-            ) : (
-              <TableCell key={idx2} isCSS={idx2 === 0}>
-                {cell}
-              </TableCell>
-            )
-          )}
-        </tr>
-      ))}
-    </TableBody>
-  </Table>
-);
-
-ClassTableLayout.propTypes = {
-  headers: PropTypes.array,
-  rows: PropTypes.arrayOf(PropTypes.array),
-  color: PropTypes.string,
-  fontSize: PropTypes.number,
-};
