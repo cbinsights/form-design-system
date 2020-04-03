@@ -1,6 +1,6 @@
 import { Meta, Source, Story } from "@storybook/addon-docs/blocks";
 import ColorSwatch, { ColorSwatchWrapper } from "components/util/ColorSwatch";
-import { DictionaryTableLayout, TableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
 import { mostReadable } from 'tinycolor2';
 
 export const mostReadableConfig = (hexName) =>
@@ -30,14 +30,16 @@ Using CSS Vars:
 ## Layout
 
 <Story name="Layout">
-  <DictionaryTableLayout
-    data={[
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={[
       {{#each this.layout}}
-        {
-          cssVar: '{{ this.varNames.css }}',
-          jsVar: '{{ this.varNames.js }}',
-          value: "{{{ this.value }}}",
-        },
+        [ 
+          '{{ this.varNames.css }}',
+          '{{ this.varNames.js }}',
+          "{{{ this.value }}}",
+        ],
       {{/each}}
     ]} 
   />
@@ -50,7 +52,7 @@ Using CSS Vars:
 <Story name="Font">
   <TableLayout
     shrinkLastColumn
-    headers={['CSS Var', 'JS Var', 'Value']}
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
     rows={[
       {{#each this.font}}
         ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}"],
@@ -60,14 +62,12 @@ Using CSS Vars:
         if (row[2].startsWith('rgba')){
           return {
             style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" }, 
-            copyValue: row[2], 
             className: "transparentpattern", 
             children: <div style=\{{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div> 
           }
         } else if (row[2].startsWith('#')){
           return {
             style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" }, 
-            copyValue: row[2], 
             children: <div style=\{{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div> 
           }
         } else if (row[1].startsWith('FONT_FAMILY')){
@@ -98,30 +98,42 @@ Using CSS Vars:
 ## Border
 
 <Story name="Border">
-  <DictionaryTableLayout
-    data={[
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={[
       {{#each this.border}}
-        {
-          cssVar: '{{ this.varNames.css }}',
-          jsVar: '{{ this.varNames.js }}',
-          value: "{{{ this.value }}}",
-        },
+        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}" ],
       {{/each}}
-    ]} 
+    ].map(row => {
+      const generateBorderValueCell = () => {
+        if (row[2].startsWith('rgba')){
+          return {
+            style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" }, 
+            className: "transparentpattern", 
+            children: <div style=\{{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div> 
+          }
+        }
+        return row[2]
+      }
+      return [
+        row[0],
+        row[1],
+        generateBorderValueCell()
+      ]
+    })} 
   />
 </Story>
 
 ## Motion
 
 <Story name="Motion">
-  <DictionaryTableLayout
-    data={[
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={[
       {{#each this.motion}}
-        {
-          cssVar: '{{ this.varNames.css }}',
-          jsVar: '{{ this.varNames.js }}',
-          value: "{{{ this.value }}}",
-        },
+        ['{{ this.varNames.css }}', '{{ this.varNames.js }}', "{{{ this.value }}}" ],
       {{/each}}
     ]} 
   />
