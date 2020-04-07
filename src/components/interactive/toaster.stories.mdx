@@ -37,30 +37,40 @@ import Toast from "components/interactive/Toast";
 Controller for positioning, transition, and dismissal of toasts.
 
 <Story name="Knobs">
-  <Toaster
-    dismissDelay={number("dismissDelay", undefined)}
-    dismissToast={action('dismissToast')}
-    isAutoDismiss={boolean("isAutoDismiss", undefined)}
-    toastProps={{
-      content: text("content", 'Check out this toast'),
-      type: options(
-        "type",
-        arrayToOptions(['error', 'success', 'info', 'progress']),
-        'info',
-        { display: "inline-radio" }
-      ),
-      progress: number("progress", 42, {
-        range: true,
-        min: 1,
-        max: 100,
-        step: 1
-      }),
-      canDismiss: boolean("canDismiss", undefined),
-      dismissOnAction: boolean("dismissOnAction", true),
-      actionLabel: text("actionLabel", 'Action'),
-      onAction: action('onAction')
-    }}
-  />
+  {() => {   
+    const [isToastShowing, setIsToastShowing] = useState(false);
+    return (
+      <>
+        <button onClick={() => setIsToastShowing(!isToastShowing)}>{isToastShowing ? 'Hide Toaster' : 'Show Toaster'}</button>
+        <Toaster
+          isOpen={isToastShowing}
+          onDismiss={() => setIsToastShowing(false)}
+          dismissDelay={number("dismissDelay", undefined)}
+          dismissToast={action('dismissToast')}
+          isAutoDismiss={boolean("isAutoDismiss", undefined)}
+          toastProps={{
+            content: text("content", "hey"),
+            type: options(
+              "type",
+              arrayToOptions(['error', 'success', 'info', 'progress']),
+              'info',
+              { display: "inline-radio" }
+            ),
+            progress: number("progress", 42, {
+              range: true,
+              min: 1,
+              max: 100,
+              step: 1
+            }),
+            canDismiss: boolean("canDismiss", undefined),
+            dismissOnAction: boolean("dismissOnAction", true),
+            actionLabel: text("actionLabel", 'Action'),
+            onAction: action('onAction')
+          }}
+        />
+      </>
+    )
+  }}
 </Story>
 
 <Props of={RawToaster} />

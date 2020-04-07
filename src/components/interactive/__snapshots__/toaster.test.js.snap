@@ -5,6 +5,7 @@ exports[`Toaster component matches snapshot 1`] = `
   containerInfo={<body />}
 >
   <Toaster
+    isOpen={true}
     toastProps={
       Object {
         "content": <p>

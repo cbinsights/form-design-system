@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -11,18 +11,14 @@ export const Toaster = ({
   toastProps = {},
   dismissDelay = 4000,
   isAutoDismiss = true,
+  isOpen = false,
+  onDismiss,
 }) => {
   const [toast, setToast] = useState(null);
+  const prevContent = useRef();
 
-  const dismissToast = () => setToast(null);
-
-  useEffect(() => {
-    transitionID = uuidv4();
-    // We check for the props here that we want to re-render the toast animation
-  }, [toastProps.content, toastProps.type]);
-
-  useEffect(() => {
-    if (Object.keys(toastProps).length) {
+  const coreLogic = () => {
+    if (isOpen) {
       setToast(
         <CSSTransition
           key={transitionID}
@@ -34,7 +30,7 @@ export const Toaster = ({
           <div className="toaster">
             <Toast
               dismissDelay={dismissDelay}
-              dismissToast={dismissToast}
+              dismissToast={onDismiss}
               isAutoDismiss={isAutoDismiss}
               content={toastProps.content}
               type={toastProps.type}
@@ -56,9 +52,9 @@ export const Toaster = ({
     if (
       isAutoDismiss &&
       toastProps.type !== 'progress' &&
-      toastProps.canDismiss !== true
+      toastProps.canDismiss !== false
     ) {
-      const timer = setTimeout(() => dismissToast(), dismissDelay);
+      const timer = setTimeout(() => onDismiss(), dismissDelay);
 
       return function cleanup() {
         clearTimeout(timer);
@@ -71,8 +67,14 @@ export const Toaster = ({
     // an update of them re-renders the Toast (without animation).
     // Note: you "cannot" spread props here... do not attempt to do so :)
     // You may be able to spread "propTypes" from Toast if you're ambitious.
-  }, [
-    toastProps.content,
+  };
+
+  useEffect(() => {
+    transitionID = uuidv4();
+    // We check for the props here that we want to re-render the toast animation
+  }, [toastProps.content, toastProps.type]);
+
+  useEffect(coreLogic, [
     toastProps.type,
     toastProps.progress,
     toastProps.actionLabel,
@@ -82,6 +84,15 @@ export const Toaster = ({
     isAutoDismiss,
     dismissDelay,
   ]);
+
+  useEffect(() => {
+    // This logic is specifically meant to handle not re-rendering
+    // the toast if the same html is passed into content
+    const content = JSON.stringify(toastProps.content);
+    const didContentChange = content !== prevContent.current;
+    if (didContentChange && prevContent.current !== undefined) coreLogic();
+    prevContent.current = content;
+  }, [toastProps.content]);
 
   return (
     <div aria-live="assertive">
@@ -98,12 +109,16 @@ const ToasterWrapper = (props) =>
   );
 
 Toaster.propTypes = {
+  /** Specifies whether Toast is open or not */
+  isOpen: PropTypes.bool,
   /** Accepts all props that `Toast` accepts. Refer to Toast component for full documentation */
-  toastProps: Toast.propTypes,
+  toastProps: PropTypes.shape(Toast.propTypes),
   /** Should this toast auto-dismiss itself? */
   isAutoDismiss: PropTypes.bool,
   /** Time in ms to auto-dismiss toast */
   dismissDelay: PropTypes.number,
+  /** Callback that is fired when toast is dismissed */
+  onDismiss: PropTypes.func,
 };
 
 export default ToasterWrapper;

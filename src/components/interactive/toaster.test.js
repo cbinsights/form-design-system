@@ -11,12 +11,13 @@ describe('Toaster component', () => {
   uuid.mockImplementation(() => 'testid');
 
   it('matches snapshot', () => {
-    const component = shallow(<Toaster toastProps={{ type: "info", content: <p>test</p> }} />);
+    const component = shallow(<Toaster isOpen toastProps={{ type: "info", content: <p>test</p> }} />);
     expect(component).toMatchSnapshot();
   });
 
   it('passes dismiss func to toast', () => {
-    const component = mount(<Toaster toastProps={{ type: "info", content: <p>test</p> }} />);
+    const onDismiss = jest.fn()
+    const component = mount(<Toaster onDismiss={onDismiss} isOpen toastProps={{ type: "info", content: <p>test</p> }} />);
     const {dismissToast} = component.find("Toast").props();
     expect(typeof dismissToast).toBe('function');
   })
