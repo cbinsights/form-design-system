@@ -41,9 +41,15 @@ exports[`TextInput component matches snapshot (default) 1`] = `
   <label
     className="fdsTextInput-root fdsTextInput-root--topLabel"
   >
+    <div
+      className="fdsTextInput-label"
+    >
+      label
+    </div>
     <DecoratedInput>
       <IconInput>
         <input
+          aria-label="label"
           className="fdsTextInput"
           onChange={[Function]}
           type="text"

@@ -102,7 +102,12 @@ const Toast = ({
                 {isAutoDismiss ? (
                   <CountdownButton onClick={dismissToast} duration={dismissDelay} />
                 ) : (
-                  <IconButton Icon={DenyIcon} onClick={dismissToast} radius="circle" />
+                  <IconButton
+                    Icon={DenyIcon}
+                    onClick={dismissToast}
+                    radius="circle"
+                    label="Close"
+                  />
                 )}
               </div>
             </FlexItem>

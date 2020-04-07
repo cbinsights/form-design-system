@@ -15,6 +15,7 @@ exports[`CountdownButton matches snapshot 1`] = `
   >
     <IconButton
       Icon={[Function]}
+      label="Close"
       radius="circle"
     />
   </div>

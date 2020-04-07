@@ -56,7 +56,7 @@ const CountdownButton = ({ Icon = DenyIcon, duration, onClick }) => {
       }}
     >
       <div className="countdownButton-button">
-        <IconButton onClick={onClick} radius="circle" Icon={Icon} />
+        <IconButton onClick={onClick} radius="circle" Icon={Icon} label="Close" />
       </div>
       <Transition
         in={true}

@@ -7,14 +7,14 @@ describe('TextInput component', () => {
 
   it('fires throttleFunctions', () => {
     const throttleFn = jest.fn()
-    const wrapper = mount(<TextInput onThrottledChange={throttleFn} />);
+    const wrapper = mount(<TextInput onThrottledChange={throttleFn} label="label" />);
     const input = wrapper.find('input')
     input.simulate('change', { target: { value: 'aaa' } });
     expect(throttleFn).toHaveBeenCalled();
   });
 
   it('matches snapshot (default)', () => {
-    const wrapper = shallow(<TextInput />);
+    const wrapper = shallow(<TextInput label="label" />);
     expect(wrapper).toMatchSnapshot();
   });
 

@@ -6,10 +6,10 @@ import DayPicker from 'react-day-picker';
 
 import ActionsArrowLeftIcon from 'lib/icons/react/ActionsArrowLeftIcon';
 import ActionsArrowRightIcon from 'lib/icons/react/ActionsArrowRightIcon';
-import Popover from '../popovers/Popover';
-import Flex from '../layout/Flex';
-import FlexItem from '../layout/FlexItem';
-import IconButton from '../interactive/IconButton';
+import Popover from 'components/popovers/Popover';
+import Flex from 'components/layout/Flex';
+import FlexItem from 'components/layout/FlexItem';
+import IconButton from 'components/interactive/IconButton';
 
 const DATE_FORMAT = 'MM/DD/YYYY';
 const DATE_PATTERN = '[0-9/]*';
@@ -106,10 +106,18 @@ const NavArrows = ({ onPreviousClick, onNextClick }) => (
   <div className="fdsDateInput-navArrows alignChild--right--center">
     <Flex noGutters>
       <FlexItem shrink>
-        <IconButton onClick={() => onPreviousClick()} Icon={ActionsArrowLeftIcon} />
+        <IconButton
+          onClick={() => onPreviousClick()}
+          Icon={ActionsArrowLeftIcon}
+          label="Previous Month"
+        />
       </FlexItem>
       <FlexItem shrink>
-        <IconButton onClick={() => onNextClick()} Icon={ActionsArrowRightIcon} />
+        <IconButton
+          onClick={() => onNextClick()}
+          Icon={ActionsArrowRightIcon}
+          label="Next Month"
+        />
       </FlexItem>
     </Flex>
   </div>

@@ -99,6 +99,7 @@ const Dialog = ({
                         Icon={DenyIcon}
                         onClick={onDismiss}
                         aria-label="close"
+                        label="close"
                       />
                     </div>
                   )}
