@@ -1,6 +1,10 @@
 import { Meta, Source, Story } from "@storybook/addon-docs/blocks";
 import ColorSwatch, { ColorSwatchWrapper } from "components/util/ColorSwatch";
-import { DictionaryTableLayout } from "components/util/Table"
+import { TableLayout } from "components/util/Table"
+import { mostReadable } from 'tinycolor2';
+
+export const mostReadableConfig = (hexName) =>
+  mostReadable(hexName, '#333', { includeFallbackColors: true, level: 'AAA' });
 
 <Meta title="Design Tokens/Dictionary" />
 
@@ -43,73 +47,75 @@ Using CSS Vars:
 ## Layout
 
 <Story name="Layout">
-  <DictionaryTableLayout
-    data={[
-        {
-          cssVar: 'var(--media-xs)',
-          jsVar: 'MEDIA_XS',
-          value: "18px",
-        },
-        {
-          cssVar: 'var(--media-s)',
-          jsVar: 'MEDIA_S',
-          value: "24px",
-        },
-        {
-          cssVar: 'var(--media-m)',
-          jsVar: 'MEDIA_M',
-          value: "34px",
-        },
-        {
-          cssVar: 'var(--media-l)',
-          jsVar: 'MEDIA_L',
-          value: "50px",
-        },
-        {
-          cssVar: 'var(--media-xl)',
-          jsVar: 'MEDIA_XL',
-          value: "72px",
-        },
-        {
-          cssVar: 'var(--space-double)',
-          jsVar: 'SPACE_DOUBLE',
-          value: "32px",
-        },
-        {
-          cssVar: 'var(--space-default)',
-          jsVar: 'SPACE_DEFAULT',
-          value: "16px",
-        },
-        {
-          cssVar: 'var(--space-half)',
-          jsVar: 'SPACE_HALF',
-          value: "8px",
-        },
-        {
-          cssVar: 'var(--zindex-navigation)',
-          jsVar: 'ZINDEX_NAVIGATION',
-          value: "10",
-        },
-        {
-          cssVar: 'var(--zindex-popover)',
-          jsVar: 'ZINDEX_POPOVER',
-          value: "20",
-        },
-        {
-          cssVar: 'var(--zindex-shim)',
-          jsVar: 'ZINDEX_SHIM',
-          value: "30",
-        },
-        {
-          cssVar: 'var(--zindex-modal)',
-          jsVar: 'ZINDEX_MODAL',
-          value: "40",
-        },
-        {
-          cssVar: 'var(--zindex-crazy)',
-          jsVar: 'ZINDEX_CRAZY',
-          value: "50",
-        },
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={[
+        [ 
+          '`var(--media-xs)`',
+          '`MEDIA_XS`',
+          "18px",
+        ],
+        [ 
+          '`var(--media-s)`',
+          '`MEDIA_S`',
+          "24px",
+        ],
+        [ 
+          '`var(--media-m)`',
+          '`MEDIA_M`',
+          "34px",
+        ],
+        [ 
+          '`var(--media-l)`',
+          '`MEDIA_L`',
+          "50px",
+        ],
+        [ 
+          '`var(--media-xl)`',
+          '`MEDIA_XL`',
+          "72px",
+        ],
+        [ 
+          '`var(--space-double)`',
+          '`SPACE_DOUBLE`',
+          "32px",
+        ],
+        [ 
+          '`var(--space-default)`',
+          '`SPACE_DEFAULT`',
+          "16px",
+        ],
+        [ 
+          '`var(--space-half)`',
+          '`SPACE_HALF`',
+          "8px",
+        ],
+        [ 
+          '`var(--zindex-navigation)`',
+          '`ZINDEX_NAVIGATION`',
+          "10",
+        ],
+        [ 
+          '`var(--zindex-popover)`',
+          '`ZINDEX_POPOVER`',
+          "20",
+        ],
+        [ 
+          '`var(--zindex-shim)`',
+          '`ZINDEX_SHIM`',
+          "30",
+        ],
+        [ 
+          '`var(--zindex-modal)`',
+          '`ZINDEX_MODAL`',
+          "40",
+        ],
+        [ 
+          '`var(--zindex-crazy)`',
+          '`ZINDEX_CRAZY`',
+          "50",
+        ],
     ]} 
   />
 </Story>
@@ -117,217 +123,122 @@ Using CSS Vars:
 
 ## Font
 
+
 <Story name="Font">
-  <DictionaryTableLayout
-    data={[
-        {
-          cssVar: 'var(--font-color-link)',
-          jsVar: 'FONT_COLOR_LINK',
-          value: "#006699",
-        },
-        {
-          cssVar: 'var(--font-color-linkInverted)',
-          jsVar: 'FONT_COLOR_LINK_INVERTED',
-          value: "#4cabce",
-        },
-        {
-          cssVar: 'var(--font-color-heading)',
-          jsVar: 'FONT_COLOR_HEADING',
-          value: "#404040",
-        },
-        {
-          cssVar: 'var(--font-color-primary)',
-          jsVar: 'FONT_COLOR_PRIMARY',
-          value: "rgba(64, 64, 64, 0.87)",
-        },
-        {
-          cssVar: 'var(--font-color-secondary)',
-          jsVar: 'FONT_COLOR_SECONDARY',
-          value: "rgba(64, 64, 64, 0.60)",
-        },
-        {
-          cssVar: 'var(--font-color-hint)',
-          jsVar: 'FONT_COLOR_HINT',
-          value: "rgba(64, 64, 64, 0.38)",
-        },
-        {
-          cssVar: 'var(--font-color-headingInverted)',
-          jsVar: 'FONT_COLOR_HEADING_INVERTED',
-          value: "#ffffff",
-        },
-        {
-          cssVar: 'var(--font-color-primaryInverted)',
-          jsVar: 'FONT_COLOR_PRIMARY_INVERTED',
-          value: "rgba(255, 255, 255, 0.87)",
-        },
-        {
-          cssVar: 'var(--font-color-secondaryInverted)',
-          jsVar: 'FONT_COLOR_SECONDARY_INVERTED',
-          value: "rgba(255, 255, 255, 0.60)",
-        },
-        {
-          cssVar: 'var(--font-color-hintInverted)',
-          jsVar: 'FONT_COLOR_HINT_INVERTED',
-          value: "rgba(255, 255, 255, 0.38)",
-        },
-        {
-          cssVar: 'var(--font-color-error)',
-          jsVar: 'FONT_COLOR_ERROR',
-          value: "#e5323e",
-        },
-        {
-          cssVar: 'var(--font-color-success)',
-          jsVar: 'FONT_COLOR_SUCCESS',
-          value: "#00986b",
-        },
-        {
-          cssVar: 'var(--font-color-errorInverted)',
-          jsVar: 'FONT_COLOR_ERROR_INVERTED',
-          value: "#e5323e",
-        },
-        {
-          cssVar: 'var(--font-color-successInverted)',
-          jsVar: 'FONT_COLOR_SUCCESS_INVERTED',
-          value: "#70c390",
-        },
-        {
-          cssVar: 'var(--font-family-condensed)',
-          jsVar: 'FONT_FAMILY_CONDENSED',
-          value: "'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif",
-        },
-        {
-          cssVar: 'var(--font-family-default)',
-          jsVar: 'FONT_FAMILY_DEFAULT',
-          value: "Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif",
-        },
-        {
-          cssVar: 'var(--font-family-mono)',
-          jsVar: 'FONT_FAMILY_MONO',
-          value: "Monaco, Consolas, monospace",
-        },
-        {
-          cssVar: 'var(--font-lineHeight-bigText)',
-          jsVar: 'FONT_LINE_HEIGHT_BIG_TEXT',
-          value: "1.2",
-        },
-        {
-          cssVar: 'var(--font-lineHeight-default)',
-          jsVar: 'FONT_LINE_HEIGHT_DEFAULT',
-          value: "1.5",
-        },
-        {
-          cssVar: 'var(--font-lineHeight-smallText)',
-          jsVar: 'FONT_LINE_HEIGHT_SMALL_TEXT',
-          value: "1.8",
-        },
-        {
-          cssVar: 'var(--font-size-xs)',
-          jsVar: 'FONT_SIZE_XS',
-          value: "10px",
-        },
-        {
-          cssVar: 'var(--font-size-s)',
-          jsVar: 'FONT_SIZE_S',
-          value: "12px",
-        },
-        {
-          cssVar: 'var(--font-size-m)',
-          jsVar: 'FONT_SIZE_M',
-          value: "14px",
-        },
-        {
-          cssVar: 'var(--font-size-default)',
-          jsVar: 'FONT_SIZE_DEFAULT',
-          value: "14px",
-        },
-        {
-          cssVar: 'var(--font-size-l)',
-          jsVar: 'FONT_SIZE_L',
-          value: "16px",
-        },
-        {
-          cssVar: 'var(--font-size-xl)',
-          jsVar: 'FONT_SIZE_XL',
-          value: "20px",
-        },
-        {
-          cssVar: 'var(--font-size-2xl)',
-          jsVar: 'FONT_SIZE_2XL',
-          value: "24px",
-        },
-        {
-          cssVar: 'var(--font-size-3xl)',
-          jsVar: 'FONT_SIZE_3XL',
-          value: "32px",
-        },
-        {
-          cssVar: 'var(--font-size-4xl)',
-          jsVar: 'FONT_SIZE_4XL',
-          value: "38px",
-        },
-        {
-          cssVar: 'var(--font-weight-default)',
-          jsVar: 'FONT_WEIGHT_DEFAULT',
-          value: "400",
-        },
-        {
-          cssVar: 'var(--font-weight-medium)',
-          jsVar: 'FONT_WEIGHT_MEDIUM',
-          value: "500",
-        },
-        {
-          cssVar: 'var(--font-weight-bold)',
-          jsVar: 'FONT_WEIGHT_BOLD',
-          value: "700",
-        },
-    ]} 
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={[
+        ['var(--font-color-link)', 'FONT_COLOR_LINK', "#006699"],
+        ['var(--font-color-linkInverted)', 'FONT_COLOR_LINK_INVERTED', "#4cabce"],
+        ['var(--font-color-heading)', 'FONT_COLOR_HEADING', "#404040"],
+        ['var(--font-color-primary)', 'FONT_COLOR_PRIMARY', "rgba(64, 64, 64, 0.87)"],
+        ['var(--font-color-secondary)', 'FONT_COLOR_SECONDARY', "rgba(64, 64, 64, 0.60)"],
+        ['var(--font-color-hint)', 'FONT_COLOR_HINT', "rgba(64, 64, 64, 0.38)"],
+        ['var(--font-color-headingInverted)', 'FONT_COLOR_HEADING_INVERTED', "#ffffff"],
+        ['var(--font-color-primaryInverted)', 'FONT_COLOR_PRIMARY_INVERTED', "rgba(255, 255, 255, 0.87)"],
+        ['var(--font-color-secondaryInverted)', 'FONT_COLOR_SECONDARY_INVERTED', "rgba(255, 255, 255, 0.60)"],
+        ['var(--font-color-hintInverted)', 'FONT_COLOR_HINT_INVERTED', "rgba(255, 255, 255, 0.38)"],
+        ['var(--font-color-error)', 'FONT_COLOR_ERROR', "#e5323e"],
+        ['var(--font-color-success)', 'FONT_COLOR_SUCCESS', "#00986b"],
+        ['var(--font-color-errorInverted)', 'FONT_COLOR_ERROR_INVERTED', "#e5323e"],
+        ['var(--font-color-successInverted)', 'FONT_COLOR_SUCCESS_INVERTED', "#70c390"],
+        ['var(--font-family-condensed)', 'FONT_FAMILY_CONDENSED', "'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif"],
+        ['var(--font-family-default)', 'FONT_FAMILY_DEFAULT', "Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif"],
+        ['var(--font-family-mono)', 'FONT_FAMILY_MONO', "Monaco, Consolas, monospace"],
+        ['var(--font-lineHeight-bigText)', 'FONT_LINE_HEIGHT_BIG_TEXT', "1.2"],
+        ['var(--font-lineHeight-default)', 'FONT_LINE_HEIGHT_DEFAULT', "1.5"],
+        ['var(--font-lineHeight-smallText)', 'FONT_LINE_HEIGHT_SMALL_TEXT', "1.8"],
+        ['var(--font-size-xs)', 'FONT_SIZE_XS', "10px"],
+        ['var(--font-size-s)', 'FONT_SIZE_S', "12px"],
+        ['var(--font-size-m)', 'FONT_SIZE_M', "14px"],
+        ['var(--font-size-default)', 'FONT_SIZE_DEFAULT', "14px"],
+        ['var(--font-size-l)', 'FONT_SIZE_L', "16px"],
+        ['var(--font-size-xl)', 'FONT_SIZE_XL', "20px"],
+        ['var(--font-size-2xl)', 'FONT_SIZE_2XL', "24px"],
+        ['var(--font-size-3xl)', 'FONT_SIZE_3XL', "32px"],
+        ['var(--font-size-4xl)', 'FONT_SIZE_4XL', "38px"],
+        ['var(--font-weight-default)', 'FONT_WEIGHT_DEFAULT', "400"],
+        ['var(--font-weight-medium)', 'FONT_WEIGHT_MEDIUM', "500"],
+        ['var(--font-weight-bold)', 'FONT_WEIGHT_BOLD', "700"],
+    ].map(row => {
+      const generateFontValueCell = () => {
+        if (row[2].startsWith('rgba')){
+          return {
+            style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" }, 
+            className: "transparentpattern", 
+            children: <div style={{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div> 
+          }
+        } else if (row[2].startsWith('#')){
+          return {
+            style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" }, 
+            children: <div style={{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div> 
+          }
+        } else if (row[1].startsWith('FONT_FAMILY')){
+          return {
+            children: <div style={{ fontFamily: row[2] }}>{row[2]}</div> 
+          }
+        } else if (row[1].startsWith('FONT_SIZE')){
+          return {
+            children: <div style={{ fontSize: row[2] }}>{row[2]}</div> 
+          }
+        } else if (row[1].startsWith('FONT_WEIGHT')){
+          return {
+            children: <div style={{ fontWeight: row[2] }}>{row[2]}</div> 
+          }
+        } else {
+          return row[2]
+        }
+      }
+      return [
+        `\`${row[0]}\``,
+        `\`${row[1]}\``,
+        generateFontValueCell(),
+      ]
+    })} 
   />
 </Story>
 
 ## Border
 
 <Story name="Border">
-  <DictionaryTableLayout
-    data={[
-        {
-          cssVar: 'var(--border-color-input)',
-          jsVar: 'BORDER_COLOR_INPUT',
-          value: "rgba(64, 64, 64, 0.24)",
-        },
-        {
-          cssVar: 'var(--border-color-focusRing)',
-          jsVar: 'BORDER_COLOR_FOCUS_RING',
-          value: "rgba(76, 171, 206, 0.6)",
-        },
-        {
-          cssVar: 'var(--border-radius-default)',
-          jsVar: 'BORDER_RADIUS_DEFAULT',
-          value: "4px",
-        },
-    ]} 
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={[
+        ['var(--border-color-input)', 'BORDER_COLOR_INPUT', "rgba(64, 64, 64, 0.24)" ],
+        ['var(--border-color-focusRing)', 'BORDER_COLOR_FOCUS_RING', "rgba(76, 171, 206, 0.6)" ],
+        ['var(--border-radius-default)', 'BORDER_RADIUS_DEFAULT', "4px" ],
+    ].map(row => {
+      const generateBorderValueCell = () => {
+        if (row[2].startsWith('rgba')){
+          return {
+            style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" }, 
+            className: "transparentpattern", 
+            children: <div style={{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div> 
+          }
+        }
+        return row[2]
+      }
+      return [
+        `\`${row[0]}\``,
+        `\`${row[1]}\``,
+        generateBorderValueCell()
+      ]
+    })} 
   />
 </Story>
 
 ## Motion
 
 <Story name="Motion">
-  <DictionaryTableLayout
-    data={[
-        {
-          cssVar: 'var(--motion-easing-default)',
-          jsVar: 'MOTION_EASING_DEFAULT',
-          value: "cubic-bezier(0.4, 0, 0.2, 1)",
-        },
-        {
-          cssVar: 'var(--motion-easing-decelerate)',
-          jsVar: 'MOTION_EASING_DECELERATE',
-          value: "cubic-bezier(0, 0, 0.2, 1)",
-        },
-        {
-          cssVar: 'var(--motion-easing-accelerate)',
-          jsVar: 'MOTION_EASING_ACCELERATE',
-          value: "cubic-bezier(0.4, 0, 1, 1)",
-        },
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={[
+        ['`var(--motion-easing-default)`', '`MOTION_EASING_DEFAULT`', "cubic-bezier(0.4, 0, 0.2, 1)" ],
+        ['`var(--motion-easing-decelerate)`', '`MOTION_EASING_DECELERATE`', "cubic-bezier(0, 0, 0.2, 1)" ],
+        ['`var(--motion-easing-accelerate)`', '`MOTION_EASING_ACCELERATE`', "cubic-bezier(0.4, 0, 1, 1)" ],
     ]} 
   />
 </Story>
