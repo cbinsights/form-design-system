@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -15,7 +15,6 @@ export const Toaster = ({
   onDismiss,
 }) => {
   const [toast, setToast] = useState(null);
-  const prevContent = useRef();
 
   const coreLogic = () => {
     if (isOpen) {
@@ -80,6 +79,7 @@ export const Toaster = ({
 
   useEffect(coreLogic, [
     toastProps.type,
+    toastProps.content,
     toastProps.progress,
     toastProps.actionLabel,
     toastProps.canDismiss,
@@ -89,14 +89,14 @@ export const Toaster = ({
     dismissDelay,
   ]);
 
-  useEffect(() => {
-    // This logic is specifically meant to handle not re-rendering
-    // the toast if the same html is passed into content
-    const content = JSON.stringify(toastProps.content);
-    const didContentChange = content !== prevContent.current;
-    if (didContentChange && prevContent.current !== undefined) coreLogic();
-    prevContent.current = content;
-  }, [toastProps.content]);
+  // useEffect(() => {
+  //   // This logic is specifically meant to handle not re-rendering
+  //   // the toast if the same html is passed into content
+  //   const content = JSON.stringify(toastProps.content);
+  //   const didContentChange = content !== prevContent.current;
+  //   if (didContentChange && prevContent.current !== undefined) coreLogic();
+  //   prevContent.current = content;
+  // }, [toastProps.content]);
 
   return (
     <div aria-live="assertive">
