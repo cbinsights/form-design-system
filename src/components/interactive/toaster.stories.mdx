@@ -8,6 +8,7 @@ import {
 import { useState } from "react";
 import { action } from '@storybook/addon-actions';
 import PropTypes from "prop-types";
+import { v4 } from 'uuid';
 
 import { storiesOf } from "@storybook/react";
 import {
@@ -75,39 +76,37 @@ Controller for positioning, transition, and dismissal of toasts.
 
 <Story name="Rendering" parameters={{ docs: { disable: true }}}>
   {() => {   
-    const [isToastShowing, setIsToastShowing] = useState(false);
+    const [params, setParams] = useState({ id: v4(), isOpen: false, isAutoDismiss: true });
     const [isShadow, setIsShadow] = useState(false);
-    const [currentRoute, setCurrentRoute] = useState('home')
-    const [contentValue, setContentValue] = useState(null)
-    const toastProps = {
-      content: <p>{contentValue}</p>,
-      dismissOnAction: true,
-      actionLabel: 'Action',
-      onAction: action('onAction')
+    const dismissToast = () => {
+      setParams({ ...params, isOpen: false })
     }
+    const { id, type, isOpen, content, isAutoDismiss } = params;
     return (
       <div className={isShadow ? "elevation--1 padding--all" : "padding--all"}>
         <button onClick={() => setIsShadow(!isShadow)}>{isShadow ? 'Hide Shadow' : 'Show Shadow'}</button>
-        <button onClick={() => setIsToastShowing(!isToastShowing)}>{isToastShowing ? 'Hide Toaster' : 'Show Toaster'}</button>
-        <button onClick={() => setCurrentRoute('home')}>Navigate Home</button>
-        <button onClick={() => setCurrentRoute('about us')}>Navigate Home</button>
-        <button onClick={() => setContentValue(contentValue === 'hello' ? 'world' : 'hello')}>Toggle content value</button>
-        <button
-          onClick={() => { 
-            setIsToastShowing(true)
-            setContentValue('blah')
+        <button onClick={() => setParams({ ...params, isOpen: true })}>Open Toast</button>
+        <button onClick={() => setParams({ ...params, isOpen: false })}>Close Toast</button>
+        <button onClick={() => setParams({ ...params, isAutoDismiss: !isAutoDismiss })}>Toggle isAutoDismiss {isAutoDismiss ? "off" : "on"}</button>
+        <button onClick={() => setParams({ ...params, id: v4(), type: "error", isOpen: true, content: 'New ID? Yes!' })}>Error Toast (new id)</button>
+        <button onClick={() => setParams({ ...params, id: v4(), type: "info", isOpen: true, content: 'New ID? Yes!' })}>Info Toast (new id)</button>
+        <button onClick={() => setParams({ ...params, id: id, type: "error", isOpen: true, content: 'New ID? No.'  })}>Error Toast (no new id)</button>
+        <br />
+        <br />
+        <b>NOTE: this is state is EXTERNAL to toaster and is being passed in</b>
+        <pre>
+          {JSON.stringify(params, null, 1)}
+        </pre>
+        <Toaster
+          id={id}
+          isOpen={isOpen}
+          onDismiss={dismissToast}
+          isAutoDismiss={isAutoDismiss}
+          toastProps={{
+            type,
+            content
           }}
-        >
-          Special!
-        </button>
-        {currentRoute === 'home' && (
-          <Toaster
-            isOpen={isToastShowing}
-            onDismiss={() => setIsToastShowing(false)}
-            isAutoDismiss={false}
-            toastProps={toastProps}
-          />
-        )}
+        />
       </div>
     )
   }}

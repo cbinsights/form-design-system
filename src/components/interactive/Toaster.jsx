@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import uuidv4 from 'uuid/v4';
 import Toast from './Toast';
 
 export const Toaster = ({
@@ -10,20 +9,39 @@ export const Toaster = ({
   dismissDelay = 4000,
   isAutoDismiss = true,
   isOpen = false,
+  id,
   onDismiss,
 }) => {
+  useEffect(() => {
+    // We need to explicitly check of canDismiss is NOT true, as it has a default
+    // parameter of true that this component does not know about
+    if (
+      isAutoDismiss &&
+      toastProps.type !== 'progress' &&
+      toastProps.canDismiss !== false
+    ) {
+      const timer = setTimeout(() => onDismiss(), dismissDelay);
+
+      return function cleanup() {
+        clearTimeout(timer);
+      };
+    }
+
+    return undefined;
+  }, [id, isOpen, isAutoDismiss, toastProps.type, toastProps.canDismiss]);
+
   return (
     <div aria-live="assertive">
       <TransitionGroup>
-        <CSSTransition
-          key={uuidv4()}
-          appear
-          unmountOnExit
-          timeout={380}
-          classNames="rtgSlideIn"
-        >
-          <div className="toaster">
-            {isOpen && (
+        {isOpen && (
+          <CSSTransition
+            key={id}
+            appear
+            unmountOnExit
+            timeout={380}
+            classNames="rtgSlideIn"
+          >
+            <div className="toaster">
               <Toast
                 dismissDelay={dismissDelay}
                 dismissToast={onDismiss}
@@ -36,9 +54,9 @@ export const Toaster = ({
                 onAction={toastProps.onAction}
                 dismissOnAction={toastProps.dismissOnAction}
               />
-            )}
-          </div>
-        </CSSTransition>
+            </div>
+          </CSSTransition>
+        )}
       </TransitionGroup>
     </div>
   );
@@ -52,6 +70,8 @@ const ToasterWrapper = (props) =>
   );
 
 Toaster.propTypes = {
+  /** Ideally a UUID that is generated and passed in whenever a new Toast should be animated in */
+  id: PropTypes.string.isRequired,
   /** Specifies whether Toast is open or not */
   isOpen: PropTypes.bool,
   /** Accepts all props that `Toast` accepts. Refer to Toast component for full documentation */
