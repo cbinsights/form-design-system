@@ -12,6 +12,8 @@ import customPropTypes from 'components/util/customPropTypes';
 import Button from 'components/interactive/Button';
 import IconButton from 'components/interactive/IconButton';
 
+export const TYPES = ['info', 'warn', 'error', 'success', 'progress'];
+
 const Toast = ({
   isAutoDismiss = true,
   dismissDelay = 4000,
@@ -122,7 +124,7 @@ Toast.propTypes = {
   content: PropTypes.node.isRequired,
 
   /** Type of toast */
-  type: PropTypes.oneOf(['info', 'warn', 'error', 'success', 'progress']),
+  type: PropTypes.oneOf(TYPES),
 
   /** Label for action button */
   actionLabel: PropTypes.string,
