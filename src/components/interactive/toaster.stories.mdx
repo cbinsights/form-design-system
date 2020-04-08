@@ -23,7 +23,7 @@ import {
 import { ImportPath, arrayToOptions, State } from "components/util/storybook";
 
 import Toaster, { Toaster as RawToaster } from "components/interactive/Toaster";
-import Toast from "components/interactive/Toast";
+import Toast, { TYPES } from "components/interactive/Toast";
 
 <Meta
   title="Components/Interactive/Toaster"
@@ -76,21 +76,33 @@ Controller for positioning, transition, and dismissal of toasts.
 
 <Story name="Rendering" parameters={{ docs: { disable: true }}}>
   {() => {   
-    const [params, setParams] = useState({ id: v4(), isOpen: false, isAutoDismiss: true });
+    const defaults = { id: v4(), isOpen: false, isAutoDismiss: true }
+    const [params, setParams] = useState(defaults);
     const [isShadow, setIsShadow] = useState(false);
     const dismissToast = () => {
       setParams({ ...params, isOpen: false })
     }
-    const { id, type, isOpen, content, isAutoDismiss } = params;
+    const randomToastType = () => {
+      var randomNumber = Math.floor(Math.random()*TYPES.length);
+      return TYPES[randomNumber]
+    }
+    const { id, type, isOpen, content, isAutoDismiss, actionLabel } = params;
     return (
       <div className={isShadow ? "elevation--1 padding--all" : "padding--all"}>
-        <button onClick={() => setIsShadow(!isShadow)}>{isShadow ? 'Hide Shadow' : 'Show Shadow'}</button>
+        <button onClick={() => setIsShadow(!isShadow)}>{isShadow ? 'Hide Arbitrary Style' : 'Show Arbitrary Style'}</button>
         <button onClick={() => setParams({ ...params, isOpen: true })}>Open Toast</button>
         <button onClick={() => setParams({ ...params, isOpen: false })}>Close Toast</button>
         <button onClick={() => setParams({ ...params, isAutoDismiss: !isAutoDismiss })}>Toggle isAutoDismiss {isAutoDismiss ? "off" : "on"}</button>
+        <button onClick={() => setParams({ ...params, id: v4() })}>New ID</button>
+        <button onClick={() => setParams({ ...params, type: randomToastType() })}>Random Toast Type</button>
+        <button onClick={() => setParams({ ...params, actionLabel: actionLabel === "Hello" ? "World" : "Hello" })}>Change Action Label</button>
+        <button onClick={() => setParams({ ...params, content: <b>hey</b>})}>Add HTML content</button>
+        <button onClick={() => setParams({ ...params, actionLabel: null })}>Remove Action Label</button>
+        <br />
         <button onClick={() => setParams({ ...params, id: v4(), type: "error", isOpen: true, content: 'New ID? Yes!' })}>Error Toast (new id)</button>
         <button onClick={() => setParams({ ...params, id: v4(), type: "info", isOpen: true, content: 'New ID? Yes!' })}>Info Toast (new id)</button>
         <button onClick={() => setParams({ ...params, id: id, type: "error", isOpen: true, content: 'New ID? No.'  })}>Error Toast (no new id)</button>
+        <button onClick={() => setParams({ ...defaults })}>Reset all</button>
         <br />
         <br />
         <b>NOTE: this is state is EXTERNAL to toaster and is being passed in</b>
@@ -103,6 +115,7 @@ Controller for positioning, transition, and dismissal of toasts.
           onDismiss={dismissToast}
           isAutoDismiss={isAutoDismiss}
           toastProps={{
+            actionLabel,
             type,
             content
           }}
