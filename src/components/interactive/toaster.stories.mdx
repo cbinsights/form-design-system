@@ -19,7 +19,7 @@ import {
   optionsKnob as options
 } from "@storybook/addon-knobs";
 
-import { ImportPath, arrayToOptions } from "components/util/storybook";
+import { ImportPath, arrayToOptions, State } from "components/util/storybook";
 
 import Toaster, { Toaster as RawToaster } from "components/interactive/Toaster";
 import Toast from "components/interactive/Toast";
@@ -69,6 +69,37 @@ Controller for positioning, transition, and dismissal of toasts.
           }}
         />
       </>
+    )
+  }}
+</Story>
+
+<Story name="Rendering" parameters={{ docs: { disable: true }}}>
+  {() => {   
+    const [isToastShowing, setIsToastShowing] = useState(false);
+    const [isShadow, setIsShadow] = useState(false);
+    const [toastContent, setToastContent] = useState(<p>hey</p>)
+    const [currentRoute, setCurrentRoute] = useState('home')
+    const toastProps = {
+      content: toastContent,
+      dismissOnAction: true,
+      actionLabel: 'Action',
+      onAction: action('onAction')
+    }
+    return (
+      <div className={isShadow ? "elevation--1 padding--all" : "padding--all"}>
+        <button onClick={() => setIsShadow(!isShadow)}>{isShadow ? 'Hide Shadow' : 'Show Shadow'}</button>
+        <button onClick={() => setIsToastShowing(!isToastShowing)}>{isToastShowing ? 'Hide Toaster' : 'Show Toaster'}</button>
+        <button onClick={() => setCurrentRoute('home')}>Navigate Home</button>
+        <button onClick={() => setCurrentRoute('about us')}>Navigate Home</button>
+        {currentRoute === 'home' && (
+          <Toaster
+            isOpen={isToastShowing}
+            onDismiss={() => setIsToastShowing(false)}
+            isAutoDismiss={false}
+            toastProps={toastProps}
+          />
+        )}
+      </div>
     )
   }}
 </Story>

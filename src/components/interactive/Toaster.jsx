@@ -70,6 +70,10 @@ export const Toaster = ({
   };
 
   useEffect(() => {
+    alert('component remounted');
+  }, []);
+
+  useEffect(() => {
     transitionID = uuidv4();
     // We check for the props here that we want to re-render the toast animation
   }, [toastProps.content, toastProps.type]);

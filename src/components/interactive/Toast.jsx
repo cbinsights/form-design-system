@@ -122,7 +122,7 @@ Toast.propTypes = {
   content: PropTypes.node.isRequired,
 
   /** Type of toast */
-  type: PropTypes.oneOf(['info', 'warn', 'error', 'success', 'progress']).isRequired,
+  type: PropTypes.oneOf(['info', 'warn', 'error', 'success', 'progress']),
 
   /** Label for action button */
   actionLabel: PropTypes.string,
