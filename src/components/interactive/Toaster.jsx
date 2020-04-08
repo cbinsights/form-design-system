@@ -70,7 +70,7 @@ export const Toaster = ({
   };
 
   useEffect(() => {
-    alert('component remounted');
+    console.log('component remounted');
   }, []);
 
   useEffect(() => {
