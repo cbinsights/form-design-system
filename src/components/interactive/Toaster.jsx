@@ -71,7 +71,7 @@ const ToasterWrapper = (props) =>
 
 Toaster.propTypes = {
   /** Ideally a UUID that is generated and passed in whenever a new Toast should be animated in */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   /** Specifies whether Toast is open or not */
   isOpen: PropTypes.bool,
   /** Accepts all props that `Toast` accepts. Refer to Toast component for full documentation */
