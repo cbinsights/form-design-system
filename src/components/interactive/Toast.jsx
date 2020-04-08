@@ -100,7 +100,11 @@ const Toast = ({
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
                 {isAutoDismiss ? (
-                  <CountdownButton onClick={dismissToast} duration={dismissDelay} />
+                  <CountdownButton
+                    onClick={dismissToast}
+                    duration={dismissDelay}
+                    label="Close"
+                  />
                 ) : (
                   <IconButton
                     Icon={DenyIcon}

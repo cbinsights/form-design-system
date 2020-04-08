@@ -49,6 +49,7 @@ exports[`Toast component matches snapshot (error) 1`] = `
         >
           <CountdownButton
             duration={4000}
+            label="Close"
           />
         </div>
       </FlexItem>
@@ -104,6 +105,7 @@ exports[`Toast component matches snapshot (info) 1`] = `
         >
           <CountdownButton
             duration={4000}
+            label="Close"
           />
         </div>
       </FlexItem>
@@ -191,6 +193,7 @@ exports[`Toast component matches snapshot (success) 1`] = `
         >
           <CountdownButton
             duration={4000}
+            label="Close"
           />
         </div>
       </FlexItem>
@@ -248,6 +251,7 @@ exports[`Toast component matches snapshot (warn) 1`] = `
         >
           <CountdownButton
             duration={4000}
+            label="Close"
           />
         </div>
       </FlexItem>
