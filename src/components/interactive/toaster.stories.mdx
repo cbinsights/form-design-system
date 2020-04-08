@@ -77,10 +77,10 @@ Controller for positioning, transition, and dismissal of toasts.
   {() => {   
     const [isToastShowing, setIsToastShowing] = useState(false);
     const [isShadow, setIsShadow] = useState(false);
-    const [toastContent, setToastContent] = useState(<p>hey</p>)
     const [currentRoute, setCurrentRoute] = useState('home')
+    const [contentValue, setContentValue] = useState(null)
     const toastProps = {
-      content: toastContent,
+      content: <p>{contentValue}</p>,
       dismissOnAction: true,
       actionLabel: 'Action',
       onAction: action('onAction')
@@ -91,6 +91,15 @@ Controller for positioning, transition, and dismissal of toasts.
         <button onClick={() => setIsToastShowing(!isToastShowing)}>{isToastShowing ? 'Hide Toaster' : 'Show Toaster'}</button>
         <button onClick={() => setCurrentRoute('home')}>Navigate Home</button>
         <button onClick={() => setCurrentRoute('about us')}>Navigate Home</button>
+        <button onClick={() => setContentValue(contentValue === 'hello' ? 'world' : 'hello')}>Toggle content value</button>
+        <button
+          onClick={() => { 
+            setIsToastShowing(true)
+            setContentValue('blah')
+          }}
+        >
+          Special!
+        </button>
         {currentRoute === 'home' && (
           <Toaster
             isOpen={isToastShowing}
