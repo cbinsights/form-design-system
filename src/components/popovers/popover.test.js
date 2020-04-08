@@ -14,6 +14,25 @@ const SELECTOR_TRIGGER = '[aria-haspopup] button';
  */
 const isPopperOpen = (w) => w.find('CSSTransition').prop('in');
 
+// https://github.com/thumbtack/thumbprint/issues/72
+// https://github.com/FezVrasta/popper.js/issues/478#issuecomment-341494703
+jest.mock('popper.js', () => {
+  const PopperJS = jest.requireActual('popper.js');
+
+  class Popper {
+      constructor() {
+          return {
+              destroy: () => {},
+              scheduleUpdate: () => {},
+          };
+      }
+  }
+
+  Popper.placements = PopperJS.placements;
+
+  return Popper;
+});
+
 describe('Popover component', () => {
 
   it('matches snapshot (default props)', () => {
