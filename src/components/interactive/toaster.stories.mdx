@@ -97,7 +97,10 @@ Important notes:
       var randomNumber = Math.floor(Math.random()*TYPES.length);
       return TYPES[randomNumber]
     }
-    const { id, type, isOpen, content, isAutoDismiss, actionLabel } = params;
+    const randomNum = () => {
+      return Math.floor(Math.random() * 100); 
+    }
+    const { id, type, isOpen, content, isAutoDismiss, actionLabel, progress } = params;
     return (
       <div className={isShadow ? "elevation--1 padding--all" : "padding--all"}>
         <button onClick={() => setIsShadow(!isShadow)}>{isShadow ? 'Hide Arbitrary Style' : 'Show Arbitrary Style'}</button>
@@ -109,6 +112,7 @@ Important notes:
         <button onClick={() => setParams({ ...params, actionLabel: actionLabel === "Hello" ? "World" : "Hello" })}>Change Action Label</button>
         <button onClick={() => setParams({ ...params, content: <b>hey</b>})}>Add HTML content</button>
         <button onClick={() => setParams({ ...params, actionLabel: null })}>Remove Action Label</button>
+        <button onClick={() => setParams({ ...params, progress: randomNum() })}>Add random progress</button>
         <br />
         <button onClick={() => setParams({ ...params, id: v4(), type: "error", isOpen: true, content: 'New ID? Yes!' })}>Error Toast (new id)</button>
         <button onClick={() => setParams({ ...params, id: v4(), type: "info", isOpen: true, content: 'New ID? Yes!' })}>Info Toast (new id)</button>
@@ -127,6 +131,7 @@ Important notes:
           isAutoDismiss={isAutoDismiss}
           toastProps={{
             actionLabel,
+            progress,
             type,
             content
           }}
