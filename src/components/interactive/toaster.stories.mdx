@@ -74,6 +74,17 @@ Controller for positioning, transition, and dismissal of toasts.
   }}
 </Story>
 
+Important notes:
+
+- **⚠️ Import only one `Toaster` component per application**.
+- Pass in a brand new `id` (with optional props) if you'd like to animate a new toast in. 
+- Passing in new props without changing the id will not retrigger the animation
+
+<Props of={RawToaster} />
+
+**toastProps**
+<Props of={Toast} />
+
 <Story name="Rendering" parameters={{ docs: { disable: true }}}>
   {() => {   
     const defaults = { id: v4(), isOpen: false, isAutoDismiss: true }
@@ -125,10 +136,75 @@ Controller for positioning, transition, and dismissal of toasts.
   }}
 </Story>
 
-<Props of={RawToaster} />
 
-Important notes:
+# All Toast Variations
 
-- **⚠️ Include only one `Toaster` component per application** to ensure that only one toast is rendered at a time.
-- Anytime `content` or `type` is added or modified, the Toast will animate out, and a new Toast will take it's place. 
-- Any other modified props will change the Toast in place, without triggering re-animation.
+<Preview>
+<Story name="Variations">
+    <React.Fragment>
+      <Toast
+        content={
+          <p>
+            Check out this <strong className="color--heading">toast</strong>
+          </p>
+        }
+        actionLabel="Action"
+        onAction={() => {}}
+        type="info"
+      />
+      <br />
+      <Toast
+        content={
+          <p>
+            You better <strong className="color--heading">watch out</strong>
+          </p>
+        }
+        actionLabel="run away"
+        onAction={() => {}}
+        type="warn"
+      />
+      <br />
+      <Toast
+        content={
+          <p>
+            You <strong className="color--heading">Did it!</strong>
+          </p>
+        }
+        type="success"
+      />
+      <br />
+      <Toast
+        content={
+          <p>
+            Failed to <strong className="color--heading">do a thing</strong>
+          </p>
+        }
+        actionLabel="Retry"
+        onAction={() => {}}
+        type="error"
+      />
+      <br />
+      <Toast
+        content={
+          <p>
+            Uploading a photo of your <strong className="color--heading">your cat</strong>
+          </p>
+        }
+        type="progress"
+      />
+      <br />
+      <Toast
+        content={
+          <p>
+            <strong className="color--heading">42%</strong> complete uploading your cat
+            photo
+          </p>
+        }
+        progress={42}
+        type="progress"
+      />
+    </React.Fragment>
+</Story>
+</Preview>
+
+
