@@ -101,7 +101,7 @@ CountdownButton.propTypes = {
   Icon: PropTypes.func,
 
   /** adds a label to IconButton */
-  label: PropTypes.func,
+  label: PropTypes.string,
 
   /** Click callback for button */
   onClick: PropTypes.func,
