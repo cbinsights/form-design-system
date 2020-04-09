@@ -29,7 +29,7 @@ let overflowStyle = null;
 const useDisableScroll = (disableScrollRef, isDisabled) => {
   useEffect(() => {
     if (disableScrollRef) {
-      const domNode = disableScrollRef.current || disableScrollRef;
+      const domNode = disableScrollRef.current;
       if (isDisabled) {
         overflowStyle = domNode.style.overflow;
         domNode.style.overflow = 'hidden';
@@ -43,7 +43,7 @@ const useDisableScroll = (disableScrollRef, isDisabled) => {
 const useCloseOnScroll = (closeOnScrollRef, isActive, closeCallback) => {
   useEffect(() => {
     if (closeOnScrollRef && isActive) {
-      const scrollRef = closeOnScrollRef.current || closeOnScrollRef;
+      const scrollRef = closeOnScrollRef.current;
       scrollRef.addEventListener('scroll', function scrollLogic() {
         closeCallback();
         scrollRef.removeEventListener('scroll', scrollLogic);
