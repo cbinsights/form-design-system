@@ -3,25 +3,6 @@ import { mount } from 'enzyme';
 
 import DateInput, { getYearRange, isValidUserDate } from './DateInput';
 
-// https://github.com/thumbtack/thumbprint/issues/72
-// https://github.com/FezVrasta/popper.js/issues/478#issuecomment-341494703
-jest.mock('popper.js', () => {
-  const PopperJS = jest.requireActual('popper.js');
-
-  class Popper {
-      constructor() {
-          return {
-              destroy: () => {},
-              scheduleUpdate: () => {},
-          };
-      }
-  }
-
-  Popper.placements = PopperJS.placements;
-
-  return Popper;
-});
-
 describe('DateInput component', () => {
 
   describe('getYearRange', () => {
