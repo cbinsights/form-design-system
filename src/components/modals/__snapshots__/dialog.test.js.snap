@@ -17,7 +17,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
               aria-modal="true"
               class="dialog elevation--3"
               role="dialog"
-              style="max-width: 500px;"
+              style="max-width: 500px; max-height: 80vh;"
               tabindex="-1"
             >
               <div
@@ -39,6 +39,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                       aria-label="close"
                       class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                       role="img"
+                      title="close"
                     >
                       <span
                         class=""
@@ -92,7 +93,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
               aria-modal="true"
               class="dialog elevation--3"
               role="dialog"
-              style="max-width: 500px;"
+              style="max-width: 500px; max-height: 80vh;"
               tabindex="-1"
             >
               <div
@@ -114,6 +115,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                       aria-label="close"
                       class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                       role="img"
+                      title="close"
                     >
                       <span
                         class=""
@@ -167,7 +169,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
               aria-modal="true"
               class="dialog elevation--3"
               role="dialog"
-              style="max-width: 500px;"
+              style="max-width: 500px; max-height: 80vh;"
               tabindex="-1"
             >
               <div
@@ -214,7 +216,8 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
               role="dialog"
               style={
                 Object {
-                  "maxWidth": "500px",
+                  "maxHeight": "80vh",
+                  "maxWidth": "500px ",
                 }
               }
               tabIndex="-1"
@@ -222,11 +225,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
               <div
                 className="dialog-content"
               >
-                <Section
-                  bgColor="white"
-                  xPadding="default"
-                  yPadding="default"
-                >
+                <Section>
                   foo
                 </Section>
               </div>
@@ -256,7 +255,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
               aria-modal="true"
               class="dialog elevation--3"
               role="dialog"
-              style="max-width: 500px;"
+              style="max-width: 500px; max-height: 80vh;"
               tabindex="-1"
             >
               <div
@@ -278,6 +277,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                       aria-label="close"
                       class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                       role="img"
+                      title="close"
                     >
                       <span
                         class=""
@@ -331,7 +331,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
               aria-modal="true"
               class="dialog elevation--3"
               role="dialog"
-              style="max-width: 500px;"
+              style="max-width: 500px; max-height: 80vh;"
               tabindex="-1"
             >
               <div
@@ -353,6 +353,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                       aria-label="close"
                       class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                       role="img"
+                      title="close"
                     >
                       <span
                         class=""
@@ -406,7 +407,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
               aria-modal="true"
               class="dialog elevation--3"
               role="dialog"
-              style="max-width: 500px;"
+              style="max-width: 500px; max-height: 80vh;"
               tabindex="-1"
             >
               <div
@@ -432,94 +433,78 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
       timeout={200}
       unmountOnExit={true}
     >
-      <FocusTrap
-        _createFocusTrap={[Function]}
-        active={true}
-        focusTrapOptions={Object {}}
-        paused={false}
-      >
-        <div>
+      <div>
+        <div
+          className="dialog-overlay"
+        />
+        <div
+          className="dialog-zIndex dialog-wrapper"
+        >
           <div
-            className="dialog-overlay"
-          />
-          <div
-            className="dialog-zIndex dialog-wrapper"
+            aria-describedby="a11y-dialog-desc"
+            aria-labelledby="a11y-dialog-title"
+            aria-modal="true"
+            className="dialog elevation--3"
+            onKeyDown={[Function]}
+            role="alertdialog"
+            style={
+              Object {
+                "maxHeight": "1000px",
+                "maxWidth": "1000px ",
+              }
+            }
+            tabIndex="-1"
           >
             <div
-              aria-describedby="a11y-dialog-desc"
-              aria-labelledby="a11y-dialog-title"
-              aria-modal="true"
-              className="dialog elevation--3"
-              onKeyDown={[Function]}
-              role="alertdialog"
-              style={
-                Object {
-                  "maxWidth": "500px",
-                }
-              }
-              tabIndex="-1"
+              className="dialog-header"
             >
-              <div
-                className="dialog-header"
+              <Section
+                border="bottom"
               >
-                <Section
-                  bgColor="white"
-                  border="bottom"
-                  xPadding="default"
-                  yPadding="default"
+                <div
+                  className="padding--right--double type--head4"
                 >
-                  <div
-                    className="padding--right--double type--head4"
+                  <span
+                    id="a11y-dialog-title"
                   >
-                    <span
-                      id="a11y-dialog-title"
-                    >
-                      hey
-                    </span>
-                     
-                  </div>
-                  <div
-                    className="dialog-icon"
-                  >
-                    <IconButton
-                      Icon={[Function]}
-                      aria-label="close"
-                      onClick={[Function]}
-                      radius="square"
-                      size="m"
-                      theme="ghost"
-                    />
-                  </div>
-                </Section>
-              </div>
-              <div
-                className="dialog-content"
+                    hey
+                  </span>
+                   
+                </div>
+                <div
+                  className="dialog-icon"
+                >
+                  <IconButton
+                    Icon={[Function]}
+                    aria-label="close"
+                    label="close"
+                    onClick={[Function]}
+                  />
+                </div>
+              </Section>
+            </div>
+            <div
+              className="dialog-content"
+            >
+              <Section>
+                foo
+              </Section>
+            </div>
+            <div
+              className="dialog-footer"
+            >
+              <Section
+                bgColor="white"
+                border="top"
               >
-                <Section
-                  bgColor="white"
-                  xPadding="default"
-                  yPadding="default"
-                >
+                <div>
                   foo
-                </Section>
-              </div>
-              <div
-                className="dialog-footer"
-              >
-                <Section
-                  bgColor="white"
-                  xPadding="default"
-                  yPadding="default"
-                >
-                  <div>
-                    foo
-                  </div>
-                </Section>
-              </div>
+                </div>
+              </Section>
             </div>
           </div>
         </div>
-      </FocusTrap>
+      </div>
     </CSSTransition>
   </Portal>
 </Fragment>

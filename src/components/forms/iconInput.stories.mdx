@@ -8,11 +8,15 @@ import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
 
 import IconInput from './IconInput';
 
-<Meta title="Forms|IconInput" decorators={[withKnobs]} component={IconInput} />
+import { ImportPath } from '../util/storybook';
+
+<Meta title="Components/Forms/IconInput" decorators={[withKnobs]} component={IconInput} />
 
 # IconInput
 
-<Story name="Knobs">
+<ImportPath component={IconInput} section="forms" />
+
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <React.Fragment>
     <IconInput
       IconLeft={boolean('Left star', true) ? StarFilledIcon : undefined}
@@ -22,6 +26,15 @@ import IconInput from './IconInput';
     </IconInput>
   </React.Fragment>
 </Story>
+
+<Preview isExpanded>
+  <IconInput
+    IconLeft={StarFilledIcon}
+    IconRight={StarFilledIcon}
+  >
+    <input type="text" placeholder={text('Placeholder text', 'My god, its full of stars!')} />
+  </IconInput>
+</Preview>
 
 <Props of={IconInput} />
 

@@ -1,4 +1,5 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { useRef } from 'react'
 import {
   withKnobs,
   optionsKnob as options,
@@ -14,15 +15,21 @@ import Popover, {
   VALID_POSITIONS,
   VALID_INTERACTION_MODES,
 } from './Popover';
+
+import { ImportPath } from '../util/storybook';
+
 import Button from '../interactive/Button';
 
-<Meta title="Popovers|Popover" decorators={[withKnobs]} component={Popover} />
+
+<Meta title="Components/Popovers/Popover" decorators={[withKnobs]} component={Popover} />
 
 # Popover
 
+<ImportPath component={Popover} section="popovers" />
+
 Base popover component. Bring your own trigger and popover content.
 
-<Story name="Knobs">
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Popover
     trigger={<div className="margin--bottom"><Button label="Click Me" /></div>}
     position={options('Position', arrayToOptions(VALID_POSITIONS), 'bottom', {
@@ -47,6 +54,25 @@ Base popover component. Bring your own trigger and popover content.
     </div>
   </Popover>
 </Story>
+
+<Preview isExpanded>
+  <Popover
+    position='right'
+    alignment='start'
+    distance={4}
+    interactionMode='click'
+    transitionName="GrowFast"
+    trigger={<div className="margin--bottom"><Button label="Click Me" /></div>}
+  >
+    <div
+      className="padding--all" 
+      style={{ outline: '3px dotted red', background: "#FFFFFF" }}
+    >
+      popover content
+    </div>
+  </Popover>
+</Preview>
+
 
 ## What this component does
 
@@ -80,5 +106,75 @@ Base popover component. Bring your own trigger and popover content.
         </p>
       </div>
     </Popover>
+  </Story>
+</Preview>
+
+## Disable Scrolling
+
+If you'd like to disable scrolling of some element when a popover is open you can pass a ref of the scrolling element to the `disableScrollRef` prop.
+
+<Preview>
+  <Story name="Disable Scrolling">
+    {() => { 
+      const containerEl = useRef(null); 
+      return (
+        <div
+          ref={containerEl}
+          style={{ height: 200, border: "1px dashed red", overflow: 'scroll' }}
+        >
+          <div style={{ height: 500, background: "yellow" }}>
+            <Popover
+              trigger={<Button theme="outlined" label="Open popover" />}
+              position="bottom"
+              alignment="start"
+              distance={8}
+              disableScrollRef={containerEl}
+            >
+              <div className="bgColor--white rounded--all elevation--2 padding--all">
+                <h3 className="type--head3">Look at me</h3>
+                <p>
+                  <em>i am the popover</em>
+                </p>
+              </div>
+            </Popover>
+          </div>
+        </div>
+      )
+    }}
+  </Story>
+</Preview>
+
+## Close on Scroll
+
+If you'd like the ability to close the popover once the user scrolls some element, you can pass a ref of that element to the `closeOnScrollRef` prop.
+
+<Preview>
+  <Story name="Close on Scroll">
+    {() => { 
+      const containerEl = useRef(null); 
+      return (
+        <div
+          ref={containerEl}
+          style={{ height: 200, border: "1px dashed red", overflow: "scroll" }}
+        >
+          <div style={{ height: 500, background: "yellow" }}>
+            <Popover
+              trigger={<Button theme="outlined" label="Open popover" />}
+              position="bottom"
+              alignment="start"
+              distance={8}
+              closeOnScrollRef={containerEl}
+            >
+              <div className="bgColor--white rounded--all elevation--2 padding--all">
+                <h3 className="type--head3">Look at me</h3>
+                <p>
+                  <em>i am the popover</em>
+                </p>
+              </div>
+            </Popover>
+          </div>
+        </div>
+      )
+    }}
   </Story>
 </Preview>

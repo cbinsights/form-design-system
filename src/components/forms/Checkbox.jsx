@@ -8,13 +8,13 @@ import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
 
 import { CustomCheckboxInput, CustomCheckboxContainer } from '@reach/checkbox';
 
-const Checkbox = ({ label, defaultChecked, showLabel = true, ...props }) => {
-  const [checkedState, setChecked] = useState(props.checked || defaultChecked || false);
-  const checked = props.checked != null ? props.checked : checkedState;
+const Checkbox = ({ label, defaultChecked, showLabel = true, ...rest }) => {
+  const [checkedState, setChecked] = useState(rest.checked || defaultChecked || false);
+  const checked = rest.checked != null ? rest.checked : checkedState;
 
   // We should maybe fire onChange in "addition" to setChecked, based on whether we
   // interpret checkbox as being "controlled" or not
-  const onChange = props.onChange ? props.onChange : (e) => setChecked(e.target.checked);
+  const onChange = rest.onChange ? rest.onChange : (e) => setChecked(e.target.checked);
 
   const CheckboxIcon = (() => {
     if (checked) {
@@ -31,11 +31,11 @@ const Checkbox = ({ label, defaultChecked, showLabel = true, ...props }) => {
   return (
     <Element className="display--inlineBlock">
       <CustomCheckboxContainer
-        checked={props.checked != null ? props.checked : checked}
+        checked={rest.checked != null ? rest.checked : checked}
         onChange={onChange}
         className="fdsCheckboxContainer"
       >
-        <CustomCheckboxInput {...props} aria-label={!showLabel ? label : undefined} />
+        <CustomCheckboxInput {...rest} aria-label={!showLabel ? label : undefined} />
         <span aria-hidden style={{ pointerEvents: 'none' }}>
           <CheckboxIcon size="xs" color={checked ? FDS.COLOR_BLUE : undefined} />
         </span>

@@ -9,11 +9,11 @@ export const THEMES = ['blue', 'outlined', 'ghost'];
 export const ICON_PLACEMENTS = ['left', 'right'];
 
 const Button = ({
-  theme,
-  iconPlacement,
+  theme = 'blue',
+  iconPlacement = 'right',
+  size = 'm',
   Icon,
   Link,
-  size,
   disabled,
   label,
   isLoading,
@@ -70,12 +70,6 @@ const Button = ({
       )}
     </Element>
   );
-};
-
-Button.defaultProps = {
-  theme: 'blue',
-  iconPlacement: 'right',
-  size: 'm',
 };
 
 Button.propTypes = {

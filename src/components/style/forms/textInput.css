@@ -1,0 +1,24 @@
+.fdsTextInput {
+  flex-grow: 1;
+}
+
+.fdsTextInput-root {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.fdsTextInput-root--leftLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fdsTextInput-root--leftLabel .fdsTextInput-label {
+  order: -1;
+  margin-right: var(--space-half);
+}
+
+.fdsTextInput-label {
+  margin-bottom: 4px;
+}

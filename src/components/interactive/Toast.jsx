@@ -13,14 +13,14 @@ import Button from 'components/interactive/Button';
 import IconButton from 'components/interactive/IconButton';
 
 const Toast = ({
+  isAutoDismiss = true,
+  dismissDelay = 4000,
+  canDismiss = true,
   content,
   type,
   actionLabel,
   progress,
   onAction,
-  isAutoDismiss,
-  dismissDelay,
-  canDismiss,
   dismissToast /* Passed from Toaster */,
 }) => {
   const classNames = cx('toast', `toast--${type}`);
@@ -100,9 +100,18 @@ const Toast = ({
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
                 {isAutoDismiss ? (
-                  <CountdownButton onClick={dismissToast} duration={dismissDelay} />
+                  <CountdownButton
+                    onClick={dismissToast}
+                    duration={dismissDelay}
+                    label="Close"
+                  />
                 ) : (
-                  <IconButton Icon={DenyIcon} onClick={dismissToast} radius="circle" />
+                  <IconButton
+                    Icon={DenyIcon}
+                    onClick={dismissToast}
+                    radius="circle"
+                    label="Close"
+                  />
                 )}
               </div>
             </FlexItem>
@@ -111,13 +120,6 @@ const Toast = ({
       </div>
     </div>
   );
-};
-
-Toast.defaultProps = {
-  dismissDelay: 4000,
-  canDismiss: true,
-  isAutoDismiss: true,
-  onDismiss: () => {},
 };
 
 Toast.propTypes = {
@@ -132,9 +134,6 @@ Toast.propTypes = {
 
   /** Callback for action button click */
   onAction: PropTypes.func,
-
-  /** Callback invoked on dismissal of toast */
-  onDismiss: PropTypes.func,
 
   /** Time in ms to auto-dismiss toast */
   dismissDelay: PropTypes.number,

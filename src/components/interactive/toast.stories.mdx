@@ -10,11 +10,15 @@ import {
 
 import Toast from './Toast';
 
-<Meta title="Interactive|Toast" decorators={[withKnobs]} component={Toast} />
+import { ImportPath } from '../util/storybook';
+
+<Meta title="Components/Interactive/Toast" decorators={[withKnobs]} component={Toast} />
 
 # Toast
 
-<Story name="Knobs">
+<ImportPath component={Toast} section="interactive" />
+
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Toast
     content={text(
       'label',
@@ -48,6 +52,10 @@ import Toast from './Toast';
     )}
   />
 </Story>
+
+<Preview isExpanded>
+  <Toast content="Toast" type="success" />
+</Preview>
 
 <Props of={Toast} />
 

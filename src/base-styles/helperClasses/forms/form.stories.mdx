@@ -1,0 +1,17 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { Example } from 'base-styles/styledocUtils';
+import { TableLayout } from "components/util/Table"
+
+<Meta title="Style Utilities/Forms"  />
+
+# Forms
+
+<TableLayout
+  isCSS
+  headers={['class', 'description', 'sample']}
+  rows={[
+    ['error', 'Forces the appearance of an :invalid state on an input', { children: <input class="error" value="invalid entry" /> }],
+    ['resetInput', 'Strips away margin and border styles. Good for plaicng input inside a visual element', { children: <input class="resetInput" value="THIS IS AN INPUT" style={{ textAlign: "center" }}/> }],
+    ['resetButton', 'Removes default user agent styling from button elements.', { children: <button class="resetButton">THIS IS A BUTTON</button> }],
+  ]} 
+/>

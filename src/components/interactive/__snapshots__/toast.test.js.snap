@@ -13,10 +13,7 @@ exports[`Toast component matches snapshot (error) 1`] = `
   <div
     className="toast-content alignChild--left--center"
   >
-    <Flex
-      align="stretch"
-      direction="row"
-    >
+    <Flex>
       <FlexItem
         shrink={true}
       >
@@ -35,9 +32,7 @@ exports[`Toast component matches snapshot (error) 1`] = `
           </div>
         </div>
       </FlexItem>
-      <FlexItem
-        shrink={false}
-      >
+      <FlexItem>
         <div
           className="toast-constrainGrowth"
         >
@@ -53,8 +48,8 @@ exports[`Toast component matches snapshot (error) 1`] = `
           className="toast-constrainGrowth alignChild--center--center"
         >
           <CountdownButton
-            Icon={[Function]}
             duration={4000}
+            label="Close"
           />
         </div>
       </FlexItem>
@@ -76,10 +71,7 @@ exports[`Toast component matches snapshot (info) 1`] = `
   <div
     className="toast-content alignChild--left--center"
   >
-    <Flex
-      align="stretch"
-      direction="row"
-    >
+    <Flex>
       <FlexItem
         shrink={true}
       >
@@ -96,9 +88,7 @@ exports[`Toast component matches snapshot (info) 1`] = `
           </div>
         </div>
       </FlexItem>
-      <FlexItem
-        shrink={false}
-      >
+      <FlexItem>
         <div
           className="toast-constrainGrowth"
         >
@@ -114,8 +104,8 @@ exports[`Toast component matches snapshot (info) 1`] = `
           className="toast-constrainGrowth alignChild--center--center"
         >
           <CountdownButton
-            Icon={[Function]}
             duration={4000}
+            label="Close"
           />
         </div>
       </FlexItem>
@@ -141,13 +131,8 @@ exports[`Toast component matches snapshot (progress) 1`] = `
   <div
     className="toast-content alignChild--left--center"
   >
-    <Flex
-      align="stretch"
-      direction="row"
-    >
-      <FlexItem
-        shrink={false}
-      >
+    <Flex>
+      <FlexItem>
         <div
           className="toast-constrainGrowth"
         >
@@ -174,10 +159,7 @@ exports[`Toast component matches snapshot (success) 1`] = `
   <div
     className="toast-content alignChild--left--center"
   >
-    <Flex
-      align="stretch"
-      direction="row"
-    >
+    <Flex>
       <FlexItem
         shrink={true}
       >
@@ -194,9 +176,7 @@ exports[`Toast component matches snapshot (success) 1`] = `
           </div>
         </div>
       </FlexItem>
-      <FlexItem
-        shrink={false}
-      >
+      <FlexItem>
         <div
           className="toast-constrainGrowth"
         >
@@ -212,8 +192,8 @@ exports[`Toast component matches snapshot (success) 1`] = `
           className="toast-constrainGrowth alignChild--center--center"
         >
           <CountdownButton
-            Icon={[Function]}
             duration={4000}
+            label="Close"
           />
         </div>
       </FlexItem>
@@ -235,10 +215,7 @@ exports[`Toast component matches snapshot (warn) 1`] = `
   <div
     className="toast-content alignChild--left--center"
   >
-    <Flex
-      align="stretch"
-      direction="row"
-    >
+    <Flex>
       <FlexItem
         shrink={true}
       >
@@ -257,9 +234,7 @@ exports[`Toast component matches snapshot (warn) 1`] = `
           </div>
         </div>
       </FlexItem>
-      <FlexItem
-        shrink={false}
-      >
+      <FlexItem>
         <div
           className="toast-constrainGrowth"
         >
@@ -275,8 +250,8 @@ exports[`Toast component matches snapshot (warn) 1`] = `
           className="toast-constrainGrowth alignChild--center--center"
         >
           <CountdownButton
-            Icon={[Function]}
             duration={4000}
+            label="Close"
           />
         </div>
       </FlexItem>

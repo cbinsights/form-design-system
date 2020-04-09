@@ -25,9 +25,11 @@
 @import "./forms/checkable.css";
 @import "./forms/checkbox.css";
 @import "./forms/radio.css";
+@import "./forms/textInput.css";
 @import "./forms/decoratedInput.css";
 @import "./forms/iconInput.css";
 @import "./forms/inputGroup.css";
+@import "./forms/dateInput.css";
 
 /* Media components */
 @import "./media/avatar.css";

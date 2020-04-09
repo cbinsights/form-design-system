@@ -9,11 +9,15 @@ import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
 
 import StackedButton from './StackedButton';
 
-<Meta title="Interactive|StackedButton" decorators={[withKnobs]} component={StackedButton} />
+import { ImportPath } from '../util/storybook';
+
+<Meta title="Components/Interactive/StackedButton" decorators={[withKnobs]} component={StackedButton} />
 
 # StackedButton
 
-<Story name="Knobs">
+<ImportPath component={StackedButton} section="interactive" />
+
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <StackedButton
     disabled={boolean('disabled', false)}
     Icon={StarFilledIcon}
@@ -21,6 +25,13 @@ import StackedButton from './StackedButton';
     hasCaret={boolean('hasCaret', false)}
   />
 </Story>
+
+<Preview isExpanded>
+  <StackedButton
+    Icon={StarFilledIcon}
+    label='Stacked Button'
+  />
+</Preview>
 
 <Props of={StackedButton} />
 

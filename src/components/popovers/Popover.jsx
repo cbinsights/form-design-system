@@ -24,22 +24,52 @@ export const getPopperPlacement = (position, alignment) => {
   return `${position}${variation}`;
 };
 
+let overflowStyle = null;
+
+const useDisableScroll = (disableScrollRef, isDisabled) => {
+  useEffect(() => {
+    if (disableScrollRef) {
+      const domNode = disableScrollRef.current || disableScrollRef;
+      if (isDisabled) {
+        overflowStyle = domNode.style.overflow;
+        domNode.style.overflow = 'hidden';
+      } else if (overflowStyle !== null) {
+        domNode.style.overflow = overflowStyle;
+      }
+    }
+  }, [disableScrollRef, isDisabled]);
+};
+
+const useCloseOnScroll = (closeOnScrollRef, isActive, closeCallback) => {
+  useEffect(() => {
+    if (closeOnScrollRef && isActive) {
+      const scrollRef = closeOnScrollRef.current || closeOnScrollRef;
+      scrollRef.addEventListener('scroll', function scrollLogic() {
+        closeCallback();
+        scrollRef.removeEventListener('scroll', scrollLogic);
+      });
+    }
+  }, [closeOnScrollRef, isActive]);
+};
+
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
  */
 const Popover = ({
+  interactionMode = 'click',
+  disablePortal,
+  position = 'auto',
+  alignment = 'start',
+  distance = 4,
+  onOpen = () => {},
+  onClose = () => {},
   trigger,
   children,
-  interactionMode,
-  disablePortal,
-  position,
-  alignment,
-  distance,
   isOpen,
   transitionName,
-  onOpen,
-  onClose,
+  disableScrollRef,
+  closeOnScrollRef,
 }) => {
   const [isActive, setIsActive] = useState(false);
   const refTriggerWrap = useRef(null);
@@ -55,6 +85,9 @@ const Popover = ({
       return newValue;
     });
   };
+
+  useCloseOnScroll(closeOnScrollRef, isActive, () => handleSetIsActive(false));
+  useDisableScroll(disableScrollRef, isActive);
 
   // update active state on props change to accommodate fully controlled popovers
   useEffect(() => {
@@ -198,15 +231,6 @@ const Popover = ({
   );
 };
 
-Popover.defaultProps = {
-  interactionMode: 'click',
-  position: 'auto',
-  alignment: 'start',
-  distance: 4,
-  onOpen: () => {},
-  onClose: () => {},
-};
-
 Popover.propTypes = {
   /** JSX - Acts as a positioning reference for the popover and triggers active state */
   trigger: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
@@ -256,6 +280,12 @@ Popover.propTypes = {
 
   /** Callback called when popover closes */
   onClose: PropTypes.func,
+
+  // When popover opens, this element should freeze scrolling. When the popover closes, the scrollability of this element should resume.
+  disableScrollRef: PropTypes.func,
+
+  // When the Popover detects scroll events from this ref, the popover should close.
+  closeOnScrollRef: PropTypes.func,
 };
 
 export default Popover;

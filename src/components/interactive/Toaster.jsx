@@ -58,6 +58,8 @@ const Toaster = ({ toast }) => {
   );
 };
 
+Toaster.displayName = 'Toaster';
+
 Toaster.propTypes = {
   /** a `Toast` element */
   toast: PropTypes.element,

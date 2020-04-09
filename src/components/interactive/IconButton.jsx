@@ -8,13 +8,13 @@ export const RADII = ['square', 'circle'];
 export const SIZES = ['s', 'm'];
 
 const IconButton = ({
+  radius = 'square',
+  theme = 'ghost',
+  size = 'm',
   Icon,
   disabled,
   isActive,
-  radius,
-  theme,
   isLoading,
-  size,
   isDestructive,
   label,
   Link,
@@ -50,12 +50,6 @@ const IconButton = ({
   );
 };
 
-IconButton.defaultProps = {
-  radius: 'square',
-  theme: 'ghost',
-  size: 'm',
-};
-
 IconButton.propTypes = {
   /**
    * Takes in a react-router `Link` reference and sets it
@@ -81,9 +75,9 @@ IconButton.propTypes = {
   /** Controls whether the button is disabled or not. */
   disabled: PropTypes.bool,
   /** Used to render a FDS Icon (should only be used for FDS Icons) */
-  Icon: PropTypes.func,
+  Icon: PropTypes.func.isRequired,
   /** Accessibility label */
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
 };
 
 export default IconButton;
