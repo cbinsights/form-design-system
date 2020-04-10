@@ -10,6 +10,7 @@ exports[`StackedButton component matches snapshot (default props) 1`] = `
 
 exports[`StackedButton component matches snapshot (set all props) 1`] = `
 <Link
+  aria-pressed={false}
   className="fdsStackedButton rounded--all fdsStackedButton--ghost border--focus--noTransition transition--default fdsStackedButton--disabled fdsStackedButton--isActive"
   disabled={false}
 >
