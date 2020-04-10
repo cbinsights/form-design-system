@@ -1,17 +1,12 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import uuid from 'uuid/v4';
+import { mount } from 'enzyme';
 
 import Toaster from './Toaster';
 
-jest.mock('uuid/v4');
-
 describe('Toaster component', () => {
 
-  uuid.mockImplementation(() => 'testid');
-
   it('matches snapshot', () => {
-    const component = shallow(<Toaster isOpen toastProps={{ type: "info", content: <p>test</p> }} />);
+    const component = mount(<Toaster isOpen toastProps={{ type: "info", content: <p>test</p> }} />);
     expect(component).toMatchSnapshot();
   });
 
