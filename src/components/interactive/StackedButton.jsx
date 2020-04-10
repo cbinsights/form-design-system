@@ -4,7 +4,16 @@ import cx from 'classnames';
 import baseElement from 'util/baseElement';
 import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
 
-const StackedButton = ({ Icon, Link, label, disabled, isActive, hasCaret, ...rest }) => {
+const StackedButton = ({
+  Icon,
+  Link,
+  label,
+  disabled,
+  isActive,
+  isToggled,
+  hasCaret,
+  ...rest
+}) => {
   const Element = baseElement({ href: rest.href, onClick: true, as: Link });
 
   return (
@@ -19,6 +28,7 @@ const StackedButton = ({ Icon, Link, label, disabled, isActive, hasCaret, ...res
         {
           'fdsStackedButton--disabled': disabled,
           'fdsStackedButton--isActive': isActive,
+          'fdsStackedButton--isToggled': isToggled,
         }
       )}
       disabled={disabled && Element === 'button'}
@@ -56,6 +66,8 @@ StackedButton.propTypes = {
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   /** Controls the active state, which changes UI (colors) */
   isActive: PropTypes.bool,
+  /** Controls the toggled state, which changes UI (colors) */
+  isToggled: PropTypes.bool,
   /** Controls whether caret icon is displayed */
   hasCaret: PropTypes.bool,
 };

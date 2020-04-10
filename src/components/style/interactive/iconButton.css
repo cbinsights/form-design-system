@@ -42,11 +42,15 @@
 }
 
 .fdsIconButton--aqua.fdsIconButton--isActive {
-  background-color: #68b8d5;
+  background-color: #85c6dd;
 }
 
 .fdsIconButton--ghost {
   color: var(--button-primary-color);
+}
+
+.fdsIconButton--ghost.fdsIconButton--isActive {
+  background-color: rgba(64, 64, 64, 0.2);
 }
 
 .fdsIconButton--ghost:hover {
@@ -54,12 +58,13 @@
 }
 
 .fdsIconButton--ghost:active {
-  background-color: rgba(64, 64, 64, 0.24);
+  background-color: rgba(64, 64, 64, 0.2);
 }
 
-.fdsIconButton--ghost.fdsIconButton--isActive {
-  background-color: rgba(64, 64, 64, 0.12);
+.fdsIconButton--ghost.fdsIconButton--isActive:focus {
+  background-color: rgba(64, 64, 64, 0.2);
 }
+
 
 .inverted .fdsIconButton--ghost {
   color: var(--color-white);
@@ -67,7 +72,7 @@
 
 /* stylelint-disable-next-line selector-max-class  */
 .inverted .fdsIconButton--ghost.fdsIconButton--isActive {
-  background-color: rgba(255, 255, 255, 0.16);
+  background-color: rgba(255, 255, 255, 0.32);
 }
 
 .inverted .fdsIconButton--ghost:hover {
@@ -78,8 +83,17 @@
   background-color: rgba(255, 255, 255, 0.32);
 }
 
+/* stylelint-disable-next-line selector-max-class  */
+.inverted .fdsIconButton--ghost.fdsIconButton--isActive:focus {
+  background-color: rgba(255, 255, 255, 0.32);
+}
+
 .fdsIconButton--isDestructive {
   color: var(--color-red);
+}
+
+.fdsIconButton--isDestructive.fdsIconButton--isActive {
+  background-color: rgba(229, 50, 62, 0.2);
 }
 
 .fdsIconButton--isDestructive:hover {
@@ -87,11 +101,11 @@
 }
 
 .fdsIconButton--isDestructive:active {
-  background-color: rgba(229, 50, 62, 0.24);
+  background-color: rgba(229, 50, 62, 0.2);
 }
 
-.fdsIconButton--isDestructive.fdsIconButton--isActive {
-  background-color: rgba(229, 50, 62, 0.12);
+.fdsIconButton--isDestructive.fdsIconButton--isActive:focus {
+  background-color: rgba(229, 50, 62, 0.2);
 }
 
 .fdsIconButton--loading {

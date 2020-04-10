@@ -5,7 +5,7 @@ import {
   boolean,
   optionsKnob as options
 } from "@storybook/addon-knobs";
-import { arrayToOptions, StoryWrapper, StoryItem, ImportPath } from "components/util/storybook";
+import { arrayToOptions, StoryWrapper, StoryItem, ImportPath, State } from "components/util/storybook";
 import Button, { SIZES, THEMES, ICON_PLACEMENTS } from "./Button";
 import StarFilledIcon from "lib/icons/react/StarFilledIcon";
 import IconButton from "./IconButton";
@@ -98,27 +98,66 @@ Modifies the theme. Should only be used when the interaction involves data loss,
 
 <Preview>
   <Story name="Active">
-    <StoryWrapper>
-    {THEMES.map(theme => (
-      <StoryItem>
-        <Button
-          theme={theme}
-          isActive
-          label={theme}
+    <>
+      <StoryWrapper>
+        <State
+          initialValue={{}}
+          render={(value, setValue) => ( 
+            <>
+              {THEMES.map((theme, idx) => (
+                <StoryItem>
+                  <Button
+                    theme={theme}
+                    isActive={!value[idx]}
+                    label={theme}
+                    onClick={() => setValue({ ...value, [idx]: !Boolean(value[idx])})}
+                  />
+                </StoryItem>
+              ))}
+            </>
+          )}
         />
-      </StoryItem>
-    ))}
-    {THEMES.map(theme => (
-      <StoryItem>
-        <Button
-          theme={theme}
-          isActive
-          isDestructive
-          label={theme}
+        <State
+          initialValue={{}}
+          render={(value, setValue) => ( 
+            <>
+              {THEMES.map((theme, idx) => (
+                <StoryItem>
+                  <Button
+                    theme={theme}
+                    isActive={!value[idx]}
+                    isDestructive
+                    label={theme}
+                    onClick={() => setValue({ ...value, [idx]: !Boolean(value[idx])})}
+                  />
+                </StoryItem>
+              ))}
+            </>
+          )}
         />
-      </StoryItem>
-    ))}
-    </StoryWrapper>
+      </StoryWrapper>
+      <div class="inverted bgColor--blue padding--all rounded--all margin--top">
+        <StoryWrapper>
+          <State
+            initialValue={{}}
+            render={(value, setValue) => ( 
+              <>
+                {['ghost', 'outlined'].map((theme, idx) => (
+                  <StoryItem>
+                    <Button
+                      theme={theme}
+                      isActive={!value[idx]}
+                      label={theme}
+                      onClick={() => setValue({ ...value, [idx]: !Boolean(value[idx])})}
+                    />
+                  </StoryItem>
+                ))}
+              </>
+            )}
+          />
+        </StoryWrapper>
+      </div>
+    </>
   </Story>
 </Preview>
 

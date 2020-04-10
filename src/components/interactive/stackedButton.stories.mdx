@@ -36,26 +36,22 @@ import { ImportPath, State } from 'components/util/storybook';
 
 <Props of={StackedButton} />
 
-### States
+### isActive & isToggled
+Click to toggle on and off
 
-<Story name="States">
+<Story name="isActive & isToggled">
   <State
-    initialValue={null}
+    initialValue={{}}
     render={((value, setValue) => {
       return (
         <>
-          {[{ label: "Lorem Ipsum", Icon: SalesforceIcon }, { label: "Dolor Sit Amet", Icon: StarFilledIcon }].map((item, idx) => (
+          {[{ label: "isActive", Icon: SalesforceIcon }, { label: "isToggled", Icon: StarFilledIcon }].map((item, idx) => (
             <StackedButton
               Icon={item.Icon}
               label={item.label}
-              isActive={value === idx}
-              onClick={() => {
-                if (idx === value){
-                  setValue(null)
-                } else {
-                  setValue(idx)
-                }
-              }}
+              isToggled={item.label === 'isToggled' && value[idx]}
+              isActive={item.label === 'isActive' && value[idx]}
+              onClick={() => setValue({ ...value, [idx]: !Boolean(value[idx])})}
             />
           ))}
         </>

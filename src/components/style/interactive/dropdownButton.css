@@ -11,12 +11,12 @@
   min-width: 170px;
 }
 
-.fdsDropdown--isActive {
-  background: #E8E8E8;
-}
-
 .fdsDropdown--isFullWidth {
   width: 100%;
+}
+
+.fdsDropdown--isActive {
+  background: #d9d9d9;
 }
 
 .fdsDropdown:hover {
@@ -24,6 +24,10 @@
 }
 
 .fdsDropdown:active {
-  background-color: #D1D1D1;
+  background-color: #d9d9d9;
+}
+
+.fdsDropdown--isActive:focus {
+  background: #d9d9d9;
 }
 

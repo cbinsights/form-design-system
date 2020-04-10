@@ -27,10 +27,8 @@
 }
 
 .fdsStackedButton--isActive {
-  background-color: var(--color-aqua);
-  color: var(--color-white);
+  background-color: rgba(64, 64, 64, 0.2);
 }
-
 
 .fdsStackedButton:hover {
   background-color: rgba(64, 64, 64, 0.08);
@@ -41,15 +39,30 @@
   background-color: rgba(64, 64, 64, 0.24);
 }
 
-.fdsStackedButton--isActive:hover {
+.fdsStackedButton--isActive:focus {
+  background-color: rgba(64, 64, 64, 0.2);
+}
+
+.fdsStackedButton--isToggled {
+  background-color: var(--color-aqua);
+  color: var(--color-white);
+}
+
+.fdsStackedButton--isToggled:hover {
   background-color: #5ab1d1;
   color: var(--color-white);
 }
 
-.fdsStackedButton--isActive:active {
+.fdsStackedButton--isToggled:active {
   background-color: transparent;
   color: var(--button-primary-color);
 }
+
+.fdsStackedButton--isToggled:focus {
+  background-color: var(--color-aqua);
+  color: var(--color-white);
+}
+
 
 .fdsStackedButton-iconWrapper {
   display: inline-flex;
