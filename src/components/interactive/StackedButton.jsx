@@ -16,6 +16,13 @@ const StackedButton = ({
 }) => {
   const Element = baseElement({ href: rest.href, onClick: true, as: Link });
 
+  const ariaPressed = () => {
+    if (Element === 'button') {
+      return isToggled || isActive;
+    }
+    return undefined;
+  };
+
   return (
     <Element
       {...rest}
@@ -32,7 +39,7 @@ const StackedButton = ({
         }
       )}
       disabled={disabled && Element === 'button'}
-      aria-pressed={Element === 'button' && (isToggled || isActive)}
+      aria-pressed={ariaPressed()}
     >
       {Icon && (
         <div className="fdsStackedButton-iconWrapper">
