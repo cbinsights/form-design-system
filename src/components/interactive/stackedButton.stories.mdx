@@ -6,6 +6,9 @@ import CollectionPublicIcon from 'lib/icons/react/CollectionPublicIcon';
 import StoryAddIcon from 'lib/icons/react/StoryAddIcon';
 import WorkFasterIcon from 'lib/icons/react/WorkFasterIcon';
 import SalesforceIcon from 'lib/icons/react/SalesforceIcon';
+import CloneIcon from 'lib/icons/react/CloneIcon';
+import ShareIcon from 'lib/icons/react/ShareIcon';
+import TrashIcon from 'lib/icons/react/TrashIcon';
 
 import StackedButton from './StackedButton';
 
@@ -69,4 +72,26 @@ import { ImportPath, State } from 'components/util/storybook';
     label="Add to Collections"
     hasCaret
   />
+</Story>
+
+### Example
+
+<Story name="Example">
+  <div className="padding--all alignChild--right--center" style={{ backgroundColor: "#f1f5f7" }}>
+    <div>
+      <StackedButton
+        Icon={CloneIcon}
+        label="Clone Collection"
+      />
+      <StackedButton
+        Icon={ShareIcon}
+        label="Share"
+      />
+      <StackedButton
+        Icon={TrashIcon}
+        label="Delete"
+        hasCaret
+      />
+    </div>
+  </div>
 </Story>
