@@ -32,6 +32,7 @@ const StackedButton = ({
         }
       )}
       disabled={disabled && Element === 'button'}
+      aria-pressed={Element === 'button' && (isToggled || isActive)}
     >
       {Icon && (
         <div className="fdsStackedButton-iconWrapper">
