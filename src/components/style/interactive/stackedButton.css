@@ -12,6 +12,8 @@
   background-color: transparent;
   font-weight: 500;
   max-width: 62px;
+  /* 1/10/2020: min-height should be axed as a breaking change after v8 */
+  min-height: 66px;
   box-sizing: border-box;
   align-items: center;
   color: var(--button-primary-color);
