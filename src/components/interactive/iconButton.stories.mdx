@@ -5,7 +5,7 @@ import CollectionPublicIcon from '../../../lib/icons/react/CollectionPublicIcon'
 import StoryAddIcon from '../../../lib/icons/react/StoryAddIcon';
 import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
 import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
-import { arrayToOptions, StoryWrapper, StoryItem, ImportPath } from "components/util/storybook";
+import { arrayToOptions, StoryWrapper, StoryItem, ImportPath, State } from "components/util/storybook";
 import { MockLink } from '../util/mock-react-router';
 
 import IconButton, { THEMES, RADII, SIZES } from './IconButton';
@@ -48,38 +48,38 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
 
 <Props of={IconButton} />
 
-### Themes / States
+### Themes
 
 <Preview>
-  <Story name="Themes / States">
+  <Story name="Themes">
     <StoryWrapper>
       {THEMES.map(theme => (
-        <>
-          <StoryItem>
-            <IconButton
-              theme={theme}
-              Icon={Icons[0]}
+        <StoryItem>
+          <IconButton
+            theme={theme}
+            Icon={Icons[0]}
           />
-          </StoryItem>
-          <StoryItem>
-            <IconButton
-              theme={theme}
-              isActive
-              Icon={Icons[0]}
-          />
-          </StoryItem>
-          <StoryItem>
-            <IconButton
-              disabled
-              theme={theme}
-              Icon={Icons[0]}
-          />
-          </StoryItem>
-        </>
+        </StoryItem>
       ))}
     </StoryWrapper>
   </Story>
 </Preview>
+
+### Destructive
+
+<Preview>
+  <Story name="Destructive">
+    <StoryWrapper>
+      <StoryItem>
+        <IconButton
+          isDestructive
+          Icon={Icons[0]}
+      />
+      </StoryItem>
+    </StoryWrapper>
+  </Story>
+</Preview>
+
 
 ### Inverted
 
@@ -100,46 +100,76 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
           Icon={Icons[0]}
       />
       </StoryItem>
-      <StoryItem>
-        <IconButton
-          disabled
-          theme="ghost"
-          Icon={Icons[0]}
-      />
-      </StoryItem>
     </StoryWrapper>
     </div>
   </Story>
 </Preview>
 
+### isActive
 
-
-### Destructive
+`isActive` should be used on buttons to signify the button having
+some affect (applying a filter, causing a popover to be open).
+**Click to toggle on and off**.
 
 <Preview>
-  <Story name="Destructive">
-    <StoryWrapper>
-      <StoryItem>
-        <IconButton
-          isDestructive
-          Icon={Icons[0]}
-      />
-      </StoryItem>
-      <StoryItem>
-        <IconButton
-          isDestructive
-          isActive
-          Icon={Icons[0]}
-      />
-      </StoryItem>
-      <StoryItem>
-        <IconButton
-          disabled
-          isDestructive
-          Icon={Icons[0]}
-      />
-      </StoryItem>
-    </StoryWrapper>
+  <Story name="isActive">
+    <>
+      <StoryWrapper>
+        <State
+          initialValue={{}}
+          render={(value, setValue) => ( 
+            <>
+              {THEMES.map((theme, idx) => (
+                <StoryItem>
+                  <IconButton
+                    Icon={Icons[0]}
+                    theme={theme}
+                    isActive={!value[idx]}
+                    onClick={() => setValue({ ...value, [idx]: !Boolean(value[idx])})}
+                  />
+                </StoryItem>
+              ))}
+            </>
+          )}
+        />
+        <State
+          initialValue={{}}
+          render={(value, setValue) => ( 
+            <>
+              <StoryItem>
+                <IconButton
+                  isDestructive
+                  Icon={Icons[0]}
+                  isActive={!value[0]}
+                  onClick={() => setValue({ ...value, [0]: !Boolean(value[0])})}
+                />
+              </StoryItem>
+            </>
+          )}
+        />
+      </StoryWrapper>
+      <div class="inverted bgColor--blue padding--all rounded--all margin--top">
+        <StoryWrapper>
+          <State
+            initialValue={{}}
+            render={(value, setValue) => ( 
+              <>
+                {['ghost'].map((theme, idx) => (
+                  <StoryItem>
+                    <IconButton
+                      Icon={Icons[0]}
+                      theme={theme}
+                      isActive={!value[idx]}
+                      onClick={() => setValue({ ...value, [idx]: !Boolean(value[idx])})}
+                    />
+                  </StoryItem>
+                ))}
+              </>
+            )}
+          />
+        </StoryWrapper>
+      </div>
+    </>
   </Story>
 </Preview>
 
@@ -169,7 +199,7 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
     {RADII.map(radius => (
       <StoryItem>
         <IconButton
-          theme={THEMES[0]}
+          theme={THEMES[1]}
           radius={radius}
           Icon={Icons[0]}
         />
