@@ -38,6 +38,7 @@
 .fdsDateInput select {
   font-size: var(--font-size-s);
   height: var(--fdsDateInput-control-height);
+  padding: 0;
 }
 
 .fdsDateInput .DayPicker-Month {

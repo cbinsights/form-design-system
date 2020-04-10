@@ -39,6 +39,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                       aria-label="close"
                       class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                       role="img"
+                      title="close"
                     >
                       <span
                         class=""
@@ -114,6 +115,7 @@ exports[`Dialog component matches snapshot (default props) 1`] = `
                       aria-label="close"
                       class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                       role="img"
+                      title="close"
                     >
                       <span
                         class=""
@@ -275,6 +277,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                       aria-label="close"
                       class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                       role="img"
+                      title="close"
                     >
                       <span
                         class=""
@@ -350,6 +353,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                       aria-label="close"
                       class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m"
                       role="img"
+                      title="close"
                     >
                       <span
                         class=""
@@ -473,6 +477,7 @@ exports[`Dialog component matches snapshot (set all props) 1`] = `
                   <IconButton
                     Icon={[Function]}
                     aria-label="close"
+                    label="close"
                     onClick={[Function]}
                   />
                 </div>

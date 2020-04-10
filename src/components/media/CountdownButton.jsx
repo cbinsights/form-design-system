@@ -20,7 +20,7 @@ export const getCircleInfo = (circleSize, strokeWidth) => {
   };
 };
 
-const CountdownButton = ({ Icon = DenyIcon, duration, onClick }) => {
+const CountdownButton = ({ label = 'Close', Icon = DenyIcon, duration, onClick }) => {
   const circleSize = 34;
   const strokeWidth = '2';
   const { r, c, centerOffset } = getCircleInfo(circleSize, strokeWidth);
@@ -56,7 +56,7 @@ const CountdownButton = ({ Icon = DenyIcon, duration, onClick }) => {
       }}
     >
       <div className="countdownButton-button">
-        <IconButton onClick={onClick} radius="circle" Icon={Icon} />
+        <IconButton onClick={onClick} radius="circle" Icon={Icon} label={label} />
       </div>
       <Transition
         in={true}
@@ -99,6 +99,9 @@ CountdownButton.propTypes = {
 
   /** Used to render a FDS Icon (should only be used for FDS Icons, e.g. Icon={DenyIcon}) */
   Icon: PropTypes.func,
+
+  /** adds a label to IconButton */
+  label: PropTypes.string,
 
   /** Click callback for button */
   onClick: PropTypes.func,

@@ -27,7 +27,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [7.16] Updated Button
+## [7.18] Updated Button
 
 - Button now has an `isActive` state
 - Dropdown now has an `isActive` state
@@ -35,6 +35,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - Button colors / look and feel were completely overhauled (no breaking changes)
 - Added bgColor--blue
 
+## [7.17] Add TextInput
+
+- Added `TextInput` form component for inputs
+
+## [7.16] Updated `Popover`
+
+- Added disableScrollRef to disable an elements scrolling while the popover is visible
+- Added closeOnScrollRef to close the popover when the user starts scrolling the given element
 
 ## [7.15] Disabled Menu
 
