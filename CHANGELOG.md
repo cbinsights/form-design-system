@@ -31,6 +31,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - Button now has an `isActive` state
 - Dropdown now has an `isActive` state
+- StackedButton now has an `isToggled` state
 - Added inverted outlined theme to Button
 - Button colors / look and feel were completely overhauled (no breaking changes)
 - Added bgColor--blue
