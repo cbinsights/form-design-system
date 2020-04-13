@@ -110,7 +110,7 @@
   background-color: #ed737c;
 }
 
-/* stylelint-disable-next-line selector-max-class  */
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: #ed737c;
 }
@@ -170,11 +170,11 @@
   background-color: #fad6d8;
 }
 
-/* stylelint-disable-next-line selector-max-class  */
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--outlined.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: #fad6d8;
 }
-/* stylelint-disable-next-line selector-max-class  */
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive {
   background-color: rgba(229, 50, 62, 0.2);
 }
@@ -187,13 +187,7 @@
   background-color: rgba(229, 50, 62, 0.2);
 }
 
-/* stylelint-disable-next-line selector-max-class  */
-.fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive:focus {
-  background-color: rgba(229, 50, 62, 0.2);
-}
-
-
-/* stylelint-disable-next-line selector-max-class  */
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: rgba(229, 50, 62, 0.2);
 }
@@ -229,13 +223,13 @@
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* stylelint-disable-next-line selector-max-class  */
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .inverted .fdsButton--ghost:active,
 .inverted .fdsButton--outlined:active {
   background-color: rgba(255, 255, 255, 0.32);
 }
 
-/* stylelint-disable-next-line selector-max-class  */
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .inverted .fdsButton--ghost.fdsButton--isActive:focus,
 .inverted .fdsButton--outlined.fdsButton--isActive:focus {
   background-color: rgba(255, 255, 255, 0.32);
