@@ -83,7 +83,7 @@
   background-color: rgba(255, 255, 255, 0.32);
 }
 
-/* stylelint-disable-next-line selector-max-class  */
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .inverted .fdsIconButton--ghost.fdsIconButton--isActive:focus {
   background-color: rgba(255, 255, 255, 0.32);
 }
