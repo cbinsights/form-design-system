@@ -23,11 +23,6 @@
   padding: 7px;
 }
 
-
-.fdsIconButton--circle {
-  border-radius: 50%;
-}
-
 .fdsIconButton--disabled {
   opacity: var(--button-opacity);
   pointer-events: none;
@@ -39,43 +34,78 @@
 }
 
 .fdsIconButton--aqua:hover {
-  opacity: 0.9;
+  background-color: #5ab1d1;
 }
 
 .fdsIconButton--aqua:active {
-  opacity: 0.8;
+  background-color: #85c6dd;
+}
+
+.fdsIconButton--aqua.fdsIconButton--isActive {
+  background-color: #85c6dd;
 }
 
 .fdsIconButton--ghost {
   color: var(--button-primary-color);
 }
 
+.fdsIconButton--ghost.fdsIconButton--isActive {
+  background-color: rgba(64, 64, 64, 0.2);
+}
+
 .fdsIconButton--ghost:hover {
-  background-color: var(--button-secondary-hover);
+  background-color: rgba(64, 64, 64, 0.08);
 }
 
 .fdsIconButton--ghost:active {
-  background-color: var(--button-secondary-pressed);
+  background-color: rgba(64, 64, 64, 0.2);
 }
 
-.fdsIconButton--active {
-  background-color: var(--color-aqua);
+.fdsIconButton--ghost.fdsIconButton--isActive:focus {
+  background-color: rgba(64, 64, 64, 0.2);
+}
+
+
+.inverted .fdsIconButton--ghost {
   color: var(--color-white);
 }
 
+/* stylelint-disable-next-line selector-max-class  */
+.inverted .fdsIconButton--ghost.fdsIconButton--isActive {
+  background-color: rgba(255, 255, 255, 0.32);
+}
+
+.inverted .fdsIconButton--ghost:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.inverted .fdsIconButton--ghost:active {
+  background-color: rgba(255, 255, 255, 0.32);
+}
+
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
+.inverted .fdsIconButton--ghost.fdsIconButton--isActive:focus {
+  background-color: rgba(255, 255, 255, 0.32);
+}
+
 .fdsIconButton--isDestructive {
-  color: var(--button-secondary-destructive);
-  background-color: transparent;
+  color: var(--color-red);
+}
+
+.fdsIconButton--isDestructive.fdsIconButton--isActive {
+  background-color: rgba(229, 50, 62, 0.2);
 }
 
 .fdsIconButton--isDestructive:hover {
-  color: var(--button-secondary-destructive);
-  background-color: var(--button-secondary-destructive-hover);
+  background-color: rgba(229, 50, 62, 0.08);
 }
 
 .fdsIconButton--isDestructive:active {
-  color: var(--button-secondary-destructive);
-  background-color: var(--button-secondary-destructive-pressed);
+  background-color: rgba(229, 50, 62, 0.2);
+}
+
+.fdsIconButton--isDestructive.fdsIconButton--isActive:focus {
+  background-color: rgba(229, 50, 62, 0.2);
 }
 
 .fdsIconButton--loading {
@@ -116,6 +146,6 @@
 
 
 .fdsIconButton--loading.fdsIconButton--isDestructive::before {
-  border-color: var(--button-secondary-destructive);
+  border-color: var(--color-red);
   border-top-color: transparent;
 }

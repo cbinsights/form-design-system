@@ -5,7 +5,7 @@ import CollectionPublicIcon from '../../../lib/icons/react/CollectionPublicIcon'
 import StoryAddIcon from '../../../lib/icons/react/StoryAddIcon';
 import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
 import SalesforceIcon from '../../../lib/icons/react/SalesforceIcon';
-import { arrayToOptions, ImportPath } from '../util/storybook';
+import { arrayToOptions, StoryWrapper, StoryItem, ImportPath, State } from "components/util/storybook";
 import { MockLink } from '../util/mock-react-router';
 
 import IconButton, { THEMES, RADII, SIZES } from './IconButton';
@@ -19,22 +19,25 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
 <ImportPath component={IconButton} section="interactive" />
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
-  <IconButton
-    isDestructive={boolean('isDestructive', false)}
-    disabled={boolean('disabled', false)}
-    isLoading={boolean('isLoading', false)}
-    theme={options('theme', arrayToOptions(THEMES), undefined, {
-      display: 'inline-radio',
-    })}
-    size={options('size', arrayToOptions(SIZES), undefined, {
-      display: 'inline-radio',
-    })}
-    radius={options('radius', arrayToOptions(RADII), undefined, {
-      display: 'inline-radio',
-    })}
-    label={text('label', undefined)}
-    Icon={StarFilledIcon}
-  />
+  <div className={boolean("Inverted", false) ? 'inverted' : ''}>
+    <IconButton
+      isDestructive={boolean('isDestructive', false)}
+      isActive={boolean('isActive', false)}
+      disabled={boolean('disabled', false)}
+      isLoading={boolean('isLoading', false)}
+      theme={options('theme', arrayToOptions(THEMES), undefined, {
+        display: 'inline-radio',
+      })}
+      size={options('size', arrayToOptions(SIZES), undefined, {
+        display: 'inline-radio',
+      })}
+      radius={options('radius', arrayToOptions(RADII), undefined, {
+        display: 'inline-radio',
+      })}
+      label={text('label', undefined)}
+      Icon={StarFilledIcon}
+    />
+  </div>
 </Story>
 
 <Preview isExpanded>
@@ -45,75 +48,20 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
 
 <Props of={IconButton} />
 
-### States
-
-<Preview>
-  <Story name="States">
-    <React.Fragment>
-    <div className="display--inlineBlock margin--right--half margin--bottom--half">
-      <IconButton
-        Icon={Icons[0]}
-      />
-    </div>
-    <div className="display--inlineBlock margin--right--half margin--bottom--half">
-      <IconButton
-        isActive
-        Icon={Icons[0]}
-      />
-    </div>
-    <div className="display--inlineBlock margin--right--half margin--bottom--half">
-      <IconButton
-        disabled
-        Icon={Icons[0]}
-      />
-    </div>
-    </React.Fragment>
-  </Story>
-</Preview>
-
-### Sizes
-
-<Preview>
-  <Story name="Sizes">
-    {SIZES.map(size => (
-      <div className="display--inlineBlock margin--right--half margin--bottom--half">
-        <IconButton
-          size={size}
-          Icon={Icons[0]}
-        />
-      </div>
-    ))}
-  </Story>
-</Preview>
-
-### Radii
-
-<Preview>
-  <Story name="Radii">
-    {RADII.map(radius => (
-      <div className="display--inlineBlock margin--right--half margin--bottom--half">
-        <IconButton
-          theme={THEMES[0]}
-          radius={radius}
-          Icon={Icons[0]}
-        />
-      </div>
-    ))}
-  </Story>
-</Preview>
-
 ### Themes
 
 <Preview>
   <Story name="Themes">
-    {THEMES.map((theme, index) => (
-      <div className="display--inlineBlock margin--right--half margin--bottom--half">
-        <IconButton
-          theme={theme}
-          Icon={Icons[0]}
-       />
-      </div>
-    ))}
+    <StoryWrapper>
+      {THEMES.map(theme => (
+        <StoryItem>
+          <IconButton
+            theme={theme}
+            Icon={Icons[0]}
+          />
+        </StoryItem>
+      ))}
+    </StoryWrapper>
   </Story>
 </Preview>
 
@@ -121,20 +69,165 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
 
 <Preview>
   <Story name="Destructive">
-    <IconButton
-      isDestructive
-      Icon={Icons[0]}
-    />
+    <StoryWrapper>
+      <StoryItem>
+        <IconButton
+          isDestructive
+          Icon={Icons[0]}
+      />
+      </StoryItem>
+    </StoryWrapper>
   </Story>
 </Preview>
+
+
+### Inverted
+
+<Preview>
+  <Story name="Inverted">
+    <div className="inverted bgColor--blue padding--all rounded--all">
+    <StoryWrapper>
+      <StoryItem>
+        <IconButton
+          theme="ghost"
+          Icon={Icons[0]}
+      />
+      </StoryItem>
+      <StoryItem>
+        <IconButton
+          theme="ghost"
+          isActive
+          Icon={Icons[0]}
+      />
+      </StoryItem>
+    </StoryWrapper>
+    </div>
+  </Story>
+</Preview>
+
+### isActive
+
+`isActive` should be used on buttons to signify the button having
+some affect (applying a filter, causing a popover to be open).
+**Click to toggle on and off**.
+
+<Preview>
+  <Story name="isActive">
+    <>
+      <StoryWrapper>
+        <State
+          initialValue={{}}
+          render={(value, setValue) => ( 
+            <>
+              {THEMES.map((theme, idx) => (
+                <StoryItem>
+                  <IconButton
+                    Icon={Icons[0]}
+                    theme={theme}
+                    isActive={!value[idx]}
+                    onClick={() => setValue({ ...value, [idx]: !Boolean(value[idx])})}
+                  />
+                </StoryItem>
+              ))}
+            </>
+          )}
+        />
+        <State
+          initialValue={{}}
+          render={(value, setValue) => ( 
+            <>
+              <StoryItem>
+                <IconButton
+                  isDestructive
+                  Icon={Icons[0]}
+                  isActive={!value[0]}
+                  onClick={() => setValue({ ...value, [0]: !Boolean(value[0])})}
+                />
+              </StoryItem>
+            </>
+          )}
+        />
+      </StoryWrapper>
+      <div class="inverted bgColor--blue padding--all rounded--all margin--top">
+        <StoryWrapper>
+          <State
+            initialValue={{}}
+            render={(value, setValue) => ( 
+              <>
+                {['ghost'].map((theme, idx) => (
+                  <StoryItem>
+                    <IconButton
+                      Icon={Icons[0]}
+                      theme={theme}
+                      isActive={!value[idx]}
+                      onClick={() => setValue({ ...value, [idx]: !Boolean(value[idx])})}
+                    />
+                  </StoryItem>
+                ))}
+              </>
+            )}
+          />
+        </StoryWrapper>
+      </div>
+    </>
+  </Story>
+</Preview>
+
+
+### Sizes
+
+<Preview>
+  <Story name="Sizes">
+    <StoryWrapper>
+    {SIZES.map(size => (
+      <StoryItem>
+        <IconButton
+          size={size}
+          Icon={Icons[0]}
+        />
+      </StoryItem>
+    ))}
+    </StoryWrapper>
+  </Story>
+</Preview>
+
+### Radii
+
+<Preview>
+  <Story name="Radii">
+    <StoryWrapper>
+    {RADII.map(radius => (
+      <StoryItem>
+        <IconButton
+          theme={THEMES[1]}
+          radius={radius}
+          Icon={Icons[0]}
+        />
+      </StoryItem>
+    ))}
+    </StoryWrapper>
+  </Story>
+</Preview>
+
 
 ### Loading
 
 <Preview>
   <Story name="Loading">
-    <IconButton
-      isLoading
-      Icon={Icons[0]}
-    />
+    <StoryWrapper>
+      <StoryItem>
+        <IconButton
+          isLoading
+          Icon={Icons[0]}
+        />
+      </StoryItem>
+      <StoryItem>
+        <IconButton
+          isDestructive
+          isLoading
+          Icon={Icons[0]}
+        />
+      </StoryItem>
+    </StoryWrapper>
   </Story>
 </Preview>

@@ -1,11 +1,13 @@
 import { addParameters } from "@storybook/react";
+import FDS from 'lib/dictionary/js/styleConstants';
 
 import "../src/components/style/index.css";
 
 addParameters({
   backgrounds: [
-    { name: "White", value: "#fff" },
-    { name: "Navy", value: "#003366" }
+    { name: "White", value: FDS.COLOR_WHITE },
+    { name: "Haze", value: FDS.COLOR_HAZE},
+    { name: "Navy", value: FDS.COLOR_NAVY }
   ],
   options: {
     showRoots: true,

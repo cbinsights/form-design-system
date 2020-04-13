@@ -5,7 +5,7 @@ import {
   boolean,
   optionsKnob as options
 } from "@storybook/addon-knobs";
-import { ImportPath } from '../util/storybook';
+import { ImportPath, State } from 'components/util/storybook';
 import DropdownButton from "./DropdownButton";
 
 <Meta title="Components/Interactive/DropdownButton" decorators={[withKnobs]} component={DropdownButton} />
@@ -16,7 +16,8 @@ import DropdownButton from "./DropdownButton";
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <DropdownButton
-    isFullWidth={boolean("disabled", undefined)}
+    isFullWidth={boolean("isFullWidth", undefined)}
+    isActive={boolean('isActive', undefined)}
   >
     {text("children", 'DropdownButton')}
   </DropdownButton>
@@ -27,6 +28,22 @@ import DropdownButton from "./DropdownButton";
 </Preview>
 
 <Props of={DropdownButton} />
+
+### isActive
+**Click to toggle on and off**.
+
+<Preview>
+  <Story name="isActive">
+    <State
+      initialValue={true}
+      render={(value, setValue) => (
+        <DropdownButton onClick={() => setValue(!value)} isActive={value}>
+          Hello world
+        </DropdownButton>
+      )}
+    />
+  </Story>
+</Preview>
 
 DropDownButton will render any JSX passed to it
 

@@ -1,12 +1,3 @@
-:root {
-  --button-group-timeout: 250ms;
-  --button-group-hover-color: #DEE5EB;
-  --button-group-pressed-color: #C2CEDA;
-  --button-group-active-color: #DBE2E9;
-  --button-group-disabled-border-color: #DBE2E9;
-  --border-radius-default: 4px;
-}
-
 .btngroup {
   display: inline-flex;
   position: relative;
@@ -51,11 +42,11 @@ for a button being clicked on (:active) */
 }
 
 .groupbtn {
-  border: 1px solid var(--color-silver);
+  border: 1px solid #C2C2C2;
   border-radius: var(--border-radius-default);
-  padding: 0 12px;
+  padding: 0 8px;
   font-size: 12px;
-  color: var(--color-slate);
+  color: var(--font-color-primary);
   font-weight: var(--font-weight-bold);
   text-transform: none;
   line-height: normal;
@@ -71,42 +62,30 @@ for a button being clicked on (:active) */
   padding: 8px 0;
 }
 
-.groupbtn:focus,
 .groupbtn:active {
   border-color: var(--color-slate);
   text-decoration: none;
-}
-
-.groupbtn:focus {
-  background-color: none;
-  /* this box-shadow acts as outline that conforms
-  to border-radius, unlike outline  */
-  color: var(--color-charcoal);
 }
 
 .groupbtn:hover {
   text-decoration: none;
-  background-color: var(--button-group-hover-color);
-}
-
-/* Pressed */
-.groupbtn:active {
-  background-color: var(--button-group-pressed-color);
-  border-color: var(--color-slate);
-  color: var(--color-charcoal);
+  border-color: #C4C4C4;
+  background-color: rgba(64, 64, 64, 0.08);
+  color: var(--font-color-primary);
 }
 
 /* Activated */
-.groupbtn--active {
+.groupbtn--active,
+.groupbtn--active:hover,
+.groupbtn:active {
   text-decoration: none;
-  background-color: var(--button-group-active-color);
-  border-color: var(--color-slate);
-  color: var(--color-charcoal);
+  background-color: rgba(0, 102, 153, 0.12);
+  border-color: #8ab9cf;
+  color: var(--color-blue);
 }
 
 .groupbtn--disabled {
-  color: var(--color-silver);
-  border-color: var(--button-group-disabled-border-color);
+  opacity: var(--button-opacity);
   cursor: default;
   pointer-events: none;
 }
