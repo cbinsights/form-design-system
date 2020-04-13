@@ -27,6 +27,15 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [7.18] Updated Button
+
+- Button now has an `isActive` state
+- Dropdown now has an `isActive` state
+- StackedButton now has an `isToggled` state
+- Added inverted outlined theme to Button
+- Button colors / look and feel were completely overhauled (no breaking changes)
+- Added bgColor--blue
+
 ## [7.17] Add TextInput
 
 - Added `TextInput` form component for inputs
@@ -63,7 +72,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ## [7.10] Updated DropdownButton
 
 - DropdownButton now accepts an `isFullWidth`
-- It's background color is now white be default.
+- It's background color is now white by default.
 
 ## [7.9] Updated Dialog
 

@@ -12,7 +12,7 @@ const FloatingAction = ({
   isLoading,
   ...rest
 }) => (
-  <div className="shape--circle elevation--3 display--inlineBlock">
+  <div className={`shape--circle elevation--2 display--inlineBlock bgColor--${theme}`}>
     <IconButton
       isActive={isActive}
       isLoading={isLoading}

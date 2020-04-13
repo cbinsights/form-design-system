@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import baseElement from 'util/baseElement';
 
-export const THEMES = ['aqua', 'ghost'];
+export const THEMES = ['ghost', 'aqua'];
 export const RADII = ['square', 'circle'];
 export const SIZES = ['s', 'm'];
 
@@ -33,9 +33,9 @@ const IconButton = ({
         `fdsIconButton--${theme}`,
         `fdsIconButton--${size}`,
         {
+          'shape--circle': radius === 'circle',
           'fdsIconButton--disabled': disabled,
-          'fdsIconButton--active': isActive,
-          'fdsIconButton--circle': radius === 'circle',
+          'fdsIconButton--isActive': isActive && !disabled,
           'fdsIconButton--isDestructive': isDestructive,
           'fdsIconButton--loading': isLoading,
         }
