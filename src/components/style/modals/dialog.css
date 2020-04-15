@@ -1,6 +1,5 @@
 .dialog-enter {
   opacity: 0;
-  z-index: var(--zindex-shim);
   position: relative;
 }
 
@@ -15,7 +14,7 @@
 
 .dialog-exit {
   opacity: 1;
-  z-index: var(--zindex-shim);
+  z-index: 20;
   position: relative;
 }
 
@@ -36,7 +35,7 @@
 }
 
 .dialog-wrapper {
-  z-index: calc(var(--zindex-modal) + 1);
+  z-index: var(--zindex-modal);
   top: 0;
   left: 0;
   right: 0;
@@ -54,7 +53,6 @@
   overflow: hidden;
   background-color: var(--color-white);
   border-radius: var(--border-radius-default);
-  z-index: calc(var(--zindex-modal) + 1);
   width: 100%;
   display: flex;
   flex-direction: column;
