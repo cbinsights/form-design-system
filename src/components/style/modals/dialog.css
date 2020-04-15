@@ -1,4 +1,5 @@
 .dialog-enter {
+  z-index: var(--zindex-shim);
   opacity: 0;
   position: relative;
 }
@@ -13,12 +14,15 @@
 }
 
 .dialog-exit {
+  z-index: var(--zindex-shim);
+  opacity: 0;
   opacity: 1;
   z-index: 20;
   position: relative;
 }
 
 .dialog-exit-active {
+  z-index: var(--zindex-shim);
   opacity: 0;
   transition: opacity 200ms;
 }
