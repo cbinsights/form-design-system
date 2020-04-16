@@ -26,7 +26,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
-
 ## [8.0] MAJOR
 
 ### Changes / Additions
@@ -42,6 +41,25 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - Toaster accepts an `isOpen` prop to show whether the Toast is visible or not
 - Toaster now also accepts a `dismissDelay` prop directly.
 
+#### StackedButton
+- No longer has a min-height
+
+#### `Radio` Component
+Now uses `ref` instead of `inputRef` (new ref prop not in documentation)
+
+## [7.19] Updated IconButton
+
+- IconButton now has an `outlined` theme
+
+## [7.18] Updated Button
+
+- Button now has an `isActive` state
+- Dropdown now has an `isActive` state
+- StackedButton now has an `isToggled` state
+- Added inverted outlined theme to Button
+- Button colors / look and feel were completely overhauled (no breaking changes)
+- Added bgColor--blue
+
 ## [7.17] Add TextInput
 
 - Added `TextInput` form component for inputs
@@ -54,7 +72,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ## [7.15] Disabled Menu
 
 - Added `isDisabled` prop to `Menu`
->>>>>>> @{-1}
 
 ## [7.14] Configurable `InputGroup`
 
@@ -79,7 +96,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ## [7.10] Updated DropdownButton
 
 - DropdownButton now accepts an `isFullWidth`
-- It's background color is now white be default.
+- It's background color is now white by default.
 
 ## [7.9] Updated Dialog
 

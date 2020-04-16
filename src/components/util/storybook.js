@@ -79,9 +79,10 @@ Info.propTypes = {
 
 export default Info;
 
-export const StoryWrapper = ({ children }) => (
+export const StoryWrapper = ({ children, className, ...rest }) => (
   <div
-    className="display--inlineFlex"
+    {...rest}
+    className={`display--inlineFlex ${className}`}
     style={{
       flexWrap: 'wrap',
       marginBottom: `-${FDS.SPACE_HALF}`,
@@ -95,6 +96,7 @@ export const StoryWrapper = ({ children }) => (
 
 StoryWrapper.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export const StoryItem = ({ children }) => (

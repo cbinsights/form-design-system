@@ -74,71 +74,122 @@
 
 .fdsButton--blue {
   color: var(--color-white);
-  background-color: #1C6695;
+  background-color: var(--color-blue);
+}
+
+.fdsButton--blue.fdsButton--isActive {
+  background-color: #5297b9;
 }
 
 .fdsButton--blue:hover {
-  background-color: #29719D;
+  background-color: #1472a1;
 }
 
 .fdsButton--blue:active {
-  background-color: #5C96B6;
+  background-color: #5297b9;
+}
+
+.fdsButton--blue.fdsButton--isActive:focus {
+  background-color: #5297b9;
 }
 
 .fdsButton--blue.fdsButton--isDestructive {
-  background-color: var(--button-destructive);
+  background-color: var(--color-red);
+}
+
+/* stylelint-disable-next-line selector-max-class  */
+.fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive {
+  background-color: #ed737c;
 }
 
 .fdsButton--blue.fdsButton--isDestructive:hover {
-  background-color: var(--button-destructive-hover);
+  background-color: #e7424d;
 }
 
 .fdsButton--blue.fdsButton--isDestructive:active {
-  background-color: var(--button-destructive-pressed);
+  background-color: #ed737c;
+}
+
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
+.fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive:focus {
+  background-color: #ed737c;
+}
+
+.fdsButton--outlined,
+.fdsButton--ghost {
+  color: var(--color--charcoal);
 }
 
 .fdsButton--outlined {
-  border: 1px solid var(--button-outlined-border);
-  background-color: white;
-  color: var(--font-color-primary);
+  border: 1px solid #c4c4c4;
+  background-color: var(--color-white);
 }
 
-.fdsButton--ghost {
-  /* this isn't needed, just writing out for clarity */
-  color: var(--button-primary-color);
+.fdsButton--outlined.fdsButton--isActive {
+  background-color: #d9d9d9;
 }
 
 .fdsButton--outlined:hover {
-  background-color: #F2F2F2;
-}
-
-.fdsButton--ghost:hover {
-  background-color: var(--button-secondary-hover);
-  color: var(--button-secondary-hover-color);
+  background-color: #f0f0f0;
 }
 
 .fdsButton--outlined:active {
-  background-color: #E0E0E0;
+  background-color: #d9d9d9;
+}
+
+.fdsButton--outlined.fdsButton--isActive:focus {
+  background-color: #d9d9d9;
+}
+
+.fdsButton--ghost.fdsButton--isActive {
+  background-color: rgba(64, 64, 64, 0.2);
+}
+
+.fdsButton--ghost:hover {
+  background-color: rgba(64, 64, 64, 0.08);
 }
 
 .fdsButton--ghost:active {
-  background-color: var(--button-secondary-pressed);
-  color: var(--button-secondary-pressed-color);
+  background-color: rgba(64, 64, 64, 0.2);
 }
 
-.fdsButton--outlined.fdsButton--isDestructive:hover,
+.fdsButton--ghost.fdsButton--isActive:focus {
+  background-color: rgba(64, 64, 64, 0.2);
+}
+
+/* stylelint-disable-next-line selector-max-class  */
+.fdsButton--outlined.fdsButton--isDestructive.fdsButton--isActive {
+  background-color: #fad6d8;
+}
+
+.fdsButton--outlined.fdsButton--isDestructive:hover {
+  background-color: #fdeff0;
+}
+
+.fdsButton--outlined.fdsButton--isDestructive:active {
+  background-color: #fad6d8;
+}
+
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
+.fdsButton--outlined.fdsButton--isDestructive.fdsButton--isActive:focus {
+  background-color: #fad6d8;
+}
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
+.fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive {
+  background-color: rgba(229, 50, 62, 0.2);
+}
+
 .fdsButton--ghost.fdsButton--isDestructive:hover {
-  background-color: var(--button-secondary-destructive-hover);
+  background-color: rgba(229, 50, 62, 0.08);
 }
 
-.fdsButton--outlined.fdsButton--isDestructive:active,
 .fdsButton--ghost.fdsButton--isDestructive:active {
-  background-color: var(--button-secondary-destructive-pressed);
+  background-color: rgba(229, 50, 62, 0.2);
 }
 
-
-.fdsButton--ghost.fdsButton--loading {
-  border: 1px solid var(--button-outlined-border);
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
+.fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive:focus {
+  background-color: rgba(229, 50, 62, 0.2);
 }
 
 .fdsButton--loading:matches(.fdsButton--ghost, .fdsButton--outlined)::before {
@@ -150,31 +201,53 @@
   opacity: 1;
 }
 
-.inverted .fdsButton--ghost {
+.inverted .fdsButton--outlined {
+  border-color: var(--color-white);
+}
+
+.inverted .fdsButton--ghost,
+.inverted .fdsButton--outlined {
   color: var(--color-white);
   background: transparent;
 }
 
-.inverted .fdsButton--ghost:hover {
+/* stylelint-disable-next-line selector-max-class  */
+.inverted .fdsButton--ghost.fdsButton--isActive,
+.inverted .fdsButton--outlined.fdsButton--isActive {
+  background-color: rgba(255, 255, 255, 0.32);
+}
+
+
+.inverted .fdsButton--ghost:hover,
+.inverted .fdsButton--outlined:hover {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-.inverted .fdsButton--ghost:active {
-  background-color: rgba(255, 255, 255, 0.16);
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
+.inverted .fdsButton--ghost:active,
+.inverted .fdsButton--outlined:active {
+  background-color: rgba(255, 255, 255, 0.32);
+}
+
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
+.inverted .fdsButton--ghost.fdsButton--isActive:focus,
+.inverted .fdsButton--outlined.fdsButton--isActive:focus {
+  background-color: rgba(255, 255, 255, 0.32);
 }
 
 /* stylelint-disable-next-line selector-max-class */
-.inverted .fdsButton--ghost.fdsButton--loading::before {
+.inverted .fdsButton--ghost.fdsButton--loading::before,
+.inverted .fdsButton--outlined.fdsButton--loading::before {
   border: 2px solid var(--color-white);
   border-top-color: transparent;
 }
 
 .fdsButton--outlined.fdsButton--isDestructive {
-  border-color: var(--button-destructive);
+  border-color: var(--color-red);
 }
 
 .fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost) {
-  color: var(--button-secondary-destructive);
+  color: var(--color-red);
 }
 
 /* There's a very very unique design requirement here that requires
@@ -182,11 +255,11 @@
    of these cases are true */
 /* stylelint-disable-next-line selector-max-class  */
 .fdsButton--ghost.fdsButton--loading.fdsButton--isDestructive {
-  border-color: var(--button-destructive);
+  border-color: var(--color-red);
 }
 
 .fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost)::before {
-  border: 2px solid var(--button-destructive);
+  border: 2px solid var(--color-red);
   border-top-color: transparent;
 }
 
