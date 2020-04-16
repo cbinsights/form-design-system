@@ -31,10 +31,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ### **BREAKING CHANGES**
 
 #### StackedButton
-- No longer has a min-height
+No longer has a min-height
 
 #### `Radio` Component
 Now uses `ref` instead of `inputRef` (new ref prop not in documentation)
+
+#### `Button` Component
+`iconPlacement` and `Icon` removed, in favor of `IconLeft` and `IconRight`
 
 ## [7.19] Updated IconButton
 

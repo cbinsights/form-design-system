@@ -12,7 +12,7 @@ describe('ButtonGroup component', () => {
 
   it('matches snapshot (set all props)', () => {
     const component = shallow(<Button 
-      label="Button" Link={() => {}} isLoading isDestructive disabled iconPlacement='left' Icon={() => {}} isFullWidth theme='outlined' hasCaret
+      label="Button" Link={() => {}} isLoading isDestructive disabled IconLeft={() => {}} IconRight={() => {}} isFullWidth theme='outlined' hasCaret
     />)
     expect(component).toMatchSnapshot();
   });
