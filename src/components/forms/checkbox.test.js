@@ -3,11 +3,6 @@ import { shallow } from 'enzyme';
 
 import Checkbox from './Checkbox';
 
-// uuid will break snapshots, so we must mock it.
-//
-// look at me, i'm universally unique, I'm _soooooo special_
-jest.mock('uuid/v4', () => jest.fn().mockReturnValue('mock-universal-unique-identifier'));
-
 describe('Checkbox component', () => {
 
   it('matches snapshot (without label)', () => {

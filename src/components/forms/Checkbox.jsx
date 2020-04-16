@@ -1,7 +1,7 @@
-import React from 'react';
-import uuidv4 from 'uuid/v4';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import FDS from 'lib/dictionary/js/styleConstants';
 
 import CheckEmptyIcon from 'lib/icons/react/CheckEmptyIcon';
 import CheckFilledIcon from 'lib/icons/react/CheckFilledIcon';
@@ -11,62 +11,89 @@ import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Checkbox = ({
-  showLabel = true,
-  indeterminate = false,
-  disabled = false,
-  label,
-  inputRef,
-  ...rest
-}) => {
-  const id = uuidv4();
+const Checkbox = React.forwardRef(
+  ({ showLabel = true, disabled = false, label, defaultChecked, ...rest }, ref) => {
+    const [checkedState, setChecked] = useState(rest.checked || defaultChecked || false);
+    const checked = rest.checked != null ? rest.checked : checkedState;
 
-  const IconUnchecked = CheckEmptyIcon;
-  const IconChecked = indeterminate ? CheckIndeterminateIcon : CheckFilledIcon;
+    // We should maybe fire onChange in "addition" to setChecked, based on whether we
+    // interpret checkbox as being "controlled" or not
+    const onChange = rest.onChange ? rest.onChange : (e) => setChecked(e.target.checked);
 
-  return (
-    <div
-      className={cx('fdsCheckable fdsCheckbox', { 'fdsCheckable--disabled': disabled })}
-    >
-      <input
-        type="checkbox"
-        id={id}
-        className="media--xs"
-        disabled={disabled}
-        ref={inputRef}
-        {...rest}
-      />
-      <label className="flush--bottom" htmlFor={id}>
-        <span className="fdsCheckable-icon--checked">
-          <IconChecked size="xs" />
+    const CheckboxIcon = (() => {
+      if (checked) {
+        if (checked === 'mixed') {
+          return CheckIndeterminateIcon;
+        }
+        return CheckFilledIcon;
+      }
+      return CheckEmptyIcon;
+    })();
+
+    const Element = showLabel ? 'label' : 'div';
+
+    const checkboxColor = () => {
+      if (disabled) return FDS.COLOR_GRAY;
+      if (checked) return FDS.COLOR_BLUE;
+      return FDS.FONT_COLOR_SECONDARY;
+    };
+
+    return (
+      <Element
+        className={cx('fdsCheckable fdsCheckbox', 'flush--bottom', {
+          'fdsCheckable--disabled': disabled,
+        })}
+      >
+        <input
+          ref={ref}
+          type="checkbox"
+          className="media--xs"
+          disabled={disabled}
+          onChange={onChange}
+          {...rest}
+        />
+        <span
+          aria-hidden
+          className="fdsCheckable--icon"
+          style={{ pointerEvents: 'none' }}
+        >
+          <CheckboxIcon size="xs" color={checkboxColor()} />
         </span>
-        <span className="fdsCheckable-icon--unchecked">
-          <IconUnchecked size="xs" />
-        </span>
-        {showLabel && <span className="padding--left--half">{label}</span>}
-      </label>
-    </div>
-  );
-};
+        {showLabel && (
+          <span
+            className={cx('padding--left--half', {
+              'color--secondary': disabled,
+            })}
+          >
+            {label}
+          </span>
+        )}
+      </Element>
+    );
+  }
+);
+
+Checkbox.displayName = 'Checkbox';
 
 Checkbox.propTypes = {
-  /** Label used for a11y attributes _and_ the rendered `label` element */
+  /**
+   * Setting any one of the 3 values here will turn component into controlled component.
+   * */
+  checked: PropTypes.oneOf([true, false, 'mixed']),
+
+  /** Label used for `label` element */
   label: PropTypes.string.isRequired,
 
-  /** If the supplied `label` prop should be rendered to the screen. */
-  showLabel: PropTypes.bool,
-
-  /** Ref for input element */
-  inputRef: PropTypes.func,
-
-  /** Sets type `indeterminate` to `true` */
-  indeterminate: PropTypes.bool,
-
-  /** `true` checks the radio by default */
+  /** `true` checks the checkbox by default */
   defaultChecked: PropTypes.bool,
 
   /** Disables form field when `true` */
   disabled: PropTypes.bool,
+
+  onChange: PropTypes.func,
+
+  /** Controls whether the label surfaces as a text label, or is hidden and applied as an aria-label */
+  showLabel: PropTypes.bool,
 };
 
 export default Checkbox;

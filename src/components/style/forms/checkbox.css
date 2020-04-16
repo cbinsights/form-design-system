@@ -1,5 +1,6 @@
 /* stylelint-disable selector-max-combinators */
 /* stylelint-disable selector-max-compound-selectors */
+/* stylelint-disable selector-max-specificity */
 
 /**
  * Checkbox-specific styles.
@@ -10,10 +11,6 @@
   transform: translateY(-1px);
 }
 
-.fdsCheckbox input:focus + label svg {
+.fdsCheckbox input:focus + .fdsCheckable--icon svg {
   border-radius: var(--border-radius-default);
-}
-
-.fdsCheckbox input:indeterminate + label svg {
-  fill: var(--color-blue);
 }

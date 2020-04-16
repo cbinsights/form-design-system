@@ -1,20 +1,19 @@
 import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import { Info, ImportPath } from '../util/storybook';
+import { Info, State, ImportPath } from 'components/util/storybook';
+import { action } from "@storybook/addon-actions";
 
 import Checkbox from './Checkbox';
 
 <Meta title="Components/Forms/Checkbox" decorators={[withKnobs]} component={Checkbox} />
 
 # Checkbox
-
 <ImportPath component={Checkbox} section="forms" />
 
-Uncontrolled custom checkbox component with optional label.
+Custom checkbox component.
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Checkbox
-    indeterminate={boolean('indeterminate', false)}
     disabled={boolean('disabled', false)}
     name="knobs"
     label={text('label', 'I agree to receive spam')}
@@ -33,6 +32,8 @@ Uncontrolled custom checkbox component with optional label.
 </Info>
 
 <Props of={Checkbox} />
+
+Component is uncontrolled by default, but you can utilize the `checked` prop to turn it into a controlled component.
 
 ## Managing checked state
 
@@ -65,12 +66,11 @@ checkbox.
 
 ## Checkboxes without labels
 
-You can prevent the label from showing by setting `showLabel` to `false`.
-The value of the `label` prop will be used to set an ARIA attribute.
+You should always render a label, but you can bring your own
 
 <Preview>
   <Story name="Checkbox without label">
-    <Checkbox name="no-label" label="I don't have a label" showLabel={false} />
+    <Checkbox name="no-label" />
   </Story>
 </Preview>
 
@@ -82,7 +82,7 @@ checked.
 
 <Preview>
   <Story name="Indeterminate checkboxes">
-    <Checkbox indeterminate name="notsureif" label="Indeterminate checkbox" />
+    <Checkbox checked="mixed" name="notsureif" label="Indeterminate checkbox" />
   </Story>
 </Preview>
 
@@ -93,6 +93,34 @@ renders. Read the `checked` attribute of the event `currentTarget`.
 
 <Preview>
   <Story name="Reading the value of a Checkbox">
-    <Checkbox label="Option one" onChange={(e) => { console.log(e.currentTarget.checked) }} />
+    <Checkbox label="Option one" onChange={action('clicked')} />
+  </Story>
+</Preview>
+
+## Variations
+
+<Preview>
+  <Story name="Variations">
+    <>
+      <Checkbox label="Indeterminate" checked="mixed" />
+      <br />
+      <State
+        initialValue={true}
+        render={(value, setValue) => (
+          <Checkbox label="Controlled Checked" checked={value} onChange={() => setValue(!value)}/>
+        )}
+      />
+      <br />
+      <State
+        initialValue={false}
+        render={(value, setValue) => (
+          <Checkbox label="Controlled Unchecked" checked={value} onChange={() => setValue(!value)}/>
+        )}
+      />
+      <br />
+      <Checkbox label="Uncontrolled" />
+      <br />
+      <Checkbox label="Uncontrolled Default Checked" defaultChecked />
+    </>
   </Story>
 </Preview>

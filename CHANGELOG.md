@@ -30,8 +30,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
-#### `Thing` Component
-Component was updated / removed.
+#### Checkbox Component
+- `inputRef` removed (can now just use normal refs)
+- `indeterminate` was removed (indeterminate now lives on `checked` prop)
 
 ## [7.19] Updated IconButton
 
