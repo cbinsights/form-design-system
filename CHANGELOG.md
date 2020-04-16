@@ -26,13 +26,19 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
-
 ## [8.0] MAJOR
 
 ### **BREAKING CHANGES**
 
 #### StackedButton
 - No longer has a min-height
+
+#### `Radio` Component
+Now uses `ref` instead of `inputRef` (new ref prop not in documentation)
+
+## [7.19] Updated IconButton
+
+- IconButton now has an `outlined` theme
 
 ## [7.18] Updated Button
 
