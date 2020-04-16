@@ -28,7 +28,18 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ---
 ## [8.0] MAJOR
 
+### Changes / Additions
+
+- Toast now accepts a dismissOnAction boolean that controls whether the Toast is dismissed when the user clicks on the actionLabel
+
 ### **BREAKING CHANGES**
+
+#### `Toaster` Component
+- Toaster was refactored, and no longer uses *most* of it's previous props (`onDismiss`, `content`, and `type`). It still uses `isAutoDismiss`.
+- Toaster now renders its own Toast component, configured via `toastProps`
+- Toaster now needs an `id` to trigger a re-animation of the Toast
+- Toaster accepts an `isOpen` prop to show whether the Toast is visible or not
+- Toaster now also accepts a `dismissDelay` prop directly.
 
 #### StackedButton
 - No longer has a min-height

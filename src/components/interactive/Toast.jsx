@@ -12,12 +12,15 @@ import customPropTypes from 'components/util/customPropTypes';
 import Button from 'components/interactive/Button';
 import IconButton from 'components/interactive/IconButton';
 
+export const TYPES = ['info', 'warn', 'error', 'success', 'progress'];
+
 const Toast = ({
   isAutoDismiss = true,
   dismissDelay = 4000,
   canDismiss = true,
+  dismissOnAction = true,
+  type = 'info',
   content,
-  type,
   actionLabel,
   progress,
   onAction,
@@ -58,10 +61,8 @@ const Toast = ({
   );
 
   const onActionDismiss = (event) => {
-    dismissToast();
-    if (typeof onAction === 'function') {
-      onAction(event);
-    }
+    if (dismissOnAction) dismissToast();
+    if (onAction) onAction(event);
   };
 
   return (
@@ -84,7 +85,7 @@ const Toast = ({
           <FlexItem>
             <div className="toast-constrainGrowth">{content}</div>
           </FlexItem>
-          {actionLabel && onAction && (
+          {actionLabel && (onAction || (dismissToast && dismissOnAction)) && (
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
                 <Button
@@ -124,10 +125,10 @@ const Toast = ({
 
 Toast.propTypes = {
   /** JSX Content of Toast */
-  content: PropTypes.element.isRequired,
+  content: PropTypes.node.isRequired,
 
   /** Type of toast */
-  type: PropTypes.oneOf(['info', 'warn', 'error', 'success', 'progress']).isRequired,
+  type: PropTypes.oneOf(TYPES),
 
   /** Label for action button */
   actionLabel: PropTypes.string,
@@ -140,6 +141,9 @@ Toast.propTypes = {
 
   /** Should this toast auto-dismiss itself? */
   isAutoDismiss: PropTypes.bool,
+
+  /* Controls if toast gets dismiss when the ActionButton is clicked */
+  dismissOnAction: PropTypes.bool,
 
   /** Is this toast user-dismissable? */
   canDismiss: PropTypes.bool,
