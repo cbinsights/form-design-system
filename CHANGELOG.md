@@ -30,8 +30,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
-#### `Thing` Component
-Component was updated / removed.
+#### `Radio` Component
+Now uses `ref` instead of `inputRef` (new ref prop not in documentation)
 
 ## [7.19] Updated IconButton
 
