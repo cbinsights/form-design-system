@@ -98,7 +98,7 @@ exports[`Toaster component matches snapshot 1`] = `
                             class="countdownButton-button"
                           >
                             <button
-                              class="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m fdsIconButton--circle"
+                              class="fdsIconButton rounded--all border--focus--noTransition transition--default alignChild--center--center fdsIconButton--ghost fdsIconButton--m shape--circle"
                               role="img"
                               title="Close"
                             >
@@ -328,7 +328,7 @@ exports[`Toaster component matches snapshot 1`] = `
                                           radius="circle"
                                         >
                                           <button
-                                            className="fdsIconButton rounded--all border--focus--noTransition transition--default fdsIconButton--ghost fdsIconButton--m fdsIconButton--circle"
+                                            className="fdsIconButton rounded--all border--focus--noTransition transition--default alignChild--center--center fdsIconButton--ghost fdsIconButton--m shape--circle"
                                             role="img"
                                             title="Close"
                                           >

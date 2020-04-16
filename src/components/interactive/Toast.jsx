@@ -85,7 +85,7 @@ const Toast = ({
           <FlexItem>
             <div className="toast-constrainGrowth">{content}</div>
           </FlexItem>
-          {actionLabel && (
+          {actionLabel && (onAction || (dismissToast && dismissOnAction)) && (
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
                 <Button
