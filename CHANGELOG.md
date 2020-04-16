@@ -26,6 +26,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+
+## [7.20] Default background color
+
+- Set default `background-color` property for `html` and `body` to white.
+
 ## [7.19] Updated IconButton
 
 - IconButton now has an `outlined` theme
