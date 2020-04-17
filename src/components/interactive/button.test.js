@@ -11,9 +11,20 @@ describe('ButtonGroup component', () => {
   });
 
   it('matches snapshot (set all props)', () => {
-    const component = mount(<Button 
-      label="Button" Link={(props) => <a href="#" {...props} />} isLoading isDestructive disabled IconLeft={"Icon"} IconRight={"Icon"} isFullWidth theme='outlined' hasCaret
-    />)
+    const component = mount(
+      <Button 
+        label="Button"
+        Link={(props) => <a href="#" {...props} />}
+        isLoading
+        isDestructive
+        disabled
+        IconLeft={"Icon"}
+        IconRight={"Icon"}
+        isFullWidth
+        theme='outlined'
+        hasCaret
+      />
+    )
     expect(component).toMatchSnapshot();
   });
 });
