@@ -6,7 +6,7 @@
       "popover":     { "value": "20" },
       "shim":        { "value": "20" },
       "modal":       { "value": "20" },
-      "crazy":       { "value": "30" }
+      "crazy":       { "value": "50" }
 
     }
   }
