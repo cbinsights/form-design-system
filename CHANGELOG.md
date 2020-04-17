@@ -30,7 +30,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### Changes / Additions
 
-- Toast now accepts a dismissOnAction boolean that controls whether the Toast is dismissed when the user clicks on the actionLabel
+- Toast now accepts a `dismissOnAction` boolean that controls whether the Toast is dismissed when the user clicks on the `actionLabel`
 
 ### **BREAKING CHANGES**
 
