@@ -162,7 +162,7 @@ const Popover = ({
       name: 'offset',
       enabled: true,
       options: {
-        offset: `0,${distance}`,
+        offset: [0, distance],
       },
     },
     {
