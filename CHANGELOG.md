@@ -47,6 +47,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### `Radio` Component
 Now uses `ref` instead of `inputRef` (new ref prop not in documentation)
 
+## [7.20] Default background color
+
+- Set default `background-color` property for `html` and `body` to white.
+
 ## [7.19] Updated IconButton
 
 - IconButton now has an `outlined` theme
