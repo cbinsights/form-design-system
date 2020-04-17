@@ -32,7 +32,7 @@ const Avatar = ({
   return (
     <Element
       {...rest}
-      role={Element === 'div' && 'img'}
+      role={Element === 'div' ? 'img' : undefined}
       aria-label={ariaLabel}
       title={name}
       className={cx(
