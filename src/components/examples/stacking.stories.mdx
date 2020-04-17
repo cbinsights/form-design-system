@@ -1,0 +1,70 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { useRef, useState } from 'react'
+import {
+  withKnobs,
+  optionsKnob as options,
+  select,
+  number,
+  boolean,
+} from '@storybook/addon-knobs';
+import { arrayToOptions, Info, ImportPath } from 'components/util/storybook';
+
+import Popover from 'components/popovers/Popover';
+import Button from 'components/interactive/Button';
+import Dialog from 'components/modals/Dialog';
+import Menu from 'components/popovers/Menu';
+import MenuItem from 'components/popovers/MenuItem';
+
+<Meta title="Examples/Stacking" />
+
+## Show stacking interactions
+
+export const MenuExample = () => (
+  <Menu trigger={<Button label="Menu trigger" hasCaret />}>
+    <MenuItem>
+      Copy
+    </MenuItem>
+    <MenuItem>
+      Delete
+    </MenuItem>
+  </Menu>
+)
+
+<Preview>
+  <Story name="Stacking" height={100}>
+    {() => {
+      const Stacking = () => {
+        const [isDialogShowing, setIsDialogShowing] = useState();
+        const showDialog = () => setIsDialogShowing(true);
+        const hideDialog = () => setIsDialogShowing(false);
+        const PopoverExample = () => (
+            <Popover
+                trigger={<button>Open popover</button>}
+                position="bottom"
+                alignment="start"
+                distance={8}
+            >
+                <div className="bgColor--white rounded--all elevation--2 padding--all">
+                    <Stacking />
+                </div>
+            </Popover>
+        )
+        return (
+            <>
+            <button onClick={showDialog}>Open Dialog</button>
+            <MenuExample />
+            <PopoverExample />
+            <Dialog
+                isOpen={isDialogShowing}
+                content={<Stacking />}
+                onDismiss={hideDialog}
+            />
+            </>
+        )
+      } 
+      return (
+        <Stacking />
+      )
+    }}
+  </Story>
+</Preview>

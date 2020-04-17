@@ -6,13 +6,12 @@ import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
 
 export const SIZES = ['s', 'm'];
 export const THEMES = ['blue', 'outlined', 'ghost'];
-export const ICON_PLACEMENTS = ['left', 'right'];
 
 const Button = ({
   theme = 'blue',
-  iconPlacement = 'right',
   size = 'm',
-  Icon,
+  IconLeft,
+  IconRight,
   Link,
   disabled,
   label,
@@ -24,6 +23,33 @@ const Button = ({
   ...rest
 }) => {
   const Element = baseElement({ href: rest.href, onClick: true, as: Link });
+
+  const IconComponent = ({ Icon, direction }) => {
+    if (Icon)
+      return (
+        <div
+          className={cx('alignChild--center--center', `fdsButton-icon--${direction}`, {
+            'fdsButton--hidden': isLoading,
+          })}
+        >
+          <IconLeft customSize={size === 's' ? 16 : 18} />
+        </div>
+      );
+
+    return null;
+  };
+
+  IconComponent.propTypes = {
+    Icon: PropTypes.func,
+    direction: PropTypes.oneOf(['left', 'right']),
+  };
+
+  const Icons = () => (
+    <>
+      <IconComponent Icon={IconRight} direction="right" />
+      <IconComponent Icon={IconLeft} direction="left" />
+    </>
+  );
 
   return (
     <Element
@@ -51,17 +77,7 @@ const Button = ({
       <span className={cx('fdsButton-label', { 'fdsButton--hidden': isLoading })}>
         {label}
       </span>
-      {Icon && (
-        <div
-          className={cx('alignChild--center--center', {
-            'fdsButton-icon--left': iconPlacement === 'left',
-            'fdsButton-icon--right': iconPlacement === 'right',
-            'fdsButton--hidden': isLoading,
-          })}
-        >
-          <Icon customSize={size === 's' ? 16 : 18} />
-        </div>
-      )}
+      <Icons />
       {hasCaret && (
         <div className="margin--left--half alignChild--center--center">
           <CaretDownIcon customSize={12} />
@@ -84,10 +100,10 @@ Button.propTypes = {
    */
   isDestructive: PropTypes.bool,
   size: PropTypes.oneOf(SIZES),
-  /**  Pass in "only" a FDS Icon reference to display it (e.g. Icon={ApproveIcon}) */
-  Icon: PropTypes.func,
-  /** Controls side the `Icon` renders on */
-  iconPlacement: PropTypes.oneOf(ICON_PLACEMENTS),
+  /**  Pass in "only" a FDS Icon reference to display it (e.g. IconRight={ApproveIcon}) */
+  IconRight: PropTypes.func,
+  /**  Pass in "only" a FDS Icon reference to display it (e.g. IconLeft={ApproveIcon}) */
+  IconLeft: PropTypes.func,
   /** Controls showing CaretDown icon (right aligned) */
   hasCaret: PropTypes.bool,
   /**
