@@ -6,13 +6,12 @@ import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
 
 export const SIZES = ['s', 'm'];
 export const THEMES = ['blue', 'outlined', 'ghost'];
-export const ICON_PLACEMENTS = ['left', 'right'];
 
 const Button = ({
   theme = 'blue',
-  iconPlacement = 'right',
   size = 'm',
-  Icon,
+  IconLeft,
+  IconRight,
   Link,
   disabled,
   label,
@@ -51,15 +50,22 @@ const Button = ({
       <span className={cx('fdsButton-label', { 'fdsButton--hidden': isLoading })}>
         {label}
       </span>
-      {Icon && (
+      {IconLeft && (
         <div
-          className={cx('alignChild--center--center', {
-            'fdsButton-icon--left': iconPlacement === 'left',
-            'fdsButton-icon--right': iconPlacement === 'right',
+          className={cx('alignChild--center--center', 'fdsButton-icon--left', {
             'fdsButton--hidden': isLoading,
           })}
         >
-          <Icon customSize={size === 's' ? 16 : 18} />
+          <IconLeft customSize={size === 's' ? 16 : 18} />
+        </div>
+      )}
+      {IconRight && (
+        <div
+          className={cx('alignChild--center--center', 'fdsButton-icon--right', {
+            'fdsButton--hidden': isLoading,
+          })}
+        >
+          <IconRight customSize={size === 's' ? 16 : 18} />
         </div>
       )}
       {hasCaret && (
@@ -84,10 +90,10 @@ Button.propTypes = {
    */
   isDestructive: PropTypes.bool,
   size: PropTypes.oneOf(SIZES),
-  /**  Pass in "only" a FDS Icon reference to display it (e.g. Icon={ApproveIcon}) */
-  Icon: PropTypes.func,
-  /** Controls side the `Icon` renders on */
-  iconPlacement: PropTypes.oneOf(ICON_PLACEMENTS),
+  /**  Pass in "only" a FDS Icon reference to display it (e.g. IconRight={ApproveIcon}) */
+  IconRight: PropTypes.func,
+  /**  Pass in "only" a FDS Icon reference to display it (e.g. IconLeft={ApproveIcon}) */
+  IconLeft: PropTypes.func,
   /** Controls showing CaretDown icon (right aligned) */
   hasCaret: PropTypes.bool,
   /**

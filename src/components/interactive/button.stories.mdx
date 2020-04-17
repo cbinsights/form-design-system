@@ -6,7 +6,7 @@ import {
   optionsKnob as options
 } from "@storybook/addon-knobs";
 import { arrayToOptions, StoryWrapper, StoryItem, ImportPath, State } from "components/util/storybook";
-import Button, { SIZES, THEMES, ICON_PLACEMENTS } from "./Button";
+import Button, { SIZES, THEMES } from "./Button";
 import StarFilledIcon from "lib/icons/react/StarFilledIcon";
 import IconButton from "./IconButton";
 import ButtonGroup from "./ButtonGroup";
@@ -25,13 +25,8 @@ import ButtonGroup from "./ButtonGroup";
       isDestructive={boolean("isDestructive", undefined)}
       isActive={boolean("isActive", undefined)}
       hasCaret={boolean("hasCaret", undefined)}
-      Icon={boolean("Icon") ? StarFilledIcon : undefined}
-      iconPlacement={options(
-        "Show sample icon?",
-        arrayToOptions(ICON_PLACEMENTS),
-        undefined,
-        { display: "inline-radio" }
-      )}
+      IconLeft={boolean("IconLeft") ? StarFilledIcon : undefined}
+      IconRight={boolean("IconRight") ? StarFilledIcon : undefined}
       isFullWidth={boolean("isFullWidth", undefined)}
       size={options("size", arrayToOptions(SIZES), undefined, {
         display: "inline-radio"
@@ -213,16 +208,17 @@ some affect (applying a filter, causing a popover to be open).
 
 ### Icons
 
-ONLY pass in FDS Icon references to `Icon`. Very important. (refer to code sample)
+ONLY pass in FDS Icon references to `IconLeft` or `IconRight`. Very important. (refer to code sample)
 
 <Preview>
   <Story name="Icons">
     <StoryWrapper>
-      {ICON_PLACEMENTS.map(placement => (
-        <StoryItem>
-          <Button Icon={StarFilledIcon} iconPlacement={placement} label="Button" />
-        </StoryItem>
-      ))}
+      <StoryItem>
+        <Button IconLeft={StarFilledIcon} label="Button" />
+      </StoryItem>
+      <StoryItem>
+        <Button IconRight={StarFilledIcon} label="Button" />
+      </StoryItem>
     </StoryWrapper>
   </Story>
 </Preview>
@@ -236,10 +232,10 @@ ONLY pass in FDS Icon references to `Icon`. Very important. (refer to code sampl
         <Button theme="blue" hasCaret label="Caret" />
       </StoryItem>
       <StoryItem>
-        <Button theme="blue" iconPlacement="left" hasCaret Icon={StarFilledIcon} label="Caret" />
+        <Button theme="blue" hasCaret IconRight={StarFilledIcon} label="Caret" />
       </StoryItem>
       <StoryItem>
-        <Button theme="blue" iconPlacement="right" hasCaret  Icon={StarFilledIcon} label="Caret" />
+        <Button theme="blue" hasCaret IconRight={StarFilledIcon} label="Caret" />
       </StoryItem>
     </StoryWrapper>
   </Story>

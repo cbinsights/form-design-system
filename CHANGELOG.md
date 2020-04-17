@@ -50,6 +50,9 @@ Now uses `ref` instead of `inputRef` (new ref prop not in documentation)
 #### z-index
 popover, shim, and modal z-index are now all 20
 
+#### `Button` Component
+`iconPlacement` and `Icon` removed, in favor of `IconLeft` and `IconRight`
+
 ## [7.20] Default background color
 
 - Set default `background-color` property for `html` and `body` to white.

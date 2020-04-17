@@ -25,7 +25,14 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
   <div
     className="alignChild--center--center fdsButton-icon--left fdsButton--hidden"
   >
-    <Icon
+    <IconLeft
+      customSize={18}
+    />
+  </div>
+  <div
+    className="alignChild--center--center fdsButton-icon--right fdsButton--hidden"
+  >
+    <IconRight
       customSize={18}
     />
   </div>
