@@ -14,10 +14,8 @@
 }
 
 .dialog-exit {
-  z-index: var(--zindex-shim);
-  opacity: 0;
   opacity: 1;
-  z-index: 20;
+  z-index: var(--zindex-shim);
   position: relative;
 }
 
