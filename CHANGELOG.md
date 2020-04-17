@@ -42,7 +42,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - Toaster now also accepts a `dismissDelay` prop directly.
 
 #### StackedButton
-No longer has a min-height
+No longer has a `min-height`
 
 #### `Radio` Component
 `inputRef` prop removed. Radio now uses `forwardRef` for the input element and accepts a `ref` prop.
