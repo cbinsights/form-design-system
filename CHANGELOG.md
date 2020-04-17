@@ -47,6 +47,9 @@ No longer has a min-height
 #### `Radio` Component
 Now uses `ref` instead of `inputRef` (new ref prop not in documentation)
 
+#### z-index
+popover, shim, and modal z-index are now all 20
+
 #### `Button` Component
 `iconPlacement` and `Icon` removed, in favor of `IconLeft` and `IconRight`
 
