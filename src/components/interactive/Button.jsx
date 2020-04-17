@@ -24,6 +24,33 @@ const Button = ({
 }) => {
   const Element = baseElement({ href: rest.href, onClick: true, as: Link });
 
+  const IconComponent = ({ Icon, direction }) => {
+    if (Icon)
+      return (
+        <div
+          className={cx('alignChild--center--center', `fdsButton-icon--${direction}`, {
+            'fdsButton--hidden': isLoading,
+          })}
+        >
+          <IconLeft customSize={size === 's' ? 16 : 18} />
+        </div>
+      );
+
+    return null;
+  };
+
+  IconComponent.propTypes = {
+    Icon: PropTypes.func,
+    direction: PropTypes.oneOf(['left', 'right']),
+  };
+
+  const Icons = () => (
+    <>
+      <IconComponent Icon={IconRight} direction="right" />
+      <IconComponent Icon={IconLeft} direction="left" />
+    </>
+  );
+
   return (
     <Element
       {...rest}
@@ -50,24 +77,7 @@ const Button = ({
       <span className={cx('fdsButton-label', { 'fdsButton--hidden': isLoading })}>
         {label}
       </span>
-      {IconLeft && (
-        <div
-          className={cx('alignChild--center--center', 'fdsButton-icon--left', {
-            'fdsButton--hidden': isLoading,
-          })}
-        >
-          <IconLeft customSize={size === 's' ? 16 : 18} />
-        </div>
-      )}
-      {IconRight && (
-        <div
-          className={cx('alignChild--center--center', 'fdsButton-icon--right', {
-            'fdsButton--hidden': isLoading,
-          })}
-        >
-          <IconRight customSize={size === 's' ? 16 : 18} />
-        </div>
-      )}
+      <Icons />
       {hasCaret && (
         <div className="margin--left--half alignChild--center--center">
           <CaretDownIcon customSize={12} />

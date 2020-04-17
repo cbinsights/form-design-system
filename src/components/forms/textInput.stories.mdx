@@ -39,7 +39,7 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
 
 <Preview isExpanded>
   <>
-    <TextInput />
+    <TextInput label="FirstName" showLabel={false} />
     <br />
     <TextInput
       label="First Name"
@@ -105,6 +105,8 @@ View this story in Canvas, in the action tab, to see how the callback is throttl
   <Story name="Throttle">
     <TextInput
       onThrottledChange={action("changed")}
+      label="Throttled"
+      showLabel={false}
     />
   </Story>
 </Preview>
@@ -118,6 +120,8 @@ View this story in Canvas, in the action tab, to see how the callback is throttl
       initialValue="Controlled"
       render={(value, setValue) => (
         <TextInput
+          label="Controlled"
+          showLabel={false}
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
@@ -131,6 +135,8 @@ View this story in Canvas, in the action tab, to see how the callback is throttl
 <Preview>
   <Story name="Icons">
     <TextInput
+      label="Icons"
+      showLabel={false}
       IconLeft={CaretDownIcon}
       IconRight={CaretDownIcon}
     />
@@ -142,6 +148,8 @@ View this story in Canvas, in the action tab, to see how the callback is throttl
 <Preview>
   <Story name="Before & After">
     <TextInput
+      label="Side Label"
+      showLabel={false}
       before="before"
       after="after"
     />
@@ -212,7 +220,7 @@ Can be used with InputGroup
   <Story name="Misc">
     <>
       <InputGroup>
-        <TextInput before="$" type="number" value="666" />
+        <TextInput before="$" type="number" value="666" label="Misc" showLabel={false} />
         <select name="unit">
           <option value="1">Million</option>
           <option value="2">Thousand</option>
@@ -220,7 +228,7 @@ Can be used with InputGroup
       </InputGroup>
       <br />
       <InputGroup>
-        <TextInput IconLeft={CaretDownIcon} type="number" value="666" />
+        <TextInput IconLeft={CaretDownIcon} type="number" value="666" label="Misc" showLabel={false} />
         <select name="unit">
           <option value="1">Million</option>
           <option value="2">Thousand</option>
@@ -228,7 +236,7 @@ Can be used with InputGroup
       </InputGroup>
       <br />
       <InputGroup>
-        <TextInput IconRight={CaretDownIcon} type="number" value="666" />
+        <TextInput IconRight={CaretDownIcon} type="number" value="666" label="Misc" showLabel={false}/>
         <select name="unit">
           <option value="1">Million</option>
           <option value="2">Thousand</option>

@@ -55,8 +55,8 @@ import ButtonGroup from "./ButtonGroup";
 <Preview>
   <Story name="Themes">
     <StoryWrapper>
-    {THEMES.map(theme => (
-      <StoryItem>
+    {THEMES.map((theme, idx) => (
+      <StoryItem key={idx}>
         <Button
           theme={theme}
           label={theme}
