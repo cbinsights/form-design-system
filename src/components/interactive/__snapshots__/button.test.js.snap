@@ -26,8 +26,8 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
 
 exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
 <Button
-  IconLeft="Icon"
-  IconRight="Icon"
+  IconLeft={[Function]}
+  IconRight={[Function]}
   Link={[Function]}
   disabled={true}
   hasCaret={true}
