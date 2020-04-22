@@ -95,8 +95,7 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
       </StoryItem>
       <StoryItem>
         <IconButton
-          theme="ghost"
-          isActive
+          theme="outlined"
           Icon={Icons[0]}
       />
       </StoryItem>
@@ -154,7 +153,7 @@ some affect (applying a filter, causing a popover to be open).
             initialValue={{}}
             render={(value, setValue) => ( 
               <>
-                {['ghost'].map((theme, idx) => (
+                {['ghost', 'outlined'].map((theme, idx) => (
                   <StoryItem>
                     <IconButton
                       Icon={Icons[0]}

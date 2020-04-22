@@ -4,8 +4,8 @@
 
       "navigation":  { "value": "10" },
       "popover":     { "value": "20" },
-      "shim":        { "value": "30" },
-      "modal":       { "value": "40" },
+      "shim":        { "value": "20" },
+      "modal":       { "value": "20" },
       "crazy":       { "value": "50" }
 
     }

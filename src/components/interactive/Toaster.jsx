@@ -1,68 +1,87 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import { CSSTransition } from 'react-transition-group';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Toast from './Toast';
 
-/**
- * @module Toaster
- * Controller for showing, dismissing and positioning Toast components.
- */
-const Toaster = ({ toast }) => {
-  const [isToasting, setIsToasting] = useState(Boolean(toast));
-  let clonedToast = null;
-
-  const dismissToast = () => {
-    setIsToasting(false);
-  };
-
-  // pass dismiss function down to toast
-  if (toast) {
-    clonedToast = React.cloneElement(toast, { dismissToast });
-  }
-
-  // when the value of toast prop goes from falsey to truthy, set isToasting to true
+export const Toaster = ({
+  toastProps = {},
+  dismissDelay = 4000,
+  isAutoDismiss = true,
+  isOpen = false,
+  id,
+  onDismiss,
+}) => {
   useEffect(() => {
-    if (toast && !isToasting) {
-      setIsToasting(true);
-    }
-  }, [Boolean(toast)]);
-
-  // set a timeout for toast to dismiss itself
-  // eslint-disable-next-line consistent-return
-  useEffect(() => {
-    if (toast && toast.props.isAutoDismiss) {
-      const timer = setTimeout(dismissToast, toast.props.dismissDelay);
+    // We need to explicitly check of canDismiss is NOT true, as it has a default
+    // parameter of true that this component does not know about
+    if (
+      isAutoDismiss &&
+      toastProps.type !== 'progress' &&
+      toastProps.canDismiss !== false
+    ) {
+      const timer = setTimeout(() => onDismiss(), dismissDelay);
 
       return function cleanup() {
         clearTimeout(timer);
       };
     }
-  });
-  const onExited = (toast && toast.props && toast.props.onDismiss) || (() => {});
 
-  return ReactDOM.createPortal(
-    <div aria-live="assertive" className="toaster">
-      <CSSTransition
-        in={isToasting}
-        appear
-        unmountOnExit
-        timeout={380}
-        classNames="rtgSlideIn"
-        onExited={onExited}
-      >
-        {clonedToast}
-      </CSSTransition>
-    </div>,
-    // eslint-disable-next-line no-undef
-    document.body
+    return undefined;
+  }, [id, isOpen, isAutoDismiss, toastProps.type, toastProps.canDismiss]);
+
+  return (
+    <div aria-live="assertive">
+      <TransitionGroup>
+        {isOpen && (
+          <CSSTransition
+            key={id}
+            appear
+            unmountOnExit
+            timeout={380}
+            classNames="rtgSlideIn"
+          >
+            <div className="toaster">
+              <Toast
+                dismissDelay={dismissDelay}
+                dismissToast={onDismiss}
+                isAutoDismiss={isAutoDismiss}
+                content={toastProps.content}
+                type={toastProps.type}
+                progress={toastProps.progress}
+                canDismiss={toastProps.canDismiss}
+                actionLabel={toastProps.actionLabel}
+                onAction={toastProps.onAction}
+                dismissOnAction={toastProps.dismissOnAction}
+              />
+            </div>
+          </CSSTransition>
+        )}
+      </TransitionGroup>
+    </div>
   );
 };
 
-Toaster.displayName = 'Toaster';
+const ToasterWrapper = (props) =>
+  ReactDOM.createPortal(
+    <Toaster {...props} />,
+    // eslint-disable-next-line no-undef
+    document.body
+  );
 
 Toaster.propTypes = {
-  /** a `Toast` element */
-  toast: PropTypes.element,
+  /**  A UUID for the toast. Each new toast should have a new UUID. */
+  id: PropTypes.string,
+  /** Specifies whether Toast is open or not */
+  isOpen: PropTypes.bool,
+  /** Accepts all props that `Toast` accepts. Refer to Toast component for full documentation */
+  toastProps: PropTypes.shape(Toast.propTypes),
+  /** Should this toast auto-dismiss itself? */
+  isAutoDismiss: PropTypes.bool,
+  /** Time in ms to auto-dismiss toast */
+  dismissDelay: PropTypes.number,
+  /** Callback that is fired when toast is dismissed */
+  onDismiss: PropTypes.func,
 };
 
-export default Toaster;
+export default ToasterWrapper;

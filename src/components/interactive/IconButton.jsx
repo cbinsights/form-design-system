@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import baseElement from 'util/baseElement';
 
-export const THEMES = ['ghost', 'aqua'];
+export const THEMES = ['ghost', 'aqua', 'outlined'];
 export const RADII = ['square', 'circle'];
 export const SIZES = ['s', 'm'];
 
@@ -30,6 +30,7 @@ const IconButton = ({
         'rounded--all',
         'border--focus--noTransition',
         'transition--default',
+        'alignChild--center--center',
         `fdsIconButton--${theme}`,
         `fdsIconButton--${size}`,
         {
