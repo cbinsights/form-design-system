@@ -231,6 +231,11 @@ const Popover = ({
   );
 };
 
+const validRef = PropTypes.oneOfType([
+  PropTypes.func,
+  PropTypes.shape({ current: PropTypes.any }),
+]);
+
 Popover.propTypes = {
   /** JSX - Acts as a positioning reference for the popover and triggers active state */
   trigger: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
@@ -281,11 +286,11 @@ Popover.propTypes = {
   /** Callback called when popover closes */
   onClose: PropTypes.func,
 
-  // When popover opens, this element should freeze scrolling. When the popover closes, the scrollability of this element should resume.
-  disableScrollRef: PropTypes.func,
+  /** When popover opens, this element should freeze scrolling. When the popover closes, the scrollability of this element should resume. */
+  disableScrollRef: validRef,
 
-  // When the Popover detects scroll events from this ref, the popover should close.
-  closeOnScrollRef: PropTypes.func,
+  /** When the Popover detects scroll events from this ref, the popover should close. */
+  closeOnScrollRef: validRef,
 };
 
 export default Popover;
