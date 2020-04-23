@@ -3,9 +3,11 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import baseElement from 'util/baseElement';
 
+const WrapperComponent = (wrapperProps) => wrapperProps.children;
+
 export const GroupButton = (props) => {
   const {
-    Wrapper = (wrapperProps) => wrapperProps.children,
+    Wrapper = WrapperComponent,
     isActive,
     Icon,
     label,
