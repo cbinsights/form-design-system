@@ -91,6 +91,8 @@ Base popover component. Bring your own trigger and popover content.
   provide, but may move the popover content to avoid edges of the viewport. This behavior is intentional.
 </Info>
 
+## Styled popover content
+
 <Preview>
   <Story name="Styled popover content" height={100}>
     <Popover
@@ -108,6 +110,29 @@ Base popover component. Bring your own trigger and popover content.
     </Popover>
   </Story>
 </Preview>
+
+## Controlled popover
+
+<Preview>
+  <Story name="Controlled popover" height={100}>
+    <Popover
+      trigger={<button>Open popover</button>}
+      position="bottom"
+      alignment="start"
+      interactionMode="controlled"
+      isOpen={true}
+      distance={8}
+    >
+      <div className="bgColor--white rounded--all elevation--2 padding--all">
+        <h3 className="type--head3">Look at me</h3>
+        <p>
+          <em>i am the popover</em>
+        </p>
+      </div>
+    </Popover>
+  </Story>
+</Preview>
+
 
 ## Disable Scrolling
 

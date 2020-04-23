@@ -5,6 +5,8 @@ import Button from './Button';
 
 describe('ButtonGroup component', () => {
 
+  const Icon = () => null
+
   it('matches snapshot (default props)', () => {
     const component = mount(<Button label="Button" />);
     expect(component).toMatchSnapshot();
@@ -18,8 +20,8 @@ describe('ButtonGroup component', () => {
         isLoading
         isDestructive
         disabled
-        IconLeft={"Icon"}
-        IconRight={"Icon"}
+        IconLeft={Icon}
+        IconRight={Icon}
         isFullWidth
         theme='outlined'
         hasCaret
