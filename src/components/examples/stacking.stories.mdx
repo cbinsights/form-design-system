@@ -31,7 +31,7 @@ export const MenuExample = () => (
 )
 
 <Preview>
-  <Story name="Stacking" height={100}>
+  <Story name="Stacking">
     {() => {
       const Stacking = () => {
         const [isDialogShowing, setIsDialogShowing] = useState();
@@ -62,8 +62,18 @@ export const MenuExample = () => (
             </>
         )
       } 
+      const [isScrolling, setIsScrolling] = useState(true)
+      const toggleScroll = () => setIsScrolling(!isScrolling);
+      const [isFixed, setIsFixed] = useState(true)
+      const toggleFixed = () => setIsFixed(!isFixed);
       return (
-        <Stacking />
+        <div style={{ height: isScrolling ? "3000px" : undefined }}>
+          <div style={{ position: isFixed ? "fixed" : undefined }}>
+            <button onClick={toggleScroll}>{isScrolling ? 'Turn off scroll' : 'Turn on scroll'}</button>
+            <button onClick={toggleFixed}>{isFixed ? 'Turn off fixed' : 'Turn on fixed'}</button>
+            <Stacking />
+          </div>
+        </div>
       )
     }}
   </Story>

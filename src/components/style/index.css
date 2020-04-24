@@ -13,6 +13,7 @@
 
 /* Reach framework styles */
 @import "@reach/menu-button/styles.css";
+@import "@reach/dialog/styles.css";
 
 /* Layout components */
 @import "./layout/flex.css";
