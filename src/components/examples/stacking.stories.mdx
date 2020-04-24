@@ -62,15 +62,12 @@ export const MenuExample = () => (
             </>
         )
       } 
-      const [isScrolling, setIsScrolling] = useState(true)
-      const toggleScroll = () => setIsScrolling(!isScrolling);
       const [isFixed, setIsFixed] = useState(true)
       const toggleFixed = () => setIsFixed(!isFixed);
       return (
-        <div style={{ height: isScrolling ? "3000px" : undefined }}>
+        <div style={{ height: "1000px" }}>
           <div style={{ position: isFixed ? "fixed" : undefined }}>
-            <button onClick={toggleScroll}>{isScrolling ? 'Turn off scroll' : 'Turn on scroll'}</button>
-            <button onClick={toggleFixed}>{isFixed ? 'Turn off fixed' : 'Turn on fixed'}</button>
+            <button onClick={toggleFixed}>Fixed is{isFixed ? 'ON' : 'OFF'}</button>
             <Stacking />
           </div>
         </div>
