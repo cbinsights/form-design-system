@@ -1,8 +1,6 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { useTransition, animated, config } from 'react-spring';
+import React, { useEffect, useRef, useState } from 'react';
+import { useTransition, animated } from 'react-spring';
 import PropTypes from 'prop-types';
-import { CSSTransition } from 'react-transition-group';
-import noScroll from 'no-scroll';
 import rafSchd from 'raf-schd';
 import DenyIcon from 'lib/icons/react/DenyIcon';
 import IconButton from 'components/interactive/IconButton';
@@ -19,7 +17,6 @@ export const isElementOverflowing = ({ current }) => {
 };
 
 const Dialog = ({
-  role = 'dialog',
   width = '500px',
   height = '80vh',
   onDismiss,
@@ -31,34 +28,68 @@ const Dialog = ({
 }) => {
   const contentEl = useRef(null);
 
-  const handleKeyDown = (e) => {
-    if (onDismiss && e.key === 'Escape') {
-      onDismiss();
-    }
-  };
-
   const [isOverflowing, setIsOverflowing] = useState(false);
 
-  const handleResize = () => {
+  const handleResize = (ref) => {
+    console.log(ref);
     rafSchd(setIsOverflowing(isElementOverflowing(contentEl)));
   };
 
   useEffect(() => {
     if (!alwaysShowBorder) {
-      handleResize(); // needs to fire once immediately on mount
+      handleResize(contentEl); // needs to fire once immediately on mount
       // eslint-disable-next-line no-undef
       window.addEventListener('resize', handleResize);
       return () => {
-        noScroll.off();
         // eslint-disable-next-line no-undef
         window.removeEventListener('resize', handleResize);
       };
     }
     return undefined;
-  }, [alwaysShowBorder]);
+  }, [alwaysShowBorder, contentEl]);
+
+  const Core = () => (
+    <>
+      {(title || onDismiss) && (
+        <React.Fragment>
+          <div className="dialog-header">
+            <Section border="bottom">
+              <div className="padding--right--double type--head4">
+                {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
+                {/* There always needs to be something (even a space) in the header for display reasons */}
+              </div>
+              {onDismiss && (
+                <div className="dialog-icon">
+                  <IconButton
+                    Icon={DenyIcon}
+                    onClick={onDismiss}
+                    aria-label="close"
+                    label="close"
+                  />
+                </div>
+              )}
+            </Section>
+          </div>
+        </React.Fragment>
+      )}
+      <div className="dialog-content" ref={contentEl}>
+        <Section>{content}</Section>
+      </div>
+      {footerContent && (
+        <div className="dialog-footer">
+          <Section
+            border={alwaysShowBorder || isOverflowing ? 'top' : undefined}
+            bgColor="white"
+          >
+            {footerContent}
+          </Section>
+        </div>
+      )}
+    </>
+  );
 
   const transitions = useTransition(isOpen, null, {
-    config: config.stiff,
+    config: { mass: 1, tension: 200, friction: 21 },
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
@@ -72,7 +103,10 @@ const Dialog = ({
       {transitions.map(
         ({ item, key, props: styles }) =>
           item && (
-            <AnimatedDialogOverlay style={{ opacity: styles.opacity }}>
+            <AnimatedDialogOverlay
+              style={{ opacity: styles.opacity }}
+              className="alignChild--center--center"
+            >
               <AnimatedDialogContent
                 class="dialog elevation--2"
                 style={{
@@ -80,41 +114,7 @@ const Dialog = ({
                   maxHeight: `${height}${typeof height === 'number' ? 'px' : ''}`,
                 }}
               >
-                {(title || onDismiss) && (
-                  <React.Fragment>
-                    <div className="dialog-header">
-                      <Section border="bottom">
-                        <div className="padding--right--double type--head4">
-                          {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
-                          {/* There always needs to be something (even a space) in the header for display reasons */}
-                        </div>
-                        {onDismiss && (
-                          <div className="dialog-icon">
-                            <IconButton
-                              Icon={DenyIcon}
-                              onClick={onDismiss}
-                              aria-label="close"
-                              label="close"
-                            />
-                          </div>
-                        )}
-                      </Section>
-                    </div>
-                  </React.Fragment>
-                )}
-                <div className="dialog-content" ref={contentEl}>
-                  <Section>{content}</Section>
-                </div>
-                {footerContent && (
-                  <div className="dialog-footer">
-                    <Section
-                      border={alwaysShowBorder || isOverflowing ? 'top' : undefined}
-                      bgColor="white"
-                    >
-                      {footerContent}
-                    </Section>
-                  </div>
-                )}
+                <Core />
               </AnimatedDialogContent>
             </AnimatedDialogOverlay>
           )
