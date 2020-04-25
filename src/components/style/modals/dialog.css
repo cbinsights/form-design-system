@@ -42,28 +42,22 @@
   left: 0;
   right: 0;
   bottom: 0;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  align-items: center;
 }
 
-.dialog {
-  position: relative;
+[data-reach-dialog-content] {
   overflow: hidden;
-  background-color: var(--color-white);
   border-radius: var(--border-radius-default);
   width: 100%;
   position: fixed;
   box-sizing: border-box;
   margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  top: 50%;
+  left: 50%;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
 }
 
 .dialog-content {

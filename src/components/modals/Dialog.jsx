@@ -1,13 +1,13 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useTransition, animated, config } from 'react-spring';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import noScroll from 'no-scroll';
 import rafSchd from 'raf-schd';
 import DenyIcon from 'lib/icons/react/DenyIcon';
 import IconButton from 'components/interactive/IconButton';
 import Section from 'components/layout/Section';
-import { Dialog as ReachDialog } from '@reach/dialog';
+import { DialogOverlay, DialogContent } from '@reach/dialog';
 
 export const isElementOverflowing = ({ current }) => {
   // Checking for current first is safer just in case,
@@ -22,7 +22,6 @@ const Dialog = ({
   role = 'dialog',
   width = '500px',
   height = '80vh',
-  disableFocusTrap = false,
   onDismiss,
   alwaysShowBorder,
   isOpen,
@@ -58,62 +57,68 @@ const Dialog = ({
     return undefined;
   }, [alwaysShowBorder]);
 
-  const dialogNode = (
-    <ReachDialog
-      className="dialog elevation--3"
-      role={role}
-      aria-labelledby={title && 'a11y-dialog-title'}
-      aria-describedby="a11y-dialog-desc"
-      aria-modal="true"
-      onKeyDown={handleKeyDown}
-      style={{
-        maxWidth: `${width}${typeof width === 'number' ? 'px' : ''} `,
-        maxHeight: `${height}${typeof height === 'number' ? 'px' : ''}`,
-      }}
-    >
-      {(title || onDismiss) && (
-        <React.Fragment>
-          <div className="dialog-header">
-            <Section border="bottom">
-              <div className="padding--right--double type--head4">
-                {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
-                {/* There always needs to be something (even a space) in the header for display reasons */}
-              </div>
-              {onDismiss && (
-                <div className="dialog-icon">
-                  <IconButton
-                    Icon={DenyIcon}
-                    onClick={onDismiss}
-                    aria-label="close"
-                    label="close"
-                  />
-                </div>
-              )}
-            </Section>
-          </div>
-        </React.Fragment>
-      )}
-      <div className="dialog-content" ref={contentEl}>
-        <Section>{content}</Section>
-      </div>
-      {footerContent && (
-        <div className="dialog-footer">
-          <Section
-            border={alwaysShowBorder || isOverflowing ? 'top' : undefined}
-            bgColor="white"
-          >
-            {footerContent}
-          </Section>
-        </div>
-      )}
-    </ReachDialog>
-  );
+  const transitions = useTransition(isOpen, null, {
+    config: config.stiff,
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+
+  const AnimatedDialogOverlay = animated(DialogOverlay);
+  const AnimatedDialogContent = animated(DialogContent);
 
   return (
     <React.Fragment>
-      <CSSTransition timeout={200} in={isOpen} classNames="dialog" unmountOnExit>
-        <React.Fragment>{dialogNode}</React.Fragment>
-      </CSSTransition>
+      {transitions.map(
+        ({ item, key, props: styles }) =>
+          item && (
+            <AnimatedDialogOverlay style={{ opacity: styles.opacity }}>
+              <AnimatedDialogContent
+                class="dialog elevation--2"
+                style={{
+                  maxWidth: `${width}${typeof width === 'number' ? 'px' : ''} `,
+                  maxHeight: `${height}${typeof height === 'number' ? 'px' : ''}`,
+                }}
+              >
+                {(title || onDismiss) && (
+                  <React.Fragment>
+                    <div className="dialog-header">
+                      <Section border="bottom">
+                        <div className="padding--right--double type--head4">
+                          {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
+                          {/* There always needs to be something (even a space) in the header for display reasons */}
+                        </div>
+                        {onDismiss && (
+                          <div className="dialog-icon">
+                            <IconButton
+                              Icon={DenyIcon}
+                              onClick={onDismiss}
+                              aria-label="close"
+                              label="close"
+                            />
+                          </div>
+                        )}
+                      </Section>
+                    </div>
+                  </React.Fragment>
+                )}
+                <div className="dialog-content" ref={contentEl}>
+                  <Section>{content}</Section>
+                </div>
+                {footerContent && (
+                  <div className="dialog-footer">
+                    <Section
+                      border={alwaysShowBorder || isOverflowing ? 'top' : undefined}
+                      bgColor="white"
+                    >
+                      {footerContent}
+                    </Section>
+                  </div>
+                )}
+              </AnimatedDialogContent>
+            </AnimatedDialogOverlay>
+          )
+      )}
     </React.Fragment>
   );
 };
