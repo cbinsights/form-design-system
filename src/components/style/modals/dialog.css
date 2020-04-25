@@ -32,10 +32,6 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.flex-grow {
-  flex-grow: 1;
-}
-
 .dialog-icon {
   position: absolute;
   top: 12px;
@@ -44,4 +40,7 @@
 
 .dialog-header {
   position: relative;
+  min-height: 56px;
+  padding-right: 48px;
+  box-sizing: border-box;
 }
