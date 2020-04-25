@@ -65,11 +65,9 @@ export const MenuExample = () => (
       const [isFixed, setIsFixed] = useState(true)
       const toggleFixed = () => setIsFixed(!isFixed);
       return (
-        <div>
-          <div style={{ position: isFixed ? "fixed" : undefined }}>
-            <button onClick={toggleFixed}>Fixed is{isFixed ? 'ON' : 'OFF'}</button>
-            <Stacking />
-          </div>
+        <div style={{ position: isFixed ? "fixed" : undefined }}>
+          <button onClick={toggleFixed}>Fixed is{isFixed ? 'ON' : 'OFF'}</button>
+          <Stacking />
         </div>
       )
     }}
