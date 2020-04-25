@@ -44,3 +44,35 @@
   padding-right: 48px;
   box-sizing: border-box;
 }
+
+.prompt-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 calc(var(--space-half) * -1);
+}
+
+.prompt-footer > div {
+  margin: 0 var(--space-half);
+}
+
+/* stylelint-disable-next-line selector-max-combinators,selector-max-compound-selectors  */
+.prompt-footer > div button {
+  width: 100%;
+}
+
+@media only screen and (max-width: 400px) {
+  .prompt-footer {
+    flex-direction: column;
+    margin: -4px 0;
+  }
+
+  .prompt-footer > div {
+    margin: 4px 0;
+  }
+
+  .prompt-footer > div:first-child {
+    order: 1;
+  }
+}
+
+

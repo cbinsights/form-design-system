@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dialog from 'components/modals/Dialog';
-import Flex from 'components/layout/Flex';
-import FlexItem from 'components/layout/FlexItem';
 
 const Prompt = (props) => (
   <Dialog
     content={<div id="a11y-dialog-desc">{props.desc}</div>}
     footerContent={
-      <Flex justify="end" wrap>
-        {props.secondaryButton && <FlexItem shrink>{props.secondaryButton}</FlexItem>}
-        {props.primaryButton && <FlexItem shrink>{props.primaryButton}</FlexItem>}
-      </Flex>
+      <div className="prompt-footer">
+        {props.secondaryButton && <div>{props.secondaryButton}</div>}
+        {props.primaryButton && <div>{props.primaryButton}</div>}
+      </div>
     }
     role="alertdialog"
     title={props.title}
