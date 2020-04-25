@@ -17,6 +17,7 @@ export const isElementOverflowing = ({ current }) => {
 };
 
 const Dialog = ({
+  role = 'dialog',
   width = '500px',
   height = '80vh',
   onDismiss,
@@ -26,70 +27,71 @@ const Dialog = ({
   content,
   footerContent,
 }) => {
-  const contentEl = useRef(null);
+  const Core = () => {
+    const [isOverflowing, setIsOverflowing] = useState(false);
 
-  const [isOverflowing, setIsOverflowing] = useState(false);
+    const contentEl = useRef(null);
 
-  const handleResize = (ref) => {
-    console.log(ref);
-    rafSchd(setIsOverflowing(isElementOverflowing(contentEl)));
-  };
+    const handleResize = () => {
+      rafSchd(setIsOverflowing(isElementOverflowing(contentEl)));
+    };
 
-  useEffect(() => {
-    if (!alwaysShowBorder) {
-      handleResize(contentEl); // needs to fire once immediately on mount
-      // eslint-disable-next-line no-undef
-      window.addEventListener('resize', handleResize);
-      return () => {
+    useEffect(() => {
+      if (!alwaysShowBorder) {
+        handleResize(); // needs to fire once immediately on mount
         // eslint-disable-next-line no-undef
-        window.removeEventListener('resize', handleResize);
-      };
-    }
-    return undefined;
-  }, [alwaysShowBorder, contentEl]);
+        window.addEventListener('resize', handleResize);
+        return () => {
+          // eslint-disable-next-line no-undef
+          window.removeEventListener('resize', handleResize);
+        };
+      }
+      return undefined;
+    }, [alwaysShowBorder]);
 
-  const Core = () => (
-    <>
-      {(title || onDismiss) && (
-        <React.Fragment>
-          <div className="dialog-header">
-            <Section border="bottom">
-              <div className="padding--right--double type--head4">
-                {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
-                {/* There always needs to be something (even a space) in the header for display reasons */}
-              </div>
-              {onDismiss && (
-                <div className="dialog-icon">
-                  <IconButton
-                    Icon={DenyIcon}
-                    onClick={onDismiss}
-                    aria-label="close"
-                    label="close"
-                  />
+    return (
+      <>
+        {(title || onDismiss) && (
+          <React.Fragment>
+            <div className="dialog-header">
+              <Section border="bottom">
+                <div className="padding--right--double type--head4">
+                  {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
+                  {/* There always needs to be something (even a space) in the header for display reasons */}
                 </div>
-              )}
+                {onDismiss && (
+                  <div className="dialog-icon">
+                    <IconButton
+                      Icon={DenyIcon}
+                      onClick={onDismiss}
+                      aria-label="close"
+                      label="close"
+                    />
+                  </div>
+                )}
+              </Section>
+            </div>
+          </React.Fragment>
+        )}
+        <div className="dialog-content" ref={contentEl}>
+          <Section>{content}</Section>
+        </div>
+        {footerContent && (
+          <div className="dialog-footer">
+            <Section
+              border={alwaysShowBorder || isOverflowing ? 'top' : undefined}
+              bgColor="white"
+            >
+              {footerContent}
             </Section>
           </div>
-        </React.Fragment>
-      )}
-      <div className="dialog-content" ref={contentEl}>
-        <Section>{content}</Section>
-      </div>
-      {footerContent && (
-        <div className="dialog-footer">
-          <Section
-            border={alwaysShowBorder || isOverflowing ? 'top' : undefined}
-            bgColor="white"
-          >
-            {footerContent}
-          </Section>
-        </div>
-      )}
-    </>
-  );
+        )}
+      </>
+    );
+  };
 
   const transitions = useTransition(isOpen, null, {
-    config: { mass: 1, tension: 200, friction: 21 },
+    config: { mass: 1, tension: 250, friction: 21 },
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
@@ -101,13 +103,14 @@ const Dialog = ({
   return (
     <React.Fragment>
       {transitions.map(
-        ({ item, key, props: styles }) =>
+        ({ item, props: styles }) =>
           item && (
             <AnimatedDialogOverlay
               style={{ opacity: styles.opacity }}
               className="alignChild--center--center"
             >
               <AnimatedDialogContent
+                role={role}
                 class="dialog elevation--2"
                 style={{
                   maxWidth: `${width}${typeof width === 'number' ? 'px' : ''} `,
