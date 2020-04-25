@@ -64,8 +64,8 @@ const Dialog = ({
                     <IconButton
                       Icon={DenyIcon}
                       onClick={onDismiss}
-                      aria-label="close"
-                      label="close"
+                      aria-label="Close"
+                      label="Close"
                     />
                   </div>
                 )}
@@ -103,15 +103,18 @@ const Dialog = ({
   return (
     <React.Fragment>
       {transitions.map(
-        ({ item, props: styles }) =>
+        ({ item, props: styles, key }) =>
           item && (
             <AnimatedDialogOverlay
               style={{ opacity: styles.opacity }}
               className="alignChild--center--center"
+              onDismiss={onDismiss}
+              key={key}
             >
               <AnimatedDialogContent
                 role={role}
-                class="dialog elevation--2"
+                className="dialog elevation--2"
+                aria-label={title}
                 style={{
                   maxWidth: `${width}${typeof width === 'number' ? 'px' : ''} `,
                   maxHeight: `${height}${typeof height === 'number' ? 'px' : ''}`,
