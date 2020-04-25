@@ -1,49 +1,3 @@
-.dialog-enter {
-  z-index: var(--zindex-shim);
-  opacity: 0;
-  position: relative;
-}
-
-.dialog-header {
-  position: relative;
-}
-
-.dialog-enter-active {
-  opacity: 1;
-  transition: opacity 200ms;
-}
-
-.dialog-exit {
-  opacity: 1;
-  z-index: var(--zindex-shim);
-  position: relative;
-}
-
-.dialog-exit-active {
-  z-index: var(--zindex-shim);
-  opacity: 0;
-  transition: opacity 200ms;
-}
-
-.dialog-overlay {
-  z-index: var(--zindex-shim);
-  background: var(--color-charcoal);
-  opacity: 0.6;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-}
-
-.dialog-wrapper {
-  z-index: var(--zindex-modal);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
 [data-reach-dialog-content] {
   overflow: hidden;
   border-radius: var(--border-radius-default);
@@ -53,6 +7,11 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+}
+
+[data-reach-dialog-overlay] {
+  padding: 2px;
+  z-index: var(--zindex-shim);
 }
 
 .dialog-content {
@@ -73,13 +32,16 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 .dialog-icon {
   position: absolute;
   top: 12px;
   right: 12px;
 }
 
-[data-reach-dialog-overlay] {
-  padding: 2px;
-  z-index: var(--zindex-shim);
+.dialog-header {
+  position: relative;
 }

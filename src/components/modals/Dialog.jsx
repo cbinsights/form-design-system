@@ -5,6 +5,8 @@ import rafSchd from 'raf-schd';
 import DenyIcon from 'lib/icons/react/DenyIcon';
 import IconButton from 'components/interactive/IconButton';
 import Section from 'components/layout/Section';
+import Flex from 'components/layout/Flex';
+import FlexItem from 'components/layout/FlexItem';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 
 export const isElementOverflowing = ({ current }) => {
@@ -52,26 +54,23 @@ const Dialog = ({
     return (
       <>
         {(title || onDismiss) && (
-          <React.Fragment>
-            <div className="dialog-header">
-              <Section border="bottom">
-                <div className="padding--right--double type--head4">
-                  {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
-                  {/* There always needs to be something (even a space) in the header for display reasons */}
+          <div className="bgColor--white border--bottom" style={{ minHeight: 56 }}>
+            <div className="alignChild--center--center dialog-header">
+              <div className="padding--right--double padding--left padding--top padding--bottom type--head4 flex-grow">
+                {title && <span id="a11y-dialog-title">{title}</span>}
+              </div>
+              {onDismiss && (
+                <div className="dialog-icon">
+                  <IconButton
+                    Icon={DenyIcon}
+                    onClick={onDismiss}
+                    aria-label="Close"
+                    label="Close"
+                  />
                 </div>
-                {onDismiss && (
-                  <div className="dialog-icon">
-                    <IconButton
-                      Icon={DenyIcon}
-                      onClick={onDismiss}
-                      aria-label="Close"
-                      label="Close"
-                    />
-                  </div>
-                )}
-              </Section>
+              )}
             </div>
-          </React.Fragment>
+          </div>
         )}
         <div className="dialog-content" ref={contentEl}>
           <Section>{content}</Section>
