@@ -52,22 +52,26 @@ const Dialog = ({
     return (
       <>
         {(title || onDismiss) && (
-          <div className="bgColor--white border--bottom dialog-header padding--left padding--top padding--bottom">
-            {title && (
-              <span id="a11y-dialog-title" className="type--head4">
-                {title}
-              </span>
-            )}
-            {onDismiss && (
-              <div className="dialog-icon">
-                <IconButton
-                  Icon={DenyIcon}
-                  onClick={onDismiss}
-                  aria-label="Close"
-                  label="Close"
-                />
-              </div>
-            )}
+          /* Do not mess with / combine the 2 lines of following classes unless you
+           *thoroughly* vet responsive, header props, and long text, all at once */
+          <div className="bgColor--white border--bottom">
+            <div className="dialog-header padding--left padding--top padding--bottom">
+              {title && (
+                <span id="a11y-dialog-title" className="type--head4">
+                  {title}
+                </span>
+              )}
+              {onDismiss && (
+                <div className="dialog-icon">
+                  <IconButton
+                    Icon={DenyIcon}
+                    onClick={onDismiss}
+                    aria-label="Close"
+                    label="Close"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         )}
         <div className="dialog-content" ref={contentEl}>
