@@ -26,6 +26,7 @@ module.exports = {
     'import/extensions': 'off',
   },
   env: {
+    "browser": true,
     'jest/globals': true
   },
   overrides: [
