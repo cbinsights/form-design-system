@@ -25,6 +25,8 @@ const Dialog = ({
   isOpen,
   title,
   content,
+  // eslint-disable-next-line no-unused-vars
+  disableFocusTrap,
   footerContent,
 }) => {
   const Core = () => {
