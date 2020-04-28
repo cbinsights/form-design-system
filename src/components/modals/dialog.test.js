@@ -1,57 +1,49 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, fireEvent, screen } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
 import Dialog from './Dialog'
 
-describe('Dialog component', () => {
+describe('Dialog', () => {
 
-  it('dismisses modal when close icon is clicked', () => {
-    const dismissFn = jest.fn()
-    const wrapper = mount(<Dialog isOpen={true} onDismiss={dismissFn} content={<button>hey</button>} />);
-    wrapper.find('IconButton').prop('onClick')();
-    expect(dismissFn).toHaveBeenCalled();
-  });
+  const dismiss = jest.fn();
 
-  it('dismisses modal when esc is pressed', () => {
-    const dismissFn = jest.fn()
-    const wrapper = mount(<Dialog isOpen={true} onDismiss={dismissFn} content={<button>hey</button>} />);
-    wrapper.find('.dialog').prop('onKeyDown')({ key: 'Escape' })
-    expect(dismissFn).toHaveBeenCalled();
-  });
+  it('tests that dialog renders properly', () => {
+    // Scrolling should not be locked before dialog is open
+    expect(window.getComputedStyle(document.body).overflow).toBe('');
 
-  it('locks scrolling when visible', () => {
-    mount(<Dialog isOpen={true} content={<button>hey</button>} />);
-    // eslint-disable-next-line no-undef
-    expect(document.documentElement.style.overflow).toBe('hidden');
-  });
-
-  it('does not lock scrolling when not visible', () => {
-    mount(<Dialog content={<button>hey</button>} />);
-    // eslint-disable-next-line no-undef
-    expect(document.documentElement.style.overflow).toBe('');
-  });
-
-  it('matches snapshot (default props)', () => {
-    const component = shallow(<Dialog isOpen={true} content="foo" />);
-    expect(component).toMatchSnapshot();
-  });
-
-  it('matches snapshot (set all props)', () => {
-    const component = shallow(
+    render(
       <Dialog
-        content="foo"
-        role="alertdialog"
-        isOpen={true}
-        canDismiss={true}
-        footerContent={<div>foo</div>}
-        title="hey"
-        onDismiss={(() => {})}
+        content={<button>content</button>}
+        isOpen
+        footerContent={<div>footerContent</div>}
+        title="title"
+        onDismiss={dismiss}
         height="1000px"
         width="1000px"
         alwaysShowBorder
-        disableFocusTrap
       />
-    );
-    expect(component).toMatchSnapshot();
-  });
+    )
+    /* Test that content renders properly */
+    /* ================================== */
+    expect(screen.getByText('content')).toBeTruthy();
+    expect(screen.getByText('footerContent')).toBeTruthy();
+    expect(screen.getByText('title')).toBeTruthy();
+
+    /* Tests that onDismiss gets fired correctly */
+    /* ========================================= */
+    // fireEvent.click(document.activeElement);
+    fireEvent.click(screen.getByLabelText('Close'));
+    // Pressing esc anywhere in dialog should trigger a close
+    fireEvent.keyDown(screen.getByText('content'), { key: 'Escape', code: 27 })
+    expect(dismiss).toHaveBeenCalledTimes(2)
+
+
+    /* Tests styles */
+    /* ============ */
+    expect(window.getComputedStyle(screen.getByRole('dialog'))['max-height']).toBe('1000px');
+    expect(window.getComputedStyle(screen.getByRole('dialog'))['max-width']).toBe('1000px');
+    // Scrolling should be locked when dialog is open
+    expect(window.getComputedStyle(document.documentElement).overflow).toBe('hidden');
+  })
 
 })
