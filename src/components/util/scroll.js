@@ -43,7 +43,6 @@
     const doc = document.documentElement;
     doc.style.width = '';
     doc.style.overflow = '';
-    window.scroll(0, scrollTop);
     isOn = false;
   }
 
