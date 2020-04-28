@@ -72,3 +72,16 @@ selected.
     </div>
   </Story>
 </Preview>
+
+## Controlled
+
+<Preview>
+  <Story name="Controlled">
+    <div onChange={(e) => { console.warn(`value is ${e.target.value}`) }}>
+      <Radio name="radio-group-onchange" label="Option one" value="1" checked={true} />
+      <Radio name="radio-group-onchange" label="Option two" value="2" />
+      <Radio name="radio-group-onchange" label="Option three" value="3" />
+    </div>
+  </Story>
+</Preview>
+

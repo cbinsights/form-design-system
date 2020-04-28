@@ -31,7 +31,6 @@ describe('Dialog', () => {
 
     /* Tests that onDismiss gets fired correctly */
     /* ========================================= */
-    // fireEvent.click(document.activeElement);
     fireEvent.click(screen.getByLabelText('Close'));
     // Pressing esc anywhere in dialog should trigger a close
     fireEvent.keyDown(screen.getByText('content'), { key: 'Escape', code: 27 })
