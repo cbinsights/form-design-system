@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import FocusTrap from 'focus-trap-react';
-import noScroll from 'no-scroll';
 import rafSchd from 'raf-schd';
 import DenyIcon from 'lib/icons/react/DenyIcon';
 import IconButton from 'components/interactive/IconButton';
 import Section from 'components/layout/Section';
+import noScroll from 'components/util/scroll';
 
 export const isElementOverflowing = ({ current }) => {
   // Checking for current first is safer just in case,
@@ -98,8 +98,8 @@ const Dialog = ({
                       <IconButton
                         Icon={DenyIcon}
                         onClick={onDismiss}
-                        aria-label="close"
-                        label="close"
+                        aria-label="Close"
+                        label="Close"
                       />
                     </div>
                   )}
