@@ -9,6 +9,7 @@ exports[`Radio component matches snapshot (checked) 1`] = `
     defaultChecked={true}
     id="mock-universal-unique-identifier"
     name="snapshot-radio"
+    readOnly={true}
     type="radio"
   />
   <label
@@ -46,6 +47,7 @@ exports[`Radio component matches snapshot (disabled) 1`] = `
     className="media--xs"
     id="mock-universal-unique-identifier"
     name="snapshot-radio"
+    readOnly={true}
     type="radio"
   />
   <label
@@ -83,6 +85,7 @@ exports[`Radio component matches snapshot 1`] = `
     className="media--xs"
     id="mock-universal-unique-identifier"
     name="snapshot-radio"
+    readOnly={true}
     type="radio"
     value="test-value"
   />
