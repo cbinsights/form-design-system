@@ -11,7 +11,20 @@ import RadioFilledIcon from 'lib/icons/react/RadioFilledIcon';
  * @returns {ReactElement}
  */
 const Radio = React.forwardRef(
-  ({ showLabel = true, disabled = false, name, label, ...rest }, ref) => {
+  (
+    {
+      showLabel = true,
+      disabled = false,
+      name,
+      label,
+      checked,
+      defaultChecked,
+      value,
+      onChange,
+      ...rest
+    },
+    ref
+  ) => {
     const id = uuidv4();
 
     return (
@@ -25,8 +38,12 @@ const Radio = React.forwardRef(
           type="radio"
           name={name}
           id={id}
-          className="media--xs"
+          checked={checked}
+          defaultChecked={defaultChecked}
+          value={value}
+          onChange={onChange}
           {...rest}
+          className="media--xs" // prevent className being passed down via rest
         />
         <label className="flush--bottom" htmlFor={id}>
           <span className="fdsCheckable-icon--checked">
@@ -62,6 +79,15 @@ Radio.propTypes = {
 
   /** Disables form field when `true` */
   disabled: PropTypes.bool,
+
+  /** The radio input `checked` attribute */
+  checked: PropTypes.bool,
+
+  /** The radio input `value` attribute */
+  value: PropTypes.string.isRequired,
+
+  /** The radio input `onChange` attribute */
+  onChange: PropTypes.func,
 };
 
 export default Radio;
