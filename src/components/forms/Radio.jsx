@@ -21,6 +21,7 @@ const Radio = React.forwardRef(
       defaultChecked,
       value,
       onChange,
+      ...rest
     },
     ref
   ) => {
@@ -37,12 +38,12 @@ const Radio = React.forwardRef(
           type="radio"
           name={name}
           id={id}
-          className="media--xs"
           checked={checked}
           defaultChecked={defaultChecked}
           value={value}
           onChange={onChange}
-          readOnly={!onChange}
+          {...rest}
+          className="media--xs" // prevent className being passed down via rest
         />
         <label className="flush--bottom" htmlFor={id}>
           <span className="fdsCheckable-icon--checked">
