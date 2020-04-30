@@ -38,7 +38,7 @@ Renders a basic keyboard navigable dropdown menu following the [WAI-ARIA pattern
 Only use a `Menu` for dropdowns that contain actions the user can take. If a dropdown includes any other type of content (forms, arbitrary content), use a `Popover` component instead.
 
 ### Positioning
-The menu will automatically position above or below the trigger element based on its position in the viewport.
+The menu will automatically position above or below the trigger button based on its position in the viewport.
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <div style={{ padding: '2rem' }}>
@@ -72,7 +72,7 @@ The menu will automatically position above or below the trigger element based on
 
 ## Trigger element
 
-The Menu trigger can accept any focusable element, but a `Button` with the `hasCaret` prop enabled is recommended.
+A `Button` with the `hasCaret` prop enabled is recommended, but the Menu trigger can accept a `button`, or any component that renders a focusable element.
 
 <Preview>
   <Story name="Trigger element">
@@ -87,7 +87,7 @@ The Menu trigger can accept any focusable element, but a `Button` with the `hasC
       </FlexItem>
       <FlexItem>
         <Menu
-          trigger={<div className="bgColor--orange inverted padding--all--half">any jsx will work</div>}>
+          trigger={<button>any button will work</button>}>
             <MenuItem onSelect={action('🍰')}>Cake</MenuItem>
             <MenuItem onSelect={action('🍕')}>Pizza</MenuItem>
             <MenuItem onSelect={action('☠️')}>Tide pod</MenuItem>
