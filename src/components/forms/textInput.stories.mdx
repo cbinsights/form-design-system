@@ -7,12 +7,15 @@ import FlexItem from 'components/layout/FlexItem';
 import { action } from "@storybook/addon-actions";
 import { useForm } from "react-hook-form";
 
+import { ImportPath } from '../util/storybook';
 import TextInput from './TextInput';
 import InputGroup from 'components/forms/InputGroup';
 
 <Meta title="Components/Forms/TextInput" decorators={[withKnobs]} component={TextInput} />
 
 # TextInput
+
+<ImportPath component={TextInput} section="forms" />
 
 Standard recommended input component. Can be used for simple no frills inputs, as well as complex inputs
 complete with accessibile labels, Icons, side labels, errorText, throttled events, and more.
@@ -55,7 +58,7 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
 
 <Info type="info">
   Additional props will be spread on the `input` element.
-</Info> 
+</Info>
 
 <Props of={TextInput} />
 
