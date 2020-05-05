@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import WorkFasterIcon from '../../../lib/icons/react/WorkFasterIcon';
+import WorkFasterIcon from 'lib/icons/react/WorkFasterIcon';
 import Updatable from './Updatable';
 
 const MOCK_COMPONENT = (

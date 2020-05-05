@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import CloneIcon from 'lib/icons/react/CloneIcon';
 import CheckIcon from 'lib/icons/react/CheckIcon';
-import FDS from '../../../lib/dictionary/js/styleConstants';
+import FDS from 'lib/dictionary/js/styleConstants';
 
 /**
  * Creates a knobs options object where labels match values.
