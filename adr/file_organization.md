@@ -1,0 +1,80 @@
+# Organize files for FDS clients
+
+- **Status:** accepted
+- **Deciders:** @akdetrick, @rey-wright, @ahmedhashim-cbi, @sfrieson-cbi, @jjniczCB, @kchen-cbi
+- **Date:** 2020.04.24
+
+---
+
+Technical Story: UIP-362
+
+## Context and Problem Statement
+
+We would like to generally flatten the directory structure in FDS as well as improving the
+import statements for client applications. This will be a breaking change for a major
+version, as clients will need to update imports once we make the change.
+
+## Decision Drivers
+
+* Remove unnecessary hierarchy in components dir
+* Simplify documentation
+* Adopt the unofficial CBI standard of organizing by component directories (each component
+  has its own directory).
+* Improve ergonomics and performance of import statements for client applications
+
+## Decision Outcome
+
+### Import statements
+Because individual imports for each component has a negative performance impact, we decided
+to use destructured imports:
+
+```diff
+-import Flex from '@cbinsights/fds/lib/components/layout/Flex';
+-import FlexItem from '@cbinsights/fds/lib/components/layout/FlexItem';
+-import TextInput from '@cbinsights/fds/lib/components/forms/TextInput';
++import { Flex, FlexItem, TextInput } from '@cbinsights/fds/lib/components';
+```
+
+The "root" file for each import corresponds to an FDS code module.
+The `lib` directory should be published as the root of the package.
+
+code module   | Import example
+------------- | --------------------------------------
+`dictionary`  | `import { COLOR_TIMBERWOLF } from '@cbinsights/fds/dictionary'`
+`components`  | `import { Avatar } from '@cbinsights/fds/components/Avatar';`
+`icons`       | `import { CloudIcon } from '@cbinsights/fds/icons';`
+`assets`      | Use path `@cbinsights/fds/assets/<file>` where applicable
+`base-styles` | not applicable; we only publish this in the rollup CSS file in `assets/`
+
+## `components` file structure
+
+Categorization directories will be removed.
+Each component will have its own directory under `components/`.
+Tests, stories, private components, and helpers will be colocated in component
+directories.
+
+```
+components/
+├── Foo/
+│   ├── Foo.jsx
+│   ├── FooHelper.jsx
+│   ├── foo.test.jsx
+│   ├── foo.stories.jsx
+│   ├── utils.js
+│   └── index.js  // export default Foo
+...
+```
+
+## Documentation
+
+The "Components" section in Storybook will no longer have categorization. All components
+will be documented flat under the section heading.
+
+### Positive Consequences
+
+We satisfy all the decision drivers
+
+### Negative Consequences
+
+Minimal. This is a breaking change that will be marked by a major version.
+
