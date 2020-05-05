@@ -41,18 +41,69 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
           "displayName": "MenuDescendantContext",
         }
       }
-      items={Array []}
+      items={
+        Array [
+          Object {
+            "element": <div
+              data-reach-menu-item=""
+              data-valuetext="First"
+              id="option-0--menu--5"
+              role="menuitem"
+              tabindex="-1"
+            >
+              <p>
+                First
+              </p>
+            </div>,
+            "index": 0,
+            "isLink": false,
+            "key": "First",
+          },
+          Object {
+            "element": <div
+              data-reach-menu-item=""
+              data-valuetext="Second"
+              id="option-1--menu--5"
+              role="menuitem"
+              tabindex="-1"
+            >
+              <p>
+                Second
+              </p>
+            </div>,
+            "index": 1,
+            "isLink": false,
+            "key": "Second",
+          },
+          Object {
+            "element": <div
+              data-reach-menu-item=""
+              data-valuetext="Third"
+              id="option-2--menu--5"
+              role="menuitem"
+              tabindex="-1"
+            >
+              <p>
+                Third
+              </p>
+            </div>,
+            "index": 2,
+            "isLink": false,
+            "key": "Third",
+          },
+        ]
+      }
       set={[Function]}
     >
       <MenuButton
         className="resetButton border--focus rounded--all"
       >
         <button
-          aria-expanded={false}
-          aria-haspopup="menu"
+          aria-controls="menu--5"
+          aria-haspopup={true}
           className="resetButton border--focus rounded--all"
           data-reach-menu-button=""
-          id="menu-button--4"
+          id="menu-button--menu--5"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           type="button"
@@ -67,7 +118,238 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
       </MenuButton>
       <MenuPopover
         className="elevation--2 rounded--all bgColor--white"
-      />
+      >
+        <Popover
+          className="elevation--2 rounded--all bgColor--white"
+          data-reach-menu=""
+          data-reach-menu-popover=""
+          hidden={true}
+          targetRef={
+            Object {
+              "current": <button
+                aria-controls="menu--5"
+                aria-haspopup="true"
+                class="resetButton border--focus rounded--all"
+                data-reach-menu-button=""
+                id="menu-button--menu--5"
+                type="button"
+              >
+                <a
+                  href="#"
+                  tabindex="-1"
+                >
+                  trigger
+                </a>
+              </button>,
+            }
+          }
+        >
+          <Portal>
+            <Portal
+              containerInfo={
+                <reach-portal>
+                  <div
+                    class="elevation--2 rounded--all bgColor--white"
+                    data-reach-menu=""
+                    data-reach-menu-popover=""
+                    data-reach-popover=""
+                    hidden=""
+                    style="position: absolute; left: 0px; top: 0px;"
+                  >
+                    <div
+                      aria-labelledby="menu-button--menu--5"
+                      data-reach-menu-items=""
+                      id="menu--5"
+                      role="menu"
+                      tabindex="-1"
+                    >
+                      <div
+                        data-reach-menu-item=""
+                        data-valuetext="First"
+                        id="option-0--menu--5"
+                        role="menuitem"
+                        tabindex="-1"
+                      >
+                        <p>
+                          First
+                        </p>
+                      </div>
+                      <div
+                        data-reach-menu-item=""
+                        data-valuetext="Second"
+                        id="option-1--menu--5"
+                        role="menuitem"
+                        tabindex="-1"
+                      >
+                        <p>
+                          Second
+                        </p>
+                      </div>
+                      <div
+                        data-reach-menu-item=""
+                        data-valuetext="Third"
+                        id="option-2--menu--5"
+                        role="menuitem"
+                        tabindex="-1"
+                      >
+                        <p>
+                          Third
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </reach-portal>
+              }
+            >
+              <PopoverImpl
+                className="elevation--2 rounded--all bgColor--white"
+                data-reach-menu=""
+                data-reach-menu-popover=""
+                hidden={true}
+                targetRef={
+                  Object {
+                    "current": <button
+                      aria-controls="menu--5"
+                      aria-haspopup="true"
+                      class="resetButton border--focus rounded--all"
+                      data-reach-menu-button=""
+                      id="menu-button--menu--5"
+                      type="button"
+                    >
+                      <a
+                        href="#"
+                        tabindex="-1"
+                      >
+                        trigger
+                      </a>
+                    </button>,
+                  }
+                }
+              >
+                <div
+                  className="elevation--2 rounded--all bgColor--white"
+                  data-reach-menu=""
+                  data-reach-menu-popover=""
+                  data-reach-popover=""
+                  hidden={true}
+                  style={
+                    Object {
+                      "left": "0px",
+                      "position": "absolute",
+                      "top": "0px",
+                    }
+                  }
+                >
+                  <MenuItems>
+                    <div
+                      aria-labelledby="menu-button--menu--5"
+                      data-reach-menu-items=""
+                      id="menu--5"
+                      onKeyDown={[Function]}
+                      role="menu"
+                      tabIndex={-1}
+                    >
+                      <MenuItem
+                        onSelect={[Function]}
+                      >
+                        <MenuItem
+                          onSelect={[Function]}
+                        >
+                          <ForwardRef(MenuItemImpl)
+                            as="div"
+                            onSelect={[Function]}
+                          >
+                            <div
+                              data-reach-menu-item=""
+                              data-valuetext="First"
+                              id="option-0--menu--5"
+                              onClick={[Function]}
+                              onDragStart={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseMove={[Function]}
+                              onMouseUp={[Function]}
+                              role="menuitem"
+                              tabIndex={-1}
+                            >
+                              <p>
+                                First
+                              </p>
+                            </div>
+                          </ForwardRef(MenuItemImpl)>
+                        </MenuItem>
+                      </MenuItem>
+                      <MenuItem
+                        onSelect={[Function]}
+                      >
+                        <MenuItem
+                          onSelect={[Function]}
+                        >
+                          <ForwardRef(MenuItemImpl)
+                            as="div"
+                            onSelect={[Function]}
+                          >
+                            <div
+                              data-reach-menu-item=""
+                              data-valuetext="Second"
+                              id="option-1--menu--5"
+                              onClick={[Function]}
+                              onDragStart={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseMove={[Function]}
+                              onMouseUp={[Function]}
+                              role="menuitem"
+                              tabIndex={-1}
+                            >
+                              <p>
+                                Second
+                              </p>
+                            </div>
+                          </ForwardRef(MenuItemImpl)>
+                        </MenuItem>
+                      </MenuItem>
+                      <MenuItem
+                        onSelect={[Function]}
+                      >
+                        <MenuItem
+                          onSelect={[Function]}
+                        >
+                          <ForwardRef(MenuItemImpl)
+                            as="div"
+                            onSelect={[Function]}
+                          >
+                            <div
+                              data-reach-menu-item=""
+                              data-valuetext="Third"
+                              id="option-2--menu--5"
+                              onClick={[Function]}
+                              onDragStart={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseMove={[Function]}
+                              onMouseUp={[Function]}
+                              role="menuitem"
+                              tabIndex={-1}
+                            >
+                              <p>
+                                Third
+                              </p>
+                            </div>
+                          </ForwardRef(MenuItemImpl)>
+                        </MenuItem>
+                      </MenuItem>
+                    </div>
+                  </MenuItems>
+                </div>
+              </PopoverImpl>
+            </Portal>
+          </Portal>
+        </Popover>
+      </MenuPopover>
     </DescendantProvider>
   </Menu>
 </Menu>
@@ -134,18 +416,63 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
           "displayName": "MenuDescendantContext",
         }
       }
-      items={Array []}
+      items={
+        Array [
+          Object {
+            "element": <div
+              data-reach-menu-item=""
+              data-valuetext="First"
+              id="option-0--menu--8"
+              role="menuitem"
+              tabindex="-1"
+            >
+              First
+            </div>,
+            "index": 0,
+            "isLink": false,
+            "key": "First",
+          },
+          Object {
+            "element": <div
+              data-reach-menu-item=""
+              data-valuetext="Second"
+              id="option-1--menu--8"
+              role="menuitem"
+              tabindex="-1"
+            >
+              Second
+            </div>,
+            "index": 1,
+            "isLink": false,
+            "key": "Second",
+          },
+          Object {
+            "element": <div
+              data-reach-menu-item=""
+              data-valuetext="Third"
+              id="option-2--menu--8"
+              role="menuitem"
+              tabindex="-1"
+            >
+              Third
+            </div>,
+            "index": 2,
+            "isLink": false,
+            "key": "Third",
+          },
+        ]
+      }
       set={[Function]}
     >
       <MenuButton
         className="resetButton border--focus rounded--all"
       >
         <button
-          aria-expanded={false}
-          aria-haspopup="menu"
+          aria-controls="menu--8"
+          aria-haspopup={true}
           className="resetButton border--focus rounded--all"
           data-reach-menu-button=""
-          id="menu-button--6"
+          id="menu-button--menu--8"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           type="button"
@@ -160,7 +487,226 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
       </MenuButton>
       <MenuPopover
         className="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
-      />
+      >
+        <Popover
+          className="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+          data-reach-menu=""
+          data-reach-menu-popover=""
+          hidden={true}
+          targetRef={
+            Object {
+              "current": <button
+                aria-controls="menu--8"
+                aria-haspopup="true"
+                class="resetButton border--focus rounded--all"
+                data-reach-menu-button=""
+                id="menu-button--menu--8"
+                type="button"
+              >
+                <a
+                  href="#"
+                  tabindex="-1"
+                >
+                  trigger
+                </a>
+              </button>,
+            }
+          }
+        >
+          <Portal>
+            <Portal
+              containerInfo={
+                <reach-portal>
+                  <div
+                    class="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+                    data-reach-menu=""
+                    data-reach-menu-popover=""
+                    data-reach-popover=""
+                    hidden=""
+                    style="position: absolute; left: 0px; top: 0px;"
+                  >
+                    <div
+                      aria-labelledby="menu-button--menu--8"
+                      data-reach-menu-items=""
+                      id="menu--8"
+                      role="menu"
+                      tabindex="-1"
+                    >
+                      <div
+                        data-reach-menu-item=""
+                        data-valuetext="First"
+                        id="option-0--menu--8"
+                        role="menuitem"
+                        tabindex="-1"
+                      >
+                        First
+                      </div>
+                      <div
+                        data-reach-menu-item=""
+                        data-valuetext="Second"
+                        id="option-1--menu--8"
+                        role="menuitem"
+                        tabindex="-1"
+                      >
+                        Second
+                      </div>
+                      <div
+                        data-reach-menu-item=""
+                        data-valuetext="Third"
+                        id="option-2--menu--8"
+                        role="menuitem"
+                        tabindex="-1"
+                      >
+                        Third
+                      </div>
+                    </div>
+                  </div>
+                </reach-portal>
+              }
+            >
+              <PopoverImpl
+                className="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+                data-reach-menu=""
+                data-reach-menu-popover=""
+                hidden={true}
+                targetRef={
+                  Object {
+                    "current": <button
+                      aria-controls="menu--8"
+                      aria-haspopup="true"
+                      class="resetButton border--focus rounded--all"
+                      data-reach-menu-button=""
+                      id="menu-button--menu--8"
+                      type="button"
+                    >
+                      <a
+                        href="#"
+                        tabindex="-1"
+                      >
+                        trigger
+                      </a>
+                    </button>,
+                  }
+                }
+              >
+                <div
+                  className="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+                  data-reach-menu=""
+                  data-reach-menu-popover=""
+                  data-reach-popover=""
+                  hidden={true}
+                  style={
+                    Object {
+                      "left": "0px",
+                      "position": "absolute",
+                      "top": "0px",
+                    }
+                  }
+                >
+                  <MenuItems>
+                    <div
+                      aria-labelledby="menu-button--menu--8"
+                      data-reach-menu-items=""
+                      id="menu--8"
+                      onKeyDown={[Function]}
+                      role="menu"
+                      tabIndex={-1}
+                    >
+                      <MenuItem
+                        onSelect={[Function]}
+                      >
+                        <MenuItem
+                          onSelect={[Function]}
+                        >
+                          <ForwardRef(MenuItemImpl)
+                            as="div"
+                            onSelect={[Function]}
+                          >
+                            <div
+                              data-reach-menu-item=""
+                              data-valuetext="First"
+                              id="option-0--menu--8"
+                              onClick={[Function]}
+                              onDragStart={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseMove={[Function]}
+                              onMouseUp={[Function]}
+                              role="menuitem"
+                              tabIndex={-1}
+                            >
+                              First
+                            </div>
+                          </ForwardRef(MenuItemImpl)>
+                        </MenuItem>
+                      </MenuItem>
+                      <MenuItem
+                        onSelect={[Function]}
+                      >
+                        <MenuItem
+                          onSelect={[Function]}
+                        >
+                          <ForwardRef(MenuItemImpl)
+                            as="div"
+                            onSelect={[Function]}
+                          >
+                            <div
+                              data-reach-menu-item=""
+                              data-valuetext="Second"
+                              id="option-1--menu--8"
+                              onClick={[Function]}
+                              onDragStart={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseMove={[Function]}
+                              onMouseUp={[Function]}
+                              role="menuitem"
+                              tabIndex={-1}
+                            >
+                              Second
+                            </div>
+                          </ForwardRef(MenuItemImpl)>
+                        </MenuItem>
+                      </MenuItem>
+                      <MenuItem
+                        onSelect={[Function]}
+                      >
+                        <MenuItem
+                          onSelect={[Function]}
+                        >
+                          <ForwardRef(MenuItemImpl)
+                            as="div"
+                            onSelect={[Function]}
+                          >
+                            <div
+                              data-reach-menu-item=""
+                              data-valuetext="Third"
+                              id="option-2--menu--8"
+                              onClick={[Function]}
+                              onDragStart={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseMove={[Function]}
+                              onMouseUp={[Function]}
+                              role="menuitem"
+                              tabIndex={-1}
+                            >
+                              Third
+                            </div>
+                          </ForwardRef(MenuItemImpl)>
+                        </MenuItem>
+                      </MenuItem>
+                    </div>
+                  </MenuItems>
+                </div>
+              </PopoverImpl>
+            </Portal>
+          </Portal>
+        </Popover>
+      </MenuPopover>
     </DescendantProvider>
   </Menu>
 </Menu>
@@ -207,18 +753,63 @@ exports[`Popover component matches snapshot (string items) 1`] = `
           "displayName": "MenuDescendantContext",
         }
       }
-      items={Array []}
+      items={
+        Array [
+          Object {
+            "element": <div
+              data-reach-menu-item=""
+              data-valuetext="First"
+              id="option-0--menu--1"
+              role="menuitem"
+              tabindex="-1"
+            >
+              First
+            </div>,
+            "index": 0,
+            "isLink": false,
+            "key": "First",
+          },
+          Object {
+            "element": <div
+              data-reach-menu-item=""
+              data-valuetext="Second"
+              id="option-1--menu--1"
+              role="menuitem"
+              tabindex="-1"
+            >
+              Second
+            </div>,
+            "index": 1,
+            "isLink": false,
+            "key": "Second",
+          },
+          Object {
+            "element": <div
+              data-reach-menu-item=""
+              data-valuetext="Third"
+              id="option-2--menu--1"
+              role="menuitem"
+              tabindex="-1"
+            >
+              Third
+            </div>,
+            "index": 2,
+            "isLink": false,
+            "key": "Third",
+          },
+        ]
+      }
       set={[Function]}
     >
       <MenuButton
         className="resetButton border--focus rounded--all"
       >
         <button
-          aria-expanded={false}
-          aria-haspopup="menu"
+          aria-controls="menu--1"
+          aria-haspopup={true}
           className="resetButton border--focus rounded--all"
           data-reach-menu-button=""
-          id="menu-button--1"
+          id="menu-button--menu--1"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           type="button"
@@ -233,7 +824,226 @@ exports[`Popover component matches snapshot (string items) 1`] = `
       </MenuButton>
       <MenuPopover
         className="elevation--2 rounded--all bgColor--white"
-      />
+      >
+        <Popover
+          className="elevation--2 rounded--all bgColor--white"
+          data-reach-menu=""
+          data-reach-menu-popover=""
+          hidden={true}
+          targetRef={
+            Object {
+              "current": <button
+                aria-controls="menu--1"
+                aria-haspopup="true"
+                class="resetButton border--focus rounded--all"
+                data-reach-menu-button=""
+                id="menu-button--menu--1"
+                type="button"
+              >
+                <a
+                  href="#"
+                  tabindex="-1"
+                >
+                  trigger
+                </a>
+              </button>,
+            }
+          }
+        >
+          <Portal>
+            <Portal
+              containerInfo={
+                <reach-portal>
+                  <div
+                    class="elevation--2 rounded--all bgColor--white"
+                    data-reach-menu=""
+                    data-reach-menu-popover=""
+                    data-reach-popover=""
+                    hidden=""
+                    style="position: absolute; left: 0px; top: 0px;"
+                  >
+                    <div
+                      aria-labelledby="menu-button--menu--1"
+                      data-reach-menu-items=""
+                      id="menu--1"
+                      role="menu"
+                      tabindex="-1"
+                    >
+                      <div
+                        data-reach-menu-item=""
+                        data-valuetext="First"
+                        id="option-0--menu--1"
+                        role="menuitem"
+                        tabindex="-1"
+                      >
+                        First
+                      </div>
+                      <div
+                        data-reach-menu-item=""
+                        data-valuetext="Second"
+                        id="option-1--menu--1"
+                        role="menuitem"
+                        tabindex="-1"
+                      >
+                        Second
+                      </div>
+                      <div
+                        data-reach-menu-item=""
+                        data-valuetext="Third"
+                        id="option-2--menu--1"
+                        role="menuitem"
+                        tabindex="-1"
+                      >
+                        Third
+                      </div>
+                    </div>
+                  </div>
+                </reach-portal>
+              }
+            >
+              <PopoverImpl
+                className="elevation--2 rounded--all bgColor--white"
+                data-reach-menu=""
+                data-reach-menu-popover=""
+                hidden={true}
+                targetRef={
+                  Object {
+                    "current": <button
+                      aria-controls="menu--1"
+                      aria-haspopup="true"
+                      class="resetButton border--focus rounded--all"
+                      data-reach-menu-button=""
+                      id="menu-button--menu--1"
+                      type="button"
+                    >
+                      <a
+                        href="#"
+                        tabindex="-1"
+                      >
+                        trigger
+                      </a>
+                    </button>,
+                  }
+                }
+              >
+                <div
+                  className="elevation--2 rounded--all bgColor--white"
+                  data-reach-menu=""
+                  data-reach-menu-popover=""
+                  data-reach-popover=""
+                  hidden={true}
+                  style={
+                    Object {
+                      "left": "0px",
+                      "position": "absolute",
+                      "top": "0px",
+                    }
+                  }
+                >
+                  <MenuItems>
+                    <div
+                      aria-labelledby="menu-button--menu--1"
+                      data-reach-menu-items=""
+                      id="menu--1"
+                      onKeyDown={[Function]}
+                      role="menu"
+                      tabIndex={-1}
+                    >
+                      <MenuItem
+                        onSelect={[Function]}
+                      >
+                        <MenuItem
+                          onSelect={[Function]}
+                        >
+                          <ForwardRef(MenuItemImpl)
+                            as="div"
+                            onSelect={[Function]}
+                          >
+                            <div
+                              data-reach-menu-item=""
+                              data-valuetext="First"
+                              id="option-0--menu--1"
+                              onClick={[Function]}
+                              onDragStart={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseMove={[Function]}
+                              onMouseUp={[Function]}
+                              role="menuitem"
+                              tabIndex={-1}
+                            >
+                              First
+                            </div>
+                          </ForwardRef(MenuItemImpl)>
+                        </MenuItem>
+                      </MenuItem>
+                      <MenuItem
+                        onSelect={[Function]}
+                      >
+                        <MenuItem
+                          onSelect={[Function]}
+                        >
+                          <ForwardRef(MenuItemImpl)
+                            as="div"
+                            onSelect={[Function]}
+                          >
+                            <div
+                              data-reach-menu-item=""
+                              data-valuetext="Second"
+                              id="option-1--menu--1"
+                              onClick={[Function]}
+                              onDragStart={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseMove={[Function]}
+                              onMouseUp={[Function]}
+                              role="menuitem"
+                              tabIndex={-1}
+                            >
+                              Second
+                            </div>
+                          </ForwardRef(MenuItemImpl)>
+                        </MenuItem>
+                      </MenuItem>
+                      <MenuItem
+                        onSelect={[Function]}
+                      >
+                        <MenuItem
+                          onSelect={[Function]}
+                        >
+                          <ForwardRef(MenuItemImpl)
+                            as="div"
+                            onSelect={[Function]}
+                          >
+                            <div
+                              data-reach-menu-item=""
+                              data-valuetext="Third"
+                              id="option-2--menu--1"
+                              onClick={[Function]}
+                              onDragStart={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseMove={[Function]}
+                              onMouseUp={[Function]}
+                              role="menuitem"
+                              tabIndex={-1}
+                            >
+                              Third
+                            </div>
+                          </ForwardRef(MenuItemImpl)>
+                        </MenuItem>
+                      </MenuItem>
+                    </div>
+                  </MenuItems>
+                </div>
+              </PopoverImpl>
+            </Portal>
+          </Portal>
+        </Popover>
+      </MenuPopover>
     </DescendantProvider>
   </Menu>
 </Menu>
