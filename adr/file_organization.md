@@ -44,8 +44,7 @@ code module   | Import example
 `components`  | `import { Avatar, TextInput } from '@cbinsights/fds/components/';`
 `icons`       | `import { CloudIcon, BellIcon } from '@cbinsights/fds/icons';`
 `assets`      | Use path `@cbinsights/fds/assets/<file>` where applicable
-`base-styles` | not applicable; we only publish this CSS as part of the main styles file
-in `assets/`
+`base-styles` | not applicable; we only publish this CSS as part of the main styles file in `assets/`
 
 ## `components` file structure
 
