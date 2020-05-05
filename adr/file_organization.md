@@ -41,8 +41,8 @@ The `lib` directory should be published as the root of the package.
 code module   | Import example
 ------------- | --------------------------------------
 `dictionary`  | `import { COLOR_TIMBERWOLF } from '@cbinsights/fds/dictionary'`
-`components`  | `import { Avatar } from '@cbinsights/fds/components/Avatar';`
-`icons`       | `import { CloudIcon } from '@cbinsights/fds/icons';`
+`components`  | `import { Avatar, TextInput } from '@cbinsights/fds/components/';`
+`icons`       | `import { CloudIcon, BellIcon } from '@cbinsights/fds/icons';`
 `assets`      | Use path `@cbinsights/fds/assets/<file>` where applicable
 `base-styles` | not applicable; we only publish this in the rollup CSS file in `assets/`
 
