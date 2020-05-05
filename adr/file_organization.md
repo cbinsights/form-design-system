@@ -32,7 +32,7 @@ to use destructured imports and rely on a tree shaking strategy:
 -import Flex from '@cbinsights/fds/lib/components/layout/Flex';
 -import FlexItem from '@cbinsights/fds/lib/components/layout/FlexItem';
 -import TextInput from '@cbinsights/fds/lib/components/forms/TextInput';
-+import { Flex, FlexItem, TextInput } from '@cbinsights/fds/lib/components';
++import { Flex, FlexItem, TextInput } from '@cbinsights/fds/components';
 ```
 
 The "root" file for each import corresponds to an FDS code module.
