@@ -26,7 +26,7 @@ version, as clients will need to update imports once we make the change.
 
 ### Import statements
 Because individual imports for each component has a negative performance impact, we decided
-to use destructured imports:
+to use destructured imports and rely on a tree shaking strategy:
 
 ```diff
 -import Flex from '@cbinsights/fds/lib/components/layout/Flex';
