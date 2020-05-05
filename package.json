@@ -91,7 +91,6 @@
     "husky": "^1.0.0-rc.13",
     "jest": "^24.8.0",
     "lint-staged": "^8.1.7",
-    "mdcss": "^1.5.2",
     "moment": "^2.20",
     "pascal-case": "^2.0.1",
     "postcss": "^7.0.2",
