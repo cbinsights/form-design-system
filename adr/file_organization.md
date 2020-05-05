@@ -46,7 +46,7 @@ code module   | Import example
 `assets`      | Use path `@cbinsights/fds/assets/<file>` where applicable
 `base-styles` | not applicable; we only publish this CSS as part of the main styles file in `assets/`
 
-## `components` file structure
+### `components` file structure
 
 Categorization directories will be removed.
 Each component will have its own directory under `components/`.
@@ -65,16 +65,16 @@ components/
 ...
 ```
 
-## Documentation
+### Documentation
 
 The "Components" section in Storybook will no longer have categorization. All components
 will be documented flat under the section heading.
 
-### Positive Consequences
+## Positive Consequences
 
 We satisfy all the decision drivers
 
-### Negative Consequences
+## Negative Consequences
 
 Minimal. This is a breaking change that will be marked by a major version.
 
