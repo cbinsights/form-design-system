@@ -40,7 +40,7 @@ The `lib` directory should be published as the root of the package.
 
 code module   | Import example
 ------------- | --------------------------------------
-`dictionary`  | `import { COLOR_TIMBERWOLF } from '@cbinsights/fds/dictionary'`
+`dictionary`  | `import { COLOR_TIMBERWOLF, COLOR_PURPLE } from '@cbinsights/fds/dictionary';`
 `components`  | `import { Avatar, TextInput } from '@cbinsights/fds/components/';`
 `icons`       | `import { CloudIcon, BellIcon } from '@cbinsights/fds/icons';`
 `assets`      | Use path `@cbinsights/fds/assets/<file>` where applicable
