@@ -7,8 +7,8 @@ import {
   number,
   boolean,
 } from '@storybook/addon-knobs';
-import { arrayToOptions } from '../util/storybook';
-import { Info } from '../util/storybook';
+import { arrayToOptions } from 'components/util/storybook';
+import { Info } from 'components/util/storybook';
 
 import Popover, {
   VALID_ALIGNMENTS,
@@ -16,9 +16,9 @@ import Popover, {
   VALID_INTERACTION_MODES,
 } from './Popover';
 
-import { ImportPath } from '../util/storybook';
+import { ImportPath } from 'components/util/storybook';
 
-import Button from '../interactive/Button';
+import Button from 'components/interactive/Button';
 
 
 <Meta title="Components/Popovers/Popover" decorators={[withKnobs]} component={Popover} />
