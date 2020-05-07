@@ -14,7 +14,10 @@ Removes default user agent styling from `button` elements.
 button.resetButton {
   background: transparent;
   border-width: 0;
+  font-size: inherit;
+  line-height: inherit;
   padding: 0;
   margin: 0;
   min-height: initial;
+  vertical-align: inherit;
 }

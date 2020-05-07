@@ -115,6 +115,13 @@ Always name rest props `rest`:
 +const Component = ({ foo, bar, ...rest})
 ```
 
+Props that accept a component _reference_ should be uppercase:
+
+```diff
+-icon={CloudIcon}
++ Icon={CloudIcon} // CloudIcon is a reference to the imported icon component
+```
+
 ## CSS classes
 In FDS, we follow a modified BEM naming convention. With our convention, hyphens carry the
 meaning for block-element relationships and underscores are reserved for conditional

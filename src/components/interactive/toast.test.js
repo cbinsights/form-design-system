@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import IconButton from './IconButton';
-import CountdownButton from '../media/CountdownButton';
+import CountdownButton from 'components/media/CountdownButton';
+import IconButton from 'components/interactive/IconButton';
 
 import Toast from './Toast';
 
