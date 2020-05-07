@@ -24,7 +24,7 @@ npm i @cbinsights/fds
 import FDS from '@cbinsights/fds/lib/js/styleConstants';
 
 // React components
-import Flex from '@cbinsights/fds/lib/components/layout/Flex';
+import Flex from '@cbinsights/fds/lib/components/Flex';
 
 // Icons
 import CloudIcon from '@cbinsights/fds/lib/react/CloudIcon';
