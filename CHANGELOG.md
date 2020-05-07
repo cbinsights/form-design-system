@@ -26,6 +26,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [9.0] MAJOR
+
+### **BREAKING CHANGES**
+
+#### `MenuButton` Component
+- Now only accepts a `button` element, or a component that renders a `button` element as a trigger
 
 ## [8.2] DateInput rest props and IconButton role
 
