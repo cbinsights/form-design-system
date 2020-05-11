@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [8.3] Add delay to `Tooltip`
+
+- Adds support for `delay` prop in base `Popover` component
+- Adds a `1000`ms hover delay to `Tooltip`
+
 ## [8.2] DateInput rest props and IconButton role
 
 - Adds rest prop spread onto the Date Input to allow input specific props
