@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import StarFilledIcon from '../../../lib/icons/react/StarFilledIcon';
+import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
 import IconInput from './IconInput';
 
 describe('IconInput component', () => {
