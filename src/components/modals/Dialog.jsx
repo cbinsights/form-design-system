@@ -81,8 +81,8 @@ const Dialog = ({
           aria-modal="true"
           onKeyDown={handleKeyDown}
           style={{
-            maxWidth: `${width}${typeof width === 'number' ? 'px' : ''} `,
-            maxHeight: `${height}${typeof height === 'number' ? 'px' : ''}`,
+            maxWidth: width,
+            maxHeight: height,
           }}
         >
           {(title || onDismiss) && (

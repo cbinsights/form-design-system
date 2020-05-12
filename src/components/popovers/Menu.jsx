@@ -11,13 +11,9 @@ import {
 const Menu = ({ isDisabled = false, isInModal = false, children, trigger }) => {
   if (isDisabled) return trigger;
 
-  const clonedTrigger = React.cloneElement(trigger, { tabIndex: '-1' });
-
   return (
     <ReachMenu>
-      <ReachMenuButton className="resetButton border--focus rounded--all">
-        {clonedTrigger}
-      </ReachMenuButton>
+      <ReachMenuButton as="div">{trigger}</ReachMenuButton>
       <ReachMenuPopover
         className={cx('elevation--2 rounded--all bgColor--white', {
           'fdsMenu--inModal': isInModal,
