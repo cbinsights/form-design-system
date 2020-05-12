@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover component matches snapshot (disabled) 1`] = `
+<Menu
+  isDisabled={true}
+  trigger={
+    <a
+      href="#"
+    >
+      trigger
+    </a>
+  }
+>
+  <a
+    href="#"
+  >
+    trigger
+  </a>
+</Menu>
+`;

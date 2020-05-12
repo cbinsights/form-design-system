@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup component matches snapshot (default props) 1`] = `
+<Button
+  label="Button"
+>
+  <button
+    className="fdsButton fontStyle--caps display--inlineFlex rounded--all alignChild--center--center border--focus--noTransition transition--default fdsButton--m fdsButton--blue"
+  >
+    <span
+      className="fdsButton-label"
+    >
+      Button
+    </span>
+    <Icons>
+      <IconComponent
+        direction="left"
+      />
+      <IconComponent
+        direction="right"
+      />
+    </Icons>
+  </button>
+</Button>
+`;
+
+exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
+<Button
+  IconLeft={[Function]}
+  IconRight={[Function]}
+  Link={[Function]}
+  disabled={true}
+  hasCaret={true}
+  isDestructive={true}
+  isFullWidth={true}
+  isLoading={true}
+  label="Button"
+  theme="outlined"
+>
+  <Link
+    className="fdsButton fontStyle--caps display--inlineFlex rounded--all alignChild--center--center border--focus--noTransition transition--default fdsButton--m fdsButton--outlined fdsButton--isDestructive fdsButton--loading fdsButton--disabled fdsButton--isFullWidth"
+    disabled={false}
+  >
+    <a
+      className="fdsButton fontStyle--caps display--inlineFlex rounded--all alignChild--center--center border--focus--noTransition transition--default fdsButton--m fdsButton--outlined fdsButton--isDestructive fdsButton--loading fdsButton--disabled fdsButton--isFullWidth"
+      disabled={false}
+      href="#"
+    >
+      <span
+        className="fdsButton-label fdsButton--hidden"
+      >
+        Button
+      </span>
+      <Icons>
+        <IconComponent
+          direction="left"
+        >
+          <div
+            className="alignChild--center--center fdsButton-icon--left fdsButton--hidden"
+          >
+            <Icon
+              customSize={18}
+            />
+          </div>
+        </IconComponent>
+        <IconComponent
+          direction="right"
+        >
+          <div
+            className="alignChild--center--center fdsButton-icon--right fdsButton--hidden"
+          >
+            <Icon
+              customSize={18}
+            />
+          </div>
+        </IconComponent>
+      </Icons>
+      <div
+        className="margin--left--half alignChild--center--center"
+      >
+        <CaretDownIcon
+          customSize={12}
+        >
+          <CaretDownIcon
+            customSize={12}
+          >
+            <div
+              className="fds-icon fds-icon--s"
+              style={
+                Object {
+                  "fill": undefined,
+                  "height": "12px",
+                  "width": "12px",
+                }
+              }
+            >
+              <CaretDownIcon>
+                <svg
+                  viewBox="0 0 24 24"
+                >
+                  <defs>
+                    <path
+                      d="M19.6504952,10.763477 L12.6420926,16.6919746 C12.2690362,17.0075478 11.7225546,17.0073137 11.3497687,16.691421 L4.35353192,10.7629234 C3.93218097,10.4058774 3.88005148,9.77486204 4.23709745,9.35351109 C4.42710064,9.12928778 4.70612066,9 5.00002083,9 L19.0046602,9 C19.5569449,9 20.0046602,9.44771525 20.0046602,10 C20.0046602,10.2941997 19.8751099,10.5734726 19.6504952,10.763477 L19.6504952,10.763477 Z"
+                      id="prefix__CaretDownIcona"
+                    />
+                  </defs>
+                  <g
+                    fillRule="evenodd"
+                  >
+                    <g>
+                      <use
+                        xlinkHref="#prefix__CaretDownIcona"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </CaretDownIcon>
+            </div>
+          </CaretDownIcon>
+        </CaretDownIcon>
+      </div>
+    </a>
+  </Link>
+</Button>
+`;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+import { MenuItem } from 'components';
 import Menu from '.';
-import MenuItem from '.';
 
 // suppress CSS warnings
 jest.mock('@reach/utils', () => {

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover component matches snapshot (default props) 1`] = `
+<Popover
+  trigger={
+    <button>
+      trigger
+    </button>
+  }
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        setReferenceNode={[Function]}
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          <div>
+            <button
+              onClick={[Function]}
+            >
+              trigger
+            </button>
+          </div>
+        </div>
+      </InnerReference>
+    </Reference>
+    <Portal
+      containerInfo={<body />}
+    >
+      <CSSTransition
+        classNames=""
+        in={false}
+        timeout={0}
+        unmountOnExit={true}
+      >
+        <Transition
+          appear={false}
+          enter={true}
+          exit={true}
+          in={false}
+          mountOnEnter={false}
+          onEnter={[Function]}
+          onEntered={[Function]}
+          onEntering={[Function]}
+          onExit={[Function]}
+          onExited={[Function]}
+          onExiting={[Function]}
+          timeout={0}
+          unmountOnExit={true}
+        />
+      </CSSTransition>
+    </Portal>
+  </Manager>
+</Popover>
+`;
