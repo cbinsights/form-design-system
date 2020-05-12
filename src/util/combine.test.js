@@ -1,4 +1,4 @@
-import combine from '.'
+import combine from './combine'
 
 describe('combine', () => {
     it('combines multiple functions', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Button from 'components/interactive/Button'
-import Prompt from '.'
+import { Button } from 'components';
+import Prompt from '.';
 
 describe('Prompt component', () => {
 

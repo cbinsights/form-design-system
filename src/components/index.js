@@ -16,6 +16,7 @@ import IconButton from 'components/IconButton';
 import IconInput from 'components/IconInput';
 import InputGroup from 'components/InputGroup';
 import Menu from 'components/Menu';
+import MenuItem from 'components/MenuItem';
 import Popover from 'components/Popover';
 import Prompt from 'components/Prompt';
 import Radio from 'components/Radio';
@@ -45,6 +46,7 @@ export {
   IconInput,
   InputGroup,
   Menu,
+  MenuItem,
   Popover,
   Prompt,
   Radio,
