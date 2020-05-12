@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import TextInput, { throttleInput } from './TextInput';
+import TextInput, { throttleInput } from '.';
 
 describe('TextInput component', () => {
 

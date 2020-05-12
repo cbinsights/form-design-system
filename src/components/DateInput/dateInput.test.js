@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import DateInput, { getYearRange, isValidUserDate } from './DateInput';
+import DateInput, { getYearRange, isValidUserDate } from '.';
 
 describe('DateInput component', () => {
 

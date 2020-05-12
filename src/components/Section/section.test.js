@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Section, { getPaddingClasses, getBorderClasses } from './Section';
+import Section, { getPaddingClasses, getBorderClasses } from '.';
 
 const renderComponent = (props) => shallow(<Section {...props}>Content</Section>);
 

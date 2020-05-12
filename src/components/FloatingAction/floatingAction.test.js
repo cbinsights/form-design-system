@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import FloatingAction from './FloatingAction';
+import FloatingAction from '.';
 
 describe('FloatingAction component', () => {
   it('matches snapshot (set all props)', () => {

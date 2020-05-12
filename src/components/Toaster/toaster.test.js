@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Toaster from './Toaster';
+import Toaster from '.';
 
 describe('Toaster component', () => {
 

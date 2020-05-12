@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
-import IconInput from './IconInput';
+import IconInput from '.';
 
 describe('IconInput component', () => {
   it('matches snapshot (set all props)', () => {

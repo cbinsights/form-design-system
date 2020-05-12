@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import StackedButton from './StackedButton';
+import StackedButton from '.';
 
 describe('StackedButton component', () => {
 

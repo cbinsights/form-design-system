@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Radio from './Radio';
+import Radio from '.';
 
 // uuid will break snapshots, so we must mock it.
 jest.mock('uuid/v4', () => jest.fn().mockReturnValue('mock-universal-unique-identifier'));

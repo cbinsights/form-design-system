@@ -1,4 +1,4 @@
-import baseElement from './baseElement'
+import baseElement from '.'
 
 const Dummy = () => null
 

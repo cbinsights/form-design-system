@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Chip from './Chip';
+import Chip from '.';
 
 const renderComponent = (props) => shallow(<Chip {...props} />);
 

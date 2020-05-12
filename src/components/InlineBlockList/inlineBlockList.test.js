@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import InlineBlockList from './InlineBlockList';
+import InlineBlockList from '.';
 
 describe('Section component', () => {
 

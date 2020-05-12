@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Checkbox from './Checkbox';
+import Checkbox from '.';
 
 // uuid will break snapshots, so we must mock it.
 //

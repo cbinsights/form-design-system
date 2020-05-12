@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import WorkFasterIcon from 'lib/icons/react/WorkFasterIcon';
-import Updatable from './Updatable';
+import Updatable from '.';
 
 const MOCK_COMPONENT = (
   <div>I can be updated with an update indicator.</div>

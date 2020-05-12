@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import IconButton from './IconButton';
+import IconButton from '.';
 
 describe('ButtonGroup component', () => {
 

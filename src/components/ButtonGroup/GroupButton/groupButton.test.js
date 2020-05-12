@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import GroupButton from './GroupButton';
+import GroupButton from '.';
 
 const Icon = () => (
   <span>🌭</span>

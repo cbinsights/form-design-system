@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Avatar, { grabInitials } from './Avatar';
+import Avatar, { grabInitials } from '.';
 
 const renderComponent = (props) => shallow(<Avatar {...props} />);
 

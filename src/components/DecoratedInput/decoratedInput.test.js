@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import DecoratedInput from './DecoratedInput';
+import DecoratedInput from '.';
 
 describe('DecoratedInput component', () => {
   it('matches snapshot (set all props)', () => {

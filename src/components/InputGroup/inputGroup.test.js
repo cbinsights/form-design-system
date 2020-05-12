@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import InputGroup, { getFlexSettings } from './InputGroup';
+import InputGroup, { getFlexSettings } from '.';
 
 describe('InputGroup component', () => {
   it('matches snapshot (set all props)', () => {

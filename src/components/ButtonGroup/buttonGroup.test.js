@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ButtonGroup from './ButtonGroup';
+import ButtonGroup from '.';
 
 const renderComponent = (props) => shallow(<ButtonGroup {...props} />);
 

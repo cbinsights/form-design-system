@@ -7,10 +7,11 @@ import {
 } from "@storybook/addon-knobs";
 import { arrayToOptions, StoryWrapper, StoryItem, ImportPath, State } from "components/util/storybook";
 import Button, { THEMES } from "./";
+import { IconButton } from "components";
 import StarFilledIcon from "lib/icons/react/StarFilledIcon";
 import ButtonGroup from "components/ButtonGroup";
 
-export const blah = ['s', 'm'];
+export const SIZES = ['s', 'm'];
 
 <Meta title="Components/Button" decorators={[withKnobs]} component={Button} />
 
@@ -29,7 +30,7 @@ export const blah = ['s', 'm'];
       IconLeft={boolean("IconLeft") ? StarFilledIcon : undefined}
       IconRight={boolean("IconRight") ? StarFilledIcon : undefined}
       isFullWidth={boolean("isFullWidth", undefined)}
-      size={options("size", arrayToOptions(blah), undefined, {
+      size={options("size", arrayToOptions(SIZES), undefined, {
         display: "inline-radio"
       })}
       theme={options(
@@ -56,6 +57,7 @@ export const blah = ['s', 'm'];
 <Preview>
   <Story name="Themes">
     <StoryWrapper>
+    <IconButton Icon={StarFilledIcon} />
     {THEMES.map((theme, idx) => (
       <StoryItem key={idx}>
         <Button
@@ -184,8 +186,8 @@ some affect (applying a filter, causing a popover to be open).
 ### Sizes
 
 <Preview>
-  <Story name="Boom">
-    {blah.map(size => (
+  <Story name="Button Sizes">
+    {SIZES.map(size => (
       <div className="display--inlineBlock margin--right--half margin--bottom--half">
         <Button
           size={size}
