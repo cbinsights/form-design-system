@@ -36,12 +36,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### `Dialog` Component
 - `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc). 
 
-## [9.0] MAJOR
-
-### Changes / Additions
-
-### **BREAKING CHANGES**
-
 #### `Flex` Component
 - `wrap` prop is no longer accepted on `Flex`
 
