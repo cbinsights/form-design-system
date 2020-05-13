@@ -11,11 +11,24 @@ import Flex from 'components/layout/Flex';
 import FlexItem from 'components/layout/FlexItem';
 import IconButton from 'components/interactive/IconButton';
 
-const DATE_FORMAT = 'MM/DD/YYYY';
-const DATE_PATTERN = '[0-9/]*';
+// Is this the correct way to localize dates? No, it is not.
+// Fortunately, this is display-only.
+//
+// The I/O of DateInput is always a JS Date object, which ensures this
+// hacky formatting is internal to DateInput and will never leak out.
+const DATE_FORMAT_MAP = {
+  MDY: 'MM/DD/YYYY',
+  DMY: 'DD/MM/YYYY',
+  YMD: 'YYYY/MM/DD', // ISO-8601, the best but least used standard
+};
 
-// tests for full date string in either MM/DD/YYYY or M/D/YYYY format
-const VALID_DATE_REGEX = /^(0?[1-9]|1[0-2])[/](0?[1-9]|[12]\d|3[01])[/]\d{4}$/;
+// capture groups for M and D work with or without a leading zero.
+// Y component requires 4 digits for all formats.
+const DATE_PATTERN_MAP = {
+  MDY: /^(0?[1-9]|1[0-2])[/](0?[1-9]|[12]\d|3[01])[/]\d{4}$/,
+  DMY: /^(0?[1-9]|[12]\d|3[01])[/](0?[1-9]|1[0-2])[/]\d{4}$/,
+  YMD: /^\d{4}[/](0?[1-9]|1[0-2])[/](0?[1-9]|[12]\d|3[01])$/,
+};
 
 /**
  * Returns a range of years to show in date picker. The range will expand to include
@@ -44,12 +57,20 @@ export const getYearRange = (currentYear, pastYears, futureYears, selectedDate) 
 };
 
 /**
- * Checks user-entered date strings for validity and completeness
+ * Checks user-entered date strings for validity and completeness.
+ *
+ * moment eagerly parses dates (starting with a single number!), so
+ * we must wait for a user to finish typing something that looks like
+ * a full date.
+ *
+ * We use patterns that accept a date string with or without a leading zero.
  *
  * @param {String} inputValue
+ * @param {String} dateFormat (MDY/DMY/YMD)
  * @returns {Boolean}
  */
-export const isValidUserDate = (inputValue) => VALID_DATE_REGEX.test(inputValue);
+export const isValidUserDate = (inputValue, dateFormat) =>
+  DATE_PATTERN_MAP[dateFormat].test(inputValue);
 
 /* eslint-disable react/prop-types */
 /**
@@ -131,15 +152,28 @@ const NavArrows = ({ onPreviousClick, onNextClick }) => (
 const DateInput = ({
   futureYears = 1,
   pastYears = 40,
+  dateFormat = 'MDY',
   defaultDate,
   onDateChange,
   ...rest
 }) => {
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
   const [pickerMonth, setPickerMonth] = useState(new Date());
+  const [prevDateFormat, setPrevDateFormat] = useState(dateFormat);
   const [inputValue, setInputValue] = useState(
-    defaultDate ? moment(defaultDate).format(DATE_FORMAT) : ''
+    defaultDate ? moment(defaultDate).format(DATE_FORMAT_MAP[dateFormat]) : ''
   );
+
+  // If the dateFormat prop changes while the input has a user-entered value,
+  // we want the value to change to reflect the new dateFormat
+  if (dateFormat !== prevDateFormat && inputValue.length > 0) {
+    // convert input value back into moment obj based on previous date format
+    const parsedInputValue = moment(inputValue, prevDateFormat);
+    // reformat the date in new `dateFormat`; set as new input value
+    setInputValue(parsedInputValue.format(DATE_FORMAT_MAP[dateFormat]));
+    // store dateFormat for next render
+    setPrevDateFormat(dateFormat);
+  }
 
   const { startYear, endYear } = getYearRange(
     new Date().getFullYear(),
@@ -154,16 +188,17 @@ const DateInput = ({
 
   const handleDaySelect = (date) => {
     setSelectedDate(date);
-    setInputValue(moment(date).format(DATE_FORMAT));
+    setInputValue(moment(date).format(DATE_FORMAT_MAP[dateFormat]));
     onDateChange(date);
   };
 
   const handleInputChange = ({ target: { value } }) => {
     setInputValue(value);
 
-    if (isValidUserDate(value)) {
-      const parsedDate = moment(value, DATE_FORMAT);
-      setPickerMonth(parsedDate.toDate()); // update the picker month/year in picker as user types
+    if (isValidUserDate(value, dateFormat)) {
+      const parsedDate = moment(value, DATE_FORMAT_MAP[dateFormat]);
+      // we want the month/year in picker to update as the user types
+      setPickerMonth(parsedDate.toDate());
       handleDaySelect(parsedDate.toDate());
     }
   };
@@ -176,8 +211,8 @@ const DateInput = ({
           type="text"
           value={inputValue}
           onChange={handleInputChange}
-          placeholder={DATE_FORMAT}
-          pattern={DATE_PATTERN}
+          placeholder={DATE_FORMAT_MAP[dateFormat]}
+          pattern="[0-9/]*"
         />
       }
     >
@@ -219,6 +254,9 @@ DateInput.propTypes = {
 
   /** Default date selection - accepts date string or instance of Date */
   defaultDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+
+  /** String representing the order of date components (M=month, Y=year, D=day) */
+  dateFormat: PropTypes.oneOf(Object.keys(DATE_FORMAT_MAP)),
 };
 
 export default DateInput;
