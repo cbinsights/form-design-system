@@ -11,11 +11,12 @@ import DateInput from './DateInput';
 
 <ImportPath component={DateInput} section="forms" />
 
-Component for inputting a single date. The `input` element will accept date entry in the
-"MM/DD/YYY" format, or the user can use the calendar popover.
+Component for inputting a single date. The `input` element will accept date text entry in
+"MDY", "DMY", or "YMD" formats, or the user can use the calendar popover.
 
-The display/input format of the date is not localized - it will always use the American
-English "MM/DD/YYYY" format.
+`DateInput` will use the American English ("MM/DD/YYYY") date format by default. You can
+change the date component order for Canadian or European style dates with the `dateFormat`
+prop.
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <DateInput
