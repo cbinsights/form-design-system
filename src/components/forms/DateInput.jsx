@@ -16,7 +16,7 @@ import IconButton from 'components/interactive/IconButton';
 //
 // The I/O of DateInput is always a JS Date object, which ensures this
 // hacky formatting is internal to DateInput and will never leak out.
-const DATE_FORMAT_MAP = {
+export const DATE_FORMAT_MAP = {
   MDY: 'MM/DD/YYYY',
   DMY: 'DD/MM/YYYY',
   YMD: 'YYYY/MM/DD', // ISO-8601, the best but least used standard
@@ -70,7 +70,7 @@ export const getYearRange = (currentYear, pastYears, futureYears, selectedDate) 
  * @returns {Boolean}
  */
 export const isValidUserDate = (inputValue, dateFormat) =>
-  DATE_PATTERN_MAP[dateFormat].test(inputValue);
+  DATE_PATTERN_MAP[dateFormat || 'MDY'].test(inputValue);
 
 /* eslint-disable react/prop-types */
 /**
