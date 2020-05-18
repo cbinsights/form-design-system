@@ -4,7 +4,7 @@ import FDS from 'lib/dictionary/js/styleConstants';
 import Popover from './Popover';
 
 export const DEFAULT_WIDTH = '240px';
-export const DELAY_MS = 1000;
+export const DELAY_MS = 700;
 
 const Tooltip = ({ trigger, message, maxWidth }) => (
   <Popover

@@ -139,16 +139,20 @@ const Popover = ({
   });
 
   let triggerProps = {};
+  let hoverTimeout;
   switch (interactionMode) {
     case 'hover':
       triggerProps.onMouseEnter = () => {
         if (parseInt(delay, 10) > 0) {
-          setTimeout(handleSetIsActive, delay, true);
+          hoverTimeout = setTimeout(handleSetIsActive, delay, true);
         } else {
           handleSetIsActive(true);
         }
       };
       triggerProps.onMouseLeave = () => {
+        if (hoverTimeout) {
+          clearTimeout(hoverTimeout);
+        }
         handleSetIsActive(false);
       };
       triggerProps.onKeyUp = (e) => {
