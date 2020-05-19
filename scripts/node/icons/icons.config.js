@@ -13,20 +13,24 @@ const PATH_ICONS_LIB = `${LIB_ROOT}/icons/`;
 module.exports = {
   // Options for exporting icons from sketch
   sketchConfig: {
-    output: `${ICONS_ROOT}/svg`,
     pageName: 'Icons',
     slicePrefix: 'icon/',
   },
 
+  // paths used by build scripts
   buildConfig: {
-    raw: {
-      input: `${ICONS_ROOT}/svg`,
-      output: `${PATH_ICONS_LIB}/raw`,
+    svg: {
+      src: `${ICONS_ROOT}/svg`,
+      lib: `${PATH_ICONS_LIB}/svg`,
+    },
+    png: {
+      src: `${ICONS_ROOT}/png`,
+      lib: `${PATH_ICONS_LIB}/png`,
     },
     react: {
-      input: `${ICONS_ROOT}/svg`,
+      src: `${ICONS_ROOT}/svg`,
+      lib: `${PATH_ICONS_LIB}/react`,
       template: `${ICONS_ROOT}/templates/withFdsIconWrapper.jsx`,
-      output: `${PATH_ICONS_LIB}/react`,
     },
     docs: {
       input: `${PATH_ICONS_LIB}/raw`,
