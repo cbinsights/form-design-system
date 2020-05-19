@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [8.4] Add delay to `Tooltip`
+
+- Adds support for `delay` prop in base `Popover` component
+- Adds a `1000`ms hover delay to `Tooltip`
+
 ## [8.3] DateInput date formatting
 
 - Adds `dateFormat` prop to `DateInput` to allow different date order (MDY, DMY, YMD)
