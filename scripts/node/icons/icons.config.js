@@ -33,7 +33,7 @@ module.exports = {
       template: `${ICONS_ROOT}/templates/withFdsIconWrapper.jsx`,
     },
     docs: {
-      input: `${PATH_ICONS_LIB}/raw`,
+      input: `${PATH_ICONS_LIB}/svg`,
       template: `${ICONS_ROOT}/templates/docs.hbs`,
       assets: `${ICONS_ROOT}/templates/assets/`,
       css: `${ICONS_ROOT}/style/icons.css`,

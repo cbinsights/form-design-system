@@ -1,3 +1,7 @@
+/**
+ * Optimizes SVG files and builds to FDS `lib`
+ */
+
 /* eslint-disable no-console */
 const fs = require('fs');
 const path = require('path');
@@ -6,8 +10,8 @@ const SVGO = require('svgo');
 const { svgoOptions, svgoPlugins } = require('./helpers/svgoConfig');
 const { buildConfig } = require('./icons.config');
 
-if (!fs.existsSync(buildConfig.raw.output)) {
-  fs.mkdirSync(buildConfig.raw.output);
+if (!fs.existsSync(buildConfig.svg.lib)) {
+  fs.mkdirSync(buildConfig.svg.lib);
 }
 
 /**
@@ -27,13 +31,13 @@ const optimizeFile = (filepath) => {
   })
     .optimize(data, { filepath })
     .then((result) => {
-      fs.writeFileSync(`${buildConfig.raw.output}/${fileName}`, result.data);
+      fs.writeFileSync(`${buildConfig.svg.lib}/${fileName}`, result.data);
     });
 };
 
-glob(`${buildConfig.raw.input}/**/*.svg`, {}, (error, files) => {
+glob(`${buildConfig.svg.src}/**/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
   console.info(`Optimizing ${files.length} SVG files...`);
   files.forEach(optimizeFile);
-  console.info(`Successfully optimized ${files.length} files`);
+  console.info(`Successfully optimized ${files.length} SVG files`);
 });
