@@ -27,6 +27,15 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [8.5] PNG Icons
+
+- Adds `lib/icons/png` PNG distribution for icons
+
+### **Deprecations**
+
+- `lib/icons/raw` is now deprecated. It will be removed in a future major release.
+  please use `lib/icons/svg` when importing raw SVG files.
+
 ## [8.4] Add delay to `Tooltip`
 
 - Adds support for `delay` prop in base `Popover` component
