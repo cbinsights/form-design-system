@@ -9,14 +9,14 @@ const { buildConfig } = require('./icons.config');
 
 const FDS_HOC_NAME = 'withFdsIconWrapper';
 
-if (!fs.existsSync(buildConfig.react.output)) {
-  fs.mkdirSync(buildConfig.react.output);
+if (!fs.existsSync(buildConfig.react.lib)) {
+  fs.mkdirSync(buildConfig.react.lib);
 }
 
 // copy our HOC for icon components to the build dir
 fs.copyFileSync(
   buildConfig.react.template,
-  path.join(buildConfig.react.output, `${FDS_HOC_NAME}.jsx`)
+  path.join(buildConfig.react.lib, `${FDS_HOC_NAME}.jsx`)
 );
 
 /**
@@ -64,11 +64,11 @@ const svgToComponent = (filepath) => {
   svgr(svgData, getSvgrConfig(iconName), {
     componentName: iconName,
   }).then((component) => {
-    fs.writeFileSync(`${buildConfig.react.output}/${iconName}.jsx`, component);
+    fs.writeFileSync(`${buildConfig.react.lib}/${iconName}.jsx`, component);
   });
 };
 
-glob(`${buildConfig.react.input}/*.svg`, {}, (error, files) => {
+glob(`${buildConfig.react.src}/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
   console.info(`Creating ${files.length} react components`);
   files.forEach(svgToComponent);
