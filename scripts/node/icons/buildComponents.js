@@ -9,10 +9,6 @@ const { buildConfig } = require('./icons.config');
 
 const FDS_HOC_NAME = 'withFdsIconWrapper';
 
-if (!fs.existsSync(buildConfig.react.lib)) {
-  fs.mkdirSync(buildConfig.react.lib);
-}
-
 // copy our HOC for icon components to the build dir
 fs.copyFileSync(
   buildConfig.react.template,

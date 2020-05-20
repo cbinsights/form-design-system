@@ -11,10 +11,6 @@ const path = require('path');
 const glob = require('glob');
 const { buildConfig } = require('./icons.config');
 
-if (!fs.existsSync(buildConfig.png.lib)) {
-  fs.mkdirSync(buildConfig.png.lib);
-}
-
 glob(`${buildConfig.png.src}/**/*.png`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
   console.info(`Copying ${files.length} PNG files...`);

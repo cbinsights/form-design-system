@@ -27,7 +27,7 @@ Prop        | Type     | Default | Description
 
 #### As raw SVG
 ```
-import cloudSvg from '@cbinsights/fds/lib/svg/Cloud.svg';
+import cloudSvg from '@cbinsights/fds/lib/icons/svg/Cloud.svg';
 ```
 
 #### As raw PNG
@@ -39,7 +39,7 @@ The base icon name is scaled to 1x. Specify higher res images with the `@scale` 
 - `Cloud@2x.png` (2x)
 
 ```
-import cloudPng from '@cbinsights/fds/lib/png/Cloud@2x.png';
+import cloudPng from '@cbinsights/fds/lib/icons/png/Cloud@2x.png';
 ```
 
 

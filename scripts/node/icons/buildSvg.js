@@ -10,10 +10,6 @@ const SVGO = require('svgo');
 const { svgoOptions, svgoPlugins } = require('./helpers/svgoConfig');
 const { buildConfig } = require('./icons.config');
 
-if (!fs.existsSync(buildConfig.svg.lib)) {
-  fs.mkdirSync(buildConfig.svg.lib);
-}
-
 /**
  * @param {String} filepath
  * @returns {undefined}
@@ -32,6 +28,7 @@ const optimizeFile = (filepath) => {
     .optimize(data, { filepath })
     .then((result) => {
       fs.writeFileSync(`${buildConfig.svg.lib}/${fileName}`, result.data);
+      fs.writeFileSync(`${buildConfig.svg.deprecatedLib}/${fileName}`, result.data);
     });
 };
 

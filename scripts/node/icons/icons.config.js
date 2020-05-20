@@ -22,6 +22,7 @@ module.exports = {
     svg: {
       src: `${ICONS_ROOT}/svg`,
       lib: `${PATH_ICONS_LIB}/svg`,
+      deprecatedLib: `${PATH_ICONS_LIB}/raw`, // will be removed later
     },
     png: {
       src: `${ICONS_ROOT}/png`,

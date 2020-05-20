@@ -8,6 +8,7 @@ mkdir -p $DIR_LIB
 mkdir -p $DIR_LIB/dictionary
 mkdir -p $DIR_LIB/components
 mkdir -p $DIR_LIB/icons
+mkdir -p $DIR_LIB/icons/raw
 mkdir -p $DIR_LIB/icons/svg
 mkdir -p $DIR_LIB/icons/png
 mkdir -p $DIR_LIB/icons/react
