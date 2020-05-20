@@ -27,11 +27,19 @@ Prop        | Type     | Default | Description
 
 #### As raw SVG
 ```
-import cloudSvg from '@cbinsights/fds/lib/raw/Cloud.svg';
+import cloudSvg from '@cbinsights/fds/lib/svg/Cloud.svg';
+```
 
-const LookAtCloudComponent = () => {
-  <p>Check out this cloud: {cloudSvg}</p>
-}
+#### As raw PNG
+
+FDS provides PNGs scaled to 1x, 2x, 3x, and 4x.
+The base icon name is scaled to 1x. Specify higher res images with the `@scale` suffix:
+
+- `Cloud.png` (1x)
+- `Cloud@2x.png` (2x)
+
+```
+import cloudPng from '@cbinsights/fds/lib/png/Cloud@2x.png';
 ```
 
 

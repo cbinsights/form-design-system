@@ -45,10 +45,17 @@ export const Icon = ({ name, svg }) => {
       ['`color`', '`String`', '`COLOR_CHARCOAL`', 'Color of `fill` for SVG'],
       ['`size`', 'One of: `\'xs\' | \'s\' | \'m\' | \'l\' | \'xl\'`', 's', 'Standard media size of icon'],
       ['`customSize`', '`Number`', '`-`', 'Sets a non-standard size for the icon. Prefer using the size prop.'],
-  ]} 
+  ]}
 />
 
-Click on an import statement to copy it.
+
+Raw `svg` files can be imported from path `lib/svg/<IconName>.svg`.
+Raw `png` fils can be imported from path `lib/png/<IconName>[@scale].png`.
+
+For more details, see the [icons
+README](https://github.com/cbinsights/form-design-system/tree/master/src/icons#usage).
+
+**Clicking on an icon below will copy the React component import statement.**
 
 <ul className="iconList">
   {{#each this}}
