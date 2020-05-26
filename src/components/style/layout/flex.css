@@ -58,10 +58,6 @@
   align-items: flex-end;
 }
 
-.flex--wrap {
-  flex-wrap: wrap;
-}
-
 /* Flex child */
 .flexItem {
   box-sizing: border-box;

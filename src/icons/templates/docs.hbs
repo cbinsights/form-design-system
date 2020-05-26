@@ -39,16 +39,20 @@ export const Icon = ({ name, svg }) => {
 
 # Icons
 
+FDS provides an icon set in `svg`, `png`, and React component formats. This page covers
+React component usage. For more details about using other formats please see the [icons
+README](https://github.com/cbinsights/form-design-system/tree/master/src/icons#usage).
+
 <TableLayout
   headers={['Prop', 'Type', 'Default', 'Description']}
   rows={[
       ['`color`', '`String`', '`COLOR_CHARCOAL`', 'Color of `fill` for SVG'],
       ['`size`', 'One of: `\'xs\' | \'s\' | \'m\' | \'l\' | \'xl\'`', 's', 'Standard media size of icon'],
       ['`customSize`', '`Number`', '`-`', 'Sets a non-standard size for the icon. Prefer using the size prop.'],
-  ]} 
+  ]}
 />
 
-Click on an import statement to copy it.
+Clicking on an icon below will copy the import statement.
 
 <ul className="iconList">
   {{#each this}}

@@ -10,7 +10,7 @@
  */
 const { exec } = require('child_process');
 const path = require('path');
-const { sketchConfig } = require('./icons.config');
+const { sketchConfig, buildConfig } = require('./icons.config');
 const cleanExports = require('./helpers/cleanExports');
 
 if (!process.argv[2]) {
@@ -18,7 +18,6 @@ if (!process.argv[2]) {
 }
 
 const PATH_SKETCH_FILE = path.normalize(process.argv[2]);
-const PATH_SVG_DEST = sketchConfig.output;
 const SKETCH_PAGE_NAME = sketchConfig.pageName;
 const SKETCH_SLICE_PREFIX = sketchConfig.slicePrefix;
 
@@ -59,6 +58,9 @@ const getSlicesByPage = (sketchData, pageName, slicePrefix) =>
     .slices.filter((slice) => slice.name.includes(slicePrefix))
     .map(({ id, name }) => ({ id, name }));
 
+//
+// Commands to inspect and export from the sketch file
+//
 exec(`sketchtool list slices "${PATH_SKETCH_FILE}"`, (error, result) => {
   if (error) throw new Error(`exec error: ${error}`);
 
@@ -77,20 +79,37 @@ exec(`sketchtool list slices "${PATH_SKETCH_FILE}"`, (error, result) => {
     );
   }
 
-  const sketchtoolCommand = [
+  const commandBase = [
     `sketchtool export slices "${PATH_SKETCH_FILE}"`,
-    '--scales=1.0',
-    `--output=${PATH_SVG_DEST}`,
-    '--formats=svg',
     `--items=${sliceIds}`,
-  ].join(' ');
+  ];
 
-  // export all slices to SVG files
-  exec(sketchtoolCommand, (exportError) => {
+  // export SVG files
+  exec([
+    ...commandBase,
+    ...[
+      '--scales=1.0',
+      '--formats=svg',
+      `--output=${buildConfig.svg.src}`,
+    ],
+  ].join(' '), (exportError) => {
     if (error) throw new Error(`exec error: ${exportError}`);
-    console.info('Slices exported');
-
-    // clean up the messy exports from sketch
-    cleanExports();
+    console.info('SVG files exported');
+    cleanExports('svg');
   });
+
+  // export PNG files
+  exec([
+    ...commandBase,
+    ...[
+      '--scales=1,2,3,4',
+      '--formats=png',
+      `--output=${buildConfig.png.src}`,
+    ],
+  ].join(' '), (exportError) => {
+    if (error) throw new Error(`exec error: ${exportError}`);
+    console.info('PNG files exported');
+    cleanExports('png');
+  });
+
 });

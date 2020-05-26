@@ -39,7 +39,6 @@ const Flex = ({
   direction = 'row',
   reverse,
   justify,
-  wrap,
   noGutters,
   children,
 }) => {
@@ -54,7 +53,6 @@ const Flex = ({
       [JustifyPropMap[justify]]: justify,
     },
     {
-      'flex--wrap': wrap,
       'flex--noGutters': noGutters,
     }
   );
@@ -74,9 +72,6 @@ Flex.propTypes = {
 
   /** When set, gutters are removed from `FlexItem` children */
   noGutters: PropTypes.bool,
-
-  /** When set, `FlexItem` children are allowed to wrap */
-  wrap: PropTypes.bool,
 
   /** When set, `FlexItem` order is rendered in reverse */
   reverse: PropTypes.bool,

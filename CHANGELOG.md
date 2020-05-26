@@ -26,6 +26,36 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [9.0] MAJOR
+
+### **BREAKING CHANGES**
+
+#### `MenuButton` Component
+- Now only accepts a `button` element, or a component that renders a `button` element as a trigger
+
+#### `Dialog` Component
+- `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc). 
+
+#### `Flex` Component
+- `wrap` prop is no longer accepted on `Flex`
+
+## [8.5] PNG Icons
+
+- Adds `lib/icons/png` PNG distribution for icons
+
+### **Deprecations**
+
+- `lib/icons/raw` is now deprecated. It will be removed in a future major release.
+  please use `lib/icons/svg` when importing raw SVG files.
+
+## [8.4] Add delay to `Tooltip`
+
+- Adds support for `delay` prop in base `Popover` component
+- Adds a `1000`ms hover delay to `Tooltip`
+
+## [8.3] DateInput date formatting
+
+- Adds `dateFormat` prop to `DateInput` to allow different date order (MDY, DMY, YMD)
 
 breaking: countdown button no longer accessible
 
