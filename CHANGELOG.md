@@ -66,8 +66,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - Adds `dateFormat` prop to `DateInput` to allow different date order (MDY, DMY, YMD)
 
-breaking: countdown button no longer accessible
-
 ## [8.2] DateInput rest props and IconButton role
 
 - Adds rest prop spread onto the Date Input to allow input specific props
