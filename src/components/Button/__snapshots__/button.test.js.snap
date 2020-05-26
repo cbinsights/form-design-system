@@ -81,7 +81,7 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
         <CaretDownIcon
           customSize={12}
         >
-          <CaretDownIcon
+          <WorldIcon
             customSize={12}
           >
             <div
@@ -116,7 +116,7 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
                 </svg>
               </CaretDownIcon>
             </div>
-          </CaretDownIcon>
+          </WorldIcon>
         </CaretDownIcon>
       </div>
     </a>

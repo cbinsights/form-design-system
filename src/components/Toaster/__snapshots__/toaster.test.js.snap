@@ -241,7 +241,7 @@ exports[`Toaster component matches snapshot 1`] = `
                                       color="#4cabce"
                                       size="l"
                                     >
-                                      <CaretDownIcon
+                                      <WorldIcon
                                         color="#4cabce"
                                         size="l"
                                       >
@@ -277,7 +277,7 @@ exports[`Toaster component matches snapshot 1`] = `
                                             </svg>
                                           </InformationIcon>
                                         </div>
-                                      </CaretDownIcon>
+                                      </WorldIcon>
                                     </InformationIcon>
                                   </div>
                                 </div>
@@ -336,7 +336,7 @@ exports[`Toaster component matches snapshot 1`] = `
                                               <DenyIcon
                                                 customSize={18}
                                               >
-                                                <CaretDownIcon
+                                                <WorldIcon
                                                   customSize={18}
                                                 >
                                                   <div
@@ -365,7 +365,7 @@ exports[`Toaster component matches snapshot 1`] = `
                                                       </svg>
                                                     </DenyIcon>
                                                   </div>
-                                                </CaretDownIcon>
+                                                </WorldIcon>
                                               </DenyIcon>
                                             </span>
                                           </button>
