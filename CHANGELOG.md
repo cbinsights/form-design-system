@@ -48,6 +48,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### `Flex` Component
 - `wrap` prop is no longer accepted on `Flex`
 
+#### No longer available components
+- `CountdownButton` (only used by Toast)
+- `DecoratedInput` (use TextInput instead)
+- `IconInput` (use TextInput instead)
+
+#### `CountdownButton` Component removed
+- No longer accessible
+
 ## [8.5] PNG Icons
 
 - Adds `lib/icons/png` PNG distribution for icons
@@ -66,7 +74,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - Adds `dateFormat` prop to `DateInput` to allow different date order (MDY, DMY, YMD)
 
-breaking: countdown button no longer accessible
 
 ## [8.2] DateInput rest props and IconButton role
 

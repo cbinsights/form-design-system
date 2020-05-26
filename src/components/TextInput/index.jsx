@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { throttle, debounce } from 'throttle-debounce';
-import IconInput from 'components/IconInput';
-import DecoratedInput from 'components/DecoratedInput';
 import cx from 'classnames';
+import IconInput from './IconInput';
+import DecoratedInput from './DecoratedInput';
 
 export const throttleValue = 500;
 

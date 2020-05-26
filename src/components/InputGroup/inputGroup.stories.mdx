@@ -1,7 +1,6 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import DecoratedInput from 'components/DecoratedInput';
 import SearchIcon from 'lib/icons/react/SearchIcon';
-import IconInput from '.';
+import TextInput from 'components/TextInput';
 import InputGroup from '.';
 
 import { ImportPath } from 'components/util/storybook';
@@ -83,9 +82,7 @@ In this example, the first and last inputs are set to `grow` and the middle inpu
 <Preview>
   <Story name="Custom grow/shrink">
     <InputGroup flexSettings={['grow', 'shrink', 'grow']}>
-      <DecoratedInput before="$">
-        <input type="number" defaultValue="100" />
-      </DecoratedInput>
+      <TextInput before="$" type="number" defaultValue="100" />
       <select name="unit">
         <option value="1">Million</option>
         <option value="2">Thousand</option>
@@ -95,45 +92,27 @@ In this example, the first and last inputs are set to `grow` and the middle inpu
   </Story>
 </Preview>
 
-### With side labels
+### Other examples
 
 <Preview>
-  <Story name="With side labels">
+  <Story name="Other examples">
     <React.Fragment>
       <label>Valuation</label>
       <InputGroup>
-        <DecoratedInput before="$">
-          <input type="number" defaultValue="666" />
-        </DecoratedInput>
+        <TextInput before="$" type="number" defaultValue="666" />
         <select name="unit">
           <option value="1">Million</option>
           <option value="2">Thousand</option>
         </select>
       </InputGroup>
-      <p className="margin--top">
-        You can place a <code>DecoratedInput</code> inside <code>InputGroup</code>
-      </p>
-    </React.Fragment>
-  </Story>
-</Preview>
-
-### With IconInput
-
-<Preview>
-  <Story name="With IconInput">
-    <React.Fragment>
+      <div className="margin--top--half" />
       <InputGroup>
-        <IconInput IconLeft={SearchIcon}>
-          <input type="search" placeholder="Search" />
-        </IconInput>
+        <TextInput IconLeft={SearchIcon} placeholder="Search" type="search" />
         <select name="unit">
           <option value="1">Companies</option>
           <option value="2">Investors</option>
         </select>
       </InputGroup>
-      <p className="margin--top">
-        You can place an <code>IconInput</code> inside <code>InputGroup</code>
-      </p>
     </React.Fragment>
   </Story>
 </Preview>
