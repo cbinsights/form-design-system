@@ -9,11 +9,7 @@ import {
 } from '@storybook/addon-knobs';
 import { arrayToOptions, Info, ImportPath } from 'components/util/storybook';
 
-import Popover from 'components/Popover';
-import Button from 'components/Button';
-import Dialog from 'components/Dialog';
-import Menu from 'components/Menu';
-import MenuItem from 'components/MenuItem';
+import { Popover, Button, Dialog, Menu, MenuItem } from 'components';
 
 <Meta title="Examples/Stacking" />
 
@@ -52,6 +48,7 @@ export const MenuExample = () => (
         return (
             <>
             <button onClick={showDialog}>Open Dialog</button>
+            <MenuExample />
             <MenuExample />
             <PopoverExample />
             <Dialog
