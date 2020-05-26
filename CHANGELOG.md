@@ -28,7 +28,16 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ---
 ## [9.0] MAJOR
 
+### Changes / Additions
+
+- Components can be imported via a destructure pattern. `import { Button, IconButton } from '@cbinsights/fds/lib/components'`
+- FDS Icons (only React) can be imported via a destructure pattern. `import { AddIcon, CaretDownIcon } from '@cbinsights/fds/lib/icons/react'`
+
 ### **BREAKING CHANGES**
+
+#### Component reorganization
+- The following folders no longer exist: `media`, `interactive`, `layout` `forms`, `modals`, `popovers`
+- All components now live next to one another. This is going to break tons of paths!
 
 #### `MenuButton` Component
 - Now only accepts a `button` element, or a component that renders a `button` element as a trigger
