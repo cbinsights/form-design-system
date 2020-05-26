@@ -80,7 +80,7 @@ const buildDestructured = (files) => {
 glob(`${buildConfig.react.src}/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
   console.info(`Creating ${files.length} react components`);
-  fs.writeFileSync(`${buildConfig.react.output}/index.js`, buildDestructured(files))
+  fs.writeFileSync(`${buildConfig.react.lib}/index.js`, buildDestructured(files))
   files.forEach(svgToComponent);
   console.info(`Success - ${files.length} react components created`);
 });
