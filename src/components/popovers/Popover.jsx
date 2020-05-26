@@ -26,6 +26,12 @@ export const getPopperPlacement = (position, alignment) => {
 
 let overflowStyle = null;
 
+/**
+ * Hook that disables scroll on a DOM node when `isDisabled` is true.
+ *
+ * @param {Object} disableScrollRef - react ref to DOM node
+ * @param {Boolean} isDisabled
+ */
 const useDisableScroll = (disableScrollRef, isDisabled) => {
   useEffect(() => {
     if (disableScrollRef) {
@@ -40,6 +46,13 @@ const useDisableScroll = (disableScrollRef, isDisabled) => {
   }, [disableScrollRef, isDisabled]);
 };
 
+/**
+ * Hook that invokes `closeCallback` if a popover is active when a user scrolls.
+ *
+ * @param {Object} closeOnScrollRef - react ref to scrolling DOM node
+ * @param {Boolean} isActive - if the popover is currently open/active
+ * @param {Boolean} closeCallback - function that closes the popover
+ */
 const useCloseOnScroll = (closeOnScrollRef, isActive, closeCallback) => {
   useEffect(() => {
     if (closeOnScrollRef && isActive) {
@@ -62,6 +75,7 @@ const Popover = ({
   position = 'auto',
   alignment = 'start',
   distance = 4,
+  delay = 0,
   onOpen = () => {},
   onClose = () => {},
   trigger,
@@ -125,12 +139,20 @@ const Popover = ({
   });
 
   let triggerProps = {};
+  let hoverTimeout;
   switch (interactionMode) {
     case 'hover':
       triggerProps.onMouseEnter = () => {
-        handleSetIsActive(true);
+        if (parseInt(delay, 10) > 0) {
+          hoverTimeout = setTimeout(handleSetIsActive, delay, true);
+        } else {
+          handleSetIsActive(true);
+        }
       };
       triggerProps.onMouseLeave = () => {
+        if (hoverTimeout) {
+          clearTimeout(hoverTimeout);
+        }
         handleSetIsActive(false);
       };
       triggerProps.onKeyUp = (e) => {
@@ -276,6 +298,9 @@ Popover.propTypes = {
 
   /** Offset distance from trigger. */
   distance: PropTypes.number,
+
+  /** Delay in milliseconds for popover to trigger (hover mode only) */
+  delay: PropTypes.number,
 
   /** Name of transition for popover content */
   transitionName: PropTypes.oneOf(['GrowFast']),
