@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import baseElement from 'util/baseElement';
-import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
+import { CaretDownIcon } from 'lib/icons/react';
 
 export const SIZES = ['s', 'm'];
 export const THEMES = ['blue', 'outlined', 'ghost'];

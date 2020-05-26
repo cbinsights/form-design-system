@@ -68,9 +68,23 @@ const svgToComponent = (filepath) => {
   });
 };
 
+const buildDestructured = (files) => {
+  let importOutput = '';
+  let exportOutput = '\nexport {\n'
+  files.forEach(file => {
+    const name = path.basename(file, '.svg');
+    importOutput += `import ${name}Icon from './${name}Icon';\n`
+    exportOutput += `  ${name}Icon,\n`
+  })
+  exportOutput += '}'
+
+  return importOutput + exportOutput;
+}
+
 glob(`${buildConfig.react.input}/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
   console.info(`Creating ${files.length} react components`);
+  fs.writeFileSync(`${buildConfig.react.output}/index.js`, buildDestructured(files))
   files.forEach(svgToComponent);
   console.info(`Success - ${files.length} react components created`);
 });
