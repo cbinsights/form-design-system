@@ -24,8 +24,18 @@ describe('Dialog', () => {
       />
     )
 
+    /* Test that content renders properly */	
+    /* ================================== */	
+    expect(screen.getByText('content')).toBeTruthy();	
+    expect(screen.getByText('footerContent')).toBeTruthy();	
+    expect(screen.getByText('title')).toBeTruthy();
+
+    /* Tests that onDismiss gets fired correctly */	
+    /* ========================================= */	
     fireEvent.click(screen.getByLabelText('Close'));
-    fireEvent.keyDown(screen.getByText('content'), { key: 'Escape', code: 27 })
+    // Pressing esc anywhere in dialog should trigger a close	
+    fireEvent.keyDown(screen.getByText('content'), { key: 'Escape', code: 27 });
+    expect(dismiss).toHaveBeenCalledTimes(2)
 
     /* Tests styles */
     /* ============ */
