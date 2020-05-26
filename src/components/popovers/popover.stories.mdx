@@ -1,5 +1,5 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import {
   withKnobs,
   optionsKnob as options,
@@ -65,7 +65,7 @@ Base popover component. Bring your own trigger and popover content.
     trigger={<div className="margin--bottom"><Button label="Click Me" /></div>}
   >
     <div
-      className="padding--all" 
+      className="padding--all"
       style={{ outline: '3px dotted red', background: "#FFFFFF" }}
     >
       popover content
@@ -113,23 +113,34 @@ Base popover component. Bring your own trigger and popover content.
 
 ## Controlled popover
 
+<Info type="info">
+  The popover will still close by itself when there is a click outside of the popover or the escape
+  key is pressed. You can use the `onClose` call to synchronize your controlling state.
+</Info>
+
 <Preview>
   <Story name="Controlled popover" height={100}>
-    <Popover
-      trigger={<button>Open popover</button>}
-      position="bottom"
-      alignment="start"
-      interactionMode="controlled"
-      isOpen={true}
-      distance={8}
-    >
-      <div className="bgColor--white rounded--all elevation--2 padding--all">
-        <h3 className="type--head3">Look at me</h3>
-        <p>
-          <em>i am the popover</em>
-        </p>
-      </div>
-    </Popover>
+    {() => {
+      const [controlledIsOpen, setControlled] = useState(true);
+      return (
+        <Popover
+          trigger={<button onClick={() => setControlled(true)}>Open popover</button>}
+          position="bottom"
+          alignment="start"
+          interactionMode="controlled"
+          isOpen={controlledIsOpen}
+          onClose={() => setControlled(false)}
+          distance={8}
+        >
+          <div className="bgColor--white rounded--all elevation--2 padding--all">
+            <h3 className="type--head3">Look at me</h3>
+            <p>
+              <em>i am the popover</em>
+            </p>
+          </div>
+        </Popover>
+      )
+    }}
   </Story>
 </Preview>
 
@@ -140,8 +151,8 @@ If you'd like to disable scrolling of some element when a popover is open you ca
 
 <Preview>
   <Story name="Disable Scrolling">
-    {() => { 
-      const containerEl = useRef(null); 
+    {() => {
+      const containerEl = useRef(null);
       return (
         <div
           ref={containerEl}
@@ -175,8 +186,8 @@ If you'd like the ability to close the popover once the user scrolls some elemen
 
 <Preview>
   <Story name="Close on Scroll">
-    {() => { 
-      const containerEl = useRef(null); 
+    {() => {
+      const containerEl = useRef(null);
       return (
         <div
           ref={containerEl}
