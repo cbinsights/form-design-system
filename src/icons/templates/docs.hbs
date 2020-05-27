@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 import { useClipboard, useToggleHover } from 'components/util/storybook'
-import cx from 'classnames';
+import cc from 'classcat';
 import { TableLayout } from "components/util/Table"
 
 export const importPath = iconName => (
@@ -14,10 +14,10 @@ export const Icon = ({ name, svg }) => {
     <li>
       <div
         onClick={() => copyToClipboard(importPath(name))}
-        className={cx('rounded--all', {
+        className={cc([{
           'elevation--1': !isHovered,
           'elevation--3': isHovered,
-        })}
+        }, 'rounded--all'])}
         onMouseEnter={toggleHover}
         onMouseLeave={toggleHover}
       >

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 
 import FDS from 'lib/dictionary/js/styleConstants';
 
@@ -9,10 +9,13 @@ import FDS from 'lib/dictionary/js/styleConstants';
  * @returns {ReactElement}
  */
 const IconInput = ({ IconLeft, IconRight, children }) => {
-  const classNames = cx('fdsIconInput', {
-    'fdsIconInput--hasStartIcon': Boolean(IconLeft),
-    'fdsIconInput--hasEndIcon': Boolean(IconRight),
-  });
+  const classNames = cc([
+    {
+      'fdsIconInput--hasStartIcon': Boolean(IconLeft),
+      'fdsIconInput--hasEndIcon': Boolean(IconRight),
+    },
+    'fdsIconInput',
+  ]);
 
   return (
     <div className={classNames}>

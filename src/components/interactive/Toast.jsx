@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import FDS from 'lib/dictionary/js/styleConstants';
 import CheckIcon from 'lib/icons/react/CheckIcon';
 import InformationIcon from 'lib/icons/react/InformationIcon';
@@ -26,7 +26,7 @@ const Toast = ({
   onAction,
   dismissToast /* Passed from Toaster */,
 }) => {
-  const classNames = cx('toast', `toast--${type}`);
+  const classNames = cc(['toast', `toast--${type}`]);
 
   const icon = {
     info: <InformationIcon size="l" color={FDS.COLOR_AQUA} />,

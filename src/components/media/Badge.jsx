@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 
 export const SIZES = ['xs', 's'];
 
 const Badge = ({ label, size = 's', ...rest }) => (
-  <div {...rest} className={cx('fdsBadge', 'wrap--singleLine', `fdsBadge--${size}`)}>
+  <div {...rest} className={cc(['fdsBadge', 'wrap--singleLine', `fdsBadge--${size}`])}>
     {label}
   </div>
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import cx from 'classnames';
+import cc from 'classcat';
 import PropTypes from 'prop-types';
 
 /**
@@ -43,10 +43,7 @@ const Flex = ({
   noGutters,
   children,
 }) => {
-  const classNames = cx(
-    'flex',
-    AlignPropMap[align],
-    DirectionPropMap[direction],
+  const classNames = cc([
     {
       [`flex--${direction}--reverse`]: reverse,
     },
@@ -56,8 +53,11 @@ const Flex = ({
     {
       'flex--wrap': wrap,
       'flex--noGutters': noGutters,
-    }
-  );
+    },
+    'flex',
+    AlignPropMap[align],
+    DirectionPropMap[direction],
+  ]);
 
   return <div className={classNames}>{children}</div>;
 };

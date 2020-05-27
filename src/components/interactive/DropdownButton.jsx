@@ -1,15 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
 
 const DropdownButton = ({ children, isFullWidth = false, isActive, ...rest }) => (
   <button
     {...rest}
-    className={cx('display--inlineFlex', 'fdsDropdown', 'border--focus', 'rounded--all', {
-      'fdsDropdown--isFullWidth': isFullWidth,
-      'fdsDropdown--isActive': isActive,
-    })}
+    className={cc([
+      {
+        'fdsDropdown--isFullWidth': isFullWidth,
+        'fdsDropdown--isActive': isActive,
+      },
+      'display--inlineFlex',
+      'fdsDropdown',
+      'border--focus',
+      'rounded--all',
+    ])}
   >
     <div>{children}</div>
     <div className="margin--left--half alignChild--center--center">

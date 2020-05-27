@@ -1,7 +1,7 @@
 import React from 'react';
 import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 
 import CheckEmptyIcon from 'lib/icons/react/CheckEmptyIcon';
 import CheckFilledIcon from 'lib/icons/react/CheckFilledIcon';
@@ -26,7 +26,7 @@ const Checkbox = ({
 
   return (
     <div
-      className={cx('fdsCheckable fdsCheckbox', { 'fdsCheckable--disabled': disabled })}
+      className={cc([{ 'fdsCheckable--disabled': disabled }, 'fdsCheckable fdsCheckbox'])}
     >
       <input
         type="checkbox"

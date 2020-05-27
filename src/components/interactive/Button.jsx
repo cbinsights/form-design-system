@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
 
@@ -30,9 +30,13 @@ const Button = ({
       <>
         {Icon && (
           <div
-            className={cx('alignChild--center--center', `fdsButton-icon--${direction}`, {
-              'fdsButton--hidden': isLoading,
-            })}
+            className={cc([
+              {
+                'fdsButton--hidden': isLoading,
+              },
+              'alignChild--center--center',
+              `fdsButton-icon--${direction}`,
+            ])}
           >
             <Icon customSize={size === 's' ? 16 : 18} />
           </div>
@@ -55,7 +59,14 @@ const Button = ({
   return (
     <Element
       {...rest}
-      className={cx(
+      className={cc([
+        {
+          'fdsButton--isDestructive': isDestructive,
+          'fdsButton--loading': isLoading,
+          'fdsButton--disabled': disabled,
+          'fdsButton--isFullWidth': isFullWidth,
+          'fdsButton--isActive': isActive && !disabled,
+        },
         'fdsButton',
         'fontStyle--caps',
         'display--inlineFlex',
@@ -65,17 +76,10 @@ const Button = ({
         'transition--default',
         `fdsButton--${size}`,
         `fdsButton--${theme}`,
-        {
-          'fdsButton--isDestructive': isDestructive,
-          'fdsButton--loading': isLoading,
-          'fdsButton--disabled': disabled,
-          'fdsButton--isFullWidth': isFullWidth,
-          'fdsButton--isActive': isActive && !disabled,
-        }
-      )}
+      ])}
       disabled={disabled && Element === 'button'}
     >
-      <span className={cx('fdsButton-label', { 'fdsButton--hidden': isLoading })}>
+      <span className={cc([{ 'fdsButton--hidden': isLoading }, 'fdsButton-label'])}>
         {label}
       </span>
       <Icons />

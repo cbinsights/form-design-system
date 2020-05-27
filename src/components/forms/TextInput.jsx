@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { throttle, debounce } from 'throttle-debounce';
 import IconInput from 'components/forms/IconInput';
 import DecoratedInput from 'components/forms/DecoratedInput';
-import cx from 'classnames';
+import cc from 'classcat';
 
 export const throttleValue = 500;
 
@@ -66,7 +66,10 @@ const TextInput = React.forwardRef(
     return (
       <>
         <Element
-          className={cx('fdsTextInput-root', `fdsTextInput-root--${labelPosition}Label`)}
+          className={cc([
+            'fdsTextInput-root',
+            `fdsTextInput-root--${labelPosition}Label`,
+          ])}
         >
           {showLabel && label && (
             <div className="fdsTextInput-label">
@@ -82,9 +85,12 @@ const TextInput = React.forwardRef(
                 aria-label={showLabel ? label : undefined}
                 onChange={inputOnChange}
                 type={type}
-                className={cx('fdsTextInput', {
-                  error: errorText,
-                })}
+                className={cc([
+                  {
+                    error: errorText,
+                  },
+                  'fdsTextInput',
+                ])}
               />
             </IconInput>
           </DecoratedInput>

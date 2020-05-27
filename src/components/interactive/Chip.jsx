@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import DenyIcon from 'lib/icons/react/DenyIcon';
 import baseElement from 'util/baseElement';
 
@@ -19,17 +19,17 @@ const Chip = ({
 }) => {
   const Element = baseElement({ href: rest.href, onClick: true, as: Link });
 
-  const rootClass = cx(
-    'fdsChip',
-    'border--focus--noTransition',
-    'transition--default',
-    `fdsChip--${size}`,
+  const rootClass = cc([
     {
       'fdsChip--active': isActive,
       'fdsChip--blue': theme === 'blue',
       'fdsChip--outline': theme === 'outline',
-    }
-  );
+    },
+    'fdsChip',
+    'border--focus--noTransition',
+    'transition--default',
+    `fdsChip--${size}`,
+  ]);
   return (
     <Element {...rest} className={rootClass}>
       <span>

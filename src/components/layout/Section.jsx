@@ -1,5 +1,5 @@
 import React from 'react';
-import cx from 'classnames';
+import cc from 'classcat';
 import PropTypes from 'prop-types';
 
 export const VALID_BG_NORMAL = ['white', 'haze', 'lightGray'];
@@ -57,16 +57,16 @@ const Section = ({
   border,
   children,
 }) => {
-  const classNames = cx(
+  const classNames = cc([
+    {
+      inverted: VALID_BG_INVERTED.includes(bgColor),
+      [getBorderClasses(border)]: Boolean(border),
+    },
     `bgColor--${bgColor}`,
     'display--block',
     getPaddingClasses('x', xPadding),
     getPaddingClasses('y', yPadding),
-    {
-      inverted: VALID_BG_INVERTED.includes(bgColor),
-      [getBorderClasses(border)]: Boolean(border),
-    }
-  );
+  ]);
 
   return <div className={classNames}>{children}</div>;
 };

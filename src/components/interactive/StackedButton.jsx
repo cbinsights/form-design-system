@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
 
@@ -26,18 +26,18 @@ const StackedButton = ({
   return (
     <Element
       {...rest}
-      className={cx(
+      className={cc([
+        {
+          'fdsStackedButton--disabled': disabled,
+          'fdsStackedButton--isActive': isActive,
+          'fdsStackedButton--isToggled': isToggled,
+        },
         'fdsStackedButton',
         'rounded--all',
         'fdsStackedButton--ghost',
         'border--focus--noTransition',
         'transition--default',
-        {
-          'fdsStackedButton--disabled': disabled,
-          'fdsStackedButton--isActive': isActive,
-          'fdsStackedButton--isToggled': isToggled,
-        }
-      )}
+      ])}
       disabled={disabled && Element === 'button'}
       aria-pressed={ariaPressed()}
     >

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import baseElement from 'util/baseElement';
 
 export const THEMES = ['ghost', 'aqua', 'outlined'];
@@ -25,7 +25,14 @@ const IconButton = ({
     <Element
       {...rest}
       title={label}
-      className={cx(
+      className={cc([
+        {
+          'shape--circle': radius === 'circle',
+          'fdsIconButton--disabled': disabled,
+          'fdsIconButton--isActive': isActive && !disabled,
+          'fdsIconButton--isDestructive': isDestructive,
+          'fdsIconButton--loading': isLoading,
+        },
         'fdsIconButton',
         'rounded--all',
         'border--focus--noTransition',
@@ -33,14 +40,7 @@ const IconButton = ({
         'alignChild--center--center',
         `fdsIconButton--${theme}`,
         `fdsIconButton--${size}`,
-        {
-          'shape--circle': radius === 'circle',
-          'fdsIconButton--disabled': disabled,
-          'fdsIconButton--isActive': isActive && !disabled,
-          'fdsIconButton--isDestructive': isDestructive,
-          'fdsIconButton--loading': isLoading,
-        }
-      )}
+      ])}
       disabled={disabled && Element === 'button'}
     >
       <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
