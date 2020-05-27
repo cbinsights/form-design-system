@@ -2,7 +2,7 @@
 
 exports[`Section component matches snapshot (all props set to user value) 1`] = `
 <div
-  className="bgColor--navy display--block padding--left padding--right padding--top padding--bottom inverted border--top border--bottom"
+  className="inverted border--top border--bottom bgColor--navy display--block padding--left padding--right padding--top padding--bottom"
 >
   Content
 </div>

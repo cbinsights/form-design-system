@@ -159,7 +159,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
         </button>
       </MenuButton>
       <MenuPopover
-        className="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+        className="fdsMenu--inModal elevation--2 rounded--all bgColor--white"
       />
     </DescendantProvider>
   </Menu>
