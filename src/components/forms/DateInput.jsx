@@ -158,7 +158,7 @@ const DateInput = ({
   ...rest
 }) => {
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
-  const [pickerMonth, setPickerMonth] = useState(new Date());
+  const [pickerMonth, setPickerMonth] = useState(defaultDate || new Date());
   const [prevDateFormat, setPrevDateFormat] = useState(dateFormat);
   const [inputValue, setInputValue] = useState(
     defaultDate ? moment(defaultDate).format(DATE_FORMAT_MAP[dateFormat]) : ''
@@ -188,6 +188,7 @@ const DateInput = ({
 
   const handleDaySelect = (date) => {
     setSelectedDate(date);
+    setPickerMonth(date);
     setInputValue(moment(date).format(DATE_FORMAT_MAP[dateFormat]));
     onDateChange(date);
   };
@@ -204,38 +205,43 @@ const DateInput = ({
   };
 
   return (
-    <Popover
-      trigger={
-        <input
-          {...rest}
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder={DATE_FORMAT_MAP[dateFormat]}
-          pattern="[0-9/]*"
-        />
-      }
-    >
-      <div className="elevation--2 rounded--all bgColor--white">
-        <DayPicker
-          month={pickerMonth}
-          className="fdsDateInput"
-          onDayClick={handleDaySelect}
-          selectedDays={selectedDate}
-          showOutsideDays={true}
-          navbarElement={<NavArrows />}
-          captionElement={({ date, localeUtils }) => (
-            <YearAndMonthSelector
-              date={date}
-              localeUtils={localeUtils}
-              onChange={handleYearMonthChange}
-              startYear={startYear}
-              endYear={endYear}
-            />
-          )}
-        />
-      </div>
-    </Popover>
+    <>
+      <p className="color--red fontFamily--mono">
+        {JSON.stringify(pickerMonth, null, 2)}
+      </p>
+      <Popover
+        trigger={
+          <input
+            {...rest}
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder={DATE_FORMAT_MAP[dateFormat]}
+            pattern="[0-9/]*"
+          />
+        }
+      >
+        <div className="elevation--2 rounded--all bgColor--white">
+          <DayPicker
+            month={pickerMonth}
+            className="fdsDateInput"
+            onDayClick={handleDaySelect}
+            selectedDays={selectedDate}
+            showOutsideDays={true}
+            navbarElement={<NavArrows />}
+            captionElement={({ date, localeUtils }) => (
+              <YearAndMonthSelector
+                date={date}
+                localeUtils={localeUtils}
+                onChange={handleYearMonthChange}
+                startYear={startYear}
+                endYear={endYear}
+              />
+            )}
+          />
+        </div>
+      </Popover>
+    </>
   );
 };
 
