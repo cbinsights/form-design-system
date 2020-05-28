@@ -27,6 +27,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [8.6] DateInput enhancements
+
+- Adds `minDate` and `maxDate` props to `Dateinput` for specifying a selectable date range
+  in the calendar UI
+- Adds icon to the input element in `DateInput`
+- Adds optional `label` prop for `DateInput`
+
 ## [8.5] PNG Icons
 
 - Adds `lib/icons/png` PNG distribution for icons
