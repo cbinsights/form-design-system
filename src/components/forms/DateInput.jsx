@@ -6,7 +6,9 @@ import DayPicker from 'react-day-picker';
 
 import ActionsArrowLeftIcon from 'lib/icons/react/ActionsArrowLeftIcon';
 import ActionsArrowRightIcon from 'lib/icons/react/ActionsArrowRightIcon';
+import DatePickerIcon from 'lib/icons/react/DatePickerIcon';
 import Popover from 'components/popovers/Popover';
+import TextInput from 'components/forms/TextInput';
 import Flex from 'components/layout/Flex';
 import FlexItem from 'components/layout/FlexItem';
 import IconButton from 'components/interactive/IconButton';
@@ -155,6 +157,7 @@ const DateInput = ({
   dateFormat = 'MDY',
   defaultDate,
   onDateChange,
+  label,
   ...rest
 }) => {
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
@@ -207,13 +210,15 @@ const DateInput = ({
   return (
     <Popover
       trigger={
-        <input
+        <TextInput
           {...rest}
+          label={label}
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder={DATE_FORMAT_MAP[dateFormat]}
           pattern="[0-9/]*"
+          IconRight={DatePickerIcon}
         />
       }
     >
@@ -258,6 +263,9 @@ DateInput.propTypes = {
 
   /** String representing the order of date components (M=month, Y=year, D=day) */
   dateFormat: PropTypes.oneOf(Object.keys(DATE_FORMAT_MAP)),
+
+  /** Label for input */
+  label: PropTypes.string,
 };
 
 export default DateInput;
