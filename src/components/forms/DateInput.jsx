@@ -39,12 +39,27 @@ const DATE_PATTERN_MAP = {
  * @param {Number} currentYear YYYY
  * @param {Number} pastYears number of prior years in range
  * @param {Number} futureYears number of future years in range
+ * @param {Date} minDate lower bound of selectable dates
+ * @param {Date} maxDate upper bound of selectable dates
  * @param {Date} selectedDate currently selected date from DateInput
  * @returns {Object} { startYear: YYYY, endYear: YYYY }
  */
-export const getYearRange = (currentYear, pastYears, futureYears, selectedDate) => {
-  let startYear = new Date(currentYear - pastYears, 0).getFullYear();
-  let endYear = new Date(currentYear + futureYears + 1, 11).getFullYear();
+export const getYearRange = (
+  currentYear,
+  pastYears,
+  futureYears,
+  minDate,
+  maxDate,
+  selectedDate
+) => {
+  // use min/max dates if specified
+  // fall back relative past/future years from current date
+  let startYear =
+    (minDate && minDate.getFullYear()) ||
+    new Date(currentYear - pastYears, 0).getFullYear();
+  let endYear =
+    (maxDate && maxDate.getFullYear() + 1) ||
+    new Date(currentYear + futureYears + 1, 11).getFullYear();
   const selectedYear = selectedDate instanceof Date && selectedDate.getFullYear();
 
   // Expand range to include selected year if out of range
@@ -158,6 +173,8 @@ const DateInput = ({
   defaultDate,
   onDateChange,
   label,
+  minDate,
+  maxDate,
   ...rest
 }) => {
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
@@ -182,6 +199,8 @@ const DateInput = ({
     new Date().getFullYear(),
     pastYears,
     futureYears,
+    minDate,
+    maxDate,
     selectedDate
   );
 
@@ -224,6 +243,8 @@ const DateInput = ({
     >
       <div className="elevation--2 rounded--all bgColor--white">
         <DayPicker
+          fromMonth={minDate}
+          toMonth={maxDate}
           month={pickerMonth}
           className="fdsDateInput"
           onDayClick={handleDaySelect}
@@ -260,6 +281,12 @@ DateInput.propTypes = {
 
   /** Default date selection - accepts date string or instance of Date */
   defaultDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+
+  /** Lower bound of selectable date range */
+  minDate: PropTypes.instanceOf(Date),
+
+  /** Upper bound of selectable date range */
+  maxDate: PropTypes.instanceOf(Date),
 
   /** String representing the order of date components (M=month, Y=year, D=day) */
   dateFormat: PropTypes.oneOf(Object.keys(DATE_FORMAT_MAP)),

@@ -51,3 +51,23 @@ Pass an instance of `Date` or a parsable date string (`MM/DD/YYYY`) to the `defa
     />
   </Story>
 </Preview>
+
+## Setting a range of selectable dates
+
+`DateInput` accepts lower and/or upper bounds for a range of selectable dates with the
+`minDate` and `maxDate` props. Pass an instance of `Date` to set either end of the range.
+
+**Note:** This will restrict the days available in the popover calendar UI, but the user
+may still type dates outside of range directly into the input. Use the `onDateChange`
+event for extra validation if necessary.
+
+<Preview>
+  <Story name="Date ranges">
+    <DateInput
+      label="Enter a date in 2020"
+      onDateChange={action('change')}
+      minDate={new Date('Jan 1 2020')}
+      maxDate={new Date('Dec 31 2020')}
+    />
+  </Story>
+</Preview>
