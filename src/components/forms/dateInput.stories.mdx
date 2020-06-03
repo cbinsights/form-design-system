@@ -71,3 +71,21 @@ event for extra validation if necessary.
     />
   </Story>
 </Preview>
+
+## Customizing the picker popover
+
+The `Popover` containing the date picker can be configured via `popoverProps`.
+Any valid `Popover` prop is accepted except for `trigger`, which the `DateInput` must
+control.
+
+In this exmaple, the `alignment` prop of the popover has been set so the picker is
+right-aligned.
+
+<Preview>
+  <Story name="Popover props">
+    <DateInput
+      onDateChange={action('change')}
+      popoverProps={{ alignment: 'end' }}
+    />
+  </Story>
+</Preview>

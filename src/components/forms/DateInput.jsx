@@ -170,6 +170,7 @@ const DateInput = ({
   futureYears = 1,
   pastYears = 40,
   dateFormat = 'MDY',
+  popoverProps = {},
   defaultDate,
   onDateChange,
   label,
@@ -183,6 +184,9 @@ const DateInput = ({
   const [inputValue, setInputValue] = useState(
     defaultDate ? moment(defaultDate).format(DATE_FORMAT_MAP[dateFormat]) : ''
   );
+
+  // eslint-disable-next-line no-param-reassign
+  delete popoverProps.trigger;
 
   // If the dateFormat prop changes while the input has a user-entered value,
   // we want the value to change to reflect the new dateFormat
@@ -240,6 +244,7 @@ const DateInput = ({
           IconRight={DatePickerIcon}
         />
       }
+      {...popoverProps}
     >
       <div className="elevation--2 rounded--all bgColor--white">
         <DayPicker
@@ -293,6 +298,12 @@ DateInput.propTypes = {
 
   /** Label for input */
   label: PropTypes.string,
+
+  /**
+   * Object accepting any valid prop from `Popover`.
+   * The `trigger` prop can not be set.
+   */
+  popoverProps: PropTypes.object,
 };
 
 export default DateInput;
