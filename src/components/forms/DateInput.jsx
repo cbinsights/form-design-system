@@ -302,8 +302,7 @@ DateInput.propTypes = {
   label: PropTypes.string,
 
   /**
-   * Object accepting any valid prop from `Popover`.
-   * The `trigger` prop can not be set.
+   * Object accepting any valid prop from `Popover` except for `trigger`.
    */
   popoverProps: PropTypes.object,
 };
