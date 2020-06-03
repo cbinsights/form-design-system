@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [8.7] Popover configuration in DateInput
+
+- Adds `popoverProps` to `DateInput` for user configuration of the popover that contains
+  the date picker
+
 ## [8.6] DateInput enhancements
 
 - Adds `minDate` and `maxDate` props to `Dateinput` for specifying a selectable date range
