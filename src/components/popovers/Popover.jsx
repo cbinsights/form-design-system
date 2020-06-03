@@ -91,7 +91,7 @@ const Popover = React.forwardRef(
   ) => {
     const [isActive, setIsActive] = useState(false);
     const refTriggerWrap = useRef(null);
-    const refContent = forwardedRef || useRef(null);
+    const refContent = forwardedRef || React.createRef();
 
     const handleSetIsActive = (newValue) => {
       setIsActive(() => {
