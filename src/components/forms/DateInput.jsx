@@ -212,7 +212,8 @@ const DateInput = ({
     setPickerMonth(date);
   };
 
-  const handleDaySelect = (date) => {
+  const handleDaySelect = (date, modifiers = {}) => {
+    if (modifiers.disabled) return;
     setSelectedDate(date);
     setPickerMonth(date);
     setInputValue(moment(date).format(DATE_FORMAT_MAP[dateFormat]));
@@ -250,6 +251,7 @@ const DateInput = ({
         <DayPicker
           fromMonth={minDate}
           toMonth={maxDate}
+          disabledDays={[{ after: maxDate, before: minDate }]}
           month={pickerMonth}
           className="fdsDateInput"
           onDayClick={handleDaySelect}
