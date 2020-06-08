@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [8.8] Popover ref forwarding
+
+- `Popover` now accepts a `ref` prop that will be forwarded to the content container DOM element
+
 ## [8.7] Popover configuration in DateInput
 
 - Adds `popoverProps` to `DateInput` for user configuration of the popover that contains
