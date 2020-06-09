@@ -223,7 +223,7 @@ const DateInput = ({
 
   const handleInputChange = ({ target: { value } }) => {
     setInputValue(value);
-    onInputChange();
+    onInputChange(value);
 
     if (isValidUserDate(value, dateFormat)) {
       const parsedDate = moment(value, DATE_FORMAT_MAP[dateFormat]);
