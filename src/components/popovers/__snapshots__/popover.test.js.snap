@@ -10,22 +10,18 @@ exports[`Popover component matches snapshot (default props) 1`] = `
 >
   <Manager>
     <Reference>
-      <InnerReference
-        setReferenceNode={[Function]}
+      <div
+        aria-expanded="false"
+        aria-haspopup="true"
       >
-        <div
-          aria-expanded="false"
-          aria-haspopup="true"
-        >
-          <div>
-            <button
-              onClick={[Function]}
-            >
-              trigger
-            </button>
-          </div>
+        <div>
+          <button
+            onClick={[Function]}
+          >
+            trigger
+          </button>
         </div>
-      </InnerReference>
+      </div>
     </Reference>
     <Portal
       containerInfo={<body />}
