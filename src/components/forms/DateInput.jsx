@@ -172,7 +172,8 @@ const DateInput = ({
   dateFormat = 'MDY',
   popoverProps = {},
   defaultDate,
-  onDateChange,
+  onDateChange = () => {},
+  onInputChange = () => {},
   label,
   minDate,
   maxDate,
@@ -222,6 +223,7 @@ const DateInput = ({
 
   const handleInputChange = ({ target: { value } }) => {
     setInputValue(value);
+    onInputChange();
 
     if (isValidUserDate(value, dateFormat)) {
       const parsedDate = moment(value, DATE_FORMAT_MAP[dateFormat]);
@@ -275,10 +277,14 @@ const DateInput = ({
 
 DateInput.propTypes = {
   /**
-   * Change callback for date selection.
+   * Change callback for date selection. This is called when a valid
+   * date has been selected in the pickr or entered into the input.
    * Called with the `Date` object of the selected date.
    */
   onDateChange: PropTypes.func,
+
+  /** Change callback for `input` element. */
+  onInputChange: PropTypes.func,
 
   /** Number of years into the past to show in the year dropdown */
   pastYears: PropTypes.number,
