@@ -37,7 +37,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 #### Component reorganization
 - The following folders no longer exist: `media`, `interactive`, `layout` `forms`, `modals`, `popovers`
-- All components now live next to one another. This is going to break tons of paths!
+- All components now live in `lib/components`. This is going to break tons of import paths!
 
 #### `MenuButton` Component
 - Now only accepts a `button` element, or a component that renders a `button` element as a trigger
