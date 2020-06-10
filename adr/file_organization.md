@@ -32,18 +32,17 @@ to use destructured imports and rely on a tree shaking strategy:
 -import Flex from '@cbinsights/fds/lib/components/layout/Flex';
 -import FlexItem from '@cbinsights/fds/lib/components/layout/FlexItem';
 -import TextInput from '@cbinsights/fds/lib/components/forms/TextInput';
-+import { Flex, FlexItem, TextInput } from '@cbinsights/fds/components';
++import { Flex, FlexItem, TextInput } from '@cbinsights/fds/lib/components';
 ```
 
 The "root" file for each import corresponds to an FDS code module.
-The `lib` directory should be published as the root of the package.
 
 code module   | Import example
 ------------- | --------------------------------------
-`dictionary`  | `import { COLOR_TIMBERWOLF, COLOR_PURPLE } from '@cbinsights/fds/dictionary';`
-`components`  | `import { Avatar, TextInput } from '@cbinsights/fds/components/';`
-`icons`       | `import { CloudIcon, BellIcon } from '@cbinsights/fds/icons';`
-`assets`      | Use path `@cbinsights/fds/assets/<file>` where applicable
+`dictionary`  | `import { COLOR_TIMBERWOLF, COLOR_PURPLE } from '@cbinsights/fds/lib/dictionary';`
+`components`  | `import { Avatar, TextInput } from '@cbinsights/fds/lib/components/';`
+`icons`       | `import { CloudIcon, BellIcon } from '@cbinsights/fds/lib/icons';`
+`assets`      | Use path `@cbinsights/fds/lib/assets/<file>` where applicable
 `base-styles` | not applicable; we only publish this CSS as part of the main styles file in `assets/`
 
 ### `components` file structure
@@ -76,5 +75,5 @@ We satisfy all the decision drivers
 
 ## Negative Consequences
 
-Minimal. This is a breaking change that will be marked by a major version.
+Minimal. This is a breaking change that will be marked by major version 9.
 
