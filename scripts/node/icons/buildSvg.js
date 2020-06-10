@@ -28,7 +28,6 @@ const optimizeFile = (filepath) => {
     .optimize(data, { filepath })
     .then((result) => {
       fs.writeFileSync(`${buildConfig.svg.lib}/${fileName}`, result.data);
-      fs.writeFileSync(`${buildConfig.svg.deprecatedLib}/${fileName}`, result.data);
     });
 };
 
