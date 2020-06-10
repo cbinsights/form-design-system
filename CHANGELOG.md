@@ -48,9 +48,15 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### `Flex` Component
 - `wrap` prop is no longer accepted on `Flex`
 
+#### Removed components
+- `CountdownButton` (only used by Toast)
+- `DecoratedInput` (use TextInput instead)
+- `IconInput` (use TextInput instead)
+
 #### `raw/` Icons distribution
 - `lib/icons/raw/` will no longer exist in packages published v9 or later. For raw SVG
   icons, use `lib/icons/svg/`.
+
 
 ## [8.5] PNG Icons
 
