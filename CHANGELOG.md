@@ -37,7 +37,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 #### Component reorganization
 - The following folders no longer exist: `media`, `interactive`, `layout` `forms`, `modals`, `popovers`
-- All components now live next to one another. This is going to break tons of paths!
+- All components now live in `lib/components`. This is going to break tons of import paths!
 
 #### `MenuButton` Component
 - Now only accepts a `button` element, or a component that renders a `button` element as a trigger
@@ -52,6 +52,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - `CountdownButton` (only used by Toast)
 - `DecoratedInput` (use TextInput instead)
 - `IconInput` (use TextInput instead)
+
+#### `raw/` Icons distribution
+- `lib/icons/raw/` will no longer exist in packages published v9 or later. For raw SVG
+  icons, use `lib/icons/svg/`.
+
 
 ## [8.5] PNG Icons
 
@@ -70,7 +75,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ## [8.3] DateInput date formatting
 
 - Adds `dateFormat` prop to `DateInput` to allow different date order (MDY, DMY, YMD)
-
 
 ## [8.2] DateInput rest props and IconButton role
 
