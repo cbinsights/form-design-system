@@ -21,7 +21,8 @@ prop.
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <DateInput
     label={text('label', null)}
-    onDateChange={action('change')}
+    onDateChange={action('date change')}
+    onInputChange={action('input change')}
     futureYears={number('futureYears', 5)}
     pastYears={number('pastYears', 10)}
     dateFormat={select('dateFormat', {
@@ -46,7 +47,8 @@ Pass an instance of `Date` or a parsable date string (`MM/DD/YYYY`) to the `defa
 <Preview>
   <Story name="Default selected date">
     <DateInput
-      onDateChange={action('change')}
+      onInputChange={action('input change')}
+      onDateChange={action('date change')}
       defaultDate={new Date()}
     />
   </Story>
@@ -65,7 +67,8 @@ event for extra validation if necessary.
   <Story name="Date ranges">
     <DateInput
       label="Enter a date in 2020"
-      onDateChange={action('change')}
+      onInputChange={action('input change')}
+      onDateChange={action('date change')}
       minDate={new Date('Jan 1 2020')}
       maxDate={new Date('Dec 31 2020')}
     />
@@ -84,7 +87,8 @@ right-aligned.
 <Preview>
   <Story name="Popover props">
     <DateInput
-      onDateChange={action('change')}
+      onDateChange={action('date change')}
+      onInputChange={action('input change')}
       popoverProps={{ alignment: 'end' }}
     />
   </Story>

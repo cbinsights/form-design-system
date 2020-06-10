@@ -52,39 +52,48 @@ describe('DateInput component', () => {
   });
 
   describe('input and picker interation', () => {
-    let changeFn;
+    let dateChangeFn;
+    let inputChangeFn;
     let wrapper;
     let input;
 
     beforeEach(() => {
-      changeFn = jest.fn();
-      wrapper = mount(<DateInput onDateChange={changeFn} />);
+      dateChangeFn = jest.fn();
+      inputChangeFn = jest.fn();
+      wrapper = mount(<DateInput onDateChange={dateChangeFn} onInputChange={inputChangeFn} />);
       wrapper.find('input').simulate('click'); // open the picker for every test
       input = wrapper.find('input');
     });
 
     afterEach(() => {
-      changeFn = null;
+      dateChangeFn = null;
+      inputChangeFn = null;
       wrapper = null;
       input = null;
     });
 
+    it('calls onInputChange when the input value changes', () => {
+      expect(inputChangeFn).not.toHaveBeenCalled();
+      input.simulate('change', { target: { value: '4' } });
+      expect(inputChangeFn).toHaveBeenCalled();
+    });
+
     it('calls onDateChange when user types a VALID freeform date', () => {
-      expect(changeFn).not.toHaveBeenCalled();
+      expect(dateChangeFn).not.toHaveBeenCalled();
       input.simulate('change', { target: { value: '4/20/2020' } });
-      expect(changeFn).toHaveBeenCalled();
+      expect(dateChangeFn).toHaveBeenCalled();
     });
 
     it('does not call onDateChange when user types an INVALID freeform date', () => {
-      expect(changeFn).not.toHaveBeenCalled();
+      expect(dateChangeFn).not.toHaveBeenCalled();
       input.simulate('change', { target: { value: 'this is not a valid date lol' } });
-      expect(changeFn).not.toHaveBeenCalled();
+      expect(dateChangeFn).not.toHaveBeenCalled();
     });
 
     it('calls onDateChange when user selects a day in the picker', () => {
-      expect(changeFn).not.toHaveBeenCalled();
+      expect(dateChangeFn).not.toHaveBeenCalled();
       wrapper.find('Day').at(7).simulate('click');
-      expect(changeFn).toHaveBeenCalled();
+      expect(dateChangeFn).toHaveBeenCalled();
     });
 
     it('updates inupt value when user selects a day in the picker', () => {
