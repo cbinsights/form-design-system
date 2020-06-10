@@ -214,7 +214,7 @@ const Popover = React.forwardRef(
     ];
 
     const contentStyle = {
-      zIndex: FDS.ZINDEX_POPOVER,
+      zIndex: FDS.ZINDEX_MODAL,
     };
 
     const popperContent = (
