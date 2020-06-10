@@ -16,9 +16,9 @@ export const Scale = ({ label, num }) => (
   </div>
 )
 
-export const SpacingExample = ({ className, type }) => (
+export const SpacingExample = ({ className }) => (
   <div className={`${className.startsWith('padding') && className} bgColor--blue display--inlineBlock border--all margin--right--2 margin--bottom--2`}>
-    <div className={`${className.startsWith('margin') && className} padding--all--2 fontWeight--bold color--white bgColor--aqua`}>
+    <div className={`${className.startsWith('margin') && className} padding--all--2 color--charcoal fontWeight--bold bgColor--white`}>
       {className} 
     </div>
   </div>

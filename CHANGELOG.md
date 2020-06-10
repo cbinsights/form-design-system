@@ -26,6 +26,15 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [8.9] Spacing classes
+
+- Added `x` and `y` directions to spacing classes (e.g. `margin--y`)
+- Added new end value for spacing classes: `1`, `2`, `3 (default)`, `4`, and `5`, which correspond to pixel values
+
+### **Deprecations**
+
+- `half` and `double` end values are now deprecated and will be removed in a feature release.
+Please use the new end values added for these classes that were added in this minor release.
 
 ## [8.8] Popover ref forwarding
 
