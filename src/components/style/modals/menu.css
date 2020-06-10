@@ -3,7 +3,7 @@
  */
 
 [data-reach-popover] {
-  z-index: var(--zindex-popover);
+  z-index: var(--zindex-modal);
 }
 
 .fdsMenu--inModal {
