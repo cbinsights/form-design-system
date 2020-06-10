@@ -1,0 +1,438 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toaster component matches snapshot 1`] = `
+<ToasterWrapper
+  isOpen={true}
+  toastProps={
+    Object {
+      "content": <p>
+        test
+      </p>,
+      "type": "info",
+    }
+  }
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          aria-live="assertive"
+        >
+          <div>
+            <div
+              class="toaster rtgSlideIn-appear rtgSlideIn-appear-active"
+            >
+              <div
+                aria-atomic="true"
+                aria-relevant="all"
+                class="toast toast--info"
+                role="log"
+              >
+                <div
+                  class="toast-bar"
+                />
+                <div
+                  class="toast-content alignChild--left--center"
+                >
+                  <div
+                    class="flex flex--alignStretch flex--row"
+                  >
+                    <div
+                      class="flexItem flexItem--shrink"
+                    >
+                      <div
+                        class="toast-constrainGrowth alignChild--center--center"
+                      >
+                        <div
+                          class="toast-icon media--s"
+                        >
+                          <div
+                            class="fds-icon fds-icon--l"
+                            style="fill: #4cabce;"
+                          >
+                            <svg
+                              viewBox="0 0 24 24"
+                            >
+                              <defs>
+                                <path
+                                  d="M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z M12,19 C15.8659932,19 19,15.8659932 19,12 C19,8.13400675 15.8659932,5 12,5 C8.13400675,5 5,8.13400675 5,12 C5,15.8659932 8.13400675,19 12,19 Z M11,11 L13,11 L13,17 L11,17 L11,11 Z M12,10 C11.1715729,10 10.5,9.32842712 10.5,8.5 C10.5,7.67157288 11.1715729,7 12,7 C12.8284271,7 13.5,7.67157288 13.5,8.5 C13.5,9.32842712 12.8284271,10 12,10 Z"
+                                  id="prefix__InformationIcona"
+                                />
+                              </defs>
+                              <g
+                                fill-rule="evenodd"
+                              >
+                                <g>
+                                  <use
+                                    xlink:href="#prefix__InformationIcona"
+                                  />
+                                </g>
+                              </g>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flexItem"
+                    >
+                      <div
+                        class="toast-constrainGrowth"
+                      >
+                        <p>
+                          test
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="flexItem flexItem--shrink"
+                    >
+                      <div
+                        class="toast-constrainGrowth alignChild--center--center"
+                      >
+                        <div
+                          class="countdownButton"
+                          style="width: 34px; height: 34px;"
+                        >
+                          <div
+                            class="countdownButton-button"
+                          >
+                            <button
+                              class="fdsIconButton rounded--all border--focus--noTransition transition--default alignChild--center--center fdsIconButton--ghost fdsIconButton--m shape--circle"
+                              title="Close"
+                            >
+                              <span
+                                class=""
+                              >
+                                <div
+                                  class="fds-icon fds-icon--s"
+                                  style="width: 18px; height: 18px;"
+                                >
+                                  <svg
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <g
+                                      fill-rule="evenodd"
+                                    >
+                                      <g>
+                                        <polygon
+                                          points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                                        />
+                                      </g>
+                                    </g>
+                                  </svg>
+                                </div>
+                              </span>
+                            </button>
+                          </div>
+                          <svg
+                            class="countdownButton-animation"
+                            height="34"
+                            viewBox="0 0 34 34"
+                            width="34"
+                          >
+                            <circle
+                              cx="17"
+                              cy="17"
+                              fill="transparent"
+                              r="16"
+                              stroke="rgba(64, 64, 64, 0.38)"
+                              stroke-width="2"
+                              style="stroke-dasharray: 100.53096491487338; stroke-dashoffset: 0; transition: all 4000ms linear; transform-origin: center center; transform: rotate(-90deg);"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+    }
+  >
+    <Toaster
+      isOpen={true}
+      toastProps={
+        Object {
+          "content": <p>
+            test
+          </p>,
+          "type": "info",
+        }
+      }
+    >
+      <div
+        aria-live="assertive"
+      >
+        <TransitionGroup
+          childFactory={[Function]}
+          component="div"
+        >
+          <div>
+            <CSSTransition
+              appear={true}
+              classNames="rtgSlideIn"
+              in={true}
+              key=".0"
+              onExited={[Function]}
+              timeout={380}
+              unmountOnExit={true}
+            >
+              <Transition
+                appear={true}
+                enter={true}
+                exit={true}
+                in={true}
+                mountOnEnter={false}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={380}
+                unmountOnExit={true}
+              >
+                <div
+                  className="toaster"
+                >
+                  <Toast
+                    content={
+                      <p>
+                        test
+                      </p>
+                    }
+                    dismissDelay={4000}
+                    isAutoDismiss={true}
+                    type="info"
+                  >
+                    <div
+                      aria-atomic="true"
+                      aria-relevant="all"
+                      className="toast toast--info"
+                      role="log"
+                    >
+                      <div
+                        className="toast-bar"
+                      />
+                      <div
+                        className="toast-content alignChild--left--center"
+                      >
+                        <Flex>
+                          <div
+                            className="flex flex--alignStretch flex--row"
+                          >
+                            <FlexItem
+                              shrink={true}
+                            >
+                              <div
+                                className="flexItem flexItem--shrink"
+                              >
+                                <div
+                                  className="toast-constrainGrowth alignChild--center--center"
+                                >
+                                  <div
+                                    className="toast-icon media--s"
+                                  >
+                                    <InformationIcon
+                                      color="#4cabce"
+                                      size="l"
+                                    >
+                                      <WorldIcon
+                                        color="#4cabce"
+                                        size="l"
+                                      >
+                                        <div
+                                          className="fds-icon fds-icon--l"
+                                          style={
+                                            Object {
+                                              "fill": "#4cabce",
+                                              "height": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          <InformationIcon>
+                                            <svg
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <defs>
+                                                <path
+                                                  d="M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z M12,19 C15.8659932,19 19,15.8659932 19,12 C19,8.13400675 15.8659932,5 12,5 C8.13400675,5 5,8.13400675 5,12 C5,15.8659932 8.13400675,19 12,19 Z M11,11 L13,11 L13,17 L11,17 L11,11 Z M12,10 C11.1715729,10 10.5,9.32842712 10.5,8.5 C10.5,7.67157288 11.1715729,7 12,7 C12.8284271,7 13.5,7.67157288 13.5,8.5 C13.5,9.32842712 12.8284271,10 12,10 Z"
+                                                  id="prefix__InformationIcona"
+                                                />
+                                              </defs>
+                                              <g
+                                                fillRule="evenodd"
+                                              >
+                                                <g>
+                                                  <use
+                                                    xlinkHref="#prefix__InformationIcona"
+                                                  />
+                                                </g>
+                                              </g>
+                                            </svg>
+                                          </InformationIcon>
+                                        </div>
+                                      </WorldIcon>
+                                    </InformationIcon>
+                                  </div>
+                                </div>
+                              </div>
+                            </FlexItem>
+                            <FlexItem>
+                              <div
+                                className="flexItem"
+                              >
+                                <div
+                                  className="toast-constrainGrowth"
+                                >
+                                  <p>
+                                    test
+                                  </p>
+                                </div>
+                              </div>
+                            </FlexItem>
+                            <FlexItem
+                              shrink={true}
+                            >
+                              <div
+                                className="flexItem flexItem--shrink"
+                              >
+                                <div
+                                  className="toast-constrainGrowth alignChild--center--center"
+                                >
+                                  <CountdownButton
+                                    duration={4000}
+                                    label="Close"
+                                  >
+                                    <div
+                                      className="countdownButton"
+                                      style={
+                                        Object {
+                                          "height": "34px",
+                                          "width": "34px",
+                                        }
+                                      }
+                                    >
+                                      <div
+                                        className="countdownButton-button"
+                                      >
+                                        <IconButton
+                                          Icon={[Function]}
+                                          label="Close"
+                                          radius="circle"
+                                        >
+                                          <button
+                                            className="fdsIconButton rounded--all border--focus--noTransition transition--default alignChild--center--center fdsIconButton--ghost fdsIconButton--m shape--circle"
+                                            title="Close"
+                                          >
+                                            <span
+                                              className=""
+                                            >
+                                              <DenyIcon
+                                                customSize={18}
+                                              >
+                                                <WorldIcon
+                                                  customSize={18}
+                                                >
+                                                  <div
+                                                    className="fds-icon fds-icon--s"
+                                                    style={
+                                                      Object {
+                                                        "fill": undefined,
+                                                        "height": "18px",
+                                                        "width": "18px",
+                                                      }
+                                                    }
+                                                  >
+                                                    <DenyIcon>
+                                                      <svg
+                                                        viewBox="0 0 24 24"
+                                                      >
+                                                        <g
+                                                          fillRule="evenodd"
+                                                        >
+                                                          <g>
+                                                            <polygon
+                                                              points="10.363961 11.7781746 4 5.41421356 5.41421356 4 11.7781746 10.363961 18.1421356 4 19.5563492 5.41421356 13.1923882 11.7781746 19.5563492 18.1421356 18.1421356 19.5563492 11.7781746 13.1923882 5.41421356 19.5563492 4 18.1421356"
+                                                            />
+                                                          </g>
+                                                        </g>
+                                                      </svg>
+                                                    </DenyIcon>
+                                                  </div>
+                                                </WorldIcon>
+                                              </DenyIcon>
+                                            </span>
+                                          </button>
+                                        </IconButton>
+                                      </div>
+                                      <Transition
+                                        appear={true}
+                                        enter={true}
+                                        exit={true}
+                                        in={true}
+                                        mountOnEnter={true}
+                                        onEnter={[Function]}
+                                        onEntered={[Function]}
+                                        onEntering={[Function]}
+                                        onExit={[Function]}
+                                        onExited={[Function]}
+                                        onExiting={[Function]}
+                                        timeout={
+                                          Object {
+                                            "appear": 1,
+                                            "enter": 4000,
+                                          }
+                                        }
+                                        unmountOnExit={false}
+                                      >
+                                        <svg
+                                          className="countdownButton-animation"
+                                          height={34}
+                                          viewBox="0 0 34 34"
+                                          width={34}
+                                        >
+                                          <circle
+                                            cx={17}
+                                            cy={17}
+                                            fill="transparent"
+                                            r={16}
+                                            stroke="rgba(64, 64, 64, 0.38)"
+                                            strokeWidth="2"
+                                            style={
+                                              Object {
+                                                "strokeDasharray": 100.53096491487338,
+                                                "strokeDashoffset": 0,
+                                                "transform": "rotate(-90deg)",
+                                                "transformOrigin": "center center",
+                                                "transition": "all 4000ms linear",
+                                              }
+                                            }
+                                          />
+                                        </svg>
+                                      </Transition>
+                                    </div>
+                                  </CountdownButton>
+                                </div>
+                              </div>
+                            </FlexItem>
+                          </div>
+                        </Flex>
+                      </div>
+                    </div>
+                  </Toast>
+                </div>
+              </Transition>
+            </CSSTransition>
+          </div>
+        </TransitionGroup>
+      </div>
+    </Toaster>
+  </Portal>
+</ToasterWrapper>
+`;
