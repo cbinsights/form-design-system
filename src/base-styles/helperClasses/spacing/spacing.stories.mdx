@@ -1,108 +1,58 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
 import { TableLayout } from "components/util/Table"
+import FDS from 'lib/dictionary/js/styleConstants';
 
 <Meta title="Style Utilities/Spacing"  />
 
-## Margin
-Adds margin to the given side of an element.
+# Spacing
+
+export const Scale = ({ label, num }) => (
+  <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", minWidth: "20px", marginRight: 4, marginTop: -4 }}>
+    <span style={{ fontWeight: "bold" }}>{label}</span>
+    <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ height: "16px", background: FDS.COLOR_BLUE, marginRight: 4, marginLeft: 4, marginBottom: 2, width: `${num}px` }}/>
+      <small style={{ fontSize: 9, lineHeight: "14px", fontStyle: "italic" }} className="color--slate">{num}px</small>
+    </div>
+  </div>
+)
+
+export const SpacingExample = ({ className, type }) => (
+  <div className={`${className.startsWith('padding') && className} bgColor--blue display--inlineBlock border--all margin--right--2 margin--bottom--2`}>
+    <div className={`${className.startsWith('margin') && className} padding--all--2 fontWeight--bold color--white bgColor--aqua`}>
+      {className} 
+    </div>
+  </div>
+)
+
+Use the following format: 
+
+.`type`--`direction`--`scale`
 
 <Story name="Margin">
   <>
   <TableLayout
-    isCSS
-    headers={['class', 'description']}
     rows={[
-      ['margin--top', 'Adds standard margin to top of element'],
-      ['margin--bottom', 'Adds standard margin to bottom of element'],
-      ['margin--right', 'Adds standard margin to right of of element'],
-      ['margin--left', 'Adds standard margin to left of element'],
-      ['margin--all', 'Adds standard margin to all sides'],
+      ['**Type**', '`margin` | `padding`'],
+      ['**Direction**', '`left`  |  `right` | `top` | `bottom` | `x` | `y` | `all`'],
+      ['**Scale (default: 3)**', { children: (
+        <>
+          <Scale label={1} num={4} />
+          <Scale label={2} num={8} />
+          <Scale label={3} num={16} />
+          <Scale label={4} num={24} />
+          <Scale label={5} num={32} />
+        </>
+      )}],
     ]} 
   />
-  <TableLayout
-    isCSS
-    headers={['class', 'description']}
-    rows={[
-      ['margin--top--half', 'Adds half margin to top of element'],
-      ['margin--bottom--half', 'Adds half margin to bottom of element'],
-      ['margin--right--half', 'Adds half margin to right of of element'],
-      ['margin--left--half', 'Adds half margin to left of element'],
-      ['margin--all--half', 'Adds half margin to all sides'],
-    ]} 
-  />
-  <TableLayout
-    isCSS
-    headers={['class', 'description']}
-    rows={[
-      ['margin--top--double', 'Adds double margin to top of element'],
-      ['margin--bottom--double', 'Adds double margin to bottom of element'],
-      ['margin--right--double', 'Adds double margin to right of of element'],
-      ['margin--left--double', 'Adds double margin to left of element'],
-      ['margin--all--double', 'Adds double margin to all sides'],
-    ]} 
-  />
+  <SpacingExample className="margin--top" />
+  <SpacingExample className="margin--bottom--2" />
+  <SpacingExample className="margin--x--5" />
+  <SpacingExample className="margin--y--1" />
+  <SpacingExample className="margin--left--3" />
+  <SpacingExample className="padding--y--1" />
+  <SpacingExample className="padding--x" />
+  <SpacingExample className="padding--all--1" />
+  <SpacingExample className="padding--left--5" />
   </>
 </Story>
-
-## Padding
-Adds padding to the given side of an element.
-
-<Story name="Padding">
-  <>
-  <TableLayout
-    isCSS
-    headers={['class', 'description']}
-    rows={[
-      ['padding--top', 'Adds standard padding to top of element'],
-      ['padding--bottom', 'Adds standard padding to bottom of element'],
-      ['padding--right', 'Adds standard padding to right of of element'],
-      ['padding--left', 'Adds standard padding to left of element'],
-      ['padding--all', 'Adds standard padding to all sides'],
-    ]} 
-  />
-  <TableLayout
-    isCSS
-    headers={['class', 'description']}
-    rows={[
-      ['padding--top--half', 'Adds half padding to top of element'],
-      ['padding--bottom--half', 'Adds half padding to bottom of element'],
-      ['padding--right--half', 'Adds half padding to right of of element'],
-      ['padding--left--half', 'Adds half padding to left of element'],
-      ['padding--all--half', 'Adds half padding to all sides'],
-    ]} 
-  />
-  <TableLayout
-    isCSS
-    headers={['class', 'description']}
-    rows={[
-      ['padding--top--double', 'Adds double padding to top of element'],
-      ['padding--bottom--double', 'Adds double padding to bottom of element'],
-      ['padding--right--double', 'Adds double padding to right of of element'],
-      ['padding--left--double', 'Adds double padding to left of element'],
-      ['padding--all--double', 'Adds double padding to all sides'],
-    ]} 
-  />
-  </>
-</Story>
-
-## Flush
-Removes spacing from the given side of an element. Sets both `padding` and `margin` to `0`;
-
-<Story name="Flush">
-  <>
-    <TableLayout
-      isCSS
-      headers={['class', 'description']}
-      rows={[
-        ['flush--top', 'Removes top spacing from element'],
-        ['flush--right', 'Removes right spacing from element'],
-        ['flush--bottom', 'Removes bottom spacing from element'],
-        ['flush--left', 'Removes left spacing from element'],
-        ['flush--all', 'Removes spacing from all sides of an element'],
-      ]} 
-    />
-  </>
-</Story>
-
-## Overriding flush
-Margin and padding utility classes can override a flush class:

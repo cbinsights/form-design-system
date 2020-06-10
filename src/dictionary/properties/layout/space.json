@@ -3,6 +3,11 @@
     "space": {
 
       "double":  { "value": "32px" },
+      "1":  { "value": "4px" },
+      "2":  { "value": "8px" },
+      "3":  { "value": "16px" },
+      "4":  { "value": "24px" },
+      "5":  { "value": "32px" },
       "default": { "value": "16px" },
       "half":    { "value": "8px" }
 

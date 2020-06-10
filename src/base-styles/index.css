@@ -11,6 +11,7 @@
 @import "./base/formTags";
 
 /* Spacing Helpers */
+@import "./helperClasses/spacing/spacing";
 @import "./helperClasses/spacing/margin";
 @import "./helperClasses/spacing/padding";
 @import "./helperClasses/spacing/flush";
