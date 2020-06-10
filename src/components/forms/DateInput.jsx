@@ -278,7 +278,7 @@ const DateInput = ({
 DateInput.propTypes = {
   /**
    * Change callback for date selection. This is called when a valid
-   * date has been selected in the pickr or entered into the input.
+   * date has been selected in the picker or entered into the input.
    * Called with the `Date` object of the selected date.
    */
   onDateChange: PropTypes.func,
