@@ -48,13 +48,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### `Flex` Component
 - `wrap` prop is no longer accepted on `Flex`
 
-#### No longer available components
+#### Removed components
 - `CountdownButton` (only used by Toast)
 - `DecoratedInput` (use TextInput instead)
 - `IconInput` (use TextInput instead)
-
-#### `CountdownButton` Component removed
-- No longer accessible
 
 ## [8.5] PNG Icons
 
