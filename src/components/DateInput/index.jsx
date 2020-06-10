@@ -6,10 +6,12 @@ import DayPicker from 'react-day-picker';
 
 import ActionsArrowLeftIcon from 'lib/icons/react/ActionsArrowLeftIcon';
 import ActionsArrowRightIcon from 'lib/icons/react/ActionsArrowRightIcon';
+import DatePickerIcon from 'lib/icons/react/DatePickerIcon';
 import Popover from 'components/Popover';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import IconButton from 'components/IconButton';
+import TextInput from 'components/TextInput';
 
 // Is this the correct way to localize dates? No, it is not.
 // Fortunately, this is display-only.
@@ -37,12 +39,27 @@ const DATE_PATTERN_MAP = {
  * @param {Number} currentYear YYYY
  * @param {Number} pastYears number of prior years in range
  * @param {Number} futureYears number of future years in range
+ * @param {Date} minDate lower bound of selectable dates
+ * @param {Date} maxDate upper bound of selectable dates
  * @param {Date} selectedDate currently selected date from DateInput
  * @returns {Object} { startYear: YYYY, endYear: YYYY }
  */
-export const getYearRange = (currentYear, pastYears, futureYears, selectedDate) => {
-  let startYear = new Date(currentYear - pastYears, 0).getFullYear();
-  let endYear = new Date(currentYear + futureYears + 1, 11).getFullYear();
+export const getYearRange = (
+  currentYear,
+  pastYears,
+  futureYears,
+  minDate,
+  maxDate,
+  selectedDate
+) => {
+  // use min/max dates if specified
+  // fall back relative past/future years from current date
+  let startYear =
+    (minDate && minDate.getFullYear()) ||
+    new Date(currentYear - pastYears, 0).getFullYear();
+  let endYear =
+    (maxDate && maxDate.getFullYear() + 1) ||
+    new Date(currentYear + futureYears + 1, 11).getFullYear();
   const selectedYear = selectedDate instanceof Date && selectedDate.getFullYear();
 
   // Expand range to include selected year if out of range
@@ -153,16 +170,23 @@ const DateInput = ({
   futureYears = 1,
   pastYears = 40,
   dateFormat = 'MDY',
+  popoverProps = {},
   defaultDate,
   onDateChange,
+  label,
+  minDate,
+  maxDate,
   ...rest
 }) => {
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
-  const [pickerMonth, setPickerMonth] = useState(new Date());
+  const [pickerMonth, setPickerMonth] = useState(defaultDate || new Date());
   const [prevDateFormat, setPrevDateFormat] = useState(dateFormat);
   const [inputValue, setInputValue] = useState(
     defaultDate ? moment(defaultDate).format(DATE_FORMAT_MAP[dateFormat]) : ''
   );
+
+  // eslint-disable-next-line no-param-reassign
+  delete popoverProps.trigger;
 
   // If the dateFormat prop changes while the input has a user-entered value,
   // we want the value to change to reflect the new dateFormat
@@ -179,6 +203,8 @@ const DateInput = ({
     new Date().getFullYear(),
     pastYears,
     futureYears,
+    minDate,
+    maxDate,
     selectedDate
   );
 
@@ -186,8 +212,10 @@ const DateInput = ({
     setPickerMonth(date);
   };
 
-  const handleDaySelect = (date) => {
+  const handleDaySelect = (date, modifiers = {}) => {
+    if (modifiers.disabled) return;
     setSelectedDate(date);
+    setPickerMonth(date);
     setInputValue(moment(date).format(DATE_FORMAT_MAP[dateFormat]));
     onDateChange(date);
   };
@@ -206,18 +234,24 @@ const DateInput = ({
   return (
     <Popover
       trigger={
-        <input
+        <TextInput
           {...rest}
+          label={label}
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder={DATE_FORMAT_MAP[dateFormat]}
           pattern="[0-9/]*"
+          IconRight={DatePickerIcon}
         />
       }
+      {...popoverProps}
     >
       <div className="elevation--2 rounded--all bgColor--white">
         <DayPicker
+          fromMonth={minDate}
+          toMonth={maxDate}
+          disabledDays={[{ after: maxDate, before: minDate }]}
           month={pickerMonth}
           className="fdsDateInput"
           onDayClick={handleDaySelect}
@@ -255,8 +289,22 @@ DateInput.propTypes = {
   /** Default date selection - accepts date string or instance of Date */
   defaultDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
 
+  /** Lower bound of selectable date range */
+  minDate: PropTypes.instanceOf(Date),
+
+  /** Upper bound of selectable date range */
+  maxDate: PropTypes.instanceOf(Date),
+
   /** String representing the order of date components (M=month, Y=year, D=day) */
   dateFormat: PropTypes.oneOf(Object.keys(DATE_FORMAT_MAP)),
+
+  /** Label for input */
+  label: PropTypes.string,
+
+  /**
+   * Object accepting any valid prop from `Popover` except for `trigger`.
+   */
+  popoverProps: PropTypes.object,
 };
 
 export default DateInput;

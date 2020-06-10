@@ -69,189 +69,196 @@ const useCloseOnScroll = (closeOnScrollRef, isActive, closeCallback) => {
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const Popover = ({
-  interactionMode = 'click',
-  disablePortal,
-  position = 'auto',
-  alignment = 'start',
-  distance = 4,
-  delay = 0,
-  onOpen = () => {},
-  onClose = () => {},
-  trigger,
-  children,
-  isOpen,
-  transitionName,
-  disableScrollRef,
-  closeOnScrollRef,
-}) => {
-  const [isActive, setIsActive] = useState(false);
-  const refTriggerWrap = useRef(null);
-  const refContent = useRef(null);
+const Popover = React.forwardRef(
+  (
+    {
+      interactionMode = 'click',
+      disablePortal,
+      position = 'auto',
+      alignment = 'start',
+      distance = 4,
+      delay = 0,
+      onOpen = () => {},
+      onClose = () => {},
+      trigger,
+      children,
+      isOpen,
+      transitionName,
+      disableScrollRef,
+      closeOnScrollRef,
+    },
+    forwardedRef
+  ) => {
+    const [isActive, setIsActive] = useState(false);
+    const refTriggerWrap = useRef(null);
+    const refContent = forwardedRef || React.createRef();
 
-  const handleSetIsActive = (newValue) => {
-    setIsActive(() => {
-      if (newValue) {
-        onOpen();
-      } else {
-        onClose();
-      }
-      return newValue;
-    });
-  };
-
-  useCloseOnScroll(closeOnScrollRef, isActive, () => handleSetIsActive(false));
-  useDisableScroll(disableScrollRef, isActive);
-
-  // update active state on props change to accommodate fully controlled popovers
-  useEffect(() => {
-    handleSetIsActive(interactionMode === 'controlled' && isOpen);
-  }, [interactionMode, isOpen]);
-
-  /**
-   * Closes popover when user presses ESC
-   * @param {Event} e DOMEvent
-   */
-  const handleKeyPress = (e) => {
-    const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
-    if (isEscapeKey) handleSetIsActive(false);
-  };
-
-  /**
-   * Closes popover when user clicks outside of content or trigger
-   * @param {Event} e DOMEvent
-   */
-  const handleBodyClick = (e) => {
-    const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
-    if (isNotPopoverClick) handleSetIsActive(false);
-  };
-
-  useEffect(() => {
-    /* eslint-disable no-undef */
-    document.body.addEventListener('mousedown', handleBodyClick, false);
-    document.body.addEventListener('keyup', handleKeyPress, false);
-
-    return () => {
-      document.body.removeEventListener('mousedown', handleBodyClick, false);
-      document.body.removeEventListener('keyup', handleKeyPress, false);
-    };
-    /* eslint-enable no-undef */
-  });
-
-  let triggerProps = {};
-  let hoverTimeout;
-  switch (interactionMode) {
-    case 'hover':
-      triggerProps.onMouseEnter = () => {
-        if (parseInt(delay, 10) > 0) {
-          hoverTimeout = setTimeout(handleSetIsActive, delay, true);
+    const handleSetIsActive = (newValue) => {
+      setIsActive(() => {
+        if (newValue) {
+          onOpen();
         } else {
-          handleSetIsActive(true);
+          onClose();
         }
+        return newValue;
+      });
+    };
+
+    useCloseOnScroll(closeOnScrollRef, isActive, () => handleSetIsActive(false));
+    useDisableScroll(disableScrollRef, isActive);
+
+    // update active state on props change to accommodate fully controlled popovers
+    useEffect(() => {
+      handleSetIsActive(interactionMode === 'controlled' && isOpen);
+    }, [interactionMode, isOpen]);
+
+    /**
+     * Closes popover when user presses ESC
+     * @param {Event} e DOMEvent
+     */
+    const handleKeyPress = (e) => {
+      const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
+      if (isEscapeKey) handleSetIsActive(false);
+    };
+
+    /**
+     * Closes popover when user clicks outside of content or trigger
+     * @param {Event} e DOMEvent
+     */
+    const handleBodyClick = (e) => {
+      const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
+      if (isNotPopoverClick) handleSetIsActive(false);
+    };
+
+    useEffect(() => {
+      /* eslint-disable no-undef */
+      document.body.addEventListener('mousedown', handleBodyClick, false);
+      document.body.addEventListener('keyup', handleKeyPress, false);
+
+      return () => {
+        document.body.removeEventListener('mousedown', handleBodyClick, false);
+        document.body.removeEventListener('keyup', handleKeyPress, false);
       };
-      triggerProps.onMouseLeave = () => {
-        if (hoverTimeout) {
-          clearTimeout(hoverTimeout);
-        }
-        handleSetIsActive(false);
-      };
-      triggerProps.onKeyUp = (e) => {
-        if (e.key === 'Tab') {
-          handleSetIsActive(true);
-        }
-      };
-      triggerProps.onKeyDown = (e) => {
-        if (e.key === 'Tab') {
+      /* eslint-enable no-undef */
+    });
+
+    let triggerProps = {};
+    let hoverTimeout;
+    switch (interactionMode) {
+      case 'hover':
+        triggerProps.onMouseEnter = () => {
+          if (parseInt(delay, 10) > 0) {
+            hoverTimeout = setTimeout(handleSetIsActive, delay, true);
+          } else {
+            handleSetIsActive(true);
+          }
+        };
+        triggerProps.onMouseLeave = () => {
+          if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+          }
           handleSetIsActive(false);
-        }
-      };
-      triggerProps.tabIndex = '1';
-      break;
-    case 'click':
-      triggerProps.onClick = () => {
-        handleSetIsActive(!isActive);
-      };
-      break;
-    default:
-      triggerProps = {};
-  }
+        };
+        triggerProps.onKeyUp = (e) => {
+          if (e.key === 'Tab') {
+            handleSetIsActive(true);
+          }
+        };
+        triggerProps.onKeyDown = (e) => {
+          if (e.key === 'Tab') {
+            handleSetIsActive(false);
+          }
+        };
+        triggerProps.tabIndex = '1';
+        break;
+      case 'click':
+        triggerProps.onClick = () => {
+          handleSetIsActive(!isActive);
+        };
+        break;
+      default:
+        triggerProps = {};
+    }
 
-  const clonedTrigger = React.cloneElement(trigger, triggerProps);
+    const clonedTrigger = React.cloneElement(trigger, triggerProps);
 
-  // https://popper.js.org/popper-documentation.html#modifiers
-  const popperModifiers = {
-    offset: {
-      enabled: true,
-      offset: `0,${distance}`,
-    },
-    preventOverflow: {
-      boundariesElement: 'viewport',
-    },
-    computeStyle: {
-      // When gpuAcceleration is enabled, `react-popper` always
-      // positions content to top/left 0 and uses `translate3d` to
-      // nudge it into place.
-      //
-      // This can cause issues with CSS transitions because it sets
-      // `will-change: transform`, which forces transitions to also
-      // ease the `translate3d`, which causes an unintended
-      // "diagonal slide" effect as the content appears.
-      gpuAcceleration: false,
-    },
-  };
+    // https://popper.js.org/popper-documentation.html#modifiers
+    const popperModifiers = {
+      offset: {
+        enabled: true,
+        offset: `0,${distance}`,
+      },
+      preventOverflow: {
+        boundariesElement: 'viewport',
+      },
+      computeStyle: {
+        // When gpuAcceleration is enabled, `react-popper` always
+        // positions content to top/left 0 and uses `translate3d` to
+        // nudge it into place.
+        //
+        // This can cause issues with CSS transitions because it sets
+        // `will-change: transform`, which forces transitions to also
+        // ease the `translate3d`, which causes an unintended
+        // "diagonal slide" effect as the content appears.
+        gpuAcceleration: false,
+      },
+    };
 
-  const contentStyle = {
-    zIndex: FDS.ZINDEX_POPOVER,
-  };
+    const contentStyle = {
+      zIndex: FDS.ZINDEX_POPOVER,
+    };
 
-  const popperContent = (
-    <CSSTransition
-      in={isActive}
-      unmountOnExit
-      timeout={transitionName ? 200 : 0}
-      classNames={transitionName ? `rtg${transitionName}` : undefined}
-    >
-      <Popper
-        innerRef={(node) => {
-          refContent.current = node;
-        }}
-        modifiers={popperModifiers}
-        placement={getPopperPlacement(position, alignment)}
+    const popperContent = (
+      <CSSTransition
+        in={isActive}
+        unmountOnExit
+        timeout={transitionName ? 200 : 0}
+        classNames={transitionName ? `rtg${transitionName}` : undefined}
       >
-        {({ placement, ref, style }) => (
-          <div
-            ref={ref}
-            style={{
-              ...contentStyle,
-              ...style,
-            }}
-            data-placement={placement}
-          >
-            {children}
-          </div>
-        )}
-      </Popper>
-    </CSSTransition>
-  );
-
-  return (
-    <Manager>
-      <Reference>
-        {({ ref }) => (
-          <div ref={ref} aria-haspopup="true" aria-expanded={isActive.toString()}>
-            <div ref={refTriggerWrap}>{clonedTrigger}</div>
-          </div>
-        )}
-      </Reference>
-      {disablePortal
-        ? popperContent
-        : ReactDOM.createPortal(
-            popperContent,
-            document.body /* eslint-disable-line no-undef */
+        <Popper
+          innerRef={(node) => {
+            refContent.current = node;
+          }}
+          modifiers={popperModifiers}
+          placement={getPopperPlacement(position, alignment)}
+        >
+          {({ placement, ref, style }) => (
+            <div
+              ref={ref}
+              style={{
+                ...contentStyle,
+                ...style,
+              }}
+              data-placement={placement}
+            >
+              {children}
+            </div>
           )}
-    </Manager>
-  );
-};
+        </Popper>
+      </CSSTransition>
+    );
+
+    return (
+      <Manager>
+        <Reference>
+          {({ ref }) => (
+            <div ref={ref} aria-haspopup="true" aria-expanded={isActive.toString()}>
+              <div ref={refTriggerWrap}>{clonedTrigger}</div>
+            </div>
+          )}
+        </Reference>
+        {disablePortal
+          ? popperContent
+          : ReactDOM.createPortal(
+              popperContent,
+              document.body /* eslint-disable-line no-undef */
+            )}
+      </Manager>
+    );
+  }
+);
+
+Popover.displayName = 'Popover';
 
 const validRef = PropTypes.oneOfType([
   PropTypes.func,
@@ -316,6 +323,9 @@ Popover.propTypes = {
 
   /** When the Popover detects scroll events from this ref, the popover should close. */
   closeOnScrollRef: validRef,
+
+  /** Ref to forward to the content container of the popover */
+  ref: validRef,
 };
 
 export default Popover;

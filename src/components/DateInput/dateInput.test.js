@@ -17,8 +17,16 @@ describe('DateInput component', () => {
     it('returns adjusted date ranges when a `selectedDate` is passed', () => {
       const battleOfHastings = new Date('Oct 14 1066');
       const totalRecall = new Date('Jun 1 2084');
-      expect(getYearRange(2020, 10, 10, battleOfHastings)).toMatchObject({ startYear: 1066, endYear: 2031 });
-      expect(getYearRange(2020, 10, 10, totalRecall)).toMatchObject({ startYear: 2010, endYear: 2085 });
+      expect(getYearRange(2020, 10, 10, null, null, battleOfHastings)).toMatchObject({ startYear: 1066, endYear: 2031 });
+      expect(getYearRange(2020, 10, 10, null, null, totalRecall)).toMatchObject({ startYear: 2010, endYear: 2085 });
+    });
+
+    it('returns bounded date range when minDate and/or maxDate are passed', () => {
+      const min = new Date('Jan 1 2018');
+      const max = new Date('Oct 1 2020');
+      expect(getYearRange(2020, 1, 1, min)).toMatchObject({ startYear: 2018, endYear: 2022 });
+      expect(getYearRange(2020, 1, 1, null, max)).toMatchObject({ startYear: 2019, endYear: 2021 });
+      expect(getYearRange(2020, 1, 1, min, max)).toMatchObject({ startYear: 2018, endYear: 2021 });
     });
   });
 
