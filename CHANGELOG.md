@@ -58,6 +58,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
   icons, use `lib/icons/svg/`.
 
 
+## [8.9] DateInput callbacks
+
+- added `onInputChange` callback to `DateInput`
+
 ## [8.8] Popover ref forwarding
 
 - `Popover` now accepts a `ref` prop that will be forwarded to the content container DOM element

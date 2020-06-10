@@ -26,35 +26,31 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
   >
     <Manager>
       <Reference>
-        <InnerReference
-          setReferenceNode={[Function]}
+        <div
+          aria-expanded="false"
+          aria-haspopup="true"
         >
-          <div
-            aria-expanded="false"
-            aria-haspopup="true"
-          >
-            <div>
-              <span
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                style={
-                  Object {
-                    "cursor": "help",
-                  }
+          <div>
+            <span
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "cursor": "help",
                 }
-                tabIndex="1"
-              >
-                <Trigger>
-                  <p>
-                    trigger
-                  </p>
-                </Trigger>
-              </span>
-            </div>
+              }
+              tabIndex="1"
+            >
+              <Trigger>
+                <p>
+                  trigger
+                </p>
+              </Trigger>
+            </span>
           </div>
-        </InnerReference>
+        </div>
       </Reference>
       <Portal
         containerInfo={<body />}

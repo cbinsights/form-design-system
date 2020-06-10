@@ -183,26 +183,35 @@ const Popover = React.forwardRef(
     const clonedTrigger = React.cloneElement(trigger, triggerProps);
 
     // https://popper.js.org/popper-documentation.html#modifiers
-    const popperModifiers = {
-      offset: {
+    const popperModifiers = [
+      {
+        name: 'offset',
         enabled: true,
-        offset: `0,${distance}`,
+        options: {
+          offset: [0, distance],
+        },
       },
-      preventOverflow: {
-        boundariesElement: 'viewport',
+      {
+        name: 'preventOverflow',
+        options: {
+          boundariesElement: 'viewport',
+        },
       },
-      computeStyle: {
-        // When gpuAcceleration is enabled, `react-popper` always
-        // positions content to top/left 0 and uses `translate3d` to
-        // nudge it into place.
-        //
-        // This can cause issues with CSS transitions because it sets
-        // `will-change: transform`, which forces transitions to also
-        // ease the `translate3d`, which causes an unintended
-        // "diagonal slide" effect as the content appears.
-        gpuAcceleration: false,
+      {
+        name: 'computeStyles',
+        options: {
+          // When gpuAcceleration is enabled, `react-popper` always
+          // positions content to top/left 0 and uses `translate3d` to
+          // nudge it into place.
+          //
+          // This can cause issues with CSS transitions because it sets
+          // `will-change: transform`, which forces transitions to also
+          // ease the `translate3d`, which causes an unintended
+          // "diagonal slide" effect as the content appears.
+          gpuAcceleration: false,
+        },
       },
-    };
+    ];
 
     const contentStyle = {
       zIndex: FDS.ZINDEX_POPOVER,
