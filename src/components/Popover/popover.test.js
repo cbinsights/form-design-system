@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Popover, { getPopperPlacement } from '.';
+import Popover from '.';
+import { getPopperPlacement } from './util';
 
 const Content = () => (<p>popover content</p>);
 const triggerJsx = (<button>trigger</button>);
