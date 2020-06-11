@@ -2,6 +2,10 @@ import { Meta, Story } from "@storybook/addon-docs/blocks";
 import { TableLayout } from "components/util/Table"
 import FDS from 'lib/dictionary/js/styleConstants';
 
+export const borderStyle = {
+  border: `1px solid ${FDS.COLOR_SAND}`
+}
+
 <Meta title="Style Utilities/Spacing"  />
 
 # Spacing
@@ -17,9 +21,13 @@ export const Scale = ({ label, num }) => (
 )
 
 export const SpacingExample = ({ className }) => (
-  <div className={`${className.startsWith('padding') && className} display--inlineBlock border--all margin--right--2 margin--bottom--2`} style={{ backgroundColor: className.startsWith('padding') ? FDS.COLOR_MINT : "#F6BDC1", border: `2px dashed ${FDS.COLOR_CHARCOAL}` }}>
-    <div className={`${className.startsWith('margin') && className} padding--all--2 color--charcoal fontWeight--bold bgColor--white`}>
-      {className} 
+  <div className="display--inlineBlock margin--right--2 margin--bottom--2" style={{ border: className.startsWith('padding') ? `5px solid ${FDS.COLOR_SAND}` : ''}}>
+    <div className={`${className.startsWith('padding') && className} display--inlineBlock border--all `} style={{ backgroundColor: className.startsWith('padding') ? FDS.COLOR_MINT : "#F6BDC1",  }}>
+      <div className={`${className.startsWith('margin') && className} display--inlineBlock`} style={{ border: className.startsWith('margin') ? `5px solid ${FDS.COLOR_SAND}` : ''}}>
+        <div className={`padding--all--2 color--charcoal fontWeight--bold bgColor--white`} style={{ border: `2px dashed #666` }}>
+          {className} 
+        </div>
+      </div>
     </div>
   </div>
 )
