@@ -1,5 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
 import PropTypes from 'prop-types';
 import {
   Menu as ReachMenu,
@@ -8,17 +7,13 @@ import {
   MenuPopover as ReachMenuPopover,
 } from '@reach/menu-button';
 
-const Menu = ({ isDisabled = false, isInModal = false, children, trigger }) => {
+const Menu = ({ isDisabled = false, children, trigger }) => {
   if (isDisabled) return trigger;
 
   return (
     <ReachMenu>
       <ReachMenuButton as="div">{trigger}</ReachMenuButton>
-      <ReachMenuPopover
-        className={cx('elevation--2 rounded--all bgColor--white', {
-          'fdsMenu--inModal': isInModal,
-        })}
-      >
+      <ReachMenuPopover className="elevation--2 rounded--all bgColor--white">
         <ReachMenuItems>{children}</ReachMenuItems>
       </ReachMenuPopover>
     </ReachMenu>
@@ -35,9 +30,6 @@ Menu.propTypes = {
 
   /** Prevent trigger from opening menu */
   isDisabled: PropTypes.bool,
-
-  /** Sets `z-index` to `zindex-crazy` when inside a modal. */
-  isInModal: PropTypes.bool,
 };
 
 export default Menu;
