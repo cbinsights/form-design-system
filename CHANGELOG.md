@@ -52,6 +52,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - `CountdownButton` (only used by Toast)
 - `DecoratedInput` (use TextInput instead)
 - `IconInput` (use TextInput instead)
+- `Section` (use fds classes instead)
 
 #### `raw/` Icons distribution
 - `lib/icons/raw/` will no longer exist in packages published v9 or later. For raw SVG
