@@ -21,10 +21,10 @@ export const Scale = ({ label, num }) => (
 )
 
 export const SpacingExample = ({ className }) => (
-  <div className="display--inlineBlock margin--right--2 margin--bottom--2" style={{ border: className.startsWith('padding') ? `5px solid ${FDS.COLOR_SAND}` : ''}}>
+  <div className="display--inlineBlock margin--right--2 margin--bottom--2" style={{ border: className.startsWith('padding') ? '1px dashed #333' : ''}}>
     <div className={`${className.startsWith('padding') && className} display--inlineBlock border--all `} style={{ backgroundColor: className.startsWith('padding') ? FDS.COLOR_MINT : "#F6BDC1",  }}>
-      <div className={`${className.startsWith('margin') && className} display--inlineBlock`} style={{ border: className.startsWith('margin') ? `5px solid ${FDS.COLOR_SAND}` : ''}}>
-        <div className={`padding--all--2 color--charcoal fontWeight--bold bgColor--white`} style={{ border: `2px dashed #666` }}>
+      <div className={`${className.startsWith('margin') && className} display--inlineBlock rounded--all`}>
+        <div className={`padding--all--2 color--charcoal fontWeight--bold bgColor--white elevation--1 rounded--all`} style={{ border: className.startsWith('margin') ? `1px dashed #333` : ''}}>
           {className} 
         </div>
       </div>
