@@ -174,7 +174,7 @@ const DateInput = ({
   defaultDate,
   onDateChange = () => {},
   onInputChange = () => {},
-  label,
+  label = '',
   minDate,
   maxDate,
   ...rest
@@ -231,6 +231,12 @@ const DateInput = ({
       setPickerMonth(parsedDate.toDate());
       handleDaySelect(parsedDate.toDate());
     }
+
+    // if user backspaces to clear the input, clear out the picker
+    if (value === '') {
+      setSelectedDate(null);
+      onDateChange(null);
+    }
   };
 
   return (
@@ -279,7 +285,9 @@ DateInput.propTypes = {
   /**
    * Change callback for date selection. This is called when a valid
    * date has been selected in the picker or entered into the input.
+   *
    * Called with the `Date` object of the selected date.
+   * Called with `null` when the date has been cleared.
    */
   onDateChange: PropTypes.func,
 
