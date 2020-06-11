@@ -10,14 +10,14 @@ export const Scale = ({ label, num }) => (
   <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", minWidth: "20px", marginRight: 4, marginTop: -4 }}>
     <span style={{ fontWeight: "bold" }}>{label}</span>
     <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center" }}>
-      <div style={{ height: "16px", background: FDS.COLOR_BLUE, marginRight: 4, marginLeft: 4, marginBottom: 2, width: `${num}px` }}/>
+      <div style={{ height: "16px", background: FDS.COLOR_AQUA, marginRight: 4, marginLeft: 4, marginBottom: 2, width: `${num}px` }}/>
       <small style={{ fontSize: 9, lineHeight: "14px", fontStyle: "italic" }} className="color--slate">{num}px</small>
     </div>
   </div>
 )
 
 export const SpacingExample = ({ className }) => (
-  <div className={`${className.startsWith('padding') && className} bgColor--blue display--inlineBlock border--all margin--right--2 margin--bottom--2`}>
+  <div className={`${className.startsWith('padding') && className} display--inlineBlock border--all margin--right--2 margin--bottom--2`} style={{ backgroundColor: className.startsWith('padding') ? FDS.COLOR_MINT : "#F6BDC1", border: `2px dashed ${FDS.COLOR_CHARCOAL}` }}>
     <div className={`${className.startsWith('margin') && className} padding--all--2 color--charcoal fontWeight--bold bgColor--white`}>
       {className} 
     </div>
