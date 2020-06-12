@@ -194,7 +194,7 @@ const Popover = React.forwardRef(
       {
         name: 'preventOverflow',
         options: {
-          boundariesElement: 'viewport',
+          boundary: 'viewport',
         },
       },
       {
