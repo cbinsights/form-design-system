@@ -41,6 +41,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 #### `MenuButton` Component
 - Now only accepts a `button` element, or a component that renders a `button` element as a trigger
+- `isInModal` is no longer accepted
 
 #### `Dialog` Component
 - `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc). 
