@@ -57,6 +57,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - `lib/icons/raw/` will no longer exist in packages published v9 or later. For raw SVG
   icons, use `lib/icons/svg/`.
 
+#### Renamed InlineBlockList component
+- `InlineBlockList` component is now `SeparatorList` as we want the naming to have more
+of a semantic difference from an upcoming component we'll be releasing that is similar
+to this one but controls spacing more.
+
 
 ## [8.9] DateInput callbacks
 
