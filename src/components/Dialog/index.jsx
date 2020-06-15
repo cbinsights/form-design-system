@@ -6,8 +6,8 @@ import FocusTrap from 'focus-trap-react';
 import rafSchd from 'raf-schd';
 import DenyIcon from 'lib/icons/react/DenyIcon';
 import IconButton from 'components/IconButton';
-import Section from 'components/Section';
 import noScroll from 'components/util/scroll';
+import cx from 'classnames';
 
 export const isElementOverflowing = ({ current }) => {
   // Checking for current first is safer just in case,
@@ -88,7 +88,7 @@ const Dialog = ({
           {(title || onDismiss) && (
             <React.Fragment>
               <div className="dialog-header">
-                <Section border="bottom">
+                <div className="bgColor--white padding--all border--bottom">
                   <div className="padding--right--double type--head4">
                     {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
                     {/* There always needs to be something (even a space) in the header for display reasons */}
@@ -103,21 +103,22 @@ const Dialog = ({
                       />
                     </div>
                   )}
-                </Section>
+                </div>
               </div>
             </React.Fragment>
           )}
           <div className="dialog-content" ref={contentEl}>
-            <Section>{content}</Section>
+            <div className="padding--all bgColor--white">{content}</div>
           </div>
           {footerContent && (
             <div className="dialog-footer">
-              <Section
-                border={alwaysShowBorder || isOverflowing ? 'top' : undefined}
-                bgColor="white"
+              <div
+                className={cx('bgColor--white', 'padding--all', {
+                  'border-top': alwaysShowBorder || isOverflowing,
+                })}
               >
                 {footerContent}
-              </Section>
+              </div>
             </div>
           )}
         </div>

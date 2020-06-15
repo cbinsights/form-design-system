@@ -6,15 +6,6 @@
   z-index: var(--zindex-modal);
 }
 
-.fdsMenu--inModal {
-  /*
-   * The Reach portaled popover can not be configured to use
-   * a different positioning strategy, so we must set a high
-   * zindex to ensure the menu list can appear above modals.
-   */
-  z-index: var(--zindex-crazy);
-}
-
 [data-reach-menu-items] {
   border-width: 0;
   padding: 0;
