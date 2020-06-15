@@ -18,7 +18,6 @@ import MenuItem from 'components/MenuItem';
 import Popover from 'components/Popover';
 import Prompt from 'components/Prompt';
 import Radio from 'components/Radio';
-import Section from 'components/Section';
 import StackedButton from 'components/StackedButton';
 import TextInput from 'components/TextInput';
 import Toaster from 'components/Toaster';
@@ -46,7 +45,6 @@ export {
   Popover,
   Prompt,
   Radio,
-  Section,
   StackedButton,
   TextInput,
   Toaster,
