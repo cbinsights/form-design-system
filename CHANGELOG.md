@@ -60,10 +60,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
   icons, use `lib/icons/svg/`.
 
 #### Renamed InlineBlockList component
-- `InlineBlockList` component is now `SeparatorList` as we want the naming to have more
-of a semantic difference from an upcoming component we'll be releasing that is similar
-to this one but controls spacing more.
-
+- `InlineBlockList is now SeparatorList. This component is primarily used for configuring
+separator characters between items in an inline-block list. If you'd like to just space
+out items, please use GapList, a new component also added in v9.
 
 ## [8.9] DateInput callbacks
 
