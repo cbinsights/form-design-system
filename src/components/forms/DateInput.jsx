@@ -171,6 +171,8 @@ const DateInput = ({
   pastYears = 40,
   dateFormat = 'MDY',
   popoverProps = {},
+  inputRef,
+  popoverRef,
   defaultDate,
   onDateChange = () => {},
   onInputChange = () => {},
@@ -186,8 +188,10 @@ const DateInput = ({
     defaultDate ? moment(defaultDate).format(DATE_FORMAT_MAP[dateFormat]) : ''
   );
 
-  // eslint-disable-next-line no-param-reassign
+  /* eslint-disable no-param-reassign */
   delete popoverProps.trigger;
+  delete popoverProps.ref;
+  /* eslint-enable no-param-reassign */
 
   // If the dateFormat prop changes while the input has a user-entered value,
   // we want the value to change to reflect the new dateFormat
@@ -241,8 +245,10 @@ const DateInput = ({
 
   return (
     <Popover
+      ref={popoverRef}
       trigger={
         <TextInput
+          ref={inputRef}
           {...rest}
           label={label}
           type="text"
@@ -315,8 +321,15 @@ DateInput.propTypes = {
   /** Label for input */
   label: PropTypes.string,
 
+  /** Ref to apply to `input` element */
+  inputRef: PropTypes.Object,
+
+  /** Ref to apply to popover content element */
+  popoverRef: PropTypes.Object,
+
   /**
-   * Object accepting any valid prop from `Popover` except for `trigger`.
+   * Object accepting any valid prop from `Popover` except for `trigger` and `ref`.
+   * To apply a `ref` to the popover element, use the `popoverRef` prop.
    */
   popoverProps: PropTypes.object,
 };
