@@ -27,6 +27,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [8.10] DateInput refs
+
+Added ref props for the `input` and popover content elements:
+- `inputRef`
+- `popoverRef`
+
 ## [8.9] DateInput callbacks
 
 - added `onInputChange` callback to `DateInput`

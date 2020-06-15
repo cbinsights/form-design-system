@@ -7,7 +7,7 @@
 * Jenkins populates the patch version depending on the branch.
 */
 
-String VERSION = "8.9"
+String VERSION = "8.10"
 
 /* ---- DO NOT EDIT BELOW (unless you really know what you're doing) ---- */
 
