@@ -1,0 +1,98 @@
+import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { Info, ImportPath } from 'components/util/storybook';
+
+import Checkbox from '.';
+
+<Meta title="Components/Checkbox" decorators={[withKnobs]} component={Checkbox} />
+
+# Checkbox
+
+<ImportPath component={Checkbox} section="forms" />
+
+Uncontrolled custom checkbox component with optional label.
+
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
+  <Checkbox
+    indeterminate={boolean('indeterminate', false)}
+    disabled={boolean('disabled', false)}
+    name="knobs"
+    label={text('label', 'I agree to receive spam')}
+  />
+</Story>
+
+<Preview isExpanded>
+  <Checkbox
+    name="knobs"
+    label='I agree to receive spam'
+  />
+</Preview>
+
+<Info type="info">
+  Additional props will be spread on the `input` element.
+</Info>
+
+<Props of={Checkbox} />
+
+## Managing checked state
+
+`Checkbox` will render as unchecked by default. Use the `defaultChecked` boolean prop to set the
+initial state to checked.
+
+<Preview>
+  <Story name="Managing checked state">
+    <Checkbox defaultChecked name="default-checked" label="Checked by default" />
+  </Story>
+</Preview>
+
+## Preventing user interaction
+
+Use the `disabled` prop to prevent the user from changing the chekced state of the
+checkbox.
+
+<Preview>
+  <Story name="Disabled checkboxes">
+    <React.Fragment>
+      <div>
+        <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
+      </div>
+      <div>
+        <Checkbox disabled defaultChecked name="disabled-checked" label="Disabled checked" />
+      </div>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Checkboxes without labels
+
+You can prevent the label from showing by setting `showLabel` to `false`.
+The value of the `label` prop will be used to set an ARIA attribute.
+
+<Preview>
+  <Story name="Checkbox without label">
+    <Checkbox name="no-label" label="I don't have a label" showLabel={false} />
+  </Story>
+</Preview>
+
+## Indeterminate checkbox
+
+Passing the `indeterminate` boolean prop will set `indeterminate` attribute of the
+underlying input element and render the `CheckIndeterminate` icon when the checkbox is
+checked.
+
+<Preview>
+  <Story name="Indeterminate checkboxes">
+    <Checkbox indeterminate name="notsureif" label="Indeterminate checkbox" />
+  </Story>
+</Preview>
+
+## Reading the value of a `Checkbox`
+
+The `onChange` prop will be spread on the `input` element the `Checkbox` component
+renders. Read the `checked` attribute of the event `currentTarget`.
+
+<Preview>
+  <Story name="Reading the value of a Checkbox">
+    <Checkbox label="Option one" onChange={(e) => { console.log(e.currentTarget.checked) }} />
+  </Story>
+</Preview>

@@ -1,0 +1,95 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, number, select, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { ImportPath } from 'components/util/storybook';
+
+import DateInput from '.';
+
+<Meta title="Components/DateInput" decorators={[withKnobs]} component={DateInput} />
+
+# DateInput
+
+<ImportPath component={DateInput} section="forms" />
+
+Component for inputting a single date. The `input` element will accept date text entry in
+"MDY", "DMY", or "YMD" formats, or the user can use the calendar popover.
+
+`DateInput` will use the American English ("MM/DD/YYYY") date format by default. You can
+change the date component order for Canadian or European style dates with the `dateFormat`
+prop.
+
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
+  <DateInput
+    label={text('label', null)}
+    onDateChange={action('date change')}
+    onInputChange={action('input change')}
+    futureYears={number('futureYears', 5)}
+    pastYears={number('pastYears', 10)}
+    dateFormat={select('dateFormat', {
+      'US (MDY)': 'MDY',
+      'European (DMY)': 'DMY',
+      'ISO-8601/Canadian (YMD)': 'YMD',
+    }, 'MDY')}
+  />
+</Story>
+
+<Preview isExpanded>
+  <DateInput onDateChange={(date) => {}} />
+</Preview>
+
+<Props of={DateInput} />
+
+## Default selected date
+
+The input element in `DateInput` will be empty by default.
+Pass an instance of `Date` or a parsable date string (`MM/DD/YYYY`) to the `defaultDate` prop to set a default value.
+
+<Preview>
+  <Story name="Default selected date">
+    <DateInput
+      onInputChange={action('input change')}
+      onDateChange={action('date change')}
+      defaultDate={new Date()}
+    />
+  </Story>
+</Preview>
+
+## Setting a range of selectable dates
+
+`DateInput` accepts lower and/or upper bounds for a range of selectable dates with the
+`minDate` and `maxDate` props. Pass an instance of `Date` to set either end of the range.
+
+**Note:** This will restrict the days available in the popover calendar UI, but the user
+may still type dates outside of range directly into the input. Use the `onDateChange`
+event for extra validation if necessary.
+
+<Preview>
+  <Story name="Date ranges">
+    <DateInput
+      label="Enter a date in 2020"
+      onInputChange={action('input change')}
+      onDateChange={action('date change')}
+      minDate={new Date('Jan 1 2020')}
+      maxDate={new Date('Dec 31 2020')}
+    />
+  </Story>
+</Preview>
+
+## Customizing the picker popover
+
+The `Popover` containing the date picker can be configured via `popoverProps`.
+Any valid `Popover` prop is accepted except for `trigger`, which the `DateInput` must
+control.
+
+In this exmaple, the `alignment` prop of the popover has been set so the picker is
+right-aligned.
+
+<Preview>
+  <Story name="Popover props">
+    <DateInput
+      onDateChange={action('date change')}
+      onInputChange={action('input change')}
+      popoverProps={{ alignment: 'end' }}
+    />
+  </Story>
+</Preview>

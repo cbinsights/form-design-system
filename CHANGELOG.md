@@ -26,15 +26,50 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
-## [8.9] Spacing classes
+## [9.0] MAJOR
 
+### Changes / Additions
+
+- Components can be imported via a destructure pattern. `import { Button, IconButton } from '@cbinsights/fds/lib/components'`
+- FDS Icons (only React) can be imported via a destructure pattern. `import { AddIcon, CaretDownIcon } from '@cbinsights/fds/lib/icons/react'`
 - Added `x` and `y` directions to spacing classes (e.g. `margin--y`)
 - Added new end value for spacing classes: `1`, `2`, `3 (default)`, `4`, and `5`, which correspond to pixel values
+
+### **BREAKING CHANGES**
+
+#### Component reorganization
+- The following folders no longer exist: `media`, `interactive`, `layout` `forms`, `modals`, `popovers`
+- All components now live in `lib/components`. This is going to break tons of import paths!
+
+#### `MenuButton` Component
+- Now only accepts a `button` element, or a component that renders a `button` element as a trigger
+- `isInModal` is no longer accepted
+
+#### `Dialog` Component
+- `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc). 
+
+#### `Flex` Component
+- `wrap` prop is no longer accepted on `Flex`
+
+#### Removed components
+- `CountdownButton` (only used by Toast)
+- `DecoratedInput` (use TextInput instead)
+- `IconInput` (use TextInput instead)
+- `Section` (use fds classes instead)
+
+#### `raw/` Icons distribution
+- `lib/icons/raw/` will no longer exist in packages published v9 or later. For raw SVG
+  icons, use `lib/icons/svg/`.
 
 ### **Deprecations**
 
 - `half` and `double` end values are now deprecated and will be removed in a feature release.
 Please use the new end values added for these classes that were added in this minor release.
+
+
+## [8.9] DateInput callbacks
+
+- added `onInputChange` callback to `DateInput`
 
 ## [8.8] Popover ref forwarding
 

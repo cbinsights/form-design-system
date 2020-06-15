@@ -1,0 +1,119 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, select } from '@storybook/addon-knobs';
+import { ImportPath } from 'components/util/storybook';
+
+import InlineBlockList from '.';
+import Chip from 'components/Chip';
+
+export const parentStyle = {
+  height: '100vh',
+  width: '100vw',
+};
+
+<Meta title="Components/InlineBlockList" decorators={[withKnobs]} component={InlineBlockList} />
+
+# InlineBlockList
+<ImportPath component={InlineBlockList} section="layout" />
+
+<Story name="Knobs">
+  <InlineBlockList
+    separator={text('separator', '✈️')}
+    items={['New York', 'Paris', 'Schenectady', 'Los Angeles', 'Hong Kong']}
+  />
+</Story>
+
+This layout component takes a list of strings or components and renders a `ul` with list
+items displayed `inline-block`. **This component allows items in the list to wrap**.
+
+Because `Flex` does not allow items to wrap, `InlineBlockList` can be useful for rendering
+lists of chips or tags.
+
+## Separator
+
+An optional `separator` prop renders a given string between the items in the list. Useful
+for breadcrumbs and other separated lists.
+
+### a11y considerations
+The separator string is rendered using CSS pseudo element content via the `data-separator`
+attribute on each list item.
+
+<Props of={InlineBlockList} />
+
+### Chips list
+
+<Preview>
+  <Story name="Chips list">
+    <InlineBlockList
+      items={[
+        <Chip key="horses" onClose={() => {}} label="Horses" theme="outline" />,
+        <Chip key="wombats" onClose={() => {}} label="Wombats" theme="outline" />,
+        <Chip key="seals" onClose={() => {}} label="Seals" theme="outline" />,
+        <Chip key="dogs" onClose={() => {}} label="Dogs" theme="outline" />,
+      ]}
+    />
+  </Story>
+</Preview>
+
+### Separated lists
+*The separator can be any string*
+
+<Preview>
+  <Story name="Separated lists">
+    <div>
+      <div className="padding--all">
+        <InlineBlockList
+          separator={select(
+            'Separator',
+            {
+              Pipe: '|',
+              Middot: '・',
+              Claps: '👏',
+            },
+            '|'
+          )}
+          items={[
+            <a key="some" className="type--link">
+              Some
+            </a>,
+            <a key="footer" className="type--link">
+              Footer
+            </a>,
+            <a key="links" className="type--link">
+              Links
+            </a>,
+            <a key="or" className="type--link">
+              Or
+            </a>,
+            <a key="something" className="type--link">
+              Something
+            </a>,
+          ]}
+        />
+      </div>
+    </div>
+  </Story>
+</Preview>
+
+### Breadcrumbs
+*You may mix strings and elements in the `items` prop*
+
+<Preview>
+  <Story name="Breadcrumbs">
+    <div>
+      <div className="padding--all">
+        <InlineBlockList
+          separator="/"
+          items={[
+            <a key="main" className="type--link">
+              Main
+            </a>,
+            'Retail',
+          ]}
+        />
+      </div>
+      <div className="padding--all">
+        <InlineBlockList separator=">" items={['Market Sizings', 'Retail', 'India']} />
+      </div>
+    </div>
+  </Story>
+</Preview>
