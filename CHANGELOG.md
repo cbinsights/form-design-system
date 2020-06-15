@@ -59,6 +59,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - `lib/icons/raw/` will no longer exist in packages published v9 or later. For raw SVG
   icons, use `lib/icons/svg/`.
 
+#### Renamed InlineBlockList component
+- `InlineBlockList is now SeparatorList. This component is primarily used for configuring
+separator characters between items in an inline-block list. If you'd like to just space
+out items, please use GapList, a new component also added in v9.
 
 ## [8.9] DateInput callbacks
 
