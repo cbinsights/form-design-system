@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GapList component matches snapshot for mixed strings and components 1`] = `
+<div
+  style={
+    Object {
+      "margin": "-8px -8px",
+    }
+  }
+>
+  <div
+    className="display--inlineBlock valign--top margin--x--2 margin--y--2"
+    key="0"
+  >
+    <a
+      href="#"
+      key="👻"
+    >
+      Spooky
+    </a>
+  </div>
+  <div
+    className="display--inlineBlock valign--top margin--x--2 margin--y--2"
+    key="1"
+  >
+    snapshot
+  </div>
+</div>
+`;
+
+exports[`GapList component matches snapshot for string items 1`] = `
+<div
+  style={
+    Object {
+      "margin": "-8px -8px",
+    }
+  }
+>
+  <div
+    className="display--inlineBlock valign--top margin--x--2 margin--y--2"
+    key="0"
+  >
+    why
+  </div>
+  <div
+    className="display--inlineBlock valign--top margin--x--2 margin--y--2"
+    key="1"
+  >
+    did
+  </div>
+  <div
+    className="display--inlineBlock valign--top margin--x--2 margin--y--2"
+    key="2"
+  >
+    it
+  </div>
+  <div
+    className="display--inlineBlock valign--top margin--x--2 margin--y--2"
+    key="3"
+  >
+    have
+  </div>
+  <div
+    className="display--inlineBlock valign--top margin--x--2 margin--y--2"
+    key="4"
+  >
+    to
+  </div>
+  <div
+    className="display--inlineBlock valign--top margin--x--2 margin--y--2"
+    key="5"
+  >
+    be
+  </div>
+  <div
+    className="display--inlineBlock valign--top margin--x--2 margin--y--2"
+    key="6"
+  >
+    snakes?
+  </div>
+</div>
+`;
