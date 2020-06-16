@@ -29,6 +29,8 @@ exports[`Popover component matches snapshot (default props) 1`] = `
       <CSSTransition
         classNames=""
         in={false}
+        onEntered={[Function]}
+        onExited={[Function]}
         timeout={0}
         unmountOnExit={true}
       >
