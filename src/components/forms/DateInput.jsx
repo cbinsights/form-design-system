@@ -337,7 +337,7 @@ DateInput.propTypes = {
    * Object accepting any valid prop from `Popover` except for `trigger` and `ref`.
    * To apply a `ref` to the popover element, use the `popoverRef` prop.
    */
-  popoverProps: PropTypes.func,
+  popoverProps: PropTypes.object,
 };
 
 export default DateInput;
