@@ -322,10 +322,16 @@ DateInput.propTypes = {
   label: PropTypes.string,
 
   /** Ref to apply to `input` element */
-  inputRef: PropTypes.Object,
+  inputRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
 
   /** Ref to apply to popover content element */
-  popoverRef: PropTypes.Object,
+  popoverRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
 
   /**
    * Object accepting any valid prop from `Popover` except for `trigger` and `ref`.
