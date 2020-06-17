@@ -24,6 +24,7 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
   <TextInput
     label={text("label", "Label")}
     errorText={text("errorText", undefined)}
+    isError={boolean("isError", undefined)}
     showRequired={boolean("required", undefined)}
     type={text("type", undefined)}
     onChange={action("changed")}
@@ -37,6 +38,7 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
       undefined,
       { display: "inline-radio" }
     )}
+    isLabelBold={boolean("isLabelBold", undefined)}
   />
 </Story>
 
