@@ -229,11 +229,15 @@ const DateInput = ({
     setInputValue(value);
     onInputChange(value);
 
+    // when the user types a date that appears valid based on the given format,
+    // we attempt to parse the date string with moment. If the date is parsed
+    // as valid, update the selected day.
     if (isValidUserDate(value, dateFormat)) {
       const parsedDate = moment(value, DATE_FORMAT_MAP[dateFormat]);
-      // we want the month/year in picker to update as the user types
-      setPickerMonth(parsedDate.toDate());
-      handleDaySelect(parsedDate.toDate());
+      if (parsedDate.isValid()) {
+        setPickerMonth(parsedDate.toDate());
+        handleDaySelect(parsedDate.toDate());
+      }
     }
 
     // if user backspaces to clear the input, clear out the picker

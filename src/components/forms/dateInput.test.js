@@ -84,9 +84,15 @@ describe('DateInput component', () => {
       expect(dateChangeFn).toHaveBeenCalled();
     });
 
+    it('does not call onDateChange when user types an INCOMPLETE freeform date', () => {
+      expect(dateChangeFn).not.toHaveBeenCalled();
+      input.simulate('change', { target: { value: '2/3' } });
+      expect(dateChangeFn).not.toHaveBeenCalled();
+    });
+
     it('does not call onDateChange when user types an INVALID freeform date', () => {
       expect(dateChangeFn).not.toHaveBeenCalled();
-      input.simulate('change', { target: { value: 'this is not a valid date lol' } });
+      input.simulate('change', { target: { value: '2/30/2020' } });
       expect(dateChangeFn).not.toHaveBeenCalled();
     });
 
