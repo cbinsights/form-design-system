@@ -35,5 +35,19 @@ describe('Button component', () => {
     expect(button.classList.value).not.toMatch('fdsButton--blue');
   });
 
+  it('tests misc functionality', () => {
+    render(
+      <Button
+        label="Button"
+        isLoading	
+        disabled	
+        isFullWidth	
+      />
+    );
+    const button = screen.getByRole('button');
+    expect(button.classList.value).toMatch('fdsButton--disabled');
+    expect(button.classList.value).toMatch('fdsButton--loading');
+    expect(button.classList.value).toMatch('fdsButton--isFullWidth');
+  });
 
 });
