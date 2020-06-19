@@ -10,10 +10,10 @@ describe('Button component', () => {
     render(<Button label="Button" />);
     const button = screen.getByRole('button');
     expect(button).toBeTruthy();
-    expect(button.classList.value).toMatch('fdsButton--m');
-    expect(button.classList.value).toMatch('fdsButton--blue');
-    expect(button.classList.value).not.toMatch('fdsButton--isDestructive');
-    expect(button.classList.value).not.toMatch('fdsButton--isFullWidth');
+    expect(button).toHaveClass('fdsButton--m');
+    expect(button).toHaveClass('fdsButton--blue');
+    expect(button).not.toHaveClass('fdsButton--isDestructive');
+    expect(button).not.toHaveClass('fdsButton--isFullWidth');
   });
 
   it('tests rendering as link', () => {
@@ -31,8 +31,8 @@ describe('Button component', () => {
   it('tests that proper theme gets applied', () => {
     render(<Button label="Button" theme="outlined" />);
     const button = screen.getByRole('button');
-    expect(button.classList.value).toMatch('fdsButton--outlined');
-    expect(button.classList.value).not.toMatch('fdsButton--blue');
+    expect(button).toHaveClass('fdsButton--outlined');
+    expect(button).not.toHaveClass('fdsButton--blue');
   });
 
   it('tests misc functionality', () => {
@@ -45,9 +45,9 @@ describe('Button component', () => {
       />
     );
     const button = screen.getByRole('button');
-    expect(button.classList.value).toMatch('fdsButton--disabled');
-    expect(button.classList.value).toMatch('fdsButton--loading');
-    expect(button.classList.value).toMatch('fdsButton--isFullWidth');
+    expect(button).toHaveClass('fdsButton--disabled');
+    expect(button).toHaveClass('fdsButton--loading');
+    expect(button).toHaveClass('fdsButton--isFullWidth');
   });
 
 });
