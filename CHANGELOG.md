@@ -64,6 +64,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 separator characters between items in an inline-block list. If you'd like to just space
 out items, please use GapList, a new component also added in v9.
 
+## [8.10] DateInput refs
+
+Added ref props for the `input` and popover content elements:
+- `inputRef`
+- `popoverRef`
+
 ## [8.9] DateInput callbacks
 
 - added `onInputChange` callback to `DateInput`

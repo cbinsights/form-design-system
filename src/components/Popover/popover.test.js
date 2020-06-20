@@ -64,14 +64,10 @@ describe('Popover component', () => {
   describe('interactionMode="click"', () => {
     let wrapper;
     let triggerEl;
-    let onOpen;
-    let onClose;
 
     beforeEach(() => {
-      onOpen = jest.fn()
-      onClose = jest.fn()
       wrapper = mount(
-        <Popover trigger={triggerJsx} interactionMode="click" onOpen={onOpen} onClose={onClose} >
+        <Popover trigger={triggerJsx} interactionMode="click">
           <Content />
         </Popover>
       );
@@ -93,11 +89,9 @@ describe('Popover component', () => {
 
       triggerEl.simulate('click');
       expect(isPopperOpen(wrapper)).toBe(true);
-      expect(onOpen).toHaveBeenCalled()
 
       triggerEl.simulate('click');
       expect(isPopperOpen(wrapper)).toBe(false);
-      expect(onClose).toHaveBeenCalled()
     });
 
     it('closes on clicks away from popover', () => {
@@ -105,25 +99,19 @@ describe('Popover component', () => {
 
       triggerEl.simulate('click');
       expect(isPopperOpen(wrapper)).toBe(true);
-      expect(onOpen).toHaveBeenCalled()
 
       triggerEl.simulate('click', { target: '<p>lol not the popover</p>' });
       expect(isPopperOpen(wrapper)).toBe(false);
-      expect(onClose).toHaveBeenCalled()
     });
   });
 
   describe('interactionMode="hover"', () => {
     let wrapper;
     let triggerEl;
-    let onOpen;
-    let onClose;
 
     beforeEach(() => {
-      onOpen = jest.fn()
-      onClose = jest.fn()
       wrapper = mount(
-        <Popover trigger={triggerJsx} interactionMode="hover"  onOpen={onOpen} onClose={onClose} >
+        <Popover trigger={triggerJsx} interactionMode="hover">
           <Content />
         </Popover>
       );
@@ -147,11 +135,9 @@ describe('Popover component', () => {
 
       triggerEl.simulate('keyup', { key: 'Tab' });
       expect(isPopperOpen(wrapper)).toBe(true);
-      expect(onOpen).toHaveBeenCalled()
 
       triggerEl.simulate('keydown', { key: 'Tab' });
       expect(isPopperOpen(wrapper)).toBe(false);
-      expect(onClose).toHaveBeenCalled()
     });
 
     it('closes on mouseleave outside of Popover elements', () => {
@@ -159,11 +145,9 @@ describe('Popover component', () => {
 
       triggerEl.simulate('mouseenter');
       expect(isPopperOpen(wrapper)).toBe(true);
-      expect(onOpen).toHaveBeenCalled()
 
       triggerEl.simulate('mouseleave', { target: '<p>lol not the popover</p>' });
       expect(isPopperOpen(wrapper)).toBe(false);
-      expect(onClose).toHaveBeenCalled()
     });
 
   });
