@@ -58,6 +58,8 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
         <CSSTransition
           classNames="rtgGrowFast"
           in={false}
+          onEntered={[Function]}
+          onExited={[Function]}
           timeout={200}
           unmountOnExit={true}
         >

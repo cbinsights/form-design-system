@@ -40,23 +40,12 @@ const Popover = React.forwardRef(
     const refTriggerWrap = useRef(null);
     const refContent = forwardedRef || React.createRef();
 
-    const handleSetIsActive = (newValue) => {
-      setIsActive(() => {
-        if (newValue) {
-          onOpen();
-        } else {
-          onClose();
-        }
-        return newValue;
-      });
-    };
-
-    useCloseOnScroll(closeOnScrollRef, isActive, () => handleSetIsActive(false));
+    useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
     useDisableScroll(disableScrollRef, isActive);
 
     // update active state on props change to accommodate fully controlled popovers
     useEffect(() => {
-      handleSetIsActive(interactionMode === 'controlled' && isOpen);
+      setIsActive(interactionMode === 'controlled' && isOpen);
     }, [interactionMode, isOpen]);
 
     /**
@@ -65,7 +54,7 @@ const Popover = React.forwardRef(
      */
     const handleKeyPress = (e) => {
       const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
-      if (isEscapeKey) handleSetIsActive(false);
+      if (isEscapeKey) setIsActive(false);
     };
 
     /**
@@ -74,7 +63,7 @@ const Popover = React.forwardRef(
      */
     const handleBodyClick = (e) => {
       const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
-      if (isNotPopoverClick) handleSetIsActive(false);
+      if (isNotPopoverClick) setIsActive(false);
     };
 
     useEffect(() => {
@@ -95,32 +84,32 @@ const Popover = React.forwardRef(
       case 'hover':
         triggerProps.onMouseEnter = () => {
           if (parseInt(delay, 10) > 0) {
-            hoverTimeout = setTimeout(handleSetIsActive, delay, true);
+            hoverTimeout = setTimeout(setIsActive, delay, true);
           } else {
-            handleSetIsActive(true);
+            setIsActive(true);
           }
         };
         triggerProps.onMouseLeave = () => {
           if (hoverTimeout) {
             clearTimeout(hoverTimeout);
           }
-          handleSetIsActive(false);
+          setIsActive(false);
         };
         triggerProps.onKeyUp = (e) => {
           if (e.key === 'Tab') {
-            handleSetIsActive(true);
+            setIsActive(true);
           }
         };
         triggerProps.onKeyDown = (e) => {
           if (e.key === 'Tab') {
-            handleSetIsActive(false);
+            setIsActive(false);
           }
         };
         triggerProps.tabIndex = '1';
         break;
       case 'click':
         triggerProps.onClick = () => {
-          handleSetIsActive(!isActive);
+          setIsActive(!isActive);
         };
         break;
       default:
@@ -141,7 +130,7 @@ const Popover = React.forwardRef(
       {
         name: 'preventOverflow',
         options: {
-          boundariesElement: 'viewport',
+          boundary: 'viewport',
         },
       },
       {
@@ -166,6 +155,8 @@ const Popover = React.forwardRef(
 
     const popperContent = (
       <CSSTransition
+        onEntered={onOpen}
+        onExited={onClose}
         in={isActive}
         unmountOnExit
         timeout={transitionName ? 200 : 0}
