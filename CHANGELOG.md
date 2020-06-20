@@ -41,6 +41,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 #### `MenuButton` Component
 - Now only accepts a `button` element, or a component that renders a `button` element as a trigger
+- `isInModal` is no longer accepted
 
 #### `Dialog` Component
 - `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc). 
@@ -52,11 +53,16 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - `CountdownButton` (only used by Toast)
 - `DecoratedInput` (use TextInput instead)
 - `IconInput` (use TextInput instead)
+- `Section` (use fds classes instead)
 
 #### `raw/` Icons distribution
 - `lib/icons/raw/` will no longer exist in packages published v9 or later. For raw SVG
   icons, use `lib/icons/svg/`.
 
+#### Renamed InlineBlockList component
+- `InlineBlockList is now SeparatorList. This component is primarily used for configuring
+separator characters between items in an inline-block list. If you'd like to just space
+out items, please use GapList, a new component also added in v9.
 
 ## [8.9] DateInput callbacks
 

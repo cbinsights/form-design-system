@@ -28,7 +28,7 @@ CSS _property_ name in variables:
 
 ```
 --font-color-primary
---zindex-popover
+--zindex-modal
 --color-red
 ```
 

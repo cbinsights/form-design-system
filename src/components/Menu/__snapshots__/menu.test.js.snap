@@ -478,10 +478,10 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
         </div>
       </MenuButton>
       <MenuPopover
-        className="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+        className="elevation--2 rounded--all bgColor--white"
       >
         <Popover
-          className="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+          className="elevation--2 rounded--all bgColor--white"
           data-reach-menu=""
           data-reach-menu-popover=""
           hidden={true}
@@ -508,7 +508,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
               containerInfo={
                 <reach-portal>
                   <div
-                    class="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+                    class="elevation--2 rounded--all bgColor--white"
                     data-reach-menu=""
                     data-reach-menu-popover=""
                     data-reach-popover=""
@@ -555,7 +555,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
               }
             >
               <PopoverImpl
-                className="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+                className="elevation--2 rounded--all bgColor--white"
                 data-reach-menu=""
                 data-reach-menu-popover=""
                 hidden={true}
@@ -578,7 +578,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
                 }
               >
                 <div
-                  className="elevation--2 rounded--all bgColor--white fdsMenu--inModal"
+                  className="elevation--2 rounded--all bgColor--white"
                   data-reach-menu=""
                   data-reach-menu-popover=""
                   data-reach-popover=""
