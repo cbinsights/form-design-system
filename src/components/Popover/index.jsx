@@ -1,3 +1,5 @@
+// TODO: update stories/tests to cover callback
+
 import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
@@ -25,6 +27,7 @@ const Popover = React.forwardRef(
       alignment = 'start',
       distance = 4,
       delay = 0,
+      onUserDismiss = () => {},
       onOpen = () => {},
       onClose = () => {},
       trigger,
@@ -49,12 +52,22 @@ const Popover = React.forwardRef(
     }, [interactionMode, isOpen]);
 
     /**
+     * Called when user takes an action to dismiss the popover
+     */
+    const handleUserDismiss = () => {
+      onUserDismiss();
+      if (interactionMode !== 'controlled') {
+        setIsActive(false);
+      }
+    };
+
+    /**
      * Closes popover when user presses ESC
      * @param {Event} e DOMEvent
      */
     const handleKeyPress = (e) => {
       const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
-      if (isEscapeKey) setIsActive(false);
+      if (isEscapeKey) handleUserDismiss();
     };
 
     /**
@@ -63,7 +76,7 @@ const Popover = React.forwardRef(
      */
     const handleBodyClick = (e) => {
       const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
-      if (isNotPopoverClick) setIsActive(false);
+      if (isNotPopoverClick) handleUserDismiss();
     };
 
     useEffect(() => {
@@ -231,12 +244,20 @@ Popover.propTypes = {
    * `click` - popover opens on trigger click
    *
    * `controlled` - enables "fully controlled" mode in which the popover is only active
-   * when the `isOpen` prop is set to `true`
+   * when the `isOpen` prop is set to `true`. Use `onUserDismiss` to handle dismissal
+   * events from user interaction.
    */
   interactionMode: PropTypes.oneOf(VALID_INTERACTION_MODES),
 
   /** Controlls active state of popover when in fully controlled interaction mode */
   isOpen: PropTypes.bool,
+
+  /**
+   * Callback fired when user takes an action to dismiss the popover.
+   * (e.g. ESC press, clickikng outside, etc.)
+   * Useful for updating `isOpen` in controlled mode.
+   */
+  onUserDismiss: PropTypes.bool,
 
   /** disables portaling the popover to `document.body` */
   disablePortal: PropTypes.bool,

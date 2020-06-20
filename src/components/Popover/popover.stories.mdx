@@ -1,4 +1,5 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { action } from '@storybook/addon-actions';
 import { useRef } from 'react'
 import {
   withKnobs,
@@ -48,6 +49,9 @@ Base popover component. Bring your own trigger and popover content.
     isOpen={boolean('isOpen (only works in controlled mode)', false)}
     disablePortal={boolean('Disable portal', false)}
     transitionName={select('Transition name', arrayToOptions(['GrowFast', '']), '')}
+    onOpen={action('onOpen')}
+    onClose={action('onClose')}
+    onUserDismiss={action('onUserDismiss')}
   >
     <div className="padding--all" style={{ outline: '3px dotted red', background: "#FFFFFF" }}>
       popover content
@@ -65,7 +69,7 @@ Base popover component. Bring your own trigger and popover content.
     trigger={<div className="margin--bottom"><Button label="Click Me" /></div>}
   >
     <div
-      className="padding--all" 
+      className="padding--all"
       style={{ outline: '3px dotted red', background: "#FFFFFF" }}
     >
       popover content
@@ -140,8 +144,8 @@ If you'd like to disable scrolling of some element when a popover is open you ca
 
 <Preview>
   <Story name="Disable Scrolling">
-    {() => { 
-      const containerEl = useRef(null); 
+    {() => {
+      const containerEl = useRef(null);
       return (
         <div
           ref={containerEl}
@@ -175,8 +179,8 @@ If you'd like the ability to close the popover once the user scrolls some elemen
 
 <Preview>
   <Story name="Close on Scroll">
-    {() => { 
-      const containerEl = useRef(null); 
+    {() => {
+      const containerEl = useRef(null);
       return (
         <div
           ref={containerEl}
