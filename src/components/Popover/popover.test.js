@@ -62,6 +62,42 @@ describe('Popover component', () => {
     });
   });
 
+  describe('interactionMode="controlled"', () => {
+    const mountControlled = (isOpen, onUserDismiss) => mount(
+      <Popover
+        trigger={triggerJsx}
+        interactionMode="controlled"
+        isOpen={isOpen}
+        onUserDismiss={onUserDismiss}
+      >
+        <Content />
+      </Popover>
+    );
+
+    it('can not be opened via user event if isOpen is false', () => {
+      const wrapper = mountControlled(false);
+      const triggerEl = wrapper.find(SELECTOR_TRIGGER);
+      expect(isPopperOpen(wrapper)).toBe(false);
+      triggerEl.simulate('click');
+      expect(isPopperOpen(wrapper)).toBe(false);
+    });
+
+    it('can not be closed via user event if isOpen is true', () => {
+      const wrapper = mountControlled(true);
+      const triggerEl = wrapper.find(SELECTOR_TRIGGER);
+      expect(isPopperOpen(wrapper)).toBe(true);
+
+      // click on trigger to close
+      triggerEl.simulate('click');
+      expect(isPopperOpen(wrapper)).toBe(true);
+
+      // click away
+      triggerEl.simulate('click', { target: '<p>lol not the popover</p>' });
+      expect(isPopperOpen(wrapper)).toBe(true);
+    });
+
+  });
+
   describe('interactionMode="click"', () => {
     let wrapper;
     let triggerEl;

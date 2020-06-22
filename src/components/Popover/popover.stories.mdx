@@ -17,7 +17,7 @@ import Popover, {
   VALID_INTERACTION_MODES,
 } from '.';
 
-import { ImportPath } from 'components/util/storybook';
+import { ImportPath, State } from "components/util/storybook";
 
 import Button from 'components/Button';
 
@@ -117,23 +117,46 @@ Base popover component. Bring your own trigger and popover content.
 
 ## Controlled popover
 
+The "controlled" `interactionMode` follows the conventions of a [controlled
+component](https://reactjs.org/docs/forms.html#controlled-components), meaning the open
+state of the popover is set by the prop `isOpen`. To update the state of `isOpen` based on
+user interaction, use the `onUserDismiss` callback.
+
+The `onUserDismiss` function is invoked when:
+
+- The user clicks the trigger element
+- The user presses `Escape`
+- the user clicks away from the popover.
+
 <Preview>
   <Story name="Controlled popover" height={100}>
-    <Popover
-      trigger={<button>Open popover</button>}
-      position="bottom"
-      alignment="start"
-      interactionMode="controlled"
-      isOpen={true}
-      distance={8}
-    >
-      <div className="bgColor--white rounded--all elevation--2 padding--all">
-        <h3 className="type--head3">Look at me</h3>
-        <p>
-          <em>i am the popover</em>
-        </p>
-      </div>
-    </Popover>
+    <State
+      initialValue={true}
+      render={(myIsOpen, setMyIsOpen) => (
+        <Popover
+          trigger={
+            <button
+              onClick={() => { setMyIsOpen(!myIsOpen) }}
+            >
+              Open popover
+            </button>
+          }
+          position="bottom"
+          alignment="start"
+          interactionMode="controlled"
+          isOpen={myIsOpen}
+          onUserDismiss={() => { setMyIsOpen(false) }}
+          distance={8}
+        >
+          <div className="bgColor--white rounded--all elevation--2 padding--all">
+            <h3 className="type--head3">Look at me</h3>
+            <p>
+              <em>i am the popover</em>
+            </p>
+          </div>
+        </Popover>
+      )}
+    />
   </Story>
 </Preview>
 

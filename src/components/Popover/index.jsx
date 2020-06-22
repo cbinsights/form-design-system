@@ -1,8 +1,3 @@
-// TODO: update any controlled mode story
-// TOOD: test a bit more in storybook
-// TODO: update tests to cover onUserDismiss and controlled mode (spy on fn)
-// TOOD: update snapshots
-
 import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
