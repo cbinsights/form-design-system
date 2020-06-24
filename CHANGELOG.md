@@ -43,6 +43,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - Now only accepts a `button` element, or a component that renders a `button` element as a trigger
 - `isInModal` is no longer accepted
 
+#### `Popover` Component
+- The popover no longer closes on user dismissal actions in controlled mode. The
+  `onUserDismiss` callback must now be used to update the state of `isOpen` when the
+  popover is in controlled mode.
+
 #### `Dialog` Component
 - `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc). 
 

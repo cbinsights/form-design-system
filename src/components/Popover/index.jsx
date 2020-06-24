@@ -5,65 +5,12 @@ import { Manager, Reference, Popper } from 'react-popper';
 import { CSSTransition } from 'react-transition-group';
 import FDS from 'lib/dictionary/js/styleConstants';
 import { isNotRefsEvent } from 'components/util/events';
+import { getPopperPlacement } from './util';
+import { useDisableScroll, useCloseOnScroll } from './hooks';
 
 export const VALID_POSITIONS = ['auto', 'top', 'right', 'bottom', 'left'];
 export const VALID_ALIGNMENTS = ['start', 'end', 'center'];
 export const VALID_INTERACTION_MODES = ['hover', 'click', 'controlled'];
-
-/**
- * https://popper.js.org/popper-documentation.html#Popper.placements
- *
- * @param {String} position prop value
- * @param {String} alignment prop value
- * @returns {String} valid `placement` value for PopperJS `Popper` component
- */
-export const getPopperPlacement = (position, alignment) => {
-  // Popperjs does not have a "center" placement variation. It centers by default.
-  // Our component explicitly accepts a `center` value for alignment.
-  const variation = !alignment || alignment === 'center' ? '' : `-${alignment}`;
-  return `${position}${variation}`;
-};
-
-let overflowStyle = null;
-
-/**
- * Hook that disables scroll on a DOM node when `isDisabled` is true.
- *
- * @param {Object} disableScrollRef - react ref to DOM node
- * @param {Boolean} isDisabled
- */
-const useDisableScroll = (disableScrollRef, isDisabled) => {
-  useEffect(() => {
-    if (disableScrollRef) {
-      const domNode = disableScrollRef.current || disableScrollRef;
-      if (isDisabled) {
-        overflowStyle = domNode.style.overflow;
-        domNode.style.overflow = 'hidden';
-      } else if (overflowStyle !== null) {
-        domNode.style.overflow = overflowStyle;
-      }
-    }
-  }, [disableScrollRef, isDisabled]);
-};
-
-/**
- * Hook that invokes `closeCallback` if a popover is active when a user scrolls.
- *
- * @param {Object} closeOnScrollRef - react ref to scrolling DOM node
- * @param {Boolean} isActive - if the popover is currently open/active
- * @param {Boolean} closeCallback - function that closes the popover
- */
-const useCloseOnScroll = (closeOnScrollRef, isActive, closeCallback) => {
-  useEffect(() => {
-    if (closeOnScrollRef && isActive) {
-      const scrollRef = closeOnScrollRef.current || closeOnScrollRef;
-      scrollRef.addEventListener('scroll', function scrollLogic() {
-        closeCallback();
-        scrollRef.removeEventListener('scroll', scrollLogic);
-      });
-    }
-  }, [closeOnScrollRef, isActive]);
-};
 
 /**
  * @param {Object} props react props
@@ -78,6 +25,7 @@ const Popover = React.forwardRef(
       alignment = 'start',
       distance = 4,
       delay = 0,
+      onUserDismiss = () => {},
       onOpen = () => {},
       onClose = () => {},
       trigger,
@@ -102,12 +50,22 @@ const Popover = React.forwardRef(
     }, [interactionMode, isOpen]);
 
     /**
+     * Called when user takes an action to dismiss the popover
+     */
+    const handleUserDismiss = () => {
+      onUserDismiss();
+      if (interactionMode !== 'controlled') {
+        setIsActive(false);
+      }
+    };
+
+    /**
      * Closes popover when user presses ESC
      * @param {Event} e DOMEvent
      */
     const handleKeyPress = (e) => {
       const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
-      if (isEscapeKey) setIsActive(false);
+      if (isEscapeKey) handleUserDismiss();
     };
 
     /**
@@ -116,7 +74,7 @@ const Popover = React.forwardRef(
      */
     const handleBodyClick = (e) => {
       const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
-      if (isNotPopoverClick) setIsActive(false);
+      if (isNotPopoverClick) handleUserDismiss();
     };
 
     useEffect(() => {
@@ -284,12 +242,20 @@ Popover.propTypes = {
    * `click` - popover opens on trigger click
    *
    * `controlled` - enables "fully controlled" mode in which the popover is only active
-   * when the `isOpen` prop is set to `true`
+   * when the `isOpen` prop is set to `true`. Use `onUserDismiss` to handle dismissal
+   * events from user interaction.
    */
   interactionMode: PropTypes.oneOf(VALID_INTERACTION_MODES),
 
   /** Controlls active state of popover when in fully controlled interaction mode */
   isOpen: PropTypes.bool,
+
+  /**
+   * Callback fired when user takes an action to dismiss the popover.
+   * (e.g. ESC press, clickikng outside, etc.)
+   * Useful for updating `isOpen` in controlled mode.
+   */
+  onUserDismiss: PropTypes.bool,
 
   /** disables portaling the popover to `document.body` */
   disablePortal: PropTypes.bool,
