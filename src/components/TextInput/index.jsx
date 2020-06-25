@@ -19,8 +19,10 @@ const TextInput = React.forwardRef(
   (
     {
       label,
+      isLabelBold,
       labelPosition = 'top',
       errorText,
+      hasError,
       onThrottledChange,
       showRequired,
       showLabel = true,
@@ -69,7 +71,9 @@ const TextInput = React.forwardRef(
           className={cx('fdsTextInput-root', `fdsTextInput-root--${labelPosition}Label`)}
         >
           {showLabel && label && (
-            <div className="fdsTextInput-label">
+            <div
+              className={cx('fdsTextInput-label', { 'fontWeight--bold': isLabelBold })}
+            >
               {label}
               {showRequired && <span className="color--red">&nbsp;*</span>}
             </div>
@@ -83,7 +87,7 @@ const TextInput = React.forwardRef(
                 onChange={inputOnChange}
                 type={type}
                 className={cx('fdsTextInput', {
-                  error: errorText,
+                  error: errorText || hasError,
                 })}
               />
             </IconInput>
@@ -98,6 +102,11 @@ const TextInput = React.forwardRef(
 TextInput.displayName = 'TextInput';
 
 TextInput.propTypes = {
+  /** Control whether input has error styling */
+  hasError: PropTypes.bool,
+  /** Control whether label receives a bold treatment */
+  isLabelBold: PropTypes.bool,
+  /** Displays as red error text below input */
   errorText: PropTypes.string,
 
   /** Label used for `label` element */
