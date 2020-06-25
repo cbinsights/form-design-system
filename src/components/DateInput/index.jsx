@@ -171,10 +171,12 @@ const DateInput = ({
   pastYears = 40,
   dateFormat = 'MDY',
   popoverProps = {},
+  inputRef,
+  popoverRef,
   defaultDate,
   onDateChange = () => {},
   onInputChange = () => {},
-  label,
+  label = '',
   minDate,
   maxDate,
   ...rest
@@ -186,8 +188,10 @@ const DateInput = ({
     defaultDate ? moment(defaultDate).format(DATE_FORMAT_MAP[dateFormat]) : ''
   );
 
-  // eslint-disable-next-line no-param-reassign
+  /* eslint-disable no-param-reassign */
   delete popoverProps.trigger;
+  delete popoverProps.ref;
+  /* eslint-enable no-param-reassign */
 
   // If the dateFormat prop changes while the input has a user-entered value,
   // we want the value to change to reflect the new dateFormat
@@ -225,18 +229,30 @@ const DateInput = ({
     setInputValue(value);
     onInputChange(value);
 
+    // when the user types a date that appears valid based on the given format,
+    // we attempt to parse the date string with moment. If the date is parsed
+    // as valid, update the selected day.
     if (isValidUserDate(value, dateFormat)) {
       const parsedDate = moment(value, DATE_FORMAT_MAP[dateFormat]);
-      // we want the month/year in picker to update as the user types
-      setPickerMonth(parsedDate.toDate());
-      handleDaySelect(parsedDate.toDate());
+      if (parsedDate.isValid()) {
+        setPickerMonth(parsedDate.toDate());
+        handleDaySelect(parsedDate.toDate());
+      }
+    }
+
+    // if user backspaces to clear the input, clear out the picker
+    if (value === '') {
+      setSelectedDate(null);
+      onDateChange(null);
     }
   };
 
   return (
     <Popover
+      ref={popoverRef}
       trigger={
         <TextInput
+          ref={inputRef}
           {...rest}
           label={label}
           type="text"
@@ -279,7 +295,9 @@ DateInput.propTypes = {
   /**
    * Change callback for date selection. This is called when a valid
    * date has been selected in the picker or entered into the input.
+   *
    * Called with the `Date` object of the selected date.
+   * Called with `null` when the date has been cleared.
    */
   onDateChange: PropTypes.func,
 
@@ -307,8 +325,21 @@ DateInput.propTypes = {
   /** Label for input */
   label: PropTypes.string,
 
+  /** Ref to apply to `input` element */
+  inputRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
+
+  /** Ref to apply to popover content element */
+  popoverRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
+
   /**
-   * Object accepting any valid prop from `Popover` except for `trigger`.
+   * Object accepting any valid prop from `Popover` except for `trigger` and `ref`.
+   * To apply a `ref` to the popover element, use the `popoverRef` prop.
    */
   popoverProps: PropTypes.object,
 };

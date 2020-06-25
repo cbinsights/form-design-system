@@ -32,6 +32,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - Components can be imported via a destructure pattern. `import { Button, IconButton } from '@cbinsights/fds/lib/components'`
 - FDS Icons (only React) can be imported via a destructure pattern. `import { AddIcon, CaretDownIcon } from '@cbinsights/fds/lib/icons/react'`
+- TextInput: 
+  - `hasError` prop added to enable the input error state without passing `errorText`
+  - `isLabelBold` prop added to allow label to be bolded
 
 ### **BREAKING CHANGES**
 
@@ -41,6 +44,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 #### `MenuButton` Component
 - Now only accepts a `button` element, or a component that renders a `button` element as a trigger
+- `isInModal` is no longer accepted
+
+#### `Popover` Component
+- The popover no longer closes on user dismissal actions in controlled mode. The
+  `onUserDismiss` callback must now be used to update the state of `isOpen` when the
+  popover is in controlled mode.
 
 #### `Dialog` Component
 - `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc). 
@@ -48,15 +57,27 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### `Flex` Component
 - `wrap` prop is no longer accepted on `Flex`
 
-#### Removed components
-- `CountdownButton` (only used by Toast)
-- `DecoratedInput` (use TextInput instead)
-- `IconInput` (use TextInput instead)
-
 #### `raw/` Icons distribution
 - `lib/icons/raw/` will no longer exist in packages published v9 or later. For raw SVG
   icons, use `lib/icons/svg/`.
 
+#### Renamed InlineBlockList component
+- `InlineBlockList is now SeparatorList. This component is primarily used for configuring
+separator characters between items in an inline-block list. If you'd like to just space
+out items, please use GapList, a new component also added in v9.
+
+<<<<<<< HEAD
+#### Removed components
+- `CountdownButton` (only used by Toast)
+- `DecoratedInput` (use TextInput instead)
+- `IconInput` (use TextInput instead)
+- `Section` (use fds classes instead)
+
+## [8.10] DateInput refs
+
+Added ref props for the `input` and popover content elements:
+- `inputRef`
+- `popoverRef`
 
 ## [8.9] DateInput callbacks
 

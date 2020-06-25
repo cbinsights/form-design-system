@@ -84,9 +84,15 @@ describe('DateInput component', () => {
       expect(dateChangeFn).toHaveBeenCalled();
     });
 
+    it('does not call onDateChange when user types an INCOMPLETE freeform date', () => {
+      expect(dateChangeFn).not.toHaveBeenCalled();
+      input.simulate('change', { target: { value: '2/3' } });
+      expect(dateChangeFn).not.toHaveBeenCalled();
+    });
+
     it('does not call onDateChange when user types an INVALID freeform date', () => {
       expect(dateChangeFn).not.toHaveBeenCalled();
-      input.simulate('change', { target: { value: 'this is not a valid date lol' } });
+      input.simulate('change', { target: { value: '2/30/2020' } });
       expect(dateChangeFn).not.toHaveBeenCalled();
     });
 
@@ -106,6 +112,20 @@ describe('DateInput component', () => {
       const dayPickerDate = wrapper.find('DayPicker').prop('month');
       expect(dayPickerDate.getMonth()).toBe(3);
       expect(dayPickerDate.getFullYear()).toBe(2020);
+    });
+
+    it('clears selected date when user backspaces out the input', () => {
+      const dayPickerSelectedDays = wrapper.find('DayPicker').prop('selectedDays');
+      expect(dateChangeFn).not.toHaveBeenCalled();
+      input.simulate('change', { target: { value: '4/20/2020' } });
+      expect(dateChangeFn).toHaveBeenCalled();
+      input.simulate('change', { target: { value: '' } });
+
+      // did the callback fire with null?
+      expect(dateChangeFn).toHaveBeenCalledWith(null);
+
+      // is the date cleared in the picker?
+      expect(dayPickerSelectedDays).toBe(null);
     });
 
   });
