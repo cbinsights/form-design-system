@@ -118,7 +118,7 @@ export const ImportPath = ({ component }) => {
   const toggleHover = useToggleHover()[1];
   const [copiedText, copyToClipboard] = useClipboard();
 
-  const path = `import { ${component.displayName} } from '@cbinsights/fds/lib/components/${component.displayName}'`;
+  const path = `import { ${component.displayName} } from '@cbinsights/fds/lib/components'`;
 
   const pathParts = path.split(' ');
 
