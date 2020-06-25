@@ -33,7 +33,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - Components can be imported via a destructure pattern. `import { Button, IconButton } from '@cbinsights/fds/lib/components'`
 - FDS Icons (only React) can be imported via a destructure pattern. `import { AddIcon, CaretDownIcon } from '@cbinsights/fds/lib/icons/react'`
 - TextInput: 
-  - `isError` prop added to enable the input error state without passing `errorText`
+  - `hasError` prop added to enable the input error state without passing `errorText`
   - `isLabelBold` prop added to allow label to be bolded
 
 ### **BREAKING CHANGES**

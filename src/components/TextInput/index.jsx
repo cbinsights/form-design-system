@@ -22,7 +22,7 @@ const TextInput = React.forwardRef(
       isLabelBold,
       labelPosition = 'top',
       errorText,
-      isError,
+      hasError,
       onThrottledChange,
       showRequired,
       showLabel = true,
@@ -87,7 +87,7 @@ const TextInput = React.forwardRef(
                 onChange={inputOnChange}
                 type={type}
                 className={cx('fdsTextInput', {
-                  error: errorText || isError,
+                  error: errorText || hasError,
                 })}
               />
             </IconInput>
@@ -103,7 +103,7 @@ TextInput.displayName = 'TextInput';
 
 TextInput.propTypes = {
   /** Control whether input has error styling */
-  isError: PropTypes.bool,
+  hasError: PropTypes.bool,
   /** Control whether label receives a bold treatment */
   isLabelBold: PropTypes.bool,
   /** Displays as red error text below input */
