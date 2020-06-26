@@ -21,10 +21,10 @@ export const Scale = ({ label, num }) => (
 )
 
 export const SpacingExample = ({ className }) => (
-  <div className="display--inlineBlock margin--right--2 margin--bottom--2" style={{ border: className.startsWith('padding') ? '1px dashed #333' : ''}}>
+  <div className="display--inlineBlock margin--right--s margin--bottom--s" style={{ border: className.startsWith('padding') ? '1px dashed #333' : ''}}>
     <div className={`${className.startsWith('padding') && className} display--inlineBlock border--all `} style={{ backgroundColor: className.startsWith('padding') ? FDS.COLOR_MINT : "#F6BDC1",  }}>
       <div className={`${className.startsWith('margin') && className} display--inlineBlock rounded--all`}>
-        <div className={`padding--all--2 color--charcoal fontWeight--bold bgColor--white elevation--1 rounded--all`} style={{ border: className.startsWith('margin') ? `1px dashed #333` : ''}}>
+        <div className={`padding--all--s color--charcoal fontWeight--bold bgColor--white elevation--1 rounded--all`} style={{ border: className.startsWith('margin') ? `1px dashed #333` : ''}}>
           {className} 
         </div>
       </div>
@@ -32,35 +32,31 @@ export const SpacingExample = ({ className }) => (
   </div>
 )
 
-Use the following format: 
-
-.`type`--`direction`--`scale`
-
 <Story name="Margin">
   <>
   <TableLayout
     rows={[
       ['**Type**', '`margin` | `padding`'],
       ['**Direction**', '`left`  |  `right` | `top` | `bottom` | `x` | `y` | `all`'],
-      ['**Scale (default: 3)**', { children: (
+      ['**Scale (default: md)**', { children: (
         <>
-          <Scale label={1} num={4} />
-          <Scale label={2} num={8} />
-          <Scale label={3} num={16} />
-          <Scale label={4} num={24} />
-          <Scale label={5} num={32} />
+          <Scale label="xs" num={4} />
+          <Scale label="s" num={8} />
+          <Scale label="m" num={16} />
+          <Scale label="l" num={24} />
+          <Scale label="xl" num={32} />
         </>
       )}],
     ]} 
   />
   <SpacingExample className="margin--top" />
-  <SpacingExample className="margin--bottom--2" />
-  <SpacingExample className="margin--x--5" />
-  <SpacingExample className="margin--y--1" />
-  <SpacingExample className="margin--left--3" />
-  <SpacingExample className="padding--y--1" />
+  <SpacingExample className="margin--bottom--s" />
+  <SpacingExample className="margin--x--xl" />
+  <SpacingExample className="margin--y--xs" />
+  <SpacingExample className="margin--left--m" />
+  <SpacingExample className="padding--y--xs" />
   <SpacingExample className="padding--x" />
-  <SpacingExample className="padding--all--1" />
-  <SpacingExample className="padding--left--5" />
+  <SpacingExample className="padding--all--xs" />
+  <SpacingExample className="padding--left--l" />
   </>
 </Story>

@@ -1,13 +1,12 @@
 {
   "layout": {
     "space": {
-
       "double":  { "value": "32px" },
-      "1":  { "value": "4px" },
-      "2":  { "value": "8px" },
-      "3":  { "value": "16px" },
-      "4":  { "value": "24px" },
-      "5":  { "value": "32px" },
+      "xs":  { "value": "4px" },
+      "s":  { "value": "8px" },
+      "m":  { "value": "16px" },
+      "l":  { "value": "24px" },
+      "xl":  { "value": "32px" },
       "default": { "value": "16px" },
       "half":    { "value": "8px" }
 
