@@ -1,0 +1,87 @@
+import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { Info, ImportPath } from 'components/util/storybook';
+
+import Radio from './';
+
+<Meta title="Components/Radio" decorators={[withKnobs]} component={Radio} />
+
+# Radio
+
+<ImportPath component={Radio} />
+
+Uncontrolled custom radio component with label.
+
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
+  <Radio
+    disabled={boolean('disabled', false)}
+    name="knobs"
+    label={text('label', 'Option one')}
+  />
+</Story>
+
+<Preview isExpanded>
+  <Radio name="radio-group-name" label="I agree to receive spam" />
+</Preview>
+
+<Info type="info">
+  Additional props will be spread on the `input` element.
+</Info>
+
+<Props of={Radio} />
+
+## Radio Groups
+
+You can create radio groups by rendering `Radio` components that share the same `name`
+prop.
+
+<Preview>
+  <Story name="Radio Groups">
+    <React.Fragment>
+      <Radio name="radio-group-story" label="Option one" />
+      <Radio name="radio-group-story" label="Option two" />
+      <Radio name="radio-group-story" label="Option three" />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Setting an initial selection
+
+Use the `defaultChecked` prop to set initial selection in a radio group.
+
+<Preview>
+  <Story name="Initial selection">
+    <React.Fragment>
+      <Radio name="radio-group-initial" label="Selected by default" defaultChecked />
+      <Radio name="radio-group-initial" label="The other option" />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Reading selected value in a radio group
+
+Place the `onChange` event on a parent element to read which radio of the group has been
+selected.
+
+<Preview>
+  <Story name="Reading selected value in a radio group">
+    <div onChange={(e) => { console.warn(`value is ${e.target.value}`) }}>
+      <Radio name="radio-group-onchange" label="Option one" value="1" />
+      <Radio name="radio-group-onchange" label="Option two" value="2" />
+      <Radio name="radio-group-onchange" label="Option three" value="3" />
+    </div>
+  </Story>
+</Preview>
+
+## Controlled
+
+<Preview>
+  <Story name="Controlled">
+    <div onChange={(e) => { console.warn(`value is ${e.target.value}`) }}>
+      <Radio name="radio-group-onchange" label="Option one" value="1" checked={true} />
+      <Radio name="radio-group-onchange" label="Option two" value="2" />
+      <Radio name="radio-group-onchange" label="Option three" value="3" />
+    </div>
+  </Story>
+</Preview>
+
