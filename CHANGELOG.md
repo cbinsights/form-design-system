@@ -36,7 +36,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
   - `hasError` prop added to enable the input error state without passing `errorText`
   - `isLabelBold` prop added to allow label to be bolded
 - Added `x` and `y` directions to spacing classes (e.g. `margin--y`)
-- Added new end value for spacing classes: `1`, `2`, `3 (default)`, `4`, and `5`, which correspond to pixel values
+- Added new end value for spacing classes: `xs`, `s`, `m (default)`, `l`, and `xl`, which correspond to pixel values
 
 ### **BREAKING CHANGES**
 
