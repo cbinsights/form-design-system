@@ -37,6 +37,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
   - `isLabelBold` prop added to allow label to be bolded
 - Added `x` and `y` directions to spacing classes (e.g. `margin--y`)
 - Added new end value for spacing classes: `xs`, `s`, `m (default)`, `l`, and `xl`, which correspond to pixel values
+- Added GapList component
 
 ### **BREAKING CHANGES**
 
