@@ -35,6 +35,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - TextInput: 
   - `hasError` prop added to enable the input error state without passing `errorText`
   - `isLabelBold` prop added to allow label to be bolded
+- Added `x` and `y` directions to spacing classes (e.g. `margin--y`)
+- Added new end value for spacing classes: `xs`, `s`, `m (default)`, `l`, and `xl`, which correspond to pixel values
 
 ### **BREAKING CHANGES**
 
@@ -66,12 +68,16 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 separator characters between items in an inline-block list. If you'd like to just space
 out items, please use GapList, a new component also added in v9.
 
-<<<<<<< HEAD
 #### Removed components
 - `CountdownButton` (only used by Toast)
 - `DecoratedInput` (use TextInput instead)
 - `IconInput` (use TextInput instead)
 - `Section` (use fds classes instead)
+
+### **Deprecations**
+
+- `half` and `double` end values are now deprecated and will be removed in a feature release.
+Please use the new end values added for these classes that were added in this minor release.
 
 ## [8.10] DateInput refs
 

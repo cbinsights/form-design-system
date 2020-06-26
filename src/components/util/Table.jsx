@@ -47,7 +47,7 @@ TableCell.propTypes = {
   label: PropTypes.string,
 };
 
-const TableHeadLayout = ({ headers }) => (
+const TableHeadLayout = ({ headers = [] }) => (
   <thead>
     <tr>
       {headers.map((header) => (
@@ -61,7 +61,13 @@ TableHeadLayout.propTypes = {
   headers: PropTypes.array,
 };
 
-export const TableLayout = ({ headers, shrinkLastColumn, rows, isCSS, copy = true }) => (
+export const TableLayout = ({
+  headers,
+  shrinkLastColumn,
+  rows = [],
+  isCSS,
+  copy = true,
+}) => (
   <Table shrinkLastColumn={shrinkLastColumn}>
     <TableHeadLayout headers={headers} />
     <tbody>
