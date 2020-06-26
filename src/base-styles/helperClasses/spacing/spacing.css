@@ -6,7 +6,7 @@
 /*
  - type:      margin | spacing
  - direction: left | right | bottom | top | all | x | y
- - scale:     1 | 2 | 3 | 4 | 5
+ - scale:     xs | s | m | l | xl
 */
 
 .margin--left--xs,
