@@ -20,6 +20,7 @@ const Button = ({
   isDestructive,
   isFullWidth,
   hasCaret,
+  isBreakoutLink,
   ...rest
 }) => {
   const Element = baseElement({ href: rest.href, onClick: true, as: Link });
@@ -71,19 +72,23 @@ const Button = ({
           'fdsButton--disabled': disabled,
           'fdsButton--isFullWidth': isFullWidth,
           'fdsButton--isActive': isActive && !disabled,
+          breakoutLink: isBreakoutLink,
         }
       )}
       disabled={disabled && Element === 'button'}
     >
-      <span className={cx('fdsButton-label', { 'fdsButton--hidden': isLoading })}>
-        {label}
-      </span>
-      <Icons />
-      {hasCaret && (
-        <div className="margin--left--half alignChild--center--center">
-          <CaretDownIcon customSize={12} />
-        </div>
-      )}
+      <div className="display--inlineFlex fdsButton--loading-spinnerWrapper">
+        <div className={cx({ 'fdsButton--loading-spinner': isLoading })} />
+        <span className={cx('fdsButton-label', { 'fdsButton--hidden': isLoading })}>
+          {label}
+        </span>
+        <Icons />
+        {hasCaret && (
+          <div className="margin--left--half alignChild--center--center">
+            <CaretDownIcon customSize={12} />
+          </div>
+        )}
+      </div>
     </Element>
   );
 };
@@ -131,6 +136,8 @@ Button.propTypes = {
    * - `Link={Link}`
    */
   Link: PropTypes.func,
+  /** Extend click radius of button to nearest relative parent */
+  isBreakoutLink: PropTypes.bool,
 };
 
 export default Button;

@@ -101,6 +101,13 @@ exports[`Toaster component matches snapshot 1`] = `
                               class="fdsIconButton rounded--all border--focus--noTransition transition--default alignChild--center--center fdsIconButton--ghost fdsIconButton--m shape--circle"
                               title="Close"
                             >
+                              <div
+                                class="fdsIconButton--loading-spinnerWrapper"
+                              >
+                                <div
+                                  class=""
+                                />
+                              </div>
                               <span
                                 class=""
                               >
@@ -330,6 +337,13 @@ exports[`Toaster component matches snapshot 1`] = `
                                             className="fdsIconButton rounded--all border--focus--noTransition transition--default alignChild--center--center fdsIconButton--ghost fdsIconButton--m shape--circle"
                                             title="Close"
                                           >
+                                            <div
+                                              className="fdsIconButton--loading-spinnerWrapper"
+                                            >
+                                              <div
+                                                className=""
+                                              />
+                                            </div>
                                             <span
                                               className=""
                                             >

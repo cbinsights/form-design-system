@@ -22,14 +22,7 @@ export const SIZES = ['s', 'm'];
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <div className={boolean("Inverted", false) ? 'inverted' : ''}>
     <Button
-      disabled={boolean("disabled", undefined)}
-      isLoading={boolean("isLoading", undefined)}
-      isDestructive={boolean("isDestructive", undefined)}
-      isActive={boolean("isActive", undefined)}
-      hasCaret={boolean("hasCaret", undefined)}
-      IconLeft={boolean("IconLeft") ? StarFilledIcon : undefined}
-      IconRight={boolean("IconRight") ? StarFilledIcon : undefined}
-      isFullWidth={boolean("isFullWidth", undefined)}
+      label={text("text", "Button")}
       size={options("size", arrayToOptions(SIZES), undefined, {
         display: "inline-radio"
       })}
@@ -41,7 +34,15 @@ export const SIZES = ['s', 'm'];
           display: "inline-radio"
         }
       )}
-      label={text("text", "Button")}
+      isDestructive={boolean("isDestructive", undefined)}
+      IconLeft={boolean("IconLeft") ? StarFilledIcon : undefined}
+      IconRight={boolean("IconRight") ? StarFilledIcon : undefined}
+      isActive={boolean("isActive", undefined)}
+      disabled={boolean("disabled", undefined)}
+      isLoading={boolean("isLoading", undefined)}
+      hasCaret={boolean("hasCaret", undefined)}
+      isFullWidth={boolean("isFullWidth", undefined)}
+      isBreakoutLink={boolean("isBreakoutLink", undefined)}
     />
   </div>
 </Story>
@@ -287,6 +288,20 @@ to take more than a couple of seconds of loading time
         </StoryWrapper>
       </div>
     </>
+  </Story>
+</Preview>
+
+### Breakout
+
+<Preview>
+  <Story name="Breakout">
+    <StoryWrapper>
+      <StoryItem>
+        <div className="alignChild--center--center" style={{ width: '100px', height: "100px", border: "1px dashed #f09", position: "relative" }}>
+          <Button label="Button" onClick={() => console.log('hey')} isBreakoutLink />
+        </div>
+      </StoryItem>
+    </StoryWrapper>
   </Story>
 </Preview>
 

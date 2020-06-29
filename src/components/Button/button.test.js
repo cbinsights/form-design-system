@@ -42,12 +42,14 @@ describe('Button component', () => {
         isLoading	
         disabled	
         isFullWidth	
+        isBreakoutLink
       />
     );
     const button = screen.getByRole('button', { name: "Button" });
     expect(button).toHaveClass('fdsButton--disabled');
     expect(button).toHaveClass('fdsButton--loading');
     expect(button).toHaveClass('fdsButton--isFullWidth');
+    expect(button).toHaveClass('breakoutLink');
   });
 
 });

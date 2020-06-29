@@ -18,6 +18,7 @@ const IconButton = ({
   isDestructive,
   label,
   Link,
+  isBreakoutLink,
   ...rest
 }) => {
   const Element = baseElement({ href: rest.href, onClick: true, as: Link });
@@ -43,6 +44,9 @@ const IconButton = ({
       )}
       disabled={disabled && Element === 'button'}
     >
+      <div className="fdsIconButton--loading-spinnerWrapper">
+        <div className={cx({ 'fdsIconButton--loading-spinner': isLoading })} />
+      </div>
       <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
         <Icon customSize={size === 's' ? 16 : 18} />
       </span>
@@ -78,6 +82,8 @@ IconButton.propTypes = {
   Icon: PropTypes.func.isRequired,
   /** Accessibility label */
   label: PropTypes.string.isRequired,
+  /** Extend click radius of button to nearest relative parent */
+  isBreakoutLink: PropTypes.bool,
 };
 
 export default IconButton;

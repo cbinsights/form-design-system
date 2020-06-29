@@ -5,6 +5,13 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
   className="fdsIconButton rounded--all border--focus--noTransition transition--default alignChild--center--center fdsIconButton--ghost fdsIconButton--m"
   title="Label"
 >
+  <div
+    className="fdsIconButton--loading-spinnerWrapper"
+  >
+    <div
+      className=""
+    />
+  </div>
   <span
     className=""
   >
@@ -21,6 +28,13 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
   disabled={true}
   title="Label"
 >
+  <div
+    className="fdsIconButton--loading-spinnerWrapper"
+  >
+    <div
+      className="fdsIconButton--loading-spinner"
+    />
+  </div>
   <span
     className="fdsIconButton--hidden"
   >
