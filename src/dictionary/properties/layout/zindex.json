@@ -1,13 +1,9 @@
 {
   "layout": {
     "zindex": {
-
       "navigation":  { "value": "10" },
-      "popover":     { "value": "20" },
-      "shim":        { "value": "20" },
       "modal":       { "value": "20" },
       "crazy":       { "value": "50" }
-
     }
   }
 }

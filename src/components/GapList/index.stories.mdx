@@ -1,0 +1,115 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import {
+  withKnobs,
+  text,
+  boolean,
+  optionsKnob as options
+} from "@storybook/addon-knobs";
+import { arrayToOptions, ImportPath } from 'components/util/storybook';
+
+import GapList, { SIZES } from '.';
+import Chip from 'components/Chip'
+
+<Meta title="Components/GapList" decorators={[withKnobs]} component={GapList} />
+
+# GapList
+
+<ImportPath component={GapList} />
+
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
+  <div className="padding--all bgColor--aqua rounded--all">
+    <GapList
+      yGap={options("yPadding", arrayToOptions(SIZES), undefined, {
+        display: "inline-radio"
+      })}
+      xGap={options("xPadding", arrayToOptions(SIZES), undefined, {
+        display: "inline-radio"
+      })}
+      valign={options("valign", arrayToOptions(['top', 'center', 'bottom', 'baseline']), undefined, {
+        display: "inline-radio"
+      })}
+      items={[
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--xs bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--s bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+      ]}
+    />
+  </div>
+</Story>
+
+<Preview isExpanded>
+  <div className="padding--all bgColor--aqua rounded--all">
+    <GapList
+      items={[
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--xs bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--xl bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+        <div class="media--s bgColor--white rounded--all elevation--1" />,
+        <div class="media--l bgColor--white rounded--all elevation--1" />,
+      ]}
+    />
+  </div>
+</Preview>
+
+Accepts an array of nodes and applies horizontal / vertical margin for you. 
+
+- Use this when you want to space out elements and also want them to wrap!
+- This only applies margin "between" nodes, so you must control any additional desired outside margin.
+- all items get wrapped with an inline-block element.
+
+<Props of={GapList} />
+
+### Spacing text
+
+Works just as well with text
+
+<Preview>
+  <Story name="Spacing text">
+    <GapList
+      items={[
+        <p>lorem</p>,
+        'ipsum',
+        <b>dolor</b>,
+        <small>sit</small>,
+        <a href="http://cbinsights.com">amet</a>,
+      ]}
+    />
+  </Story>
+</Preview>
+
+### Misc
+
+<Preview>
+  <Story name="Misc">
+    <GapList
+      items={[	
+        <Chip key="horses" onClose={() => {}} label="Horses" theme="outline" />,	
+        <Chip key="wombats" onClose={() => {}} label="Wombats" theme="outline" />,	
+        <Chip key="seals" onClose={() => {}} label="Seals" theme="outline" />,	
+        <Chip key="dogs" onClose={() => {}} label="Dogs" theme="outline" />,	
+      ]}	
+    />
+  </Story>
+</Preview>

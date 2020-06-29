@@ -11,6 +11,7 @@
 @import "./base/formTags";
 
 /* Spacing Helpers */
+@import "./helperClasses/spacing/spacing";
 @import "./helperClasses/spacing/margin";
 @import "./helperClasses/spacing/padding";
 @import "./helperClasses/spacing/flush";
@@ -19,6 +20,7 @@
 @import "./helperClasses/position/childAlign";
 @import "./helperClasses/position/align";
 @import "./helperClasses/position/valign";
+@import "./helperClasses/position/zindex";
 
 /* Layout Helpers */
 @import "./helperClasses/layout/media";

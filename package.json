@@ -153,8 +153,8 @@
   },
   "version": "4.0.0",
   "dependencies": {
+    "@reach/menu-button": "^0.10.1",
     "@popperjs/core": "^2.4.1",
-    "@reach/menu-button": "^0.8.2",
     "focus-trap-react": "^6.0.0",
     "raf-schd": "^4",
     "react-popper": "^2.2.3",
