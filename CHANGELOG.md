@@ -26,6 +26,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+
+## [9.1] Breakout Links
+
+- Added `breakoutLink` class (to extend clickable area to nearest relative parent)
+- Added `isBreakoutLink` props to `Button` and `IconButton` components to apply 
+the `breakoutLink` class
+
+
 ## [9.0] MAJOR
 
 ### Changes / Additions
