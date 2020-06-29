@@ -82,7 +82,7 @@ In this example, the first and last inputs are set to `grow` and the middle inpu
 <Preview>
   <Story name="Custom grow/shrink">
     <InputGroup flexSettings={['grow', 'shrink', 'grow']}>
-      <TextInput before="$" type="number" defaultValue="100" />
+      <TextInput before="$" type="number" defaultValue="100" label="Money" showLabel={false} />
       <select name="unit">
         <option value="1">Million</option>
         <option value="2">Thousand</option>
@@ -99,7 +99,7 @@ In this example, the first and last inputs are set to `grow` and the middle inpu
     <React.Fragment>
       <label>Valuation</label>
       <InputGroup>
-        <TextInput before="$" type="number" defaultValue="666" />
+        <TextInput before="$" type="number" defaultValue="666" label="Money" showLabel={false} />
         <select name="unit">
           <option value="1">Million</option>
           <option value="2">Thousand</option>
@@ -107,7 +107,7 @@ In this example, the first and last inputs are set to `grow` and the middle inpu
       </InputGroup>
       <div className="margin--top--half" />
       <InputGroup>
-        <TextInput IconLeft={SearchIcon} placeholder="Search" type="search" />
+        <TextInput IconLeft={SearchIcon} placeholder="Search" type="search" label="Search" showLabel={false} />
         <select name="unit">
           <option value="1">Companies</option>
           <option value="2">Investors</option>

@@ -16,19 +16,19 @@ addParameters({
         return 0;
       }
 
-      const sectionSort = () => {
-        const sectionSortOrder = [
-          "Intro",
-          "UI Guidelines",
-          "Design Tokens",
-          "Icons",
-          "Style Utilities",
-          "Components"
-        ].reduce((ordering, section, i) => {
-          ordering[section] = i;
-          return ordering;
-        }, {});
+      const sectionSortOrder = [
+        "Intro",
+        "UI Guidelines",
+        "Design Tokens",
+        "Icons",
+        "Style Utilities",
+        "Components"
+      ].reduce((ordering, section, i) => {
+        ordering[section] = i;
+        return ordering;
+      }, {});
 
+      const sectionSort = () => {
         return (
           sectionSortOrder[a[1].kind.split("/")[0]] -
           sectionSortOrder[b[1].kind.split("/")[0]]
@@ -36,9 +36,9 @@ addParameters({
       };
 
       const alphabeticalSort = () =>
-        a[1].id.localeCompare(b[1].id, { numeric: true });
+        a[1].id.localeCompare(b[1].id, { numeric: true }) + Object.keys(sectionSortOrder).length;
 
-      return sectionSort() || alphabeticalSort();
+      return sectionSort() || alphabeticalSort()
     }
   }
 });
