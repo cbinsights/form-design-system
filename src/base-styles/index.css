@@ -44,6 +44,9 @@
 /* List Helpers */
 @import "./helperClasses/list/decorated";
 
+/* Link Helpers */
+@import "./helperClasses/links/breakout";
+
 /* Typesetting */
 @import "./helperClasses/typeset/scale";
 @import "./helperClasses/typeset/links";

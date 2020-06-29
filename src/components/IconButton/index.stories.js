@@ -133,6 +133,27 @@ export const Radii = (args) => (
   </StoryWrapper>
 );
 
+export const Breakout = (args) => (
+  <StoryWrapper>
+    <StoryItem>
+      <div
+        className="alignChild--center--center"
+        style={{ padding: '20px', border: '1px dashed #f09', position: 'relative' }}
+      >
+        <IconButton {...args} {...Primary.args} isBreakoutLink />
+      </div>
+    </StoryItem>
+  </StoryWrapper>
+);
+
+Breakout.parameters = {
+  docs: {
+    description: {
+      story: 'Breakout buttons extend their clickable area to the next nearest parent.',
+    },
+  },
+};
+
 export const Loading = (args) => (
   <StoryWrapper>
     <StoryItem>

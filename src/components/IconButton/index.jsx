@@ -20,6 +20,7 @@ const IconButton = forwardRef(
       isDestructive,
       label,
       Link,
+      isBreakoutLink,
       ...rest
     },
     ref
@@ -37,6 +38,7 @@ const IconButton = forwardRef(
             'fdsIconButton--isActive': isActive && !disabled,
             'fdsIconButton--isDestructive': isDestructive,
             'fdsIconButton--loading': isLoading,
+            breakoutLink: isBreakoutLink,
           },
           'fdsIconButton',
           'rounded--all',
@@ -48,6 +50,9 @@ const IconButton = forwardRef(
         ])}
         disabled={disabled && Element === 'button'}
       >
+        <div className="fdsIconButton--loading-spinnerWrapper">
+          <div className={cc({ 'fdsIconButton--loading-spinner': isLoading })} />
+        </div>
         <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
           <Icon customSize={size === 's' ? 16 : 18} />
         </span>
@@ -86,6 +91,8 @@ IconButton.propTypes = {
   Icon: PropTypes.func.isRequired,
   /** Accessibility label */
   label: PropTypes.string.isRequired,
+  /** Extend click radius of button to nearest relative parent */
+  isBreakoutLink: PropTypes.bool,
 };
 
 export default IconButton;
