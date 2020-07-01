@@ -44,7 +44,7 @@
     "raf-schd": "^4",
     "react": "^16",
     "react-dom": "^16",
-    "react-transition-group": "^2.6"
+    "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -108,7 +108,7 @@
     "react-hook-form": "^5.0.3",
     "react-is": "^16.11.0",
     "react-markdown": "^4.3.1",
-    "react-transition-group": "^2.6",
+    "react-transition-group": "^4.4.1",
     "rimraf": "^2.6.2",
     "snake-case": "^2.1.0",
     "style-dictionary": "^2.8.1",
