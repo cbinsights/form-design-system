@@ -50,7 +50,6 @@ exports[`TextInput component matches snapshot (default) 1`] = `
     <DecoratedInput>
       <IconInput>
         <input
-          aria-invalid={false}
           aria-label="label"
           className="fdsTextInput"
           onChange={[Function]}
