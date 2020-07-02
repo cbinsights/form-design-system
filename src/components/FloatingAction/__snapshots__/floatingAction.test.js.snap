@@ -4,7 +4,7 @@ exports[`FloatingAction component matches snapshot (set all props) 1`] = `
 <div
   className="shape--circle elevation--2 display--inlineBlock bgColor--aqua"
 >
-  <IconButton
+  <ForwardRef
     Icon={[Function]}
     label="delete the internet"
     radius="circle"

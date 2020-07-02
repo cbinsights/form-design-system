@@ -15,14 +15,14 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
       <FlexItem
         shrink={true}
       >
-        <Button
+        <ForwardRef
           label="bar"
         />
       </FlexItem>
       <FlexItem
         shrink={true}
       >
-        <Button
+        <ForwardRef
           label="foo"
         />
       </FlexItem>
@@ -47,14 +47,14 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
       <FlexItem
         shrink={true}
       >
-        <Button
+        <ForwardRef
           label="bar"
         />
       </FlexItem>
       <FlexItem
         shrink={true}
       >
-        <Button
+        <ForwardRef
           label="foo"
         />
       </FlexItem>
@@ -82,14 +82,14 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
       <FlexItem
         shrink={true}
       >
-        <Button
+        <ForwardRef
           label="bar"
         />
       </FlexItem>
       <FlexItem
         shrink={true}
       >
-        <Button
+        <ForwardRef
           label="foo"
         />
       </FlexItem>
