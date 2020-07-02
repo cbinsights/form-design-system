@@ -47,7 +47,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
             "element": <div
               data-reach-menu-item=""
               data-valuetext="First"
-              id="option-0--menu--5"
+              id="option-0--menu--7"
               role="menuitem"
               tabindex="-1"
             >
@@ -63,7 +63,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
             "element": <div
               data-reach-menu-item=""
               data-valuetext="Second"
-              id="option-1--menu--5"
+              id="option-1--menu--7"
               role="menuitem"
               tabindex="-1"
             >
@@ -79,7 +79,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
             "element": <div
               data-reach-menu-item=""
               data-valuetext="Third"
-              id="option-2--menu--5"
+              id="option-2--menu--7"
               role="menuitem"
               tabindex="-1"
             >
@@ -99,10 +99,10 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
         as="div"
       >
         <div
-          aria-controls="menu--5"
+          aria-controls="menu--7"
           aria-haspopup={true}
           data-reach-menu-button=""
-          id="menu-button--menu--5"
+          id="menu-button--menu--7"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           type="button"
@@ -125,10 +125,10 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
           targetRef={
             Object {
               "current": <div
-                aria-controls="menu--5"
+                aria-controls="menu--7"
                 aria-haspopup="true"
                 data-reach-menu-button=""
-                id="menu-button--menu--5"
+                id="menu-button--menu--7"
                 type="button"
               >
                 <a
@@ -153,16 +153,16 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
                     style="position: absolute; left: 0px; top: 0px;"
                   >
                     <div
-                      aria-labelledby="menu-button--menu--5"
+                      aria-labelledby="menu-button--menu--7"
                       data-reach-menu-items=""
-                      id="menu--5"
+                      id="menu--7"
                       role="menu"
                       tabindex="-1"
                     >
                       <div
                         data-reach-menu-item=""
                         data-valuetext="First"
-                        id="option-0--menu--5"
+                        id="option-0--menu--7"
                         role="menuitem"
                         tabindex="-1"
                       >
@@ -173,7 +173,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
                       <div
                         data-reach-menu-item=""
                         data-valuetext="Second"
-                        id="option-1--menu--5"
+                        id="option-1--menu--7"
                         role="menuitem"
                         tabindex="-1"
                       >
@@ -184,7 +184,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
                       <div
                         data-reach-menu-item=""
                         data-valuetext="Third"
-                        id="option-2--menu--5"
+                        id="option-2--menu--7"
                         role="menuitem"
                         tabindex="-1"
                       >
@@ -205,10 +205,10 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
                 targetRef={
                   Object {
                     "current": <div
-                      aria-controls="menu--5"
+                      aria-controls="menu--7"
                       aria-haspopup="true"
                       data-reach-menu-button=""
-                      id="menu-button--menu--5"
+                      id="menu-button--menu--7"
                       type="button"
                     >
                       <a
@@ -236,9 +236,9 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
                 >
                   <MenuItems>
                     <div
-                      aria-labelledby="menu-button--menu--5"
+                      aria-labelledby="menu-button--menu--7"
                       data-reach-menu-items=""
-                      id="menu--5"
+                      id="menu--7"
                       onKeyDown={[Function]}
                       role="menu"
                       tabIndex={-1}
@@ -256,7 +256,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
                             <div
                               data-reach-menu-item=""
                               data-valuetext="First"
-                              id="option-0--menu--5"
+                              id="option-0--menu--7"
                               onClick={[Function]}
                               onDragStart={[Function]}
                               onMouseDown={[Function]}
@@ -287,7 +287,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
                             <div
                               data-reach-menu-item=""
                               data-valuetext="Second"
-                              id="option-1--menu--5"
+                              id="option-1--menu--7"
                               onClick={[Function]}
                               onDragStart={[Function]}
                               onMouseDown={[Function]}
@@ -318,7 +318,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
                             <div
                               data-reach-menu-item=""
                               data-valuetext="Third"
-                              id="option-2--menu--5"
+                              id="option-2--menu--7"
                               onClick={[Function]}
                               onDragStart={[Function]}
                               onMouseDown={[Function]}
@@ -416,7 +416,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
             "element": <div
               data-reach-menu-item=""
               data-valuetext="First"
-              id="option-0--menu--8"
+              id="option-0--menu--12"
               role="menuitem"
               tabindex="-1"
             >
@@ -430,7 +430,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
             "element": <div
               data-reach-menu-item=""
               data-valuetext="Second"
-              id="option-1--menu--8"
+              id="option-1--menu--12"
               role="menuitem"
               tabindex="-1"
             >
@@ -444,7 +444,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
             "element": <div
               data-reach-menu-item=""
               data-valuetext="Third"
-              id="option-2--menu--8"
+              id="option-2--menu--12"
               role="menuitem"
               tabindex="-1"
             >
@@ -462,10 +462,10 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
         as="div"
       >
         <div
-          aria-controls="menu--8"
+          aria-controls="menu--12"
           aria-haspopup={true}
           data-reach-menu-button=""
-          id="menu-button--menu--8"
+          id="menu-button--menu--12"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           type="button"
@@ -488,10 +488,10 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
           targetRef={
             Object {
               "current": <div
-                aria-controls="menu--8"
+                aria-controls="menu--12"
                 aria-haspopup="true"
                 data-reach-menu-button=""
-                id="menu-button--menu--8"
+                id="menu-button--menu--12"
                 type="button"
               >
                 <a
@@ -516,16 +516,16 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
                     style="position: absolute; left: 0px; top: 0px;"
                   >
                     <div
-                      aria-labelledby="menu-button--menu--8"
+                      aria-labelledby="menu-button--menu--12"
                       data-reach-menu-items=""
-                      id="menu--8"
+                      id="menu--12"
                       role="menu"
                       tabindex="-1"
                     >
                       <div
                         data-reach-menu-item=""
                         data-valuetext="First"
-                        id="option-0--menu--8"
+                        id="option-0--menu--12"
                         role="menuitem"
                         tabindex="-1"
                       >
@@ -534,7 +534,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
                       <div
                         data-reach-menu-item=""
                         data-valuetext="Second"
-                        id="option-1--menu--8"
+                        id="option-1--menu--12"
                         role="menuitem"
                         tabindex="-1"
                       >
@@ -543,7 +543,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
                       <div
                         data-reach-menu-item=""
                         data-valuetext="Third"
-                        id="option-2--menu--8"
+                        id="option-2--menu--12"
                         role="menuitem"
                         tabindex="-1"
                       >
@@ -562,10 +562,10 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
                 targetRef={
                   Object {
                     "current": <div
-                      aria-controls="menu--8"
+                      aria-controls="menu--12"
                       aria-haspopup="true"
                       data-reach-menu-button=""
-                      id="menu-button--menu--8"
+                      id="menu-button--menu--12"
                       type="button"
                     >
                       <a
@@ -593,9 +593,9 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
                 >
                   <MenuItems>
                     <div
-                      aria-labelledby="menu-button--menu--8"
+                      aria-labelledby="menu-button--menu--12"
                       data-reach-menu-items=""
-                      id="menu--8"
+                      id="menu--12"
                       onKeyDown={[Function]}
                       role="menu"
                       tabIndex={-1}
@@ -613,7 +613,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
                             <div
                               data-reach-menu-item=""
                               data-valuetext="First"
-                              id="option-0--menu--8"
+                              id="option-0--menu--12"
                               onClick={[Function]}
                               onDragStart={[Function]}
                               onMouseDown={[Function]}
@@ -642,7 +642,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
                             <div
                               data-reach-menu-item=""
                               data-valuetext="Second"
-                              id="option-1--menu--8"
+                              id="option-1--menu--12"
                               onClick={[Function]}
                               onDragStart={[Function]}
                               onMouseDown={[Function]}
@@ -671,7 +671,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
                             <div
                               data-reach-menu-item=""
                               data-valuetext="Third"
-                              id="option-2--menu--8"
+                              id="option-2--menu--12"
                               onClick={[Function]}
                               onDragStart={[Function]}
                               onMouseDown={[Function]}
