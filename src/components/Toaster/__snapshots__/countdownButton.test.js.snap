@@ -13,7 +13,7 @@ exports[`CountdownButton matches snapshot 1`] = `
   <div
     className="countdownButton-button"
   >
-    <ForwardRef
+    <IconButton
       Icon={[Function]}
       label="Close"
       radius="circle"

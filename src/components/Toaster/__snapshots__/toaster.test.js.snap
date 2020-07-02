@@ -321,7 +321,7 @@ exports[`Toaster component matches snapshot 1`] = `
                                       <div
                                         className="countdownButton-button"
                                       >
-                                        <ForwardRef
+                                        <IconButton
                                           Icon={[Function]}
                                           label="Close"
                                           radius="circle"
@@ -369,7 +369,7 @@ exports[`Toaster component matches snapshot 1`] = `
                                               </DenyIcon>
                                             </span>
                                           </button>
-                                        </ForwardRef>
+                                        </IconButton>
                                       </div>
                                       <Transition
                                         appear={true}
