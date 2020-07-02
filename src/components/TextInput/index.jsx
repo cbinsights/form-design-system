@@ -84,7 +84,7 @@ const TextInput = React.forwardRef(
                 {...props}
                 ref={ref}
                 aria-label={showLabel ? label : undefined}
-                aria-invalid={Boolean(errorText || hasError)}
+                aria-invalid={errorText || hasError ? true : undefined}
                 onChange={inputOnChange}
                 type={type}
                 className={cx('fdsTextInput', {
