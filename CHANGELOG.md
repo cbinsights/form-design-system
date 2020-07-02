@@ -38,6 +38,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - Added `x` and `y` directions to spacing classes (e.g. `margin--y`)
 - Added new end value for spacing classes: `xs`, `s`, `m (default)`, `l`, and `xl`, which correspond to pixel values
 - Added GapList component
+- Added `zindex--modal` class
 
 ### **BREAKING CHANGES**
 
@@ -74,6 +75,9 @@ out items, please use GapList, a new component also added in v9.
 - `DecoratedInput` (use TextInput instead)
 - `IconInput` (use TextInput instead)
 - `Section` (use fds classes instead)
+
+#### z-index
+- popover and shim redundant values were removed (use modal value instead and rely on source order)
 
 ### **Deprecations**
 
