@@ -32,6 +32,7 @@ const TextInput = React.forwardRef(
       IconRight,
       after,
       before,
+      'aria-label': ariaLabel,
       ...props
     },
     ref
@@ -83,7 +84,7 @@ const TextInput = React.forwardRef(
               <input
                 {...props}
                 ref={ref}
-                aria-label={showLabel ? label : undefined}
+                aria-label={ariaLabel || (showLabel ? label : undefined)}
                 onChange={inputOnChange}
                 type={type}
                 className={cx('fdsTextInput', {
@@ -102,6 +103,8 @@ const TextInput = React.forwardRef(
 TextInput.displayName = 'TextInput';
 
 TextInput.propTypes = {
+  /** Control aria-label */
+  'aria-label': PropTypes.string,
   /** Control whether input has error styling */
   hasError: PropTypes.bool,
   /** Control whether label receives a bold treatment */
