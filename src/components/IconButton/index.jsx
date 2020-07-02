@@ -56,6 +56,8 @@ const IconButton = forwardRef(
   }
 );
 
+IconButton.displayName = 'IconButton';
+
 IconButton.propTypes = {
   /**
    * Takes in a react-router `Link` reference and sets it
