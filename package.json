@@ -7,7 +7,7 @@
     "lib"
   ],
   "scripts": {
-    "codeshift": "./transforms/transform.sh",
+    "codeshift": "scripts/bash/transforms/transform.sh",
     "clean": "./scripts/bash/clean.sh",
     "build:bootstrap": "./scripts/bash/bootstrapBuild.sh",
     "build:dictionary": "node scripts/node/dictionary/build.js",
