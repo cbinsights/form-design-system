@@ -98,6 +98,8 @@ const Button = forwardRef(
   }
 );
 
+Button.displayName = 'Button';
+
 Button.propTypes = {
   /** Text inside the button */
   label: PropTypes.string.isRequired,
