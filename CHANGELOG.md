@@ -26,6 +26,103 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [9.0] MAJOR
+
+### Changes / Additions
+
+- Components can be imported via a destructure pattern. `import { Button, IconButton } from '@cbinsights/fds/lib/components'`
+- FDS Icons (only React) can be imported via a destructure pattern. `import { AddIcon, CaretDownIcon } from '@cbinsights/fds/lib/icons/react'`
+- TextInput: 
+  - `hasError` prop added to enable the input error state without passing `errorText`
+  - `isLabelBold` prop added to allow label to be bolded
+- Added `x` and `y` directions to spacing classes (e.g. `margin--y`)
+- Added new end value for spacing classes: `xs`, `s`, `m (default)`, `l`, and `xl`, which correspond to pixel values
+- Added GapList component
+
+### **BREAKING CHANGES**
+
+#### Component reorganization
+- The following folders no longer exist: `media`, `interactive`, `layout` `forms`, `modals`, `popovers`
+- All components now live in `lib/components`. This is going to break tons of import paths!
+
+#### `MenuButton` Component
+- Now only accepts a `button` element, or a component that renders a `button` element as a trigger
+- `isInModal` is no longer accepted
+
+#### `Popover` Component
+- The popover no longer closes on user dismissal actions in controlled mode. The
+  `onUserDismiss` callback must now be used to update the state of `isOpen` when the
+  popover is in controlled mode.
+
+#### `Dialog` Component
+- `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc). 
+
+#### `Flex` Component
+- `wrap` prop is no longer accepted on `Flex`
+
+#### `raw/` Icons distribution
+- `lib/icons/raw/` will no longer exist in packages published v9 or later. For raw SVG
+  icons, use `lib/icons/svg/`.
+
+#### Renamed InlineBlockList component
+- `InlineBlockList is now SeparatorList. This component is primarily used for configuring
+separator characters between items in an inline-block list. If you'd like to just space
+out items, please use GapList, a new component also added in v9.
+
+#### Removed components
+- `CountdownButton` (only used by Toast)
+- `DecoratedInput` (use TextInput instead)
+- `IconInput` (use TextInput instead)
+- `Section` (use fds classes instead)
+
+### **Deprecations**
+
+- `half` and `double` end values are now deprecated and will be removed in a feature release.
+Please use the new end values added for these classes that were added in this minor release.
+
+## [8.10] DateInput refs
+
+Added ref props for the `input` and popover content elements:
+- `inputRef`
+- `popoverRef`
+
+## [8.9] DateInput callbacks
+
+- added `onInputChange` callback to `DateInput`
+
+## [8.8] Popover ref forwarding
+
+- `Popover` now accepts a `ref` prop that will be forwarded to the content container DOM element
+
+## [8.7] Popover configuration in DateInput
+
+- Adds `popoverProps` to `DateInput` for user configuration of the popover that contains
+  the date picker
+
+## [8.6] DateInput enhancements
+
+- Adds `minDate` and `maxDate` props to `Dateinput` for specifying a selectable date range
+  in the calendar UI
+- Adds icon to the input element in `DateInput`
+- Adds optional `label` prop for `DateInput`
+
+## [8.5] PNG Icons
+
+- Adds `lib/icons/png` PNG distribution for icons
+
+### **Deprecations**
+
+- `lib/icons/raw` is now deprecated. It will be removed in a future major release.
+  please use `lib/icons/svg` when importing raw SVG files.
+
+## [8.4] Add delay to `Tooltip`
+
+- Adds support for `delay` prop in base `Popover` component
+- Adds a `1000`ms hover delay to `Tooltip`
+
+## [8.3] DateInput date formatting
+
+- Adds `dateFormat` prop to `DateInput` to allow different date order (MDY, DMY, YMD)
 
 ## [8.2] DateInput rest props and IconButton role
 

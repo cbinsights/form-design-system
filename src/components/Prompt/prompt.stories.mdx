@@ -1,0 +1,58 @@
+import {
+  Meta,
+  Story,
+  Preview,
+  Props,
+  Description
+} from "@storybook/addon-docs/blocks";
+import { withKnobs, text, boolean, object } from "@storybook/addon-knobs";
+import { action } from '@storybook/addon-actions';
+import { ImportPath } from 'components/util/storybook';
+import Button from "components/Button";
+
+import Prompt from "./";
+
+export const primaryButtonProps = () =>
+  object("primaryButton", {
+    isDestructive: true,
+    label: "Yes, delete"
+  });
+
+export const secondaryButtonProps = () =>
+  object("secondaryButton", {
+    theme: "ghost",
+    label: "Keep Collection",
+    onClick: action("close modal"),
+    }
+  );
+
+<Meta
+  title="Components/Prompt"
+  decorators={[withKnobs]}
+  component={Prompt}
+  parameters={{ docs: { disable: true } }}
+/>
+
+# Prompt
+
+<ImportPath component={Prompt} />
+
+*Please click **"Canvas"** to view examples.*
+
+A confirm modal that displays a simple message, with 2 buttons to either confirm the action, or deny it.
+
+<Props of={Prompt} />
+
+<Story name="Knobs">
+  <Prompt
+    isOpen={boolean("isOpen", true)}
+    desc={text(
+      "content",
+      "This change will be permanent and cannot be undone."
+    )}
+    title={text("title", "Are you sure you want to delete this collection?")}
+    primaryButton={<Button {...primaryButtonProps()} />}
+    secondaryButton={<Button {...secondaryButtonProps()} />}
+    onDismiss={action('close modal')}
+  />
+</Story>

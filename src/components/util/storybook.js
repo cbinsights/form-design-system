@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import CloneIcon from 'lib/icons/react/CloneIcon';
 import CheckIcon from 'lib/icons/react/CheckIcon';
-import FDS from '../../../lib/dictionary/js/styleConstants';
+import FDS from 'lib/dictionary/js/styleConstants';
 
 /**
  * Creates a knobs options object where labels match values.
@@ -114,11 +114,11 @@ export const storyBackgrounds = {
     'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQYV2M8fPiwLwMOwAiStLW13YxNftBJAgAx2BqeI9XcBAAAAABJRU5ErkJggg==)',
 };
 
-export const ImportPath = ({ component, section }) => {
+export const ImportPath = ({ component }) => {
   const toggleHover = useToggleHover()[1];
   const [copiedText, copyToClipboard] = useClipboard();
 
-  const path = `import ${component.displayName} from '@cbinsights/fds/lib/components/${section}/${component.displayName}'`;
+  const path = `import { ${component.displayName} } from '@cbinsights/fds/lib/components'`;
 
   const pathParts = path.split(' ');
 
@@ -130,9 +130,11 @@ export const ImportPath = ({ component, section }) => {
       onClick={() => copyToClipboard(path)}
     >
       <span>{pathParts[0]} </span>
-      <span className="importPath--highlight">{pathParts[1]} </span>
-      <span>{pathParts[2]} </span>
-      <span className="importPath--highlight">{pathParts[3]}</span>
+      <span className="importPath--highlight">
+        {pathParts[1]} {pathParts[2]} {pathParts[3]}
+      </span>
+      <span> {pathParts[4]} </span>
+      <span className="importPath--highlight">{pathParts[5]}</span>
       {!copiedText ? (
         <CloneIcon customSize={14} />
       ) : (

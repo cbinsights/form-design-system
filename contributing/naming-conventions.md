@@ -28,7 +28,7 @@ CSS _property_ name in variables:
 
 ```
 --font-color-primary
---zindex-popover
+--zindex-modal
 --color-red
 ```
 
@@ -113,6 +113,13 @@ Always name rest props `rest`:
 -const Component = ({ foo, bar, ...props})
 -const Component = ({ foo, bar, ...otherProps})
 +const Component = ({ foo, bar, ...rest})
+```
+
+Props that accept a component _reference_ should be uppercase:
+
+```diff
+-icon={CloudIcon}
++ Icon={CloudIcon} // CloudIcon is a reference to the imported icon component
 ```
 
 ## CSS classes

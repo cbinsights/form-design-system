@@ -16,29 +16,34 @@ addParameters({
         return 0;
       }
 
-      const sectionSort = () => {
-        const sectionSortOrder = [
-          "Intro",
-          "UI Guidelines",
-          "Design Tokens",
-          "Icons",
-          "Style Utilities",
-          "Components"
-        ].reduce((ordering, section, i) => {
-          ordering[section] = i;
-          return ordering;
-        }, {});
+      const alphabeticalSort = () =>
+        (a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }));
 
+      const sectionSortOrder = [
+        "Intro",
+        "UI Guidelines",
+        "Design Tokens",
+        "Icons",
+        "Style Utilities",
+        "Components",
+        "Examples"
+      ].reduce((ordering, section, i) => {
+        ordering[section] = i;
+        return ordering;
+      }, {});
+
+      const sectionSort = () => {
         return (
-          sectionSortOrder[a[1].kind.split("/")[0]] -
-          sectionSortOrder[b[1].kind.split("/")[0]]
+          sectionSortOrder[first] -
+          sectionSortOrder[second]
         );
       };
 
-      const alphabeticalSort = () =>
-        a[1].id.localeCompare(b[1].id, { numeric: true });
+      const first = a[1].kind.split("/")[0];
+      const second = b[1].kind.split("/")[0];
+      if (first === second) return alphabeticalSort()
+      return sectionSort();
 
-      return sectionSort() || alphabeticalSort();
     }
   }
 });

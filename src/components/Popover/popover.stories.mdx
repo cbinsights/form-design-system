@@ -1,0 +1,233 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { action } from '@storybook/addon-actions';
+import { useRef } from 'react'
+import {
+  withKnobs,
+  optionsKnob as options,
+  select,
+  number,
+  boolean,
+} from '@storybook/addon-knobs';
+import { arrayToOptions } from 'components/util/storybook';
+import { Info } from 'components/util/storybook';
+
+import Popover, {
+  VALID_ALIGNMENTS,
+  VALID_POSITIONS,
+  VALID_INTERACTION_MODES,
+} from '.';
+
+import { ImportPath, State } from "components/util/storybook";
+
+import Button from 'components/Button';
+
+
+<Meta title="Components/Popover" decorators={[withKnobs]} component={Popover} />
+
+# Popover
+
+<ImportPath component={Popover} />
+
+Base popover component. Bring your own trigger and popover content.
+
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
+  <Popover
+    trigger={<div className="margin--bottom"><Button label="Click Me" /></div>}
+    position={options('Position', arrayToOptions(VALID_POSITIONS), 'bottom', {
+      display: 'inline-radio',
+    })}
+    alignment={options('Alignment', arrayToOptions(VALID_ALIGNMENTS), 'start', {
+      display: 'inline-radio',
+    })}
+    distance={number('Distance', 4)}
+    interactionMode={options(
+      'Interaction mode',
+      arrayToOptions(VALID_INTERACTION_MODES),
+      'click',
+      { display: 'inline-radio' }
+    )}
+    isOpen={boolean('isOpen (only works in controlled mode)', false)}
+    disablePortal={boolean('Disable portal', false)}
+    transitionName={select('Transition name', arrayToOptions(['GrowFast', '']), '')}
+    onOpen={action('onOpen')}
+    onClose={action('onClose')}
+    onUserDismiss={action('onUserDismiss')}
+  >
+    <div className="padding--all" style={{ outline: '3px dotted red', background: "#FFFFFF" }}>
+      popover content
+    </div>
+  </Popover>
+</Story>
+
+<Preview isExpanded>
+  <Popover
+    position='right'
+    alignment='start'
+    distance={4}
+    interactionMode='click'
+    transitionName="GrowFast"
+    trigger={<div className="margin--bottom"><Button label="Click Me" /></div>}
+  >
+    <div
+      className="padding--all"
+      style={{ outline: '3px dotted red', background: "#FFFFFF" }}
+    >
+      popover content
+    </div>
+  </Popover>
+</Preview>
+
+
+## What this component does
+
+- Handle events according to `interactionMode` passed in
+- Handle positioning of popover content
+
+## What this component does **not** do
+
+- Content styling - the popover container is just a transparent div.
+- Arrows. They aren't supported, but we can add them in the future.
+
+<Props of={Popover} />
+
+<Info type="info">
+  When setting `position` and `alignment` props, the positioning engine will prefer the props you
+  provide, but may move the popover content to avoid edges of the viewport. This behavior is intentional.
+</Info>
+
+## Styled popover content
+
+<Preview>
+  <Story name="Styled popover content" height={100}>
+    <Popover
+      trigger={<Button theme="outlined" label="Open popover" />}
+      position="bottom"
+      alignment="start"
+      distance={8}
+    >
+      <div className="bgColor--white rounded--all elevation--2 padding--all">
+        <h3 className="type--head3">Look at me</h3>
+        <p>
+          <em>i am the popover</em>
+        </p>
+      </div>
+    </Popover>
+  </Story>
+</Preview>
+
+## Controlled popover
+
+The "controlled" `interactionMode` follows the conventions of a [controlled
+component](https://reactjs.org/docs/forms.html#controlled-components), meaning the open
+state of the popover is exclusively controlled by the prop `isOpen`.
+
+To update the state of `isOpen` based on user interaction, you must use the `onUserDismiss` callback.
+
+The `onUserDismiss` function is invoked when:
+
+- The user clicks the trigger element
+- The user presses `Escape`
+- the user clicks away from the popover.
+
+<Preview>
+  <Story name="Controlled popover" height={100}>
+    <State
+      initialValue={true}
+      render={(myIsOpen, setMyIsOpen) => (
+        <Popover
+          trigger={
+            <button
+              onClick={() => { setMyIsOpen(!myIsOpen) }}
+            >
+              Open popover
+            </button>
+          }
+          position="bottom"
+          alignment="start"
+          interactionMode="controlled"
+          isOpen={myIsOpen}
+          onUserDismiss={() => { setMyIsOpen(false) }}
+          distance={8}
+        >
+          <div className="bgColor--white rounded--all elevation--2 padding--all">
+            <h3 className="type--head3">Look at me</h3>
+            <p>
+              <em>i am the popover</em>
+            </p>
+          </div>
+        </Popover>
+      )}
+    />
+  </Story>
+</Preview>
+
+
+## Disable Scrolling
+
+If you'd like to disable scrolling of some element when a popover is open you can pass a ref of the scrolling element to the `disableScrollRef` prop.
+
+<Preview>
+  <Story name="Disable Scrolling">
+    {() => {
+      const containerEl = useRef(null);
+      return (
+        <div
+          ref={containerEl}
+          style={{ height: 200, border: "1px dashed red", overflow: 'scroll' }}
+        >
+          <div style={{ height: 500, background: "yellow" }}>
+            <Popover
+              trigger={<Button theme="outlined" label="Open popover" />}
+              position="bottom"
+              alignment="start"
+              distance={8}
+              disableScrollRef={containerEl}
+            >
+              <div className="bgColor--white rounded--all elevation--2 padding--all">
+                <h3 className="type--head3">Look at me</h3>
+                <p>
+                  <em>i am the popover</em>
+                </p>
+              </div>
+            </Popover>
+          </div>
+        </div>
+      )
+    }}
+  </Story>
+</Preview>
+
+## Close on Scroll
+
+If you'd like the ability to close the popover once the user scrolls some element, you can pass a ref of that element to the `closeOnScrollRef` prop.
+
+<Preview>
+  <Story name="Close on Scroll">
+    {() => {
+      const containerEl = useRef(null);
+      return (
+        <div
+          ref={containerEl}
+          style={{ height: 200, border: "1px dashed red", overflow: "scroll" }}
+        >
+          <div style={{ height: 500, background: "yellow" }}>
+            <Popover
+              trigger={<Button theme="outlined" label="Open popover" />}
+              position="bottom"
+              alignment="start"
+              distance={8}
+              closeOnScrollRef={containerEl}
+            >
+              <div className="bgColor--white rounded--all elevation--2 padding--all">
+                <h3 className="type--head3">Look at me</h3>
+                <p>
+                  <em>i am the popover</em>
+                </p>
+              </div>
+            </Popover>
+          </div>
+        </div>
+      )
+    }}
+  </Story>
+</Preview>

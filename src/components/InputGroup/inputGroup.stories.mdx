@@ -1,0 +1,118 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import SearchIcon from 'lib/icons/react/SearchIcon';
+import TextInput from 'components/TextInput';
+import InputGroup from '.';
+
+import { ImportPath } from 'components/util/storybook';
+
+<Meta title="Components/InputGroup" component={InputGroup} />
+
+# InputGroup
+
+<ImportPath component={InputGroup} />
+
+Visually groups multiple form fields on one line.
+This component will automatically assign `shrink`/`grow` to its internal flex items, but
+you can override the defaults by using the `flexSettings` prop.
+
+<Props of={InputGroup} />
+
+### Dropdown Variations
+
+<Preview>
+  <Story name="Dropdown Variations">
+    <React.Fragment>
+      <div className="margin--bottom">
+        <InputGroup>
+          <select name="type">
+            <option value="1">Horse-size duck</option>
+            <option value="2">Duck-size horse</option>
+          </select>
+          <input type="text" placeholder="Name of pet" />
+          <select name="color">
+            <option value="1">Yellow</option>
+            <option value="2">Brown</option>
+            <option value="2">White</option>
+          </select>
+        </InputGroup>
+      </div>
+      <div className="margin--bottom">
+        <InputGroup>
+          <input type="number" defaultValue="666" />
+          <select name="unit">
+            <option value="1">Million</option>
+            <option value="2">Thousand</option>
+          </select>
+        </InputGroup>
+      </div>
+      <div className="margin--bottom">
+      </div>
+      <div className="margin--bottom">
+        <InputGroup>
+          <select name="currencty">
+            <option value="USD">$</option>
+            <option value="GBP">￡</option>
+            <option value="YEN">￥</option>
+          </select>
+          <input type="number" defaultValue="666" />
+        </InputGroup>
+      </div>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+### Text inputs
+
+<Preview>
+  <Story name="Text inputs">
+    <InputGroup>
+      <input type="text" placeholder="First Name" />
+      <input type="text" placeholder="Middle Name" />
+      <input type="text" placeholder="Last Name" />
+    </InputGroup>
+  </Story>
+</Preview>
+
+### Custom grow/shirnk
+
+Use the `flexSettings` prop to control the flex behavior of each input segment.
+In this example, the first and last inputs are set to `grow` and the middle input will
+`shrink` to the natural width of the select.
+
+<Preview>
+  <Story name="Custom grow/shrink">
+    <InputGroup flexSettings={['grow', 'shrink', 'grow']}>
+      <TextInput before="$" type="number" defaultValue="100" label="Money" showLabel={false} />
+      <select name="unit">
+        <option value="1">Million</option>
+        <option value="2">Thousand</option>
+      </select>
+      <input type="text" placeholder="Investor Name" />
+    </InputGroup>
+  </Story>
+</Preview>
+
+### Other examples
+
+<Preview>
+  <Story name="Other examples">
+    <React.Fragment>
+      <label>Valuation</label>
+      <InputGroup>
+        <TextInput before="$" type="number" defaultValue="666" label="Money" showLabel={false} />
+        <select name="unit">
+          <option value="1">Million</option>
+          <option value="2">Thousand</option>
+        </select>
+      </InputGroup>
+      <div className="margin--top--half" />
+      <InputGroup>
+        <TextInput IconLeft={SearchIcon} placeholder="Search" type="search" label="Search" showLabel={false} />
+        <select name="unit">
+          <option value="1">Companies</option>
+          <option value="2">Investors</option>
+        </select>
+      </InputGroup>
+    </React.Fragment>
+  </Story>
+</Preview>
