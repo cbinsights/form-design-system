@@ -2,7 +2,7 @@
 
 - **Status:** accepted
 - **Deciders:** @akdetrick, @rey-wright, @ahmedhashim-cbi, @sfrieson-cbi, @jjniczCB, @kchen-cbi
-- **Date:** 2020.04.24
+- **Date:** 2020.07.06
 
 ---
 
@@ -55,12 +55,11 @@ directories.
 ```
 components/
 ├── Foo/
-│   ├── Foo.jsx
 │   ├── FooHelper.jsx
 │   ├── foo.test.jsx
 │   ├── foo.stories.jsx
 │   ├── utils.js
-│   └── index.js  // export default Foo
+│   └── index.js  // contains Foo component code
 ...
 ```
 
