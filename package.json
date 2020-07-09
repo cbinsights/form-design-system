@@ -11,7 +11,7 @@
     "clean": "./scripts/bash/clean.sh",
     "build:bootstrap": "./scripts/bash/bootstrapBuild.sh",
     "build:dictionary": "node scripts/node/dictionary/build.js",
-    "build:styles": "yarn styles:min && yarn styles:full && yarn styles:docs",
+    "build:styles": "yarn styles:min && yarn styles:full",
     "build:icons": "yarn icons:png && yarn icons:svg && yarn icons:react && yarn icons:transpile && yarn icons:css && yarn icons:docs",
     "build:comp": "yarn comp:css && yarn comp:jsx && yarn comp:docs",
     "build:distCSS": "NODE_ENV=production postcss src/assets/all-styles.css -o ./lib/assets/all-styles.min.css --config=./postcss.config.js",
