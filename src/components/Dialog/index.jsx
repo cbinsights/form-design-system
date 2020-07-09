@@ -114,7 +114,7 @@ const Dialog = ({
             <div className="dialog-footer">
               <div
                 className={cx('bgColor--white', 'padding--all', {
-                  'border-top': alwaysShowBorder || isOverflowing,
+                  'border--top': alwaysShowBorder || isOverflowing,
                 })}
               >
                 {footerContent}
