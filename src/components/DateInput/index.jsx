@@ -173,7 +173,7 @@ const DateInput = ({
   popoverProps = {},
   inputRef,
   popoverRef,
-  defaultDate,
+  defaultDate: defaultDateInput,
   onDateChange = () => {},
   onInputChange = () => {},
   label = '',
@@ -181,6 +181,8 @@ const DateInput = ({
   maxDate,
   ...rest
 }) => {
+  const defaultDate =
+    typeof defaultDateInput === 'string' ? new Date(defaultDateInput) : defaultDateInput;
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
   const [pickerMonth, setPickerMonth] = useState(defaultDate || new Date());
   const [prevDateFormat, setPrevDateFormat] = useState(dateFormat);
