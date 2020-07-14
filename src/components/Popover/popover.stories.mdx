@@ -8,8 +8,8 @@ import {
   number,
   boolean,
 } from '@storybook/addon-knobs';
-import { arrayToOptions } from 'components/util/storybook';
-import { Info } from 'components/util/storybook';
+import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
+import Info from 'util/storybook-docs/Info';
 
 import Popover, {
   VALID_ALIGNMENTS,
@@ -17,7 +17,8 @@ import Popover, {
   VALID_INTERACTION_MODES,
 } from '.';
 
-import { ImportPath, State } from "components/util/storybook";
+import ImportPath from 'util/storybook-docs/ImportPath';
+import State from 'util/storybook-docs/State';
 
 import Button from 'components/Button';
 
@@ -161,6 +162,41 @@ The `onUserDismiss` function is invoked when:
   </Story>
 </Preview>
 
+## Close on Scroll (preferred)
+
+If you'd like the ability to close the popover once the user scrolls some element, you can pass a ref of that element to the `closeOnScrollRef` prop.
+If you're not sure how to handle scrolling behavior with a popover, choose this option.
+
+<Preview>
+  <Story name="Close on Scroll">
+    {() => {
+      const containerEl = useRef(null);
+      return (
+        <div
+          ref={containerEl}
+          style={{ height: 200, border: "1px dashed red", overflow: "scroll" }}
+        >
+          <div style={{ height: 500, background: "yellow" }}>
+            <Popover
+              trigger={<Button theme="outlined" label="Open popover" />}
+              position="bottom"
+              alignment="start"
+              distance={8}
+              closeOnScrollRef={containerEl}
+            >
+              <div className="bgColor--white rounded--all elevation--2 padding--all">
+                <h3 className="type--head3">Look at me</h3>
+                <p>
+                  <em>i am the popover</em>
+                </p>
+              </div>
+            </Popover>
+          </div>
+        </div>
+      )
+    }}
+  </Story>
+</Preview>
 
 ## Disable Scrolling
 
@@ -197,37 +233,3 @@ If you'd like to disable scrolling of some element when a popover is open you ca
   </Story>
 </Preview>
 
-## Close on Scroll
-
-If you'd like the ability to close the popover once the user scrolls some element, you can pass a ref of that element to the `closeOnScrollRef` prop.
-
-<Preview>
-  <Story name="Close on Scroll">
-    {() => {
-      const containerEl = useRef(null);
-      return (
-        <div
-          ref={containerEl}
-          style={{ height: 200, border: "1px dashed red", overflow: "scroll" }}
-        >
-          <div style={{ height: 500, background: "yellow" }}>
-            <Popover
-              trigger={<Button theme="outlined" label="Open popover" />}
-              position="bottom"
-              alignment="start"
-              distance={8}
-              closeOnScrollRef={containerEl}
-            >
-              <div className="bgColor--white rounded--all elevation--2 padding--all">
-                <h3 className="type--head3">Look at me</h3>
-                <p>
-                  <em>i am the popover</em>
-                </p>
-              </div>
-            </Popover>
-          </div>
-        </div>
-      )
-    }}
-  </Story>
-</Preview>
