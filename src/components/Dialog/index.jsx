@@ -6,8 +6,8 @@ import FocusTrap from 'focus-trap-react';
 import rafSchd from 'raf-schd';
 import DenyIcon from 'lib/icons/react/DenyIcon';
 import IconButton from 'components/IconButton';
-import noScroll from 'components/util/scroll';
 import cx from 'classnames';
+import noScroll from './noScroll';
 
 export const isElementOverflowing = ({ current }) => {
   // Checking for current first is safer just in case,
