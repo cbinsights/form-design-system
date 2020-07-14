@@ -1,7 +1,8 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, boolean, text, optionsKnob as options } from '@storybook/addon-knobs';
 import ApproveIcon from 'lib/icons/react/ApproveIcon';
-import { arrayToOptions, ImportPath } from 'components/util/storybook';
+import ImportPath from 'util/storybook-docs/ImportPath';
+import { arrayToOptions } from 'util/storybook-docs/knobHelpers';;
 
 import FloatingAction, { VALID_FAB_THEMES } from '.';
 
