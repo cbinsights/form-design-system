@@ -19,6 +19,7 @@ exports[`TextInput component matches snapshot (all props) 1`] = `
         IconRight={[Function]}
       >
         <input
+          aria-invalid={true}
           aria-label="label"
           className="fdsTextInput error"
           onChange={[Function]}

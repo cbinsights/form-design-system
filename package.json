@@ -7,11 +7,11 @@
     "lib"
   ],
   "scripts": {
-    "codeshift": "./transforms/transform.sh",
+    "codeshift": "scripts/bash/transforms/transform.sh",
     "clean": "./scripts/bash/clean.sh",
     "build:bootstrap": "./scripts/bash/bootstrapBuild.sh",
     "build:dictionary": "node scripts/node/dictionary/build.js",
-    "build:styles": "yarn styles:min && yarn styles:full && yarn styles:docs",
+    "build:styles": "yarn styles:min && yarn styles:full",
     "build:icons": "yarn icons:png && yarn icons:svg && yarn icons:react && yarn icons:transpile && yarn icons:css && yarn icons:docs",
     "build:comp": "yarn comp:css && yarn comp:jsx && yarn comp:docs",
     "build:distCSS": "NODE_ENV=production postcss src/assets/all-styles.css -o ./lib/assets/all-styles.min.css --config=./postcss.config.js",
@@ -91,7 +91,6 @@
     "husky": "^1.0.0-rc.13",
     "jest": "^24.8.0",
     "lint-staged": "^8.1.7",
-    "mdcss": "^1.5.2",
     "moment": "^2.20",
     "pascal-case": "^2.0.1",
     "postcss": "^7.0.2",
@@ -153,7 +152,7 @@
   },
   "version": "4.0.0",
   "dependencies": {
-    "@reach/menu-button": "^0.10.1",
+    "@reach/menu-button": "^0.10.5",
     "@popperjs/core": "^2.4.1",
     "focus-trap-react": "^6.0.0",
     "raf-schd": "^4",
