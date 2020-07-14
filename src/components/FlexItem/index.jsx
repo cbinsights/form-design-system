@@ -1,5 +1,5 @@
 import React from 'react';
-import cx from 'classnames';
+import cc from 'classcat';
 import PropTypes from 'prop-types';
 
 /**
@@ -27,16 +27,16 @@ const AlignPropMap = {
  * @returns {ReactElement}
  */
 const FlexItem = ({ shrink = false, justify, align, children }) => {
-  const classNames = cx(
-    'flexItem',
+  const classNames = cc([
     {
       'flexItem--shrink': shrink,
     },
     {
       [JustifyPropMap[justify]]: justify,
       [AlignPropMap[align]]: align,
-    }
-  );
+    },
+    'flexItem',
+  ]);
 
   return <div className={classNames}>{children}</div>;
 };

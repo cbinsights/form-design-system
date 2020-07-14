@@ -1,22 +1,22 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
 
 const DropdownButton = forwardRef(
   ({ children, isFullWidth = false, isActive, ...rest }, ref) => (
     <button
       {...rest}
-      className={cx(
+      className={cc([
+        {
+          'fdsDropdown--isFullWidth': isFullWidth,
+          'fdsDropdown--isActive': isActive,
+        },
         'display--inlineFlex',
         'fdsDropdown',
         'border--focus',
         'rounded--all',
-        {
-          'fdsDropdown--isFullWidth': isFullWidth,
-          'fdsDropdown--isActive': isActive,
-        }
-      )}
+      ])}
       ref={ref}
     >
       <div>{children}</div>

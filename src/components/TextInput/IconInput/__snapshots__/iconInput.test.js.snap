@@ -2,7 +2,7 @@
 
 exports[`IconInput component matches snapshot (set all props) 1`] = `
 <div
-  className="fdsIconInput fdsIconInput--hasStartIcon fdsIconInput--hasEndIcon"
+  className="fdsIconInput--hasStartIcon fdsIconInput--hasEndIcon fdsIconInput"
 >
   <span
     className="fdsIconInput-icon fdsIconInput-icon--start alignChild--center--center"

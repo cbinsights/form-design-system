@@ -2,7 +2,7 @@
 
 exports[`Section component matches snapshot for mixed strings and components 1`] = `
 <ul
-  className="fdsInlineBlockList fdsInlineBlockList--separators"
+  className="fdsInlineBlockList--separators fdsInlineBlockList"
 >
   <li
     className="display--inlineBlock"
@@ -28,7 +28,7 @@ exports[`Section component matches snapshot for mixed strings and components 1`]
 
 exports[`Section component matches snapshot for string items 1`] = `
 <ul
-  className="fdsInlineBlockList fdsInlineBlockList--separators"
+  className="fdsInlineBlockList--separators fdsInlineBlockList"
 >
   <li
     className="display--inlineBlock"

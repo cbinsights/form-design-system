@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import { CaretDownIcon } from 'lib/icons/react';
 
@@ -34,13 +34,13 @@ const Button = forwardRef(
         <>
           {Icon && (
             <div
-              className={cx(
-                'alignChild--center--center',
-                `fdsButton-icon--${direction}`,
+              className={cc([
                 {
                   'fdsButton--hidden': isLoading,
-                }
-              )}
+                },
+                'alignChild--center--center',
+                `fdsButton-icon--${direction}`,
+              ])}
             >
               <Icon customSize={size === 's' ? 16 : 18} />
             </div>
@@ -64,7 +64,14 @@ const Button = forwardRef(
       <Element
         {...rest}
         ref={ref}
-        className={cx(
+        className={cc([
+          {
+            'fdsButton--isDestructive': isDestructive,
+            'fdsButton--loading': isLoading,
+            'fdsButton--disabled': disabled,
+            'fdsButton--isFullWidth': isFullWidth,
+            'fdsButton--isActive': isActive && !disabled,
+          },
           'fdsButton',
           'fontStyle--caps',
           'display--inlineFlex',
@@ -74,17 +81,10 @@ const Button = forwardRef(
           'transition--default',
           `fdsButton--${size}`,
           `fdsButton--${theme}`,
-          {
-            'fdsButton--isDestructive': isDestructive,
-            'fdsButton--loading': isLoading,
-            'fdsButton--disabled': disabled,
-            'fdsButton--isFullWidth': isFullWidth,
-            'fdsButton--isActive': isActive && !disabled,
-          }
-        )}
+        ])}
         disabled={disabled && Element === 'button'}
       >
-        <span className={cx('fdsButton-label', { 'fdsButton--hidden': isLoading })}>
+        <span className={cc([{ 'fdsButton--hidden': isLoading }, 'fdsButton-label'])}>
           {label}
         </span>
         <Icons />

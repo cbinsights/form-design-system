@@ -6,7 +6,7 @@ import FocusTrap from 'focus-trap-react';
 import rafSchd from 'raf-schd';
 import DenyIcon from 'lib/icons/react/DenyIcon';
 import IconButton from 'components/IconButton';
-import cx from 'classnames';
+import cc from 'classcat';
 import noScroll from './noScroll';
 
 export const isElementOverflowing = ({ current }) => {
@@ -113,9 +113,13 @@ const Dialog = ({
           {footerContent && (
             <div className="dialog-footer">
               <div
-                className={cx('bgColor--white', 'padding--all', {
-                  'border--top': alwaysShowBorder || isOverflowing,
-                })}
+                className={cc([
+                  {
+                    'border--top': alwaysShowBorder || isOverflowing,
+                  },
+                  'bgColor--white',
+                  'padding--all',
+                ])}
               >
                 {footerContent}
               </div>

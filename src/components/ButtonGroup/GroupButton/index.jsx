@@ -1,5 +1,5 @@
 import React from 'react';
-import cx from 'classnames';
+import cc from 'classcat';
 import PropTypes from 'prop-types';
 import baseElement from 'util/baseElement';
 
@@ -19,12 +19,17 @@ export const GroupButton = (props) => {
 
   const Element = baseElement({ href: rest.href, onClick: true, as: Link });
 
-  const rootClass = cx('groupbtn', 'border--focus--noTransition', 'transition--default', {
-    'groupbtn--disabled': props.disabled,
-    'groupbtn--active': isActive,
-    'groupbtn--first': isFirstButton,
-    'groupbtn--last': isLastButton,
-  });
+  const rootClass = cc([
+    {
+      'groupbtn--disabled': props.disabled,
+      'groupbtn--active': isActive,
+      'groupbtn--first': isFirstButton,
+      'groupbtn--last': isLastButton,
+    },
+    'groupbtn',
+    'border--focus--noTransition',
+    'transition--default',
+  ]);
 
   return (
     <Wrapper>

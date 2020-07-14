@@ -1,5 +1,5 @@
 import React from 'react';
-import cx from 'classnames';
+import cc from 'classcat';
 import PropTypes from 'prop-types';
 
 /**
@@ -7,9 +7,12 @@ import PropTypes from 'prop-types';
  * @returns {ReactElement}
  */
 const InlineBlockList = ({ items, separator }) => {
-  const classNames = cx('fdsInlineBlockList', {
-    'fdsInlineBlockList--separators': Boolean(separator),
-  });
+  const classNames = cc([
+    {
+      'fdsInlineBlockList--separators': Boolean(separator),
+    },
+    'fdsInlineBlockList',
+  ]);
 
   return (
     <ul className={classNames}>
