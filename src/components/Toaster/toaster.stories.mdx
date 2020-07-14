@@ -20,7 +20,9 @@ import {
   optionsKnob as options
 } from "@storybook/addon-knobs";
 
-import { ImportPath, arrayToOptions, State } from "components/util/storybook";
+import ImportPath from 'util/storybook-docs/ImportPath';
+import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
+import State from 'util/storybook-docs/State';
 
 import Toaster, { Toaster as RawToaster } from "components/Toaster";
 import Toast, { TYPES } from "./Toast";

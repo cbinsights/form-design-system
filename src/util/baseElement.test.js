@@ -1,6 +1,5 @@
 import baseElement from './baseElement'
 
-const Dummy = () => null
 
 describe('baseElement', () => {
 
@@ -25,6 +24,7 @@ describe('baseElement', () => {
   });
 
   it('returns "as" element / component if its passed', () => {
+    const Dummy = () => null
     expect(baseElement({ as: Dummy })).toBe(Dummy);
     expect(baseElement({ as: Dummy, href: '#example' })).toBe(Dummy);
   });
