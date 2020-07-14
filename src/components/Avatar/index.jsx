@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import baseElement from 'util/baseElement';
 
 const LIGHT_COLORS = ['white', 'haze', 'lightGray'];
@@ -35,16 +35,16 @@ const Avatar = ({
       role={Element === 'div' ? 'img' : undefined}
       aria-label={ariaLabel}
       title={name}
-      className={cx(
+      className={cc([
+        {
+          'border--focus': Element !== 'div',
+          'color--white': DARK_COLORS.includes(bgColor),
+        },
         'fdsAvatar',
         `bgColor--${bgColor}`,
         `fdsAvatar--${size}`,
         `fdsAvatar--${radius}`,
-        {
-          'border--focus': Element !== 'div',
-          'color--white': DARK_COLORS.includes(bgColor),
-        }
-      )}
+      ])}
     >
       {imgUrl && (
         <span className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />

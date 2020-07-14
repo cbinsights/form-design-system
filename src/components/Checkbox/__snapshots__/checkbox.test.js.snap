@@ -2,7 +2,7 @@
 
 exports[`Checkbox component matches snapshot (disabled) 1`] = `
 <div
-  className="fdsCheckable fdsCheckbox fdsCheckable--disabled"
+  className="fdsCheckable--disabled fdsCheckable fdsCheckbox"
 >
   <input
     className="media--xs"

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { throttle, debounce } from 'throttle-debounce';
-import cx from 'classnames';
+import cc from 'classcat';
 import IconInput from './IconInput';
 import DecoratedInput from './DecoratedInput';
 
@@ -69,11 +69,14 @@ const TextInput = React.forwardRef(
     return (
       <>
         <Element
-          className={cx('fdsTextInput-root', `fdsTextInput-root--${labelPosition}Label`)}
+          className={cc([
+            'fdsTextInput-root',
+            `fdsTextInput-root--${labelPosition}Label`,
+          ])}
         >
           {showLabel && label && (
             <div
-              className={cx('fdsTextInput-label', { 'fontWeight--bold': isLabelBold })}
+              className={cc([{ 'fontWeight--bold': isLabelBold }, 'fdsTextInput-label'])}
             >
               {label}
               {showRequired && <span className="color--red">&nbsp;*</span>}
@@ -88,9 +91,12 @@ const TextInput = React.forwardRef(
                 aria-invalid={errorText || hasError ? true : undefined}
                 onChange={inputOnChange}
                 type={type}
-                className={cx('fdsTextInput', {
-                  error: errorText || hasError,
-                })}
+                className={cc([
+                  {
+                    error: errorText || hasError,
+                  },
+                  'fdsTextInput',
+                ])}
               />
             </IconInput>
           </DecoratedInput>

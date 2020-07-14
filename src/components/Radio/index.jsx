@@ -1,7 +1,7 @@
 import React from 'react';
 import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 
 import RadioEmptyIcon from 'lib/icons/react/RadioEmptyIcon';
 import RadioFilledIcon from 'lib/icons/react/RadioFilledIcon';
@@ -29,9 +29,12 @@ const Radio = React.forwardRef(
 
     return (
       <div
-        className={cx('fdsCheckable fdsRadio', {
-          'fdsCheckable--disabled': disabled,
-        })}
+        className={cc([
+          {
+            'fdsCheckable--disabled': disabled,
+          },
+          'fdsCheckable fdsRadio',
+        ])}
       >
         <input
           ref={ref}
