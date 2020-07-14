@@ -72,7 +72,6 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^4.0.0",
-    "classnames": "^2",
     "css": "^2.2.4",
     "cssnano": "^4.1.0",
     "d3-scale": "^2.1.2",
@@ -155,6 +154,7 @@
   "dependencies": {
     "@reach/menu-button": "^0.10.5",
     "@popperjs/core": "^2.4.1",
+    "classcat": "^4.1.0",
     "focus-trap-react": "^6.0.0",
     "raf-schd": "^4",
     "react-popper": "^2.2.3",
