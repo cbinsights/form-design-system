@@ -181,8 +181,11 @@ const DateInput = ({
   maxDate,
   ...rest
 }) => {
-  const defaultDate =
-    typeof defaultDateInput === 'string' ? new Date(defaultDateInput) : defaultDateInput;
+  const defaultDate = defaultDateInput
+    ? moment(defaultDateInput)
+        .utc()
+        .toDate()
+    : null;
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
   const [pickerMonth, setPickerMonth] = useState(defaultDate || new Date());
   const [prevDateFormat, setPrevDateFormat] = useState(dateFormat);
@@ -313,7 +316,11 @@ DateInput.propTypes = {
   /** Number of years into the future to show in the year dropdown */
   futureYears: PropTypes.number,
 
-  /** Default date selection - accepts date string or instance of Date */
+  /**
+   * Default date selection. Accepts the following:
+   * - (DEPRECATED) a native `Date` object
+   * - a valid date string
+   */
   defaultDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
 
   /** Lower bound of selectable date range */
