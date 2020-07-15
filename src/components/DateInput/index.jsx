@@ -181,8 +181,9 @@ const DateInput = ({
   maxDate,
   ...rest
 }) => {
-  const defaultDate =
-    typeof defaultDateInput === 'string' ? new Date(defaultDateInput) : defaultDateInput;
+  const defaultDate = moment(defaultDateInput)
+    .utc()
+    .toDate();
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
   const [pickerMonth, setPickerMonth] = useState(defaultDate || new Date());
   const [prevDateFormat, setPrevDateFormat] = useState(dateFormat);

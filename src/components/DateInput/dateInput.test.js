@@ -115,7 +115,7 @@ describe('DateInput component', () => {
     });
 
     it('clears selected date when user backspaces out the input', () => {
-      const dayPickerSelectedDays = wrapper.find('DayPicker').prop('selectedDays');
+      const getSelectedDays = () => wrapper.find('DayPicker').prop('selectedDays');
       expect(dateChangeFn).not.toHaveBeenCalled();
       input.simulate('change', { target: { value: '4/20/2020' } });
       expect(dateChangeFn).toHaveBeenCalled();
@@ -125,7 +125,7 @@ describe('DateInput component', () => {
       expect(dateChangeFn).toHaveBeenCalledWith(null);
 
       // is the date cleared in the picker?
-      expect(dayPickerSelectedDays).toBe(null);
+      expect(getSelectedDays()).toBe(null);
     });
 
   });
