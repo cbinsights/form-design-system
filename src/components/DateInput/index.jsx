@@ -313,7 +313,10 @@ DateInput.propTypes = {
   /** Number of years into the future to show in the year dropdown */
   futureYears: PropTypes.number,
 
-  /** Default date selection - accepts date string or instance of Date */
+  /**
+   * Default date selection.
+   * Accepts date string or instance of Date, but a string is recommended.
+   */
   defaultDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
 
   /** Lower bound of selectable date range */
