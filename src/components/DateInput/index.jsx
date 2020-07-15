@@ -181,9 +181,11 @@ const DateInput = ({
   maxDate,
   ...rest
 }) => {
-  const defaultDate = moment(defaultDateInput)
-    .utc()
-    .toDate();
+  const defaultDate = defaultDateInput
+    ? moment(defaultDateInput)
+        .utc()
+        .toDate()
+    : null;
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
   const [pickerMonth, setPickerMonth] = useState(defaultDate || new Date());
   const [prevDateFormat, setPrevDateFormat] = useState(dateFormat);
@@ -315,8 +317,9 @@ DateInput.propTypes = {
   futureYears: PropTypes.number,
 
   /**
-   * Default date selection.
-   * Accepts date string or instance of Date, but a string is recommended.
+   * Default date selection. Accepts the following:
+   * - (DEPRECATED) a native `Date` object
+   * - a valid date string
    */
   defaultDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
 
