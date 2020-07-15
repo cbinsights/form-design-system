@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useClipboard from 'util/storybook-docs/useClipboard';
 import ReactMarkdown from 'react-markdown';
-import cx from 'classnames';
+import cc from 'classcat';
 
 export const Table = (props) => (
   <table className={`doctable ${props.shrinkLastColumn ? 'shrinkLastColumn' : ''}`}>
@@ -19,10 +19,12 @@ export const TableCell = ({ children, label, isCSS, copy, ...props }) => {
   const [copiedText, copyToClipboard] = useClipboard();
   return (
     <td
-      className={cx({
-        hasCopy: copy,
-        hasCSS: isCSS,
-      })}
+      className={cc([
+        {
+          hasCopy: copy,
+          hasCSS: isCSS,
+        },
+      ])}
       onClick={(e) => {
         copyToClipboard(e.currentTarget.firstElementChild.innerText.trim());
       }}

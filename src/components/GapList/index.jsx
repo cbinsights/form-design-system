@@ -1,5 +1,5 @@
 import React from 'react';
-import cx from 'classnames';
+import cc from 'classcat';
 import PropTypes from 'prop-types';
 
 export const SIZES = ['xs', 's', 'm', 'l', 'xl'];
@@ -11,12 +11,12 @@ const GapList = ({ items, xGap = 'm', yGap = 'm', valign = 'top' }) => (
     {items.map((item, i) => (
       <div
         key={i}
-        className={cx(
+        className={cc([
           'display--inlineBlock',
           `valign--${valign}`,
           `margin--x--${xGap}`,
-          `margin--y--${yGap}`
-        )}
+          `margin--y--${yGap}`,
+        ])}
       >
         {item}
       </div>

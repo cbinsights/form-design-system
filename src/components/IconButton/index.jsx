@@ -1,54 +1,62 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import baseElement from 'util/baseElement';
 
 export const THEMES = ['ghost', 'aqua', 'outlined'];
 export const RADII = ['square', 'circle'];
 export const SIZES = ['s', 'm'];
 
-const IconButton = ({
-  radius = 'square',
-  theme = 'ghost',
-  size = 'm',
-  Icon,
-  disabled,
-  isActive,
-  isLoading,
-  isDestructive,
-  label,
-  Link,
-  ...rest
-}) => {
-  const Element = baseElement({ href: rest.href, onClick: true, as: Link });
-  return (
-    <Element
-      {...rest}
-      title={label}
-      className={cx(
-        'fdsIconButton',
-        'rounded--all',
-        'border--focus--noTransition',
-        'transition--default',
-        'alignChild--center--center',
-        `fdsIconButton--${theme}`,
-        `fdsIconButton--${size}`,
-        {
-          'shape--circle': radius === 'circle',
-          'fdsIconButton--disabled': disabled,
-          'fdsIconButton--isActive': isActive && !disabled,
-          'fdsIconButton--isDestructive': isDestructive,
-          'fdsIconButton--loading': isLoading,
-        }
-      )}
-      disabled={disabled && Element === 'button'}
-    >
-      <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
-        <Icon customSize={size === 's' ? 16 : 18} />
-      </span>
-    </Element>
-  );
-};
+const IconButton = forwardRef(
+  (
+    {
+      radius = 'square',
+      theme = 'ghost',
+      size = 'm',
+      Icon,
+      disabled,
+      isActive,
+      isLoading,
+      isDestructive,
+      label,
+      Link,
+      ...rest
+    },
+    ref
+  ) => {
+    const Element = baseElement({ href: rest.href, onClick: true, as: Link });
+    return (
+      <Element
+        {...rest}
+        ref={ref}
+        title={label}
+        className={cc([
+          {
+            'shape--circle': radius === 'circle',
+            'fdsIconButton--disabled': disabled,
+            'fdsIconButton--isActive': isActive && !disabled,
+            'fdsIconButton--isDestructive': isDestructive,
+            'fdsIconButton--loading': isLoading,
+          },
+          'fdsIconButton',
+          'rounded--all',
+          'border--focus--noTransition',
+          'transition--default',
+          'alignChild--center--center',
+          `fdsIconButton--${theme}`,
+          `fdsIconButton--${size}`,
+        ])}
+        disabled={disabled && Element === 'button'}
+      >
+        <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
+          <Icon customSize={size === 's' ? 16 : 18} />
+        </span>
+      </Element>
+    );
+  }
+);
+
+IconButton.displayName = 'IconButton';
 
 IconButton.propTypes = {
   /**

@@ -21,7 +21,7 @@ exports[`TextInput component matches snapshot (all props) 1`] = `
         <input
           aria-invalid={true}
           aria-label="label"
-          className="fdsTextInput error"
+          className="error fdsTextInput"
           onChange={[Function]}
           required={true}
           type="number"

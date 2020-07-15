@@ -1,5 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen, fireEvent } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import '@testing-library/jest-dom/extend-expect'
 
 import DateInput, { DATE_FORMAT_MAP, getYearRange, isValidUserDate } from '.';
 
@@ -54,78 +56,75 @@ describe('DateInput component', () => {
   describe('input and picker interation', () => {
     let dateChangeFn;
     let inputChangeFn;
-    let wrapper;
-    let input;
 
     beforeEach(() => {
       dateChangeFn = jest.fn();
       inputChangeFn = jest.fn();
-      wrapper = mount(<DateInput onDateChange={dateChangeFn} onInputChange={inputChangeFn} />);
-      wrapper.find('input').simulate('click'); // open the picker for every test
-      input = wrapper.find('input');
+      render(<DateInput onDateChange={dateChangeFn} onInputChange={inputChangeFn} />);
+      fireEvent.click(screen.getByLabelText('Date Input'));
     });
 
     afterEach(() => {
       dateChangeFn = null;
       inputChangeFn = null;
-      wrapper = null;
-      input = null;
     });
 
-    it('calls onInputChange when the input value changes', () => {
+    it('calls onInputChange when the input value changes', async () => {
       expect(inputChangeFn).not.toHaveBeenCalled();
-      input.simulate('change', { target: { value: '4' } });
+      await userEvent.type(screen.getByRole('textbox'), '4')
       expect(inputChangeFn).toHaveBeenCalled();
     });
 
-    it('calls onDateChange when user types a VALID freeform date', () => {
+    it('calls onDateChange when user types a VALID freeform date', async () => {
       expect(dateChangeFn).not.toHaveBeenCalled();
-      input.simulate('change', { target: { value: '4/20/2020' } });
+      await userEvent.type(screen.getByRole('textbox'), '4/20/2020')
       expect(dateChangeFn).toHaveBeenCalled();
     });
 
-    it('does not call onDateChange when user types an INCOMPLETE freeform date', () => {
+    it('does not call onDateChange when user types an INCOMPLETE freeform date', async () => {
       expect(dateChangeFn).not.toHaveBeenCalled();
-      input.simulate('change', { target: { value: '2/3' } });
+      await userEvent.type(screen.getByRole('textbox'), '2/3')
       expect(dateChangeFn).not.toHaveBeenCalled();
     });
 
-    it('does not call onDateChange when user types an INVALID freeform date', () => {
+    it('does not call onDateChange when user types an INVALID freeform date', async () => {
       expect(dateChangeFn).not.toHaveBeenCalled();
-      input.simulate('change', { target: { value: '2/30/2020' } });
+      await userEvent.type(screen.getByRole('textbox'), '2/30/2020')
       expect(dateChangeFn).not.toHaveBeenCalled();
     });
 
     it('calls onDateChange when user selects a day in the picker', () => {
       expect(dateChangeFn).not.toHaveBeenCalled();
-      wrapper.find('Day').at(7).simulate('click');
+      fireEvent.click(screen.getByText('7'));
       expect(dateChangeFn).toHaveBeenCalled();
     });
 
     it('updates inupt value when user selects a day in the picker', () => {
-      wrapper.find('Day').at(7).simulate('click');
-      expect(input.instance().value).toHaveLength(10); // MM/DD/YYYY === 10 chars
+      fireEvent.click(screen.getByText('7'));
+      expect(screen.getByRole('textbox').value).toBe('07/07/2020'); // MM/DD/YYYY === 10 chars
+      expect(screen.getByRole('textbox').value).toHaveLength(10); // MM/DD/YYYY === 10 chars
     });
 
-    it('sets DayPicker selected date correctly from input', () => {
-      input.simulate('change', { target: { value: '4/20/2020' } });
-      const dayPickerDate = wrapper.find('DayPicker').prop('month');
-      expect(dayPickerDate.getMonth()).toBe(3);
-      expect(dayPickerDate.getFullYear()).toBe(2020);
+    it('sets DayPicker selected date correctly from input', async () => {
+      await userEvent.type(screen.getByRole('textbox'), '4/20/2020')
+      expect(screen.getByRole('gridcell', { selected: true, name: 'Mon Apr 20 2020' })).toBeTruthy()
     });
 
-    it('clears selected date when user backspaces out the input', () => {
-      const getSelectedDays = () => wrapper.find('DayPicker').prop('selectedDays');
+    it('clears selected date when user backspaces out the input', async () => {
       expect(dateChangeFn).not.toHaveBeenCalled();
-      input.simulate('change', { target: { value: '4/20/2020' } });
+      await userEvent.type(screen.getByRole('textbox'), '4/20/2020')
       expect(dateChangeFn).toHaveBeenCalled();
-      input.simulate('change', { target: { value: '' } });
+
+      expect(screen.getByRole('gridcell', { selected: true, name: 'Mon Apr 20 2020' })).toBeTruthy()
+
+      await userEvent.type(screen.getByRole('textbox'), '{selectall}')
+      await userEvent.type(screen.getByRole('textbox'), '{backspace}')
 
       // did the callback fire with null?
       expect(dateChangeFn).toHaveBeenCalledWith(null);
 
       // is the date cleared in the picker?
-      expect(getSelectedDays()).toBe(null);
+      expect(screen.queryByRole('gridcell', { selected: true, name: 'Mon Apr 20 2020' })).toBeNull()
     });
 
   });
@@ -133,9 +132,8 @@ describe('DateInput component', () => {
   describe('Date formats', () => {
     it('uses correct placeholder for a given format', () => {
       Object.keys(DATE_FORMAT_MAP).forEach((format) => {
-        const wrapper = mount(<DateInput dateFormat={format} />);
-        const placeholder = wrapper.find('input').prop('placeholder');
-        expect(placeholder).toBe(DATE_FORMAT_MAP[format]);
+        render(<DateInput dateFormat={format} />);
+        expect(screen.getByPlaceholderText(DATE_FORMAT_MAP[format])).toBeTruthy();
       });
     });
 
@@ -146,14 +144,13 @@ describe('DateInput component', () => {
         '2020/06/01',
       ];
       Object.keys(DATE_FORMAT_MAP).forEach((format, i) => {
-        const wrapper = mount(
+        render(
           <DateInput
             dateFormat={format}
             defaultDate={new Date('June 1 2020')}
           />
         );
-        const inputValue = wrapper.find('input').prop('value');
-        expect(inputValue).toBe(expectedValues[i]);
+        expect(screen.getByDisplayValue(expectedValues[i])).toBeTruthy();
       });
     });
   });

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { mostReadable } from 'tinycolor2';
 import useClipboard from 'util/storybook-docs/useClipboard';
 import useToggleHover from 'util/storybook-docs/useToggleHover';
-import cx from 'classnames';
+import cc from 'classcat';
 
 const CopyButton = ({ value, copyToClipboard }) => (
   <button onClick={() => copyToClipboard(value)} className="swatchContainer-copyButton">
@@ -40,10 +40,14 @@ export const ColorSwatch = (props) => {
 
   return (
     <div
-      className={cx('rounded--all', 'swatchContainer', {
-        'elevation--1': !isHovered,
-        'elevation--3': isHovered,
-      })}
+      className={cc([
+        {
+          'elevation--1': !isHovered,
+          'elevation--3': isHovered,
+        },
+        'rounded--all',
+        'swatchContainer',
+      ])}
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
     >

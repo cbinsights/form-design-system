@@ -1,92 +1,104 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import { CaretDownIcon } from 'lib/icons/react';
 
 export const SIZES = ['s', 'm'];
 export const THEMES = ['blue', 'outlined', 'ghost'];
 
-const Button = ({
-  theme = 'blue',
-  size = 'm',
-  IconLeft,
-  IconRight,
-  Link,
-  disabled,
-  label,
-  isActive,
-  isLoading,
-  isDestructive,
-  isFullWidth,
-  hasCaret,
-  ...rest
-}) => {
-  const Element = baseElement({ href: rest.href, onClick: true, as: Link });
+const Button = forwardRef(
+  (
+    {
+      theme = 'blue',
+      size = 'm',
+      IconLeft,
+      IconRight,
+      Link,
+      disabled,
+      label,
+      isActive,
+      isLoading,
+      isDestructive,
+      isFullWidth,
+      hasCaret,
+      ...rest
+    },
+    ref
+  ) => {
+    const Element = baseElement({ href: rest.href, onClick: true, as: Link });
 
-  const IconComponent = ({ direction }) => {
-    const Icon = direction === 'left' ? IconLeft : IconRight;
-    return (
+    const IconComponent = ({ direction }) => {
+      const Icon = direction === 'left' ? IconLeft : IconRight;
+      return (
+        <>
+          {Icon && (
+            <div
+              className={cc([
+                {
+                  'fdsButton--hidden': isLoading,
+                },
+                'alignChild--center--center',
+                `fdsButton-icon--${direction}`,
+              ])}
+            >
+              <Icon customSize={size === 's' ? 16 : 18} />
+            </div>
+          )}
+        </>
+      );
+    };
+
+    IconComponent.propTypes = {
+      direction: PropTypes.oneOf(['left', 'right']),
+    };
+
+    const Icons = () => (
       <>
-        {Icon && (
-          <div
-            className={cx('alignChild--center--center', `fdsButton-icon--${direction}`, {
-              'fdsButton--hidden': isLoading,
-            })}
-          >
-            <Icon customSize={size === 's' ? 16 : 18} />
-          </div>
-        )}
+        <IconComponent direction="left" />
+        <IconComponent direction="right" />
       </>
     );
-  };
 
-  IconComponent.propTypes = {
-    direction: PropTypes.oneOf(['left', 'right']),
-  };
+    return (
+      <Element
+        {...rest}
+        ref={ref}
+        className={cc([
+          {
+            'fdsButton--isDestructive': isDestructive,
+            'fdsButton--loading': isLoading,
+            'fdsButton--disabled': disabled,
+            'fdsButton--isFullWidth': isFullWidth,
+            'fdsButton--isActive': isActive && !disabled,
+          },
+          'fdsButton',
+          'fontStyle--caps',
+          'display--inlineFlex',
+          'rounded--all',
+          'alignChild--center--center',
+          'border--focus--noTransition',
+          'transition--default',
+          `fdsButton--${size}`,
+          `fdsButton--${theme}`,
+        ])}
+        disabled={disabled && Element === 'button'}
+      >
+        <span className={cc([{ 'fdsButton--hidden': isLoading }, 'fdsButton-label'])}>
+          {label}
+        </span>
+        <Icons />
+        {hasCaret && (
+          <div className="margin--left--half alignChild--center--center">
+            <CaretDownIcon customSize={12} />
+          </div>
+        )}
+      </Element>
+    );
+  }
+);
 
-  const Icons = () => (
-    <>
-      <IconComponent direction="left" />
-      <IconComponent direction="right" />
-    </>
-  );
-
-  return (
-    <Element
-      {...rest}
-      className={cx(
-        'fdsButton',
-        'fontStyle--caps',
-        'display--inlineFlex',
-        'rounded--all',
-        'alignChild--center--center',
-        'border--focus--noTransition',
-        'transition--default',
-        `fdsButton--${size}`,
-        `fdsButton--${theme}`,
-        {
-          'fdsButton--isDestructive': isDestructive,
-          'fdsButton--loading': isLoading,
-          'fdsButton--disabled': disabled,
-          'fdsButton--isFullWidth': isFullWidth,
-          'fdsButton--isActive': isActive && !disabled,
-        }
-      )}
-      disabled={disabled && Element === 'button'}
-    >
-      <span className={cx('fdsButton-label', { 'fdsButton--hidden': isLoading })}>
-        {label}
-      </span>
-      <Icons />
-      {hasCaret && (
-        <div className="margin--left--half alignChild--center--center">
-          <CaretDownIcon customSize={12} />
-        </div>
-      )}
-    </Element>
-  );
-};
+Button.displayName = 'Button';
 
 Button.propTypes = {
   /** Text inside the button */

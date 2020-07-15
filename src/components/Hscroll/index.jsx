@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import cx from 'classnames';
+import cc from 'classcat';
 import PropTypes from 'prop-types';
 import rafSchd from 'raf-schd';
 
@@ -37,12 +37,16 @@ const Hscroll = ({
   const [isAtScrollEnd, setIsAtScrollEnd] = useState(false);
   const contentEl = useRef(null);
 
-  const containerClassNames = cx('hscroll', `hscroll--bgColor--${bgColor}`, {
-    'hscroll--enableFade': enableFade,
-    'hscroll--enableGutter': enableGutter,
-    'hscroll--scrolled': isScrolled,
-    'hscroll--scrollEnd': isAtScrollEnd,
-  });
+  const containerClassNames = cc([
+    {
+      'hscroll--enableFade': enableFade,
+      'hscroll--enableGutter': enableGutter,
+      'hscroll--scrolled': isScrolled,
+      'hscroll--scrollEnd': isAtScrollEnd,
+    },
+    'hscroll',
+    `hscroll--bgColor--${bgColor}`,
+  ]);
 
   const onScroll = (e) => {
     const { scrolled, scrollEnd } = getScrollAtributes(e, contentEl.current.scrollWidth);

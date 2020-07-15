@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cc from 'classcat';
 import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
 
-const DropdownButton = ({ children, isFullWidth = false, isActive, ...rest }) => (
-  <button
-    {...rest}
-    className={cx('display--inlineFlex', 'fdsDropdown', 'border--focus', 'rounded--all', {
-      'fdsDropdown--isFullWidth': isFullWidth,
-      'fdsDropdown--isActive': isActive,
-    })}
-  >
-    <div>{children}</div>
-    <div className="margin--left--half alignChild--center--center">
-      <CaretDownIcon customSize={12} />
-    </div>
-  </button>
+const DropdownButton = forwardRef(
+  ({ children, isFullWidth = false, isActive, ...rest }, ref) => (
+    <button
+      {...rest}
+      className={cc([
+        {
+          'fdsDropdown--isFullWidth': isFullWidth,
+          'fdsDropdown--isActive': isActive,
+        },
+        'display--inlineFlex',
+        'fdsDropdown',
+        'border--focus',
+        'rounded--all',
+      ])}
+      ref={ref}
+    >
+      <div>{children}</div>
+      <div className="margin--left--half alignChild--center--center">
+        <CaretDownIcon customSize={12} />
+      </div>
+    </button>
+  )
 );
+
+DropdownButton.displayName = 'DropdownButton';
 
 DropdownButton.propTypes = {
   /** content rendered to the left of the carat */

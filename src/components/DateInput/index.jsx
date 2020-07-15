@@ -255,6 +255,7 @@ const DateInput = ({
       ref={popoverRef}
       trigger={
         <TextInput
+          aria-label="Date Input"
           ref={inputRef}
           {...rest}
           label={label}
