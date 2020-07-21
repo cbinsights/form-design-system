@@ -153,12 +153,7 @@
   }
 
   .swatchContainer {
-    margin: 6px;
     border-radius: 3px;
-    min-width: 110px;
-    max-width: 230px;
-    flex-grow: 1;
-    align-self: flex-start;
     cursor: pointer;
     position: relative;
     background-color: white;
@@ -199,9 +194,9 @@
   }
 
   .swatchWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -6px;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   }
 
   /**
@@ -225,33 +220,32 @@
   }
 
   .iconList {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     padding: 0 !important;
-    margin: -8px !important;
+    margin: 0 !important;
   }
 
   .iconList svg {
-    width: 50px;
+    width: 40px;
   }
 
   .iconList li {
     list-style-type: none;
-    margin: 8px;
-    min-width: 110px;
-    max-width: 140px;
-    flex-grow: 1;
     position: relative;
-    margin-bottom: 24px;
   }
 
   .iconList li > div {
-    padding: 16px;
+    padding: 16px 4px;
     border-radius: 3px;
     text-align: center;
     cursor: pointer;
     transition: box-shadow 150ms var(--motion-easing-default);
+  }
+
+  .iconList li > div > p {
+    word-wrap: break-word;
   }
 
   /**
