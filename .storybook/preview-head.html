@@ -154,33 +154,56 @@
 
   .swatchContainer {
     border-radius: 3px;
-    cursor: pointer;
     position: relative;
     background-color: white;
-    overflow: hidden;
-    transition: box-shadow 150ms var(--motion-easing-default);
   }
 
   .swatchContainer-swatch {
     position: relative;
-    height: 90px;
+    height: 80px;
   }
 
   .swatchContainer-copyButton {
     font-Size: 10px;
-    color: #444;
+    color: inherit;
     width: 100%;
-    padding: 6px;
-    border-right: 0 none;
-    border-left: 0 none;
-    display: block;
-    margin-bottom: -1px;
-    background-color: white;
-    border: 0 none;
+    padding: 5px 0;
+    background: rgba(255,255,255,.3);
+    border-radius: 3px;
+    border: none;
+    margin-top: 2px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    transition-property: background-color, color, box-shadow;
+    transition-duration: .2s;
+    transition-timing-function: linear;
   }
 
-  .swatchContainer-copyButton:first-child {
-    border-top: 0 none;
+  .swatchContainer-copyButton:hover, .swatchContainer-copyButton:focus {
+    z-index: 2;
+  }
+
+  .swatchContainer-copyButton:hover {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2)
+  }
+
+  .swatchContainer-light .swatchContainer-copyButton {
+    color: #FFF;
+    background: rgba(225,225,225,.2);
+  }
+
+  .swatchContainer-light .swatchContainer-copyButton:hover {
+    background: rgba(255,255,255,.9);
+    color: #000;
+  }
+
+  .swatchContainer-dark .swatchContainer-copyButton {
+    color: #333;
+    background: rgba(255,255,255,.3);
+  }
+
+  .swatchContainer-dark .swatchContainer-copyButton:hover {
+    background: rgba(255,255,255,.9);
+    color: #000;
   }
 
   .swatchContainer-hex {
@@ -196,7 +219,7 @@
   .swatchWrapper {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 
   /**

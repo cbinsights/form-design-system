@@ -10,12 +10,7 @@ export const mostReadableConfig = (hexName) =>
 
 # Dictionary
 
-Using JS Vars: 
-`import FDS from '@cbinsights/fds/lib/dictionary/js/styleConstants'`
-`<CheckIcon color={FDS.COLOR_MINT} />`
-
-Using CSS Vars:
-`.foo { color: var(--color-mint) }`
+[I'm a developer: how do I use these values?](#usage-instructions)
 
 ## Colors
 
@@ -26,6 +21,7 @@ Using CSS Vars:
     {{/each}}
   </ColorSwatchWrapper>
 </Story>
+
 
 ## Layout
 
@@ -138,3 +134,14 @@ Using CSS Vars:
     ]} 
   />
 </Story>
+
+### Usage Instructions
+
+```
+// JS
+import FDS from '@cbinsights/fds/lib/dictionary/js/styleConstants'
+<span style=\{{ color: FDS.COLOR_MINT }} />
+
+// CSS
+.foo { color: var(--color-mint) }
+```
