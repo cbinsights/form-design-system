@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { mostReadable } from 'tinycolor2';
 import useClipboard from 'util/storybook-docs/useClipboard';
-import useToggleHover from 'util/storybook-docs/useToggleHover';
 import cc from 'classcat';
 
 const CopyButton = ({ value, copyToClipboard }) => (
@@ -22,7 +21,6 @@ const mostReadableConfig = (hexName) =>
 
 export const ColorSwatch = (props) => {
   const [copiedText, copyToClipboard] = useClipboard('');
-  const [isHovered, toggleHover] = useToggleHover();
 
   const colorName = props.jsVar
     .split('_')
@@ -42,19 +40,23 @@ export const ColorSwatch = (props) => {
     <div
       className={cc([
         {
-          'elevation--1': !isHovered,
-          'elevation--3': isHovered,
+          'swatchContainer-dark': mostReadableConfig(hexName).toHexString() === '#000000',
+          'swatchContainer-light':
+            mostReadableConfig(hexName).toHexString() === '#ffffff',
         },
         'rounded--all',
         'swatchContainer',
+        'padding--all--xs',
       ])}
-      onMouseEnter={toggleHover}
-      onMouseLeave={toggleHover}
+      style={{
+        backgroundColor: hexName,
+        color: mostReadableConfig(hexName).toHexString(),
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: hexName === '#FFFFFF' ? '#F2F2F2' : 'transparent',
+      }}
     >
-      <div
-        className="alignChild--center--center span--100 swatchContainer-swatch"
-        style={{ backgroundColor: hexName, color: mostReadableConfig(hexName) }}
-      >
+      <div className="alignChild--center--center span--100 swatchContainer-swatch">
         <div className="align--center">
           {!copiedText ? (
             <React.Fragment>

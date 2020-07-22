@@ -16,8 +16,7 @@ export const Icon = ({ name, svg }) => {
       <div
         onClick={() => copyToClipboard(importPath(name))}
         className={cx('rounded--all', {
-          'elevation--1': !isHovered,
-          'elevation--3': isHovered,
+          'elevation--1': isHovered,
         })}
         onMouseEnter={toggleHover}
         onMouseLeave={toggleHover}
@@ -30,8 +29,8 @@ export const Icon = ({ name, svg }) => {
         >
           {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
         </span>
+        <p className="wrap--singleLine--truncate type--data">{name}</p>
       </div>
-      <p className="align--center wrap--singleLine--truncate type--data padding--top--half">{name}</p>
     </li>
   )
 }
