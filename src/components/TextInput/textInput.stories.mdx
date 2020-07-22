@@ -25,7 +25,7 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
   <TextInput
     label={text("label", "Label")}
     errorText={text("errorText", undefined)}
-    isError={boolean("isError", undefined)}
+    hasError={boolean("hasError", undefined)}
     showRequired={boolean("required", undefined)}
     type={text("type", undefined)}
     onChange={action("changed")}
@@ -39,6 +39,7 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
       undefined,
       { display: "inline-radio" }
     )}
+    labelWidth={text("labelWidth", "")}
     isLabelBold={boolean("isLabelBold", undefined)}
   />
 </Story>
@@ -224,8 +225,6 @@ You may use this input in any form management library you'd like. We recommend `
 
 ### Misc
 
-Can be used with InputGroup
-
 <Preview>
   <Story name="Misc">
     <>
@@ -252,6 +251,8 @@ Can be used with InputGroup
           <option value="2">Thousand</option>
         </select>
       </InputGroup>
+      <br />
+      <TextInput label="Label on left with width" labelPosition="left" labelWidth="100px" />
     </>
   </Story>
 </Preview>

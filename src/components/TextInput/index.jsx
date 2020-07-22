@@ -19,6 +19,7 @@ const TextInput = React.forwardRef(
   (
     {
       label,
+      labelWidth,
       isLabelBold,
       labelPosition = 'top',
       errorText,
@@ -77,6 +78,7 @@ const TextInput = React.forwardRef(
           {showLabel && label && (
             <div
               className={cc([{ 'fontWeight--bold': isLabelBold }, 'fdsTextInput-label'])}
+              style={labelWidth ? { width: labelWidth } : undefined}
             >
               {label}
               {showRequired && <span className="color--red">&nbsp;*</span>}
@@ -121,6 +123,9 @@ TextInput.propTypes = {
 
   /** Label used for `label` element */
   label: PropTypes.string.isRequired,
+
+  /** Specify width of label (useful for when label is positioned to left */
+  labelWidth: PropTypes.string,
 
   /**
    * FDS Icon _reference_
