@@ -32,6 +32,7 @@ describe('TextInput component', () => {
         type="number"
         labelPosition="left"
         required
+        labelWidth="200px"
       />
     );
     expect(wrapper).toMatchSnapshot();

@@ -26,6 +26,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+
+## [9.1] TextInput enhancements
+
+- Added `labelWidth` prop to control width of label (helpful when used in combination with `labelPosition`)
+
 ## [9.0] MAJOR
 
 ### Changes / Additions
