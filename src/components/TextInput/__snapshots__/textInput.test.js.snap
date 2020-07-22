@@ -7,6 +7,11 @@ exports[`TextInput component matches snapshot (all props) 1`] = `
   >
     <div
       className="fdsTextInput-label"
+      style={
+        Object {
+          "width": "200px",
+        }
+      }
     >
       label
     </div>
