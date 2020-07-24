@@ -77,7 +77,13 @@ const TextInput = React.forwardRef(
         >
           {showLabel && label && (
             <div
-              className={cc([{ 'fontWeight--bold': isLabelBold }, 'fdsTextInput-label'])}
+              className={cc([
+                {
+                  'fontWeight--bold': isLabelBold,
+                  'margin--bottom--xs': labelPosition === 'top',
+                },
+                'fdsTextInput-label',
+              ])}
               style={labelWidth ? { width: labelWidth } : undefined}
             >
               {label}
