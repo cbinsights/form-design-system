@@ -27,6 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.2] Avatar enhancements
+
+- Added `l` size to Avatar
+- Added `PlaceholderIcon` prop
+
 ## [9.1] TextInput enhancements
 
 - Added `labelWidth` prop to control width of label (helpful when used in combination with `labelPosition`)
