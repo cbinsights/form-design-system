@@ -119,7 +119,8 @@ const Popover = React.forwardRef(
         triggerProps.tabIndex = '1';
         break;
       case 'click':
-        triggerProps.onClick = () => {
+        triggerProps.onClick = (e) => {
+          e.stopPropagation();
           setIsActive(!isActive);
         };
         break;
