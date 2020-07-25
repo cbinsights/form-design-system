@@ -7,7 +7,7 @@
   position: relative;
   font-weight: var(--font-weight-bold);
   border: 0 none;
-  vertical-align: baseline;
+  line-height: normal;
 }
 
 .fdsAvatar-img {
@@ -37,8 +37,6 @@
   font-size: var(--font-size-s);
   width: 24px;
   height: 24px;
-  /* stylelint-disable-next-line declaration-property-unit-whitelist */
-  line-height: 24px;
 }
 
 .fdsAvatar--square,

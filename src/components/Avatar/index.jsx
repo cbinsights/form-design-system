@@ -4,7 +4,16 @@ import cc from 'classcat';
 import baseElement from 'util/baseElement';
 
 const LIGHT_COLORS = ['white', 'haze', 'lightGray'];
-const DARK_COLORS = ['orange', 'charcoal', 'navy', 'aqua', 'gray', 'red', 'purple'];
+const DARK_COLORS = [
+  'orange',
+  'charcoal',
+  'navy',
+  'aqua',
+  'gray',
+  'red',
+  'purple',
+  'blue',
+];
 export const RADII = ['square', 'circle'];
 export const BG_COLORS = [...LIGHT_COLORS, ...DARK_COLORS];
 export const SIZES = ['s', 'm', 'l'];
