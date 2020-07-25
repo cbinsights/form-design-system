@@ -14,8 +14,8 @@
   line-height: 1;
   display: inline-flex;
   align-items: center;
-  padding: 5px 7px;
   position: relative;
+  padding: 0;
   border: 1px solid transparent;
   /* button element specific */
   vertical-align: top;
@@ -29,7 +29,6 @@
 }
 
 .fdsChip-close {
-  margin-left: var(--space-half);
   font-size: var(--font-size-xs);
   line-height: inherit;
 }
@@ -62,7 +61,7 @@
 }
 
 .fdsChip--blue:hover {
-  background-color: var(--chip-blue-hover-bg);
+  background-color: #D4E7EE;
 }
 
 .fdsChip--outline {
@@ -76,9 +75,25 @@
   color: var(--color-charcoal);
 }
 
+.fdsChip--s .fdsChip-label {
+  margin: 2px 0;
+}
+
 .fdsChip--s {
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding: 0 5px;
+}
+
+.fdsChip--m .fdsChip-label {
+  margin: 5px 0;
+}
+
+.fdsChip--m {
+  padding: 0 7px;
+}
+
+.fdsChip-label {
+  display: flex;
+  align-items: center;
 }
 
 .fdsChip-ul,

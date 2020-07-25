@@ -11,6 +11,7 @@ const Chip = ({
   size = 'm',
   theme = 'gray',
   Link,
+  Icon,
   isActive,
   label,
   subtitle,
@@ -32,7 +33,12 @@ const Chip = ({
   ]);
   return (
     <Element {...rest} className={rootClass}>
-      <span>
+      {Icon && (
+        <div className="margin--right--xs">
+          <Icon customSize={18} />
+        </div>
+      )}
+      <span className="fdsChip-label">
         {label}
         {subtitle && <span className="fdsChip-subtitle">{subtitle}</span>}
       </span>
@@ -40,14 +46,14 @@ const Chip = ({
         <span
           role="button"
           tabIndex="-1"
-          className="fdsChip-close border--focus"
+          className="fdsChip-close border--focus margin--left--xs"
           onClick={(e) => {
             onClose(e);
             e.stopPropagation();
             e.preventDefault();
           }}
         >
-          <DenyIcon size="xs" />
+          <DenyIcon customSize={10} />
         </span>
       )}
     </Element>
@@ -65,6 +71,8 @@ Chip.propTypes = {
   /** Specify the size of the chip */
   size: PropTypes.oneOf(SIZES),
   isActive: PropTypes.bool,
+  /**  Pass in "only" a FDS Icon reference to display it (e.g. Icon={ApproveIcon}) */
+  Icon: PropTypes.func,
   /** Text that appears to the right of the label */
   subtitle: PropTypes.string,
   /**
