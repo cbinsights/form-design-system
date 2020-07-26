@@ -2,7 +2,14 @@ import React from 'react';
 import { render, screen, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-import Avatar, { grabInitials } from '.';
+import Avatar, { grabInitials, trimName } from '.';
+
+describe('trimName', () => {
+  expect(trimName('  ')).toBeNull();
+  expect(trimName('')).toBeNull();
+  expect(trimName('   hello world ')).toBe('hello world');
+  expect(trimName('hello world')).toBe('hello world');
+});
 
 describe('grabInitials', () => {
 
@@ -54,6 +61,9 @@ describe('Avatar component', () => {
     expect(screen.getByTitle('Joey Tribbiani', { name: "JT" })).toBeTruthy();
     cleanup()
     render(<Avatar name="Joey Tribbiani" size="s" initialsLength={1} />);
+    expect(screen.getByTitle('Joey Tribbiani', { name: "J" })).toBeTruthy();
+    cleanup();
+    render(<Avatar name=" Joey Tribbiani " size="s" initialsLength={1} />);
     expect(screen.getByTitle('Joey Tribbiani', { name: "J" })).toBeTruthy();
   });
 

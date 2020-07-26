@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
@@ -26,6 +26,14 @@ export const grabInitials = (str, initialsCount = 2) =>
     .reduce((prev, curr) => prev + curr.charAt(0), '')
     .toUpperCase();
 
+export const trimName = (str) => {
+  // We want to reject strings which only contain whitespaces
+  const regex = /\S/;
+  // If it doesn't only contain whitespaces, return a trimmed string,
+  // otherwise return null
+  return str && regex.test(str) ? str.trim() : null;
+};
+
 const Avatar = ({
   bgColor = 'purple',
   size = 'm',
@@ -38,9 +46,11 @@ const Avatar = ({
   PlaceholderIcon,
   ...rest
 }) => {
+  const cleanName = trimName(name);
+
   const Element = baseElement({ href: rest.href, onClick: rest.onClick, as: Link });
 
-  const placeholderIconSize = useCallback(() => {
+  const placeholderIconSize = () => {
     switch (size) {
       case 's':
         return 16;
@@ -51,14 +61,14 @@ const Avatar = ({
       default:
         return 16;
     }
-  }, [size]);
+  };
 
   return (
     <Element
       {...rest}
       role={Element === 'div' ? 'img' : undefined}
       aria-label={ariaLabel}
-      title={name || 'Placeholder Avatar'}
+      title={cleanName || 'Placeholder Avatar'}
       className={cc([
         {
           'border--focus': Element !== 'div',
@@ -74,8 +84,8 @@ const Avatar = ({
       {imgUrl && (
         <span className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
       )}
-      {name && grabInitials(name, initialsLength)}
-      {!(name || imgUrl) && PlaceholderIcon && (
+      {cleanName && grabInitials(cleanName, initialsLength)}
+      {!(cleanName || imgUrl) && PlaceholderIcon && (
         <PlaceholderIcon customSize={placeholderIconSize()} />
       )}
     </Element>
