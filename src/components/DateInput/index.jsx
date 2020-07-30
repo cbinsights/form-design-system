@@ -52,6 +52,7 @@ const DateInput = ({
   const [inputValue, setInputValue] = useState(
     defaultDate ? moment(defaultDate).format(DATE_FORMAT_MAP[dateFormat]) : ''
   );
+  const [isOpen, setIsOpen] = useState(false);
 
   /* eslint-disable no-param-reassign */
   delete popoverProps.trigger;
@@ -78,6 +79,14 @@ const DateInput = ({
     selectedDate
   );
 
+  const openPopover = () => {
+    setIsOpen(true);
+  };
+
+  const closePopover = () => {
+    setIsOpen(false);
+  };
+
   const handleYearMonthChange = (date) => {
     setPickerMonth(date);
   };
@@ -88,6 +97,7 @@ const DateInput = ({
     setPickerMonth(date);
     setInputValue(moment(date).format(DATE_FORMAT_MAP[dateFormat]));
     onDateChange(date);
+    closePopover();
   };
 
   const handleInputChange = ({ target: { value } }) => {
@@ -115,6 +125,9 @@ const DateInput = ({
   return (
     <Popover
       ref={popoverRef}
+      interactionMode="controlled"
+      isOpen={isOpen}
+      onUserDismiss={closePopover}
       trigger={
         <TextInput
           aria-label="Date Input"
@@ -123,6 +136,7 @@ const DateInput = ({
           label={label}
           type="text"
           value={inputValue}
+          onFocus={openPopover}
           onChange={handleInputChange}
           placeholder={DATE_FORMAT_MAP[dateFormat]}
           pattern="[0-9/]*"

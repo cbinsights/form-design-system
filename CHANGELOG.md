@@ -26,6 +26,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+
+## [9.1] `DateInput` popover behavior
+
+- `DateInput` now opens the calendar popover on input focus
+- The calendar popover in `DateInput` will now close itself on date selection
+
 ## [9.0] MAJOR
 
 ### Changes / Additions

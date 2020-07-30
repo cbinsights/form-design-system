@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom/extend-expect'
 
-import DateInput, { DATE_FORMAT_MAP, getYearRange, isValidUserDate } from '.';
+import DateInput, { DATE_FORMAT_MAP } from '.';
 
 describe('DateInput component', () => {
   let dateChangeFn;
@@ -13,7 +13,7 @@ describe('DateInput component', () => {
     dateChangeFn = jest.fn();
     inputChangeFn = jest.fn();
     render(<DateInput onDateChange={dateChangeFn} onInputChange={inputChangeFn} />);
-    fireEvent.click(screen.getByLabelText('Date Input'));
+    fireEvent.focus(screen.getByLabelText('Date Input'));
   });
 
   afterEach(() => {
