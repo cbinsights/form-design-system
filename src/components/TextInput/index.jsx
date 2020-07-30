@@ -130,9 +130,6 @@ TextInput.propTypes = {
   /** Label used for `label` element */
   label: PropTypes.string.isRequired,
 
-  /** Specify width of label (useful for when label is positioned to left */
-  labelWidth: PropTypes.string,
-
   /**
    * FDS Icon _reference_
    * `IconLeft={StarFilledIcon}`
@@ -163,7 +160,12 @@ TextInput.propTypes = {
   /** String to place to the right of the input */
   after: PropTypes.string,
 
+  /** Controls where the label renders */
   labelPosition: PropTypes.oneOf(['top', 'left']),
+
+  /** Specify width of label (useful for when label is positioned to left */
+  labelWidth: PropTypes.string,
+
   showRequired: PropTypes.bool,
   showLabel: PropTypes.bool,
 };
