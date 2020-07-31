@@ -105,22 +105,30 @@ Every time the `build` command is run, docs are regenerated to the root `docs/` 
 
 **Please update the minor or major version as appropriate when making changes in a branch**
 
+version | meaning
+------- | ----------------------------------------------------------------------------
+**Major** | Introduces breaking changes, requiring consumers to make changes to support the new version
+**Minor** | Introduces new components, features or behaviors. _Does not_ require consumers to make changes.
+**Patch** | Bug fixes, doc updates, very small changes that do not affect behavior.
+
 #### Updating version number
-We commit the major and minor version in [`Jenkinsfile`](https://github.com/cbinsights/form-design-system/blob/master/Jenkinsfile#L10).
-Jenkins populates the patch version based on branch.
+We commit the major and minor version as variables in the [GitLab CI configuration](https://github.com/cbinsights/form-design-system/blob/master/.gitlab-ci.yml) for this project.
+GitLab populates the patch version based on pipeline ID.
 
 ```
-String VERSION = "1.19"
+  CBI_MAJOR_VERSION: 9
+  CBI_MINOR_VERSION: 4
 ```
 
-To update the version of the design system in your branch...
+To update the package version for `@cbinsights/fds`...
 
-1. Update the minor and/or major version in `Jenkinsfile`
+1. Update the minor and/or major version in `.gitlab-ci.yml`
 2. Update `CHANGELOG.md` with a note about your changes
 3. Submit your PR.
 
+
 #### Beta versions
-Jenkins will publish all fds packages to npm on any push to origin.
+GitLab will publish an npm version for any branch pushed to origin.
 Non-master branches publish with a "beta" tag followed by the short sha1 hash for the commit.
 Pushes to `master` will publish a "latest" version.
 

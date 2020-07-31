@@ -1,0 +1,29 @@
+variables:
+  CBI_NODE_VERSION: "node:11-alpine"
+  CBI_MAJOR_VERSION: 9
+  CBI_MINOR_VERSION: 4
+
+include:
+  - project: 'engineering/gitlab-includes'
+    ref: latest
+    file: 'npm-login.yml'
+
+  - project: 'engineering/gitlab-includes'
+    ref: latest
+    file: 'front-end-build-yarn.yml'
+
+  - project: 'engineering/gitlab-includes'
+    ref: latest
+    file: 'front-end-test-yarn.yml'
+
+  - project: 'engineering/gitlab-includes'
+    ref: latest
+    file: 'front-end-publish-npm.yml'
+
+stages:
+  - configure
+  - authenticate
+  - build
+  - test
+  - publish
+
