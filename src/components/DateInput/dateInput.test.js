@@ -51,7 +51,7 @@ describe('DateInput component', () => {
     expect(dateChangeFn).toHaveBeenCalled();
   });
 
-  it('updates inupt value when user selects a day in the picker', () => {
+  it('updates input value when user selects a day in the picker', () => {
     fireEvent.click(screen.getByText('7'));
     expect(screen.getByRole('textbox').value).toBe('07/07/2020'); // MM/DD/YYYY === 10 chars
     expect(screen.getByRole('textbox').value).toHaveLength(10); // MM/DD/YYYY === 10 chars
