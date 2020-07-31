@@ -8,44 +8,33 @@
 @import "./rtg/growFast";
 @import "./rtg/slideIn";
 
-/* Variables */
-@import "./vars/buttonColors.css";
-
 /* Reach framework styles */
 @import "@reach/menu-button/styles.css";
 
-/* Layout components */
-@import "./layout/flex.css";
-@import "./layout/section.css";
-@import "./layout/inlineBlockList.css";
-@import "./layout/hscroll.css";
-
-/* Forms */
-@import "./forms/checkable.css";
-@import "./forms/checkbox.css";
-@import "./forms/radio.css";
-@import "./forms/textInput.css";
-@import "./forms/decoratedInput.css";
-@import "./forms/iconInput.css";
-@import "./forms/inputGroup.css";
-@import "./forms/dateInput.css";
-
-/* Media components */
-@import "./media/avatar.css";
-@import "./media/badge.css";
-@import "./media/updatable.css";
-@import "./media/countdownButton.css";
-
-/* Interactive components */
-@import "./interactive/buttonGroup.css";
-@import "./interactive/button.css";
-@import "./interactive/stackedButton.css";
-@import "./interactive/iconButton.css";
-@import "./interactive/dropdownButton.css";
-@import "./interactive/chips.css";
-@import "./interactive/toast.css";
-@import "./interactive/toaster.css";
-
-/* Modal (Dialogs/Popovers) */
-@import "./modals/dialog.css";
-@import "./modals/menu.css";
+@import "./buttonColors.css";
+@import "./flex.css";
+@import "./section.css";
+@import "./inlineBlockList.css";
+@import "./hscroll.css";
+@import "./checkable.css";
+@import "./checkbox.css";
+@import "./radio.css";
+@import "./textInput.css";
+@import "./decoratedInput.css";
+@import "./iconInput.css";
+@import "./inputGroup.css";
+@import "./dateInput.css";
+@import "./avatar.css";
+@import "./badge.css";
+@import "./updatable.css";
+@import "./countdownButton.css";
+@import "./buttonGroup.css";
+@import "./button.css";
+@import "./stackedButton.css";
+@import "./iconButton.css";
+@import "./dropdownButton.css";
+@import "./chips.css";
+@import "./toast.css";
+@import "./toaster.css";
+@import "./dialog.css";
+@import "./menu.css";
