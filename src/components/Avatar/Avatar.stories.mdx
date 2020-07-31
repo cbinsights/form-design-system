@@ -1,5 +1,6 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
+import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
 import ImportPath from 'util/storybook-docs/ImportPath';
 import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
@@ -31,6 +32,8 @@ import Avatar, { BG_COLORS, SIZES, RADII, INITIALS_LENGTH } from '.';
         initialsLength={options('initials', arrayToOptions(INITIALS_LENGTH), undefined, {
           display: 'inline-radio',
         })}
+        PlaceholderIcon={boolean("PlaceholderIcon", false) ? StarFilledIcon : undefined}
+        href={text('href', '')}
       />
     </StoryItem>
     <StoryItem>
@@ -46,6 +49,11 @@ import Avatar, { BG_COLORS, SIZES, RADII, INITIALS_LENGTH } from '.';
         })}
         name={text('name', 'Samuel Jackson')}
         imgUrl="http://placeimg.com/80/81/animals"
+        initialsLength={options('initials', arrayToOptions(INITIALS_LENGTH), undefined, {
+          display: 'inline-radio',
+        })}
+        PlaceholderIcon={boolean("PlaceholderIcon", false) ? StarFilledIcon : undefined}
+        href={text('href', '')}
       />
     </StoryItem>
   </StoryWrapper>
@@ -167,4 +175,18 @@ Avatar will render as a button if you pass it a href, onClick, or Link to it.
     </StoryWrapper>
   </Story>
 </Preview>
+
+### Placeholder
+
+<Preview>
+  <Story name="Placeholder">
+    <StoryWrapper>
+      <StoryItem>
+        <Avatar PlaceholderIcon={StarFilledIcon} />
+      </StoryItem>
+    </StoryWrapper>
+  </Story>
+</Preview>
+
+
 

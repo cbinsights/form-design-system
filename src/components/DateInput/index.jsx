@@ -37,6 +37,8 @@ const DateInput = ({
   onDateChange = () => {},
   onInputChange = () => {},
   label = '',
+  labelPosition,
+  labelWidth,
   minDate,
   maxDate,
   ...rest
@@ -134,6 +136,8 @@ const DateInput = ({
           ref={inputRef}
           {...rest}
           label={label}
+          labelPosition={labelPosition}
+          labelWidth={labelWidth}
           type="text"
           value={inputValue}
           onFocus={openPopover}
@@ -208,6 +212,12 @@ DateInput.propTypes = {
 
   /** Label for input */
   label: PropTypes.string,
+
+  /** Controls where the label renders */
+  labelPosition: PropTypes.oneOf(['top', 'left']),
+
+  /** Specify width of label (useful for when label is positioned to left */
+  labelWidth: PropTypes.string,
 
   /** Ref to apply to `input` element */
   inputRef: PropTypes.oneOfType([

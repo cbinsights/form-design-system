@@ -2,14 +2,12 @@
   font-size: var(--font-size-xs);
   user-select: none;
   box-sizing: border-box;
-  text-align: center;
   padding: 0;
   margin: 0;
   position: relative;
   font-weight: var(--font-weight-bold);
-  display: inline-block;
   border: 0 none;
-  vertical-align: baseline;
+  line-height: normal;
 }
 
 .fdsAvatar-img {
@@ -21,21 +19,24 @@
   background-size: cover;
 }
 
+.fdsAvatar--l {
+  font-size: var(--font-size-xl);
+  font-family: var(--font-family-condensed);
+  width: 56px;
+  height: 56px;
+}
+
 .fdsAvatar--m {
   font-size: var(--font-size-m);
   font-family: var(--font-family-condensed);
   width: 32px;
   height: 32px;
-  /* stylelint-disable-next-line declaration-property-unit-whitelist */
-  line-height: 32px;
 }
 
 .fdsAvatar--s {
   font-size: var(--font-size-s);
   width: 24px;
   height: 24px;
-  /* stylelint-disable-next-line declaration-property-unit-whitelist */
-  line-height: 24px;
 }
 
 .fdsAvatar--square,

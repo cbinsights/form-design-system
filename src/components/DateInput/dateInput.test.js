@@ -57,9 +57,10 @@ describe('DateInput component', () => {
     expect(screen.getByRole('textbox').value).toHaveLength(10); // MM/DD/YYYY === 10 chars
   });
 
-  it('sets DayPicker selected date correctly from input', async () => {
-    await userEvent.type(screen.getByRole('textbox'), '4/20/2020')
-    expect(screen.getByRole('gridcell', { selected: true, name: 'Mon Apr 20 2020' })).toBeTruthy()
+  it('calls onDateChange when user selects a day in the picker', () => {
+    expect(dateChangeFn).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
+    expect(dateChangeFn).toHaveBeenCalled();
   });
 
   it('clears selected date when user backspaces out the input', async () => {

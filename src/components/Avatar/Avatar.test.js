@@ -1,9 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen, cleanup } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
 
-import Avatar, { grabInitials } from '.';
+import Avatar, { grabInitials, trimName } from '.';
 
-const renderComponent = (props) => shallow(<Avatar {...props} />);
+describe('trimName', () => {
+  expect(trimName('  ')).toBeNull();
+  expect(trimName('')).toBeNull();
+  expect(trimName('   hello world ')).toBe('hello world');
+  expect(trimName('hello world')).toBe('hello world');
+});
 
 describe('grabInitials', () => {
 
@@ -31,18 +37,44 @@ describe('grabInitials', () => {
 
 describe('Avatar component', () => {
 
-  it('has no image', () => {
-    const component = renderComponent({ name: 'Joey Tribbiani' });
-    expect(component).toMatchSnapshot();
+  it('renders name', () => {
+    render(<Avatar name="Joey Tribbiani" />);
+    expect(screen.getByTitle('Joey Tribbiani', { name: "JT" })).toBeTruthy();
   });
 
-  it('has an image', () => {
-    const component = renderComponent({ name: 'Joey Tribbiani', imgUrl: 'lol.png' });
-    expect(component).toMatchSnapshot();
+  it('renders proper sizes', () => {
+    render(<Avatar name="Joey Tribbiani" />);
+    expect(screen.getByTitle('Joey Tribbiani', { name: "JT" })).toHaveClass('fdsAvatar--m');
+    cleanup()
+    render(<Avatar name="Joey Tribbiani" size="l" />);
+    expect(screen.getByTitle('Joey Tribbiani', { name: "JT" })).toHaveClass('fdsAvatar--l');
+    cleanup()
+    render(<Avatar name="Joey Tribbiani" size="s" />);
+    expect(screen.getByTitle('Joey Tribbiani', { name: "JT" })).toHaveClass('fdsAvatar--s');
   });
 
-  it('matches snapshot (set all props)', () => {
-    const component = renderComponent({ name: 'Ross Gellar', bgColor: 'aqua', size: 's', imgUrl: 'lol.png' })
-    expect(component).toMatchSnapshot();
+  it('renders proper initials', () => {
+    render(<Avatar name="Joey" />);
+    expect(screen.getByTitle('Joey', { name: "J" })).toBeTruthy();
+    cleanup()
+    render(<Avatar name="Joey Tribbiani" size="l" />);
+    expect(screen.getByTitle('Joey Tribbiani', { name: "JT" })).toBeTruthy();
+    cleanup()
+    render(<Avatar name="Joey Tribbiani" size="s" initialsLength={1} />);
+    expect(screen.getByTitle('Joey Tribbiani', { name: "J" })).toBeTruthy();
+    cleanup();
+    render(<Avatar name=" Joey Tribbiani " size="s" initialsLength={1} />);
+    expect(screen.getByTitle('Joey Tribbiani', { name: "J" })).toBeTruthy();
   });
+
+  it('does not render as an image if its a link', () => {
+    render(<Avatar name="Joey" href="#" />);
+    expect(screen.queryByRole('img')).toBeNull();
+  })
+
+  it('renders placeholder if title or img not passed in', () => {
+    render(<Avatar />);
+    expect(screen.getByTitle('Placeholder Avatar')).toBeTruthy();
+  })
+
 });

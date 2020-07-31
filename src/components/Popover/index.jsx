@@ -119,7 +119,8 @@ const Popover = React.forwardRef(
         triggerProps.tabIndex = '1';
         break;
       case 'click':
-        triggerProps.onClick = () => {
+        triggerProps.onClick = (e) => {
+          e.stopPropagation();
           setIsActive(!isActive);
         };
         break;
@@ -255,7 +256,7 @@ Popover.propTypes = {
    * (e.g. ESC press, clickikng outside, etc.)
    * Useful for updating `isOpen` in controlled mode.
    */
-  onUserDismiss: PropTypes.bool,
+  onUserDismiss: PropTypes.func,
 
   /** disables portaling the popover to `document.body` */
   disablePortal: PropTypes.bool,

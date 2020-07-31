@@ -117,7 +117,7 @@
 
 .fdsButton--outlined,
 .fdsButton--ghost {
-  color: var(--color--charcoal);
+  color: var(--color-charcoal);
 }
 
 .fdsButton--outlined {

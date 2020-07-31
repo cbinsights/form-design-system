@@ -19,6 +19,7 @@ const TextInput = React.forwardRef(
   (
     {
       label,
+      labelWidth,
       isLabelBold,
       labelPosition = 'top',
       errorText,
@@ -76,7 +77,14 @@ const TextInput = React.forwardRef(
         >
           {showLabel && label && (
             <div
-              className={cc([{ 'fontWeight--bold': isLabelBold }, 'fdsTextInput-label'])}
+              className={cc([
+                {
+                  'fontWeight--bold': isLabelBold,
+                  'margin--bottom--xs': labelPosition === 'top',
+                },
+                'fdsTextInput-label',
+              ])}
+              style={labelWidth ? { width: labelWidth } : undefined}
             >
               {label}
               {showRequired && <span className="color--red">&nbsp;*</span>}
@@ -152,7 +160,12 @@ TextInput.propTypes = {
   /** String to place to the right of the input */
   after: PropTypes.string,
 
+  /** Controls where the label renders */
   labelPosition: PropTypes.oneOf(['top', 'left']),
+
+  /** Specify width of label (useful for when label is positioned to left */
+  labelWidth: PropTypes.string,
+
   showRequired: PropTypes.bool,
   showLabel: PropTypes.bool,
 };
