@@ -47,7 +47,7 @@ describe('DateInput component', () => {
 
   it('calls onDateChange when user selects a day in the picker', () => {
     expect(dateChangeFn).not.toHaveBeenCalled();
-    fireEvent.click(screen.getByText('7'));
+    fireEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
     expect(dateChangeFn).toHaveBeenCalled();
   });
 
