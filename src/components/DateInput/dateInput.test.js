@@ -52,7 +52,7 @@ describe('DateInput component', () => {
   });
 
   it('updates input value when user selects a day in the picker', () => {
-    fireEvent.click(screen.getByText('7'));
+    fireEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
     expect(screen.getByRole('textbox').value).toBe('07/07/2020'); // MM/DD/YYYY === 10 chars
     expect(screen.getByRole('textbox').value).toHaveLength(10); // MM/DD/YYYY === 10 chars
   });
