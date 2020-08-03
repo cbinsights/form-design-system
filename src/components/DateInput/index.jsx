@@ -49,7 +49,7 @@ const DateInput = ({
         .toDate()
     : null;
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
-  const [pickerMonth, setPickerMonth] = useState(defaultDate || new Date());
+  const [pickerMonth, setPickerMonth] = useState(defaultDate || new Date(Date.now()));
   const [prevDateFormat, setPrevDateFormat] = useState(dateFormat);
   const [inputValue, setInputValue] = useState(
     defaultDate ? moment(defaultDate).format(DATE_FORMAT_MAP[dateFormat]) : ''
@@ -73,7 +73,7 @@ const DateInput = ({
   }
 
   const { startYear, endYear } = getYearRange(
-    new Date().getFullYear(),
+    new Date(Date.now()).getFullYear(),
     pastYears,
     futureYears,
     minDate,

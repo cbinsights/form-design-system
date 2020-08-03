@@ -12,6 +12,11 @@ describe('DateInput component', () => {
   beforeEach(() => {
     dateChangeFn = jest.fn();
     inputChangeFn = jest.fn();
+    jest
+      .spyOn(global.Date, 'now')
+      .mockImplementationOnce(() =>
+        new Date('2020-07-07').valueOf()
+      );
     render(<DateInput onDateChange={dateChangeFn} onInputChange={inputChangeFn} />);
     fireEvent.focus(screen.getByLabelText('Date Input'));
   });
