@@ -12,7 +12,7 @@ describe('DateInput component', () => {
   beforeEach(() => {
     dateChangeFn = jest.fn();
     inputChangeFn = jest.fn();
-    render(<DateInput onDateChange={dateChangeFn} onInputChange={inputChangeFn} />);
+    render(<DateInput onDateChange={dateChangeFn} onInputChange={inputChangeFn} defaultDate="2020-07-07" />);
     fireEvent.focus(screen.getByLabelText('Date Input'));
   });
 
@@ -29,6 +29,7 @@ describe('DateInput component', () => {
 
   it('calls onDateChange when user types a VALID freeform date', async () => {
     expect(dateChangeFn).not.toHaveBeenCalled();
+    await userEvent.clear(screen.getByRole('textbox'))
     await userEvent.type(screen.getByRole('textbox'), '4/20/2020')
     expect(dateChangeFn).toHaveBeenCalled();
   });
@@ -65,13 +66,13 @@ describe('DateInput component', () => {
 
   it('clears selected date when user backspaces out the input', async () => {
     expect(dateChangeFn).not.toHaveBeenCalled();
+    await userEvent.clear(screen.getByRole('textbox'))
     await userEvent.type(screen.getByRole('textbox'), '4/20/2020')
     expect(dateChangeFn).toHaveBeenCalled();
 
     expect(screen.getByRole('gridcell', { selected: true, name: 'Mon Apr 20 2020' })).toBeTruthy()
 
-    await userEvent.type(screen.getByRole('textbox'), '{selectall}')
-    await userEvent.type(screen.getByRole('textbox'), '{backspace}')
+    await userEvent.clear(screen.getByRole('textbox'))
 
     // did the callback fire with null?
     expect(dateChangeFn).toHaveBeenCalledWith(null);
