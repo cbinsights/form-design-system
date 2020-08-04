@@ -16,6 +16,7 @@
     "build:comp": "yarn comp:css && yarn comp:jsx && yarn comp:docs",
     "build:distCSS": "NODE_ENV=production postcss src/assets/all-styles.css -o ./lib/assets/all-styles.min.css --config=./postcss.config.js",
     "build:full": "yarn clean && yarn build:bootstrap && yarn build:dictionary && yarn build:styles && yarn build:icons && yarn build:comp && yarn build:distCSS",
+    "build": "yarn build:full",
     "styles:min": "NODE_ENV=production postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
     "styles:full": "postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.full.css --config=./postcss.config.js",
     "styles:docs": "NODE_ENV=base_styles_docs postcss ./lib/base-styles/base-styles.full.css --output=/dev/null",
