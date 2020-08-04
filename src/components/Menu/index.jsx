@@ -12,7 +12,7 @@ const Menu = ({ isDisabled = false, children, trigger }) => {
 
   return (
     <ReachMenu>
-      <ReachMenuButton as="div">{trigger}</ReachMenuButton>
+      <ReachMenuButton as={trigger.type} {...trigger.props} />
       <ReachMenuPopover className="elevation--2 rounded--all bgColor--white">
         <ReachMenuItems>{children}</ReachMenuItems>
       </ReachMenuPopover>
