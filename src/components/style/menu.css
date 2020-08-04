@@ -1,0 +1,42 @@
+/**
+ * Overrides for @reach/menu-button
+ */
+
+[data-reach-popover] {
+  z-index: var(--zindex-modal);
+}
+
+[data-reach-menu-items] {
+  border-width: 0;
+  padding: 0;
+  font-size: inherit;
+  min-width: 140px;
+  max-width: 460px;
+  overflow-y: scroll;
+}
+
+[data-reach-menu-item] {
+  padding: var(--space-half) var(--space-default);
+  white-space: initial;
+  margin: 0;
+}
+
+/* use highlight color instead of focus ring */
+[data-reach-menu-item]:focus {
+  outline: 0; /* stylelint-disable-line */
+}
+
+/* stylelint-disable-next-line selector-max-attribute */
+[data-reach-menu-item][data-selected] {
+  background: var(--color-lightGray);
+  color: inherit;
+}
+
+.fdsMenuItem--disabled {
+  color: var(--font-color-hint) !important;
+}
+
+.fdsMenuItem--disabled[data-selected] {
+  background: rgba(var(--rgb-lightGray), 0.25) !important;
+  cursor: not-allowed;
+}

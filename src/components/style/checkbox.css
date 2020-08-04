@@ -1,0 +1,19 @@
+/* stylelint-disable selector-max-combinators */
+/* stylelint-disable selector-max-compound-selectors */
+
+/**
+ * Checkbox-specific styles.
+ * Most styling for this component is handled by `checkable.css`
+ */
+
+.fdsCheckbox .fds-icon {
+  transform: translateY(-1px);
+}
+
+.fdsCheckbox input:focus + label svg {
+  border-radius: var(--border-radius-default);
+}
+
+.fdsCheckbox input:indeterminate + label svg {
+  fill: var(--color-blue);
+}

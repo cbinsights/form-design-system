@@ -1,0 +1,22 @@
+.fdsBadge {
+  font-family: var(--font-family-default);
+  line-height: var(--font-lineHeight-bigText);
+  font-weight: var(--font-weight-bold);
+  color: rgba(var(--rgb-navy, inherit), 0.6);
+  background-color: rgba(var(--rgb-navy, inherit), 0.08);
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.fdsBadge--xs {
+  font-size: var(--font-size-xs);
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.fdsBadge--s {
+  font-size: var(--font-size-s);
+  padding: var(--border-radius-default) var(--space-half);
+  border-radius: var(--border-radius-default);
+}

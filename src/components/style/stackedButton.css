@@ -1,0 +1,71 @@
+.fdsStackedButton {
+  border: 0 none;
+  font-size: var(--font-size-xs);
+  position: relative;
+  line-height: normal;
+  user-select: none;
+  display: inline-flex;
+  text-align: center;
+  vertical-align: top;
+  flex-direction: column;
+  padding: var(--space-half);
+  background-color: transparent;
+  font-weight: 500;
+  max-width: 72px;
+  box-sizing: border-box;
+  align-items: center;
+  color: var(--button-primary-color);
+}
+
+.fdsStackedButton:focus {
+  z-index: 2;
+}
+
+.fdsStackedButton--disabled {
+  opacity: var(--button-opacity);
+  pointer-events: none;
+}
+
+.fdsStackedButton--isActive {
+  background-color: rgba(64, 64, 64, 0.2);
+}
+
+.fdsStackedButton:hover {
+  background-color: rgba(64, 64, 64, 0.08);
+  color: var(--button-primary-color);
+}
+
+.fdsStackedButton:active {
+  background-color: rgba(64, 64, 64, 0.24);
+}
+
+.fdsStackedButton--isActive:focus {
+  background-color: rgba(64, 64, 64, 0.2);
+}
+
+.fdsStackedButton--isToggled {
+  background-color: var(--color-aqua);
+  color: var(--color-white);
+}
+
+.fdsStackedButton--isToggled:hover {
+  background-color: #5ab1d1;
+  color: var(--color-white);
+}
+
+.fdsStackedButton--isToggled:active {
+  background-color: transparent;
+  color: var(--button-primary-color);
+}
+
+.fdsStackedButton--isToggled:focus {
+  background-color: var(--color-aqua);
+  color: var(--color-white);
+}
+
+
+.fdsStackedButton-iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 4px;
+}

@@ -1,0 +1,95 @@
+.btngroup {
+  display: inline-flex;
+  position: relative;
+}
+
+.btngroup .groupbtn {
+  margin-left: -1px;
+  position: relative;
+  border-radius: 0;
+  z-index: 1;
+}
+
+/* z-index is used here to manage the border for those button
+states and their stacking order (whether they display or not).
+The border for a disabled button should appear below a border
+for a button being clicked on (:active) */
+.btngroup .groupbtn--disabled {
+  z-index: 0;
+}
+
+.btngroup .groupbtn--active {
+  z-index: 2;
+}
+
+.btngroup .groupbtn:focus {
+  z-index: 3;
+}
+
+.btngroup .groupbtn:active {
+  z-index: 4;
+}
+
+.btngroup .groupbtn--first {
+  border-top-left-radius: var(--border-radius-default);
+  border-bottom-left-radius: var(--border-radius-default);
+  margin-left: 0;
+}
+
+.btngroup .groupbtn--last {
+  border-top-right-radius: var(--border-radius-default);
+  border-bottom-right-radius: var(--border-radius-default);
+}
+
+.groupbtn {
+  border: 1px solid #C2C2C2;
+  border-radius: var(--border-radius-default);
+  padding: 0 8px;
+  font-size: 12px;
+  color: var(--font-color-primary);
+  font-weight: var(--font-weight-bold);
+  text-transform: none;
+  line-height: normal;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  min-height: auto;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+.groupbtn-label {
+  padding: 8px 0;
+}
+
+.groupbtn:active {
+  border-color: var(--color-slate);
+  text-decoration: none;
+}
+
+.groupbtn:hover {
+  text-decoration: none;
+  border-color: #C4C4C4;
+  background-color: rgba(64, 64, 64, 0.08);
+  color: var(--font-color-primary);
+}
+
+/* Activated */
+.groupbtn--active,
+.groupbtn--active:hover,
+.groupbtn:active {
+  text-decoration: none;
+  background-color: rgba(0, 102, 153, 0.12);
+  border-color: #8ab9cf;
+  color: var(--color-blue);
+}
+
+.groupbtn--disabled {
+  opacity: var(--button-opacity);
+  cursor: default;
+  pointer-events: none;
+}
+
+.groupbtn-icon {
+  margin-right: calc(var(--space-half) / 2);
+}

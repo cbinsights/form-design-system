@@ -1,0 +1,33 @@
+.fdsDropdown {
+  background-color: var(--color-white);
+  font-size: var(--font-size-default);
+  user-select: none;
+  font-size: var(--font-size-default);
+  padding: var(--space-half);
+  border: 1px solid #C4C4C4;
+  color: var(--font-color-primary);
+  align-items: center;
+  justify-content: space-between;
+  min-width: 170px;
+}
+
+.fdsDropdown--isFullWidth {
+  width: 100%;
+}
+
+.fdsDropdown--isActive {
+  background: #d9d9d9;
+}
+
+.fdsDropdown:hover {
+  background-color: #f0f0f0;
+}
+
+.fdsDropdown:active {
+  background-color: #d9d9d9;
+}
+
+.fdsDropdown--isActive:focus {
+  background: #d9d9d9;
+}
+
