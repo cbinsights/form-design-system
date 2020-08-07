@@ -10,7 +10,7 @@
     "codeshift": "/bin/sh ./scripts/bash/transforms/transform.sh",
     "clean": "/bin/sh ./scripts/bash/clean.sh",
     "build:bootstrap": "/bin/sh ./scripts/bash/bootstrapBuild.sh",
-    "build:dictionary": "/bin/sh ./scripts/node/dictionary/build.js",
+    "build:dictionary": "node ./scripts/node/dictionary/build.js",
     "build:styles": "yarn styles:min && yarn styles:full",
     "build:icons": "yarn icons:png && yarn icons:svg && yarn icons:react && yarn icons:transpile && yarn icons:css && yarn icons:docs",
     "build:comp": "yarn comp:css && yarn comp:jsx && yarn comp:docs",
