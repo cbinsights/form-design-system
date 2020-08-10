@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import CountdownButton, { getCircleInfo } from './CountdownButton';
+import CountdownButton, { getCircleInfo } from '.';
 
 const renderComponent = (props) => shallow(<CountdownButton {...props} />);
 

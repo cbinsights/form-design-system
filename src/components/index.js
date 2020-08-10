@@ -10,6 +10,7 @@ import DropdownButton from 'components/DropdownButton';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import FloatingAction from 'components/FloatingAction';
+import GapList from 'components/GapList';
 import Hscroll from 'components/Hscroll';
 import IconButton from 'components/IconButton';
 import InputGroup from 'components/InputGroup';
@@ -38,6 +39,7 @@ export {
   Flex,
   FlexItem,
   FloatingAction,
+  GapList,
   Hscroll,
   IconButton,
   InputGroup,

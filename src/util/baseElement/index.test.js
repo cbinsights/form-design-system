@@ -1,5 +1,4 @@
-import baseElement from './baseElement'
-
+import baseElement from '.'
 
 describe('baseElement', () => {
 
