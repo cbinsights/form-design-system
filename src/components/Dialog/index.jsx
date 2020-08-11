@@ -73,7 +73,7 @@ const Dialog = ({
       <div className="dialog-overlay"></div>
       <div className="dialog-zIndex dialog-wrapper">
         <div
-          className="dialog elevation--3"
+          className="dialog elevation--3 border--focus--noTransition"
           role={role}
           aria-labelledby={title && 'a11y-dialog-title'}
           aria-describedby="a11y-dialog-desc"
