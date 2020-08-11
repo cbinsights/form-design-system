@@ -25,14 +25,14 @@ export const SpacingExample = ({ className }) => (
     <div className={`${className.startsWith('padding') && className} display--inlineBlock border--all `} style={{ backgroundColor: className.startsWith('padding') ? FDS.COLOR_MINT : "#F6BDC1",  }}>
       <div className={`${className.startsWith('margin') && className} display--inlineBlock rounded--all`}>
         <div className={`padding--all--s color--charcoal fontWeight--bold bgColor--white elevation--1 rounded--all`} style={{ border: className.startsWith('margin') ? `1px dashed #333` : ''}}>
-          {className} 
+          {className}
         </div>
       </div>
     </div>
   </div>
 )
 
-<Story name="Margin">
+<Story name="Margin and Padding">
   <>
   <TableLayout
     rows={[
@@ -47,7 +47,7 @@ export const SpacingExample = ({ className }) => (
           <Scale label="xl" num={32} />
         </>
       )}],
-    ]} 
+    ]}
   />
   <SpacingExample className="margin--top" />
   <SpacingExample className="margin--bottom--s" />
