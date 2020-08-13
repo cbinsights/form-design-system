@@ -12,6 +12,7 @@ describe('Checkbox component', () => {
 
   it('matches snapshot (without label)', () => {
     const wrapper = shallow(<Checkbox name="snapshot_checkbox" showLabel={false} label="snapshot checkbox" />);
+    console.log(wrapper.html());
     expect(wrapper).toMatchSnapshot();
   });
 

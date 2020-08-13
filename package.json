@@ -30,7 +30,7 @@
     "comp:jsx": "babel src --out-dir=lib --ignore=**/*.test.{js,jsx} --source-maps",
     "comp:css": "postcss src/components/style/index.css -o ./lib/components/style/fds-components.css --config=./postcss.config.js",
     "comp:docs": "build-storybook -c .storybook -o ./docs/fds-components/",
-    "test": "node --version && jest --color",
+    "test": "node --version && jest ./src/components/Checkbox/checkbox.test.js --color",
     "update-snapshots": "jest -u --color",
     "lint": "eslint ./src/ --ext .js,.jsx",
     "precommit": "lint-staged",
