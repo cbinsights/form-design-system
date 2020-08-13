@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup component matches snapshot (default props) 1`] = `
+<div
+  className="btngroup"
+>
+  <GroupButton
+    Icon={[Function]}
+    isActive={true}
+    isFirstButton={true}
+    isLastButton={false}
+    key="Feed"
+    label="Feed"
+  />
+  <GroupButton
+    Icon={[Function]}
+    disabled={true}
+    isFirstButton={false}
+    isLastButton={true}
+    key="Table"
+    label="Table"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
+<div
+  className="btngroup"
+>
+  <GroupButton
+    Icon={[Function]}
+    isActive={true}
+    isFirstButton={true}
+    isLastButton={false}
+    key="Feed"
+    label="Feed"
+    onClick={[Function]}
+  />
+  <GroupButton
+    Icon={[Function]}
+    disabled={true}
+    isFirstButton={false}
+    isLastButton={true}
+    key="Table"
+    label="Table"
+    onClick={[Function]}
+  />
+</div>
+`;

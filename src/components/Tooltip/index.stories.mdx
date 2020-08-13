@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, number } from '@storybook/addon-knobs';
+
+import ImportPath from 'util/storybook-docs/ImportPath';;
+
+import Tooltip from 'components/Tooltip';
+
+<Meta title="Components/Tooltip" decorators={[withKnobs]} component={Tooltip} />
+
+# Tooltip
+
+<ImportPath component={Tooltip} />
+
+<Story name="Knobs">
+  <Tooltip
+    trigger={<p>ℹ️Hover Here!</p>}
+    message="message"
+    maxWidth={number('max width', 240)}
+  />
+</Story>
