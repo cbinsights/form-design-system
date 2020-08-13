@@ -96,23 +96,21 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
       set={[Function]}
     >
       <MenuButton
-        as="div"
+        as="a"
+        href="#"
       >
-        <div
+        <a
           aria-controls="menu--7"
           aria-haspopup={true}
           data-reach-menu-button=""
+          href="#"
           id="menu-button--menu--7"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           type="button"
         >
-          <a
-            href="#"
-          >
-            trigger
-          </a>
-        </div>
+          trigger
+        </a>
       </MenuButton>
       <MenuPopover
         className="elevation--2 rounded--all bgColor--white"
@@ -124,19 +122,16 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
           hidden={true}
           targetRef={
             Object {
-              "current": <div
+              "current": <a
                 aria-controls="menu--7"
                 aria-haspopup="true"
                 data-reach-menu-button=""
+                href="#"
                 id="menu-button--menu--7"
                 type="button"
               >
-                <a
-                  href="#"
-                >
-                  trigger
-                </a>
-              </div>,
+                trigger
+              </a>,
             }
           }
         >
@@ -204,19 +199,16 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
                 hidden={true}
                 targetRef={
                   Object {
-                    "current": <div
+                    "current": <a
                       aria-controls="menu--7"
                       aria-haspopup="true"
                       data-reach-menu-button=""
+                      href="#"
                       id="menu-button--menu--7"
                       type="button"
                     >
-                      <a
-                        href="#"
-                      >
-                        trigger
-                      </a>
-                    </div>,
+                      trigger
+                    </a>,
                   }
                 }
               >
@@ -459,23 +451,21 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
       set={[Function]}
     >
       <MenuButton
-        as="div"
+        as="a"
+        href="#"
       >
-        <div
+        <a
           aria-controls="menu--12"
           aria-haspopup={true}
           data-reach-menu-button=""
+          href="#"
           id="menu-button--menu--12"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           type="button"
         >
-          <a
-            href="#"
-          >
-            trigger
-          </a>
-        </div>
+          trigger
+        </a>
       </MenuButton>
       <MenuPopover
         className="elevation--2 rounded--all bgColor--white"
@@ -487,19 +477,16 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
           hidden={true}
           targetRef={
             Object {
-              "current": <div
+              "current": <a
                 aria-controls="menu--12"
                 aria-haspopup="true"
                 data-reach-menu-button=""
+                href="#"
                 id="menu-button--menu--12"
                 type="button"
               >
-                <a
-                  href="#"
-                >
-                  trigger
-                </a>
-              </div>,
+                trigger
+              </a>,
             }
           }
         >
@@ -561,19 +548,16 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
                 hidden={true}
                 targetRef={
                   Object {
-                    "current": <div
+                    "current": <a
                       aria-controls="menu--12"
                       aria-haspopup="true"
                       data-reach-menu-button=""
+                      href="#"
                       id="menu-button--menu--12"
                       type="button"
                     >
-                      <a
-                        href="#"
-                      >
-                        trigger
-                      </a>
-                    </div>,
+                      trigger
+                    </a>,
                   }
                 }
               >
@@ -790,23 +774,21 @@ exports[`Popover component matches snapshot (string items) 1`] = `
       set={[Function]}
     >
       <MenuButton
-        as="div"
+        as="a"
+        href="#"
       >
-        <div
+        <a
           aria-controls="menu--1"
           aria-haspopup={true}
           data-reach-menu-button=""
+          href="#"
           id="menu-button--menu--1"
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           type="button"
         >
-          <a
-            href="#"
-          >
-            trigger
-          </a>
-        </div>
+          trigger
+        </a>
       </MenuButton>
       <MenuPopover
         className="elevation--2 rounded--all bgColor--white"
@@ -818,19 +800,16 @@ exports[`Popover component matches snapshot (string items) 1`] = `
           hidden={true}
           targetRef={
             Object {
-              "current": <div
+              "current": <a
                 aria-controls="menu--1"
                 aria-haspopup="true"
                 data-reach-menu-button=""
+                href="#"
                 id="menu-button--menu--1"
                 type="button"
               >
-                <a
-                  href="#"
-                >
-                  trigger
-                </a>
-              </div>,
+                trigger
+              </a>,
             }
           }
         >
@@ -892,19 +871,16 @@ exports[`Popover component matches snapshot (string items) 1`] = `
                 hidden={true}
                 targetRef={
                   Object {
-                    "current": <div
+                    "current": <a
                       aria-controls="menu--1"
                       aria-haspopup="true"
                       data-reach-menu-button=""
+                      href="#"
                       id="menu-button--menu--1"
                       type="button"
                     >
-                      <a
-                        href="#"
-                      >
-                        trigger
-                      </a>
-                    </div>,
+                      trigger
+                    </a>,
                   }
                 }
               >
