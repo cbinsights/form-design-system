@@ -1,4 +1,7 @@
 module.exports = {
+  ignore: [
+    /\.test\.jsx?$/,
+  ],
   presets: [
     [
       '@babel/preset-env',
@@ -14,7 +17,7 @@ module.exports = {
   plugins: [
     '@babel/plugin-transform-regenerator',
     '@babel/plugin-transform-runtime',
-    '@babel/plugin-transform-modules-commonjs', 
+    '@babel/plugin-transform-modules-commonjs',
     [
       "module-resolver", {
         "root": ["./src"],
