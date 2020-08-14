@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   presets: [
     [
       '@babel/preset-env',
@@ -24,4 +24,16 @@ module.exports = {
       }
     ]
   ],
+};
+
+module.exports = (api) => {
+
+  // avoid copying test files to destination for JSX build
+  if (api.env('jsx_compile')) {
+    config.ignore = [
+      /\.test\.jsx?$/
+    ];
+  }
+
+  return config;
 };
