@@ -27,6 +27,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.4] Icons refresh
+
+Added icons:
+- `CollectionPublicFilled`
+- `Selection`
+
+Updated a number of icon shapes to standardize size and position within viewboxes.
+
 ## [9.3] `DateInput` popover behavior
 
 - `DateInput` now opens the calendar popover on input focus

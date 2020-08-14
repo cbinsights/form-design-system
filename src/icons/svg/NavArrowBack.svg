@@ -4,8 +4,8 @@
     <title>icon/nav_arrow_back</title>
     <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon/nav_arrow_back" fill="#404040" fill-rule="nonzero">
-            <polygon id="Path" points="20 11 7.83 11 13.42 5.41 12 4 4 12 12 20 13.41 18.59 7.83 13 20 13"></polygon>
+        <g id="icon/nav_arrow_back" fill="#404040">
+            <polygon id="NavArrowBack" points="20 11 7.83 11 13.42 5.41 12 4 4 12 12 20 13.41 18.59 7.83 13 20 13"></polygon>
         </g>
     </g>
 </svg>

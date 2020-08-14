@@ -3,15 +3,9 @@
     <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
     <title>icon/minus</title>
     <desc>Created with sketchtool.</desc>
-    <defs>
-        <polygon id="path-1" points="2 11 2 13 22 13 22 11"></polygon>
-    </defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon/minus">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="minus" fill="#404040" xlink:href="#path-1"></use>
+        <g id="icon/minus" fill="#404040">
+            <polygon id="Minus" points="20 13 4 13 4 11 20 11"></polygon>
         </g>
     </g>
 </svg>

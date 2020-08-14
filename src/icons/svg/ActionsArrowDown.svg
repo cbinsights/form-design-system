@@ -5,7 +5,7 @@
     <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/actions_arrow_down" fill="#404040">
-            <polygon id="actions-arrow-down" points="18.6600501 7.09699258 20.8785213 9.31546382 13.2995504 16.8944348 13.3157158 16.9106002 12.0161654 18.2101506 12 18.1939852 11.9838346 18.2101506 10.6842842 16.9106002 10.7004496 16.8944348 2.97598979 9.16997495 5.19446103 6.95150371 12 13.7570427 18.6600501 7.09699258"></polygon>
+            <polygon id="ActionsArrowDown" points="18.12 7 12 13.1808367 5.88 7 4 8.90283401 12 17 20 8.90283401"></polygon>
         </g>
     </g>
 </svg>
