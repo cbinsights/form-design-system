@@ -1,7 +1,4 @@
 module.exports = {
-  ignore: [
-    /\.test\.jsx?$/,
-  ],
   presets: [
     [
       '@babel/preset-env',

@@ -27,7 +27,7 @@
     "icons:transpile": "babel ./lib/icons/react --out-dir ./lib/icons/react",
     "icons:css": "cp src/icons/style/icons.css ./lib/icons/style/icons.css",
     "icons:docs": "node ./scripts/node/icons/buildDocs.js",
-    "comp:jsx": "babel src --out-dir=lib --source-maps",
+    "comp:jsx": "babel src --out-dir=lib --ignore='src/**.*.test.*' --source-maps",
     "comp:css": "postcss src/components/style/index.css -o ./lib/components/style/fds-components.css --config=./postcss.config.js",
     "comp:docs": "build-storybook -c .storybook -o ./docs/fds-components/",
     "test": "jest --color",
