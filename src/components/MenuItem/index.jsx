@@ -4,7 +4,7 @@ import { MenuItem as ReachMenuItem } from '@reach/menu-button';
 
 const MenuItem = ({ onSelect, children, isDisabled }) => (
   <ReachMenuItem
-    className={isDisabled && 'fdsMenuItem--disabled'}
+    className={isDisabled ? 'fdsMenuItem--disabled' : undefined}
     onSelect={!isDisabled && onSelect}
     aria-disabled={isDisabled}
   >

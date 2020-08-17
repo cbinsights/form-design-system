@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CountdownButton matches snapshot 1`] = `
+<div
+  className="countdownButton"
+  style={
+    Object {
+      "height": "34px",
+      "width": "34px",
+    }
+  }
+>
+  <div
+    className="countdownButton-button"
+  >
+    <IconButton
+      Icon={[Function]}
+      label="Close"
+      radius="circle"
+    />
+  </div>
+  <Transition
+    appear={true}
+    enter={true}
+    exit={true}
+    in={true}
+    mountOnEnter={true}
+    onEnter={[Function]}
+    onEntered={[Function]}
+    onEntering={[Function]}
+    onExit={[Function]}
+    onExited={[Function]}
+    onExiting={[Function]}
+    timeout={
+      Object {
+        "appear": 1,
+        "enter": 666,
+      }
+    }
+    unmountOnExit={false}
+  >
+    <Component />
+  </Transition>
+</div>
+`;
