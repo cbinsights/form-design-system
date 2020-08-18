@@ -10,7 +10,6 @@ module.exports = {
     "@storybook/addon-a11y"
   ],
   webpackFinal: async (config, { configType }) => {
-  
       // Rey wrote this, blame him.
       // Essentially, we want to keep all the rest of the
       // rules present, add our own css rule, and ignore the existing css rule
