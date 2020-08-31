@@ -39,6 +39,7 @@ const DateInput = ({
   label = '',
   labelPosition,
   labelWidth,
+  disablePortal,
   minDate,
   maxDate,
   ...rest
@@ -130,6 +131,7 @@ const DateInput = ({
       interactionMode="controlled"
       isOpen={isOpen}
       onUserDismiss={closePopover}
+      disablePortal={disablePortal}
       trigger={
         <TextInput
           aria-label="Date Input"
@@ -236,6 +238,9 @@ DateInput.propTypes = {
    * To apply a `ref` to the popover element, use the `popoverRef` prop.
    */
   popoverProps: PropTypes.object,
+
+  /** disables portaling the popover to `document.body` */
+  disablePortal: PropTypes.bool,
 };
 
 export default DateInput;
