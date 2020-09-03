@@ -21,7 +21,7 @@ const YearAndMonthSelector = ({ date, localeUtils, onChange, startYear, endYear 
 
   return (
     <form className="DayPicker-Caption border--bottom">
-      <div className="padding--bottom--half">
+      <div className="padding--bottom--half align--left">
         <select
           name="month"
           onChange={handleChange}
