@@ -1,3 +1,7 @@
 .zindex--modal {
   z-index: var(--zindex-modal);
 }
+
+.zindex--navigation {
+  z-index: var(--zindex-navigation);
+}
