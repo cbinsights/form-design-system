@@ -27,6 +27,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.5] `zindex--navigation` classname addition
+- Added `zindex--navigation` utility classname
+
 ## [9.3] `DateInput` popover behavior
 
 - `DateInput` now opens the calendar popover on input focus
