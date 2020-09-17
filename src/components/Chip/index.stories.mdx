@@ -8,6 +8,9 @@ import {
 } from "@storybook/addon-knobs";
 import ImportPath from 'util/storybook-docs/ImportPath';
 import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
+import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
+import StarFilledIcon from "lib/icons/react/StarFilledIcon";
+import CompanyIcon from 'lib/icons/react/CompanyIcon';
 
 import Chip, { THEMES, SIZES } from ".";
 
@@ -38,6 +41,7 @@ export const chipsTwo = [
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Chip
     isActive={boolean("isActive", false)}
+    Icon={boolean("Icon", false) ? CompanyIcon : undefined}
     label={text("label", "Hello World")}
     subtitle={text("subtitle", "")}
     onClose={action("close")}
@@ -100,5 +104,20 @@ Used to display tags, members, filter settings, and other tokens.
         <Chip size={size} label="Chip" subtitle="subtitle" />
       </div>
     ))}
+  </Story>
+</Preview>
+
+### Misc
+
+<Preview>
+  <Story name="Misc">
+    <StoryWrapper>
+      <StoryItem>
+        <Chip label="#amet" theme="ghost" onClose={() => {}} />
+        <Chip label="#sit" theme="ghost" onClose={() => {}} />
+        <Chip label="#dolor" theme="ghost" onClose={() => {}} />
+        <Chip label="#ipsum" theme="ghost" onClose={() => {}} Icon={StarFilledIcon} />
+      </StoryItem>
+    </StoryWrapper>
   </Story>
 </Preview>

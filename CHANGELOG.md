@@ -27,6 +27,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.6] Chip enhancements
+- Added `Icon` prop
+
 ## [9.5] `zindex--navigation` classname addition
 - Added `zindex--navigation` utility classname
 
