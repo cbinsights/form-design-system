@@ -167,7 +167,7 @@
 .padding--top--m,
 .padding--y--m,
 .padding--all--m,
-.padding-y { padding-top: var(--space-default); }
+.padding--y { padding-top: var(--space-default); }
 
 .padding--top--l,
 .padding--y--l,
