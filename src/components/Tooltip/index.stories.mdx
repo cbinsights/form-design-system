@@ -1,9 +1,11 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { withKnobs, text, number } from '@storybook/addon-knobs';
+import { withKnobs, optionsKnob as options, text, number } from '@storybook/addon-knobs';
+import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
 
 import ImportPath from 'util/storybook-docs/ImportPath';;
 
 import Tooltip from 'components/Tooltip';
+import { VALID_POSITIONS } from 'components/Popover';
 
 <Meta title="Components/Tooltip" decorators={[withKnobs]} component={Tooltip} />
 
@@ -13,9 +15,12 @@ import Tooltip from 'components/Tooltip';
 
 <Story name="Knobs">
   <Tooltip
-    trigger={<p>ℹ️Hover Here!</p>}
+    trigger={<span>ℹ️ Hover Here!</span>}
     message="message"
-    maxWidth={number('max width', 240)}
+    maxWidth={number('Max Width', 240)}
+    position={options('Position', arrayToOptions(VALID_POSITIONS), 'bottom', {
+      display: 'inline-radio',
+    })}
   />
 </Story>
 
