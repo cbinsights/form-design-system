@@ -1,0 +1,31 @@
+------------
+Content plan
+------------
+
+Design Guidelines
+  How to use this guide
+  New features in CBI product
+  Existing features in CBI product
+Contributing
+Color
+  Use in branding
+  Use in user interface
+Accessibility
+Icons
+Typography
+  Headings
+  Body text
+  Type scale (link to dictionary or generate from dictionary)
+Forms and controls
+Motion
+UI Copy (could be one story OR split up as follows)
+  Capitalization
+  Punctuation
+  Numbers
+  Time and date
+  Calls to action
+System Messages
+  Header banners
+  Toasts
+Internationalization
+
