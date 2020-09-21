@@ -22,6 +22,7 @@ describe('Chip component', () => {
             isActive: true,
             subtitle: 'bar',
             onClose: () => {},
+            Icon: () => {},
             size: 'm',
             theme: 'blue'
         });
