@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.8] Icons update
+- Added "History" icon shape
+- Added "Selection" icon shape
+
 ## [9.7] UI copy guidelines
 - Added "UI Copy Guidelines" to storybook
 

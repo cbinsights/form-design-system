@@ -5,7 +5,7 @@
     <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/arrow_down" fill="#404040">
-            <path d="M14,14 L14,4 L10,4 L10,14 L7,14 L12,19 L17,14 L14,14 Z M16,12 L22,12 L12,22 L2,12 L8,12 L8,2 L16,2 L16,12 Z" id="arrow-down"></path>
+            <path d="M14,14 L14,4 L10,4 L10,14 L7,14 L12,19 L17,14 L14,14 Z M16,12 L22,12 L12,22 L2,12 L8,12 L8,3 L8,2 L9,2 L16,2 L16,12 Z" id="ArrowDown"></path>
         </g>
     </g>
 </svg>

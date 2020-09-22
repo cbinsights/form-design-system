@@ -5,7 +5,7 @@
     <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/download" fill="#404040">
-            <path d="M13,12 L13,5 L11,5 L11,12 L8,12 L12,15.5 L16,12 L13,12 Z M15,10 L21,10 L12,18 L3,10 L9,10 L9,3 L15,3 L15,10 Z M3,19 L21,19 L21,21 L3,21 L3,19 Z" id="download"></path>
+            <path d="M9,2 L9,10 L4.5859375,10 L12,17.414062 L19.414062,10 L15,10 L15,2 C11,2 9,2 9,2 Z M11,4 L13,4 L13,12 L14.585938,12 L12,14.585938 L9.4140625,12 L11,12 L11,4 Z M2,20 L2,22 L22,22 L22,20 L2,20 Z" id="Download"></path>
         </g>
     </g>
 </svg>

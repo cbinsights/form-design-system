@@ -21,7 +21,7 @@
 .fdsDateInput-navArrows {
   position: absolute;
   height: var(--fdsDateInput-control-height);
-  top: var(--space-half);
+  top: 12px;
   right: var(--space-half);
 }
 
