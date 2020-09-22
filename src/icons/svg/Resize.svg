@@ -4,8 +4,8 @@
     <title>icon/resize</title>
     <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon/resize" fill="#404040" fill-rule="nonzero">
-            <polygon id="resize" points="7 11 17 11 17 7 22 12 17 17 17 13 7 13 7 17 2 12 7 7"></polygon>
+        <g id="icon/resize" fill="#404040">
+            <polygon id="Resize" points="6 8 2 12 6 16 6 13 18 13 18 16 22 12 18 8 18 11 6 11"></polygon>
         </g>
     </g>
 </svg>

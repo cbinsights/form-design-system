@@ -3,9 +3,9 @@
     <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
     <title>icon/approve</title>
     <desc>Created with sketchtool.</desc>
-    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.87">
         <g id="icon/approve" fill="#404040">
-            <polygon id="approve" points="13 11 21 11 21 13 13 13 13 21 11 21 11 13 3 13 3 11 11 11 11 3 13 3"></polygon>
+            <polygon id="Approve" points="20 13 13 13 13 20 11 20 11 13 4 13 4 11 11 11 11 4 13 4 13 11 20 11"></polygon>
         </g>
     </g>
 </svg>

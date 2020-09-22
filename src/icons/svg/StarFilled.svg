@@ -4,8 +4,8 @@
     <title>icon/star_filled</title>
     <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon/star_filled" fill="#404040" fill-rule="nonzero">
-            <polygon id="Path" points="12 17.27 18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21"></polygon>
+        <g id="icon/star_filled" fill="#404040">
+            <polygon id="StarFilled" points="12 1.5 8.5878906 8.4121094 0.9609375 9.5214844 6.4804688 14.902344 5.1777344 22.5 12 18.912109 18.822266 22.5 17.519531 14.902344 23.039062 9.5214844 15.412109 8.4121094"></polygon>
         </g>
     </g>
 </svg>

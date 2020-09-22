@@ -4,8 +4,8 @@
     <title>icon/check_indeterminate</title>
     <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon/check_indeterminate" fill="#404040" fill-rule="nonzero">
-            <path d="M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 Z M19,13 L5,13 L5,11 L19,11 L19,13 Z" id="Shape"></path>
+        <g id="icon/check_indeterminate" fill="#404040">
+            <path d="M19,3 L5,3 C3.895,3 3,3.895 3,5 L3,19 C3,20.105 3.895,21 5,21 L19,21 C20.105,21 21,20.105 21,19 L21,5 C21,3.895 20.105,3 19,3 Z M17,13 L7,13 L7,11 L17,11 L17,13 Z" id="CheckIndeterminate"></path>
         </g>
     </g>
 </svg>
