@@ -23,30 +23,29 @@ const Chip = ({
   const rootClass = cc([
     {
       'fdsChip--active': isActive,
-      'fdsChip--blue': theme === 'blue',
-      'fdsChip--outline': theme === 'outline',
     },
     'fdsChip',
     'border--focus--noTransition',
     'transition--default',
     `fdsChip--${size}`,
+    `fdsChip--${theme}`,
   ]);
   return (
     <Element {...rest} className={rootClass}>
       {Icon && (
-        <div className="margin--right--xs">
-          <Icon customSize={18} />
+        <div className="fdsChip-icon">
+          <Icon customSize={size === 'm' ? 16 : 14} />
         </div>
       )}
-      <span className="fdsChip-label">
-        {label}
+      <span>
+        <span className="fdsChip-label">{label}</span>
         {subtitle && <span className="fdsChip-subtitle">{subtitle}</span>}
       </span>
       {onClose && (
         <span
           role="button"
-          tabIndex="-1"
-          className="fdsChip-close border--focus margin--left--xs"
+          tabIndex="0"
+          className="fdsChip-close border--focus"
           onClick={(e) => {
             onClose(e);
             e.stopPropagation();

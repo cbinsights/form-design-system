@@ -44,7 +44,7 @@ export const chipsTwo = [
     Icon={boolean("Icon", false) ? CompanyIcon : undefined}
     label={text("label", "Hello World")}
     subtitle={text("subtitle", "")}
-    onClose={action("close")}
+    onClose={boolean("onClose", true) ? action("closed") : undefined}
     onClick={action("clicked")}
     size={options("size", arrayToOptions(SIZES), undefined, {
       display: "inline-radio"
