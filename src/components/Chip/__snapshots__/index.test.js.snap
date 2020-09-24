@@ -2,12 +2,14 @@
 
 exports[`Chip component matches snapshot (default props) 1`] = `
 <button
-  className="fdsChip border--focus--noTransition transition--default fdsChip--m"
+  className="fdsChip border--focus--noTransition transition--default fdsChip--m fdsChip--gray"
 >
-  <span
-    className="fdsChip-label"
-  >
-    foo
+  <span>
+    <span
+      className="fdsChip-label"
+    >
+      foo
+    </span>
   </span>
 </button>
 `;
@@ -15,19 +17,21 @@ exports[`Chip component matches snapshot (default props) 1`] = `
 exports[`Chip component matches snapshot (set all props) 1`] = `
 <button
   as={[Function]}
-  className="fdsChip--active fdsChip--blue fdsChip border--focus--noTransition transition--default fdsChip--m"
+  className="fdsChip--active fdsChip border--focus--noTransition transition--default fdsChip--m fdsChip--blue"
 >
   <div
-    className="margin--right--xs"
+    className="fdsChip-icon"
   >
     <Icon
-      customSize={18}
+      customSize={16}
     />
   </div>
-  <span
-    className="fdsChip-label"
-  >
-    foo
+  <span>
+    <span
+      className="fdsChip-label"
+    >
+      foo
+    </span>
     <span
       className="fdsChip-subtitle"
     >
@@ -35,10 +39,10 @@ exports[`Chip component matches snapshot (set all props) 1`] = `
     </span>
   </span>
   <span
-    className="fdsChip-close border--focus margin--left--xs"
+    className="fdsChip-close border--focus"
     onClick={[Function]}
     role="button"
-    tabIndex="-1"
+    tabIndex="0"
   >
     <DenyIcon
       customSize={10}
