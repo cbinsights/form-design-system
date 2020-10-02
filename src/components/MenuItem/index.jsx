@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MenuItem as ReachMenuItem } from '@reach/menu-button';
 
+const noop = () => {};
+
 const MenuItem = ({ onSelect, children, isDisabled }) => (
   <ReachMenuItem
     className={isDisabled ? 'fdsMenuItem--disabled' : undefined}
-    onSelect={!isDisabled && onSelect}
+    onSelect={!isDisabled ? onSelect : noop}
     aria-disabled={isDisabled}
   >
     {children}
