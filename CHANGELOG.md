@@ -27,6 +27,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.9] Icons update
+- Added "Paint" icon shape
+
 ## [9.8] Icons update
 - Added "History" icon shape
 - Added "Selection" icon shape
