@@ -51,9 +51,10 @@ const Popover = React.forwardRef(
 
     /**
      * Called when user takes an action to dismiss the popover
+     * @param {Event} e DOMEvent
      */
-    const handleUserDismiss = () => {
-      onUserDismiss();
+    const handleUserDismiss = (e) => {
+      onUserDismiss(e);
       if (interactionMode !== 'controlled') {
         setIsActive(false);
       }
@@ -65,7 +66,7 @@ const Popover = React.forwardRef(
      */
     const handleKeyPress = (e) => {
       const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
-      if (isEscapeKey) handleUserDismiss();
+      if (isEscapeKey) handleUserDismiss(e);
     };
 
     /**
@@ -74,7 +75,7 @@ const Popover = React.forwardRef(
      */
     const handleBodyClick = (e) => {
       const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
-      if (isNotPopoverClick) handleUserDismiss();
+      if (isNotPopoverClick) handleUserDismiss(e);
     };
 
     useEffect(() => {
@@ -255,6 +256,7 @@ Popover.propTypes = {
    * Callback fired when user takes an action to dismiss the popover.
    * (e.g. ESC press, clickikng outside, etc.)
    * Useful for updating `isOpen` in controlled mode.
+   * Function is invoked with the DOM event as the argument.
    */
   onUserDismiss: PropTypes.func,
 
