@@ -27,6 +27,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.10] Toast performance
+- Refactored top bar of `Toast` to use SVG with a `stroke-dashoffset` animation
+
 ## [9.9] Icons update
 - Added "Paint" icon shape
 

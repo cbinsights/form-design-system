@@ -30,7 +30,7 @@ const Toast = ({
   const classNames = cc(['toast', `toast--${type}`]);
 
   const icon = {
-    info: <InformationIcon size="l" color={FDS.COLOR_AQUA} />,
+    info: <InformationIcon size="l" color={FDS.COLOR_WHITE} />,
     success: <CheckIcon size="xs" color={FDS.COLOR_WHITE} />,
     warn: (
       <div role="image" className="fontWeight--bold color--white">
@@ -44,22 +44,15 @@ const Toast = ({
     ),
   }[type];
 
-  const useContinuousProgressBar = type === 'progress' && !progress;
-  const useAmountProgressBar = type === 'progress' && progress;
+  const accentColor = {
+    info: FDS.COLOR_BLUE,
+    warn: FDS.COLOR_ORANGE,
+    error: FDS.COLOR_RED,
+    success: FDS.COLOR_GREEN,
+    progress: FDS.COLOR_AQUA,
+  }[type];
 
-  const toastBar = (
-    <div className="toast-bar">
-      {useContinuousProgressBar && (
-        <div className="toast-progressBar toast-progressBar--continuous" />
-      )}
-      {useAmountProgressBar && (
-        <div
-          className="toast-progressBar toast-progressBar--amount"
-          style={{ width: `${progress}%` }}
-        />
-      )}
-    </div>
-  );
+  const iconStyle = { backgroundColor: accentColor };
 
   const onActionDismiss = (event) => {
     if (dismissOnAction) dismissToast();
@@ -73,13 +66,33 @@ const Toast = ({
       aria-relevant="all"
       aria-atomic="true"
     >
-      {toastBar}
+      <div className="toast-bar">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={cc([
+            'toast-svg',
+            { 'toast-svg--animate': type === 'progress' && !progress },
+          ])}
+        >
+          <line
+            x1="0%"
+            y1="50%"
+            x2={(progress && `${progress}%`) || '100%'}
+            y2="50%"
+            stroke={accentColor}
+            strokeWidth={FDS.SPACE_S}
+            strokeDasharray={type === 'progress' && !progress ? '200 400' : ''}
+          />
+        </svg>
+      </div>
       <div className="toast-content alignChild--left--center">
         <Flex>
           {icon && (
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
-                <div className="toast-icon media--s">{icon}</div>
+                <div className="toast-icon media--s" style={iconStyle}>
+                  {icon}
+                </div>
               </div>
             </FlexItem>
           )}
