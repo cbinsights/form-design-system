@@ -31,9 +31,9 @@ export const ColorSwatch = (props) => {
   const { cssVar, jsVar } = props;
 
   const layouts = [
+    { value: hexName, position: 'bottomRight' },
     { value: jsVar, position: 'topRight' },
     { value: cssVar, position: 'topLeft' },
-    { value: hexName, position: 'bottomRight' },
   ];
 
   return (
@@ -61,7 +61,6 @@ export const ColorSwatch = (props) => {
           {!copiedText ? (
             <React.Fragment>
               <b className="swatchContainer-name">{colorName}</b>
-              <div className="swatchContainer-hex">{hexName}</div>
             </React.Fragment>
           ) : (
             <b>COPIED</b>
