@@ -1,7 +1,7 @@
 variables:
   CBI_NODE_VERSION: "node:12-alpine"
   CBI_MAJOR_VERSION: 9
-  CBI_MINOR_VERSION: 9
+  CBI_MINOR_VERSION: 10
 
 include:
   - project: 'engineering/gitlab-includes'
