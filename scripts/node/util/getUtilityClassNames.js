@@ -18,12 +18,12 @@ const { LIB_ROOT } = require('../constants');
  * These characters indicate a selector that is not a basic utility class
  * (combinators, attribute selectors, etc)
  */
-const SELECTOR_CHAR_BLACKLIST = [' ', ':', '+', '[']
+const SELECTOR_CHAR_DENYLIST = [' ', ':', '+', '[']
 
 /**
  * Exclude inverted. We get too many false positives.
  */
-const CLASSNAME_BLACKLIST = ['inverted'];
+const CLASSNAME_DENYLIST = ['inverted'];
 
 // Get CSS string from built file in `lib`
 const inputCss = fs.readFileSync(path.resolve(LIB_ROOT, 'base-styles/base-styles.full.css')).toString();
@@ -43,11 +43,11 @@ css.parse(inputCss).stylesheet.rules
 // get just the utility classes
 const utilityClasses = allSelectors
   .filter((s) => s[0] === '.')       // include only class selectors
-  .filter((s) =>                     // filter out blacklisted chars
-    !SELECTOR_CHAR_BLACKLIST.some((ch) => s.includes(ch))
+  .filter((s) =>                     // filter out denied chars
+    !SELECTOR_CHAR_DENYLIST.some((ch) => s.includes(ch))
   )
-  .filter((s) =>                     // filter out blacklisted classes
-    !CLASSNAME_BLACKLIST.some((classname) => s.includes(classname))
+  .filter((s) =>                     // filter out denied classes
+    !CLASSNAME_DENYLIST.some((classname) => s.includes(classname))
    )
   .map((s) => s.replace('.', ''));   // remove dot (we're checking usage, not definition)
 

@@ -95,6 +95,8 @@ Command                    | Description
 `yarn snapshot-update`| Updates snapshots
 `yarn lint`           | Runs `eslint` on all js files
 `yarn precommit`      | Runs `lint-staged` to verify precommit hook will pass
+`yarn stats:css`      | Prints a regex used to search all current FDS CSS classes
+`yarn stats:imports <PATH>` | Searches `<PATH>` for FDS component imports and prints a report
 
 ### Docs
 Documentation is published to Github Pages from the `docs/` directory in `master`.
