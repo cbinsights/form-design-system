@@ -23,12 +23,6 @@
   letter-spacing: 0.12em;
 }
 
-.toast-bar {
-  height: 8px;
-  border-radius: var(--toast-border-radius) var(--toast-border-radius) 0 0;
-  overflow: hidden;
-}
-
 .toast-icon {
   border-radius: 100%;
   display: flex;
@@ -36,51 +30,31 @@
   align-items: center;
 }
 
-.toast--info .toast-bar {
-  background: var(--color-blue);
+.toast-bar {
+  height: var(--space-s);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.toast--warn .toast-bar,
-.toast--warn .toast-icon {
-  background: var(--color-orange);
+.toast-svg {
+  background: var(--color-sky); /* the SVG line will cover up this bg */
+  border-radius: var(--toast-border-radius) var(--toast-border-radius) 0 0;
+  height: var(--space-s);
+  width: 100%;
 }
 
-.toast--error .toast-bar,
-.toast--error .toast-icon {
-  background: var(--color-red);
+.toast-svg--animate line {
+  animation: indeterminateProgress 1500ms linear infinite;
 }
 
-.toast--success .toast-bar,
-.toast--success .toast-icon {
-  background: var(--color-green);
-}
-
-.toast--progress .toast-bar {
-  background: var(--color-sky);
-}
-
-
-.toast-progressBar {
-  height: 100%;
-  background-color: var(--color-aqua);
-}
-
-.toast-progressBar--amount {
-  transition: width 500ms;
-}
-
-
-@keyframes moveX {
-  0% {
-    transform: translateX(-200px);
+@keyframes indeterminateProgress {
+  from {
+    stroke-dashoffset: 0;
   }
 
-  100% {
-    transform: translateX(calc(var(--toast-maxWidth) + 200px));
+  to {
+    stroke-dashoffset: calc(var(--toast-maxWidth) * -1);
   }
-}
-
-.toast-progressBar--continuous {
-  width: 200px;
-  animation: moveX 2500ms linear infinite;
 }
