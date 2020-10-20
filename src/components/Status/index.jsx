@@ -14,10 +14,8 @@ const Status = ({ label, type = 'update' }) => {
           'fds-status',
           'padding--x--s fontSize--xs alignChild--center--center',
           {
-            'shape--circle': !label,
-            'color--white': isUpdate,
-            'bgColor--red': isUpdate,
-            'fds-status--dot': !label,
+            'shape--circle fds-status--dot color--white': !label,
+            'color--white bgColor--red': isUpdate,
             'color--aqua': !isUpdate,
             'bgColor--aqua': !isUpdate && !label,
           },
@@ -32,15 +30,11 @@ const Status = ({ label, type = 'update' }) => {
 Status.propTypes = {
   /**
    * String to render inside the Status bubble.
-   * (`element` type should be reserved for icons)
+   * The `element` type should be reserved for FDS icons.
    */
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 
-  /**
-   * Type of Status.
-   * 'update': notification style red
-   * 'count': blue bubble for showing counts (e.g. notes)
-   */
+  /** Type of Status */
   type: PropTypes.oneOf(VALID_TYPES),
 };
 

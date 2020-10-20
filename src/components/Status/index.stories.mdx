@@ -3,6 +3,10 @@ import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs'
 import ImportPath from 'util/storybook-docs/ImportPath';
 import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
 
+import Flex from 'components/Flex';
+import FlexItem from 'components/FlexItem';
+import GapList from 'components/GapList';
+
 import Status, { VALID_TYPES } from '.';
 
 <Meta title="Components/Status" decorators={[withKnobs]} component={Status} />
@@ -10,6 +14,9 @@ import Status, { VALID_TYPES } from '.';
 # Status
 
 <ImportPath component={Status}  />
+
+Renders a status bubble with an optional label. The bubble will be centered within the
+parent container you place it in.
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
   <Status
@@ -28,3 +35,44 @@ import Status, { VALID_TYPES } from '.';
 
 <Props of={Status} />
 
+### Variations
+
+Status uses the `update` type by default, which is used to indicate "newness".
+
+The `count` type can be used to show an amount, but does not indicate "newness" the way
+that the `update` type does.
+
+Either variation will become a filled dot when the `label` is left undefined.
+
+<Preview>
+  <Story name="Variations">
+    <GapList
+      items={[
+        <Status label="42" />,
+        <Status label="42" type="count" />,
+        <Status />,
+        <Status type="count" />,
+      ]}
+    />
+  </Story>
+</Preview>
+
+### Table rows with Status
+
+To indicate "newness" on a table row, place the indicator to the left of the first column.
+The bubble will center itself within the nearest parent.
+
+<Preview>
+  <Story name="With table rows">
+    <Flex>
+      <FlexItem shrink>
+        <div style={{width: '100%', height: '32px'}}>
+          <Status />
+        </div>
+      </FlexItem>
+      <FlexItem>
+        <div className="bgColor--haze" style={{width: '100%', height: '32px'}} />
+      </FlexItem>
+    </Flex>
+  </Story>
+</Preview>
