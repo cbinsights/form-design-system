@@ -1,0 +1,30 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
+import ImportPath from 'util/storybook-docs/ImportPath';
+import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
+
+import Status, { VALID_TYPES } from '.';
+
+<Meta title="Components/Status" decorators={[withKnobs]} component={Status} />
+
+# Status
+
+<ImportPath component={Status}  />
+
+<Story name="Knobs" parameters={{ docs: { disable: true }}}>
+  <Status
+    label={text('label', '42')}
+    type={options('type', arrayToOptions(VALID_TYPES), 'update', {
+      display: 'inline-radio',
+    })}
+  />
+</Story>
+
+<Preview isExpanded>
+  <Status
+    label="42"
+  />
+</Preview>
+
+<Props of={Status} />
+
