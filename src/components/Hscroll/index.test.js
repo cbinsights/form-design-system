@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Hscroll, { getScrollAtributes } from '.';
+import Hscroll from '.';
+import { getScrollAttributes } from './useGetScrollAttributes';
 
 const WIDTH_CONTAINER = 400;
 const WIDTH_CONTENT = 800;
@@ -41,7 +42,7 @@ describe('Hscroll component', () => {
           clientWidth: WIDTH_CONTAINER
         }
       };
-      const { scrolled, scrollEnd } = getScrollAtributes(MOCK_EVENT, WIDTH_CONTENT);
+      const { scrolled, scrollEnd } = getScrollAttributes(MOCK_EVENT, WIDTH_CONTENT);
 
       expect(scrolled).toBe(true);
       expect(scrollEnd).toBe(false);
@@ -54,7 +55,7 @@ describe('Hscroll component', () => {
           clientWidth: WIDTH_CONTAINER
         }
       };
-      const { scrolled, scrollEnd } = getScrollAtributes(MOCK_EVENT, WIDTH_CONTENT);
+      const { scrolled, scrollEnd } = getScrollAttributes(MOCK_EVENT, WIDTH_CONTENT);
 
       expect(scrolled).toBe(true);
       expect(scrollEnd).toBe(true);
@@ -67,7 +68,7 @@ describe('Hscroll component', () => {
           clientWidth: WIDTH_CONTAINER
         }
       };
-      const { scrolled, scrollEnd } = getScrollAtributes(MOCK_EVENT, WIDTH_CONTENT);
+      const { scrolled, scrollEnd } = getScrollAttributes(MOCK_EVENT, WIDTH_CONTENT);
 
       expect(scrolled).toBe(false);
       expect(scrollEnd).toBe(false);
