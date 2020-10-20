@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.11] Standalone `Updatable` bubble
+- Added `Status` component that supports optional labels and two variants (count, update)
+- Refactored `Updatable` component to use `Status` internally
+
 ## [9.10] Toast performance
 - Refactored top bar of `Toast` to use SVG with a `stroke-dashoffset` animation
 
