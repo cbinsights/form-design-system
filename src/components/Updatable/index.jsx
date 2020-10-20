@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Status from 'components/Status';
 
 const Updatable = ({ message, children }) => (
   <div className="updatable">
     {children}
-    {message && <div className="updatable-indicator">{message}</div>}
+    <div className="updatable-indicator">
+      <Status label={message} type="update" />
+    </div>
   </div>
 );
 

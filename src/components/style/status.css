@@ -4,9 +4,6 @@
 }
 
 .fds-status {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   border-radius: var(--space-l);
   height: var(--space-default);
   border: 1px solid;
@@ -14,6 +11,11 @@
 
 .fds-status--dot {
   padding: 0;
-  height: var(--space-s);
-  width: var(--space-s);
+  height: 10px;
+  width: 10px;
 }
+
+.fds-status-label {
+  max-width: var(--media-xl);
+}
+

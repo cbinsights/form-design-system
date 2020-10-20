@@ -11,26 +11,30 @@ const Status = ({ label, type = 'update' }) => {
     <div className="fds-statusWrapper alignChild--center--center">
       <div
         className={cc([
-          'fds-status padding--x--s fontSize--xs',
+          'fds-status',
+          'padding--x--s fontSize--xs alignChild--center--center',
           {
-            'color--aqua': !isUpdate,
-            inverted: isUpdate,
-            'bgColor--red': isUpdate,
             'shape--circle': !label,
+            'color--white': isUpdate,
+            'bgColor--red': isUpdate,
             'fds-status--dot': !label,
+            'color--aqua': !isUpdate,
             'bgColor--aqua': !isUpdate && !label,
           },
         ])}
       >
-        {label}
+        <span className="fds-status-label wrap--singleLine--truncate">{label}</span>
       </div>
     </div>
   );
 };
 
 Status.propTypes = {
-  /** String to render inside the Status bubble */
-  label: PropTypes.string,
+  /**
+   * String to render inside the Status bubble.
+   * (`element` type should be reserved for icons)
+   */
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 
   /**
    * Type of Status.
