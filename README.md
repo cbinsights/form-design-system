@@ -138,3 +138,4 @@ Branch   | version
 -------- | -------------------------------------
 `master` | `X.X.X` (npm "latest" tag)
 `feature/my-cool-feature` | `X.X.0-beta.d270ad1` (npm "beta" tag)
+
