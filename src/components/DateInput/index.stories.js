@@ -7,15 +7,15 @@ const Template = (args) => <DateInput {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  onDateChange: (date) => { return date }
+  onDateChange: (date) => date,
 };
 
 export const defaultSelectedDate = Template.bind({});
 defaultSelectedDate.args = {
   onInputChange: action('input change'),
   onDateChange: action('date change'),
-  defaultDate: "01/01/2010"
-}
+  defaultDate: '01/01/2010',
+};
 
 defaultSelectedDate.parameters = {
   docs: {
@@ -28,12 +28,12 @@ defaultSelectedDate.parameters = {
 
 export const dateRanges = Template.bind({});
 dateRanges.args = {
-  label: "Enter a date in 2020",
+  label: 'Enter a date in 2020',
   onInputChange: action('input change'),
   onDateChange: action('date change'),
   minDate: new Date('Jan 1 2020'),
   maxDate: new Date('Dec 31 2020'),
-}
+};
 
 dateRanges.parameters = {
   docs: {
@@ -48,8 +48,8 @@ export const popoverProps = Template.bind({});
 popoverProps.args = {
   onDateChange: action('date change'),
   onInputChange: action('input change'),
-  popoverProps: { alignment: 'end' }
-}
+  popoverProps: { alignment: 'end' },
+};
 
 popoverProps.parameters = {
   docs: {
@@ -62,9 +62,9 @@ popoverProps.parameters = {
 
 export const labelPosition = Template.bind({});
 labelPosition.args = {
-  label: "DateInput",
-  labelPosition: "left"
-}
+  label: 'DateInput',
+  labelPosition: 'left',
+};
 
 export default {
   component: DateInput,
@@ -72,7 +72,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Component for inputting a single date. The `input` element will accept date text entry in "MDY", "DMY", or "YMD" formats, or the user can use the calendar popover. `DateInput` will use the American English ("MM/DD/YYYY") date format by default. You can change the date component order for Canadian or European style dates with the `dateFormat` prop. '
+        component:
+          'Component for inputting a single date. The `input` element will accept date text entry in "MDY", "DMY", or "YMD" formats, or the user can use the calendar popover. `DateInput` will use the American English ("MM/DD/YYYY") date format by default. You can change the date component order for Canadian or European style dates with the `dateFormat` prop. ',
       },
     },
   },
