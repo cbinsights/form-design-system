@@ -1,15 +1,13 @@
 import React from 'react';
-import StarFilledIcon from "lib/icons/react/StarFilledIcon";
+import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
-import Chip, { THEMES, SIZES } from ".";
+import Chip, { THEMES, SIZES } from '.';
 
-const Template = (args) => (
-  <Chip {...args} />
-);
+const Template = (args) => <Chip {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: "Hello world"
+  label: 'Hello world',
 };
 
 export const Themes = () => (
@@ -20,7 +18,7 @@ export const Themes = () => (
       </StoryItem>
     ))}
   </StoryWrapper>
-)
+);
 
 export const isActive = () => (
   <StoryWrapper>
@@ -30,28 +28,28 @@ export const isActive = () => (
       </StoryItem>
     ))}
   </StoryWrapper>
-)
+);
 
-
-
-export const Sizes = () => (
-    SIZES.map((size, idx) => (
-      <div key={idx} className="margin--right--half margin--bottom--half display--inlineBlock">
-        <Chip size={size} label={`Size: ${size}`} />
-      </div>
-    ))
-)
+export const Sizes = () =>
+  SIZES.map((size, idx) => (
+    <div
+      key={idx}
+      className="margin--right--half margin--bottom--half display--inlineBlock"
+    >
+      <Chip size={size} label={`Size: ${size}`} />
+    </div>
+  ));
 
 export const Subtitle = Template.bind({});
 Subtitle.args = {
-  label: "Chip",
-  subtitle: "subtitle"
+  label: 'Chip',
+  subtitle: 'subtitle',
 };
 
 export const Icon = Template.bind({});
 Icon.args = {
-  label: "Chip",
-  Icon: StarFilledIcon
+  label: 'Chip',
+  Icon: StarFilledIcon,
 };
 
 export default {
@@ -60,7 +58,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Used to display tags, members, filter settings, and other tokens.'
+        component: 'Used to display tags, members, filter settings, and other tokens.',
       },
     },
   },
