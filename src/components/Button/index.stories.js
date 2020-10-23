@@ -217,13 +217,9 @@ Loading.parameters = {
 };
 
 export const Misc = () => (
-  <StoryWrapper>
-    <StoryItem>
-      <div style={{ width: '100px' }}>
-        <Button label="Text can wrap" />
-      </div>
-    </StoryItem>
-  </StoryWrapper>
+  <div style={{ width: '100px' }}>
+    <Button label="Text can wrap" />
+  </div>
 );
 
 export default {
