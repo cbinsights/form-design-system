@@ -3,14 +3,14 @@ import ApproveIcon from 'lib/icons/react/ApproveIcon';
 
 import FloatingAction from '.';
 
-const Template = (args) => <FloatingAction {...args} />
+const Template = (args) => <FloatingAction {...args} />;
 
 export const Primary = Template.bind({});
 
 Primary.args = {
   Icon: ApproveIcon,
-  label: "Add Column"
-}
+  label: 'Add Column',
+};
 
 export default {
   component: FloatingAction,
@@ -18,7 +18,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Component that renders a "floating action button" as outlined in [Material Design Guidelines](https://material.io/components/buttons-floating-action-button/). Essentially, a limited `IconButton` with a shadow.'
+        component:
+          'Component that renders a "floating action button" as outlined in [Material Design Guidelines](https://material.io/components/buttons-floating-action-button/). Essentially, a limited `IconButton` with a shadow.',
       },
     },
   },
