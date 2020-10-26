@@ -15,6 +15,7 @@ import ImportPath2 from 'util/storybook-docs/ImportPath2';
 import "../src/components/style/index.css";
 
 export const parameters = {
+  previewTabs: { 'storybook/docs/panel': { index: -1 } },
   docs: {
     page: () => (
       <>
