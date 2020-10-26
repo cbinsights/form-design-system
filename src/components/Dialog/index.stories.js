@@ -68,7 +68,7 @@ const Layout = () => (
 
 export default {
   component: Dialog,
-  title: 'components/Dialogg',
+  title: 'components/Dialog',
   parameters: {
     docs: {
       page: Layout,
