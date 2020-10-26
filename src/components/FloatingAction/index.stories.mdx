@@ -1,40 +1,25 @@
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { withKnobs, boolean, text, optionsKnob as options } from '@storybook/addon-knobs';
+import React from 'react';
 import ApproveIcon from 'lib/icons/react/ApproveIcon';
-import ImportPath from 'util/storybook-docs/ImportPath';
-import { arrayToOptions } from 'util/storybook-docs/knobHelpers';;
 
-import FloatingAction, { VALID_FAB_THEMES } from '.';
+import FloatingAction from '.';
 
-<Meta title="Components/FloatingAction" decorators={[withKnobs]} component={FloatingAction} />
+const Template = (args) => <FloatingAction {...args} />
 
-# FloatingAction
+export const Primary = Template.bind({});
 
-<ImportPath component={FloatingAction} />
+Primary.args = {
+  Icon: ApproveIcon,
+  label: "Add Column"
+}
 
-<Story name="Knobs" parameters={{ docs: { disable: true }}}>
-  <FloatingAction
-    disabled={boolean('disabled', false)}
-    isLoading={boolean('isLoading', false)}
-    theme={options('theme', arrayToOptions(VALID_FAB_THEMES), undefined, {
-      display: 'inline-radio',
-    })}
-    Icon={ApproveIcon}
-    label={text("label", "Add Column")}
-  />
-</Story>
-
-<Preview isExpanded>
-  <FloatingAction
-    Icon={ApproveIcon}
-    label="Add Column"
-  />
-</Preview>
-
-
-<Props of={FloatingAction} />
-
-Component that renders a "floating action button" as outlined in [Material Design
-Guidelines](https://material.io/components/buttons-floating-action-button/).
-
-Essentially, a limited `IconButton` with a shadow.
+export default {
+  component: FloatingAction,
+  title: 'components/FloatingAction',
+  parameters: {
+    docs: {
+      description: {
+        component: 'Component that renders a "floating action button" as outlined in [Material Design Guidelines](https://material.io/components/buttons-floating-action-button/). Essentially, a limited `IconButton` with a shadow.'
+      },
+    },
+  },
+};
