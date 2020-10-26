@@ -20,7 +20,7 @@ export const Primary = (args) => (
       </FlexItem>
     </Flex>
   </div>
-)
+);
 
 export const classicMediaBlock = (args) => (
   <div style={parentStyle} className="debug--flex">
@@ -29,14 +29,14 @@ export const classicMediaBlock = (args) => (
         <img src="https://place-hold.it/40x40/a02385/fff&text=:)" />
       </FlexItem>
       <FlexItem>
-        Look at this media block. Notice how this area grows to fill the remaining
-        space of the fixed width parent container. When this content wraps, it will
-        not wrap below the figure the same way it would when positioning the image
-        with a<code>float</code>.
+        Look at this media block. Notice how this area grows to fill the remaining space
+        of the fixed width parent container. When this content wraps, it will not wrap
+        below the figure the same way it would when positioning the image with a
+        <code>float</code>.
       </FlexItem>
     </Flex>
   </div>
-)
+);
 
 classicMediaBlock.parameters = {
   docs: {
@@ -68,7 +68,7 @@ export const autoSizedContentArea = (args) => (
       </FlexItem>
     </Flex>
   </div>
-)
+);
 
 autoSizedContentArea.parameters = {
   docs: {
@@ -86,7 +86,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Flex is an abstraction of CSS flexbox that provides a subset of flexbox functionality. **A `Flex` should only contain `FlexItem` children**.',
+        component:
+          'Flex is an abstraction of CSS flexbox that provides a subset of flexbox functionality. **A `Flex` should only contain `FlexItem` children**.',
       },
     },
   },
