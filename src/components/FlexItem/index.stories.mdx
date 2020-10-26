@@ -1,56 +1,35 @@
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
-import ImportPath from 'util/storybook-docs/ImportPath';;
+import React from 'react';
 
 import Flex from 'components/Flex';
 import FlexItem from '.';
 
-export const parentStyle = {
-  width: '600px',
-};
-
-export const getAlignKnob = label =>
-  select(`\`align\` "${label}" item`, {
-    start: 'start',
-    end: 'end',
-    center: 'center',
-  });
-
-<Meta title="Components/FlexItem" decorators={[withKnobs]} component={FlexItem} />
-
-# FlexItem
-
-<ImportPath component={FlexItem} />
-
-Direct parent must be `<Flex>`
-
-<Story name="Knobs">
-  <div style={parentStyle} className="debug--flex">
+const Template = (args) => (
+  <div style={{ width: '600px' }} className="debug--flex">
     <Flex>
-      <FlexItem shrink={boolean('add `shrink` prop to "image" item', false)}>
+      <FlexItem {...args}>
         <img src="https://place-hold.it/40x40/a02385/fff&text=IMG" />
       </FlexItem>
-      <FlexItem
-        shrink={boolean('add `shrink` prop to "Dogs" item', false)}
-        align={getAlignKnob('Dogs')}
-      >
+      <FlexItem {...args}>
         <p>Dogs</p>
       </FlexItem>
-      <FlexItem
-        shrink={boolean('add `shrink` prop to "Cats" item', false)}
-        align={getAlignKnob('Cats')}
-      >
+      <FlexItem {...args}>
         <p>Cats</p>
       </FlexItem>
     </Flex>
   </div>
-</Story>
+)
 
-## Shrinking & growing a `FlexItem`
-By default, all `FlexItem` components will grow to fill remaining space within the parent
-`Flex`. The boolean prop `shrink` will cause a `FlexItem` to shrink to its content size.
+export const Primary = Template.bind({});
+Primary.args = {};
 
-## Controlling alignment/justification
-You can use the same `align` and `justify` prop interface from `Flex` to control alignment and justification of individual `FlexItem` components.
-  
-<Props of={FlexItem} />
+export default {
+  component: FlexItem,
+  title: 'components/FlexItem',
+  parameters: {
+    docs: {
+      description: {
+        component: 'Direct parent must be `<Flex>`. By default, all `FlexItem` components will grow to fill remaining space within the parent `Flex`.',
+      },
+    },
+  },
+};
