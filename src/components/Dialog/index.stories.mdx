@@ -1,7 +1,16 @@
-import { Meta, Story, Preview, Props, Description } from "@storybook/addon-docs/blocks";
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import React from 'react'
 import { action } from '@storybook/addon-actions';
-import ImportPath from 'util/storybook-docs/ImportPath';
+
+import {
+  Title,
+  Subtitle,
+  Description,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+} from '@storybook/addon-docs/blocks';
+
+import ImportPath2 from 'util/storybook-docs/ImportPath2';
 
 import Button from 'components/Button';
 import Flex from 'components/Flex';
@@ -12,132 +21,64 @@ import MenuItem from 'components/MenuItem';
 
 import Dialog from '.';
 
-<Meta title="Components/Dialog" decorators={[withKnobs]} component={Dialog} parameters={{ docs: { disable: true } }}/>
+const Template = (args) => <Dialog {...args} />;
 
-# Dialog
+export const Primary = Template.bind({});
+Primary.args = {
+  isOpen: true,
+  content: 'Modal content here',
+  title: 'Modal title here',
+  onDismiss: action('close modal'),
+  disablePortal: true
+};
 
-<ImportPath component={Dialog} />
+export const scrollingContent = Template.bind({});
+scrollingContent.args = {
+  isOpen: true,
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus. Neque laoreet suspendisse interdum consectetur. Ut porttitor leo a diam. Quisque egestas diam in arcu cursus euismod quis viverra. Eget nunc lobortis mattis aliquam. Mauris pharetra et ultrices neque ornare aenean euismod. Luctus accumsan tortor posuere ac. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Non arcu risus quis varius quam quisque id diam. Vel pharetra vel turpis nunc eget lorem dolor sed. Risus quis varius quam quisque id diam vel quam elementum. Velit ut tortor pretium viverra suspendisse potenti. Amet purus gravida quis blandit turpis cursus in hac. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Egestas maecenas pharetra convallis posuere morbi leo. Pellentesque pulvinar pellentesque habitant morbi tristique. Habitasse platea dictumst quisque sagittis purus. Fermentum dui faucibus in ornare quam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Turpis egestas integer eget aliquet. Bibendum est ultricies integer quis auctor elit sed vulputate. Scelerisque viverra mauris in aliquam sem fringilla ut morbi. Lectus urna duis convallis convallis tellus id interdum velit. A arcu cursus vitae congue mauris rhoncus aenean. Odio euismod lacinia at quis risus sed vulputate odio. Nibh tellus molestie nunc non. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor. A erat nam at lectus urna duis convallis convallis. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Mauris sit amet massa vitae tortor condimentum lacinia. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Risus quis varius quam quisque id diam vel. Id nibh tortor id aliquet. Nisi quis eleifend quam adipiscing vitae proin.",
+  onDismiss: action('close modal'),
+  title: "Long content area"
+}
 
-*Please click **"Canvas"** to view examples.*
 
-An accessible base modal for all other modals to be built upon (either your own, or other FDS modals like `<Prompt />`)
+export const scrollingContentWithFooter = Template.bind({});
+scrollingContentWithFooter.args = {
+  isOpen: true,
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus. Neque laoreet suspendisse interdum consectetur. Ut porttitor leo a diam. Quisque egestas diam in arcu cursus euismod quis viverra. Eget nunc lobortis mattis aliquam. Mauris pharetra et ultrices neque ornare aenean euismod. Luctus accumsan tortor posuere ac. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Non arcu risus quis varius quam quisque id diam. Vel pharetra vel turpis nunc eget lorem dolor sed. Risus quis varius quam quisque id diam vel quam elementum. Velit ut tortor pretium viverra suspendisse potenti. Amet purus gravida quis blandit turpis cursus in hac. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Egestas maecenas pharetra convallis posuere morbi leo. Pellentesque pulvinar pellentesque habitant morbi tristique. Habitasse platea dictumst quisque sagittis purus. Fermentum dui faucibus in ornare quam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Turpis egestas integer eget aliquet. Bibendum est ultricies integer quis auctor elit sed vulputate. Scelerisque viverra mauris in aliquam sem fringilla ut morbi. Lectus urna duis convallis convallis tellus id interdum velit. A arcu cursus vitae congue mauris rhoncus aenean. Odio euismod lacinia at quis risus sed vulputate odio. Nibh tellus molestie nunc non. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor. A erat nam at lectus urna duis convallis convallis. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Mauris sit amet massa vitae tortor condimentum lacinia. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Risus quis varius quam quisque id diam vel. Id nibh tortor id aliquet. Nisi quis eleifend quam adipiscing vitae proin.",
+  onDismiss: action('close modal'),
+  footerContent: (<Button label="Confirm" />),
+  title: "Long content area w/footer"
+}
 
-<Props of={Dialog} />
+export const scrollingContentFooterPermanentBorder = Template.bind({});
+scrollingContentFooterPermanentBorder.args = {
+  isOpen: true,
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus.",
+  onDismiss: action('close modal'),
+  footerContent: <Button label="Confirm" />,
+  title: "Footer & permanent border",
+  alwaysShowBorder: true
+}
 
-<Story name="Knobs">
-  <Dialog
-    isOpen={boolean('isOpen', true)}
-    footerContent={text('footerContent', '')}
-    content={text('content', 'Modal content here')}
-    onDismiss={
-      boolean('onDismiss', true)
-        ? action('close modal')
-        : undefined
-    }
-    title={text('title', 'Modal title here')}
-    width={text('width', undefined)}
-    height={text('height', undefined)}
-    alwaysShowBorder={boolean('alwaysShowBorder', undefined)}
-  />
-</Story>
+const Layout = () => (
+  <>
+    <Title />
+    <ImportPath2 />
+    <Subtitle />
+    <Description />
+    <ArgsTable story={PRIMARY_STORY} />
+  </>
+)
 
-<Story name="Scrolling content">
-  <Dialog
-    isOpen={true}
-    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus. Neque laoreet suspendisse interdum consectetur. Ut porttitor leo a diam. Quisque egestas diam in arcu cursus euismod quis viverra. Eget nunc lobortis mattis aliquam. Mauris pharetra et ultrices neque ornare aenean euismod. Luctus accumsan tortor posuere ac. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Non arcu risus quis varius quam quisque id diam. Vel pharetra vel turpis nunc eget lorem dolor sed. Risus quis varius quam quisque id diam vel quam elementum. Velit ut tortor pretium viverra suspendisse potenti. Amet purus gravida quis blandit turpis cursus in hac. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Egestas maecenas pharetra convallis posuere morbi leo. Pellentesque pulvinar pellentesque habitant morbi tristique. Habitasse platea dictumst quisque sagittis purus. Fermentum dui faucibus in ornare quam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Turpis egestas integer eget aliquet. Bibendum est ultricies integer quis auctor elit sed vulputate. Scelerisque viverra mauris in aliquam sem fringilla ut morbi. Lectus urna duis convallis convallis tellus id interdum velit. A arcu cursus vitae congue mauris rhoncus aenean. Odio euismod lacinia at quis risus sed vulputate odio. Nibh tellus molestie nunc non. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor. A erat nam at lectus urna duis convallis convallis. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Mauris sit amet massa vitae tortor condimentum lacinia. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Risus quis varius quam quisque id diam vel. Id nibh tortor id aliquet. Nisi quis eleifend quam adipiscing vitae proin."
-    onDismiss={action('close modal')}
-    title="Long content area"
-  />
-</Story>
-
-<Story name="Scrolling content w/footer">
-  <Dialog
-    isOpen={true}
-    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus. Neque laoreet suspendisse interdum consectetur. Ut porttitor leo a diam. Quisque egestas diam in arcu cursus euismod quis viverra. Eget nunc lobortis mattis aliquam. Mauris pharetra et ultrices neque ornare aenean euismod. Luctus accumsan tortor posuere ac. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Non arcu risus quis varius quam quisque id diam. Vel pharetra vel turpis nunc eget lorem dolor sed. Risus quis varius quam quisque id diam vel quam elementum. Velit ut tortor pretium viverra suspendisse potenti. Amet purus gravida quis blandit turpis cursus in hac. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Egestas maecenas pharetra convallis posuere morbi leo. Pellentesque pulvinar pellentesque habitant morbi tristique. Habitasse platea dictumst quisque sagittis purus. Fermentum dui faucibus in ornare quam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Turpis egestas integer eget aliquet. Bibendum est ultricies integer quis auctor elit sed vulputate. Scelerisque viverra mauris in aliquam sem fringilla ut morbi. Lectus urna duis convallis convallis tellus id interdum velit. A arcu cursus vitae congue mauris rhoncus aenean. Odio euismod lacinia at quis risus sed vulputate odio. Nibh tellus molestie nunc non. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor. A erat nam at lectus urna duis convallis convallis. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Mauris sit amet massa vitae tortor condimentum lacinia. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Risus quis varius quam quisque id diam vel. Id nibh tortor id aliquet. Nisi quis eleifend quam adipiscing vitae proin."
-    onDismiss={action('close modal')}
-    footerContent={<Button label="Confirm" />}
-    title="Long content area w/footer"
-  />
-</Story>
-
-<Story name="Scrolling content w/footer & permanent border">
-  <Dialog
-    isOpen={true}
-    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus."
-    onDismiss={action('close modal')}
-    footerContent={<Button label="Confirm" />}
-    title="Footer & permanent border"
-    alwaysShowBorder
-  />
-</Story>
-
-<Story name="Customizable Footer">
-  <Dialog
-    isOpen={true}
-    content={<Button label="Customizable footer" />}
-    onDismiss={action('close modal')}
-    footerContent={
-      <div>
-        <Flex align="center">
-          <FlexItem shrink>
-            <Button label="Anything" />
-          </FlexItem>
-          <FlexItem shrink>
-            <Button theme="outlined" label="Can go" />
-          </FlexItem>
-          <FlexItem shrink>
-            <p>in the</p>
-          </FlexItem>
-          <FlexItem shrink>
-            <input placeholder="footer" />
-          </FlexItem>
-        </Flex>
-        <p className="margin--top">Lorem ipsum dolor</p>
-      </div>
-    }
-  />
-</Story>
-
-<Story name="Custom dimensions">
-  <Dialog
-    isOpen={true}
-    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus. Neque laoreet suspendisse interdum consectetur. Ut porttitor leo a diam. Quisque egestas diam in arcu cursus euismod quis viverra. Eget nunc lobortis mattis aliquam. Mauris pharetra et ultrices neque ornare aenean euismod. Luctus accumsan tortor posuere ac. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Non arcu risus quis varius quam quisque id diam. Vel pharetra vel turpis nunc eget lorem dolor sed. Risus quis varius quam quisque id diam vel quam elementum. Velit ut tortor pretium viverra suspendisse potenti. Amet purus gravida quis blandit turpis cursus in hac. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Egestas maecenas pharetra convallis posuere morbi leo. Pellentesque pulvinar pellentesque habitant morbi tristique. Habitasse platea dictumst quisque sagittis purus. Fermentum dui faucibus in ornare quam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Turpis egestas integer eget aliquet. Bibendum est ultricies integer quis auctor elit sed vulputate. Scelerisque viverra mauris in aliquam sem fringilla ut morbi. Lectus urna duis convallis convallis tellus id interdum velit. A arcu cursus vitae congue mauris rhoncus aenean. Odio euismod lacinia at quis risus sed vulputate odio. Nibh tellus molestie nunc non. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor. A erat nam at lectus urna duis convallis convallis. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Mauris sit amet massa vitae tortor condimentum lacinia. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Risus quis varius quam quisque id diam vel. Id nibh tortor id aliquet. Nisi quis eleifend quam adipiscing vitae proin."
-    onDismiss={action('close modal')}
-    title="Custom Dimensions (800px x 640px)"
-    width="800px"
-    height="640px"
-  />
-</Story>
-
-<Story name="Disabling FocusTrap">
-  <Dialog
-    isOpen={true}
-    disableFocusTrap={true}
-    content={
-      <div>
-        <Menu trigger={<Button theme="outlined" label="Menu" hasCaret />}>
-          <MenuItem onSelect={() => { alert('copy') }}>
-            Copy
-          </MenuItem>
-          <MenuItem onSelect={() => { alert('delete') }}>
-            Delete
-          </MenuItem>
-          <MenuItem onSelect={() => { alert('edit') }}>
-            Edit
-          </MenuItem>
-          <MenuItem onSelect={() => { alert('hide') }}>
-            Hide
-          </MenuItem>
-        </Menu>
-        <p className="margin--bottom margin--top">
-          Because <code>Menu</code> needs to manage focus events,
-          this <code>Dialog</code> uses the <code>disableFocusTrap</code> prop to prevent
-          focus event conflicts between <code>Menu</code> and <code>Dialog</code>.
-        </p>
-      </div>
-    }
-    onDismiss={action('close modal')}
-    title="Focus trap disabled"
-  />
-</Story>
-
+export default {
+  component: Dialog,
+  title: 'components/Dialogg',
+  parameters: {
+    docs: {
+      page: Layout,
+      description: {
+        component: 'An accessible base modal for all other modals to be built upon (either your own, or other FDS modals like `<Prompt />`). **Please click "Canvas" to view examples**.',
+      },
+    },
+  },
+};
