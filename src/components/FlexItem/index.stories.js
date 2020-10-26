@@ -17,7 +17,7 @@ const Template = (args) => (
       </FlexItem>
     </Flex>
   </div>
-)
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};
@@ -28,7 +28,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Direct parent must be `<Flex>`. By default, all `FlexItem` components will grow to fill remaining space within the parent `Flex`.',
+        component:
+          'Direct parent must be `<Flex>`. By default, all `FlexItem` components will grow to fill remaining space within the parent `Flex`.',
       },
     },
   },
