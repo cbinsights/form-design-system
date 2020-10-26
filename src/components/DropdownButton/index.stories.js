@@ -1,5 +1,5 @@
 import React from 'react';
-import DropdownButton from ".";
+import DropdownButton from '.';
 
 const Template = (args) => <DropdownButton {...args} />;
 
@@ -12,5 +12,3 @@ export default {
   component: DropdownButton,
   title: 'components/DropdownButton',
 };
-
-
