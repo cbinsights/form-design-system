@@ -3,26 +3,30 @@ import State from 'util/storybook-docs/State';
 import Button from 'components/Button';
 import Popover from '.';
 
-const Template = args => <Popover {...args} />;
+const Template = (args) => <Popover {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
-  transitionName: "GrowFast",
-  trigger: <div className="margin--bottom"><Button label="Click Me" /></div>,
+  transitionName: 'GrowFast',
+  trigger: (
+    <div className="margin--bottom">
+      <Button label="Click Me" />
+    </div>
+  ),
   children: (
     <div
       className="padding--all"
-      style={{ outline: '3px dotted red', background: "#FFFFFF" }}
+      style={{ outline: '3px dotted red', background: '#FFFFFF' }}
     >
       popover content
     </div>
-  )
-}
+  ),
+};
 
 export const styledPopoverContent = Template.bind({});
 styledPopoverContent.args = {
   trigger: <Button theme="outlined" label="Open popover" />,
-  position: "bottom",
-  alignment: "start",
+  position: 'bottom',
+  alignment: 'start',
   distance: 8,
   children: (
     <div className="bgColor--white rounded--all elevation--2 padding--all">
@@ -31,10 +35,10 @@ styledPopoverContent.args = {
         <em>i am the popover</em>
       </p>
     </div>
-  )
-}
+  ),
+};
 
-export const controlledPopover = args => (
+export const controlledPopover = (args) => (
   <State
     initialValue={true}
     render={(myIsOpen, setMyIsOpen) => (
@@ -42,7 +46,9 @@ export const controlledPopover = args => (
         {...args}
         trigger={
           <button
-            onClick={() => { setMyIsOpen(!myIsOpen) }}
+            onClick={() => {
+              setMyIsOpen(!myIsOpen);
+            }}
           >
             Open popover
           </button>
@@ -51,7 +57,9 @@ export const controlledPopover = args => (
         alignment="start"
         interactionMode="controlled"
         isOpen={myIsOpen}
-        onUserDismiss={() => { setMyIsOpen(false) }}
+        onUserDismiss={() => {
+          setMyIsOpen(false);
+        }}
         distance={8}
       >
         <div className="bgColor--white rounded--all elevation--2 padding--all">
@@ -63,7 +71,7 @@ export const controlledPopover = args => (
       </Popover>
     )}
   />
-)
+);
 
 controlledPopover.parameters = {
   docs: {
@@ -74,14 +82,14 @@ controlledPopover.parameters = {
   },
 };
 
-export const closeOnScroll = args => {
+export const closeOnScroll = (args) => {
   const containerEl = useRef(null);
   return (
     <div
       ref={containerEl}
-      style={{ height: 200, border: "1px dashed red", overflow: "scroll" }}
+      style={{ height: 200, border: '1px dashed red', overflow: 'scroll' }}
     >
-      <div style={{ height: 500, background: "yellow" }}>
+      <div style={{ height: 500, background: 'yellow' }}>
         <Popover
           {...args}
           trigger={<Button theme="outlined" label="Open popover" />}
@@ -99,26 +107,26 @@ export const closeOnScroll = args => {
         </Popover>
       </div>
     </div>
-  )
-}
+  );
+};
 
 closeOnScroll.parameters = {
   docs: {
     description: {
       story:
-        'If you\'d like the ability to close the popover once the user scrolls some element, you can pass a ref of that element to the `closeOnScrollRef` prop. If you\'re not sure how to handle scrolling behavior with a popover, choose this option.',
+        "If you'd like the ability to close the popover once the user scrolls some element, you can pass a ref of that element to the `closeOnScrollRef` prop. If you're not sure how to handle scrolling behavior with a popover, choose this option.",
     },
   },
 };
 
-export const disableScrolling = args => {
+export const disableScrolling = (args) => {
   const containerEl = useRef(null);
   return (
     <div
       ref={containerEl}
-      style={{ height: 200, border: "1px dashed red", overflow: 'scroll' }}
+      style={{ height: 200, border: '1px dashed red', overflow: 'scroll' }}
     >
-      <div style={{ height: 500, background: "yellow" }}>
+      <div style={{ height: 500, background: 'yellow' }}>
         <Popover
           {...args}
           trigger={<Button theme="outlined" label="Open popover" />}
@@ -136,14 +144,14 @@ export const disableScrolling = args => {
         </Popover>
       </div>
     </div>
-  )
-}
+  );
+};
 
 disableScrolling.parameters = {
   docs: {
     description: {
       story:
-        'If you\'d like to disable scrolling of some element when a popover is open you can pass a ref of the scrolling element to the `disableScrollRef` prop.',
+        "If you'd like to disable scrolling of some element when a popover is open you can pass a ref of the scrolling element to the `disableScrollRef` prop.",
     },
   },
 };
@@ -155,10 +163,8 @@ export default {
     docs: {
       description: {
         component:
-          'Base popover component. Bring your own trigger and popover content. What this component does: Handle events according to `interactionMode` passed in & handle positioning of popover content What this component does **not** do: Content styling (the popover container is just a transparent div) & Arrows. They arent supported, but we can add them in the future. When setting `position` and `alignment` props, the positioning engine will prefer the props you provide, but may move the popover content to avoid edges of the viewport. This behavior is intentional.'
+          'Base popover component. Bring your own trigger and popover content. What this component does: Handle events according to `interactionMode` passed in & handle positioning of popover content What this component does **not** do: Content styling (the popover container is just a transparent div) & Arrows. They arent supported, but we can add them in the future. When setting `position` and `alignment` props, the positioning engine will prefer the props you provide, but may move the popover content to avoid edges of the viewport. This behavior is intentional.',
       },
     },
   },
 };
-
-
