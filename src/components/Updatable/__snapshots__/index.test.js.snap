@@ -10,7 +10,7 @@ exports[`AvatarRow component matches snapshot with count 1`] = `
   <div
     className="updatable-indicator"
   >
-    <Status
+    <Indicator
       label="666"
       type="update"
     />
@@ -28,7 +28,7 @@ exports[`AvatarRow component matches snapshot with element in message 1`] = `
   <div
     className="updatable-indicator"
   >
-    <Status
+    <Indicator
       label={
         <span>
           <WorkFasterIcon

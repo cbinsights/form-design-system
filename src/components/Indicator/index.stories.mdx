@@ -7,60 +7,58 @@ import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import GapList from 'components/GapList';
 
-import Count, { VALID_TYPES } from '.';
+import Indicator, { VALID_TYPES } from '.';
 
-<Meta title="Components/Count" decorators={[withKnobs]} component={Count} />
+<Meta title="Components/Indicator" decorators={[withKnobs]} component={Indicator} />
 
-# Count
+# Indicator
 
-<ImportPath component={Count}  />
+<ImportPath component={Indicator}  />
 
-Renders a count bubble with an optional label. The bubble will be centered within the
+Renders an indicator bubble with an optional label. The bubble will be centered within the
 parent container you place it in.
 
-To render a `Count` in the top right corner of an element, use the `Updatable` component.
+To render a `Indicator` in the top right corner of an element, use the `Updatable` component.
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
-  <Count
+  <Indicator
     label={text('label', '42')}
-    type={options('type', arrayToOptions(VALID_TYPES), 'notification', {
+    type={options('type', arrayToOptions(VALID_TYPES), 'update', {
       display: 'inline-radio',
     })}
   />
 </Story>
 
 <Preview isExpanded>
-  <Count
+  <Indicator
     label="42"
   />
 </Preview>
 
-<Props of={Count} />
+<Props of={Indicator} />
 
 ### Variations
 
-Count uses the `notification` type by default, which is used to indicate a count of
-_new_ items behind a link.
+Indicator uses the `update` type by default, which is used to notify users of new updates.
 
-The `passive` type can be used to show total items.
+The `count` type can be used to show a count of total items.
 
-When the `label` is left undefined, both types will collapse into a dot, indicating there
-is at least one item.
+When the `label` is left undefined, both types will collapse into a dot.
 
 <Preview>
   <Story name="Variations">
     <GapList
       items={[
-        <Count label="42" />,
-        <Count label="42" type="passive" />,
-        <Count />,
-        <Count type="passive" />,
+        <Indicator label="42" />,
+        <Indicator label="42" type="count" />,
+        <Indicator />,
+        <Indicator type="count" />,
       ]}
     />
   </Story>
 </Preview>
 
-### Table rows with Count
+### Table rows with Indicator
 
 To indicate a table row is "new", place the indicator to the left of the first column.
 The bubble will center itself within the nearest parent.
@@ -70,7 +68,7 @@ The bubble will center itself within the nearest parent.
     <Flex>
       <FlexItem shrink>
         <div style={{width: '100%', height: '32px'}}>
-          <Count />
+          <Indicator />
         </div>
       </FlexItem>
       <FlexItem>
