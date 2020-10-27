@@ -27,6 +27,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.12] Icons Update
+- Adds `Handshake`  icon shape
+- Adds `Briefcase`  icon shape
+- Adds `LinkedinFilled` icon shape
+- Adds `TwitterFilled` icon shape
+
 ## [9.11] Icons Update
 - Adds `Help`  icon shape
 - Adds `Error`  icon shape
