@@ -3,7 +3,7 @@ import SearchIcon from 'lib/icons/react/SearchIcon';
 import TextInput from 'components/TextInput';
 import InputGroup from '.';
 
-export const dropdownVariations = args => (
+export const dropdownVariations = (args) => (
   <>
     <div className="margin--bottom">
       <InputGroup {...args}>
@@ -28,8 +28,7 @@ export const dropdownVariations = args => (
         </select>
       </InputGroup>
     </div>
-    <div className="margin--bottom">
-    </div>
+    <div className="margin--bottom"></div>
     <div className="margin--bottom">
       <InputGroup {...args}>
         <select name="currencty">
@@ -43,7 +42,7 @@ export const dropdownVariations = args => (
   </>
 );
 
-export const textInputs = args => (
+export const textInputs = (args) => (
   <InputGroup {...args}>
     <input type="text" placeholder="First Name" />
     <input type="text" placeholder="Middle Name" />
@@ -51,46 +50,64 @@ export const textInputs = args => (
   </InputGroup>
 );
 
-export const growAndShrink = args => (
+export const growAndShrink = (args) => (
   <InputGroup {...args} flexSettings={['grow', 'shrink', 'grow']}>
-    <TextInput before="$" type="number" defaultValue="100" label="Money" showLabel={false} />
+    <TextInput
+      before="$"
+      type="number"
+      defaultValue="100"
+      label="Money"
+      showLabel={false}
+    />
     <select name="unit">
       <option value="1">Million</option>
       <option value="2">Thousand</option>
     </select>
     <input type="text" placeholder="Investor Name" />
   </InputGroup>
-)
+);
 
 growAndShrink.parameters = {
   docs: {
     description: {
       story:
-        'Use the `flexSettings` prop to control the flex behavior of each input segment. In this example, the first and last inputs are set to `grow` and the middle input will `shrink` to the natural width of the select.'
+        'Use the `flexSettings` prop to control the flex behavior of each input segment. In this example, the first and last inputs are set to `grow` and the middle input will `shrink` to the natural width of the select.',
     },
   },
 };
 
-export const otherExamples = args => (
-    <>
-      <label>Valuation</label>
-      <InputGroup {...args}>
-        <TextInput before="$" type="number" defaultValue="666" label="Money" showLabel={false} />
-        <select name="unit">
-          <option value="1">Million</option>
-          <option value="2">Thousand</option>
-        </select>
-      </InputGroup>
-      <div className="margin--top--half" />
-      <InputGroup {...args}>
-        <TextInput IconLeft={SearchIcon} placeholder="Search" type="search" label="Search" showLabel={false} />
-        <select name="unit">
-          <option value="1">Companies</option>
-          <option value="2">Investors</option>
-        </select>
-      </InputGroup>
-    </>
-)
+export const otherExamples = (args) => (
+  <>
+    <label>Valuation</label>
+    <InputGroup {...args}>
+      <TextInput
+        before="$"
+        type="number"
+        defaultValue="666"
+        label="Money"
+        showLabel={false}
+      />
+      <select name="unit">
+        <option value="1">Million</option>
+        <option value="2">Thousand</option>
+      </select>
+    </InputGroup>
+    <div className="margin--top--half" />
+    <InputGroup {...args}>
+      <TextInput
+        IconLeft={SearchIcon}
+        placeholder="Search"
+        type="search"
+        label="Search"
+        showLabel={false}
+      />
+      <select name="unit">
+        <option value="1">Companies</option>
+        <option value="2">Investors</option>
+      </select>
+    </InputGroup>
+  </>
+);
 
 export default {
   component: InputGroup,
@@ -98,7 +115,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Visually groups multiple form fields on one line. This component will automatically assign `shrink`/`grow` to its internal flex items, but you can override the defaults by using the `flexSettings` prop.'
+        component:
+          'Visually groups multiple form fields on one line. This component will automatically assign `shrink`/`grow` to its internal flex items, but you can override the defaults by using the `flexSettings` prop.',
       },
     },
   },
