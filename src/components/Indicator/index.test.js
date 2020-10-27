@@ -1,15 +1,18 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
 import Indicator from '.';
+
+const SELECTOR_NOTIF = '[aria-label="Notification indicator"]';
+const SELECTOR_COUNT = '[aria-label="Count indicator"]';
 
 describe('Indicator component', () => {
 
   it('renders correctly as notif with label', () => {
     const { container } = render(<Indicator label="666" />);
-    const notif = container.querySelector('[aria-label="Notification indicator"]');
-    const count = container.querySelector('[aria-label="Count indicator"]');
+    const notif = container.querySelector(SELECTOR_NOTIF);
+    const count = container.querySelector(SELECTOR_COUNT);
     expect(count).toBeFalsy();
     expect(notif).toBeTruthy();
     expect(notif).toHaveClass('color--white');
@@ -20,8 +23,8 @@ describe('Indicator component', () => {
 
   it('renders correctly as notif without label', () => {
     const { container } = render(<Indicator />);
-    const notif = container.querySelector('[aria-label="Notification indicator"]');
-    const count = container.querySelector('[aria-label="Count indicator"]');
+    const notif = container.querySelector(SELECTOR_NOTIF);
+    const count = container.querySelector(SELECTOR_COUNT);
     expect(count).toBeFalsy();
     expect(notif).toBeTruthy();
     expect(notif).toHaveClass('color--white');
@@ -35,8 +38,8 @@ describe('Indicator component', () => {
 
   it('renders correctly as count with label', () => {
     const { container } = render(<Indicator label="666" type="count" />);
-    const notif = container.querySelector('[aria-label="Notification indicator"]');
-    const count = container.querySelector('[aria-label="Count indicator"]');
+    const notif = container.querySelector(SELECTOR_NOTIF);
+    const count = container.querySelector(SELECTOR_COUNT);
     expect(notif).toBeFalsy();
     expect(count).toBeTruthy();
     expect(count).toHaveClass('color--aqua');
@@ -47,8 +50,8 @@ describe('Indicator component', () => {
 
   it('renders correctly as count without label', () => {
     const { container } = render(<Indicator type="count" />);
-    const notif = container.querySelector('[aria-label="Notification indicator"]');
-    const count = container.querySelector('[aria-label="Count indicator"]');
+    const notif = container.querySelector(SELECTOR_NOTIF);
+    const count = container.querySelector(SELECTOR_COUNT);
     expect(notif).toBeFalsy();
     expect(count).toBeTruthy();
     expect(count).toHaveClass('color--aqua');
