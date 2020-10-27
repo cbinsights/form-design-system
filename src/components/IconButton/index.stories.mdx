@@ -1,119 +1,60 @@
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
+import React from 'react';
 import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
-import CollectionPublicIcon from 'lib/icons/react/CollectionPublicIcon';
-import StoryAddIcon from 'lib/icons/react/StoryAddIcon';
-import WorkFasterIcon from 'lib/icons/react/WorkFasterIcon';
-import SalesforceIcon from 'lib/icons/react/SalesforceIcon';
-import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
-import ImportPath from 'util/storybook-docs/ImportPath';
 import State from 'util/storybook-docs/State';
 
 import IconButton, { THEMES, RADII, SIZES } from '.';
 
-export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFasterIcon, SalesforceIcon]
+const Template = (args) => <IconButton {...args} />;
 
-<Meta title="Components/IconButton" decorators={[withKnobs]} component={IconButton} />
+export const Primary = Template.bind({});
+Primary.args = {
+  Icon: StarFilledIcon,
+};
 
-# IconButton
-
-<ImportPath component={IconButton} />
-
-<Story name="Knobs" parameters={{ docs: { disable: true }}}>
-  <div className={boolean("Inverted", false) ? 'inverted' : ''}>
-    <IconButton
-      isDestructive={boolean('isDestructive', false)}
-      isActive={boolean('isActive', false)}
-      disabled={boolean('disabled', false)}
-      isLoading={boolean('isLoading', false)}
-      theme={options('theme', arrayToOptions(THEMES), undefined, {
-        display: 'inline-radio',
-      })}
-      size={options('size', arrayToOptions(SIZES), undefined, {
-        display: 'inline-radio',
-      })}
-      radius={options('radius', arrayToOptions(RADII), undefined, {
-        display: 'inline-radio',
-      })}
-      label={text('label', undefined)}
-      Icon={StarFilledIcon}
-    />
-  </div>
-</Story>
-
-<Preview isExpanded>
-  <IconButton
-    Icon={StarFilledIcon}
-  />
-</Preview>
-
-<Props of={IconButton} />
-
-### Themes
-
-<Preview>
-  <Story name="Themes">
-    <StoryWrapper>
-      {THEMES.map(theme => (
-        <StoryItem>
-          <IconButton
-            theme={theme}
-            Icon={Icons[0]}
-          />
-        </StoryItem>
-      ))}
-    </StoryWrapper>
-  </Story>
-</Preview>
-
-### Destructive
-
-<Preview>
-  <Story name="Destructive">
-    <StoryWrapper>
-      <StoryItem>
+export const Themes = (args) => (
+  <StoryWrapper>
+    {THEMES.map((theme, idx) => (
+      <StoryItem key={idx}>
         <IconButton
-          isDestructive
-          Icon={Icons[0]}
-      />
+          {...args}
+          {...Primary.args}
+          theme={theme}
+        />
       </StoryItem>
-    </StoryWrapper>
-  </Story>
-</Preview>
+    ))}
+  </StoryWrapper>
+)
 
 
-### Inverted
+export const Destructive = Template.bind({});
+Destructive.args = {
+  ...Primary.args,
+  isDestructive: true,
+}
 
-<Preview>
-  <Story name="Inverted">
+export const Inverted = (args) => (
     <div className="inverted bgColor--blue padding--all rounded--all">
     <StoryWrapper>
       <StoryItem>
         <IconButton
+          {...args}
+          {...Primary.args}
           theme="ghost"
-          Icon={Icons[0]}
       />
       </StoryItem>
       <StoryItem>
         <IconButton
+          {...args}
+          {...Primary.args}
           theme="outlined"
-          Icon={Icons[0]}
       />
       </StoryItem>
     </StoryWrapper>
     </div>
-  </Story>
-</Preview>
+)
 
-### isActive
-
-`isActive` should be used on buttons to signify the button having
-some affect (applying a filter, causing a popover to be open).
-**Click to toggle on and off**.
-
-<Preview>
-  <Story name="isActive">
+export const isActive = (args) => (
     <>
       <StoryWrapper>
         <State
@@ -121,12 +62,13 @@ some affect (applying a filter, causing a popover to be open).
           render={(value, setValue) => ( 
             <>
               {THEMES.map((theme, idx) => (
-                <StoryItem>
+                <StoryItem key={idx}>
                   <IconButton
-                    Icon={Icons[0]}
+                    {...args}
+                    {...Primary.args}
                     theme={theme}
                     isActive={!value[idx]}
-                    onClick={() => setValue({ ...value, [idx]: !Boolean(value[idx])})}
+                    onClick={() => setValue({ ...value, [idx]: !value[idx] })}
                   />
                 </StoryItem>
               ))}
@@ -134,34 +76,36 @@ some affect (applying a filter, causing a popover to be open).
           )}
         />
         <State
-          initialValue={{}}
+          initialValue={false}
           render={(value, setValue) => ( 
             <>
               <StoryItem>
                 <IconButton
+                  {...args}
+                  {...Primary.args}
                   isDestructive
-                  Icon={Icons[0]}
                   isActive={!value[0]}
-                  onClick={() => setValue({ ...value, [0]: !Boolean(value[0])})}
+                  onClick={() => setValue(!value)}
                 />
               </StoryItem>
             </>
           )}
         />
       </StoryWrapper>
-      <div class="inverted bgColor--blue padding--all rounded--all margin--top">
+      <div className="inverted bgColor--blue padding--all rounded--all margin--top">
         <StoryWrapper>
           <State
             initialValue={{}}
             render={(value, setValue) => ( 
               <>
                 {['ghost', 'outlined'].map((theme, idx) => (
-                  <StoryItem>
+                  <StoryItem key={idx}>
                     <IconButton
-                      Icon={Icons[0]}
+                      {...args}
+                      {...Primary.args}
                       theme={theme}
                       isActive={!value[idx]}
-                      onClick={() => setValue({ ...value, [idx]: !Boolean(value[idx])})}
+                      onClick={() => setValue({ ...value, [idx]: !value[idx] })}
                     />
                   </StoryItem>
                 ))}
@@ -171,64 +115,70 @@ some affect (applying a filter, causing a popover to be open).
         </StoryWrapper>
       </div>
     </>
-  </Story>
-</Preview>
+) 
 
 
-### Sizes
+isActive.parameters = {
+  docs: {
+    description: {
+      story:
+        '`isActive` should be used on buttons to signify the button having some affect (applying a filter, causing a popover to be open). **Click to toggle on and off**.',
+    },
+  },
+};
 
-<Preview>
-  <Story name="Sizes">
+
+export const Sizes = (args) => (
     <StoryWrapper>
-    {SIZES.map(size => (
-      <StoryItem>
+    {SIZES.map((size, idx) => (
+      <StoryItem key={idx}>
         <IconButton
+          {...args}
+          {...Primary.args}
           size={size}
-          Icon={Icons[0]}
         />
       </StoryItem>
     ))}
     </StoryWrapper>
-  </Story>
-</Preview>
+)
 
-### Radii
-
-<Preview>
-  <Story name="Radii">
+export const Radii = (args) => (
     <StoryWrapper>
-    {RADII.map(radius => (
-      <StoryItem>
+    {RADII.map((radius, idx) => (
+      <StoryItem key={idx}>
         <IconButton
+          {...args}
+          {...Primary.args}
           theme={THEMES[1]}
           radius={radius}
-          Icon={Icons[0]}
         />
       </StoryItem>
     ))}
     </StoryWrapper>
-  </Story>
-</Preview>
+)
 
 
-### Loading
-
-<Preview>
-  <Story name="Loading">
+export const Loading = (args) => (
     <StoryWrapper>
       <StoryItem>
         <IconButton
+          {...args}
+          {...Primary.args}
           isLoading
-          Icon={Icons[0]}
         />
       </StoryItem>
       <StoryItem>
         <IconButton
+          {...args}
+          {...Primary.args}
           isDestructive
           isLoading
-          Icon={Icons[0]}
         />
       </StoryItem>
     </StoryWrapper>
-  </Story>
-</Preview>
+)
+
+export default {
+  component: IconButton,
+  title: 'components/IconButton',
+};
