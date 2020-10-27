@@ -77,7 +77,7 @@ const Toast = ({
           <line
             x1="0%"
             y1="50%"
-            x2={progress ? `${progress}%` : '100%'}
+            x2={type === 'progress' && progress ? `${progress}%` : '100%'}
             y2="50%"
             stroke={accentColor}
             strokeWidth={FDS.SPACE_S}
