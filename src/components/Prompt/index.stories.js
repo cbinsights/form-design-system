@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import ImportPath2 from 'util/storybook-docs/ImportPath2';
-import Button from "components/Button";
+import Button from 'components/Button';
 
 import {
   Title,
@@ -11,7 +11,7 @@ import {
   PRIMARY_STORY,
 } from '@storybook/addon-docs/blocks';
 
-import Prompt from ".";
+import Prompt from '.';
 
 export const Primary = () => (
   <Prompt
@@ -19,10 +19,12 @@ export const Primary = () => (
     desc="This change will be permanent and cannot be undone."
     title="Are you sure you want to delete this collection?"
     primaryButton={<Button isDestructive label="Delete" />}
-    secondaryButton={<Button theme="ghost" label="Keep Collection" onClick={action("close modal")} />}
+    secondaryButton={
+      <Button theme="ghost" label="Keep Collection" onClick={action('close modal')} />
+    }
     onDismiss={action('close modal')}
   />
-)
+);
 
 const Layout = () => (
   <>
@@ -47,4 +49,3 @@ export default {
     },
   },
 };
-
