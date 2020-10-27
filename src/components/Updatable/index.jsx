@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Status from 'components/Status';
+import Count from 'components/Count';
 
 const Updatable = ({ message, children }) => (
   <div className="updatable">
     {children}
     <div className="updatable-indicator">
-      <Status label={message} type="update" />
+      <Count label={message} type="notification" />
     </div>
   </div>
 );

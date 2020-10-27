@@ -1,21 +1,21 @@
-.fds-statusWrapper {
+.fds-countWrapper {
   width: 100%;
   height: 100%;
 }
 
-.fds-status {
+.fds-count {
   border-radius: var(--space-l);
   height: var(--space-default);
   border: 1px solid;
 }
 
-.fds-status--dot {
+.fds-count--dot {
   padding: 0;
   height: 11px;
   width: 11px;
 }
 
-.fds-status-label {
+.fds-count-label {
   max-width: var(--media-xl);
 }
 

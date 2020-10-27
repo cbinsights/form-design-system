@@ -1,27 +1,27 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Status from '.';
+import Count from '.';
 
-describe('Status component', () => {
+describe('Count component', () => {
 
   it('matches snapshot (default props, has label)', () => {
-    const component = shallow(<Status label="test" />);
+    const component = shallow(<Count label="test" />);
     expect(component).toMatchSnapshot();
   });
 
   it('matches snapshot (update dot)', () => {
-    const component = shallow(<Status />)
+    const component = shallow(<Count />)
     expect(component).toMatchSnapshot();
   });
 
   it('matches snapshot (count dot)', () => {
-    const component = shallow(<Status type="count" />)
+    const component = shallow(<Count type="passive" />)
     expect(component).toMatchSnapshot();
   });
 
   it('matches snapshot (count with label)', () => {
-    const component = shallow(<Status label="42" type="count" />)
+    const component = shallow(<Count label="42" type="passive" />)
     expect(component).toMatchSnapshot();
   });
 });
