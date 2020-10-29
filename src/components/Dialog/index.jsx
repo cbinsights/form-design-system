@@ -50,7 +50,6 @@ const Dialog = ({
       // eslint-disable-next-line no-undef
       window.addEventListener('resize', handleResize);
       return () => {
-        noScroll.off();
         // eslint-disable-next-line no-undef
         window.removeEventListener('resize', handleResize);
       };
@@ -66,6 +65,9 @@ const Dialog = ({
     } else {
       noScroll.off();
     }
+    return () => {
+      noScroll.off();
+    };
   }, [isOpen]);
 
   const dialogNode = (
