@@ -28,6 +28,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ---
 
 ## [9.13] Standalone `Updatable` bubble
+- Added `testAlign` prop for Tooltip component
+
+## [9.13] Standalone `Updatable` bubble
 - Added `Indicator` component that supports optional labels and two variants (count, update)
 - Refactored `Updatable` component to use `Status` internally
 
