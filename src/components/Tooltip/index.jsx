@@ -7,7 +7,7 @@ export const DEFAULT_WIDTH = '240px';
 export const DELAY_MS = 350;
 export const DEFAULT_POSITION = 'bottom';
 const DEFAULT_TEXT_ALIGN = 'center';
-const VALID_TEXT_ALIGN = ['left', 'center', 'right'];
+export const VALID_TEXT_ALIGN = ['left', 'center', 'right'];
 
 const Tooltip = ({
   trigger,
