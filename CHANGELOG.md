@@ -27,7 +27,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [9.14] Standalone `Updatable` bubble
+## [9.14] Tooltip text alignment
 - Added `testAlign` prop for Tooltip component
 
 ## [9.13] Standalone `Updatable` bubble
