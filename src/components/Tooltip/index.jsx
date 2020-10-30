@@ -4,7 +4,7 @@ import FDS from 'lib/dictionary/js/styleConstants';
 import Tippy from '@tippyjs/react';
 import { VALID_POSITIONS } from 'components/Popover';
 
-export const DEFAULT_WIDTH = '240px';
+export const DEFAULT_WIDTH = 240;
 export const DELAY_MS = 350;
 export const DEFAULT_POSITION = 'bottom';
 export const VALID_TEXT_ALIGN = ['left', 'center', 'right'];
