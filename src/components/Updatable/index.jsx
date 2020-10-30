@@ -5,9 +5,11 @@ import Indicator from 'components/Indicator';
 const Updatable = ({ message, children }) => (
   <div className="updatable">
     {children}
-    <div className="updatable-indicator">
-      <Indicator label={message} type="update" />
-    </div>
+    {message && (
+      <div className="updatable-indicator">
+        <Indicator label={message} type="update" />
+      </div>
+    )}
   </div>
 );
 
