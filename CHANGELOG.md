@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.15] Updatable dot
+- Added the `showDot` prop to `Updatable` to support showing an `Indicator` dot when the
+  `message` is empty.
+
 ## [9.14] Tooltip text alignment
 - Added `testAlign` prop for Tooltip component
 

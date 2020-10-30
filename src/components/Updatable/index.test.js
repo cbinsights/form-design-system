@@ -21,4 +21,14 @@ describe('AvatarRow component', () => {
     expect(component).toMatchSnapshot();
   });
 
+  it('matches snapshot with undefined message', () => {
+    const component = shallow(<Updatable>{MOCK_COMPONENT}</Updatable>)
+    expect(component).toMatchSnapshot();
+  });
+
+  it('matches snapshot with undefined message AND showDot', () => {
+    const component = shallow(<Updatable showDot>{MOCK_COMPONENT}</Updatable>)
+    expect(component).toMatchSnapshot();
+  });
+
 });

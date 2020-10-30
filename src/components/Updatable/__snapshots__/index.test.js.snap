@@ -43,3 +43,30 @@ exports[`AvatarRow component matches snapshot with element in message 1`] = `
   </div>
 </div>
 `;
+
+exports[`AvatarRow component matches snapshot with undefined message 1`] = `
+<div
+  className="updatable"
+>
+  <div>
+    I can be updated with an update indicator.
+  </div>
+</div>
+`;
+
+exports[`AvatarRow component matches snapshot with undefined message AND showDot 1`] = `
+<div
+  className="updatable"
+>
+  <div>
+    I can be updated with an update indicator.
+  </div>
+  <div
+    className="updatable-indicator"
+  >
+    <Indicator
+      type="update"
+    />
+  </div>
+</div>
+`;
