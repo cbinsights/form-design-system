@@ -11,7 +11,7 @@ Removes default user agent styling from `button` elements.
 ```
 */
 
-button.resetButton {
+.resetButton {
   background: transparent;
   border-width: 0;
   font-size: inherit;
