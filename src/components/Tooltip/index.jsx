@@ -1,46 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FDS from 'lib/dictionary/js/styleConstants';
-import Popover, { VALID_POSITIONS } from 'components/Popover';
+import Tippy from '@tippyjs/react';
+import { VALID_POSITIONS } from 'components/Popover';
 
 export const DEFAULT_WIDTH = '240px';
 export const DELAY_MS = 350;
 export const DEFAULT_POSITION = 'bottom';
-const DEFAULT_TEXT_ALIGN = 'center';
 export const VALID_TEXT_ALIGN = ['left', 'center', 'right'];
 
 const Tooltip = ({
+  triggerRef,
+  position = DEFAULT_POSITION,
   trigger,
   message,
-  maxWidth,
-  position = DEFAULT_POSITION,
-  textAlign = DEFAULT_TEXT_ALIGN,
+  maxWidth = DEFAULT_WIDTH,
+  interactive,
 }) => (
-  <Popover
-    interactionMode="hover"
-    trigger={<span style={{ cursor: 'help' }}>{trigger}</span>}
-    distance={parseInt(FDS.SPACE_HALF, 10)}
-    position={position}
-    alignment="center"
-    transitionName="GrowFast"
-    delay={DELAY_MS}
+  <Tippy
+    arrow={false}
+    interactive={interactive}
+    delay={[DELAY_MS, 0]}
+    reference={triggerRef}
+    maxWidth={maxWidth}
+    content={message}
+    placement={position}
+    zIndex={FDS.ZINDEX_MODAL}
+    moveTransition="transform 0.2s ease-out"
+    appendTo={document.body}
   >
-    <div
-      role="tooltip"
-      style={{ maxWidth: maxWidth ? `${maxWidth}px` : DEFAULT_WIDTH }}
-      className={`bgColor--charcoal inverted align--${textAlign} padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold`}
-    >
-      {message}
-    </div>
-  </Popover>
+    {trigger}
+  </Tippy>
 );
 
 Tooltip.propTypes = {
   /** JSX - Acts as a positioning reference for the popover and triggers active state */
   trigger: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
 
+  triggerRef: PropTypes.oneOfType([
+    // Either a function
+    PropTypes.func,
+    // Or the instance of a DOM native element (see the note about SSR)
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
+
   /** Content of the tooltip */
-  message: PropTypes.string.isRequired,
+  message: PropTypes.node.isRequired,
 
   /** Maximum width of tooltip */
   maxWidth: PropTypes.number,
@@ -50,9 +55,7 @@ Tooltip.propTypes = {
    * `top` for example, will place the tooltip above the trigger.
    */
   position: PropTypes.oneOf(VALID_POSITIONS),
-
-  /** Text align for the message */
-  textAlign: PropTypes.oneOf(VALID_TEXT_ALIGN),
+  interactive: PropTypes.bool,
 };
 
 export default Tooltip;

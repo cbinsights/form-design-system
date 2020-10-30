@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, optionsKnob as options, text, number } from '@storybook/addon-knobs';
 import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
@@ -15,9 +16,9 @@ import { VALID_POSITIONS } from 'components/Popover';
 
 <Story name="Knobs">
   <Tooltip
-    trigger={<span>ℹ️ Hover Here!</span>}
+    trigger={<button>ℹ️ Hover Here!</button>}
     message={text('Message', 'Hello world!')}
-    maxWidth={number('Max Width', 60)}
+    maxWidth={number('Max Width', 160)}
     position={options('Position', arrayToOptions(VALID_POSITIONS), 'bottom', {
       display: 'inline-radio',
     })}
@@ -26,3 +27,38 @@ import { VALID_POSITIONS } from 'components/Popover';
 </Story>
 
 <Props of={Tooltip} />
+
+## Ref
+
+Supports directly adding a ref (try to only use if you need it)
+
+<Preview>
+  <Story name="Ref">
+    {() => {
+      const ref = useRef();
+      return (
+        <>
+          <button ref={ref}>Trigger</button>
+          <Tooltip
+            message="Tooltip"
+            triggerRef={ref}
+          />
+        </>
+      )
+    }}
+  </Story>
+</Preview>
+
+## Interactive
+
+Specifying interactive allows you to interact with the tooltip even in hover mode
+
+<Preview>
+  <Story name="Interactive">
+    <Tooltip
+      interactive
+      trigger={<button>ℹ️ Hover Here!</button>}
+      message='Hello world!'
+    />
+  </Story>
+</Preview>
