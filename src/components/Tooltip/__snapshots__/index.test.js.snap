@@ -15,7 +15,7 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
         0,
       ]
     }
-    maxWidth="240px"
+    maxWidth={240}
     moveTransition="transform 0.2s ease-out"
     placement="bottom"
     zIndex="20"
@@ -30,7 +30,7 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
           0,
         ]
       }
-      maxWidth="240px"
+      maxWidth={240}
       moveTransition="transform 0.2s ease-out"
       placement="bottom"
       zIndex="20"
