@@ -35,7 +35,7 @@ const Tooltip = ({
 
 Tooltip.propTypes = {
   /** JSX - Acts as a positioning reference for the popover and triggers active state */
-  trigger: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
+  trigger: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
 
   triggerRef: PropTypes.oneOfType([
     // Either a function
