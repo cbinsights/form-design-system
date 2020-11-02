@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FDS from 'lib/dictionary/js/styleConstants';
 
-const ZeroState = ({ Icon, label, height, ...props }) => (
+const ZeroState = ({ Icon, label = '', height = '0px', ...props }) => (
   <article
     className="alignChild--center--center pointer-events-none"
     style={{ minHeight: height }}
@@ -33,11 +33,6 @@ ZeroState.propTypes = {
    * Min height of section
    */
   height: PropTypes.string,
-};
-
-ZeroState.defaultProps = {
-  height: '0px',
-  label: '',
 };
 
 export default ZeroState;
