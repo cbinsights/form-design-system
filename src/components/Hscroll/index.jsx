@@ -1,7 +1,7 @@
 import React from 'react';
 import cc from 'classcat';
 import PropTypes from 'prop-types';
-import useGetScrollAttributes from './useGetScrollAttributes';
+import useScrollAttributes from './useScrollAttributes';
 
 /**
  * @param {Object} props react props
@@ -14,13 +14,13 @@ const Hscroll = ({
   children,
   ...rest
 }) => {
-  const [onScroll, contentEl, isScrolled, isAtScrollEnd] = useGetScrollAttributes();
+  const [onScroll, contentEl, isAtScrollStart, isAtScrollEnd] = useScrollAttributes();
 
   const containerClassNames = cc([
     {
       'hscroll--enableFade': enableFade,
       'hscroll--enableGutter': enableGutter,
-      'hscroll--scrolled': isScrolled,
+      'hscroll--scrolled': !isAtScrollStart,
       'hscroll--scrollEnd': isAtScrollEnd,
     },
     'hscroll',

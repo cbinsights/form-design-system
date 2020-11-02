@@ -15,23 +15,26 @@ export const getScrollAttributes = (e, contentScrollWidth) => {
   const scrollEnd = contentScrollWidth - clientWidth;
 
   return {
-    scrolled: Boolean(scrollLeft),
+    scrollStart: !scrollLeft,
     scrollEnd: Boolean(scrollLeft === scrollEnd),
   };
 };
 
-const useGetScrollAttributes = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+const useScrollAttributes = () => {
+  const [isAtScrollStart, setIsAtScrollStart] = useState(true);
   const [isAtScrollEnd, setIsAtScrollEnd] = useState(false);
   const contentEl = useRef(null);
 
   const onScroll = (e) => {
-    const { scrolled, scrollEnd } = getScrollAttributes(e, contentEl.current.scrollWidth);
-    rafSchd(setIsScrolled(scrolled));
+    const { scrollStart, scrollEnd } = getScrollAttributes(
+      e,
+      contentEl.current.scrollWidth
+    );
+    rafSchd(setIsAtScrollStart(scrollStart));
     rafSchd(setIsAtScrollEnd(scrollEnd));
   };
 
-  return [onScroll, contentEl, isScrolled, isAtScrollEnd];
+  return [onScroll, contentEl, isAtScrollStart, isAtScrollEnd];
 };
 
-export default useGetScrollAttributes;
+export default useScrollAttributes;

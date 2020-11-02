@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Hscroll from '.';
-import { getScrollAttributes } from './useGetScrollAttributes';
+import { getScrollAttributes } from './useScrollAttributes';
 
 const WIDTH_CONTAINER = 400;
 const WIDTH_CONTENT = 800;
