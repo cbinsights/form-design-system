@@ -27,7 +27,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [9.17] 👍
+## [9.16] 👍
 - Added `Thumbsup` icon shape
 
 ## [9.15] Updatable dot
