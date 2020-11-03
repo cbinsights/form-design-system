@@ -27,6 +27,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.17] 👍
+- Added `Thumbsup` icon shape
+
 ## [9.15] Updatable dot
 - Added the `showDot` prop to `Updatable` to support showing an `Indicator` dot when the
   `message` is empty.
