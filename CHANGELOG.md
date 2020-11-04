@@ -27,8 +27,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
-## [9.16] Added ZeroState component
+## [9.17] Added ZeroState component
 - Added `ZeroState` component, useful for displaying when a lack of the primary UI isn't available (due to lack of results, columns, etc)
+
+## [9.16] 👍
+- Added `Thumbsup` icon shape
 
 ## [9.15] Updatable dot
 - Added the `showDot` prop to `Updatable` to support showing an `Indicator` dot when the
