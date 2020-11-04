@@ -1,79 +1,19 @@
-import { Meta, Story, Preview, Props, Source } from "@storybook/addon-docs/blocks";
-import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs';
+import React from 'react';
 import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
-import Info from 'util/storybook-docs/Info'
-import ImportPath from 'util/storybook-docs/ImportPath';
-import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import { action } from "@storybook/addon-actions";
 import { useForm } from "react-hook-form";
+import InputGroup from 'components/InputGroup';
+import State from 'util/storybook-docs/State';
 
 import TextInput from '.';
-import InputGroup from 'components/InputGroup';
 
-<Meta title="Components/TextInput" decorators={[withKnobs]} component={TextInput} />
+export const Primary = args => (
+  <TextInput {...args} label="First Name"  />
+)
 
-# TextInput
-
-<ImportPath component={TextInput} />
-
-Standard recommended input component. Can be used for simple no frills inputs, as well as complex inputs
-complete with accessibile labels, Icons, side labels, errorText, throttled events, and more.
-
-<Story name="Knobs" parameters={{ docs: { disable: true } }}>
-  <TextInput
-    label={text("label", "Label")}
-    errorText={text("errorText", undefined)}
-    hasError={boolean("hasError", undefined)}
-    showRequired={boolean("required", undefined)}
-    type={text("type", undefined)}
-    onChange={action("changed")}
-    IconRight={boolean("Show IconRight", undefined) ? CaretDownIcon : undefined}
-    IconLeft={boolean("Show IconLeft", undefined) ? CaretDownIcon : undefined}
-    before={text("before", undefined)}
-    after={text("after", undefined)}
-    labelPosition={options(
-      "labelPosition",
-      arrayToOptions(['top', 'left']),
-      undefined,
-      { display: "inline-radio" }
-    )}
-    labelWidth={text("labelWidth", "")}
-    isLabelBold={boolean("isLabelBold", undefined)}
-  />
-</Story>
-
-<Info type="info">
-  <b>Side labels are not a substitute for label elements</b>
-</Info>
-
-<Preview isExpanded>
-  <>
-    <TextInput label="FirstName" showLabel={false} />
-    <br />
-    <TextInput
-      label="First Name"
-      showRequired
-      errorText="Custom error text"
-      placeholder="Placeholder text"
-      IconRight={CaretDownIcon}
-      before="$"
-      after=".com"
-    />
-  </>
-</Preview>
-
-<Info type="info">
-  Additional props will be spread on the `input` element.
-</Info>
-
-<Props of={TextInput} />
-
-## Example Layout
-
-<Preview>
-  <Story name="Example Layout">
+export const exampleLayout = () => (
     <>
       <Flex>
         <FlexItem>
@@ -101,36 +41,14 @@ complete with accessibile labels, Icons, side labels, errorText, throttled event
         </FlexItem>
       </Flex>
     </>
-  </Story>
-</Preview>
+)
 
-### Throttle
-
-The prop `onThrottleChange` fires a callback that throttles less than 5 characters,
-and debounces 5 or more characters.
-https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-in-react
-
-View this story in Canvas, in the action tab, to see how the callback is throttled.
-
-<Preview>
-  <Story name="Throttle">
-    <TextInput
-      onThrottledChange={action("changed")}
-      label="Throttled"
-      showLabel={false}
-    />
-  </Story>
-</Preview>
-
-
-### Controlled Input
-
-<Preview>
-  <Story name="Controlled Input">
+export const controlledInput = args => (
     <State
       initialValue="Controlled"
       render={(value, setValue) => (
         <TextInput
+          {...args}
           label="Controlled"
           showLabel={false}
           value={value}
@@ -138,61 +56,35 @@ View this story in Canvas, in the action tab, to see how the callback is throttl
         />
       )}
     />
-  </Story>
-</Preview>
+)
 
-### Icons
+export const Icons = args => (
+  <TextInput
+    {...args}
+    label="Icons"
+    showLabel={false}
+    IconLeft={CaretDownIcon}
+    IconRight={CaretDownIcon}
+  />
+)
 
-<Preview>
-  <Story name="Icons">
+export const sideLabel = args => (
     <TextInput
-      label="Icons"
-      showLabel={false}
-      IconLeft={CaretDownIcon}
-      IconRight={CaretDownIcon}
-    />
-  </Story>
-</Preview>
-
-### Side label
-
-<Preview>
-  <Story name="Before & After">
-    <TextInput
+      {...args}
       label="Side Label"
       showLabel={false}
       before="before"
       after="after"
     />
-  </Story>
-</Preview>
+)
 
-### Side Labels + Icon
-
-<Preview>
-  <Story name="Side + Icon">
-    <TextInput
-      label="Label"
-      placeholder="placeholder"
-      before="before"
-      after="after"
-      IconLeft={CaretDownIcon}
-      IconRight={CaretDownIcon}
-    />
-  </Story>
-</Preview>
-
-### Form management library
-You may use this input in any form management library you'd like. We recommend `react-hook-form`, which is used in the example below:
-
-<Preview>
-  <Story name="Form management library">
-    {() => {
-      const { register, handleSubmit, setValue, errors } = useForm();
-      return <div>
+export const formManagementLibrary = args => {
+      const { register, handleSubmit, errors } = useForm();
+      return (<div>
         <form onSubmit={handleSubmit(action('submitted'))}>
           <div className="margin--bottom--half">
           <TextInput
+            {...args}
             label="Username"
             name="username"
             type="text"
@@ -203,6 +95,7 @@ You may use this input in any form management library you'd like. We recommend `
           />
           </div>
           <TextInput
+            {...args}
             label="Email"
             name="email"
             type="text"
@@ -218,15 +111,20 @@ You may use this input in any form management library you'd like. We recommend `
           <br />
           <button type="submit">Submit</button>
         </form>
-      </div>;
-    }}
-  </Story>
-</Preview>
+      </div>
+    )
+}
 
-### Misc
+formManagementLibrary.parameters = {
+  docs: {
+    description: {
+      story:
+        'You may use this input in any form management library you would like. We recommend `react-hook-form`, which is used in the example below:',
+    },
+  },
+};
 
-<Preview>
-  <Story name="Misc">
+export const misc = () => (
     <>
       <InputGroup>
         <TextInput before="$" type="number" value="666" label="Misc" showLabel={false} />
@@ -254,5 +152,18 @@ You may use this input in any form management library you'd like. We recommend `
       <br />
       <TextInput label="Label on left with width" labelPosition="left" labelWidth="100px" />
     </>
-  </Story>
-</Preview>
+    )
+
+export default {
+  component: TextInput,
+  title: 'components/TextInput',
+  parameters: {
+    docs: {
+      description: {
+        component: 'Standard recommended input component. Can be used for simple no frills inputs, as well as complex inputs complete with accessibile labels, Icons, side labels, errorText, throttled events, and more.'
+      },
+    },
+  },
+};
+
+
