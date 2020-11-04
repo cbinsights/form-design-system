@@ -13,6 +13,7 @@ import FloatingAction from 'components/FloatingAction';
 import GapList from 'components/GapList';
 import Hscroll from 'components/Hscroll';
 import IconButton from 'components/IconButton';
+import Indicator from 'components/Indicator';
 import InputGroup from 'components/InputGroup';
 import Menu from 'components/Menu';
 import MenuItem from 'components/MenuItem';
@@ -25,6 +26,7 @@ import TextInput from 'components/TextInput';
 import Toaster from 'components/Toaster';
 import Tooltip from 'components/Tooltip';
 import Updatable from 'components/Updatable';
+import ZeroState from 'components/ZeroState';
 
 export {
   Avatar,
@@ -42,6 +44,7 @@ export {
   GapList,
   Hscroll,
   IconButton,
+  Indicator,
   InputGroup,
   Menu,
   MenuItem,
@@ -54,4 +57,5 @@ export {
   Toaster,
   Tooltip,
   Updatable,
+  ZeroState,
 };
