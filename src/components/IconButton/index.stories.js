@@ -147,4 +147,9 @@ export const Loading = (args) => (
 export default {
   component: IconButton,
   title: 'components/IconButton',
+  parameters: {
+    docs: {
+      attributes: ['rest'],
+    },
+  },
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-import { addParameters } from "@storybook/react";
 import FDS from 'lib/dictionary/js/styleConstants';
 import {
   Title,
@@ -11,6 +10,7 @@ import {
   PRIMARY_STORY,
 } from '@storybook/addon-docs/blocks';
 import ImportPath from 'util/storybook-docs/ImportPath';
+import Badges from 'util/storybook-docs/Badges';
 
 import "../src/components/style/index.css";
 
@@ -24,6 +24,7 @@ export const parameters = {
         <Subtitle />
         <Description />
         <Primary />
+        <Badges />
         <ArgsTable story={PRIMARY_STORY} />
         <Stories />
       </>

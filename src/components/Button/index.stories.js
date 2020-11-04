@@ -225,4 +225,9 @@ export const Misc = () => (
 export default {
   component: Button,
   title: 'components/Button',
+  parameters: {
+    docs: {
+      attributes: ['rest'],
+    },
+  },
 };

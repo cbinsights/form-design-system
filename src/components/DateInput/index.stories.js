@@ -71,6 +71,7 @@ export default {
   title: 'components/DateInput',
   parameters: {
     docs: {
+      attributes: ['rest'],
       description: {
         component:
           'Component for inputting a single date. The `input` element will accept date text entry in "MDY", "DMY", or "YMD" formats, or the user can use the calendar popover. `DateInput` will use the American English ("MM/DD/YYYY") date format by default. You can change the date component order for Canadian or European style dates with the `dateFormat` prop. ',
