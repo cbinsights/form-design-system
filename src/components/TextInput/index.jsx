@@ -34,7 +34,7 @@ const TextInput = React.forwardRef(
       after,
       before,
       'aria-label': ariaLabel,
-      ...props
+      ...rest
     },
     ref
   ) => {
@@ -93,7 +93,7 @@ const TextInput = React.forwardRef(
           <DecoratedInput after={after} before={before}>
             <IconInput IconLeft={IconLeft} IconRight={IconRight}>
               <input
-                {...props}
+                {...rest}
                 ref={ref}
                 aria-label={ariaLabel || (showLabel ? label : undefined)}
                 aria-invalid={errorText || hasError ? true : undefined}
@@ -154,10 +154,10 @@ TextInput.propTypes = {
   /** Custom onChange event that throttles / debounces. */
   onThrottledChange: PropTypes.func,
 
-  /** String to place to the left of the input */
+  /** String to place to the left of the input. Not a substitute for a label! */
   before: PropTypes.string,
 
-  /** String to place to the right of the input */
+  /** String to place to the right of the input. Not a substitute for a label! */
   after: PropTypes.string,
 
   /** Controls where the label renders */

@@ -34,7 +34,7 @@ InlineBlockList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.element, PropTypes.string]))
     .isRequired,
 
-  /** Optional character to render between items */
+  /** Optional character to render between items. Useful for breadcrumbs and other separated lists */
   separator: PropTypes.string,
 };
 
