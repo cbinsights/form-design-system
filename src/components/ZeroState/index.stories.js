@@ -44,7 +44,6 @@ export default {
   title: 'components/ZeroState',
   parameters: {
     docs: {
-      attributes: ['rest'],
       description: {
         component: 'Useful to display if there no results, no columns, etc.',
       },
