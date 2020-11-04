@@ -1,94 +1,31 @@
-import {
-  Meta,
-  Story,
-  Preview,
-  Props,
-  Source
-} from "@storybook/addon-docs/blocks";
-import { useState } from "react";
-import { action } from '@storybook/addon-actions';
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
 import { v4 } from 'uuid';
 
-import { storiesOf } from "@storybook/react";
-import {
-  withKnobs,
-  select,
-  text,
-  number,
-  boolean,
-  optionsKnob as options
-} from "@storybook/addon-knobs";
-
-import ImportPath from 'util/storybook-docs/ImportPath';
-import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
-import State from 'util/storybook-docs/State';
-
-import Toaster, { Toaster as RawToaster } from "components/Toaster";
+import { Toaster } from "components/Toaster";
 import Toast, { TYPES } from "./Toast";
 
-<Meta
-  title="Components/Toaster"
-  decorators={[withKnobs]}
-  component={Toaster}
-/>
-
-# Toaster
-
-<ImportPath component={RawToaster} />
-
-Controller for positioning, transition, and dismissal of toasts.
-
-<Story name="Knobs">
-  {() => {   
+export const Primary = args => {
     const [isToastShowing, setIsToastShowing] = useState(false);
     return (
       <>
         <button onClick={() => setIsToastShowing(!isToastShowing)}>{isToastShowing ? 'Hide Toaster' : 'Show Toaster'}</button>
         <Toaster
+          {...args}
           isOpen={isToastShowing}
           onDismiss={() => setIsToastShowing(false)}
-          dismissDelay={number("dismissDelay", undefined)}
-          dismissToast={action('dismissToast')}
-          isAutoDismiss={boolean("isAutoDismiss", undefined)}
           toastProps={{
-            content: text("content", "hey"),
-            type: options(
-              "type",
-              arrayToOptions(['error', 'success', 'info', 'progress']),
-              'info',
-              { display: "inline-radio" }
-            ),
-            progress: number("progress", 42, {
-              range: true,
-              min: 1,
-              max: 100,
-              step: 1
-            }),
-            canDismiss: boolean("canDismiss", undefined),
-            dismissOnAction: boolean("dismissOnAction", true),
-            actionLabel: text("actionLabel", 'Action'),
-            onAction: action('onAction')
+            content: "hey",
+            type: 'info',
+            progress: 42,
+            dismissOnAction: true,
+            actionLabel: 'Action',
           }}
         />
       </>
     )
-  }}
-</Story>
+}
 
-Important notes:
-
-- **⚠️ Import only one `Toaster` component per application**.
-- Pass in a brand new `id` (with optional props) if you'd like to animate a new toast in. 
-- Passing in new props without changing the id will not retrigger the animation
-
-<Props of={RawToaster} />
-
-**toastProps**
-<Props of={Toast} />
-
-<Story name="Rendering" parameters={{ docs: { disable: true }}}>
-  {() => {   
+export const rendering = () => {
     const defaults = { id: v4(), isOpen: false, isAutoDismiss: true }
     const [params, setParams] = useState(defaults);
     const [isShadow, setIsShadow] = useState(false);
@@ -96,12 +33,11 @@ Important notes:
       setParams({ ...params, isOpen: false })
     }
     const randomToastType = () => {
-      var randomNumber = Math.floor(Math.random()*TYPES.length);
+      const randomNumber = Math.floor(Math.random()*TYPES.length);
       return TYPES[randomNumber]
     }
-    const randomNum = () => {
-      return Math.floor(Math.random() * 100); 
-    }
+    const randomNum = () => Math.floor(Math.random() * 100); 
+
     const { id, type, isOpen, content, isAutoDismiss, actionLabel, progress } = params;
     return (
       <div className={isShadow ? "elevation--1 padding--all" : "padding--all"}>
@@ -118,7 +54,7 @@ Important notes:
         <br />
         <button onClick={() => setParams({ ...params, id: v4(), type: "error", isOpen: true, content: 'New ID? Yes!' })}>Error Toast (new id)</button>
         <button onClick={() => setParams({ ...params, id: v4(), type: "info", isOpen: true, content: 'New ID? Yes!' })}>Info Toast (new id)</button>
-        <button onClick={() => setParams({ ...params, id: id, type: "error", isOpen: true, content: 'New ID? No.'  })}>Error Toast (no new id)</button>
+        <button onClick={() => setParams({ ...params, id, type: "error", isOpen: true, content: 'New ID? No.'  })}>Error Toast (no new id)</button>
         <button onClick={() => setParams({ ...defaults })}>Reset all</button>
         <br />
         <br />
@@ -140,14 +76,9 @@ Important notes:
         />
       </div>
     )
-  }}
-</Story>
+};
 
-
-# All Toast Variations
-
-<Preview>
-<Story name="Variations">
+export const variations = () => (
     <React.Fragment>
       <Toast
         content={
@@ -211,7 +142,17 @@ Important notes:
         type="progress"
       />
     </React.Fragment>
-</Story>
-</Preview>
+);
 
-
+export default {
+  component: Toaster,
+  subcomponents: { Toast },
+  title: 'components/Toaster',
+  parameters: {
+    docs: {
+      description: {
+        component: 'Controller for positioning, transition, and dismissal of toasts. Important notes: - **⚠️ Import only one `Toaster` component per application**. - Pass in a brand new `id` (with optional props) if you would like to animate a new toast in. - Passing in new props without changing the id will not retrigger the animation',
+      },
+    },
+  },
+};
