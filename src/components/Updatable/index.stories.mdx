@@ -1,7 +1,8 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import CheckIcon from 'lib/icons/react/CheckIcon';
+import NewsIcon from 'lib/icons/react/NewsIcon';
 
 import ImportPath from 'util/storybook-docs/ImportPath';;
 
@@ -16,7 +17,7 @@ import Updatable from './';
 Wraps children in an "updatable" container with a `message` displayed as a notification-style red bubble.
 
 <Story name="Knobs" parameters={{ docs: { disable: true }}}>
-  <Updatable message={text('message', 42)}>
+  <Updatable message={text('message', 42)} showDot={boolean('showDot', false)}>
     <button>lorem ipsum</button>
   </Updatable>
 </Story>
@@ -29,7 +30,10 @@ Wraps children in an "updatable" container with a `message` displayed as a notif
 
 <Props of={Updatable} />
 
-### Different Variations
+### Wrapping content
+
+`Updatable` accepts any `children`. A wrapper will be crearted around child content to act
+as a positioning reference for the indicator bubble.
 
 <Preview>
   <Story name="Variations">
@@ -50,5 +54,18 @@ Wraps children in an "updatable" container with a `message` displayed as a notif
         <img src="https://placeimg.com/80/81/animals" />
       </Updatable>
     </React.Fragment>
+  </Story>
+</Preview>
+
+### Without a `message`
+
+When the `message` prop is falsy, the indicator will not be shown.
+To force a dot to render with an empty `message`, pass the `showDot` prop.
+
+<Preview>
+  <Story name="Dot only">
+    <Updatable showDot>
+      <NewsIcon />
+    </Updatable>
   </Story>
 </Preview>

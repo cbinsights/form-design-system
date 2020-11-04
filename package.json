@@ -36,7 +36,8 @@
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "stats:css": "node ./scripts/node/util/getUtilityCLassNames.js && cat lib/stats/utilityClassRegex.txt"
+    "stats:css": "node ./scripts/node/util/getUtilityCLassNames.js && cat lib/stats/utilityClassRegex.txt",
+    "stats:imports": "node ./scripts/node/util/getImportCount.js"
   },
   "peerDependencies": {
     "classnames": "^2",
@@ -50,6 +51,7 @@
   "devDependencies": {
     "@babel/cli": "^7.10.4",
     "@babel/core": "^7.10.4",
+    "@babel/parser": "^7",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@babel/plugin-transform-regenerator": "^7.10.4",
