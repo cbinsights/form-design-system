@@ -62,4 +62,9 @@ export const Miscellaneous = (args) => (
 export default {
   component: StackedButton,
   title: 'components/StackedButton',
+  parameters: {
+    docs: {
+      attributes: ['rest'],
+    },
+  },
 };

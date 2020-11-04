@@ -103,6 +103,7 @@ export default {
   title: 'components/Checkbox',
   parameters: {
     docs: {
+      attributes: ['rest'],
       description: {
         component: 'Uncontrolled custom checkbox component with optional label.',
       },

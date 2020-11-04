@@ -13,6 +13,7 @@ export default {
   title: 'components/Badge',
   parameters: {
     docs: {
+      attributes: ['rest'],
       description: {},
     },
   },

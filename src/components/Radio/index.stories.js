@@ -91,6 +91,7 @@ export default {
   title: 'components/Radio',
   parameters: {
     docs: {
+      attributes: ['rest'],
       description: {
         component: 'Uncontrolled custom radio component with label.',
       },

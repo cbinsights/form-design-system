@@ -9,7 +9,7 @@ import {
   PRIMARY_STORY,
 } from '@storybook/addon-docs/blocks';
 
-import ImportPath2 from 'util/storybook-docs/ImportPath2';
+import ImportPath from 'util/storybook-docs/ImportPath';
 
 import Button from 'components/Button';
 
@@ -59,7 +59,7 @@ scrollingContentFooterPermanentBorder.args = {
 const Layout = () => (
   <>
     <Title />
-    <ImportPath2 />
+    <ImportPath />
     <Subtitle />
     <Description />
     <ArgsTable story={PRIMARY_STORY} />

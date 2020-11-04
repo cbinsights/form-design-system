@@ -129,6 +129,7 @@ export default {
   title: 'components/Avatar',
   parameters: {
     docs: {
+      attributes: ['rest'],
       description: {
         component: '',
       },

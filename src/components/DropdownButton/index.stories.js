@@ -11,4 +11,9 @@ Primary.args = {
 export default {
   component: DropdownButton,
   title: 'components/DropdownButton',
+  parameters: {
+    docs: {
+      attributes: ['rest'],
+    },
+  },
 };
