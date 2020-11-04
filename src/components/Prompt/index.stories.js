@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import ImportPath2 from 'util/storybook-docs/ImportPath2';
+import ImportPath from 'util/storybook-docs/ImportPath';
 import Button from 'components/Button';
 
 import {
@@ -29,7 +29,7 @@ export const Primary = () => (
 const Layout = () => (
   <>
     <Title />
-    <ImportPath2 />
+    <ImportPath />
     <Subtitle />
     <Description />
     <ArgsTable story={PRIMARY_STORY} />

@@ -10,7 +10,7 @@ import {
   Stories,
   PRIMARY_STORY,
 } from '@storybook/addon-docs/blocks';
-import ImportPath2 from 'util/storybook-docs/ImportPath2';
+import ImportPath from 'util/storybook-docs/ImportPath';
 
 import "../src/components/style/index.css";
 
@@ -20,7 +20,7 @@ export const parameters = {
     page: () => (
       <>
         <Title />
-        <ImportPath2 />
+        <ImportPath />
         <Subtitle />
         <Description />
         <Primary />

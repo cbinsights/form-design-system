@@ -1,21 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { DocsContext } from '@storybook/addon-docs/blocks';
 import CloneIcon from 'lib/icons/react/CloneIcon';
 import CheckIcon from 'lib/icons/react/CheckIcon';
 import useToggleHover from './useToggleHover';
 import useClipboard from './useClipboard';
 
-export const ImportPath = ({ component }) => {
+export const ImportPath = () => {
   const toggleHover = useToggleHover()[1];
   const [copiedText, copyToClipboard] = useClipboard();
+  const context = useContext(DocsContext);
+  console.log(context);
 
-  const path = `import { ${component.displayName} } from '@cbinsights/fds/lib/components'`;
+  const componentName = context.kind.split('/')[1];
+
+  const path = `import { ${componentName} } from '@cbinsights/fds/lib/componentss'`;
 
   const pathParts = path.split(' ');
 
   return (
     <p
-      className="importPath margin--bottom"
+      className="sbdocs-title importPath margin--bottom"
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
       onClick={() => copyToClipboard(path)}
@@ -33,18 +37,6 @@ export const ImportPath = ({ component }) => {
       )}
     </p>
   );
-};
-
-ImportPath.propTypes = {
-  component: PropTypes.func,
-  section: PropTypes.oneOf([
-    'forms',
-    'interactive',
-    'layout',
-    'media',
-    'modals',
-    'popovers',
-  ]),
 };
 
 export default ImportPath;
