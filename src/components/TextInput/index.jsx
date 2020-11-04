@@ -154,10 +154,10 @@ TextInput.propTypes = {
   /** Custom onChange event that throttles / debounces. */
   onThrottledChange: PropTypes.func,
 
-  /** String to place to the left of the input */
+  /** String to place to the left of the input. Not a substitute for a label! */
   before: PropTypes.string,
 
-  /** String to place to the right of the input */
+  /** String to place to the right of the input. Not a substitute for a label! */
   after: PropTypes.string,
 
   /** Controls where the label renders */
