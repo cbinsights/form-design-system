@@ -170,6 +170,7 @@ export default {
   title: 'components/TextInput',
   parameters: {
     docs: {
+      attributes: ['rest'],
       description: {
         component:
           'Standard recommended input component. Can be used for simple no frills inputs, as well as complex inputs complete with accessibile labels, Icons, side labels, errorText, throttled events, and more.',

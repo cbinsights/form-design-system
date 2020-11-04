@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FDS from 'lib/dictionary/js/styleConstants';
 
-const ZeroState = ({ Icon, label = '', height = '0px', ...props }) => (
+const ZeroState = ({ Icon, label = '', height = '0px', ...rest }) => (
   <article
     className="alignChild--center--center pointer-events-none"
     style={{ minHeight: height }}
   >
-    <section {...props}>
+    <section {...rest}>
       {Icon && (
         <div className="alignChild--center--center" role="img">
           <Icon size="xl" color={FDS.FONT_COLOR_HINT} />

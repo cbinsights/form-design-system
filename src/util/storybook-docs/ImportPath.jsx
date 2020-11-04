@@ -9,8 +9,6 @@ export const ImportPath = () => {
   const toggleHover = useToggleHover()[1];
   const [copiedText, copyToClipboard] = useClipboard();
   const context = useContext(DocsContext);
-  console.log(context);
-
   const componentName = context.kind.split('/')[1];
 
   const path = `import { ${componentName} } from '@cbinsights/fds/lib/componentss'`;

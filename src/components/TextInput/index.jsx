@@ -34,7 +34,7 @@ const TextInput = React.forwardRef(
       after,
       before,
       'aria-label': ariaLabel,
-      ...props
+      ...rest
     },
     ref
   ) => {
@@ -93,7 +93,7 @@ const TextInput = React.forwardRef(
           <DecoratedInput after={after} before={before}>
             <IconInput IconLeft={IconLeft} IconRight={IconRight}>
               <input
-                {...props}
+                {...rest}
                 ref={ref}
                 aria-label={ariaLabel || (showLabel ? label : undefined)}
                 aria-invalid={errorText || hasError ? true : undefined}
