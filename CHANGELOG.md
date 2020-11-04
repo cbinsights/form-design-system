@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.18] Added Caret for IconButton 🥕
+- Added the `hasCaret` prop to `IconButton` to support showing a caret (indicating a dropdown trigger).
+
+
 ## [9.17] Added ZeroState component
 - Added `ZeroState` component, useful for displaying when a lack of the primary UI isn't available (due to lack of results, columns, etc)
 
@@ -94,7 +98,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - Components can be imported via a destructure pattern. `import { Button, IconButton } from '@cbinsights/fds/lib/components'`
 - FDS Icons (only React) can be imported via a destructure pattern. `import { AddIcon, CaretDownIcon } from '@cbinsights/fds/lib/icons/react'`
-- TextInput: 
+- TextInput:
   - `hasError` prop added to enable the input error state without passing `errorText`
   - `isLabelBold` prop added to allow label to be bolded
 - Added `x` and `y` directions to spacing classes (e.g. `margin--y`)
@@ -118,7 +122,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
   popover is in controlled mode.
 
 #### `Dialog` Component
-- `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc). 
+- `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc).
 
 #### `Flex` Component
 - `wrap` prop is no longer accepted on `Flex`

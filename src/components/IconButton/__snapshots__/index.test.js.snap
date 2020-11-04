@@ -17,7 +17,7 @@ exports[`ButtonGroup component matches snapshot (default props) 1`] = `
 
 exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
 <button
-  className="shape--circle fdsIconButton--disabled fdsIconButton--isDestructive fdsIconButton--loading fdsIconButton rounded--all border--focus--noTransition transition--default alignChild--center--center fdsIconButton--aqua fdsIconButton--s"
+  className="shape--circle fdsIconButton--disabled fdsIconButton--isDestructive fdsIconButton--hasCaret fdsIconButton--loading fdsIconButton rounded--all border--focus--noTransition transition--default alignChild--center--center fdsIconButton--aqua fdsIconButton--s"
   disabled={true}
   title="Label"
 >
@@ -27,6 +27,13 @@ exports[`ButtonGroup component matches snapshot (set all props) 1`] = `
     <Icon
       customSize={16}
     />
+    <div
+      className="display--inlineBlock margin--left--half"
+    >
+      <CaretDownIcon
+        customSize={12}
+      />
+    </div>
   </span>
 </button>
 `;

@@ -27,6 +27,7 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
       isActive={boolean('isActive', false)}
       disabled={boolean('disabled', false)}
       isLoading={boolean('isLoading', false)}
+      hasCaret={boolean('hasCaret', false)}
       theme={options('theme', arrayToOptions(THEMES), undefined, {
         display: 'inline-radio',
       })}
@@ -82,6 +83,20 @@ export const Icons = [StarFilledIcon, CollectionPublicIcon, StoryAddIcon, WorkFa
   </Story>
 </Preview>
 
+### Caret
+
+<Preview>
+  <Story name="Caret">
+    <StoryWrapper>
+      <StoryItem>
+        <IconButton hasCaret Icon={Icons[0]} />
+      </StoryItem>
+      <StoryItem>
+        <IconButton hasCaret Icon={Icons[1]} />
+      </StoryItem>
+    </StoryWrapper>
+  </Story>
+</Preview>
 
 ### Inverted
 
@@ -118,7 +133,7 @@ some affect (applying a filter, causing a popover to be open).
       <StoryWrapper>
         <State
           initialValue={{}}
-          render={(value, setValue) => ( 
+          render={(value, setValue) => (
             <>
               {THEMES.map((theme, idx) => (
                 <StoryItem>
@@ -135,7 +150,7 @@ some affect (applying a filter, causing a popover to be open).
         />
         <State
           initialValue={{}}
-          render={(value, setValue) => ( 
+          render={(value, setValue) => (
             <>
               <StoryItem>
                 <IconButton
@@ -153,7 +168,7 @@ some affect (applying a filter, causing a popover to be open).
         <StoryWrapper>
           <State
             initialValue={{}}
-            render={(value, setValue) => ( 
+            render={(value, setValue) => (
               <>
                 {['ghost', 'outlined'].map((theme, idx) => (
                   <StoryItem>

@@ -147,6 +147,11 @@
   pointer-events: none;
 }
 
+.fdsIconButton--hasCaret {
+  padding: 0 var(--space-half);
+  width: auto;
+}
+
 /*
    Spinner technique is from the following:
    https://stephanwagner.me/only-css-loading-spinner

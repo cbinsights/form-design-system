@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
+import { CaretDownIcon } from 'lib/icons/react';
 
 export const THEMES = ['ghost', 'aqua', 'outlined'];
 export const RADII = ['square', 'circle'];
@@ -18,6 +19,7 @@ const IconButton = forwardRef(
       isActive,
       isLoading,
       isDestructive,
+      hasCaret,
       label,
       Link,
       ...rest
@@ -36,6 +38,7 @@ const IconButton = forwardRef(
             'fdsIconButton--disabled': disabled,
             'fdsIconButton--isActive': isActive && !disabled,
             'fdsIconButton--isDestructive': isDestructive,
+            'fdsIconButton--hasCaret': hasCaret,
             'fdsIconButton--loading': isLoading,
           },
           'fdsIconButton',
@@ -48,8 +51,13 @@ const IconButton = forwardRef(
         ])}
         disabled={disabled && Element === 'button'}
       >
-        <span className={isLoading ? 'fdsIconButton--hidden' : ''}>
+        <span className={cc([{ 'fdsIconButton--hidden': isLoading }])}>
           <Icon customSize={size === 's' ? 16 : 18} />
+          {hasCaret && (
+            <div className="display--inlineBlock margin--left--half">
+              <CaretDownIcon customSize={12} />
+            </div>
+          )}
         </span>
       </Element>
     );
@@ -86,6 +94,8 @@ IconButton.propTypes = {
   Icon: PropTypes.func.isRequired,
   /** Accessibility label */
   label: PropTypes.string.isRequired,
+  /** Controls showing CaretDown icon (right aligned) */
+  hasCaret: PropTypes.bool,
 };
 
 export default IconButton;
