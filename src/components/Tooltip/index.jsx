@@ -6,8 +6,16 @@ import Popover, { VALID_POSITIONS } from 'components/Popover';
 export const DEFAULT_WIDTH = '240px';
 export const DELAY_MS = 350;
 export const DEFAULT_POSITION = 'bottom';
+const DEFAULT_TEXT_ALIGN = 'center';
+export const VALID_TEXT_ALIGN = ['left', 'center', 'right'];
 
-const Tooltip = ({ trigger, message, maxWidth, position = DEFAULT_POSITION }) => (
+const Tooltip = ({
+  trigger,
+  message,
+  maxWidth,
+  position = DEFAULT_POSITION,
+  textAlign = DEFAULT_TEXT_ALIGN,
+}) => (
   <Popover
     interactionMode="hover"
     trigger={<span style={{ cursor: 'help' }}>{trigger}</span>}
@@ -20,7 +28,7 @@ const Tooltip = ({ trigger, message, maxWidth, position = DEFAULT_POSITION }) =>
     <div
       role="tooltip"
       style={{ maxWidth: maxWidth ? `${maxWidth}px` : DEFAULT_WIDTH }}
-      className="bgColor--charcoal inverted align--center padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold"
+      className={`bgColor--charcoal inverted align--${textAlign} padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold`}
     >
       {message}
     </div>
@@ -42,6 +50,9 @@ Tooltip.propTypes = {
    * `top` for example, will place the tooltip above the trigger.
    */
   position: PropTypes.oneOf(VALID_POSITIONS),
+
+  /** Text align for the message */
+  textAlign: PropTypes.oneOf(VALID_TEXT_ALIGN),
 };
 
 export default Tooltip;

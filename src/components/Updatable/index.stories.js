@@ -1,5 +1,6 @@
 import React from 'react';
 import CheckIcon from 'lib/icons/react/CheckIcon';
+import NewsIcon from 'lib/icons/react/NewsIcon';
 import Updatable from '.';
 
 const Template = (args) => <Updatable {...args} />;
@@ -29,7 +30,31 @@ export const Variations = () => (
     </Updatable>
   </>
 );
+
+export const dotOnly = (args) => (
+  <Updatable {...args} showDot>
+    <NewsIcon />
+  </Updatable>
+);
+
+dotOnly.parameters = {
+  docs: {
+    description: {
+      story:
+        'When the `message` prop is falsy, the indicator will not be shown. To force a dot to render with an empty `message`, pass the `showDot` prop.',
+    },
+  },
+};
+
 export default {
   component: Updatable,
   title: 'components/Updatable',
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Wraps children in an "updatable" container with a `message` displayed as a notification-style red bubble.',
+      },
+    },
+  },
 };

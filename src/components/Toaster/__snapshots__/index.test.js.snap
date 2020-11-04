@@ -30,7 +30,22 @@ exports[`Toaster component matches snapshot 1`] = `
               >
                 <div
                   class="toast-bar"
-                />
+                >
+                  <svg
+                    class="toast-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      stroke="#006699"
+                      stroke-dasharray=""
+                      stroke-width="8px"
+                      x1="0%"
+                      x2="100%"
+                      y1="50%"
+                      y2="50%"
+                    />
+                  </svg>
+                </div>
                 <div
                   class="toast-content alignChild--left--center"
                 >
@@ -45,10 +60,11 @@ exports[`Toaster component matches snapshot 1`] = `
                       >
                         <div
                           class="toast-icon media--s"
+                          style="background-color: rgb(0, 102, 153);"
                         >
                           <div
                             class="fds-icon fds-icon--l"
-                            style="fill: #4cabce;"
+                            style="fill: #ffffff;"
                           >
                             <svg
                               viewBox="0 0 24 24"
@@ -211,7 +227,22 @@ exports[`Toaster component matches snapshot 1`] = `
                     >
                       <div
                         className="toast-bar"
-                      />
+                      >
+                        <svg
+                          className="toast-svg"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <line
+                            stroke="#006699"
+                            strokeDasharray=""
+                            strokeWidth="8px"
+                            x1="0%"
+                            x2="100%"
+                            y1="50%"
+                            y2="50%"
+                          />
+                        </svg>
+                      </div>
                       <div
                         className="toast-content alignChild--left--center"
                       >
@@ -230,20 +261,25 @@ exports[`Toaster component matches snapshot 1`] = `
                                 >
                                   <div
                                     className="toast-icon media--s"
+                                    style={
+                                      Object {
+                                        "backgroundColor": "#006699",
+                                      }
+                                    }
                                   >
                                     <InformationIcon
-                                      color="#4cabce"
+                                      color="#ffffff"
                                       size="l"
                                     >
                                       <WorldIcon
-                                        color="#4cabce"
+                                        color="#ffffff"
                                         size="l"
                                       >
                                         <div
                                           className="fds-icon fds-icon--l"
                                           style={
                                             Object {
-                                              "fill": "#4cabce",
+                                              "fill": "#ffffff",
                                               "height": undefined,
                                               "width": undefined,
                                             }
