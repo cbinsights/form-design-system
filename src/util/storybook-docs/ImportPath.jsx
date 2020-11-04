@@ -11,7 +11,7 @@ export const ImportPath = () => {
   const context = useContext(DocsContext);
   const componentName = context.kind.split('/')[1];
 
-  const path = `import { ${componentName} } from '@cbinsights/fds/lib/componentss'`;
+  const path = `import { ${componentName} } from '@cbinsights/fds/lib/components'`;
 
   const pathParts = path.split(' ');
 
