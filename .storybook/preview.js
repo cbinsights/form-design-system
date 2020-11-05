@@ -50,7 +50,6 @@ export const parameters = {
         "Icons",
         "Style Utilities",
         "Components",
-        "Examples"
       ],
       locales: ''
     }
