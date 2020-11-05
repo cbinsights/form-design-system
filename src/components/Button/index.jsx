@@ -22,6 +22,7 @@ const Button = forwardRef(
       isDestructive,
       isFullWidth,
       hasCaret,
+      isBreakoutLink,
       ...rest
     },
     ref
@@ -71,6 +72,7 @@ const Button = forwardRef(
             'fdsButton--disabled': disabled,
             'fdsButton--isFullWidth': isFullWidth,
             'fdsButton--isActive': isActive && !disabled,
+            breakoutLink: isBreakoutLink,
           },
           'fdsButton',
           'fontStyle--caps',
@@ -84,15 +86,18 @@ const Button = forwardRef(
         ])}
         disabled={disabled && Element === 'button'}
       >
-        <span className={cc([{ 'fdsButton--hidden': isLoading }, 'fdsButton-label'])}>
-          {label}
-        </span>
-        <Icons />
-        {hasCaret && (
-          <div className="margin--left--half alignChild--center--center">
-            <CaretDownIcon customSize={12} />
-          </div>
-        )}
+        <div className="display--inlineFlex fdsButton--loading-spinnerWrapper">
+          <div className={cc({ 'fdsButton--loading-spinner': isLoading })} />
+          <span className={cc([{ 'fdsButton--hidden': isLoading }, 'fdsButton-label'])}>
+            {label}
+          </span>
+          <Icons />
+          {hasCaret && (
+            <div className="margin--left--half alignChild--center--center">
+              <CaretDownIcon customSize={12} />
+            </div>
+          )}
+        </div>
       </Element>
     );
   }
@@ -143,6 +148,8 @@ Button.propTypes = {
    * - `Link={Link}`
    */
   Link: PropTypes.func,
+  /** Extend click radius of button to nearest relative parent */
+  isBreakoutLink: PropTypes.bool,
 };
 
 export default Button;

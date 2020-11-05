@@ -27,6 +27,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.18] Breakout Links
+
+- Added `breakoutLink` class (to extend clickable area to nearest relative parent)
+- Added `isBreakoutLink` props to `Button` and `IconButton` components to apply 
+the `breakoutLink` class
+
 ## [9.17] Added ZeroState component
 - Added `ZeroState` component, useful for displaying when a lack of the primary UI isn't available (due to lack of results, columns, etc)
 

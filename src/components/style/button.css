@@ -6,7 +6,6 @@
   letter-spacing: 1px;
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-default);
-  position: relative;
   line-height: normal;
   user-select: none;
   /* We do this to make sure buttons with borders and without are the same dimensions */
@@ -53,7 +52,11 @@
   }
 }
 
-.fdsButton--loading::before {
+.fdsButton--loading-spinnerWrapper {
+  position: relative;
+}
+
+.fdsButton--loading-spinner::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -192,7 +195,7 @@
   background-color: rgba(229, 50, 62, 0.2);
 }
 
-.fdsButton--loading:matches(.fdsButton--ghost, .fdsButton--outlined)::before {
+.fdsButton--loading:matches(.fdsButton--ghost, .fdsButton--outlined) .fdsButton--loading-spinner::before {
   border: 2px solid #5DABCB;
   border-top-color: transparent;
 }
@@ -236,8 +239,8 @@
 }
 
 /* stylelint-disable-next-line selector-max-class */
-.inverted .fdsButton--ghost.fdsButton--loading::before,
-.inverted .fdsButton--outlined.fdsButton--loading::before {
+.inverted .fdsButton--ghost .fdsButton--loading-spinner::before,
+.inverted .fdsButton--outlined .fdsButton--loading-spinner::before {
   border: 2px solid var(--color-white);
   border-top-color: transparent;
 }
@@ -258,7 +261,7 @@
   border-color: var(--color-red);
 }
 
-.fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost)::before {
+.fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost) .fdsButton--loading-spinner::before {
   border: 2px solid var(--color-red);
   border-top-color: transparent;
 }

@@ -216,6 +216,27 @@ Loading.parameters = {
   },
 };
 
+export const Breakout = (args) => (
+  <StoryWrapper>
+    <StoryItem>
+      <div
+        className="alignChild--center--center padding--all--xl"
+        style={{ border: '1px dashed #f09', position: 'relative' }}
+      >
+        <Button {...args} label="Button" isBreakoutLink />
+      </div>
+    </StoryItem>
+  </StoryWrapper>
+);
+
+Breakout.parameters = {
+  docs: {
+    description: {
+      story: 'Breakout buttons extend their clickable area to the next nearest parent.',
+    },
+  },
+};
+
 export const Misc = () => (
   <div style={{ width: '100px' }}>
     <Button label="Text can wrap" />
