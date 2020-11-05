@@ -6,8 +6,7 @@ import logo from "/assets/FDS-logo.svg"
 const theme = create({
   base: 'light',
   brandTitle: 'Form Design System',
-  brandUrl: 'cbinsights.github.io/form-design-system',
-  brandImage: logo, // We can add an actual logo later,
+  brandImage: logo,
 });
 
 addons.setConfig({
