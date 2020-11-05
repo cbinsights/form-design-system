@@ -220,8 +220,8 @@ export const Breakout = (args) => (
   <StoryWrapper>
     <StoryItem>
       <div
-        className="alignChild--center--center"
-        style={{ padding: '20px', border: '1px dashed #f09', position: 'relative' }}
+        className="alignChild--center--center padding--all--xl"
+        style={{ border: '1px dashed #f09', position: 'relative' }}
       >
         <Button {...args} label="Button" isBreakoutLink />
       </div>
