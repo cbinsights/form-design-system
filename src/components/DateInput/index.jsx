@@ -41,6 +41,8 @@ const DateInput = ({
   labelWidth,
   minDate,
   maxDate,
+  hasError,
+  errorText,
   ...rest
 }) => {
   const defaultDate = defaultDateInput
@@ -135,6 +137,8 @@ const DateInput = ({
           aria-label="Date Input"
           ref={inputRef}
           {...rest}
+          hasError={hasError}
+          errorText={errorText}
           label={label}
           labelPosition={labelPosition}
           labelWidth={labelWidth}
@@ -236,6 +240,12 @@ DateInput.propTypes = {
    * To apply a `ref` to the popover element, use the `popoverRef` prop.
    */
   popoverProps: PropTypes.object,
+
+  /** Control whether input has error styling */
+  hasError: PropTypes.bool,
+
+  /** Displays as red error text below input */
+  errorText: PropTypes.string,
 };
 
 export default DateInput;
