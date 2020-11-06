@@ -9,6 +9,12 @@
   border: 1px solid;
 }
 
+/* specificity fix for border utility class */
+/* follow up with: UIP-994 */
+.fds-indicator.border--none {
+  border-width: 0;
+}
+
 .fds-indicator--dot {
   padding: 0;
   height: 11px;
