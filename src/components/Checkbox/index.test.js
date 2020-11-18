@@ -12,7 +12,8 @@ describe('Checkbox component', () => {
 
     fireEvent.click(input);
     expect(input.checked).toBeTruthy();
-    expect(container.querySelector('.fdsCheckable')).toHaveClass('fdsCheckable--disabled')
+    expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
+    expect(container.querySelector('.fdsCheckable')).toHaveClass('fdsCheckable--disabled');
   });
 
   it('fires change callback when checking', () => {
