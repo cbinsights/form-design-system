@@ -50,7 +50,7 @@ export const getYearRange = (
 /**
  * Checks user-entered date strings for validity and completeness.
  *
- * moment eagerly parses dates (starting with a single number!), so
+ * dayjs eagerly parses dates (starting with a single number!), so
  * we must wait for a user to finish typing something that looks like
  * a full date.
  *
