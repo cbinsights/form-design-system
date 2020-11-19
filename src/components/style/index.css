@@ -8,8 +8,6 @@
 @import "./rtg/growFast";
 @import "./rtg/slideIn";
 
-
-
 @import "./buttonColors.css";
 @import "./flex.css";
 @import "./section.css";
@@ -42,4 +40,5 @@
 @import "@reach/menu-button/styles.css";
 /* Tippy framework styles */
 @import "tippy.js/dist/tippy.css";
+@import "tippy.js/themes/light.css";
 @import "./tooltip.css";
