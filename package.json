@@ -45,6 +45,7 @@
     "prop-types": "^15",
     "raf-schd": "^4",
     "react": "^16",
+    "react-day-picker": "^7.4.8",
     "react-dom": "^16",
     "react-transition-group": "^4.4.1"
   },
