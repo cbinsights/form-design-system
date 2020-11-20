@@ -5,7 +5,6 @@
 const {
   ICONS_ROOT,
   LIB_ROOT,
-  DOCS_ROOT,
 } = require('../constants.js')
 
 const PATH_ICONS_LIB = `${LIB_ROOT}/icons/`;
@@ -33,11 +32,8 @@ module.exports = {
       template: `${ICONS_ROOT}/templates/withFdsIconWrapper.jsx`,
     },
     docs: {
-      input: `${PATH_ICONS_LIB}/svg`,
-      template: `${ICONS_ROOT}/templates/docs.hbs`,
-      assets: `${ICONS_ROOT}/templates/assets/`,
-      css: `${ICONS_ROOT}/style/icons.css`,
-      output: `${DOCS_ROOT}/icons`,
+      input: `${PATH_ICONS_LIB}/svg`, // used to build manifest of svg strings
+      output: `${PATH_ICONS_LIB}`,    // manifest destination
     },
   },
 };

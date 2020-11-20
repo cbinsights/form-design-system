@@ -3,6 +3,7 @@ import useClipboard from 'util/storybook-docs/useClipboard';
 import useToggleHover from 'util/storybook-docs/useToggleHover';
 import cx from 'classnames';
 import { TableLayout } from 'util/storybook-docs/Table';
+import manifest from '../../lib/icons/iconManifest.js';
 
 export const importPath = iconName => (
   `import ${iconName}Icon from '@cbinsights/fds/lib/icons/react/${iconName}Icon';`
@@ -22,7 +23,7 @@ export const Icon = ({ name, svg }) => {
         onMouseLeave={toggleHover}
       >
         <div
-          dangerouslySetInnerHTML=\{{ __html: svg }}
+          dangerouslySetInnerHTML={{ __html: svg }}
         />
         <span
           className={cx("copyNotice", { 'display--block': isHovered })}
@@ -55,7 +56,5 @@ README](https://github.com/cbinsights/form-design-system/tree/master/src/icons#u
 Clicking on an icon below will copy the import statement.
 
 <ul className="iconList">
-  {{#each this}}
-    <Icon name='{{this.name}}' svg='{{{ this.svg }}}' />
-  {{/each}}
+  {manifest.map(({name, svg}) => <Icon name={name} svg={svg} />)}
 </ul>
