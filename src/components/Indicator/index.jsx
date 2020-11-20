@@ -16,7 +16,7 @@ const Indicator = ({ label, type = 'update' }) => {
           'padding--x--xs fontSize--xs alignChild--center--center',
           {
             'shape--circle fds-indicator--dot color--white': !label,
-            'color--white bgColor--red': isUpdate,
+            'color--white bgColor--red border--none': isUpdate,
             'color--aqua': !isUpdate,
             'bgColor--aqua': !isUpdate && !label,
           },
