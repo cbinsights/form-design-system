@@ -246,12 +246,27 @@
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    padding: 0 !important;
-    margin: 0 !important;
+    margin-top: var(--space-m);
   }
 
-  .iconList svg {
-    width: 40px;
+  .iconSize--xs svg {
+    width: var(--media-xs);
+  }
+
+  .iconSize--s svg {
+    width: var(--media-s);
+  }
+
+  .iconSize--m svg {
+    width: var(--media-m);
+  }
+
+  .iconSize--l svg {
+    width: var(--media-l);
+  }
+
+  .iconSize--xl svg {
+    width: var(--media-xl);
   }
 
   .iconList li {
