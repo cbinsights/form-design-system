@@ -17,10 +17,9 @@ const Checkbox = ({
   disabled = false,
   label,
   inputRef,
+  id = uuidv4(),
   ...rest
 }) => {
-  const id = uuidv4();
-
   const IconUnchecked = CheckEmptyIcon;
   const IconChecked = indeterminate ? CheckIndeterminateIcon : CheckFilledIcon;
 
@@ -29,12 +28,13 @@ const Checkbox = ({
       className={cc([{ 'fdsCheckable--disabled': disabled }, 'fdsCheckable fdsCheckbox'])}
     >
       <input
+        {...rest}
         type="checkbox"
         id={id}
         className="media--xs"
         disabled={disabled}
         ref={inputRef}
-        {...rest}
+        aria-label={showLabel ? undefined : label}
       />
       <label className="flush--bottom" htmlFor={id}>
         <span className="fdsCheckable-icon--checked">
@@ -67,6 +67,9 @@ Checkbox.propTypes = {
 
   /** Disables form field when `true` */
   disabled: PropTypes.bool,
+
+  /** Supplies an `id` to the input, often used with `showLabel={false}` to connect the label. */
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export default Checkbox;

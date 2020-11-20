@@ -1,48 +1,53 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect'
 
 import Checkbox from '.';
 
-// uuid will break snapshots, so we must mock it.
-//
-// look at me, i'm universally unique, I'm _soooooo special_
-jest.mock('uuid/v4', () => jest.fn().mockReturnValue('mock-universal-unique-identifier'));
-
 describe('Checkbox component', () => {
+  it('passes the `disabled` prop', () => {
+    const { container } = render(<Checkbox label="change callback" disabled name="disabled-test" />);
+    const input = screen.getByLabelText('change callback');
+    expect(input.disabled).toBeTruthy();
 
-  it('matches snapshot (without label)', () => {
-    const wrapper = shallow(<Checkbox name="snapshot_checkbox" showLabel={false} label="snapshot checkbox" />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('matches snapshot (with label)', () => {
-    const wrapper = shallow(<Checkbox label="Snapshot Label" name="snapshot_checkbox" />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('matches snapshot (disabled)', () => {
-    const wrapper = shallow(<Checkbox disabled label="Snapshot Label" name="snapshot_checkbox" />);
-    expect(wrapper).toMatchSnapshot();
+    fireEvent.click(input);
+    expect(input.checked).toBeTruthy();
+    expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
+    expect(container.querySelector('.fdsCheckable')).toHaveClass('fdsCheckable--disabled');
   });
 
   it('fires change callback when checking', () => {
     const changeFn = jest.fn();
-    const input = shallow(<Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />)
-      .find('input');
-
+    render(<Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />);
+    const input = screen.getByLabelText('change callback');
     expect(changeFn).not.toHaveBeenCalled();
-    input.simulate('change', { target: { checked: true } })
+    fireEvent.click(input);
+    expect(input.checked).toBeTruthy();
+    fireEvent.change(input, { target: input })
     expect(changeFn).toHaveBeenCalled();
   });
 
   it('fires change callback when unchecking', () => {
     const changeFn = jest.fn();
-    const input = shallow(<Checkbox defaultChecked label="unchecking callback" name="uncheck-callback-test" onChange={changeFn} />)
-      .find('input');
+    render(<Checkbox defaultChecked label="unchecking callback" name="uncheck-callback-test" onChange={changeFn} />);
 
+    const input = screen.getByLabelText('unchecking callback');
     expect(changeFn).not.toHaveBeenCalled();
-    input.simulate('change', { target: { checked: false } })
+    fireEvent.click(input);
+    expect(input.checked).toBeFalsy();
+    fireEvent.change(input, { target: input })
     expect(changeFn).toHaveBeenCalled();
   });
 
+  it('allows users to supply their own id', () => {
+    render(
+      <>
+        <Checkbox id="checkbox-id" label="Component label" showLabel={false} name="multiple labels" />
+        <label htmlFor="checkbox-id">User label</label>
+      </>
+    );
+
+    expect(screen.getByLabelText('Component label')).toBeTruthy();
+    expect(screen.getByLabelText('User label')).toBeTruthy();
+  });
 });

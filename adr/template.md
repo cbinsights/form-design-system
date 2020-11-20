@@ -1,8 +1,18 @@
 # [short title of solved problem and solution]
 
-- **Status:** [accepted | deprecated | … | superseded by [example_adr](example_adr.md)] <!-- optional -->
-- **Deciders:** [list everyone involved in the decision] <!-- optional -->
-- **Date:** [YYYY-MM-DD when the decision was last updated] <!-- optional -->
+- **Status:** [active | deprecated | superseded by [example_adr](example_adr.md)] <!-- optional -->
+- **Decision Author:** [name the primary person who worked on this ADR] <!-- optional -->
+- **Participants:** [list everyone involved in the decision] <!-- optional -->
+- **Last Update Date:** [YYYY-MM-DD when the decision was last updated] <!-- optional -->
+
+<!--
+Explanation of Statuses:
+
+active (in PR): The ADR is still being worked on and accepting feedback.
+active (on master): The ADR is in active use and applies to all relevant work.
+deprecated: The ADR is no longer in use, but has not been replaced by another ADR (e.g. we just decided to stop doing a thing)
+superseded: The ADR no longer applies and has been replaced by the linked ADR.
+-->
 
 ---
 
@@ -27,7 +37,7 @@ Technical Story: [description | ticket/issue URL] <!-- optional -->
 
 ## Decision Outcome
 
-Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
+Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force | … | comes out best (see below)].
 
 ## Positive Consequences <!-- optional -->
 
@@ -42,4 +52,5 @@ Chosen option: "[option 1]", because [justification. e.g., only option, which me
 ## Links <!-- optional -->
 
 * [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
+* [Link type] [Link to Example Implementation] <!-- example: Implemented in [abc service](gitlab.cbinsights.com/enginneering/services/abc-service) -->
 * … <!-- numbers of links can vary -->
