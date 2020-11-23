@@ -67,7 +67,8 @@ getSourceFilePaths(process.argv[2], (files) => {
     .map(([key, value], i) => `${i+1}. ${key} (${value})`);
 
   console.log(`\nSearched ${files.length} files in ${process.argv[2]}`);
-  console.log(`\n------ Most used classes ------\n${topClasses.join('\n')}`);
   console.log(`\n------ Unused classes (${unusedClasses.length}) ------\n${unusedClasses.join(', ')}`);
-  console.log(`\nTOTAL CLASS USAGE: ${totalCount}\n`);
+  console.log(`\n------ Most used classes ------\n${topClasses.join('\n')}`);
+  console.log(`\n---------------------------------`);
+  console.log(`TOTAL CLASS USAGE: ${totalCount}\n`);
 });
