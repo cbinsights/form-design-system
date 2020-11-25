@@ -25,6 +25,11 @@ export const TypeLink = () => (
   </button>
 )
 
+
+export const Pointer = () => (
+  <p className="pointer-events-none" onClick={console.log}>Clicking on this text will not fire the onClick event attached to it</p>
+)
+
 # Links
 
 <TableLayout
@@ -33,5 +38,6 @@ export const TypeLink = () => (
   rows={[
     ['breakoutLink', 'Allows a button or link to extend to the bounds of the nearest position relative element. https://css-tricks.com/breakout-buttons/', {children: <Breakout /> }],
     ['type--link', 'Allows you to make buttons or text look like a link', { children: <TypeLink /> }],
+    ['pointer-events-none', 'Disables pointer events', { children: <Pointer /> }],
   ]} 
 />

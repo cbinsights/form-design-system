@@ -46,6 +46,7 @@
 
 /* Link Helpers */
 @import "./helperClasses/links/breakout";
+@import "./helperClasses/links/pointer";
 
 /* Typesetting */
 @import "./helperClasses/typeset/scale";
