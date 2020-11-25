@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.19] Added useScrollAttributes hook
+
+- Added useScrollAttributes hook to return 2 booleans for if scroll is at the left or right, respectively
+
 ## [9.18] Breakout Links
 
 - Added `breakoutLink` class (to extend clickable area to nearest relative parent)
