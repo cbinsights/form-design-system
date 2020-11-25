@@ -3,7 +3,6 @@ const path = require('path');
 module.exports = {
   stories: [
     "../src/**/*.stories.@(js|mdx)",
-    "../docs/**/*.stories.@(js|mdx)",
     "../guidelines/**/*.stories.@(js|mdx)"
   ],
   addons: [
@@ -34,7 +33,7 @@ module.exports = {
           }
         ],
       });
-      
+
       config.resolve.modules = [
         ...(config.resolve.modules || []),
         path.resolve('./src'),
@@ -46,6 +45,6 @@ module.exports = {
       }
 
       return config;
-  
+
     }
 };
