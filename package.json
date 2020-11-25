@@ -36,8 +36,8 @@
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "stats:css": "node ./scripts/node/util/getUtilityCLassNames.js && cat lib/stats/utilityClassRegex.txt",
-    "stats:imports": "node ./scripts/node/util/getImportCount.js"
+    "stats:css": "node ./scripts/node/util/getClassStats.js",
+    "stats:imports": "node ./scripts/node/util/getImportStats.js"
   },
   "peerDependencies": {
     "classnames": "^2",

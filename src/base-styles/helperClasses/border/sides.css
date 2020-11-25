@@ -21,7 +21,7 @@ class            | description
 }
 
 .border--none {
-  border-width: 0;
+  border-width: 0 !important;
 }
 
 .border--top {

@@ -13,10 +13,10 @@ const Indicator = ({ label, type = 'update' }) => {
         aria-label={isUpdate ? 'Notification indicator' : 'Count indicator'}
         className={cc([
           'fds-indicator',
-          'padding--x--s fontSize--xs alignChild--center--center',
+          'padding--x--xs fontSize--xs alignChild--center--center',
           {
             'shape--circle fds-indicator--dot color--white': !label,
-            'color--white bgColor--red': isUpdate,
+            'color--white bgColor--red border--none': isUpdate,
             'color--aqua': !isUpdate,
             'bgColor--aqua': !isUpdate && !label,
           },

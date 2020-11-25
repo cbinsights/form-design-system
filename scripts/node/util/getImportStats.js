@@ -3,29 +3,20 @@
  * Provides a count of FDS component imports from a given repo
  * ---------------------------
  */
-
-
 const fs = require('fs');
-const glob = require('glob');
-const path = require('path');
 const parser = require('@babel/parser');
+const {
+  FDS_PACKAGE_NAME,
+  getSourceFilePaths,
+} = require('./searchUtils.js');
 
 if (!process.argv[2]) throw new Error('Missing target dir. Run `yarn stats:imports <TARGET_DIR>');
-
-const GLOB_PATTERN = `${path.resolve(process.argv[2])}/**/*.+(js|jsx)`;
-const FILENAME_DENYLIST = [
-  'node_modules',
-  '__tests__',
-  '__spec__',
-  '__snapshots__',
-];
-const FDS_IMPORT_SOURCE = '@cbinsights/fds';
 
 /**
  * @param {String} path filepath
  * @returns {Boolean} true if file contains an FDS import
  */
-const hasFdsImport = (path) => fs.readFileSync(path).includes(FDS_IMPORT_SOURCE);
+const hasFdsImport = (path) => fs.readFileSync(path).includes(FDS_PACKAGE_NAME);
 
 /**
  * @param {String} path filepath
@@ -48,13 +39,12 @@ const toAst = (path) => parser.parse(
  */
 const toComponentList = (ast) => ast.program.body
   .filter((node) => node.type === 'ImportDeclaration')        // only imports
-  .filter((i) => i.source.value.includes(FDS_IMPORT_SOURCE))  // only FDS imports
+  .filter((i) => i.source.value.includes(FDS_PACKAGE_NAME))  // only FDS imports
   .flatMap((i) => i.specifiers.map((s) => s.local.name));     // return a flat arr of local specifier names
 
 
-glob(GLOB_PATTERN, (error, files) => {
+getSourceFilePaths(process.argv[2], (files) => {
   const componentCountMap = files
-    .filter((path) => !FILENAME_DENYLIST.some((word) => path.includes(word)))
     .filter(hasFdsImport)       // only convert files that actually have FDS imports
     .map(toAst)
     .flatMap(toComponentList)   // get component names from each file and merge into flat arr
