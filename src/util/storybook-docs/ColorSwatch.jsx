@@ -22,11 +22,7 @@ const mostReadableConfig = (hexName) =>
 export const ColorSwatch = (props) => {
   const [copiedText, copyToClipboard] = useClipboard('');
 
-  const colorName = props.jsVar
-    .split('_')
-    .slice(1)
-    .join(' ')
-    .toLowerCase();
+  const colorName = props.name;
   const hexName = `#${props.hex.toUpperCase()}`;
   const { cssVar, jsVar } = props;
 
@@ -81,6 +77,7 @@ export const ColorSwatch = (props) => {
 };
 
 ColorSwatch.propTypes = {
+  name: PropTypes.string,
   hex: PropTypes.string,
   cssVar: PropTypes.string,
   jsVar: PropTypes.string,
