@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import FDS from 'lib/dictionary/js/styleConstants';
 
 const ZeroState = ({ Icon, label = '', height = '0px' }) => (
-  <article
-    className="alignChild--center--center pointer-events-none"
-    style={{ minHeight: height }}
-  >
+  <article className="alignChild--center--center" style={{ minHeight: height }}>
     <section>
       {Icon && (
         <div className="alignChild--center--center" role="img">
