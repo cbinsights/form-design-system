@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import cc from 'classcat';
 import PropTypes from 'prop-types';
-import useScrollAttributes from './useScrollAttributes';
+import useScrollAttributes from 'hooks/useScrollAttributes';
 
 /**
  * @param {Object} props react props
@@ -14,7 +14,8 @@ const Hscroll = ({
   children,
   ...rest
 }) => {
-  const [onScroll, contentEl, isAtScrollStart, isAtScrollEnd] = useScrollAttributes();
+  const ref = useRef();
+  const [isAtScrollStart, isAtScrollEnd] = useScrollAttributes(ref);
 
   const containerClassNames = cc([
     {
@@ -28,13 +29,9 @@ const Hscroll = ({
   ]);
 
   return (
-    <div
-      className={containerClassNames}
-      onScroll={enableFade ? onScroll : undefined}
-      {...rest}
-    >
+    <div className={containerClassNames} {...rest}>
       <div className="hscroll-overflowEl">
-        <div ref={contentEl} className="hscroll-content">
+        <div ref={enableFade ? ref : undefined} className="hscroll-content">
           {children}
         </div>
       </div>

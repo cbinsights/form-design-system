@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import rafSchd from 'raf-schd';
 
 /**
@@ -20,21 +20,24 @@ export const getScrollAttributes = (e, contentScrollWidth) => {
   };
 };
 
-const useScrollAttributes = () => {
+const useScrollAttributes = (ref) => {
   const [isAtScrollStart, setIsAtScrollStart] = useState(true);
   const [isAtScrollEnd, setIsAtScrollEnd] = useState(false);
-  const contentEl = useRef(null);
 
   const onScroll = (e) => {
-    const { scrollStart, scrollEnd } = getScrollAttributes(
-      e,
-      contentEl.current.scrollWidth
-    );
+    const { scrollStart, scrollEnd } = getScrollAttributes(e, ref.current.scrollWidth);
     rafSchd(setIsAtScrollStart(scrollStart));
     rafSchd(setIsAtScrollEnd(scrollEnd));
   };
 
-  return [onScroll, contentEl, isAtScrollStart, isAtScrollEnd];
+  useEffect(() => {
+    ref.current.addEventListener('scroll', onScroll);
+    return () => {
+      ref.current.removeEventListener('scroll', onScroll);
+    };
+  }, [ref]);
+
+  return [isAtScrollStart, isAtScrollEnd];
 };
 
 export default useScrollAttributes;
