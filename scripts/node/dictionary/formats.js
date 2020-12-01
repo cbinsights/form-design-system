@@ -1,12 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const Handlebars = require('handlebars');
 const { toHsla } = require('./util/color');
 const { DICTIONARY_ROOT } = require('../constants');
 
-Handlebars.registerHelper('json', (c) => JSON.stringify(c, null, 2));
-const templatePath = path.resolve(DICTIONARY_ROOT, 'doc-template/index.hbs');
-const template = Handlebars.compile(fs.readFileSync(templatePath).toString());
+const lg = (msg) => { console.log(JSON.stringify(msg, null, 2)) }
 
 /**
  * @param {Array} props list of dictionary props
@@ -30,45 +27,6 @@ const jsComment = () =>
 
 /**
  * @param {Array} dictionary style-dictionary dictionary
- * @return {String} html file
- */
-const formatHtmlDoc = (dictionary) => {
-  const color = filterByCategory(dictionary.allProperties, 'color').map((p) => {
-    const { name, hex, rgb, hsl, varNames } = p.attributes;
-    return {
-      name,
-      varNames,
-      values: {
-        calculated: p.value,
-        hex,
-        rgba: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
-        hsla: toHsla(hsl),
-      }
-    };
-  });
-
-  const otherProps = dictionary.allProperties
-    .filter((p) => p.attributes.category !== 'color')
-    .map((p) => {
-      const { varNames, category } = p.attributes;
-      return {
-        varNames,
-        value: p.value,
-        attributes: { category },
-      };
-    });
-
-  return template({
-    color,
-    border: filterByCategory(otherProps, 'border'),
-    font: filterByCategory(otherProps, 'font'),
-    layout: filterByCategory(otherProps, 'layout'),
-    motion: filterByCategory(otherProps, 'motion'),
-  });
-};
-
-/**
- * @param {Array} dictionary style-dictionary dictionary
  * @returns {String} js file
  */
 const formatJSCustomProperties = (dictionary) =>
@@ -88,6 +46,51 @@ const formatCommonJs = (dictionary) =>
   dictionary.allProperties
     .map((prop) => `exports.${prop.name} = "${prop.value}";`)
     .join('\n');
+
+/**
+ * @param {Array} dictionary style-dicitonary dictionary
+ * @return {String} js file that exports objects by category
+ */
+const formatJsManifest = (dictionary) => {
+
+  // properties from color category get more detailed information
+  const colors = filterByCategory(dictionary.allProperties, 'color')
+    .map((p) => {
+      const { name, hex, rgb, hsl, varNames } = p.attributes;
+      return {
+        name,
+        varNames,
+        values: {
+          hex,
+          calculated: p.value,
+          rgba: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
+          hsla: toHsla(hsl),
+        },
+      };
+    });
+
+  // all other properties can just map to a simple varName/value/category arr
+  const otherProperties = dictionary.allProperties
+    .filter((p) => p.attributes.category !== 'color')
+    .map((p) => {
+      const { varNames, category } = p.attributes;
+      return {
+        varNames,
+        value: p.value,
+        attributes: { category },
+      }
+    });
+
+  const result = {
+    colors,
+    layouts: filterByCategory(otherProperties, 'layout'),
+    fonts: filterByCategory(otherProperties, 'font'),
+    borders: filterByCategory(otherProperties, 'border'),
+    motions: filterByCategory(otherProperties, 'motion'),
+  };
+
+  return `module.exports = ${JSON.stringify(result, null, 2)}`;
+};
 
 /**
  * @param {Object} filteredDictionary dictionary category-filtered by config
@@ -142,16 +145,16 @@ const formatRgbComponents = (filteredDictionary) =>
 // Custom formats
 module.exports = [
   {
-    name: 'html/doc',
-    formatter: formatHtmlDoc,
-  },
-  {
     name: 'js/customProperties',
     formatter: formatJSCustomProperties,
   },
   {
     name: 'javascript/commonJs',
     formatter: formatCommonJs,
+  },
+  {
+    name: 'javascript/manifest',
+    formatter: formatJsManifest,
   },
   {
     name: 'javascript/reactNativeColors',

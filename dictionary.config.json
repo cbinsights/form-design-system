@@ -95,20 +95,19 @@
       }]
     },
 
-    "docs": {
+    "JSManifest": {
       "transforms": [
         "attribute/cti",
         "attribute/color",
         "attribute/varNames",
         "color/css"
       ],
-      "buildPath": "./docs/dictionary/",
+      "buildPath": "./lib/dictionary/js/",
       "files": [{
         "filter": "excludeCustomMedia",
-        "destination": "index.stories.mdx",
-        "format": "html/doc"
-      }],
-      "actions": ["doc_assets"]
+        "destination": "manifest.js",
+        "format": "javascript/manifest"
+      }]
     }
 
   }

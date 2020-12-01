@@ -1,0 +1,137 @@
+import { Meta, Source, Story } from "@storybook/addon-docs/blocks";
+import ColorSwatch, { ColorSwatchWrapper } from "util/storybook-docs/ColorSwatch";
+import { TableLayout } from 'util/storybook-docs/Table';
+import { mostReadable } from 'tinycolor2';
+import { colors, layouts, fonts, borders, motions } from '../../lib/dictionary/js/manifest.js';
+
+export const mostReadableConfig = (hexName) =>
+  mostReadable(hexName, '#333', { includeFallbackColors: true, level: 'AA' });
+
+<Meta title="Design Tokens/Dictionary" />
+
+# Dictionary
+
+[I'm a developer: how do I use these values?](#usage-instructions)
+
+## Color
+
+<Story name="Color">
+  <ColorSwatchWrapper>
+    {colors.map(({ varNames, values }) => (
+      <ColorSwatch name={varNames.human} hex={values.hex} cssVar={varNames.css} jsVar={varNames.js} />
+    ))}
+  </ColorSwatchWrapper>
+</Story>
+
+## Layout
+
+<Story name="Layout">
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={layouts.map(({ varNames, value }) => ([
+      varNames.css,
+      varNames.js,
+      value,
+    ]))}
+  />
+</Story>
+
+## Font
+
+<Story name="Font">
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={fonts.map(({ varNames, value }) => ([ varNames.css, varNames.js, value ]))
+      .map(row => {
+        const generateFontValueCell = () => {
+          if (row[2].startsWith('rgba')){
+            return {
+              style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" },
+              className: "transparentpattern",
+              children: <div style={{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div>
+            }
+          } else if (row[2].startsWith('#')){
+            return {
+              style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" },
+              children: <div style={{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div>
+            }
+          } else if (row[1].startsWith('FONT_FAMILY')){
+            return {
+              children: <div style={{ fontFamily: row[2] }}>{row[2]}</div>
+            }
+          } else if (row[1].startsWith('FONT_SIZE')){
+            return {
+              children: <div style={{ fontSize: row[2] }}>{row[2]}</div>
+            }
+          } else if (row[1].startsWith('FONT_WEIGHT')){
+            return {
+              children: <div style={{ fontWeight: row[2] }}>{row[2]}</div>
+            }
+          } else {
+            return row[2]
+          }
+        }
+        return [
+          row[0],
+          row[1],
+          generateFontValueCell(),
+        ];
+      })
+    }
+  />
+</Story>
+
+## Border
+
+<Story name="Border">
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={borders.map(({ varNames, value }) => ([ varNames.css, varNames.js, value]))
+      .map(row => {
+        const generateBorderValueCell = () => {
+          if (row[2].startsWith('rgba')){
+            return {
+              style: { padding: 0, color: mostReadableConfig(row[2]), height: "1px" },
+              className: "transparentpattern",
+              children: <div style={{ height: "100%", padding: "16px", cursor: "pointer", backgroundColor: row[2] }}>{row[2]}</div>
+            }
+          }
+          return row[2]
+        }
+        return [
+          row[0],
+          row[1],
+          generateBorderValueCell()
+        ];
+      })
+    }
+  />
+</Story>
+
+## Motion
+
+<Story name="Motion">
+  <TableLayout
+    shrinkLastColumn
+    headers={['CSS VAR', 'JS VAR', 'VALUE']}
+    rows={motions.map(({ varNames, value }) => ([
+      varNames.css,
+      varNames.js,
+      value,
+    ]))}
+  />
+</Story>
+
+### Usage Instructions
+
+```
+// JS
+import FDS from '@cbinsights/fds/lib/dictionary/js/styleConstants'
+<span style={{ color: FDS.COLOR_MINT }} />
+
+// CSS
+.foo { color: var(--color-mint) }
+```
