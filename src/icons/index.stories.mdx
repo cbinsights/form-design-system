@@ -1,0 +1,103 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import useClipboard from 'util/storybook-docs/useClipboard';
+import useToggleHover from 'util/storybook-docs/useToggleHover';
+import State from 'util/storybook-docs/State';
+import Flex from 'components/Flex';
+import FlexItem from 'components/FlexItem';
+import cx from 'classnames';
+import { TableLayout } from 'util/storybook-docs/Table';
+import manifest from '../../lib/icons/iconManifest.js';
+
+export const importPath = iconName => (
+  `import ${iconName}Icon from '@cbinsights/fds/lib/icons/react/${iconName}Icon';`
+);
+
+export const Icon = ({ name, svg, size }) => {
+  const [copiedText, copyToClipboard] = useClipboard();
+  const [isHovered, toggleHover] = useToggleHover();
+  return (
+    <li>
+      <div
+        onClick={() => copyToClipboard(importPath(name))}
+        className={cx('rounded--all', {
+            'elevation--1': isHovered,
+        })}
+        onMouseEnter={toggleHover}
+        onMouseLeave={toggleHover}
+      >
+        <div
+          className={`iconSize--${size}`}
+          dangerouslySetInnerHTML={{ __html: svg }}
+        />
+        <span
+          className={cx("copyNotice", { 'display--block': isHovered })}
+        >
+          {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
+        </span>
+        <p className="wrap--singleLine--truncate type--data">{name}</p>
+      </div>
+    </li>
+  )
+}
+
+<Meta title="Icons/Icons" />
+
+# Icons
+
+We use an icon library designed in house, by our friendly neighborhood design team. The
+original sketch file is maintained in Abstract.
+
+## SVG
+
+FDS provides all icons shown on this page as optimized SVG files <a href="https://unpkg.com/browse/@cbinsights/fds/lib/icons/svg/">here</a>.
+
+## PNG
+
+For mobile applications, FDS provides scaled PNG images for all icons <a href="https://unpkg.com/browse/@cbinsights/fds/lib/icons/png/">here</a>
+
+## React
+
+Whenever possible, we recommend using the React components distribution to render icons.
+
+<TableLayout
+  headers={['Prop', 'Type', 'Default', 'Description']}
+  rows={[
+      ['`color`', '`String`', '`COLOR_CHARCOAL`', 'Color of `fill` for SVG'],
+      ['`size`', 'One of: `\'xs\' | \'s\' | \'m\' | \'l\' | \'xl\'`', 's', 'Standard media size of icon'],
+      ['`customSize`', '`Number`', '`-`', 'Sets a non-standard size for the icon. Prefer using the size prop.'],
+  ]}
+/>
+
+<State
+  initialValue="l"
+  render={(size, setSize) => (
+    <section>
+      <div className="bgColor--haze padding--y--s padding--x--m rounded--all">
+        <Flex>
+          <FlexItem align="center">
+            Click on an icon below to copy the React component import statement
+          </FlexItem>
+          <FlexItem align="center" shrink>
+            <div className="border--left padding--left">
+              <label className="type--data flush--bottom display--inlineBlock padding--right--s" htmlFor="size">Size</label>
+              <select
+                name="size"
+                value={size}
+                onChange={(e) => {setSize(e.target.value)}}
+              >
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+              </select>
+            </div>
+          </FlexItem>
+        </Flex>
+      </div>
+      <ul className="resetList iconList">
+        {manifest.map(({name, svg}) => <Icon name={name} svg={svg} size={size} />)}
+      </ul>
+    </section>
+  )}
+/>
