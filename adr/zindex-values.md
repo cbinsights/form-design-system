@@ -59,10 +59,3 @@ Use modal z-index for shims, popovers, and modals. To control stacking between t
 #### Crazy
 
 Use crazy for the unexpected situations where you know something should go above everything else. This ideally would never need to be used but is there as an escape hatch and for debugging purposes even.
-
-### For standard values, continue using increments of `10`
-
-For base stacking context, standard values are most helpful at increments of 10 because it
-gives engineers flexibility to insert layers between defined stack levels. For example:
-
-
