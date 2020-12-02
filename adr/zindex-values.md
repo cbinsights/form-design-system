@@ -19,7 +19,7 @@ We've decided to go with a 2 tier approach:
 - Use pre-defined z-index values & ranges that are defined in FDS.
 - Use values between `1` and `9` for fine layering control (usualy when pre-defined z-index
 values are not useful)
-
+- Rely on DOM order to set stacking order for elements of the same `z-index` (for example, a popover menu within a modal)
 
 ### Use values between `1` and `9` for fine layering control
 
@@ -64,6 +64,5 @@ Use crazy for the unexpected situations where you know something should go above
 
 For base stacking context, standard values are most helpful at increments of 10 because it
 gives engineers flexibility to insert layers between defined stack levels. For example:
-
 
 
