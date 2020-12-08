@@ -68,3 +68,32 @@ Sets background of an element to a linear gradient simulating a fade effect.
     />
   </>
 </Story>
+
+## Horizontal Fade gradients
+Gradients useful for adding fades to scrolling containers. Both can be used simultaneously.
+
+<Story name="Horizontal Fade gradients">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description', 'sample']}
+      rows={[
+        ['horizontalFade--left--white', 'Adds white fade to left side'],
+        ['horizontalFade--right--white', 'Adds white fade to right side'],
+      ].map(row => [
+        row[0],
+        row[1],
+        { 
+          className: 'transparentpattern',
+          style: {
+            display: "inline-flex",
+            boxSizing: "border-box",
+            width: "100%",
+            padding: 0
+          },
+          children: <div className={row[0]} style={{ width: "100%", height: "52px" }} />
+        },
+      ])}
+    />
+  </>
+</Story>

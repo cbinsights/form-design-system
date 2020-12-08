@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.20] Added horizontalfade classes
+
+- Added horizontalFade--right--white and horizontalFade--left--white classes.
+
 ## [9.19] Added useScrollAttributes hook
 
 - Added useScrollAttributes hook to return 2 booleans for if scroll is at the left or right, respectively

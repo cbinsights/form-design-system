@@ -63,3 +63,31 @@ Signature: `bgFade--<direction>--<color>`
   background-image: linear-gradient(to right, var(--color-haze), rgba(var(--rgb-haze), 0));
 }
 
+/* ==============================================
+   horizontal fades used explicitly for scrolling
+   ============================================== */
+.horizontalFade--left--white,
+.horizontalFade--white--right {
+  position: relative;
+}
+
+.horizontalFade--right--white::after {
+  background-image: linear-gradient(to left, var(--color-white), rgba(var(--rgb-white), 0));
+  right: 0;
+}
+
+.horizontalFade--left--white::before {
+  background-image: linear-gradient(to right, var(--color-white), rgba(var(--rgb-white), 0));
+  left: 0;
+}
+
+.horizontalFade--left--white::before,
+.horizontalFade--right--white::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--space-default);
+  z-index: 1;
+}
