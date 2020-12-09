@@ -40,6 +40,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 #### Removed components
 - `HScroll` (use fade classes + useScrollAttributes hook)
+- `GapList` (use FDS classes instead for spacing, border)
 
 ## [9.19] Added useScrollAttributes hook
 
