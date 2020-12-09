@@ -38,6 +38,16 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### Component reorganization
 - bgFade classes are removed
 
+#### Double and Half spacing removed
+- classes, css variables, and js variables all updated
+- upgrade guide: 
+  - `half` (8px) maps to `s` (8px)
+  - `double` (32px) maps to `xl` (32px)
+- Examples:
+  - CSS Variable: { margin: var(--space-half) } becomes { margin: var(--space-half) }
+  - JS Variable: FDS.SPACE_DOUBLE becomes FDS.SPACE_XL 
+  - classes: .margin--top--half .becomes margin--top--s
+
 #### Removed components
 - `HScroll` (use fade classes + useScrollAttributes hook)
 
