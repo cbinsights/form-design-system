@@ -47,12 +47,12 @@ input[type="tel"],
 input[type="file"] {
   box-sizing: border-box;
   display: inline-block;
-  padding: 4px var(--space-half);
+  padding: 4px var(--space-s);
   border-radius: 4px;
   border: 1px solid var(--border-color-input);
   background: var(--color-white);
-  min-width: var(--space-double);
-  min-height: var(--space-double);
+  min-width: var(--space-xl);
+  min-height: var(--space-xl);
   color: var(--font-color-primary);
 }
 
@@ -86,7 +86,7 @@ select {
   appearance: menulist;
   -moz-appearance: menulist;
   -webkit-appearance: menulist;
-  height: var(--space-double);
+  height: var(--space-xl);
 }
 
 /* Safari Only */
@@ -99,13 +99,13 @@ select {
 }
 
 option {
-  min-height: var(--space-double);
+  min-height: var(--space-xl);
 }
 
 textarea {
   vertical-align: top;
-  padding: var(--space-half);
-  min-height: calc(var(--space-double) * 2);
+  padding: var(--space-s);
+  min-height: calc(var(--space-xl) * 2);
 }
 
 input[type="seach"] {

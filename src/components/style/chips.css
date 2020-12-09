@@ -30,7 +30,7 @@
 .fdsChip-subtitle {
   display: inline-block;
   vertical-align: middle;
-  padding-left: var(--space-half);
+  padding-left: var(--space-s);
   font-size: var(--font-size-xs);
 }
 
@@ -109,7 +109,7 @@
 }
 
 .fdsChip--m .fdsChip-close {
-  margin-left: var(--space-half);
+  margin-left: var(--space-s);
   margin-right: -4px;
 }
 

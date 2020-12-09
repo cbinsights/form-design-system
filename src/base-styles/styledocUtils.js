@@ -58,37 +58,37 @@ export const Headers = () => (
 export const Typesetting = ({ isInverted }) => (
   <div className={isInverted && 'inverted bgColor--navy padding--all'}>
     <div style={typeStyle}>type--head1</div>
-    <div className="type--head1 margin--bottom--half">
+    <div className="type--head1 margin--bottom--s">
       Sphinx of black quartz, judge my vow
     </div>
     <div style={typeStyle}>type--head2</div>
-    <div className="type--head2 margin--bottom--half">
+    <div className="type--head2 margin--bottom--s">
       Sphinx of black quartz, judge my vow
     </div>
     <div style={typeStyle}>type--head3</div>
-    <div className="type--head3 margin--bottom--half">
+    <div className="type--head3 margin--bottom--s">
       Sphinx of black quartz, judge my vow
     </div>
     <div style={typeStyle}>type--head4</div>
-    <div className="type--head4 margin--bottom--half">
+    <div className="type--head4 margin--bottom--s">
       Sphinx of black quartz, judge my vow
     </div>
     <div style={typeStyle}>type--big</div>
-    <div className="type--big margin--bottom--half">
+    <div className="type--big margin--bottom--s">
       Sphinx of black quartz, judge my vow
     </div>
     <div style={typeStyle}>type--data</div>
-    <div className="type--data margin--bottom--half">
+    <div className="type--data margin--bottom--s">
       Sphinx of black quartz, judge my vow
     </div>
     <div style={typeStyle}>type--caption</div>
-    <div className="type--caption margin--bottom--half">
+    <div className="type--caption margin--bottom--s">
       Sphinx of black quartz, judge my vow
     </div>
     <div>
       <span style={typeStyle}>type--link </span> (anchor)
     </div>
-    <a className="type--link margin--bottom--half display--block" href="#">
+    <a className="type--link margin--bottom--s display--block" href="#">
       Go to Homepage
     </a>
   </div>

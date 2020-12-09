@@ -17,6 +17,6 @@
 
 .fdsBadge--s {
   font-size: var(--font-size-s);
-  padding: var(--border-radius-default) var(--space-half);
+  padding: var(--border-radius-default) var(--space-s);
   border-radius: var(--border-radius-default);
 }

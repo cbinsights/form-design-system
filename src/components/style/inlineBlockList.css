@@ -5,7 +5,7 @@
 
 /* spacing */
 .fdsInlineBlockList li {
-  margin-right: var(--space-half);
+  margin-right: var(--space-s);
 }
 
 .fdsInlineBlockList li:last-child {
@@ -15,7 +15,7 @@
 /* separators */
 .fdsInlineBlockList--separators li::after {
   content: attr(data-separator);
-  margin-left: var(--space-half);
+  margin-left: var(--space-s);
   color: var(--font-color-secondary);
 }
 

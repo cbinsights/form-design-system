@@ -19,8 +19,8 @@ body {
 
 .toaster {
   position: fixed;
-  bottom: var(--space-double);
-  left: var(--space-double);
+  bottom: var(--space-xl);
+  left: var(--space-xl);
   z-index: var(--zindex-modal);
 }
 

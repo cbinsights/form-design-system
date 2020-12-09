@@ -15,7 +15,7 @@
 }
 
 .toast-content {
-  padding: calc(var(--space-half) / 2) var(--space-default);
+  padding: calc(var(--space-s) / 2) var(--space-default);
   min-height: 40px;
 }
 

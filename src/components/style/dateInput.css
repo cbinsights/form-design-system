@@ -22,7 +22,7 @@
   position: absolute;
   height: var(--fdsDateInput-control-height);
   top: 12px;
-  right: var(--space-half);
+  right: var(--space-s);
 }
 
 .fdsDateInput .DayPicker-wrapper {
@@ -30,9 +30,9 @@
 }
 
 .fdsDateInput .DayPicker-Caption {
-  padding-top: var(--space-half);
+  padding-top: var(--space-s);
   margin: -8px;
-  margin-bottom: var(--space-half);
+  margin-bottom: var(--space-s);
 }
 
 .fdsDateInput select {
@@ -47,12 +47,12 @@
 
 .fdsDateInput .DayPicker-Months {
   display: block; /* disables flexbox centering of month box */
-  padding: var(--space-half);
+  padding: var(--space-s);
 }
 
 .fdsDateInput .DayPicker-Day {
   line-height: 1;
-  padding: var(--space-half);
+  padding: var(--space-s);
 }
 
 .fdsDateInput .DayPicker-Day--outside {
