@@ -11,7 +11,6 @@ import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import FloatingAction from 'components/FloatingAction';
 import GapList from 'components/GapList';
-import Hscroll from 'components/Hscroll';
 import IconButton from 'components/IconButton';
 import Indicator from 'components/Indicator';
 import InputGroup from 'components/InputGroup';
@@ -42,7 +41,6 @@ export {
   FlexItem,
   FloatingAction,
   GapList,
-  Hscroll,
   IconButton,
   Indicator,
   InputGroup,
