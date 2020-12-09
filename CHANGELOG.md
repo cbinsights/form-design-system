@@ -27,6 +27,17 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [10.0] MAJOR
+
+### Changes / Additions
+
+-  Fade classes added, which work via pseudo elements and support using multiple at a time
+
+### **BREAKING CHANGES**
+
+#### Component reorganization
+- bgFade classes are removed
+
 ## [9.19] Added useScrollAttributes hook
 
 - Added useScrollAttributes hook to return 2 booleans for if scroll is at the left or right, respectively

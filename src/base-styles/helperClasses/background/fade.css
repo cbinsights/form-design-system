@@ -30,36 +30,86 @@ Signature: `bgFade--<direction>--<color>`
 */
 
 /* white */
-.bgFade--top--white {
+.fade--top--white::before {
   background-image: linear-gradient(to bottom, var(--color-white), rgba(var(--rgb-white), 0));
+  top: 0;
 }
 
-.bgFade--right--white {
+.fade--right--white::after {
   background-image: linear-gradient(to left, var(--color-white), rgba(var(--rgb-white), 0));
+  right: 0;
 }
 
-.bgFade--bottom--white {
+.fade--bottom--white::after {
   background-image: linear-gradient(to top, var(--color-white), rgba(var(--rgb-white), 0));
+  bottom: 0;
 }
 
-.bgFade--left--white {
+.fade--left--white::before {
   background-image: linear-gradient(to right, var(--color-white), rgba(var(--rgb-white), 0));
+  left: 0;
 }
 
 /* haze */
-.bgFade--top--haze {
+.fade--top--haze::before {
   background-image: linear-gradient(to bottom, var(--color-haze), rgba(var(--rgb-haze), 0));
+  top: 0;
 }
 
-.bgFade--right--haze {
+.fade--right--haze::after {
   background-image: linear-gradient(to left, var(--color-haze), rgba(var(--rgb-haze), 0));
+  right: 0;
 }
 
-.bgFade--bottom--haze {
+.fade--bottom--haze::after {
   background-image: linear-gradient(to top, var(--color-haze), rgba(var(--rgb-haze), 0));
+  bottom: 0;
 }
 
-.bgFade--left--haze {
+.fade--left--haze::before {
   background-image: linear-gradient(to right, var(--color-haze), rgba(var(--rgb-haze), 0));
+  left: 0;
 }
 
+.fade--left--white::before,
+.fade--right--white::after,
+.fade--top--white::before,
+.fade--bottom--white::after,
+.fade--left--haze::before,
+.fade--right--haze::after,
+.fade--top--haze::before,
+.fade--bottom--haze::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+.fade--left--white,
+.fade--right--white,
+.fade--top--white,
+.fade--bottom--white,
+.fade--left--haze,
+.fade--right--haze,
+.fade--top--haze,
+.fade--bottom--haze {
+  position: relative;
+}
+
+.fade--left--white::before,
+.fade--right--white::after,
+.fade--left--haze::before,
+.fade--right--haze::after {
+  top: 0;
+  bottom: 0;
+  width: var(--space-default);
+}
+
+.fade--top--white::before,
+.fade--bottom--white::after,
+.fade--top--haze::before,
+.fade--bottom--haze::after {
+  left: 0;
+  right: 0;
+  height: var(--space-default);
+}
