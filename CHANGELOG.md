@@ -38,6 +38,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### Component reorganization
 - bgFade classes are removed
 
+#### Removed components
+- `HScroll` (use fade classes + useScrollAttributes hook)
+
 ## [9.19] Added useScrollAttributes hook
 
 - Added useScrollAttributes hook to return 2 booleans for if scroll is at the left or right, respectively
