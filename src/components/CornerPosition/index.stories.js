@@ -38,7 +38,7 @@ export default {
     docs: {
       description: {
         component:
-          'Takes a node for children, and absolutely positions a decoration you pass in the top right of it. Works great with `<Badge />`.',
+          'Takes a node, and absolutely positions a decoration you pass in the top right of that node. Works great with `<Badge />`.',
       },
     },
   },
