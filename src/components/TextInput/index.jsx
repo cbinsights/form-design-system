@@ -1,19 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { throttle, debounce } from 'throttle-debounce';
 import cc from 'classcat';
+import useOnThrottledChange from 'hooks/useOnThrottledChange';
 import IconInput from './IconInput';
 import DecoratedInput from './DecoratedInput';
 
 export const throttleValue = 500;
-
-export const throttleInput = (input, throttleFn, debounceFn) => {
-  if (input.length < 5 || input.endsWith(' ')) {
-    throttleFn(input);
-  } else {
-    debounceFn(input);
-  }
-};
 
 const TextInput = React.forwardRef(
   (
@@ -38,32 +30,7 @@ const TextInput = React.forwardRef(
     },
     ref
   ) => {
-    // Refer to the following for an explanation on
-    // the throttling / debouncing approach:
-    // https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-in-react
-    let onThrottledChangeThrottled;
-    let onThrottledChangeDebounced;
-
-    const assignThrottleFunctions = () => {
-      if (onThrottledChange) {
-        onThrottledChangeThrottled = throttle(throttleValue, onThrottledChange);
-        onThrottledChangeDebounced = debounce(throttleValue, onThrottledChange);
-      }
-    };
-
-    const inputOnChange = (e) => {
-      e.persist();
-      onChange(e);
-      if (onThrottledChange) {
-        throttleInput(
-          e.target.value,
-          onThrottledChangeThrottled,
-          onThrottledChangeDebounced
-        );
-      }
-    };
-
-    useEffect(assignThrottleFunctions, [onThrottledChange]);
+    const [inputOnChange] = useOnThrottledChange(onChange, onThrottledChange);
 
     const Element = showLabel ? 'label' : 'div';
 
