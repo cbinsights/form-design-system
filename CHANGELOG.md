@@ -41,9 +41,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### Component reorganization
 - bgFade classes are removed
 
+### CornerPosition component
+- `CornerPosition` component added to help decorate nodes
+
 #### Removed components
 - `HScroll` (use fade classes + useScrollAttributes hook)
 - `GapList` (use FDS classes instead for spacing, border)
+- `Updatable` (use `CornerPosition` component + Badge instead)
 
 ## [9.19] Added useScrollAttributes hook
 
