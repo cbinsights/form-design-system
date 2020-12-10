@@ -19,7 +19,6 @@ const TEMPLATE = require('handlebars').compile(
  */
 const writeComponent = async (filepath) => {
   const componentName = getComponentName(filepath);
-  console.info(`Creating ${componentName}.jsx`);
 
   await toJsx(fs.readFileSync(filepath))
     .then((jsx) => {
