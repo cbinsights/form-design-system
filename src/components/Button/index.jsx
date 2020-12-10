@@ -84,7 +84,7 @@ const Button = forwardRef(
           'transition--default',
           `fdsButton--${size}`,
           `fdsButton--${theme}`,
-          `margin--${margin}`,
+          ...(margin ? [`margin--${margin}`] : []),
         ])}
         disabled={disabled && Element === 'button'}
       >
@@ -152,7 +152,7 @@ Button.propTypes = {
   Link: PropTypes.func,
   /** Extend click radius of button to nearest relative parent */
   isBreakoutLink: PropTypes.bool,
-  /** Allows specifying a margin class value. all--y, top--xl, etc */
+  /** Allows specifying a margin class value. all-y, top-xl, etc */
   margin(props, propName) {
     // This will be split out into a reusable function the moment we
     // would like to use this elsewhere.
