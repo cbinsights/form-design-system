@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { throttle, debounce } from 'throttle-debounce';
 
+// the throttling / debouncing approach:
 export const throttleValue = 500;
 
 export const throttleInput = (input, throttleFn, debounceFn) => {
@@ -14,7 +15,7 @@ export const throttleInput = (input, throttleFn, debounceFn) => {
 let onThrottledChangeThrottled;
 let onThrottledChangeDebounced;
 
-const useOnThrottledChange = (onChange, onThrottledChange) => {
+const useOnThrottledChange = (onThrottledChange, onChange = () => {}) => {
   const assignThrottleFunctions = () => {
     if (onThrottledChange) {
       onThrottledChangeThrottled = throttle(throttleValue, onThrottledChange);

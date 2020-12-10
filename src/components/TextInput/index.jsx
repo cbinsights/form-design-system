@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
-import useOnThrottledChange from 'hooks/useOnThrottledChange';
 import IconInput from './IconInput';
 import DecoratedInput from './DecoratedInput';
-
-export const throttleValue = 500;
 
 const TextInput = React.forwardRef(
   (
@@ -16,7 +13,6 @@ const TextInput = React.forwardRef(
       labelPosition = 'top',
       errorText,
       hasError,
-      onThrottledChange,
       showRequired,
       showLabel = true,
       onChange = () => {},
@@ -30,8 +26,6 @@ const TextInput = React.forwardRef(
     },
     ref
   ) => {
-    const [inputOnChange] = useOnThrottledChange(onChange, onThrottledChange);
-
     const Element = showLabel ? 'label' : 'div';
 
     return (
@@ -64,7 +58,7 @@ const TextInput = React.forwardRef(
                 ref={ref}
                 aria-label={ariaLabel || (showLabel ? label : undefined)}
                 aria-invalid={errorText || hasError ? true : undefined}
-                onChange={inputOnChange}
+                onChange={onChange}
                 type={type}
                 className={cc([
                   {
@@ -117,9 +111,6 @@ TextInput.propTypes = {
 
   /** Standard React onChange event */
   onChange: PropTypes.func,
-
-  /** Custom onChange event that throttles / debounces. */
-  onThrottledChange: PropTypes.func,
 
   /** String to place to the left of the input. Not a substitute for a label! */
   before: PropTypes.string,

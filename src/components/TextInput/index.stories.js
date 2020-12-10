@@ -66,6 +66,17 @@ export const Icons = (args) => (
   />
 );
 
+export const Throttled = (args) => (
+  <TextInput
+    {...args}
+    label="Icons"
+    showLabel={false}
+    IconLeft={CaretDownIcon}
+    IconRight={CaretDownIcon}
+    onThrottledChange={action('changed')}
+  />
+);
+
 export const sideLabel = (args) => (
   <TextInput
     {...args}
