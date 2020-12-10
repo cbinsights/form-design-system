@@ -8,6 +8,7 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
   <ForwardRef(TippyWrapper)
     appendTo={<body />}
     arrow={false}
+    className="bgColor--charcoal inverted align--center padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold"
     content="lol"
     delay={
       Array [
@@ -18,11 +19,13 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
     maxWidth={240}
     moveTransition="transform 0.2s ease-out"
     placement="bottom"
+    theme="tooltip"
     zIndex="20"
   >
     <Tippy
       appendTo={<body />}
       arrow={false}
+      className="bgColor--charcoal inverted align--center padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold"
       content="lol"
       delay={
         Array [
@@ -33,6 +36,7 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
       maxWidth={240}
       moveTransition="transform 0.2s ease-out"
       placement="bottom"
+      theme="tooltip"
       zIndex="20"
     >
       <Trigger>
