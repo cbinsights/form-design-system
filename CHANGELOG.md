@@ -35,6 +35,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
+#### Tooltip component
+- `trigger` MUST be able to receive focus now
+
 #### Component reorganization
 - bgFade classes are removed
 
