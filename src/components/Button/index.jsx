@@ -73,6 +73,7 @@ const Button = forwardRef(
             'fdsButton--disabled': disabled,
             'fdsButton--isFullWidth': isFullWidth,
             'fdsButton--isActive': isActive && !disabled,
+            [`margin--${margin}`]: margin,
             breakoutLink: isBreakoutLink,
           },
           'fdsButton',
@@ -84,7 +85,6 @@ const Button = forwardRef(
           'transition--default',
           `fdsButton--${size}`,
           `fdsButton--${theme}`,
-          ...(margin ? [`margin--${margin}`] : []),
         ])}
         disabled={disabled && Element === 'button'}
       >
@@ -152,7 +152,7 @@ Button.propTypes = {
   Link: PropTypes.func,
   /** Extend click radius of button to nearest relative parent */
   isBreakoutLink: PropTypes.bool,
-  /** Allows specifying a margin class value. all-y, top-xl, etc */
+  /** Allows specifying a margin class value. all--y, top--xl, etc */
   margin(props, propName) {
     // This will be split out into a reusable function the moment we
     // would like to use this elsewhere.
@@ -177,7 +177,7 @@ Button.propTypes = {
     };
 
     if (marginValue) {
-      const split = marginValue.split('-');
+      const split = marginValue.split('--');
       // If the first part of the split class is not a direction, it's an invalid value.
       if (!directions[split[0]]) {
         return new Error(`Invalid margin (no valid direction detected)`);
@@ -189,7 +189,7 @@ Button.propTypes = {
           return new Error(`Invalid margin value (no valid value detected)`);
         }
       }
-      // There should only be a single hyphen in the value they pass else it's wrong
+      // There should only be a single double hyphen in the value they pass else it's wrong
       if (split[2]) {
         return new Error(`Invalid margin value (should only be a single hyphen)`);
       }
