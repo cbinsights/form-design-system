@@ -29,7 +29,7 @@ module.exports = {
     react: {
       src: `${ICONS_ROOT}/svg`,
       lib: `${PATH_ICONS_LIB}/react`,
-      template: `${ICONS_ROOT}/templates/withFdsIconWrapper.jsx`,
+      template: `${ICONS_ROOT}/templates/reactComponent.hbs`,
     },
     docs: {
       input: `${PATH_ICONS_LIB}/svg`, // used to build manifest of svg strings

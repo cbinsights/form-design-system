@@ -1,0 +1,28 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const {{componentName}} = ({
+  size = 's',
+  color,
+  customSize
+}) => (
+  <div
+    className={`fds-icon fds-icon--${size}`}
+    style=\{{
+      fill: color,
+      width: customSize && `${customSize}px`,
+      height: customSize && `${customSize}px`,
+    \}}
+  >
+    {{{svg}}}
+  </div>
+);
+
+{{componentName}}.propTypes = {
+  color: PropTypes.string,
+  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
+  customSize: PropTypes.number,
+};
+
+export default {{componentName}};
+
