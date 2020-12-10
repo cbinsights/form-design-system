@@ -2,6 +2,7 @@ import React from 'react';
 import State from 'util/storybook-docs/State';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
+import WorldIcon from 'lib/icons/react/WorldIcon';
 import Button, { THEMES, SIZES } from '.';
 
 const Template = (args) => <Button label="Button" {...args} />;
@@ -149,7 +150,7 @@ FullWidth.args = {
 export const Icons = () => (
   <StoryWrapper>
     <StoryItem>
-      <Button IconLeft={StarFilledIcon} label="Button" />
+      <Button IconLeft={WorldIcon} label="Button" />
     </StoryItem>
     <StoryItem>
       <Button IconRight={StarFilledIcon} label="Button" />
