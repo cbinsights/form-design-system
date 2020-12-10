@@ -1,27 +1,22 @@
-.fds-indicatorWrapper {
-  width: 100%;
-  height: 100%;
+.fdsIndicator {
+  font-family: var(--font-family-default);
+  line-height: var(--font-lineHeight-bigText);
+  font-weight: var(--font-weight-bold);
+  color: rgba(var(--rgb-navy, inherit), 0.6);
+  background-color: rgba(var(--rgb-navy, inherit), 0.08);
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.fds-indicator {
-  border-radius: var(--space-l);
-  height: var(--space-default);
-  border: 1px solid;
+.fdsIndicator--xs {
+  font-size: var(--font-size-xs);
+  padding: 2px 4px;
+  border-radius: 2px;
 }
 
-/* specificity fix for border utility class */
-/* follow up with: UIP-994 */
-.fds-indicator.border--none {
-  border-width: 0;
+.fdsIndicator--s {
+  font-size: var(--font-size-s);
+  padding: var(--border-radius-default) var(--space-half);
+  border-radius: var(--border-radius-default);
 }
-
-.fds-indicator--dot {
-  padding: 0;
-  height: 11px;
-  width: 11px;
-}
-
-.fds-indicator-label {
-  max-width: var(--media-xl);
-}
-

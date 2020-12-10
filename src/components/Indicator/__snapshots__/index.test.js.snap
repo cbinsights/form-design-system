@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Indicator component matches snapshot (default props) 1`] = `
+<div
+  className="fdsIndicator wrap--singleLine fdsIndicator--s"
+>
+  badge
+</div>
+`;
+
+exports[`Indicator component matches snapshot (set all props) 1`] = `
+<div
+  className="fdsIndicator wrap--singleLine fdsIndicator--xs"
+  data-test="test"
+>
+  badge
+</div>
+`;
