@@ -3,22 +3,17 @@ import PropTypes from 'prop-types';
 import FDS from 'lib/dictionary/js/styleConstants';
 import Tippy from '@tippyjs/react';
 
-export const DEFAULT_WIDTH = 240;
-export const DELAY_MS = 350;
-export const DEFAULT_POSITION = 'bottom';
-export const VALID_TEXT_ALIGN = ['left', 'center', 'right'];
-
 const Tooltip = ({
-  position = DEFAULT_POSITION,
   trigger,
   message,
-  maxWidth = DEFAULT_WIDTH,
+  position = 'bottom',
+  maxWidth = 240,
   textAlign = 'center',
 }) => (
   <Tippy
     arrow={false}
     theme="tooltip"
-    delay={[DELAY_MS, 0]}
+    delay={[350, 0]}
     maxWidth={maxWidth}
     content={message}
     placement={position}
