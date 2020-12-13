@@ -32,12 +32,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ### Changes / Additions
 
 -  Fade classes added, which work via pseudo elements and support using multiple at a time
-- Added `useOnThrottledChange` hook.
 
 ### **BREAKING CHANGES**
 
 ### TextInput component
-- onThrottledChange has been removed (in favor of useOnThrottledChange hook)
+- onThrottledChange has been removed
 
 #### Tooltip component
 - `trigger` MUST be able to receive focus now
