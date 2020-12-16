@@ -191,7 +191,7 @@ Button.propTypes = {
       }
       // There should only be a single double hyphen in the value they pass else it's wrong
       if (split[2]) {
-        return new Error(`Invalid margin value (should only be a single hyphen)`);
+        return new Error(`Found more than one double hyphen ('--') in margin prop`);
       }
     }
     return null;
