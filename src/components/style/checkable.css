@@ -20,6 +20,7 @@
 }
 
 .fdsCheckable label {
+  /* contains checkbox icon and text label */
   display: inline-flex;
 }
 
