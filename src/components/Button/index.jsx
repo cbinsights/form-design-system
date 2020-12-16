@@ -156,7 +156,7 @@ Button.propTypes = {
   margin(props, propName) {
     // This will be split out into a reusable function the moment we
     // would like to use this elsewhere.
-    const marginValue = props[propName];
+    const marginSuffix = props[propName];
 
     const directions = {
       all: true,
@@ -176,22 +176,28 @@ Button.propTypes = {
       xl: true,
     };
 
-    if (marginValue) {
-      const split = marginValue.split('--');
+    if (marginSuffix) {
+      const split = marginSuffix.split('--');
+      const marginDirection = split[0];
+      const marginAmount = split[1];
+      const invalidRunoff = split[2];
       // If the first part of the split class is not a direction, it's an invalid value.
-      if (!directions[split[0]]) {
-        return new Error(`Invalid margin (no valid direction detected)`);
+      if (!directions[marginDirection]) {
+        return new Error(
+          `Invalid margin (no valid direction detected, or malformed suffix)`
+        );
       }
       // If there happens to be an amount (which is optional)
-      if (split[1]) {
+      if (marginAmount) {
         // If a standard amount isn't detected, the class is invalid
-        if (!amounts[split[1]]) {
+        if (!amounts[marginAmount]) {
           return new Error(`Invalid margin value (no valid value detected)`);
         }
-      }
-      // There should only be a single double hyphen in the value they pass else it's wrong
-      if (split[2]) {
-        return new Error(`Found more than one double hyphen ('--') in margin prop`);
+
+        // There should only be a single double hyphen in the value they pass else it's wrong
+        if (invalidRunoff) {
+          return new Error(`Found more than one double hyphen ('--') in margin prop`);
+        }
       }
     }
     return null;
