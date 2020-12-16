@@ -31,7 +31,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### Changes / Additions
 
--  Fade classes added, which work via pseudo elements and support using multiple at a time
+- Fade classes added, which work via pseudo elements and support using multiple at a time
+- FDS Button now has support for adding margins.
 
 ### **BREAKING CHANGES**
 
@@ -44,7 +45,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
   - `half` (8px) maps to `s` (8px)
   - `double` (32px) maps to `xl` (32px)
 - Examples:
-  - CSS Variable: { margin: var(--space-half) } becomes { margin: var(--space-half) }
+  - CSS Variable: { margin: var(--space-half) } becomes { margin: var(--space-s) }
   - JS Variable: FDS.SPACE_DOUBLE becomes FDS.SPACE_XL 
   - classes: .margin--top--half .becomes margin--top--s
 
