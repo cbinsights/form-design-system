@@ -16,5 +16,5 @@
 
 .fdsTextInput-root--leftLabel .fdsTextInput-label {
   order: -1;
-  margin-right: var(--space-half);
+  margin-right: var(--space-s);
 }

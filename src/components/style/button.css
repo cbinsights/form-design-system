@@ -267,11 +267,11 @@
 }
 
 .fdsButton--m .fdsButton-icon--left {
-  margin-right: var(--space-half);
+  margin-right: var(--space-s);
 }
 
 .fdsButton--m .fdsButton-icon--right {
-  margin-left: var(--space-half);
+  margin-left: var(--space-s);
 }
 
 .fdsButton--s .fdsButton-icon--left {

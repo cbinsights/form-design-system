@@ -93,7 +93,7 @@ const Button = forwardRef(
           </span>
           <Icons />
           {hasCaret && (
-            <div className="margin--left--half alignChild--center--center">
+            <div className="margin--left--s alignChild--center--center">
               <CaretDownIcon customSize={12} />
             </div>
           )}

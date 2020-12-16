@@ -19,7 +19,7 @@ const Tooltip = ({
   <Popover
     interactionMode="hover"
     trigger={<span style={{ cursor: 'help' }}>{trigger}</span>}
-    distance={parseInt(FDS.SPACE_HALF, 10)}
+    distance={parseInt(FDS.SPACE_S, 10)}
     position={position}
     alignment="center"
     transitionName="GrowFast"
@@ -28,7 +28,7 @@ const Tooltip = ({
     <div
       role="tooltip"
       style={{ maxWidth: maxWidth ? `${maxWidth}px` : DEFAULT_WIDTH }}
-      className={`bgColor--charcoal inverted align--${textAlign} padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold`}
+      className={`bgColor--charcoal inverted align--${textAlign} padding--top--s padding--bottom--s padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold`}
     >
       {message}
     </div>

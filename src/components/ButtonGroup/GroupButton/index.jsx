@@ -35,7 +35,7 @@ export const GroupButton = (props) => {
     <Wrapper>
       <Element {...rest} className={rootClass}>
         {Icon && (
-          <div className="margin--right--half">
+          <div className="margin--right--s">
             <Icon size="xs" />
           </div>
         )}

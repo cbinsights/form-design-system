@@ -11,11 +11,11 @@
 }
 
 .fdsIconInput--hasStartIcon input {
-  padding-left: var(--space-double);
+  padding-left: var(--space-xl);
 }
 
 .fdsIconInput--hasEndIcon input {
-  padding-right: var(--space-double);
+  padding-right: var(--space-xl);
 }
 
 .fdsIconInput-icon {
@@ -25,9 +25,9 @@
 }
 
 .fdsIconInput-icon--start {
-  left: var(--space-half);
+  left: var(--space-s);
 }
 
 .fdsIconInput-icon--end {
-  right: var(--space-half);
+  right: var(--space-s);
 }

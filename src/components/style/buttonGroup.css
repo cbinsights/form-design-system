@@ -91,5 +91,5 @@ for a button being clicked on (:active) */
 }
 
 .groupbtn-icon {
-  margin-right: calc(var(--space-half) / 2);
+  margin-right: calc(var(--space-s) / 2);
 }

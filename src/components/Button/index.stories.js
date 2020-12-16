@@ -134,10 +134,7 @@ isActive.parameters = {
 
 export const Sizes = () =>
   SIZES.map((size, idx) => (
-    <div
-      key={idx}
-      className="display--inlineBlock margin--right--half margin--bottom--half"
-    >
+    <div key={idx} className="display--inlineBlock margin--right--s margin--bottom--s">
       <Button size={size} label="Button" />
     </div>
   ));
