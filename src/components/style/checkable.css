@@ -20,9 +20,12 @@
 }
 
 .fdsCheckable label {
-  /* contains checkbox icon and text label */
   display: inline-flex;
-  align-items: center;
+}
+
+.fdsCheckable-label {
+  padding-left: var(--space-s);
+  margin-top: 1px;
 }
 
 .fdsCheckable .fds-icon {
