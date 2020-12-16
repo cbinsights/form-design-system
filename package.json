@@ -118,7 +118,7 @@
     "stylelint": "^13.2",
     "svg-to-jsx": "^1.0.2",
     "tinycolor2": "^1.4.1",
-    "webpack": "^4.38"
+    "webpack": "^5.10"
   },
   "repository": {
     "type": "git",
