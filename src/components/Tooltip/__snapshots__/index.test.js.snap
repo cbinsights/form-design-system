@@ -5,82 +5,55 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
   message="lol"
   trigger={<Trigger />}
 >
-  <Popover
-    alignment="center"
-    delay={350}
-    distance={8}
-    interactionMode="hover"
-    position="bottom"
-    transitionName="GrowFast"
-    trigger={
-      <span
-        style={
-          Object {
-            "cursor": "help",
-          }
+  <ForwardRef(TippyWrapper)
+    appendTo={<body />}
+    arrow={false}
+    className="bgColor--charcoal inverted align--center padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold"
+    content="lol"
+    delay={
+      Array [
+        350,
+        0,
+      ]
+    }
+    maxWidth={240}
+    moveTransition="transform 0.2s ease-out"
+    placement="bottom"
+    theme="tooltip"
+    zIndex="20"
+  >
+    <Tippy
+      appendTo={<body />}
+      arrow={false}
+      className="bgColor--charcoal inverted align--center padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold"
+      content="lol"
+      delay={
+        Array [
+          350,
+          0,
+        ]
+      }
+      maxWidth={240}
+      moveTransition="transform 0.2s ease-out"
+      placement="bottom"
+      theme="tooltip"
+      zIndex="20"
+    >
+      <Trigger>
+        <p>
+          trigger
+        </p>
+      </Trigger>
+      <Portal
+        containerInfo={
+          <div>
+            lol
+          </div>
         }
       >
-        <Trigger />
-      </span>
-    }
-  >
-    <Manager>
-      <Reference>
-        <div
-          aria-expanded="false"
-          aria-haspopup="true"
-        >
-          <div>
-            <span
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              style={
-                Object {
-                  "cursor": "help",
-                }
-              }
-              tabIndex="1"
-            >
-              <Trigger>
-                <p>
-                  trigger
-                </p>
-              </Trigger>
-            </span>
-          </div>
-        </div>
-      </Reference>
-      <Portal
-        containerInfo={<body />}
-      >
-        <CSSTransition
-          classNames="rtgGrowFast"
-          in={false}
-          onEntered={[Function]}
-          onExited={[Function]}
-          timeout={200}
-          unmountOnExit={true}
-        >
-          <Transition
-            appear={false}
-            enter={true}
-            exit={true}
-            in={false}
-            mountOnEnter={false}
-            onEnter={[Function]}
-            onEntered={[Function]}
-            onEntering={[Function]}
-            onExit={[Function]}
-            onExited={[Function]}
-            onExiting={[Function]}
-            timeout={200}
-            unmountOnExit={true}
-          />
-        </CSSTransition>
+        lol
       </Portal>
-    </Manager>
-  </Popover>
+    </Tippy>
+  </ForwardRef(TippyWrapper)>
 </Tooltip>
 `;

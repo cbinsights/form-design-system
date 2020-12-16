@@ -10,7 +10,9 @@
 
 /* Reach framework styles */
 @import "@reach/menu-button/styles.css";
-
+/* Tippy framework styles */
+@import "tippy.js/dist/tippy.css";
+@import "./tooltip.css";
 @import "./buttonColors.css";
 @import "./flex.css";
 @import "./section.css";
