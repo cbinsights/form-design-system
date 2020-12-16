@@ -1,6 +1,6 @@
 variables:
   CBI_NODE_VERSION: "node:12-alpine"
-  CBI_MAJOR_VERSION: 10 
+  CBI_MAJOR_VERSION: 10
   CBI_MINOR_VERSION: 0
 
 include:

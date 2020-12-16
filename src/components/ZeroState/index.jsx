@@ -10,7 +10,7 @@ const ZeroState = ({ Icon, label = '', height = '0px' }) => (
           <Icon size="xl" color={FDS.FONT_COLOR_HINT} />
         </div>
       )}
-      <p className="color--hint padding--top--half align--center">{label}</p>
+      <p className="color--hint padding--top--s align--center">{label}</p>
     </section>
   </article>
 );

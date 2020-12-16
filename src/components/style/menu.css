@@ -16,7 +16,7 @@
 }
 
 [data-reach-menu-item] {
-  padding: var(--space-half) var(--space-default);
+  padding: var(--space-s) var(--space-default);
   white-space: initial;
   margin: 0;
 }
