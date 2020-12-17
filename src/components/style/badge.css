@@ -1,22 +1,27 @@
-.fdsBadge {
-  font-family: var(--font-family-default);
-  line-height: var(--font-lineHeight-bigText);
-  font-weight: var(--font-weight-bold);
-  color: rgba(var(--rgb-navy, inherit), 0.6);
-  background-color: rgba(var(--rgb-navy, inherit), 0.08);
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
+.fds-badgeWrapper {
+  width: 100%;
+  height: 100%;
 }
 
-.fdsBadge--xs {
-  font-size: var(--font-size-xs);
-  padding: 2px 4px;
-  border-radius: 2px;
+.fds-badge {
+  border-radius: var(--space-l);
+  height: var(--space-default);
+  border: 1px solid;
 }
 
-.fdsBadge--s {
-  font-size: var(--font-size-s);
-  padding: var(--border-radius-default) var(--space-s);
-  border-radius: var(--border-radius-default);
+/* specificity fix for border utility class */
+/* follow up with: UIP-994 */
+.fds-badge.border--none {
+  border-width: 0;
 }
+
+.fds-badge--dot {
+  padding: 0;
+  height: 11px;
+  width: 11px;
+}
+
+.fds-badge-label {
+  max-width: var(--media-xl);
+}
+

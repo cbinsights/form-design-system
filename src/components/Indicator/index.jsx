@@ -2,41 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
 
-export const VALID_TYPES = ['update', 'count'];
+export const SIZES = ['xs', 's'];
 
-const Indicator = ({ label, type = 'update' }) => {
-  const isUpdate = type === 'update';
-
-  return (
-    <div className="fds-indicatorWrapper alignChild--center--center">
-      <div
-        aria-label={isUpdate ? 'Notification indicator' : 'Count indicator'}
-        className={cc([
-          'fds-indicator',
-          'padding--x--xs fontSize--xs alignChild--center--center',
-          {
-            'shape--circle fds-indicator--dot color--white': !label,
-            'color--white bgColor--red border--none': isUpdate,
-            'color--aqua': !isUpdate,
-            'bgColor--aqua': !isUpdate && !label,
-          },
-        ])}
-      >
-        <span className="fds-indicator-label wrap--singleLine--truncate">{label}</span>
-      </div>
-    </div>
-  );
-};
+const Indicator = ({ label, size = 's', ...rest }) => (
+  <div
+    {...rest}
+    className={cc(['fdsIndicator', 'wrap--singleLine', `fdsIndicator--${size}`])}
+  >
+    {label}
+  </div>
+);
 
 Indicator.propTypes = {
-  /**
-   * String to render inside the Indicator bubble.
-   * The `element` type should be reserved for FDS icons.
-   */
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-
-  /** Type of Indicator */
-  type: PropTypes.oneOf(VALID_TYPES),
+  /** Text inside the button */
+  label: PropTypes.string.isRequired,
+  /** Controls size display */
+  size: PropTypes.oneOf(SIZES),
 };
 
 export default Indicator;
