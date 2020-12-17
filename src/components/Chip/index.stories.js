@@ -32,10 +32,7 @@ export const isActive = () => (
 
 export const Sizes = () =>
   SIZES.map((size, idx) => (
-    <div
-      key={idx}
-      className="margin--right--half margin--bottom--half display--inlineBlock"
-    >
+    <div key={idx} className="margin--right--s margin--bottom--s display--inlineBlock">
       <Chip size={size} label={`Size: ${size}`} />
     </div>
   ));

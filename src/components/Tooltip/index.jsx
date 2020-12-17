@@ -37,21 +37,7 @@ Tooltip.propTypes = {
   maxWidth: PropTypes.number,
 
   /** Position preference of tooltip. */
-  position: PropTypes.oneOf([
-    'top-start',
-    'top-end',
-    'right',
-    'right-start',
-    'right-end',
-    'bottom',
-    'bottom-start',
-    'bottom-end',
-    'left',
-    'left-start',
-    'auto',
-    'auto-start',
-    'auto-end',
-  ]),
+  position: PropTypes.oneOf(['auto', 'top', 'right', 'bottom', 'left']),
   /** Text align for the message */
   textAlign: PropTypes.oneOf(['left', 'center', 'right']),
 };

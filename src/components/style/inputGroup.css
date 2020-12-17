@@ -80,7 +80,7 @@
     .fdsInputGroup select {
       border-color: rgba(var(--rgb-charcoal), 0.24);
       min-height: initial;
-      height: calc(var(--space-double) + 2px);
+      height: calc(var(--space-xl) + 2px);
       margin: -1px;
       transform: translateX(1px);
     }
