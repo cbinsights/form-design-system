@@ -91,7 +91,7 @@ const Dialog = ({
             <React.Fragment>
               <div className="dialog-header">
                 <div className="bgColor--white padding--all border--bottom">
-                  <div className="padding--right--double type--head4">
+                  <div className="padding--right--xl type--head4">
                     {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
                     {/* There always needs to be something (even a space) in the header for display reasons */}
                   </div>

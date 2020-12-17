@@ -92,7 +92,7 @@ export const otherExamples = (args) => (
         <option value="2">Thousand</option>
       </select>
     </InputGroup>
-    <div className="margin--top--half" />
+    <div className="margin--top--s" />
     <InputGroup {...args}>
       <TextInput
         IconLeft={SearchIcon}

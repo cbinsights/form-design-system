@@ -81,7 +81,7 @@ export const formManagementLibrary = (args) => {
   return (
     <div>
       <form onSubmit={handleSubmit(action('submitted'))}>
-        <div className="margin--bottom--half">
+        <div className="margin--bottom--s">
           <TextInput
             {...args}
             label="Username"
