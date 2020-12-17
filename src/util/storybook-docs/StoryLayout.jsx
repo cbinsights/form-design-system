@@ -8,8 +8,8 @@ export const StoryWrapper = ({ children, className, ...rest }) => (
     className={`display--inlineFlex ${className}`}
     style={{
       flexWrap: 'wrap',
-      marginBottom: `-${FDS.SPACE_HALF}`,
-      marginRight: `-${FDS.SPACE_HALF}`,
+      marginBottom: `-${FDS.SPACE_S}`,
+      marginRight: `-${FDS.SPACE_S}`,
       alignItems: 'center',
     }}
   >
@@ -23,7 +23,7 @@ StoryWrapper.propTypes = {
 };
 
 export const StoryItem = ({ children }) => (
-  <div className="margin--right--half margin--bottom--half">{children}</div>
+  <div className="margin--right--s margin--bottom--s">{children}</div>
 );
 
 StoryItem.propTypes = {

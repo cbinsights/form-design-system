@@ -55,7 +55,7 @@ const Radio = React.forwardRef(
           <span className="fdsCheckable-icon--unchecked">
             <RadioEmptyIcon size="xs" />
           </span>
-          {showLabel && <span className="padding--left--half">{label}</span>}
+          {showLabel && <span className="padding--left--s">{label}</span>}
         </label>
       </div>
     );

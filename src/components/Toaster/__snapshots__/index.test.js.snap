@@ -68,6 +68,7 @@ exports[`Toaster component matches snapshot 1`] = `
                           >
                             <svg
                               viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <g
                                 fill-rule="evenodd"
@@ -127,6 +128,7 @@ exports[`Toaster component matches snapshot 1`] = `
                                 >
                                   <svg
                                     viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <g
                                       fill-rule="evenodd"
@@ -278,37 +280,31 @@ exports[`Toaster component matches snapshot 1`] = `
                                       color="#ffffff"
                                       size="l"
                                     >
-                                      <WorldIcon
-                                        color="#ffffff"
-                                        size="l"
-                                      >
-                                        <div
-                                          className="fds-icon fds-icon--l"
-                                          style={
-                                            Object {
-                                              "fill": "#ffffff",
-                                              "height": undefined,
-                                              "width": undefined,
-                                            }
+                                      <div
+                                        className="fds-icon fds-icon--l"
+                                        style={
+                                          Object {
+                                            "fill": "#ffffff",
+                                            "height": undefined,
+                                            "width": undefined,
                                           }
+                                        }
+                                      >
+                                        <svg
+                                          viewBox="0 0 24 24"
+                                          xmlns="http://www.w3.org/2000/svg"
                                         >
-                                          <InformationIcon>
-                                            <svg
-                                              viewBox="0 0 24 24"
-                                            >
-                                              <g
-                                                fillRule="evenodd"
-                                              >
-                                                <g>
-                                                  <path
-                                                    d="M12,2 C6.4889971,2 2,6.4889971 2,12 C2,17.511003 6.4889971,22 12,22 C17.511003,22 22,17.511003 22,12 C22,6.4889971 17.511003,2 12,2 Z M12,4 C16.430123,4 20,7.5698774 20,12 C20,16.430123 16.430123,20 12,20 C7.5698774,20 4,16.430123 4,12 C4,7.5698774 7.5698774,4 12,4 Z M11,7 L11,9 L13,9 L13,7 L11,7 Z M11,11 L11,17 L13,17 L13,11 L11,11 Z"
-                                                  />
-                                                </g>
-                                              </g>
-                                            </svg>
-                                          </InformationIcon>
-                                        </div>
-                                      </WorldIcon>
+                                          <g
+                                            fillRule="evenodd"
+                                          >
+                                            <g>
+                                              <path
+                                                d="M12,2 C6.4889971,2 2,6.4889971 2,12 C2,17.511003 6.4889971,22 12,22 C17.511003,22 22,17.511003 22,12 C22,6.4889971 17.511003,2 12,2 Z M12,4 C16.430123,4 20,7.5698774 20,12 C20,16.430123 16.430123,20 12,20 C7.5698774,20 4,16.430123 4,12 C4,7.5698774 7.5698774,4 12,4 Z M11,7 L11,9 L13,9 L13,7 L11,7 Z M11,11 L11,17 L13,17 L13,11 L11,11 Z"
+                                              />
+                                            </g>
+                                          </g>
+                                        </svg>
+                                      </div>
                                     </InformationIcon>
                                   </div>
                                 </div>
@@ -374,36 +370,31 @@ exports[`Toaster component matches snapshot 1`] = `
                                               <DenyIcon
                                                 customSize={18}
                                               >
-                                                <WorldIcon
-                                                  customSize={18}
-                                                >
-                                                  <div
-                                                    className="fds-icon fds-icon--s"
-                                                    style={
-                                                      Object {
-                                                        "fill": undefined,
-                                                        "height": "18px",
-                                                        "width": "18px",
-                                                      }
+                                                <div
+                                                  className="fds-icon fds-icon--s"
+                                                  style={
+                                                    Object {
+                                                      "fill": undefined,
+                                                      "height": "18px",
+                                                      "width": "18px",
                                                     }
+                                                  }
+                                                >
+                                                  <svg
+                                                    viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg"
                                                   >
-                                                    <DenyIcon>
-                                                      <svg
-                                                        viewBox="0 0 24 24"
-                                                      >
-                                                        <g
-                                                          fillRule="evenodd"
-                                                        >
-                                                          <g>
-                                                            <polygon
-                                                              points="19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12"
-                                                            />
-                                                          </g>
-                                                        </g>
-                                                      </svg>
-                                                    </DenyIcon>
-                                                  </div>
-                                                </WorldIcon>
+                                                    <g
+                                                      fillRule="evenodd"
+                                                    >
+                                                      <g>
+                                                        <polygon
+                                                          points="19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12"
+                                                        />
+                                                      </g>
+                                                    </g>
+                                                  </svg>
+                                                </div>
                                               </DenyIcon>
                                             </span>
                                           </button>

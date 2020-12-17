@@ -20,7 +20,7 @@ const DropdownButton = forwardRef(
       ref={ref}
     >
       <div>{children}</div>
-      <div className="margin--left--half alignChild--center--center">
+      <div className="margin--left--s alignChild--center--center">
         <CaretDownIcon customSize={12} />
       </div>
     </button>

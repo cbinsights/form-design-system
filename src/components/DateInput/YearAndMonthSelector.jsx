@@ -21,12 +21,12 @@ const YearAndMonthSelector = ({ date, localeUtils, onChange, startYear, endYear 
 
   return (
     <form className="DayPicker-Caption border--bottom">
-      <div className="padding--bottom--half align--left">
+      <div className="padding--bottom--s align--left">
         <select
           name="month"
           onChange={handleChange}
           value={date.getMonth()}
-          className="margin--right--half"
+          className="margin--right--s"
         >
           {months.map((month, i) => (
             <option key={month} value={i}>
