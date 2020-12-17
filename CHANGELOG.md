@@ -42,6 +42,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### Component reorganization
 - bgFade classes are removed
 
+### CornerPosition component
+- `CornerPosition` component added to help decorate nodes
+
 #### Double and Half spacing removed
 - classes, css variables, and js variables all updated
 - upgrade guide: 
@@ -55,6 +58,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### Removed components
 - `HScroll` (use fade classes + useScrollAttributes hook)
 - `GapList` (use FDS classes instead for spacing, border)
+- `Updatable` (use `CornerPosition` component + Badge instead)
 
 ## [9.20] 🎁 Unwrapped Icons
 

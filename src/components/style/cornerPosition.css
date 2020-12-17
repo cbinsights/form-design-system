@@ -1,10 +1,10 @@
-.updatable {
+.cornerPosition-root {
   display: inline-block;  /* should be removed in v10 (UIP-997) */
   vertical-align: middle; /* should be removed in v10 (UIP-997) */
   position: relative;
 }
 
-.updatable-indicator {
+.cornerPosition-decoration {
   position: absolute;
   top: 0;
   right: 0;
