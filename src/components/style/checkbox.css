@@ -6,10 +6,6 @@
  * Most styling for this component is handled by `checkable.css`
  */
 
-.fdsCheckbox .fds-icon {
-  transform: translateY(-1px);
-}
-
 .fdsCheckbox input:focus + label svg {
   border-radius: var(--border-radius-default);
 }

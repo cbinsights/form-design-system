@@ -43,7 +43,7 @@ const Checkbox = ({
         <span className="fdsCheckable-icon--unchecked">
           <IconUnchecked size="xs" />
         </span>
-        {showLabel && <span className="padding--left--half">{label}</span>}
+        {showLabel && <span className="fdsCheckable-label">{label}</span>}
       </label>
     </div>
   );
