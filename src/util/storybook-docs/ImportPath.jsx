@@ -16,7 +16,7 @@ export const ImportPath = () => {
   const pathParts = path.split(' ');
 
   return (
-    <p
+    <div
       className="sbdocs-title importPath margin--bottom"
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
@@ -33,7 +33,7 @@ export const ImportPath = () => {
       ) : (
         <CheckIcon customSize={14} color="green" />
       )}
-    </p>
+    </div>
   );
 };
 

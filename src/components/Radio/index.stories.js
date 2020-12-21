@@ -1,4 +1,5 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 
 import Radio from '.';
 
@@ -48,11 +49,7 @@ initialSelection.parameters = {
 };
 
 export const readingSelectedValue = (args) => (
-  <div
-    onChange={(e) => {
-      console.warn(`value is ${e.target.value}`);
-    }}
-  >
+  <div onChange={(e) => action('change')(e.target.value)}>
     <Radio {...args} name="radio-group-onchange" label="Option one" value="1" />
     <Radio {...args} name="radio-group-onchange" label="Option two" value="2" />
     <Radio {...args} name="radio-group-onchange" label="Option three" value="3" />
@@ -69,11 +66,7 @@ readingSelectedValue.parameters = {
 };
 
 export const controlled = (args) => (
-  <div
-    onChange={(e) => {
-      console.warn(`value is ${e.target.value}`);
-    }}
-  >
+  <div onChange={(e) => action('change')(e.target.value)}>
     <Radio
       {...args}
       name="radio-group-onchange"
