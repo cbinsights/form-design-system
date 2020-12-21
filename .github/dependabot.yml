@@ -8,7 +8,11 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: "weekly"
     labels:
       - "dependabot"
       - "dependencies"
+    ignore:
+      -dependency-name: "react"
+      -dependency-name: "react-dom"
+      -dependency-name: "moment"
