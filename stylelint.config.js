@@ -13,10 +13,7 @@ module.exports = {
     'at-rule-semicolon-newline-after': 'always',
     'at-rule-semicolon-space-before': 'never',
     'block-closing-brace-empty-line-before': 'never',
-    'block-closing-brace-newline-after': [
-      'always',
-      { ignoreAtRules: ['if', 'else'] },
-    ],
+    'block-closing-brace-newline-after': ['always', { ignoreAtRules: ['if', 'else'] }],
     'block-closing-brace-newline-before': 'always-multi-line',
     'block-no-empty': true,
     'block-opening-brace-newline-after': 'always-multi-line',
@@ -112,7 +109,7 @@ module.exports = {
       'always',
       {
         except: ['first-nested', 'after-single-line-comment'],
-        ignore: ['after-comment']
+        ignore: ['after-comment'],
       },
     ],
     'selector-attribute-brackets-space-inside': 'never',

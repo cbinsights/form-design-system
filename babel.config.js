@@ -16,23 +16,21 @@ const config = {
     '@babel/plugin-transform-runtime',
     '@babel/plugin-transform-modules-commonjs',
     [
-      "module-resolver", {
-        "root": ["./src"],
-        "alias": {
-          "lib": "./lib",
-        }
-      }
-    ]
+      'module-resolver',
+      {
+        root: ['./src'],
+        alias: {
+          lib: './lib',
+        },
+      },
+    ],
   ],
 };
 
 module.exports = (api) => {
-
   // avoid copying test files to destination for JSX build
   if (api.env('jsx_compile')) {
-    config.ignore = [
-      /\.test\.jsx?$/
-    ];
+    config.ignore = [/\.test\.jsx?$/];
   }
 
   return config;

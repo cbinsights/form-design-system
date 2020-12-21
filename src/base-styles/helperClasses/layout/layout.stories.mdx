@@ -1,17 +1,23 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { Example, generalStyles, containerStyles, labelStyle } from 'base-styles/styledocUtils';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import {
+  Example,
+  generalStyles,
+  containerStyles,
+  labelStyle,
+} from 'base-styles/styledocUtils';
 import { TableLayout } from 'util/storybook-docs/Table';
 import FDS from 'lib/dictionary/js/styleConstants';
 
-<Meta title="Style Utilities/Layout"  />
+<Meta title="Style Utilities/Layout" />
 
 export const borderHelperStyles = {
   ...generalStyles,
   backgroundColor: '#333',
-  margin: ".5rem"
-}
+  margin: '.5rem',
+};
 
 ## Media Sizing
+
 For standard media like avatars and icons,
 these classes set square dimenions on the selected
 element to match standard media sizes.
@@ -27,21 +33,32 @@ element to match standard media sizes.
         ['media--m', `Sets height & width to \`${FDS.MEDIA_M}\` (\`var(--media-m)\`)`],
         ['media--l', `Sets height & width to \`${FDS.MEDIA_L}\` (\`var(--media-l)\`)`],
         ['media--xl', `Sets height & width to \`${FDS.MEDIA_XL}\` (\`var(--media-xl)\`)`],
-      ]} 
+      ]}
     />
     <div style={containerStyles}>
-      <Example label="media--xs"><div className="media--xs rounded--all" style={borderHelperStyles} /></Example>
-      <Example label="media--s"><div className="media--s rounded--all" style={borderHelperStyles} /></Example>
-      <Example label="media--m"><div className="media--m rounded--all" style={borderHelperStyles} /></Example>
-      <Example label="media--l"><div className="media--l rounded--all" style={borderHelperStyles} /></Example>
-      <Example label="media--xl"><div className="media--xl rounded--all" style={borderHelperStyles} /></Example>
+      <Example label="media--xs">
+        <div className="media--xs rounded--all" style={borderHelperStyles} />
+      </Example>
+      <Example label="media--s">
+        <div className="media--s rounded--all" style={borderHelperStyles} />
+      </Example>
+      <Example label="media--m">
+        <div className="media--m rounded--all" style={borderHelperStyles} />
+      </Example>
+      <Example label="media--l">
+        <div className="media--l rounded--all" style={borderHelperStyles} />
+      </Example>
+      <Example label="media--xl">
+        <div className="media--xl rounded--all" style={borderHelperStyles} />
+      </Example>
     </div>
   </>
 </Story>
 
-export const widthStyles = { height: 50 }
+export const widthStyles = { height: 50 };
 
 ## Width
+
 Sets element width in percentage.
 
 <Story name="Width">
@@ -52,13 +69,19 @@ Sets element width in percentage.
       rows={[
         ['span--100', 'Sets `width` to `100%`'],
         ['span--50', 'Sets `width` to `50%`'],
-      ]} 
+      ]}
     />
     <span style={labelStyle}>span--100</span>
-    <div className="span--100 rounded--all bgColor--charcoal margin--top--half" style={widthStyles} />
+    <div
+      className="span--100 rounded--all bgColor--charcoal margin--top--half"
+      style={widthStyles}
+    />
     <br />
     <span style={labelStyle}>span--50</span>
-    <div className="span--50 rounded--all bgColor--charcoal margin--top--half" style={widthStyles} />
+    <div
+      className="span--50 rounded--all bgColor--charcoal margin--top--half"
+      style={widthStyles}
+    />
   </>
 </Story>
 
@@ -76,6 +99,6 @@ Sets element width in percentage.
       ['display--inlineBlock', 'Sets `display` to `inline-block`'],
       ['display--inlineFlex', 'Sets `display` to `inline-flex`'],
       ['display--grid', 'Sets `display` to `grid`'],
-    ]} 
+    ]}
   />
 </Story>

@@ -39,8 +39,11 @@
 }
 
 .toast-svg {
-  background: var(--color-sky); /* the SVG line will cover up this bg */
-  border-radius: var(--toast-border-radius) var(--toast-border-radius) 0 0;
+  background: var(
+    --color-sky
+  ); /* the SVG line will cover up this bg */
+  border-radius: var(--toast-border-radius)
+    var(--toast-border-radius) 0 0;
   height: var(--space-s);
   width: 100%;
 }

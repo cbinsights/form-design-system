@@ -1,5 +1,5 @@
 .updatable {
-  display: inline-block;  /* should be removed in v10 (UIP-997) */
+  display: inline-block; /* should be removed in v10 (UIP-997) */
   vertical-align: middle; /* should be removed in v10 (UIP-997) */
   position: relative;
 }

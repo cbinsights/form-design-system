@@ -4,7 +4,6 @@ import { shallow } from 'enzyme';
 import SeparatorList from '.';
 
 describe('Section component', () => {
-
   it('matches snapshot for string items', () => {
     const component = shallow(
       <SeparatorList
@@ -20,7 +19,9 @@ describe('Section component', () => {
       <SeparatorList
         separator="🎃"
         items={[
-          <a key="👻" href="#">Spooky</a>,
+          <a key="👻" href="#">
+            Spooky
+          </a>,
           'snapshot',
         ]}
       />
@@ -29,16 +30,12 @@ describe('Section component', () => {
   });
 
   it('all list items include the correct data-separator attribute', () => {
-    const TEST_SEPARATOR = "・"
+    const TEST_SEPARATOR = '・';
     const component = shallow(
-      <SeparatorList
-        separator={TEST_SEPARATOR}
-        items={[ 'one', 'two', 'three', ]}
-      />
+      <SeparatorList separator={TEST_SEPARATOR} items={['one', 'two', 'three']} />
     );
     component.find('li').forEach((item) => {
       expect(item.prop('data-separator')).toBe(TEST_SEPARATOR);
     });
   });
-
 });

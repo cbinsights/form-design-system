@@ -30,21 +30,21 @@ select,
 textarea,
 input:not([type]),
 input[list],
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="date-time-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="year"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="file"] {
+input[type='text'],
+input[type='password'],
+input[type='datetime'],
+input[type='date-time-local'],
+input[type='date'],
+input[type='month'],
+input[type='time'],
+input[type='week'],
+input[type='year'],
+input[type='number'],
+input[type='email'],
+input[type='url'],
+input[type='search'],
+input[type='tel'],
+input[type='file'] {
   box-sizing: border-box;
   display: inline-block;
   padding: 4px var(--space-half);
@@ -56,18 +56,17 @@ input[type="file"] {
   color: var(--font-color-primary);
 }
 
-
 /**
  * Cursors
  */
 button,
 label,
 select,
-input[type="color"],
-input[type="reset"],
-input[type="submit"],
-input[type="radio"],
-input[type="checkbox"] {
+input[type='color'],
+input[type='reset'],
+input[type='submit'],
+input[type='radio'],
+input[type='checkbox'] {
   cursor: pointer;
 }
 
@@ -108,45 +107,44 @@ textarea {
   min-height: calc(var(--space-double) * 2);
 }
 
-input[type="seach"] {
+input[type='seach'] {
   box-sizing: content-box;
   -webkit-appearance: textfield;
 }
 
-input[type="file"] {
+input[type='file'] {
   font-size: var(--font-size-s);
   background: transparent;
   padding-top: 6px; /* offset smaller font size */
 }
 
-input[type="date"],
-input[type="time"],
-input[type="date-time-local"],
-input[type="month"],
-input[type="year"],
-input[type="number"] {
+input[type='date'],
+input[type='time'],
+input[type='date-time-local'],
+input[type='month'],
+input[type='year'],
+input[type='number'] {
   text-align: right;
 }
-
 
 /**
  * Invalid/disabled
  */
 select:invalid,
 textarea:invalid,
-input:not([type="submit"]):invalid {
+input:not([type='submit']):invalid {
   border-color: var(--color-red);
 }
 
 select:disabled,
 textarea:disabled,
-input:not([type="submit"]):disabled {
+input:not([type='submit']):disabled {
   color: var(--font-color-hint);
   background-color: var(--color-lightGray);
 }
 
-input[type="checkbox"]:disabled,
-input[type="radio"]:disabled {
+input[type='checkbox']:disabled,
+input[type='radio']:disabled {
   background: var(--color-lightGray);
 }
 
@@ -154,7 +152,7 @@ input[type="radio"]:disabled {
  * Focus states
  */
 /* stylelint-disable-next-line selector-max-specific */
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
+input:not([type='checkbox']):not([type='radio']):not([type='range']):focus,
 select:focus,
 textarea:focus {
   outline: none;
@@ -163,8 +161,8 @@ textarea:focus {
 }
 
 /* stylelint-disable selector-max-specific */
-:invalid:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
-.error:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus {
+:invalid:not([type='checkbox']):not([type='radio']):not([type='range']):focus,
+.error:not([type='checkbox']):not([type='radio']):not([type='range']):focus {
   border-color: var(--color-red);
   box-shadow: 0 0 0 2px var(--color-red);
 }

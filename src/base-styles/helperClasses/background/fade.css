@@ -31,35 +31,66 @@ Signature: `bgFade--<direction>--<color>`
 
 /* white */
 .bgFade--top--white {
-  background-image: linear-gradient(to bottom, var(--color-white), rgba(var(--rgb-white), 0));
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-white),
+    rgba(var(--rgb-white), 0)
+  );
 }
 
 .bgFade--right--white {
-  background-image: linear-gradient(to left, var(--color-white), rgba(var(--rgb-white), 0));
+  background-image: linear-gradient(
+    to left,
+    var(--color-white),
+    rgba(var(--rgb-white), 0)
+  );
 }
 
 .bgFade--bottom--white {
-  background-image: linear-gradient(to top, var(--color-white), rgba(var(--rgb-white), 0));
+  background-image: linear-gradient(
+    to top,
+    var(--color-white),
+    rgba(var(--rgb-white), 0)
+  );
 }
 
 .bgFade--left--white {
-  background-image: linear-gradient(to right, var(--color-white), rgba(var(--rgb-white), 0));
+  background-image: linear-gradient(
+    to right,
+    var(--color-white),
+    rgba(var(--rgb-white), 0)
+  );
 }
 
 /* haze */
 .bgFade--top--haze {
-  background-image: linear-gradient(to bottom, var(--color-haze), rgba(var(--rgb-haze), 0));
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-haze),
+    rgba(var(--rgb-haze), 0)
+  );
 }
 
 .bgFade--right--haze {
-  background-image: linear-gradient(to left, var(--color-haze), rgba(var(--rgb-haze), 0));
+  background-image: linear-gradient(
+    to left,
+    var(--color-haze),
+    rgba(var(--rgb-haze), 0)
+  );
 }
 
 .bgFade--bottom--haze {
-  background-image: linear-gradient(to top, var(--color-haze), rgba(var(--rgb-haze), 0));
+  background-image: linear-gradient(
+    to top,
+    var(--color-haze),
+    rgba(var(--rgb-haze), 0)
+  );
 }
 
 .bgFade--left--haze {
-  background-image: linear-gradient(to right, var(--color-haze), rgba(var(--rgb-haze), 0));
+  background-image: linear-gradient(
+    to right,
+    var(--color-haze),
+    rgba(var(--rgb-haze), 0)
+  );
 }
-

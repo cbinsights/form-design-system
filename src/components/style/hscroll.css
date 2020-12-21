@@ -34,7 +34,6 @@
   background: var(--color-lightGray);
 }
 
-
 /**
  * background color in content area must be specified
  * instead of inheriting from container, which could have
@@ -48,8 +47,6 @@
   background: var(--color-haze);
 }
 
-
-
 /**
  * Fade management
  *
@@ -61,7 +58,7 @@
  */
 .hscroll--enableFade::before,
 .hscroll--enableFade::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 0;
@@ -91,19 +88,34 @@
 
 /* white fades */
 .hscroll--bgColor--white.hscroll--enableFade::before {
-  background-image: linear-gradient(to right, var(--color-white), rgba(var(--rgb-white), 0));
+  background-image: linear-gradient(
+    to right,
+    var(--color-white),
+    rgba(var(--rgb-white), 0)
+  );
 }
 
 .hscroll--bgColor--white.hscroll--enableFade::after {
-  background-image: linear-gradient(to left, var(--color-white), rgba(var(--rgb-white), 0));
+  background-image: linear-gradient(
+    to left,
+    var(--color-white),
+    rgba(var(--rgb-white), 0)
+  );
 }
 
 /* haze fades */
 .hscroll--bgColor--haze.hscroll--enableFade::before {
-  background-image: linear-gradient(to right, var(--color-haze), rgba(var(--rgb-haze), 0));
+  background-image: linear-gradient(
+    to right,
+    var(--color-haze),
+    rgba(var(--rgb-haze), 0)
+  );
 }
 
 .hscroll--bgColor--haze.hscroll--enableFade::after {
-  background-image: linear-gradient(to left, var(--color-haze), rgba(var(--rgb-haze), 0));
+  background-image: linear-gradient(
+    to left,
+    var(--color-haze),
+    rgba(var(--rgb-haze), 0)
+  );
 }
-

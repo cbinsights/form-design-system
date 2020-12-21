@@ -1,11 +1,9 @@
 {
   "font": {
     "weight": {
-
       "default": { "value": "400" },
-      "medium":  { "value": "500" },
-      "bold":    { "value": "700" }
-
+      "medium": { "value": "500" },
+      "bold": { "value": "700" }
     }
   }
 }

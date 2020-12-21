@@ -4,7 +4,7 @@
   user-select: none;
   font-size: var(--font-size-default);
   padding: var(--space-half);
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   color: var(--font-color-primary);
   align-items: center;
   justify-content: space-between;
@@ -30,4 +30,3 @@
 .fdsDropdown--isActive:focus {
   background: #d9d9d9;
 }
-

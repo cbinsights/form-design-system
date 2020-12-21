@@ -4,11 +4,10 @@ import { shallow, mount } from 'enzyme';
 import TextInput, { throttleInput } from '.';
 
 describe('TextInput component', () => {
-
   it('fires throttleFunctions', () => {
-    const throttleFn = jest.fn()
+    const throttleFn = jest.fn();
     const wrapper = mount(<TextInput onThrottledChange={throttleFn} label="label" />);
-    const input = wrapper.find('input')
+    const input = wrapper.find('input');
     input.simulate('change', { target: { value: 'aaa' } });
     expect(throttleFn).toHaveBeenCalled();
   });
@@ -20,7 +19,7 @@ describe('TextInput component', () => {
 
   it('matches snapshot (all props)', () => {
     const wrapper = shallow(
-      <TextInput 
+      <TextInput
         label="label"
         errorText="errorText"
         IconLeft={() => {}}
@@ -37,34 +36,32 @@ describe('TextInput component', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
-
 });
 
 describe('throttleInput', () => {
   let throttleFn;
-  let debounceFn
+  let debounceFn;
 
   beforeEach(() => {
     throttleFn = jest.fn();
     debounceFn = jest.fn();
-  })
+  });
 
   it('calls throttleFn when less than 5 characters', () => {
-    throttleInput('aaa', throttleFn, debounceFn)
+    throttleInput('aaa', throttleFn, debounceFn);
     expect(throttleFn).toHaveBeenCalled();
     expect(debounceFn).not.toHaveBeenCalled();
   });
 
   it('calls throttleFn when a space is the last character', () => {
-    throttleInput('aaaaaaaaaaa ', throttleFn, debounceFn)
+    throttleInput('aaaaaaaaaaa ', throttleFn, debounceFn);
     expect(throttleFn).toHaveBeenCalled();
     expect(debounceFn).not.toHaveBeenCalled();
   });
 
   it('calls debounceFn with 5 characters or more', () => {
-    throttleInput('aaaaa', throttleFn, debounceFn)
+    throttleInput('aaaaa', throttleFn, debounceFn);
     expect(throttleFn).not.toHaveBeenCalled();
     expect(debounceFn).toHaveBeenCalled();
   });
-
 });

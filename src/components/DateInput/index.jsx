@@ -45,11 +45,7 @@ const DateInput = ({
   errorText,
   ...rest
 }) => {
-  const defaultDate = defaultDateInput
-    ? moment(defaultDateInput)
-        .utc()
-        .toDate()
-    : null;
+  const defaultDate = defaultDateInput ? moment(defaultDateInput).utc().toDate() : null;
   const [selectedDate, setSelectedDate] = useState(defaultDate || null);
   const [pickerMonth, setPickerMonth] = useState(defaultDate || new Date());
   const [prevDateFormat, setPrevDateFormat] = useState(dateFormat);

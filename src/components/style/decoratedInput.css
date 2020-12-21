@@ -1,4 +1,3 @@
-
 .fdsDecoratedInput {
   display: flex;
   flex-grow: 1;
@@ -7,7 +6,7 @@
 }
 
 .fdsDecoratedInput input {
-  z-index: 2;    /* focus ring should overlap side labels */
+  z-index: 2; /* focus ring should overlap side labels */
   flex-basis: 1; /* input should grow to fill space */
   flex-grow: 1;
   width: auto;
@@ -33,7 +32,6 @@
   display: inline-flex;
   align-items: center;
 }
-
 
 .fdsDecoratedInput[data-before] input {
   border-top-left-radius: 0 !important;

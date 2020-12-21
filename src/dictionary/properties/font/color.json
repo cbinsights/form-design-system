@@ -1,26 +1,25 @@
 {
   "font": {
     "color": {
+      "link": { "value": "{color.base.blue.value}" },
 
-      "link":     { "value": "{color.base.blue.value}" },
+      "linkInverted": { "value": "{color.base.aqua.value}" },
 
-      "linkInverted":     { "value": "{color.base.aqua.value}" },
+      "heading": { "value": "{color.base.charcoal.value}" },
+      "primary": { "value": "rgba(64, 64, 64, 0.87)" },
+      "secondary": { "value": "rgba(64, 64, 64, 0.60)" },
+      "hint": { "value": "rgba(64, 64, 64, 0.38)" },
 
-      "heading":    { "value": "{color.base.charcoal.value}" },
-      "primary":    { "value": "rgba(64, 64, 64, 0.87)" },
-      "secondary":  { "value": "rgba(64, 64, 64, 0.60)" },
-      "hint":       { "value": "rgba(64, 64, 64, 0.38)" },
+      "headingInverted": { "value": "{color.base.white.value}" },
+      "primaryInverted": { "value": "rgba(255, 255, 255, 0.87)" },
+      "secondaryInverted": { "value": "rgba(255, 255, 255, 0.60)" },
+      "hintInverted": { "value": "rgba(255, 255, 255, 0.38)" },
 
-      "headingInverted":    { "value": "{color.base.white.value}" },
-      "primaryInverted":    { "value": "rgba(255, 255, 255, 0.87)" },
-      "secondaryInverted":  { "value": "rgba(255, 255, 255, 0.60)" },
-      "hintInverted":       { "value": "rgba(255, 255, 255, 0.38)" },
+      "error": { "value": "{color.base.red.value}" },
+      "success": { "value": "{color.base.green.value}" },
 
-      "error":     { "value": "{color.base.red.value}" },
-      "success":   { "value": "{color.base.green.value}" },
-
-      "errorInverted":     { "value": "{color.base.red.value}" },
-      "successInverted":   { "value": "{color.base.mint.value}" }
+      "errorInverted": { "value": "{color.base.red.value}" },
+      "successInverted": { "value": "{color.base.mint.value}" }
     }
   }
 }

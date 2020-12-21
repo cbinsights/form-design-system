@@ -39,16 +39,16 @@
 }
 
 .fdsChip--gray {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   color: var(--font-color-heading);
 }
 
 .fdsChip--gray.fdsChip--active {
-  background-color: #CACACA;
+  background-color: #cacaca;
 }
 
 .fdsChip--gray:hover {
-  background-color: #D8D8D8;
+  background-color: #d8d8d8;
 }
 
 .fdsChip--gray .fdsChip-close:hover {
@@ -61,7 +61,7 @@
 
 .fdsChip--blue {
   color: var(--color-blue);
-  background-color: #E0EDF2;
+  background-color: #e0edf2;
 }
 
 .fdsChip--blue.fdsChip--active {
@@ -69,7 +69,7 @@
 }
 
 .fdsChip--blue:hover {
-  background-color: #D4E7EE;
+  background-color: #d4e7ee;
 }
 
 .fdsChip--blue .fdsChip-close:hover {
@@ -112,7 +112,6 @@
   margin-left: var(--space-half);
   margin-right: -4px;
 }
-
 
 .fdsChip-ul,
 .fdsChip-li {

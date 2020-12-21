@@ -4,8 +4,8 @@ import { shallow, mount } from 'enzyme';
 import Popover from '.';
 import { getPopperPlacement } from './util';
 
-const Content = () => (<p>popover content</p>);
-const triggerJsx = (<button>trigger</button>);
+const Content = () => <p>popover content</p>;
+const triggerJsx = <button>trigger</button>;
 
 const SELECTOR_TRIGGER = '[aria-haspopup] button';
 
@@ -16,28 +16,36 @@ const SELECTOR_TRIGGER = '[aria-haspopup] button';
 const isPopperOpen = (w) => w.find('CSSTransition').prop('in');
 
 describe('Popover component', () => {
-
   it('matches snapshot (default props)', () => {
-    const wrapper = mount(<Popover trigger={triggerJsx}><Content /></Popover>);
+    const wrapper = mount(
+      <Popover trigger={triggerJsx}>
+        <Content />
+      </Popover>
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
   it('uses Portal by default', () => {
-    const wrapper = mount(<Popover trigger={triggerJsx}><Content /></Popover>);
+    const wrapper = mount(
+      <Popover trigger={triggerJsx}>
+        <Content />
+      </Popover>
+    );
     expect(wrapper.exists('Portal')).toBe(true);
   });
 
   it('does NOT use Portal when disablePortal is set', () => {
-    const wrapper = mount(<Popover trigger={triggerJsx} disablePortal><Content /></Popover>);
+    const wrapper = mount(
+      <Popover trigger={triggerJsx} disablePortal>
+        <Content />
+      </Popover>
+    );
     expect(wrapper.exists('Portal')).toBe(false);
   });
 
   it('ignores `isOpen` prop when not in controlled mode', () => {
     const wrapper = shallow(
-      <Popover
-        trigger={triggerJsx}
-        isOpen
-      >
+      <Popover trigger={triggerJsx} isOpen>
         <Content />
       </Popover>
     );
@@ -63,16 +71,17 @@ describe('Popover component', () => {
   });
 
   describe('interactionMode="controlled"', () => {
-    const mountControlled = (isOpen, onUserDismiss) => mount(
-      <Popover
-        trigger={triggerJsx}
-        interactionMode="controlled"
-        isOpen={isOpen}
-        onUserDismiss={onUserDismiss}
-      >
-        <Content />
-      </Popover>
-    );
+    const mountControlled = (isOpen, onUserDismiss) =>
+      mount(
+        <Popover
+          trigger={triggerJsx}
+          interactionMode="controlled"
+          isOpen={isOpen}
+          onUserDismiss={onUserDismiss}
+        >
+          <Content />
+        </Popover>
+      );
 
     it('can not be opened via user event if isOpen is false', () => {
       const wrapper = mountControlled(false);
@@ -95,7 +104,6 @@ describe('Popover component', () => {
       triggerEl.simulate('click', { target: '<p>lol not the popover</p>' });
       expect(isPopperOpen(wrapper)).toBe(true);
     });
-
   });
 
   describe('interactionMode="click"', () => {
@@ -186,7 +194,5 @@ describe('Popover component', () => {
       triggerEl.simulate('mouseleave', { target: '<p>lol not the popover</p>' });
       expect(isPopperOpen(wrapper)).toBe(false);
     });
-
   });
-
 });

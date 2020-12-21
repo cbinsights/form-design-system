@@ -1,5 +1,5 @@
 variables:
-  CBI_NODE_VERSION: "node:12-alpine"
+  CBI_NODE_VERSION: 'node:12-alpine'
   CBI_MAJOR_VERSION: 9
   CBI_MINOR_VERSION: 20
 
@@ -26,5 +26,3 @@ stages:
   - build
   - test
   - publish
-
-

@@ -42,6 +42,3 @@ surrounding stacking context to do the rest.
 For example, the `ButtonGroup` component needs to manage layering of buttons so that the
 focus ring is always visible. The surrounding stacking context does not matter - it uses
 values `1` through `5` to accomplish this.
-
-
-

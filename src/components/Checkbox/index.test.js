@@ -1,48 +1,66 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect';
 
 import Checkbox from '.';
 
 describe('Checkbox component', () => {
   it('passes the `disabled` prop', () => {
-    const { container } = render(<Checkbox label="change callback" disabled name="disabled-test" />);
+    const { container } = render(
+      <Checkbox label="change callback" disabled name="disabled-test" />
+    );
     const input = screen.getByLabelText('change callback');
     expect(input.disabled).toBeTruthy();
 
     fireEvent.click(input);
     expect(input.checked).toBeTruthy();
     expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
-    expect(container.querySelector('.fdsCheckable')).toHaveClass('fdsCheckable--disabled');
+    expect(container.querySelector('.fdsCheckable')).toHaveClass(
+      'fdsCheckable--disabled'
+    );
   });
 
   it('fires change callback when checking', () => {
     const changeFn = jest.fn();
-    render(<Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />);
+    render(
+      <Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />
+    );
     const input = screen.getByLabelText('change callback');
     expect(changeFn).not.toHaveBeenCalled();
     fireEvent.click(input);
     expect(input.checked).toBeTruthy();
-    fireEvent.change(input, { target: input })
+    fireEvent.change(input, { target: input });
     expect(changeFn).toHaveBeenCalled();
   });
 
   it('fires change callback when unchecking', () => {
     const changeFn = jest.fn();
-    render(<Checkbox defaultChecked label="unchecking callback" name="uncheck-callback-test" onChange={changeFn} />);
+    render(
+      <Checkbox
+        defaultChecked
+        label="unchecking callback"
+        name="uncheck-callback-test"
+        onChange={changeFn}
+      />
+    );
 
     const input = screen.getByLabelText('unchecking callback');
     expect(changeFn).not.toHaveBeenCalled();
     fireEvent.click(input);
     expect(input.checked).toBeFalsy();
-    fireEvent.change(input, { target: input })
+    fireEvent.change(input, { target: input });
     expect(changeFn).toHaveBeenCalled();
   });
 
   it('allows users to supply their own id', () => {
     render(
       <>
-        <Checkbox id="checkbox-id" label="Component label" showLabel={false} name="multiple labels" />
+        <Checkbox
+          id="checkbox-id"
+          label="Component label"
+          showLabel={false}
+          name="multiple labels"
+        />
         <label htmlFor="checkbox-id">User label</label>
       </>
     );

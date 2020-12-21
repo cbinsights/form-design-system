@@ -17,8 +17,8 @@ apply to _all_ components.
 
 ## Considered Options
 
-* Every component accepts a `className`
-* No components accept a `className`
+- Every component accepts a `className`
+- No components accept a `className`
 
 ## Decision Outcome
 
@@ -30,11 +30,10 @@ Chosen option: "No components accept a `className`", because...
 
 ### Positive Consequences <!-- optional -->
 
-* Prop API consistency across all components.
+- Prop API consistency across all components.
 
 ### Negative Consequences <!-- optional -->
 
-* Consumers of FDS components must handle the breaking change. Any custom `className`
+- Consumers of FDS components must handle the breaking change. Any custom `className`
   props on FDS components must be moved to a direct parent or direct child of the
   component.
-

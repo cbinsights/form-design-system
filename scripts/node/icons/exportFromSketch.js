@@ -85,31 +85,28 @@ exec(`sketchtool list slices "${PATH_SKETCH_FILE}"`, (error, result) => {
   ];
 
   // export SVG files
-  exec([
-    ...commandBase,
-    ...[
-      '--scales=1.0',
-      '--formats=svg',
-      `--output=${buildConfig.svg.src}`,
-    ],
-  ].join(' '), (exportError) => {
-    if (error) throw new Error(`exec error: ${exportError}`);
-    console.info('SVG files exported');
-    cleanExports('svg');
-  });
+  exec(
+    [
+      ...commandBase,
+      ...['--scales=1.0', '--formats=svg', `--output=${buildConfig.svg.src}`],
+    ].join(' '),
+    (exportError) => {
+      if (error) throw new Error(`exec error: ${exportError}`);
+      console.info('SVG files exported');
+      cleanExports('svg');
+    }
+  );
 
   // export PNG files
-  exec([
-    ...commandBase,
-    ...[
-      '--scales=1,2,3,4',
-      '--formats=png',
-      `--output=${buildConfig.png.src}`,
-    ],
-  ].join(' '), (exportError) => {
-    if (error) throw new Error(`exec error: ${exportError}`);
-    console.info('PNG files exported');
-    cleanExports('png');
-  });
-
+  exec(
+    [
+      ...commandBase,
+      ...['--scales=1,2,3,4', '--formats=png', `--output=${buildConfig.png.src}`],
+    ].join(' '),
+    (exportError) => {
+      if (error) throw new Error(`exec error: ${exportError}`);
+      console.info('PNG files exported');
+      cleanExports('png');
+    }
+  );
 });

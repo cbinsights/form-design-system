@@ -1,29 +1,45 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { Example, generalStyles, containerStyles, layoutStyle, labelStyle } from 'base-styles/styledocUtils';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import {
+  Example,
+  generalStyles,
+  containerStyles,
+  layoutStyle,
+  labelStyle,
+} from 'base-styles/styledocUtils';
 import { TableLayout } from 'util/storybook-docs/Table';
 import State from 'util/storybook-docs/State';
 
-<Meta title="Style Utilities/Links"  />
+<Meta title="Style Utilities/Links" />
 
 export const Breakout = () => (
-  <div className="alignChild--center--center" style={{ border: "1px dashed #f09", width: "200px", height: "200px", position: "relative" }}>
+  <div
+    className="alignChild--center--center"
+    style={{
+      border: '1px dashed #f09',
+      width: '200px',
+      height: '200px',
+      position: 'relative',
+    }}
+  >
     <State
       initialValue={true}
       render={(value, setValue) => (
         <button className="breakoutLink" onClick={() => setValue(!value)}>
-          Breakout Button {value ? "Off" : "On"}
+          Breakout Button {value ? 'Off' : 'On'}
         </button>
       )}
-    >
-    </State>
+    ></State>
   </div>
-)
+);
 
 export const TypeLink = () => (
-  <button className="resetButton type--link" onClick={() => window.alert('Terms of service.')}>
+  <button
+    className="resetButton type--link"
+    onClick={() => window.alert('Terms of service.')}
+  >
     Link
   </button>
-)
+);
 
 # Links
 
@@ -31,7 +47,15 @@ export const TypeLink = () => (
   isCSS
   headers={['class', 'description', 'sample']}
   rows={[
-    ['breakoutLink', 'Allows a button or link to extend to the bounds of the nearest position relative element. https://css-tricks.com/breakout-buttons/', {children: <Breakout /> }],
-    ['type--link', 'Allows you to make buttons or text look like a link', { children: <TypeLink /> }],
-  ]} 
+    [
+      'breakoutLink',
+      'Allows a button or link to extend to the bounds of the nearest position relative element. https://css-tricks.com/breakout-buttons/',
+      { children: <Breakout /> },
+    ],
+    [
+      'type--link',
+      'Allows you to make buttons or text look like a link',
+      { children: <TypeLink /> },
+    ],
+  ]}
 />

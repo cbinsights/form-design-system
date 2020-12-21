@@ -12,7 +12,6 @@ jest.mock('@reach/utils', () => {
 });
 
 describe('Popover component', () => {
-
   /**
    * `@reach/menu-button` has its own test coverage.
    * FDS provides only styling overrides, so snapshots will be adequate coverage for our code.
@@ -30,9 +29,15 @@ describe('Popover component', () => {
   it('matches snapshot (JSX items)', () => {
     const wrapper = mount(
       <Menu trigger={<a href="#">trigger</a>}>
-        <MenuItem onSelect={() => {}}><p>First</p></MenuItem>
-        <MenuItem onSelect={() => {}}><p>Second</p></MenuItem>
-        <MenuItem onSelect={() => {}}><p>Third</p></MenuItem>
+        <MenuItem onSelect={() => {}}>
+          <p>First</p>
+        </MenuItem>
+        <MenuItem onSelect={() => {}}>
+          <p>Second</p>
+        </MenuItem>
+        <MenuItem onSelect={() => {}}>
+          <p>Third</p>
+        </MenuItem>
       </Menu>
     );
     expect(wrapper).toMatchSnapshot();
@@ -57,5 +62,4 @@ describe('Popover component', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
-
 });
