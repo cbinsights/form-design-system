@@ -33,8 +33,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - Fade classes added, which work via pseudo elements and support using multiple at a time
 - FDS Button now has support for adding margins.
+- FDS Popover now has 2 themes: `default` and `unthemed`
 
 ### **BREAKING CHANGES**
+
+#### Popover component
+- Prop interface has completely changed. Refer to documentation for full information on new prop names and usage.
+- Default look of Popover now has included styling (dropshadow, border-radidus, etc)
 
 #### Tooltip component
 - `trigger` MUST be able to receive focus now
