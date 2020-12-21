@@ -11,18 +11,23 @@ const Popover = ({
   trigger = 'click',
   triggerElement,
   onClickOutside,
+  theme = 'default',
   appendTo = () => document.body,
 }) => {
   const hideOnEsc = useMemo(() => hideOnEscFunc(onClickOutside), [onClickOutside]);
+  /* Tippy will throw a warning if you attempt to pass a trigger when
+     isOpen is passed. This will avoid showing that warning. */
+  const triggerHelper = isOpen !== undefined ? undefined : trigger;
   return (
     <>
       <Tippy
+        animation={false}
         arrow={false}
         visible={isOpen}
-        trigger={isOpen !== undefined ? undefined : trigger}
+        theme={`popover-${theme}`}
+        trigger={triggerHelper}
         placement={placement}
         interactive
-        theme="light"
         appendTo={appendTo}
         onClickOutside={onClickOutside || (() => {})}
         plugins={[hideOnEsc]}
@@ -42,26 +47,11 @@ Popover.propTypes = {
   children: PropTypes.node,
   /** Element that popover is positioned on */
   triggerElement: PropTypes.node,
-  placement: PropTypes.oneOf([
-    'top',
-    'top-start',
-    'top-end',
-    'right',
-    'right-start',
-    'right-end',
-    'bottom',
-    'bottom-start',
-    'bottom-end',
-    'left',
-    'left-start',
-    'left-end',
-    'auto',
-    'auto-start',
-    'auto-end',
-  ]),
+  placement: PropTypes.oneOf(['auto', 'top', 'right', 'bottom', 'bottom-start', 'left']),
   isOpen: PropTypes.bool,
   onClickOutside: PropTypes.func,
-  trigger: PropTypes.string,
+  trigger: PropTypes.oneOf(['click', 'mouseenter focus']),
+  theme: PropTypes.oneOf(['default', 'unthemed']),
 };
 
 export default Popover;

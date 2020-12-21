@@ -10,15 +10,16 @@ Primary.args = {
   children: <div className="padding--all">popover content</div>,
 };
 
-export const styledPopoverContent = Template.bind({});
-styledPopoverContent.args = {
-  triggerElement: <Button theme="outlined" label="Open popover" />,
+export const Unthemed = Template.bind({});
+Unthemed.args = {
+  theme: 'unthemed',
+  triggerElement: <Button label="Click Me" />,
   children: (
-    <div className="bgColor--white rounded--all padding--all--s">
-      <h3 className="type--head3">Look at me</h3>
-      <p>
-        <em>i am the popover</em>
-      </p>
+    <div
+      className="bgColor-white"
+      style={{ border: 'red dotted 3px', background: 'white', padding: '8px' }}
+    >
+      popover content
     </div>
   ),
 };
@@ -41,7 +42,7 @@ export const controlledPopover = (args) => (
         }
         isOpen={myIsOpen}
       >
-        <div className="bgColor--white rounded--all padding--all--s">
+        <div className="padding--all">
           <h3 className="type--head3">Look at me</h3>
           <p>
             <em>i am the popover</em>
