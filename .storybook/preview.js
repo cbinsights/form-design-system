@@ -40,7 +40,6 @@ export const parameters = {
     ],
   },
   options: {
-    showRoots: true,
     storySort: {
       method: 'alphabetical',
       order: [

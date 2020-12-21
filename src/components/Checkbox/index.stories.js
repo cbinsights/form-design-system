@@ -86,7 +86,6 @@ indeterminateCheckboxes.parameters = {
 export const readingTheValueOfACheckbox = Template.bind({});
 readingTheValueOfACheckbox.args = {
   label: 'Option one',
-  onChange: (e) => console.log(e.currentTarget.checked),
 };
 
 readingTheValueOfACheckbox.parameters = {
@@ -101,6 +100,7 @@ readingTheValueOfACheckbox.parameters = {
 export default {
   component: Checkbox,
   title: 'components/Checkbox',
+  argTypes: { onChange: { action: 'onChange' } },
   parameters: {
     docs: {
       attributes: ['rest'],
