@@ -15,7 +15,7 @@ import Button from 'components/Button';
 
 import Dialog from '.';
 
-const Template = (args) => <Dialog {...args} />;
+const Template = (args) => <Dialog disableFocusTrap={true} {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
