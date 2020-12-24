@@ -37,7 +37,7 @@
 }
 
 .fdsMenuItem--active {
-  background-color: var(--color-lightGray);
+  background-color: rgba(64, 64, 64, 0.12);
 }
 
 .fdsMenuItem--disabled[data-selected] {
