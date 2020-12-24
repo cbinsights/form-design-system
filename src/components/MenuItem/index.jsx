@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cc from 'classcat';
 import { MenuItem as ReachMenuItem } from '@reach/menu-button';
 
 const noop = () => {};
 
-const MenuItem = ({ onSelect, children, isDisabled }) => (
+const MenuItem = ({ onSelect, children, isDisabled, isActive }) => (
   <ReachMenuItem
-    className={isDisabled ? 'fdsMenuItem--disabled' : undefined}
+    className={cc([
+      {
+        'fdsMenuItem--disabled': isDisabled,
+        'fdsMenuItem--active': isActive,
+      },
+    ])}
     onSelect={!isDisabled ? onSelect : noop}
     aria-disabled={isDisabled}
   >
@@ -24,6 +30,9 @@ MenuItem.propTypes = {
 
   /** Styles menu item as disabled and disables selection events */
   isDisabled: PropTypes.bool,
+
+  /** Applies isActive style to MenuItem */
+  isActive: PropTypes.bool,
 };
 
 export default MenuItem;

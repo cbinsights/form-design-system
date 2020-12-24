@@ -27,6 +27,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [9.21] MenuItem additions
+
+- `MenuItem` now has `isActive` which renders an active state UI for it. To use this, you'll need to add isActive states to all `MenuItem`'s and apply the correct conditionals so the selected one is active. 
+
 ## [9.20] 🎁 Unwrapped Icons
 
 - Icon components are no longer wrapped with the `withFdsIconWrapper` HOC. The props signature

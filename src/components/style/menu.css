@@ -36,6 +36,10 @@
   color: var(--font-color-hint) !important;
 }
 
+.fdsMenuItem--active {
+  background-color: var(--color-lightGray);
+}
+
 .fdsMenuItem--disabled[data-selected] {
   background: rgba(var(--rgb-lightGray), 0.25) !important;
   cursor: not-allowed;

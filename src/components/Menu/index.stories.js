@@ -145,6 +145,45 @@ disabledItems.parameters = {
   },
 };
 
+export const isActive = (args) => (
+  <Menu
+    {...args}
+    trigger={<Button theme="outlined" label="Menu with active item" hasCaret />}
+  >
+    <MenuItem
+      isActive
+      onSelect={() => {
+        action('🍰');
+      }}
+    >
+      <Tooltip trigger="Cake" message="Not your birthday" />
+    </MenuItem>
+    <MenuItem
+      onSelect={() => {
+        action('🍕');
+      }}
+    >
+      Pizza
+    </MenuItem>
+    <MenuItem
+      onSelect={() => {
+        action('☠️');
+      }}
+    >
+      Tide pod
+    </MenuItem>
+  </Menu>
+);
+
+isActive.parameters = {
+  docs: {
+    description: {
+      story:
+        'To use isActive properly, you will needd to add this prop to all MenuItems and add the relevant conditionals so that the selected one in the list has the active state.',
+    },
+  },
+};
+
 export default {
   component: Menu,
   subcomponents: { MenuItem },
