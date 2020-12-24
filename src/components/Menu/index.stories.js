@@ -95,6 +95,9 @@ export const customItems = (args) => (
         </Flex>
       </div>
     </MenuItem>
+    <MenuLink onSelect={action('Storybook')} href="/">
+      Go to Storybook home
+    </MenuLink>
   </Menu>
 );
 
@@ -153,7 +156,7 @@ export default {
     docs: {
       description: {
         component:
-          'Use for dropdowns that contain actions the user can take. (Use FDS `Popover` instead for content like forms & arbitrary content). Use `MenuLink` for rendering links in the list, and otherwise use `MenuItem`',
+          'Renders a dropdown containing links, and actions the user can take. (Use FDS `Popover` instead for content like forms & arbitrary content). Use `MenuLink` for rendering links, and default to using `MenuItem` otherwise.',
       },
     },
   },
