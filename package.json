@@ -157,9 +157,9 @@
   "version": "4.0.0",
   "dependencies": {
     "@popperjs/core": "^2.4.1",
-    "@reach/menu-button": "^0.10.5",
+    "@reach/menu-button": "^0.12.1",
     "classcat": "^4.1.0",
-    "focus-trap-react": "^6.0.0",
+    "focus-trap-react": "^8.3.2",
     "raf-schd": "^4",
     "react-popper": "^2.2.3",
     "throttle-debounce": "^3.0.1",
