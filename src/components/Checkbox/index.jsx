@@ -1,5 +1,5 @@
 import React from 'react';
-import uuidv4 from 'uuid/v4';
+import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
 
@@ -17,7 +17,7 @@ const Checkbox = ({
   disabled = false,
   label,
   inputRef,
-  id = uuidv4(),
+  id = v4(),
   ...rest
 }) => {
   const IconUnchecked = CheckEmptyIcon;
