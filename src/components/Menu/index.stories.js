@@ -109,6 +109,23 @@ customItems.parameters = {
   },
 };
 
+export const rest = (args) => (
+  <Menu {...args} trigger={<Button hasCaret label="actions" theme="outlined" />}>
+    <MenuItem data-test="hello">Delete</MenuItem>
+    <MenuLink href="#" data-test="world">
+      Edit
+    </MenuLink>
+  </Menu>
+);
+
+rest.parameters = {
+  docs: {
+    description: {
+      story: '`MenuItem` and `MenuLink` accept rest props.',
+    },
+  },
+};
+
 export const disabledItems = (args) => (
   <Menu
     {...args}
