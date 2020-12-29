@@ -29,7 +29,7 @@ const Popover = ({
         placement={placement}
         interactive
         appendTo={appendTo}
-        onUserDismiss={onUserDismiss || (() => {})}
+        onClickOutside={onUserDismiss || (() => {})}
         plugins={[hideOnEsc]}
         ignoreAttributes
         zIndex={FDS.ZINDEX_MODAL}
