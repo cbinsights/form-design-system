@@ -4,13 +4,13 @@ import { MenuLink as ReachMenuLink } from '@reach/menu-button';
 
 const noop = () => {};
 
-const MenuLink = ({ onSelect, children, isDisabled, href, as }) => (
+const MenuLink = ({ onSelect, children, isDisabled, Link, ...rest }) => (
   <ReachMenuLink
     className={isDisabled ? 'fdsMenuItem--disabled' : undefined}
     onSelect={!isDisabled ? onSelect : noop}
     aria-disabled={isDisabled}
-    href={href}
-    as={as}
+    as={Link}
+    {...rest}
   >
     {children}
   </ReachMenuLink>
@@ -27,10 +27,15 @@ MenuLink.propTypes = {
   /** Styles menu item as disabled and disables selection events */
   isDisabled: PropTypes.bool,
 
-  href: PropTypes.string,
-
-  /** Useful for passing react router Link */
-  as: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /**
+   * Takes in a react-router `Link` reference and sets it
+   * as the base element. You may ONLY use it like the
+   * following:
+   *
+   * - `import { Link } from 'react-router'`
+   * - `Link={Link}`
+   */
+  Link: PropTypes.func,
 };
 
 export default MenuLink;
