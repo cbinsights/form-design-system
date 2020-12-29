@@ -10,11 +10,11 @@ const Popover = ({
   placement = 'bottom-start',
   trigger = 'click',
   triggerElement,
-  onClickOutside,
+  onUserDismiss,
   theme = 'default',
   appendTo = () => document.body,
 }) => {
-  const hideOnEsc = useMemo(() => hideOnEscFunc(onClickOutside), [onClickOutside]);
+  const hideOnEsc = useMemo(() => hideOnEscFunc(onUserDismiss), [onUserDismiss]);
   /* Tippy will throw a warning if you attempt to pass a trigger when
      isOpen is passed. This will avoid showing that warning. */
   const triggerHelper = isOpen !== undefined ? undefined : trigger;
@@ -29,7 +29,7 @@ const Popover = ({
         placement={placement}
         interactive
         appendTo={appendTo}
-        onClickOutside={onClickOutside || (() => {})}
+        onUserDismiss={onUserDismiss || (() => {})}
         plugins={[hideOnEsc]}
         ignoreAttributes
         zIndex={FDS.ZINDEX_MODAL}
@@ -43,14 +43,23 @@ const Popover = ({
 };
 
 Popover.propTypes = {
-  appendTo: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  appendTo: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func,
+    PropTypes.oneOf(['parent']),
+  ]),
   children: PropTypes.node,
   /** Element that popover is positioned on */
   triggerElement: PropTypes.node,
+  /** Position preference of the popover */
   placement: PropTypes.oneOf(['auto', 'top', 'right', 'bottom', 'bottom-start', 'left']),
+  /** Controls the popover */
   isOpen: PropTypes.bool,
-  onClickOutside: PropTypes.func,
+  /** calls this callback when user clicks outside popover or presses esc key */
+  onUserDismiss: PropTypes.func,
+  /** What mode of interaction triggers the popover */
   trigger: PropTypes.oneOf(['click', 'mouseenter focus']),
+  /** the UI display */
   theme: PropTypes.oneOf(['default', 'unthemed']),
 };
 

@@ -2,7 +2,6 @@ const hideOnEscFunc = (callback) => ({
   name: 'hideOnEsc',
   defaultValue: true,
   fn(props) {
-    console.log('hi adam', props);
     function onKeyDown(event) {
       if (event.keyCode === 27) {
         if (callback) {
