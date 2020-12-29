@@ -4,11 +4,12 @@ import { MenuItem as ReachMenuItem } from '@reach/menu-button';
 
 const noop = () => {};
 
-const MenuItem = ({ onSelect, children, isDisabled }) => (
+const MenuItem = ({ onSelect, children, isDisabled, ...rest }) => (
   <ReachMenuItem
     className={isDisabled ? 'fdsMenuItem--disabled' : undefined}
     onSelect={!isDisabled ? onSelect : noop}
     aria-disabled={isDisabled}
+    {...rest}
   >
     {children}
   </ReachMenuItem>
