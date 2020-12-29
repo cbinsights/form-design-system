@@ -43,11 +43,8 @@ const Popover = ({
 };
 
 Popover.propTypes = {
-  appendTo: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.func,
-    PropTypes.oneOf(['parent']),
-  ]),
+  /** the UI display */
+  theme: PropTypes.oneOf(['default', 'unthemed']),
   children: PropTypes.node,
   /** Element that popover is positioned on */
   triggerElement: PropTypes.node,
@@ -59,8 +56,12 @@ Popover.propTypes = {
   onUserDismiss: PropTypes.func,
   /** What mode of interaction triggers the popover */
   trigger: PropTypes.oneOf(['click', 'mouseenter focus']),
-  /** the UI display */
-  theme: PropTypes.oneOf(['default', 'unthemed']),
+  /** Either takes a reference ( () => document.body ), the string `parent` to disable portalling, or passing an element */
+  appendTo: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.oneOf(['parent']),
+    PropTypes.node,
+  ]),
 };
 
 export default Popover;
