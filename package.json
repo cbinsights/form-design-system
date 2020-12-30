@@ -115,7 +115,7 @@
     "rimraf": "^2.6.2",
     "snake-case": "^2.1.0",
     "style-dictionary": "^2.8.1",
-    "style-loader": "^2.0.0",
+    "style-loader": "^1.2.1",
     "stylelint": "^13.2",
     "svg-to-jsx": "^1.0.2",
     "tinycolor2": "^1.4.1",
