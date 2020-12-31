@@ -1,5 +1,5 @@
 import React from 'react';
-import uuidv4 from 'uuid/v4';
+import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
 
@@ -25,7 +25,7 @@ const Radio = React.forwardRef(
     },
     ref
   ) => {
-    const id = uuidv4();
+    const id = v4();
 
     return (
       <div
