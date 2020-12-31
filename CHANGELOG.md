@@ -70,6 +70,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ## [9.21] MenuLink
 - Added FDS `MenuLink` component. Use alongside FDS `MenuItem` inside of FDS `Menu`.
+
 ## [9.20] 🎁 Unwrapped Icons
 
 - Icon components are no longer wrapped with the `withFdsIconWrapper` HOC. The props signature
