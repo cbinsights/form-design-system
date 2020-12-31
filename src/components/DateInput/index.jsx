@@ -5,9 +5,9 @@ import moment from 'moment';
 import DayPicker from 'react-day-picker';
 
 import DatePickerIcon from 'lib/icons/react/DatePickerIcon';
-import Popover from 'components/Popover';
 import TextInput from 'components/TextInput';
 import YearAndMonthSelector from './YearAndMonthSelector';
+import DateInputPopover from './DateInputPopover';
 import NavArrows from './NavArrows';
 import { getYearRange, isValidUserDate } from './util';
 
@@ -127,7 +127,7 @@ const DateInput = ({
   };
 
   return (
-    <Popover
+    <DateInputPopover
       ref={popoverRef}
       interactionMode="controlled"
       isOpen={isOpen}
@@ -175,7 +175,7 @@ const DateInput = ({
           )}
         />
       </div>
-    </Popover>
+    </DateInputPopover>
   );
 };
 

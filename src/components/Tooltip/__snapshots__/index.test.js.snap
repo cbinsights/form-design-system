@@ -6,9 +6,9 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
   trigger={<Trigger />}
 >
   <ForwardRef(TippyWrapper)
-    appendTo={<body />}
+    appendTo={[Function]}
     arrow={false}
-    className="bgColor--charcoal inverted align--center padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold"
+    className="bgColor--charcoal inverted align--center padding--y--s  padding--x elevation--2 rounded--all fontSize--s fontWeight--bold"
     content="lol"
     delay={
       Array [
@@ -23,9 +23,9 @@ exports[`Tooltip component matches snapshot (uses the right classes) 1`] = `
     zIndex="20"
   >
     <Tippy
-      appendTo={<body />}
+      appendTo={[Function]}
       arrow={false}
-      className="bgColor--charcoal inverted align--center padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold"
+      className="bgColor--charcoal inverted align--center padding--y--s  padding--x elevation--2 rounded--all fontSize--s fontWeight--bold"
       content="lol"
       delay={
         Array [

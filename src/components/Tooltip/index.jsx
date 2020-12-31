@@ -19,8 +19,8 @@ const Tooltip = ({
     placement={position}
     zIndex={FDS.ZINDEX_MODAL}
     moveTransition="transform 0.2s ease-out"
-    appendTo={document.body}
-    className={`bgColor--charcoal inverted align--${textAlign} padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold`}
+    appendTo={() => document.body}
+    className={`bgColor--charcoal inverted align--${textAlign} padding--y--s  padding--x elevation--2 rounded--all fontSize--s fontWeight--bold`}
   >
     {trigger}
   </Tippy>
@@ -37,21 +37,7 @@ Tooltip.propTypes = {
   maxWidth: PropTypes.number,
 
   /** Position preference of tooltip. */
-  position: PropTypes.oneOf([
-    'top-start',
-    'top-end',
-    'right',
-    'right-start',
-    'right-end',
-    'bottom',
-    'bottom-start',
-    'bottom-end',
-    'left',
-    'left-start',
-    'auto',
-    'auto-start',
-    'auto-end',
-  ]),
+  position: PropTypes.oneOf(['auto', 'top', 'right', 'bottom', 'left']),
   /** Text align for the message */
   textAlign: PropTypes.oneOf(['left', 'center', 'right']),
 };

@@ -1,3 +1,8 @@
+/* Reach framework styles */
+@import "@reach/menu-button/styles.css";
+/* Tippy framework styles */
+@import "tippy.js/dist/tippy.css";
+
 /* Foundational Styles */
 @import "../../base-styles/index.css";
 
@@ -8,8 +13,8 @@
 @import "./rtg/growFast";
 @import "./rtg/slideIn";
 
-
-
+@import "./tooltip.css";
+@import "./popover.css";
 @import "./buttonColors.css";
 @import "./flex.css";
 @import "./section.css";
@@ -38,8 +43,3 @@
 @import "./toaster.css";
 @import "./dialog.css";
 @import "./menu.css";
-/* Reach framework styles */
-@import "@reach/menu-button/styles.css";
-/* Tippy framework styles */
-@import "tippy.js/dist/tippy.css";
-@import "./tooltip.css";

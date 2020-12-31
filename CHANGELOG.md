@@ -31,12 +31,18 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### Changes / Additions
 
--  Fade classes added, which work via pseudo elements and support using multiple at a time
+- Fade classes added, which work via pseudo elements and support using multiple at a time
+- FDS Button now has support for adding margins.
+- FDS Popover now has 2 themes: `default` and `unthemed`
 
 ### **BREAKING CHANGES**
 
 ### TextInput component
 - onThrottledChange has been removed
+
+#### Popover component
+- Prop interface has completely changed. Refer to documentation for full information on new prop names and usage.
+- Default look of Popover now has included styling (dropshadow, border-radidus, etc)
 
 #### Tooltip component
 - `trigger` MUST be able to receive focus now
@@ -47,10 +53,26 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ### CornerPosition component
 - `CornerPosition` component added to help decorate nodes
 
+#### Double and Half spacing removed
+- classes, css variables, and js variables all updated
+- upgrade guide: 
+  - `half` (8px) maps to `s` (8px)
+  - `double` (32px) maps to `xl` (32px)
+- Examples:
+  - CSS Variable: { margin: var(--space-half) } becomes { margin: var(--space-s) }
+  - JS Variable: FDS.SPACE_DOUBLE becomes FDS.SPACE_XL 
+  - classes: .margin--top--half .becomes margin--top--s
+
 #### Removed components
 - `HScroll` (use fade classes + useScrollAttributes hook)
 - `GapList` (use FDS classes instead for spacing, border)
 - `Updatable` (use `CornerPosition` component + Badge instead)
+
+## [9.20] 🎁 Unwrapped Icons
+
+- Icon components are no longer wrapped with the `withFdsIconWrapper` HOC. The props signature
+  and import statements remain unchanged. Your editor may now have improved autocomplete
+  features for FDS icon components.
 
 ## [9.19] Added useScrollAttributes hook
 

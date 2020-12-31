@@ -17,8 +17,10 @@
 .margin--x--s,
 .margin--all--s { margin-left: var(--space-s); }
 
+.margin--left,
 .margin--left--m,
 .margin--x--m,
+.margin--all,
 .margin--all--m,
 .margin--x { margin-left: var(--space-default); }
 
@@ -38,8 +40,10 @@
 .margin--x--s,
 .margin--all--s { margin-right: var(--space-s); }
 
+.margin--right,
 .margin--right--m,
 .margin--x--m,
+.margin--all,
 .margin--all--m,
 .margin--x { margin-right: var(--space-default); }
 
@@ -59,8 +63,10 @@
 .margin--y--s,
 .margin--all--s { margin-bottom: var(--space-s); }
 
+.margin--bottom,
 .margin--bottom--m,
 .margin--y--m,
+.margin--all,
 .margin--all--m,
 .margin--y { margin-bottom: var(--space-default); }
 
@@ -80,8 +86,10 @@
 .margin--y--s,
 .margin--all--s { margin-top: var(--space-s); }
 
+.margin--top,
 .margin--top--m,
 .margin--y--m,
+.margin--all,
 .margin--all--m,
 .margin--y { margin-top: var(--space-default); }
 
@@ -101,8 +109,10 @@
 .padding--x--s,
 .padding--all--s { padding-left: var(--space-s); }
 
+.padding--left,
 .padding--left--m,
 .padding--x--m,
+.padding--all,
 .padding--all--m,
 .padding--x { padding-left: var(--space-default); }
 
@@ -122,8 +132,10 @@
 .padding--x--s,
 .padding--all--s { padding-right: var(--space-s); }
 
+.padding--right,
 .padding--right--m,
 .padding--x--m,
+.padding--all,
 .padding--all--m,
 .padding--x { padding-right: var(--space-default); }
 
@@ -143,8 +155,10 @@
 .padding--y--s,
 .padding--all--s { padding-bottom: var(--space-s); }
 
+.padding-bottom,
 .padding--bottom--m,
 .padding--y--m,
+.padding--all,
 .padding--all--m,
 .padding--y { padding-bottom: var(--space-default); }
 
@@ -164,8 +178,10 @@
 .padding--y--s,
 .padding--all--s { padding-top: var(--space-s); }
 
+.padding--top,
 .padding--top--m,
 .padding--y--m,
+.padding--all,
 .padding--all--m,
 .padding--y { padding-top: var(--space-default); }
 
