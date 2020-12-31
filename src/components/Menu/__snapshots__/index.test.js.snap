@@ -44,6 +44,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
       items={
         Array [
           Object {
+            "disabled": undefined,
             "element": <div
               data-reach-menu-item=""
               data-valuetext="First"
@@ -60,6 +61,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
             "key": "First",
           },
           Object {
+            "disabled": undefined,
             "element": <div
               data-reach-menu-item=""
               data-valuetext="Second"
@@ -76,6 +78,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
             "key": "Second",
           },
           Object {
+            "disabled": undefined,
             "element": <div
               data-reach-menu-item=""
               data-valuetext="Third"
@@ -116,6 +119,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
         className="elevation--2 rounded--all bgColor--white"
       >
         <Popover
+          as="div"
           className="elevation--2 rounded--all bgColor--white"
           data-reach-menu=""
           data-reach-menu-popover=""
@@ -193,6 +197,7 @@ exports[`Popover component matches snapshot (JSX items) 1`] = `
               }
             >
               <PopoverImpl
+                as="div"
                 className="elevation--2 rounded--all bgColor--white"
                 data-reach-menu=""
                 data-reach-menu-popover=""
@@ -405,6 +410,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
       items={
         Array [
           Object {
+            "disabled": undefined,
             "element": <div
               data-reach-menu-item=""
               data-valuetext="First"
@@ -419,6 +425,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
             "key": "First",
           },
           Object {
+            "disabled": undefined,
             "element": <div
               data-reach-menu-item=""
               data-valuetext="Second"
@@ -433,6 +440,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
             "key": "Second",
           },
           Object {
+            "disabled": undefined,
             "element": <div
               data-reach-menu-item=""
               data-valuetext="Third"
@@ -471,6 +479,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
         className="elevation--2 rounded--all bgColor--white"
       >
         <Popover
+          as="div"
           className="elevation--2 rounded--all bgColor--white"
           data-reach-menu=""
           data-reach-menu-popover=""
@@ -542,6 +551,7 @@ exports[`Popover component matches snapshot (in modal) 1`] = `
               }
             >
               <PopoverImpl
+                as="div"
                 className="elevation--2 rounded--all bgColor--white"
                 data-reach-menu=""
                 data-reach-menu-popover=""
@@ -728,6 +738,7 @@ exports[`Popover component matches snapshot (string items) 1`] = `
       items={
         Array [
           Object {
+            "disabled": undefined,
             "element": <div
               data-reach-menu-item=""
               data-valuetext="First"
@@ -742,6 +753,7 @@ exports[`Popover component matches snapshot (string items) 1`] = `
             "key": "First",
           },
           Object {
+            "disabled": undefined,
             "element": <div
               data-reach-menu-item=""
               data-valuetext="Second"
@@ -756,6 +768,7 @@ exports[`Popover component matches snapshot (string items) 1`] = `
             "key": "Second",
           },
           Object {
+            "disabled": undefined,
             "element": <div
               data-reach-menu-item=""
               data-valuetext="Third"
@@ -794,6 +807,7 @@ exports[`Popover component matches snapshot (string items) 1`] = `
         className="elevation--2 rounded--all bgColor--white"
       >
         <Popover
+          as="div"
           className="elevation--2 rounded--all bgColor--white"
           data-reach-menu=""
           data-reach-menu-popover=""
@@ -865,6 +879,7 @@ exports[`Popover component matches snapshot (string items) 1`] = `
               }
             >
               <PopoverImpl
+                as="div"
                 className="elevation--2 rounded--all bgColor--white"
                 data-reach-menu=""
                 data-reach-menu-popover=""

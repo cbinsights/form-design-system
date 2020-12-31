@@ -16,6 +16,12 @@ const config = {
     '@babel/plugin-transform-runtime',
     '@babel/plugin-transform-modules-commonjs',
     [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragmaFrag": "React.Fragment"
+      }
+    ],
+    [
       "module-resolver", {
         "root": ["./src"],
         "alias": {
