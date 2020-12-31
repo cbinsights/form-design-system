@@ -16,6 +16,7 @@ import Indicator from 'components/Indicator';
 import InputGroup from 'components/InputGroup';
 import Menu from 'components/Menu';
 import MenuItem from 'components/MenuItem';
+import MenuLink from 'components/MenuLink';
 import Popover from 'components/Popover';
 import Prompt from 'components/Prompt';
 import Radio from 'components/Radio';
@@ -45,6 +46,7 @@ export {
   InputGroup,
   Menu,
   MenuItem,
+  MenuLink,
   Popover,
   Prompt,
   Radio,

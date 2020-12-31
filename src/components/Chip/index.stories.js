@@ -49,6 +49,12 @@ Icon.args = {
   Icon: StarFilledIcon,
 };
 
+export const Close = Template.bind({});
+Close.args = {
+  label: 'Chip',
+  onClose: () => {},
+};
+
 export default {
   component: Chip,
   title: 'components/Chip',
