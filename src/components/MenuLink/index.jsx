@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MenuItem as ReachMenuItem } from '@reach/menu-button';
+import { MenuLink as ReachMenuLink } from '@reach/menu-button';
 
 const noop = () => {};
 
-const MenuItem = ({ onSelect, children, isDisabled, ...rest }) => (
-  <ReachMenuItem
+const MenuLink = ({ onSelect, children, isDisabled, Link, ...rest }) => (
+  <ReachMenuLink
     className={isDisabled ? 'fdsMenuItem--disabled' : undefined}
     onSelect={!isDisabled ? onSelect : noop}
     aria-disabled={isDisabled}
+    as={Link}
     {...rest}
   >
     {children}
-  </ReachMenuItem>
+  </ReachMenuLink>
 );
 
-MenuItem.propTypes = {
+MenuLink.propTypes = {
   /** selection callback */
   onSelect: PropTypes.func.isRequired,
 
@@ -25,6 +26,16 @@ MenuItem.propTypes = {
 
   /** Styles menu item as disabled and disables selection events */
   isDisabled: PropTypes.bool,
+
+  /**
+   * Takes in a react-router `Link` reference and sets it
+   * as the base element. You may ONLY use it like the
+   * following:
+   *
+   * - `import { Link } from 'react-router'`
+   * - `Link={Link}`
+   */
+  Link: PropTypes.func,
 };
 
-export default MenuItem;
+export default MenuLink;

@@ -12,7 +12,7 @@ import EditIcon from 'lib/icons/react/EditIcon';
 import FundingIcon from 'lib/icons/react/FundingIcon';
 import Tooltip from 'components/Tooltip';
 
-import { MenuItem } from 'components';
+import { MenuItem, MenuLink } from 'components';
 import Menu from '.';
 
 export const Primary = (args) => (
@@ -95,13 +95,33 @@ export const customItems = (args) => (
         </Flex>
       </div>
     </MenuItem>
+    <MenuLink onSelect={action('Storybook')} href="/">
+      Go to Storybook home
+    </MenuLink>
   </Menu>
 );
 
 customItems.parameters = {
   docs: {
     description: {
-      story: '`MenuItem` components will accept a plain string or any JSX node.',
+      story: '`MenuItem` and `MenuLink` will accept a plain string or any JSX node.',
+    },
+  },
+};
+
+export const rest = (args) => (
+  <Menu {...args} trigger={<Button hasCaret label="actions" theme="outlined" />}>
+    <MenuItem data-test="hello">Delete</MenuItem>
+    <MenuLink href="#" data-test="world">
+      Edit
+    </MenuLink>
+  </Menu>
+);
+
+rest.parameters = {
+  docs: {
+    description: {
+      story: '`MenuItem` and `MenuLink` accept rest props.',
     },
   },
 };
@@ -147,13 +167,13 @@ disabledItems.parameters = {
 
 export default {
   component: Menu,
-  subcomponents: { MenuItem },
+  subcomponents: { MenuItem, MenuLink },
   title: 'components/Menu',
   parameters: {
     docs: {
       description: {
         component:
-          'Renders a basic keyboard navigable dropdown menu following the [WAI-ARIA pattern for "menubutton"](https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton). Only use a `Menu` for dropdowns that contain actions the user can take. If a dropdown includes any other type of content (forms, arbitrary content), use a `Popover` component instead. The menu will automatically position above or below the trigger button based on its position in the viewport.',
+          'Renders a dropdown containing links, and actions the user can take. (Use FDS `Popover` instead for content like forms & arbitrary content). Use `MenuLink` for rendering links, and default to using `MenuItem` otherwise.',
       },
     },
   },
