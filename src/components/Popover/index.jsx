@@ -9,14 +9,14 @@ const Popover = ({
   children,
   isOpen,
   placement = 'bottom-start',
-  trigger = 'click',
+  triggerType = 'click',
   triggerElement,
   onUserDismiss,
   theme = 'default',
   appendTo = () => document.body,
 }) => {
   const hideOnEsc = useMemo(() => hideOnEscFunc(onUserDismiss), [onUserDismiss]);
-  const computedTrigger = triggerHelper(trigger, isOpen);
+  const computedTriggerType = triggerHelper(triggerType, isOpen);
   return (
     <>
       <Tippy
@@ -24,7 +24,7 @@ const Popover = ({
         arrow={false}
         visible={isOpen}
         theme={`popover-${theme}`}
-        trigger={computedTrigger}
+        trigger={computedTriggerType}
         placement={placement}
         interactive
         appendTo={appendTo}
@@ -54,7 +54,7 @@ Popover.propTypes = {
   /** calls this callback when user clicks outside popover or presses esc key */
   onUserDismiss: PropTypes.func,
   /** What mode of interaction triggers the popover */
-  trigger: PropTypes.oneOf(['click', 'hover']),
+  triggerType: PropTypes.oneOf(['click', 'hover']),
   /** Either takes a reference ( () => document.body ), the string `parent` to disable portalling, or passing an element */
   appendTo: PropTypes.oneOfType([
     PropTypes.func,

@@ -28,7 +28,7 @@ export const controlledPopover = (args) => {
   return (
     <Popover
       {...args}
-      onClickOutside={() => setIsOpen(false)}
+      onUserDismiss={() => setIsOpen(false)}
       triggerElement={
         <button
           onClick={() => {
