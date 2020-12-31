@@ -4,6 +4,18 @@ import Tippy from '@tippyjs/react';
 import FDS from 'lib/dictionary/js/styleConstants';
 import hideOnEscFunc from './hideOnEsc';
 
+const triggerHelper = (trigger, isOpen) => {
+  // https://atomiks.github.io/tippyjs/v6/all-props/#trigger
+  // We'd like hover to semantically map to mouseenter + focus
+  const triggerMapping = {
+    click: 'click',
+    hover: 'mouseenter focus',
+  };
+  /* Tippy will throw a warning if you attempt to pass a trigger when
+     isOpen is passed. This will avoid showing that warning. */
+  return isOpen !== undefined ? undefined : triggerMapping[trigger];
+};
+
 const Popover = ({
   children,
   isOpen,
@@ -15,9 +27,7 @@ const Popover = ({
   appendTo = () => document.body,
 }) => {
   const hideOnEsc = useMemo(() => hideOnEscFunc(onUserDismiss), [onUserDismiss]);
-  /* Tippy will throw a warning if you attempt to pass a trigger when
-     isOpen is passed. This will avoid showing that warning. */
-  const triggerHelper = isOpen !== undefined ? undefined : trigger;
+  const computedTrigger = triggerHelper(trigger, isOpen);
   return (
     <>
       <Tippy
@@ -25,7 +35,7 @@ const Popover = ({
         arrow={false}
         visible={isOpen}
         theme={`popover-${theme}`}
-        trigger={triggerHelper}
+        trigger={computedTrigger}
         placement={placement}
         interactive
         appendTo={appendTo}
@@ -55,7 +65,7 @@ Popover.propTypes = {
   /** calls this callback when user clicks outside popover or presses esc key */
   onUserDismiss: PropTypes.func,
   /** What mode of interaction triggers the popover */
-  trigger: PropTypes.oneOf(['click', 'mouseenter focus']),
+  trigger: PropTypes.oneOf(['click', 'hover']),
   /** Either takes a reference ( () => document.body ), the string `parent` to disable portalling, or passing an element */
   appendTo: PropTypes.oneOfType([
     PropTypes.func,
