@@ -3,7 +3,6 @@ import { DocsContext } from '@storybook/addon-docs/blocks';
 
 export const Badges = () => {
   const context = useContext(DocsContext);
-  console.log(context);
 
   const isRest = context.parameters.docs.attributes;
 

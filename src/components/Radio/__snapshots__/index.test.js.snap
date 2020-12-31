@@ -10,6 +10,7 @@ exports[`Radio component matches snapshot (checked) 1`] = `
     id="mock-universal-unique-identifier"
     name="snapshot-radio"
     type="radio"
+    value="test-value"
   />
   <label
     className="flush--bottom"
@@ -47,6 +48,7 @@ exports[`Radio component matches snapshot (disabled) 1`] = `
     id="mock-universal-unique-identifier"
     name="snapshot-radio"
     type="radio"
+    value="test-value"
   />
   <label
     className="flush--bottom"

@@ -35,12 +35,12 @@ module.exports = {
     'declaration-colon-space-after': 'always',
     'declaration-colon-space-before': 'never',
     'declaration-empty-line-before': 'never',
-    'declaration-property-unit-whitelist': {
+    'declaration-property-unit-allowed-list': {
       'line-height': [],
       '/^animation/': ['ms'],
       '/^transition/': ['ms'],
     },
-    'declaration-property-value-blacklist': [
+    'declaration-property-value-disallowed-list': [
       {
         outline: ['none'],
         // no font-size values under 12px or .75rem
@@ -67,7 +67,7 @@ module.exports = {
     'function-parentheses-newline-inside': 'never-multi-line',
     'function-parentheses-space-inside': 'never',
     'function-url-quotes': 'always',
-    'function-url-scheme-blacklist': ['/^data:image/'],
+    'function-url-scheme-disallowed-list': ['/^data:image/'],
     'function-whitespace-after': 'always',
     indentation: 2,
     'length-zero-no-unit': true,
@@ -90,7 +90,7 @@ module.exports = {
     'number-leading-zero': 'always',
     'number-max-precision': 2,
     'number-no-trailing-zeros': true,
-    'property-blacklist': 'text-rendering',
+    'property-disallowed-list': 'text-rendering',
     'property-case': 'lower',
     'property-no-unknown': true,
     'property-no-vendor-prefix': [
@@ -116,7 +116,7 @@ module.exports = {
       },
     ],
     'selector-attribute-brackets-space-inside': 'never',
-    'selector-attribute-operator-blacklist': '|=',
+    'selector-attribute-operator-disallowed-list': '|=',
     'selector-attribute-operator-space-after': 'never',
     'selector-attribute-operator-space-before': 'never',
     'selector-attribute-quotes': 'always',
@@ -182,7 +182,7 @@ module.exports = {
     'declaration-colon-newline-after': null,
     'declaration-no-important': null,
     'declaration-property-unit-blacklist': null,
-    'declaration-property-value-whitelist': null,
+    'declaration-property-value-allowed-list': null,
     'font-weight-notation': null,
     'function-blacklist': null,
     'function-url-no-scheme-relative': null,
