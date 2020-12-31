@@ -37,6 +37,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
+### TextInput component
+- onThrottledChange has been removed
+
 #### Popover component
 - Prop interface has completely changed. Refer to documentation for full information on new prop names and usage.
 - Default look of Popover now has included styling (dropshadow, border-radidus, etc)

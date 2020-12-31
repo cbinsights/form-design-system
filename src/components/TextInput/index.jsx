@@ -1,19 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { throttle, debounce } from 'throttle-debounce';
 import cc from 'classcat';
 import IconInput from './IconInput';
 import DecoratedInput from './DecoratedInput';
-
-export const throttleValue = 500;
-
-export const throttleInput = (input, throttleFn, debounceFn) => {
-  if (input.length < 5 || input.endsWith(' ')) {
-    throttleFn(input);
-  } else {
-    debounceFn(input);
-  }
-};
 
 const TextInput = React.forwardRef(
   (
@@ -24,7 +13,6 @@ const TextInput = React.forwardRef(
       labelPosition = 'top',
       errorText,
       hasError,
-      onThrottledChange,
       showRequired,
       showLabel = true,
       onChange = () => {},
@@ -38,33 +26,6 @@ const TextInput = React.forwardRef(
     },
     ref
   ) => {
-    // Refer to the following for an explanation on
-    // the throttling / debouncing approach:
-    // https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-in-react
-    let onThrottledChangeThrottled;
-    let onThrottledChangeDebounced;
-
-    const assignThrottleFunctions = () => {
-      if (onThrottledChange) {
-        onThrottledChangeThrottled = throttle(throttleValue, onThrottledChange);
-        onThrottledChangeDebounced = debounce(throttleValue, onThrottledChange);
-      }
-    };
-
-    const inputOnChange = (e) => {
-      e.persist();
-      onChange(e);
-      if (onThrottledChange) {
-        throttleInput(
-          e.target.value,
-          onThrottledChangeThrottled,
-          onThrottledChangeDebounced
-        );
-      }
-    };
-
-    useEffect(assignThrottleFunctions, [onThrottledChange]);
-
     const Element = showLabel ? 'label' : 'div';
 
     return (
@@ -97,7 +58,7 @@ const TextInput = React.forwardRef(
                 ref={ref}
                 aria-label={ariaLabel || (showLabel ? label : undefined)}
                 aria-invalid={errorText || hasError ? true : undefined}
-                onChange={inputOnChange}
+                onChange={onChange}
                 type={type}
                 className={cc([
                   {
@@ -150,9 +111,6 @@ TextInput.propTypes = {
 
   /** Standard React onChange event */
   onChange: PropTypes.func,
-
-  /** Custom onChange event that throttles / debounces. */
-  onThrottledChange: PropTypes.func,
 
   /** String to place to the left of the input. Not a substitute for a label! */
   before: PropTypes.string,

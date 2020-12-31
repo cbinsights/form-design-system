@@ -163,7 +163,6 @@
     "focus-trap-react": "^6.0.0",
     "raf-schd": "^4",
     "react-popper": "^2.2.3",
-    "throttle-debounce": "^3.0.1",
     "uuid": "^3.3.3"
   },
   "resolutions": {
