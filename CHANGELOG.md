@@ -26,6 +26,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [9.21] MenuLink
+- Added FDS `MenuLink` component. Use alongside FDS `MenuItem` inside of FDS `Menu`.
 
 ## [9.20] 🎁 Unwrapped Icons
 

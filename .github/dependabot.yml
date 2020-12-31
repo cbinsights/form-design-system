@@ -13,6 +13,6 @@ updates:
       - "dependabot"
       - "dependencies"
     ignore:
-      -dependency-name: "react"
-      -dependency-name: "react-dom"
-      -dependency-name: "moment"
+      - dependency-name: "react"
+      - dependency-name: "react-dom"
+      - dependency-name: "moment"
