@@ -50,14 +50,14 @@ export const controlledPopover = (args) => {
   );
 };
 
-export const fixedPopoverForPositioning = () => (
+export const popoverWithinAPopover = (args) => (
   <Popover triggerElement={<button>Open popover</button>}>
     <div className="padding--y--s padding--x--m" style={{ overflow: 'hidden' }}>
       <h3>Here is some content inside.</h3>
       <p>This popover is overflow hidden.</p>
       <p>
         Here is something else to
-        <Popover triggerElement={<button>click</button>} isFixed appendTo="parent">
+        <Popover triggerElement={<button>click</button>} {...args}>
           <div className="padding--all--m">
             <p>
               You can see this modal even though the parent modal has its{' '}
@@ -70,6 +70,20 @@ export const fixedPopoverForPositioning = () => (
     </div>
   </Popover>
 );
+popoverWithinAPopover.args = {
+  isFixed: true,
+  appendTo: 'parent',
+};
+const hidden = { table: { disable: true } };
+popoverWithinAPopover.argTypes = {
+  triggerElement: hidden,
+  theme: hidden,
+  children: hidden,
+  placement: hidden,
+  isOpen: hidden,
+  onUserDismiss: hidden,
+  triggerType: hidden,
+};
 
 export default {
   component: Popover,
