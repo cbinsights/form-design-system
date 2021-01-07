@@ -50,6 +50,27 @@ export const controlledPopover = (args) => {
   );
 };
 
+export const fixedPopoverForPositioning = () => (
+  <Popover triggerElement={<button>Open popover</button>}>
+    <div className="padding--y--s padding--x--m" style={{ overflow: 'hidden' }}>
+      <h3>Here is some content inside.</h3>
+      <p>This popover is overflow hidden.</p>
+      <p>
+        Here is something else to
+        <Popover triggerElement={<button>click</button>} isFixed appendTo="parent">
+          <div className="padding--all--m">
+            <p>
+              You can see this modal even though the parent modal has its{' '}
+              <code>overflow</code> set to <code>hidden</code>.
+            </p>
+            <p>You can also click inside here without closing the parent modals.</p>
+          </div>
+        </Popover>
+      </p>
+    </div>
+  </Popover>
+);
+
 export default {
   component: Popover,
   title: 'components/Popover',
