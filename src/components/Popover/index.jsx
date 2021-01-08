@@ -14,8 +14,15 @@ const Popover = ({
   onUserDismiss,
   theme = 'default',
   appendTo = () => document.body,
+  isFixed = false,
 }) => {
   const hideOnEsc = useMemo(() => hideOnEscFunc(onUserDismiss), [onUserDismiss]);
+  const popperOptions = useMemo(
+    () => ({
+      strategy: isFixed ? 'fixed' : 'absolute',
+    }),
+    [isFixed]
+  );
   const computedTriggerType = triggerHelper(triggerType, isOpen);
   return (
     <>
@@ -34,6 +41,7 @@ const Popover = ({
         zIndex={FDS.ZINDEX_MODAL}
         moveTransition="transform 0.2s ease-out"
         content={children}
+        popperOptions={popperOptions}
       >
         {triggerElement}
       </Tippy>
@@ -61,6 +69,8 @@ Popover.propTypes = {
     PropTypes.oneOf(['parent']),
     PropTypes.node,
   ]),
+  /** Whether or not to render the popover with fixed position or not. */
+  isFixed: PropTypes.bool,
 };
 
 export default Popover;

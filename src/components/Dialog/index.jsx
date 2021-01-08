@@ -29,9 +29,9 @@ const Dialog = ({
   title,
   content,
   footerContent,
+  disablePortal = false,
 }) => {
   const contentEl = useRef(null);
-
   const handleKeyDown = (e) => {
     if (onDismiss && e.key === 'Escape') {
       onDismiss();
@@ -132,17 +132,19 @@ const Dialog = ({
     </div>
   );
 
+  const transitionNode = (
+    <CSSTransition timeout={200} in={isOpen} classNames="dialog" unmountOnExit>
+      <React.Fragment>
+        {disableFocusTrap ? dialogNode : <FocusTrap>{dialogNode}</FocusTrap>}
+      </React.Fragment>
+    </CSSTransition>
+  );
+
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(
-        <CSSTransition timeout={200} in={isOpen} classNames="dialog" unmountOnExit>
-          <React.Fragment>
-            {disableFocusTrap ? dialogNode : <FocusTrap>{dialogNode}</FocusTrap>}
-          </React.Fragment>
-        </CSSTransition>,
-        // eslint-disable-next-line no-undef
-        document.body
-      )}
+      {disablePortal
+        ? transitionNode
+        : ReactDOM.createPortal(transitionNode, document.body)}
     </React.Fragment>
   );
 };
@@ -186,6 +188,9 @@ Dialog.propTypes = {
    * Useful when the Dialog contains components that manage focus (e.g. `Menu`)
    */
   disableFocusTrap: PropTypes.bool,
+
+  /** Disables rendering the dialog in a portal, and renders it locally instead. */
+  disablePortal: PropTypes.bool,
 };
 
 export default Dialog;

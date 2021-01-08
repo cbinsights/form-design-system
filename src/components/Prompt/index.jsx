@@ -17,6 +17,7 @@ const Prompt = (props) => (
     title={props.title}
     isOpen={props.isOpen}
     onDismiss={props.onDismiss}
+    disablePortal={props.disablePortal}
   />
 );
 
@@ -36,6 +37,8 @@ Prompt.propTypes = {
    * user attempts to close modal. When defined, the modal close button appears
    */
   onDismiss: PropTypes.func,
+  /** Keeps the Prompt from being rendered in a portal and renders it locally instead. */
+  disablePortal: PropTypes.bool,
 };
 
 export default Prompt;

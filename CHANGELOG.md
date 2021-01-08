@@ -34,6 +34,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - Fade classes added, which work via pseudo elements and support using multiple at a time
 - FDS Button now has support for adding margins.
 - FDS Popover now has 2 themes: `default` and `unthemed`
+- FDS Dialog now has a `disablePortal` prop
+- FDS Prompt now has a `disablePortal` prop
 
 ### **BREAKING CHANGES**
 
