@@ -49,15 +49,74 @@ export const playground = () => {
       <br />
       <br />
       <h4>Types:</h4>
-      <button onClick={() => setParams({ ...params, type: 'info' })}>info</button>
-      <button onClick={() => setParams({ ...params, type: 'warn' })}>warn</button>
-      <button onClick={() => setParams({ ...params, type: 'error' })}>error</button>
-      <button onClick={() => setParams({ ...params, type: 'success' })}>success</button>
-      <button onClick={() => setParams({ ...params, type: 'progress' })}>progress</button>
-      <button onClick={() => setParams({ ...params, progress: randomNum() })}>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, type: 'info' },
+          })
+        }
+      >
+        info
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, type: 'warn' },
+          })
+        }
+      >
+        warn
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, type: 'error' },
+          })
+        }
+      >
+        error
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, type: 'error' },
+          })
+        }
+      >
+        success
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, type: 'error' },
+          })
+        }
+      >
+        progress
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, progress: randomNum() },
+          })
+        }
+      >
         Add random progress
       </button>
-      <button onClick={() => setParams({ ...params, progress: null })}>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, progress: null },
+          })
+        }
+      >
         Remove progress
       </button>
       <br />
