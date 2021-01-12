@@ -37,6 +37,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
+### Toaster component
+- toastProps changed to toastInstance (to better explain what it encompasses)
+- onDismiss removed. Will now reside in toastInstance
+
 ### TextInput component
 - onThrottledChange has been removed
 
