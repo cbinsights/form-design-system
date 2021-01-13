@@ -5,8 +5,9 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import customPropTypes from 'components/util/customPropTypes';
 import Toast, { TYPES } from './Toast';
 
+const dismissDelay = 4000;
+
 export const Toaster = ({
-  dismissDelay = 4000,
   isAutoDismiss = true,
   isOpen = false,
   toastInstance = {},
@@ -84,8 +85,6 @@ Toaster.propTypes = {
   isOpen: PropTypes.bool,
   /** Should this toast auto-dismiss itself? */
   isAutoDismiss: PropTypes.bool,
-  /** Time in ms to auto-dismiss toast */
-  dismissDelay: PropTypes.number,
   /** Controls the display for your specific toast. */
   toastInstance: PropTypes.shape({
     /** JSX Content of Toast */
