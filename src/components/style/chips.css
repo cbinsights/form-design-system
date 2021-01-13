@@ -4,7 +4,7 @@
   line-height: 1;
   align-items: center;
   position: relative;
-  display: flex;
+  display: inline-flex;
   padding: 0 var(--space-s);
   border: 1px solid transparent;
   /* button element specific */
