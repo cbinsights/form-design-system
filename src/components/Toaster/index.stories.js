@@ -28,14 +28,14 @@ export const Primary = (args) => {
 };
 
 export const playground = () => {
-  const defaults = { id: v4(), isOpen: false, isAutoDismiss: true };
+  const defaults = { id: v4(), isOpen: false, isAutoDismiss: true, toastInstance: {} };
   const [params, setParams] = useState(defaults);
   const dismissToast = () => {
     setParams({ ...params, isOpen: false });
   };
   const randomNum = () => Math.floor(Math.random() * 100);
 
-  const { id, type, isOpen, content, isAutoDismiss, actionLabel, progress } = params;
+  const { id, isOpen, toastInstance, isAutoDismiss, actionLabel } = params;
   return (
     <div className="padding--all">
       <h4>Core:</h4>
@@ -83,7 +83,7 @@ export const playground = () => {
         onClick={() =>
           setParams({
             ...params,
-            toastInstance: { ...params.toastInstance, type: 'error' },
+            toastInstance: { ...params.toastInstance, type: 'success' },
           })
         }
       >
@@ -93,7 +93,7 @@ export const playground = () => {
         onClick={() =>
           setParams({
             ...params,
-            toastInstance: { ...params.toastInstance, type: 'error' },
+            toastInstance: { ...params.toastInstance, type: 'progress' },
           })
         }
       >
@@ -126,22 +126,53 @@ export const playground = () => {
         onClick={() =>
           setParams({
             ...params,
-            actionLabel: actionLabel === 'Hello' ? 'World' : 'Hello',
+            toastInstance: {
+              ...params.toastInstance,
+              actionLabel: actionLabel === 'Hello' ? 'World' : 'Hello',
+            },
           })
         }
       >
         Change Action Label
       </button>
-      <button onClick={() => setParams({ ...params, content: 'hello world' })}>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, content: 'hello world' },
+          })
+        }
+      >
         Add content
       </button>
-      <button onClick={() => setParams({ ...params, content: <b>hello world</b> })}>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, content: <b>hello world</b> },
+          })
+        }
+      >
         Add HTML content
       </button>
-      <button onClick={() => setParams({ ...params, content: null })}>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, content: null },
+          })
+        }
+      >
         Remove content
       </button>
-      <button onClick={() => setParams({ ...params, actionLabel: null })}>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, actionLabel: null },
+          })
+        }
+      >
         Remove Action Label
       </button>
       <br />
@@ -151,10 +182,13 @@ export const playground = () => {
         onClick={() =>
           setParams({
             ...params,
+            toastInstance: {
+              ...params.toastInstance,
+              type: 'error',
+              content: 'New ID? Yes!',
+            },
             id: v4(),
-            type: 'error',
             isOpen: true,
-            content: 'New ID? Yes!',
           })
         }
       >
@@ -165,9 +199,12 @@ export const playground = () => {
           setParams({
             ...params,
             id: v4(),
-            type: 'info',
             isOpen: true,
-            content: 'New ID? Yes!',
+            toastInstance: {
+              ...params.toastInstance,
+              content: 'New ID? Yes!',
+              type: 'info',
+            },
           })
         }
       >
@@ -178,9 +215,12 @@ export const playground = () => {
           setParams({
             ...params,
             id,
-            type: 'error',
             isOpen: true,
-            content: 'New ID? No.',
+            toastInstance: {
+              ...params.toastInstance,
+              content: 'New ID? No.',
+              type: 'error',
+            },
           })
         }
       >
@@ -196,10 +236,10 @@ export const playground = () => {
         isAutoDismiss={isAutoDismiss}
         toastInstance={{
           onDismiss: dismissToast,
-          actionLabel,
-          progress,
-          type,
-          content,
+          actionLabel: toastInstance.actionLabel,
+          progress: toastInstance.progress,
+          type: toastInstance.type,
+          content: toastInstance.content,
         }}
       />
     </div>
