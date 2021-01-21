@@ -17,14 +17,14 @@ const NavArrows = ({ onPreviousClick, onNextClick }) => (
     <Flex noGutters>
       <FlexItem shrink>
         <IconButton
-          onClick={() => onPreviousClick()}
+          onClick={onPreviousClick}
           Icon={ActionsArrowLeftIcon}
           label="Previous Month"
         />
       </FlexItem>
       <FlexItem shrink>
         <IconButton
-          onClick={() => onNextClick()}
+          onClick={onNextClick}
           Icon={ActionsArrowRightIcon}
           label="Next Month"
         />
@@ -35,10 +35,10 @@ const NavArrows = ({ onPreviousClick, onNextClick }) => (
 
 NavArrows.propTypes = {
   /** callback for clicking on left arrow */
-  onPreviousClick: PropTypes.func.isRequired,
+  onPreviousClick: PropTypes.func,
 
   /** callback for clicking on right arrow */
-  onNextClick: PropTypes.func.isRequired,
+  onNextClick: PropTypes.func,
 };
 
 export default NavArrows;

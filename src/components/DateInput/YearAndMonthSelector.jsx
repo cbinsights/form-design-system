@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 const YearAndMonthSelector = ({ date, localeUtils, onChange, startYear, endYear }) => {
   const months = localeUtils.getMonths();
 
-  const years = Array.from({ length: endYear - startYear }, (year, i) => i + startYear);
+  const years = Array.from({ length: endYear - startYear }, (_, i) => i + startYear);
 
   const handleChange = ({
     target: {
@@ -54,11 +54,11 @@ YearAndMonthSelector.propTypes = {
   /** `react-day-picker` localeUtils */
   localeUtils: PropTypes.object.isRequired,
 
-  /** Year range start as JS `Date` object */
-  startYear: PropTypes.instanceOf(Date).isRequired,
+  /** Year range start as number */
+  startYear: PropTypes.number.isRequired,
 
-  /** Year range start as JS `Date` object */
-  endYear: PropTypes.instanceOf(Date).isRequired,
+  /** Year range end as number */
+  endYear: PropTypes.number.isRequired,
 
   /** Month/year change callback */
   onChange: PropTypes.func,
