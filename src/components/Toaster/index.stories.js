@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { v4 } from 'uuid';
 
 import { Toaster } from 'components/Toaster';
-import Toast, { TYPES } from './Toast';
+import Toast from './Toast';
 
 export const Primary = (args) => {
   const [isToastShowing, setIsToastShowing] = useState(false);
@@ -14,9 +14,9 @@ export const Primary = (args) => {
       <Toaster
         {...args}
         isOpen={isToastShowing}
-        onDismiss={() => setIsToastShowing(false)}
-        toastProps={{
+        toastInstance={{
           content: 'hey',
+          onDismiss: () => setIsToastShowing(false),
           type: 'info',
           progress: 42,
           dismissOnAction: true,
@@ -27,94 +27,205 @@ export const Primary = (args) => {
   );
 };
 
-export const rendering = () => {
-  const defaults = { id: v4(), isOpen: false, isAutoDismiss: true };
+export const playground = () => {
+  const defaults = { id: v4(), isOpen: false, isAutoDismiss: true, toastInstance: {} };
   const [params, setParams] = useState(defaults);
-  const [isShadow, setIsShadow] = useState(false);
   const dismissToast = () => {
     setParams({ ...params, isOpen: false });
   };
-  const randomToastType = () => {
-    const randomNumber = Math.floor(Math.random() * TYPES.length);
-    return TYPES[randomNumber];
-  };
   const randomNum = () => Math.floor(Math.random() * 100);
 
-  const { id, type, isOpen, content, isAutoDismiss, actionLabel, progress } = params;
+  const { id, isOpen, toastInstance, isAutoDismiss, actionLabel } = params;
   return (
-    <div className={isShadow ? 'elevation--1 padding--all' : 'padding--all'}>
-      <button onClick={() => setIsShadow(!isShadow)}>
-        {isShadow ? 'Hide Arbitrary Style' : 'Show Arbitrary Style'}
-      </button>
+    <div className="padding--all">
+      <h4>Core:</h4>
       <button onClick={() => setParams({ ...params, isOpen: true })}>Open Toast</button>
       <button onClick={() => setParams({ ...params, isOpen: false })}>Close Toast</button>
       <button onClick={() => setParams({ ...params, isAutoDismiss: !isAutoDismiss })}>
         Toggle isAutoDismiss {isAutoDismiss ? 'off' : 'on'}
       </button>
       <button onClick={() => setParams({ ...params, id: v4() })}>New ID</button>
-      <button onClick={() => setParams({ ...params, type: randomToastType() })}>
-        Random Toast Type
+      <button onClick={() => setParams({ ...defaults })}>Reset all</button>
+      <br />
+      <br />
+      <h4>Types:</h4>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, type: 'info' },
+          })
+        }
+      >
+        info
       </button>
       <button
         onClick={() =>
           setParams({
             ...params,
-            actionLabel: actionLabel === 'Hello' ? 'World' : 'Hello',
+            toastInstance: { ...params.toastInstance, type: 'warn' },
+          })
+        }
+      >
+        warn
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, type: 'error' },
+          })
+        }
+      >
+        error
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, type: 'success' },
+          })
+        }
+      >
+        success
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, type: 'progress' },
+          })
+        }
+      >
+        progress
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, progress: randomNum() },
+          })
+        }
+      >
+        Add random progress
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, progress: null },
+          })
+        }
+      >
+        Remove progress
+      </button>
+      <br />
+      <br />
+      <h4>Modify Content:</h4>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: {
+              ...params.toastInstance,
+              actionLabel: actionLabel === 'Hello' ? 'World' : 'Hello',
+            },
           })
         }
       >
         Change Action Label
       </button>
-      <button onClick={() => setParams({ ...params, content: <b>hey</b> })}>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, content: 'hello world' },
+          })
+        }
+      >
+        Add content
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, content: <b>hello world</b> },
+          })
+        }
+      >
         Add HTML content
       </button>
-      <button onClick={() => setParams({ ...params, actionLabel: null })}>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, content: null },
+          })
+        }
+      >
+        Remove content
+      </button>
+      <button
+        onClick={() =>
+          setParams({
+            ...params,
+            toastInstance: { ...params.toastInstance, actionLabel: null },
+          })
+        }
+      >
         Remove Action Label
       </button>
-      <button onClick={() => setParams({ ...params, progress: randomNum() })}>
-        Add random progress
-      </button>
       <br />
+      <br />
+      <h4>Example usages:</h4>
       <button
         onClick={() =>
           setParams({
             ...params,
+            toastInstance: {
+              ...params.toastInstance,
+              type: 'error',
+              content: 'New ID? Yes!',
+            },
             id: v4(),
-            type: 'error',
             isOpen: true,
-            content: 'New ID? Yes!',
           })
         }
       >
-        Error Toast (new id)
+        Error Toast (animate)
       </button>
       <button
         onClick={() =>
           setParams({
             ...params,
             id: v4(),
-            type: 'info',
             isOpen: true,
-            content: 'New ID? Yes!',
+            toastInstance: {
+              ...params.toastInstance,
+              content: 'New ID? Yes!',
+              type: 'info',
+            },
           })
         }
       >
-        Info Toast (new id)
+        Info Toast (animate)
       </button>
       <button
         onClick={() =>
           setParams({
             ...params,
             id,
-            type: 'error',
             isOpen: true,
-            content: 'New ID? No.',
+            toastInstance: {
+              ...params.toastInstance,
+              content: 'New ID? No.',
+              type: 'error',
+            },
           })
         }
       >
-        Error Toast (no new id)
+        Error Toast (do not animate)
       </button>
-      <button onClick={() => setParams({ ...defaults })}>Reset all</button>
       <br />
       <br />
       <b>NOTE: this is state is EXTERNAL to toaster and is being passed in</b>
@@ -122,17 +233,26 @@ export const rendering = () => {
       <Toaster
         id={id}
         isOpen={isOpen}
-        onDismiss={dismissToast}
         isAutoDismiss={isAutoDismiss}
-        toastProps={{
-          actionLabel,
-          progress,
-          type,
-          content,
+        toastInstance={{
+          onDismiss: dismissToast,
+          actionLabel: toastInstance.actionLabel,
+          progress: toastInstance.progress,
+          type: toastInstance.type,
+          content: toastInstance.content,
         }}
       />
     </div>
   );
+};
+
+playground.parameters = {
+  docs: {
+    description: {
+      story:
+        'This is a playground where you can enable certain functionality and see how Toaster reacts in real time, while being able to visualize the exact prop structure to generate it.',
+    },
+  },
 };
 
 export const variations = () => (
@@ -200,6 +320,17 @@ export const variations = () => (
     />
   </React.Fragment>
 );
+
+variations.parameters = {
+  docs: {
+    description: {
+      story: 'This is merely to give you a better visual idea of all the variations.',
+    },
+    source: {
+      code: 'Hidden. This is merely to give you a visual idea of the themes available.',
+    },
+  },
+};
 
 export default {
   component: Toaster,

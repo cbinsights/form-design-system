@@ -25,7 +25,7 @@ export const Info = ({ type, children }) => {
   return (
     <blockquote
       style={style}
-      className="margin--bottom padding--top--half padding--bottom--half padding--left padding--right rounded--all"
+      className="margin--bottom padding--top--s padding--bottom--s padding--left padding--right rounded--all"
     >
       <span className="padding--right fontSize--2xl">{emojiMap[type]}</span>
       <span className="color--heading">{children}</span>

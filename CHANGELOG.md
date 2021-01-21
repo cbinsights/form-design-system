@@ -26,6 +26,54 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+
+## [10.0] MAJOR
+
+### Changes / Additions
+
+- Fade classes added, which work via pseudo elements and support using multiple at a time
+- FDS Popover now has 2 themes: `default` and `unthemed`
+- FDS Dialog now has a `disablePortal` prop
+- FDS Prompt now has a `disablePortal` prop
+
+### **BREAKING CHANGES**
+
+### Toaster component
+- toastProps changed to toastInstance (to better explain what it encompasses)
+- `onDismiss` prop removed. Now should reside in `toastInstance` object
+- `dismissDelay` prop removed. Delay can no longer be customized. `isAutoDismiss` should be disabled if there is a lot of content to read / parse in the toast.
+
+### TextInput component
+- onThrottledChange has been removed
+
+#### Popover component
+- Prop interface has completely changed. Refer to documentation for full information on new prop names and usage.
+- Default look of Popover now has included styling (dropshadow, border-radidus, etc)
+
+#### Tooltip component
+- `trigger` MUST be able to receive focus now
+
+#### Component reorganization
+- bgFade classes are removed
+
+### CornerPosition component
+- `CornerPosition` component added to help decorate nodes
+
+#### Double and Half spacing removed
+- classes, css variables, and js variables all updated
+- upgrade guide: 
+  - `half` (8px) maps to `s` (8px)
+  - `double` (32px) maps to `xl` (32px)
+- Examples:
+  - CSS Variable: { margin: var(--space-half) } becomes { margin: var(--space-s) }
+  - JS Variable: FDS.SPACE_DOUBLE becomes FDS.SPACE_XL 
+  - classes: .margin--top--half .becomes margin--top--s
+
+#### Removed components
+- `HScroll` (use fade classes + useScrollAttributes hook)
+- `GapList` (use FDS classes instead for spacing, border)
+- `Updatable` (use `CornerPosition` component + Badge instead)
+
 ## [9.21] MenuLink
 - Added FDS `MenuLink` component. Use alongside FDS `MenuItem` inside of FDS `Menu`.
 

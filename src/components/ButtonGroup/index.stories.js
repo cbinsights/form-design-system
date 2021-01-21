@@ -1,5 +1,4 @@
 import React from 'react';
-import Updatable from 'components/Updatable';
 import Tooltip from 'components/Tooltip';
 import FeedIcon from 'lib/icons/react/FeedIcon';
 import State from 'util/storybook-docs/State';
@@ -34,11 +33,6 @@ export const ActiveStates = () => (
 export const Wrapper = Template.bind({});
 Wrapper.args = {
   buttons: [
-    {
-      label: 'Updatable',
-      // eslint-disable-next-line
-      Wrapper: (props) => <Updatable message="42">{props.children}</Updatable>,
-    },
     {
       label: 'Tooltip',
       // eslint-disable-next-line

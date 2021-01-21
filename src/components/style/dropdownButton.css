@@ -3,7 +3,7 @@
   font-size: var(--font-size-default);
   user-select: none;
   font-size: var(--font-size-default);
-  padding: var(--space-half);
+  padding: var(--space-s);
   border: 1px solid #C4C4C4;
   color: var(--font-color-primary);
   align-items: center;

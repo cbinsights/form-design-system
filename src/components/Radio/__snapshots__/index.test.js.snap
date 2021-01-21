@@ -31,7 +31,7 @@ exports[`Radio component matches snapshot (checked) 1`] = `
       />
     </span>
     <span
-      className="padding--left--half"
+      className="padding--left--s"
     >
       Snapshot Label
     </span>
@@ -69,7 +69,7 @@ exports[`Radio component matches snapshot (disabled) 1`] = `
       />
     </span>
     <span
-      className="padding--left--half"
+      className="padding--left--s"
     >
       Snapshot Label
     </span>
@@ -107,7 +107,7 @@ exports[`Radio component matches snapshot 1`] = `
       />
     </span>
     <span
-      className="padding--left--half"
+      className="padding--left--s"
     >
       Snapshot Label
     </span>

@@ -1,3 +1,8 @@
+/* Reach framework styles */
+@import "@reach/menu-button/styles.css";
+/* Tippy framework styles */
+@import "tippy.js/dist/tippy.css";
+
 /* Foundational Styles */
 @import "../../base-styles/index.css";
 
@@ -8,14 +13,12 @@
 @import "./rtg/growFast";
 @import "./rtg/slideIn";
 
-/* Reach framework styles */
-@import "@reach/menu-button/styles.css";
-
+@import "./tooltip.css";
+@import "./popover.css";
 @import "./buttonColors.css";
 @import "./flex.css";
 @import "./section.css";
 @import "./inlineBlockList.css";
-@import "./hscroll.css";
 @import "./checkable.css";
 @import "./checkbox.css";
 @import "./radio.css";
@@ -27,7 +30,7 @@
 @import "./avatar.css";
 @import "./badge.css";
 @import "./indicator.css";
-@import "./updatable.css";
+@import "./cornerPosition.css";
 @import "./countdownButton.css";
 @import "./buttonGroup.css";
 @import "./zeroState.css";

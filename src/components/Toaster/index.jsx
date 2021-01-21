@@ -2,25 +2,27 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import Toast from './Toast';
+import customPropTypes from 'components/util/customPropTypes';
+import Toast, { TYPES } from './Toast';
+
+const dismissDelay = 4000;
 
 export const Toaster = ({
-  toastProps = {},
-  dismissDelay = 4000,
   isAutoDismiss = true,
   isOpen = false,
+  toastInstance = {},
   id,
-  onDismiss,
 }) => {
   useEffect(() => {
     // We need to explicitly check of canDismiss is NOT true, as it has a default
     // parameter of true that this component does not know about
     if (
       isAutoDismiss &&
-      toastProps.type !== 'progress' &&
-      toastProps.canDismiss !== false
+      toastInstance.type !== 'progress' &&
+      toastInstance.canDismiss !== false &&
+      toastInstance.onDismiss
     ) {
-      const timer = setTimeout(() => onDismiss(), dismissDelay);
+      const timer = setTimeout(() => toastInstance.onDismiss(), dismissDelay);
 
       return function cleanup() {
         clearTimeout(timer);
@@ -28,7 +30,14 @@ export const Toaster = ({
     }
 
     return undefined;
-  }, [id, isOpen, isAutoDismiss, toastProps.type, toastProps.canDismiss]);
+  }, [
+    id,
+    isOpen,
+    isAutoDismiss,
+    toastInstance.type,
+    toastInstance.canDismiss,
+    toastInstance.onDismiss,
+  ]);
 
   return (
     <div aria-live="assertive">
@@ -44,15 +53,15 @@ export const Toaster = ({
             <div className="toaster">
               <Toast
                 dismissDelay={dismissDelay}
-                dismissToast={onDismiss}
                 isAutoDismiss={isAutoDismiss}
-                content={toastProps.content}
-                type={toastProps.type}
-                progress={toastProps.progress}
-                canDismiss={toastProps.canDismiss}
-                actionLabel={toastProps.actionLabel}
-                onAction={toastProps.onAction}
-                dismissOnAction={toastProps.dismissOnAction}
+                dismissToast={toastInstance.onDismiss}
+                content={toastInstance.content}
+                type={toastInstance.type}
+                progress={toastInstance.progress}
+                canDismiss={toastInstance.canDismiss}
+                actionLabel={toastInstance.actionLabel}
+                onAction={toastInstance.onAction}
+                dismissOnAction={toastInstance.dismissOnAction}
               />
             </div>
           </CSSTransition>
@@ -74,14 +83,34 @@ Toaster.propTypes = {
   id: PropTypes.string,
   /** Specifies whether Toast is open or not */
   isOpen: PropTypes.bool,
-  /** Accepts all props that `Toast` accepts. Refer to Toast component for full documentation */
-  toastProps: PropTypes.shape(Toast.propTypes),
   /** Should this toast auto-dismiss itself? */
   isAutoDismiss: PropTypes.bool,
-  /** Time in ms to auto-dismiss toast */
-  dismissDelay: PropTypes.number,
-  /** Callback that is fired when toast is dismissed */
-  onDismiss: PropTypes.func,
+  /** Controls the display for your specific toast. */
+  toastInstance: PropTypes.shape({
+    /** JSX Content of Toast */
+    content: PropTypes.node.isRequired,
+
+    /** Type of toast */
+    type: PropTypes.oneOf(TYPES),
+
+    /** Label for action button */
+    actionLabel: PropTypes.string,
+
+    /** Callback for action button click */
+    onAction: PropTypes.func,
+
+    /* Controls if toast gets dismiss when the ActionButton is clicked */
+    dismissOnAction: PropTypes.bool,
+
+    /** Is this toast user-dismissable? */
+    canDismiss: PropTypes.bool,
+
+    /** Number 1-100 declaring % progress */
+    progress: customPropTypes.range(1, 100),
+
+    /** Function to dismiss the toast */
+    dismissToast: PropTypes.func,
+  }),
 };
 
 export default ToasterWrapper;

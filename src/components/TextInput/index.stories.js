@@ -66,6 +66,17 @@ export const Icons = (args) => (
   />
 );
 
+export const Throttled = (args) => (
+  <TextInput
+    {...args}
+    label="Icons"
+    showLabel={false}
+    IconLeft={CaretDownIcon}
+    IconRight={CaretDownIcon}
+    onThrottledChange={action('changed')}
+  />
+);
+
 export const sideLabel = (args) => (
   <TextInput
     {...args}
@@ -81,7 +92,7 @@ export const formManagementLibrary = (args) => {
   return (
     <div>
       <form onSubmit={handleSubmit(action('submitted'))}>
-        <div className="margin--bottom--half">
+        <div className="margin--bottom--s">
           <TextInput
             {...args}
             label="Username"

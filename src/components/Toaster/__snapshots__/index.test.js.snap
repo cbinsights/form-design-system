@@ -3,7 +3,7 @@
 exports[`Toaster component matches snapshot 1`] = `
 <ToasterWrapper
   isOpen={true}
-  toastProps={
+  toastInstance={
     Object {
       "content": <p>
         test
@@ -174,7 +174,7 @@ exports[`Toaster component matches snapshot 1`] = `
   >
     <Toaster
       isOpen={true}
-      toastProps={
+      toastInstance={
         Object {
           "content": <p>
             test

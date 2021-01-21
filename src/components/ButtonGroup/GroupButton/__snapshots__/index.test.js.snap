@@ -7,7 +7,7 @@ exports[`GroupButton component matches snapshot (set all props) 1`] = `
     value="Feed"
   >
     <div
-      className="margin--right--half"
+      className="margin--right--s"
     >
       <Icon
         size="xs"

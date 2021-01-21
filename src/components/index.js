@@ -4,14 +4,13 @@ import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
 import Checkbox from 'components/Checkbox';
 import Chip from 'components/Chip';
+import CornerPosition from 'components/CornerPosition';
 import DateInput from 'components/DateInput';
 import Dialog from 'components/Dialog';
 import DropdownButton from 'components/DropdownButton';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import FloatingAction from 'components/FloatingAction';
-import GapList from 'components/GapList';
-import Hscroll from 'components/Hscroll';
 import IconButton from 'components/IconButton';
 import Indicator from 'components/Indicator';
 import InputGroup from 'components/InputGroup';
@@ -26,7 +25,6 @@ import StackedButton from 'components/StackedButton';
 import TextInput from 'components/TextInput';
 import Toaster from 'components/Toaster';
 import Tooltip from 'components/Tooltip';
-import Updatable from 'components/Updatable';
 import ZeroState from 'components/ZeroState';
 
 export {
@@ -36,14 +34,13 @@ export {
   ButtonGroup,
   Checkbox,
   Chip,
+  CornerPosition,
   DateInput,
   Dialog,
   DropdownButton,
   Flex,
   FlexItem,
   FloatingAction,
-  GapList,
-  Hscroll,
   IconButton,
   Indicator,
   InputGroup,
@@ -58,6 +55,5 @@ export {
   TextInput,
   Toaster,
   Tooltip,
-  Updatable,
   ZeroState,
 };

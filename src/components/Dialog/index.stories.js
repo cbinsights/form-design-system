@@ -12,6 +12,7 @@ import {
 import ImportPath from 'util/storybook-docs/ImportPath';
 
 import Button from 'components/Button';
+import Popover from 'components/Popover';
 
 import Dialog from '.';
 
@@ -54,6 +55,46 @@ scrollingContentFooterPermanentBorder.args = {
   footerContent: <Button label="Confirm" />,
   title: 'Footer & permanent border',
   alwaysShowBorder: true,
+};
+
+export const dialogFromPopover = (args) => {
+  const [dialogIsOpen, setDialogOpen] = React.useState(false);
+  const handleClick = () => {
+    setDialogOpen(true);
+  };
+  return (
+    <Popover trigger={<button>Open the popover</button>}>
+      <div className="border--all rounded--all padding--all--m">
+        <p>
+          This item launches a dialog. <button onClick={handleClick}>Launch</button>
+        </p>
+        <p>
+          This item launches a dialog. <button onClick={handleClick}>Launch</button>
+        </p>
+        <p>
+          This item launches a dialog. <button onClick={handleClick}>Launch</button>
+        </p>
+        <Dialog {...args} onDismiss={() => setDialogOpen(false)} isOpen={dialogIsOpen} />
+      </div>
+    </Popover>
+  );
+};
+const hidden = { table: { disable: true } };
+dialogFromPopover.args = {
+  disablePortal: true,
+  title: 'Disabled Portal Dialog',
+  content:
+    'This was triggered from a popover and is still interactive without closing the popover.',
+};
+dialogFromPopover.argTypes = {
+  onDismiss: hidden,
+  isOpen: hidden,
+  role: hidden,
+  footerContent: hidden,
+  width: hidden,
+  height: hidden,
+  alwaysShowBorder: hidden,
+  disableFocusTrap: hidden,
 };
 
 const Layout = () => (

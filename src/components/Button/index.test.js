@@ -43,6 +43,7 @@ describe('Button component', () => {
         disabled	
         isFullWidth	
         isBreakoutLink
+        margin="all--s"
       />
     );
     const button = screen.getByRole('button', { name: "Button" });
