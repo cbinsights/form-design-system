@@ -51,7 +51,6 @@ describe('Button component', () => {
     expect(button).toHaveClass('fdsButton--loading');
     expect(button).toHaveClass('fdsButton--isFullWidth');
     expect(button).toHaveClass('breakoutLink');
-    expect(button).toHaveClass('margin--all--s');
   });
 
 });
