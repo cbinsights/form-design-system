@@ -39,6 +39,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ### **BREAKING CHANGES**
 
+### Toaster component
+- toastProps changed to toastInstance (to better explain what it encompasses)
+- `onDismiss` prop removed. Now should reside in `toastInstance` object
+- `dismissDelay` prop removed. Delay can no longer be customized. `isAutoDismiss` should be disabled if there is a lot of content to read / parse in the toast.
+
 ### TextInput component
 - onThrottledChange has been removed
 
