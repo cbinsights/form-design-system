@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
@@ -34,63 +34,69 @@ export const trimName = (str) => {
   return str && regex.test(str) ? str.trim() : null;
 };
 
-const Avatar = ({
-  bgColor = 'purple',
-  size = 'm',
-  radius = 'circle',
-  'aria-label': ariaLabel = 'Avatar',
-  initialsLength = 2,
-  imgUrl,
-  name,
-  Link,
-  PlaceholderIcon,
-  ...rest
-}) => {
-  const cleanName = trimName(name);
+const Avatar = forwardRef(
+  (
+    {
+      bgColor = 'purple',
+      size = 'm',
+      radius = 'circle',
+      'aria-label': ariaLabel = 'Avatar',
+      initialsLength = 2,
+      imgUrl,
+      name,
+      Link,
+      PlaceholderIcon,
+      ...rest
+    },
+    ref
+  ) => {
+    const cleanName = trimName(name);
 
-  const Element = baseElement({ href: rest.href, onClick: rest.onClick, as: Link });
+    const Element = baseElement({ href: rest.href, onClick: rest.onClick, as: Link });
 
-  const placeholderIconSize = () => {
-    switch (size) {
-      case 's':
-        return 16;
-      case 'm':
-        return 18;
-      case 'l':
-        return 24;
-      default:
-        return 16;
-    }
-  };
+    const placeholderIconSize = () => {
+      switch (size) {
+        case 's':
+          return 16;
+        case 'm':
+          return 18;
+        case 'l':
+          return 24;
+        default:
+          return 16;
+      }
+    };
 
-  return (
-    <Element
-      {...rest}
-      role={Element === 'div' ? 'img' : undefined}
-      aria-label={ariaLabel}
-      title={cleanName || 'Placeholder Avatar'}
-      className={cc([
-        {
-          'border--focus': Element !== 'div',
-          'color--white': DARK_COLORS.includes(bgColor),
-        },
-        'fdsAvatar',
-        'alignChild--center--center',
-        `bgColor--${bgColor}`,
-        `fdsAvatar--${size}`,
-        `fdsAvatar--${radius}`,
-      ])}
-    >
-      {imgUrl && (
-        <span className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
-      )}
-      {cleanName && grabInitials(cleanName, initialsLength)}
-      {!(cleanName || imgUrl) && PlaceholderIcon && (
-        <PlaceholderIcon customSize={placeholderIconSize()} />
-      )}
-    </Element>
-  );
-};
+    return (
+      <Element
+        {...rest}
+        ref={ref}
+        role={Element === 'div' ? 'img' : undefined}
+        aria-label={ariaLabel}
+        title={cleanName || 'Placeholder Avatar'}
+        className={cc([
+          {
+            'border--focus': Element !== 'div',
+            'color--white': DARK_COLORS.includes(bgColor),
+          },
+          'fdsAvatar',
+          'alignChild--center--center',
+          `bgColor--${bgColor}`,
+          `fdsAvatar--${size}`,
+          `fdsAvatar--${radius}`,
+        ])}
+      >
+        {imgUrl && (
+          <span className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
+        )}
+        {cleanName && grabInitials(cleanName, initialsLength)}
+        {!(cleanName || imgUrl) && PlaceholderIcon && (
+          <PlaceholderIcon customSize={placeholderIconSize()} />
+        )}
+      </Element>
+    );
+  }
+);
 
 Avatar.propTypes = {
   /** Controls color of button */

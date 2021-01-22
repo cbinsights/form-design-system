@@ -26,14 +26,13 @@ describe('Badge component', () => {
     const notif = container.querySelector(SELECTOR_NOTIF);
     const count = container.querySelector(SELECTOR_COUNT);
     expect(count).toBeFalsy();
+    expect(notif).toBeNull();
+  });
+
+  it('renders correctly as notif without label with showDot true', () => {
+    const { container } = render(<Badge showDot={true} />);
+    const notif = container.querySelector(SELECTOR_NOTIF);
     expect(notif).toBeTruthy();
-    expect(notif).toHaveClass('color--white');
-    expect(notif).toHaveClass('bgColor--red');
-    expect(notif).toHaveClass('shape--circle');
-    expect(notif).toHaveClass('fds-badge--dot');
-    expect(notif).toHaveClass('color--white');
-    expect(notif).not.toHaveClass('color--aqua');
-    expect(notif).not.toHaveClass('bgColor--aqua');
   });
 
   it('renders correctly as count with label', () => {
@@ -53,13 +52,7 @@ describe('Badge component', () => {
     const notif = container.querySelector(SELECTOR_NOTIF);
     const count = container.querySelector(SELECTOR_COUNT);
     expect(notif).toBeFalsy();
-    expect(count).toBeTruthy();
-    expect(count).toHaveClass('color--aqua');
-    expect(count).toHaveClass('bgColor--aqua');
-    expect(count).toHaveClass('shape--circle');
-    expect(count).toHaveClass('fds-badge--dot');
-    expect(count).toHaveClass('color--white');
-    expect(count).not.toHaveClass('bgColor--red');
+    expect(count).toBeNull();
   });
 
 });
