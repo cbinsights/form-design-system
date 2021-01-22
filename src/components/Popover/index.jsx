@@ -15,6 +15,8 @@ const Popover = ({
   theme = 'default',
   appendTo = () => document.body,
   isFixed = false,
+  onShow = () => {},
+  onHide = () => {},
 }) => {
   const hideOnEsc = useMemo(() => hideOnEscFunc(onUserDismiss), [onUserDismiss]);
   const popperOptions = useMemo(
@@ -42,6 +44,8 @@ const Popover = ({
         moveTransition="transform 0.2s ease-out"
         content={children}
         popperOptions={popperOptions}
+        onShow={onShow}
+        onHide={onHide}
       >
         {triggerElement}
       </Tippy>
@@ -71,6 +75,8 @@ Popover.propTypes = {
   ]),
   /** Whether or not to render the popover with fixed position or not. */
   isFixed: PropTypes.bool,
+  onShow: PropTypes.func,
+  onHide: PropTypes.func,
 };
 
 export default Popover;
