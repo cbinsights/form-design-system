@@ -57,7 +57,10 @@ export const popoverWithinAPopover = (args) => (
       <p>This popover is overflow hidden.</p>
       <p>
         Here is something else to
-        <Popover triggerElement={<button>click</button>} {...args}>
+        <Popover
+          triggerElement={<button className="margin--left--xs">click</button>}
+          {...args}
+        >
           <div className="padding--all--m">
             <p>
               You can see this modal even though the parent modal has its{' '}
@@ -88,4 +91,5 @@ popoverWithinAPopover.argTypes = {
 export default {
   component: Popover,
   title: 'components/Popover',
+  argTypes: { onShow: { action: 'onShow' }, onHide: { action: 'onHide' } },
 };

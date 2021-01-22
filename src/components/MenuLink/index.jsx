@@ -18,7 +18,7 @@ const MenuLink = ({ onSelect, children, isDisabled, Link, ...rest }) => (
 
 MenuLink.propTypes = {
   /** selection callback */
-  onSelect: PropTypes.func.isRequired,
+  onSelect: PropTypes.func,
 
   /** React children - any JSX can be used in a menu item */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
