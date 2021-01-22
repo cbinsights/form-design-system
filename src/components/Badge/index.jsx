@@ -4,26 +4,28 @@ import cc from 'classcat';
 
 export const VALID_TYPES = ['update', 'count'];
 
-const Badge = ({ label, type = 'update' }) => {
+const Badge = ({ label, showDot = false, type = 'update' }) => {
   const isUpdate = type === 'update';
 
   return (
     <div className="fds-badgeWrapper alignChild--center--center">
-      <div
-        aria-label={isUpdate ? 'Notification badge' : 'Count badge'}
-        className={cc([
-          'fds-badge',
-          'padding--x--xs fontSize--xs alignChild--center--center',
-          {
-            'shape--circle fds-badge--dot color--white': !label,
-            'color--white bgColor--red border--none': isUpdate,
-            'color--aqua': !isUpdate,
-            'bgColor--aqua': !isUpdate && !label,
-          },
-        ])}
-      >
-        <span className="fds-badge-label wrap--singleLine--truncate">{label}</span>
-      </div>
+      {(label || showDot) && (
+        <div
+          aria-label={isUpdate ? 'Notification badge' : 'Count badge'}
+          className={cc([
+            'fds-badge',
+            'padding--x--xs fontSize--xs alignChild--center--center',
+            {
+              'shape--circle fds-badge--dot color--white': !label,
+              'color--white bgColor--red border--none': isUpdate,
+              'color--aqua': !isUpdate,
+              'bgColor--aqua': !isUpdate && !label,
+            },
+          ])}
+        >
+          <span className="fds-badge-label wrap--singleLine--truncate">{label}</span>
+        </div>
+      )}
     </div>
   );
 };
@@ -34,6 +36,9 @@ Badge.propTypes = {
    * The `element` type should be reserved for FDS icons.
    */
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+
+  /** When true, an indicator dot will be rendered when the `message` is empty */
+  showDot: PropTypes.bool,
 
   /** Type of Badge */
   type: PropTypes.oneOf(VALID_TYPES),
