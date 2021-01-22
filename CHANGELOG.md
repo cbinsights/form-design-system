@@ -35,6 +35,8 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - FDS Popover now has 2 themes: `default` and `unthemed`
 - FDS Dialog now has a `disablePortal` prop
 - FDS Prompt now has a `disablePortal` prop
+- `CornerPosition` component added to help decorate nodes
+- Badge (previously indicator) has a `showDot` prop to specify whether you want a dot to show if there is no label
 
 ### **BREAKING CHANGES**
 
@@ -56,8 +58,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 #### Component reorganization
 - bgFade classes are removed
 
-### CornerPosition component
-- `CornerPosition` component added to help decorate nodes
+#### Badge & Indicator components
+- `Badge` component is now the `Indicator`
+- `Indicator` component is now the `Badge`
 
 #### Double and Half spacing removed
 - classes, css variables, and js variables all updated
