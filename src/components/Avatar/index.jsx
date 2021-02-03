@@ -98,6 +98,8 @@ const Avatar = forwardRef(
   }
 );
 
+Avatar.displayName = 'Avatar';
+
 Avatar.propTypes = {
   /** Controls color of button */
   bgColor: PropTypes.oneOf(BG_COLORS),
