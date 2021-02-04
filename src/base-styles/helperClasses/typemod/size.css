@@ -1,22 +1,3 @@
-/*----
-title: Size Modifiers
-name: typeSizeModifiers
-section: Type Modifiers
-----
-Modifies size of text and adjusts leading accordingly.
-
-```example:html
-<p class="fontSize--4xl">4XL Text</p>
-<p class="fontSize--3xl">3XL Text</p>
-<p class="fontSize--2xl">2XL Text</p>
-<p class="fontSize--xl">XL Text</p>
-<p class="fontSize--l">L Text</p>
-<p class="fontSize--default">Default text (default)</p>
-<p class="fontSize--s">S text</p>
-<p class="fontSize--xs">XS text</p>
-```
-*/
-
 .fontSize--4xl,
 .fontSize--3xl,
 .fontSize--2xl,

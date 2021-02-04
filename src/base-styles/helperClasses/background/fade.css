@@ -1,35 +1,3 @@
-/*---
-title: Fade gradients
-name: backgroundFade
-section: Background helpers
----
-
-Sets background of an element to a linear gradient
-simulating a fade effect.
-
-Signature: `bgFade--<direction>--<color>`
-
-```example:html
-<div style="float: left; background-color: #f7f7f7; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQYV2M8fPiwLwMOwAiStLW13YxNftBJAgAx2BqeI9XcBAAAAABJRU5ErkJggg==)">
-  <div style="display: flex; align-items: center;">
-    <code class="color--purple media--xl alignChild--center--center">white</code>
-    <div class="media--xl bgFade--left--white"></div>
-    <div class="media--xl bgFade--top--white"></div>
-    <div class="media--xl bgFade--bottom--white"></div>
-    <div class="media--xl bgFade--right--white"></div>
-  </div>
-  <div style="display: flex;">
-    <code class="color--purple media--xl alignChild--center--center">haze</code>
-    <div class="media--xl bgFade--left--haze"></div>
-    <div class="media--xl bgFade--top--haze"></div>
-    <div class="media--xl bgFade--bottom--haze"></div>
-    <div class="media--xl bgFade--right--haze"></div>
-  </div>
-</div>
-```
-*/
-
-/* white */
 .fade--top--white::before {
   background-image: linear-gradient(to bottom, var(--color-white), rgba(var(--rgb-white), 0));
   top: 0;

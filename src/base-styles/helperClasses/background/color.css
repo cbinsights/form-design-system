@@ -1,30 +1,3 @@
-/*---
-title: Background Colors
-name: backgroundColors
-section: Background helpers
----
-
-Sets background color of an element.
-
-Signature: `bgColor--<color>`
-
-**💡 use the [`inverted`](https://cbinsights.github.io/form-design-system/fds-styles/#inverted-standard-text-colors)
-class to flip text colors for dark backgrounds**
-
-```example:html
-<div class="bgColor--white">I have a background color</div>
-<div class="bgColor--haze">I have a background color</div>
-<div class="bgColor--lightGray">I have a background color</div>
-<div class="bgColor--orange inverted">I have a background color</div>
-<div class="bgColor--charcoal inverted">I have a background color</div>
-<div class="bgColor--navy inverted">I have a background color</div>
-<div class="bgColor--aqua">I have a background color</div>
-<div class="bgColor--gray inverted">I have a background color</div>
-<div class="bgColor--red inverted">I have a background color</div>
-<div class="bgColor--purple inverted">I have a background color</div>
-```
-*/
-
 .bgColor--white {
   background-color: var(--color-white);
 }

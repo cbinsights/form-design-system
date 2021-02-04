@@ -51,6 +51,7 @@
 
 /* Text modifiers */
 @import "./helperClasses/typemod/size";
+@import "./helperClasses/typemod/family";
 @import "./helperClasses/typemod/weight";
 @import "./helperClasses/typemod/color";
 @import "./helperClasses/typemod/style";

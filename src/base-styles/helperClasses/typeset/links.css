@@ -1,25 +1,3 @@
-/*---
-title: Links
-name: links
-section: Typesetting
----
-
-```example:html
-<div>
-  <a class="type--link" href="#">This is an actual link with the link class</a>
-</div>
-<div>
-  <button class="resetButton type--link">This reset button looks like a link</button>
-</div>
-<p>
-  This paragraph as a <span class="type--link">span</span> that looks like a link.
-</p>
-<div class="inverted padding--all" style="background-color: var(--color-navy)">
-  This is a <a class="type--link">link</a> in an inverted context.
-</div>
-```
-*/
-
 .type--link {
   color: var(--font-color-link);
 }

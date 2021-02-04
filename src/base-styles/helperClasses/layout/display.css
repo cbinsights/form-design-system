@@ -1,22 +1,3 @@
-/*---
-title: Display
-name: layoutDisplay
-section: Layout Helpers
----
-
-Modifies display property of element
-
-class                     | description
-------------------------- | ---------------------------------
-`display--none`           | Sets `display` to `none`
-`display--block`          | Sets `display` to `block`
-`display--flex`           | Sets `display` to `flex`
-`display--inline`         | Sets `display` to `inline`
-`display--inlineBlock`    | Sets `display` to `inline-block`
-`display--inlineFlex`     | Sets `display` to `inline-flex`
-`display--grid`           | Sets `display` to `grid`
-*/
-
 .display--none { display: none !important; }
 
 .display--block { display: block !important; }

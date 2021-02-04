@@ -1,16 +1,3 @@
-/*----
-title: Type Style Modifiers
-name: typeStyleModifiers
-section: Type Modifiers
-----
-Modifies style, decoration, or transform of text
-
-```example:html
-<p class="fontStyle--italic">Italic text</p>
-<p class="fontStyle--underline">Underline text</p>
-<p class="fontStyle--caps">Uppercase text</p>
-```
-*/
 .fontStyle--italic {
   font-style: italic;
 }

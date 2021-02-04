@@ -1,20 +1,3 @@
-/*---
-title: Truncate text
-name: truncate
-section: Text flow
----
-
-Helpers to adjust text wrapping with CSS.
-
-Allows compontents to render full strings while CSS does the job
-of clamping text to one line.
-
-Class                         | Description
------------------------------ | --------------------------------
-`.wrap--singleLine`           | forces text to a single line (nowrap)
-`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with "&hellip;" entity
-*/
-
 .wrap--singleLine--truncate,
 .wrap--singleLine {
   white-space: nowrap !important;

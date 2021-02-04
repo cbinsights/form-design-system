@@ -1,28 +1,3 @@
-/*---
-title: Child Align
-name: positionChildAlign
-section: Position Helpers
----
-
-Positions direct child(s) of element using flex properties.
-**These classes modify `flex` properties**. Avoid combining
-`alignChild` classes with flexbox layout elements.
-
-Classes follow this signature:
-```css
-.alignChild--(left|right|center)--(top|bottom|center)
-```
-
-```example:html
-<div
-  class="alignChild--center--center"
-  style="border: 1px dotted red; height: 100px; width: 100px;"
->
-  <div style="background: pink;">child</div>
-</div>
-```
-*/
-
 .alignChild--center--center,
 .alignChild--center--top,
 .alignChild--center--bottom,
