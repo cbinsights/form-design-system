@@ -137,7 +137,7 @@ export const disabledItems = (args) => (
         action('🍰');
       }}
     >
-      <Tooltip trigger="Cake" message="Not your birthday" />
+      <Tooltip trigger={<button>Cake</button>} message="Not your birthday" />
     </MenuItem>
     <MenuItem
       onSelect={() => {
