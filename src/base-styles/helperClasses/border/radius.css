@@ -1,21 +1,3 @@
-/*---
-title: Border Radius
-name: borderRadius
-section: Border Helpers
----
-
-Rounds the corners of an element using a standard
-`border-radius` value.
-
-class            | description
----------------- | ---------------------------------
-`rounded--top`   | Rounds the top corners of the element
-`rounded--right` | Rounds the right corners of the element
-`rounded--bottom`| Rounds the bottom corners of the element
-`rounded--left`  | Rounds the left corners of the element
-`rounded--all`   | Rounds all corners of the element
-*/
-
 .rounded--top {
   border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
 }

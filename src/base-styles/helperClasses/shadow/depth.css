@@ -1,36 +1,3 @@
-/*---
-title: Depth shadows
-name: depthShadows
-section: Shadow Helpers
----
-
-These `depth` classes set an `inset` `box-shadow` to
-illustrate depth below "page surface".
-
-Signature: `depth--<level>`
-
-```example:html
-<style>
-._example {
-  width: 25%;
-  height: var(--media-m);
-  padding: 0.25rem;
-  margin: 1rem 2rem;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-size: var(--font-size-s);
-  font-family: var(--font-family-mono);
-  color: var(--color-violet);
-}
-</style>
-
-<div class="_example depth--1">1 (1dp)</div>
-<div class="_example depth--2">2 (2dp)</div>
-<div class="_example depth--3">3 (4dp)</div>
-```
-*/
-
 /* Shadow 1dp */
 .depth--1 {
   box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.14),

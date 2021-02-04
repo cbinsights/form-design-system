@@ -1,20 +1,3 @@
-/*---
-title: Vertical Align
-name: positionVAlign
-section: Position Helpers
----
-
-Sets `vertical-align` property. Note that `vertical-align`
-**only applies to elements displayed `inline`, `inline-block`,
-`table-cell` or `inline-flex`.**
-
-class                     | description
-------------------------- | ---------------------------------
-`valign--top`             | Sets `vertical-align` to `top`
-`valign--center`          | Sets `vertical-align` to `middle`
-`valign--bottom`          | Sets `vertical-align` to `bottom`
-*/
-
 .valign--top {
   vertical-align: top;
 }

@@ -46,6 +46,25 @@ Modifies weight of text.
   />
 </Story>
 
+## Family Modifiers
+Modifies the font family of text.
+
+<Story name="Family Modifiers">
+  <TableLayout 
+    isCSS
+    headers={['class', 'description', 'sample']}
+    rows={[
+      ['fontFamily--condensed', 'Condensed text'],
+      ['fontFamily--default', 'Default text'],
+      ['fontFamily--mono', 'Monospaced text'],
+    ].map(row => [
+      row[0],
+      row[1],
+      { children: <div className={row[0]}>Sphinx of black quartz, judge my vow</div> }
+    ])}
+  />
+</Story>
+
 ## Type Style Modifiers
 
 <Story name="Type Style Modifiers">

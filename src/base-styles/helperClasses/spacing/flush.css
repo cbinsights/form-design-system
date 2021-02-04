@@ -1,31 +1,3 @@
-/*---
-title: Flush
-name: spacingFlush
-section: Spacing Helpers
----
-
-Removes spacing from the given side of an element.
-Sets both `padding` and `margin` to `0`;
-
-class           | description
---------------- | ---------------------------------
-`flush--top`    | Removes top spacing from element
-`flush--right`  | Removes right spacing from element
-`flush--bottom` | Removes bottom spacing from element
-`flush--left`   | Removes left spacing from element
-`flush--all`    | Removes spacing from all sides of an element
-
-#### Overriding `flush`
-
-Margin and padding utility classes can override a flush class:
-
-```html
-  <div class="flush--all padding--left">
-    Removes all padding, then sets padding left.
-  </div>
-```
-*/
-
 .flush--top {
   margin-top: 0 !important;
   padding-top: 0 !important;

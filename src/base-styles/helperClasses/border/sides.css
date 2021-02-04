@@ -1,21 +1,3 @@
-/*---
-title: Borders by side
-name: borderDirections
-section: Border Helpers
----
-
-Adds standard borders to an element for a given side.
-
-class            | description
----------------- | ---------------------------------
-`border--none`   | removes all borders
-`border--top`    | applies a standard top border
-`border--right`  | applies a standard right border
-`border--bottom` | applies a standard bottom border
-`border--left`   | applies a standard left border
-`border--all`    | applies a standard border to all sides
-*/
-
 :root {
   --standardBorder: 1px solid rgba(var(--rgb-charcoal), 0.12);
 }
