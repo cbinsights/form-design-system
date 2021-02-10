@@ -24,9 +24,7 @@ exports.toHsla = (hsl) => {
  * @returns {Number}
  */
 const brightScale = (color, r, scaleType = 'scaleLinear') =>
-  d3[scaleType]()
-    .domain([0, 255])
-    .range(r)(Color(color).getBrightness());
+  d3[scaleType]().domain([0, 255]).range(r)(Color(color).getBrightness());
 
 /**
  * Get a value from a range based on color saturation
@@ -36,10 +34,7 @@ const brightScale = (color, r, scaleType = 'scaleLinear') =>
  * @returns {Number}
  */
 const satScale = (color, r) =>
-  d3
-    .scaleLinear()
-    .domain([0, 1])
-    .range(r)(Color(color).toHsl().s);
+  d3.scaleLinear().domain([0, 1]).range(r)(Color(color).toHsl().s);
 
 /**
  * @param {String} base color from which get R,G,B components

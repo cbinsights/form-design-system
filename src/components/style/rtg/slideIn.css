@@ -23,8 +23,10 @@
 .rtgSlideIn-enter {
   opacity: 0.01;
   transform: translateY(100px);
-  transition: transform var(--toast-timeout) var(--motion-easing-default),
-    opacity var(--toast-timeout) var(--motion-easing-default);
+  transition: transform var(--toast-timeout)
+      var(--motion-easing-default),
+    opacity var(--toast-timeout)
+      var(--motion-easing-default);
 }
 
 .rtgSlideIn-appear-active,
@@ -36,12 +38,13 @@
 .rtgSlideIn-exit {
   opacity: 1;
   transform: translateY(0);
-  transition: transform var(--toast-timeout) var(--motion-easing-default),
-    opacity var(--toast-timeout) var(--motion-easing-default);
+  transition: transform var(--toast-timeout)
+      var(--motion-easing-default),
+    opacity var(--toast-timeout)
+      var(--motion-easing-default);
 }
 
 .rtgSlideIn-exit-active {
   opacity: 0.01; /* removed from DOM on duration complete */
   transform: translateY(100px);
 }
-

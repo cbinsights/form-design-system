@@ -1,9 +1,9 @@
 {
   "layout": {
     "zindex": {
-      "navigation":  { "value": "10" },
-      "modal":       { "value": "20" },
-      "crazy":       { "value": "50" }
+      "navigation": { "value": "10" },
+      "modal": { "value": "20" },
+      "crazy": { "value": "50" }
     }
   }
 }

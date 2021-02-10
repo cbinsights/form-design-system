@@ -24,7 +24,7 @@ const writeComponent = async (filepath) => {
     .then((jsx) => {
       const content = TEMPLATE({
         componentName,
-        svg: jsx
+        svg: jsx,
       });
       fs.writeFileSync(`${buildConfig.react.lib}/${componentName}.jsx`, content);
     })
@@ -42,13 +42,13 @@ const writeComponent = async (filepath) => {
  */
 const buildDestructured = (files) => {
   let importOutput = '';
-  let exportOutput = '\nexport {\n'
-  files.forEach(file => {
+  let exportOutput = '\nexport {\n';
+  files.forEach((file) => {
     const name = path.basename(file, '.svg');
-    importOutput += `import ${name}Icon from './${name}Icon';\n`
-    exportOutput += `  ${name}Icon,\n`
-  })
-  exportOutput += '}'
+    importOutput += `import ${name}Icon from './${name}Icon';\n`;
+    exportOutput += `  ${name}Icon,\n`;
+  });
+  exportOutput += '}';
 
   return importOutput + exportOutput;
 };
@@ -56,6 +56,6 @@ const buildDestructured = (files) => {
 glob(`${buildConfig.react.src}/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
   console.info(`Creating ${files.length} react components`);
-  fs.writeFileSync(`${buildConfig.react.lib}/index.js`, buildDestructured(files))
+  fs.writeFileSync(`${buildConfig.react.lib}/index.js`, buildDestructured(files));
   files.forEach(writeComponent);
 });

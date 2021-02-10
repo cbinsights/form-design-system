@@ -4,19 +4,29 @@ import { Button } from 'components';
 import Prompt from '.';
 
 describe('Prompt component', () => {
-
   it('matches snapshot (default props)', () => {
-    const component = shallow(<Prompt primaryButton={<Button label="foo" />} secondaryButton={<Button label="bar" />} />);
+    const component = shallow(
+      <Prompt
+        primaryButton={<Button label="foo" />}
+        secondaryButton={<Button label="bar" />}
+      />
+    );
     expect(component).toMatchSnapshot();
-    const component2 = shallow(<Prompt isOpen primaryButton={<Button label="foo" />} secondaryButton={<Button label="bar" />} />);
+    const component2 = shallow(
+      <Prompt
+        isOpen
+        primaryButton={<Button label="foo" />}
+        secondaryButton={<Button label="bar" />}
+      />
+    );
     expect(component2).toMatchSnapshot();
   });
 
   it('matches snapshot (set all props)', () => {
     const component = shallow(
-      <Prompt 
-        primaryButton={<Button label="foo" />} 
-        secondaryButton={<Button label="bar" />} 
+      <Prompt
+        primaryButton={<Button label="foo" />}
+        secondaryButton={<Button label="bar" />}
         title="title"
         desc="desc"
         isOpen
@@ -24,5 +34,4 @@ describe('Prompt component', () => {
     );
     expect(component).toMatchSnapshot();
   });
-
-})
+});

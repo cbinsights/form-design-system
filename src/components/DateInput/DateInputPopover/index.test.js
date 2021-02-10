@@ -4,8 +4,8 @@ import { shallow, mount } from 'enzyme';
 import DateInputPopover from '.';
 import { getPopperPlacement } from './util';
 
-const Content = () => (<p>popover content</p>);
-const triggerJsx = (<button>trigger</button>);
+const Content = () => <p>popover content</p>;
+const triggerJsx = <button>trigger</button>;
 
 const SELECTOR_TRIGGER = '[aria-haspopup] button';
 
@@ -16,28 +16,36 @@ const SELECTOR_TRIGGER = '[aria-haspopup] button';
 const isPopperOpen = (w) => w.find('CSSTransition').prop('in');
 
 describe('DateInputPopover component', () => {
-
   it('matches snapshot (default props)', () => {
-    const wrapper = mount(<DateInputPopover trigger={triggerJsx}><Content /></DateInputPopover>);
+    const wrapper = mount(
+      <DateInputPopover trigger={triggerJsx}>
+        <Content />
+      </DateInputPopover>
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
   it('uses Portal by default', () => {
-    const wrapper = mount(<DateInputPopover trigger={triggerJsx}><Content /></DateInputPopover>);
+    const wrapper = mount(
+      <DateInputPopover trigger={triggerJsx}>
+        <Content />
+      </DateInputPopover>
+    );
     expect(wrapper.exists('Portal')).toBe(true);
   });
 
   it('does NOT use Portal when disablePortal is set', () => {
-    const wrapper = mount(<DateInputPopover trigger={triggerJsx} disablePortal><Content /></DateInputPopover>);
+    const wrapper = mount(
+      <DateInputPopover trigger={triggerJsx} disablePortal>
+        <Content />
+      </DateInputPopover>
+    );
     expect(wrapper.exists('Portal')).toBe(false);
   });
 
   it('ignores `isOpen` prop when not in controlled mode', () => {
     const wrapper = shallow(
-      <DateInputPopover
-        trigger={triggerJsx}
-        isOpen
-      >
+      <DateInputPopover trigger={triggerJsx} isOpen>
         <Content />
       </DateInputPopover>
     );
@@ -63,16 +71,17 @@ describe('DateInputPopover component', () => {
   });
 
   describe('interactionMode="controlled"', () => {
-    const mountControlled = (isOpen, onUserDismiss) => mount(
-      <DateInputPopover
-        trigger={triggerJsx}
-        interactionMode="controlled"
-        isOpen={isOpen}
-        onUserDismiss={onUserDismiss}
-      >
-        <Content />
-      </DateInputPopover>
-    );
+    const mountControlled = (isOpen, onUserDismiss) =>
+      mount(
+        <DateInputPopover
+          trigger={triggerJsx}
+          interactionMode="controlled"
+          isOpen={isOpen}
+          onUserDismiss={onUserDismiss}
+        >
+          <Content />
+        </DateInputPopover>
+      );
 
     it('can not be opened via user event if isOpen is false', () => {
       const wrapper = mountControlled(false);
@@ -95,7 +104,6 @@ describe('DateInputPopover component', () => {
       triggerEl.simulate('click', { target: '<p>lol not the popover</p>' });
       expect(isPopperOpen(wrapper)).toBe(true);
     });
-
   });
 
   describe('interactionMode="click"', () => {
@@ -186,7 +194,5 @@ describe('DateInputPopover component', () => {
       triggerEl.simulate('mouseleave', { target: '<p>lol not the popover</p>' });
       expect(isPopperOpen(wrapper)).toBe(false);
     });
-
   });
-
 });

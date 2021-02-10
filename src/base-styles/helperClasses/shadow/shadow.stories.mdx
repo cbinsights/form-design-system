@@ -1,8 +1,14 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { Example, generalStyles, containerStyles, layoutStyle, labelStyle } from 'base-styles/styledocUtils';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import {
+  Example,
+  generalStyles,
+  containerStyles,
+  layoutStyle,
+  labelStyle,
+} from 'base-styles/styledocUtils';
 import { TableLayout } from 'util/storybook-docs/Table';
 
-<Meta title="Style Utilities/Shadow"  />
+<Meta title="Style Utilities/Shadow" />
 
 ## Elevation
 
@@ -15,16 +21,26 @@ import { TableLayout } from 'util/storybook-docs/Table';
     ['elevation--3', '8dp box shadow'],
     ['elevation--4', '12dp box shadow'],
     ['elevation--5', '16dp box shadow (largest elevated)'],
-  ]} 
+  ]}
 />
 
 <Story name="Elevation">
   <div style={containerStyles}>
-    <Example label="elevation--1"><div className="elevation--1 rounded--all" style={generalStyles} /></Example>
-    <Example label="elevation--2"><div className="elevation--2 rounded--all" style={generalStyles} /></Example>
-    <Example label="elevation--3"><div className="elevation--3 rounded--all" style={generalStyles} /></Example>
-    <Example label="elevation--4"><div className="elevation--4 rounded--all" style={generalStyles} /></Example>
-    <Example label="elevation--5"><div className="elevation--5 rounded--all" style={generalStyles} /></Example>
+    <Example label="elevation--1">
+      <div className="elevation--1 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="elevation--2">
+      <div className="elevation--2 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="elevation--3">
+      <div className="elevation--3 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="elevation--4">
+      <div className="elevation--4 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="elevation--5">
+      <div className="elevation--5 rounded--all" style={generalStyles} />
+    </Example>
   </div>
 </Story>
 
@@ -37,13 +53,19 @@ import { TableLayout } from 'util/storybook-docs/Table';
     ['depth--1', '1dp inset box shadow (most shallow depth)'],
     ['depth--2', '2dp inset box shadow'],
     ['depth--3', '3dp inset box shadow (deepest depth)'],
-  ]} 
+  ]}
 />
 
 <Story name="Depth">
   <div style={containerStyles}>
-    <Example label="depth--1"><div className="depth--1 rounded--all" style={generalStyles} /></Example>
-    <Example label="depth--2"><div className="depth--2 rounded--all" style={generalStyles} /></Example>
-    <Example label="depth--3"><div className="depth--3 rounded--all" style={generalStyles} /></Example>
+    <Example label="depth--1">
+      <div className="depth--1 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="depth--2">
+      <div className="depth--2 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="depth--3">
+      <div className="depth--3 rounded--all" style={generalStyles} />
+    </Example>
   </div>
 </Story>

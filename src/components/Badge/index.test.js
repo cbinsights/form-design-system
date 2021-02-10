@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import Badge from '.';
 
@@ -8,7 +8,6 @@ const SELECTOR_NOTIF = '[aria-label="Notification badge"]';
 const SELECTOR_COUNT = '[aria-label="Count badge"]';
 
 describe('Badge component', () => {
-
   it('renders correctly as notif with label', () => {
     const { container } = render(<Badge label="666" />);
     const notif = container.querySelector(SELECTOR_NOTIF);
@@ -54,5 +53,4 @@ describe('Badge component', () => {
     expect(notif).toBeFalsy();
     expect(count).toBeNull();
   });
-
 });

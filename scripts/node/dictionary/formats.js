@@ -3,7 +3,9 @@ const path = require('path');
 const { toHsla } = require('./util/color');
 const { DICTIONARY_ROOT } = require('../constants');
 
-const lg = (msg) => { console.log(JSON.stringify(msg, null, 2)) }
+const lg = (msg) => {
+  console.log(JSON.stringify(msg, null, 2));
+};
 
 /**
  * @param {Array} props list of dictionary props
@@ -52,22 +54,20 @@ const formatCommonJs = (dictionary) =>
  * @return {String} js file that exports objects by category
  */
 const formatJsManifest = (dictionary) => {
-
   // properties from color category get more detailed information
-  const colors = filterByCategory(dictionary.allProperties, 'color')
-    .map((p) => {
-      const { name, hex, rgb, hsl, varNames } = p.attributes;
-      return {
-        name,
-        varNames,
-        values: {
-          hex,
-          calculated: p.value,
-          rgba: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
-          hsla: toHsla(hsl),
-        },
-      };
-    });
+  const colors = filterByCategory(dictionary.allProperties, 'color').map((p) => {
+    const { name, hex, rgb, hsl, varNames } = p.attributes;
+    return {
+      name,
+      varNames,
+      values: {
+        hex,
+        calculated: p.value,
+        rgba: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
+        hsla: toHsla(hsl),
+      },
+    };
+  });
 
   // all other properties can just map to a simple varName/value/category arr
   const otherProperties = dictionary.allProperties
@@ -78,7 +78,7 @@ const formatJsManifest = (dictionary) => {
         varNames,
         value: p.value,
         attributes: { category },
-      }
+      };
     });
 
   const result = {
@@ -136,10 +136,10 @@ const formatRgbComponents = (filteredDictionary) =>
 * color: rgba( var(--rgb-purple), 0.38);
 */`,
     ':root {',
-    ...filteredDictionary.allProperties.map((prop) =>
-      `  --rgb-${prop.name}: ${prop.value};`
+    ...filteredDictionary.allProperties.map(
+      (prop) => `  --rgb-${prop.name}: ${prop.value};`
     ),
-    '}'
+    '}',
   ].join('\n');
 
 // Custom formats

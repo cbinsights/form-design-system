@@ -18,7 +18,7 @@ We've decided to go with a 2 tier approach:
 
 - Use pre-defined z-index values & ranges that are defined in FDS.
 - Use values between `1` and `9` for fine layering control (usualy when pre-defined z-index
-values are not useful)
+  values are not useful)
 - Rely on DOM order to set stacking order for elements of the same `z-index` (for example, a popover menu within a modal)
 
 ### Use values between `1` and `9` for fine layering control
@@ -32,14 +32,13 @@ values `1` through `5` to accomplish this.
 
 Note: It's helpful to understand what stacking context is to better utilize this approach. `z-index` values [are not absolute](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
 
-
 ### Pre-defined FDS z-index values / ranges
 
-We currently have 3 layers: navigation (10), modal (20), and crazy (50). 
+We currently have 3 layers: navigation (10), modal (20), and crazy (50).
 
 #### Navigation
 
-You want to use navigation z-index for headers, sidebars, etc. Anything that generally serves to "frame" the content on a page. 
+You want to use navigation z-index for headers, sidebars, etc. Anything that generally serves to "frame" the content on a page.
 
 For navigation, you will need often manage the relationship between navigation elements. You can do this by using calc. To note: the navigation z-index should never exceed 19, as these are z-index values for modals.
 
@@ -64,5 +63,3 @@ Use crazy for the unexpected situations where you know something should go above
 
 For base stacking context, standard values are most helpful at increments of 10 because it
 gives engineers flexibility to insert layers between defined stack levels. For example:
-
-

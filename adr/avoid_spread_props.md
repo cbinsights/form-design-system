@@ -27,9 +27,9 @@ side effects, and unnecessary customization.
 
 ## Considered Options
 
-* Every component spreads rest props
-* No components spread rest props
-* Only components that render attribute-heavy DOM elements spread rest props
+- Every component spreads rest props
+- No components spread rest props
+- Only components that render attribute-heavy DOM elements spread rest props
 
 ## Decision Outcome
 
@@ -45,4 +45,3 @@ Chosen option: "Only components that render attribute-heavy DOM elements spread 
 
 - Not all components will behave the same way.
 - **We must document when a component supports spread props**.
-

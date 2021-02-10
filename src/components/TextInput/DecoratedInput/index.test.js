@@ -6,10 +6,7 @@ import DecoratedInput from '.';
 describe('DecoratedInput component', () => {
   it('matches snapshot (set all props)', () => {
     const wrapper = shallow(
-      <DecoratedInput
-        before="left boi"
-        after="right boi"
-      >
+      <DecoratedInput before="left boi" after="right boi">
         <input type="text" />
       </DecoratedInput>
     );
@@ -18,9 +15,7 @@ describe('DecoratedInput component', () => {
 
   it('does NOT add data attribute for before if undefined', () => {
     const wrapper = shallow(
-      <DecoratedInput
-        after="right boi"
-      >
+      <DecoratedInput after="right boi">
         <input type="text" />
       </DecoratedInput>
     );
@@ -30,9 +25,7 @@ describe('DecoratedInput component', () => {
 
   it('does NOT add data attribute for after if undefined', () => {
     const wrapper = shallow(
-      <DecoratedInput
-        before="left boi"
-      >
+      <DecoratedInput before="left boi">
         <input type="text" />
       </DecoratedInput>
     );

@@ -1,5 +1,5 @@
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { useRef, useState } from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { useRef, useState } from 'react';
 import {
   withKnobs,
   optionsKnob as options,
@@ -7,7 +7,7 @@ import {
   number,
   boolean,
 } from '@storybook/addon-knobs';
-import Info from 'util/storybook-docs/Info'
+import Info from 'util/storybook-docs/Info';
 import ImportPath from 'util/storybook-docs/ImportPath';
 import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
 
@@ -21,10 +21,15 @@ import { Popover, Button, Dialog, Menu, MenuItem } from 'components';
   <Story name="Inline buttons">
     {() => (
       <div>
-        Using the `.resetButton` class name you can inline a button to launch interactions like:{' '}
-        <button className="resetButton type--link" onClick={() => window.alert('Terms of service.')}>
+        Using the `.resetButton` class name you can inline a button to launch interactions
+        like:{' '}
+        <button
+          className="resetButton type--link"
+          onClick={() => window.alert('Terms of service.')}
+        >
           see terms
-        </button>.
+        </button>
+        .
       </div>
     )}
   </Story>

@@ -4,13 +4,12 @@ const WIDTH_CONTAINER = 400;
 const WIDTH_CONTENT = 800;
 
 describe('getScrollAttributes', () => {
-
   it('returns correct attributes for partially scrolling', () => {
     const MOCK_EVENT = {
       target: {
         scrollLeft: 50,
-        clientWidth: WIDTH_CONTAINER
-      }
+        clientWidth: WIDTH_CONTAINER,
+      },
     };
     const { scrollStart, scrollEnd } = getScrollAttributes(MOCK_EVENT, WIDTH_CONTENT);
 
@@ -22,8 +21,8 @@ describe('getScrollAttributes', () => {
     const MOCK_EVENT = {
       target: {
         scrollLeft: WIDTH_CONTAINER,
-        clientWidth: WIDTH_CONTAINER
-      }
+        clientWidth: WIDTH_CONTAINER,
+      },
     };
     const { scrollStart, scrollEnd } = getScrollAttributes(MOCK_EVENT, WIDTH_CONTENT);
 
@@ -35,13 +34,12 @@ describe('getScrollAttributes', () => {
     const MOCK_EVENT = {
       target: {
         scrollLeft: 0,
-        clientWidth: WIDTH_CONTAINER
-      }
+        clientWidth: WIDTH_CONTAINER,
+      },
     };
     const { scrollStart, scrollEnd } = getScrollAttributes(MOCK_EVENT, WIDTH_CONTENT);
 
     expect(scrollStart).toBe(true);
     expect(scrollEnd).toBe(false);
-  })
-
+  });
 });

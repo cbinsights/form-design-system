@@ -8,7 +8,6 @@ const renderComponent = (props) => shallow(<CountdownButton {...props} />);
 const MOCK_PROPS = { duration: 666 };
 
 describe('CountdownButton', () => {
-
   it('matches snapshot', () => {
     const component = renderComponent(MOCK_PROPS);
     expect(component).toMatchSnapshot();
@@ -19,13 +18,13 @@ describe('CountdownButton', () => {
     const expected = {
       r: 40,
       c: Math.PI * 40 * 2,
-      centerOffset: 45
+      centerOffset: 45,
     };
 
     Object.keys(expected).forEach((k) => {
-      expect(actual[k]).toEqual(expected[k])
-    })
-  })
+      expect(actual[k]).toEqual(expected[k]);
+    });
+  });
 
   describe('CountdownButton animation', () => {
     const component = mount(<CountdownButton {...MOCK_PROPS} />);
@@ -34,6 +33,5 @@ describe('CountdownButton', () => {
     it('shows a full timer stroke on mount', () => {
       expect(strokeDashoffset).toBe(0);
     });
-
   });
 });

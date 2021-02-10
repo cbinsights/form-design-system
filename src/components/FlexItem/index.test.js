@@ -6,7 +6,6 @@ import FlexItem from '.';
 const renderComponent = (props) => shallow(<FlexItem {...props} />);
 
 describe('Flex component', () => {
-
   it('matches snapshot (default props)', () => {
     const flex = renderComponent();
     expect(flex).toMatchSnapshot();
@@ -17,7 +16,7 @@ describe('Flex component', () => {
       shrink: true,
       align: 'center',
       justify: 'spaceBetween',
-      className: 'foo'
+      className: 'foo',
     });
     expect(flex).toMatchSnapshot();
   });

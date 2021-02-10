@@ -117,6 +117,7 @@
     "style-dictionary": "^2.8.1",
     "style-loader": "^1.2.1",
     "stylelint": "^13.2",
+    "stylelint-config-recommended": "^3.0.0",
     "svg-to-jsx": "^1.0.2",
     "tinycolor2": "^1.4.1",
     "webpack": "^4.38"
@@ -152,8 +153,8 @@
   "version": "4.0.0",
   "dependencies": {
     "@popperjs/core": "^2.5.4",
-    "@tippyjs/react": "^4.2.0",
     "@reach/menu-button": "^0.12.1",
+    "@tippyjs/react": "^4.2.0",
     "classcat": "^4.1.0",
     "focus-trap-react": "^8.3.2",
     "raf-schd": "^4",

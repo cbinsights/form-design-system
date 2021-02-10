@@ -7,10 +7,7 @@ import IconInput from '.';
 describe('IconInput component', () => {
   it('matches snapshot (set all props)', () => {
     const wrapper = shallow(
-      <IconInput
-        IconLeft={StarFilledIcon}
-        IconRight={StarFilledIcon}
-      >
+      <IconInput IconLeft={StarFilledIcon} IconRight={StarFilledIcon}>
         <input type="text" />
       </IconInput>
     );
@@ -19,9 +16,7 @@ describe('IconInput component', () => {
 
   it('only adds left padding for left icon', () => {
     const rootEl = shallow(
-      <IconInput
-        IconLeft={StarFilledIcon}
-      >
+      <IconInput IconLeft={StarFilledIcon}>
         <input type="text" />
       </IconInput>
     ).find('.fdsIconInput');
@@ -32,9 +27,7 @@ describe('IconInput component', () => {
 
   it('only adds right padding for right icon', () => {
     const rootEl = shallow(
-      <IconInput
-        IconRight={StarFilledIcon}
-      >
+      <IconInput IconRight={StarFilledIcon}>
         <input type="text" />
       </IconInput>
     ).find('.fdsIconInput');
@@ -42,5 +35,4 @@ describe('IconInput component', () => {
     expect(rootEl.hasClass('fdsIconInput--hasEndIcon')).toBe(true);
     expect(rootEl.hasClass('fdsIconInput--hasStartIcon')).toBe(false);
   });
-
 });

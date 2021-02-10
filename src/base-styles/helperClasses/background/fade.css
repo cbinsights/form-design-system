@@ -1,41 +1,73 @@
 .fade--top--white::before {
-  background-image: linear-gradient(to bottom, var(--color-white), rgba(var(--rgb-white), 0));
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-white),
+    rgba(var(--rgb-white), 0)
+  );
   top: 0;
 }
 
 .fade--right--white::after {
-  background-image: linear-gradient(to left, var(--color-white), rgba(var(--rgb-white), 0));
+  background-image: linear-gradient(
+    to left,
+    var(--color-white),
+    rgba(var(--rgb-white), 0)
+  );
   right: 0;
 }
 
 .fade--bottom--white::after {
-  background-image: linear-gradient(to top, var(--color-white), rgba(var(--rgb-white), 0));
+  background-image: linear-gradient(
+    to top,
+    var(--color-white),
+    rgba(var(--rgb-white), 0)
+  );
   bottom: 0;
 }
 
 .fade--left--white::before {
-  background-image: linear-gradient(to right, var(--color-white), rgba(var(--rgb-white), 0));
+  background-image: linear-gradient(
+    to right,
+    var(--color-white),
+    rgba(var(--rgb-white), 0)
+  );
   left: 0;
 }
 
 /* haze */
 .fade--top--haze::before {
-  background-image: linear-gradient(to bottom, var(--color-haze), rgba(var(--rgb-haze), 0));
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-haze),
+    rgba(var(--rgb-haze), 0)
+  );
   top: 0;
 }
 
 .fade--right--haze::after {
-  background-image: linear-gradient(to left, var(--color-haze), rgba(var(--rgb-haze), 0));
+  background-image: linear-gradient(
+    to left,
+    var(--color-haze),
+    rgba(var(--rgb-haze), 0)
+  );
   right: 0;
 }
 
 .fade--bottom--haze::after {
-  background-image: linear-gradient(to top, var(--color-haze), rgba(var(--rgb-haze), 0));
+  background-image: linear-gradient(
+    to top,
+    var(--color-haze),
+    rgba(var(--rgb-haze), 0)
+  );
   bottom: 0;
 }
 
 .fade--left--haze::before {
-  background-image: linear-gradient(to right, var(--color-haze), rgba(var(--rgb-haze), 0));
+  background-image: linear-gradient(
+    to right,
+    var(--color-haze),
+    rgba(var(--rgb-haze), 0)
+  );
   left: 0;
 }
 
@@ -47,7 +79,7 @@
 .fade--right--haze::after,
 .fade--top--haze::before,
 .fade--bottom--haze::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   z-index: 1;

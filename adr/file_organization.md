@@ -16,15 +16,16 @@ version, as clients will need to update imports once we make the change.
 
 ## Decision Drivers
 
-* Remove unnecessary hierarchy in components dir
-* Simplify documentation
-* Adopt the unofficial CBI standard of organizing by component directories (each component
+- Remove unnecessary hierarchy in components dir
+- Simplify documentation
+- Adopt the unofficial CBI standard of organizing by component directories (each component
   has its own directory).
-* Improve ergonomics and performance of import statements for client applications
+- Improve ergonomics and performance of import statements for client applications
 
 ## Decision Outcome
 
 ### Import statements
+
 Because individual imports for each component has a negative performance impact, we decided
 to use destructured imports and rely on a tree shaking strategy:
 
@@ -37,13 +38,13 @@ to use destructured imports and rely on a tree shaking strategy:
 
 The "root" file for each import corresponds to an FDS code module.
 
-code module   | Import example
-------------- | --------------------------------------
-`dictionary`  | `import { COLOR_TIMBERWOLF, COLOR_PURPLE } from '@cbinsights/fds/lib/dictionary';`
-`components`  | `import { Avatar, TextInput } from '@cbinsights/fds/lib/components/';`
-`icons`       | `import { CloudIcon, BellIcon } from '@cbinsights/fds/lib/icons';`
-`assets`      | Use path `@cbinsights/fds/lib/assets/<file>` where applicable
-`base-styles` | not applicable; we only publish this CSS as part of the main styles file in `assets/`
+| code module   | Import example                                                                        |
+| ------------- | ------------------------------------------------------------------------------------- |
+| `dictionary`  | `import { COLOR_TIMBERWOLF, COLOR_PURPLE } from '@cbinsights/fds/lib/dictionary';`    |
+| `components`  | `import { Avatar, TextInput } from '@cbinsights/fds/lib/components/';`                |
+| `icons`       | `import { CloudIcon, BellIcon } from '@cbinsights/fds/lib/icons';`                    |
+| `assets`      | Use path `@cbinsights/fds/lib/assets/<file>` where applicable                         |
+| `base-styles` | not applicable; we only publish this CSS as part of the main styles file in `assets/` |
 
 ### `components` file structure
 
@@ -75,4 +76,3 @@ We satisfy all the decision drivers
 ## Negative Consequences
 
 Minimal. This is a breaking change that will be marked by major version 9.
-

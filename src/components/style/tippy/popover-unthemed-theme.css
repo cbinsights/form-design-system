@@ -1,4 +1,4 @@
-.tippy-box[data-theme~="popover-unthemed"] {
+.tippy-box[data-theme~='popover-unthemed'] {
   background: transparent;
   color: initial;
   border-radius: initial;
@@ -6,6 +6,6 @@
   line-height: initial;
 }
 
-.tippy-box[data-theme~="popover-unthemed"] .tippy-content {
+.tippy-box[data-theme~='popover-unthemed'] .tippy-content {
   padding: 0;
 }
