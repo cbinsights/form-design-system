@@ -139,12 +139,14 @@
     }
   },
   "lint-staged": {
-    "src/**/*.css": [
-      "stylelint --fix"
-    ],
     "src/**/*": [
-      "prettier --write",
+      "prettier --write"
+    ],
+    "src/**/*.{js,jsx}": [
       "eslint --no-ignore"
+    ],
+    "src/**/*.css": [
+      "stylelint"
     ]
   },
   "version": "4.0.0",
