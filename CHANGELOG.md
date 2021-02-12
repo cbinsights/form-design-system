@@ -33,7 +33,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ## [10.1] Added font-family classes
 
-- Added `fontFamily--condensed`, `fontFamily--default`, and `fontFamily-mono` FDS classes.
+- Added `fontFamily--condensed`, `fontFamily--default`, and `fontFamily-mono` FDS classes
 
 ## [10.0] MAJOR
 
