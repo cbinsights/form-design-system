@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { Meta, Story } from '@storybook/addon-docs/blocks';
 import { TableLayout } from 'util/storybook-docs/Table';
 import FDS from 'lib/dictionary/js/styleConstants';
 import { Example, generalStyles, containerStyles } from 'base-styles/styledocUtils';
@@ -10,20 +10,21 @@ export const positionStyles = {
   height: boxDimensions,
   width: boxDimensions,
   border: `1px dashed ${FDS.COLOR_BLUE}`,
-  padding: 2 
-}
+  padding: 2,
+};
 
 export const boxStyles = {
   height: boxDimensions / 2,
   width: boxDimensions / 2,
   background: FDS.COLOR_AQUA,
   border: `1px solid ${FDS.COLOR_BLUE}`,
-  borderRadius: 3
-}
+  borderRadius: 3,
+};
 
-<Meta title="Style Utilities/Position"  />
+<Meta title="Style Utilities/Position" />
 
 ## Child Align
+
 Positions direct child(s) of element using flex properties.
 **These classes modify `flex` properties.**
 Avoid combining `alignChild` classes with flexbox layout elements.
@@ -43,14 +44,18 @@ Avoid combining `alignChild` classes with flexbox layout elements.
         ['alignChild--right--center', 'Adds standard margin to all sides'],
         ['alignChild--right--top', 'Adds standard margin to left of element'],
         ['alignChild--right--bottom', 'Adds standard margin to all sides'],
-      ].map(row => [
+      ].map((row) => [
         row[0],
         row[1],
-        { 
+        {
           style: { paddingTop: 0, paddingBottom: 0 },
-          children: <div className={row[0]} style={positionStyles}><div style={boxStyles}/></div>
-        }
-      ])} 
+          children: (
+            <div className={row[0]} style={positionStyles}>
+              <div style={boxStyles} />
+            </div>
+          ),
+        },
+      ])}
     />
   </>
 </Story>
@@ -65,15 +70,26 @@ Avoid combining `alignChild` classes with flexbox layout elements.
       ['align--center', 'Sets `text-align` to `center`'],
       ['align--left', 'Sets `text-align` to `left`'],
       ['align--right', 'Sets `text-align` to `right`'],
-    ].map(row => [
+    ].map((row) => [
       row[0],
       row[1],
-      { className: row[0], style: { backgroundColor: FDS.COLOR_HAZE }, children: <span style={{ backgroundColor: FDS.COLOR_AQUA, padding: "1px", color: "white" }}>CB Insights</span>}
-    ])} 
+      {
+        className: row[0],
+        style: { backgroundColor: FDS.COLOR_HAZE },
+        children: (
+          <span
+            style={{ backgroundColor: FDS.COLOR_AQUA, padding: '1px', color: 'white' }}
+          >
+            CB Insights
+          </span>
+        ),
+      },
+    ])}
   />
 </Story>
 
 ## Vertical Align
+
 Sets `vertical-align` property. **Only applies to `inline`, `inline-block`,
 `table-cell` or `inline-flex` elements**.
 
@@ -85,28 +101,33 @@ Sets `vertical-align` property. **Only applies to `inline`, `inline-block`,
       ['valign--top', 'Sets `vertical-align` to `top`'],
       ['valign--center', 'Sets `vertical-align` to `middle`'],
       ['valign--bottom', 'Sets `vertical-align` to `bottom`'],
-    ].map(row => [
+    ].map((row) => [
       row[0],
       row[1],
-      { 
-        style: { backgroundColor: FDS.COLOR_HAZE, position: "relative" }, 
+      {
+        style: { backgroundColor: FDS.COLOR_HAZE, position: 'relative' },
         children: (
           <>
             <span
               className={`${row[0]} display--inlineBlock`}
-              style={{ backgroundColor: FDS.COLOR_AQUA, padding: 1, color: FDS.COLOR_WHITE, height: 40 }}
+              style={{
+                backgroundColor: FDS.COLOR_AQUA,
+                padding: 1,
+                color: FDS.COLOR_WHITE,
+                height: 40,
+              }}
             >
               CB
             </span>
-            <span style={{ position: "relative"}}>Insights</span>
+            <span style={{ position: 'relative' }}>Insights</span>
           </>
-        )
-      }
-    ])} 
+        ),
+      },
+    ])}
   />
 </Story>
 
-## Z Index 
+## Z Index
 
 <Story name="Z Index">
   <TableLayout

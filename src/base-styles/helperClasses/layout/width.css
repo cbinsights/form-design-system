@@ -1,3 +1,7 @@
-.span--100 { width: 100% !important; }
+.span--100 {
+  width: 100% !important;
+}
 
-.span--50 { width: 50% !important; }
+.span--50 {
+  width: 50% !important;
+}

@@ -4,9 +4,9 @@ module.exports = (file, api) => {
 
   root = root.find(j.ImportDeclaration).forEach((statement) => {
     const sourceValue = statement.value.source.value;
-    if (sourceValue.startsWith("@cbinsights/fds/lib/components")) {
+    if (sourceValue.startsWith('@cbinsights/fds/lib/components')) {
       const regex = /components\/.*\//;
-      const replacedValue = sourceValue.replace(regex, "components/");
+      const replacedValue = sourceValue.replace(regex, 'components/');
       const originalComponent = statement.value.specifiers[0].local.name;
       j(statement).replaceWith(
         j.importDeclaration(
@@ -17,5 +17,5 @@ module.exports = (file, api) => {
     }
   });
 
-  return root.toSource({quote: 'single'});
+  return root.toSource({ quote: 'single' });
 };

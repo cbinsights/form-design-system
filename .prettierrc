@@ -1,5 +1,5 @@
 {
-	"singleQuote": true,
+  "singleQuote": true,
   "useTabs": false,
   "trailingComma": "es5",
   "arrowParens": "always"

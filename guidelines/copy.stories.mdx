@@ -1,10 +1,11 @@
-import { Meta } from "@storybook/addon-docs/blocks";
-import Info from 'util/storybook-docs/Info'
+import { Meta } from '@storybook/addon-docs/blocks';
+import Info from 'util/storybook-docs/Info';
 import CopyExample from 'util/storybook-docs/CopyExample';
 
 <Meta title="UI Guidelines/UI Copy" />
 
 # UI Copy Guidelines
+
 Guidelines for writing copy that appears in product user interface (web and mobile applications).
 When writing non-interface copy, please refer to IU guidelines.
 
@@ -13,6 +14,7 @@ When writing non-interface copy, please refer to IU guidelines.
 Generally prefer sentence case. When in doubt, don't capitalize.
 
 ### Headings
+
 Use title case in main headings. The main heading is typically the biggest heading on the page or app view.
 
 <CopyExample
@@ -21,6 +23,7 @@ Use title case in main headings. The main heading is typically the biggest headi
 />
 
 ### Subheadings
+
 Subheadings should be sentence case. Do not title case a heading unless it's the top-level heading on a page/view.
 
 <CopyExample
@@ -29,6 +32,7 @@ Subheadings should be sentence case. Do not title case a heading unless it's the
 />
 
 ### Short descriptions
+
 Short descriptions (e.g. toast messages, tooltips, table cell values) should be in sentence case without a period. If the short description is more than one sentence, use periods.
 
 <CopyExample
@@ -37,30 +41,25 @@ Short descriptions (e.g. toast messages, tooltips, table cell values) should be 
 />
 
 ### Tables
+
 For table headings and values, prefer sentence casing.
 
-<CopyExample
-  valid="Last updated"
-  invalid="Last Updated"
-/>
+<CopyExample valid="Last updated" invalid="Last Updated" />
 
 ### Charts
+
 Always title case chart titles.
 
-<CopyExample
-  valid="Mentions in Earnings Calls"
-  invalid=" Mentions in earnings calls"
-/>
+<CopyExample valid="Mentions in Earnings Calls" invalid=" Mentions in earnings calls" />
 
 ### Calls to action
+
 CTAs should be in sentence case. Buttons may be in all caps or sentence case.
 
-<CopyExample
-  valid="Reload page"
-  invalid="Reload Page"
-/>
+<CopyExample valid="Reload page" invalid="Reload Page" />
 
 ### People/roles
+
 Do not capitalize roles or job titles. For example, the role of "administrator" does not describe a deity, mythic figure, or a proper noun.
 
 <CopyExample
@@ -69,6 +68,7 @@ Do not capitalize roles or job titles. For example, the role of "administrator" 
 />
 
 ### Entities
+
 Case specific companies and investors with original casing (e.g. "Locus Biosciences"). Do not capitalize identifiers like the words "company" and "investor".
 
 <CopyExample
@@ -77,16 +77,15 @@ Case specific companies and investors with original casing (e.g. "Locus Bioscien
 />
 
 ### Product features
+
 Always capitalize major features on the CBI platform. When in doubt, ask the product marketing team.
 
-<CopyExample
-  valid="Your Stories"
-  invalid="Your stories"
-/>
+<CopyExample valid="Your Stories" invalid="Your stories" />
 
 ## Punctuation
 
 ### Exclamation points
+
 Use sparingly, only for positive messages where the user might be as excited as we are. DO NOT use exclamation points in error messages.
 
 <CopyExample
@@ -95,6 +94,7 @@ Use sparingly, only for positive messages where the user might be as excited as 
 />
 
 ### Periods
+
 Periods are not necessary in most user interface copy. Avoid periods unless the copy contains more than one sentence.
 
 <CopyExample
@@ -103,68 +103,54 @@ Periods are not necessary in most user interface copy. Avoid periods unless the 
 />
 
 ### Serial commas
+
 Always use a serial comma.
 
-<CopyExample
-  invalid="Pål, Paul and Kristin"
-  valid="Pål, Paul, and Kristin"
-/>
+<CopyExample invalid="Pål, Paul and Kristin" valid="Pål, Paul, and Kristin" />
 
 ### Ampersands
+
 Avoid ampersands in UI copy. Spell out "and".
 
-<CopyExample
-  invalid="Clone & view Collection"
-  valid="Clone and view Collection"
-/>
+<CopyExample invalid="Clone & view Collection" valid="Clone and view Collection" />
 
 ### Numbers
+
 Use figures for paging and denoting a number of items the user is interacting with (e.g. "3 rows selected").
 
-<CopyExample
-  valid="Showing 20 results"
-  invalid="Showing twenty results"
-/>
+<CopyExample valid="Showing 20 results" invalid="Showing twenty results" />
 
 ### Time and date
+
 By default, use American English notation for shorthand dates. Show leading zeros.
 
-<CopyExample
-  valid="MM/DD/YYYY"
-/>
+<CopyExample valid="MM/DD/YYYY" />
 
 Do not abbreviate month name. if the copy doesn't fit, change the design to allow text wrapping or use a shorthand date instead.
 
-<CopyExample
-  invalid="Aug 22, 2019"
-  valid="August 22, 2019"
-/>
+<CopyExample invalid="Aug 22, 2019" valid="August 22, 2019" />
 
 ## Calls to action
+
 Avoid unnecessary instruction in calls to action. Keep CTAs clear and concise.
 
-<CopyExample
-  invalid="Click to create Collection"
-  valid="Create Collection"
-/>
+<CopyExample invalid="Click to create Collection" valid="Create Collection" />
 
 Use an active voice for actions instead of a passive voice. Use verbs.
 
-<CopyExample
-  invalid="New page"
-  valid="Add page"
-/>
+<CopyExample invalid="New page" valid="Add page" />
 
 Buttons, menu items, and other clickable copy should describe the action in the first two words.
 
-<CopyExample
-  invalid="Yes, delete column"
-  valid="Delete column"
-/>
+<CopyExample invalid="Yes, delete column" valid="Delete column" />
 
 ---
 
 <Info type="info">
-  <p>Extra reading: <a href="https://uxdesign.cc/how-to-write-for-interactions-3ff03080fb18">How to write for interactions</a></p>
+  <p>
+    Extra reading:{' '}
+    <a href="https://uxdesign.cc/how-to-write-for-interactions-3ff03080fb18">
+      How to write for interactions
+    </a>
+  </p>
 </Info>
-

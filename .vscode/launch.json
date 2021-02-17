@@ -9,16 +9,11 @@
       "type": "node",
       "request": "launch",
       "program": "${workspaceRoot}/node_modules/jest/bin/jest",
-      "runtimeArgs": [
-        "--inspect-brk",
-      ],
-      "args": [
-        "--no-timeouts",
-        "${file}",
-      ],
+      "runtimeArgs": ["--inspect-brk"],
+      "args": ["--no-timeouts", "${file}"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "port": 9229
-    },
+    }
   ]
 }

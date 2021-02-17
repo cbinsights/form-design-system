@@ -1,71 +1,69 @@
 /* Custom properties */
-@import "../../lib/dictionary/css/customProperties";
-@import "../../lib/dictionary/css/rawRgbColors";
+@import '../../lib/dictionary/css/customProperties';
+@import '../../lib/dictionary/css/rawRgbColors';
 
 /* Base styles */
-@import "./base/customNormalize";
-@import "./base/documentTags";
-@import "./base/inlineTags";
-@import "./base/blockTags";
-@import "./base/headingTags";
-@import "./base/formTags";
+@import './base/customNormalize';
+@import './base/documentTags';
+@import './base/inlineTags';
+@import './base/blockTags';
+@import './base/headingTags';
+@import './base/formTags';
 
 /* Spacing Helpers */
-@import "./helperClasses/spacing/spacing";
-@import "./helperClasses/spacing/flush";
+@import './helperClasses/spacing/spacing';
+@import './helperClasses/spacing/flush';
 
 /* Position Helpers */
-@import "./helperClasses/position/childAlign";
-@import "./helperClasses/position/align";
-@import "./helperClasses/position/valign";
-@import "./helperClasses/position/zindex";
+@import './helperClasses/position/childAlign';
+@import './helperClasses/position/align';
+@import './helperClasses/position/valign';
+@import './helperClasses/position/zindex';
 
 /* Layout Helpers */
-@import "./helperClasses/layout/media";
-@import "./helperClasses/layout/width";
-@import "./helperClasses/layout/display";
+@import './helperClasses/layout/media';
+@import './helperClasses/layout/width';
+@import './helperClasses/layout/display';
 
 /* Shadow Helpers */
-@import "./helperClasses/shadow/elevation";
-@import "./helperClasses/shadow/depth";
+@import './helperClasses/shadow/elevation';
+@import './helperClasses/shadow/depth';
 
 /* Border Helpers */
-@import "./helperClasses/border/radius";
-@import "./helperClasses/border/focus";
-@import "./helperClasses/border/sides";
-@import "./helperClasses/border/shape";
+@import './helperClasses/border/radius';
+@import './helperClasses/border/focus';
+@import './helperClasses/border/sides';
+@import './helperClasses/border/shape';
 
 /* Background Helpers */
-@import "./helperClasses/background/color";
-@import "./helperClasses/background/fade";
+@import './helperClasses/background/color';
+@import './helperClasses/background/fade';
 
 /* List Helpers */
-@import "./helperClasses/list/decorated";
+@import './helperClasses/list/decorated';
 
 /* Link Helpers */
-@import "./helperClasses/links/breakout";
+@import './helperClasses/links/breakout';
 
 /* Typesetting */
-@import "./helperClasses/typeset/scale";
-@import "./helperClasses/typeset/links";
+@import './helperClasses/typeset/scale';
+@import './helperClasses/typeset/links';
 
 /* Text modifiers */
-@import "./helperClasses/typemod/size";
-@import "./helperClasses/typemod/family";
-@import "./helperClasses/typemod/weight";
-@import "./helperClasses/typemod/color";
-@import "./helperClasses/typemod/style";
+@import './helperClasses/typemod/size';
+@import './helperClasses/typemod/family';
+@import './helperClasses/typemod/weight';
+@import './helperClasses/typemod/color';
+@import './helperClasses/typemod/style';
 
 /* Form field modifiers */
-@import "./helperClasses/forms/inputError";
-@import "./helperClasses/forms/inputReset";
-@import "./helperClasses/forms/buttonReset";
+@import './helperClasses/forms/inputError';
+@import './helperClasses/forms/inputReset';
+@import './helperClasses/forms/buttonReset';
 
 /* Whitespace helpers */
-@import "./helperClasses/whitespace/truncate";
-@import "./helperClasses/whitespace/wrap";
-
+@import './helperClasses/whitespace/truncate';
+@import './helperClasses/whitespace/wrap';
 
 /* Animation helpers */
-@import "./helperClasses/animations/transitions";
-
+@import './helperClasses/animations/transitions';

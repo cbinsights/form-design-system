@@ -2,7 +2,6 @@
 /* stylelint-disable selector-max-compound-selectors */
 
 .fdsButton {
-  border: 0 none;
   letter-spacing: 1px;
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-default);
@@ -19,13 +18,21 @@
 /* we remove 1px off each side as there's a border we need to compensate for */
 /* we apply vertical padding on the label only, so that the bigger icon
     doesn't change the button dimensions */
-.fdsButton--m { padding: 0 15px; }
+.fdsButton--m {
+  padding: 0 15px;
+}
 
-.fdsButton--m .fdsButton-label { padding: 7px 0; }
+.fdsButton--m .fdsButton-label {
+  padding: 7px 0;
+}
 
-.fdsButton--s { padding: 0 6px; }
+.fdsButton--s {
+  padding: 0 6px;
+}
 
-.fdsButton--s .fdsButton-label { padding: 3px 0; }
+.fdsButton--s .fdsButton-label {
+  padding: 3px 0;
+}
 
 .fdsButton--isFullWidth {
   width: 100%;
@@ -57,7 +64,7 @@
 }
 
 .fdsButton--loading-spinner::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -195,8 +202,9 @@
   background-color: rgba(229, 50, 62, 0.2);
 }
 
-.fdsButton--loading:matches(.fdsButton--ghost, .fdsButton--outlined) .fdsButton--loading-spinner::before {
-  border: 2px solid #5DABCB;
+.fdsButton--loading:matches(.fdsButton--ghost, .fdsButton--outlined)
+  .fdsButton--loading-spinner::before {
+  border: 2px solid #5dabcb;
   border-top-color: transparent;
 }
 
@@ -220,7 +228,6 @@
   background-color: rgba(255, 255, 255, 0.32);
 }
 
-
 .inverted .fdsButton--ghost:hover,
 .inverted .fdsButton--outlined:hover {
   background-color: rgba(255, 255, 255, 0.08);
@@ -239,8 +246,12 @@
 }
 
 /* stylelint-disable-next-line selector-max-class */
-.inverted .fdsButton--ghost .fdsButton--loading-spinner::before,
-.inverted .fdsButton--outlined .fdsButton--loading-spinner::before {
+.inverted
+  .fdsButton--ghost
+  .fdsButton--loading-spinner::before,
+.inverted
+  .fdsButton--outlined
+  .fdsButton--loading-spinner::before {
   border: 2px solid var(--color-white);
   border-top-color: transparent;
 }
@@ -261,7 +272,8 @@
   border-color: var(--color-red);
 }
 
-.fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost) .fdsButton--loading-spinner::before {
+.fdsButton--isDestructive:matches(.fdsButton--outlined, .fdsButton--ghost)
+  .fdsButton--loading-spinner::before {
   border: 2px solid var(--color-red);
   border-top-color: transparent;
 }

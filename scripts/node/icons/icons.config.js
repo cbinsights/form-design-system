@@ -2,10 +2,7 @@
  * Configuration for `fds-icons` build scripts
  */
 
-const {
-  ICONS_ROOT,
-  LIB_ROOT,
-} = require('../constants.js')
+const { ICONS_ROOT, LIB_ROOT } = require('../constants.js');
 
 const PATH_ICONS_LIB = `${LIB_ROOT}/icons/`;
 
@@ -33,7 +30,7 @@ module.exports = {
     },
     docs: {
       input: `${PATH_ICONS_LIB}/svg`, // used to build manifest of svg strings
-      output: `${PATH_ICONS_LIB}`,    // manifest destination
+      output: `${PATH_ICONS_LIB}`, // manifest destination
     },
   },
 };

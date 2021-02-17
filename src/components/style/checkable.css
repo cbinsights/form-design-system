@@ -42,7 +42,7 @@
   fill: var(--color-blue);
 }
 
-.fdsCheckable--disabled :matches(label,svg) {
+.fdsCheckable--disabled :matches(label, svg) {
   color: var(--font-color-hint) !important;
   fill: var(--font-color-hint) !important;
 }
@@ -58,7 +58,10 @@
   display: none;
 }
 
-.fdsCheckable input:checked + label .fdsCheckable-icon--checked {
+.fdsCheckable
+  input:checked
+  + label
+  .fdsCheckable-icon--checked {
   display: block;
 }
 
@@ -66,6 +69,9 @@
   display: block;
 }
 
-.fdsCheckable input:checked + label .fdsCheckable-icon--unchecked {
+.fdsCheckable
+  input:checked
+  + label
+  .fdsCheckable-icon--unchecked {
   display: none;
 }

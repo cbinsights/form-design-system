@@ -1,11 +1,9 @@
 {
   "motion": {
     "easing": {
-
-      "default":     { "value": "cubic-bezier(0.4, 0, 0.2, 1)" },
-      "decelerate":  { "value": "cubic-bezier(0, 0, 0.2, 1)" },
-      "accelerate":  { "value": "cubic-bezier(0.4, 0, 1, 1)" }
-
+      "default": { "value": "cubic-bezier(0.4, 0, 0.2, 1)" },
+      "decelerate": { "value": "cubic-bezier(0, 0, 0.2, 1)" },
+      "accelerate": { "value": "cubic-bezier(0.4, 0, 1, 1)" }
     }
   }
 }

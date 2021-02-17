@@ -1,11 +1,11 @@
 {
   "layout": {
     "space": {
-      "xs":  { "value": "4px" },
-      "s":  { "value": "8px" },
-      "m":  { "value": "16px" },
-      "l":  { "value": "24px" },
-      "xl":  { "value": "32px" },
+      "xs": { "value": "4px" },
+      "s": { "value": "8px" },
+      "m": { "value": "16px" },
+      "l": { "value": "24px" },
+      "xl": { "value": "32px" },
       "default": { "value": "16px" }
     }
   }

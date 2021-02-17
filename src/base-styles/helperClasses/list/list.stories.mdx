@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { Meta, Story } from '@storybook/addon-docs/blocks';
 import { TableLayout } from 'util/storybook-docs/Table';
 import FDS from 'lib/dictionary/js/styleConstants';
 import { generalStyles, labelStyle } from 'base-styles/styledocUtils';
@@ -6,10 +6,10 @@ import { generalStyles, labelStyle } from 'base-styles/styledocUtils';
 export const positionStyles = {
   ...generalStyles,
   border: `1px solid ${FDS.COLOR_CHARCOAL}`,
-  padding: 1 
-}
+  padding: 1,
+};
 
-<Meta title="Style Utilities/List"  />
+<Meta title="Style Utilities/List" />
 
 ## Decorated Lists
 
@@ -18,11 +18,11 @@ export const positionStyles = {
     <TableLayout
       isCSS
       headers={['class', 'description']}
-      rows={[
-        ['list--decorated', 'Enables standard list decoration'],
-      ]} 
+      rows={[['list--decorated', 'Enables standard list decoration']]}
     />
-    <div>With <span style={labelStyle}>list--decorated</span>:</div>
+    <div>
+      With <span style={labelStyle}>list--decorated</span>:
+    </div>
     <hr />
     <ul className="list--decorated">
       <li>Lorem</li>

@@ -1,5 +1,5 @@
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { useRef, useState } from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { useRef, useState } from 'react';
 import {
   withKnobs,
   optionsKnob as options,
@@ -7,7 +7,7 @@ import {
   number,
   boolean,
 } from '@storybook/addon-knobs';
-import Info from 'util/storybook-docs/Info'
+import Info from 'util/storybook-docs/Info';
 import ImportPath from 'util/storybook-docs/ImportPath';
 import { arrayToOptions } from 'util/storybook-docs/knobHelpers';
 
@@ -19,14 +19,10 @@ import { Popover, Button, Dialog, Menu, MenuItem } from 'components';
 
 export const MenuExample = () => (
   <Menu trigger={<Button label="Menu trigger" hasCaret />}>
-    <MenuItem>
-      Copy
-    </MenuItem>
-    <MenuItem>
-      Delete
-    </MenuItem>
+    <MenuItem>Copy</MenuItem>
+    <MenuItem>Delete</MenuItem>
   </Menu>
-)
+);
 
 <Preview>
   <Story name="Stacking">
@@ -36,41 +32,41 @@ export const MenuExample = () => (
         const showDialog = () => setIsDialogShowing(true);
         const hideDialog = () => setIsDialogShowing(false);
         const PopoverExample = () => (
-            <Popover
-                trigger={<button>Open popover</button>}
-                position="bottom"
-                alignment="start"
-                distance={8}
-            >
-                <div className="bgColor--white rounded--all elevation--2 padding--all">
-                    <Stacking />
-                </div>
-            </Popover>
-        )
+          <Popover
+            trigger={<button>Open popover</button>}
+            position="bottom"
+            alignment="start"
+            distance={8}
+          >
+            <div className="bgColor--white rounded--all elevation--2 padding--all">
+              <Stacking />
+            </div>
+          </Popover>
+        );
         return (
-            <>
+          <>
             <button onClick={showDialog}>Open Dialog</button>
             <MenuExample />
             <MenuExample />
             <PopoverExample />
             <PopoverExample />
             <Dialog
-                disableFocusTrap
-                isOpen={isDialogShowing}
-                content={<Stacking />}
-                onDismiss={hideDialog}
+              disableFocusTrap
+              isOpen={isDialogShowing}
+              content={<Stacking />}
+              onDismiss={hideDialog}
             />
-            </>
-        )
-      } 
-      const [isFixed, setIsFixed] = useState(true)
+          </>
+        );
+      };
+      const [isFixed, setIsFixed] = useState(true);
       const toggleFixed = () => setIsFixed(!isFixed);
       return (
-        <div style={{ position: isFixed ? "fixed" : undefined }}>
+        <div style={{ position: isFixed ? 'fixed' : undefined }}>
           <button onClick={toggleFixed}>Fixed is{isFixed ? 'ON' : 'OFF'}</button>
           <Stacking />
         </div>
-      )
+      );
     }}
   </Story>
 </Preview>

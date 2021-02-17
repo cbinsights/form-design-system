@@ -4,7 +4,6 @@ import { shallow } from 'enzyme';
 import TextInput from '.';
 
 describe('TextInput component', () => {
-
   it('matches snapshot (default)', () => {
     const wrapper = shallow(<TextInput label="label" />);
     expect(wrapper).toMatchSnapshot();
@@ -12,7 +11,7 @@ describe('TextInput component', () => {
 
   it('matches snapshot (all props)', () => {
     const wrapper = shallow(
-      <TextInput 
+      <TextInput
         label="label"
         errorText="errorText"
         IconLeft={() => {}}
@@ -28,5 +27,4 @@ describe('TextInput component', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
-
 });

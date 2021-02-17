@@ -28,16 +28,20 @@
 .rtgGrowFast-enter-active {
   opacity: 1;
   transform: scale(1);
-  transition: transform var(--rtgGrowFast-timeout) var(--rtgGrowFast-easing),
-    opacity var(--rtgGrowFast-timeout) var(--rtgGrowFast-easing);
+  transition: transform var(--rtgGrowFast-timeout)
+      var(--rtgGrowFast-easing),
+    opacity var(--rtgGrowFast-timeout)
+      var(--rtgGrowFast-easing);
 }
 
 /* BEGIN EXIT transition */
 .rtgGrowFast-exit {
   opacity: 1;
   transform: scale(1);
-  transition: transform var(--rtgGrowFast-timeout) var(--rtgGrowFast-easing),
-    opacity var(--rtgGrowFast-timeout) var(--rtgGrowFast-easing);
+  transition: transform var(--rtgGrowFast-timeout)
+      var(--rtgGrowFast-easing),
+    opacity var(--rtgGrowFast-timeout)
+      var(--rtgGrowFast-easing);
 }
 
 /* END EXIT transition */

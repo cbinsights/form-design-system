@@ -1,13 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { FlexItem }  from 'components';
+import { FlexItem } from 'components';
 import Flex from '.';
 
-const renderComponent = (props) => shallow(<Flex {...props}><FlexItem /></Flex>);
+const renderComponent = (props) =>
+  shallow(
+    <Flex {...props}>
+      <FlexItem />
+    </Flex>
+  );
 
 describe('Flex component', () => {
-
   it('matches snapshot (default props)', () => {
     const flex = renderComponent();
     expect(flex).toMatchSnapshot();
@@ -21,7 +25,7 @@ describe('Flex component', () => {
       direction: 'column',
       align: 'end',
       justify: 'spaceBetween',
-      className: 'foo'
+      className: 'foo',
     });
     expect(flex).toMatchSnapshot();
   });

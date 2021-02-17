@@ -21,6 +21,5 @@ Removed `mui-theme` from FDS.
 
 ### Negative Consequences <!-- optional -->
 
-* Consumers will need to handle the breaking change. Consumers are now responsible for
+- Consumers will need to handle the breaking change. Consumers are now responsible for
   defining their own material-ui base theme.
-

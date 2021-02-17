@@ -16,29 +16,27 @@ const config = {
     '@babel/plugin-transform-runtime',
     '@babel/plugin-transform-modules-commonjs',
     [
-      "@babel/plugin-transform-react-jsx",
+      '@babel/plugin-transform-react-jsx',
       {
-        "pragmaFrag": "React.Fragment"
-      }
+        pragmaFrag: 'React.Fragment',
+      },
     ],
     [
-      "module-resolver", {
-        "root": ["./src"],
-        "alias": {
-          "lib": "./lib",
-        }
-      }
-    ]
+      'module-resolver',
+      {
+        root: ['./src'],
+        alias: {
+          lib: './lib',
+        },
+      },
+    ],
   ],
 };
 
 module.exports = (api) => {
-
   // avoid copying test files to destination for JSX build
   if (api.env('jsx_compile')) {
-    config.ignore = [
-      /\.test\.jsx?$/
-    ];
+    config.ignore = [/\.test\.jsx?$/];
   }
 
   return config;
