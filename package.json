@@ -144,7 +144,7 @@
       "prettier --write"
     ],
     "src/**/*.{js,jsx}": [
-      "eslint --no-ignore"
+      "eslint --no-ignore --fix"
     ],
     "src/**/*.css": [
       "stylelint"
