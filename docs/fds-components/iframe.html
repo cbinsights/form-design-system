@@ -123,7 +123,11 @@
         /* eslint-enable object-shorthand */
       })
     );
-  };</script><link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,500,700&display=swap" rel="stylesheet"><style>html, body { height: 100%; background: transparent !important; };
+  };</script><link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,500,700&display=swap" rel="stylesheet"><style>html,
+  body {
+    height: 100%;
+    background: transparent !important;
+  }
 
   #root {
     padding: 16px !important;
@@ -158,16 +162,19 @@
     border-top-color: #e6e6e6;
   }
 
-  .doctable td, .doctable th {
+  .doctable td,
+  .doctable th {
     padding: 0;
     border: none;
   }
 
-  .doctable th:first-of-type, .doctable td:first-of-type {
+  .doctable th:first-of-type,
+  .doctable td:first-of-type {
     padding-left: 20px;
   }
 
-  .doctable.shrinkLastColumn th:last-of-type, .doctable.shrinkLastColumn td:last-of-type {
+  .doctable.shrinkLastColumn th:last-of-type,
+  .doctable.shrinkLastColumn td:last-of-type {
     padding-right: 20px;
     width: 20%;
   }
@@ -182,12 +189,15 @@
     padding-right: 15px;
   }
   .doctable tbody {
-    box-shadow: rgba(0,0,0,0.10) 0 1px 3px 1px, rgba(0,0,0,0.065) 0 0 0 1px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 1px, rgba(0, 0, 0, 0.065) 0 0 0 1px;
     border-radius: 4px;
   }
 
   .transparentpattern {
-    background-image: linear-gradient(45deg, #DDD 25%, transparent 25%), linear-gradient(-45deg, #DDD 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #DDD 75%), linear-gradient(-45deg, transparent 75%, #DDD 75%);
+    background-image: linear-gradient(45deg, #ddd 25%, transparent 25%),
+      linear-gradient(-45deg, #ddd 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ddd 75%),
+      linear-gradient(-45deg, transparent 75%, #ddd 75%);
     background-size: 20px 20px;
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
   }
@@ -196,15 +206,18 @@
     border-top-left-radius: 4px;
   }
 
-  .doctable tr:last-child td:first-child, .doctable tr:last-child th:first-child {
+  .doctable tr:last-child td:first-child,
+  .doctable tr:last-child th:first-child {
     border-bottom-left-radius: 4px;
   }
 
-  .doctable tr:last-child td:last-child, .doctable tr:last-child th:last-child {
+  .doctable tr:last-child td:last-child,
+  .doctable tr:last-child th:last-child {
     border-bottom-right-radius: 4px;
   }
 
-  .doctable tr:first-child td:last-child, .doctable tr:first-child th:last-child {
+  .doctable tr:first-child td:last-child,
+  .doctable tr:first-child th:last-child {
     border-top-right-radius: 4px;
   }
 
@@ -232,7 +245,7 @@
   }
 
   .doctable td > span.cliptext {
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0, 0, 0, 0.2);
     font-size: 9px;
     padding: 1px 4px;
     line-height: normal;
@@ -251,14 +264,14 @@
   }
 
   .doctable td.hasCSS {
-    color: #F09 !important;
+    color: #f09 !important;
     font-family: var(--font-family-mono);
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-book);
   }
 
   .copyNotice {
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0, 0, 0, 0.2);
     font-size: 9px !important;
     padding: 1px 4px;
     line-height: normal;
@@ -285,52 +298,55 @@
   }
 
   .swatchContainer-copyButton {
-    font-Size: 10px;
+    font-size: 10px;
     color: inherit;
     width: 100%;
     padding: 5px 0;
-    background: rgba(255,255,255,.3);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 3px;
     border: none;
     margin-top: 2px;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+      0 1px 3px 0 rgba(0, 0, 0, 0.2);
     transition-property: background-color, color, box-shadow;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     transition-timing-function: linear;
   }
 
-  .swatchContainer-copyButton:hover, .swatchContainer-copyButton:focus {
+  .swatchContainer-copyButton:hover,
+  .swatchContainer-copyButton:focus {
     z-index: 2;
   }
 
   .swatchContainer-copyButton:hover {
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+      0 2px 4px -1px rgba(0, 0, 0, 0.2);
   }
 
   .swatchContainer-light .swatchContainer-copyButton {
-    color: #FFF;
-    background: rgba(225,225,225,.2);
+    color: #fff;
+    background: rgba(225, 225, 225, 0.2);
   }
 
   .swatchContainer-light .swatchContainer-copyButton:hover {
-    background: rgba(255,255,255,.9);
+    background: rgba(255, 255, 255, 0.9);
     color: #000;
   }
 
   .swatchContainer-dark .swatchContainer-copyButton {
     color: #333;
-    background: rgba(255,255,255,.3);
+    background: rgba(255, 255, 255, 0.3);
   }
 
   .swatchContainer-dark .swatchContainer-copyButton:hover {
-    background: rgba(255,255,255,.9);
+    background: rgba(255, 255, 255, 0.9);
     color: #000;
   }
 
   .swatchContainer-hex {
     color: inherit;
     font-size: 10px;
-    opacity: .4;
+    opacity: 0.4;
   }
 
   .swatchContainer-name {
@@ -418,7 +434,6 @@
     border: 1px solid var(--debug-color-layerBorder) !important;
   }
 
-
   /**
   <element class="debug-classes">
 
@@ -490,14 +505,16 @@
     color: #333;
     font-size: 14px;
     cursor: pointer;
-    font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Nunito Sans', -apple-system, '.SFNSText-Regular', 'San Francisco',
+      BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
   .importPath--highlight {
     color: #006699;
   }
 
-  .importPath:hover, .importPath:hover svg {
+  .importPath:hover,
+  .importPath:hover svg {
     color: darkorange;
   }
 
@@ -510,4 +527,4 @@
             
         
             
-              window['FRAMEWORK_OPTIONS'] = {};</script><script src="runtime~main.313eff362ca9e1dbb658.bundle.js"></script><script src="vendors~main.313eff362ca9e1dbb658.bundle.js"></script><script src="main.313eff362ca9e1dbb658.bundle.js"></script></body></html>
+              window['FRAMEWORK_OPTIONS'] = {};</script><script src="runtime~main.7b66544812df9258baa7.bundle.js"></script><script src="vendors~main.7b66544812df9258baa7.bundle.js"></script><script src="main.7b66544812df9258baa7.bundle.js"></script></body></html>
