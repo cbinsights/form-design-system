@@ -1,6 +1,6 @@
 .tippy-box[data-theme~='popover-unthemed'] {
   background: transparent;
-  color: initial;
+  color: inherit;
   border-radius: initial;
   font-size: unset;
   line-height: initial;
