@@ -1,5 +1,5 @@
 .tippy-box[data-theme~='popover-default'] {
-  color: initial;
+  color: inherit;
   background-color: var(--color-white);
   border-radius: var(--border-radius-default);
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
