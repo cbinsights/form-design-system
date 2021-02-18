@@ -17,14 +17,14 @@ const NavArrows = ({ onPreviousClick, onNextClick }) => (
     <Flex noGutters>
       <FlexItem shrink>
         <IconButton
-          onClick={onPreviousClick}
+          onClick={() => onPreviousClick()}
           Icon={ActionsArrowLeftIcon}
           label="Previous Month"
         />
       </FlexItem>
       <FlexItem shrink>
         <IconButton
-          onClick={onNextClick}
+          onClick={() => onNextClick()}
           Icon={ActionsArrowRightIcon}
           label="Next Month"
         />
