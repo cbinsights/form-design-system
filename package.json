@@ -64,7 +64,7 @@
     "@storybook/addon-actions": "6.1.11",
     "@storybook/addon-backgrounds": "6.1.14",
     "@storybook/addon-docs": "6.1.11",
-    "@storybook/addon-essentials": "6.1.11",
+    "@storybook/addon-essentials": "6.1.18",
     "@storybook/addon-knobs": "6.1.11",
     "@storybook/addon-links": "6.1.14",
     "@storybook/addons": "6.1.11",
@@ -152,7 +152,7 @@
   },
   "version": "4.0.0",
   "dependencies": {
-    "@popperjs/core": "^2.5.4",
+    "@popperjs/core": "^2.7.2",
     "@reach/menu-button": "^0.12.1",
     "@tippyjs/react": "^4.2.0",
     "classcat": "^4.1.0",
