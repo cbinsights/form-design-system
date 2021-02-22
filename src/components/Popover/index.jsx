@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import Tippy from '@tippyjs/react';
 import FDS from 'lib/dictionary/js/styleConstants';
+import LazyTippy from './LazyTippy';
 import hideOnEscFunc from './hideOnEsc';
 import triggerHelper from './triggerHelper';
 
@@ -28,7 +28,7 @@ const Popover = ({
   const computedTriggerType = triggerHelper(triggerType, isOpen);
   return (
     <>
-      <Tippy
+      <LazyTippy
         animation={false}
         arrow={false}
         visible={isOpen}
@@ -48,7 +48,7 @@ const Popover = ({
         onHide={onHide}
       >
         {triggerElement}
-      </Tippy>
+      </LazyTippy>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FDS from 'lib/dictionary/js/styleConstants';
-import Tippy from '@tippyjs/react';
+import LazyTippy from 'components/Popover/LazyTippy';
 
 const Tooltip = ({
   trigger,
@@ -10,7 +10,7 @@ const Tooltip = ({
   maxWidth = 240,
   textAlign = 'center',
 }) => (
-  <Tippy
+  <LazyTippy
     arrow={false}
     theme="tooltip"
     delay={[350, 0]}
@@ -23,7 +23,7 @@ const Tooltip = ({
     className={`bgColor--charcoal inverted align--${textAlign} padding--y--s  padding--x elevation--2 rounded--all fontSize--s fontWeight--bold`}
   >
     {trigger}
-  </Tippy>
+  </LazyTippy>
 );
 
 Tooltip.propTypes = {
