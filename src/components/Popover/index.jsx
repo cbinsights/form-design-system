@@ -41,7 +41,6 @@ const Popover = ({
         plugins={[hideOnEsc]}
         ignoreAttributes
         zIndex={FDS.ZINDEX_MODAL}
-        moveTransition="transform 0.2s ease-out"
         content={children}
         popperOptions={popperOptions}
         onShow={onShow}

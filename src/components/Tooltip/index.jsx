@@ -18,7 +18,6 @@ const Tooltip = ({
     content={message}
     placement={position}
     zIndex={FDS.ZINDEX_MODAL}
-    moveTransition="transform 0.2s ease-out"
     appendTo={() => document.body}
     className={`bgColor--charcoal inverted align--${textAlign} padding--y--s  padding--x elevation--2 rounded--all fontSize--s fontWeight--bold`}
   >
