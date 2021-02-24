@@ -20,7 +20,7 @@ const Tooltip = ({ trigger, message, maxWidth, position = DEFAULT_POSITION }) =>
     <div
       role="tooltip"
       style={{ maxWidth: maxWidth ? `${maxWidth}px` : DEFAULT_WIDTH }}
-      className="bgColor--charcoal inverted align--center padding--top--half padding--bottom--half padding--left padding--right elevation--2 rounded--all fontSize--s fontWeight--bold"
+      className="bgColor--charcoal inverted align--center padding--y--s padding--x elevation--2 rounded--all fontSize--s fontWeight--bold"
     >
       {message}
     </div>
