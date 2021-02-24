@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from 'components/Button';
 import Popover from '.';
 
@@ -21,6 +21,32 @@ Unthemed.args = {
       popover content
     </div>
   ),
+};
+
+export const closeOnScroll = () => {
+  const containerEl = useRef(null);
+  return (
+    <div
+      ref={containerEl}
+      style={{ height: 200, border: '1px dashed red', overflow: 'scroll' }}
+    >
+      <div style={{ height: 500, background: 'yellow' }}>
+        <Popover
+          triggerElement={<Button theme="outlined" label="Open popover" />}
+          placement="bottom-start"
+          alignment="start"
+          closeOnScrollRef={containerEl}
+        >
+          <div className="bgColor--white rounded--all elevation--2 padding--all">
+            <h3 className="type--head3">Look at me</h3>
+            <p>
+              <em>i am the popover</em>
+            </p>
+          </div>
+        </Popover>
+      </div>
+    </div>
+  );
 };
 
 export const controlledPopover = (args) => {

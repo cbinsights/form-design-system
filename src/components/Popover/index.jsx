@@ -1,8 +1,10 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import validRef from 'components/common/validRef';
 import FDS from 'lib/dictionary/js/styleConstants';
 import LazyTippy from './LazyTippy';
 import hideOnEscFunc from './hideOnEsc';
+import hideOnScrollFunc from './hideOnScroll';
 import triggerHelper from './triggerHelper';
 
 const Popover = ({
@@ -17,8 +19,12 @@ const Popover = ({
   isFixed = false,
   onShow = () => {},
   onHide = () => {},
+  closeOnScrollRef,
 }) => {
   const hideOnEsc = useMemo(() => hideOnEscFunc(onUserDismiss), [onUserDismiss]);
+  const hideOnScroll = useMemo(() => hideOnScrollFunc(closeOnScrollRef), [
+    closeOnScrollRef,
+  ]);
   const popperOptions = useMemo(
     () => ({
       strategy: isFixed ? 'fixed' : 'absolute',
@@ -38,7 +44,7 @@ const Popover = ({
         interactive
         appendTo={appendTo}
         onClickOutside={onUserDismiss || (() => {})}
-        plugins={[hideOnEsc]}
+        plugins={[hideOnEsc, hideOnScroll]}
         ignoreAttributes
         zIndex={FDS.ZINDEX_MODAL}
         content={children}
@@ -76,6 +82,7 @@ Popover.propTypes = {
   isFixed: PropTypes.bool,
   onShow: PropTypes.func,
   onHide: PropTypes.func,
+  closeOnScrollRef: validRef,
 };
 
 export default Popover;

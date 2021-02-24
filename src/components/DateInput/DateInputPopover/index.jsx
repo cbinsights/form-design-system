@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 import { CSSTransition } from 'react-transition-group';
 import FDS from 'lib/dictionary/js/styleConstants';
+import validRef from 'components/common/validRef';
 import { isNotRefsEvent } from 'components/util/events';
 import { getPopperPlacement } from './util';
 import { useDisableScroll, useCloseOnScroll } from './hooks';
@@ -219,11 +220,6 @@ const Popover = React.forwardRef(
 );
 
 Popover.displayName = 'Popover';
-
-const validRef = PropTypes.oneOfType([
-  PropTypes.func,
-  PropTypes.shape({ current: PropTypes.any }),
-]);
 
 Popover.propTypes = {
   /** JSX - Acts as a positioning reference for the popover and triggers active state */
