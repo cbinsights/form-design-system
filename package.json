@@ -154,7 +154,6 @@
   "dependencies": {
     "@popperjs/core": "^2.7.2",
     "@reach/menu-button": "^0.12.1",
-    "@tippyjs/react": "^4.2.0",
     "classcat": "^4.1.0",
     "focus-trap-react": "^8.3.2",
     "raf-schd": "^4",
