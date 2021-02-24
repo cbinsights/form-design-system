@@ -31,6 +31,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [11.0] MAJOR
+
+### **BREAKING CHANGES**
+
+### Popover component
+
+- Popover API reverted to v9 API to fix issues caused by the introduction of Tippy in v10
+
 ## [10.1] Added font-family classes
 
 - Added `fontFamily--condensed`, `fontFamily--default`, and `fontFamily-mono` FDS classes
