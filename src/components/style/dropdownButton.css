@@ -29,3 +29,8 @@
 .fdsDropdown--isActive:focus {
   background: #d9d9d9;
 }
+
+.fdsDropdown--disabled {
+  opacity: var(--button-opacity);
+  pointer-events: none;
+}
