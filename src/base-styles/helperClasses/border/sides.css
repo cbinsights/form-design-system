@@ -1,5 +1,6 @@
 :root {
-  --standardBorder: 1px solid rgba(var(--rgb-charcoal), 0.12);
+  --standardBorder: 1px solid
+    rgba(var(--rgb-charcoal), 0.12);
 }
 
 .border--none {
@@ -26,11 +27,6 @@
   border: var(--standardBorder);
 }
 
-.inverted:matches(
-.border--top,
-.border--right,
-.border--bottom,
-.border--left,
-.border--all,) {
+.inverted:matches(.border--top, .border--right, .border--bottom, .border--left, .border--all, ) {
   border-color: var(--font-color-hintInverted);
 }

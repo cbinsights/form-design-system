@@ -2,97 +2,87 @@
   "source": ["./src/dictionary/**/*.json"],
 
   "platforms": {
-
     "ReactNative": {
-      "transforms": [
-        "attribute/cti",
-        "name/i/objectKey"
-      ],
+      "transforms": ["attribute/cti", "name/i/objectKey"],
       "buildPath": "./lib/dictionary/js/",
-      "files": [{
-        "filter": "isColor",
-        "destination": "reactNative.js",
-        "format": "javascript/reactNativeColors"
-      }]
+      "files": [
+        {
+          "filter": "isColor",
+          "destination": "reactNative.js",
+          "format": "javascript/reactNativeColors"
+        }
+      ]
     },
 
     "SketchPalette": {
-      "transforms": [
-        "attribute/cti"
-      ],
+      "transforms": ["attribute/cti"],
       "buildPath": "./lib/dictionary/sketch/",
-      "files": [{
-        "destination": "cbi.sketchpalette",
-        "format": "sketch/palette"
-      }]
+      "files": [
+        {
+          "destination": "cbi.sketchpalette",
+          "format": "sketch/palette"
+        }
+      ]
     },
 
     "CssCustomProperties": {
-      "transforms": [
-        "attribute/cti",
-        "name/custom/kebab",
-        "color/css"
-      ],
+      "transforms": ["attribute/cti", "name/custom/kebab", "color/css"],
       "buildPath": "./lib/dictionary/css/",
-      "files": [{
-        "filter": "excludeCustomMedia",
-        "destination": "customProperties.css",
-        "format": "css/variables"
-      }]
+      "files": [
+        {
+          "filter": "excludeCustomMedia",
+          "destination": "customProperties.css",
+          "format": "css/variables"
+        }
+      ]
     },
 
     "CssCustomMedia": {
-      "transforms": [
-        "attribute/cti",
-        "name/custom/kebab"
-      ],
+      "transforms": ["attribute/cti", "name/custom/kebab"],
       "buildPath": "./lib/dictionary/css/",
-      "files": [{
-        "filter": "isCustomMedia",
-        "destination": "customMedia.css",
-        "format": "css/customMedia"
-      }]
+      "files": [
+        {
+          "filter": "isCustomMedia",
+          "destination": "customMedia.css",
+          "format": "css/customMedia"
+        }
+      ]
     },
 
     "CssRawRgb": {
-      "transforms": [
-        "attribute/cti",
-        "value/rgbComponents"
-      ],
+      "transforms": ["attribute/cti", "value/rgbComponents"],
       "buildPath": "./lib/dictionary/css/",
-      "files": [{
-        "filter": "isColor",
-        "destination": "rawRgbColors.css",
-        "format": "css/rgbComponents"
-      }]
+      "files": [
+        {
+          "filter": "isColor",
+          "destination": "rawRgbColors.css",
+          "format": "css/rgbComponents"
+        }
+      ]
     },
 
     "JSCustomProperties": {
-      "transforms": [
-        "attribute/cti",
-        "name/custom/kebab",
-        "color/css"
-      ],
+      "transforms": ["attribute/cti", "name/custom/kebab", "color/css"],
       "buildPath": "./lib/dictionary/js/",
-      "files": [{
-        "filter": "excludeCustomMedia",
-        "destination": "cssCustomProperties.js",
-        "format": "js/customProperties"
-      }]
+      "files": [
+        {
+          "filter": "excludeCustomMedia",
+          "destination": "cssCustomProperties.js",
+          "format": "js/customProperties"
+        }
+      ]
     },
 
     "JSConstants": {
-      "transforms": [
-        "attribute/cti",
-        "name/custom/constant",
-        "color/css"
-      ],
+      "transforms": ["attribute/cti", "name/custom/constant", "color/css"],
       "buildPath": "./lib/dictionary/js/",
-      "files": [{
-        "filter": "excludeCustomMedia",
-        "destination": "styleConstants.js",
-        "format": "javascript/commonJs"
-      }]
+      "files": [
+        {
+          "filter": "excludeCustomMedia",
+          "destination": "styleConstants.js",
+          "format": "javascript/commonJs"
+        }
+      ]
     },
 
     "JSManifest": {
@@ -103,12 +93,13 @@
         "color/css"
       ],
       "buildPath": "./lib/dictionary/js/",
-      "files": [{
-        "filter": "excludeCustomMedia",
-        "destination": "manifest.js",
-        "format": "javascript/manifest"
-      }]
+      "files": [
+        {
+          "filter": "excludeCustomMedia",
+          "destination": "manifest.js",
+          "format": "javascript/manifest"
+        }
+      ]
     }
-
   }
 }

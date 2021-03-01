@@ -5,19 +5,12 @@ module.exports = {
     ecmaVersion: 6,
     ecmaFeatures: {
       jsx: true,
-      experimentalObjectRestSpread: true
+      experimentalObjectRestSpread: true,
     },
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  extends: [
-    'airbnb-base',
-    'plugin:react/recommended',
-    'prettier'
-  ],
-  plugins: [
-    'react',
-    'jest'
-  ],
+  extends: ['airbnb-base', 'plugin:react/recommended', 'prettier'],
+  plugins: ['react', 'jest'],
   rules: {
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
@@ -27,16 +20,14 @@ module.exports = {
   },
   env: {
     'jest/globals': true,
-    "browser": true,
+    browser: true,
   },
   overrides: [
     {
-      files: [
-        '*.test.js'
-      ],
-      'rules': {
+      files: ['*.test.js'],
+      rules: {
         'import/no-unresolved': false,
-      }
-    }
-  ]
-}
+      },
+    },
+  ],
+};

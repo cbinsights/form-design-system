@@ -2,7 +2,7 @@
 // https://github.com/davidtheclark/no-scroll/blob/master/index.js
 /* eslint-disable */
 
-(function(root) {
+(function (root) {
   let isOn = false;
   let scrollbarSize;
   let scrollTop;

@@ -1,4 +1,4 @@
-const snakeCase = require('snake-case')
+const snakeCase = require('snake-case');
 const { getRgbComponents } = require('./util/color');
 
 /**

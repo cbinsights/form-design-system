@@ -5,9 +5,7 @@ import ButtonGroup from '.';
 
 const renderComponent = (props) => shallow(<ButtonGroup {...props} />);
 
-const Icon = () => (
-  <span>🌭</span>
-)
+const Icon = () => <span>🌭</span>;
 
 const buttons = [
   { label: 'Feed', Icon, isActive: true },
@@ -15,7 +13,6 @@ const buttons = [
 ];
 
 describe('ButtonGroup component', () => {
-
   it('matches snapshot (default props)', () => {
     const component = renderComponent({
       buttons,
@@ -26,7 +23,7 @@ describe('ButtonGroup component', () => {
   it('matches snapshot (set all props)', () => {
     const component = renderComponent({
       buttons,
-      onChange: () => {}
+      onChange: () => {},
     });
     expect(component).toMatchSnapshot();
   });

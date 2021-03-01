@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 All Major and Minor changes to this project will be documented in this file.
 
 #### What is considered a "breaking change"?
+
 Any code change in this software that requires consumers to update their usage is
 considered a breaking change (e.g. prop name changes, deletions, interface/argument
 changes, etc).
@@ -13,6 +14,7 @@ changes, etc).
 ---
 
 ## [Major.Minor] _(example)_
+
 This is an example of a brief overview of the _Major_ or _Minor_ version changes.
 
 - this is an example of a change note
@@ -20,16 +22,26 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a change note
 
 ### **BREAKING CHANGES**
+
 - this is an example of a change note
 
 ### **Deprecations**
+
 - this is an example of a deprecation note
 
 ---
 
+## [11.0] MAJOR
+
+### **BREAKING CHANGES**
+
+### Popover component
+
+- Popover API reverted to v9 API to fix issues caused by the introduction of Tippy in v10
+
 ## [10.1] Added font-family classes
 
-- Added `fontFamily--condensed`, `fontFamily--default`, and `fontFamily-mono` FDS classes.
+- Added `fontFamily--condensed`, `fontFamily--default`, and `fontFamily-mono` FDS classes
 
 ## [10.0] MAJOR
 
@@ -45,43 +57,52 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ### **BREAKING CHANGES**
 
 ### Toaster component
+
 - toastProps changed to toastInstance (to better explain what it encompasses)
 - `onDismiss` prop removed. Now should reside in `toastInstance` object
 - `dismissDelay` prop removed. Delay can no longer be customized. `isAutoDismiss` should be disabled if there is a lot of content to read / parse in the toast.
 
 ### TextInput component
+
 - onThrottledChange has been removed
 
 #### Popover component
+
 - Prop interface has completely changed. Refer to documentation for full information on new prop names and usage.
 - Default look of Popover now has included styling (dropshadow, border-radidus, etc)
 
 #### Tooltip component
+
 - `trigger` MUST be able to receive focus now
 
 #### Component reorganization
+
 - bgFade classes are removed
 
 #### Badge & Indicator components
+
 - `Badge` component is now the `Indicator`
 - `Indicator` component is now the `Badge`
 
 #### Double and Half spacing removed
+
 - classes, css variables, and js variables all updated
-- upgrade guide: 
+- upgrade guide:
   - `half` (8px) maps to `s` (8px)
   - `double` (32px) maps to `xl` (32px)
 - Examples:
   - CSS Variable: { margin: var(--space-half) } becomes { margin: var(--space-s) }
-  - JS Variable: FDS.SPACE_DOUBLE becomes FDS.SPACE_XL 
+  - JS Variable: FDS.SPACE_DOUBLE becomes FDS.SPACE_XL
   - classes: .margin--top--half .becomes margin--top--s
 
 #### Removed components
+
 - `HScroll` (use fade classes + useScrollAttributes hook)
 - `GapList` (use FDS classes instead for spacing, border)
 - `Updatable` (use `CornerPosition` component + Badge instead)
 
 ## [9.21] MenuLink
+
 - Added FDS `MenuLink` component. Use alongside FDS `MenuItem` inside of FDS `Menu`.
 
 ## [9.20] 🎁 Unwrapped Icons
@@ -97,54 +118,67 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 ## [9.18] Breakout Links
 
 - Added `breakoutLink` class (to extend clickable area to nearest relative parent)
-- Added `isBreakoutLink` props to `Button` and `IconButton` components to apply 
-the `breakoutLink` class
+- Added `isBreakoutLink` props to `Button` and `IconButton` components to apply
+  the `breakoutLink` class
 
 ## [9.17] Added ZeroState component
+
 - Added `ZeroState` component, useful for displaying when a lack of the primary UI isn't available (due to lack of results, columns, etc)
 
 ## [9.16] 👍
+
 - Added `Thumbsup` icon shape
 
 ## [9.15] Updatable dot
+
 - Added the `showDot` prop to `Updatable` to support showing an `Indicator` dot when the
   `message` is empty.
 
 ## [9.14] Tooltip text alignment
+
 - Added `testAlign` prop for Tooltip component
 
 ## [9.13] Standalone `Updatable` bubble
+
 - Added `Indicator` component that supports optional labels and two variants (count, update)
 - Refactored `Updatable` component to use `Status` internally
 
 ## [9.12] Icons Update
-- Adds `Handshake`  icon shape
-- Adds `Briefcase`  icon shape
+
+- Adds `Handshake` icon shape
+- Adds `Briefcase` icon shape
 - Adds `LinkedinFilled` icon shape
 - Adds `TwitterFilled` icon shape
 
 ## [9.11] Icons Update
-- Adds `Help`  icon shape
-- Adds `Error`  icon shape
+
+- Adds `Help` icon shape
+- Adds `Error` icon shape
 - Adds `Warning` icon shape
 
 ## [9.10] Toast performance
+
 - Refactored top bar of `Toast` to use SVG with a `stroke-dashoffset` animation
 
 ## [9.9] Icons update
+
 - Added "Paint" icon shape
 
 ## [9.8] Icons update
+
 - Added "History" icon shape
 - Added "Selection" icon shape
 
 ## [9.7] UI copy guidelines
+
 - Added "UI Copy Guidelines" to storybook
 
 ## [9.6] Chip enhancements
+
 - Added `Icon` prop
 
 ## [9.5] `zindex--navigation` classname addition
+
 - Added `zindex--navigation` utility classname
 
 ## [9.3] `DateInput` popover behavior
@@ -167,7 +201,7 @@ the `breakoutLink` class
 
 - Components can be imported via a destructure pattern. `import { Button, IconButton } from '@cbinsights/fds/lib/components'`
 - FDS Icons (only React) can be imported via a destructure pattern. `import { AddIcon, CaretDownIcon } from '@cbinsights/fds/lib/icons/react'`
-- TextInput: 
+- TextInput:
   - `hasError` prop added to enable the input error state without passing `errorText`
   - `isLabelBold` prop added to allow label to be bolded
 - Added `x` and `y` directions to spacing classes (e.g. `margin--y`)
@@ -178,50 +212,60 @@ the `breakoutLink` class
 ### **BREAKING CHANGES**
 
 #### Component reorganization
+
 - The following folders no longer exist: `media`, `interactive`, `layout` `forms`, `modals`, `popovers`
 - All components now live in `lib/components`. This is going to break tons of import paths!
 
 #### `MenuButton` Component
+
 - Now only accepts a `button` element, or a component that renders a `button` element as a trigger
 - `isInModal` is no longer accepted
 
 #### `Popover` Component
+
 - The popover no longer closes on user dismissal actions in controlled mode. The
   `onUserDismiss` callback must now be used to update the state of `isOpen` when the
   popover is in controlled mode.
 
 #### `Dialog` Component
-- `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc). 
+
+- `width` and `height` now do not accept numbers. You must pass the unit type (px, vh, etc).
 
 #### `Flex` Component
+
 - `wrap` prop is no longer accepted on `Flex`
 
 #### `raw/` Icons distribution
+
 - `lib/icons/raw/` will no longer exist in packages published v9 or later. For raw SVG
   icons, use `lib/icons/svg/`.
 
 #### Renamed InlineBlockList component
+
 - `InlineBlockList is now SeparatorList. This component is primarily used for configuring
-separator characters between items in an inline-block list. If you'd like to just space
-out items, please use GapList, a new component also added in v9.
+  separator characters between items in an inline-block list. If you'd like to just space
+  out items, please use GapList, a new component also added in v9.
 
 #### Removed components
+
 - `CountdownButton` (only used by Toast)
 - `DecoratedInput` (use TextInput instead)
 - `IconInput` (use TextInput instead)
 - `Section` (use fds classes instead)
 
 #### z-index
+
 - popover and shim redundant values were removed (use modal value instead and rely on source order)
 
 ### **Deprecations**
 
 - `half` and `double` end values are now deprecated and will be removed in a feature release.
-Please use the new end values added for these classes that were added in this minor release.
+  Please use the new end values added for these classes that were added in this minor release.
 
 ## [8.10] DateInput refs
 
 Added ref props for the `input` and popover content elements:
+
 - `inputRef`
 - `popoverRef`
 
@@ -281,22 +325,27 @@ Added ref props for the `input` and popover content elements:
 ### **BREAKING CHANGES**
 
 #### `Toaster` Component
-- Toaster was refactored, and no longer uses *most* of it's previous props (`onDismiss`, `content`, and `type`). It still uses `isAutoDismiss`.
+
+- Toaster was refactored, and no longer uses _most_ of it's previous props (`onDismiss`, `content`, and `type`). It still uses `isAutoDismiss`.
 - Toaster now renders its own Toast component, configured via `toastProps`
 - Toaster now needs an `id` to trigger a re-animation of the Toast
 - Toaster accepts an `isOpen` prop to show whether the Toast is visible or not
 - Toaster now also accepts a `dismissDelay` prop directly.
 
 #### StackedButton
+
 No longer has a `min-height`
 
 #### `Radio` Component
+
 `inputRef` prop removed. Radio now uses `forwardRef` for the input element and accepts a `ref` prop.
 
 #### z-index
+
 popover, shim, and modal z-index are now all 20
 
 #### `Button` Component
+
 `iconPlacement` and `Icon` removed, in favor of `IconLeft` and `IconRight`
 
 ## [7.20] Default background color
@@ -380,11 +429,12 @@ popover, shim, and modal z-index are now all 20
 ## [7.4] Updated Buttons
 
 - `outlined` Button now has updated presentation (white background,
-   different pseudo state colors)
--  Button, StackedButton and IconButton all have updated text color
-   (--button-secondary-color updated to --button-primary-color)
+  different pseudo state colors)
+- Button, StackedButton and IconButton all have updated text color
+  (--button-secondary-color updated to --button-primary-color)
 
 ## [7.3] `react-hook-form` fixes
+
 Makes `Checkbox` and `Radio` compatible with `react-hook-form`.
 
 - Removed `Checkbox` and `Radio` internal state; these components are now fully uncontrolled
@@ -407,17 +457,21 @@ Makes `Checkbox` and `Radio` compatible with `react-hook-form`.
 ### **BREAKING CHANGES**
 
 #### `AvatarRow` Component
+
 Component removed (was not publicly documented).
 
 #### `MuiAvatarShim` Component
+
 Component removed (was not publicly documented).
 
 #### `Checkbox` Component
+
 - `onChange` callback now receives the entire event object
 - `name` is no longer a required prop
 - `label` is now required - to hide the label, set `showLabel` to `false`
 
 #### `transition-default` class renamed
+
 `transition-default` is now `transition--default`
 
 ## [6.14] Updated `Prompt`
@@ -490,13 +544,16 @@ Component removed (was not publicly documented).
 ### **BREAKING CHANGES**
 
 #### `MuiButtonShim` Component
+
 Component removed (was not publicly documented).
 
 #### `CountdownButton` Component
+
 This component no longer accepts text as an icon. You must pass it
 a component. It will render a `DenyIcon` by default.
 
 #### Form inputs
+
 This release may introduce minor visual regressions on inputs in consumer applications.
 
 - Added default styles to all form elements, including box-shadow focus ring
@@ -514,25 +571,23 @@ Changed some existing `z-index` values (see migration tables below).
 
 ##### Updated JS vars
 
-`fds-dictionary` `z-index`  migration:
+`fds-dictionary` `z-index` migration:
 
-Old JS var          | New JS var
-------------------- | ----------------------
-`ZINDEX_MAIN`       | `ZINDEX_NAVIGATION` OR remove `z-index`
-`ZINDEX_BANNER`     | `ZINDEX_NAVIGATION`
-`ZINDEX_FLOATING_ACTION`     | `ZINDEX_NAVIGATION`
-
+| Old JS var               | New JS var                              |
+| ------------------------ | --------------------------------------- |
+| `ZINDEX_MAIN`            | `ZINDEX_NAVIGATION` OR remove `z-index` |
+| `ZINDEX_BANNER`          | `ZINDEX_NAVIGATION`                     |
+| `ZINDEX_FLOATING_ACTION` | `ZINDEX_NAVIGATION`                     |
 
 ##### Updated CSS vars
 
 `fds-dictionary` `z-index` migration:
 
-Old CSS var       | New CSS color var
------------------ | ----------------------
-`--zindex-main`   | `--zindex-navigation` OR remove the property
-`--zindex-banner` | `--zindex-navigation`
-`--zindex-floatingAction` | `--zindex-navigation`
-
+| Old CSS var               | New CSS color var                            |
+| ------------------------- | -------------------------------------------- |
+| `--zindex-main`           | `--zindex-navigation` OR remove the property |
+| `--zindex-banner`         | `--zindex-navigation`                        |
+| `--zindex-floatingAction` | `--zindex-navigation`                        |
 
 ## [5.10] Update IconButton
 
@@ -544,9 +599,11 @@ Old CSS var       | New CSS color var
 - Adds `FloatingAction` component for [floating action buttons](https://material.io/components/buttons-floating-action-button/)
 
 ## [5.8] `Popover` callbacks
+
 Adds onClose and onOpen callbacks to Popover
 
 ## [5.7] Fade helpers
+
 Adds `bgFade--<direction>--<color>` helper classes to base stylesheet.
 
 ## [5.6] Updated IconButton
@@ -555,6 +612,7 @@ Adds `bgFade--<direction>--<color>` helper classes to base stylesheet.
 - Default IconButton size now becomes medium: `size="m"`
 
 ## [5.5] Medium weight font
+
 Adds full support to FDS for medium weight Roboto.
 
 - Adds `medium` weight to dictionary font weights
@@ -587,18 +645,22 @@ Adds full support to FDS for medium weight Roboto.
 ## [5.0] MAJOR
 
 ### Changes
+
 - Added `InlineBlockList` layout component.
 
 ### **BREAKING CHANGES**
 
 #### `mui-theme` Removed
+
 The material-ui theme object has been removed from FDS. Consumers are now responsible for
 declaring theme values for the material-ui framework.
 
 #### `raf-schd` is now a peer dependency
+
 Consumers must add version `^4` of the `raf-schd` package as a dependency.
 
 #### Icons
+
 The `className` prop in all icon components will be ignored. Use `customSize` or `color`
 to customize the size or color of the icon. Prefer the `size` prop, which takes tee shirt
 sizes and sets the icon to a _standard_ media size.
@@ -609,6 +671,7 @@ sizes and sets the icon to a _standard_ media size.
 ```
 
 #### `Chip` Component
+
 The `Chip` component no longer provides margin. Use the `InlineBlockList` layout component
 to create a list of chips.
 
@@ -626,6 +689,7 @@ size values](https://github.com/cbinsights/form-design-system/blob/master/contri
 ```
 
 #### `MenuButton` component
+
 MenuButton component was removed. Please use StackedButton instead.
 
 ```diff
@@ -649,7 +713,6 @@ MenuButton component was removed. Please use StackedButton instead.
 +<div data-test="lol"><Flex>...</Flex></div>
 ```
 
-
 ## [4.35] Updated Button component
 
 - Added `hasCaret` prop to visually toggle right aligned caret
@@ -661,6 +724,7 @@ MenuButton component was removed. Please use StackedButton instead.
 - Added `Tooltip` component composed from `Popover`
 
 ## [4.33] Updated buttons
+
 - Updated `IconButton`, `StackedButton`, and `Button` to have lower opacity for disabled states
 
 ## [4.32] Added IconButton and StackedButton components
@@ -669,9 +733,11 @@ MenuButton component was removed. Please use StackedButton instead.
 - Added `StackedButton` to components
 
 ## [4.31] Add background classes for gray and aqua.
+
 - Added bgColor--gray and bgColor--aqua helper classes
 
 ## [4.30] Updated Star Icons
+
 - Updated `StarEmpty` Icon
 - Updated `StarFilled` Icon
 
@@ -742,12 +808,12 @@ MenuButton component was removed. Please use StackedButton instead.
 ## [4.15] Updated Icons
 
 - Added `customSize` prop to icons to enable arbitrary sizes (we do not
-want to encourage active use of this prop however)
+  want to encourage active use of this prop however)
 
 ## [4.14] Updated / Added link colors
 
 - Increased link contrast by making default links appear as `blue` (instead of `aqua`)
-Added `linkInverted` property to dictionary and set up inverted link context in base-styles
+  Added `linkInverted` property to dictionary and set up inverted link context in base-styles
 
 ## [4.13] Fixed Chip
 
@@ -801,7 +867,6 @@ Added `linkInverted` property to dictionary and set up inverted link context in 
 - Add `css/rgbComponents` format to dictionary
 - Add new distribution to dictionary, `lib/dictionary/css/rawRgbColors.css`
 
-
 ## [4.1] Removing some global button css
 
 - Removed global button line-height
@@ -843,13 +908,12 @@ In `v4.0`, all FDS code compiles to a root `lib` directory.
 +import FDS from '@cbinsights/fds/lib/dictionary/styleConstants';
 ```
 
-former npm module import    | new import statement
---------------------------- | ----------------------------------------
-`fds-dictionary/dist`       | `@cbinsights/fds/lib/dictionary/`
-`fds-icons/lib/react`       | `@cbinsights/fds/lib/icons/react`
-`fds-components/lib/`       | `@cbinsights/fds/lib/components/`
-`fds-mui-theme/`            | `@cbinsights/fds/lib/mui-theme/`
-
+| former npm module import | new import statement              |
+| ------------------------ | --------------------------------- |
+| `fds-dictionary/dist`    | `@cbinsights/fds/lib/dictionary/` |
+| `fds-icons/lib/react`    | `@cbinsights/fds/lib/icons/react` |
+| `fds-components/lib/`    | `@cbinsights/fds/lib/components/` |
+| `fds-mui-theme/`         | `@cbinsights/fds/lib/mui-theme/`  |
 
 #### New stylesheet for consumers
 
@@ -859,6 +923,7 @@ a special `assets` dir in `./lib` that includes combined styles:
 `@cbinsights/fds/lib/assets/all-styles.min.css`
 
 #### New typography scale and classes
+
 Typography has been completely rewritten for version `4.0` to reflect new design
 standards. Use the tables below as a migration guide:
 
@@ -866,90 +931,91 @@ standards. Use the tables below as a migration guide:
 
 `fds-dictionary` color migration:
 
-Old JS color var       | New JS color var
----------------------- | ----------------------
-`FONT_COLOR_DARK`      | `FONT_COLOR_HEADING`
-`FONT_COLOR_DEFAULT`   | `FONT_COLOR_PRIMARY`
-`FONT_COLOR_LIGHT`     | `FONT_COLOR_SECONDARY`
-`FONT_COLOR_DISABLED`  | `FONT_COLOR_HINT`
+| Old JS color var      | New JS color var       |
+| --------------------- | ---------------------- |
+| `FONT_COLOR_DARK`     | `FONT_COLOR_HEADING`   |
+| `FONT_COLOR_DEFAULT`  | `FONT_COLOR_PRIMARY`   |
+| `FONT_COLOR_LIGHT`    | `FONT_COLOR_SECONDARY` |
+| `FONT_COLOR_DISABLED` | `FONT_COLOR_HINT`      |
 
 `fds-dictionary` size migration:
 
-Old JS size var        | New JS size var
----------------------- | ----------------------
-`FONT_SIZE_HEADING1`   | `FONT_SIZE_4_XL`
-`FONT_SIZE_HEADING2`   | `FONT_SIZE_3_XL`
-`FONT_SIZE_HEADING3`   | `FONT_SIZE_2_XL`
-`FONT_SIZE_BIG`        | `FONT_SIZE_XL`
-`FONT_SIZE_SMALL`      | `FONT_SIZE_S`
-`FONT_SIZE_TINY`       | `FONT_SIZE_XS`
+| Old JS size var      | New JS size var  |
+| -------------------- | ---------------- |
+| `FONT_SIZE_HEADING1` | `FONT_SIZE_4_XL` |
+| `FONT_SIZE_HEADING2` | `FONT_SIZE_3_XL` |
+| `FONT_SIZE_HEADING3` | `FONT_SIZE_2_XL` |
+| `FONT_SIZE_BIG`      | `FONT_SIZE_XL`   |
+| `FONT_SIZE_SMALL`    | `FONT_SIZE_S`    |
+| `FONT_SIZE_TINY`     | `FONT_SIZE_XS`   |
 
 ##### Updated CSS vars
 
 `fds-dictionary` color migration:
 
-Old CSS color var        | New CSS color var
------------------------- | ----------------------
-`--font-color-dark`      | `--font-color-heading`
-`--font-color-default`   | `--font-color-primary`
-`--font-color-light`     | `--font-color-secondary`
-`--font-color-disabled`   | `--font-color-hint`
+| Old CSS color var       | New CSS color var        |
+| ----------------------- | ------------------------ |
+| `--font-color-dark`     | `--font-color-heading`   |
+| `--font-color-default`  | `--font-color-primary`   |
+| `--font-color-light`    | `--font-color-secondary` |
+| `--font-color-disabled` | `--font-color-hint`      |
 
 `fds-dictionary` size migration:
 
-Old CSS size var       | New CSS size var
----------------------- | ----------------------
-`--font-size-heading1` | `--font-size-4xl`
-`--font-size-heading2` | `--font-size-3xl`
-`--font-size-heading3` | `--font-size-2xl`
-`--font-size-big`      | `--font-size-xl`
-`--font-size-small`    | `--font-size-s`
-`--font-size-tiny`     | `--font-size-xs`
+| Old CSS size var       | New CSS size var  |
+| ---------------------- | ----------------- |
+| `--font-size-heading1` | `--font-size-4xl` |
+| `--font-size-heading2` | `--font-size-3xl` |
+| `--font-size-heading3` | `--font-size-2xl` |
+| `--font-size-big`      | `--font-size-xl`  |
+| `--font-size-small`    | `--font-size-s`   |
+| `--font-size-tiny`     | `--font-size-xs`  |
 
 ##### `typeset` classes changed
+
 All `typeset--<classOfTypography>` classes have changed their signature.
 
-* `typeset--<classOfTypography>` => `type--<classOfTypography>`
-  * e.g. `typeset--head3` becomes `type--head3`
+- `typeset--<classOfTypography>` => `type--<classOfTypography>`
+  - e.g. `typeset--head3` becomes `type--head3`
 
 ##### `typemod` classes changed
+
 All `typemod--<modification>` classes have changed to reflect the CSS property
 being modified by the class.
 
 `fds-styles` size migration:
 
-Old size CSS class  | New size CSS class
-------------------- | ----------------------
-`typemod--huge`     | `fontSize--4xl`
-`typemod--xxlarge`  | `fontSize--3xl`
-`typemod--xlarge`   | `fontSize--xl`
-`typemod--large`    | `fontSize--l`
-`typemod--small`    | `fontSize--s`
-`typemod--tiny`     | `fontSize--xs`
+| Old size CSS class | New size CSS class |
+| ------------------ | ------------------ |
+| `typemod--huge`    | `fontSize--4xl`    |
+| `typemod--xxlarge` | `fontSize--3xl`    |
+| `typemod--xlarge`  | `fontSize--xl`     |
+| `typemod--large`   | `fontSize--l`      |
+| `typemod--small`   | `fontSize--s`      |
+| `typemod--tiny`    | `fontSize--xs`     |
 
 `fds-styles` color migration:
 
-Old color CSS class     | New color CSS class
------------------------ | ----------------------
-`typemod--dark`         | `color--heading`
-`typemod--light`        | `color--secondary`
-`typemod--<colorName>`  | `color--<colorName>`
+| Old color CSS class    | New color CSS class  |
+| ---------------------- | -------------------- |
+| `typemod--dark`        | `color--heading`     |
+| `typemod--light`       | `color--secondary`   |
+| `typemod--<colorName>` | `color--<colorName>` |
 
 `fds-styles` weight migration:
 
-Old weight CSS class    | New weight CSS class
-------------------- | ----------------------
-`typemod--bold`     | `fontWeight--bold`
-`typemod--book`     | `fontWeight--book`
+| Old weight CSS class | New weight CSS class |
+| -------------------- | -------------------- |
+| `typemod--bold`      | `fontWeight--bold`   |
+| `typemod--book`      | `fontWeight--book`   |
 
 `fds-styles` font style migration:
 
-old font style class    | new font style class
------------------------ | ----------------------
-`typemod--italic`       | `fontStyle--italic`
-`typemod--underline`    | `fontStyle--underline`
-`typemod--caps`         | `fontStyle--caps`
-
+| old font style class | new font style class   |
+| -------------------- | ---------------------- |
+| `typemod--italic`    | `fontStyle--italic`    |
+| `typemod--underline` | `fontStyle--underline` |
+| `typemod--caps`      | `fontStyle--caps`      |
 
 ## [3.8] Add view and sort icons
 
@@ -984,7 +1050,6 @@ old font style class    | new font style class
 - Anchor buttons can now have a disabled style
 - Fixed bug that happens when `onChange` is not specified
 
-
 ## [3.2] Updated ButtonGroup
 
 - Standardized `ButtonGroup` in line with `Chips`
@@ -1004,6 +1069,7 @@ old font style class    | new font style class
 **⚠️ No consumers were using flexGrow, but we're making this a breaking change just to be safe **
 
 #### **BREAKING CHANGES**
+
 - Removed flexGrow prop from FlexItem
 
 ## [2.38] Added Chips
@@ -1072,7 +1138,7 @@ old font style class    | new font style class
 
 ## [2.25] Fix `Move` icon
 
-- Roll back  SVG changes to `Move` icon
+- Roll back SVG changes to `Move` icon
 
 ## [2.24] `Updatable` signature change
 
@@ -1088,9 +1154,9 @@ old font style class    | new font style class
 - Add IE11 target to `babel/preset-env` configuration to ensure arrow functions are
   transformed.
 
-## [2.21] ☢️  (broken) Upgrades / Housekeeping
+## [2.21] ☢️ (broken) Upgrades / Housekeeping
 
-**⚠️  In this version, babel fails to read browserslist and does not transform "`=>`"**
+**⚠️ In this version, babel fails to read browserslist and does not transform "`=>`"**
 
 - Move all jest configuration to repo root; run tests from root
 - Upgrade some dev dependencies to latest...
@@ -1203,9 +1269,11 @@ old font style class    | new font style class
 - Added `--half` variants to [padding and spacing utility classes](https://cbinsights.github.io/form-design-system/fds-styles/#spacing-helpers) in `fds-styles`
 
 ## [2.0] Major Icon Update
+
 Updated `fds-icons` package with breaking changes.
 
 #### **Changes**
+
 - Added new icons
 
 ```diff
@@ -1233,6 +1301,7 @@ Updated `fds-icons` package with breaking changes.
 ```
 
 #### **BREAKING CHANGES**
+
 Renamed a number of icons...
 
 - `Down` => `CaretDown`
@@ -1249,7 +1318,6 @@ Renamed a number of icons...
 - `Decending` => `OrderDescending`
 - `RadioButtonEmpty` => `RadioEmpty`
 - `RadioButtonFilled` => `RadioFilled`
-
 
 ## [1.21] `fds-icons`
 
@@ -1295,8 +1363,8 @@ Renamed a number of icons...
 - Added `fds-mui-theme` package. This provides a theme for `material-ui` based on our standard styles
   defined in `fds-dictionary`.
 
-
 ## [1.11, 1.12]
+
 bad publish - identical to `1.10`.
 
 ## [1.10]
@@ -1349,18 +1417,21 @@ blue[900]; // darkened blue
 - Fixes issue where default body type size was not being set
 
 ## [1.2]
+
 Added typesetting and type modifier classes to `fds-styles`.
 
 ## [1.1]
+
 Added dictionary properties for typography.
 
 ## [1.0] - Stable
+
 Public API defined; all packages ready for use in production, but most are very basic stubs.
 For `v1.0.0`, the package to consume is `fds-components`, which includes `Flex` and `FlexItem`
 layout helper components.
 
-
 ## [0.2]
+
 Add cross-package dependencies.
 The component lib now imports the foundational stylesheet from `fds-styles`.
 The foundational stylesheet imports custom properties from `fds-dictionary`.
@@ -1368,8 +1439,8 @@ The foundational stylesheet imports custom properties from `fds-dictionary`.
 - `fds-styles` now depends on `fds-dictionary`
 - `fds-components` now depends on `fds-styles`
 
-
 ## [0.1]
+
 First published beta version of FDS components. Use with caution.
 
 - Add `fds-dictionary` package

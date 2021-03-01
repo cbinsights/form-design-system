@@ -36,5 +36,4 @@ describe('InputGroup component', () => {
       expect(getFlexSettings(userSetting.length, userSetting)).toStrictEqual(userSetting);
     });
   });
-
 });

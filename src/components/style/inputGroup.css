@@ -9,13 +9,13 @@
   width: 100%;
 }
 
-.fdsInputGroup :matches(input,select) {
+.fdsInputGroup :matches(input, select) {
   position: relative; /* for focus z-index */
   width: 100%;
   z-index: 1;
 }
 
-.fdsInputGroup :matches(input,select):focus {
+.fdsInputGroup :matches(input, select):focus {
   z-index: 2; /* allow focus ring to overlap siblings */
 }
 

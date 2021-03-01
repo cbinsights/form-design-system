@@ -85,7 +85,8 @@
 }
 
 /* IE11 needs auto flex basis for column items */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media all and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
   .flex--column > .flexItem {
     flex-basis: auto;
   }
@@ -132,7 +133,8 @@
   padding-left: 0;
 }
 
-.flex--column:not(.flex--column--reverse) > .flexItem:first-child,
+.flex--column:not(.flex--column--reverse)
+  > .flexItem:first-child,
 .flex--column--reverse > .flexItem:last-child {
   padding-top: 0;
 }

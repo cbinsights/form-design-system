@@ -1,0 +1,1016 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { TableLayout } from 'util/storybook-docs/Table';
+import { action } from '@storybook/addon-actions';
+import {
+  Example,
+  generalStyles,
+  containerStyles,
+  labelStyle,
+  Typesetting,
+  Headers,
+} from 'base-styles/styledocUtils';
+import State from 'util/storybook-docs/State';
+import FDS from 'lib/dictionary/js/styleConstants';
+
+export const positionStyles = {
+  ...generalStyles,
+  border: `1px solid ${FDS.COLOR_CHARCOAL}`,
+  padding: 1,
+};
+
+<Meta title="Style Utilities/Style Utilities" />
+
+## Transitions
+
+Adds standard transitions.
+
+<Story name="Transitions">
+  <TableLayout
+    isCSS
+    headers={['class', 'description']}
+    rows={[
+      ['transition--default', 'transitions properties to default duration and timing'],
+    ]}
+  />
+</Story>
+
+## Background Colors
+
+Sets background color of an element. Signature: `bgColor--<color>`
+
+<Story name="Background Colors">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description', 'sample']}
+      rows={[
+        ['bgColor--white', 'Sets background color `var(--color-white)`'],
+        ['bgColor--haze', 'Sets background color `var(--color-haze)`'],
+        ['bgColor--lightGray', 'Sets background color `var(--color-lightGray)`'],
+        ['bgColor--orange', 'Sets background color `var(--color-orange)`'],
+        ['bgColor--charcoal', 'Sets background color `var(--color-charcoal)`'],
+        ['bgColor--navy', 'Sets background color `var(--color-navy)`'],
+        ['bgColor--blue', 'Sets background color `var(--color-blue)`'],
+        ['bgColor--aqua', 'Sets background color `var(--color-aqua)`'],
+        ['bgColor--gray', 'Sets background color `var(--color-gray)`'],
+        ['bgColor--red', 'Sets background color `var(--color-red)`'],
+        ['bgColor--purple', 'Sets background color `var(--color-purple)`'],
+      ].map((row) => [row[0], row[1], { className: row[0] }])}
+    />
+  </>
+</Story>
+
+## Fade gradients
+
+Sets background of an element to a linear gradient simulating a fade effect.
+
+<Story name="Fade gradients">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description', 'sample']}
+      rows={[
+        [
+          'fade--left--white',
+          'Sets linear gradient from left (white) to right (transparent)',
+        ],
+        [
+          'fade--top--white',
+          'Sets linear gradient from top (white) to bottom (transparent)',
+        ],
+        [
+          'fade--bottom--white',
+          'Sets linear gradient from bottom (white) to top (transparent)',
+        ],
+        [
+          'fade--right--white',
+          'Sets linear gradient from right (white) to left (transparent)',
+        ],
+        [
+          'fade--left--haze',
+          'Sets linear gradient from left (haze) to right (transparent)',
+        ],
+        [
+          'fade--top--haze',
+          'Sets linear gradient from top (haze) to bottom (transparent)',
+        ],
+        [
+          'fade--bottom--haze',
+          'Sets linear gradient from bottom (haze) to top (transparent)',
+        ],
+        [
+          'fade--right--haze',
+          'Sets linear gradient from right (haze) to left (transparent)',
+        ],
+      ].map((row) => [
+        row[0],
+        row[1],
+        {
+          className: 'transparentpattern',
+          style: {
+            display: 'inline-flex',
+            boxSizing: 'border-box',
+            width: '100%',
+            padding: 0,
+          },
+          children: <div className={row[0]} style={{ width: '100%', height: '52px' }} />,
+        },
+      ])}
+    />
+  </>
+</Story>
+
+## Border Radius
+
+<Story name="Border Radius">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[
+        ['rounded--top', 'Rounds the top corners of the element'],
+        ['rounded--bottom', 'Rounds the bottom corners of the element'],
+        ['rounded--right', 'Rounds the right corners of the element'],
+        ['rounded--left', 'Rounds the left corners of the element'],
+        ['rounded--all', 'Rounds all corners of the element'],
+      ]}
+    />
+    <div style={containerStyles}>
+      <Example label="rounded--top">
+        <div className="rounded--top bgColor--charcoal" style={generalStyles} />
+      </Example>
+      <Example label="rounded--bottom">
+        <div className="rounded--bottom bgColor--charcoal" style={generalStyles} />
+      </Example>
+      <Example label="rounded--right">
+        <div className="rounded--right bgColor--charcoal" style={generalStyles} />
+      </Example>
+      <Example label="rounded--left">
+        <div className="rounded--left bgColor--charcoal" style={generalStyles} />
+      </Example>
+      <Example label="rounded--all">
+        <div className="rounded--all bgColor--charcoal" style={generalStyles} />
+      </Example>
+    </div>
+  </>
+</Story>
+
+## Border Radius Shape
+
+Creates a shape with CSS border radius
+
+<Story name="Border Shape">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[['shape--circle', 'Makes the element a circle']]}
+    />
+    <div style={containerStyles}>
+      <Example label="shape--circle">
+        <div
+          className="shape--circle bgColor--charcoal"
+          style={{ width: 72, height: 72 }}
+        />
+      </Example>
+    </div>
+  </>
+</Story>
+
+export const borderSideStyles = {
+  ...generalStyles,
+  backgroundColor: '#fbfbfb',
+};
+
+## Borders by side
+
+Adds standard borders to an element for a given side.
+
+<Story name="Borders by side">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[
+        ['border--none', 'removes all borders'],
+        ['border--top', 'applies a standard top border'],
+        ['border--right', 'applies a standard right border'],
+        ['border--bottom', 'applies a standard bottom border'],
+        ['border--left', 'applies a standard left border'],
+        ['border--all', 'applies a standard border to all sides'],
+      ]}
+    />
+    <div style={containerStyles}>
+      <Example label="border--none">
+        <div className="border--none" style={borderSideStyles} />
+      </Example>
+      <Example label="border--top">
+        <div className="border--top" style={borderSideStyles} />
+      </Example>
+      <Example label="border--bottom">
+        <div className="border--bottom" style={borderSideStyles} />
+      </Example>
+      <Example label="border--right">
+        <div className="border--right" style={borderSideStyles} />
+      </Example>
+      <Example label="border--left">
+        <div className="border--left" style={borderSideStyles} />
+      </Example>
+      <Example label="border--all">
+        <div className="border--all" style={borderSideStyles} />
+      </Example>
+    </div>
+  </>
+</Story>
+
+## Focus Style
+
+Adds standard focus style to elements (only on :focus state)
+
+<Story name="Focus Style">
+  <TableLayout
+    isCSS
+    headers={['class', 'description']}
+    rows={[
+      ['border--focus', 'Adds standard box shadow focus style'],
+      [
+        'border--focus--noTransition',
+        'Adds standard box shadow focus style without transition',
+      ],
+    ]}
+  />
+</Story>
+
+<TableLayout
+  isCSS
+  headers={['class', 'description', 'sample']}
+  rows={[
+    [
+      'error',
+      'Forces the appearance of an :invalid state on an input',
+      { children: <input class="error" value="invalid entry" /> },
+    ],
+    [
+      'resetInput',
+      'Strips away margin and border styles. Good for plaicng input inside a visual element',
+      {
+        children: (
+          <input
+            class="resetInput"
+            value="THIS IS AN INPUT"
+            style={{ textAlign: 'center' }}
+          />
+        ),
+      },
+    ],
+    [
+      'resetButton',
+      'Removes default user agent styling from button elements.',
+      { children: <button class="resetButton">THIS IS A BUTTON</button> },
+    ],
+  ]}
+/>
+
+export const borderHelperStyles = {
+  ...generalStyles,
+  backgroundColor: '#333',
+  margin: '.5rem',
+};
+
+## Media Sizing
+
+For standard media like avatars and icons,
+these classes set square dimenions on the selected
+element to match standard media sizes.
+
+<Story name="Media Sizing">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[
+        ['media--xs', `Sets height & width to \`${FDS.MEDIA_XS}\` (\`var(--media-xs)\`)`],
+        ['media--s', `Sets height & width to \`${FDS.MEDIA_S}\` (\`var(--media-s)\`)`],
+        ['media--m', `Sets height & width to \`${FDS.MEDIA_M}\` (\`var(--media-m)\`)`],
+        ['media--l', `Sets height & width to \`${FDS.MEDIA_L}\` (\`var(--media-l)\`)`],
+        ['media--xl', `Sets height & width to \`${FDS.MEDIA_XL}\` (\`var(--media-xl)\`)`],
+      ]}
+    />
+    <div style={containerStyles}>
+      <Example label="media--xs">
+        <div className="media--xs rounded--all" style={borderHelperStyles} />
+      </Example>
+      <Example label="media--s">
+        <div className="media--s rounded--all" style={borderHelperStyles} />
+      </Example>
+      <Example label="media--m">
+        <div className="media--m rounded--all" style={borderHelperStyles} />
+      </Example>
+      <Example label="media--l">
+        <div className="media--l rounded--all" style={borderHelperStyles} />
+      </Example>
+      <Example label="media--xl">
+        <div className="media--xl rounded--all" style={borderHelperStyles} />
+      </Example>
+    </div>
+  </>
+</Story>
+
+export const widthStyles = { height: 50 };
+
+## Width
+
+Sets element width in percentage.
+
+<Story name="Width">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[
+        ['span--100', 'Sets `width` to `100%`'],
+        ['span--50', 'Sets `width` to `50%`'],
+      ]}
+    />
+    <span style={labelStyle}>span--100</span>
+    <div
+      className="span--100 rounded--all bgColor--charcoal margin--top--s"
+      style={widthStyles}
+    />
+    <br />
+    <span style={labelStyle}>span--50</span>
+    <div
+      className="span--50 rounded--all bgColor--charcoal margin--top--s"
+      style={widthStyles}
+    />
+  </>
+</Story>
+
+## Display
+
+<Story name="Display">
+  <TableLayout
+    isCSS
+    headers={['class', 'description']}
+    rows={[
+      ['display--none', 'Sets `display` to `none`'],
+      ['display--block', 'Sets `display` to `block`'],
+      ['display--flex', 'Sets `display` to `flex`'],
+      ['display--inline', 'Sets `display` to `inline`'],
+      ['display--inlineBlock', 'Sets `display` to `inline-block`'],
+      ['display--inlineFlex', 'Sets `display` to `inline-flex`'],
+      ['display--grid', 'Sets `display` to `grid`'],
+    ]}
+  />
+</Story>
+
+export const Breakout = () => (
+  <div
+    className="alignChild--center--center"
+    style={{
+      border: '1px dashed #f09',
+      width: '200px',
+      height: '200px',
+      position: 'relative',
+    }}
+  >
+    <State
+      initialValue={true}
+      render={(value, setValue) => (
+        <button className="breakoutLink" onClick={() => setValue(!value)}>
+          Breakout Button {value ? 'Off' : 'On'}
+        </button>
+      )}
+    ></State>
+  </div>
+);
+
+export const TypeLink = () => (
+  <button
+    className="resetButton type--link"
+    onClick={() => window.alert('Terms of service.')}
+  >
+    Link
+  </button>
+);
+
+# Links
+
+<TableLayout
+  isCSS
+  headers={['class', 'description', 'sample']}
+  rows={[
+    [
+      'breakoutLink',
+      'Allows a button or link to extend to the bounds of the nearest position relative element. https://css-tricks.com/breakout-buttons/',
+      { children: <Breakout /> },
+    ],
+    [
+      'type--link',
+      'Allows you to make buttons or text look like a link',
+      { children: <TypeLink /> },
+    ],
+  ]}
+/>
+
+## Decorated Lists
+
+<Story name="Decorated Lists">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[['list--decorated', 'Enables standard list decoration']]}
+    />
+    <div>
+      With <span style={labelStyle}>list--decorated</span>:
+    </div>
+    <hr />
+    <ul className="list--decorated">
+      <li>Lorem</li>
+      <li>Ipsum</li>
+    </ul>
+    <br />
+    <div>Without (by default, lists have their styles reset):</div>
+    <hr />
+    <ul>
+      <li>Lorem</li>
+      <li>Ipsum</li>
+    </ul>
+  </>
+</Story>
+
+export const Pointer = () => (
+  <p className="pointer-events-none" onClick={action('click')}>
+    Clicking on this text will not fire the onClick event attached to it
+  </p>
+);
+
+# Misc
+
+<TableLayout
+  isCSS
+  headers={['class', 'description', 'sample']}
+  rows={[['pointer-events-none', 'Disables pointer events', { children: <Pointer /> }]]}
+/>
+
+export const boxDimensions = 34;
+
+export const alignPositionStyles = {
+  ...generalStyles,
+  height: boxDimensions,
+  width: boxDimensions,
+  border: `1px dashed ${FDS.COLOR_BLUE}`,
+  padding: 2,
+};
+
+export const boxStyles = {
+  height: boxDimensions / 2,
+  width: boxDimensions / 2,
+  background: FDS.COLOR_AQUA,
+  border: `1px solid ${FDS.COLOR_BLUE}`,
+  borderRadius: 3,
+};
+
+## Child Align
+
+Positions direct child(s) of element using flex properties.
+**These classes modify `flex` properties.**
+Avoid combining `alignChild` classes with flexbox layout elements.
+
+<Story name="Child Align">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description', 'sample']}
+      rows={[
+        ['alignChild--center--center', 'Adds standard margin to all sides'],
+        ['alignChild--center--top', 'Adds standard margin to all sides'],
+        ['alignChild--center--bottom', 'Adds standard margin to all sides'],
+        ['alignChild--left--center', 'Adds standard margin to bottom of element'],
+        ['alignChild--left--top', 'Adds standard margin to top of element'],
+        ['alignChild--left--bottom', 'Adds standard margin to right of of element'],
+        ['alignChild--right--center', 'Adds standard margin to all sides'],
+        ['alignChild--right--top', 'Adds standard margin to left of element'],
+        ['alignChild--right--bottom', 'Adds standard margin to all sides'],
+      ].map((row) => [
+        row[0],
+        row[1],
+        {
+          style: { paddingTop: 0, paddingBottom: 0 },
+          children: (
+            <div className={row[0]} style={alignPositionStyles}>
+              <div style={boxStyles} />
+            </div>
+          ),
+        },
+      ])}
+    />
+  </>
+</Story>
+
+## Text Align
+
+<Story name="Text Align">
+  <TableLayout
+    isCSS
+    headers={['class', 'description', 'sample']}
+    rows={[
+      ['align--center', 'Sets `text-align` to `center`'],
+      ['align--left', 'Sets `text-align` to `left`'],
+      ['align--right', 'Sets `text-align` to `right`'],
+    ].map((row) => [
+      row[0],
+      row[1],
+      {
+        className: row[0],
+        style: { backgroundColor: FDS.COLOR_HAZE },
+        children: (
+          <span
+            style={{ backgroundColor: FDS.COLOR_AQUA, padding: '1px', color: 'white' }}
+          >
+            CB Insights
+          </span>
+        ),
+      },
+    ])}
+  />
+</Story>
+
+## Vertical Align
+
+Sets `vertical-align` property. **Only applies to `inline`, `inline-block`,
+`table-cell` or `inline-flex` elements**.
+
+<Story name="Vertical Align">
+  <TableLayout
+    isCSS
+    headers={['class', 'description', 'sample']}
+    rows={[
+      ['valign--top', 'Sets `vertical-align` to `top`'],
+      ['valign--center', 'Sets `vertical-align` to `middle`'],
+      ['valign--bottom', 'Sets `vertical-align` to `bottom`'],
+    ].map((row) => [
+      row[0],
+      row[1],
+      {
+        style: { backgroundColor: FDS.COLOR_HAZE, position: 'relative' },
+        children: (
+          <>
+            <span
+              className={`${row[0]} display--inlineBlock`}
+              style={{
+                backgroundColor: FDS.COLOR_AQUA,
+                padding: 1,
+                color: FDS.COLOR_WHITE,
+                height: 40,
+              }}
+            >
+              CB
+            </span>
+            <span style={{ position: 'relative' }}>Insights</span>
+          </>
+        ),
+      },
+    ])}
+  />
+</Story>
+
+## Z Index
+
+<Story name="Z Index">
+  <TableLayout
+    isCSS
+    headers={['class', 'description']}
+    rows={[
+      ['zindex--modal', `Sets z-index value to ${FDS.ZINDEX_MODAL}`],
+      ['zindex--navigation', `Sets z-index value to ${FDS.ZINDEX_NAVIGATION}`],
+    ]}
+  />
+</Story>
+
+export const borderStyle = {
+  border: `1px solid ${FDS.COLOR_SAND}`,
+};
+
+## Spacing
+
+export const Scale = ({ label, num }) => (
+  <div
+    style={{
+      display: 'inline-flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      minWidth: '20px',
+      marginRight: 4,
+      marginTop: -4,
+    }}
+  >
+    <span style={{ fontWeight: 'bold' }}>{label}</span>
+    <div
+      style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center' }}
+    >
+      <div
+        style={{
+          height: '16px',
+          background: FDS.COLOR_AQUA,
+          marginRight: 4,
+          marginLeft: 4,
+          marginBottom: 2,
+          width: `${num}px`,
+        }}
+      />
+      <small
+        style={{ fontSize: 9, lineHeight: '14px', fontStyle: 'italic' }}
+        className="color--slate"
+      >
+        {num}px
+      </small>
+    </div>
+  </div>
+);
+
+export const SpacingExample = ({ className }) => (
+  <div
+    className="display--inlineBlock margin--right--s margin--bottom--s"
+    style={{ border: className.startsWith('padding') ? '1px dashed #333' : '' }}
+  >
+    <div
+      className={`${
+        className.startsWith('padding') && className
+      } display--inlineBlock border--all `}
+      style={{
+        backgroundColor: className.startsWith('padding') ? FDS.COLOR_MINT : '#F6BDC1',
+      }}
+    >
+      <div
+        className={`${
+          className.startsWith('margin') && className
+        } display--inlineBlock rounded--all`}
+      >
+        <div
+          className={`padding--all--s color--charcoal fontWeight--bold bgColor--white elevation--1 rounded--all`}
+          style={{ border: className.startsWith('margin') ? `1px dashed #333` : '' }}
+        >
+          {className}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+<Story name="Margin and Padding">
+  <>
+    <TableLayout
+      rows={[
+        ['**Type**', '`margin` | `padding`'],
+        ['**Direction**', '`left`  |  `right` | `top` | `bottom` | `x` | `y` | `all`'],
+        [
+          '**Scale (default: m)**',
+          {
+            children: (
+              <>
+                <Scale label="xs" num={4} />
+                <Scale label="s" num={8} />
+                <Scale label="m" num={16} />
+                <Scale label="l" num={24} />
+                <Scale label="xl" num={32} />
+              </>
+            ),
+          },
+        ],
+      ]}
+    />
+    <SpacingExample className="margin--top" />
+    <SpacingExample className="margin--bottom--s" />
+    <SpacingExample className="margin--x--xl" />
+    <SpacingExample className="margin--y--xs" />
+    <SpacingExample className="margin--left--m" />
+    <SpacingExample className="padding--y--xs" />
+    <SpacingExample className="padding--x" />
+    <SpacingExample className="padding--all--xs" />
+    <SpacingExample className="padding--left--l" />
+  </>
+</Story>
+
+## Elevation
+
+<TableLayout
+  isCSS
+  headers={['class', 'description']}
+  rows={[
+    ['elevation--1', '2dp box shadow (smallest elevated)'],
+    ['elevation--2', '4dp box shadow'],
+    ['elevation--3', '8dp box shadow'],
+    ['elevation--4', '12dp box shadow'],
+    ['elevation--5', '16dp box shadow (largest elevated)'],
+  ]}
+/>
+
+<Story name="Elevation">
+  <div style={containerStyles}>
+    <Example label="elevation--1">
+      <div className="elevation--1 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="elevation--2">
+      <div className="elevation--2 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="elevation--3">
+      <div className="elevation--3 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="elevation--4">
+      <div className="elevation--4 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="elevation--5">
+      <div className="elevation--5 rounded--all" style={generalStyles} />
+    </Example>
+  </div>
+</Story>
+
+## Depth
+
+<TableLayout
+  isCSS
+  headers={['class', 'description']}
+  rows={[
+    ['depth--1', '1dp inset box shadow (most shallow depth)'],
+    ['depth--2', '2dp inset box shadow'],
+    ['depth--3', '3dp inset box shadow (deepest depth)'],
+  ]}
+/>
+
+<Story name="Depth">
+  <div style={containerStyles}>
+    <Example label="depth--1">
+      <div className="depth--1 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="depth--2">
+      <div className="depth--2 rounded--all" style={generalStyles} />
+    </Example>
+    <Example label="depth--3">
+      <div className="depth--3 rounded--all" style={generalStyles} />
+    </Example>
+  </div>
+</Story>
+
+## Size Modifiers
+
+Modifies size of text and adjusts leading accordingly.
+
+<Story name="Size Modifiers">
+  <TableLayout
+    isCSS
+    headers={['class', 'description', 'sample']}
+    rows={[
+      ['fontSize--4xl', '4XL Text'],
+      ['fontSize--3xl', '3XL Text'],
+      ['fontSize--2xl', '2XL Text'],
+      ['fontSize--xl', 'XL Text'],
+      ['fontSize--l', 'L Text'],
+      ['fontSize--default', 'Default text (default)'],
+      ['fontSize--s', 'S Text'],
+      ['fontSize--xs', 'XS Text'],
+    ].map((row) => [
+      row[0],
+      row[1],
+      { children: <div className={row[0]}>Sphinx of black quartz, judge my vow</div> },
+    ])}
+  />
+</Story>
+
+## Weight Modifiers
+
+Modifies weight of text.
+
+<Story name="Weight Modifiers">
+  <TableLayout
+    isCSS
+    headers={['class', 'description', 'sample']}
+    rows={[
+      ['fontWeight--bold', 'Bold text'],
+      ['fontWeight--book', 'Book text'],
+    ].map((row) => [
+      row[0],
+      row[1],
+      { children: <div className={row[0]}>Sphinx of black quartz, judge my vow</div> },
+    ])}
+  />
+</Story>
+
+## Family Modifiers
+
+Modifies the font family of text.
+
+<Story name="Family Modifiers">
+  <TableLayout
+    isCSS
+    headers={['class', 'description', 'sample']}
+    rows={[
+      ['fontFamily--condensed', 'Condensed text'],
+      ['fontFamily--default', 'Default text'],
+      ['fontFamily--mono', 'Monospaced text'],
+    ].map((row) => [
+      row[0],
+      row[1],
+      { children: <div className={row[0]}>Sphinx of black quartz, judge my vow</div> },
+    ])}
+  />
+</Story>
+
+## Type Style Modifiers
+
+<Story name="Type Style Modifiers">
+  <TableLayout
+    isCSS
+    headers={['class', 'description', 'sample']}
+    rows={[
+      ['fontStyle--italic', 'Italic text'],
+      ['fontStyle--underline', 'Underline text'],
+      ['fontStyle--caps', 'Uppercase text'],
+    ].map((row) => [
+      row[0],
+      row[1],
+      { children: <div className={row[0]}>Sphinx of black quartz, judge my vow</div> },
+    ])}
+  />
+</Story>
+
+## Color Modifiers
+
+Modifies color of text.
+When using standard text color classes (`heading`, `primary`, `secondary`, `hint`),
+a parent element with the `inverted` class will switch the text to tints of white.
+
+<Story name="Color Modifiers">
+  <TableLayout
+    isCSS
+    headers={['class', 'description', 'color', 'inverted']}
+    rows={[
+      ['color--heading', 'Heading text color'],
+      ['color--primary', 'Primary text color (default)'],
+      ['color--secondary', 'Secondary text color'],
+      ['color--hint', 'Hint text color'],
+      ['color--success', 'Success text color'],
+      ['color--error', 'Error text color'],
+    ].map((row) => [
+      row[0],
+      row[1],
+      { children: 'Aa', className: row[0] },
+      {
+        className: 'inverted',
+        style: { backgroundColor: FDS.COLOR_NAVY },
+        children: <div className={row[0]}>Aa</div>,
+      },
+    ])}
+  />
+</Story>
+
+## Fancy Text Colors
+
+If you don't see the color you need here, please make a request for it!
+
+<Story name="Fancy Text Colors">
+  <TableLayout
+    isCSS
+    headers={['class', 'description', 'color']}
+    rows={[
+      ['color--slate', 'Slate text'],
+      ['color--green', 'Green text'],
+      ['color--mint', 'Mint text'],
+      ['color--navy', 'Navy text'],
+      ['color--blue', 'Blue text'],
+      ['color--aqua', 'Aqua text'],
+      ['color--sky', 'Sky text'],
+      ['color--violet', 'Violet text'],
+      ['color--purple', 'Purple text'],
+      ['color--red', 'Red text'],
+      ['color--orange', 'Orange text'],
+      ['color--white', 'White text'],
+    ].map((row) => [
+      row[0],
+      row[1],
+      {
+        children: 'Aa',
+        className: row[0],
+        style: { backgroundColor: row[0] === 'color--white' ? FDS.COLOR_CHARCOAL : '' },
+      },
+    ])}
+  />
+</Story>
+
+export const typePositionStyles = {
+  ...generalStyles,
+  border: `1px solid ${FDS.COLOR_CHARCOAL}`,
+  padding: 2,
+};
+
+export const typeBoxStyles = {
+  height: 30,
+  width: 30,
+  background: FDS.COLOR_CHARCOAL,
+  borderRadius: 3,
+};
+
+# Typesetting
+
+<TableLayout
+  isCSS
+  headers={['class', 'description']}
+  rows={[
+    ['type--head1', 'Top level heading'],
+    ['type--head2', 'Secondary heading'],
+    ['type--head3', 'Tertiary heading'],
+    ['type--head4', 'Minor heading'],
+    ['type--big', 'Big body text'],
+    ['type--data', 'Typesetting for data (e.g. tables)'],
+    [
+      'type--caption',
+      'Tiny text for captions and legalese. **This is not very readable; only use in special circumstances.**',
+    ],
+    ['type--link', 'Sets text display to look like a link'],
+  ]}
+/>
+
+To set the display of a given heading tag, use one of the typesetting classes below.
+(By default, HTML heading tags are set to match the default body text.)
+
+<Typesetting />
+
+## Inverted
+
+All Typesetting classes get an optimized display for
+dark backgrounds by being placed inside an `.inverted` context:
+
+<Typesetting isInverted />
+
+export const wrapBorderStyle = {
+  border: `1px dashed ${FDS.COLOR_GRAY}`,
+};
+
+export const wrapWidth = 250;
+
+Allows components to render full strings while CSS
+does the job of clamping text to one line.
+
+## Truncate text
+
+<Story name="Truncate text">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[
+        ['wrap--singleLine', 'Forces text to a single line (nowrap).'],
+        [
+          'wrap--singleLine--truncate',
+          'Forces text to a single line (nowrap) and truncates with "..." entity.',
+        ],
+      ]}
+    />
+    <div style={labelStyle}>wrap--singleLine</div>
+    <div
+      className="wrap--singleLine border--all"
+      style={{ ...wrapBorderStyle, width: wrapWidth, overflow: 'hidden' }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit
+    </div>
+    <br />
+    <div style={labelStyle}>wrap--singleLine--truncate</div>
+    <div
+      className="wrap--singleLine--truncate border--all"
+      style={{ ...wrapBorderStyle, width: wrapWidth }}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit
+    </div>
+  </>
+</Story>
+
+## Text Wrapping
+
+<Story name="Text Wrapping">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[['wrap--hyphenate', 'Allows breaking on word, displaying hyphenation']]}
+    />
+    <div style={labelStyle}>wrap--hyphenate</div>
+    <div
+      className="wrap--hyphenate"
+      style={{ ...wrapBorderStyle, overflow: 'hidden', width: wrapWidth }}
+    >
+      Loremipsumdolorsitamet,consecteturadipiscingelit,seddoeiusmodtemporincididuntutlaboreetdoloremagnaaliqua.
+    </div>
+    <br />
+    <div>Default:</div>
+    <div style={{ ...wrapBorderStyle, overflow: 'hidden', width: wrapWidth }}>
+      Loremipsumdolorsitamet,consecteturadipiscingelit,seddoeiusmodtemporincididuntutlaboreetdoloremagnaaliqua.
+    </div>
+  </>
+</Story>

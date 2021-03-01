@@ -1,7 +1,7 @@
 variables:
-  CBI_NODE_VERSION: "node:12-alpine"
-  CBI_MAJOR_VERSION: 10
-  CBI_MINOR_VERSION: 1 
+  CBI_NODE_VERSION: 'node:12-alpine'
+  CBI_MAJOR_VERSION: 11
+  CBI_MINOR_VERSION: 0
 
 include:
   - project: 'engineering/gitlab-includes'
@@ -26,5 +26,3 @@ stages:
   - build
   - test
   - publish
-
-

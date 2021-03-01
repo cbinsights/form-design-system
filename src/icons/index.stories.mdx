@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Meta } from '@storybook/addon-docs/blocks';
 import useClipboard from 'util/storybook-docs/useClipboard';
 import useToggleHover from 'util/storybook-docs/useToggleHover';
 import State from 'util/storybook-docs/State';
@@ -8,9 +8,8 @@ import cx from 'classnames';
 import { TableLayout } from 'util/storybook-docs/Table';
 import manifest from '../../lib/icons/iconManifest.js';
 
-export const importPath = iconName => (
-  `import ${iconName}Icon from '@cbinsights/fds/lib/icons/react/${iconName}Icon';`
-);
+export const importPath = (iconName) =>
+  `import ${iconName}Icon from '@cbinsights/fds/lib/icons/react/${iconName}Icon';`;
 
 export const Icon = ({ name, svg, size }) => {
   const [copiedText, copyToClipboard] = useClipboard();
@@ -20,25 +19,20 @@ export const Icon = ({ name, svg, size }) => {
       <div
         onClick={() => copyToClipboard(importPath(name))}
         className={cx('rounded--all', {
-            'elevation--1': isHovered,
+          'elevation--1': isHovered,
         })}
         onMouseEnter={toggleHover}
         onMouseLeave={toggleHover}
       >
-        <div
-          className={`iconSize--${size}`}
-          dangerouslySetInnerHTML={{ __html: svg }}
-        />
-        <span
-          className={cx("copyNotice", { 'display--block': isHovered })}
-        >
+        <div className={`iconSize--${size}`} dangerouslySetInnerHTML={{ __html: svg }} />
+        <span className={cx('copyNotice', { 'display--block': isHovered })}>
           {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
         </span>
         <p className="wrap--singleLine--truncate type--data">{name}</p>
       </div>
     </li>
-  )
-}
+  );
+};
 
 <Meta title="Icons/Icons" />
 
@@ -62,9 +56,19 @@ Whenever possible, we recommend using the React components distribution to rende
 <TableLayout
   headers={['Prop', 'Type', 'Default', 'Description']}
   rows={[
-      ['`color`', '`String`', '`COLOR_CHARCOAL`', 'Color of `fill` for SVG'],
-      ['`size`', 'One of: `\'xs\' | \'s\' | \'m\' | \'l\' | \'xl\'`', 's', 'Standard media size of icon'],
-      ['`customSize`', '`Number`', '`-`', 'Sets a non-standard size for the icon. Prefer using the size prop.'],
+    ['`color`', '`String`', '`COLOR_CHARCOAL`', 'Color of `fill` for SVG'],
+    [
+      '`size`',
+      "One of: `'xs' | 's' | 'm' | 'l' | 'xl'`",
+      's',
+      'Standard media size of icon',
+    ],
+    [
+      '`customSize`',
+      '`Number`',
+      '`-`',
+      'Sets a non-standard size for the icon. Prefer using the size prop.',
+    ],
   ]}
 />
 
@@ -79,11 +83,18 @@ Whenever possible, we recommend using the React components distribution to rende
           </FlexItem>
           <FlexItem align="center" shrink>
             <div className="border--left padding--left">
-              <label className="type--data flush--bottom display--inlineBlock padding--right--s" htmlFor="size">Size</label>
+              <label
+                className="type--data flush--bottom display--inlineBlock padding--right--s"
+                htmlFor="size"
+              >
+                Size
+              </label>
               <select
                 name="size"
                 value={size}
-                onChange={(e) => {setSize(e.target.value)}}
+                onChange={(e) => {
+                  setSize(e.target.value);
+                }}
               >
                 <option value="xs">XS</option>
                 <option value="s">S</option>
@@ -96,7 +107,9 @@ Whenever possible, we recommend using the React components distribution to rende
         </Flex>
       </div>
       <ul className="resetList iconList">
-        {manifest.map(({name, svg}) => <Icon name={name} svg={svg} size={size} />)}
+        {manifest.map(({ name, svg }) => (
+          <Icon name={name} svg={svg} size={size} />
+        ))}
       </ul>
     </section>
   )}

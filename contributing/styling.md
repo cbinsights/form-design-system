@@ -1,6 +1,7 @@
 [&larr; Table of Contents](../CONTRIBUTING.md)
 
 # Styling Guidelines
+
 🎨 How to CSS in FDS
 
 ## Styling components
@@ -26,6 +27,7 @@ Prefer existing utility classes over writing new CSS
 ```
 
 ## Managing specificity
+
 **Aim to keep selectors to a single class**. Avoid ancestry and combinators.
 
 CSS classes in FDS follow an _additive class pattern_. A base class should define default
@@ -52,6 +54,7 @@ styled.
 ```
 
 ## Managing layout and spacing
+
 The outermost element of a component **should avoid layout side effects**. Because we want
 our component to behave the same way regardless of where it is placed in the DOM, avoid
 properties that cause layout side effects:
@@ -62,16 +65,15 @@ properties that cause layout side effects:
 Instead, manage spacing and layout within the box boundary of the outermost element in the
 component.
 
-
 ## Styling typography
 
 **Avoid setting font properties in CSS**. Prefer utility classes provided by FDS.
 
-CSS rule                                   | utility class
------------------------------------------- | --------------------
-🚫 `font-size: var(--font-size-xl)`        | ✅ `.fontSize--xl`
-🚫 `font-weight: var(--font-weight-bold)`  | ✅ `.fontWeight--bold`
-🚫 `color: var(--font-color-secondary)`    | ✅ `.color--secondary`
+| CSS rule                                  | utility class          |
+| ----------------------------------------- | ---------------------- |
+| 🚫 `font-size: var(--font-size-xl)`       | ✅ `.fontSize--xl`     |
+| 🚫 `font-weight: var(--font-weight-bold)` | ✅ `.fontWeight--bold` |
+| 🚫 `color: var(--font-color-secondary)`   | ✅ `.color--secondary` |
 
 **Use `type--` classes for design-approved font value combinations**. While it's perfectly
 acceptable to mix and match type modifiers, always prefer the `type--` classes, which

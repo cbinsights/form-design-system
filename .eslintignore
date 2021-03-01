@@ -7,3 +7,10 @@ node_modules/
 .eslintrc.js
 *.config.js
 *.plugins.js
+docs/
+lib/
+scripts/
+*.mdx
+*.css
+*.md
+*.json

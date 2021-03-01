@@ -5,15 +5,14 @@
  * file will only be imported once.
  */
 
-
 /* Global custom properties */
-@import "../../lib/dictionary/css/customProperties.css";
+@import '../../lib/dictionary/css/customProperties.css';
 
 /* Base styles */
-@import "../base-styles/index.css";
+@import '../base-styles/index.css';
 
 /* Icons */
-@import "../icons/style/icons.css";
+@import '../icons/style/icons.css';
 
 /* Components */
-@import "../components/style/index.css";
+@import '../components/style/index.css';

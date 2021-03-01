@@ -1,8 +1,8 @@
 {
   "border": {
     "color": {
-      "input":      { "value": "rgba(64, 64, 64, 0.24)" },
-      "focusRing":  { "value": "rgba(76, 171, 206, 0.6)" }
+      "input": { "value": "rgba(64, 64, 64, 0.24)" },
+      "focusRing": { "value": "rgba(76, 171, 206, 0.6)" }
     }
   }
 }
