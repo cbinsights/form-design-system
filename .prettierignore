@@ -1,3 +1,4 @@
 *.hbs
 docs/
 lib/
+*.snap

@@ -2,11 +2,6 @@
 
 exports[`Prompt component matches snapshot (default props) 1`] = `
 <Dialog
-  content={
-    <div
-      id="a11y-dialog-desc"
-    />
-  }
   footerContent={
     <Flex
       justify="end"
@@ -28,17 +23,11 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
       </FlexItem>
     </Flex>
   }
-  role="alertdialog"
 />
 `;
 
 exports[`Prompt component matches snapshot (default props) 2`] = `
 <Dialog
-  content={
-    <div
-      id="a11y-dialog-desc"
-    />
-  }
   footerContent={
     <Flex
       justify="end"
@@ -61,19 +50,12 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
     </Flex>
   }
   isOpen={true}
-  role="alertdialog"
 />
 `;
 
 exports[`Prompt component matches snapshot (set all props) 1`] = `
 <Dialog
-  content={
-    <div
-      id="a11y-dialog-desc"
-    >
-      desc
-    </div>
-  }
+  content="desc"
   footerContent={
     <Flex
       justify="end"
@@ -96,7 +78,6 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
     </Flex>
   }
   isOpen={true}
-  role="alertdialog"
   title="title"
 />
 `;
