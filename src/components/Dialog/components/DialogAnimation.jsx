@@ -5,7 +5,7 @@ import {
   DialogContent as ReachDialogContent,
 } from '@reach/dialog';
 import { AnimatePresence, motion } from 'framer-motion';
-import DialogContext from './DialogContext';
+import DialogContext from '../DialogContext';
 
 const MotionDialogOverlay = motion(ReachDialogOverlay);
 const MotionDialogContent = motion(ReachDialogContent);

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import IconButton from 'components/IconButton';
 import DenyIcon from 'lib/icons/react/DenyIcon';
-import DialogContext from './DialogContext';
+import DialogContext from '../DialogContext';
 
 const DialogHeader = () => {
   const { onDismiss, title } = useContext(DialogContext);

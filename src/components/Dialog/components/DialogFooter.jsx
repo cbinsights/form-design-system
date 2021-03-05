@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import cc from 'classcat';
-import DialogContext from './DialogContext';
+import DialogContext from '../DialogContext';
 
 const DialogFooter = () => {
   const { footerContent, alwaysShowBorder, isOverflowing } = useContext(DialogContext);

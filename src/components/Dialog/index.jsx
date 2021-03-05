@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import DialogHeader from './DialogHeader';
-import DialogContent from './DialogContent';
+import DialogHeader from './components/DialogHeader';
+import DialogContent from './components/DialogContent';
+import DialogFooter from './components/DialogFooter';
+import DialogAnimation from './components/DialogAnimation';
 import DialogContext from './DialogContext';
-import DialogFooter from './DialogFooter';
-import DialogAnimation from './DialogAnimation';
 import useResizeObserver from './useResizeObserver';
 
 const Dialog = ({
