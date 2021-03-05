@@ -42,6 +42,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - `role` prop removed
 - `width` and `height` no longer accept a number
 
+
+### Prompt component
+
+- `disablePortal` prop removed
 ## [11.0] MAJOR
 
 ### **BREAKING CHANGES**
