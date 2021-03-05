@@ -6,18 +6,16 @@ import FlexItem from 'components/FlexItem';
 
 const Prompt = (props) => (
   <Dialog
-    content={<div id="a11y-dialog-desc">{props.desc}</div>}
+    content={props.desc}
     footerContent={
       <Flex justify="end" wrap>
         {props.secondaryButton && <FlexItem shrink>{props.secondaryButton}</FlexItem>}
         {props.primaryButton && <FlexItem shrink>{props.primaryButton}</FlexItem>}
       </Flex>
     }
-    role="alertdialog"
     title={props.title}
     isOpen={props.isOpen}
     onDismiss={props.onDismiss}
-    disablePortal={props.disablePortal}
   />
 );
 
@@ -37,8 +35,6 @@ Prompt.propTypes = {
    * user attempts to close modal. When defined, the modal close button appears
    */
   onDismiss: PropTypes.func,
-  /** Keeps the Prompt from being rendered in a portal and renders it locally instead. */
-  disablePortal: PropTypes.bool,
 };
 
 export default Prompt;
