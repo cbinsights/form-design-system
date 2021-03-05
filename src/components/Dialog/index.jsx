@@ -113,8 +113,8 @@ const Dialog = ({
             aria-label={title}
             className="elevation--3"
             style={{
-              maxWidth: `${width}${typeof width === 'number' ? 'px' : ''} `,
-              maxHeight: `${height}${typeof height === 'number' ? 'px' : ''}`,
+              maxWidth: width,
+              maxHeight: height,
             }}
           >
             <Core />
