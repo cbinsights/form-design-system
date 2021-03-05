@@ -31,6 +31,16 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+
+## [12.0] MAJOR
+
+### **BREAKING CHANGES**
+
+### Dialog component
+
+- `disablePortal` prop removed
+- `role` prop removed
+
 ## [11.0] MAJOR
 
 ### **BREAKING CHANGES**
