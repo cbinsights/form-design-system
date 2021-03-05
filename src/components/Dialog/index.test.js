@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Dialog from '.';
 
 describe('Dialog', () => {
@@ -28,9 +28,9 @@ describe('Dialog', () => {
 
     /* Tests that onDismiss gets fired correctly */
     /* ========================================= */
-    fireEvent.click(screen.getByLabelText('Close'));
+    userEvent.click(screen.getByLabelText('Close'));
     // Pressing esc anywhere in dialog should trigger a close
-    fireEvent.keyDown(screen.getByText('content'), { key: 'Escape', code: 27 });
+    userEvent.type(screen.getByText('content'), '{esc}');
     expect(dismiss).toHaveBeenCalledTimes(2);
 
     /* Tests styles */
