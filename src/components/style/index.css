@@ -1,5 +1,6 @@
 /* Reach framework styles */
 @import '@reach/menu-button/styles.css';
+@import '@reach/dialog/styles.css';
 
 /* Foundational Styles */
 @import '../../base-styles/index.css';

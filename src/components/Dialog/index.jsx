@@ -1,13 +1,11 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import { CSSTransition } from 'react-transition-group';
-import FocusTrap from 'focus-trap-react';
 import rafSchd from 'raf-schd';
 import DenyIcon from 'lib/icons/react/DenyIcon';
 import IconButton from 'components/IconButton';
+import { DialogOverlay, DialogContent } from '@reach/dialog';
+import { AnimatePresence, motion } from 'framer-motion';
 import cc from 'classcat';
-import noScroll from './noScroll';
 
 export const isElementOverflowing = ({ current }) => {
   // Checking for current first is safer just in case,
@@ -19,7 +17,6 @@ export const isElementOverflowing = ({ current }) => {
 };
 
 const Dialog = ({
-  role = 'dialog',
   width = '500px',
   height = '80vh',
   disableFocusTrap = false,
@@ -29,130 +26,106 @@ const Dialog = ({
   title,
   content,
   footerContent,
-  disablePortal = false,
 }) => {
-  const contentEl = useRef(null);
-  const handleKeyDown = (e) => {
-    if (onDismiss && e.key === 'Escape') {
-      onDismiss();
-    }
-  };
+  const Core = () => {
+    const [isOverflowing, setIsOverflowing] = useState(false);
 
-  const [isOverflowing, setIsOverflowing] = useState(false);
+    const contentEl = useRef(null);
 
-  const handleResize = () => {
-    rafSchd(setIsOverflowing(isElementOverflowing(contentEl)));
-  };
-
-  useEffect(() => {
-    if (!alwaysShowBorder) {
-      handleResize(); // needs to fire once immediately on mount
-      // eslint-disable-next-line no-undef
-      window.addEventListener('resize', handleResize);
-      return () => {
-        // eslint-disable-next-line no-undef
-        window.removeEventListener('resize', handleResize);
-      };
-    }
-    return undefined;
-  }, [alwaysShowBorder]);
-
-  useLayoutEffect(() => {
-    // This toggles scrolling on and off based on whether the modal
-    // is shown or not
-    if (isOpen) {
-      noScroll.on();
-    } else {
-      noScroll.off();
-    }
-    return () => {
-      noScroll.off();
+    const handleResize = () => {
+      rafSchd(setIsOverflowing(isElementOverflowing(contentEl)));
     };
-  }, [isOpen]);
 
-  const dialogNode = (
-    <div>
-      <div className="dialog-overlay"></div>
-      <div className="dialog-zIndex dialog-wrapper">
-        <div
-          className="dialog elevation--3 border--focus--noTransition"
-          role={role}
-          aria-labelledby={title && 'a11y-dialog-title'}
-          aria-describedby="a11y-dialog-desc"
-          tabIndex="-1"
-          aria-modal="true"
-          onKeyDown={handleKeyDown}
-          style={{
-            maxWidth: width,
-            maxHeight: height,
-          }}
-        >
-          {(title || onDismiss) && (
-            <React.Fragment>
-              <div className="dialog-header">
-                <div className="bgColor--white padding--all border--bottom">
-                  <div className="padding--right--xl type--head4">
-                    {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
-                    {/* There always needs to be something (even a space) in the header for display reasons */}
-                  </div>
-                  {onDismiss && (
-                    <div className="dialog-icon">
-                      <IconButton
-                        Icon={DenyIcon}
-                        onClick={onDismiss}
-                        aria-label="Close"
-                        label="Close"
-                      />
-                    </div>
-                  )}
+    useEffect(() => {
+      if (!alwaysShowBorder) {
+        handleResize(); // needs to fire once immediately on mount
+        // eslint-disable-next-line no-undef
+        window.addEventListener('resize', handleResize);
+        return () => {
+          // eslint-disable-next-line no-undef
+          window.removeEventListener('resize', handleResize);
+        };
+      }
+      return undefined;
+    }, [alwaysShowBorder]);
+
+    return (
+      <>
+        {(title || onDismiss) && (
+          /* Do not mess with / combine the 2 lines of following classes unless you
+           *thoroughly* vet responsive, header props, and long text, all at once */
+          <div className="bgColor--white border--bottom">
+            <div className="dialog-header padding--left padding--top padding--bottom">
+              {title && (
+                <span id="a11y-dialog-title" className="type--head4">
+                  {title}
+                </span>
+              )}
+              {onDismiss && (
+                <div className="dialog-icon">
+                  <IconButton
+                    Icon={DenyIcon}
+                    onClick={onDismiss}
+                    aria-label="Close"
+                    label="Close"
+                  />
                 </div>
-              </div>
-            </React.Fragment>
-          )}
-          <div className="dialog-content" ref={contentEl}>
-            <div className="padding--all bgColor--white">{content}</div>
-          </div>
-          {footerContent && (
-            <div className="dialog-footer">
-              <div
-                className={cc([
-                  {
-                    'border--top': alwaysShowBorder || isOverflowing,
-                  },
-                  'bgColor--white',
-                  'padding--all',
-                ])}
-              >
-                {footerContent}
-              </div>
+              )}
             </div>
-          )}
+          </div>
+        )}
+        <div className="dialog-content" ref={contentEl}>
+          <div className="padding--all bgColor--white">{content}</div>
         </div>
-      </div>
-    </div>
-  );
+        {footerContent && (
+          <div className="dialog-footer">
+            <div
+              className={cc([
+                {
+                  'border--top': alwaysShowBorder || isOverflowing,
+                },
+                'bgColor--white',
+                'padding--all',
+              ])}
+            >
+              {footerContent}
+            </div>
+          </div>
+        )}
+      </>
+    );
+  };
 
-  const transitionNode = (
-    <CSSTransition timeout={200} in={isOpen} classNames="dialog" unmountOnExit>
-      <React.Fragment>
-        {disableFocusTrap ? dialogNode : <FocusTrap>{dialogNode}</FocusTrap>}
-      </React.Fragment>
-    </CSSTransition>
-  );
+  const MotionDialogOverlay = motion(DialogOverlay);
+  const MotionDialogContent = motion(DialogContent);
 
   return (
-    <React.Fragment>
-      {disablePortal
-        ? transitionNode
-        : ReactDOM.createPortal(transitionNode, document.body)}
-    </React.Fragment>
+    <AnimatePresence>
+      {isOpen && (
+        <MotionDialogOverlay
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onDismiss={onDismiss}
+          dangerouslyBypassFocusLock={disableFocusTrap}
+        >
+          <MotionDialogContent
+            aria-label={title}
+            className="elevation--3"
+            style={{
+              maxWidth: `${width}${typeof width === 'number' ? 'px' : ''} `,
+              maxHeight: `${height}${typeof height === 'number' ? 'px' : ''}`,
+            }}
+          >
+            <Core />
+          </MotionDialogContent>
+        </MotionDialogOverlay>
+      )}
+    </AnimatePresence>
   );
 };
 
 Dialog.propTypes = {
-  /** Controls the role of the modal */
-  role: PropTypes.oneOf(['dialog', 'alertdialog']),
-
   /** Controls whether the modal (and overlay) are shown or not */
   isOpen: PropTypes.bool,
 
@@ -188,9 +161,6 @@ Dialog.propTypes = {
    * Useful when the Dialog contains components that manage focus (e.g. `Menu`)
    */
   disableFocusTrap: PropTypes.bool,
-
-  /** Disables rendering the dialog in a portal, and renders it locally instead. */
-  disablePortal: PropTypes.bool,
 };
 
 export default Dialog;
