@@ -1,20 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import rafSchd from 'raf-schd';
-import DenyIcon from 'lib/icons/react/DenyIcon';
-import IconButton from 'components/IconButton';
-import { DialogOverlay, DialogContent } from '@reach/dialog';
-import { AnimatePresence, motion } from 'framer-motion';
-import cc from 'classcat';
 
-export const isElementOverflowing = ({ current }) => {
-  // Checking for current first is safer just in case,
-  // and will also fail gracefully in tests
-  if (current) {
-    return current.scrollHeight > current.clientHeight;
-  }
-  return false;
-};
+import DialogHeader from './DialogHeader';
+import DialogContent from './DialogContent';
+import DialogContext from './DialogContext';
+import DialogFooter from './DialogFooter';
+import DialogAnimation from './DialogAnimation';
+import useResizeObserver from './useResizeObserver';
 
 const Dialog = ({
   width = '500px',
@@ -27,101 +19,31 @@ const Dialog = ({
   content,
   footerContent,
 }) => {
-  const Core = () => {
-    const [isOverflowing, setIsOverflowing] = useState(false);
-
-    const contentEl = useRef(null);
-
-    const handleResize = () => {
-      rafSchd(setIsOverflowing(isElementOverflowing(contentEl)));
-    };
-
-    useEffect(() => {
-      if (!alwaysShowBorder) {
-        handleResize(); // needs to fire once immediately on mount
-        // eslint-disable-next-line no-undef
-        window.addEventListener('resize', handleResize);
-        return () => {
-          // eslint-disable-next-line no-undef
-          window.removeEventListener('resize', handleResize);
-        };
-      }
-      return undefined;
-    }, [alwaysShowBorder]);
-
-    return (
-      <>
-        {(title || onDismiss) && (
-          /* Do not mess with / combine the 2 lines of following classes unless you
-           *thoroughly* vet responsive, header props, and long text, all at once */
-          <div className="bgColor--white border--bottom">
-            <div className="dialog-header padding--left padding--top padding--bottom">
-              {title && (
-                <span id="a11y-dialog-title" className="type--head4">
-                  {title}
-                </span>
-              )}
-              {onDismiss && (
-                <div className="dialog-icon">
-                  <IconButton
-                    Icon={DenyIcon}
-                    onClick={onDismiss}
-                    aria-label="Close"
-                    label="Close"
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-        <div className="dialog-content" ref={contentEl}>
-          <div className="padding--all bgColor--white">{content}</div>
-        </div>
-        {footerContent && (
-          <div className="dialog-footer">
-            <div
-              className={cc([
-                {
-                  'border--top': alwaysShowBorder || isOverflowing,
-                },
-                'bgColor--white',
-                'padding--all',
-              ])}
-            >
-              {footerContent}
-            </div>
-          </div>
-        )}
-      </>
-    );
-  };
-
-  const MotionDialogOverlay = motion(DialogOverlay);
-  const MotionDialogContent = motion(DialogContent);
-
+  const [ref, entry] = useResizeObserver();
+  const isOverflowing =
+    entry.target && entry.target.scrollHeight > entry.target.clientHeight;
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <MotionDialogOverlay
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onDismiss={onDismiss}
-          dangerouslyBypassFocusLock={disableFocusTrap}
-        >
-          <MotionDialogContent
-            aria-label={title}
-            className="elevation--3"
-            style={{
-              maxWidth: width,
-              maxHeight: height,
-            }}
-          >
-            <Core />
-          </MotionDialogContent>
-        </MotionDialogOverlay>
-      )}
-    </AnimatePresence>
+    <DialogContext.Provider
+      value={{
+        width,
+        height,
+        disableFocusTrap,
+        onDismiss,
+        alwaysShowBorder,
+        isOpen,
+        title,
+        content,
+        footerContent,
+        ref,
+        isOverflowing,
+      }}
+    >
+      <DialogAnimation>
+        <DialogHeader />
+        <DialogContent />
+        <DialogFooter />
+      </DialogAnimation>
+    </DialogContext.Provider>
   );
 };
 
