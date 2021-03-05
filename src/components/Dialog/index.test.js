@@ -7,9 +7,6 @@ describe('Dialog', () => {
   const dismiss = jest.fn();
 
   it('tests that dialog renders properly', () => {
-    // Scrolling should not be locked before dialog is open
-    expect(window.getComputedStyle(document.body).overflow).toBe('');
-
     render(
       <Dialog
         content={<button>content</button>}
@@ -44,7 +41,5 @@ describe('Dialog', () => {
     expect(window.getComputedStyle(screen.getByRole('dialog'))['max-width']).toBe(
       '1000px'
     );
-    // Scrolling should be locked when dialog is open
-    expect(window.getComputedStyle(document.documentElement).overflow).toBe('hidden');
   });
 });
