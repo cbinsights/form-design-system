@@ -40,6 +40,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 - `disablePortal` prop removed
 - `role` prop removed
+- `width` and `height` no longer accept a number
 
 ## [11.0] MAJOR
 
