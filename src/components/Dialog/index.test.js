@@ -20,6 +20,8 @@ describe('Dialog', () => {
       />
     );
 
+    expect(screen.getByLabelText('Close')).toHaveFocus();
+
     /* Test that content renders properly */
     /* ================================== */
     expect(screen.getByText('content')).toBeTruthy();
