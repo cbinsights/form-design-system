@@ -693,6 +693,26 @@ export const SpacingExample = ({ className }) => (
   </>
 </Story>
 
+## Flush
+
+Removes spacing from the given side of an element. Sets both `padding` and `margin` to `0`;
+
+<Story name="Flush">
+  <>
+    <TableLayout
+      isCSS
+      headers={['class', 'description']}
+      rows={[
+        ['flush--top', 'Removes top spacing from element'],
+        ['flush--right', 'Removes right spacing from element'],
+        ['flush--bottom', 'Removes bottom spacing from element'],
+        ['flush--left', 'Removes left spacing from element'],
+        ['flush--all', 'Removes spacing from all sides of an element'],
+      ]}
+    />
+  </>
+</Story>
+
 ## Elevation
 
 <TableLayout
