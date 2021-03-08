@@ -135,11 +135,11 @@
 }
 
 .fdsButton--orange:hover {
-  background-color: #ff8157;
+  background-color: #ff7243;
 }
 
 .fdsButton--orange:active {
-  background-color: var(--color-orange);
+  background-color: #ff9774;
 }
 
 .fdsButton--orange.fdsButton--isActive:focus {
