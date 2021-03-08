@@ -125,6 +125,49 @@
   background-color: #ed737c;
 }
 
+.fdsButton--orange {
+  color: var(--color-white);
+  background-color: var(--color-orange);
+}
+
+.fdsButton--orange.fdsButton--isActive {
+  background-color: var(--color-orange);
+}
+
+.fdsButton--orange:hover {
+  background-color: #ff7243;
+}
+
+.fdsButton--orange:active {
+  background-color: #ff9774;
+}
+
+.fdsButton--orange.fdsButton--isActive:focus {
+  background-color: #ff9774;
+}
+
+.fdsButton--orange.fdsButton--isDestructive {
+  background-color: var(--color-red);
+}
+
+/* stylelint-disable-next-line selector-max-class  */
+.fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive {
+  background-color: #ed737c;
+}
+
+.fdsButton--orange.fdsButton--isDestructive:hover {
+  background-color: #e7424d;
+}
+
+.fdsButton--orange.fdsButton--isDestructive:active {
+  background-color: #ed737c;
+}
+
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
+.fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive:focus {
+  background-color: #ed737c;
+}
+
 .fdsButton--outlined,
 .fdsButton--ghost {
   color: var(--color-charcoal);
