@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import DialogHeader from './components/DialogHeader';
 import DialogContent from './components/DialogContent';
 import DialogFooter from './components/DialogFooter';
-import DialogAnimation from './components/DialogAnimation';
+import DialogWrapper from './components/DialogWrapper';
 import DialogContext from './DialogContext';
 import useResizeObserver from './useResizeObserver';
 
@@ -38,11 +38,11 @@ const Dialog = ({
         isOverflowing,
       }}
     >
-      <DialogAnimation>
+      <DialogWrapper>
         <DialogHeader />
         <DialogContent />
         <DialogFooter />
-      </DialogAnimation>
+      </DialogWrapper>
     </DialogContext.Provider>
   );
 };
