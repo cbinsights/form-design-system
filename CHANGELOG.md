@@ -30,6 +30,9 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - this is an example of a deprecation note
 
 ---
+## [11.1] Button theme addition 
+
+- Added theme prop: `orange` to FDS Button
 
 
 ## [12.0] MAJOR

@@ -5,7 +5,7 @@ import baseElement from 'util/baseElement';
 import { CaretDownIcon } from 'lib/icons/react';
 
 export const SIZES = ['s', 'm'];
-export const THEMES = ['blue', 'outlined', 'ghost'];
+export const THEMES = ['blue', 'orange', 'outlined', 'ghost'];
 
 const Button = forwardRef(
   (
