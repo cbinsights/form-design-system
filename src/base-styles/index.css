@@ -1,4 +1,5 @@
 /* Custom properties */
+@import '../../lib/dictionary/css/customMedia';
 @import '../../lib/dictionary/css/customProperties';
 @import '../../lib/dictionary/css/rawRgbColors';
 
