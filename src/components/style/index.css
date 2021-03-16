@@ -1,5 +1,6 @@
 /* Reach framework styles */
 @import '@reach/menu-button/styles.css';
+@import '@reach/checkbox/styles.css';
 
 /* Foundational Styles */
 @import '../../base-styles/index.css';
@@ -17,6 +18,7 @@
 @import './inlineBlockList.css';
 @import './checkable.css';
 @import './checkbox.css';
+@import './checky.css';
 @import './radio.css';
 @import './textInput.css';
 @import './decoratedInput.css';
