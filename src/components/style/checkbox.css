@@ -18,7 +18,7 @@
   fill: var(--color-blue);
 }
 
-.checkbox-span {
+.fdsCheckbox-span {
   display: block;
   position: absolute;
   top: 50%;
@@ -27,25 +27,25 @@
   transform: translate(-50%, -50%) scaleX(1) scaleY(1);
 }
 
-.checkbox-container {
+.fdsCheckbox-container {
   width: 18px;
   height: 18px;
   border-radius: var(--border-radius-default);
 }
 
-.checkbox-span .fds-icon {
+.fdsCheckbox-span .fds-icon {
   display: block;
 }
 
-.checkbox-container.checked svg {
+.fdsCheckbox-container.fdsCheckbox--checked svg {
   fill: var(--color-blue);
 }
 
-.checkbox-container.disabled + .label {
+.fdsCheckbox-container.fdsCheckbox--disabled + .label {
   color: var(--font-color-hint);
 }
 
-.checkbox-container.disabled svg {
+.fdsCheckbox-container.fdsCheckbox--disabled svg {
   fill: var(--font-color-hint);
 }
 

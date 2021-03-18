@@ -25,7 +25,10 @@ const Checkbox = ({ checked, label, disabled, showLabel = true, ...rest }) => {
       <CustomCheckboxContainer
         checked={checked}
         disabled={disabled}
-        className={cc([{ checked, disabled }, 'checkbox-container'])}
+        className={cc([
+          { 'fdsCheckbox--checked': checked, 'fdsCheckbox--disabled': disabled },
+          'fdsCheckbox-container',
+        ])}
         {...rest}
       >
         <CustomCheckboxInput
@@ -34,11 +37,11 @@ const Checkbox = ({ checked, label, disabled, showLabel = true, ...rest }) => {
           aria-label={!showLabel ? label : undefined}
           {...rest}
         />
-        <span aria-hidden className="checkbox-span">
+        <span aria-hidden className="fdsCheckbox-span">
           <CheckboxIcon size="xs" />
         </span>
       </CustomCheckboxContainer>
-      {showLabel && <span className="label">{label}</span>}
+      {showLabel && <span className="fdsCheckbox-label">{label}</span>}
     </Element>
   );
 };
