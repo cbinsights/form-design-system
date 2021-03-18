@@ -1,71 +1,85 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-
 import Checkbox from '.';
 
-describe('Checkbox component', () => {
-  it('passes the `disabled` prop', () => {
-    const { container } = render(
-      <Checkbox label="change callback" disabled name="disabled-test" />
-    );
-    const input = screen.getByLabelText('change callback');
-    expect(input.disabled).toBeTruthy();
+const Template = (args) => <Checkbox {...args} />;
 
-    fireEvent.click(input);
-    expect(input.checked).toBeTruthy();
-    expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
-    expect(container.querySelector('.fdsCheckable')).toHaveClass(
-      'fdsCheckable--disabled'
-    );
-  });
+export const Primary = Template.bind({});
+Primary.args = {
+  value: 'spam',
+  label: 'I agree to receive spam',
+};
 
-  it('fires change callback when checking', () => {
-    const changeFn = jest.fn();
-    render(
-      <Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />
-    );
-    const input = screen.getByLabelText('change callback');
-    expect(changeFn).not.toHaveBeenCalled();
-    fireEvent.click(input);
-    expect(input.checked).toBeTruthy();
-    fireEvent.change(input, { target: input });
-    expect(changeFn).toHaveBeenCalled();
-  });
+export const managingCheckedState = Template.bind({});
 
-  it('fires change callback when unchecking', () => {
-    const changeFn = jest.fn();
-    render(
+managingCheckedState.args = {
+  defaultChecked: true,
+  value: 'default-checked',
+  label: 'Checked by default',
+};
+
+export const preventingUserInteraction = () => (
+  <>
+    <div>
+      <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
+    </div>
+    <div>
       <Checkbox
+        disabled
         defaultChecked
-        label="unchecking callback"
-        name="uncheck-callback-test"
-        onChange={changeFn}
+        name="disabled-checked"
+        label="Disabled checked"
       />
-    );
+    </div>
+  </>
+);
 
-    const input = screen.getByLabelText('unchecking callback');
-    expect(changeFn).not.toHaveBeenCalled();
-    fireEvent.click(input);
-    expect(input.checked).toBeFalsy();
-    fireEvent.change(input, { target: input });
-    expect(changeFn).toHaveBeenCalled();
-  });
+preventingUserInteraction.parameters = {
+  docs: {
+    description: {
+      story:
+        'Use the `disabled` prop to prevent the user from changing the checked state of the checkbox.',
+    },
+  },
+};
 
-  it('allows users to supply their own id', () => {
-    render(
-      <>
-        <Checkbox
-          id="checkbox-id"
-          label="Component label"
-          showLabel={false}
-          name="multiple labels"
-        />
-        <label htmlFor="checkbox-id">User label</label>
-      </>
-    );
+export const checkboxWithoutLabel = Template.bind({});
+checkboxWithoutLabel.args = {
+  value: 'no-label',
+  label: "I don't have a label",
+  showLabel: false,
+};
 
-    expect(screen.getByLabelText('Component label')).toBeTruthy();
-    expect(screen.getByLabelText('User label')).toBeTruthy();
-  });
-});
+export const mixedCheckboxes = Template.bind({});
+mixedCheckboxes.args = {
+  checked: 'mixed',
+  value: 'notsureif',
+  label: 'Mixed checkbox',
+};
+
+export const readingTheValueOfACheckbox = Template.bind({});
+readingTheValueOfACheckbox.args = {
+  label: 'Option one',
+};
+
+readingTheValueOfACheckbox.parameters = {
+  docs: {
+    description: {
+      story:
+        ' The `onChange` prop will be spread on the `input` element the `Checkbox` component renders. Read the `checked` attribute of the event `currentTarget`.',
+    },
+  },
+};
+
+export default {
+  component: Checkbox,
+  title: 'components/Checky',
+  argTypes: { onChange: { action: 'onChange' } },
+  parameters: {
+    docs: {
+      attributes: ['rest'],
+      description: {
+        component: 'Uncontrolled custom checkbox component with optional label.',
+      },
+    },
+  },
+};
