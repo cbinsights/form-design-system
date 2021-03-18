@@ -9,3 +9,7 @@
 .fdsRadio input:focus + label svg {
   border-radius: 100%;
 }
+
+.fdsRadio--checked svg {
+  fill: var(--color-blue);
+}

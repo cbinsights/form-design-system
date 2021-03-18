@@ -1,15 +1,10 @@
-import React from 'react';
-import { v4 } from 'uuid';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
 
 import RadioEmptyIcon from 'lib/icons/react/RadioEmptyIcon';
 import RadioFilledIcon from 'lib/icons/react/RadioFilledIcon';
 
-/**
- * @param {Object} props react props
- * @returns {ReactElement}
- */
 const Radio = React.forwardRef(
   (
     {
@@ -18,42 +13,41 @@ const Radio = React.forwardRef(
       name,
       label,
       checked,
-      defaultChecked,
       value,
       onChange,
+      className,
       ...rest
     },
     ref
   ) => {
-    const id = v4();
+    const RadioIcon = useMemo(() => {
+      if (checked) return RadioFilledIcon;
+      return RadioEmptyIcon;
+    }, [checked]);
 
     return (
       <div
         className={cc([
           {
             'fdsCheckable--disabled': disabled,
+            'fdsRadio--checked': checked,
           },
           'fdsCheckable fdsRadio',
         ])}
       >
-        <input
-          ref={ref}
-          type="radio"
-          name={name}
-          id={id}
-          checked={checked}
-          defaultChecked={defaultChecked}
-          value={value}
-          onChange={onChange}
-          {...rest}
-          className="media--xs" // prevent className being passed down via rest
-        />
-        <label className="flush--bottom" htmlFor={id}>
+        <label className="flush--bottom">
+          <input
+            ref={ref}
+            type="radio"
+            name={name}
+            checked={checked}
+            value={value}
+            onChange={onChange}
+            className="media--xs"
+            {...rest}
+          />
           <span className="fdsCheckable-icon--checked">
-            <RadioFilledIcon size="xs" />
-          </span>
-          <span className="fdsCheckable-icon--unchecked">
-            <RadioEmptyIcon size="xs" />
+            <RadioIcon size="xs" />
           </span>
           {showLabel && <span className="padding--left--s">{label}</span>}
         </label>
@@ -77,9 +71,6 @@ Radio.propTypes = {
   /** If the supplied `label` prop should be rendered to the screen. */
   showLabel: PropTypes.bool,
 
-  /** `true` checks the radio by default */
-  defaultChecked: PropTypes.bool,
-
   /** Disables form field when `true` */
   disabled: PropTypes.bool,
 
@@ -91,6 +82,8 @@ Radio.propTypes = {
 
   /** The radio input `onChange` attribute */
   onChange: PropTypes.func,
+
+  className: PropTypes.string,
 };
 
 export default Radio;

@@ -1,9 +1,25 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Radio from '.';
 
-const Template = (args) => <Radio {...args} />;
+const Template = (args) => <Radio {...args} value="1" />;
+const MultiTemplate = ({ multi = {}, ...args }) => {
+  const [isChecked, setIsChecked] = useState('1');
+  const onChange = (e) => {
+    setIsChecked(e.target.value);
+  };
+  return (
+    <div onChange={onChange}>
+      <Radio {...args} {...multi.one} checked={isChecked === '1'} value="1" />
+      <Radio {...args} {...multi.two} checked={isChecked === '2'} value="2" />
+      <Radio {...args} {...multi.three} checked={isChecked === '3'} value="3" />
+    </div>
+  );
+};
+
+MultiTemplate.propTypes = {
+  multi: PropTypes.object,
+};
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -11,15 +27,17 @@ Primary.args = {
   label: 'I agree to receive spam',
 };
 
-export const radioGroups = (args) => (
-  <React.Fragment>
-    <Radio {...args} name="radio-group-story" label="Option one" />
-    <Radio {...args} name="radio-group-story" label="Option two" />
-    <Radio {...args} name="radio-group-story" label="Option three" />
-  </React.Fragment>
-);
+export const RadioGroups = MultiTemplate.bind({});
+RadioGroups.args = {
+  name: 'radio-group-story',
+  multi: {
+    one: { label: 'Option one' },
+    two: { label: 'Option two' },
+    three: { label: 'Option three' },
+  },
+};
 
-radioGroups.parameters = {
+RadioGroups.parameters = {
   docs: {
     description: {
       story:
@@ -28,66 +46,13 @@ radioGroups.parameters = {
   },
 };
 
-export const initialSelection = (args) => (
-  <React.Fragment>
-    <Radio
-      {...args}
-      name="radio-group-initial"
-      label="Selected by default"
-      defaultChecked
-    />
-    <Radio {...args} name="radio-group-initial" label="The other option" />
-  </React.Fragment>
-);
-
-initialSelection.parameters = {
-  docs: {
-    description: {
-      story: 'Use the `defaultChecked` prop to set initial selection in a radio group.',
-    },
-  },
-};
-
-export const readingSelectedValue = (args) => (
-  <div onChange={(e) => action('change')(e.target.value)}>
-    <Radio {...args} name="radio-group-onchange" label="Option one" value="1" />
-    <Radio {...args} name="radio-group-onchange" label="Option two" value="2" />
-    <Radio {...args} name="radio-group-onchange" label="Option three" value="3" />
-  </div>
-);
-
-readingSelectedValue.parameters = {
-  docs: {
-    description: {
-      story:
-        'Place the `onChange` event on a parent element to read which radio of the group has been selected.',
-    },
-  },
-};
-
-export const controlled = (args) => (
-  <div onChange={(e) => action('change')(e.target.value)}>
-    <Radio
-      {...args}
-      name="radio-group-onchange"
-      label="Option one"
-      value="1"
-      checked={true}
-    />
-    <Radio {...args} name="radio-group-onchange" label="Option two" value="2" />
-    <Radio {...args} name="radio-group-onchange" label="Option three" value="3" />
-  </div>
-);
-
 export default {
   component: Radio,
   title: 'components/Radio',
+  argTypes: { onChange: { action: 'onChange' } },
   parameters: {
     docs: {
       attributes: ['rest'],
-      description: {
-        component: 'Uncontrolled custom radio component with label.',
-      },
     },
   },
 };
