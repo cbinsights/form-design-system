@@ -76,13 +76,23 @@ const toItemObjectKey = (prop) => getCTI(prop).item.toLowerCase();
  * @param {Object} prop style-dictionary prop
  * @returns {Object} map of distributions to var names for this prop
  */
-const toVarNames = (prop) => ({
-  varNames: {
-    css: `var(--${toKebab(prop)})`,
-    js: `${toConstant(prop)}`,
-    human: `${getCTI(prop).item}`,
-  },
-});
+const toVarNames = (prop) => {
+  let result;
+  switch(getCTI(prop).category) {
+    case 'customMedia':
+      result = {
+        css: `@media (--viewport-${getCTI(prop).item}) {}`,
+      }
+      break;
+    default:
+      result = {
+        css: `var(--${toKebab(prop)})`,
+        js: `${toConstant(prop)}`,
+        human: `${getCTI(prop).item}`,
+      }
+  }
+  return result;
+};
 
 /**
  * @param {Object} prop style-dictionary prop

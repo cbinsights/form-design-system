@@ -87,6 +87,7 @@ const formatJsManifest = (dictionary) => {
     fonts: filterByCategory(otherProperties, 'font'),
     borders: filterByCategory(otherProperties, 'border'),
     motions: filterByCategory(otherProperties, 'motion'),
+    viewports: filterByCategory(otherProperties, 'customMedia'),
   };
 
   return `module.exports = ${JSON.stringify(result, null, 2)}`;

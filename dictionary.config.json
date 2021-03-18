@@ -95,7 +95,6 @@
       "buildPath": "./lib/dictionary/js/",
       "files": [
         {
-          "filter": "excludeCustomMedia",
           "destination": "manifest.js",
           "format": "javascript/manifest"
         }

@@ -12,11 +12,11 @@ export const Primary = (args) => (
       <FlexItem shrink>
         <img src="https://place-hold.it/40x40/a02385/fff&text=IMG" />
       </FlexItem>
-      <FlexItem shrink>
-        <h4>Look at this cool content</h4>
+      <FlexItem>
+        <p>This item grows to fill remaining space</p>
       </FlexItem>
       <FlexItem shrink>
-        <p className="color--link">edit</p>
+        <p className="type--link">edit</p>
       </FlexItem>
     </Flex>
   </div>
