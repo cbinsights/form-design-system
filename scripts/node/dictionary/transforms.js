@@ -77,21 +77,16 @@ const toItemObjectKey = (prop) => getCTI(prop).item.toLowerCase();
  * @returns {Object} map of distributions to var names for this prop
  */
 const toVarNames = (prop) => {
-  let result;
-  switch(getCTI(prop).category) {
-    case 'customMedia':
-      result = {
-        css: `@media (--viewport-${getCTI(prop).item}) {}`,
-      }
-      break;
-    default:
-      result = {
-        css: `var(--${toKebab(prop)})`,
-        js: `${toConstant(prop)}`,
-        human: `${getCTI(prop).item}`,
-      }
-  }
-  return result;
+  const { category, item } = getCTI(prop);
+  const isCustomMedia = category === 'customMedia';
+
+  const varNames = {
+    css: isCustomMedia ? `@media (--viewport-${item}) {}` : `var(--${toKebab(prop)})`,
+    js: !isCustomMedia && `${toConstant(prop)}`,
+    human: item,
+  };
+
+  return { varNames };
 };
 
 /**
