@@ -5,7 +5,6 @@ const Template = (args) => <Checkbox {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  checked: true,
   value: 'spam',
   label: 'I agree to receive spam',
 };
