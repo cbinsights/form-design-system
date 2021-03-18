@@ -54,7 +54,7 @@
  * the DOM; we use checked state selectors on the `input`
  * element to determine which one to show
  */
-.fdsCheckable input + label .fdsCheckable-icon--checked {
+.fdsCheckable label .fdsCheckable-icon--checked {
   display: none;
 }
 
@@ -65,7 +65,7 @@
   display: block;
 }
 
-.fdsCheckable input + label .fdsCheckable-icon--unchecked {
+.fdsCheckable label .fdsCheckable-icon--unchecked {
   display: block;
 }
 
