@@ -25,15 +25,16 @@ const Checkbox = ({ checked, label, disabled, showLabel = true, ...rest }) => {
       <CustomCheckboxContainer
         checked={checked}
         disabled={disabled}
-        className={cc([{ checked, disabled }, 'checky-container'])}
+        className={cc([{ checked, disabled }, 'checkbox-container'])}
         {...rest}
       >
         <CustomCheckboxInput
           disabled={disabled}
           checked={checked}
           aria-label={!showLabel ? label : undefined}
+          {...rest}
         />
-        <span aria-hidden className="checky-span">
+        <span aria-hidden className="checkbox-span">
           <CheckboxIcon size="xs" />
         </span>
       </CustomCheckboxContainer>
@@ -46,7 +47,7 @@ Checkbox.propTypes = {
   /**
    * Setting any one of the 3 values here will turn component into controlled component.
    * */
-  checked: PropTypes.oneOf([true, false, 'mixed']),
+  checked: PropTypes.bool,
 
   /** Label used for `label` element */
   label: PropTypes.string.isRequired,

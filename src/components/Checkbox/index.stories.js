@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Checkbox from '.';
 
-const Template = (args) => <Checkbox {...args} />;
+const Template = (args) => {
+  const [checked, setChecked] = useState(false);
+  const onChange = (e) => {
+    setChecked(e.target.checked);
+  };
+  return <Checkbox onChange={onChange} checked={checked} {...args} />;
+};
 
 export const Primary = Template.bind({});
 Primary.args = {
-  name: 'spam',
+  value: 'spam',
   label: 'I agree to receive spam',
 };
 
@@ -13,74 +19,30 @@ export const managingCheckedState = Template.bind({});
 
 managingCheckedState.args = {
   defaultChecked: true,
-  name: 'default-checked',
+  value: 'default-checked',
   label: 'Checked by default',
 };
 
-managingCheckedState.parameters = {
-  docs: {
-    description: {
-      story:
-        '`Checkbox` will render as unchecked by default. Use the `defaultChecked` boolean prop to set the initial state to checked.',
-    },
-  },
-};
+export const preventingUserInteraction = Template.bind({});
 
-export const preventingUserInteraction = () => (
-  <>
-    <div>
-      <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
-    </div>
-    <div>
-      <Checkbox
-        disabled
-        defaultChecked
-        name="disabled-checked"
-        label="Disabled checked"
-      />
-    </div>
-  </>
-);
-
-preventingUserInteraction.parameters = {
-  docs: {
-    description: {
-      story:
-        'Use the `disabled` prop to prevent the user from changing the checked state of the checkbox.',
-    },
-  },
+preventingUserInteraction.args = {
+  disabled: true,
+  name: 'disabled checked',
+  label: 'Disabled: User cannot fire change event.',
 };
 
 export const checkboxWithoutLabel = Template.bind({});
 checkboxWithoutLabel.args = {
-  name: 'no-label',
+  value: 'no-label',
   label: "I don't have a label",
   showLabel: false,
 };
 
-checkboxWithoutLabel.parameters = {
-  docs: {
-    description: {
-      story:
-        'You can prevent the label from showing by setting `showLabel` to `false`. The value of the `label` prop will be used to set an ARIA attribute.',
-    },
-  },
-};
-
-export const indeterminateCheckboxes = Template.bind({});
-indeterminateCheckboxes.args = {
-  indeterminate: true,
-  name: 'notsureif',
-  label: 'Indeterminate checkbox',
-};
-
-indeterminateCheckboxes.parameters = {
-  docs: {
-    description: {
-      story:
-        'Passing the `indeterminate` boolean prop will set `indeterminate` attribute of the underlying input element and render the `CheckIndeterminate` icon when the checkbox is checked.',
-    },
-  },
+export const mixedCheckboxes = Template.bind({});
+mixedCheckboxes.args = {
+  checked: 'mixed',
+  value: 'notsureif',
+  label: 'Mixed checkbox',
 };
 
 export const readingTheValueOfACheckbox = Template.bind({});
@@ -100,7 +62,6 @@ readingTheValueOfACheckbox.parameters = {
 export default {
   component: Checkbox,
   title: 'components/Checkbox',
-  argTypes: { onChange: { action: 'onChange' } },
   parameters: {
     docs: {
       attributes: ['rest'],

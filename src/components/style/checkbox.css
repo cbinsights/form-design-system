@@ -6,10 +6,52 @@
  * Most styling for this component is handled by `checkable.css`
  */
 
+[data-reach-custom-checkbox-container] {
+  margin-right: 8px;
+}
+
 .fdsCheckbox input:focus + label svg {
   border-radius: var(--border-radius-default);
 }
 
 .fdsCheckbox input:indeterminate + label svg {
   fill: var(--color-blue);
+}
+
+.checkbox-span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%) scaleX(1) scaleY(1);
+}
+
+.checkbox-container {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--border-radius-default);
+}
+
+.checkbox-span .fds-icon {
+  display: block;
+}
+
+.checkbox-container.checked svg {
+  fill: var(--color-blue);
+}
+
+.checkbox-container.disabled + .label {
+  color: var(--font-color-hint);
+}
+
+.checkbox-container.disabled svg {
+  fill: var(--font-color-hint);
+}
+
+[data-reach-custom-checkbox-container]:focus-within,
+[data-reach-custom-checkbox-container] [data-focus] {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--border-color-focusRing);
+  transition: box-shadow 250ms var(--motion-easing-default);
 }
