@@ -4,27 +4,17 @@ exports[`Radio component matches snapshot (checked) 1`] = `
 <div
   className="fdsCheckable fdsRadio"
 >
-  <input
-    className="media--xs"
-    defaultChecked={true}
-    id="mock-universal-unique-identifier"
-    name="snapshot-radio"
-    type="radio"
-    value="test-value"
-  />
   <label
     className="flush--bottom"
-    htmlFor="mock-universal-unique-identifier"
   >
+    <input
+      className="media--xs"
+      name="snapshot-radio"
+      type="radio"
+      value="test-value"
+    />
     <span
       className="fdsCheckable-icon--checked"
-    >
-      <RadioFilledIcon
-        size="xs"
-      />
-    </span>
-    <span
-      className="fdsCheckable-icon--unchecked"
     >
       <RadioEmptyIcon
         size="xs"
@@ -43,26 +33,17 @@ exports[`Radio component matches snapshot (disabled) 1`] = `
 <div
   className="fdsCheckable--disabled fdsCheckable fdsRadio"
 >
-  <input
-    className="media--xs"
-    id="mock-universal-unique-identifier"
-    name="snapshot-radio"
-    type="radio"
-    value="test-value"
-  />
   <label
     className="flush--bottom"
-    htmlFor="mock-universal-unique-identifier"
   >
+    <input
+      className="media--xs"
+      name="snapshot-radio"
+      type="radio"
+      value="test-value"
+    />
     <span
       className="fdsCheckable-icon--checked"
-    >
-      <RadioFilledIcon
-        size="xs"
-      />
-    </span>
-    <span
-      className="fdsCheckable-icon--unchecked"
     >
       <RadioEmptyIcon
         size="xs"
@@ -81,26 +62,17 @@ exports[`Radio component matches snapshot 1`] = `
 <div
   className="fdsCheckable fdsRadio"
 >
-  <input
-    className="media--xs"
-    id="mock-universal-unique-identifier"
-    name="snapshot-radio"
-    type="radio"
-    value="test-value"
-  />
   <label
     className="flush--bottom"
-    htmlFor="mock-universal-unique-identifier"
   >
+    <input
+      className="media--xs"
+      name="snapshot-radio"
+      type="radio"
+      value="test-value"
+    />
     <span
       className="fdsCheckable-icon--checked"
-    >
-      <RadioFilledIcon
-        size="xs"
-      />
-    </span>
-    <span
-      className="fdsCheckable-icon--unchecked"
     >
       <RadioEmptyIcon
         size="xs"

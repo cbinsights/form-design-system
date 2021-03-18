@@ -3,11 +3,6 @@ import { shallow } from 'enzyme';
 
 import Radio from '.';
 
-// uuid will break snapshots, so we must mock it.
-jest.mock('uuid', () => ({
-  v4: jest.fn().mockReturnValue('mock-universal-unique-identifier'),
-}));
-
 describe('Radio component', () => {
   it('matches snapshot', () => {
     const wrapper = shallow(
@@ -25,12 +20,7 @@ describe('Radio component', () => {
 
   it('matches snapshot (checked)', () => {
     const wrapper = shallow(
-      <Radio
-        defaultChecked
-        label="Snapshot Label"
-        name="snapshot-radio"
-        value="test-value"
-      />
+      <Radio label="Snapshot Label" name="snapshot-radio" value="test-value" />
     );
     expect(wrapper).toMatchSnapshot();
   });
