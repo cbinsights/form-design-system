@@ -5,7 +5,7 @@ const StyleDictionary = require('style-dictionary').extend(
   path.resolve(REPO_ROOT, 'dictionary.config.json')
 );
 
-const filters = require('./filters');
+const { allFilters } = require('./filters');
 const transforms = require('./transforms');
 const formats = require('./formats');
 
@@ -16,7 +16,7 @@ const fancyLog = (msg) => {
   console.log(logHR);
 };
 
-filters.forEach((f) => {
+allFilters.forEach((f) => {
   console.log(`Registering filter ${f.name}`);
   StyleDictionary.registerFilter(f);
 });

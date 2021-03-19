@@ -90,6 +90,7 @@
         "attribute/cti",
         "attribute/color",
         "attribute/varNames",
+        "attribute/mqInfo",
         "color/css"
       ],
       "buildPath": "./lib/dictionary/js/",
