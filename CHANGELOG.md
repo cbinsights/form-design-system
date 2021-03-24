@@ -31,6 +31,11 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [11.3] Responsive Flex
+
+- Added `switchDirection` prop to Flex that allows flex direction to change based on
+  viewport size.
+
 ## [11.2] Button theme addition 
 
 - Added theme prop: `outlined--blue` to FDS Button
