@@ -5,16 +5,6 @@ import '@testing-library/jest-dom/extend-expect';
 import FlexItem from 'components/FlexItem';
 import Flex from '.';
 
-// Testing reference:
-//
-// classes                  | props that modify the classList
-// ------------------------ | --------------------------------
-// flex--align[Direction]   | align
-// flex--justify[Direction] | justify
-// flex--row,flex--column   | direction
-// flex--reverse            | reverse
-//
-
 const hasAllClasses = (container, classes) =>
   classes.every((c) => Object.values(container.firstChild.classList).includes(c));
 
