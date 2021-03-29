@@ -1,3 +1,5 @@
 *.hbs
 docs/
 lib/
+*.png
+*.svg
