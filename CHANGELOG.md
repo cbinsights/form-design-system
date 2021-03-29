@@ -31,6 +31,10 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [11.3] Icons update
+
+- Added `GraduateCap` shape to icons
+
 ## [11.2] Button theme addition 
 
 - Added theme prop: `outlined--blue` to FDS Button
