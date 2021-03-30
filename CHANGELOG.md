@@ -31,15 +31,19 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [11.4] violet bgColor class added
+
+- Added bgColor--violet
+
 ## [11.3] Icons update
 
 - Added `GraduateCap` shape to icons
 
-## [11.2] Button theme addition 
+## [11.2] Button theme addition
 
 - Added theme prop: `outlined--blue` to FDS Button
 
-## [11.1] Button theme addition 
+## [11.1] Button theme addition
 
 - Added theme prop: `orange` to FDS Button
 
