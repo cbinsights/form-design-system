@@ -41,3 +41,7 @@
 .bgColor--blue {
   background-color: var(--color-blue);
 }
+
+.bgColor--violet {
+  background-color: var(--color-violet);
+}
