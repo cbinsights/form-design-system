@@ -11,6 +11,7 @@ import {
 } from '@storybook/addon-docs/blocks';
 import ImportPath from 'util/storybook-docs/ImportPath';
 import Badges from 'util/storybook-docs/Badges';
+import Related from 'util/storybook-docs/Related';
 
 import '../src/components/style/index.css';
 
@@ -21,6 +22,7 @@ export const parameters = {
       <>
         <Title />
         <ImportPath />
+        <Related />
         <Subtitle />
         <Description />
         <Primary />

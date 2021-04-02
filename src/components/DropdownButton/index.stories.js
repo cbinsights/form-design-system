@@ -13,7 +13,9 @@ export default {
   title: 'components/DropdownButton',
   parameters: {
     docs: {
-      attributes: ['rest'],
+      fds: {
+        attributes: ['rest'],
+      },
     },
   },
 };

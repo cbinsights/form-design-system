@@ -246,7 +246,9 @@ export default {
   title: 'components/Button',
   parameters: {
     docs: {
-      attributes: ['rest'],
+      fds: {
+        attributes: ['rest'],
+      },
     },
   },
 };

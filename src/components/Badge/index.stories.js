@@ -65,6 +65,9 @@ export default {
   title: 'components/Badge',
   parameters: {
     docs: {
+      fds: {
+        related: ['CornerPosition'],
+      },
       description: {
         component:
           ' Renders a bubble with an optional label. The bubble will be centered within the parent container you place it in. To render a `Badge` in the top right corner of an element, use the `CornerPosition` component.',

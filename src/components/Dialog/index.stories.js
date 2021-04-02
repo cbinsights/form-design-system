@@ -112,6 +112,9 @@ export default {
   title: 'components/Dialog',
   parameters: {
     docs: {
+      fds: {
+        related: ['Prompt'],
+      },
       page: Layout,
       description: {
         component:

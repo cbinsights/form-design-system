@@ -103,7 +103,9 @@ export default {
   argTypes: { onChange: { action: 'onChange' } },
   parameters: {
     docs: {
-      attributes: ['rest'],
+      fds: {
+        attributes: ['rest'],
+      },
       description: {
         component: 'Uncontrolled custom checkbox component with optional label.',
       },
