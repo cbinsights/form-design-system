@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { DocsContext } from '@storybook/addon-docs/blocks';
+import { linkTo } from '@storybook/addon-links';
 
 export const Related = () => {
   const context = useContext(DocsContext);
@@ -9,17 +10,17 @@ export const Related = () => {
   if (!related) return null;
 
   return (
-    <div
-      style={{
-        borderRadius: '3px',
-        padding: '8px 16px',
-        fontSize: '15px',
-        fontWeight: 'bold',
-        marginBottom: '16px',
-        background: '#EEE',
-      }}
-    >
-      Related: {related.map((item) => item).join(', ')}
+    <div className="related">
+      Are you looking for:
+      <span> </span>
+      {related.map((item, index) => (
+        <>
+          <a key={index} className="relatedLink" onClick={linkTo(`components/${item}`)}>
+            {item}
+          </a>
+          {index !== related.length - 1 && ', '}
+        </>
+      ))}
     </div>
   );
 };
