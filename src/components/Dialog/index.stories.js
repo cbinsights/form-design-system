@@ -1,15 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-
-import {
-  Title,
-  Subtitle,
-  Description,
-  ArgsTable,
-  PRIMARY_STORY,
-} from '@storybook/addon-docs/blocks';
-
-import ImportPath from 'util/storybook-docs/ImportPath';
+import { NoStoriesLayout } from 'util/storybook-docs/Layout';
 
 import Button from 'components/Button';
 import Popover from 'components/Popover';
@@ -97,16 +88,6 @@ dialogFromPopover.argTypes = {
   disableFocusTrap: hidden,
 };
 
-const Layout = () => (
-  <>
-    <Title />
-    <ImportPath />
-    <Subtitle />
-    <Description />
-    <ArgsTable story={PRIMARY_STORY} />
-  </>
-);
-
 export default {
   component: Dialog,
   title: 'components/Dialog',
@@ -115,7 +96,7 @@ export default {
       fds: {
         related: ['Prompt'],
       },
-      page: Layout,
+      page: NoStoriesLayout,
       description: {
         component:
           'An accessible base modal for all other modals to be built upon (either your own, or other FDS modals like `<Prompt />`). **Please click "Canvas" to view examples**.',

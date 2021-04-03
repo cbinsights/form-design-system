@@ -1,15 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import ImportPath from 'util/storybook-docs/ImportPath';
+import { NoStoriesLayout } from 'util/storybook-docs/Layout';
 import Button from 'components/Button';
-
-import {
-  Title,
-  Subtitle,
-  Description,
-  ArgsTable,
-  PRIMARY_STORY,
-} from '@storybook/addon-docs/blocks';
 
 import Prompt from '.';
 
@@ -26,16 +18,6 @@ export const Primary = () => (
   />
 );
 
-const Layout = () => (
-  <>
-    <Title />
-    <ImportPath />
-    <Subtitle />
-    <Description />
-    <ArgsTable story={PRIMARY_STORY} />
-  </>
-);
-
 export default {
   component: Prompt,
   title: 'components/Prompt',
@@ -44,7 +26,7 @@ export default {
       fds: {
         related: ['Dialog'],
       },
-      page: Layout,
+      page: NoStoriesLayout,
       description: {
         component:
           'A confirm modal that displays a simple message, with 2 buttons to either confirm the action, or deny it. **Please click "Canvas" to view examples**.',
