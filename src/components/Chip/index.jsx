@@ -87,7 +87,7 @@ Chip.propTypes = {
    * - `import { Link } from 'react-router'`
    * - `Link={Link}`
    */
-  Link: PropTypes.func,
+  Link: PropTypes.elementType,
 };
 
 export default Chip;
