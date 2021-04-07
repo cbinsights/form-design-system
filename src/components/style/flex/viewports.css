@@ -1,4 +1,3 @@
-
 @media (--viewport-xs) {
   .xs\:flex--row {
     flex-direction: row;
@@ -123,4 +122,3 @@
     padding: var(--flexItem-padding-column);
   }
 }
-
