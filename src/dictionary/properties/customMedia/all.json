@@ -1,8 +1,8 @@
 {
   "customMedia": {
     "all": {
-      "xs": { "value": "(min-width: 320px)" },
-      "s": { "value": "(min-width: 480px)" },
+      "xs": { "value": "(min-width: 480px)" },
+      "s": { "value": "(min-width: 640px)" },
       "m": { "value": "(min-width: 768px)" },
       "l": { "value": "(min-width: 1024px)" },
       "xl": { "value": "(min-width: 1280px)" }

@@ -57,7 +57,7 @@ StackedButton.propTypes = {
    * - `import { Link } from 'react-router'`
    * - `Link={Link}`
    */
-  Link: PropTypes.func,
+  Link: PropTypes.elementType,
   /**
    * Controls whether the button is disabled or not. Will control the disabled
    * presentation of either an anchor or button rendered under the hood,

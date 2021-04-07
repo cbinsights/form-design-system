@@ -123,7 +123,7 @@ Avatar.propTypes = {
    * - `import { Link } from 'react-router'`
    * - `Link={Link}`
    */
-  Link: PropTypes.func,
+  Link: PropTypes.elementType,
   /** Adds an aria-label to the component (we add a default one for you, but it's preferred to add one if you can.) */
   'aria-label': PropTypes.string,
 };

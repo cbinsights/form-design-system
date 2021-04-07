@@ -11,6 +11,11 @@ export const DirectionPropMap = {
 };
 
 /**
+ * @description valid breakpoint values
+ */
+export const SwitchDirectionProps = ['xs', 's', 'm', 'l', 'xl'];
+
+/**
  * @description map of justify prop values to class names
  */
 export const JustifyPropMap = {
@@ -37,14 +42,21 @@ export const AlignPropMap = {
 const Flex = ({
   align = 'stretch',
   direction = 'row',
+  switchDirection: breakpoint,
   reverse,
   justify,
   noGutters,
   children,
 }) => {
   const classNames = cc([
+    'flex',
+    AlignPropMap[align],
+    DirectionPropMap[direction],
     {
-      [`flex--${direction}--reverse`]: reverse,
+      [`${breakpoint}:flex--${direction === 'row' ? 'column' : 'row'}`]: breakpoint,
+    },
+    {
+      'flex--reverse': reverse,
     },
     {
       [JustifyPropMap[justify]]: justify,
@@ -52,9 +64,6 @@ const Flex = ({
     {
       'flex--noGutters': noGutters,
     },
-    'flex',
-    AlignPropMap[align],
-    DirectionPropMap[direction],
   ]);
 
   return <div className={classNames}>{children}</div>;
@@ -63,6 +72,9 @@ const Flex = ({
 Flex.propTypes = {
   /** sets flex-direction (along with either 100% height or width) */
   direction: PropTypes.oneOf(Object.keys(DirectionPropMap)),
+
+  /** switches flex-direction at a given breakpoint */
+  switchDirection: PropTypes.oneOf(SwitchDirectionProps),
 
   /** sets standard justify-content */
   justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),

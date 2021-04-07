@@ -72,7 +72,7 @@ IconButton.propTypes = {
    * - `import { Link } from 'react-router'`
    * - `Link={Link}`
    */
-  Link: PropTypes.func,
+  Link: PropTypes.elementType,
   /** Controls active style UI of button */
   isActive: PropTypes.bool,
   /** Controls radius of button (slightly rounded square, or circle) */
