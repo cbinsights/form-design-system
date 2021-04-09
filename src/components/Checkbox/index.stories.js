@@ -18,7 +18,7 @@ Primary.args = {
 export const managingCheckedState = Template.bind({});
 
 managingCheckedState.args = {
-  defaultChecked: true,
+  checked: true,
   value: 'default-checked',
   label: 'Checked by default',
 };
