@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Flex component matches snapshot (default props) 1`] = `""`;
+exports[`Flex component matches snapshot (default props) 1`] = `
+<div
+  className="flexItem"
+>
+  <div />
+</div>
+`;
+
+exports[`Flex component matches snapshot (no child) 1`] = `""`;
 
 exports[`Flex component matches snapshot (set all props) 1`] = `""`;
