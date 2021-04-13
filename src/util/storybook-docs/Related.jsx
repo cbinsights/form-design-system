@@ -11,7 +11,7 @@ export const Related = () => {
 
   return (
     <div className="related">
-      Are you looking for:
+      Related:
       <span> </span>
       {related.map((item, index) => (
         <>
