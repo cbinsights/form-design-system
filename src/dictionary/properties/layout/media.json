@@ -3,7 +3,7 @@
     "media": {
       "xs": { "value": "18px" },
       "s": { "value": "24px" },
-      "m": { "value": "34px" },
+      "m": { "value": "32px" },
       "l": { "value": "50px" },
       "xl": { "value": "72px" }
     }

@@ -1,3 +1,10 @@
+:root {
+  --flexItem-padding-row: 0 0 0 var(--space-default);
+  --flexItem-padding-column: var(--space-default) 0 0 0;
+  --flexItem-flush-row: inherit inherit inherit 0;
+  --flexItem-flush-column: 0 inherit inherit inherit;
+}
+
 /* Flex parent */
 .flex {
   box-sizing: border-box;
@@ -5,13 +12,13 @@
   flex-wrap: nowrap;
 }
 
-/* direction */
+/* flex-direction rules */
 .flex--row {
   flex-direction: row;
   width: 100%;
 }
 
-.flex--row--reverse {
+.flex--row.flex--reverse {
   flex-direction: row-reverse;
 }
 
@@ -20,7 +27,7 @@
   height: 100%;
 }
 
-.flex--column--reverse {
+.flex--column.flex--reverse {
   flex-direction: column-reverse;
 }
 
@@ -76,12 +83,12 @@
 
 .flex--row > .flexItem {
   height: 100%;
-  padding-left: var(--space-default);
+  padding: var(--flexItem-padding-row);
 }
 
 .flex--column > .flexItem {
   width: 100%;
-  padding-top: var(--space-default);
+  padding: var(--flexItem-padding-column);
 }
 
 /* IE11 needs auto flex basis for column items */
@@ -128,15 +135,14 @@
 
 /* Gutters */
 /* stylelint-disable selector-max-specificity */
-.flex--row:not(.flex--row--reverse) > .flexItem:first-child,
-.flex--row--reverse > .flexItem:last-child {
-  padding-left: 0;
+.flex--row:not(.flex--reverse) > .flexItem:first-child,
+.flex--row.flex--reverse > .flexItem:last-child {
+  padding: var(--flexItem-flush-row);
 }
 
-.flex--column:not(.flex--column--reverse)
-  > .flexItem:first-child,
-.flex--column--reverse > .flexItem:last-child {
-  padding-top: 0;
+.flex--column:not(.flex--reverse) > .flexItem:first-child,
+.flex--column.flex--reverse > .flexItem:last-child {
+  padding: var(--flexItem-flush-column);
 }
 
 .flex--noGutters > .flexItem {
