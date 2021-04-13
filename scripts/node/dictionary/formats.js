@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { toHsla } = require('./util/color');
 const { DICTIONARY_ROOT } = require('../constants');
+const { excludeColor, excludeCustomMedia } = require('./filters.js');
 
 const lg = (msg) => {
   console.log(JSON.stringify(msg, null, 2));
@@ -69,9 +70,20 @@ const formatJsManifest = (dictionary) => {
     };
   });
 
+  // custom media gets a special `mqInfo` set of attributes
+  const mediaQueries = filterByCategory(dictionary.allProperties, 'customMedia').map((p) => {
+    const { mqInfo, category } = p.attributes;
+    return {
+      mqInfo,
+      value: p.value,
+      attributes: { category },
+    };
+  });
+
   // all other properties can just map to a simple varName/value/category arr
   const otherProperties = dictionary.allProperties
-    .filter((p) => p.attributes.category !== 'color')
+    .filter(excludeColor.matcher)
+    .filter(excludeCustomMedia.matcher)
     .map((p) => {
       const { varNames, category } = p.attributes;
       return {
@@ -83,6 +95,7 @@ const formatJsManifest = (dictionary) => {
 
   const result = {
     colors,
+    mediaQueries,
     layouts: filterByCategory(otherProperties, 'layout'),
     fonts: filterByCategory(otherProperties, 'font'),
     borders: filterByCategory(otherProperties, 'border'),

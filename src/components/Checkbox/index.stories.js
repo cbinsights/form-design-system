@@ -64,7 +64,9 @@ export default {
   title: 'components/Checkbox',
   parameters: {
     docs: {
-      attributes: ['rest'],
+      fds: {
+        attributes: ['rest'],
+      },
       description: {
         component: 'Uncontrolled custom checkbox component with optional label.',
       },

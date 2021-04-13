@@ -1,5 +1,6 @@
 const snakeCase = require('snake-case');
 const { getRgbComponents } = require('./util/color');
+const { isCustomMedia, excludeCustomMedia } = require('./filters');
 
 /**
  * @param {Object} prop style-dictionary prop
@@ -93,6 +94,19 @@ const toRgbComponents = (prop) => {
   return `${r}, ${g}, ${b}`;
 };
 
+/**
+ * @param {Object} prop style-dictionary prop
+ * @returns {Object} map of distributions to var names for this prop
+ */
+const toMqInfo = (prop) => ({
+  mqInfo: {
+    size: getCTI(prop).item,
+    usage: `@media (--viewport-${getCTI(prop).item})`,
+    query: prop.value,
+    description: `targets viewports ${getCTI(prop).item} and larger`,
+  },
+});
+
 // Custom transforms
 module.exports = [
   {
@@ -119,6 +133,13 @@ module.exports = [
     name: 'attribute/varNames',
     type: 'attribute',
     transformer: toVarNames,
+    matcher: excludeCustomMedia.matcher,
+  },
+  {
+    name: 'attribute/mqInfo',
+    type: 'attribute',
+    transformer: toMqInfo,
+    matcher: isCustomMedia.matcher,
   },
   {
     name: 'value/rgbComponents',

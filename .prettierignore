@@ -2,3 +2,5 @@
 docs/
 lib/
 *.snap
+*.png
+*.svg

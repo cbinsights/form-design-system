@@ -15,47 +15,53 @@ application itself. System messages come in many shapes and sizes; each type of 
 designed for a specific use case (see below). FDS provides React components for Toasts and
 Prompts. Banners and Marketing messages should be handled at the application level.
 
-Message type      | When to use it
------------------ | ------------------------
-**Banner**        | Information pretaining to site-wide impact (e.g. expired trial, scheduled downtime)
-**Toast**         | Provide feedback for user actions (e.g. progress, warnings, errors, success)
-**Prompt**        | Prompting for user feedback. Typically used to confirm a user action ("Are you sure?")
-**Marketing**     | e.g. Billy, Pendo, and other tools used for education, onboarding, or sales
-
+| Message type  | When to use it                                                                         |
+| ------------- | -------------------------------------------------------------------------------------- |
+| **Banner**    | Information pretaining to site-wide impact (e.g. expired trial, scheduled downtime)    |
+| **Toast**     | Provide feedback for user actions (e.g. progress, warnings, errors, success)           |
+| **Prompt**    | Prompting for user feedback. Typically used to confirm a user action ("Are you sure?") |
+| **Marketing** | e.g. Billy, Pendo, and other tools used for education, onboarding, or sales            |
 
 ## Banner
+
 <img src={imgBanner} alt="example Banner" style={{ maxWidth: '600px' }} />
 
-*Banners should only be used to convey important messages. If there is something
-actionable for the user, include a link or button in the banner.*
+_Banners should only be used to convey important messages. If there is something
+actionable for the user, include a link or button in the banner._
 
 ### Examples
+
 - Trial expired
 - Scheduled downtime
 - Ongoing incidents or other service disruptions
 
 ## Toast
+
 <img src={imgToast} alt="example Toast" style={{ maxWidth: '600px' }} />
 
-*Toasts animate up from the bottom left of the viewport. By default, a Toast notification
-will dismiss itself after about four seconds.*
+_Toasts animate up from the bottom left of the viewport. By default, a Toast notification
+will dismiss itself after about four seconds._
 
 ### Give users time to read
+
 - Keep toast messages short and concise
 - For longer messages, disable auto dismissal
 
 ### Provide an action
+
 - For error Toasts, include a retry action whenever possible
 - For success Toasts, provide a link whenever possible (e.g. "Go to Collection")
 - For progress Toasts, include a cancel action if possible
 
 ## Prompt
+
 <img src={imgPrompt} alt="example Prompt" style={{ maxWidth: '600px' }} />
 
-*A Prompt is a modal dialog that solicits user feedback. Prompts are typically used to
-confirm a destructive user action.*
+_A Prompt is a modal dialog that solicits user feedback. Prompts are typically used to
+confirm a destructive user action._
 
 ### Make choices clear to the user
+
 - The primary/confirmation action should always be the rightmost button
 - The primary/confirmation action should always use a high contrast button style
 - The secondary/cancel action should always use a low contrast button style
@@ -64,18 +70,18 @@ confirm a destructive user action.*
 ### Use simple, direct language
 
 ##### Put the most important information in the title:
+
 <CopyExample
   invalid="Are you sure you want to delete this Collection?"
   valid="This will permanently delete your Collection"
 />
 
 ##### Buttons should be direct, following UI copy guidelines:
-<CopyExample
-  invalid="Yes, delete Collection"
-  valid="Delete Collection"
-/>
+
+<CopyExample invalid="Yes, delete Collection" valid="Delete Collection" />
 
 ### Give the user a way out
+
 - **All user responses should close the prompt immediately**
 - Any Prompt dismissal action taken by the user should be interpreted as "cancel"
 - Feedback, such as error or success messages should be handled outside of the Prompt, in a

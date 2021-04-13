@@ -52,7 +52,12 @@ export default {
   argTypes: { onChange: { action: 'onChange' } },
   parameters: {
     docs: {
-      attributes: ['rest'],
+      fds: {
+        attributes: ['rest'],
+      },
+      description: {
+        component: 'Uncontrolled custom radio component with label.',
+      },
     },
   },
 };

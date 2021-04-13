@@ -13,7 +13,7 @@
 @import './rtg/slideIn';
 
 @import './buttonColors.css';
-@import './flex.css';
+@import './flex/index.css';
 @import './section.css';
 @import './inlineBlockList.css';
 @import './checkable.css';

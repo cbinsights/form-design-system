@@ -170,7 +170,9 @@ export default {
   title: 'components/IconButton',
   parameters: {
     docs: {
-      attributes: ['rest'],
+      fds: {
+        attributes: ['rest'],
+      },
     },
   },
 };

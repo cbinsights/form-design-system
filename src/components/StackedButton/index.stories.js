@@ -64,7 +64,9 @@ export default {
   title: 'components/StackedButton',
   parameters: {
     docs: {
-      attributes: ['rest'],
+      fds: {
+        attributes: ['rest'],
+      },
     },
   },
 };

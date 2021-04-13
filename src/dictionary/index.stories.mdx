@@ -8,6 +8,7 @@ import {
   fonts,
   borders,
   motions,
+  mediaQueries,
 } from '../../lib/dictionary/js/manifest.js';
 
 export const mostReadableConfig = (hexName) =>
@@ -153,13 +154,49 @@ export const mostReadableConfig = (hexName) =>
   />
 </Story>
 
-### Usage Instructions
+## Breakpoints
+
+<Story name="Breakpoints">
+  <TableLayout
+    headers={['SIZE', 'USAGE', 'MQ VALUE', 'DESCRIPTION']}
+    rows={mediaQueries.map(({ mqInfo }) => {
+      const { size, usage, query, description } = mqInfo;
+      return [size, usage, query, description];
+    })}
+  />
+</Story>
+
+## Usage Instructions
+
+### Design tokens
+
+**JS constants**
+
+To use JS constants from FDS, import `styleConstants` from dictionary:
 
 ```
-// JS
-import FDS from '@cbinsights/fds/lib/dictionary/js/styleConstants'
+import FDS from '@cbinsights/fds/lib/dictionary/js/styleConstants';
 <span style={{ color: FDS.COLOR_MINT }} />
+```
 
-// CSS
-.foo { color: var(--color-mint) }
+**CSS custom properties**
+
+FDS puts all CSS custom properties in the global scope. You may reference them directly:
+
+```
+.foo { color: var(--color-mint); }
+```
+
+### Custom media queries
+
+FDS provides custom media queries using the syntax from the ["custom media" stage 1 CSS proposal](https://cssdb.org/#custom-media-queries).
+In order to use these, your application must enable the custom media queries feature in `postcss-preset-env` (or
+use the latest version of `fe-config`).
+
+```
+import '@cbinsights/fds/lib/dictionary/customMedia.css';
+
+@media (--viewport-m) {
+  /* styles here will target viewports size 'm' and larger */
+}
 ```
