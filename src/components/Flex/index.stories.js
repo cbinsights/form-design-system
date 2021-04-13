@@ -12,19 +12,19 @@ export const Primary = (args) => (
       <FlexItem shrink>
         <img src="https://place-hold.it/40x40/a02385/fff&text=IMG" />
       </FlexItem>
-      <FlexItem shrink>
-        <h4>Look at this cool content</h4>
+      <FlexItem>
+        <p>This item grows to fill remaining space</p>
       </FlexItem>
       <FlexItem shrink>
-        <p className="color--link">edit</p>
+        <p className="type--link">edit</p>
       </FlexItem>
     </Flex>
   </div>
 );
 
-export const classicMediaBlock = (args) => (
+export const classicMediaBlock = () => (
   <div style={parentStyle} className="debug--flex">
-    <Flex {...args}>
+    <Flex>
       <FlexItem shrink>
         <img src="https://place-hold.it/40x40/a02385/fff&text=:)" />
       </FlexItem>
@@ -47,9 +47,9 @@ classicMediaBlock.parameters = {
   },
 };
 
-export const autoSizedContentArea = (args) => (
+export const autoSizedContentArea = () => (
   <div style={{ height: '300px' }} className="debug--flex">
-    <Flex direction="column" {...args}>
+    <Flex direction="column">
       <FlexItem shrink>
         <p>
           This is the header, in a <code>FlexItem</code> set to <code>shrink</code>
@@ -75,6 +75,31 @@ autoSizedContentArea.parameters = {
     description: {
       story:
         'Within a fixed height container, this `Flex` creates a fixed height header and footer which allows the content area to expand to fill the remaining space.',
+    },
+  },
+};
+
+export const responsiveFlex = () => (
+  <div className="debug--flex">
+    <Flex direction="column" switchDirection="m">
+      <FlexItem>
+        <p>Item 1</p>
+      </FlexItem>
+      <FlexItem>
+        <p>Item 2</p>
+      </FlexItem>
+      <FlexItem>
+        <p>Item 3</p>
+      </FlexItem>
+    </Flex>
+  </div>
+);
+
+responsiveFlex.parameters = {
+  docs: {
+    description: {
+      story:
+        'This `Flex` displays in column direction by default and uses the `switchDirection` prop to change flex direction when the viewport reaches the `m` breakpoint.',
     },
   },
 };

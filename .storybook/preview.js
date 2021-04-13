@@ -1,16 +1,6 @@
 import React from 'react';
 import FDS from 'lib/dictionary/js/styleConstants';
-import {
-  Title,
-  Subtitle,
-  Description,
-  Primary,
-  ArgsTable,
-  Stories,
-  PRIMARY_STORY,
-} from '@storybook/addon-docs/blocks';
-import ImportPath from 'util/storybook-docs/ImportPath';
-import Badges from 'util/storybook-docs/Badges';
+import Layout from 'util/storybook-docs/Layout';
 
 import '../src/components/style/index.css';
 
@@ -18,16 +8,7 @@ export const parameters = {
   previewTabs: { 'storybook/docs/panel': { index: -1 } },
   docs: {
     page: () => (
-      <>
-        <Title />
-        <ImportPath />
-        <Subtitle />
-        <Description />
-        <Primary />
-        <Badges />
-        <ArgsTable story={PRIMARY_STORY} />
-        <Stories />
-      </>
+      <Layout />
     ),
   },
   backgrounds: {

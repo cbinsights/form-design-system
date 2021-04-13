@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { DocsContext } from '@storybook/addon-docs/blocks';
 
-export const Badges = () => {
+export const Rest = () => {
   const context = useContext(DocsContext);
 
-  const isRest = context.parameters.docs.attributes;
+  const isRest = context.parameters.docs.fds?.attributes;
 
   if (!isRest) return null;
 
@@ -25,4 +25,4 @@ export const Badges = () => {
   );
 };
 
-export default Badges;
+export default Rest;

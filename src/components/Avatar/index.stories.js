@@ -129,7 +129,10 @@ export default {
   title: 'components/Avatar',
   parameters: {
     docs: {
-      attributes: ['rest'],
+      fds: {
+        attributes: ['rest'],
+        related: ['IconButton', 'StackedButton'],
+      },
       description: {
         component: '',
       },
