@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/bank</title>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/bank" fill="#404040">
+            <path d="M12,2.5 L3,6.5 L3,9 L5,9 L5,17 L7,17 L7,9 L9,9 L9,17 L11,17 L11,9 L13,9 L13,17 L15,17 L15,9 L17,9 L17,17 L19,17 L19,9 L21,9 L21,6.5 L12,2.5 Z M12,4.6894531 L17.201172,7 L6.7988281,7 L12,4.6894531 Z M3,19 L3,21 L21,21 L21,19 L3,19 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

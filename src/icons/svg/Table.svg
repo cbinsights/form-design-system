@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
     <title>icon/table</title>
-    <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/table" fill="#404040" fill-rule="nonzero">
             <path d="M3,3 L6,3 L6,6 L3,6 L3,3 Z M3,8 L6,8 L6,11 L3,11 L3,8 Z M3,13 L6,13 L6,16 L3,16 L3,13 Z M3,18 L6,18 L6,21 L3,21 L3,18 Z M8,3 L21,3 L21,6 L8,6 L8,3 Z M8,8 L21,8 L21,11 L8,11 L8,8 Z M8,13 L21,13 L21,16 L8,16 L8,13 Z M8,18 L21,18 L21,21 L8,21 L8,18 Z" id="table"></path>

@@ -1,82 +1,49 @@
-# `fds-icons`
+### High level explanation for FDS Icons
 
-Icon library for Form Design System
+- All of our FDS Icons reflect a set of Icons that CB Insights designers have in their system. We do not accept any other outside icons.
+- These Icons live in closed source Sketch file that can only be accessed by CB Insights employees.
 
-## Getting Started
+### Making requests to add new icons
 
-### Usage
+- In order for us to add an icon to FDS, it must be added to the UI Platform Icons set by a product designer here: https://app.abstract.com/projects/0b3bf318-e4a9-4319-8a9f-52f161094fb2/branches/master/files/D109C042-4BC3-434D-844A-6F3AA9E2881C
+- You (a CB Insights developer) can request a new icon be added to that file in this Slack channel: https://cbinsights.slack.com/archives/C01TDGQ0T47
+- Once doing that, you can request that we re-run our icon export script in this channel: https://cbinsights.slack.com/archives/CL99MD596
 
-#### As a React component (recommended)
+### Adding icons from UI Platform Icons Abstract to FDS Icons
 
-```
-import CloudIcon from '@cbinsights/fds/lib/icons/react/CloudIcon';
+Note: most of you will want to request help from the UI Platform team to regenerate the icons here: https://cbinsights.slack.com/archives/CL99MD596
 
-const UploadButton = () => {
-  <button>
-    <CloudIcon />
-    Upload yourself to the cloud
-  </button>
-};
-```
+To regenerate the icons, you must
 
-Every Icon component from `fds-icons` accepts the following props:
-
-| Prop        | Type                  | Default          | Description                 |
-| ----------- | --------------------- | ---------------- | --------------------------- |
-| `color`     | `String`              | `COLOR_CHARCOAL` | Color of `fill` for SVG     |
-| `size`      | `xs`,`s`,`m`,`l`,`xl` | `s`              | Standard media size of icon |
-| `className` | `String`              |                  | custom class name           |
-
-#### As raw SVG
-
-```
-import cloudSvg from '@cbinsights/fds/lib/icons/svg/Cloud.svg';
-```
-
-#### As raw PNG
-
-FDS provides PNGs scaled to 1x, 2x, 3x, and 4x.
-The base icon name is scaled to 1x. Specify higher res images with the `@scale` suffix:
-
-- `Cloud.png` (1x)
-- `Cloud@2x.png` (2x)
-
-```
-import cloudPng from '@cbinsights/fds/lib/icons/png/Cloud@2x.png';
-```
-
----
-
-## Development
-
-### Updating icons from a Sketch file
-
-This project uses `sketchtool` to export SVG icons directly from a sketch file provided by the design team. You must have [Sketch](https://www.sketchapp.com/) installed in order to run the export command.
-
-#### 1) Setting up `sketchtool`
-
-If you don't already have `sketchtool` on your system, follow these steps:
-
-1. Install [Sketch](https://www.sketchapp.com/)
-2. Add the `sketchtool` binary to your PATH:
+1 Be a CB Insights employee and request access to this
+[Abstract Project](https://app.goabstract.com/organizations/0bd48624-8826-4447-a082-1957932b89b8/projects) 2. Ensure you have [Sketch](https://www.sketchapp.com/) installed. 3. Ensure the `sketchtool` binary is in your PATH:
 
 ```bash
+## bash
 export SKETCHTOOL_PATH="/Applications/Sketch.app/Contents/Resources/sketchtool/bin"
 export PATH=$PATH:SKETCHTOOL_PATH
 ```
 
-#### 2) Getting the icons sketch file
+```bash
+## fish
+set -U /Applications/Sketch.app/Contents/Resources/sketchtool/bin $fish_user_paths
+```
 
-Our design team is now using [Abstract](https://app.goabstract.com/organizations/0bd48624-8826-4447-a082-1957932b89b8/projects)
-to version Sketch files for the design system. To pull down the latest `Icons.sketch` file...
+4. Ensure you have the [Abstract Desktop App](https://app.abstract.com/download)
+5. In Abstract Desktop app in the sidebar, select **FDS** --> **Master** in the sidebar
+6. Click on `Files` in the main screen
+7. Right click on the UI Platform Icons.sketch file
+8. Click "Export" and save it somewhere easy to remember. You'll need the path to this file in the next step.
+9. Run the following in the root of FDS:
 
-1. Ask the design team for credentials to [our project](https://app.goabstract.com/organizations/0bd48624-8826-4447-a082-1957932b89b8/projects)
-2. Download the Abstract desktop app
-3. In the desktop app, navigate to "CB Insights Design System"
-4. Select `Master` in the sidebar
-5. Select "Export files" from the kebab menu
+```
+yarn icons:export <path to sketch file>
+```
 
-![export files menu selection](./readme-img-abstract.png)
+9. In general (if everything seems fine) you'll commit all the new files that were generated.
+10. You can view icons in storybook to verify your icons were generated correctly.
+
+Note: Icons follow general SEMVER rules (adding an icon is a minor update, removing an icon is a major update).
 
 ##### Known issues
 
@@ -84,30 +51,3 @@ to version Sketch files for the design system. To pull down the latest `Icons.sk
 - Icon artboards should be named with prefix `icon/`
 - No two icons should be named the same thing. The export script will helpfully
   throw an error if any duplicates are detected.
-
-#### 3) Running the export
-
-This project uses a node script to automate `sketchtool` commands.
-Run it **from the root of the `form-design-system` repo**.
-
-```
-yarn icons:export <path to sketch file>
-```
-
-This will export SVG files to `packages/fds-icons/src/`.
-
-#### Verifying changes
-
-A good way to verify icons exported as expected is to run a build on the icons package and check the regenerated docs.
-
-```
-yarn build:icons
-```
-
-Once the build is complete you can open `docs/fds-icons/index.html` in a browser to see
-changes/additions to the icon set.
-
-#### 4) Bump the version number
-
-When adding or changing icons, please bump the **minor** version number for FDS. When removing
-icons, bump the **major** version number.
