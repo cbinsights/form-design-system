@@ -15,18 +15,19 @@ Note: most of you will want to request help from the UI Platform team to regener
 
 To regenerate the icons, you must
 
-1 Be a CB Insights employee and request access to this
-[Abstract Project](https://app.goabstract.com/organizations/0bd48624-8826-4447-a082-1957932b89b8/projects) 2. Ensure you have [Sketch](https://www.sketchapp.com/) installed. 3. Ensure the `sketchtool` binary is in your PATH:
+1. Be a CB Insights employee and request access to this
+   [Abstract Project](https://app.goabstract.com/organizations/0bd48624-8826-4447-a082-1957932b89b8/projects) 2. Ensure you have [Sketch](https://www.sketchapp.com/) installed. 3. Ensure the `sketchtool` binary is in your PATH:
 
 ```bash
-## bash
+## for bash
 export SKETCHTOOL_PATH="/Applications/Sketch.app/Contents/Resources/sketchtool/bin"
 export PATH=$PATH:SKETCHTOOL_PATH
+## for fish
+set -U /Applications/Sketch.app/Contents/Resources/sketchtool/bin $fish_user_paths
 ```
 
 ```bash
-## fish
-set -U /Applications/Sketch.app/Contents/Resources/sketchtool/bin $fish_user_paths
+
 ```
 
 4. Ensure you have the [Abstract Desktop App](https://app.abstract.com/download)
