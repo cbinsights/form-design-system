@@ -109,9 +109,11 @@ const Dialog = ({
               </div>
             </React.Fragment>
           )}
-          <div className="dialog-content" ref={contentEl}>
-            <div className="padding--all bgColor--white">{content}</div>
-          </div>
+          {content && (
+            <div className="dialog-content" ref={contentEl}>
+              <div className="padding--all bgColor--white">{content}</div>
+            </div>
+          )}
           {footerContent && (
             <div className="dialog-footer">
               <div
