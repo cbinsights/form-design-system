@@ -3,31 +3,33 @@
 - All of our FDS Icons reflect a set of Icons that CB Insights designers have in their system. We do not accept any other outside icons.
 - These Icons live in closed source Sketch file that can only be accessed by CB Insights employees.
 
-### Making requests to add new icons
+### Making requests to add new icons to Abstract
 
 - In order for us to add an icon to FDS, it must be added to the UI Platform Icons set by a product designer here: https://app.abstract.com/projects/0b3bf318-e4a9-4319-8a9f-52f161094fb2/branches/master/files/D109C042-4BC3-434D-844A-6F3AA9E2881C
 - You (a CB Insights developer) can request a new icon be added to that file in this Slack channel: https://cbinsights.slack.com/archives/C01TDGQ0T47
-- Once doing that, you can request that we re-run our icon export script in this channel: https://cbinsights.slack.com/archives/CL99MD596
 
-### Adding icons from UI Platform Icons Abstract to FDS Icons
+#### Requesting icons be to FDS (for CB Insights employees)
 
-Note: most of you will want to request help from the UI Platform team to regenerate the icons here: https://cbinsights.slack.com/archives/CL99MD596
+Most of you will want to request the icons be added to FDS rather than doing it yourselves:
+
+- Verify that the icon you need is in Abstract first: https://app.abstract.com/projects/0b3bf318-e4a9-4319-8a9f-52f161094fb2/branches/master/files/D109C042-4BC3-434D-844A-6F3AA9E2881C
+- Request that we re-run our icon export script in this channel: https://cbinsights.slack.com/archives/CL99MD596
+
+#### Actually adding Icons to FDS
 
 To regenerate the icons, you must
 
 1. Be a CB Insights employee and request access to this
-   [Abstract Project](https://app.goabstract.com/organizations/0bd48624-8826-4447-a082-1957932b89b8/projects) 2. Ensure you have [Sketch](https://www.sketchapp.com/) installed. 3. Ensure the `sketchtool` binary is in your PATH:
+   [Abstract Project](https://app.goabstract.com/organizations/0bd48624-8826-4447-a082-1957932b89b8/projects)
+2. Ensure you have [Sketch](https://www.sketchapp.com/) installed.
+3. Ensure the `sketchtool` binary is in your PATH:
 
 ```bash
-## for bash
+## bash
 export SKETCHTOOL_PATH="/Applications/Sketch.app/Contents/Resources/sketchtool/bin"
 export PATH=$PATH:SKETCHTOOL_PATH
-## for fish
+## fish
 set -U /Applications/Sketch.app/Contents/Resources/sketchtool/bin $fish_user_paths
-```
-
-```bash
-
 ```
 
 4. Ensure you have the [Abstract Desktop App](https://app.abstract.com/download)
