@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
     <title>icon/home</title>
-    <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/home" fill="#404040">
             <path d="M12,2 L1,12 L4,12 L4,21 L11,21 L11,15 L13,15 L13,21 L20,21 L20,12 L23,12 L12,2 Z M12,4.7910156 L18,10.191406 L18,11 L18,19 L15,19 L15,13 L9,13 L9,19 L6,19 L6,10.191406 L12,4.7910156 Z" id="Home"></path>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
     <title>icon/line_graph</title>
-    <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/line_graph" fill="#404040">
             <path d="M3,3 L3,19 C3,20.093063 3.9069372,21 5,21 L21,21 L21,19 L5,19 L5,3 L3,3 Z M19.320312,6.3144531 L14.988281,10.605469 L11.994141,7.7421875 L6.3027344,13.283203 L7.6972656,14.716797 L12.005859,10.521484 L15.011719,13.394531 L20.728516,7.734375 L19.320312,6.3144531 Z" id="LineGraph"></path>

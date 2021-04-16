@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
     <title>icon/hamburger_bars</title>
-    <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/hamburger_bars" fill="#404040">
             <path d="M2,5 L2,7 L22,7 L22,5 L2,5 Z M2,11 L2,13 L22,13 L22,11 L2,11 Z M2,17 L2,19 L22,19 L22,17 L2,17 Z" id="HamburgerBars"></path>
