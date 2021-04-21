@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
     <title>icon/filter</title>
-    <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/filter" fill="#404040">
             <path d="M8,17 L16,17 L16,19 L8,19 L8,17 Z M6,13 L18,13 L18,15 L6,15 L6,13 Z M4,9 L20,9 L20,11 L4,11 L4,9 Z M2,5 L22,5 L22,7 L2,7 L2,5 Z" id="filter"></path>

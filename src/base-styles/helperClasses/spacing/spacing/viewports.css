@@ -1,0 +1,1063 @@
+@media (--viewport-s) {
+  .s\:margin--left--xs,
+  .s\:margin--x--xs,
+  .s\:margin--all--xs {
+    margin-left: var(--space-xs);
+  }
+
+  .s\:margin--left--s,
+  .s\:margin--x--s,
+  .s\:margin--all--s {
+    margin-left: var(--space-s);
+  }
+
+  .s\:margin--left,
+  .s\:margin--left--m,
+  .s\:margin--x--m,
+  .s\:margin--all,
+  .s\:margin--all--m,
+  .s\:margin--x {
+    margin-left: var(--space-default);
+  }
+
+  .s\:margin--left--l,
+  .s\:margin--x--l,
+  .s\:margin--all--l {
+    margin-left: var(--space-l);
+  }
+
+  .s\:margin--left--xl,
+  .s\:margin--x--xl,
+  .s\:margin--all--xl {
+    margin-left: var(--space-xl);
+  }
+
+  .s\:margin--right--xs,
+  .s\:margin--x--xs,
+  .s\:margin--all--xs {
+    margin-right: var(--space-xs);
+  }
+
+  .s\:margin--right--s,
+  .s\:margin--x--s,
+  .s\:margin--all--s {
+    margin-right: var(--space-s);
+  }
+
+  .s\:margin--right,
+  .s\:margin--right--m,
+  .s\:margin--x--m,
+  .s\:margin--all,
+  .s\:margin--all--m,
+  .s\:margin--x {
+    margin-right: var(--space-default);
+  }
+
+  .s\:margin--right--l,
+  .s\:margin--x--l,
+  .s\:margin--all--l {
+    margin-right: var(--space-l);
+  }
+
+  .s\:margin--right--xl,
+  .s\:margin--x--xl,
+  .s\:margin--all--xl {
+    margin-right: var(--space-xl);
+  }
+
+  .s\:margin--bottom--xs,
+  .s\:margin--y--xs,
+  .s\:margin--all--xs {
+    margin-bottom: var(--space-xs);
+  }
+
+  .s\:margin--bottom--s,
+  .s\:margin--y--s,
+  .s\:margin--all--s {
+    margin-bottom: var(--space-s);
+  }
+
+  .s\:margin--bottom,
+  .s\:margin--bottom--m,
+  .s\:margin--y--m,
+  .s\:margin--all,
+  .s\:margin--all--m,
+  .s\:margin--y {
+    margin-bottom: var(--space-default);
+  }
+
+  .s\:margin--bottom--l,
+  .s\:margin--y--l,
+  .s\:margin--all--l {
+    margin-bottom: var(--space-l);
+  }
+
+  .s\:margin--bottom--xl,
+  .s\:margin--y--xl,
+  .s\:margin--all--xl {
+    margin-bottom: var(--space-xl);
+  }
+
+  .s\:margin--top--xs,
+  .s\:margin--y--xs,
+  .s\:margin--all--xs {
+    margin-top: var(--space-xs);
+  }
+
+  .s\:margin--top--s,
+  .s\:margin--y--s,
+  .s\:margin--all--s {
+    margin-top: var(--space-s);
+  }
+
+  .s\:margin--top,
+  .s\:margin--top--m,
+  .s\:margin--y--m,
+  .s\:margin--all,
+  .s\:margin--all--m,
+  .s\:margin--y {
+    margin-top: var(--space-default);
+  }
+
+  .s\:margin--top--l,
+  .s\:margin--y--l,
+  .s\:margin--all--l {
+    margin-top: var(--space-l);
+  }
+
+  .s\:margin--top--xl,
+  .s\:margin--y--xl,
+  .s\:margin--all--xl {
+    margin-top: var(--space-xl);
+  }
+
+  .s\:padding--left--xs,
+  .s\:padding--x--xs,
+  .s\:padding--all--xs {
+    padding-left: var(--space-xs);
+  }
+
+  .s\:padding--left--s,
+  .s\:padding--x--s,
+  .s\:padding--all--s {
+    padding-left: var(--space-s);
+  }
+
+  .s\:padding--left,
+  .s\:padding--left--m,
+  .s\:padding--x--m,
+  .s\:padding--all,
+  .s\:padding--all--m,
+  .s\:padding--x {
+    padding-left: var(--space-default);
+  }
+
+  .s\:padding--left--l,
+  .s\:padding--x--l,
+  .s\:padding--all--l {
+    padding-left: var(--space-l);
+  }
+
+  .s\:padding--left--xl,
+  .s\:padding--x--xl,
+  .s\:padding--all--xl {
+    padding-left: var(--space-xl);
+  }
+
+  .s\:padding--right--xs,
+  .s\:padding--x--xs,
+  .s\:padding--all--xs {
+    padding-right: var(--space-xs);
+  }
+
+  .s\:padding--right--s,
+  .s\:padding--x--s,
+  .s\:padding--all--s {
+    padding-right: var(--space-s);
+  }
+
+  .s\:padding--right,
+  .s\:padding--right--m,
+  .s\:padding--x--m,
+  .s\:padding--all,
+  .s\:padding--all--m,
+  .s\:padding--x {
+    padding-right: var(--space-default);
+  }
+
+  .s\:padding--right--l,
+  .s\:padding--x--l,
+  .s\:padding--all--l {
+    padding-right: var(--space-l);
+  }
+
+  .s\:padding--right--xl,
+  .s\:padding--x--xl,
+  .s\:padding--all--xl {
+    padding-right: var(--space-xl);
+  }
+
+  .s\:padding--bottom--xs,
+  .s\:padding--y--xs,
+  .s\:padding--all--xs {
+    padding-bottom: var(--space-xs);
+  }
+
+  .s\:padding--bottom--s,
+  .s\:padding--y--s,
+  .s\:padding--all--s {
+    padding-bottom: var(--space-s);
+  }
+
+  .s\:padding--bottom,
+  .s\:padding--bottom--m,
+  .s\:padding--y--m,
+  .s\:padding--all,
+  .s\:padding--all--m,
+  .s\:padding--y {
+    padding-bottom: var(--space-default);
+  }
+
+  .s\:padding--bottom--l,
+  .s\:padding--y--l,
+  .s\:padding--all--l {
+    padding-bottom: var(--space-l);
+  }
+
+  .s\:padding--bottom--xl,
+  .s\:padding--y--xl,
+  .s\:padding--all--xl {
+    padding-bottom: var(--space-xl);
+  }
+
+  .s\:padding--top--xs,
+  .s\:padding--y--xs,
+  .s\:padding--all--xs {
+    padding-top: var(--space-xs);
+  }
+
+  .s\:padding--top--s,
+  .s\:padding--y--s,
+  .s\:padding--all--s {
+    padding-top: var(--space-s);
+  }
+
+  .s\:padding--top,
+  .s\:padding--top--m,
+  .s\:padding--y--m,
+  .s\:padding--all,
+  .s\:padding--all--m,
+  .s\:padding--y {
+    padding-top: var(--space-default);
+  }
+
+  .s\:padding--top--l,
+  .s\:padding--y--l,
+  .s\:padding--all--l {
+    padding-top: var(--space-l);
+  }
+
+  .s\:padding--top--xl,
+  .s\:padding--y--xl,
+  .s\:padding--all--xl {
+    padding-top: var(--space-xl);
+  }
+}
+
+@media (--viewport-m) {
+  .m\:margin--left--xs,
+  .m\:margin--x--xs,
+  .m\:margin--all--xs {
+    margin-left: var(--space-xs);
+  }
+
+  .m\:margin--left--s,
+  .m\:margin--x--s,
+  .m\:margin--all--s {
+    margin-left: var(--space-s);
+  }
+
+  .m\:margin--left,
+  .m\:margin--left--m,
+  .m\:margin--x--m,
+  .m\:margin--all,
+  .m\:margin--all--m,
+  .m\:margin--x {
+    margin-left: var(--space-default);
+  }
+
+  .m\:margin--left--l,
+  .m\:margin--x--l,
+  .m\:margin--all--l {
+    margin-left: var(--space-l);
+  }
+
+  .m\:margin--left--xl,
+  .m\:margin--x--xl,
+  .m\:margin--all--xl {
+    margin-left: var(--space-xl);
+  }
+
+  .m\:margin--right--xs,
+  .m\:margin--x--xs,
+  .m\:margin--all--xs {
+    margin-right: var(--space-xs);
+  }
+
+  .m\:margin--right--s,
+  .m\:margin--x--s,
+  .m\:margin--all--s {
+    margin-right: var(--space-s);
+  }
+
+  .m\:margin--right,
+  .m\:margin--right--m,
+  .m\:margin--x--m,
+  .m\:margin--all,
+  .m\:margin--all--m,
+  .m\:margin--x {
+    margin-right: var(--space-default);
+  }
+
+  .m\:margin--right--l,
+  .m\:margin--x--l,
+  .m\:margin--all--l {
+    margin-right: var(--space-l);
+  }
+
+  .m\:margin--right--xl,
+  .m\:margin--x--xl,
+  .m\:margin--all--xl {
+    margin-right: var(--space-xl);
+  }
+
+  .m\:margin--bottom--xs,
+  .m\:margin--y--xs,
+  .m\:margin--all--xs {
+    margin-bottom: var(--space-xs);
+  }
+
+  .m\:margin--bottom--s,
+  .m\:margin--y--s,
+  .m\:margin--all--s {
+    margin-bottom: var(--space-s);
+  }
+
+  .m\:margin--bottom,
+  .m\:margin--bottom--m,
+  .m\:margin--y--m,
+  .m\:margin--all,
+  .m\:margin--all--m,
+  .m\:margin--y {
+    margin-bottom: var(--space-default);
+  }
+
+  .m\:margin--bottom--l,
+  .m\:margin--y--l,
+  .m\:margin--all--l {
+    margin-bottom: var(--space-l);
+  }
+
+  .m\:margin--bottom--xl,
+  .m\:margin--y--xl,
+  .m\:margin--all--xl {
+    margin-bottom: var(--space-xl);
+  }
+
+  .m\:margin--top--xs,
+  .m\:margin--y--xs,
+  .m\:margin--all--xs {
+    margin-top: var(--space-xs);
+  }
+
+  .m\:margin--top--s,
+  .m\:margin--y--s,
+  .m\:margin--all--s {
+    margin-top: var(--space-s);
+  }
+
+  .m\:margin--top,
+  .m\:margin--top--m,
+  .m\:margin--y--m,
+  .m\:margin--all,
+  .m\:margin--all--m,
+  .m\:margin--y {
+    margin-top: var(--space-default);
+  }
+
+  .m\:margin--top--l,
+  .m\:margin--y--l,
+  .m\:margin--all--l {
+    margin-top: var(--space-l);
+  }
+
+  .m\:margin--top--xl,
+  .m\:margin--y--xl,
+  .m\:margin--all--xl {
+    margin-top: var(--space-xl);
+  }
+
+  .m\:padding--left--xs,
+  .m\:padding--x--xs,
+  .m\:padding--all--xs {
+    padding-left: var(--space-xs);
+  }
+
+  .m\:padding--left--s,
+  .m\:padding--x--s,
+  .m\:padding--all--s {
+    padding-left: var(--space-s);
+  }
+
+  .m\:padding--left,
+  .m\:padding--left--m,
+  .m\:padding--x--m,
+  .m\:padding--all,
+  .m\:padding--all--m,
+  .m\:padding--x {
+    padding-left: var(--space-default);
+  }
+
+  .m\:padding--left--l,
+  .m\:padding--x--l,
+  .m\:padding--all--l {
+    padding-left: var(--space-l);
+  }
+
+  .m\:padding--left--xl,
+  .m\:padding--x--xl,
+  .m\:padding--all--xl {
+    padding-left: var(--space-xl);
+  }
+
+  .m\:padding--right--xs,
+  .m\:padding--x--xs,
+  .m\:padding--all--xs {
+    padding-right: var(--space-xs);
+  }
+
+  .m\:padding--right--s,
+  .m\:padding--x--s,
+  .m\:padding--all--s {
+    padding-right: var(--space-s);
+  }
+
+  .m\:padding--right,
+  .m\:padding--right--m,
+  .m\:padding--x--m,
+  .m\:padding--all,
+  .m\:padding--all--m,
+  .m\:padding--x {
+    padding-right: var(--space-default);
+  }
+
+  .m\:padding--right--l,
+  .m\:padding--x--l,
+  .m\:padding--all--l {
+    padding-right: var(--space-l);
+  }
+
+  .m\:padding--right--xl,
+  .m\:padding--x--xl,
+  .m\:padding--all--xl {
+    padding-right: var(--space-xl);
+  }
+
+  .m\:padding--bottom--xs,
+  .m\:padding--y--xs,
+  .m\:padding--all--xs {
+    padding-bottom: var(--space-xs);
+  }
+
+  .m\:padding--bottom--s,
+  .m\:padding--y--s,
+  .m\:padding--all--s {
+    padding-bottom: var(--space-s);
+  }
+
+  .m\:padding--bottom,
+  .m\:padding--bottom--m,
+  .m\:padding--y--m,
+  .m\:padding--all,
+  .m\:padding--all--m,
+  .m\:padding--y {
+    padding-bottom: var(--space-default);
+  }
+
+  .m\:padding--bottom--l,
+  .m\:padding--y--l,
+  .m\:padding--all--l {
+    padding-bottom: var(--space-l);
+  }
+
+  .m\:padding--bottom--xl,
+  .m\:padding--y--xl,
+  .m\:padding--all--xl {
+    padding-bottom: var(--space-xl);
+  }
+
+  .m\:padding--top--xs,
+  .m\:padding--y--xs,
+  .m\:padding--all--xs {
+    padding-top: var(--space-xs);
+  }
+
+  .m\:padding--top--s,
+  .m\:padding--y--s,
+  .m\:padding--all--s {
+    padding-top: var(--space-s);
+  }
+
+  .m\:padding--top,
+  .m\:padding--top--m,
+  .m\:padding--y--m,
+  .m\:padding--all,
+  .m\:padding--all--m,
+  .m\:padding--y {
+    padding-top: var(--space-default);
+  }
+
+  .m\:padding--top--l,
+  .m\:padding--y--l,
+  .m\:padding--all--l {
+    padding-top: var(--space-l);
+  }
+
+  .m\:padding--top--xl,
+  .m\:padding--y--xl,
+  .m\:padding--all--xl {
+    padding-top: var(--space-xl);
+  }
+}
+
+@media (--viewport-l) {
+  .l\:margin--left--xs,
+  .l\:margin--x--xs,
+  .l\:margin--all--xs {
+    margin-left: var(--space-xs);
+  }
+
+  .l\:margin--left--s,
+  .l\:margin--x--s,
+  .l\:margin--all--s {
+    margin-left: var(--space-s);
+  }
+
+  .l\:margin--left,
+  .l\:margin--left--m,
+  .l\:margin--x--m,
+  .l\:margin--all,
+  .l\:margin--all--m,
+  .l\:margin--x {
+    margin-left: var(--space-default);
+  }
+
+  .l\:margin--left--l,
+  .l\:margin--x--l,
+  .l\:margin--all--l {
+    margin-left: var(--space-l);
+  }
+
+  .l\:margin--left--xl,
+  .l\:margin--x--xl,
+  .l\:margin--all--xl {
+    margin-left: var(--space-xl);
+  }
+
+  .l\:margin--right--xs,
+  .l\:margin--x--xs,
+  .l\:margin--all--xs {
+    margin-right: var(--space-xs);
+  }
+
+  .l\:margin--right--s,
+  .l\:margin--x--s,
+  .l\:margin--all--s {
+    margin-right: var(--space-s);
+  }
+
+  .l\:margin--right,
+  .l\:margin--right--m,
+  .l\:margin--x--m,
+  .l\:margin--all,
+  .l\:margin--all--m,
+  .l\:margin--x {
+    margin-right: var(--space-default);
+  }
+
+  .l\:margin--right--l,
+  .l\:margin--x--l,
+  .l\:margin--all--l {
+    margin-right: var(--space-l);
+  }
+
+  .l\:margin--right--xl,
+  .l\:margin--x--xl,
+  .l\:margin--all--xl {
+    margin-right: var(--space-xl);
+  }
+
+  .l\:margin--bottom--xs,
+  .l\:margin--y--xs,
+  .l\:margin--all--xs {
+    margin-bottom: var(--space-xs);
+  }
+
+  .l\:margin--bottom--s,
+  .l\:margin--y--s,
+  .l\:margin--all--s {
+    margin-bottom: var(--space-s);
+  }
+
+  .l\:margin--bottom,
+  .l\:margin--bottom--m,
+  .l\:margin--y--m,
+  .l\:margin--all,
+  .l\:margin--all--m,
+  .l\:margin--y {
+    margin-bottom: var(--space-default);
+  }
+
+  .l\:margin--bottom--l,
+  .l\:margin--y--l,
+  .l\:margin--all--l {
+    margin-bottom: var(--space-l);
+  }
+
+  .l\:margin--bottom--xl,
+  .l\:margin--y--xl,
+  .l\:margin--all--xl {
+    margin-bottom: var(--space-xl);
+  }
+
+  .l\:margin--top--xs,
+  .l\:margin--y--xs,
+  .l\:margin--all--xs {
+    margin-top: var(--space-xs);
+  }
+
+  .l\:margin--top--s,
+  .l\:margin--y--s,
+  .l\:margin--all--s {
+    margin-top: var(--space-s);
+  }
+
+  .l\:margin--top,
+  .l\:margin--top--m,
+  .l\:margin--y--m,
+  .l\:margin--all,
+  .l\:margin--all--m,
+  .l\:margin--y {
+    margin-top: var(--space-default);
+  }
+
+  .l\:margin--top--l,
+  .l\:margin--y--l,
+  .l\:margin--all--l {
+    margin-top: var(--space-l);
+  }
+
+  .l\:margin--top--xl,
+  .l\:margin--y--xl,
+  .l\:margin--all--xl {
+    margin-top: var(--space-xl);
+  }
+
+  .l\:padding--left--xs,
+  .l\:padding--x--xs,
+  .l\:padding--all--xs {
+    padding-left: var(--space-xs);
+  }
+
+  .l\:padding--left--s,
+  .l\:padding--x--s,
+  .l\:padding--all--s {
+    padding-left: var(--space-s);
+  }
+
+  .l\:padding--left,
+  .l\:padding--left--m,
+  .l\:padding--x--m,
+  .l\:padding--all,
+  .l\:padding--all--m,
+  .l\:padding--x {
+    padding-left: var(--space-default);
+  }
+
+  .l\:padding--left--l,
+  .l\:padding--x--l,
+  .l\:padding--all--l {
+    padding-left: var(--space-l);
+  }
+
+  .l\:padding--left--xl,
+  .l\:padding--x--xl,
+  .l\:padding--all--xl {
+    padding-left: var(--space-xl);
+  }
+
+  .l\:padding--right--xs,
+  .l\:padding--x--xs,
+  .l\:padding--all--xs {
+    padding-right: var(--space-xs);
+  }
+
+  .l\:padding--right--s,
+  .l\:padding--x--s,
+  .l\:padding--all--s {
+    padding-right: var(--space-s);
+  }
+
+  .l\:padding--right,
+  .l\:padding--right--m,
+  .l\:padding--x--m,
+  .l\:padding--all,
+  .l\:padding--all--m,
+  .l\:padding--x {
+    padding-right: var(--space-default);
+  }
+
+  .l\:padding--right--l,
+  .l\:padding--x--l,
+  .l\:padding--all--l {
+    padding-right: var(--space-l);
+  }
+
+  .l\:padding--right--xl,
+  .l\:padding--x--xl,
+  .l\:padding--all--xl {
+    padding-right: var(--space-xl);
+  }
+
+  .l\:padding--bottom--xs,
+  .l\:padding--y--xs,
+  .l\:padding--all--xs {
+    padding-bottom: var(--space-xs);
+  }
+
+  .l\:padding--bottom--s,
+  .l\:padding--y--s,
+  .l\:padding--all--s {
+    padding-bottom: var(--space-s);
+  }
+
+  .l\:padding--bottom,
+  .l\:padding--bottom--m,
+  .l\:padding--y--m,
+  .l\:padding--all,
+  .l\:padding--all--m,
+  .l\:padding--y {
+    padding-bottom: var(--space-default);
+  }
+
+  .l\:padding--bottom--l,
+  .l\:padding--y--l,
+  .l\:padding--all--l {
+    padding-bottom: var(--space-l);
+  }
+
+  .l\:padding--bottom--xl,
+  .l\:padding--y--xl,
+  .l\:padding--all--xl {
+    padding-bottom: var(--space-xl);
+  }
+
+  .l\:padding--top--xs,
+  .l\:padding--y--xs,
+  .l\:padding--all--xs {
+    padding-top: var(--space-xs);
+  }
+
+  .l\:padding--top--s,
+  .l\:padding--y--s,
+  .l\:padding--all--s {
+    padding-top: var(--space-s);
+  }
+
+  .l\:padding--top,
+  .l\:padding--top--m,
+  .l\:padding--y--m,
+  .l\:padding--all,
+  .l\:padding--all--m,
+  .l\:padding--y {
+    padding-top: var(--space-default);
+  }
+
+  .l\:padding--top--l,
+  .l\:padding--y--l,
+  .l\:padding--all--l {
+    padding-top: var(--space-l);
+  }
+
+  .l\:padding--top--xl,
+  .l\:padding--y--xl,
+  .l\:padding--all--xl {
+    padding-top: var(--space-xl);
+  }
+}
+
+@media (--viewport-xl) {
+  .xl\:margin--left--xs,
+  .xl\:margin--x--xs,
+  .xl\:margin--all--xs {
+    margin-left: var(--space-xs);
+  }
+
+  .xl\:margin--left--s,
+  .xl\:margin--x--s,
+  .xl\:margin--all--s {
+    margin-left: var(--space-s);
+  }
+
+  .xl\:margin--left,
+  .xl\:margin--left--m,
+  .xl\:margin--x--m,
+  .xl\:margin--all,
+  .xl\:margin--all--m,
+  .xl\:margin--x {
+    margin-left: var(--space-default);
+  }
+
+  .xl\:margin--left--l,
+  .xl\:margin--x--l,
+  .xl\:margin--all--l {
+    margin-left: var(--space-l);
+  }
+
+  .xl\:margin--left--xl,
+  .xl\:margin--x--xl,
+  .xl\:margin--all--xl {
+    margin-left: var(--space-xl);
+  }
+
+  .xl\:margin--right--xs,
+  .xl\:margin--x--xs,
+  .xl\:margin--all--xs {
+    margin-right: var(--space-xs);
+  }
+
+  .xl\:margin--right--s,
+  .xl\:margin--x--s,
+  .xl\:margin--all--s {
+    margin-right: var(--space-s);
+  }
+
+  .xl\:margin--right,
+  .xl\:margin--right--m,
+  .xl\:margin--x--m,
+  .xl\:margin--all,
+  .xl\:margin--all--m,
+  .xl\:margin--x {
+    margin-right: var(--space-default);
+  }
+
+  .xl\:margin--right--l,
+  .xl\:margin--x--l,
+  .xl\:margin--all--l {
+    margin-right: var(--space-l);
+  }
+
+  .xl\:margin--right--xl,
+  .xl\:margin--x--xl,
+  .xl\:margin--all--xl {
+    margin-right: var(--space-xl);
+  }
+
+  .xl\:margin--bottom--xs,
+  .xl\:margin--y--xs,
+  .xl\:margin--all--xs {
+    margin-bottom: var(--space-xs);
+  }
+
+  .xl\:margin--bottom--s,
+  .xl\:margin--y--s,
+  .xl\:margin--all--s {
+    margin-bottom: var(--space-s);
+  }
+
+  .xl\:margin--bottom,
+  .xl\:margin--bottom--m,
+  .xl\:margin--y--m,
+  .xl\:margin--all,
+  .xl\:margin--all--m,
+  .xl\:margin--y {
+    margin-bottom: var(--space-default);
+  }
+
+  .xl\:margin--bottom--l,
+  .xl\:margin--y--l,
+  .xl\:margin--all--l {
+    margin-bottom: var(--space-l);
+  }
+
+  .xl\:margin--bottom--xl,
+  .xl\:margin--y--xl,
+  .xl\:margin--all--xl {
+    margin-bottom: var(--space-xl);
+  }
+
+  .xl\:margin--top--xs,
+  .xl\:margin--y--xs,
+  .xl\:margin--all--xs {
+    margin-top: var(--space-xs);
+  }
+
+  .xl\:margin--top--s,
+  .xl\:margin--y--s,
+  .xl\:margin--all--s {
+    margin-top: var(--space-s);
+  }
+
+  .xl\:margin--top,
+  .xl\:margin--top--m,
+  .xl\:margin--y--m,
+  .xl\:margin--all,
+  .xl\:margin--all--m,
+  .xl\:margin--y {
+    margin-top: var(--space-default);
+  }
+
+  .xl\:margin--top--l,
+  .xl\:margin--y--l,
+  .xl\:margin--all--l {
+    margin-top: var(--space-l);
+  }
+
+  .xl\:margin--top--xl,
+  .xl\:margin--y--xl,
+  .xl\:margin--all--xl {
+    margin-top: var(--space-xl);
+  }
+
+  .xl\:padding--left--xs,
+  .xl\:padding--x--xs,
+  .xl\:padding--all--xs {
+    padding-left: var(--space-xs);
+  }
+
+  .xl\:padding--left--s,
+  .xl\:padding--x--s,
+  .xl\:padding--all--s {
+    padding-left: var(--space-s);
+  }
+
+  .xl\:padding--left,
+  .xl\:padding--left--m,
+  .xl\:padding--x--m,
+  .xl\:padding--all,
+  .xl\:padding--all--m,
+  .xl\:padding--x {
+    padding-left: var(--space-default);
+  }
+
+  .xl\:padding--left--l,
+  .xl\:padding--x--l,
+  .xl\:padding--all--l {
+    padding-left: var(--space-l);
+  }
+
+  .xl\:padding--left--xl,
+  .xl\:padding--x--xl,
+  .xl\:padding--all--xl {
+    padding-left: var(--space-xl);
+  }
+
+  .xl\:padding--right--xs,
+  .xl\:padding--x--xs,
+  .xl\:padding--all--xs {
+    padding-right: var(--space-xs);
+  }
+
+  .xl\:padding--right--s,
+  .xl\:padding--x--s,
+  .xl\:padding--all--s {
+    padding-right: var(--space-s);
+  }
+
+  .xl\:padding--right,
+  .xl\:padding--right--m,
+  .xl\:padding--x--m,
+  .xl\:padding--all,
+  .xl\:padding--all--m,
+  .xl\:padding--x {
+    padding-right: var(--space-default);
+  }
+
+  .xl\:padding--right--l,
+  .xl\:padding--x--l,
+  .xl\:padding--all--l {
+    padding-right: var(--space-l);
+  }
+
+  .xl\:padding--right--xl,
+  .xl\:padding--x--xl,
+  .xl\:padding--all--xl {
+    padding-right: var(--space-xl);
+  }
+
+  .xl\:padding--bottom--xs,
+  .xl\:padding--y--xs,
+  .xl\:padding--all--xs {
+    padding-bottom: var(--space-xs);
+  }
+
+  .xl\:padding--bottom--s,
+  .xl\:padding--y--s,
+  .xl\:padding--all--s {
+    padding-bottom: var(--space-s);
+  }
+
+  .xl\:padding--bottom,
+  .xl\:padding--bottom--m,
+  .xl\:padding--y--m,
+  .xl\:padding--all,
+  .xl\:padding--all--m,
+  .xl\:padding--y {
+    padding-bottom: var(--space-default);
+  }
+
+  .xl\:padding--bottom--l,
+  .xl\:padding--y--l,
+  .xl\:padding--all--l {
+    padding-bottom: var(--space-l);
+  }
+
+  .xl\:padding--bottom--xl,
+  .xl\:padding--y--xl,
+  .xl\:padding--all--xl {
+    padding-bottom: var(--space-xl);
+  }
+
+  .xl\:padding--top--xs,
+  .xl\:padding--y--xs,
+  .xl\:padding--all--xs {
+    padding-top: var(--space-xs);
+  }
+
+  .xl\:padding--top--s,
+  .xl\:padding--y--s,
+  .xl\:padding--all--s {
+    padding-top: var(--space-s);
+  }
+
+  .xl\:padding--top,
+  .xl\:padding--top--m,
+  .xl\:padding--y--m,
+  .xl\:padding--all,
+  .xl\:padding--all--m,
+  .xl\:padding--y {
+    padding-top: var(--space-default);
+  }
+
+  .xl\:padding--top--l,
+  .xl\:padding--y--l,
+  .xl\:padding--all--l {
+    padding-top: var(--space-l);
+  }
+
+  .xl\:padding--top--xl,
+  .xl\:padding--y--xl,
+  .xl\:padding--all--xl {
+    padding-top: var(--space-xl);
+  }
+}

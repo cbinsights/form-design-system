@@ -1,14 +1,3 @@
-/* Spacing classes legend
-   ======================
-   .type--direction--value
-   ====================== */
-
-/*
- - type:      margin | spacing
- - direction: left | right | bottom | top | all | x | y
- - scale:     xs | s | m | l | xl
-*/
-
 .margin--left--xs,
 .margin--x--xs,
 .margin--all--xs {

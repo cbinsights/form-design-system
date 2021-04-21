@@ -6,7 +6,7 @@ import FlexItem from 'components/FlexItem';
 
 const Prompt = (props) => (
   <Dialog
-    content={<div id="a11y-dialog-desc">{props.desc}</div>}
+    content={props.desc ? <div id="a11y-dialog-desc">{props.desc}</div> : null}
     footerContent={
       <Flex justify="end" wrap>
         {props.secondaryButton && <FlexItem shrink>{props.secondaryButton}</FlexItem>}

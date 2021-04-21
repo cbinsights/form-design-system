@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
     <title>icon/export</title>
-    <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/export" fill="#404040">
             <path d="M6,2 C4.9057453,2 4,2.9057453 4,4 L4,20 C4,21.094255 4.9057453,22 6,22 L14,22 L14,20 L6,20 L6,4 L13,4 L13,9 L18,9 L18,13 L20,13 L20,8 L14,2 L6,2 Z M20,14 L20,17 L16,17 L16,19 L20,19 L20,22 L24,18 L20,14 Z" id="Export"></path>

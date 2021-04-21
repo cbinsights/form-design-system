@@ -1,27 +1,21 @@
 .display--none {
   display: none !important;
 }
-
 .display--block {
   display: block !important;
 }
-
 .display--flex {
   display: flex !important;
 }
-
 .display--inline {
   display: inline !important;
 }
-
 .display--inlineBlock {
   display: inline-block !important;
 }
-
 .display--inlineFlex {
   display: inline-flex !important;
 }
-
 .display--grid {
   display: grid !important;
 }

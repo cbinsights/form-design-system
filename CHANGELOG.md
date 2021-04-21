@@ -31,6 +31,24 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [11.7] Icons update
+
+- Adds `Factory` icon shape
+- Adds `Feeds` icon shape
+- Adds `Devices` icon shape
+- Adds `Heart` icon shape
+- Adds `LightBulb` icon shape
+- Adds `PiggyBank` icon shape
+- Adds `ShoppingCart` icon shape
+- Adds `Umbrella` icon shape
+- Adds `Car` icon shape
+- Adds `Battery` icon shape
+- Adds `Bank`icon shape
+
+## [11.6] Responsive classes
+
+- Added responsive variants for the following classes: `align`, `display`, `padding`, `margin`, `alignChild`. All responsive variants have 4 variants: `s`, `m`, `l`, `xl`, and can be used like so: `.xl:align--left`
+
 ## [11.5] Responsive Flex
 
 - Added `switchDirection` prop to Flex that allows flex direction to change based on
@@ -45,7 +63,6 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 - Added `GraduateCap` shape to icons
 
 ## [11.2] Button theme addition
->>>>>>> master
 
 - Added theme prop: `outlined--blue` to FDS Button
 

@@ -2,11 +2,7 @@
 
 exports[`Prompt component matches snapshot (default props) 1`] = `
 <Dialog
-  content={
-    <div
-      id="a11y-dialog-desc"
-    />
-  }
+  content={null}
   footerContent={
     <Flex
       justify="end"
@@ -34,11 +30,7 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
 
 exports[`Prompt component matches snapshot (default props) 2`] = `
 <Dialog
-  content={
-    <div
-      id="a11y-dialog-desc"
-    />
-  }
+  content={null}
   footerContent={
     <Flex
       justify="end"

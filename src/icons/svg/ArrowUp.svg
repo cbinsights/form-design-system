@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
     <title>icon/arrow_up</title>
-    <desc>Created with sketchtool.</desc>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/arrow_up" fill="#404040">
             <path d="M14,10 L17,10 L12,5 L7,10 L10,10 L10,20 L14,20 L14,10 Z M16,12 L16,22 L8,22 L8,12 L2,12 L12,2 L22,12 L16,12 Z" id="arrow-up"></path>
