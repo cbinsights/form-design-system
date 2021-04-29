@@ -162,7 +162,7 @@ Dialog.propTypes = {
   footerContent: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 
   /** Add into content (middle) portion of modal */
-  content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+  content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 
   /** Controls text displayed in modal header */
   title: PropTypes.string,
