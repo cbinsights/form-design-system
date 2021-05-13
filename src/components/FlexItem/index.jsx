@@ -27,6 +27,7 @@ const AlignPropMap = {
  * @returns {ReactElement}
  */
 const FlexItem = ({ shrink = false, justify, align, children }) => {
+  if (!children) return null;
   const classNames = cc([
     {
       'flexItem--shrink': shrink,
