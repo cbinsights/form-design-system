@@ -37,7 +37,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "stats:css": "node ./scripts/node/util/getClassStats.js",
-    "stats:imports": "node ./scripts/node/util/getImportStats.js"
+    "stats:imports": "node ./scripts/node/util/getImportStats.js",
+    "ts-check": "blah"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
@@ -59,6 +60,7 @@
     "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.13.0",
     "@storybook/addon-a11y": "6.1.14",
     "@storybook/addon-actions": "6.1.11",
     "@storybook/addon-backgrounds": "6.1.14",
@@ -120,6 +122,7 @@
     "stylelint-config-recommended": "^3.0.0",
     "svg-to-jsx": "^1.0.2",
     "tinycolor2": "^1.4.1",
+    "typescript": "^4.2.4",
     "webpack": "^4.38"
   },
   "repository": {
