@@ -17,9 +17,9 @@ const Layout = ({ hasStories = true }) => (
   <>
     <Related />
     <Title />
-    <ImportPath />
     <Subtitle />
     <Description />
+    <ImportPath />
     {hasStories && <Primary />}
     <Badges />
     <ArgsTable story={PRIMARY_STORY} />
