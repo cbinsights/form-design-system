@@ -46,11 +46,7 @@ export default {
   component: SeparatorList,
   title: 'components/SeparatorList',
   parameters: {
-    docs: {
-      description: {
-        component:
-          'This layout component takes a list of strings or components and renders a `ul` with list items displayed `inline-block`. **This component allows items in the list to wrap**.',
-      },
-    },
+    componentSubtitle: 'Renders inline-block list with a custom separator',
+    docs: {},
   },
 };

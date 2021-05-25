@@ -170,10 +170,12 @@ export default {
   subcomponents: { MenuItem, MenuLink },
   title: 'components/Menu',
   parameters: {
+    componentSubtitle:
+      'Renders a dropdown containing links, and actions the user can take.',
     docs: {
       description: {
         component:
-          'Renders a dropdown containing links, and actions the user can take. (Use FDS `Popover` instead for content like forms & arbitrary content). Use `MenuLink` for rendering links, and default to using `MenuItem` otherwise.',
+          'Use FDS `Popover` instead for content like forms & arbitrary content. Use `MenuLink` for rendering links, and default to using `MenuItem` otherwise.',
       },
     },
   },

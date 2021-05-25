@@ -102,12 +102,10 @@ export default {
   title: 'components/Checkbox',
   argTypes: { onChange: { action: 'onChange' } },
   parameters: {
+    componentSubtitle: 'Uncontrolled custom checkbox component with optional label.',
     docs: {
       fds: {
         attributes: ['rest'],
-      },
-      description: {
-        component: 'Uncontrolled custom checkbox component with optional label.',
       },
     },
   },

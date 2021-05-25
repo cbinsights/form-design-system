@@ -337,10 +337,11 @@ export default {
   subcomponents: { Toast },
   title: 'components/Toaster',
   parameters: {
+    componentSubtitle: 'Displays Toast alerts',
     docs: {
       description: {
         component:
-          'Controller for positioning, transition, and dismissal of toasts. Important notes: - **⚠️ Import only one `Toaster` component per application**. - Pass in a brand new `id` (with optional props) if you would like to animate a new toast in. - Passing in new props without changing the id will not retrigger the animation',
+          'Important notes: - **⚠️ Import only one `Toaster` component per application**. - Pass in a brand new `id` (with optional props) if you would like to animate a new toast in. - Passing in new props without changing the id will not retrigger the animation',
       },
     },
   },

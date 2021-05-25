@@ -63,9 +63,6 @@ export default {
       fds: {
         attributes: ['rest'],
       },
-      description: {
-        component: 'Used to display tags, members, filter settings, and other tokens.',
-      },
     },
   },
 };

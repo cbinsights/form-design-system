@@ -29,6 +29,7 @@ export default {
   component: Prompt,
   title: 'components/Prompt',
   parameters: {
+    componentSubtitle: 'An inflexible version of Dialog that is used for confirm modals.',
     docs: {
       fds: {
         related: ['Dialog'],
@@ -36,7 +37,7 @@ export default {
       page: NoStoriesLayout,
       description: {
         component:
-          'A confirm modal that displays a simple message, with 2 buttons to either confirm the action, or deny it. **Please click "Canvas" to view examples**.',
+          'Displays a simple string message, with 2 buttons to either confirm the action, or deny it. **Please click "Canvas" to view examples**.',
       },
     },
   },

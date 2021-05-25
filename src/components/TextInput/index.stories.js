@@ -180,13 +180,14 @@ export default {
   component: TextInput,
   title: 'components/TextInput',
   parameters: {
+    componentSubtitle: 'Standard recommended input component',
     docs: {
       fds: {
         attributes: ['rest'],
       },
       description: {
         component:
-          'Standard recommended input component. Can be used for simple no frills inputs, as well as complex inputs complete with accessibile labels, Icons, side labels, errorText, throttled events, and more.',
+          'Can be used for simple no frills inputs, as well as complex inputs complete with accessibile labels, Icons, side labels, errorText, throttled events, and more.',
       },
     },
   },

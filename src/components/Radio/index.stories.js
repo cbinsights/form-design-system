@@ -83,12 +83,10 @@ export default {
   component: Radio,
   title: 'components/Radio',
   parameters: {
+    componentSubtitle: 'Uncontrolled custom radio component with label.',
     docs: {
       fds: {
         attributes: ['rest'],
-      },
-      description: {
-        component: 'Uncontrolled custom radio component with label.',
       },
     },
   },
