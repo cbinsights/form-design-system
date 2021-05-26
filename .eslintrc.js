@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 6,
     ecmaFeatures: {
@@ -9,25 +9,22 @@ module.exports = {
     },
     sourceType: 'module',
   },
-  extends: ['airbnb-base', 'plugin:react/recommended', 'prettier'],
-  plugins: ['react', 'jest'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'prettier'],
   rules: {
-    'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error',
-    'import/no-extraneous-dependencies': 'off',
-    'import/no-unresolved': 'off',
-    'import/extensions': 'off',
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "TSEnumDeclaration",
+        "message": "Don't declare enums"
+      }
+    ]
   },
   env: {
-    'jest/globals': true,
     browser: true,
   },
   overrides: [
     {
       files: ['*.test.js'],
-      rules: {
-        'import/no-unresolved': false,
-      },
     },
   ],
 };
