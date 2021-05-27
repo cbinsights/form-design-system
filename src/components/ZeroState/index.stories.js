@@ -43,10 +43,6 @@ export default {
   component: ZeroState,
   title: 'components/ZeroState',
   parameters: {
-    docs: {
-      description: {
-        component: 'Useful to display if there no results, no columns, etc.',
-      },
-    },
+    componentSubtitle: 'Placeholder component',
   },
 };

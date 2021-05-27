@@ -113,11 +113,6 @@ export default {
   component: InputGroup,
   title: 'components/InputGroup',
   parameters: {
-    docs: {
-      description: {
-        component:
-          'Visually groups multiple form fields on one line. This component will automatically assign `shrink`/`grow` to its internal flex items, but you can override the defaults by using the `flexSettings` prop.',
-      },
-    },
+    componentSubtitle: 'Visually groups multiple form fields on one line.',
   },
 };

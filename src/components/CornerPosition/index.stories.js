@@ -35,13 +35,11 @@ export default {
   component: CornerPosition,
   title: 'components/CornerPosition',
   parameters: {
+    componentSubtitle:
+      'Absolutely positions a decoration node to the top right of another node.',
     docs: {
       fds: {
         related: ['Badge'],
-      },
-      description: {
-        component:
-          'Takes a node, and absolutely positions a decoration you pass in the top right of that node. Works great with `<Badge />`.',
       },
     },
   },

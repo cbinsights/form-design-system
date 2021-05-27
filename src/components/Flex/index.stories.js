@@ -109,10 +109,10 @@ export default {
   subcomponents: { FlexItem },
   title: 'components/Flex',
   parameters: {
+    componentSubtitle: 'An abstraction of a subset of CSS flexbox',
     docs: {
       description: {
-        component:
-          'Flex is an abstraction of CSS flexbox that provides a subset of flexbox functionality. **A `Flex` should only contain `FlexItem` children**.',
+        component: 'A `Flex` should only contain `FlexItem` children.',
       },
     },
   },

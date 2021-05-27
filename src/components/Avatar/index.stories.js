@@ -133,9 +133,6 @@ export default {
         attributes: ['rest'],
         related: ['IconButton', 'StackedButton'],
       },
-      description: {
-        component: '',
-      },
     },
   },
 };

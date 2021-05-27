@@ -26,10 +26,10 @@ export default {
   component: FlexItem,
   title: 'components/FlexItem',
   parameters: {
+    componentSubtitle: 'An abstraction of a subset of CSS flexbox',
     docs: {
       description: {
-        component:
-          'Direct parent must be `<Flex>`. By default, all `FlexItem` components will grow to fill remaining space within the parent `Flex`.',
+        component: 'Direct parent must be `<Flex>`.',
       },
     },
   },

@@ -16,7 +16,6 @@ export default {
       fds: {
         attributes: ['rest'],
       },
-      description: {},
     },
   },
 };
