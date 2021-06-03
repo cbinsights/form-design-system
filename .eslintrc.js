@@ -1,16 +1,10 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 6,
-    ecmaFeatures: {
-      jsx: true,
-      experimentalObjectRestSpread: true,
-    },
-    sourceType: 'module',
-  },
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'prettier', "plugin:jest/recommended"],
+  plugins: ['@typescript-eslint'],
   rules: {
+    /* "no-restricted-syntax" is used to limit what gets rolled out in each stage. */
     "no-restricted-syntax": [
       "error",
       {
@@ -19,30 +13,21 @@ module.exports = {
       }
     ]
   },
-  plugins: ['@typescript-eslint'],
   env: {
     browser: true,
   },
   rules: {
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
-    'import/extensions': 'off',
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "no-empty-function": "off",
-    "@typescript-eslint/no-empty-function": 0
+    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/explicit-module-boundary-types": "off", // It's necessary to turn this off for non Typescript files
   },
   overrides: [
-    {
-      files: ['*.test.js'],
-      rules: {
-        'import/no-unresolved': 0,
-      },
-    },
     {
       // enable the rule specifically for TypeScript files
       "files": ["*.ts", "*.tsx"],
       "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": ["error"]
+        "@typescript-eslint/explicit-module-boundary-types": ["error"] // We want to start throwing again on Typescript files
       }
     }
   ],
