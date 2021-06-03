@@ -7,7 +7,7 @@ import { CaretDownIcon } from 'lib/icons/react';
 export const SIZES = ['s', 'm'];
 export const THEMES = ['blue', 'orange', 'outlined', 'outlined--blue', 'ghost'];
 
-const Button = forwardRef(
+export const Button = forwardRef(
   (
     {
       theme = 'blue',

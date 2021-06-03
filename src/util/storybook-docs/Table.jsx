@@ -15,7 +15,7 @@ Table.propTypes = {
   shrinkLastColumn: PropTypes.bool,
 };
 
-export const TableCell = ({ children, label, isCSS, copy, ...props }) => {
+export const TableCell = ({ children, isCSS, copy, ...props }) => {
   const [copiedText, copyToClipboard] = useClipboard();
   return (
     <td
@@ -46,7 +46,6 @@ TableCell.propTypes = {
   children: PropTypes.node,
   copy: PropTypes.bool,
   isCSS: PropTypes.bool,
-  label: PropTypes.string,
 };
 
 const TableHeadLayout = ({ headers = [] }) => (
