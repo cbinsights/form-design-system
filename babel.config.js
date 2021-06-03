@@ -1,8 +1,16 @@
 const config = {
   presets: [
-    '@babel/preset-env',
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current',
+          ie: '11' /* transform arrow functions */,
+        },
+      },
+    ],
     '@babel/preset-react', 
-    ['@babel/preset-typescript', {allowNamespaces: true}],
+    ['@babel/preset-typescript'],
   ],
   plugins: [
     '@babel/plugin-transform-regenerator',
