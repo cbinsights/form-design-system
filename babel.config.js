@@ -26,6 +26,7 @@ const config = {
       'module-resolver',
       {
         root: ['./src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
         alias: {
           lib: './lib',
         },
