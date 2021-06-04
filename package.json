@@ -38,7 +38,7 @@
     "build-storybook": "build-storybook",
     "stats:css": "node ./scripts/node/util/getClassStats.js",
     "stats:imports": "node ./scripts/node/util/getImportStats.js",
-    "type-check": "tsc"
+    "type-check": "tsc --jsx preserve --allowSyntheticDefaultImports"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
@@ -75,6 +75,32 @@
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.0.11",
+    "@types/babel__core": "^7.1.14",
+    "@types/babel__plugin-transform-runtime": "^7.9.1",
+    "@types/babel__preset-env": "^7.9.1",
+    "@types/css": "^1.0.28-alpha",
+    "@types/cssnano": "^4.0.0",
+    "@types/d3-scale": "^3.3.0",
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/enzyme-to-json": "^1.5.4",
+    "@types/eslint": "^7.2.13",
+    "@types/fs-extra": "^8.1.1",
+    "@types/glob": "^7.1.3",
+    "@types/postcss-import": "^12.0.0",
+    "@types/prettier": "^2.2.3",
+    "@types/prop-types": "^15.7.3",
+    "@types/raf-schd": "^4.0.1",
+    "@types/react": "^16.14.8",
+    "@types/react-dom": "^17.0.6",
+    "@types/react-is": "^17.0.0",
+    "@types/react-transition-group": "^4.4.1",
+    "@types/rimraf": "^3.0.0",
+    "@types/stylelint": "^13.13.0",
+    "@types/testing-library__jest-dom": "^5.9.5",
+    "@types/tinycolor2": "^1.4.2",
+    "@types/uuid": "^8.3.0",
+    "@types/webpack": "^4.41.29",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "babel-eslint": "^10.1.0",
@@ -146,6 +172,9 @@
     }
   },
   "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "yarn type-check"
+    ],
     "src/**/*": [
       "prettier --write"
     ],
