@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, HTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
@@ -7,14 +7,14 @@ import { CaretDownIcon } from 'lib/icons/react';
 export const SIZES = ['s', 'm'];
 export const THEMES = ['blue', 'orange', 'outlined', 'outlined--blue', 'ghost'];
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
+export interface ButtonProps
+  extends HTMLAttributes<HTMLElement | HTMLButtonElement | HTMLAnchorElement> {
   /** Text inside the button */
   label: string;
 
   /** Used to control the display and theme of the button */
   theme?: typeof THEMES[number];
 
-  /** Used to control the size of the button */
   /**
    * Controls whether button should be in a destructive UI state.
    * This only influences UI, there is no functional differences enabled
@@ -22,6 +22,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
    */
   isDestructive?: boolean;
 
+  /** Used to control the size of the button */
   size?: typeof SIZES[number];
 
   /**  Pass in "only" a FDS Icon reference to display it (e.g. IconRight={ApproveIcon}) */
