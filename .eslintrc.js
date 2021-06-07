@@ -5,13 +5,27 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   env: { browser: true },
   rules: {
-    /* "no-restricted-syntax" is used to limit what gets rolled out in each stage. */
+    /* =========================================
+
+       We use "no-restricted-syntax" is used to
+       limit what gets rolled out in each stage.
+       https://cbinsights.atlassian.net/wiki/spaces/TD/pages/2379907163/Rollout+plan
+
+       ========================================= */
     "no-restricted-syntax": [
       "error",
       {
+        "selector": "TSTypeAnnotation",
+        "message": "Don't use Typescript yet (Still on Stage 0)"
+      },
+      {
         "selector": "TSEnumDeclaration",
-        "message": "Don't declare enums"
-      }
+        "message": "Don't declare enums (Stage 1 feature)"
+      },
+      {
+        "selector": "TSInterfaceDeclaration",
+        "message": "Don't declare interfaces (Stage 1 feature)"
+      },
     ]
   },
   rules: {
