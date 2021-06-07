@@ -17,6 +17,7 @@ export const Themes = (): JSX.Element => (
     ))}
   </StoryWrapper>
 );
+Primary.args = { label: 'Button' };
 
 export const isDestructive = (): JSX.Element => (
   <StoryWrapper>
