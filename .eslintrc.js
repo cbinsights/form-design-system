@@ -1,17 +1,17 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'prettier', "plugin:jest/recommended"],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended',  'plugin:jest/recommended', 'prettier',],
   plugins: ['@typescript-eslint'],
   env: { browser: true },
   rules: {
     /* =========================================
 
-       We use "no-restricted-syntax" is used to
-       limit what gets rolled out in each stage.
-       https://cbinsights.atlassian.net/wiki/spaces/TD/pages/2379907163/Rollout+plan
+      We use "no-restricted-syntax" is used to
+      limit what gets rolled out in each stage.
+      https://cbinsights.atlassian.net/wiki/spaces/TD/pages/2379907163/Rollout+plan
 
-       ========================================= */
+      ========================================= */
     "no-restricted-syntax": [
       "error",
       {
