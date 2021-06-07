@@ -6,12 +6,7 @@ import Button from '.';
 describe('Button component', () => {
   it('tests default rendering', () => {
     render(<Button label="Button" />);
-    const button = screen.getByRole('button', { name: 'Button' });
-    expect(button).toBeTruthy();
-    expect(button).toHaveClass('fdsButton--m');
-    expect(button).toHaveClass('fdsButton--blue');
-    expect(button).not.toHaveClass('fdsButton--isDestructive');
-    expect(button).not.toHaveClass('fdsButton--isFullWidth');
+    expect(screen.getByRole('button', { name: 'Button' })).toBeTruthy();
   });
 
   it('tests rendering as link', () => {
@@ -33,16 +28,7 @@ describe('Button component', () => {
   });
 
   it('tests misc functionality', () => {
-    render(
-      <Button
-        label="Button"
-        isLoading
-        disabled
-        isFullWidth
-        isBreakoutLink
-        margin="all--s"
-      />
-    );
+    render(<Button label="Button" isLoading disabled isFullWidth isBreakoutLink />);
     const button = screen.getByRole('button', { name: 'Button' });
     expect(button).toHaveClass('fdsButton--disabled');
     expect(button).toHaveClass('fdsButton--loading');

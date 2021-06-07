@@ -167,13 +167,10 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn lint && yarn test"
+      "pre-push": "yarn type-check && yarn lint && yarn test"
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "yarn type-check"
-    ],
     "src/**/*": [
       "prettier --write"
     ],
