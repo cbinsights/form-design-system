@@ -3,6 +3,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'prettier', "plugin:jest/recommended"],
   plugins: ['@typescript-eslint'],
+  env: { browser: true },
   rules: {
     /* "no-restricted-syntax" is used to limit what gets rolled out in each stage. */
     "no-restricted-syntax": [
@@ -13,13 +14,8 @@ module.exports = {
       }
     ]
   },
-  env: {
-    browser: true,
-  },
   rules: {
-    'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error',
-    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/no-empty-function": 0, // We like using empty noop (for now)
     "@typescript-eslint/explicit-module-boundary-types": "off", // It's necessary to turn this off for non Typescript files
   },
   overrides: [
