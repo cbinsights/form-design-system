@@ -4,7 +4,7 @@ import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 import { StarFilledIcon, WorldIcon } from 'lib/icons/react';
 import Button, { ButtonProps, THEMES, SIZES } from '.';
 
-const Template = (args): JSX.Element => <Button label="Button" {...args} />;
+const Template = (args) => <Button label="Button" {...args} />;
 
 export const Primary = Template.bind({});
 
