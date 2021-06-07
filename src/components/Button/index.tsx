@@ -7,7 +7,7 @@ import { CaretDownIcon } from 'lib/icons/react';
 export const SIZES = ['s', 'm'];
 export const THEMES = ['blue', 'orange', 'outlined', 'outlined--blue', 'ghost'];
 
-export interface ButtonProps {
+export interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
   /** Text inside the button */
   label: string;
 
@@ -65,10 +65,6 @@ export interface ButtonProps {
   isBreakoutLink?: boolean;
 
   href?: string;
-
-  // Allows rest props for now without having to introduce a complicated interface extend
-  // on an element
-  [x: string]: any;
 }
 
 export const Button = forwardRef(
