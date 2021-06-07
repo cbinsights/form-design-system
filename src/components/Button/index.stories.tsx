@@ -110,7 +110,6 @@ export const isActive = (): JSX.Element => (
                     theme={theme}
                     isActive={!value[idx]}
                     label={theme}
-                    onHover={() => {}}
                     onClick={() => setValue({ ...value, [idx]: !value[idx] })}
                     data-test="hey"
                   />
