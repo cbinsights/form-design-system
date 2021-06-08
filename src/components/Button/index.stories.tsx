@@ -6,6 +6,10 @@ import Button, { ButtonProps, THEMES, SIZES } from '.';
 
 const Template = (args) => <Button label="Button" {...args} />;
 
+const INVERTED_THEMES = THEMES.filter(
+  (THEME) => THEME === 'ghost' || THEME === 'outlined'
+);
+
 export const Primary = Template.bind({});
 
 export const Themes = (): JSX.Element => (
@@ -105,7 +109,7 @@ export const isActive = (): JSX.Element => (
           initialValue={{}}
           render={(value, setValue) => (
             <>
-              {['ghost', 'outlined'].map((theme, idx) => (
+              {INVERTED_THEMES.map((theme, idx) => (
                 <StoryItem key={idx}>
                   <Button
                     theme={theme}
