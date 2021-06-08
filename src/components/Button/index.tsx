@@ -68,11 +68,6 @@ export interface ButtonProps
   href?: string;
 }
 
-enum Test {
-  up,
-  down,
-}
-
 export const Button = forwardRef(
   (
     {

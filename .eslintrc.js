@@ -11,6 +11,9 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   env: { browser: true },
   rules: {
+    '@typescript-eslint/no-explicit-any': 0, // We want to use any as some people are not abiding by our contract and we do not want to have Typescript throw an error quite yet
+    '@typescript-eslint/no-empty-function': 0, // We like using empty noop (for now)
+    '@typescript-eslint/explicit-module-boundary-types': 'off', // It's necessary to turn this off for non Typescript files
     /* =========================================
 
       We use "no-restricted-syntax" is used to
@@ -21,23 +24,10 @@ module.exports = {
     'no-restricted-syntax': [
       'error',
       {
-        selector: 'TSTypeAnnotation',
-        message: "Don't use Typescript yet (Still on Stage 0)",
-      },
-      {
         selector: 'TSEnumDeclaration',
-        message: "Don't declare enums (Stage 1 feature)",
-      },
-      {
-        selector: 'TSInterfaceDeclaration',
-        message: "Don't declare interfaces (Stage 1 feature)",
+        message: "Don't declare enums",
       },
     ],
-  },
-  rules: {
-    '@typescript-eslint/no-explicit-any': 0, // We want to use any as some people are not abiding by our contract and we do not want to have Typescript throw an error quite yet
-    '@typescript-eslint/no-empty-function': 0, // We like using empty noop (for now)
-    '@typescript-eslint/explicit-module-boundary-types': 'off', // It's necessary to turn this off for non Typescript files
   },
   overrides: [
     {
