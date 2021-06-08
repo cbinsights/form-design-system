@@ -2,13 +2,11 @@ import React from 'react';
 import State from 'util/storybook-docs/State';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 import { StarFilledIcon, WorldIcon } from 'lib/icons/react';
-import Button, { ButtonProps, THEMES, SIZES } from '.';
+import Button, { ButtonProps, THEMES, THEME, SIZES } from '.';
 
 const Template = (args) => <Button label="Button" {...args} />;
 
-const INVERTED_THEMES = THEMES.filter(
-  (THEME) => THEME === 'ghost' || THEME === 'outlined'
-);
+const INVERTED_THEMES: THEME[] = ['ghost', 'outlined'];
 
 export const Primary = Template.bind({});
 

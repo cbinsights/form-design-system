@@ -5,7 +5,9 @@ import baseElement from 'util/baseElement';
 import { CaretDownIcon } from 'lib/icons/react';
 
 export const SIZES = ['s', 'm'] as const;
+
 export const THEMES = ['blue', 'orange', 'outlined', 'outlined--blue', 'ghost'] as const;
+export type THEME = typeof THEMES[number];
 
 export interface ButtonProps
   extends HTMLAttributes<HTMLElement | HTMLButtonElement | HTMLAnchorElement> {
@@ -13,7 +15,7 @@ export interface ButtonProps
   label: string;
 
   /** Used to control the display and theme of the button */
-  theme?: typeof THEMES[number];
+  theme?: THEME;
 
   /**
    * Controls whether button should be in a destructive UI state.
