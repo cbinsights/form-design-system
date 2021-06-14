@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/advise</title>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.87">
+        <g id="icon/advise" fill="#404040">
+            <path d="M5,2 C3.8954305,2 3,2.8954305 3,4 C3,5.1045695 3.8954305,6 5,6 C6.1045695,6 7,5.1045695 7,4 C7,2.8954305 6.1045695,2 5,2 Z M9,3 L9,5 L19,5 L19,14 L17,14 L17,12 L13,12 L13,14 L10,14 L10,16 L22,16 L22,14 L21,14 L21,4.5 C21,3.67 20.33,3 19.5,3 L9,3 Z M4,7 C2.895,7 2,7.895 2,9 L2,15 L2,16 L2,22 L4,22 L4,16 L6,16 L6,22 L8,22 L8,16 L8,15 L8,9 L14,9 L14,7 L8,7 L7,7 L4,7 Z M4,9 L6,9 L6,14 L4,14 L4,9 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

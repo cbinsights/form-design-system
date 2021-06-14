@@ -31,24 +31,13 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [11.9] Icons update
+
+Target (changed!), Goal, Advise, Feeds, Devices, Heart, LightBulb, PiggyBank, ShoppingCart, Umbrella, Car, Battery, Bank
+
 ## [11.8] Icons update
 
-- Adds `Target` icon shape
-- Adds `Store` icon shape
-
-## [11.7] Icons update
-
-- Adds `Factory` icon shape
-- Adds `Feeds` icon shape
-- Adds `Devices` icon shape
-- Adds `Heart` icon shape
-- Adds `LightBulb` icon shape
-- Adds `PiggyBank` icon shape
-- Adds `ShoppingCart` icon shape
-- Adds `Umbrella` icon shape
-- Adds `Car` icon shape
-- Adds `Battery` icon shape
-- Adds `Bank`icon shape
+Target, Store, Factory, Feeds, Devices, Heart, LightBulb, PiggyBank, ShoppingCart, Umbrella, Car, Battery, Bank
 
 ## [11.6] Responsive classes
 
