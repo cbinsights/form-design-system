@@ -31,6 +31,12 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [11.9] Icons update
+
+- Modfies `Target` icon shape
+- Adds `Goal` icon shape
+- Adds `Advise` icon shape
+
 ## [11.8] Icons update
 
 - Adds `Target` icon shape
