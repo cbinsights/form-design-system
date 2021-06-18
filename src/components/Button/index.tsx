@@ -7,7 +7,7 @@ import { CaretDownIcon } from 'lib/icons/react';
 export const SIZES = ['s', 'm'] as const;
 
 export const THEMES = ['blue', 'orange', 'outlined', 'outlined--blue', 'ghost'] as const;
-export type THEME = typeof THEMES[number];
+export type Theme = typeof THEMES[number];
 
 export interface ButtonProps
   extends HTMLAttributes<HTMLElement | HTMLButtonElement | HTMLAnchorElement> {
