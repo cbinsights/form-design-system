@@ -15,7 +15,7 @@ export interface ButtonProps
   label: string;
 
   /** Used to control the display and theme of the button */
-  theme?: THEME;
+  theme?: Theme;
 
   /**
    * Controls whether button should be in a destructive UI state.

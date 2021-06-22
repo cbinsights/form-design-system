@@ -21,7 +21,6 @@ include:
     file: 'front-end-publish-npm.yml'
 
 type-check:
-  retry: 2
   stage: test
   script:
     - yarn type-check

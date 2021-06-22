@@ -2,11 +2,11 @@ import React from 'react';
 import State from 'util/storybook-docs/State';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 import { StarFilledIcon, WorldIcon } from 'lib/icons/react';
-import Button, { ButtonProps, THEMES, THEME, SIZES } from '.';
+import Button, { ButtonProps, THEMES, Theme, SIZES } from '.';
 
 const Template = (args) => <Button label="Button" {...args} />;
 
-const INVERTED_THEMES: THEME[] = ['ghost', 'outlined'];
+const INVERTED_THEMES: Theme[] = ['ghost', 'outlined'];
 
 export const Primary = Template.bind({});
 
@@ -114,7 +114,6 @@ export const isActive = (): JSX.Element => (
                     isActive={!value[idx]}
                     label={theme}
                     onClick={() => setValue({ ...value, [idx]: !value[idx] })}
-                    data-test="hey"
                   />
                 </StoryItem>
               ))}

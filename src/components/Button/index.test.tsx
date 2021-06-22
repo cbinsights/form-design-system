@@ -6,7 +6,12 @@ import Button from '.';
 describe('Button component', () => {
   it('tests default rendering', () => {
     render(<Button label="Button" />);
-    expect(screen.getByRole('button', { name: 'Button' })).toBeTruthy();
+    const button = screen.getByRole('button', { name: 'Button' });
+    expect(button).toBeTruthy();
+    expect(button).toHaveClass('fdsButton--m');
+    expect(button).toHaveClass('fdsButton--blue');
+    expect(button).not.toHaveClass('fdsButton--isDestructive');
+    expect(button).not.toHaveClass('fdsButton--isFullWidth');
   });
 
   it('tests rendering as link', () => {

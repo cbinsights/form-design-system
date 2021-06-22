@@ -38,7 +38,7 @@
     "build-storybook": "build-storybook",
     "stats:css": "node ./scripts/node/util/getClassStats.js",
     "stats:imports": "node ./scripts/node/util/getImportStats.js",
-    "type-check": "tsc --jsx react --allowSyntheticDefaultImports --noEmit"
+    "type-check": "tsc"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
