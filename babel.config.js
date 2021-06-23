@@ -9,7 +9,8 @@ const config = {
         },
       },
     ],
-    ['@babel/preset-react'],
+    '@babel/preset-react', 
+    ['@babel/preset-typescript'],
   ],
   plugins: [
     '@babel/plugin-transform-regenerator',
@@ -25,6 +26,7 @@ const config = {
       'module-resolver',
       {
         root: ['./src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
         alias: {
           lib: './lib',
         },

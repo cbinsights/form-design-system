@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 /**
  * Checks if a DOMEvent is NOT on any of the given refs.
  *

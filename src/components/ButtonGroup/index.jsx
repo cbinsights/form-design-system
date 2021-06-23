@@ -5,33 +5,17 @@ import GroupButton from './GroupButton';
 
 const ButtonGroup = ({ buttons, onChange, ...restBtnGroup }) => (
   <div {...restBtnGroup} className="btngroup">
-    {buttons.map(
-      (
-        {
-          value,
-          content,
-          key,
-          Icon,
-          onClick,
-          label,
-          // `isFirstButton` and `isLastButton` are private and can't being passed in.
-          isFirstButton,
-          isLastButton,
-          ...restBtn
-        },
-        index
-      ) => (
-        <GroupButton
-          key={key || label}
-          onClick={onChange ? combine(() => onChange(label || value), onClick) : onClick}
-          label={label}
-          Icon={Icon}
-          isFirstButton={index === 0}
-          isLastButton={index === buttons.length - 1}
-          {...restBtn}
-        />
-      )
-    )}
+    {buttons.map(({ value, key, Icon, onClick, label, ...restBtn }, index) => (
+      <GroupButton
+        key={key || label}
+        onClick={onChange ? combine(() => onChange(label || value), onClick) : onClick}
+        label={label}
+        Icon={Icon}
+        isFirstButton={index === 0}
+        isLastButton={index === buttons.length - 1}
+        {...restBtn}
+      />
+    ))}
   </div>
 );
 

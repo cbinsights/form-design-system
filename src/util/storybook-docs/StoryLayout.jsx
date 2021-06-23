@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FDS from 'lib/dictionary/js/styleConstants';
 
-export const StoryWrapper = ({ children, className, ...rest }) => (
+export const StoryWrapper = ({ children, className = '', ...rest }) => (
   <div
     {...rest}
     className={`display--inlineFlex ${className}`}

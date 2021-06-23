@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 /**
  * https://popper.js.org/popper-documentation.html#Popper.placements
  *

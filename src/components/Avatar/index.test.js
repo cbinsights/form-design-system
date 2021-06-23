@@ -4,10 +4,12 @@ import { render, screen, cleanup } from '@testing-library/react';
 import Avatar, { grabInitials, trimName } from '.';
 
 describe('trimName', () => {
-  expect(trimName('  ')).toBeNull();
-  expect(trimName('')).toBeNull();
-  expect(trimName('   hello world ')).toBe('hello world');
-  expect(trimName('hello world')).toBe('hello world');
+  it('Works properly', () => {
+    expect(trimName('  ')).toBeNull();
+    expect(trimName('')).toBeNull();
+    expect(trimName('   hello world ')).toBe('hello world');
+    expect(trimName('hello world')).toBe('hello world');
+  });
 });
 
 describe('grabInitials', () => {

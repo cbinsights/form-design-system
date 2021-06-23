@@ -63,12 +63,6 @@ describe('DateInput component', () => {
     expect(screen.getByRole('textbox').value).toHaveLength(10); // MM/DD/YYYY === 10 chars
   });
 
-  it('calls onDateChange when user selects a day in the picker', () => {
-    expect(dateChangeFn).not.toHaveBeenCalled();
-    fireEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
-    expect(dateChangeFn).toHaveBeenCalled();
-  });
-
   it('clears selected date when user backspaces out the input', async () => {
     expect(dateChangeFn).not.toHaveBeenCalled();
     expect(

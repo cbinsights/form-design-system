@@ -33,16 +33,7 @@ describe('Button component', () => {
   });
 
   it('tests misc functionality', () => {
-    render(
-      <Button
-        label="Button"
-        isLoading
-        disabled
-        isFullWidth
-        isBreakoutLink
-        margin="all--s"
-      />
-    );
+    render(<Button label="Button" isLoading disabled isFullWidth isBreakoutLink />);
     const button = screen.getByRole('button', { name: 'Button' });
     expect(button).toHaveClass('fdsButton--disabled');
     expect(button).toHaveClass('fdsButton--loading');

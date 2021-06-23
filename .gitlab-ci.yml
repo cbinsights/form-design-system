@@ -20,6 +20,16 @@ include:
     ref: latest
     file: 'front-end-publish-npm.yml'
 
+type-check:
+  stage: test
+  script:
+    - yarn type-check
+  tags:
+    - shell
+    - dev
+  except:
+    - tags
+
 stages:
   - configure
   - authenticate
