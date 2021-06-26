@@ -5,6 +5,7 @@ import { Manager, Reference, Popper } from 'react-popper';
 import { CSSTransition } from 'react-transition-group';
 import FDS from 'lib/dictionary/js/styleConstants';
 import { isNotRefsEvent } from 'components/util/events';
+import useIsSSR from 'components/util/hooks/useIsSSR';
 import { getPopperPlacement } from './util';
 import { useDisableScroll, useCloseOnScroll } from './hooks';
 
@@ -130,6 +131,9 @@ const Popover = React.forwardRef(
     }
 
     const clonedTrigger = React.cloneElement(trigger, triggerProps);
+
+    const isSsr = useIsSSR();
+    if (isSsr) return clonedTrigger;
 
     // https://popper.js.org/popper-documentation.html#modifiers
     const popperModifiers = [
