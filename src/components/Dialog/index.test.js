@@ -19,6 +19,7 @@ describe('Dialog', () => {
         height="1000px"
         width="1000px"
         alwaysShowBorder
+        headerFooter="headerFooter"
       />
     );
 
@@ -27,6 +28,7 @@ describe('Dialog', () => {
     expect(screen.getByText('content')).toBeTruthy();
     expect(screen.getByText('footerContent')).toBeTruthy();
     expect(screen.getByText('title')).toBeTruthy();
+    expect(screen.getByText('headerFooter')).toBeTruthy();
 
     /* Tests that onDismiss gets fired correctly */
     /* ========================================= */

@@ -14,6 +14,7 @@ Primary.args = {
   isOpen: true,
   content: 'Modal content here',
   title: 'Modal title here',
+  headerFooter: 'Modal header footer here',
   onDismiss: action('close modal'),
   disablePortal: true,
 };
