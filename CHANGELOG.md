@@ -31,7 +31,7 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 ## [11.11] Dialog update
-- Adds the 'headerFooter' prop to the Dialog component
+- Adds the 'subTitle' prop to the Dialog component
 
 ## [11.10] Icons update
 
