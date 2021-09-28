@@ -29,7 +29,7 @@ const Dialog = ({
   title,
   content,
   footerContent,
-  headerFooter,
+  subTitle,
   disablePortal = false,
 }) => {
   const contentEl = useRef(null);
@@ -97,7 +97,7 @@ const Dialog = ({
                       {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
                       {/* There always needs to be something (even a space) in the header for display reasons */}
                     </div>
-                    {headerFooter}
+                    {subTitle}
                   </div>
                   {onDismiss && (
                     <div className="dialog-icon">
@@ -199,7 +199,7 @@ Dialog.propTypes = {
   disablePortal: PropTypes.bool,
 
   /** Add content below the title */
-  headerFooter: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  subTitle: PropTypes.node,
 };
 
 export default Dialog;
