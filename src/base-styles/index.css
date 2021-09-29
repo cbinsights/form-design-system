@@ -11,6 +11,11 @@
 @import './base/headingTags';
 @import './base/formTags';
 
+/* Form field modifiers */
+@import './helperClasses/forms/inputError';
+@import './helperClasses/forms/inputReset';
+@import './helperClasses/forms/buttonReset';
+
 /* Spacing Helpers */
 @import './helperClasses/spacing/spacing';
 @import './helperClasses/spacing/flush';
@@ -56,11 +61,6 @@
 @import './helperClasses/typemod/weight';
 @import './helperClasses/typemod/color';
 @import './helperClasses/typemod/style';
-
-/* Form field modifiers */
-@import './helperClasses/forms/inputError';
-@import './helperClasses/forms/inputReset';
-@import './helperClasses/forms/buttonReset';
 
 /* Whitespace helpers */
 @import './helperClasses/whitespace/truncate';
