@@ -45,7 +45,7 @@ for a button being clicked on (:active) */
   border: 1px solid #c2c2c2;
   border-radius: var(--border-radius-default);
   padding: 0 8px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--font-color-primary);
   font-weight: var(--font-weight-bold);
   text-transform: none;

@@ -139,7 +139,6 @@ export const Button = forwardRef(
             breakoutLink: isBreakoutLink,
           },
           'fdsButton',
-          'fontStyle--caps',
           'display--inlineFlex',
           'rounded--all',
           'alignChild--center--center',
