@@ -79,16 +79,16 @@ const Popover = React.forwardRef(
     };
 
     useEffect(() => {
-      /* eslint-disable no-undef */
-      document.body.addEventListener('mousedown', handleBodyClick, false);
-      document.body.addEventListener('keyup', handleKeyPress, false);
+      if (isActive) {
+        document.body.addEventListener('mousedown', handleBodyClick, false);
+        document.body.addEventListener('keyup', handleKeyPress, false);
+      }
 
       return () => {
         document.body.removeEventListener('mousedown', handleBodyClick, false);
         document.body.removeEventListener('keyup', handleKeyPress, false);
       };
-      /* eslint-enable no-undef */
-    });
+    }, [isActive]);
 
     let triggerProps = {};
     let hoverTimeout;
@@ -258,7 +258,7 @@ Popover.propTypes = {
 
   /**
    * Callback fired when user takes an action to dismiss the popover.
-   * (e.g. ESC press, clickikng outside, etc.)
+   * (e.g. ESC press, clicking outside, etc.)
    * Useful for updating `isOpen` in controlled mode.
    * Function is invoked with the DOM event as the argument.
    */
