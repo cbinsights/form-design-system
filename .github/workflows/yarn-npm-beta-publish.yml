@@ -6,7 +6,7 @@ on:
 
 jobs:
   npm-beta:
-    name: Publish npm beta version
+    name: Publish npm beta version soon
     needs: [test, typecheck, lint]
     runs-on: ubuntu-latest
     steps:
