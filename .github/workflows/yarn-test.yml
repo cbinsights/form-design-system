@@ -7,8 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-    name: Test
+  setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,5 +17,13 @@ jobs:
           node-version: '12.x'
           cache: 'yarn'
       - run: yarn --frozen-lockfile
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
       - run: yarn build
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - run: yarn test
