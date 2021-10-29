@@ -7,27 +7,48 @@ on:
     branches: [ master ]
 
 jobs:
-  setup:
+  test:
+    name: Testing
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: '12.x'
           cache: 'yarn'
-      - run: yarn --frozen-lockfile
-  build:
-    needs: setup
+      - name: Yarn Install
+        run: yarn --frozen-lockfile
+      - name: Build Style Dictionary
+        run: yarn build
+      - name: Run Tests
+        run: yarn test
+  typecheck:
+    name: Typechecking
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-      - run: yarn build
-  test:
-    needs: build
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+          cache: 'yarn'
+      - name: Yarn Install
+        run: yarn --frozen-lockfile
+      - name: Build Style Dictionary
+        run: yarn build
+      - name: Run typecheck
+        run: yarn tsc
+  linting:
+    name: Linting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-      - run: yarn test
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+          cache: 'yarn'
+      - name: Yarn Install
+        run: yarn --frozen-lockfile
+      - name: Build Style Dictionary
+        run: yarn build
+      - name: Run linting
+        run: yarn tsc
