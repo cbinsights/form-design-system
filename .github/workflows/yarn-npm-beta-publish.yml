@@ -15,7 +15,8 @@ jobs:
         with:
           node-version: '12.x'
           cache: 'yarn'
-      - uses: @cumulusds@v0.0.0
+    - name: Get YML Paths
+      uses: CumulusDS/get-yaml-paths-action@v0.1.0
         - id: action_with_json_output
             with:
             file: gitlab-ci.yml
