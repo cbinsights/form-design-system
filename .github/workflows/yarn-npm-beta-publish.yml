@@ -1,0 +1,31 @@
+name: NPM beta publish
+
+on:
+  push:
+    branches: [ 'beta' ]
+
+jobs:
+  npm-beta:
+    name: Publish npm beta version
+    needs: [test, typecheck, lint]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+          cache: 'yarn'
+      - uses: @cumulusds@v0.0.0
+        - id: action_with_json_output
+            with:
+            file: gitlab-ci.yml
+            CBI_MAJOR_VERSION: variables.CBI_MAJOR_VERSION
+            CBI_MINOR_VERSION: variables.CBI_MAJOR_VERSION
+      - name: Yarn Install
+        run: yarn --frozen-lockfile
+      - name: Build Style Dictionary
+        run: yarn build
+      - run: yarn publish --new-version=${SEMVER} --tag=beta
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          SEMVER: ${steps.action_with_json_output.outputs.CBI_MAJOR_VERSION}.${steps.action_with_json_output.outputs.CBI_MINOR_VERSION}.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8}
