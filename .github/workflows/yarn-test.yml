@@ -1,21 +1,15 @@
 on:
   pull_request:
-    branches: [ 'master', 'beta' ]
+    branches: ['master', 'beta']
   push:
-    branches: [ 'master', 'beta' ]
+    branches: ['master', 'beta']
 
 jobs:
   test:
     name: Testing
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '12.x'
-          cache: 'yarn'
-      - name: Yarn Install
-        run: yarn --frozen-lockfile
+      - uses: cbinsights/fds/.github/workflows/workflow-reuse.yml@beta
       - name: Build Style Dictionary
         run: yarn build
       - name: Run Tests
