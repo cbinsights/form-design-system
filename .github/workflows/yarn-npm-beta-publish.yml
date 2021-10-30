@@ -24,7 +24,9 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org/'
           always-auth: true
-          scope: '@octocat'
+          scope: '@cbinsights'
+      - run: git config --global user.email "noreply@cbinsights.com"
+      - run: git config --global user.name "CBI Github CI"
       - run: yarn publish --new-version 11.11.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8} --tag beta --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
