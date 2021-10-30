@@ -5,11 +5,23 @@ on:
     branches: ['master', 'beta']
 
 jobs:
-  test:
+jobs:
+  call-workflow:
+    uses: cbinsights/fds/.github/workflows/workflow-reuse.yml@beta
     name: Testing
     runs-on: ubuntu-latest
     steps:
-      - uses: cbinsights/fds/.github/workflows/workflow-reuse.yml@beta
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ hashFiles('**/pack.ge-lsyarn
+        with:
+          node-version: '12.x'
+          cache: 'yarn'
+      - name: Yarn Install
+        run: yarn --frozen-lockfile
       - name: Build Style Dictionary
         run: yarn build
       - name: Run Tests
