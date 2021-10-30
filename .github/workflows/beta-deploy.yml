@@ -5,14 +5,14 @@ on:
     branches: ['beta']
 
 jobs:
-  test:
-    uses: cbinsights/form-design-system/.github/workflows/reusable-test.yml@beta
-  typecheck:
-    uses: cbinsights/form-design-system/.github/workflows/reusable-typecheck.yml@beta
-  lint:
-    uses: cbinsights/form-design-system/.github/workflows/reusable-linting.yml@beta
+  # test:
+  #   uses: cbinsights/form-design-system/.github/workflows/reusable-test.yml@beta
+  # typecheck:
+  #   uses: cbinsights/form-design-system/.github/workflows/reusable-typecheck.yml@beta
+  # lint:
+  #   uses: cbinsights/form-design-system/.github/workflows/reusable-linting.yml@beta
   npm-publish:
     uses: cbinsights/form-design-system/.github/workflows/reusable-npm-publish.yml@beta
-    needs: [test, typecheck, lint]
+    # needs: [test, typecheck, lint]
     secrets:
       token: ${{ secrets.NPM_TOKEN }}
