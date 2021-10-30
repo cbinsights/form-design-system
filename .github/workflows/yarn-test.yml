@@ -5,17 +5,14 @@ on:
     branches: ['master', 'beta']
 
 jobs:
-jobs:
   call-workflow:
     uses: cbinsights/fds/.github/workflows/workflow-reuse.yml@beta
+  test:
     name: Testing
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-node-${{ hashFiles('**/pack.ge-lsyarn
         with:
           node-version: '12.x'
           cache: 'yarn'
