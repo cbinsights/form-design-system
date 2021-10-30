@@ -52,12 +52,12 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Build Style Dictionary
         run: yarn build
-        - name: Setting up git config before publish
-          run: |
-            git config --global user.email "noreply@cbinsights.com"
-            git config --global user.name "CBI Github CI"
-        - name: Publishing to npm
-          run: yarn publish --new-version ${{env.version}}.${{env.version_suffix}} --tag ${{ env.tag }} --access public
+      - name: Setting up git config before publish
+        run: |
+          git config --global user.email "noreply@cbinsights.com"
+          git config --global user.name "CBI Github CI"
+      - name: Publishing to npm
+        run: yarn publish --new-version ${{env.version}}.${{env.version_suffix}} --tag ${{ env.tag }} --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.token }}
           NPM_AUTH_TOKEN: ${{ secrets.token }}
