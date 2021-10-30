@@ -27,7 +27,7 @@ jobs:
       #   run: yarn --frozen-lockfile
       # - name: Build Package
       #   run: yarn build
-      - run: echo "Hello $SEMVER"
+      - run: echo "Hello $GITHUB_RUN_ID"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          SEMVER: 11.11.${{ GITHUB_RUN_ID }}-beta.${{ GITHUB_SHA::8 }}
+          # SEMVER: 11.11.${{ GITHUB_RUN_ID }}-beta.${{ GITHUB_SHA::8 }}
