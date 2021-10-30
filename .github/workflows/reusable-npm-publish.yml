@@ -1,21 +1,18 @@
-name: Beta versions
+name: NPM publish reusable workflow
 
 on:
-  pull_request:
-    branches: ['beta']
-  push:
-    branches: ['beta']
+  workflow_call:
 
 jobs:
-  # test:
-  #   uses: cbinsights/form-design-system/.github/workflows/test.yml@master
-  # typecheck:
-  #   uses: cbinsights/form-design-system/.github/workflows/typecheck.yml@master
-  # lint:
-  #   uses: cbinsights/form-design-system/.github/workflows/linting.yml@master
+  test:
+    uses: cbinsights/form-design-system/.github/workflows/test.yml@master
+  typecheck:
+    uses: cbinsights/form-design-system/.github/workflows/typecheck.yml@master
+  lint:
+    uses: cbinsights/form-design-system/.github/workflows/linting.yml@master
   npm-beta:
     name: Publish npm beta version
-    # needs: [test, typecheck, lint]
+    needs: [test, typecheck, lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

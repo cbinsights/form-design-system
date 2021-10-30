@@ -1,0 +1,15 @@
+name: Beta workflow deploy
+
+on:
+  push:
+    branches: ['beta']
+
+jobs:
+  test:
+    uses: cbinsights/form-design-system/.github/workflows/reusable-test.yml@master
+  typecheck:
+    uses: cbinsights/form-design-system/.github/workflows/reusable-typecheck.yml@master
+  lint:
+    uses: cbinsights/form-design-system/.github/workflows/reusable-linting.yml@master
+  npm-beta:
+    uses: cbinsights/form-design-system/.github/workflows/reusable-npm-publish.yml@master

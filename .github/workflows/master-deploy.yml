@@ -1,0 +1,13 @@
+name: Master workflow deploy
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  test:
+    uses: cbinsights/form-design-system/.github/workflows/test.yml@master
+  typecheck:
+    uses: cbinsights/form-design-system/.github/workflows/typecheck.yml@master
+  linting:
+    uses: cbinsights/form-design-system/.github/workflows/linting.yml@master

@@ -1,15 +1,13 @@
-name: Master workflow
+name: Beta workflow pull request
 
 on:
   pull_request:
-    branches: ['master']
-  push:
-    branches: ['master']
+    branches: ['beta']
 
 jobs:
   test:
     uses: cbinsights/form-design-system/.github/workflows/test.yml@master
   typecheck:
     uses: cbinsights/form-design-system/.github/workflows/typecheck.yml@master
-  linting:
+  lint:
     uses: cbinsights/form-design-system/.github/workflows/linting.yml@master
