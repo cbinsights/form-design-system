@@ -5,23 +5,8 @@ on:
     branches: ['master', 'beta']
 
 jobs:
-  call-workflow:
-    uses: cbinsights/form-design-system/.github/workflows/reusable.yml@beta
   test:
-    name: Testing
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          node-version: '12.x'
-          cache: 'yarn'
-      - name: Yarn Install
-        run: yarn --frozen-lockfile
-      - name: Build Style Dictionary
-        run: yarn build
-      - name: Run Tests
-        run: yarn test
+    uses: cbinsights/form-design-system/.github/workflows/test.yml@beta
   typecheck:
     name: Typechecking
     runs-on: ubuntu-latest
