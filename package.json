@@ -2,6 +2,7 @@
   "name": "@cbinsights/fds",
   "description": "Form: A design system by CB Insights",
   "author": "CB Insights",
+  "version": "11.11",
   "license": "MIT",
   "files": [
     "lib"
@@ -181,7 +182,6 @@
       "stylelint"
     ]
   },
-  "version": "4.0.0",
   "dependencies": {
     "@popperjs/core": "^2.7.2",
     "@reach/menu-button": "^0.12.1",
