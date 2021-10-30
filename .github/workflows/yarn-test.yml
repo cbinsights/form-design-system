@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: cbinsights/fds/.github/workflows/reusable.yml@v1
+    uses: cbinsights/fds/.github/workflows/reusable.yml
   test:
     name: Testing
     runs-on: ubuntu-latest
