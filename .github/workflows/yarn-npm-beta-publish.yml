@@ -11,7 +11,7 @@ jobs:
     uses: cbinsights/form-design-system/.github/workflows/test.yml@beta
   typecheck:
     uses: cbinsights/form-design-system/.github/workflows/typecheck.yml@beta
-  linting:
+  lint:
     uses: cbinsights/form-design-system/.github/workflows/linting.yml@beta
   npm-beta:
     name: Publish npm beta version
