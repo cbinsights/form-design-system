@@ -1,4 +1,4 @@
-name: NPM beta publish
+name: Beta versions
 
 on:
   pull_request:
@@ -7,15 +7,15 @@ on:
     branches: ['beta']
 
 jobs:
-  test:
-    uses: cbinsights/form-design-system/.github/workflows/test.yml@beta
-  typecheck:
-    uses: cbinsights/form-design-system/.github/workflows/typecheck.yml@beta
-  lint:
-    uses: cbinsights/form-design-system/.github/workflows/linting.yml@beta
+  # test:
+  #   uses: cbinsights/form-design-system/.github/workflows/test.yml@beta
+  # typecheck:
+  #   uses: cbinsights/form-design-system/.github/workflows/typecheck.yml@beta
+  # lint:
+  #   uses: cbinsights/form-design-system/.github/workflows/linting.yml@beta
   npm-beta:
     name: Publish npm beta version
-    needs: [test, typecheck, lint]
+    # needs: [test, typecheck, lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,11 +23,11 @@ jobs:
         with:
           node-version: '12.x'
           cache: 'yarn'
-      - name: Yarn Install
-        run: yarn --frozen-lockfile
-      - name: Build Package
-        run: yarn build
-      - run: yarn publish --new-version=${SEMVER} --tag=beta
+      # - name: Yarn Install
+      #   run: yarn --frozen-lockfile
+      # - name: Build Package
+      #   run: yarn build
+      - run: yarn publish --new-version ${SEMVER} --tag=beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           SEMVER: 11.11.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8}
