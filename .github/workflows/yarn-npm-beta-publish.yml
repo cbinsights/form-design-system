@@ -2,9 +2,9 @@ name: NPM beta publish
 
 on:
   pull_request:
-    branches: ['master']
+    branches: ['beta']
   push:
-    branches: ['master']
+    branches: ['beta']
 
 jobs:
   test:
