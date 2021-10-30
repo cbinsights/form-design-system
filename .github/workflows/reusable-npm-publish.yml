@@ -5,11 +5,11 @@ on:
 
 jobs:
   test:
-    uses: cbinsights/form-design-system/.github/workflows/test.yml@master
+    uses: cbinsights/form-design-system/.github/workflows/reusable-test.yml@master
   typecheck:
-    uses: cbinsights/form-design-system/.github/workflows/typecheck.yml@master
+    uses: cbinsights/form-design-system/.github/workflows/reusable-typecheck.yml@master
   lint:
-    uses: cbinsights/form-design-system/.github/workflows/linting.yml@master
+    uses: cbinsights/form-design-system/.github/workflows/reusable-linting.yml@master
   npm-beta:
     name: Publish npm beta version
     needs: [test, typecheck, lint]
