@@ -1,8 +1,8 @@
 on:
   pull_request:
-    branches: ['master', 'beta']
+    branches: ['master']
   push:
-    branches: ['master', 'beta']
+    branches: ['master']
 
 jobs:
   test:

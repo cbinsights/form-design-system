@@ -1,26 +1,33 @@
-# name: NPM beta publish
-#
-# on:
-#   push:
-#     branches: ['beta']
-#
-# jobs:
-#   npm-beta:
-#     name: Publish npm beta version soon
-#     needs: [test, typecheck, lint]
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: actions/setup-node@v2
-#         with:
-#           node-version: '12.x'
-#           cache: 'yarn'
-#       - name: Yarn Install
-#         run: yarn --frozen-lockfile
-#       - name: Build Style Dictionary
-#         run: yarn build
-#       - run: yarn publish --new-version=${SEMVER} --tag=beta
-#         env:
-#           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-#           SEMVER: ${steps.action_with_json_output.outputs.CBI_MAJOR_VERSION}.${steps.action_with_json_output.outputs.CBI_MINOR_VERSION}.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8}
-#
+name: NPM beta publish
+
+on:
+  pull_request:
+    branches: ['master']
+  push:
+    branches: ['master']
+
+jobs:
+  test:
+    uses: cbinsights/form-design-system/.github/workflows/test.yml@beta
+  typecheck:
+    uses: cbinsights/form-design-system/.github/workflows/typecheck.yml@beta
+  linting:
+    uses: cbinsights/form-design-system/.github/workflows/linting.yml@beta
+  npm-beta:
+    name: Publish npm beta version
+    needs: [test, typecheck, lint]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+          cache: 'yarn'
+      - name: Yarn Install
+        run: yarn --frozen-lockfile
+      - name: Build Package
+        run: yarn build
+      - run: yarn publish --new-version=${SEMVER} --tag=beta
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          SEMVER: 11.11.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8}
