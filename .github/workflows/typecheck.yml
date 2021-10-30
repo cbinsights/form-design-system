@@ -4,7 +4,6 @@ on:
   workflow_call:
 
 jobs:
-  test:
   typecheck:
     name: Typechecking
     runs-on: ubuntu-latest

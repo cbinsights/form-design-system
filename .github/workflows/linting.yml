@@ -4,8 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  test:
-  typecheck:
+  linting:
     name: Linting
     runs-on: ubuntu-latest
     steps:
