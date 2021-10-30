@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org/'
-          always-auth: true
-          scope: '@octocat'
+          # always-auth: true
+          # scope: '@octocat'
       - run: yarn publish --new-version 11.11.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8} --tag=beta
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
