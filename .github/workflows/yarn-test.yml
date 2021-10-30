@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: cbinsights/fds/.github/workflows/reusable.yml@v1
+    uses: cbinsights/form-design-system/.github/workflows/reusable.yml@beta
   test:
     name: Testing
     runs-on: ubuntu-latest
