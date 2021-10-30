@@ -27,7 +27,6 @@ jobs:
       #   run: yarn --frozen-lockfile
       # - name: Build Package
       #   run: yarn build
-      - run: echo "Hello $GITHUB_RUN_ID"
+      - run: yarn publish --new-version 11.11.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8} --tag=beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          # SEMVER: 11.11.${{ GITHUB_RUN_ID }}-beta.${{ GITHUB_SHA::8 }}
