@@ -26,4 +26,4 @@ jobs:
           always-auth: true
       - run: yarn publish --new-version 11.11.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8} --tag=beta
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
