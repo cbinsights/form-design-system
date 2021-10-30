@@ -22,6 +22,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
+          always-auth: true
       - run: yarn publish --new-version 11.11.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8} --tag=beta
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.YARN_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
