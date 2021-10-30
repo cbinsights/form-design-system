@@ -8,32 +8,6 @@ jobs:
   test:
     uses: cbinsights/form-design-system/.github/workflows/test.yml@beta
   typecheck:
-    name: Typechecking
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '12.x'
-          cache: 'yarn'
-      - name: Yarn Install
-        run: yarn --frozen-lockfile
-      - name: Build Style Dictionary
-        run: yarn build
-      - name: Run typecheck
-        run: yarn tsc
+    uses: cbinsights/form-design-system/.github/workflows/typecheck.yml@beta
   linting:
-    name: Linting
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '12.x'
-          cache: 'yarn'
-      - name: Yarn Install
-        run: yarn --frozen-lockfile
-      - name: Build Style Dictionary
-        run: yarn build
-      - name: Run linting
-        run: yarn tsc
+    uses: cbinsights/form-design-system/.github/workflows/linting.yml@beta
