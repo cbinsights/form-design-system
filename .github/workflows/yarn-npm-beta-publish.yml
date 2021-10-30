@@ -30,10 +30,9 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Build Style Dictionary
         run: yarn build
-      - name: Publish
-        run: git config --global user.email "noreply@cbinsights.com"
-        run: git config --global user.name "CBI Github CI"
-        run: yarn publish --new-version 11.11.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8} --tag beta --access public
+      - run: git config --global user.email "noreply@cbinsights.com"
+      - run: git config --global user.name "CBI Github CI"
+      - run: yarn publish --new-version 11.11.${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8} --tag beta --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
