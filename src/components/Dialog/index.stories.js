@@ -14,6 +14,15 @@ Primary.args = {
   isOpen: true,
   content: 'Modal content here',
   title: 'Modal title here',
+  onDismiss: action('close modal'),
+  disablePortal: true,
+};
+
+export const dialogWithSubtitle = Template.bind({});
+dialogWithSubtitle.args = {
+  isOpen: true,
+  content: 'Modal content here',
+  title: 'Modal title here',
   subTitle: 'Modal subtitle here',
   onDismiss: action('close modal'),
   disablePortal: true,
