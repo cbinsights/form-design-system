@@ -1,11 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+interface {{componentName}}Props {
+  color: string;
+  size: 'xs' | 's' | 'm' | 'l' | 'xl';
+  customSize: number;
+}
 
 const {{componentName}} = ({
   size = 's',
   color,
   customSize
-}) => (
+}: {{componentName}}Props ) => (
   <div
     className={`fds-icon fds-icon--${size}`}
     style=\{{
@@ -17,12 +22,6 @@ const {{componentName}} = ({
     {{{svg}}}
   </div>
 );
-
-{{componentName}}.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
-  customSize: PropTypes.number,
-};
 
 export default {{componentName}};
 

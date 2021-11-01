@@ -24,7 +24,7 @@
     "icons:svg": "node ./scripts/node/icons/buildSvg.js",
     "icons:png": "node ./scripts/node/icons/buildPng.js",
     "icons:react": "node ./scripts/node/icons/buildComponents.js",
-    "icons:transpile": "babel ./lib/icons/react --out-dir ./lib/icons/react",
+    "icons:transpile": "babel ./lib/icons/react --out-dir ./lib/icons/react --extensions '.js,.jsx,.ts,.tsx'",
     "icons:css": "cp src/icons/style/icons.css ./lib/icons/style/icons.css",
     "icons:docs": "node ./scripts/node/icons/buildIconManifest.js",
     "comp:jsx": "NODE_ENV=jsx_compile babel src --out-dir=lib --source-maps --no-copy-ignored --extensions '.js,.jsx,.ts,.tsx'",
