@@ -58,7 +58,7 @@ export interface AvatarProps
    * - `import { Link } from 'react-router'`
    * - `Link={Link}`
    */
-  Link?: React.ElementType;
+  Link?: React.ComponentType;
   /** Adds an aria-label to the component (we add a default one for you, but it's preferred to add one if you can.) */
   'aria-label'?: string;
 
