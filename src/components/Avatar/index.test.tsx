@@ -37,38 +37,37 @@ describe('grabInitials', () => {
 describe('Avatar component', () => {
   it('renders name', () => {
     render(<Avatar name="Joey Tribbiani" />);
-    expect(screen.getByTitle('Joey Tribbiani', { name: 'JT' })).toBeTruthy();
+    expect(screen.getByTitle('Joey Tribbiani')).toHaveTextContent('JT');
   });
 
   it('renders proper sizes', () => {
     render(<Avatar name="Joey Tribbiani" />);
-    expect(screen.getByTitle('Joey Tribbiani', { name: 'JT' })).toHaveClass(
-      'fdsAvatar--m'
-    );
+    expect(screen.getByTitle('Joey Tribbiani')).toHaveClass('fdsAvatar--m');
     cleanup();
+
     render(<Avatar name="Joey Tribbiani" size="l" />);
-    expect(screen.getByTitle('Joey Tribbiani', { name: 'JT' })).toHaveClass(
-      'fdsAvatar--l'
-    );
+    expect(screen.getByTitle('Joey Tribbiani')).toHaveClass('fdsAvatar--l');
     cleanup();
+
     render(<Avatar name="Joey Tribbiani" size="s" />);
-    expect(screen.getByTitle('Joey Tribbiani', { name: 'JT' })).toHaveClass(
-      'fdsAvatar--s'
-    );
+    expect(screen.getByTitle('Joey Tribbiani')).toHaveClass('fdsAvatar--s');
   });
 
   it('renders proper initials', () => {
     render(<Avatar name="Joey" />);
-    expect(screen.getByTitle('Joey', { name: 'J' })).toBeTruthy();
+    expect(screen.getByTitle('Joey')).toHaveTextContent(/^J$/);
     cleanup();
+
     render(<Avatar name="Joey Tribbiani" size="l" />);
-    expect(screen.getByTitle('Joey Tribbiani', { name: 'JT' })).toBeTruthy();
+    expect(screen.getByTitle('Joey Tribbiani')).toHaveTextContent(/^JT$/);
     cleanup();
+
     render(<Avatar name="Joey Tribbiani" size="s" initialsLength={1} />);
-    expect(screen.getByTitle('Joey Tribbiani', { name: 'J' })).toBeTruthy();
+    expect(screen.getByTitle('Joey Tribbiani')).toHaveTextContent(/^J$/);
     cleanup();
+
     render(<Avatar name=" Joey Tribbiani " size="s" initialsLength={1} />);
-    expect(screen.getByTitle('Joey Tribbiani', { name: 'J' })).toBeTruthy();
+    expect(screen.getByTitle('Joey Tribbiani')).toHaveTextContent(/^J$/);
   });
 
   it('does not render as an image if its a link', () => {

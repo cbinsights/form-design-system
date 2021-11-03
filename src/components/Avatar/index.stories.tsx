@@ -3,9 +3,9 @@ import React from 'react';
 import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 
-import Avatar, { BG_COLORS, SIZES, RADII } from '.';
+import Avatar, { AvatarProps, BG_COLORS, SIZES, RADII } from '.';
 
-const Template = (args) => (
+const Template = (args: AvatarProps): JSX.Element => (
   <StoryWrapper>
     <StoryItem>
       <Avatar {...args} />
@@ -34,7 +34,7 @@ PlaceholderIcon.parameters = {
   },
 };
 
-export const Colors = () => (
+export const Colors = (): JSX.Element => (
   <StoryWrapper>
     <StoryItem>
       <Avatar name="default" />
@@ -49,6 +49,7 @@ export const Colors = () => (
     ))}
   </StoryWrapper>
 );
+
 Colors.parameters = {
   docs: {
     description: {
@@ -58,7 +59,7 @@ Colors.parameters = {
   },
 };
 
-export const Images = () => (
+export const Images = (): JSX.Element => (
   <StoryWrapper>
     <StoryItem>
       <Avatar name="Hello Impecable" imgUrl="http://placeimg.com/80/81/animals" />
@@ -77,7 +78,7 @@ Images.parameters = {
   },
 };
 
-export const Sizes = () => (
+export const Sizes = (): JSX.Element => (
   <StoryWrapper>
     {SIZES.map((size, idx) => (
       <StoryItem key={idx}>
@@ -87,7 +88,7 @@ export const Sizes = () => (
   </StoryWrapper>
 );
 
-export const Radii = () => (
+export const Radii = (): JSX.Element => (
   <StoryWrapper>
     {RADII.map((radius, idx) => (
       <StoryItem key={idx}>
@@ -97,7 +98,7 @@ export const Radii = () => (
   </StoryWrapper>
 );
 
-export const Button = () => (
+export const Button = (): JSX.Element => (
   <StoryWrapper>
     <StoryItem>
       <Avatar name="Hello Impecable" href="#" />
