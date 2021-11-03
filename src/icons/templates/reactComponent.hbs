@@ -1,16 +1,11 @@
 import React from 'react';
-
-interface {{componentName}}Props {
-  color: string;
-  size: 'xs' | 's' | 'm' | 'l' | 'xl';
-  customSize: number;
-}
+import { IconProps } from 'components/Icon'
 
 const {{componentName}} = ({
   size = 's',
   color,
   customSize
-}: {{componentName}}Props ) => (
+}: IconProps ) => (
   <div
     className={`fds-icon fds-icon--${size}`}
     style=\{{
