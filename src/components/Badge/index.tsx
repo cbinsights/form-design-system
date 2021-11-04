@@ -1,10 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cc from 'classcat';
+import Icon from 'components/Icon';
 
-export const VALID_TYPES = ['update', 'count'];
+export const VALID_TYPES = ['update', 'count'] as const;
 
-const Badge = ({ label, showDot = false, type = 'update' }) => {
+export interface BadgeProps {
+  /**
+   * String to render inside the Badge bubble.
+   * The `element` type should be reserved for FDS icons.
+   */
+  label?: string | Icon;
+
+  /** When true, an indicator dot will be rendered when the `message` is empty */
+  showDot?: boolean;
+
+  /** Type of Badge */
+  type?: typeof VALID_TYPES[number];
+}
+
+const Badge = ({ label, showDot = false, type = 'update' }: BadgeProps): JSX.Element => {
   const isUpdate = type === 'update';
 
   return (
@@ -28,20 +42,6 @@ const Badge = ({ label, showDot = false, type = 'update' }) => {
       )}
     </div>
   );
-};
-
-Badge.propTypes = {
-  /**
-   * String to render inside the Badge bubble.
-   * The `element` type should be reserved for FDS icons.
-   */
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-
-  /** When true, an indicator dot will be rendered when the `message` is empty */
-  showDot: PropTypes.bool,
-
-  /** Type of Badge */
-  type: PropTypes.oneOf(VALID_TYPES),
 };
 
 export default Badge;
