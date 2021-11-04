@@ -3,16 +3,16 @@ import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 
-import Badge from '.';
+import Badge, { BadgeProps } from '.';
 
-const Template = (args) => <Badge {...args} />;
+const Template = (args: BadgeProps) => <Badge {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   label: 42,
 };
 
-export const variations = () => (
+export const variations = (): JSX.Element => (
   <StoryWrapper>
     <StoryItem>
       <Badge label="42" />
@@ -38,7 +38,7 @@ variations.parameters = {
   },
 };
 
-export const withTableRows = (args) => (
+export const withTableRows = (args: BadgeProps): JSX.Element => (
   <Flex>
     <FlexItem shrink>
       <div style={{ width: '100%', height: '32px' }}>
