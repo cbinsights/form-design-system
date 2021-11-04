@@ -1,11 +1,11 @@
 import React from 'react';
-
+import { Story } from '@storybook/react';
 import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 
 import Avatar, { AvatarProps, BG_COLORS, SIZES, RADII } from '.';
 
-const Template = (args: AvatarProps): JSX.Element => (
+const Template = (args: AvatarProps) => (
   <StoryWrapper>
     <StoryItem>
       <Avatar {...args} />
@@ -16,12 +16,12 @@ const Template = (args: AvatarProps): JSX.Element => (
   </StoryWrapper>
 );
 
-export const Primary = Template.bind({});
+export const Primary: Story<AvatarProps> = Template.bind({});
 Primary.args = {
   name: 'Samuel Jackson',
 };
 
-export const PlaceholderIcon = Template.bind({});
+export const PlaceholderIcon: Story<AvatarProps> = Template.bind({});
 PlaceholderIcon.args = {
   PlaceholderIcon: StarFilledIcon,
 };

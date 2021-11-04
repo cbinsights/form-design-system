@@ -1,4 +1,5 @@
 import React from 'react';
+import { Story } from '@storybook/react';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
@@ -7,9 +8,9 @@ import Badge, { BadgeProps } from '.';
 
 const Template = (args: BadgeProps) => <Badge {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<BadgeProps> = Template.bind({});
 Primary.args = {
-  label: 42,
+  label: '42',
 };
 
 export const variations = (): JSX.Element => (
