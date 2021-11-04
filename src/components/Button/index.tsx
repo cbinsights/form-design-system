@@ -1,5 +1,4 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
-import PropTypes from 'prop-types';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import { CaretDownIcon } from 'lib/icons/react';
@@ -92,8 +91,11 @@ export const Button = forwardRef(
     ref
   ) => {
     const Element = baseElement({ href, onClick: true, as: Link });
+    interface IconProps {
+      direction?: 'left' | 'right';
+    }
 
-    const IconComponent = ({ direction }) => {
+    const IconComponent = ({ direction }: IconProps) => {
       const Icon = direction === 'left' ? IconLeft : IconRight;
       return (
         <>
@@ -112,10 +114,6 @@ export const Button = forwardRef(
           )}
         </>
       );
-    };
-
-    IconComponent.propTypes = {
-      direction: PropTypes.oneOf(['left', 'right']),
     };
 
     const Icons = () => (

@@ -1,14 +1,19 @@
 import React from 'react';
 import State from 'util/storybook-docs/State';
+import { Story } from '@storybook/react';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 import { StarFilledIcon, WorldIcon } from 'lib/icons/react';
 import Button, { ButtonProps, THEMES, Theme, SIZES } from '.';
 
-const Template = (args) => <Button label="Button" {...args} />;
+const Template = ({ label = 'Button', ...args }: ButtonProps) => (
+  <Button {...args} label={label} />
+);
 
 const INVERTED_THEMES: Theme[] = ['ghost', 'outlined'];
 
-export const Primary = Template.bind({});
+export const Primary: Story<ButtonProps> = Template.bind({});
+
+Primary.args = { label: 'Button' };
 
 export const Themes = (): JSX.Element => (
   <StoryWrapper>
@@ -19,7 +24,6 @@ export const Themes = (): JSX.Element => (
     ))}
   </StoryWrapper>
 );
-Primary.args = { label: 'Button' };
 
 export const isDestructive = (): JSX.Element => (
   <StoryWrapper>
@@ -62,11 +66,17 @@ Inverted.parameters = {
   },
 };
 
+type Shape = {
+  [key: number]: boolean;
+};
+
+const initialValue: Shape = {};
+
 export const isActive = (): JSX.Element => (
   <>
     <StoryWrapper>
       <State
-        initialValue={{}}
+        initialValue={initialValue}
         render={(value, setValue) => (
           <>
             {THEMES.map((theme, idx) => (
@@ -82,7 +92,7 @@ export const isActive = (): JSX.Element => (
           </>
         )}
       />
-      <State
+      <State<Shape>
         initialValue={{}}
         render={(value, setValue) => (
           <>
@@ -104,7 +114,7 @@ export const isActive = (): JSX.Element => (
     <div className="inverted bgColor--blue padding--all rounded--all margin--top">
       <StoryWrapper>
         <State
-          initialValue={{}}
+          initialValue={initialValue}
           render={(value, setValue) => (
             <>
               {INVERTED_THEMES.map((theme, idx) => (
@@ -144,10 +154,7 @@ export const Sizes = (): JSX.Element => (
   </>
 );
 
-export const FullWidth = Template.bind({});
-FullWidth.args = {
-  isFullWidth: true,
-};
+export const FullWidth: Story<ButtonProps> = Template.bind({});
 
 export const Icons = (): JSX.Element => (
   <StoryWrapper>
