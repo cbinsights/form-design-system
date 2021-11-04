@@ -92,7 +92,7 @@ export const Button = forwardRef(
   ) => {
     const Element = baseElement({ href, onClick: true, as: Link });
     interface IconProps {
-      direction: 'left' | 'right';
+      direction?: 'left' | 'right';
     }
 
     const IconComponent = ({ direction }: IconProps) => {
