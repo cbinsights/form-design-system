@@ -1,9 +1,10 @@
 import React from 'react';
-import DropdownButton from '.';
+import { Story } from '@storybook/react';
+import DropdownButton, { Props } from '.';
 
-const Template = (args) => <DropdownButton {...args} />;
+const Template = (args: Props) => <DropdownButton {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<Props> = Template.bind({});
 Primary.args = {
   children: 'Dropdown Button',
 };
