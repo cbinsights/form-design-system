@@ -74,7 +74,7 @@ const Avatar = forwardRef(
       'aria-label': ariaLabel = 'Avatar',
       initialsLength = 2,
       imgUrl,
-      name,
+      name = '',
       Link,
       PlaceholderIcon,
       ...rest
