@@ -8,7 +8,7 @@ describe('Checkbox component', () => {
     const { container } = render(
       <Checkbox label="change callback" disabled name="disabled-test" />
     );
-    const input = screen.getByLabelText('change callback');
+    const input = screen.getByLabelText('change callback') as HTMLInputElement;
     expect(input.disabled).toBeTruthy();
 
     fireEvent.click(input);
@@ -24,7 +24,7 @@ describe('Checkbox component', () => {
     render(
       <Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />
     );
-    const input = screen.getByLabelText('change callback');
+    const input = screen.getByLabelText('change callback') as HTMLInputElement;
     expect(changeFn).not.toHaveBeenCalled();
     fireEvent.click(input);
     expect(input.checked).toBeTruthy();
@@ -43,7 +43,7 @@ describe('Checkbox component', () => {
       />
     );
 
-    const input = screen.getByLabelText('unchecking callback');
+    const input = screen.getByLabelText('unchecking callback') as HTMLInputElement;
     expect(changeFn).not.toHaveBeenCalled();
     fireEvent.click(input);
     expect(input.checked).toBeFalsy();
