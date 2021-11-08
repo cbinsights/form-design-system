@@ -7,9 +7,7 @@ import '../src/components/style/index.css';
 export const parameters = {
   previewTabs: { 'storybook/docs/panel': { index: -1 } },
   docs: {
-    page: () => (
-      <Layout />
-    ),
+    page: () => <Layout />,
   },
   backgrounds: {
     default: 'White',

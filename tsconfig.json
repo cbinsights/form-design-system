@@ -2,14 +2,10 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "lib/*": ["../lib/*"],
+      "lib/*": ["../lib/*"]
     },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
@@ -21,11 +17,6 @@
     "moduleResolution": "node",
     "jsx": "preserve"
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

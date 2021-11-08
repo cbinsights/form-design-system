@@ -71,14 +71,16 @@ const formatJsManifest = (dictionary) => {
   });
 
   // custom media gets a special `mqInfo` set of attributes
-  const mediaQueries = filterByCategory(dictionary.allProperties, 'customMedia').map((p) => {
-    const { mqInfo, category } = p.attributes;
-    return {
-      mqInfo,
-      value: p.value,
-      attributes: { category },
-    };
-  });
+  const mediaQueries = filterByCategory(dictionary.allProperties, 'customMedia').map(
+    (p) => {
+      const { mqInfo, category } = p.attributes;
+      return {
+        mqInfo,
+        value: p.value,
+        attributes: { category },
+      };
+    }
+  );
 
   // all other properties can just map to a simple varName/value/category arr
   const otherProperties = dictionary.allProperties
