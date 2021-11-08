@@ -1,8 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import FDS from 'lib/dictionary/js/styleConstants';
+import Icon from 'components/Icon';
 
-const ZeroState = ({ Icon, label = '', height = '0px' }) => (
+export type Props = {
+  /** Pass in "only" a FDS Icon reference to display it (e.g. Icon={TableIcon}) */
+  Icon?: Icon;
+  /** Text inside */
+  label?: string | number | React.ReactNode;
+  /** Min height of section */
+  height?: string;
+};
+
+const ZeroState = ({ Icon, label = '', height = '0px' }: Props): JSX.Element => (
   <article className="alignChild--center--center" style={{ minHeight: height }}>
     <section>
       {Icon && (
@@ -14,22 +23,5 @@ const ZeroState = ({ Icon, label = '', height = '0px' }) => (
     </section>
   </article>
 );
-
-ZeroState.propTypes = {
-  /**
-   * Pass in "only" a FDS Icon reference to display it (e.g. Icon={TableIcon})
-   */
-  Icon: PropTypes.func,
-
-  /**
-   * Text inside
-   */
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.node]),
-
-  /**
-   * Min height of section
-   */
-  height: PropTypes.string,
-};
 
 export default ZeroState;

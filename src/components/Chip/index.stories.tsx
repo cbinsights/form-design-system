@@ -1,16 +1,17 @@
 import React from 'react';
 import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
+import { Story } from '@storybook/react';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
-import Chip, { THEMES, SIZES } from '.';
+import Chip, { THEMES, SIZES, ChipProps } from '.';
 
-const Template = (args) => <Chip {...args} />;
+const Template = (args: ChipProps) => <Chip {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<ChipProps> = Template.bind({});
 Primary.args = {
   label: 'Hello world',
 };
 
-export const Themes = () => (
+export const Themes = (): JSX.Element => (
   <StoryWrapper>
     {THEMES.map((theme, idx) => (
       <StoryItem key={idx}>
@@ -20,7 +21,7 @@ export const Themes = () => (
   </StoryWrapper>
 );
 
-export const isActive = () => (
+export const isActive = (): JSX.Element => (
   <StoryWrapper>
     {THEMES.map((theme, idx) => (
       <StoryItem key={idx}>
@@ -30,26 +31,29 @@ export const isActive = () => (
   </StoryWrapper>
 );
 
-export const Sizes = () =>
-  SIZES.map((size, idx) => (
-    <div key={idx} className="margin--right--s margin--bottom--s display--inlineBlock">
-      <Chip size={size} label={`Size: ${size}`} />
-    </div>
-  ));
+export const Sizes = (): JSX.Element => (
+  <StoryWrapper>
+    {SIZES.map((size, idx) => (
+      <div key={idx} className="margin--right--s margin--bottom--s display--inlineBlock">
+        <Chip size={size} label={`Size: ${size}`} />
+      </div>
+    ))}
+  </StoryWrapper>
+);
 
-export const Subtitle = Template.bind({});
+export const Subtitle: Story<ChipProps> = Template.bind({});
 Subtitle.args = {
   label: 'Chip',
   subtitle: 'subtitle',
 };
 
-export const Icon = Template.bind({});
+export const Icon: Story<ChipProps> = Template.bind({});
 Icon.args = {
   label: 'Chip',
   Icon: StarFilledIcon,
 };
 
-export const Close = Template.bind({});
+export const Close: Story<ChipProps> = Template.bind({});
 Close.args = {
   label: 'Chip',
   onClose: () => {},
