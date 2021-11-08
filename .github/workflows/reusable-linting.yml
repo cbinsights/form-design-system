@@ -17,5 +17,7 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Build Style Dictionary
         run: yarn build
-      - name: Run linting
+      - name: Run eslint
         run: yarn lint
+      - name: Run Prettier Check
+        run: yarn prettier:check

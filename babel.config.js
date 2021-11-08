@@ -9,7 +9,7 @@ const config = {
         },
       },
     ],
-    '@babel/preset-react', 
+    '@babel/preset-react',
     ['@babel/preset-typescript'],
   ],
   plugins: [
