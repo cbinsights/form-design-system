@@ -31,6 +31,14 @@ This is an example of a brief overview of the _Major_ or _Minor_ version changes
 
 ---
 
+## [11.12] Icons update
+
+- Adds `VerifiedCheck` icon shape
+- Adds `UploadOutlined` icon shape
+- Adds `UploadFilled` icon shape
+- Adds `DownloadOutlined` icon shape
+- Adds `DownloadFilled` icon shape
+
 ## [11.11] Dialog update
 
 - Adds the 'subTitle' prop to the Dialog component
