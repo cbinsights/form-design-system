@@ -1,15 +1,16 @@
 import React from 'react';
-import Checkbox from '.';
+import { Story } from '@storybook/react';
+import Checkbox, { CheckboxProps } from '.';
 
-const Template = (args) => <Checkbox {...args} />;
+const Template = (args: CheckboxProps) => <Checkbox {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<CheckboxProps> = Template.bind({});
 Primary.args = {
   name: 'spam',
   label: 'I agree to receive spam',
 };
 
-export const managingCheckedState = Template.bind({});
+export const managingCheckedState: Story<CheckboxProps> = Template.bind({});
 
 managingCheckedState.args = {
   defaultChecked: true,
@@ -26,7 +27,7 @@ managingCheckedState.parameters = {
   },
 };
 
-export const preventingUserInteraction = () => (
+export const preventingUserInteraction = (): JSX.Element => (
   <>
     <div>
       <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
@@ -51,7 +52,7 @@ preventingUserInteraction.parameters = {
   },
 };
 
-export const checkboxWithoutLabel = Template.bind({});
+export const checkboxWithoutLabel: Story<CheckboxProps> = Template.bind({});
 checkboxWithoutLabel.args = {
   name: 'no-label',
   label: "I don't have a label",
@@ -67,7 +68,7 @@ checkboxWithoutLabel.parameters = {
   },
 };
 
-export const indeterminateCheckboxes = Template.bind({});
+export const indeterminateCheckboxes: Story<CheckboxProps> = Template.bind({});
 indeterminateCheckboxes.args = {
   indeterminate: true,
   name: 'notsureif',
@@ -83,7 +84,7 @@ indeterminateCheckboxes.parameters = {
   },
 };
 
-export const readingTheValueOfACheckbox = Template.bind({});
+export const readingTheValueOfACheckbox: Story<CheckboxProps> = Template.bind({});
 readingTheValueOfACheckbox.args = {
   label: 'Option one',
 };

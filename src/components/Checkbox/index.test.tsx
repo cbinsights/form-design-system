@@ -9,10 +9,10 @@ describe('Checkbox component', () => {
       <Checkbox label="change callback" disabled name="disabled-test" />
     );
     const input = screen.getByLabelText('change callback');
-    expect(input.disabled).toBeTruthy();
+    expect(input).toBeDisabled();
 
     fireEvent.click(input);
-    expect(input.checked).toBeTruthy();
+    expect(input).toBeChecked();
     expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
     expect(container.querySelector('.fdsCheckable')).toHaveClass(
       'fdsCheckable--disabled'
@@ -27,7 +27,7 @@ describe('Checkbox component', () => {
     const input = screen.getByLabelText('change callback');
     expect(changeFn).not.toHaveBeenCalled();
     fireEvent.click(input);
-    expect(input.checked).toBeTruthy();
+    expect(input).toBeChecked();
     fireEvent.change(input, { target: input });
     expect(changeFn).toHaveBeenCalled();
   });
@@ -46,7 +46,7 @@ describe('Checkbox component', () => {
     const input = screen.getByLabelText('unchecking callback');
     expect(changeFn).not.toHaveBeenCalled();
     fireEvent.click(input);
-    expect(input.checked).toBeFalsy();
+    expect(input).not.toBeChecked();
     fireEvent.change(input, { target: input });
     expect(changeFn).toHaveBeenCalled();
   });
