@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/download_outlined</title>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.87">
+        <g id="icon/download_outlined" fill="#404040">
+            <path d="M10.5,2 C9.6829372,2 9,2.6829372 9,3.5 L9,10 L4.5859375,10 L12,17.414062 L19.414062,10 L15,10 L15,3.5 C15,2.6829372 14.317063,2 13.5,2 L10.5,2 Z M11,4 L13,4 L13,12 L14.585938,12 L12,14.585938 L9.4140625,12 L11,12 L11,4 Z M2,20 L2,22 L22,22 L22,20 L2,20 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

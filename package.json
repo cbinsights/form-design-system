@@ -2,7 +2,7 @@
   "name": "@cbinsights/fds",
   "description": "Form: A design system by CB Insights",
   "author": "CB Insights",
-  "version": "11.11",
+  "version": "11.12",
   "license": "MIT",
   "files": [
     "lib"
