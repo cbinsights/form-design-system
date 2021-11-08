@@ -3,8 +3,11 @@ import FDS from 'lib/dictionary/js/styleConstants';
 import Icon from 'components/Icon';
 
 export type Props = {
+  /** Pass in "only" a FDS Icon reference to display it (e.g. Icon={TableIcon}) */
   Icon?: Icon;
+  /** Text inside */
   label?: string | number | React.ReactNode;
+  /** Min height of section */
   height?: string;
 };
 
