@@ -16,13 +16,12 @@ exports[`Chip component matches snapshot (default props) 1`] = `
 
 exports[`Chip component matches snapshot (set all props) 1`] = `
 <button
-  as={[Function]}
   className="fdsChip--active fdsChip border--focus--noTransition transition--default fdsChip--m fdsChip--blue"
 >
   <div
     className="fdsChip-icon"
   >
-    <Icon
+    <StarFilledIcon
       customSize={16}
     />
   </div>
@@ -42,7 +41,7 @@ exports[`Chip component matches snapshot (set all props) 1`] = `
     className="fdsChip-close border--focus"
     onClick={[Function]}
     role="button"
-    tabIndex="0"
+    tabIndex={0}
   >
     <DenyIcon
       customSize={10}

@@ -3,3 +3,4 @@ docs/
 lib/
 *.png
 *.svg
+*.tsx.snap
