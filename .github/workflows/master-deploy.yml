@@ -15,4 +15,4 @@ jobs:
     uses: cbinsights/form-design-system/.github/workflows/reusable-npm-publish.yml@master
     needs: [test, typecheck, lint]
     secrets:
-      token: ${{ secrets.NPM_TOKEN }}
+      token: ${{ secrets.SEMANTIC_NPM_TOKEN }}
