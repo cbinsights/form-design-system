@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
-import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
+import CaretDownIcon from 'icons/react/CaretDownIcon';
 
 const DropdownButton = forwardRef(
   ({ children, isFullWidth = false, isActive, disabled, ...rest }, ref) => (

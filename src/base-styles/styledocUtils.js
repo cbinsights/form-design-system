@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FDS from 'lib/dictionary/js/styleConstants';
+import FDS from 'dictionary/js/styleConstants';
 
 export const generalStyles = {
   width: FDS.MEDIA_XL,

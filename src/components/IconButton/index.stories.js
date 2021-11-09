@@ -1,5 +1,5 @@
 import React from 'react';
-import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
+import StarFilledIcon from 'icons/react/StarFilledIcon';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 import State from 'util/storybook-docs/State';
 

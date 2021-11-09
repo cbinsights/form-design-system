@@ -1,5 +1,5 @@
 import React from 'react';
-import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
+import StarFilledIcon from 'icons/react/StarFilledIcon';
 import { Story } from '@storybook/react';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 import Chip, { THEMES, SIZES, ChipProps } from '.';

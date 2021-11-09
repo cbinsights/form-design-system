@@ -12,12 +12,6 @@ module.exports = {
   ],
   webpackFinal: async (config) => {
     config.resolve.modules = [...(config.resolve.modules || []), path.resolve('./src')];
-
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      lib: path.resolve('./lib'),
-    };
-
     return config;
   },
 };

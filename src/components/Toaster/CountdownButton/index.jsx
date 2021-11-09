@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Transition } from 'react-transition-group';
-import FDS from 'lib/dictionary/js/styleConstants';
+import FDS from 'dictionary/js/styleConstants';
 import IconButton from 'components/IconButton';
-import DenyIcon from 'lib/icons/react/DenyIcon';
+import DenyIcon from 'icons/react/DenyIcon';
 
 /**
  *

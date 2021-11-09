@@ -5,6 +5,8 @@ const glob = require('glob');
 const toJsx = require('svg-to-jsx');
 const getComponentName = require('./helpers/getComponentName');
 const { buildConfig } = require('./icons.config');
+const SVGO = require('svgo');
+const { svgoOptions, svgoPlugins } = require('./helpers/svgoConfig');
 
 // @function TEMPLATE
 const TEMPLATE = require('handlebars').compile(
@@ -19,14 +21,23 @@ const TEMPLATE = require('handlebars').compile(
  */
 const writeComponent = async (filepath) => {
   const componentName = getComponentName(filepath);
+  const iconName = path.basename(filepath, '.svg');
+  const svgo = new SVGO({
+    ...svgoOptions,
+    plugins: [...svgoPlugins, { cleanupIDs: { prefix: iconName } }],
+  });
 
-  await toJsx(fs.readFileSync(filepath))
+  fs.promises
+    .readFile(filepath)
+    .then((svg) => svgo.optimize(svg, { filepath }))
+    .then((optimized) => toJsx(optimized.data))
     .then((jsx) => {
       const content = TEMPLATE({
         componentName,
         svg: jsx,
+        date: new Date(),
       });
-      fs.writeFileSync(`${buildConfig.react.lib}/${componentName}.jsx`, content);
+      fs.writeFileSync(`${buildConfig.react.lib}/${componentName}.tsx`, content);
     })
     .catch((err) => {
       throw new Error(err);
@@ -34,11 +45,11 @@ const writeComponent = async (filepath) => {
 };
 
 /**
- * Builds an `index.js` to make all icons exportable
+ * Builds an `index.tsx` to make all icons exportable
  * with destructured statements
  *
  * @param {Array} files - all svg filepaths
- * @returns {String} index.js file content string
+ * @returns {String} index.tsx file content string
  */
 const buildDestructured = (files) => {
   let importOutput = '';
@@ -56,6 +67,6 @@ const buildDestructured = (files) => {
 glob(`${buildConfig.react.src}/*.svg`, {}, (error, files) => {
   if (error) throw new Error(`glob error: ${error}`);
   console.info(`Creating ${files.length} react components`);
-  fs.writeFileSync(`${buildConfig.react.lib}/index.js`, buildDestructured(files));
+  fs.writeFileSync(`${buildConfig.react.lib}/index.tsx`, buildDestructured(files));
   files.forEach(writeComponent);
 });

@@ -1,8 +1,8 @@
 import React from 'react';
-import FDS from 'lib/dictionary/js/styleConstants';
+import FDS from 'dictionary/js/styleConstants';
 import Layout from 'util/storybook-docs/Layout';
 
-import '../src/components/style/index.css';
+import 'components/style/index.css';
 
 export const parameters = {
   previewTabs: { 'storybook/docs/panel': { index: -1 } },

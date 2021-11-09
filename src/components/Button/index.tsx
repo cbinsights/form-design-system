@@ -1,7 +1,7 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
-import { CaretDownIcon } from 'lib/icons/react';
+import { CaretDownIcon } from 'icons/react';
 
 export const SIZES = ['s', 'm'] as const;
 

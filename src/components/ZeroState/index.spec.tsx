@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import TableIcon from 'lib/icons/react/TableIcon';
+import TableIcon from 'icons/react/TableIcon';
 import ZeroState from '.';
 
 describe('<ZeroState />', () => {
