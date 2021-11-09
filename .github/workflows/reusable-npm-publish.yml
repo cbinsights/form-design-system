@@ -43,6 +43,7 @@ jobs:
           echo "${{ env.version }}"
           echo "${{ env.version_suffix }}"
           echo "${{ env.tag }}"
+          echo "${{ secrets.NPM_TOKEN }}"
           echo "yarn publish --new-version ${{env.version}}.${{env.version_suffix}} --tag ${{ env.tag }} --access public"
       - uses: actions/setup-node@v2
         with:
