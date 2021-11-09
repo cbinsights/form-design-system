@@ -1,0 +1,78 @@
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
+.fdsLoading--m,
+.fdsLoading--s,
+.fdsLoading--xs {
+  margin: 0 auto;
+  position: relative;
+}
+
+.fdsLoading--m:before,
+.fdsLoading--s:before,
+.fdsLoading--xs:before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+}
+
+.fdsLoading--m {
+  height: 62px;
+  width: 62px;
+}
+
+.fdsLoading--m:before {
+  top: 32px;
+  left: 32px;
+  width: 48px;
+  height: 48px;
+  border-left: 6px solid var(--color-aqua);
+  border-bottom: 6px solid var(--color-aqua);
+  border-right: 6px solid var(--color-aqua);
+  border: 6px solid var(--color-aqua);
+  border-top: 6px solid transparent;
+}
+
+.fdsLoading--s {
+  height: 32px;
+  width: 32px;
+}
+
+.fdsLoading--s:before {
+  top: 16px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  border-left: 3px solid var(--color-aqua);
+  border-bottom: 3px solid var(--color-aqua);
+  border-right: 3px solid var(--color-aqua);
+  border: 3px solid var(--color-aqua);
+  border-top: 3px solid transparent;
+}
+
+.fdsLoading--xs {
+  height: 16px;
+  width: 16px;
+}
+
+.fdsLoading--xs:before {
+  top: 8px;
+  left: 8px;
+  width: 12px;
+  height: 12px;
+  border-left: 2px solid var(--color-aqua);
+  border-bottom: 2px solid var(--color-aqua);
+  border-right: 2px solid var(--color-aqua);
+  border: 2px solid var(--color-aqua);
+  border-top: 2px solid transparent;
+}
