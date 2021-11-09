@@ -44,7 +44,7 @@ jobs:
           echo "${{ env.version_suffix }}"
           echo "${{ env.tag }}"
           echo "yarn publish --new-version ${{env.version}}.${{env.version_suffix}} --tag ${{ env.tag }} --access public"
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: '14.x'
           cache: 'yarn'
