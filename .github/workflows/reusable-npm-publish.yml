@@ -44,7 +44,7 @@ jobs:
           echo "${{ env.version_suffix }}"
           echo "${{ env.tag }}"
           echo "yarn publish --new-version ${{env.version}}.${{env.version_suffix}} --tag ${{ env.tag }} --access public"
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
           cache: 'yarn'
@@ -57,8 +57,7 @@ jobs:
           git config --global user.email "noreply@cbinsights.com"
           git config --global user.name "CBI Github CI"
 
-      - name: Release
-        run: npx semantic-release
+      - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
