@@ -61,10 +61,10 @@ jobs:
           git config --global user.name "CBI Github CI"
 
       - name: Release
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.SEMANTIC_NPM_TOKEN }}
-        run: npx semantic-release
 
       - name: Generate Storybook Documentation
         run: yarn comp:docs
