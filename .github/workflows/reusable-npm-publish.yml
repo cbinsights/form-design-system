@@ -11,56 +11,23 @@ jobs:
     name: Publish npm package
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Parse package.json version
-        id: set_var
-        run: |
-          content=`cat ${{ github.workspace }}/package.json`
-          # the following lines are only required for multi line json
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          # end of optional handling for multi line json
-          echo "::set-output name=packageJson::$content"
-      - name: read package.json version
-        run: |
-          echo "version=${{fromJson(steps.set_var.outputs.packageJson).version}}" >> $GITHUB_ENV
-      - name: Sets env vars for yarn publish (beta)
-        run: |
-          echo "version_suffix=${GITHUB_RUN_ID}-beta.${GITHUB_SHA::8}" >> $GITHUB_ENV
-          echo "tag=beta" >> $GITHUB_ENV
-        if: contains('refs/heads/beta', github.ref)
-      - name: Sets env vars for yarn publish (master)
-        run: |
-          echo "version_suffix=${GITHUB_RUN_ID}" >> $GITHUB_ENV
-          echo "tag=latest" >> $GITHUB_ENV
-        if: contains('refs/heads/master', github.ref)
-      - name: Echo envs to see how we're doing
-        run: |
-          echo "${{ env.version }}"
-          echo "${{ env.version_suffix }}"
-          echo "${{ env.tag }}"
-          echo "yarn publish --new-version ${{env.version}}.${{env.version_suffix}} --tag ${{ env.tag }} --access public"
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
           node-version: '14.x'
           cache: 'yarn'
-          registry-url: 'https://registry.npmjs.org/'
-          always-auth: true
-          scope: '@cbinsights'
       - name: Installing packages
         run: yarn --frozen-lockfile
-      - name: Build Style Dictionary
+      - name: Create build
         run: yarn build
-      - name: Setting up git config before publish
-        run: |
-          git config --global user.email "noreply@cbinsights.com"
-          git config --global user.name "CBI Github CI"
-      - name: Publishing to npm
-        run: yarn publish --new-version ${{env.version}}.${{env.version_suffix}} --tag ${{ env.tag }} --access public
+      - name: Release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.token }}
-          NPM_AUTH_TOKEN: ${{ secrets.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.token }}
+        run: npx semantic-release
       - name: Generate Storybook Documentation
         run: yarn comp:docs
       - name: Publish to Github Pages
