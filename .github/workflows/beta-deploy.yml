@@ -14,4 +14,4 @@ jobs:
   npm-publish:
     uses: cbinsights/form-design-system/.github/workflows/reusable-npm-publish.yml@beta
     secrets:
-      token: ${{ secrets.NPM_TOKEN }}
+      token: ${{ secrets.SEMANTIC_NPM_TOKEN }}
