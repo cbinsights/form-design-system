@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: 'jest-environment-jsdom',
   moduleDirectories: ['node_modules', 'src'],
   rootDir: './',
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/lib/'],
