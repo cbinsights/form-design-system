@@ -1,5 +1,10 @@
 import React from 'react';
-import { IconProps } from 'components/Icon'
+
+interface IconProps {
+  color?: string;
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+  customSize?: number;
+}
 
 const {{componentName}} = ({
   size = 's',

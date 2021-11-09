@@ -1,7 +1,6 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
-import Icon from 'components/Icon';
 
 const LIGHT_COLORS = ['white', 'haze', 'lightGray'] as const;
 const DARK_COLORS = [
@@ -49,7 +48,7 @@ export interface AvatarProps
   /** Controls how many initials can be displayed */
   initialsLength?: typeof INITIALS_LENGTH[number];
   /**  Accepts FDS Icon. Renders if name or imgUrl are not present  */
-  PlaceholderIcon?: Icon;
+  PlaceholderIcon?: () => JSX.Element;
   /**
    * Takes in a react-router `Link` reference and sets it
    * as the base element. You may ONLY use it like the
