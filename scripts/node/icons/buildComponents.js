@@ -26,7 +26,7 @@ const writeComponent = async (filepath) => {
         componentName,
         svg: jsx,
       });
-      fs.writeFileSync(`${buildConfig.react.lib}/${componentName}.tsx`, content);
+      fs.writeFileSync(`${buildConfig.react.lib}/${componentName}.jsx`, content);
     })
     .catch((err) => {
       throw new Error(err);
