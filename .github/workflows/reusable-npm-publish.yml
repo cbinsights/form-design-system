@@ -48,9 +48,6 @@ jobs:
         with:
           node-version: '14.x'
           cache: 'yarn'
-          registry-url: 'https://registry.npmjs.org/'
-          always-auth: true
-          scope: '@cbinsights'
       - name: Installing packages
         run: yarn --frozen-lockfile
       - name: Build Style Dictionary
