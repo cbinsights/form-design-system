@@ -56,13 +56,11 @@ jobs:
         run: |
           git config --global user.email "noreply@cbinsights.com"
           git config --global user.name "CBI Github CI"
-
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
-
       - name: Generate Storybook Documentation
         run: yarn comp:docs
       - name: Publish to Github Pages
