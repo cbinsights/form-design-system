@@ -2,7 +2,7 @@
   "name": "@cbinsights/fds",
   "description": "Form: A design system by CB Insights",
   "author": "CB Insights",
-  "version": "11.12",
+  "version": "0.0.0-development",
   "license": "MIT",
   "files": [
     "lib"
@@ -40,7 +40,8 @@
     "build-storybook": "build-storybook",
     "stats:css": "node ./scripts/node/util/getClassStats.js",
     "stats:imports": "node ./scripts/node/util/getImportStats.js",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "semantic-release": "semantic-release"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
@@ -157,7 +158,8 @@
     "tinycolor2": "^1.4.1",
     "ts-migrate": "^0.1.26",
     "typescript": "4.4.4",
-    "webpack": "^4.38"
+    "webpack": "^4.38",
+    "semantic-release": "^18.0.0"
   },
   "repository": {
     "type": "git",
