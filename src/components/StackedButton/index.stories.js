@@ -1,5 +1,5 @@
 import React from 'react';
-import { StarFilledIcon, CollectionPublicIcon, SalesforceIcon } from 'lib/icons/react';
+import { StarFilledIcon, CollectionPublicIcon, SalesforceIcon } from 'icons/react';
 
 import State from 'util/storybook-docs/State';
 

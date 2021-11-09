@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 import { CSSTransition } from 'react-transition-group';
-import FDS from 'lib/dictionary/js/styleConstants';
+import FDS from 'dictionary/js/styleConstants';
 import { isNotRefsEvent } from 'components/util/events';
 import { getPopperPlacement } from './util';
 import { useDisableScroll, useCloseOnScroll } from './hooks';

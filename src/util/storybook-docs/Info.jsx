@@ -1,5 +1,5 @@
 import React from 'react';
-import FDS from 'lib/dictionary/js/styleConstants';
+import FDS from 'dictionary/js/styleConstants';
 import PropTypes from 'prop-types';
 
 /**

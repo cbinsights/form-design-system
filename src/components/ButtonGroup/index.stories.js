@@ -1,6 +1,6 @@
 import React from 'react';
 import Tooltip from 'components/Tooltip';
-import FeedIcon from 'lib/icons/react/FeedIcon';
+import FeedIcon from 'icons/react/FeedIcon';
 import State from 'util/storybook-docs/State';
 import ButtonGroup from '.';
 

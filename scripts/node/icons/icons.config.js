@@ -4,7 +4,7 @@
 
 const { ICONS_ROOT, LIB_ROOT } = require('../constants.js');
 
-const PATH_ICONS_LIB = `${LIB_ROOT}/icons/`;
+const PATH_ICONS_LIB = `${LIB_ROOT}/icons`;
 
 module.exports = {
   // Options for exporting icons from sketch
@@ -24,13 +24,13 @@ module.exports = {
       lib: `${PATH_ICONS_LIB}/png`,
     },
     react: {
-      src: `${PATH_ICONS_LIB}/svg`,
-      lib: `${PATH_ICONS_LIB}/react`,
+      src: `${ICONS_ROOT}/svg`,
+      lib: `${ICONS_ROOT}/react`,
       template: `${ICONS_ROOT}/templates/reactComponent.hbs`,
     },
     docs: {
-      input: `${PATH_ICONS_LIB}/svg`, // used to build manifest of svg strings
-      output: `${PATH_ICONS_LIB}`, // manifest destination
+      input: `${ICONS_ROOT}/svg`, // used to build manifest of svg strings
+      output: `${ICONS_ROOT}`, // manifest destination
     },
   },
 };

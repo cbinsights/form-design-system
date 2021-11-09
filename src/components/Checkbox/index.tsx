@@ -2,9 +2,9 @@ import React, { HTMLAttributes } from 'react';
 import { v4 } from 'uuid';
 import cc from 'classcat';
 
-import CheckEmptyIcon from 'lib/icons/react/CheckEmptyIcon';
-import CheckFilledIcon from 'lib/icons/react/CheckFilledIcon';
-import CheckIndeterminateIcon from 'lib/icons/react/CheckIndeterminateIcon';
+import CheckEmptyIcon from 'icons/react/CheckEmptyIcon';
+import CheckFilledIcon from 'icons/react/CheckFilledIcon';
+import CheckIndeterminateIcon from 'icons/react/CheckIndeterminateIcon';
 
 export interface CheckboxProps extends HTMLAttributes<HTMLInputElement> {
   /** Label used for a11y attributes _and_ the rendered `label` element */

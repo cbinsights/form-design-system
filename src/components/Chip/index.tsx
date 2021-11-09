@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from 'react';
 import cc from 'classcat';
-import DenyIcon from 'lib/icons/react/DenyIcon';
+import DenyIcon from 'icons/react/DenyIcon';
 import baseElement from 'util/baseElement';
 import Icon from 'components/Icon';
 

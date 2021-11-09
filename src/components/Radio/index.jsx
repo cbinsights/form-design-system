@@ -3,8 +3,8 @@ import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
 
-import RadioEmptyIcon from 'lib/icons/react/RadioEmptyIcon';
-import RadioFilledIcon from 'lib/icons/react/RadioFilledIcon';
+import RadioEmptyIcon from 'icons/react/RadioEmptyIcon';
+import RadioFilledIcon from 'icons/react/RadioFilledIcon';
 
 /**
  * @param {Object} props react props

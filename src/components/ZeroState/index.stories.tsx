@@ -1,8 +1,8 @@
 import React from 'react';
-import DenyIcon from 'lib/icons/react/DenyIcon';
+import DenyIcon from 'icons/react/DenyIcon';
 import { Story } from '@storybook/react';
-import SearchIcon from 'lib/icons/react/SearchIcon';
-import TableIcon from 'lib/icons/react/TableIcon';
+import SearchIcon from 'icons/react/SearchIcon';
+import TableIcon from 'icons/react/TableIcon';
 import ZeroState, { Props } from '.';
 
 const Template = (args: $TSFixMe) => <ZeroState {...args} />;

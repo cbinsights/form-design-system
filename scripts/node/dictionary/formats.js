@@ -34,10 +34,11 @@ const jsComment = () =>
  */
 const formatJSCustomProperties = (dictionary) =>
   [
-    `${jsComment()}`,
-    'module.exports = {',
+    jsComment(),
+    'const cssVariables = {',
     ...dictionary.allProperties.map((prop) => `  "--${prop.name}": "${prop.value}",`),
     '};',
+    'export default cssVariables;',
   ].join('\n');
 
 /**
@@ -45,10 +46,13 @@ const formatJSCustomProperties = (dictionary) =>
  * @return {String} js file with commonJS exports
  */
 const formatCommonJs = (dictionary) =>
-  jsComment() +
-  dictionary.allProperties
-    .map((prop) => `exports.${prop.name} = "${prop.value}";`)
-    .join('\n');
+  [
+    jsComment(),
+    'const FDS = {',
+    ...dictionary.allProperties.map((prop) => `${prop.name}: "${prop.value}",`),
+    '};',
+    'export default FDS;',
+  ].join('\n');
 
 /**
  * @param {Array} dictionary style-dicitonary dictionary
@@ -104,7 +108,14 @@ const formatJsManifest = (dictionary) => {
     motions: filterByCategory(otherProperties, 'motion'),
   };
 
-  return `module.exports = ${JSON.stringify(result, null, 2)}`;
+  Object.entries(result).map((name, value) => console.log(name));
+
+  return [
+    jsComment(),
+    ...Object.entries(result).map(
+      ([name, value]) => `export const ${name} = ${JSON.stringify(value, null, 2)};`
+    ),
+  ].join('\n');
 };
 
 /**
@@ -113,10 +124,11 @@ const formatJsManifest = (dictionary) => {
  */
 const formatReactNativeColors = (filteredDictionary) =>
   [
-    `${jsComment()}`,
-    'module.exports = {',
+    jsComment(),
+    'const reactNative = {',
     ...filteredDictionary.allProperties.map((prop) => `  ${prop.name}: '${prop.value}',`),
     '};',
+    'export default reactNative;',
   ].join('\n');
 
 /**

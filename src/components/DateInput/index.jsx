@@ -7,7 +7,7 @@ import utc from 'dayjs/plugin/utc';
 
 import DayPicker from 'react-day-picker';
 
-import DatePickerIcon from 'lib/icons/react/DatePickerIcon';
+import DatePickerIcon from 'icons/react/DatePickerIcon';
 import TextInput from 'components/TextInput';
 import YearAndMonthSelector from './YearAndMonthSelector';
 import DateInputPopover from './DateInputPopover';

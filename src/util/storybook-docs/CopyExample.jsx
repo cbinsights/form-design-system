@@ -1,7 +1,7 @@
 import React from 'react';
-import FDS from 'lib/dictionary/js/styleConstants';
-import CheckIcon from 'lib/icons/react/CheckIcon';
-import DenyIcon from 'lib/icons/react/DenyIcon';
+import FDS from 'dictionary/js/styleConstants';
+import CheckIcon from 'icons/react/CheckIcon';
+import DenyIcon from 'icons/react/DenyIcon';
 import PropTypes from 'prop-types';
 
 /**

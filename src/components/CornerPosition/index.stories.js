@@ -1,5 +1,5 @@
 import React from 'react';
-import CheckIcon from 'lib/icons/react/CheckIcon';
+import CheckIcon from 'icons/react/CheckIcon';
 import Badge from 'components/Badge';
 import CornerPosition from '.';
 

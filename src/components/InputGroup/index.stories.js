@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchIcon from 'lib/icons/react/SearchIcon';
+import SearchIcon from 'icons/react/SearchIcon';
 import TextInput from 'components/TextInput';
 import InputGroup from '.';
 
