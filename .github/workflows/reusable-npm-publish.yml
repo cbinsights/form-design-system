@@ -51,8 +51,8 @@ jobs:
       - name: Installing packages
         run: yarn --frozen-lockfile
       - name: Build Style Dictionary
-        run: yarn build
-      - name: Setting up git config before publish
+        #   run: yarn build
+        # - name: Setting up git config before publish
         run: |
           git config --global user.email "noreply@cbinsights.com"
           git config --global user.name "CBI Github CI"
@@ -61,7 +61,7 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.SEMANTIC_NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Generate Storybook Documentation
         run: yarn comp:docs
