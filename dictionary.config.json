@@ -80,7 +80,7 @@
         {
           "filter": "excludeCustomMedia",
           "destination": "styleConstants.tsx",
-          "format": "javascript/commonJs"
+          "format": "javascript/esModules"
         }
       ]
     },

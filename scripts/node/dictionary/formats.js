@@ -43,9 +43,9 @@ const formatJSCustomProperties = (dictionary) =>
 
 /**
  * @param {Array} dictionary style-dicitonary dictionary
- * @return {String} js file with commonJS exports
+ * @return {String} js file with ES Modules exports
  */
-const formatCommonJs = (dictionary) =>
+const formatESModules = (dictionary) =>
   [
     jsComment(),
     'const FDS = {',
@@ -176,8 +176,8 @@ module.exports = [
     formatter: formatJSCustomProperties,
   },
   {
-    name: 'javascript/commonJs',
-    formatter: formatCommonJs,
+    name: 'javascript/esModules',
+    formatter: formatESModules,
   },
   {
     name: 'javascript/manifest',
