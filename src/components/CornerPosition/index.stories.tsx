@@ -11,7 +11,7 @@ Primary.args = {
   children: <button>lorem ipsum</button>,
 };
 
-export const Variations = () => (
+export const Variations = (): JSX.Element => (
   <>
     <CornerPosition decoration={<Badge label="alert" />}>
       <div
