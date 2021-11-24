@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FDS from 'lib/dictionary/js/styleConstants';
+import FDS from 'dictionary/js/styleConstants';
 
 export const StoryWrapper = ({ children, className = '', ...rest }) => (
   <div

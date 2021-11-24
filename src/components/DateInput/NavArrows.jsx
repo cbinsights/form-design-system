@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import IconButton from 'components/IconButton';
-import ActionsArrowLeftIcon from 'lib/icons/react/ActionsArrowLeftIcon';
-import ActionsArrowRightIcon from 'lib/icons/react/ActionsArrowRightIcon';
+import ActionsArrowLeftIcon from 'icons/react/ActionsArrowLeftIcon';
+import ActionsArrowRightIcon from 'icons/react/ActionsArrowRightIcon';
 
 /**
  * Private component for DateInput that renders prev/next arrows.

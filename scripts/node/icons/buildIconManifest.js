@@ -2,18 +2,34 @@ const fs = require('fs-extra');
 const path = require('path');
 const glob = require('glob');
 const { buildConfig } = require('./icons.config');
+const SVGO = require('svgo');
+const { svgoOptions, svgoPlugins } = require('./helpers/svgoConfig');
 
 if (!fs.existsSync(buildConfig.docs.output)) {
   fs.mkdirSync(buildConfig.docs.output);
 }
 
-glob(`${buildConfig.docs.input}/*.svg`, {}, (error, files) => {
-  const svgDefs = files.map((filepath) => ({
-    name: path.basename(filepath, '.svg'),
-    svg: fs.readFileSync(filepath).toString(),
-  }));
+const processFile = async (filepath) => {
+  const iconName = path.basename(filepath, '.svg');
+  const svgo = new SVGO({
+    ...svgoOptions,
+    plugins: [...svgoPlugins, { cleanupIDs: { prefix: iconName } }],
+  });
 
-  const content = `module.exports = ${JSON.stringify(svgDefs, null, 2)};`;
+  const optimized = await fs.promises
+    .readFile(filepath)
+    .then((svg) => svgo.optimize(svg, { filepath }));
 
-  fs.writeFileSync(`${buildConfig.docs.output}/iconManifest.js`, content);
+  return {
+    name: iconName,
+    svg: optimized.data,
+  };
+};
+
+glob(`${buildConfig.docs.input}/*.svg`, {}, async (error, files) => {
+  const svgDefs = files.map(processFile);
+  Promise.all(svgDefs).then((defs) => {
+    const content = `module.exports = ${JSON.stringify(defs, null, 2)};`;
+    fs.writeFileSync(`${buildConfig.docs.output}/iconManifest.tsx`, content);
+  });
 });

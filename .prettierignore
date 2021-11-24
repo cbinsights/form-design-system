@@ -4,3 +4,7 @@ lib/
 *.png
 *.svg
 *.tsx.snap
+src/icons/react/
+src/dictionary/js/
+src/dictionary/css/
+src/icons/iconManifest.tsx

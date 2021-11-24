@@ -6,7 +6,7 @@
  */
 
 /* Global custom properties */
-@import '../../lib/dictionary/css/customProperties.css';
+@import '../dictionary/css/customProperties.css';
 
 /* Base styles */
 @import '../base-styles/index.css';

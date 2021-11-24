@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import FDS from 'lib/dictionary/js/styleConstants';
+import FDS from 'dictionary/js/styleConstants';
 import useScrollAttributes from '.';
 
 const nested = {

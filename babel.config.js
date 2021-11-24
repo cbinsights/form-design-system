@@ -27,9 +27,6 @@ const config = {
       {
         root: ['./src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        alias: {
-          lib: './lib',
-        },
       },
     ],
   ],
@@ -38,7 +35,12 @@ const config = {
 module.exports = (api) => {
   // avoid copying test files to destination for JSX build
   if (api.env('jsx_compile')) {
-    config.ignore = [/\.test\.jsx?$/];
+    config.ignore = [
+      /\.test\.jsx?$/,
+      /\.test\.tsx?$/,
+      /\.stories\.jsx?$/,
+      /\.stories\.tsx?$/,
+    ];
   }
 
   return config;

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import FocusTrap from 'focus-trap-react';
 import rafSchd from 'raf-schd';
-import DenyIcon from 'lib/icons/react/DenyIcon';
+import DenyIcon from 'icons/react/DenyIcon';
 import IconButton from 'components/IconButton';
 import cc from 'classcat';
 import noScroll from './noScroll';

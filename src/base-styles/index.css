@@ -1,7 +1,7 @@
 /* Custom properties */
-@import '../../lib/dictionary/css/customMedia';
-@import '../../lib/dictionary/css/customProperties';
-@import '../../lib/dictionary/css/rawRgbColors';
+@import '../dictionary/css/customMedia';
+@import '../dictionary/css/customProperties';
+@import '../dictionary/css/rawRgbColors';
 
 /* Base styles */
 @import './base/customNormalize';

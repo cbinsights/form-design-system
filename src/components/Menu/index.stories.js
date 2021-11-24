@@ -6,10 +6,10 @@ import Button from 'components/Button';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 
-import CloneIcon from 'lib/icons/react/CloneIcon';
-import TrashIcon from 'lib/icons/react/TrashIcon';
-import EditIcon from 'lib/icons/react/EditIcon';
-import FundingIcon from 'lib/icons/react/FundingIcon';
+import CloneIcon from 'icons/react/CloneIcon';
+import TrashIcon from 'icons/react/TrashIcon';
+import EditIcon from 'icons/react/EditIcon';
+import FundingIcon from 'icons/react/FundingIcon';
 import Tooltip from 'components/Tooltip';
 
 import { MenuItem, MenuLink } from 'components';

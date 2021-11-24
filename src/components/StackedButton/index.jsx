@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
-import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
+import CaretDownIcon from 'icons/react/CaretDownIcon';
 
 const StackedButton = forwardRef(
   ({ Icon, Link, label, disabled, isActive, isToggled, hasCaret, ...rest }, ref) => {

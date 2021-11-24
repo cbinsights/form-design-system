@@ -1,5 +1,5 @@
 import React from 'react';
-import CaretDownIcon from 'lib/icons/react/CaretDownIcon';
+import CaretDownIcon from 'icons/react/CaretDownIcon';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import { action } from '@storybook/addon-actions';

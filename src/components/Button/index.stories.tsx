@@ -2,7 +2,7 @@ import React from 'react';
 import State from 'util/storybook-docs/State';
 import { Story } from '@storybook/react';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
-import { StarFilledIcon, WorldIcon } from 'lib/icons/react';
+import { StarFilledIcon, WorldIcon } from 'icons/react';
 import Button, { ButtonProps, THEMES, Theme, SIZES } from '.';
 
 const Template = ({ label = 'Button', ...args }: ButtonProps) => (

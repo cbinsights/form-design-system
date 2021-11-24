@@ -4,11 +4,11 @@
   "platforms": {
     "ReactNative": {
       "transforms": ["attribute/cti", "name/i/objectKey"],
-      "buildPath": "./lib/dictionary/js/",
+      "buildPath": "./src/dictionary/js/",
       "files": [
         {
           "filter": "isColor",
-          "destination": "reactNative.js",
+          "destination": "reactNative.tsx",
           "format": "javascript/reactNativeColors"
         }
       ]
@@ -16,7 +16,7 @@
 
     "SketchPalette": {
       "transforms": ["attribute/cti"],
-      "buildPath": "./lib/dictionary/sketch/",
+      "buildPath": "./src/dictionary/sketch/",
       "files": [
         {
           "destination": "cbi.sketchpalette",
@@ -27,7 +27,7 @@
 
     "CssCustomProperties": {
       "transforms": ["attribute/cti", "name/custom/kebab", "color/css"],
-      "buildPath": "./lib/dictionary/css/",
+      "buildPath": "./src/dictionary/css/",
       "files": [
         {
           "filter": "excludeCustomMedia",
@@ -39,7 +39,7 @@
 
     "CssCustomMedia": {
       "transforms": ["attribute/cti", "name/custom/kebab"],
-      "buildPath": "./lib/dictionary/css/",
+      "buildPath": "./src/dictionary/css/",
       "files": [
         {
           "filter": "isCustomMedia",
@@ -51,7 +51,7 @@
 
     "CssRawRgb": {
       "transforms": ["attribute/cti", "value/rgbComponents"],
-      "buildPath": "./lib/dictionary/css/",
+      "buildPath": "./src/dictionary/css/",
       "files": [
         {
           "filter": "isColor",
@@ -63,11 +63,11 @@
 
     "JSCustomProperties": {
       "transforms": ["attribute/cti", "name/custom/kebab", "color/css"],
-      "buildPath": "./lib/dictionary/js/",
+      "buildPath": "./src/dictionary/js/",
       "files": [
         {
           "filter": "excludeCustomMedia",
-          "destination": "cssCustomProperties.js",
+          "destination": "cssCustomProperties.tsx",
           "format": "js/customProperties"
         }
       ]
@@ -75,12 +75,12 @@
 
     "JSConstants": {
       "transforms": ["attribute/cti", "name/custom/constant", "color/css"],
-      "buildPath": "./lib/dictionary/js/",
+      "buildPath": "./src/dictionary/js/",
       "files": [
         {
           "filter": "excludeCustomMedia",
-          "destination": "styleConstants.js",
-          "format": "javascript/commonJs"
+          "destination": "styleConstants.tsx",
+          "format": "javascript/esModules"
         }
       ]
     },
@@ -93,10 +93,10 @@
         "attribute/mqInfo",
         "color/css"
       ],
-      "buildPath": "./lib/dictionary/js/",
+      "buildPath": "./src/dictionary/js/",
       "files": [
         {
-          "destination": "manifest.js",
+          "destination": "manifest.tsx",
           "format": "javascript/manifest"
         }
       ]

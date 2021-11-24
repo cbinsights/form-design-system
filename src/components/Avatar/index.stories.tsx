@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import StarFilledIcon from 'lib/icons/react/StarFilledIcon';
+import StarFilledIcon from 'icons/react/StarFilledIcon';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 
 import Avatar, { AvatarProps, BG_COLORS, SIZES, RADII } from '.';

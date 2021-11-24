@@ -1,5 +1,5 @@
 import React from 'react';
-import ApproveIcon from 'lib/icons/react/ApproveIcon';
+import ApproveIcon from 'icons/react/ApproveIcon';
 
 import FloatingAction from '.';
 
