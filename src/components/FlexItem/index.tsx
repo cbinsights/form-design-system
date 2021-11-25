@@ -1,6 +1,5 @@
 import React from 'react';
 import cc from 'classcat';
-import PropTypes from 'prop-types';
 
 /**
  * @description map of justify prop values to class names
@@ -22,37 +21,40 @@ const AlignPropMap = {
   center: 'flexItem--alignCenter',
 };
 
+export interface FlexItemProps {
+  /** Sets standard justify-content */
+  justify?: 'start' | 'end' | 'center' | 'spaceBetween' | 'spaceAround';
+
+  /** Sets standard align-items */
+  align?: 'start' | 'end' | 'center';
+
+  /** When set, the `FlexItem` will shrink to content size */
+  shrink?: boolean;
+
+  /** React children */
+  children?: React.ReactNode;
+}
+
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const FlexItem = ({ shrink = false, justify, align, children }) => {
+const FlexItem = ({
+  shrink = false,
+  justify,
+  align,
+  children,
+}: FlexItemProps): JSX.Element => {
   const classNames = cc([
+    align && AlignPropMap[align],
+    justify && JustifyPropMap[justify],
     {
       'flexItem--shrink': shrink,
-    },
-    {
-      [JustifyPropMap[justify]]: justify,
-      [AlignPropMap[align]]: align,
     },
     'flexItem',
   ]);
 
   return <div className={classNames}>{children}</div>;
-};
-
-FlexItem.propTypes = {
-  /** Sets standard justify-content */
-  justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),
-
-  /** Sets standard align-items */
-  align: PropTypes.oneOf(Object.keys(AlignPropMap)),
-
-  /** When set, the `FlexItem` will shrink to content size */
-  shrink: PropTypes.bool,
-
-  /** React children */
-  children: PropTypes.node,
 };
 
 export default FlexItem;

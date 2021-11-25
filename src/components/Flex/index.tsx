@@ -1,6 +1,6 @@
 import React from 'react';
 import cc from 'classcat';
-import PropTypes from 'prop-types';
+import { FlexItemProps } from '../FlexItem';
 
 /**
  * @description map of alignment prop values to class names
@@ -9,11 +9,6 @@ export const DirectionPropMap = {
   row: 'flex--row',
   column: 'flex--column',
 };
-
-/**
- * @description valid breakpoint values
- */
-export const SwitchDirectionProps = ['xs', 's', 'm', 'l', 'xl'];
 
 /**
  * @description map of justify prop values to class names
@@ -35,6 +30,29 @@ export const AlignPropMap = {
   stretch: 'flex--alignStretch',
 };
 
+export interface FlexProps {
+  /** sets flex-direction (along with either 100% height or width) */
+  direction?: 'row' | 'column';
+
+  /** switches flex-direction at a given breakpoint */
+  switchDirection?: 'xs' | 's' | 'm' | 'l' | 'xl';
+
+  /** sets standard justify-content */
+  justify?: 'end' | 'center' | 'spaceBetween' | 'spaceAround';
+
+  /** sets standard align-items */
+  align?: 'start' | 'end' | 'center' | 'stretch';
+
+  /** When set, gutters are removed from `FlexItem` children */
+  noGutters?: boolean;
+
+  /** When set, `FlexItem` order is rendered in reverse */
+  reverse?: boolean;
+
+  /** React children (should be of type `FlexItem`) */
+  children: React.ReactElement<FlexItemProps> | Array<React.ReactElement<FlexItemProps>>;
+}
+
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
@@ -47,11 +65,12 @@ const Flex = ({
   justify,
   noGutters,
   children,
-}) => {
+}: FlexProps): JSX.Element => {
   const classNames = cc([
     'flex',
     AlignPropMap[align],
     DirectionPropMap[direction],
+    justify && JustifyPropMap[justify],
     {
       [`${breakpoint}:flex--${direction === 'row' ? 'column' : 'row'}`]: breakpoint,
     },
@@ -59,38 +78,11 @@ const Flex = ({
       'flex--reverse': reverse,
     },
     {
-      [JustifyPropMap[justify]]: justify,
-    },
-    {
       'flex--noGutters': noGutters,
     },
   ]);
 
   return <div className={classNames}>{children}</div>;
-};
-
-Flex.propTypes = {
-  /** sets flex-direction (along with either 100% height or width) */
-  direction: PropTypes.oneOf(Object.keys(DirectionPropMap)),
-
-  /** switches flex-direction at a given breakpoint */
-  switchDirection: PropTypes.oneOf(SwitchDirectionProps),
-
-  /** sets standard justify-content */
-  justify: PropTypes.oneOf(Object.keys(JustifyPropMap)),
-
-  /** sets standard align-items */
-  align: PropTypes.oneOf(Object.keys(AlignPropMap)),
-
-  /** When set, gutters are removed from `FlexItem` children */
-  noGutters: PropTypes.bool,
-
-  /** When set, `FlexItem` order is rendered in reverse */
-  reverse: PropTypes.bool,
-
-  /** React children (should be of type `FlexItem`) */
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
-    .isRequired,
 };
 
 export default Flex;
