@@ -1,7 +1,7 @@
 import React from 'react';
-import Indicator from '.';
+import Indicator, { IndicatorProps } from '.';
 
-const Template = (args) => <Indicator {...args} />;
+const Template = (args: IndicatorProps): JSX.Element => <Indicator {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
