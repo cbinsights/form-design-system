@@ -1,12 +1,19 @@
 import React from 'react';
 import cc from 'classcat';
-import PropTypes from 'prop-types';
+
+export interface SeparatorListProps {
+  /** Components (or strings) to render in the list */
+  items: Array<React.ReactElement | string>;
+
+  /** Optional character to render between items. Useful for breadcrumbs and other separated lists */
+  separator?: string;
+}
 
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const InlineBlockList = ({ items, separator }) => {
+const InlineBlockList = ({ items, separator }: SeparatorListProps): JSX.Element => {
   const classNames = cc([
     {
       'fdsInlineBlockList--separators': Boolean(separator),
@@ -27,15 +34,6 @@ const InlineBlockList = ({ items, separator }) => {
       ))}
     </ul>
   );
-};
-
-InlineBlockList.propTypes = {
-  /** Components (or strings) to render in the list */
-  items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.element, PropTypes.string]))
-    .isRequired,
-
-  /** Optional character to render between items. Useful for breadcrumbs and other separated lists */
-  separator: PropTypes.string,
 };
 
 export default InlineBlockList;

@@ -15,8 +15,6 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: yarn --frozen-lockfile
-      - name: Build Style Dictionary
-        run: yarn build
       - name: Run eslint
         run: yarn lint
       - name: Run Prettier Check
