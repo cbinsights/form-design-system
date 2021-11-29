@@ -14,19 +14,8 @@ jobs:
           node-version: '14.x'
           cache: 'yarn'
 
-      # - name: Cache Style Dictionary
-      #   id: cache-dictionary
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: ../lib
-      #     key: ${{ runner.os }}-${{ hashFiles('../src/components/**/*', '../src/base-styles/**/*', '../src/dictionary/**/*') }}
-
       - name: Yarn Install
         run: yarn --frozen-lockfile
-
-      - name: Build Style Dictionary
-        # if: steps.cache-dictionary.outputs.cache-hit != 'true'
-        run: yarn build
 
       - name: Run tests
         run: |
