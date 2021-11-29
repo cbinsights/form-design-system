@@ -1,7 +1,7 @@
 import React from 'react';
-import SeparatorList from '.';
+import SeparatorList, { SeparatorListProps } from '.';
 
-const Template = (args) => <SeparatorList {...args} />;
+const Template = (args: SeparatorListProps): JSX.Element => <SeparatorList {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
