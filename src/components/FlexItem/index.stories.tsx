@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Flex from 'components/Flex';
-import FlexItem from '.';
+import FlexItem, { FlexItemProps } from '.';
 
-const Template = (args) => (
+const Template = (args: FlexItemProps): JSX.Element => (
   <div style={{ width: '600px' }} className="debug--flex">
     <Flex>
       <FlexItem {...args}>
