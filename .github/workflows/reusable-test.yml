@@ -29,4 +29,8 @@ jobs:
         run: yarn build
 
       - name: Run tests
-        run: yarn test
+        run: |
+          yarn test:coverage
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov
