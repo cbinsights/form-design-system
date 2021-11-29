@@ -3,13 +3,13 @@ import { StarFilledIcon, CollectionPublicIcon, SalesforceIcon } from 'icons/reac
 
 import State from 'util/storybook-docs/State';
 
-import StackedButton from '.';
+import StackedButton, { StackedButtonProps } from '.';
 
-export const Primary = (args) => (
+export const Primary = (args: StackedButtonProps): JSX.Element => (
   <StackedButton {...args} Icon={StarFilledIcon} label="Stacked Button" />
 );
 
-export const isActiveAndToggled = (args) => (
+export const isActiveAndToggled = (args: StackedButtonProps): JSX.Element => (
   <State
     initialValue={{}}
     render={(value, setValue) => (
@@ -41,7 +41,7 @@ isActiveAndToggled.parameters = {
   },
 };
 
-export const Miscellaneous = (args) => (
+export const Miscellaneous = (args: StackedButtonProps): JSX.Element => (
   <>
     <StackedButton
       {...args}

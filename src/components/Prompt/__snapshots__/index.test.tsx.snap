@@ -6,7 +6,6 @@ exports[`Prompt component matches snapshot (default props) 1`] = `
   footerContent={
     <Flex
       justify="end"
-      wrap={true}
     >
       <FlexItem
         shrink={true}
@@ -34,7 +33,6 @@ exports[`Prompt component matches snapshot (default props) 2`] = `
   footerContent={
     <Flex
       justify="end"
-      wrap={true}
     >
       <FlexItem
         shrink={true}
@@ -69,7 +67,6 @@ exports[`Prompt component matches snapshot (set all props) 1`] = `
   footerContent={
     <Flex
       justify="end"
-      wrap={true}
     >
       <FlexItem
         shrink={true}

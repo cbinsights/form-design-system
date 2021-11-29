@@ -1,12 +1,12 @@
 import React from 'react';
 import FlexItem from 'components/FlexItem';
-import Flex from '.';
+import Flex, { FlexProps } from '.';
 
 const parentStyle = {
   width: '600px',
 };
 
-export const Primary = (args) => (
+export const Primary = (args: FlexProps): JSX.Element => (
   <div style={parentStyle} className="debug--flex">
     <Flex {...args}>
       <FlexItem shrink>
@@ -22,7 +22,7 @@ export const Primary = (args) => (
   </div>
 );
 
-export const classicMediaBlock = () => (
+export const classicMediaBlock = (): JSX.Element => (
   <div style={parentStyle} className="debug--flex">
     <Flex>
       <FlexItem shrink>
@@ -47,7 +47,7 @@ classicMediaBlock.parameters = {
   },
 };
 
-export const autoSizedContentArea = () => (
+export const autoSizedContentArea = (): JSX.Element => (
   <div style={{ height: '300px' }} className="debug--flex">
     <Flex direction="column">
       <FlexItem shrink>
@@ -79,7 +79,7 @@ autoSizedContentArea.parameters = {
   },
 };
 
-export const responsiveFlex = () => (
+export const responsiveFlex = (): JSX.Element => (
   <div className="debug--flex">
     <Flex direction="column" switchDirection="m">
       <FlexItem>

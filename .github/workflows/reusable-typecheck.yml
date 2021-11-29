@@ -15,7 +15,5 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: yarn --frozen-lockfile
-      - name: Build Style Dictionary
-        run: yarn build
       - name: Run typecheck
         run: yarn tsc
