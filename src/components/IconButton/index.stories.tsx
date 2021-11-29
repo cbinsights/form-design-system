@@ -3,16 +3,16 @@ import StarFilledIcon from 'icons/react/StarFilledIcon';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 import State from 'util/storybook-docs/State';
 
-import IconButton, { THEMES, RADII, SIZES } from '.';
+import IconButton, { THEMES, RADII, SIZES, IconButtonProps } from '.';
 
-const Template = (args) => <IconButton {...args} />;
+const Template = (args: IconButtonProps): JSX.Element => <IconButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   Icon: StarFilledIcon,
 };
 
-export const Themes = (args) => (
+export const Themes = (args: IconButtonProps): JSX.Element => (
   <StoryWrapper>
     {THEMES.map((theme, idx) => (
       <StoryItem key={idx}>
@@ -28,7 +28,7 @@ Destructive.args = {
   isDestructive: true,
 };
 
-export const Inverted = (args) => (
+export const Inverted = (args: IconButtonProps): JSX.Element => (
   <div className="inverted bgColor--blue padding--all rounded--all">
     <StoryWrapper>
       <StoryItem>
@@ -41,7 +41,7 @@ export const Inverted = (args) => (
   </div>
 );
 
-export const isActive = (args) => (
+export const isActive = (args: IconButtonProps): JSX.Element => (
   <>
     <StoryWrapper>
       <State
@@ -113,7 +113,7 @@ isActive.parameters = {
   },
 };
 
-export const Sizes = (args) => (
+export const Sizes = (args: IconButtonProps): JSX.Element => (
   <StoryWrapper>
     {SIZES.map((size, idx) => (
       <StoryItem key={idx}>
@@ -123,7 +123,7 @@ export const Sizes = (args) => (
   </StoryWrapper>
 );
 
-export const Radii = (args) => (
+export const Radii = (args: IconButtonProps): JSX.Element => (
   <StoryWrapper>
     {RADII.map((radius, idx) => (
       <StoryItem key={idx}>
@@ -133,7 +133,7 @@ export const Radii = (args) => (
   </StoryWrapper>
 );
 
-export const Breakout = (args) => (
+export const Breakout = (args: IconButtonProps): JSX.Element => (
   <StoryWrapper>
     <StoryItem>
       <div
@@ -154,7 +154,7 @@ Breakout.parameters = {
   },
 };
 
-export const Loading = (args) => (
+export const Loading = (args: IconButtonProps): JSX.Element => (
   <StoryWrapper>
     <StoryItem>
       <IconButton {...args} {...Primary.args} isLoading />
