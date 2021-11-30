@@ -7,11 +7,13 @@ import { useForm } from 'react-hook-form';
 import InputGroup from 'components/InputGroup';
 import State from 'util/storybook-docs/State';
 
-import TextInput from '.';
+import TextInput, { TextInputProps } from '.';
 
-export const Primary = (args) => <TextInput {...args} label="First Name" />;
+export const Primary = (args: TextInputProps): JSX.Element => (
+  <TextInput {...args} label="First Name" />
+);
 
-export const exampleLayout = () => (
+export const exampleLayout = (): JSX.Element => (
   <>
     <Flex>
       <FlexItem>
@@ -41,7 +43,7 @@ export const exampleLayout = () => (
   </>
 );
 
-export const controlledInput = (args) => (
+export const controlledInput = (args: TextInputProps): JSX.Element => (
   <State
     initialValue="Controlled"
     render={(value, setValue) => (
@@ -56,7 +58,7 @@ export const controlledInput = (args) => (
   />
 );
 
-export const Icons = (args) => (
+export const Icons = (args: TextInputProps): JSX.Element => (
   <TextInput
     {...args}
     label="Icons"
@@ -66,18 +68,7 @@ export const Icons = (args) => (
   />
 );
 
-export const Throttled = (args) => (
-  <TextInput
-    {...args}
-    label="Icons"
-    showLabel={false}
-    IconLeft={CaretDownIcon}
-    IconRight={CaretDownIcon}
-    onThrottledChange={action('changed')}
-  />
-);
-
-export const sideLabel = (args) => (
+export const sideLabel = (args: TextInputProps): JSX.Element => (
   <TextInput
     {...args}
     label="Side Label"
@@ -87,8 +78,19 @@ export const sideLabel = (args) => (
   />
 );
 
-export const formManagementLibrary = (args) => {
-  const { register, handleSubmit, errors } = useForm();
+export const formManagementLibrary = (args: TextInputProps): JSX.Element => {
+  const { register, handleSubmit, formState } = useForm();
+  // const inputRef = useRef<HTMLInputElement>(null);
+  const registeredUsername = register('Username', {
+    validate: (value) => value !== 'admin' || 'Nice try!',
+  });
+  const registeredEmail = register('Email', {
+    required: 'Required',
+    pattern: {
+      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+      message: 'invalid email address',
+    },
+  });
   return (
     <div>
       <form onSubmit={handleSubmit(action('submitted'))}>
@@ -98,10 +100,8 @@ export const formManagementLibrary = (args) => {
             label="Username"
             name="username"
             type="text"
-            errorText={errors.username && errors.username.message}
-            ref={register({
-              validate: (value) => value !== 'admin' || 'Nice try!',
-            })}
+            errorText={formState.errors.username && formState.errors.username.message}
+            ref={registeredUsername.ref}
           />
         </div>
         <TextInput
@@ -109,14 +109,8 @@ export const formManagementLibrary = (args) => {
           label="Email"
           name="email"
           type="text"
-          errorText={errors.email && errors.email.message}
-          ref={register({
-            required: 'Required',
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: 'invalid email address',
-            },
-          })}
+          errorText={formState.errors.email && formState.errors.email.message}
+          ref={registeredEmail.ref}
         />
         <br />
         <button type="submit">Submit</button>
@@ -134,7 +128,7 @@ formManagementLibrary.parameters = {
   },
 };
 
-export const misc = () => (
+export const misc = (): JSX.Element => (
   <>
     <InputGroup>
       <TextInput before="$" type="number" value="666" label="Misc" showLabel={false} />

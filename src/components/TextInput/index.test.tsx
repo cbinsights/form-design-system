@@ -14,8 +14,6 @@ describe('TextInput component', () => {
       <TextInput
         label="label"
         errorText="errorText"
-        IconLeft={() => {}}
-        IconRight={() => {}}
         onChange={() => {}}
         before="before"
         after="after"
