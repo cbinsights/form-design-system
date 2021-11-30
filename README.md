@@ -2,7 +2,10 @@
 
 A design system by CB Insights.
 
-[![npm](https://img.shields.io/npm/v/@cbinsights/fds.svg?style=flat-square&color=blue)](http://www.npmjs.com/package/@cbinsights/fds)
+[![npm](https://img.shields.io/npm/v/@cbinsights/fds.svg?color=blue)](http://www.npmjs.com/package/@cbinsights/fds)
+[![coverage](https://img.shields.io/codecov/c/github/cbinsights/form-design-system?token=UI2IZDUN3W)](https://codecov.io/gh/cbinsights/form-design-system)
+[![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/cbinsights/form-design-system/issues)
 
 ### Installation
 
@@ -19,8 +22,6 @@ https://cbinsights.github.io/form-design-system/
 ## Want to contribute?
 
 - Fork the repo
-- Run `yarn` && `yarn build`
-- Make your changes
 - All commits must match https://www.conventionalcommits.org/ (use `yarn commit` for help)
-- Push your changes and make a pull request
-- Add "Closes #000" to the pull request, adding the Github ticket number it references
+- Commit should include an appropriate Github issue in the message description, e.g. `fixes #000`
+- Make a pull request!
