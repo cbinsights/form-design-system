@@ -36,9 +36,11 @@ export interface IconButtonProps {
   /** Accessibility label */
   label: string;
   /** Extend click radius of button to nearest relative parent */
-  isBreakoutLink: boolean;
+  isBreakoutLink?: boolean;
   /** URL for base element */
-  href: string;
+  href?: string;
+  /** Handler for on click event */
+  onClick?: () => void;
 }
 
 const IconButton = forwardRef(
