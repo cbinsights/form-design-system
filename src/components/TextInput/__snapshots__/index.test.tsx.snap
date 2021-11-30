@@ -19,10 +19,7 @@ exports[`TextInput component matches snapshot (all props) 1`] = `
       after="after"
       before="before"
     >
-      <IconInput
-        IconLeft={[Function]}
-        IconRight={[Function]}
-      >
+      <IconInput>
         <input
           aria-invalid={true}
           aria-label="label"
