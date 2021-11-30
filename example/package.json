@@ -1,0 +1,33 @@
+{
+  "name": "fds-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@cbinsights/fds": "11.13.8",
+    "classnames": "2.2.6",
+    "dayjs": "1.10.5",
+    "moment": "2.27.0",
+    "react": "16.8.6",
+    "react-day-picker": "7.4.8",
+    "react-dom": "16.8.6",
+    "react-scripts": "3.0.1",
+    "react-transition-group": "4.3.0"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
