@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "@cbinsights/fds": "11.10.710",
+    "@cbinsights/fds": "11.13.8",
     "classnames": "2.2.6",
     "dayjs": "1.10.5",
     "moment": "2.27.0",

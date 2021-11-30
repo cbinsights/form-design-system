@@ -1,3 +1,3 @@
-# codesandbox-test
+# FDS example playground
 
-Created with CodeSandbox
+A way to quickly look at and verify FDS usage
