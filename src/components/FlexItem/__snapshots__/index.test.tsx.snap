@@ -8,6 +8,6 @@ exports[`Flex component matches snapshot (default props) 1`] = `
 
 exports[`Flex component matches snapshot (set all props) 1`] = `
 <div
-  className="flexItem--shrink flexItem--justifySpaceBetween flexItem--alignCenter flexItem"
+  className="flexItem--alignCenter flexItem--justifySpaceBetween flexItem--shrink flexItem"
 />
 `;
