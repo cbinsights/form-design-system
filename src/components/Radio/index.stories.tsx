@@ -1,9 +1,9 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 
-import Radio from '.';
+import Radio, { RadioProps } from '.';
 
-const Template = (args) => <Radio {...args} />;
+const Template = (args: RadioProps): JSX.Element => <Radio {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -11,7 +11,7 @@ Primary.args = {
   label: 'I agree to receive spam',
 };
 
-export const radioGroups = (args) => (
+export const radioGroups = (args: RadioProps): JSX.Element => (
   <React.Fragment>
     <Radio {...args} name="radio-group-story" label="Option one" />
     <Radio {...args} name="radio-group-story" label="Option two" />
@@ -28,7 +28,7 @@ radioGroups.parameters = {
   },
 };
 
-export const initialSelection = (args) => (
+export const initialSelection = (args: RadioProps): JSX.Element => (
   <React.Fragment>
     <Radio
       {...args}
@@ -48,8 +48,8 @@ initialSelection.parameters = {
   },
 };
 
-export const readingSelectedValue = (args) => (
-  <div onChange={(e) => action('change')(e.target.value)}>
+export const readingSelectedValue = (args: RadioProps): JSX.Element => (
+  <div onChange={(e) => action('change')((e.target as HTMLInputElement).value)}>
     <Radio {...args} name="radio-group-onchange" label="Option one" value="1" />
     <Radio {...args} name="radio-group-onchange" label="Option two" value="2" />
     <Radio {...args} name="radio-group-onchange" label="Option three" value="3" />
@@ -65,14 +65,14 @@ readingSelectedValue.parameters = {
   },
 };
 
-export const controlled = (args) => (
-  <div onChange={(e) => action('change')(e.target.value)}>
+export const controlled = (args: RadioProps): JSX.Element => (
+  <div onChange={(e) => action('change')((e.target as HTMLInputElement).value)}>
     <Radio
       {...args}
       name="radio-group-onchange"
       label="Option one"
       value="1"
-      checked={true}
+      defaultChecked
     />
     <Radio {...args} name="radio-group-onchange" label="Option two" value="2" />
     <Radio {...args} name="radio-group-onchange" label="Option three" value="3" />
