@@ -1,14 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cc from 'classcat';
 
 import FDS from 'dictionary/js/styleConstants';
+import { IconProps } from 'components/Icon';
+
+export interface IconInputProps {
+  /** An `input` element child */
+  children?: React.ReactNode;
+
+  /**
+   * FDS Icon _reference_
+   * `IconLeft={StarFilledIcon}`
+   */
+  IconLeft?: React.ComponentType<IconProps>;
+
+  /**
+   * FDS Icon _reference_
+   * `IconRight={StarFilledIcon}`
+   */
+  IconRight?: React.ComponentType<IconProps>;
+}
 
 /**
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const IconInput = ({ IconLeft, IconRight, children }) => {
+const IconInput = ({ IconLeft, IconRight, children }: IconInputProps): JSX.Element => {
   const classNames = cc([
     {
       'fdsIconInput--hasStartIcon': Boolean(IconLeft),
@@ -32,23 +49,6 @@ const IconInput = ({ IconLeft, IconRight, children }) => {
       )}
     </div>
   );
-};
-
-IconInput.propTypes = {
-  /** An `input` element child */
-  children: PropTypes.node,
-
-  /**
-   * FDS Icon _reference_
-   * `IconLeft={StarFilledIcon}`
-   */
-  IconLeft: PropTypes.func,
-
-  /**
-   * FDS Icon _reference_
-   * `IconRight={StarFilledIcon}`
-   */
-  IconRight: PropTypes.func,
 };
 
 export default IconInput;

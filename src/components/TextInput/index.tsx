@@ -1,10 +1,63 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cc from 'classcat';
 import IconInput from './IconInput';
 import DecoratedInput from './DecoratedInput';
+import { IconProps } from 'components/Icon';
 
-const TextInput = React.forwardRef(
+export interface TextInputProps {
+  /** Control aria-label */
+  'aria-label'?: string;
+  /** Control whether input has error styling */
+  hasError?: boolean;
+  /** Control whether label receives a bold treatment */
+  isLabelBold?: boolean;
+  /** Displays as red error text below input */
+  errorText?: string;
+
+  /** Label used for `label` element */
+  label: string;
+
+  /**
+   * FDS Icon _reference_
+   * `IconLeft={StarFilledIcon}`
+   */
+  IconLeft?: React.ComponentType<IconProps>;
+
+  /**
+   * FDS Icon _reference_
+   * `IconRight={StarFilledIcon}`
+   */
+  IconRight?: React.ComponentType<IconProps>;
+
+  /** Input element `type` attribute */
+  type?: string;
+
+  /** Controls showing asterisk on label, signifying field is required */
+  required?: boolean;
+
+  /** Standard React onChange event */
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+
+  /** String to place to the left of the input. Not a substitute for a label! */
+  before?: string;
+
+  /** String to place to the right of the input. Not a substitute for a label! */
+  after?: string;
+
+  /** Controls where the label renders */
+  labelPosition?: 'top' | 'left';
+
+  /** Specify width of label (useful for when label is positioned to left */
+  labelWidth?: string;
+
+  showRequired?: boolean;
+  showLabel?: boolean;
+  placeholder?: string;
+  value?: string;
+  name?: string;
+}
+
+const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
   (
     {
       label,
@@ -23,7 +76,7 @@ const TextInput = React.forwardRef(
       before,
       'aria-label': ariaLabel,
       ...rest
-    },
+    }: TextInputProps,
     ref
   ) => {
     const Element = showLabel ? 'label' : 'div';
@@ -77,55 +130,4 @@ const TextInput = React.forwardRef(
 );
 
 TextInput.displayName = 'TextInput';
-
-TextInput.propTypes = {
-  /** Control aria-label */
-  'aria-label': PropTypes.string,
-  /** Control whether input has error styling */
-  hasError: PropTypes.bool,
-  /** Control whether label receives a bold treatment */
-  isLabelBold: PropTypes.bool,
-  /** Displays as red error text below input */
-  errorText: PropTypes.string,
-
-  /** Label used for `label` element */
-  label: PropTypes.string.isRequired,
-
-  /**
-   * FDS Icon _reference_
-   * `IconLeft={StarFilledIcon}`
-   */
-  IconLeft: PropTypes.func,
-
-  /**
-   * FDS Icon _reference_
-   * `IconRight={StarFilledIcon}`
-   */
-  IconRight: PropTypes.func,
-
-  /** Input element `type` attribute */
-  type: PropTypes.string,
-
-  /** Controls showing asterisk on label, signifying field is required */
-  required: PropTypes.bool,
-
-  /** Standard React onChange event */
-  onChange: PropTypes.func,
-
-  /** String to place to the left of the input. Not a substitute for a label! */
-  before: PropTypes.string,
-
-  /** String to place to the right of the input. Not a substitute for a label! */
-  after: PropTypes.string,
-
-  /** Controls where the label renders */
-  labelPosition: PropTypes.oneOf(['top', 'left']),
-
-  /** Specify width of label (useful for when label is positioned to left */
-  labelWidth: PropTypes.string,
-
-  showRequired: PropTypes.bool,
-  showLabel: PropTypes.bool,
-};
-
 export default TextInput;
