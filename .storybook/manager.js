@@ -1,8 +1,7 @@
 import { addons } from '@storybook/addons';
 import { create } from '@storybook/theming/create';
-
-import logo from '/assets/FDS-logo.svg';
-import favicon from '/assets/FDS-logo-favicon.svg';
+import logo from '../src/assets/FDS-logo.svg';
+import favicon from '../src/assets/FDS-logo-favicon.svg';
 
 const link = document.createElement('link');
 link.setAttribute('rel', 'shortcut icon');

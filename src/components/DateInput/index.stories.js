@@ -10,14 +10,14 @@ Primary.args = {
   onDateChange: (date) => date,
 };
 
-export const defaultSelectedDate = Template.bind({});
-defaultSelectedDate.args = {
+export const DefaultSelectedDate = Template.bind({});
+DefaultSelectedDate.args = {
   onInputChange: action('input change'),
   onDateChange: action('date change'),
   defaultDate: '01/01/2010',
 };
 
-defaultSelectedDate.parameters = {
+DefaultSelectedDate.parameters = {
   docs: {
     description: {
       story:
@@ -26,8 +26,8 @@ defaultSelectedDate.parameters = {
   },
 };
 
-export const dateRanges = Template.bind({});
-dateRanges.args = {
+export const DateRanges = Template.bind({});
+DateRanges.args = {
   label: 'Enter a date in 2020',
   onInputChange: action('input change'),
   onDateChange: action('date change'),
@@ -35,7 +35,7 @@ dateRanges.args = {
   maxDate: new Date('Dec 31 2020'),
 };
 
-dateRanges.parameters = {
+DateRanges.parameters = {
   docs: {
     description: {
       story:
@@ -44,14 +44,14 @@ dateRanges.parameters = {
   },
 };
 
-export const popoverProps = Template.bind({});
-popoverProps.args = {
+export const PopoverProps = Template.bind({});
+PopoverProps.args = {
   onDateChange: action('date change'),
   onInputChange: action('input change'),
   popoverProps: { alignment: 'end' },
 };
 
-popoverProps.parameters = {
+PopoverProps.parameters = {
   docs: {
     description: {
       story:
@@ -60,8 +60,8 @@ popoverProps.parameters = {
   },
 };
 
-export const labelPosition = Template.bind({});
-labelPosition.args = {
+export const LabelPosition = Template.bind({});
+LabelPosition.args = {
   label: 'DateInput',
   labelPosition: 'left',
 };

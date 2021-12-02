@@ -13,7 +13,7 @@ Primary.args = {
   label: '42',
 };
 
-export const variations = (): JSX.Element => (
+export const Variations = (): JSX.Element => (
   <StoryWrapper>
     <StoryItem>
       <Badge label="42" />
@@ -30,7 +30,7 @@ export const variations = (): JSX.Element => (
   </StoryWrapper>
 );
 
-variations.parameters = {
+Variations.parameters = {
   docs: {
     description: {
       story:
@@ -39,7 +39,7 @@ variations.parameters = {
   },
 };
 
-export const withTableRows = (args: BadgeProps): JSX.Element => (
+export const WithTableRows = (args: BadgeProps): JSX.Element => (
   <Flex>
     <FlexItem shrink>
       <div style={{ width: '100%', height: '32px' }}>
@@ -52,7 +52,7 @@ export const withTableRows = (args: BadgeProps): JSX.Element => (
   </Flex>
 );
 
-withTableRows.parameters = {
+WithTableRows.parameters = {
   docs: {
     description: {
       story:
