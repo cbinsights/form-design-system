@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import State from 'util/storybook-docs/State';
 import Button from 'components/Button';
-import Popover from '.';
+import Popover, { PopoverProps } from '.';
 
-const Template = (args) => <Popover {...args} />;
+const Template = (args: PopoverProps): JSX.Element => <Popover {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   transitionName: 'GrowFast',
@@ -38,7 +38,7 @@ styledPopoverContent.args = {
   ),
 };
 
-export const controlledPopover = (args) => (
+export const controlledPopover = (args: PopoverProps): JSX.Element => (
   <State
     initialValue={true}
     render={(myIsOpen, setMyIsOpen) => (
@@ -82,7 +82,7 @@ controlledPopover.parameters = {
   },
 };
 
-export const popoverWithinAPopover = (args) => (
+export const popoverWithinAPopover = (args: PopoverProps): JSX.Element => (
   <Popover trigger={<button>Open popover</button>}>
     <div className="bgColor--white rounded--all elevation--2 padding--all">
       <div className="padding--y--s padding--x--m" style={{ overflow: 'hidden' }}>
@@ -124,7 +124,7 @@ popoverWithinAPopover.argTypes = {
   triggerType: hidden,
 };
 
-export const closeOnScroll = (args) => {
+export const closeOnScroll = (args: PopoverProps): JSX.Element => {
   const containerEl = useRef(null);
   return (
     <div
@@ -161,7 +161,7 @@ closeOnScroll.parameters = {
   },
 };
 
-export const disableScrolling = (args) => {
+export const disableScrolling = (args: PopoverProps): JSX.Element => {
   const containerEl = useRef(null);
   return (
     <div
