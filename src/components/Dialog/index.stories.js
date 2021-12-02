@@ -18,8 +18,8 @@ Primary.args = {
   disablePortal: true,
 };
 
-export const dialogWithSubtitle = Template.bind({});
-dialogWithSubtitle.args = {
+export const DialogWithSubtitle = Template.bind({});
+DialogWithSubtitle.args = {
   isOpen: true,
   content: 'Modal content here',
   title: 'Modal title here',
@@ -28,8 +28,8 @@ dialogWithSubtitle.args = {
   disablePortal: true,
 };
 
-export const scrollingContent = Template.bind({});
-scrollingContent.args = {
+export const ScrollingContent = Template.bind({});
+ScrollingContent.args = {
   isOpen: true,
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus. Neque laoreet suspendisse interdum consectetur. Ut porttitor leo a diam. Quisque egestas diam in arcu cursus euismod quis viverra. Eget nunc lobortis mattis aliquam. Mauris pharetra et ultrices neque ornare aenean euismod. Luctus accumsan tortor posuere ac. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Non arcu risus quis varius quam quisque id diam. Vel pharetra vel turpis nunc eget lorem dolor sed. Risus quis varius quam quisque id diam vel quam elementum. Velit ut tortor pretium viverra suspendisse potenti. Amet purus gravida quis blandit turpis cursus in hac. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Egestas maecenas pharetra convallis posuere morbi leo. Pellentesque pulvinar pellentesque habitant morbi tristique. Habitasse platea dictumst quisque sagittis purus. Fermentum dui faucibus in ornare quam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Turpis egestas integer eget aliquet. Bibendum est ultricies integer quis auctor elit sed vulputate. Scelerisque viverra mauris in aliquam sem fringilla ut morbi. Lectus urna duis convallis convallis tellus id interdum velit. A arcu cursus vitae congue mauris rhoncus aenean. Odio euismod lacinia at quis risus sed vulputate odio. Nibh tellus molestie nunc non. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor. A erat nam at lectus urna duis convallis convallis. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Mauris sit amet massa vitae tortor condimentum lacinia. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Risus quis varius quam quisque id diam vel. Id nibh tortor id aliquet. Nisi quis eleifend quam adipiscing vitae proin.',
@@ -37,8 +37,8 @@ scrollingContent.args = {
   title: 'Long content area',
 };
 
-export const scrollingContentWithFooter = Template.bind({});
-scrollingContentWithFooter.args = {
+export const ScrollingContentWithFooter = Template.bind({});
+ScrollingContentWithFooter.args = {
   isOpen: true,
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus. Neque laoreet suspendisse interdum consectetur. Ut porttitor leo a diam. Quisque egestas diam in arcu cursus euismod quis viverra. Eget nunc lobortis mattis aliquam. Mauris pharetra et ultrices neque ornare aenean euismod. Luctus accumsan tortor posuere ac. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Non arcu risus quis varius quam quisque id diam. Vel pharetra vel turpis nunc eget lorem dolor sed. Risus quis varius quam quisque id diam vel quam elementum. Velit ut tortor pretium viverra suspendisse potenti. Amet purus gravida quis blandit turpis cursus in hac. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Egestas maecenas pharetra convallis posuere morbi leo. Pellentesque pulvinar pellentesque habitant morbi tristique. Habitasse platea dictumst quisque sagittis purus. Fermentum dui faucibus in ornare quam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Turpis egestas integer eget aliquet. Bibendum est ultricies integer quis auctor elit sed vulputate. Scelerisque viverra mauris in aliquam sem fringilla ut morbi. Lectus urna duis convallis convallis tellus id interdum velit. A arcu cursus vitae congue mauris rhoncus aenean. Odio euismod lacinia at quis risus sed vulputate odio. Nibh tellus molestie nunc non. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor. A erat nam at lectus urna duis convallis convallis. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Mauris sit amet massa vitae tortor condimentum lacinia. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Risus quis varius quam quisque id diam vel. Id nibh tortor id aliquet. Nisi quis eleifend quam adipiscing vitae proin.',
@@ -47,8 +47,8 @@ scrollingContentWithFooter.args = {
   title: 'Long content area w/footer',
 };
 
-export const scrollingContentFooterPermanentBorder = Template.bind({});
-scrollingContentFooterPermanentBorder.args = {
+export const ScrollingContentFooterPermanentBorder = Template.bind({});
+ScrollingContentFooterPermanentBorder.args = {
   isOpen: true,
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci. Placerat vestibulum lectus mauris ultrices eros in cursus.',
@@ -58,7 +58,7 @@ scrollingContentFooterPermanentBorder.args = {
   alwaysShowBorder: true,
 };
 
-export const dialogFromPopover = (args) => {
+export const DialogFromPopover = (args) => {
   const [dialogIsOpen, setDialogOpen] = React.useState(false);
   const handleClick = () => {
     setDialogOpen(true);
@@ -81,13 +81,13 @@ export const dialogFromPopover = (args) => {
   );
 };
 const hidden = { table: { disable: true } };
-dialogFromPopover.args = {
+DialogFromPopover.args = {
   disablePortal: true,
   title: 'Disabled Portal Dialog',
   content:
     'This was triggered from a popover and is still interactive without closing the popover.',
 };
-dialogFromPopover.argTypes = {
+DialogFromPopover.argTypes = {
   onDismiss: hidden,
   isOpen: hidden,
   role: hidden,

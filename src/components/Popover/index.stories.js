@@ -22,8 +22,8 @@ Primary.args = {
   ),
 };
 
-export const styledPopoverContent = Template.bind({});
-styledPopoverContent.args = {
+export const StyledPopoverContent = Template.bind({});
+StyledPopoverContent.args = {
   trigger: <Button theme="outlined" label="Open popover" />,
   position: 'bottom',
   alignment: 'start',
@@ -38,7 +38,7 @@ styledPopoverContent.args = {
   ),
 };
 
-export const controlledPopover = (args) => (
+export const ControlledPopover = (args) => (
   <State
     initialValue={true}
     render={(myIsOpen, setMyIsOpen) => (
@@ -73,7 +73,7 @@ export const controlledPopover = (args) => (
   />
 );
 
-controlledPopover.parameters = {
+ControlledPopover.parameters = {
   docs: {
     description: {
       story:
@@ -82,7 +82,7 @@ controlledPopover.parameters = {
   },
 };
 
-export const popoverWithinAPopover = (args) => (
+export const PopoverWithinAPopover = (args) => (
   <Popover trigger={<button>Open popover</button>}>
     <div className="bgColor--white rounded--all elevation--2 padding--all">
       <div className="padding--y--s padding--x--m" style={{ overflow: 'hidden' }}>
@@ -109,12 +109,12 @@ export const popoverWithinAPopover = (args) => (
     </div>
   </Popover>
 );
-popoverWithinAPopover.args = {
+PopoverWithinAPopover.args = {
   isFixed: true,
   disablePortal: 'true',
 };
 const hidden = { table: { disable: true } };
-popoverWithinAPopover.argTypes = {
+PopoverWithinAPopover.argTypes = {
   triggerElement: hidden,
   theme: hidden,
   children: hidden,
@@ -124,7 +124,7 @@ popoverWithinAPopover.argTypes = {
   triggerType: hidden,
 };
 
-export const closeOnScroll = (args) => {
+export const CloseOnScroll = (args) => {
   const containerEl = useRef(null);
   return (
     <div
@@ -152,7 +152,7 @@ export const closeOnScroll = (args) => {
   );
 };
 
-closeOnScroll.parameters = {
+CloseOnScroll.parameters = {
   docs: {
     description: {
       story:
@@ -161,7 +161,7 @@ closeOnScroll.parameters = {
   },
 };
 
-export const disableScrolling = (args) => {
+export const DisableScrolling = (args) => {
   const containerEl = useRef(null);
   return (
     <div
@@ -189,7 +189,7 @@ export const disableScrolling = (args) => {
   );
 };
 
-disableScrolling.parameters = {
+DisableScrolling.parameters = {
   docs: {
     description: {
       story:

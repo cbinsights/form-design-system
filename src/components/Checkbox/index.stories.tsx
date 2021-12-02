@@ -10,15 +10,15 @@ Primary.args = {
   label: 'I agree to receive spam',
 };
 
-export const managingCheckedState: Story<CheckboxProps> = Template.bind({});
+export const ManagingCheckedState: Story<CheckboxProps> = Template.bind({});
 
-managingCheckedState.args = {
+ManagingCheckedState.args = {
   defaultChecked: true,
   name: 'default-checked',
   label: 'Checked by default',
 };
 
-managingCheckedState.parameters = {
+ManagingCheckedState.parameters = {
   docs: {
     description: {
       story:
@@ -27,7 +27,7 @@ managingCheckedState.parameters = {
   },
 };
 
-export const preventingUserInteraction = (): JSX.Element => (
+export const PreventingUserInteraction = (): JSX.Element => (
   <>
     <div>
       <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
@@ -43,7 +43,7 @@ export const preventingUserInteraction = (): JSX.Element => (
   </>
 );
 
-preventingUserInteraction.parameters = {
+PreventingUserInteraction.parameters = {
   docs: {
     description: {
       story:
@@ -52,14 +52,14 @@ preventingUserInteraction.parameters = {
   },
 };
 
-export const checkboxWithoutLabel: Story<CheckboxProps> = Template.bind({});
-checkboxWithoutLabel.args = {
+export const CheckboxWithoutLabel: Story<CheckboxProps> = Template.bind({});
+CheckboxWithoutLabel.args = {
   name: 'no-label',
   label: "I don't have a label",
   showLabel: false,
 };
 
-checkboxWithoutLabel.parameters = {
+CheckboxWithoutLabel.parameters = {
   docs: {
     description: {
       story:
@@ -68,14 +68,14 @@ checkboxWithoutLabel.parameters = {
   },
 };
 
-export const indeterminateCheckboxes: Story<CheckboxProps> = Template.bind({});
-indeterminateCheckboxes.args = {
+export const IndeterminateCheckboxes: Story<CheckboxProps> = Template.bind({});
+IndeterminateCheckboxes.args = {
   indeterminate: true,
   name: 'notsureif',
   label: 'Indeterminate checkbox',
 };
 
-indeterminateCheckboxes.parameters = {
+IndeterminateCheckboxes.parameters = {
   docs: {
     description: {
       story:
@@ -84,12 +84,12 @@ indeterminateCheckboxes.parameters = {
   },
 };
 
-export const readingTheValueOfACheckbox: Story<CheckboxProps> = Template.bind({});
-readingTheValueOfACheckbox.args = {
+export const ReadingTheValueOfACheckbox: Story<CheckboxProps> = Template.bind({});
+ReadingTheValueOfACheckbox.args = {
   label: 'Option one',
 };
 
-readingTheValueOfACheckbox.parameters = {
+ReadingTheValueOfACheckbox.parameters = {
   docs: {
     description: {
       story:
