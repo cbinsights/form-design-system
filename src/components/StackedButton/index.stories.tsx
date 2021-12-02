@@ -9,7 +9,7 @@ export const Primary = (args: StackedButtonProps): JSX.Element => (
   <StackedButton {...args} Icon={StarFilledIcon} label="Stacked Button" />
 );
 
-export const isActiveAndToggled = (args: StackedButtonProps): JSX.Element => (
+export const IsActiveAndToggled = (args: StackedButtonProps): JSX.Element => (
   <State
     initialValue={{}}
     render={(value, setValue) => (
@@ -33,7 +33,7 @@ export const isActiveAndToggled = (args: StackedButtonProps): JSX.Element => (
   />
 );
 
-isActiveAndToggled.parameters = {
+IsActiveAndToggled.parameters = {
   docs: {
     description: {
       story: 'Click to toggle on and off',

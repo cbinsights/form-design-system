@@ -9,8 +9,8 @@ Primary.args = {
   message: 'Hello world',
 };
 
-export const maxWidth = Template.bind({});
-maxWidth.args = {
+export const MaxWidth = Template.bind({});
+MaxWidth.args = {
   maxWidth: 600,
   trigger: <button>ℹ️ Hover Here!</button>,
   message:
