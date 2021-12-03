@@ -1,7 +1,7 @@
 import React from 'react';
-import DropdownButton from '.';
+import DropdownButton, { DropdownButtonProps } from '.';
 
-const Template = (args) => <DropdownButton {...args} />;
+const Template = (args: DropdownButtonProps): JSX.Element => <DropdownButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
