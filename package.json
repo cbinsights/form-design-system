@@ -214,6 +214,7 @@
   "dependencies": {
     "@popperjs/core": "^2.7.2",
     "@reach/menu-button": "^0.12.1",
+    "@reach/utils": "^0.16.0",
     "classcat": "^4.1.0",
     "components": "link:./src/components",
     "dictionary": "link:./src/dictionary",
