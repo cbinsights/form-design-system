@@ -22,7 +22,7 @@ export const Primary = (args: FlexProps): JSX.Element => (
   </div>
 );
 
-export const classicMediaBlock = (): JSX.Element => (
+export const ClassicMediaBlock = (): JSX.Element => (
   <div style={parentStyle} className="debug--flex">
     <Flex>
       <FlexItem shrink>
@@ -38,7 +38,7 @@ export const classicMediaBlock = (): JSX.Element => (
   </div>
 );
 
-classicMediaBlock.parameters = {
+ClassicMediaBlock.parameters = {
   docs: {
     description: {
       story:
@@ -47,7 +47,7 @@ classicMediaBlock.parameters = {
   },
 };
 
-export const autoSizedContentArea = (): JSX.Element => (
+export const AutoSizedContentArea = (): JSX.Element => (
   <div style={{ height: '300px' }} className="debug--flex">
     <Flex direction="column">
       <FlexItem shrink>
@@ -70,7 +70,7 @@ export const autoSizedContentArea = (): JSX.Element => (
   </div>
 );
 
-autoSizedContentArea.parameters = {
+AutoSizedContentArea.parameters = {
   docs: {
     description: {
       story:
@@ -79,7 +79,7 @@ autoSizedContentArea.parameters = {
   },
 };
 
-export const responsiveFlex = (): JSX.Element => (
+export const ResponsiveFlex = (): JSX.Element => (
   <div className="debug--flex">
     <Flex direction="column" switchDirection="m">
       <FlexItem>
@@ -95,7 +95,7 @@ export const responsiveFlex = (): JSX.Element => (
   </div>
 );
 
-responsiveFlex.parameters = {
+ResponsiveFlex.parameters = {
   docs: {
     description: {
       story:

@@ -27,7 +27,7 @@ export const Primary = (args) => {
   );
 };
 
-export const playground = () => {
+export const Playground = () => {
   const defaults = { id: v4(), isOpen: false, isAutoDismiss: true, toastInstance: {} };
   const [params, setParams] = useState(defaults);
   const dismissToast = () => {
@@ -246,7 +246,7 @@ export const playground = () => {
   );
 };
 
-playground.parameters = {
+Playground.parameters = {
   docs: {
     description: {
       story:
@@ -255,7 +255,7 @@ playground.parameters = {
   },
 };
 
-export const variations = () => (
+export const Variations = () => (
   <React.Fragment>
     <Toast
       content={
@@ -321,7 +321,7 @@ export const variations = () => (
   </React.Fragment>
 );
 
-variations.parameters = {
+Variations.parameters = {
   docs: {
     description: {
       story: 'This is merely to give you a better visual idea of all the variations.',

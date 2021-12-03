@@ -41,7 +41,7 @@ export const Inverted = (args: IconButtonProps): JSX.Element => (
   </div>
 );
 
-export const isActive = (args: IconButtonProps): JSX.Element => (
+export const IsActive = (args: IconButtonProps): JSX.Element => (
   <>
     <StoryWrapper>
       <State
@@ -104,7 +104,7 @@ export const isActive = (args: IconButtonProps): JSX.Element => (
   </>
 );
 
-isActive.parameters = {
+IsActive.parameters = {
   docs: {
     description: {
       story:

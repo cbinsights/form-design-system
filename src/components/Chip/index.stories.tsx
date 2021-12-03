@@ -21,7 +21,7 @@ export const Themes = (): JSX.Element => (
   </StoryWrapper>
 );
 
-export const isActive = (): JSX.Element => (
+export const IsActive = (): JSX.Element => (
   <StoryWrapper>
     {THEMES.map((theme, idx) => (
       <StoryItem key={idx}>
