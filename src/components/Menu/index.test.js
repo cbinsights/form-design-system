@@ -4,13 +4,6 @@ import { mount } from 'enzyme';
 import { MenuItem } from 'components';
 import Menu from '.';
 
-// suppress CSS warnings
-jest.mock('@reach/utils', () => {
-  const reachUtils = jest.requireActual('@reach/utils');
-  const overrides = { checkStyles: jest.fn() };
-  return Object.assign(reachUtils, overrides);
-});
-
 describe('Popover component', () => {
   /**
    * `@reach/menu-button` has its own test coverage.
