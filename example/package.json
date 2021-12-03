@@ -13,7 +13,9 @@
     "react-day-picker": "7.4.8",
     "react-dom": "16.8.6",
     "react-scripts": "3.0.1",
-    "react-transition-group": "4.3.0"
+    "react-transition-group": "4.3.0",
+    "raf-schd": "4.0.3",
+    "prop-types": "15.7.2"
   },
   "devDependencies": {
     "typescript": "3.3.3"
