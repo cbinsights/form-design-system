@@ -11,7 +11,7 @@ Primary.args = {
   label: 'I agree to receive spam',
 };
 
-export const radioGroups = (args: RadioProps): JSX.Element => (
+export const RadioGroups = (args: RadioProps): JSX.Element => (
   <React.Fragment>
     <Radio {...args} name="radio-group-story" label="Option one" />
     <Radio {...args} name="radio-group-story" label="Option two" />
@@ -19,7 +19,7 @@ export const radioGroups = (args: RadioProps): JSX.Element => (
   </React.Fragment>
 );
 
-radioGroups.parameters = {
+RadioGroups.parameters = {
   docs: {
     description: {
       story:
@@ -28,7 +28,7 @@ radioGroups.parameters = {
   },
 };
 
-export const initialSelection = (args: RadioProps): JSX.Element => (
+export const InitialSelection = (args: RadioProps): JSX.Element => (
   <React.Fragment>
     <Radio
       {...args}
@@ -40,7 +40,7 @@ export const initialSelection = (args: RadioProps): JSX.Element => (
   </React.Fragment>
 );
 
-initialSelection.parameters = {
+InitialSelection.parameters = {
   docs: {
     description: {
       story: 'Use the `defaultChecked` prop to set initial selection in a radio group.',
@@ -48,7 +48,7 @@ initialSelection.parameters = {
   },
 };
 
-export const readingSelectedValue = (args: RadioProps): JSX.Element => (
+export const ReadingSelectedValue = (args: RadioProps): JSX.Element => (
   <div onChange={(e) => action('change')((e.target as HTMLInputElement).value)}>
     <Radio {...args} name="radio-group-onchange" label="Option one" value="1" />
     <Radio {...args} name="radio-group-onchange" label="Option two" value="2" />
@@ -56,7 +56,7 @@ export const readingSelectedValue = (args: RadioProps): JSX.Element => (
   </div>
 );
 
-readingSelectedValue.parameters = {
+ReadingSelectedValue.parameters = {
   docs: {
     description: {
       story:

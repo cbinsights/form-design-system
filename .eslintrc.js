@@ -7,20 +7,25 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:jest/recommended',
     'prettier',
+    'plugin:storybook/recommended',
   ],
   plugins: ['@typescript-eslint'],
-  env: { browser: true },
+  env: {
+    browser: true,
+  },
   rules: {
-    '@typescript-eslint/no-explicit-any': 0, // We want to use any as some people are not abiding by our contract and we do not want to have Typescript throw an error quite yet
-    '@typescript-eslint/no-empty-function': 0, // We like using empty noop (for now)
-    '@typescript-eslint/explicit-module-boundary-types': 'off', // It's necessary to turn this off for non Typescript files
-    /* =========================================
+    '@typescript-eslint/no-explicit-any': 0,
+    // We want to use any as some people are not abiding by our contract and we do not want to have Typescript throw an error quite yet
+    '@typescript-eslint/no-empty-function': 0,
+    // We like using empty noop (for now)
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    // It's necessary to turn this off for non Typescript files
 
-      We use "no-restricted-syntax" is used to
+    /* =========================================
+       We use "no-restricted-syntax" is used to
       limit what gets rolled out in each stage.
       https://cbinsights.atlassian.net/wiki/spaces/TD/pages/2379907163/Rollout+plan
-
-      ========================================= */
+       ========================================= */
     'no-restricted-syntax': [
       'error',
       {

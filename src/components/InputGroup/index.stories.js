@@ -3,7 +3,7 @@ import SearchIcon from 'icons/react/SearchIcon';
 import TextInput from 'components/TextInput';
 import InputGroup from '.';
 
-export const dropdownVariations = (args) => (
+export const DropdownVariations = (args) => (
   <>
     <div className="margin--bottom">
       <InputGroup {...args}>
@@ -42,7 +42,7 @@ export const dropdownVariations = (args) => (
   </>
 );
 
-export const textInputs = (args) => (
+export const TextInputs = (args) => (
   <InputGroup {...args}>
     <input type="text" placeholder="First Name" />
     <input type="text" placeholder="Middle Name" />
@@ -50,7 +50,7 @@ export const textInputs = (args) => (
   </InputGroup>
 );
 
-export const growAndShrink = (args) => (
+export const GrowAndShrink = (args) => (
   <InputGroup {...args} flexSettings={['grow', 'shrink', 'grow']}>
     <TextInput
       before="$"
@@ -67,7 +67,7 @@ export const growAndShrink = (args) => (
   </InputGroup>
 );
 
-growAndShrink.parameters = {
+GrowAndShrink.parameters = {
   docs: {
     description: {
       story:
@@ -76,7 +76,7 @@ growAndShrink.parameters = {
   },
 };
 
-export const otherExamples = (args) => (
+export const OtherExamples = (args) => (
   <>
     <label>Valuation</label>
     <InputGroup {...args}>

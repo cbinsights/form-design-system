@@ -20,7 +20,7 @@ jobs:
           node-version: '14.x'
           cache: 'yarn'
       - name: Installing packages
-        run: yarn --frozen-lockfile
+        run: yarn --immutable
       - name: Create build
         run: yarn build
       - name: Release

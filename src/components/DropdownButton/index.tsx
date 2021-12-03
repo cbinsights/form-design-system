@@ -1,10 +1,23 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
 import cc from 'classcat';
 import CaretDownIcon from 'icons/react/CaretDownIcon';
 
-const DropdownButton = forwardRef(
-  ({ children, isFullWidth = false, isActive, disabled, ...rest }, ref) => (
+export interface DropdownButtonProps {
+  /** content rendered to the left of the carat */
+  children?: React.ReactNode;
+  /** Controls disabled state of dropdown button */
+  disabled?: boolean;
+  /** Controls the button going full width */
+  isFullWidth?: boolean;
+  /** Controls active state of dropdown */
+  isActive?: boolean;
+}
+
+const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>(
+  (
+    { children, isFullWidth = false, isActive, disabled, ...rest }: DropdownButtonProps,
+    ref
+  ) => (
     <button
       {...rest}
       className={cc([
@@ -30,16 +43,5 @@ const DropdownButton = forwardRef(
 );
 
 DropdownButton.displayName = 'DropdownButton';
-
-DropdownButton.propTypes = {
-  /** content rendered to the left of the carat */
-  children: PropTypes.node,
-  /** Controls disabled state of dropdown button */
-  disabled: PropTypes.bool,
-  /** Controls the button going full width */
-  isFullWidth: PropTypes.bool,
-  /** Controls active state of dropdown */
-  isActive: PropTypes.bool,
-};
 
 export default DropdownButton;

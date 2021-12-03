@@ -35,3 +35,11 @@ docs/fds-components/vendors~react-syntax-highlighter_languages_highlight_*.*.bun
 !docs/fds-components/react-syntax-highlighter_languages_highlight_tsx.*.bundle.js.map
 !docs/fds-components/react-syntax-highlighter_languages_highlight_typescript.*.bundle.js.map
 
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+

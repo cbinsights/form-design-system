@@ -13,7 +13,7 @@ export const Primary = (args: TextInputProps): JSX.Element => (
   <TextInput {...args} label="First Name" />
 );
 
-export const exampleLayout = (): JSX.Element => (
+export const ExampleLayout = (): JSX.Element => (
   <>
     <Flex>
       <FlexItem>
@@ -43,7 +43,7 @@ export const exampleLayout = (): JSX.Element => (
   </>
 );
 
-export const controlledInput = (args: TextInputProps): JSX.Element => (
+export const ControlledInput = (args: TextInputProps): JSX.Element => (
   <State
     initialValue="Controlled"
     render={(value, setValue) => (
@@ -68,7 +68,7 @@ export const Icons = (args: TextInputProps): JSX.Element => (
   />
 );
 
-export const sideLabel = (args: TextInputProps): JSX.Element => (
+export const SideLabel = (args: TextInputProps): JSX.Element => (
   <TextInput
     {...args}
     label="Side Label"
@@ -78,7 +78,7 @@ export const sideLabel = (args: TextInputProps): JSX.Element => (
   />
 );
 
-export const formManagementLibrary = (args: TextInputProps): JSX.Element => {
+export const FormManagementLibrary = (args: TextInputProps): JSX.Element => {
   const { register, handleSubmit, formState } = useForm();
   // const inputRef = useRef<HTMLInputElement>(null);
   const registeredUsername = register('Username', {
@@ -119,7 +119,7 @@ export const formManagementLibrary = (args: TextInputProps): JSX.Element => {
   );
 };
 
-formManagementLibrary.parameters = {
+FormManagementLibrary.parameters = {
   docs: {
     description: {
       story:
@@ -128,7 +128,7 @@ formManagementLibrary.parameters = {
   },
 };
 
-export const misc = (): JSX.Element => (
+export const Misc = (): JSX.Element => (
   <>
     <InputGroup>
       <TextInput before="$" type="number" value="666" label="Misc" showLabel={false} />

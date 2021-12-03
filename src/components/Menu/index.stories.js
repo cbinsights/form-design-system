@@ -22,7 +22,7 @@ export const Primary = (args) => (
   </Menu>
 );
 
-export const triggerElement = (args) => (
+export const TriggerElement = (args) => (
   <Flex>
     <FlexItem>
       <Menu
@@ -44,7 +44,7 @@ export const triggerElement = (args) => (
   </Flex>
 );
 
-triggerElement.parameters = {
+TriggerElement.parameters = {
   docs: {
     description: {
       story:
@@ -53,7 +53,7 @@ triggerElement.parameters = {
   },
 };
 
-export const customItems = (args) => (
+export const CustomItems = (args) => (
   <Menu {...args} trigger={<Button hasCaret label="actions" theme="outlined" />}>
     <MenuItem onSelect={action('Delete')}>
       <div className="color--primary">
@@ -101,7 +101,7 @@ export const customItems = (args) => (
   </Menu>
 );
 
-customItems.parameters = {
+CustomItems.parameters = {
   docs: {
     description: {
       story: '`MenuItem` and `MenuLink` will accept a plain string or any JSX node.',
@@ -109,7 +109,7 @@ customItems.parameters = {
   },
 };
 
-export const rest = (args) => (
+export const Rest = (args) => (
   <Menu {...args} trigger={<Button hasCaret label="actions" theme="outlined" />}>
     <MenuItem data-test="hello">Delete</MenuItem>
     <MenuLink href="#" data-test="world">
@@ -118,7 +118,7 @@ export const rest = (args) => (
   </Menu>
 );
 
-rest.parameters = {
+Rest.parameters = {
   docs: {
     description: {
       story: '`MenuItem` and `MenuLink` accept rest props.',
@@ -126,7 +126,7 @@ rest.parameters = {
   },
 };
 
-export const disabledItems = (args) => (
+export const DisabledItems = (args) => (
   <Menu
     {...args}
     trigger={<Button theme="outlined" label="Menu with disabled item" hasCaret />}
@@ -156,7 +156,7 @@ export const disabledItems = (args) => (
   </Menu>
 );
 
-disabledItems.parameters = {
+DisabledItems.parameters = {
   docs: {
     description: {
       story:
