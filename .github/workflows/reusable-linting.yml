@@ -14,7 +14,7 @@ jobs:
           node-version: '14.x'
           cache: 'yarn'
       - name: Yarn Install
-        run: yarn --frozen-lockfile
+        run: yarn --immutable
       - name: Run eslint
         run: yarn lint
       - name: Run Prettier Check
