@@ -6,7 +6,7 @@ const path = require('path');
 const { REPO_ROOT } = require('../constants.js');
 const packageName = require(`${REPO_ROOT}/package.json`).name;
 
-const SEARCH_DENYLIST = ['node_modules', '__tests__', '__spec__', '__snapshots__'];
+const SEARCH_DENYLIST = ['__tests__', '__spec__', '__snapshots__'];
 
 module.exports = {
   /** import matcher */
