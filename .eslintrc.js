@@ -34,6 +34,11 @@ module.exports = {
       },
     ],
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   overrides: [
     {
       // enable the rule specifically for TypeScript files

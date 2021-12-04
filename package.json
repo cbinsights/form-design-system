@@ -35,7 +35,7 @@
     "dictionary:css": "cp -r src/dictionary/css lib/dictionary/",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "lint": "eslint ./src/ --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint --max-warnings 0 ./src/ --ext .js,.jsx,.ts,.tsx",
     "prettier:check": "prettier --check .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
