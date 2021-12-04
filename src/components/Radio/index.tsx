@@ -1,16 +1,40 @@
 import React from 'react';
 import { v4 } from 'uuid';
-import PropTypes from 'prop-types';
 import cc from 'classcat';
 
 import RadioEmptyIcon from 'icons/react/RadioEmptyIcon';
 import RadioFilledIcon from 'icons/react/RadioFilledIcon';
 
-/**
- * @param {Object} props react props
- * @returns {ReactElement}
- */
-const Radio = React.forwardRef(
+export interface RadioProps {
+  /**
+   * html `name` attribute.
+   * Use to create radio groups.
+   */
+  name: string;
+
+  /** html `label` element content */
+  label: string;
+
+  /** If the supplied `label` prop should be rendered to the screen. */
+  showLabel?: boolean;
+
+  /** `true` checks the radio by default */
+  defaultChecked?: boolean;
+
+  /** Disables form field when `true` */
+  disabled?: boolean;
+
+  /** The radio input `checked` attribute */
+  checked?: boolean;
+
+  /** The radio input `value` attribute */
+  value: string;
+
+  /** The radio input `onChange` attribute */
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+}
+
+const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   (
     {
       showLabel = true,
@@ -22,7 +46,7 @@ const Radio = React.forwardRef(
       value,
       onChange,
       ...rest
-    },
+    }: RadioProps,
     ref
   ) => {
     const id = v4();
@@ -37,6 +61,7 @@ const Radio = React.forwardRef(
         ])}
       >
         <input
+          {...rest}
           ref={ref}
           type="radio"
           name={name}
@@ -45,7 +70,6 @@ const Radio = React.forwardRef(
           defaultChecked={defaultChecked}
           value={value}
           onChange={onChange}
-          {...rest}
           className="media--xs" // prevent className being passed down via rest
         />
         <label className="flush--bottom" htmlFor={id}>
@@ -63,34 +87,5 @@ const Radio = React.forwardRef(
 );
 
 Radio.displayName = 'Radio';
-
-Radio.propTypes = {
-  /**
-   * html `name` attribute.
-   * Use to create radio groups.
-   */
-  name: PropTypes.string.isRequired,
-
-  /** html `label` element content */
-  label: PropTypes.string.isRequired,
-
-  /** If the supplied `label` prop should be rendered to the screen. */
-  showLabel: PropTypes.bool,
-
-  /** `true` checks the radio by default */
-  defaultChecked: PropTypes.bool,
-
-  /** Disables form field when `true` */
-  disabled: PropTypes.bool,
-
-  /** The radio input `checked` attribute */
-  checked: PropTypes.bool,
-
-  /** The radio input `value` attribute */
-  value: PropTypes.string.isRequired,
-
-  /** The radio input `onChange` attribute */
-  onChange: PropTypes.func,
-};
 
 export default Radio;
