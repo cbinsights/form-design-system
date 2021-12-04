@@ -6,34 +6,6 @@
 lib/
 *.log
 
-TODO.md
-
-#
-# Storybook 5.3 beta has a bug where `react-syntax-highlighter` (used in MDX) generates
-# 555 chunks; all supported languages.
-#
-# Until Storybook can resolve this issue, we ignore all of the unused chunks.
-#
-# Storybook issue: https://github.com/storybookjs/storybook/issues/8972
-#
-docs/fds-components/react-syntax-highlighter_languages_highlight_*.*.bundle.js
-docs/fds-components/react-syntax-highlighter_languages_highlight_*.*.bundle.js.map
-docs/fds-components/vendors~react-syntax-highlighter_languages_highlight_*.*.bundle.js
-docs/fds-components/vendors~react-syntax-highlighter_languages_highlight_*.*.bundle.js.map
-
-#
-# Unignore all the chunks storybook actually uses for MDX stories.
-#
-# Storybook source:
-# https://github.com/storybookjs/storybook/blob/5e4e5055fc5460d1768fd2a6648f2fec8c0891bb/lib/components/src/syntaxhighlighter/syntaxhighlighter.tsx#L22
-#
-!docs/fds-components/react-syntax-highlighter_languages_highlight_jsx.*.bundle.js.map
-!docs/fds-components/react-syntax-highlighter_languages_highlight_bash.*.bundle.js.map
-!docs/fds-components/react-syntax-highlighter_languages_highlight_css.*.bundle.js.map
-!docs/fds-components/react-syntax-highlighter_languages_highlight_html.*.bundle.js.map
-!docs/fds-components/react-syntax-highlighter_languages_highlight_tsx.*.bundle.js.map
-!docs/fds-components/react-syntax-highlighter_languages_highlight_typescript.*.bundle.js.map
-
 .yarn/*
 !.yarn/cache
 !.yarn/patches
@@ -42,4 +14,4 @@ docs/fds-components/vendors~react-syntax-highlighter_languages_highlight_*.*.bun
 !.yarn/sdks
 !.yarn/versions
 
-node_modules
+node_modules 
