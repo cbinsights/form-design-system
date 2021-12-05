@@ -4,7 +4,7 @@ import useToggleHover from 'util/storybook-docs/useToggleHover';
 import State from 'util/storybook-docs/State';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
-import cx from 'classnames';
+import cc from 'classcat';
 import { TableLayout } from 'util/storybook-docs/Table';
 import manifest from 'icons/iconManifest.tsx';
 
@@ -18,9 +18,13 @@ export const Icon = ({ name, svg, size }) => {
     <li>
       <div
         onClick={() => copyToClipboard(importPath(name))}
-        className={cx('rounded--all', {
-          'elevation--1': isHovered,
-        })}
+        className={cc([
+          {
+            'elevation--1': isHovered,
+          },
+          'rounded--all',
+          `fdsButton-icon--${direction}`,
+        ])}
         onMouseEnter={toggleHover}
         onMouseLeave={toggleHover}
       >

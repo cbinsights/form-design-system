@@ -65,7 +65,7 @@ ReadingSelectedValue.parameters = {
   },
 };
 
-export const controlled = (args: RadioProps): JSX.Element => (
+export const Controlled = (args: RadioProps): JSX.Element => (
   <div onChange={(e) => action('change')((e.target as HTMLInputElement).value)}>
     <Radio
       {...args}
