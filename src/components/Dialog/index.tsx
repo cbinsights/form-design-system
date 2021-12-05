@@ -1,5 +1,4 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import FocusTrap from 'focus-trap-react';
@@ -9,7 +8,9 @@ import IconButton from 'components/IconButton';
 import cc from 'classcat';
 import noScroll from './noScroll';
 
-export const isElementOverflowing = ({ current }) => {
+export const isElementOverflowing = ({
+  current,
+}: React.MutableRefObject<HTMLDivElement | null>): boolean => {
   // Checking for current first is safer just in case,
   // and will also fail gracefully in tests
   if (current) {
@@ -17,6 +18,53 @@ export const isElementOverflowing = ({ current }) => {
   }
   return false;
 };
+
+export interface DialogProps {
+  /** Controls the role of the modal */
+  role?: 'dialog' | 'alertdialog';
+
+  /** Controls whether the modal (and overlay) are shown or not */
+  isOpen?: boolean;
+
+  /** Add into bottom portion of modal */
+  footerContent?: React.ReactNode | string;
+
+  /** Add into content (middle) portion of modal */
+  content?: React.ReactNode | string;
+
+  /** Controls text displayed in modal header */
+  title?: string;
+
+  /**
+   * Callback that user can pass in, to be conditionally fired when
+   * user attempts to close modal. When defined, the modal close button appears
+   */
+  onDismiss?: () => void;
+
+  /** Custom modal width */
+  width?: string;
+
+  /** Custom modal height */
+  height?: string;
+
+  /**
+   * Border between content area and footer currently renders only if there is scrollable content. Set this boolean
+   * so that the border always renders no matter what.
+   */
+  alwaysShowBorder?: boolean;
+
+  /**
+   * Disables the focus trap on the Dialog.
+   * Useful when the Dialog contains components that manage focus (e.g. `Menu`)
+   */
+  disableFocusTrap?: boolean;
+
+  /** Disables rendering the dialog in a portal, and renders it locally instead. */
+  disablePortal?: boolean;
+
+  /** Add content below the title */
+  subTitle?: React.ReactNode;
+}
 
 const Dialog = ({
   role = 'dialog',
@@ -31,18 +79,19 @@ const Dialog = ({
   footerContent,
   subTitle,
   disablePortal = false,
-}) => {
-  const contentEl = useRef(null);
-  const handleKeyDown = (e) => {
+}: DialogProps): JSX.Element => {
+  const contentEl = useRef<HTMLDivElement>(null);
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (onDismiss && e.key === 'Escape') {
       onDismiss();
     }
   };
 
   const [isOverflowing, setIsOverflowing] = useState(false);
+  const schdSetIsOverflowing = rafSchd(setIsOverflowing);
 
   const handleResize = () => {
-    rafSchd(setIsOverflowing(isElementOverflowing(contentEl)));
+    schdSetIsOverflowing(isElementOverflowing(contentEl));
   };
 
   useEffect(() => {
@@ -80,7 +129,7 @@ const Dialog = ({
           role={role}
           aria-labelledby={title && 'a11y-dialog-title'}
           aria-describedby="a11y-dialog-desc"
-          tabIndex="-1"
+          tabIndex={-1}
           aria-modal="true"
           onKeyDown={handleKeyDown}
           style={{
@@ -153,53 +202,6 @@ const Dialog = ({
         : ReactDOM.createPortal(transitionNode, document.body)}
     </React.Fragment>
   );
-};
-
-Dialog.propTypes = {
-  /** Controls the role of the modal */
-  role: PropTypes.oneOf(['dialog', 'alertdialog']),
-
-  /** Controls whether the modal (and overlay) are shown or not */
-  isOpen: PropTypes.bool,
-
-  /** Add into bottom portion of modal */
-  footerContent: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-
-  /** Add into content (middle) portion of modal */
-  content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-
-  /** Controls text displayed in modal header */
-  title: PropTypes.string,
-
-  /**
-   * Callback that user can pass in, to be conditionally fired when
-   * user attempts to close modal. When defined, the modal close button appears
-   */
-  onDismiss: PropTypes.func,
-
-  /** Custom modal width */
-  width: PropTypes.string,
-
-  /** Custom modal height */
-  height: PropTypes.string,
-
-  /**
-   * Border between content area and footer currently renders only if there is scrollable content. Set this boolean
-   * so that the border always renders no matter what.
-   */
-  alwaysShowBorder: PropTypes.bool,
-
-  /**
-   * Disables the focus trap on the Dialog.
-   * Useful when the Dialog contains components that manage focus (e.g. `Menu`)
-   */
-  disableFocusTrap: PropTypes.bool,
-
-  /** Disables rendering the dialog in a portal, and renders it locally instead. */
-  disablePortal: PropTypes.bool,
-
-  /** Add content below the title */
-  subTitle: PropTypes.node,
 };
 
 export default Dialog;

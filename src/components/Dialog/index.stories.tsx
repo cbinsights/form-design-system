@@ -5,9 +5,11 @@ import { NoStoriesLayout } from 'util/storybook-docs/Layout';
 import Button from 'components/Button';
 import Popover from 'components/Popover';
 
-import Dialog from '.';
+import Dialog, { DialogProps } from '.';
 
-const Template = (args) => <Dialog disableFocusTrap={true} {...args} />;
+const Template = (args: DialogProps): JSX.Element => (
+  <Dialog disableFocusTrap={true} {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -58,7 +60,7 @@ ScrollingContentFooterPermanentBorder.args = {
   alwaysShowBorder: true,
 };
 
-export const DialogFromPopover = (args) => {
+export const DialogFromPopover = (args: DialogProps): JSX.Element => {
   const [dialogIsOpen, setDialogOpen] = React.useState(false);
   const handleClick = () => {
     setDialogOpen(true);
