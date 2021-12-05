@@ -1,0 +1,18 @@
+name: Deploy
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  test:
+    uses: cbinsights/form-design-system/.github/workflows/reusable-test.yml@master
+  typecheck:
+    uses: cbinsights/form-design-system/.github/workflows/reusable-typecheck.yml@master
+  lint:
+    uses: cbinsights/form-design-system/.github/workflows/reusable-linting.yml@master
+  npm-publish:
+    uses: cbinsights/form-design-system/.github/workflows/reusable-npm-publish.yml@master
+    needs: [test, typecheck, lint]
+    secrets:
+      token: ${{ secrets.SEMANTIC_NPM_TOKEN }}
