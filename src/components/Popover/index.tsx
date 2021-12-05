@@ -1,6 +1,12 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, {
+  useRef,
+  useEffect,
+  useState,
+  Ref,
+  MutableRefObject,
+  HTMLAttributes,
+} from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 import { CSSTransition } from 'react-transition-group';
 import FDS from 'dictionary/js/styleConstants';
@@ -8,15 +14,84 @@ import { isNotRefsEvent } from 'components/util/events';
 import { getPopperPlacement } from './util';
 import { useDisableScroll, useCloseOnScroll } from './hooks';
 
-export const VALID_POSITIONS = ['auto', 'top', 'right', 'bottom', 'left'];
-export const VALID_ALIGNMENTS = ['start', 'end', 'center'];
-export const VALID_INTERACTION_MODES = ['hover', 'click', 'controlled'];
+export type Position = 'auto' | 'top' | 'right' | 'bottom' | 'left';
+export type PopperAlignment = 'start' | 'end';
+export type Alignment = PopperAlignment | 'center';
+export type InteractionMode = 'hover' | 'click' | 'controlled';
 
-/**
- * @param {Object} props react props
- * @returns {ReactElement}
- */
-const Popover = React.forwardRef(
+export interface PopoverProps {
+  /** JSX - Acts as a positioning reference for the popover and triggers active state */
+  trigger: React.ReactElement;
+
+  /**
+   * JSX - Content to place in the positioned popover container. The popover container
+   * does not provide any default styling; content should be styled with background,
+   * borders, and shadows as appropriate.
+   */
+  children: React.ReactNode | React.ReactElement;
+
+  /**
+   * What mode of interaction triggers the active/inactive state of the popover.
+   *
+   * `hover` - popover opens on trigger hover/focus
+   *
+   * `click` - popover opens on trigger click
+   *
+   * `controlled` - enables "fully controlled" mode in which the popover is only active
+   * when the `isOpen` prop is set to `true`. Use `onUserDismiss` to handle dismissal
+   * events from user interaction.
+   */
+  interactionMode?: InteractionMode;
+
+  /** Controlls active state of popover when in fully controlled interaction mode */
+  isOpen?: boolean;
+
+  /**
+   * Callback fired when user takes an action to dismiss the popover.
+   * (e.g. ESC press, clicking outside, etc.)
+   * Useful for updating `isOpen` in controlled mode.
+   * Function is invoked with the DOM event as the argument.
+   */
+  onUserDismiss?: (e: MouseEvent | KeyboardEvent) => void;
+
+  /** disables portaling the popover to `document.body` */
+  disablePortal?: boolean;
+
+  /**
+   * Vertical position preference of popover content.
+   * `top` for example, will place the popover content above the trigger.
+   */
+  position?: Position;
+
+  /** Horizontal alignment preference of popover content relative to trigger */
+  alignment?: Alignment;
+
+  /** Offset distance from trigger. */
+  distance?: number;
+
+  /** Delay in milliseconds for popover to trigger (hover mode only) */
+  delay?: number;
+
+  /** Name of transition for popover content */
+  transitionName?: 'GrowFast';
+
+  /** Callback called when popover opens */
+  onOpen?: () => void;
+
+  /** Callback called when popover closes */
+  onClose?: () => void;
+
+  /** When popover opens, this element should freeze scrolling. When the popover closes, the scrollability of this element should resume. */
+  disableScrollRef?: MutableRefObject<HTMLElement>;
+
+  /** When the Popover detects scroll events from this ref, the popover should close. */
+  closeOnScrollRef?: MutableRefObject<HTMLElement>;
+
+  /** Ref to forward to the content container of the popover */
+  ref?: Ref<HTMLElement>;
+}
+
+const Popover = React.forwardRef<HTMLElement, PopoverProps>(
   (
     {
       interactionMode = 'click',
@@ -34,7 +109,7 @@ const Popover = React.forwardRef(
       transitionName,
       disableScrollRef,
       closeOnScrollRef,
-    },
+    }: PopoverProps,
     forwardedRef
   ) => {
     const [isActive, setIsActive] = useState(false);
@@ -46,14 +121,13 @@ const Popover = React.forwardRef(
 
     // update active state on props change to accommodate fully controlled popovers
     useEffect(() => {
-      setIsActive(interactionMode === 'controlled' && isOpen);
+      setIsActive(interactionMode === 'controlled' && !!isOpen);
     }, [interactionMode, isOpen]);
 
     /**
      * Called when user takes an action to dismiss the popover
-     * @param {Event} e DOMEvent
      */
-    const handleUserDismiss = (e) => {
+    const handleUserDismiss = (e: MouseEvent | KeyboardEvent) => {
       onUserDismiss(e);
       if (interactionMode !== 'controlled') {
         setIsActive(false);
@@ -62,18 +136,16 @@ const Popover = React.forwardRef(
 
     /**
      * Closes popover when user presses ESC
-     * @param {Event} e DOMEvent
      */
-    const handleKeyPress = (e) => {
+    const handleKeyPress = (e: KeyboardEvent) => {
       const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
       if (isEscapeKey) handleUserDismiss(e);
     };
 
     /**
      * Closes popover when user clicks outside of content or trigger
-     * @param {Event} e DOMEvent
      */
-    const handleBodyClick = (e) => {
+    const handleBodyClick = (e: MouseEvent) => {
       const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
       if (isNotPopoverClick) handleUserDismiss(e);
     };
@@ -90,12 +162,12 @@ const Popover = React.forwardRef(
       };
     }, [isActive]);
 
-    let triggerProps = {};
-    let hoverTimeout;
+    let triggerProps: HTMLAttributes<HTMLElement> = {};
+    let hoverTimeout: number;
     switch (interactionMode) {
       case 'hover':
         triggerProps.onMouseEnter = () => {
-          if (parseInt(delay, 10) > 0) {
+          if (delay > 0) {
             hoverTimeout = setTimeout(setIsActive, delay, true);
           } else {
             setIsActive(true);
@@ -121,7 +193,7 @@ const Popover = React.forwardRef(
           e.stopPropagation();
           setIsActive(false);
         };
-        triggerProps.tabIndex = '1';
+        triggerProps.tabIndex = 1;
         break;
       case 'click':
         triggerProps.onClick = (e) => {
@@ -167,7 +239,7 @@ const Popover = React.forwardRef(
     ];
 
     const contentStyle = {
-      zIndex: FDS.ZINDEX_MODAL,
+      zIndex: Number(FDS.ZINDEX_MODAL),
     };
 
     const popperContent = (
@@ -181,7 +253,7 @@ const Popover = React.forwardRef(
       >
         <Popper
           innerRef={(node) => {
-            refContent.current = node;
+            (refContent as MutableRefObject<HTMLElement>).current = node;
           }}
           modifiers={popperModifiers}
           placement={getPopperPlacement(position, alignment)}
@@ -206,7 +278,7 @@ const Popover = React.forwardRef(
       <Manager>
         <Reference>
           {({ ref }) => (
-            <div ref={ref} aria-haspopup="true" aria-expanded={isActive.toString()}>
+            <div ref={ref} aria-haspopup="true" aria-expanded={isActive}>
               <div ref={refTriggerWrap}>{clonedTrigger}</div>
             </div>
           )}
@@ -223,82 +295,5 @@ const Popover = React.forwardRef(
 );
 
 Popover.displayName = 'Popover';
-
-const validRef = PropTypes.oneOfType([
-  PropTypes.func,
-  PropTypes.shape({ current: PropTypes.any }),
-]);
-
-Popover.propTypes = {
-  /** JSX - Acts as a positioning reference for the popover and triggers active state */
-  trigger: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
-
-  /**
-   * JSX - Content to place in the positioned popover container. The popover container
-   * does not provide any default styling; content should be styled with background,
-   * borders, and shadows as appropriate.
-   */
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
-
-  /**
-   * What mode of interaction triggers the active/inactive state of the popover.
-   *
-   * `hover` - popover opens on trigger hover/focus
-   *
-   * `click` - popover opens on trigger click
-   *
-   * `controlled` - enables "fully controlled" mode in which the popover is only active
-   * when the `isOpen` prop is set to `true`. Use `onUserDismiss` to handle dismissal
-   * events from user interaction.
-   */
-  interactionMode: PropTypes.oneOf(VALID_INTERACTION_MODES),
-
-  /** Controlls active state of popover when in fully controlled interaction mode */
-  isOpen: PropTypes.bool,
-
-  /**
-   * Callback fired when user takes an action to dismiss the popover.
-   * (e.g. ESC press, clicking outside, etc.)
-   * Useful for updating `isOpen` in controlled mode.
-   * Function is invoked with the DOM event as the argument.
-   */
-  onUserDismiss: PropTypes.func,
-
-  /** disables portaling the popover to `document.body` */
-  disablePortal: PropTypes.bool,
-
-  /**
-   * Vertical position preference of popover content.
-   * `top` for example, will place the popover content above the trigger.
-   */
-  position: PropTypes.oneOf(VALID_POSITIONS),
-
-  /** Horizontal alignment preference of popover content relative to trigger */
-  alignment: PropTypes.oneOf(VALID_ALIGNMENTS),
-
-  /** Offset distance from trigger. */
-  distance: PropTypes.number,
-
-  /** Delay in milliseconds for popover to trigger (hover mode only) */
-  delay: PropTypes.number,
-
-  /** Name of transition for popover content */
-  transitionName: PropTypes.oneOf(['GrowFast']),
-
-  /** Callback called when popover opens */
-  onOpen: PropTypes.func,
-
-  /** Callback called when popover closes */
-  onClose: PropTypes.func,
-
-  /** When popover opens, this element should freeze scrolling. When the popover closes, the scrollability of this element should resume. */
-  disableScrollRef: validRef,
-
-  /** When the Popover detects scroll events from this ref, the popover should close. */
-  closeOnScrollRef: validRef,
-
-  /** Ref to forward to the content container of the popover */
-  ref: validRef,
-};
 
 export default Popover;

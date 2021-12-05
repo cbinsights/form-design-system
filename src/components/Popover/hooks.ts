@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 
-let overflowStyle = null;
+let overflowStyle: string | null = null;
 
 /**
  * Hook that disables scroll on a DOM node when `isDisabled` is true.
@@ -8,7 +8,10 @@ let overflowStyle = null;
  * @param {Object} disableScrollRef - react ref to DOM node
  * @param {Boolean} isDisabled
  */
-export const useDisableScroll = (disableScrollRef, isDisabled) => {
+export const useDisableScroll = (
+  disableScrollRef: MutableRefObject<HTMLElement> | undefined,
+  isDisabled: boolean
+): void => {
   useEffect(() => {
     if (disableScrollRef) {
       const domNode = disableScrollRef.current || disableScrollRef;
@@ -29,7 +32,11 @@ export const useDisableScroll = (disableScrollRef, isDisabled) => {
  * @param {Boolean} isActive - if the popover is currently open/active
  * @param {Boolean} closeCallback - function that closes the popover
  */
-export const useCloseOnScroll = (closeOnScrollRef, isActive, closeCallback) => {
+export const useCloseOnScroll = (
+  closeOnScrollRef: MutableRefObject<HTMLElement> | undefined,
+  isActive: boolean,
+  closeCallback: () => void
+): void => {
   useEffect(() => {
     if (closeOnScrollRef && isActive) {
       const scrollRef = closeOnScrollRef.current || closeOnScrollRef;
