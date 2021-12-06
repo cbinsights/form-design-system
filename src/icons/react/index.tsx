@@ -116,6 +116,7 @@ import PhoneIcon from './PhoneIcon';
 import PiggyBankIcon from './PiggyBankIcon';
 import PresentIcon from './PresentIcon';
 import PublishIcon from './PublishIcon';
+import PuzzleIcon from './PuzzleIcon';
 import QuestionIcon from './QuestionIcon';
 import RadioEmptyIcon from './RadioEmptyIcon';
 import RadioFilledIcon from './RadioFilledIcon';
@@ -148,6 +149,7 @@ import TeamIcon from './TeamIcon';
 import TextIcon from './TextIcon';
 import ThreeDotIcon from './ThreeDotIcon';
 import ThumbsUpIcon from './ThumbsUpIcon';
+import ToolsIcon from './ToolsIcon';
 import TrashIcon from './TrashIcon';
 import TwitterIcon from './TwitterIcon';
 import TwitterFilledIcon from './TwitterFilledIcon';
@@ -288,6 +290,7 @@ export {
   PiggyBankIcon,
   PresentIcon,
   PublishIcon,
+  PuzzleIcon,
   QuestionIcon,
   RadioEmptyIcon,
   RadioFilledIcon,
@@ -320,6 +323,7 @@ export {
   TextIcon,
   ThreeDotIcon,
   ThumbsUpIcon,
+  ToolsIcon,
   TrashIcon,
   TwitterIcon,
   TwitterFilledIcon,
