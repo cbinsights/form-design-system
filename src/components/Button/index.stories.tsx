@@ -135,7 +135,7 @@ export const IsActive = (): JSX.Element => (
   </>
 );
 
-isActive.parameters = {
+IsActive.parameters = {
   docs: {
     description: {
       story:
