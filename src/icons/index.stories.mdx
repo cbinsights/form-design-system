@@ -23,13 +23,12 @@ export const Icon = ({ name, svg, size }) => {
             'elevation--1': isHovered,
           },
           'rounded--all',
-          `fdsButton-icon--${direction}`,
         ])}
         onMouseEnter={toggleHover}
         onMouseLeave={toggleHover}
       >
         <div className={`iconSize--${size}`} dangerouslySetInnerHTML={{ __html: svg }} />
-        <span className={cx('copyNotice', { 'display--block': isHovered })}>
+        <span className={cc([{ 'display--block': isHovered }, 'copyNotice'])}>
           {copiedText ? <b>Copied to Clipboard</b> : 'Copy to Clipboard'}
         </span>
         <p className="wrap--singleLine--truncate type--data">{name}</p>
