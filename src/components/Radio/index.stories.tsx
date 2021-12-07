@@ -1,5 +1,4 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 
 import Radio, { RadioProps } from '.';
 
@@ -49,7 +48,7 @@ InitialSelection.parameters = {
 };
 
 export const ReadingSelectedValue = (args: RadioProps): JSX.Element => (
-  <div onChange={(e) => action('change')((e.target as HTMLInputElement).value)}>
+  <div>
     <Radio {...args} name="radio-group-onchange" label="Option one" value="1" />
     <Radio {...args} name="radio-group-onchange" label="Option two" value="2" />
     <Radio {...args} name="radio-group-onchange" label="Option three" value="3" />
@@ -66,7 +65,7 @@ ReadingSelectedValue.parameters = {
 };
 
 export const Controlled = (args: RadioProps): JSX.Element => (
-  <div onChange={(e) => action('change')((e.target as HTMLInputElement).value)}>
+  <div>
     <Radio
       {...args}
       name="radio-group-onchange"
@@ -82,6 +81,7 @@ export const Controlled = (args: RadioProps): JSX.Element => (
 export default {
   component: Radio,
   title: 'components/Radio',
+  argTypes: { onChange: { action: 'onChange' } },
   parameters: {
     componentSubtitle: 'Uncontrolled custom radio component with label.',
     docs: {

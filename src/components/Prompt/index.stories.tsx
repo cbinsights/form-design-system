@@ -1,5 +1,4 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import { NoStoriesLayout } from 'util/storybook-docs/Layout';
 import Button from 'components/Button';
 
@@ -13,10 +12,7 @@ Primary.args = {
   desc: 'This change will be permanent and cannot be undone.',
   title: 'Are you sure you want to delete this collection?',
   primaryButton: <Button isDestructive label="Delete" />,
-  secondaryButton: (
-    <Button theme="ghost" label="Keep Collection" onClick={action('close modal')} />
-  ),
-  onDismiss: action('close modal'),
+  secondaryButton: <Button theme="ghost" label="Keep Collection" />,
 };
 
 export const NoDescription = Template.bind({});
@@ -28,6 +24,7 @@ NoDescription.args = {
 export default {
   component: Prompt,
   title: 'components/Prompt',
+  argTypes: { onDismiss: { action: 'onDismiss' } },
   parameters: {
     componentSubtitle: 'An inflexible version of Dialog that is used for confirm modals.',
     docs: {

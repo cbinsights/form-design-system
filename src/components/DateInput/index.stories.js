@@ -1,19 +1,14 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 
 import DateInput from '.';
 
 const Template = (args) => <DateInput {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-  onDateChange: (date) => date,
-};
+Primary.args = {};
 
 export const DefaultSelectedDate = Template.bind({});
 DefaultSelectedDate.args = {
-  onInputChange: action('input change'),
-  onDateChange: action('date change'),
   defaultDate: '01/01/2010',
 };
 
@@ -29,8 +24,6 @@ DefaultSelectedDate.parameters = {
 export const DateRanges = Template.bind({});
 DateRanges.args = {
   label: 'Enter a date in 2020',
-  onInputChange: action('input change'),
-  onDateChange: action('date change'),
   minDate: new Date('Jan 1 2020'),
   maxDate: new Date('Dec 31 2020'),
 };
@@ -46,8 +39,6 @@ DateRanges.parameters = {
 
 export const PopoverProps = Template.bind({});
 PopoverProps.args = {
-  onDateChange: action('date change'),
-  onInputChange: action('input change'),
   popoverProps: { alignment: 'end' },
 };
 
@@ -69,6 +60,10 @@ LabelPosition.args = {
 export default {
   component: DateInput,
   title: 'components/DateInput',
+  argTypes: {
+    onInputChange: { action: 'onInputChange' },
+    onDateChange: { action: 'onDateChange' },
+  },
   parameters: {
     componentSubtitle: 'Input for a single date selection',
     docs: {

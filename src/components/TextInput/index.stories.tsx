@@ -2,7 +2,6 @@ import React from 'react';
 import CaretDownIcon from 'icons/react/CaretDownIcon';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
-import { action } from '@storybook/addon-actions';
 import { useForm } from 'react-hook-form';
 import InputGroup from 'components/InputGroup';
 import State from 'util/storybook-docs/State';
@@ -13,14 +12,14 @@ export const Primary = (args: TextInputProps): JSX.Element => (
   <TextInput {...args} label="First Name" />
 );
 
-export const ExampleLayout = (): JSX.Element => (
+export const ExampleLayout = ({ onChange }: TextInputProps): JSX.Element => (
   <>
     <Flex>
       <FlexItem>
-        <TextInput label="First Name" showRequired />
+        <TextInput label="First Name" showRequired onChange={onChange} />
       </FlexItem>
       <FlexItem>
-        <TextInput label="Last Name" showRequired />
+        <TextInput label="Last Name" showRequired onChange={onChange} />
       </FlexItem>
     </Flex>
     <br />
@@ -31,19 +30,20 @@ export const ExampleLayout = (): JSX.Element => (
           label="Email"
           errorText="Enter a valid email address"
           placeholder="e.g. anand@cbinsights.com"
+          onChange={onChange}
         />
       </FlexItem>
       <FlexItem>
-        <TextInput type="password" label="Password" />
+        <TextInput type="password" label="Password" onChange={onChange} />
       </FlexItem>
       <FlexItem>
-        <TextInput type="number" label="Zipcode" after="90210" />
+        <TextInput type="number" label="Zipcode" after="90210" onChange={onChange} />
       </FlexItem>
     </Flex>
   </>
 );
 
-export const ControlledInput = (args: TextInputProps): JSX.Element => (
+export const ControlledInput = ({ onChange, ...args }: TextInputProps): JSX.Element => (
   <State
     initialValue="Controlled"
     render={(value, setValue) => (
@@ -52,35 +52,42 @@ export const ControlledInput = (args: TextInputProps): JSX.Element => (
         label="Controlled"
         showLabel={false}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => {
+          onChange();
+          setValue(e.target.value);
+        }}
       />
     )}
   />
 );
 
-export const Icons = (args: TextInputProps): JSX.Element => (
+export const Icons = ({ onChange, ...args }: TextInputProps): JSX.Element => (
   <TextInput
     {...args}
     label="Icons"
     showLabel={false}
     IconLeft={CaretDownIcon}
     IconRight={CaretDownIcon}
+    onChange={onChange}
   />
 );
 
-export const SideLabel = (args: TextInputProps): JSX.Element => (
+export const SideLabel = ({ onChange, ...args }: TextInputProps): JSX.Element => (
   <TextInput
     {...args}
     label="Side Label"
     showLabel={false}
     before="before"
     after="after"
+    onChange={onChange}
   />
 );
 
-export const FormManagementLibrary = (args: TextInputProps): JSX.Element => {
+export const FormManagementLibrary = ({
+  onChange,
+  ...args
+}: TextInputProps): JSX.Element => {
   const { register, handleSubmit, formState } = useForm();
-  // const inputRef = useRef<HTMLInputElement>(null);
   const registeredUsername = register('Username', {
     validate: (value) => value !== 'admin' || 'Nice try!',
   });
@@ -93,7 +100,7 @@ export const FormManagementLibrary = (args: TextInputProps): JSX.Element => {
   });
   return (
     <div>
-      <form onSubmit={handleSubmit(action('submitted'))}>
+      <form onSubmit={handleSubmit(() => {})}>
         <div className="margin--bottom--s">
           <TextInput
             {...args}
@@ -102,6 +109,7 @@ export const FormManagementLibrary = (args: TextInputProps): JSX.Element => {
             type="text"
             errorText={formState.errors.username && formState.errors.username.message}
             ref={registeredUsername.ref}
+            onChange={onChange}
           />
         </div>
         <TextInput
@@ -111,6 +119,7 @@ export const FormManagementLibrary = (args: TextInputProps): JSX.Element => {
           type="text"
           errorText={formState.errors.email && formState.errors.email.message}
           ref={registeredEmail.ref}
+          onChange={onChange}
         />
         <br />
         <button type="submit">Submit</button>
@@ -128,10 +137,17 @@ FormManagementLibrary.parameters = {
   },
 };
 
-export const Misc = (): JSX.Element => (
+export const Misc = ({ onChange }: TextInputProps): JSX.Element => (
   <>
     <InputGroup>
-      <TextInput before="$" type="number" value="666" label="Misc" showLabel={false} />
+      <TextInput
+        before="$"
+        type="number"
+        value="666"
+        label="Misc"
+        showLabel={false}
+        onChange={onChange}
+      />
       <select name="unit">
         <option value="1">Million</option>
         <option value="2">Thousand</option>
@@ -145,6 +161,7 @@ export const Misc = (): JSX.Element => (
         value="666"
         label="Misc"
         showLabel={false}
+        onChange={onChange}
       />
       <select name="unit">
         <option value="1">Million</option>
@@ -159,6 +176,7 @@ export const Misc = (): JSX.Element => (
         value="666"
         label="Misc"
         showLabel={false}
+        onChange={onChange}
       />
       <select name="unit">
         <option value="1">Million</option>
@@ -166,13 +184,23 @@ export const Misc = (): JSX.Element => (
       </select>
     </InputGroup>
     <br />
-    <TextInput label="Label on left with width" labelPosition="left" labelWidth="100px" />
+    <TextInput
+      label="Label on left with width"
+      labelPosition="left"
+      labelWidth="100px"
+      onChange={onChange}
+    />
   </>
 );
 
 export default {
   component: TextInput,
   title: 'components/TextInput',
+  argTypes: {
+    onChange: {
+      action: 'onChange',
+    },
+  },
   parameters: {
     componentSubtitle: 'Standard recommended input component',
     docs: {
