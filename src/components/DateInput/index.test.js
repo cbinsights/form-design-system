@@ -67,7 +67,7 @@ describe('DateInput component', () => {
     expect(dateChangeFn).not.toHaveBeenCalled();
     expect(
       screen.getByRole('gridcell', { selected: true, name: 'Tue Jul 07 2020' })
-    ).toBeTruthy();
+    ).toBeInTheDocument();
     await userEvent.clear(screen.getByRole('textbox'));
     // did the callback fire with null?
     expect(dateChangeFn).toHaveBeenCalledWith(null);
@@ -82,7 +82,7 @@ describe('Date formats', () => {
   it('uses correct placeholder for a given format', () => {
     Object.keys(DATE_FORMAT_MAP).forEach((format) => {
       render(<DateInput dateFormat={format} />);
-      expect(screen.getByPlaceholderText(DATE_FORMAT_MAP[format])).toBeTruthy();
+      expect(screen.getByPlaceholderText(DATE_FORMAT_MAP[format])).toBeInTheDocument();
     });
   });
 
@@ -90,7 +90,7 @@ describe('Date formats', () => {
     const expectedValues = ['06/01/2020', '01/06/2020', '2020/06/01'];
     Object.keys(DATE_FORMAT_MAP).forEach((format, i) => {
       render(<DateInput dateFormat={format} defaultDate={new Date('June 1 2020')} />);
-      expect(screen.getByDisplayValue(expectedValues[i])).toBeTruthy();
+      expect(screen.getByDisplayValue(expectedValues[i])).toBeInTheDocument();
     });
   });
 });
