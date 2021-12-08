@@ -76,7 +76,6 @@
     "@commitlint/prompt-cli": "^14.1.0",
     "@mdx-js/react": "^1.6.22",
     "@storybook/addon-a11y": "6.4.4",
-    "@storybook/addon-actions": "6.4.4",
     "@storybook/addon-backgrounds": "6.4.4",
     "@storybook/addon-docs": "6.4.4",
     "@storybook/addon-essentials": "6.4.4",
