@@ -43,7 +43,8 @@
     "stats:imports": "node ./scripts/node/util/getImportStats.js",
     "type-check": "tsc",
     "semantic-release": "semantic-release",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "check": "yarn lint && yarn test && yarn type-check"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
