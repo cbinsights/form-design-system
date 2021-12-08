@@ -45,9 +45,9 @@ for a button being clicked on (:active) */
   border: 1px solid #c2c2c2;
   border-radius: var(--border-radius-default);
   padding: 0 8px;
-  font-size: 12px;
+  font-size: var(--font-size-default);
   color: var(--font-color-primary);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
   text-transform: none;
   line-height: normal;
   display: inline-flex;
@@ -59,7 +59,7 @@ for a button being clicked on (:active) */
 }
 
 .groupbtn-label {
-  padding: 8px 0;
+  padding: 7px 0;
 }
 
 .groupbtn:active {
