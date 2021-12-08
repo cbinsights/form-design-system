@@ -44,7 +44,7 @@
     "type-check": "tsc",
     "semantic-release": "semantic-release",
     "commit": "git-cz",
-    "check": "eslint --max-warnings 0 ./src/ --ext .js,.jsx,.ts,.tsx && jest && tsc"
+    "check": "yarn lint && yarn test && yarn type-check"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
