@@ -64,7 +64,7 @@ describe('Checkbox component', () => {
       </>
     );
 
-    expect(screen.getByLabelText('Component label')).toBeTruthy();
-    expect(screen.getByLabelText('User label')).toBeTruthy();
+    expect(screen.getByLabelText('Component label')).toBeInTheDocument();
+    expect(screen.getByLabelText('User label')).toBeInTheDocument();
   });
 });

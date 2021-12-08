@@ -77,6 +77,6 @@ describe('Avatar component', () => {
 
   it('renders placeholder if title or img not passed in', () => {
     render(<Avatar />);
-    expect(screen.getByTitle('Placeholder Avatar')).toBeTruthy();
+    expect(screen.getByTitle('Placeholder Avatar')).toBeInTheDocument();
   });
 });

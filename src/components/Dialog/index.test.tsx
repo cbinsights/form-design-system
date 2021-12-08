@@ -25,10 +25,10 @@ describe('Dialog', () => {
 
     /* Test that content renders properly */
     /* ================================== */
-    expect(screen.getByText('content')).toBeTruthy();
-    expect(screen.getByText('footerContent')).toBeTruthy();
-    expect(screen.getByText('title')).toBeTruthy();
-    expect(screen.getByText('subTitle')).toBeTruthy();
+    expect(screen.getByText('content')).toBeInTheDocument();
+    expect(screen.getByText('footerContent')).toBeInTheDocument();
+    expect(screen.getByText('title')).toBeInTheDocument();
+    expect(screen.getByText('subTitle')).toBeInTheDocument();
 
     /* Tests that onDismiss gets fired correctly */
     /* ========================================= */
