@@ -6,6 +6,6 @@ describe('DropdownButton component', () => {
   it('renders correctly', () => {
     render(<DropdownButton>Dropdown</DropdownButton>);
     const child = screen.getByText('Dropdown');
-    expect(child).toBeTruthy();
+    expect(child).toBeInTheDocument();
   });
 });

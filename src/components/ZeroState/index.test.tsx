@@ -7,7 +7,7 @@ describe('<ZeroState />', () => {
   describe('if label is provided', () => {
     it('should render label', () => {
       render(<ZeroState label="Hello World" />);
-      expect(screen.getByText('Hello World')).toBeTruthy();
+      expect(screen.getByText('Hello World')).toBeInTheDocument();
       expect(screen.queryByRole('img')).toBeNull();
     });
   });
@@ -15,7 +15,7 @@ describe('<ZeroState />', () => {
   describe('if Icon is provided', () => {
     it('should render icon', () => {
       render(<ZeroState Icon={TableIcon} />);
-      expect(screen.getByRole('img')).toBeTruthy();
+      expect(screen.getByRole('img')).toBeInTheDocument();
     });
   });
 });

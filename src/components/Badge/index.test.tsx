@@ -12,7 +12,7 @@ describe('Badge component', () => {
     const notif = container.querySelector(SELECTOR_NOTIF);
     const count = container.querySelector(SELECTOR_COUNT);
     expect(count).toBeFalsy();
-    expect(notif).toBeTruthy();
+    expect(notif).toBeInTheDocument();
     expect(notif).toHaveClass('color--white');
     expect(notif).toHaveClass('bgColor--red');
     expect(notif).not.toHaveClass('color--aqua');
@@ -30,7 +30,7 @@ describe('Badge component', () => {
   it('renders correctly as notif without label with showDot true', () => {
     const { container } = render(<Badge showDot={true} />);
     const notif = container.querySelector(SELECTOR_NOTIF);
-    expect(notif).toBeTruthy();
+    expect(notif).toBeInTheDocument();
   });
 
   it('renders correctly as count with label', () => {
@@ -38,7 +38,7 @@ describe('Badge component', () => {
     const notif = container.querySelector(SELECTOR_NOTIF);
     const count = container.querySelector(SELECTOR_COUNT);
     expect(notif).toBeFalsy();
-    expect(count).toBeTruthy();
+    expect(count).toBeInTheDocument();
     expect(count).toHaveClass('color--aqua');
     expect(count).not.toHaveClass('color--white');
     expect(count).not.toHaveClass('bgColor--red');

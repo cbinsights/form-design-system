@@ -12,7 +12,7 @@ describe('Popover component', () => {
       </Popover>
     );
     expect(screen.queryByText('popover content')).toBeNull();
-    expect(screen.getByText('trigger')).toBeTruthy();
+    expect(screen.getByText('trigger')).toBeInTheDocument();
   });
 
   it('tests that trigger and content text gets rendered', () => {
@@ -21,8 +21,8 @@ describe('Popover component', () => {
         <p>popover content</p>
       </Popover>
     );
-    expect(screen.getByText('trigger')).toBeTruthy();
-    expect(screen.getByText('popover content')).toBeTruthy();
+    expect(screen.getByText('trigger')).toBeInTheDocument();
+    expect(screen.getByText('popover content')).toBeInTheDocument();
   });
 
   it('tests that onUserDismiss is called only once when clicking outside popover', async () => {
@@ -38,7 +38,7 @@ describe('Popover component', () => {
 
     userEvent.click(screen.getByText('trigger'));
     userEvent.click(screen.getByText('popover content'));
-    expect(screen.getByText('popover content')).toBeTruthy();
+    expect(screen.getByText('popover content')).toBeInTheDocument();
     userEvent.click(screen.getByText('outside click'));
     await waitFor(() => expect(screen.queryByText('popover content')).toBeNull());
 
@@ -57,7 +57,7 @@ describe('Popover component', () => {
     );
 
     userEvent.click(screen.getByText('trigger'));
-    expect(screen.getByText('popover content')).toBeTruthy();
+    expect(screen.getByText('popover content')).toBeInTheDocument();
     userEvent.type(document.body, '{esc}');
     await waitFor(() => expect(screen.queryByText('popover content')).toBeNull());
 

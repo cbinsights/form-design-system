@@ -7,7 +7,7 @@ describe('Button component', () => {
   it('tests default rendering', () => {
     render(<Button label="Button" />);
     const button = screen.getByRole('button', { name: 'Button' });
-    expect(button).toBeTruthy();
+    expect(button).toBeInTheDocument();
     expect(button).toHaveClass('fdsButton--m');
     expect(button).toHaveClass('fdsButton--blue');
     expect(button).not.toHaveClass('fdsButton--isDestructive');
@@ -17,12 +17,12 @@ describe('Button component', () => {
   it('tests rendering as link', () => {
     render(<Button label="Anchor" href="#" />);
     const link = screen.getByRole('link', { name: 'Anchor' });
-    expect(link).toBeTruthy();
+    expect(link).toBeInTheDocument();
   });
 
   it('tests that props get spread', () => {
     render(<Button label="Button" href="#" data-testid="test" />);
-    expect(screen.getByTestId('test')).toBeTruthy();
+    expect(screen.getByTestId('test')).toBeInTheDocument();
   });
 
   it('tests that proper theme gets applied', () => {

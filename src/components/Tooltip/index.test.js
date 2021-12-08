@@ -8,7 +8,7 @@ describe('Tooltip component', () => {
     render(<Tooltip trigger={<button>trigger</button>} message="lol" />);
     userEvent.hover(screen.getByText('trigger'));
     await waitFor(() => {
-      expect(screen.getByText('lol')).toBeTruthy();
+      expect(screen.getByText('lol')).toBeInTheDocument();
     });
   });
 });
