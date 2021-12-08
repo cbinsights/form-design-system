@@ -1,5 +1,4 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 
 import Button from 'components/Button';
 
@@ -15,10 +14,15 @@ import Tooltip from 'components/Tooltip';
 import { MenuItem, MenuLink } from 'components';
 import Menu from '.';
 
+/**
+ * eslint complains about PropTypes when destructuring.
+ * since this will be migrated to typescript there's no point in investing time on PropTypes.
+ * TODO: deconstruct onSelect and do rest operator on args when migrating to typescript
+ * */
 export const Primary = (args) => (
   <Menu {...args} trigger={<Button label="Menu trigger" hasCaret />}>
-    <MenuItem onSelect={action('copy')}>Copy</MenuItem>
-    <MenuItem onSelect={action('delete')}>Delete</MenuItem>
+    <MenuItem onSelect={args.onSelect}>Copy</MenuItem>
+    <MenuItem onSelect={args.onSelect}>Delete</MenuItem>
   </Menu>
 );
 
@@ -29,16 +33,16 @@ export const TriggerElement = (args) => (
         {...args}
         trigger={<Button theme="outlined" label="Recommended trigger" hasCaret />}
       >
-        <MenuItem onSelect={action('🍰')}>Cake</MenuItem>
-        <MenuItem onSelect={action('🍕')}>Pizza</MenuItem>
-        <MenuItem onSelect={action('☠️')}>Tide pod</MenuItem>
+        <MenuItem onSelect={args.onSelect}>Cake</MenuItem>
+        <MenuItem onSelect={args.onSelect}>Pizza</MenuItem>
+        <MenuItem onSelect={args.onSelect}>Tide pod</MenuItem>
       </Menu>
     </FlexItem>
     <FlexItem>
       <Menu {...args} trigger={<button>any button will work</button>}>
-        <MenuItem onSelect={action('🍰')}>Cake</MenuItem>
-        <MenuItem onSelect={action('🍕')}>Pizza</MenuItem>
-        <MenuItem onSelect={action('☠️')}>Tide pod</MenuItem>
+        <MenuItem onSelect={args.onSelect}>Cake</MenuItem>
+        <MenuItem onSelect={args.onSelect}>Pizza</MenuItem>
+        <MenuItem onSelect={args.onSelect}>Tide pod</MenuItem>
       </Menu>
     </FlexItem>
   </Flex>
@@ -55,7 +59,7 @@ TriggerElement.parameters = {
 
 export const CustomItems = (args) => (
   <Menu {...args} trigger={<Button hasCaret label="actions" theme="outlined" />}>
-    <MenuItem onSelect={action('Delete')}>
+    <MenuItem onSelect={args.onSelect}>
       <div className="color--primary">
         <Flex align="center">
           <FlexItem shrink>
@@ -65,7 +69,7 @@ export const CustomItems = (args) => (
         </Flex>
       </div>
     </MenuItem>
-    <MenuItem onSelect={action('Edit')}>
+    <MenuItem onSelect={args.onSelect}>
       <div className="color--primary">
         <Flex align="center">
           <FlexItem shrink>
@@ -75,7 +79,7 @@ export const CustomItems = (args) => (
         </Flex>
       </div>
     </MenuItem>
-    <MenuItem onSelect={action('Clone')}>
+    <MenuItem onSelect={args.onSelect}>
       <div className="color--primary">
         <Flex align="center">
           <FlexItem shrink>
@@ -85,7 +89,7 @@ export const CustomItems = (args) => (
         </Flex>
       </div>
     </MenuItem>
-    <MenuItem onSelect={action('Bribe')}>
+    <MenuItem onSelect={args.onSelect}>
       <div className="color--primary">
         <Flex align="center">
           <FlexItem shrink>
@@ -95,7 +99,7 @@ export const CustomItems = (args) => (
         </Flex>
       </div>
     </MenuItem>
-    <MenuLink onSelect={action('Storybook')} href="/">
+    <MenuLink onSelect={args.onSelect} href="/">
       Go to Storybook home
     </MenuLink>
   </Menu>
@@ -131,28 +135,11 @@ export const DisabledItems = (args) => (
     {...args}
     trigger={<Button theme="outlined" label="Menu with disabled item" hasCaret />}
   >
-    <MenuItem
-      isDisabled
-      onSelect={() => {
-        action('🍰');
-      }}
-    >
+    <MenuItem isDisabled onSelect={args.onSelect}>
       <Tooltip trigger={<button>Cake</button>} message="Not your birthday" />
     </MenuItem>
-    <MenuItem
-      onSelect={() => {
-        action('🍕');
-      }}
-    >
-      Pizza
-    </MenuItem>
-    <MenuItem
-      onSelect={() => {
-        action('☠️');
-      }}
-    >
-      Tide pod
-    </MenuItem>
+    <MenuItem onSelect={args.onSelect}>Pizza</MenuItem>
+    <MenuItem onSelect={args.onSelect}>Tide pod</MenuItem>
   </Menu>
 );
 
@@ -169,6 +156,9 @@ export default {
   component: Menu,
   subcomponents: { MenuItem, MenuLink },
   title: 'components/Menu',
+  argTypes: {
+    onSelect: { action: 'onSelect' },
+  },
   parameters: {
     componentSubtitle:
       'Renders a dropdown containing links, and actions the user can take.',

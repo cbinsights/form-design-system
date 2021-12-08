@@ -3138,7 +3138,6 @@ __metadata:
     "@popperjs/core": ^2.7.2
     "@reach/menu-button": ^0.12.1
     "@storybook/addon-a11y": 6.4.4
-    "@storybook/addon-actions": 6.4.4
     "@storybook/addon-backgrounds": 6.4.4
     "@storybook/addon-docs": 6.4.4
     "@storybook/addon-essentials": 6.4.4

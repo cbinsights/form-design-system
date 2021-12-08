@@ -1,6 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import { TableLayout } from 'util/storybook-docs/Table';
-import { action } from '@storybook/addon-actions';
 import {
   Example,
   generalStyles,
@@ -480,7 +479,7 @@ export const TypeLink = () => (
 </Story>
 
 export const Pointer = () => (
-  <p className="pointer-events-none" onClick={action('click')}>
+  <p className="pointer-events-none" onClick={console.log}>
     Clicking on this text will not fire the onClick event attached to it
   </p>
 );
