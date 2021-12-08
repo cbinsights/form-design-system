@@ -89,7 +89,7 @@
 
 .fdsButton--blue:active,
 .fdsButton--blue.fdsButton--isActive,
-  .fdsButton--blue.fdsButton--isActive:focus {
+.fdsButton--blue.fdsButton--isActive:focus {
   background-color: rgba( var(--rgb-blue), .7);
 }
 
@@ -97,34 +97,20 @@
   background-color: rgba( var(--rgb-blue), .9);
 }
 
-/* .fdsButton--blue:active {
-  background-color: rgba( var(--rgb-blue), .7);
-}
-
-.fdsButton--blue.fdsButton--isActive:focus {
-  background-color: rgba( var(--rgb-blue), .7);
-} */
-
 .fdsButton--blue.fdsButton--isDestructive {
   background-color: var(--color-red);
 }
 
+.fdsButton--blue.fdsButton--isDestructive:active,
 /* stylelint-disable-next-line selector-max-class  */
-.fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive {
+.fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive,
+/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
+.fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: rgba( var(--rgb-red), .7);
 }
 
 .fdsButton--blue.fdsButton--isDestructive:hover {
   background-color: rgba( var(--rgb-red), .9);
-}
-
-.fdsButton--blue.fdsButton--isDestructive:active {
-  background-color: rgba( var(--rgb-red), .7);
-}
-
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
-.fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive:focus {
-  background-color: rgba( var(--rgb-red), .7);
 }
 
 .fdsButton--orange {
@@ -140,10 +126,7 @@
   background-color: rgba( var(--rgb-orange), .9);
 }
 
-.fdsButton--orange:active {
-  background-color: rgba( var(--rgb-orange), .7);
-}
-
+.fdsButton--orange:active,
 .fdsButton--orange.fdsButton--isActive:focus {
   background-color: rgba( var(--rgb-orange), .7);
 }
@@ -152,19 +135,13 @@
   background-color: var(--color-red);
 }
 
-/* stylelint-disable-next-line selector-max-class  */
-.fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive {
-  background-color: rgba( var(--rgb-red), .7);
-}
-
 .fdsButton--orange.fdsButton--isDestructive:hover {
   background-color: rgba( var(--rgb-red), .9);
 }
 
-.fdsButton--orange.fdsButton--isDestructive:active {
-  background-color: rgba( var(--rgb-red), .7);
-}
-
+.fdsButton--orange.fdsButton--isDestructive:active,
+/* stylelint-disable-next-line selector-max-class  */
+.fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive,
 /* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: rgba( var(--rgb-red), .7);
