@@ -4,6 +4,7 @@
   "assigneesFromCodeOwners": true,
   "prConcurrentLimit": 4,
   "assigneesSampleSize": 1,
+  "ignorePaths": ["**/example/**"],
   "packageRules": [
     {
       "matchPackagePatterns": ["eslint"],
