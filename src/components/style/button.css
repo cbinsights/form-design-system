@@ -7,6 +7,7 @@
   font-size: var(--font-size-default);
   line-height: normal;
   user-select: none;
+
   /* We do this to make sure buttons with borders and without are the same dimensions */
   border: 1px solid transparent;
   background-color: transparent;
@@ -15,7 +16,9 @@
 }
 
 /* Button padding */
+
 /* we remove 1px off each side as there's a border we need to compensate for */
+
 /* we apply vertical padding on the label only, so that the bigger icon
     doesn't change the button dimensions */
 .fdsButton--m {
@@ -217,19 +220,19 @@
 }
 
 .fdsButton--ghost.fdsButton--isActive {
-  background-color: rgba(64, 64, 64, 0.2);
+  background-color: rgb(64 64 64 / 20%);
 }
 
 .fdsButton--ghost:hover {
-  background-color: rgba(64, 64, 64, 0.08);
+  background-color: rgb(64 64 64 / 8%);
 }
 
 .fdsButton--ghost:active {
-  background-color: rgba(64, 64, 64, 0.2);
+  background-color: rgb(64 64 64 / 20%);
 }
 
 .fdsButton--ghost.fdsButton--isActive:focus {
-  background-color: rgba(64, 64, 64, 0.2);
+  background-color: rgb(64 64 64 / 20%);
 }
 
 /* stylelint-disable-next-line selector-max-class  */
@@ -269,20 +272,20 @@
 
 /* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive {
-  background-color: rgba(229, 50, 62, 0.2);
+  background-color: rgb(229 50 62 / 20%);
 }
 
 .fdsButton--ghost.fdsButton--isDestructive:hover {
-  background-color: rgba(229, 50, 62, 0.08);
+  background-color: rgb(229 50 62 / 8%);
 }
 
 .fdsButton--ghost.fdsButton--isDestructive:active {
-  background-color: rgba(229, 50, 62, 0.2);
+  background-color: rgb(229 50 62 / 20%);
 }
 
 /* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive:focus {
-  background-color: rgba(229, 50, 62, 0.2);
+  background-color: rgb(229 50 62 / 20%);
 }
 
 .fdsButton--loading.fdsButton--outlined--blue
@@ -317,20 +320,20 @@
 .inverted .fdsButton--ghost.fdsButton--isActive,
 .inverted .fdsButton--outlined.fdsButton--isActive,
 .inverted .fdsButton--outlined--blue.fdsButton--isActive {
-  background-color: rgba(255, 255, 255, 0.32);
+  background-color: rgb(255 255 255 / 32%);
 }
 
 .inverted .fdsButton--ghost:hover,
 .inverted .fdsButton--outlined:hover,
 .inverted .fdsButton--outlined--blue:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgb(255 255 255 / 8%);
 }
 
 /* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .inverted .fdsButton--ghost:active,
 .inverted .fdsButton--outlined:active,
 .inverted .fdsButton--outlined--blue:active {
-  background-color: rgba(255, 255, 255, 0.32);
+  background-color: rgb(255 255 255 / 32%);
 }
 
 /* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
@@ -338,7 +341,7 @@
 .inverted .fdsButton--outlined.fdsButton--isActive:focus,
 .inverted
   .fdsButton--outlined--blue.fdsButton--isActive:focus {
-  background-color: rgba(255, 255, 255, 0.32);
+  background-color: rgb(255 255 255 / 32%);
 }
 
 /* stylelint-disable-next-line selector-max-class */

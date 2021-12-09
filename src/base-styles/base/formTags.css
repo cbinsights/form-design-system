@@ -83,8 +83,6 @@ input[disabled] {
 
 select {
   appearance: menulist;
-  -moz-appearance: menulist;
-  -webkit-appearance: menulist;
   height: var(--space-xl);
 }
 
@@ -109,7 +107,7 @@ textarea {
 
 input[type='seach'] {
   box-sizing: content-box;
-  -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
 input[type='file'] {

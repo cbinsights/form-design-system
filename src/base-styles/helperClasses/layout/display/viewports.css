@@ -2,21 +2,27 @@
   .s\:display--none {
     display: none !important;
   }
+
   .s\:display--block {
     display: block !important;
   }
+
   .s\:display--flex {
     display: flex !important;
   }
+
   .s\:display--inline {
     display: inline !important;
   }
+
   .s\:display--inlineBlock {
     display: inline-block !important;
   }
+
   .s\:display--inlineFlex {
     display: inline-flex !important;
   }
+
   .s\:display--grid {
     display: grid !important;
   }
@@ -26,21 +32,27 @@
   .m\:display--none {
     display: none !important;
   }
+
   .m\:display--block {
     display: block !important;
   }
+
   .m\:display--flex {
     display: flex !important;
   }
+
   .m\:display--inline {
     display: inline !important;
   }
+
   .m\:display--inlineBlock {
     display: inline-block !important;
   }
+
   .m\:display--inlineFlex {
     display: inline-flex !important;
   }
+
   .m\:display--grid {
     display: grid !important;
   }
@@ -50,21 +62,27 @@
   .l\:display--none {
     display: none !important;
   }
+
   .l\:display--block {
     display: block !important;
   }
+
   .l\:display--flex {
     display: flex !important;
   }
+
   .l\:display--inline {
     display: inline !important;
   }
+
   .l\:display--inlineBlock {
     display: inline-block !important;
   }
+
   .l\:display--inlineFlex {
     display: inline-flex !important;
   }
+
   .l\:display--grid {
     display: grid !important;
   }
@@ -74,21 +92,27 @@
   .xl\:display--none {
     display: none !important;
   }
+
   .xl\:display--block {
     display: block !important;
   }
+
   .xl\:display--flex {
     display: flex !important;
   }
+
   .xl\:display--inline {
     display: inline !important;
   }
+
   .xl\:display--inlineBlock {
     display: inline-block !important;
   }
+
   .xl\:display--inlineFlex {
     display: inline-flex !important;
   }
+
   .xl\:display--grid {
     display: grid !important;
   }

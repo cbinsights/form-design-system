@@ -37,6 +37,6 @@
 }
 
 .fdsMenuItem--disabled[data-selected] {
-  background: rgba(var(--rgb-lightGray), 0.25) !important;
+  background: rgb(var(--rgb-lightGray) 25%) !important;
   cursor: not-allowed;
 }

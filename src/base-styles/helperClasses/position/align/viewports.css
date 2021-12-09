@@ -2,9 +2,11 @@
   .s\:align--left {
     text-align: left;
   }
+
   .s\:align--center {
     text-align: center;
   }
+
   .s\:align--right {
     text-align: right;
   }
@@ -14,9 +16,11 @@
   .m\:align--left {
     text-align: left;
   }
+
   .m\:align--center {
     text-align: center;
   }
+
   .m\:align--right {
     text-align: right;
   }
@@ -26,9 +30,11 @@
   .l\:align--left {
     text-align: left;
   }
+
   .l\:align--center {
     text-align: center;
   }
+
   .l\:align--right {
     text-align: right;
   }
@@ -38,9 +44,11 @@
   .xl\:align--left {
     text-align: left;
   }
+
   .xl\:align--center {
     text-align: center;
   }
+
   .xl\:align--right {
     text-align: right;
   }

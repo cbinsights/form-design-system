@@ -2,7 +2,7 @@
   background-image: linear-gradient(
     to bottom,
     var(--color-white),
-    rgba(var(--rgb-white), 0)
+    rgb(var(--rgb-white) 0)
   );
   top: 0;
 }
@@ -11,7 +11,7 @@
   background-image: linear-gradient(
     to left,
     var(--color-white),
-    rgba(var(--rgb-white), 0)
+    rgb(var(--rgb-white) 0)
   );
   right: 0;
 }
@@ -20,7 +20,7 @@
   background-image: linear-gradient(
     to top,
     var(--color-white),
-    rgba(var(--rgb-white), 0)
+    rgb(var(--rgb-white) 0)
   );
   bottom: 0;
 }
@@ -29,7 +29,7 @@
   background-image: linear-gradient(
     to right,
     var(--color-white),
-    rgba(var(--rgb-white), 0)
+    rgb(var(--rgb-white) 0)
   );
   left: 0;
 }
@@ -39,7 +39,7 @@
   background-image: linear-gradient(
     to bottom,
     var(--color-haze),
-    rgba(var(--rgb-haze), 0)
+    rgb(var(--rgb-haze) 0)
   );
   top: 0;
 }
@@ -48,7 +48,7 @@
   background-image: linear-gradient(
     to left,
     var(--color-haze),
-    rgba(var(--rgb-haze), 0)
+    rgb(var(--rgb-haze) 0)
   );
   right: 0;
 }
@@ -57,7 +57,7 @@
   background-image: linear-gradient(
     to top,
     var(--color-haze),
-    rgba(var(--rgb-haze), 0)
+    rgb(var(--rgb-haze) 0)
   );
   bottom: 0;
 }
@@ -66,7 +66,7 @@
   background-image: linear-gradient(
     to right,
     var(--color-haze),
-    rgba(var(--rgb-haze), 0)
+    rgb(var(--rgb-haze) 0)
   );
   left: 0;
 }

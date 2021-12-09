@@ -5,7 +5,7 @@
 
 .fdsInputGroup {
   border-radius: 4px;
-  border: 1px solid rgba(var(--rgb-charcoal), 0.24);
+  border: 1px solid rgb(var(--rgb-charcoal) 0.24);
   width: 100%;
 }
 
@@ -38,7 +38,7 @@
  */
 
 .fdsInputGroup .flexItem {
-  border-right: 1px solid rgba(var(--rgb-charcoal), 0.24);
+  border-right: 1px solid rgb(var(--rgb-charcoal) 0.24);
 }
 
 .fdsInputGroup .flexItem:last-child {
@@ -74,11 +74,12 @@
 }
 
 /* `select` styling overrides for Safari 10+ Only */
+
 /* All other browsers ignore this media query */
 @media not all and (min-resolution: 0.001dpcm) {
   @media {
     .fdsInputGroup select {
-      border-color: rgba(var(--rgb-charcoal), 0.24);
+      border-color: rgb(var(--rgb-charcoal) 0.24);
       min-height: initial;
       height: calc(var(--space-xl) + 2px);
       margin: -1px;
@@ -86,7 +87,7 @@
     }
 
     .fdsInputGroup select:focus {
-      outline: 2px solid rgba(var(--rgb-aqua), 0.6);
+      outline: 2px solid rgb(var(--rgb-aqua) 0.6);
     }
   }
 }

@@ -1,6 +1,5 @@
 :root {
-  --standardBorder: 1px solid
-    rgba(var(--rgb-charcoal), 0.12);
+  --standardBorder: 1px solid rgb(var(--rgb-charcoal) 0.12);
 }
 
 .border--none {
