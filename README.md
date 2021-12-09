@@ -22,6 +22,7 @@ https://cbinsights.github.io/form-design-system/
 ## Want to contribute?
 
 - Fork the repo
-- All commits must match https://www.conventionalcommits.org/ (use `yarn commit` for help)
-- Commit should include an appropriate Github issue in the message description, e.g. `fixes #000`
+- Run `yarn install`
+- Use `yarn commit` to help you generate a [conventional commit](https://www.conventionalcommits.org/)
+- Ideally reference a issue number in the commit body (e.g. fixes #123). `yarn commit` will help you with this.
 - Make a pull request!
