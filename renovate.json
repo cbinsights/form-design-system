@@ -1,7 +1,9 @@
 {
   "extends": ["config:base", "schedule:earlyMondays"],
   "timezone": "America/New_York",
+  "assigneesFromCodeOwners": true,
   "prConcurrentLimit": 4,
+  "assigneesSampleSize": 1,
   "packageRules": [
     {
       "matchPackagePatterns": ["eslint"],
