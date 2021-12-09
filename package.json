@@ -176,6 +176,7 @@
     "style-dictionary": "^2.8.1",
     "style-loader": "^1.2.1",
     "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^24.0.0",
     "svg-to-jsx": "^1.0.2",
     "svgo": "^1",

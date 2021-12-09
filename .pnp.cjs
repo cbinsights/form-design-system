@@ -159,6 +159,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["style-dictionary", "npm:2.10.2"],
             ["style-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.2.1"],
             ["stylelint", "npm:14.1.0"],
+            ["stylelint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.3"],
             ["stylelint-config-standard", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:24.0.0"],
             ["svg-to-jsx", "npm:1.0.2"],
             ["svgo", "npm:1.3.2"],
@@ -7094,6 +7095,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["style-dictionary", "npm:2.10.2"],
             ["style-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.2.1"],
             ["stylelint", "npm:14.1.0"],
+            ["stylelint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.3"],
             ["stylelint-config-standard", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:24.0.0"],
             ["svg-to-jsx", "npm:1.0.2"],
             ["svgo", "npm:1.3.2"],
@@ -31773,6 +31775,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["table", "npm:6.7.5"],
             ["v8-compile-cache", "npm:2.3.0"],
             ["write-file-atomic", "npm:3.0.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["stylelint-config-prettier", [
+        ["npm:9.0.3", {
+          "packageLocation": "./.yarn/cache/stylelint-config-prettier-npm-9.0.3-9e96da5ef3-9ff3f719da.zip/node_modules/stylelint-config-prettier/",
+          "packageDependencies": [
+            ["stylelint-config-prettier", "npm:9.0.3"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.3", {
+          "packageLocation": "./.yarn/__virtual__/stylelint-config-prettier-virtual-19467fb54e/0/cache/stylelint-config-prettier-npm-9.0.3-9e96da5ef3-9ff3f719da.zip/node_modules/stylelint-config-prettier/",
+          "packageDependencies": [
+            ["stylelint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.3"],
+            ["@types/stylelint", "npm:13.13.3"],
+            ["stylelint", "npm:14.1.0"]
+          ],
+          "packagePeers": [
+            "@types/stylelint",
+            "stylelint"
           ],
           "linkType": "HARD",
         }]
