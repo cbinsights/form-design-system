@@ -1,11 +1,9 @@
 {
   "extends": [
-    "config:base"
-  ],
-  "timezone": "America/New_York",
-  "schedule": [
+    "config:base",
     "schedule:earlyMondays"
   ],
+  "timezone": "America/New_York",
   "packageRules": [
     {
       "matchPackagePatterns": ["eslint"],
