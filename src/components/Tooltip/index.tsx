@@ -11,7 +11,7 @@ export interface TooltipProps {
   trigger: JSX.Element | string;
 
   /** Content of the tooltip */
-  message?: string;
+  message: string;
 
   /** Maximum width of tooltip */
   maxWidth?: number;
