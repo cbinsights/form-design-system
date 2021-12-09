@@ -99,7 +99,6 @@
   color: var(--color-white);
 }
 
-/* stylelint-disable-next-line selector-max-class  */
 .inverted .fdsIconButton--ghost.fdsIconButton--isActive,
 .inverted .fdsIconButton--outlined.fdsIconButton--isActive {
   background-color: rgb(255 255 255 / 32%);
@@ -115,7 +114,6 @@
   background-color: rgb(255 255 255 / 32%);
 }
 
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .inverted
   .fdsIconButton--ghost.fdsIconButton--isActive:focus,
 .inverted

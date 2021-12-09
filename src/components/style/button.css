@@ -1,6 +1,3 @@
-/* stylelint-disable selector-max-combinators */
-/* stylelint-disable selector-max-compound-selectors */
-
 .fdsButton {
   letter-spacing: 1px;
   font-weight: var(--font-weight-medium);
@@ -110,7 +107,6 @@
   background-color: var(--color-red);
 }
 
-/* stylelint-disable-next-line selector-max-class  */
 .fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive {
   background-color: #ed737c;
 }
@@ -123,7 +119,6 @@
   background-color: #ed737c;
 }
 
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: #ed737c;
 }
@@ -153,7 +148,6 @@
   background-color: var(--color-red);
 }
 
-/* stylelint-disable-next-line selector-max-class  */
 .fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive {
   background-color: #ed737c;
 }
@@ -166,7 +160,6 @@
   background-color: #ed737c;
 }
 
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: #ed737c;
 }
@@ -235,7 +228,6 @@
   background-color: rgb(64 64 64 / 20%);
 }
 
-/* stylelint-disable-next-line selector-max-class  */
 .fdsButton--outlined.fdsButton--isDestructive.fdsButton--isActive {
   background-color: #fad6d8;
 }
@@ -248,7 +240,6 @@
   background-color: #fad6d8;
 }
 
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--outlined.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: #fad6d8;
 }
@@ -265,12 +256,10 @@
   background-color: #fad6d8;
 }
 
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--outlined--blue.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: #fad6d8;
 }
 
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive {
   background-color: rgb(229 50 62 / 20%);
 }
@@ -283,7 +272,6 @@
   background-color: rgb(229 50 62 / 20%);
 }
 
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: rgb(229 50 62 / 20%);
 }
@@ -316,7 +304,6 @@
   background: transparent;
 }
 
-/* stylelint-disable-next-line selector-max-class  */
 .inverted .fdsButton--ghost.fdsButton--isActive,
 .inverted .fdsButton--outlined.fdsButton--isActive,
 .inverted .fdsButton--outlined--blue.fdsButton--isActive {
@@ -329,14 +316,12 @@
   background-color: rgb(255 255 255 / 8%);
 }
 
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .inverted .fdsButton--ghost:active,
 .inverted .fdsButton--outlined:active,
 .inverted .fdsButton--outlined--blue:active {
   background-color: rgb(255 255 255 / 32%);
 }
 
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .inverted .fdsButton--ghost.fdsButton--isActive:focus,
 .inverted .fdsButton--outlined.fdsButton--isActive:focus,
 .inverted
@@ -344,7 +329,6 @@
   background-color: rgb(255 255 255 / 32%);
 }
 
-/* stylelint-disable-next-line selector-max-class */
 .inverted
   .fdsButton--ghost
   .fdsButton--loading-spinner::before,
@@ -370,7 +354,6 @@
 /* There's a very very unique design requirement here that requires
    the following override. We only want the following design when all 3
    of these cases are true */
-/* stylelint-disable-next-line selector-max-class  */
 .fdsButton--ghost.fdsButton--loading.fdsButton--isDestructive {
   border-color: var(--color-red);
 }
