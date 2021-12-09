@@ -1,0 +1,26 @@
+{
+  "extends": ["config:base", "schedule:earlyMondays"],
+  "timezone": "America/New_York",
+  "assigneesFromCodeOwners": true,
+  "prConcurrentLimit": 10,
+  "assigneesSampleSize": 1,
+  "ignorePaths": ["**/example/**"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint"
+    },
+    {
+      "matchPackagePatterns": ["testing-library"],
+      "groupName": "testing-library"
+    },
+    {
+      "matchPackagePatterns": ["postcss"],
+      "groupName": "PostCSS"
+    },
+    {
+      "matchPackagePatterns": ["stylelint"],
+      "groupName": "Stylelint"
+    }
+  ]
+}
