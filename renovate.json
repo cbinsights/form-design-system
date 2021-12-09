@@ -1,5 +1,27 @@
 {
   "extends": [
     "config:base"
+  ],
+  "timezone": "America/New_York",
+  "schedule": [
+    "schedule:earlyMondays"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint"
+    },
+    {
+      "matchPackagePatterns": ["testing-library"],
+      "groupName": "testing-library"
+    },
+    {
+      "matchPackagePatterns": ["postcss"],
+      "groupName": "PostCSS"
+    },
+    {
+      "matchPackagePatterns": ["stylelint"],
+      "groupName": "Stylelint"
+    }
   ]
 }
