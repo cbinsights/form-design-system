@@ -1,15 +1,16 @@
 import React from 'react';
-import Tooltip from 'components/Tooltip';
+import { Story } from '@storybook/react';
+import Tooltip, { TooltipProps } from 'components/Tooltip';
 
-const Template = (args) => <Tooltip {...args} />;
+const Template = (args: TooltipProps) => <Tooltip {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<TooltipProps> = Template.bind({});
 Primary.args = {
   trigger: <button>ℹ️ Hover Here!</button>,
   message: 'Hello world',
 };
 
-export const MaxWidth = Template.bind({});
+export const MaxWidth: Story<TooltipProps> = Template.bind({});
 MaxWidth.args = {
   maxWidth: 600,
   trigger: <button>ℹ️ Hover Here!</button>,
