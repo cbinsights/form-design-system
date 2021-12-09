@@ -1,6 +1,7 @@
 {
   "extends": ["config:base", "schedule:earlyMondays"],
   "timezone": "America/New_York",
+  "prConcurrentLimit": 4,
   "packageRules": [
     {
       "matchPackagePatterns": ["eslint"],
