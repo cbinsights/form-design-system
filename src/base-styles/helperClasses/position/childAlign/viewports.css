@@ -3,34 +3,42 @@
     justify-content: center;
     align-items: center;
   }
+
   .s\:alignChild--center--top {
     justify-content: center;
     align-items: flex-start;
   }
+
   .s\:alignChild--center--bottom {
     justify-content: center;
     align-items: flex-end;
   }
+
   .s\:alignChild--left--center {
     justify-content: flex-start;
     align-items: center;
   }
+
   .s\:alignChild--left--top {
     justify-content: flex-start;
     align-items: flex-start;
   }
+
   .s\:alignChild--left--bottom {
     justify-content: flex-start;
     align-items: flex-end;
   }
+
   .s\:alignChild--right--center {
     justify-content: flex-end;
     align-items: center;
   }
+
   .s\:alignChild--right--top {
     justify-content: flex-end;
     align-items: flex-start;
   }
+
   .s\:alignChild--right--bottom {
     justify-content: flex-end;
     align-items: flex-end;
@@ -42,34 +50,42 @@
     justify-content: center;
     align-items: center;
   }
+
   .m\:alignChild--center--top {
     justify-content: center;
     align-items: flex-start;
   }
+
   .m\:alignChild--center--bottom {
     justify-content: center;
     align-items: flex-end;
   }
+
   .m\:alignChild--left--center {
     justify-content: flex-start;
     align-items: center;
   }
+
   .m\:alignChild--left--top {
     justify-content: flex-start;
     align-items: flex-start;
   }
+
   .m\:alignChild--left--bottom {
     justify-content: flex-start;
     align-items: flex-end;
   }
+
   .m\:alignChild--right--center {
     justify-content: flex-end;
     align-items: center;
   }
+
   .m\:alignChild--right--top {
     justify-content: flex-end;
     align-items: flex-start;
   }
+
   .m\:alignChild--right--bottom {
     justify-content: flex-end;
     align-items: flex-end;
@@ -81,34 +97,42 @@
     justify-content: center;
     align-items: center;
   }
+
   .l\:alignChild--center--top {
     justify-content: center;
     align-items: flex-start;
   }
+
   .l\:alignChild--center--bottom {
     justify-content: center;
     align-items: flex-end;
   }
+
   .l\:alignChild--left--center {
     justify-content: flex-start;
     align-items: center;
   }
+
   .l\:alignChild--left--top {
     justify-content: flex-start;
     align-items: flex-start;
   }
+
   .l\:alignChild--left--bottom {
     justify-content: flex-start;
     align-items: flex-end;
   }
+
   .l\:alignChild--right--center {
     justify-content: flex-end;
     align-items: center;
   }
+
   .l\:alignChild--right--top {
     justify-content: flex-end;
     align-items: flex-start;
   }
+
   .l\:alignChild--right--bottom {
     justify-content: flex-end;
     align-items: flex-end;
@@ -120,34 +144,42 @@
     justify-content: center;
     align-items: center;
   }
+
   .xl\:alignChild--center--top {
     justify-content: center;
     align-items: flex-start;
   }
+
   .xl\:alignChild--center--bottom {
     justify-content: center;
     align-items: flex-end;
   }
+
   .xl\:alignChild--left--center {
     justify-content: flex-start;
     align-items: center;
   }
+
   .xl\:alignChild--left--top {
     justify-content: flex-start;
     align-items: flex-start;
   }
+
   .xl\:alignChild--left--bottom {
     justify-content: flex-start;
     align-items: flex-end;
   }
+
   .xl\:alignChild--right--center {
     justify-content: flex-end;
     align-items: center;
   }
+
   .xl\:alignChild--right--top {
     justify-content: flex-end;
     align-items: flex-start;
   }
+
   .xl\:alignChild--right--bottom {
     justify-content: flex-end;
     align-items: flex-end;
