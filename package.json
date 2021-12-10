@@ -44,7 +44,9 @@
     "type-check": "tsc",
     "semantic-release": "semantic-release",
     "commit": "git-cz",
-    "check": "yarn lint && yarn test && yarn type-check"
+    "check": "yarn lint && yarn test && yarn type-check",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
@@ -152,6 +154,7 @@
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "^10.2.9",
     "pascal-case": "^2.0.1",
+    "pinst": "^2.1.6",
     "postcss": "^8.2.1",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^12.0.0",
@@ -193,12 +196,6 @@
     "last 2 Safari versions",
     "Explorer 11"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
     "src/**/*": [
       "prettier --write"
