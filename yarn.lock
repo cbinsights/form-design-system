@@ -3342,7 +3342,7 @@ __metadata:
     "@types/react-is": 17.0.0
     "@types/react-transition-group": 4.4.1
     "@types/rimraf": 3.0.0
-    "@types/stylelint": ^13.13.0
+    "@types/stylelint": 13.13.0
     "@types/testing-library__jest-dom": ^5.14.1
     "@types/testing-library__user-event": ^4.2.0
     "@types/tinycolor2": 1.4.2
@@ -3403,8 +3403,8 @@ __metadata:
     snake-case: 2.1.0
     style-dictionary: 2.10.2
     style-loader: 1.2.1
-    stylelint: ^13.2
-    stylelint-config-recommended: ^3.0.0
+    stylelint: 13.8.0
+    stylelint-config-recommended: 3.0.0
     svg-to-jsx: 1.0.2
     svgo: 1.3.2
     tinycolor2: 1.4.2
@@ -6887,7 +6887,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/stylelint@npm:^13.13.0":
+"@types/stylelint@npm:13.13.0":
   version: 13.13.0
   resolution: "@types/stylelint@npm:13.13.0"
   dependencies:
@@ -23879,7 +23879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-recommended@npm:^3.0.0":
+"stylelint-config-recommended@npm:3.0.0":
   version: 3.0.0
   resolution: "stylelint-config-recommended@npm:3.0.0"
   peerDependencies:
@@ -23888,7 +23888,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^13.2":
+"stylelint@npm:13.8.0":
   version: 13.8.0
   resolution: "stylelint@npm:13.8.0"
   dependencies:
