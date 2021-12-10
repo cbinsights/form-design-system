@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { DocsContext } from '@storybook/addon-docs/blocks';
+import { DocsContext } from '@storybook/addon-docs';
 import { linkTo } from '@storybook/addon-links';
 
 export const Related = () => {
