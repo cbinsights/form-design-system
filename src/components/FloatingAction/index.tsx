@@ -1,12 +1,12 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import IconButton, { THEMES } from 'components/IconButton';
+import Icon from 'components/Icon';
+import IconButton from 'components/IconButton';
 
-export const VALID_FAB_THEMES = THEMES.filter((t) => t !== 'ghost');
+type VALID_FAB_THEMES = 'aqua' | 'outlined';
 
 export interface FloatingActionProps {
   /** Used to render a FDS Icon (should obnly be used for FDS Icons) */
-  icon: any;
+  Icon: Icon;
 
   /** Accessibility label */
   label: string;
@@ -18,12 +18,12 @@ export interface FloatingActionProps {
   isActive?: boolean;
 
   /** Theme of IconButton in the FloatingAction VALID_FAB_THEMES */
-  theme?: 'aqua' | 'outlined';
+  theme?: VALID_FAB_THEMES;
 }
 
 const FloatingAction = ({
   theme = 'aqua',
-  icon,
+  Icon,
   label,
   isActive,
   isLoading,
@@ -33,7 +33,7 @@ const FloatingAction = ({
     <IconButton
       isActive={isActive}
       isLoading={isLoading}
-      Icon={icon}
+      Icon={Icon}
       label={label}
       size="m"
       radius="circle"
@@ -42,22 +42,5 @@ const FloatingAction = ({
     />
   </div>
 );
-
-// FloatingAction.propTypes = {
-//   /** Used to render a FDS Icon (should only be used for FDS Icons) */
-//   Icon: PropTypes.func.isRequired,
-
-//   /** Accessibility label */
-//   label: PropTypes.string.isRequired,
-
-//   /** Show loading spinner if true */
-//   isLoading: PropTypes.bool,
-
-//   /** Controls active style UI of button */
-//   isActive: PropTypes.bool,
-
-//   /** Theme of IconButton in the FloatingAction */
-//   theme: PropTypes.oneOf(VALID_FAB_THEMES),
-// };
 
 export default FloatingAction;
