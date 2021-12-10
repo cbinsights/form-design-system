@@ -3309,7 +3309,7 @@ __metadata:
     "@storybook/addon-docs": 6.4.4
     "@storybook/addon-essentials": 6.4.4
     "@storybook/addon-links": 6.4.4
-    "@storybook/addon-postcss": ^2.0.0
+    "@storybook/addon-postcss": 2.0.0
     "@storybook/addons": 6.4.4
     "@storybook/api": 6.4.7
     "@storybook/components": 6.4.4
@@ -3329,11 +3329,11 @@ __metadata:
     "@types/enzyme": 3.10.8
     "@types/enzyme-adapter-react-16": 1.0.6
     "@types/enzyme-to-json": 1.5.4
-    "@types/eslint": ^7.2.13
+    "@types/eslint": 7.2.13
     "@types/fs-extra": 8.1.1
     "@types/glob": 7.1.3
     "@types/jest": 27.0.3
-    "@types/postcss-import": ^12.0.0
+    "@types/postcss-import": 12.0.0
     "@types/prettier": 2.2.3
     "@types/prop-types": 15.7.3
     "@types/raf-schd": 4.0.1
@@ -3342,15 +3342,15 @@ __metadata:
     "@types/react-is": 17.0.0
     "@types/react-transition-group": 4.4.1
     "@types/rimraf": 3.0.0
-    "@types/stylelint": ^13.13.0
+    "@types/stylelint": 13.13.0
     "@types/testing-library__jest-dom": ^5.14.1
     "@types/testing-library__user-event": ^4.2.0
     "@types/tinycolor2": 1.4.2
     "@types/uuid": 8.3.0
     "@types/webpack": 4.41.29
-    "@typescript-eslint/eslint-plugin": ^5.3.1
-    "@typescript-eslint/parser": ^5.3.1
-    babel-eslint: ^10.1.0
+    "@typescript-eslint/eslint-plugin": 5.3.1
+    "@typescript-eslint/parser": 5.3.1
+    babel-eslint: 10.1.0
     babel-jest: 27.4.2
     babel-loader: 8.2.3
     babel-plugin-module-resolver: 4.1.0
@@ -3366,12 +3366,12 @@ __metadata:
     enzyme: 3.11.0
     enzyme-adapter-react-16: 1.15.5
     enzyme-to-json: 3.6.1
-    eslint: ^8.2.0
-    eslint-config-prettier: ^8.3.0
-    eslint-plugin-import: ^2.25.2
-    eslint-plugin-jest: ^25.2.4
-    eslint-plugin-react: ^7.26.1
-    eslint-plugin-storybook: ^0.5.1
+    eslint: 8.2.0
+    eslint-config-prettier: 8.3.0
+    eslint-plugin-import: 2.25.2
+    eslint-plugin-jest: 25.2.4
+    eslint-plugin-react: 7.26.1
+    eslint-plugin-storybook: 0.5.1
     focus-trap-react: 8.3.2
     fs-extra: 8.1.0
     glob: 7.1.6
@@ -3382,11 +3382,11 @@ __metadata:
     jest-prop-type-error: 1.1.0
     lint-staged: 10.5.4
     pascal-case: 2.0.1
-    postcss: ^8.2.1
-    postcss-cli: ^8.3.1
-    postcss-import: ^12.0.0
-    postcss-loader: ^3.0.0
-    postcss-preset-env: ^5.3.0
+    postcss: 8.2.10
+    postcss-cli: 8.3.1
+    postcss-import: 12.0.1
+    postcss-loader: 3.0.0
+    postcss-preset-env: 5.3.0
     prettier: 2.4.1
     prop-types: 15.7.2
     raf-schd: 4.0.3
@@ -3403,8 +3403,8 @@ __metadata:
     snake-case: 2.1.0
     style-dictionary: 2.10.2
     style-loader: 1.2.1
-    stylelint: ^13.2
-    stylelint-config-recommended: ^3.0.0
+    stylelint: 13.8.0
+    stylelint-config-recommended: 3.0.0
     svg-to-jsx: 1.0.2
     svgo: 1.3.2
     tinycolor2: 1.4.2
@@ -5234,7 +5234,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-postcss@npm:^2.0.0":
+"@storybook/addon-postcss@npm:2.0.0":
   version: 2.0.0
   resolution: "@storybook/addon-postcss@npm:2.0.0"
   dependencies:
@@ -6501,7 +6501,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:^7.2.13":
+"@types/eslint@npm:7.2.13":
   version: 7.2.13
   resolution: "@types/eslint@npm:7.2.13"
   dependencies:
@@ -6734,7 +6734,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/postcss-import@npm:^12.0.0":
+"@types/postcss-import@npm:12.0.0":
   version: 12.0.0
   resolution: "@types/postcss-import@npm:12.0.0"
   dependencies:
@@ -6887,7 +6887,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/stylelint@npm:^13.13.0":
+"@types/stylelint@npm:13.13.0":
   version: 13.13.0
   resolution: "@types/stylelint@npm:13.13.0"
   dependencies:
@@ -7046,7 +7046,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.3.1":
+"@typescript-eslint/eslint-plugin@npm:5.3.1":
   version: 5.3.1
   resolution: "@typescript-eslint/eslint-plugin@npm:5.3.1"
   dependencies:
@@ -7100,7 +7100,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.3.1":
+"@typescript-eslint/parser@npm:5.3.1":
   version: 5.3.1
   resolution: "@typescript-eslint/parser@npm:5.3.1"
   dependencies:
@@ -8269,7 +8269,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-eslint@npm:^10.1.0":
+"babel-eslint@npm:10.1.0":
   version: 10.1.0
   resolution: "babel-eslint@npm:10.1.0"
   dependencies:
@@ -12078,7 +12078,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.3.0":
+"eslint-config-prettier@npm:8.3.0":
   version: 8.3.0
   resolution: "eslint-config-prettier@npm:8.3.0"
   peerDependencies:
@@ -12110,7 +12110,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.25.2":
+"eslint-plugin-import@npm:2.25.2":
   version: 2.25.2
   resolution: "eslint-plugin-import@npm:2.25.2"
   dependencies:
@@ -12133,7 +12133,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^25.2.4":
+"eslint-plugin-jest@npm:25.2.4":
   version: 25.2.4
   resolution: "eslint-plugin-jest@npm:25.2.4"
   dependencies:
@@ -12150,7 +12150,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.26.1":
+"eslint-plugin-react@npm:7.26.1":
   version: 7.26.1
   resolution: "eslint-plugin-react@npm:7.26.1"
   dependencies:
@@ -12174,7 +12174,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-storybook@npm:^0.5.1":
+"eslint-plugin-storybook@npm:0.5.1":
   version: 0.5.1
   resolution: "eslint-plugin-storybook@npm:0.5.1"
   dependencies:
@@ -12258,6 +12258,54 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint@npm:8.2.0":
+  version: 8.2.0
+  resolution: "eslint@npm:8.2.0"
+  dependencies:
+    "@eslint/eslintrc": ^1.0.4
+    "@humanwhocodes/config-array": ^0.6.0
+    ajv: ^6.10.0
+    chalk: ^4.0.0
+    cross-spawn: ^7.0.2
+    debug: ^4.3.2
+    doctrine: ^3.0.0
+    enquirer: ^2.3.5
+    escape-string-regexp: ^4.0.0
+    eslint-scope: ^6.0.0
+    eslint-utils: ^3.0.0
+    eslint-visitor-keys: ^3.0.0
+    espree: ^9.0.0
+    esquery: ^1.4.0
+    esutils: ^2.0.2
+    fast-deep-equal: ^3.1.3
+    file-entry-cache: ^6.0.1
+    functional-red-black-tree: ^1.0.1
+    glob-parent: ^6.0.1
+    globals: ^13.6.0
+    ignore: ^4.0.6
+    import-fresh: ^3.0.0
+    imurmurhash: ^0.1.4
+    is-glob: ^4.0.0
+    js-yaml: ^4.1.0
+    json-stable-stringify-without-jsonify: ^1.0.1
+    levn: ^0.4.1
+    lodash.merge: ^4.6.2
+    minimatch: ^3.0.4
+    natural-compare: ^1.4.0
+    optionator: ^0.9.1
+    progress: ^2.0.0
+    regexpp: ^3.2.0
+    semver: ^7.2.1
+    strip-ansi: ^6.0.1
+    strip-json-comments: ^3.1.0
+    text-table: ^0.2.0
+    v8-compile-cache: ^2.0.3
+  bin:
+    eslint: bin/eslint.js
+  checksum: 19f2f4e23bdd1d0f1c99759adb88c0bf01908ce5bd480913ca7b5d3183f4c42d93142ada699b196e228295c074254ad90a3475126784673bd1afeb22e91ceea8
+  languageName: node
+  linkType: hard
+
 "eslint@npm:^7.14.0":
   version: 7.32.0
   resolution: "eslint@npm:7.32.0"
@@ -12305,54 +12353,6 @@ __metadata:
   bin:
     eslint: bin/eslint.js
   checksum: cc85af9985a3a11085c011f3d27abe8111006d34cc274291b3c4d7bea51a4e2ff6135780249becd919ba7f6d6d1ecc38a6b73dacb6a7be08d38453b344dc8d37
-  languageName: node
-  linkType: hard
-
-"eslint@npm:^8.2.0":
-  version: 8.2.0
-  resolution: "eslint@npm:8.2.0"
-  dependencies:
-    "@eslint/eslintrc": ^1.0.4
-    "@humanwhocodes/config-array": ^0.6.0
-    ajv: ^6.10.0
-    chalk: ^4.0.0
-    cross-spawn: ^7.0.2
-    debug: ^4.3.2
-    doctrine: ^3.0.0
-    enquirer: ^2.3.5
-    escape-string-regexp: ^4.0.0
-    eslint-scope: ^6.0.0
-    eslint-utils: ^3.0.0
-    eslint-visitor-keys: ^3.0.0
-    espree: ^9.0.0
-    esquery: ^1.4.0
-    esutils: ^2.0.2
-    fast-deep-equal: ^3.1.3
-    file-entry-cache: ^6.0.1
-    functional-red-black-tree: ^1.0.1
-    glob-parent: ^6.0.1
-    globals: ^13.6.0
-    ignore: ^4.0.6
-    import-fresh: ^3.0.0
-    imurmurhash: ^0.1.4
-    is-glob: ^4.0.0
-    js-yaml: ^4.1.0
-    json-stable-stringify-without-jsonify: ^1.0.1
-    levn: ^0.4.1
-    lodash.merge: ^4.6.2
-    minimatch: ^3.0.4
-    natural-compare: ^1.4.0
-    optionator: ^0.9.1
-    progress: ^2.0.0
-    regexpp: ^3.2.0
-    semver: ^7.2.1
-    strip-ansi: ^6.0.1
-    strip-json-comments: ^3.1.0
-    text-table: ^0.2.0
-    v8-compile-cache: ^2.0.3
-  bin:
-    eslint: bin/eslint.js
-  checksum: 19f2f4e23bdd1d0f1c99759adb88c0bf01908ce5bd480913ca7b5d3183f4c42d93142ada699b196e228295c074254ad90a3475126784673bd1afeb22e91ceea8
   languageName: node
   linkType: hard
 
@@ -19879,7 +19879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-cli@npm:^8.3.1":
+"postcss-cli@npm:8.3.1":
   version: 8.3.1
   resolution: "postcss-cli@npm:8.3.1"
   dependencies:
@@ -20129,7 +20129,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-import@npm:^12.0.0":
+"postcss-import@npm:12.0.1":
   version: 12.0.1
   resolution: "postcss-import@npm:12.0.1"
   dependencies:
@@ -20191,7 +20191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-loader@npm:^3.0.0":
+"postcss-loader@npm:3.0.0":
   version: 3.0.0
   resolution: "postcss-loader@npm:3.0.0"
   dependencies:
@@ -20513,7 +20513,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-preset-env@npm:^5.3.0":
+"postcss-preset-env@npm:5.3.0":
   version: 5.3.0
   resolution: "postcss-preset-env@npm:5.3.0"
   dependencies:
@@ -20769,6 +20769,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss@npm:8.2.10":
+  version: 8.2.10
+  resolution: "postcss@npm:8.2.10"
+  dependencies:
+    colorette: ^1.2.2
+    nanoid: ^3.1.22
+    source-map: ^0.6.1
+  checksum: 1c42c592255092fa04bb6050d9ee39a62867934a4f1512a60fa0b96e4557cc00b69298c036092b006709d0ead9c5943eaabd11e0e635f2c652b2dd3231836448
+  languageName: node
+  linkType: hard
+
 "postcss@npm:^6.0, postcss@npm:^6.0.1, postcss@npm:^6.0.16, postcss@npm:^6.0.18, postcss@npm:^6.0.20, postcss@npm:^6.0.21, postcss@npm:^6.0.22, postcss@npm:^6.0.23":
   version: 6.0.23
   resolution: "postcss@npm:6.0.23"
@@ -20777,17 +20788,6 @@ __metadata:
     source-map: ^0.6.1
     supports-color: ^5.4.0
   checksum: cc6cb2c1dbcdefa6f57a71d67fe535c9e96543298bbe28f9a6a64c4f1e21b6127113890dd4cda8873d3f4e6613a0566b7b4bbb230204f3a9a309190bda065d81
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.2.1":
-  version: 8.2.10
-  resolution: "postcss@npm:8.2.10"
-  dependencies:
-    colorette: ^1.2.2
-    nanoid: ^3.1.22
-    source-map: ^0.6.1
-  checksum: 1c42c592255092fa04bb6050d9ee39a62867934a4f1512a60fa0b96e4557cc00b69298c036092b006709d0ead9c5943eaabd11e0e635f2c652b2dd3231836448
   languageName: node
   linkType: hard
 
@@ -23854,7 +23854,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-recommended@npm:^3.0.0":
+"stylelint-config-recommended@npm:3.0.0":
   version: 3.0.0
   resolution: "stylelint-config-recommended@npm:3.0.0"
   peerDependencies:
@@ -23863,7 +23863,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^13.2":
+"stylelint@npm:13.8.0":
   version: 13.8.0
   resolution: "stylelint@npm:13.8.0"
   dependencies:
