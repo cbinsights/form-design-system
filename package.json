@@ -197,7 +197,7 @@
     "Explorer 11"
   ],
   "lint-staged": {
-    "src/**/*": [
+    "*": [
       "prettier --write"
     ],
     "src/**/*.{js,jsx,ts,tsx}": [
