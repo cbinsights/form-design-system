@@ -135,6 +135,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-prop-type-error", "npm:1.1.0"],
             ["lint-staged", "npm:10.5.4"],
             ["pascal-case", "npm:2.0.1"],
+            ["pinst", "npm:2.1.6"],
             ["postcss", "npm:8.2.10"],
             ["postcss-cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.1"],
             ["postcss-import", "npm:12.0.1"],
@@ -7159,6 +7160,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-prop-type-error", "npm:1.1.0"],
             ["lint-staged", "npm:10.5.4"],
             ["pascal-case", "npm:2.0.1"],
+            ["pinst", "npm:2.1.6"],
             ["postcss", "npm:8.2.10"],
             ["postcss-cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.1"],
             ["postcss-import", "npm:12.0.1"],
@@ -27079,6 +27081,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/pify-npm-4.0.1-062756097b-9c4e34278c.zip/node_modules/pify/",
           "packageDependencies": [
             ["pify", "npm:4.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["pinst", [
+        ["npm:2.1.6", {
+          "packageLocation": "./.yarn/cache/pinst-npm-2.1.6-750cbdedeb-3644c352a7.zip/node_modules/pinst/",
+          "packageDependencies": [
+            ["pinst", "npm:2.1.6"],
+            ["fromentries", "npm:1.3.2"]
           ],
           "linkType": "HARD",
         }]
