@@ -1,13 +1,13 @@
 import React from 'react';
 import combine from 'util/combine';
-import GroupButton from './GroupButton';
+import GroupButton, { GroupButtonProps } from './GroupButton';
 
 export interface ButtonGroupProps {
   /**
    * Each object in array renders a GroupButton, and (generally) passes all it's values through
    * as props to GroupButton
    */
-  buttons: Array<any>;
+  buttons: GroupButtonProps[];
 
   /**
    * Fires when any Button is clicked in ButtonGroup
