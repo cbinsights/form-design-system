@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
+
+type FlexType = 'shrink' | 'grow'[];
 
 /**
  * Returns an array InputGroup can use to set grow/shrink on flex items
@@ -11,7 +12,7 @@ import FlexItem from 'components/FlexItem';
  * @param {Array} userSettings - `flexSettings` prop optionally set by user
  * @returns {Array} e.g. ['shrink', 'grow', 'shrink']
  */
-export const getFlexSettings = (childCount, userSettings) => {
+export const getFlexSettings = (childCount: number, userSettings: FlexType): FlexType => {
   // always obey a valid `flexSettings` prop when passed by a user
   if (userSettings && userSettings.length === childCount) return userSettings;
 
@@ -31,7 +32,7 @@ export const getFlexSettings = (childCount, userSettings) => {
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const InputGroup = ({ children, flexSettings }) => {
+const InputGroup = ({ children, flexSettings }: InputGroupProps): JSX.Element => {
   const growShrinkArr = getFlexSettings(React.Children.count(children), flexSettings);
 
   return (
@@ -45,9 +46,9 @@ const InputGroup = ({ children, flexSettings }) => {
   );
 };
 
-InputGroup.propTypes = {
+export interface InputGroupProps {
   /** `input` or `select` elements */
-  children: PropTypes.arrayOf(PropTypes.node).isRequired,
+  children: React.ReactNode;
 
   /**
    * Controls how the input segments should grow or shrink to fill remaining space.
@@ -56,7 +57,7 @@ InputGroup.propTypes = {
    *
    * `grow` - grow the input element to fill remaining space
    */
-  flexSettings: PropTypes.arrayOf(PropTypes.oneOf(['shrink', 'grow'])),
-};
+  flexSettings: FlexType;
+}
 
 export default InputGroup;
