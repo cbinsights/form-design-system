@@ -1,6 +1,5 @@
 import React from 'react';
 import cc from 'classcat';
-import { FlexItemProps } from '../FlexItem';
 
 /**
  * @description map of alignment prop values to class names
@@ -50,7 +49,7 @@ export interface FlexProps {
   reverse?: boolean;
 
   /** React children (should be of type `FlexItem`) */
-  children: React.ReactElement<FlexItemProps> | Array<React.ReactElement<FlexItemProps>>;
+  children: React.ReactNode;
 }
 
 /**
