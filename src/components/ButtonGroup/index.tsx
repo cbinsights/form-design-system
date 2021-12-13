@@ -7,12 +7,12 @@ export interface ButtonGroupProps {
    * Each object in array renders a GroupButton, and (generally) passes all it's values through
    * as props to GroupButton
    */
-  buttons: any[];
+  buttons: Array<any>;
 
   /**
    * Fires when any Button is clicked in ButtonGroup
    */
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: React.FormEventHandler<HTMLInputElement>;
 }
 
 const ButtonGroup = ({
@@ -34,13 +34,5 @@ const ButtonGroup = ({
     ))}
   </div>
 );
-
-// ButtonGroup.propTypes = {
-/**
- * Each object in array renders a GroupButton, and (generally) passes all it's values through
- * as props to GroupButton
- */
-// buttons: PropTypes.arrayOf(PropTypes.shape(GroupButton.propTypes)).isRequired,
-// };
 
 export default ButtonGroup;
