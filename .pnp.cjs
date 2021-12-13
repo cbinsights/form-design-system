@@ -74,7 +74,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:12.1.2"],
             ["@testing-library/user-event", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:13.5.0"],
             ["@types/babel__core", "npm:7.1.14"],
-            ["@types/babel__plugin-transform-runtime", "npm:7.9.1"],
+            ["@types/babel__plugin-transform-runtime", "npm:7.9.2"],
             ["@types/babel__preset-env", "npm:7.9.1"],
             ["@types/css", "npm:1.0.28-alpha"],
             ["@types/cssnano", "npm:4.0.0"],
@@ -7088,7 +7088,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:12.1.2"],
             ["@testing-library/user-event", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:13.5.0"],
             ["@types/babel__core", "npm:7.1.14"],
-            ["@types/babel__plugin-transform-runtime", "npm:7.9.1"],
+            ["@types/babel__plugin-transform-runtime", "npm:7.9.2"],
             ["@types/babel__preset-env", "npm:7.9.1"],
             ["@types/css", "npm:1.0.28-alpha"],
             ["@types/cssnano", "npm:4.0.0"],
@@ -11636,10 +11636,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/babel__plugin-transform-runtime", [
-        ["npm:7.9.1", {
-          "packageLocation": "./.yarn/cache/@types-babel__plugin-transform-runtime-npm-7.9.1-cdced35bb0-4273f096ad.zip/node_modules/@types/babel__plugin-transform-runtime/",
+        ["npm:7.9.2", {
+          "packageLocation": "./.yarn/cache/@types-babel__plugin-transform-runtime-npm-7.9.2-686ddccae8-0eb18bf14b.zip/node_modules/@types/babel__plugin-transform-runtime/",
           "packageDependencies": [
-            ["@types/babel__plugin-transform-runtime", "npm:7.9.1"]
+            ["@types/babel__plugin-transform-runtime", "npm:7.9.2"]
           ],
           "linkType": "HARD",
         }]
