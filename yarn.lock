@@ -3311,7 +3311,7 @@ __metadata:
     "@testing-library/react": 12.1.2
     "@testing-library/user-event": 13.5.0
     "@types/babel__core": 7.1.14
-    "@types/babel__plugin-transform-runtime": 7.9.1
+    "@types/babel__plugin-transform-runtime": 7.9.2
     "@types/babel__preset-env": 7.9.1
     "@types/css": 1.0.28-alpha
     "@types/cssnano": 4.0.0
@@ -6372,10 +6372,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/babel__plugin-transform-runtime@npm:7.9.1":
-  version: 7.9.1
-  resolution: "@types/babel__plugin-transform-runtime@npm:7.9.1"
-  checksum: 4273f096adea8c69c32add15dd195aa858a81f7e072606eec2c5246d85d58faad9cf4276c1ed227965944f579f8b28ac6d2448dc8c781e1f182c30c35ee89f84
+"@types/babel__plugin-transform-runtime@npm:7.9.2":
+  version: 7.9.2
+  resolution: "@types/babel__plugin-transform-runtime@npm:7.9.2"
+  checksum: 0eb18bf14b478804d34f96d47b992e53043776b8679e0c110051985a22ec18497e6f2c6d20f5289876c6094ccac2d41fa2f716a150e7512cee0a5c2ae1cf79b3
   languageName: node
   linkType: hard
 
