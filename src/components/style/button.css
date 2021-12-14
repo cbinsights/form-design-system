@@ -2,7 +2,6 @@
 /* stylelint-disable selector-max-compound-selectors */
 
 .fdsButton {
-  letter-spacing: 1px;
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-default);
   line-height: normal;
