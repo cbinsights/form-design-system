@@ -3,7 +3,7 @@ import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import Icon from 'components/Icon';
 
-const WrapperComponent = (wrapperProps: { children: JSX.Element }) =>
+const WrapperComponent = (wrapperProps: { children: React.ReactNode }): React.ReactNode =>
   wrapperProps.children;
 
 export interface GroupButtonProps {
@@ -35,13 +35,16 @@ export interface GroupButtonProps {
    * `wrapper` must render the children prop passed into it
    * to render the GroupButton.
    */
-  Wrapper?: JSX.Element;
+  Wrapper: JSX.Element;
 
   /** Assigns the first button styling. */
   isFirstButton?: boolean;
 
   /** Assigns the last button styling. */
   isLastButton?: boolean;
+
+  /** Specifies a URL to link to.  */
+  href?: string;
 }
 
 export const GroupButton = (props: GroupButtonProps): JSX.Element => {
@@ -53,10 +56,11 @@ export const GroupButton = (props: GroupButtonProps): JSX.Element => {
     Link,
     isFirstButton,
     isLastButton,
+    href,
     ...rest
   } = props;
 
-  const Element = baseElement({ href: rest.href, onClick: true, as: Link });
+  const Element = baseElement({ href: href, onClick: true, as: Link });
 
   const rootClass = cc([
     {
