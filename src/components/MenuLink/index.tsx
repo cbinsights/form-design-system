@@ -8,7 +8,7 @@ export interface MenuLinkProps {
   onSelect?: () => void;
 
   /** React children - any JSX can be used in a menu item */
-  children: Array<React.ReactNode> | React.ReactNode;
+  children: React.ReactNode;
 
   /** Styles menu item as disabled and disables selection events */
   isDisabled?: boolean;
@@ -20,6 +20,11 @@ export interface MenuLinkProps {
    *
    * - `import { Link } from 'react-router'`
    * - `Link={Link}`
+   *
+   * TODO: properly type this and other Link props we have in the project, and place it somewhere it makes sense.
+   * e.g.
+   * type ReachLink = React.ComponentProps<typeof ReachMenuLink>['as'];
+   * Link: ReachLink;
    */
   Link?: any;
 
