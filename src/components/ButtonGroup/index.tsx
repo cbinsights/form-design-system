@@ -1,18 +1,24 @@
 import React from 'react';
-import combine from 'util/combine';
 import GroupButton, { GroupButtonProps } from './GroupButton';
 
+type ButtonModificationProps = {
+  key: string | number;
+  value: number;
+  onClick: any;
+};
+
+type CombinedButtonProps = GroupButtonProps & ButtonModificationProps;
 export interface ButtonGroupProps {
   /**
    * Each object in array renders a GroupButton, and (generally) passes all it's values through
    * as props to GroupButton
    */
-  buttons: GroupButtonProps[];
+  buttons: CombinedButtonProps[];
 
   /**
    * Fires when any Button is clicked in ButtonGroup
    */
-  onChange?: React.FormEventHandler<HTMLInputElement>;
+  onChange?: any;
 }
 
 const ButtonGroup = ({
@@ -24,7 +30,7 @@ const ButtonGroup = ({
     {buttons.map(({ value, key, Icon, onClick, label, ...restBtn }, index) => (
       <GroupButton
         key={key || label}
-        onClick={onChange ? combine(() => onChange(label || value), onClick) : onClick}
+        onClick={onChange}
         label={label}
         Icon={Icon}
         isFirstButton={index === 0}

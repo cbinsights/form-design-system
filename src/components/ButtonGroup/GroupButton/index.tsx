@@ -45,6 +45,8 @@ export interface GroupButtonProps {
 
   /** Specifies a URL to link to.  */
   href?: string;
+
+  onClick: () => void;
 }
 
 export const GroupButton = (props: GroupButtonProps): JSX.Element => {
