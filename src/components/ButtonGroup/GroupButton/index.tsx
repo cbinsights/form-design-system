@@ -3,8 +3,8 @@ import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import Icon from 'components/Icon';
 
-const WrapperComponent = (wrapperProps: { children: React.ReactNode }): React.ReactNode =>
-  wrapperProps.children;
+const WrapperComponent = ({ children }: { children: JSX.Element }): JSX.Element =>
+  children;
 
 export interface GroupButtonProps {
   /** Displays active button style when true */
@@ -35,7 +35,7 @@ export interface GroupButtonProps {
    * `wrapper` must render the children prop passed into it
    * to render the GroupButton.
    */
-  Wrapper: JSX.Element;
+  Wrapper?: () => JSX.Element;
 
   /** Assigns the first button styling. */
   isFirstButton?: boolean;
