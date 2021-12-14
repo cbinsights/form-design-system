@@ -45,14 +45,4 @@ describe('Popover component', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
-  it('matches snapshot (in modal)', () => {
-    const wrapper = mount(
-      <Menu isInModal trigger={<a href="#">trigger</a>}>
-        <MenuItem onSelect={() => {}}>First</MenuItem>
-        <MenuItem onSelect={() => {}}>Second</MenuItem>
-        <MenuItem onSelect={() => {}}>Third</MenuItem>
-      </Menu>
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
 });
