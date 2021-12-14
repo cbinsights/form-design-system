@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HamburgerBarsIcon from '@cbinsights/fds/icons/react/HamburgerBarsIcon';
 
 import './styles.css';
 import '@cbinsights/fds/lib/assets/all-styles.min.css';
@@ -11,12 +10,10 @@ import {
   Button,
   Checkbox,
   Chip,
-  IconButton,
   TextInput,
   Indicator,
   SeparatorList,
   DropdownButton,
-  FloatingAction,
   Radio,
   DateInput,
 } from '@cbinsights/fds/lib/components';
@@ -34,17 +31,13 @@ function App() {
 
       <Chip label="chip label" />
 
-      <IconButton label="icon label" icon={HamburgerBarsIcon} />
-
       <TextInput label="input" />
 
       <Indicator label="indicator" />
 
       <SeparatorList items={['item1', 'item2', 'item...']} />
 
-      <DropdownButton />
-
-      <FloatingAction icon={HamburgerBarsIcon} label="floating action" />
+      <DropdownButton children={'placeholder'} />
 
       <Radio name="radio group" label="radio" />
 
