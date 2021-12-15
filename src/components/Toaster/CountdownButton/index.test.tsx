@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import CountdownButton, { getCircleInfo } from '.';
+import CountdownButton, { CountdownButtonProps, getCircleInfo } from '.';
 
-const renderComponent = (props) => shallow(<CountdownButton {...props} />);
+const renderComponent = (props: CountdownButtonProps) =>
+  shallow(<CountdownButton {...props} />);
 
 const MOCK_PROPS = { duration: 666 };
 

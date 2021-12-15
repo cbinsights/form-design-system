@@ -40,7 +40,7 @@ export interface IconButtonProps {
   /** URL for base element */
   href?: string;
   /** Handler for on click event */
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const IconButton = forwardRef(
