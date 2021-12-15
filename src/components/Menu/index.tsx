@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Menu as ReachMenu,
   MenuItems as ReachMenuItems,
@@ -7,7 +6,18 @@ import {
   MenuPopover as ReachMenuPopover,
 } from '@reach/menu-button';
 
-const Menu = ({ isDisabled = false, children, trigger }) => {
+export interface MenuProps {
+  /** JSX node - the element that should trigger the menu */
+  trigger: React.ReactElement;
+
+  /** React children (should be of type `MenuItem`) */
+  children: React.ReactNode;
+
+  /** Prevent trigger from opening menu */
+  isDisabled?: boolean;
+}
+
+const Menu = ({ isDisabled = false, children, trigger }: MenuProps): JSX.Element => {
   if (isDisabled) return trigger;
 
   return (
@@ -18,18 +28,6 @@ const Menu = ({ isDisabled = false, children, trigger }) => {
       </ReachMenuPopover>
     </ReachMenu>
   );
-};
-
-Menu.propTypes = {
-  /** JSX node - the element that should trigger the menu */
-  trigger: PropTypes.node.isRequired,
-
-  /** React children (should be of type `MenuItem`) */
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
-    .isRequired,
-
-  /** Prevent trigger from opening menu */
-  isDisabled: PropTypes.bool,
 };
 
 export default Menu;
