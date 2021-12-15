@@ -2,6 +2,8 @@
 docs/
 lib/
 .yarn/
+yarn.lock
+.prettierignore
 *.png
 *.svg
 *.tsx.snap
