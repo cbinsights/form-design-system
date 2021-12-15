@@ -3351,7 +3351,7 @@ __metadata:
     cssnano: 4.1.10
     cz-conventional-changelog: 3.3.0
     d3-scale: 3.2.3
-    dayjs: 1.9.7
+    dayjs: 1.10.7
     dictionary: "link:./src/dictionary"
     enzyme: 3.11.0
     enzyme-adapter-react-16: 1.15.6
@@ -10928,10 +10928,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:1.9.7":
-  version: 1.9.7
-  resolution: "dayjs@npm:1.9.7"
-  checksum: 351e94f0a415f4f5ee77d50b7bc0b08c6b5ae24b100ed6867f08c6b22c2325664c3a9d441f3a9e00b019adb427d20968ffa8f04a063c5d0d69d5ff14816b3c15
+"dayjs@npm:1.10.7":
+  version: 1.10.7
+  resolution: "dayjs@npm:1.10.7"
+  checksum: a0a4ca95abaa03d0702161dc2c35d16121188e342f5052b9c61cdf784dab68af766f477c04f87f71c6af666fd4d13db9b9853b87265850d6093b7b04e1bb1cd7
   languageName: node
   linkType: hard
 
