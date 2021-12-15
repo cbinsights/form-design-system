@@ -4,7 +4,16 @@
  * override where you can specify any element / component as
  * the root
  */
-const baseElement = ({ href, onClick, as }) => {
+
+import React from 'react';
+
+interface BaseElementArgs {
+  href?: string;
+  onClick?: boolean | React.MouseEventHandler | (() => void);
+  as?: React.ElementType;
+}
+
+const baseElement = ({ href, onClick, as }: BaseElementArgs): any => {
   let Element;
   if (as) {
     Element = as;

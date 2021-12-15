@@ -45,8 +45,8 @@
     "semantic-release": "semantic-release",
     "commit": "git-cz",
     "check": "yarn lint && yarn test && yarn type-check",
-    "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable"
+    "postinstall": "yarn husky install",
+    "prepublishOnly": "yarn pinst --disable"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
