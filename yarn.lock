@@ -3331,7 +3331,7 @@ __metadata:
     "@types/react-dom": 17.0.6
     "@types/react-is": 17.0.3
     "@types/react-transition-group": 4.4.1
-    "@types/rimraf": 3.0.0
+    "@types/rimraf": 3.0.2
     "@types/stylelint": 13.13.0
     "@types/testing-library__jest-dom": 5.14.2
     "@types/testing-library__user-event": 4.2.0
@@ -6903,13 +6903,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/rimraf@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@types/rimraf@npm:3.0.0"
+"@types/rimraf@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@types/rimraf@npm:3.0.2"
   dependencies:
     "@types/glob": "*"
     "@types/node": "*"
-  checksum: a2a9a3f5a88546e11bfe15031a3a8442974c1df5e3f9a6b5cb22680bc3721fb9f0b5880a99ec99f6bb12e274fa4cb43e41cc7152d8400360c4060fc609f4ff8a
+  checksum: b47fa302f46434cba704d20465861ad250df79467d3d289f9d6490d3aeeb41e8cb32dd80bd1a8fd833d1e185ac719fbf9be12e05ad9ce9be094d8ee8f1405347
   languageName: node
   linkType: hard
 

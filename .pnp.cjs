@@ -94,7 +94,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:17.0.6"],
             ["@types/react-is", "npm:17.0.3"],
             ["@types/react-transition-group", "npm:4.4.1"],
-            ["@types/rimraf", "npm:3.0.0"],
+            ["@types/rimraf", "npm:3.0.2"],
             ["@types/stylelint", "npm:13.13.0"],
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
@@ -7108,7 +7108,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:17.0.6"],
             ["@types/react-is", "npm:17.0.3"],
             ["@types/react-transition-group", "npm:4.4.1"],
-            ["@types/rimraf", "npm:3.0.0"],
+            ["@types/rimraf", "npm:3.0.2"],
             ["@types/stylelint", "npm:13.13.0"],
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
@@ -12236,10 +12236,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/rimraf", [
-        ["npm:3.0.0", {
-          "packageLocation": "./.yarn/cache/@types-rimraf-npm-3.0.0-8a09fb283d-a2a9a3f5a8.zip/node_modules/@types/rimraf/",
+        ["npm:3.0.2", {
+          "packageLocation": "./.yarn/cache/@types-rimraf-npm-3.0.2-dd6eb5de99-b47fa302f4.zip/node_modules/@types/rimraf/",
           "packageDependencies": [
-            ["@types/rimraf", "npm:3.0.0"],
+            ["@types/rimraf", "npm:3.0.2"],
             ["@types/glob", "npm:7.1.3"],
             ["@types/node", "npm:14.0.27"]
           ],
