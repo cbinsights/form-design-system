@@ -3316,7 +3316,7 @@ __metadata:
     "@types/css": 1.0.28-alpha
     "@types/cssnano": 4.0.0
     "@types/d3-scale": 3.3.0
-    "@types/enzyme": 3.10.8
+    "@types/enzyme": 3.10.10
     "@types/enzyme-adapter-react-16": 1.0.6
     "@types/enzyme-to-json": 1.5.4
     "@types/eslint": 7.2.13
@@ -6511,13 +6511,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/enzyme@npm:*, @types/enzyme@npm:3.10.8":
+"@types/enzyme@npm:*":
   version: 3.10.8
   resolution: "@types/enzyme@npm:3.10.8"
   dependencies:
     "@types/cheerio": "*"
     "@types/react": "*"
   checksum: 84febe0558d7985cd5f824e8adc2816c050616d5c7334cc6a6520c7ebac1bb6d200aa5ca057f2a8f4d6e81f2cddf89994d6c8a6cca395fb9d29d4d6e437b3c71
+  languageName: node
+  linkType: hard
+
+"@types/enzyme@npm:3.10.10":
+  version: 3.10.10
+  resolution: "@types/enzyme@npm:3.10.10"
+  dependencies:
+    "@types/cheerio": "*"
+    "@types/react": "*"
+  checksum: e2393f87d6737d643789fb1a83c53c5cb6cb9eaebf1e1c8a3163d95f778f3741a9734fea47761a7648d9c778166ffd531f61c0aa4c5bf97b0d8018cacad05a49
   languageName: node
   linkType: hard
 
