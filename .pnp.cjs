@@ -84,7 +84,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/enzyme-to-json", "npm:1.5.4"],
             ["@types/eslint", "npm:7.2.13"],
             ["@types/fs-extra", "npm:8.1.1"],
-            ["@types/glob", "npm:7.1.3"],
+            ["@types/glob", "npm:7.2.0"],
             ["@types/jest", "npm:27.0.3"],
             ["@types/postcss-import", "npm:12.0.0"],
             ["@types/prettier", "npm:2.4.2"],
@@ -127,7 +127,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.1"],
             ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.2"],
             ["fs-extra", "npm:8.1.0"],
-            ["glob", "npm:7.1.6"],
+            ["glob", "npm:7.2.0"],
             ["handlebars", "npm:4.7.7"],
             ["husky", "npm:7.0.4"],
             ["icons", "link:./src/icons::locator=%40cbinsights%2Ffds%40workspace%3A."],
@@ -7098,7 +7098,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/enzyme-to-json", "npm:1.5.4"],
             ["@types/eslint", "npm:7.2.13"],
             ["@types/fs-extra", "npm:8.1.1"],
-            ["@types/glob", "npm:7.1.3"],
+            ["@types/glob", "npm:7.2.0"],
             ["@types/jest", "npm:27.0.3"],
             ["@types/postcss-import", "npm:12.0.0"],
             ["@types/prettier", "npm:2.4.2"],
@@ -7141,7 +7141,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.1"],
             ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.2"],
             ["fs-extra", "npm:8.1.0"],
-            ["glob", "npm:7.1.6"],
+            ["glob", "npm:7.2.0"],
             ["handlebars", "npm:4.7.7"],
             ["husky", "npm:7.0.4"],
             ["icons", "link:./src/icons::locator=%40cbinsights%2Ffds%40workspace%3A."],
@@ -11835,6 +11835,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-glob-npm-7.1.3-44516e2aab-e0eef12285.zip/node_modules/@types/glob/",
           "packageDependencies": [
             ["@types/glob", "npm:7.1.3"],
+            ["@types/minimatch", "npm:3.0.3"],
+            ["@types/node", "npm:14.0.27"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:7.2.0", {
+          "packageLocation": "./.yarn/cache/@types-glob-npm-7.2.0-772334bf9a-6ae717fedf.zip/node_modules/@types/glob/",
+          "packageDependencies": [
+            ["@types/glob", "npm:7.2.0"],
             ["@types/minimatch", "npm:3.0.3"],
             ["@types/node", "npm:14.0.27"]
           ],
