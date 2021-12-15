@@ -12,37 +12,38 @@ import FundingIcon from 'icons/react/FundingIcon';
 import Tooltip from 'components/Tooltip';
 
 import { MenuItem, MenuLink } from 'components';
-import Menu from '.';
+import Menu, { MenuProps } from '.';
 
-/**
- * eslint complains about PropTypes when destructuring.
- * since this will be migrated to typescript there's no point in investing time on PropTypes.
- * TODO: deconstruct onSelect and do rest operator on args when migrating to typescript
- * */
-export const Primary = (args) => (
+export const Primary = ({
+  onSelect,
+  ...args
+}: MenuProps & { onSelect: () => void }): JSX.Element => (
   <Menu {...args} trigger={<Button label="Menu trigger" hasCaret />}>
-    <MenuItem onSelect={args.onSelect}>Copy</MenuItem>
-    <MenuItem onSelect={args.onSelect}>Delete</MenuItem>
+    <MenuItem onSelect={onSelect}>Copy</MenuItem>
+    <MenuItem onSelect={onSelect}>Delete</MenuItem>
   </Menu>
 );
 
-export const TriggerElement = (args) => (
+export const TriggerElement = ({
+  onSelect,
+  ...args
+}: MenuProps & { onSelect: () => void }): JSX.Element => (
   <Flex>
     <FlexItem>
       <Menu
         {...args}
         trigger={<Button theme="outlined" label="Recommended trigger" hasCaret />}
       >
-        <MenuItem onSelect={args.onSelect}>Cake</MenuItem>
-        <MenuItem onSelect={args.onSelect}>Pizza</MenuItem>
-        <MenuItem onSelect={args.onSelect}>Tide pod</MenuItem>
+        <MenuItem onSelect={onSelect}>Cake</MenuItem>
+        <MenuItem onSelect={onSelect}>Pizza</MenuItem>
+        <MenuItem onSelect={onSelect}>Tide pod</MenuItem>
       </Menu>
     </FlexItem>
     <FlexItem>
       <Menu {...args} trigger={<button>any button will work</button>}>
-        <MenuItem onSelect={args.onSelect}>Cake</MenuItem>
-        <MenuItem onSelect={args.onSelect}>Pizza</MenuItem>
-        <MenuItem onSelect={args.onSelect}>Tide pod</MenuItem>
+        <MenuItem onSelect={onSelect}>Cake</MenuItem>
+        <MenuItem onSelect={onSelect}>Pizza</MenuItem>
+        <MenuItem onSelect={onSelect}>Tide pod</MenuItem>
       </Menu>
     </FlexItem>
   </Flex>
@@ -57,9 +58,12 @@ TriggerElement.parameters = {
   },
 };
 
-export const CustomItems = (args) => (
+export const CustomItems = ({
+  onSelect,
+  ...args
+}: MenuProps & { onSelect: () => void }): JSX.Element => (
   <Menu {...args} trigger={<Button hasCaret label="actions" theme="outlined" />}>
-    <MenuItem onSelect={args.onSelect}>
+    <MenuItem onSelect={onSelect}>
       <div className="color--primary">
         <Flex align="center">
           <FlexItem shrink>
@@ -69,7 +73,7 @@ export const CustomItems = (args) => (
         </Flex>
       </div>
     </MenuItem>
-    <MenuItem onSelect={args.onSelect}>
+    <MenuItem onSelect={onSelect}>
       <div className="color--primary">
         <Flex align="center">
           <FlexItem shrink>
@@ -79,7 +83,7 @@ export const CustomItems = (args) => (
         </Flex>
       </div>
     </MenuItem>
-    <MenuItem onSelect={args.onSelect}>
+    <MenuItem onSelect={onSelect}>
       <div className="color--primary">
         <Flex align="center">
           <FlexItem shrink>
@@ -89,7 +93,7 @@ export const CustomItems = (args) => (
         </Flex>
       </div>
     </MenuItem>
-    <MenuItem onSelect={args.onSelect}>
+    <MenuItem onSelect={onSelect}>
       <div className="color--primary">
         <Flex align="center">
           <FlexItem shrink>
@@ -99,7 +103,7 @@ export const CustomItems = (args) => (
         </Flex>
       </div>
     </MenuItem>
-    <MenuLink onSelect={args.onSelect} href="/">
+    <MenuLink onSelect={onSelect} href="/">
       Go to Storybook home
     </MenuLink>
   </Menu>
@@ -113,9 +117,11 @@ CustomItems.parameters = {
   },
 };
 
-export const Rest = (args) => (
+export const Rest = (args: MenuProps): JSX.Element => (
   <Menu {...args} trigger={<Button hasCaret label="actions" theme="outlined" />}>
-    <MenuItem data-test="hello">Delete</MenuItem>
+    <MenuItem data-test="hello" onSelect={() => {}}>
+      Delete
+    </MenuItem>
     <MenuLink href="#" data-test="world">
       Edit
     </MenuLink>
@@ -130,16 +136,19 @@ Rest.parameters = {
   },
 };
 
-export const DisabledItems = (args) => (
+export const DisabledItems = ({
+  onSelect,
+  ...args
+}: MenuProps & { onSelect: () => void }): JSX.Element => (
   <Menu
     {...args}
     trigger={<Button theme="outlined" label="Menu with disabled item" hasCaret />}
   >
-    <MenuItem isDisabled onSelect={args.onSelect}>
+    <MenuItem isDisabled onSelect={onSelect}>
       <Tooltip trigger={<button>Cake</button>} message="Not your birthday" />
     </MenuItem>
-    <MenuItem onSelect={args.onSelect}>Pizza</MenuItem>
-    <MenuItem onSelect={args.onSelect}>Tide pod</MenuItem>
+    <MenuItem onSelect={onSelect}>Pizza</MenuItem>
+    <MenuItem onSelect={onSelect}>Tide pod</MenuItem>
   </Menu>
 );
 
