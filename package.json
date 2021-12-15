@@ -100,7 +100,7 @@
     "@types/css": "1.0.28-alpha",
     "@types/cssnano": "4.0.0",
     "@types/d3-scale": "3.3.0",
-    "@types/enzyme": "3.10.8",
+    "@types/enzyme": "3.10.10",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/enzyme-to-json": "1.5.4",
     "@types/eslint": "7.2.13",
