@@ -3336,7 +3336,7 @@ __metadata:
     "@types/testing-library__jest-dom": 5.14.2
     "@types/testing-library__user-event": 4.2.0
     "@types/tinycolor2": 1.4.2
-    "@types/uuid": 8.3.0
+    "@types/uuid": 8.3.3
     "@types/webpack": 4.41.32
     "@typescript-eslint/eslint-plugin": 5.3.1
     "@typescript-eslint/parser": 5.3.1
@@ -7008,10 +7008,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/uuid@npm:8.3.0":
-  version: 8.3.0
-  resolution: "@types/uuid@npm:8.3.0"
-  checksum: 0f46b15020b9c252473fb327a6491fd7d238c7b5bbaebd32195a0de178db040f6abb96902507ba25dd4a673cdd9cc28b8880512dba54561e8bc60d8f326c1e30
+"@types/uuid@npm:8.3.3":
+  version: 8.3.3
+  resolution: "@types/uuid@npm:8.3.3"
+  checksum: 3f340155bb1161f9ffa7163926d6222fea8f3505c23619b72bcc230883354926672c08a06510c7a543f73553c792a84444cc1744cff631b4ba988763e4bd7a8f
   languageName: node
   linkType: hard
 
