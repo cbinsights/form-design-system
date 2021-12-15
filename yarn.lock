@@ -3329,7 +3329,7 @@ __metadata:
     "@types/raf-schd": 4.0.1
     "@types/react": 16.14.8
     "@types/react-dom": 17.0.6
-    "@types/react-is": 17.0.0
+    "@types/react-is": 17.0.3
     "@types/react-transition-group": 4.4.1
     "@types/rimraf": 3.0.0
     "@types/stylelint": 13.13.0
@@ -3363,7 +3363,7 @@ __metadata:
     eslint-plugin-react: 7.26.1
     eslint-plugin-storybook: 0.5.1
     focus-trap-react: 8.3.2
-    fs-extra: 8.1.0
+    fs-extra: 10.0.0
     glob: 7.2.0
     handlebars: 4.7.7
     husky: 7.0.4
@@ -3381,9 +3381,9 @@ __metadata:
     prettier: 2.5.1
     prop-types: 15.7.2
     raf-schd: 4.0.3
-    react: 16.13.1
+    react: 16.14.0
     react-day-picker: 7.4.10
-    react-dom: 16.13.1
+    react-dom: 16.14.0
     react-hook-form: 7.19.1
     react-is: 16.13.1
     react-markdown: 4.3.1
@@ -6838,12 +6838,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-is@npm:17.0.0":
-  version: 17.0.0
-  resolution: "@types/react-is@npm:17.0.0"
+"@types/react-is@npm:17.0.3":
+  version: 17.0.3
+  resolution: "@types/react-is@npm:17.0.3"
   dependencies:
     "@types/react": "*"
-  checksum: 2247edb164295ae86d856fd1ed7ee7423e6089b03e683232796f0e0210c47e7189792b039e70527faaf79a6d791a39ff96eb946f58c7a9754c03fdbac3add1c6
+  checksum: 6abb7c47d54f012272650df8a962a28bd82f219291e5ef8b4dfa7fe0bb98ae243b060bf9fbe8ceff6213141794855a006db194b490b00ffd15842ae19d0ce1f0
   languageName: node
   linkType: hard
 
@@ -13223,6 +13223,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:10.0.0, fs-extra@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "fs-extra@npm:10.0.0"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: 5285a3d8f34b917cf2b66af8c231a40c1623626e9d701a20051d3337be16c6d7cac94441c8b3732d47a92a2a027886ca93c69b6a4ae6aee3c89650d2a8880c0a
+  languageName: node
+  linkType: hard
+
 "fs-extra@npm:8.1.0, fs-extra@npm:^8.1.0":
   version: 8.1.0
   resolution: "fs-extra@npm:8.1.0"
@@ -13244,17 +13255,6 @@ __metadata:
     path-is-absolute: ^1.0.0
     rimraf: ^2.2.8
   checksum: 6edfd65fc813baa27f1603778c0f5ec11f8c5006a20b920437813ee2023eba18aeec8bef1c89b2e6c84f9fc90fdc7c916f4a700466c8c69d22a35d018f2570f0
-  languageName: node
-  linkType: hard
-
-"fs-extra@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "fs-extra@npm:10.0.0"
-  dependencies:
-    graceful-fs: ^4.2.0
-    jsonfile: ^6.0.1
-    universalify: ^2.0.0
-  checksum: 5285a3d8f34b917cf2b66af8c231a40c1623626e9d701a20051d3337be16c6d7cac94441c8b3732d47a92a2a027886ca93c69b6a4ae6aee3c89650d2a8880c0a
   languageName: node
   linkType: hard
 
@@ -21449,17 +21449,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:16.13.1":
-  version: 16.13.1
-  resolution: "react-dom@npm:16.13.1"
+"react-dom@npm:16.14.0":
+  version: 16.14.0
+  resolution: "react-dom@npm:16.14.0"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
     prop-types: ^15.6.2
     scheduler: ^0.19.1
   peerDependencies:
-    react: ^16.13.1
-  checksum: 5009f3ee9bca06d6d4b9cf92c832eca102c284e6d019e832179c8de3e353534571474c95b7ab975935b22823726710dcd73783596c11dd71304beb11c19281c5
+    react: ^16.14.0
+  checksum: 5a5c49da0f106b2655a69f96c622c347febcd10532db391c262b26aec225b235357d9da1834103457683482ab1b229af7a50f6927a6b70e53150275e31785544
   languageName: node
   linkType: hard
 
@@ -21708,14 +21708,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:16.13.1":
-  version: 16.13.1
-  resolution: "react@npm:16.13.1"
+"react@npm:16.14.0":
+  version: 16.14.0
+  resolution: "react@npm:16.14.0"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
     prop-types: ^15.6.2
-  checksum: 4508f4207caca6bef55736284cbf2ce18d2edfee4c1457fc0bb2086b34ed5bcf9b44acdb71e27574e73a5b5d4d093720b5b4ec0bf92bb89394ee3a0a7c42c2d4
+  checksum: 8484f3ecb13414526f2a7412190575fc134da785c02695eb92bb6028c930bfe1c238d7be2a125088fec663cc7cda0a3623373c46807cf2c281f49c34b79881ac
   languageName: node
   linkType: hard
 
