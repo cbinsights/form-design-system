@@ -118,7 +118,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dictionary", "link:./src/dictionary::locator=%40cbinsights%2Ffds%40workspace%3A."],
             ["enzyme", "npm:3.11.0"],
             ["enzyme-adapter-react-16", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.15.6"],
-            ["enzyme-to-json", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.6.1"],
+            ["enzyme-to-json", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.6.2"],
             ["eslint", "npm:8.2.0"],
             ["eslint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.0"],
             ["eslint-plugin-import", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.25.2"],
@@ -7132,7 +7132,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dictionary", "link:./src/dictionary::locator=%40cbinsights%2Ffds%40workspace%3A."],
             ["enzyme", "npm:3.11.0"],
             ["enzyme-adapter-react-16", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.15.6"],
-            ["enzyme-to-json", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.6.1"],
+            ["enzyme-to-json", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.6.2"],
             ["eslint", "npm:8.2.0"],
             ["eslint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.0"],
             ["eslint-plugin-import", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.25.2"],
@@ -18216,17 +18216,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["enzyme-to-json", [
-        ["npm:3.6.1", {
-          "packageLocation": "./.yarn/cache/enzyme-to-json-npm-3.6.1-0a5df95aa9-5d17ef56d9.zip/node_modules/enzyme-to-json/",
+        ["npm:3.6.2", {
+          "packageLocation": "./.yarn/cache/enzyme-to-json-npm-3.6.2-ea15cbb1e0-e81f3dc05b.zip/node_modules/enzyme-to-json/",
           "packageDependencies": [
-            ["enzyme-to-json", "npm:3.6.1"]
+            ["enzyme-to-json", "npm:3.6.2"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.6.1", {
-          "packageLocation": "./.yarn/__virtual__/enzyme-to-json-virtual-4e625ac0bc/0/cache/enzyme-to-json-npm-3.6.1-0a5df95aa9-5d17ef56d9.zip/node_modules/enzyme-to-json/",
+        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.6.2", {
+          "packageLocation": "./.yarn/__virtual__/enzyme-to-json-virtual-e90243371e/0/cache/enzyme-to-json-npm-3.6.2-ea15cbb1e0-e81f3dc05b.zip/node_modules/enzyme-to-json/",
           "packageDependencies": [
-            ["enzyme-to-json", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.6.1"],
+            ["enzyme-to-json", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.6.2"],
             ["@types/cheerio", "npm:0.22.22"],
             ["@types/enzyme", "npm:3.10.8"],
             ["enzyme", "npm:3.11.0"],

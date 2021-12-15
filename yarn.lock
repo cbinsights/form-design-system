@@ -3355,7 +3355,7 @@ __metadata:
     dictionary: "link:./src/dictionary"
     enzyme: 3.11.0
     enzyme-adapter-react-16: 1.15.6
-    enzyme-to-json: 3.6.1
+    enzyme-to-json: 3.6.2
     eslint: 8.2.0
     eslint-config-prettier: 8.3.0
     eslint-plugin-import: 2.25.2
@@ -11815,16 +11815,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enzyme-to-json@npm:3.6.1":
-  version: 3.6.1
-  resolution: "enzyme-to-json@npm:3.6.1"
+"enzyme-to-json@npm:3.6.2":
+  version: 3.6.2
+  resolution: "enzyme-to-json@npm:3.6.2"
   dependencies:
     "@types/cheerio": ^0.22.22
-    lodash: ^4.17.15
+    lodash: ^4.17.21
     react-is: ^16.12.0
   peerDependencies:
     enzyme: ^3.4.0
-  checksum: 5d17ef56d9561afb81bb4fe36c5118e3460b073c258d4d3e5a5c119df08c38a98fb7a61eed12bc024bbe91dca21766536875bdf29cc3fe3ad47f7f608dd5b30c
+  checksum: e81f3dc05b5c440da416544a3cbc41fb9e79de0777453e48fe55de822f7d6f56ee08e5173d46a7624cf2781198396509c470bdd616a1ea441e6fa9ddf4396477
   languageName: node
   linkType: hard
 
