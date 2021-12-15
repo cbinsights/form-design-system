@@ -1,4 +1,5 @@
 import React from 'react';
+import combine from 'util/combine';
 import GroupButton, { GroupButtonProps } from './GroupButton';
 
 type ButtonModificationProps = {
@@ -30,7 +31,7 @@ const ButtonGroup = ({
     {buttons.map(({ value, key, Icon, onClick, label, ...restBtn }, index) => (
       <GroupButton
         key={key || label}
-        onClick={onChange}
+        onClick={onChange ? combine(() => onChange(label || value), onClick) : onClick}
         label={label}
         Icon={Icon}
         isFirstButton={index === 0}
