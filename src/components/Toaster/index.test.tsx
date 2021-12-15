@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
 import Toaster from '.';
+import Toast from './Toast';
 
 describe('Toaster component', () => {
   it('matches snapshot', () => {
@@ -17,10 +17,10 @@ describe('Toaster component', () => {
       <Toaster
         onDismiss={onDismiss}
         isOpen
-        toastInstance={{ type: 'info', onDismiss, content: <p>test</p> }}
+        toastInstance={{ type: 'info', content: <p>test</p> }}
       />
     );
-    const { dismissToast } = component.find('Toast').props();
+    const { dismissToast } = component.find(Toast).props();
     expect(typeof dismissToast).toBe('function');
   });
 });
