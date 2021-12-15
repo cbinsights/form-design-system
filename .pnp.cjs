@@ -83,7 +83,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/enzyme-adapter-react-16", "npm:1.0.6"],
             ["@types/enzyme-to-json", "npm:1.5.4"],
             ["@types/eslint", "npm:7.2.13"],
-            ["@types/fs-extra", "npm:8.1.1"],
+            ["@types/fs-extra", "npm:8.1.2"],
             ["@types/glob", "npm:7.2.0"],
             ["@types/jest", "npm:27.0.3"],
             ["@types/postcss-import", "npm:12.0.0"],
@@ -7097,7 +7097,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/enzyme-adapter-react-16", "npm:1.0.6"],
             ["@types/enzyme-to-json", "npm:1.5.4"],
             ["@types/eslint", "npm:7.2.13"],
-            ["@types/fs-extra", "npm:8.1.1"],
+            ["@types/fs-extra", "npm:8.1.2"],
             ["@types/glob", "npm:7.2.0"],
             ["@types/jest", "npm:27.0.3"],
             ["@types/postcss-import", "npm:12.0.0"],
@@ -11830,10 +11830,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/fs-extra", [
-        ["npm:8.1.1", {
-          "packageLocation": "./.yarn/cache/@types-fs-extra-npm-8.1.1-137794a9e5-d7d564b84b.zip/node_modules/@types/fs-extra/",
+        ["npm:8.1.2", {
+          "packageLocation": "./.yarn/cache/@types-fs-extra-npm-8.1.2-3025d177dd-7277198ded.zip/node_modules/@types/fs-extra/",
           "packageDependencies": [
-            ["@types/fs-extra", "npm:8.1.1"],
+            ["@types/fs-extra", "npm:8.1.2"],
             ["@types/node", "npm:14.0.27"]
           ],
           "linkType": "HARD",
