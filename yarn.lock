@@ -3329,7 +3329,7 @@ __metadata:
     "@types/raf-schd": 4.0.1
     "@types/react": 16.14.8
     "@types/react-dom": 17.0.6
-    "@types/react-is": 17.0.0
+    "@types/react-is": 17.0.3
     "@types/react-transition-group": 4.4.1
     "@types/rimraf": 3.0.0
     "@types/stylelint": 13.13.0
@@ -6838,12 +6838,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-is@npm:17.0.0":
-  version: 17.0.0
-  resolution: "@types/react-is@npm:17.0.0"
+"@types/react-is@npm:17.0.3":
+  version: 17.0.3
+  resolution: "@types/react-is@npm:17.0.3"
   dependencies:
     "@types/react": "*"
-  checksum: 2247edb164295ae86d856fd1ed7ee7423e6089b03e683232796f0e0210c47e7189792b039e70527faaf79a6d791a39ff96eb946f58c7a9754c03fdbac3add1c6
+  checksum: 6abb7c47d54f012272650df8a962a28bd82f219291e5ef8b4dfa7fe0bb98ae243b060bf9fbe8ceff6213141794855a006db194b490b00ffd15842ae19d0ce1f0
   languageName: node
   linkType: hard
 
