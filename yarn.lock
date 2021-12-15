@@ -3354,7 +3354,7 @@ __metadata:
     dayjs: 1.9.7
     dictionary: "link:./src/dictionary"
     enzyme: 3.11.0
-    enzyme-adapter-react-16: 1.15.5
+    enzyme-adapter-react-16: 1.15.6
     enzyme-to-json: 3.6.1
     eslint: 8.2.0
     eslint-config-prettier: 8.3.0
@@ -11767,15 +11767,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enzyme-adapter-react-16@npm:1.15.5":
-  version: 1.15.5
-  resolution: "enzyme-adapter-react-16@npm:1.15.5"
+"enzyme-adapter-react-16@npm:1.15.6":
+  version: 1.15.6
+  resolution: "enzyme-adapter-react-16@npm:1.15.6"
   dependencies:
-    enzyme-adapter-utils: ^1.13.1
+    enzyme-adapter-utils: ^1.14.0
     enzyme-shallow-equal: ^1.0.4
     has: ^1.0.3
-    object.assign: ^4.1.0
-    object.values: ^1.1.1
+    object.assign: ^4.1.2
+    object.values: ^1.1.2
     prop-types: ^15.7.2
     react-is: ^16.13.1
     react-test-renderer: ^16.0.0-0
@@ -11784,23 +11784,24 @@ __metadata:
     enzyme: ^3.0.0
     react: ^16.0.0-0
     react-dom: ^16.0.0-0
-  checksum: 3e1a7e1bff19721a960c917d84fc057e1429b8d63ea74fcc284103571dc3348f48de1d32e4eee17664b41f5eb0c5caf0f0f3077940efb9553901e8c837dd72bf
+  checksum: b0f31037c7595558d504c060e19db542723789a41e0598b97345b89855cb03ac86a706440106ef5d4a6c95431e455ea0cad58ca5b287bdb771915b5c6210da84
   languageName: node
   linkType: hard
 
-"enzyme-adapter-utils@npm:^1.13.1":
-  version: 1.13.1
-  resolution: "enzyme-adapter-utils@npm:1.13.1"
+"enzyme-adapter-utils@npm:^1.14.0":
+  version: 1.14.0
+  resolution: "enzyme-adapter-utils@npm:1.14.0"
   dependencies:
     airbnb-prop-types: ^2.16.0
-    function.prototype.name: ^1.1.2
-    object.assign: ^4.1.0
-    object.fromentries: ^2.0.2
+    function.prototype.name: ^1.1.3
+    has: ^1.0.3
+    object.assign: ^4.1.2
+    object.fromentries: ^2.0.3
     prop-types: ^15.7.2
     semver: ^5.7.1
   peerDependencies:
     react: 0.13.x || 0.14.x || ^15.0.0-0 || ^16.0.0-0
-  checksum: 5e3300e66a4d3b035a949022ecba45359b5047b9e112b733773880ad91831ec830af7e23ca6987a0db2a5f8e7c6eb1d00233402e9efceb7181d7790a0211ca47
+  checksum: a96a0a1bdf66417ff751e465c33733f58127b043013ec288429bc9113defa4f8ac23d806be4f3cf399cf23401cd3fdd88383ea146bc1d8f1e4258ecf35611c62
   languageName: node
   linkType: hard
 
@@ -13370,6 +13371,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"function.prototype.name@npm:^1.1.3":
+  version: 1.1.5
+  resolution: "function.prototype.name@npm:1.1.5"
+  dependencies:
+    call-bind: ^1.0.2
+    define-properties: ^1.1.3
+    es-abstract: ^1.19.0
+    functions-have-names: ^1.2.2
+  checksum: acd21d733a9b649c2c442f067567743214af5fa248dbeee69d8278ce7df3329ea5abac572be9f7470b4ec1cd4d8f1040e3c5caccf98ebf2bf861a0deab735c27
+  languageName: node
+  linkType: hard
+
 "functional-red-black-tree@npm:^1.0.1":
   version: 1.0.1
   resolution: "functional-red-black-tree@npm:1.0.1"
@@ -13381,6 +13394,13 @@ __metadata:
   version: 1.2.1
   resolution: "functions-have-names@npm:1.2.1"
   checksum: 34a3f18ce1d6ce54b9e7df3209d25718106206aee3951ae82a639dbda71c7c57112836628734b4ba18aeddf5f6e8d8c92c7b825df8cbe1ef8b6f683afecaf38a
+  languageName: node
+  linkType: hard
+
+"functions-have-names@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "functions-have-names@npm:1.2.2"
+  checksum: 25f44b6d1c41ac86ffdf41f25d1de81c0a5b4a3fcf4307a33cdfb23b9d4bd5d0d8bf312eaef5ad368c6500c8a9e19f692b8ce9f96aaab99db9dd936554165558
   languageName: node
   linkType: hard
 
@@ -18968,7 +18988,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object.fromentries@npm:^2.0.0 || ^1.0.0, object.fromentries@npm:^2.0.2":
+"object.fromentries@npm:^2.0.0 || ^1.0.0":
   version: 2.0.2
   resolution: "object.fromentries@npm:2.0.2"
   dependencies:
@@ -18980,7 +19000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object.fromentries@npm:^2.0.4":
+"object.fromentries@npm:^2.0.3, object.fromentries@npm:^2.0.4":
   version: 2.0.5
   resolution: "object.fromentries@npm:2.0.5"
   dependencies:
@@ -19032,7 +19052,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object.values@npm:^1.1.4, object.values@npm:^1.1.5":
+"object.values@npm:^1.1.2, object.values@npm:^1.1.4, object.values@npm:^1.1.5":
   version: 1.1.5
   resolution: "object.values@npm:1.1.5"
   dependencies:
