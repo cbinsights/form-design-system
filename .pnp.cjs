@@ -92,7 +92,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/raf-schd", "npm:4.0.1"],
             ["@types/react", "npm:16.14.8"],
             ["@types/react-dom", "npm:17.0.6"],
-            ["@types/react-is", "npm:17.0.0"],
+            ["@types/react-is", "npm:17.0.3"],
             ["@types/react-transition-group", "npm:4.4.1"],
             ["@types/rimraf", "npm:3.0.0"],
             ["@types/stylelint", "npm:13.13.0"],
@@ -7106,7 +7106,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/raf-schd", "npm:4.0.1"],
             ["@types/react", "npm:16.14.8"],
             ["@types/react-dom", "npm:17.0.6"],
-            ["@types/react-is", "npm:17.0.0"],
+            ["@types/react-is", "npm:17.0.3"],
             ["@types/react-transition-group", "npm:4.4.1"],
             ["@types/rimraf", "npm:3.0.0"],
             ["@types/stylelint", "npm:13.13.0"],
@@ -12188,10 +12188,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/react-is", [
-        ["npm:17.0.0", {
-          "packageLocation": "./.yarn/cache/@types-react-is-npm-17.0.0-f6a92d6bc8-2247edb164.zip/node_modules/@types/react-is/",
+        ["npm:17.0.3", {
+          "packageLocation": "./.yarn/cache/@types-react-is-npm-17.0.3-1deb53884e-6abb7c47d5.zip/node_modules/@types/react-is/",
           "packageDependencies": [
-            ["@types/react-is", "npm:17.0.0"],
+            ["@types/react-is", "npm:17.0.3"],
             ["@types/react", "npm:16.9.46"]
           ],
           "linkType": "HARD",
