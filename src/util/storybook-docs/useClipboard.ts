@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-export default () => {
+export default (): [string, (s: string) => void] => {
   const [copiedText, setCopiedText] = useState('');
-  const copyToClipboard = (value) => {
+  const copyToClipboard = (value: string) => {
     // eslint-disable-next-line no-undef
     window.navigator.clipboard.writeText(value);
     setCopiedText(value);
