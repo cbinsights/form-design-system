@@ -159,7 +159,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["style-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.2.1"],
             ["stylelint", "npm:13.8.0"],
             ["stylelint-config-recommended", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.0.0"],
-            ["svg-to-jsx", "npm:1.0.2"],
+            ["svg-to-jsx", "npm:1.0.4"],
             ["svgo", "npm:1.3.2"],
             ["tinycolor2", "npm:1.4.2"],
             ["ts-migrate", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.26"],
@@ -7173,7 +7173,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["style-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.2.1"],
             ["stylelint", "npm:13.8.0"],
             ["stylelint-config-recommended", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.0.0"],
-            ["svg-to-jsx", "npm:1.0.2"],
+            ["svg-to-jsx", "npm:1.0.4"],
             ["svgo", "npm:1.3.2"],
             ["tinycolor2", "npm:1.4.2"],
             ["ts-migrate", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.26"],
@@ -32100,10 +32100,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["svg-to-jsx", [
-        ["npm:1.0.2", {
-          "packageLocation": "./.yarn/cache/svg-to-jsx-npm-1.0.2-52c3142d0a-1704398879.zip/node_modules/svg-to-jsx/",
+        ["npm:1.0.4", {
+          "packageLocation": "./.yarn/cache/svg-to-jsx-npm-1.0.4-17d1377127-c707d10b7f.zip/node_modules/svg-to-jsx/",
           "packageDependencies": [
-            ["svg-to-jsx", "npm:1.0.2"],
+            ["svg-to-jsx", "npm:1.0.4"],
             ["object-assign", "npm:4.1.1"],
             ["q", "npm:1.5.1"],
             ["xml2js", "npm:0.4.23"],
