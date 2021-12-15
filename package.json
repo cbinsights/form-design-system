@@ -96,7 +96,7 @@
     "@testing-library/user-event": "13.5.0",
     "@types/babel__core": "7.1.14",
     "@types/babel__plugin-transform-runtime": "7.9.2",
-    "@types/babel__preset-env": "7.9.1",
+    "@types/babel__preset-env": "7.9.2",
     "@types/css": "1.0.28-alpha",
     "@types/cssnano": "4.0.0",
     "@types/d3-scale": "3.3.0",
