@@ -98,7 +98,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/stylelint", "npm:13.13.0"],
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
-            ["@types/tinycolor2", "npm:1.4.2"],
+            ["@types/tinycolor2", "npm:1.4.3"],
             ["@types/uuid", "npm:8.3.3"],
             ["@types/webpack", "npm:4.41.32"],
             ["@typescript-eslint/eslint-plugin", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.3.1"],
@@ -7112,7 +7112,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/stylelint", "npm:13.13.0"],
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
-            ["@types/tinycolor2", "npm:1.4.2"],
+            ["@types/tinycolor2", "npm:1.4.3"],
             ["@types/uuid", "npm:8.3.3"],
             ["@types/webpack", "npm:4.41.32"],
             ["@typescript-eslint/eslint-plugin", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.3.1"],
@@ -12190,10 +12190,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/tinycolor2", [
-        ["npm:1.4.2", {
-          "packageLocation": "./.yarn/cache/@types-tinycolor2-npm-1.4.2-49d51988f8-4687c4c708.zip/node_modules/@types/tinycolor2/",
+        ["npm:1.4.3", {
+          "packageLocation": "./.yarn/cache/@types-tinycolor2-npm-1.4.3-90e6bf0ed8-61984b2825.zip/node_modules/@types/tinycolor2/",
           "packageDependencies": [
-            ["@types/tinycolor2", "npm:1.4.2"]
+            ["@types/tinycolor2", "npm:1.4.3"]
           ],
           "linkType": "HARD",
         }]

@@ -119,7 +119,7 @@
     "@types/stylelint": "13.13.0",
     "@types/testing-library__jest-dom": "5.14.2",
     "@types/testing-library__user-event": "4.2.0",
-    "@types/tinycolor2": "1.4.2",
+    "@types/tinycolor2": "1.4.3",
     "@types/uuid": "8.3.3",
     "@types/webpack": "4.41.32",
     "@typescript-eslint/eslint-plugin": "5.3.1",
