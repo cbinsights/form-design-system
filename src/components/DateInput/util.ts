@@ -1,3 +1,5 @@
+import { Modifier } from 'react-day-picker';
+import { DateFormat } from '.';
 // capture groups for M and D work with or without a leading zero.
 // Y component requires 4 digits for all formats.
 const DATE_PATTERN_MAP = {
@@ -19,13 +21,13 @@ const DATE_PATTERN_MAP = {
  * @returns {Object} { startYear: YYYY, endYear: YYYY }
  */
 export const getYearRange = (
-  currentYear,
-  pastYears,
-  futureYears,
-  minDate,
-  maxDate,
-  selectedDate
-) => {
+  currentYear: number,
+  pastYears: number,
+  futureYears: number,
+  minDate?: Date | null,
+  maxDate?: Date | null,
+  selectedDate?: Date
+): { startYear: number; endYear: number } => {
   // use min/max dates if specified
   // fall back relative past/future years from current date
   let startYear =
@@ -47,6 +49,28 @@ export const getYearRange = (
   return { startYear, endYear };
 };
 
+export const getDisabledDays = (minDate?: Date, maxDate?: Date): Modifier | undefined => {
+  let days: Modifier | undefined;
+  if (minDate) {
+    if (maxDate) {
+      days = {
+        before: minDate,
+        after: maxDate,
+      };
+    } else {
+      days = {
+        before: minDate,
+      };
+    }
+  } else if (maxDate) {
+    days = {
+      after: maxDate,
+    };
+  }
+
+  return days;
+};
+
 /**
  * Checks user-entered date strings for validity and completeness.
  *
@@ -60,5 +84,6 @@ export const getYearRange = (
  * @param {String} dateFormat (MDY/DMY/YMD)
  * @returns {Boolean}
  */
-export const isValidUserDate = (inputValue, dateFormat) =>
-  DATE_PATTERN_MAP[dateFormat || 'MDY'].test(inputValue);
+
+export const isValidUserDate = (inputValue: string, dateFormat: DateFormat): boolean =>
+  DATE_PATTERN_MAP[dateFormat].test(inputValue);
