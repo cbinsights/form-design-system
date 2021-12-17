@@ -97,7 +97,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-transition-group", "npm:4.4.4"],
             ["@types/rimraf", "npm:3.0.2"],
             ["@types/semantic-release", "npm:17.2.3"],
-            ["@types/svgo", "npm:1.3.2"],
+            ["@types/svgo", "npm:1.3.6"],
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
             ["@types/tinycolor2", "npm:1.4.3"],
@@ -7113,7 +7113,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-transition-group", "npm:4.4.4"],
             ["@types/rimraf", "npm:3.0.2"],
             ["@types/semantic-release", "npm:17.2.3"],
-            ["@types/svgo", "npm:1.3.2"],
+            ["@types/svgo", "npm:1.3.6"],
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
             ["@types/tinycolor2", "npm:1.4.3"],
@@ -12159,10 +12159,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/svgo", [
-        ["npm:1.3.2", {
-          "packageLocation": "./.yarn/cache/@types-svgo-npm-1.3.2-82808620b1-ddd0db71ad.zip/node_modules/@types/svgo/",
+        ["npm:1.3.6", {
+          "packageLocation": "./.yarn/cache/@types-svgo-npm-1.3.6-935a4b2762-46d648b51a.zip/node_modules/@types/svgo/",
           "packageDependencies": [
-            ["@types/svgo", "npm:1.3.2"]
+            ["@types/svgo", "npm:1.3.6"]
           ],
           "linkType": "HARD",
         }]
