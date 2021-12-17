@@ -4062,7 +4062,7 @@ __metadata:
     css: 2.2.4
     cssnano: 4.1.11
     cz-conventional-changelog: 3.3.0
-    d3-scale: 3.2.3
+    d3-scale: 3.3.0
     dayjs: 1.10.7
     dictionary: "link:./src/dictionary"
     enzyme: 3.11.0
@@ -11580,6 +11580,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"d3-array@npm:2":
+  version: 2.12.1
+  resolution: "d3-array@npm:2.12.1"
+  dependencies:
+    internmap: ^1.0.0
+  checksum: 97853b7b523aded17078f37c67742f45d81e88dda2107ae9994c31b9e36c5fa5556c4c4cf39650436f247813602dfe31bf7ad067ff80f127a16903827f10c6eb
+  languageName: node
+  linkType: hard
+
 "d3-array@npm:^2.3.0":
   version: 2.9.1
   resolution: "d3-array@npm:2.9.1"
@@ -11610,16 +11619,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"d3-scale@npm:3.2.3":
-  version: 3.2.3
-  resolution: "d3-scale@npm:3.2.3"
+"d3-scale@npm:3.3.0":
+  version: 3.3.0
+  resolution: "d3-scale@npm:3.3.0"
   dependencies:
     d3-array: ^2.3.0
     d3-format: 1 - 2
     d3-interpolate: 1.2.0 - 2
-    d3-time: 1 - 2
+    d3-time: ^2.1.1
     d3-time-format: 2 - 3
-  checksum: 8d5a75079676eada4cd4026170670900349cae624ea9872e489135367ccdbd540767c543ec5fd5c4e74e0e4835261609f082a1647e2a26fe0c6d142ebe950784
+  checksum: f77e73f0fb422292211d0687914c30d26e29011a936ad2a535a868ae92f306c3545af1fe7ea5db1b3e67dbce7a6c6cd952e53d02d1d557543e7e5d30e30e52f2
   languageName: node
   linkType: hard
 
@@ -11636,6 +11645,15 @@ __metadata:
   version: 2.0.0
   resolution: "d3-time@npm:2.0.0"
   checksum: 9d1c1510b1c2569b2f87100a376eea18d322644a89360eadfb558c12e7c7f15cd1aebb5e60778cba3088edaffb6ee285334e735de8dfc1ea9f255f855e21d04b
+  languageName: node
+  linkType: hard
+
+"d3-time@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "d3-time@npm:2.1.1"
+  dependencies:
+    d3-array: 2
+  checksum: d1c7b9658c20646e46c3dd19e11c38e02dec098e8baa7d2cd868af8eb01953668f5da499fa33dc63541cf74a26e788786f8828c4381dbbf475a76b95972979a6
   languageName: node
   linkType: hard
 
@@ -15650,6 +15668,13 @@ __metadata:
     has: ^1.0.3
     side-channel: ^1.0.4
   checksum: 1944f92e981e47aebc98a88ff0db579fd90543d937806104d0b96557b10c1f170c51fb777b97740a8b6ddeec585fca8c39ae99fd08a8e058dfc8ab70937238bf
+  languageName: node
+  linkType: hard
+
+"internmap@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "internmap@npm:1.0.1"
+  checksum: 9d00f8c0cf873a24a53a5a937120dab634c41f383105e066bb318a61864e6292d24eb9516e8e7dccfb4420ec42ca474a0f28ac9a6cc82536898fa09bbbe53813
   languageName: node
   linkType: hard
 
