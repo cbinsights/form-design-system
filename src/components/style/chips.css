@@ -7,9 +7,11 @@
   display: inline-flex;
   padding: 0 var(--space-s);
   border: 1px solid transparent;
+
   /* button element specific */
   vertical-align: top;
   min-height: auto;
+
   /* ----------------------- */
 }
 

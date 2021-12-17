@@ -70,7 +70,7 @@ for a button being clicked on (:active) */
 .groupbtn:hover {
   text-decoration: none;
   border-color: #c4c4c4;
-  background-color: rgba(64, 64, 64, 0.08);
+  background-color: rgb(64 64 64 / 8%);
   color: var(--font-color-primary);
 }
 
@@ -79,7 +79,7 @@ for a button being clicked on (:active) */
 .groupbtn--active:hover,
 .groupbtn:active {
   text-decoration: none;
-  background-color: rgba(0, 102, 153, 0.12);
+  background-color: rgb(0 102 153 / 12%);
   border-color: #8ab9cf;
   color: var(--color-blue);
 }

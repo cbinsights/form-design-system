@@ -2,20 +2,25 @@
   .xs\:flex--row {
     flex-direction: row;
   }
+
   .xs\:flex--row.flex--reverse {
     flex-direction: row-reverse;
   }
+
   .xs\:flex--row > .flexItem {
     height: 100%;
     width: auto;
     padding: var(--flexItem-padding-row);
   }
+
   .xs\:flex--column {
     flex-direction: column;
   }
+
   .xs\:flex--column.flex--reverse {
     flex-direction: column-reverse;
   }
+
   .xs\:flex--column > .flexItem {
     width: 100%;
     height: auto;
@@ -27,20 +32,25 @@
   .s\:flex--row {
     flex-direction: row;
   }
+
   .s\:flex--row.flex--reverse {
     flex-direction: row-reverse;
   }
+
   .s\:flex--row > .flexItem {
     height: 100%;
     width: auto;
     padding: var(--flexItem-padding-row);
   }
+
   .s\:flex--column {
     flex-direction: column;
   }
+
   .s\:flex--column.flex--reverse {
     flex-direction: column-reverse;
   }
+
   .s\:flex--column > .flexItem {
     width: 100%;
     height: auto;
@@ -52,20 +62,25 @@
   .m\:flex--row {
     flex-direction: row;
   }
+
   .m\:flex--row.flex--reverse {
     flex-direction: row-reverse;
   }
+
   .m\:flex--row > .flexItem {
     height: 100%;
     width: auto;
     padding: var(--flexItem-padding-row);
   }
+
   .m\:flex--column {
     flex-direction: column;
   }
+
   .m\:flex--column.flex--reverse {
     flex-direction: column-reverse;
   }
+
   .m\:flex--column > .flexItem {
     width: 100%;
     height: auto;
@@ -77,20 +92,25 @@
   .l\:flex--row {
     flex-direction: row;
   }
+
   .l\:flex--row.flex--reverse {
     flex-direction: row-reverse;
   }
+
   .l\:flex--row > .flexItem {
     height: 100%;
     width: auto;
     padding: var(--flexItem-padding-row);
   }
+
   .l\:flex--column {
     flex-direction: column;
   }
+
   .l\:flex--column.flex--reverse {
     flex-direction: column-reverse;
   }
+
   .l\:flex--column > .flexItem {
     width: 100%;
     height: auto;
@@ -102,20 +122,25 @@
   .xl\:flex--row {
     flex-direction: row;
   }
+
   .xl\:flex--row.flex--reverse {
     flex-direction: row-reverse;
   }
+
   .xl\:flex--row > .flexItem {
     height: 100%;
     width: auto;
     padding: var(--flexItem-padding-row);
   }
+
   .xl\:flex--column {
     flex-direction: column;
   }
+
   .xl\:flex--column.flex--reverse {
     flex-direction: column-reverse;
   }
+
   .xl\:flex--column > .flexItem {
     width: 100%;
     height: auto;
