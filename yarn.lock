@@ -3334,7 +3334,7 @@ __metadata:
     "@types/react-transition-group": 4.4.4
     "@types/rimraf": 3.0.2
     "@types/semantic-release": 17.2.3
-    "@types/svgo": 1.3.2
+    "@types/svgo": 1.3.6
     "@types/testing-library__jest-dom": 5.14.2
     "@types/testing-library__user-event": 4.2.0
     "@types/tinycolor2": 1.4.3
@@ -6851,10 +6851,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/svgo@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@types/svgo@npm:1.3.2"
-  checksum: ddd0db71ada001626a0471afe4f2e6aee3b057460f25ae7da36c9343e3b31be2b467e1af0901745453ea9c16a417bf7e0b1018c1ff1984e399db61dd8e87491f
+"@types/svgo@npm:1.3.6":
+  version: 1.3.6
+  resolution: "@types/svgo@npm:1.3.6"
+  checksum: 46d648b51a9485eb129ba30da009bb3d6223434bbe224cb051351d9f6055f3c3688544dee5a200d007e993822a4ccec2d96fd13f7c04a2ac8495a602de028f04
   languageName: node
   linkType: hard
 
