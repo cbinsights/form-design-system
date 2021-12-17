@@ -53,19 +53,19 @@
 }
 
 .fdsIconButton--ghost.fdsIconButton--isActive {
-  background-color: rgba(64, 64, 64, 0.2);
+  background-color: rgb(64 64 64 / 20%);
 }
 
 .fdsIconButton--ghost:hover {
-  background-color: rgba(64, 64, 64, 0.08);
+  background-color: rgb(64 64 64 / 8%);
 }
 
 .fdsIconButton--ghost:active {
-  background-color: rgba(64, 64, 64, 0.2);
+  background-color: rgb(64 64 64 / 20%);
 }
 
 .fdsIconButton--ghost.fdsIconButton--isActive:focus {
-  background-color: rgba(64, 64, 64, 0.2);
+  background-color: rgb(64 64 64 / 20%);
 }
 
 .fdsIconButton--outlined {
@@ -99,28 +99,26 @@
   color: var(--color-white);
 }
 
-/* stylelint-disable-next-line selector-max-class  */
 .inverted .fdsIconButton--ghost.fdsIconButton--isActive,
 .inverted .fdsIconButton--outlined.fdsIconButton--isActive {
-  background-color: rgba(255, 255, 255, 0.32);
+  background-color: rgb(255 255 255 / 32%);
 }
 
 .inverted .fdsIconButton--ghost:hover,
 .inverted .fdsIconButton--outlined:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgb(255 255 255 / 8%);
 }
 
 .inverted .fdsIconButton--ghost:active,
 .inverted .fdsIconButton--outlined:active {
-  background-color: rgba(255, 255, 255, 0.32);
+  background-color: rgb(255 255 255 / 32%);
 }
 
-/* stylelint-disable-next-line selector-max-class,selector-max-specificity  */
 .inverted
   .fdsIconButton--ghost.fdsIconButton--isActive:focus,
 .inverted
   .fdsIconButton--outlined.fdsIconButton--isActive:focus {
-  background-color: rgba(255, 255, 255, 0.32);
+  background-color: rgb(255 255 255 / 32%);
 }
 
 .fdsIconButton--isDestructive {
@@ -128,19 +126,19 @@
 }
 
 .fdsIconButton--isDestructive.fdsIconButton--isActive {
-  background-color: rgba(229, 50, 62, 0.2);
+  background-color: rgb(229 50 62 / 20%);
 }
 
 .fdsIconButton--isDestructive:hover {
-  background-color: rgba(229, 50, 62, 0.08);
+  background-color: rgb(229 50 62 / 8%);
 }
 
 .fdsIconButton--isDestructive:active {
-  background-color: rgba(229, 50, 62, 0.2);
+  background-color: rgb(229 50 62 / 20%);
 }
 
 .fdsIconButton--isDestructive.fdsIconButton--isActive:focus {
-  background-color: rgba(229, 50, 62, 0.2);
+  background-color: rgb(229 50 62 / 20%);
 }
 
 .fdsIconButton--loading {
