@@ -1,7 +1,3 @@
-/* stylelint-disable selector-max-combinators */
-/* stylelint-disable selector-max-compound-selectors */
-/* stylelint-disable selector-max-specificity */
-
 /**
  * Component helper classes for styling checkable inputs.
  * Replaces user agent input with an FDS icon.

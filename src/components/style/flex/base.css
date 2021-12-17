@@ -75,9 +75,7 @@
 }
 
 .flexItem--shrink {
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 0;
+  flex: 0 0 auto;
   width: initial;
 }
 
@@ -134,7 +132,6 @@
 }
 
 /* Gutters */
-/* stylelint-disable selector-max-specificity */
 .flex--row:not(.flex--reverse) > .flexItem:first-child,
 .flex--row.flex--reverse > .flexItem:last-child {
   padding: var(--flexItem-flush-row);
@@ -148,4 +145,3 @@
 .flex--noGutters > .flexItem {
   padding: 0 !important;
 }
-/* stylelint-enable */

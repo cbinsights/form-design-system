@@ -44,7 +44,10 @@ module.exports = {
       // enable the rule specifically for TypeScript files
       files: ['*.ts', '*.tsx'],
       rules: {
-        '@typescript-eslint/explicit-module-boundary-types': ['error'], // We want to start throwing again on Typescript files
+        // We want to start throwing again on Typescript files
+        '@typescript-eslint/explicit-module-boundary-types': ['error'],
+        // We don't use prop-types in TypeScript files
+        'react/prop-types': 0,
       },
     },
   ],

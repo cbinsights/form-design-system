@@ -10,7 +10,6 @@
 /* Transitions (for `react-transition-group`) */
 @import './rtg/growFast';
 @import './rtg/slideIn';
-
 @import './buttonColors.css';
 @import './flex/index.css';
 @import './section.css';

@@ -10,7 +10,7 @@
   max-width: var(--toast-maxWidth);
   min-width: 540px;
   border-radius: var(--toast-border-radius);
-  box-shadow: 0 2px 16px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 16px 4px rgb(0 0 0 / 25%);
   background: var(--color-white);
 }
 
@@ -42,6 +42,7 @@
   background: var(
     --color-sky
   ); /* the SVG line will cover up this bg */
+
   border-radius: var(--toast-border-radius)
     var(--toast-border-radius) 0 0;
   height: var(--space-s);

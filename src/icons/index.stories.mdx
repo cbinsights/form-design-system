@@ -9,7 +9,7 @@ import { TableLayout } from 'util/storybook-docs/Table';
 import manifest from 'icons/iconManifest.tsx';
 
 export const importPath = (iconName) =>
-  `import ${iconName}Icon from '@cbinsights/fds/icons/react/${iconName}Icon';`;
+  `import ${iconName}Icon from '@cbinsights/fds/lib/icons/react/${iconName}Icon';`;
 
 export const Icon = ({ name, svg, size }) => {
   const [copiedText, copyToClipboard] = useClipboard();
