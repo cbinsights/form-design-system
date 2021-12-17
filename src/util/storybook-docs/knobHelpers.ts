@@ -4,7 +4,7 @@
  * @param {Array} values list of possible prop values
  * @returns {Object} options object for storybook knobs
  */
-export const arrayToOptions = (values) =>
+export const arrayToOptions = (values: Array<any>): object =>
   values.reduce(
     (o, val) => ({
       ...o,
