@@ -97,7 +97,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-transition-group", "npm:4.4.4"],
             ["@types/rimraf", "npm:3.0.2"],
             ["@types/semantic-release", "npm:17.2.3"],
-            ["@types/svgo", "npm:1.3.2"],
+            ["@types/svgo", "npm:1.3.6"],
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
             ["@types/tinycolor2", "npm:1.4.3"],
@@ -113,7 +113,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["commitizen", "npm:4.2.4"],
             ["components", "link:./src/components::locator=%40cbinsights%2Ffds%40workspace%3A."],
             ["css", "npm:2.2.4"],
-            ["cssnano", "npm:4.1.10"],
+            ["cssnano", "npm:4.1.11"],
             ["cz-conventional-changelog", "npm:3.3.0"],
             ["d3-scale", "npm:3.2.3"],
             ["dayjs", "npm:1.10.7"],
@@ -7596,7 +7596,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-transition-group", "npm:4.4.4"],
             ["@types/rimraf", "npm:3.0.2"],
             ["@types/semantic-release", "npm:17.2.3"],
-            ["@types/svgo", "npm:1.3.2"],
+            ["@types/svgo", "npm:1.3.6"],
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
             ["@types/tinycolor2", "npm:1.4.3"],
@@ -7612,7 +7612,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["commitizen", "npm:4.2.4"],
             ["components", "link:./src/components::locator=%40cbinsights%2Ffds%40workspace%3A."],
             ["css", "npm:2.2.4"],
-            ["cssnano", "npm:4.1.10"],
+            ["cssnano", "npm:4.1.11"],
             ["cz-conventional-changelog", "npm:3.3.0"],
             ["d3-scale", "npm:3.2.3"],
             ["dayjs", "npm:1.10.7"],
@@ -12642,10 +12642,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/svgo", [
-        ["npm:1.3.2", {
-          "packageLocation": "./.yarn/cache/@types-svgo-npm-1.3.2-82808620b1-ddd0db71ad.zip/node_modules/@types/svgo/",
+        ["npm:1.3.6", {
+          "packageLocation": "./.yarn/cache/@types-svgo-npm-1.3.6-935a4b2762-46d648b51a.zip/node_modules/@types/svgo/",
           "packageDependencies": [
-            ["@types/svgo", "npm:1.3.2"]
+            ["@types/svgo", "npm:1.3.6"]
           ],
           "linkType": "HARD",
         }]
@@ -17292,12 +17292,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["cssnano", [
-        ["npm:4.1.10", {
-          "packageLocation": "./.yarn/cache/cssnano-npm-4.1.10-10e25c9634-698179cb73.zip/node_modules/cssnano/",
+        ["npm:4.1.11", {
+          "packageLocation": "./.yarn/cache/cssnano-npm-4.1.11-92d372cf2a-2453fbe9f9.zip/node_modules/cssnano/",
           "packageDependencies": [
-            ["cssnano", "npm:4.1.10"],
+            ["cssnano", "npm:4.1.11"],
             ["cosmiconfig", "npm:5.2.1"],
-            ["cssnano-preset-default", "npm:4.0.7"],
+            ["cssnano-preset-default", "npm:4.0.8"],
             ["is-resolvable", "npm:1.1.0"],
             ["postcss", "npm:7.0.39"]
           ],
@@ -17305,10 +17305,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["cssnano-preset-default", [
-        ["npm:4.0.7", {
-          "packageLocation": "./.yarn/cache/cssnano-preset-default-npm-4.0.7-422631428b-ebc382757b.zip/node_modules/cssnano-preset-default/",
+        ["npm:4.0.8", {
+          "packageLocation": "./.yarn/cache/cssnano-preset-default-npm-4.0.8-4b19123b4d-eb32c9fdd8.zip/node_modules/cssnano-preset-default/",
           "packageDependencies": [
-            ["cssnano-preset-default", "npm:4.0.7"],
+            ["cssnano-preset-default", "npm:4.0.8"],
             ["css-declaration-sorter", "npm:4.0.1"],
             ["cssnano-util-raw-cache", "npm:4.0.1"],
             ["postcss", "npm:7.0.39"],
@@ -17337,7 +17337,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-ordered-values", "npm:4.1.2"],
             ["postcss-reduce-initial", "npm:4.0.3"],
             ["postcss-reduce-transforms", "npm:4.0.2"],
-            ["postcss-svgo", "npm:4.0.2"],
+            ["postcss-svgo", "npm:4.0.3"],
             ["postcss-unique-selectors", "npm:4.0.1"]
           ],
           "linkType": "HARD",
@@ -21539,15 +21539,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["html-comment-regex", [
-        ["npm:1.1.2", {
-          "packageLocation": "./.yarn/cache/html-comment-regex-npm-1.1.2-3f748b74f9-64c1e13c93.zip/node_modules/html-comment-regex/",
-          "packageDependencies": [
-            ["html-comment-regex", "npm:1.1.2"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["html-element-map", [
         ["npm:1.2.0", {
           "packageLocation": "./.yarn/cache/html-element-map-npm-1.2.0-d84ca33cc2-b5e7cad2da.zip/node_modules/html-element-map/",
@@ -22944,16 +22935,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/is-subset-npm-0.1.1-15dc569569-97b8d7852a.zip/node_modules/is-subset/",
           "packageDependencies": [
             ["is-subset", "npm:0.1.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["is-svg", [
-        ["npm:3.0.0", {
-          "packageLocation": "./.yarn/cache/is-svg-npm-3.0.0-405580f5e7-5acaa20407.zip/node_modules/is-svg/",
-          "packageDependencies": [
-            ["is-svg", "npm:3.0.0"],
-            ["html-comment-regex", "npm:1.1.2"]
           ],
           "linkType": "HARD",
         }]
@@ -28705,11 +28686,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["postcss-svgo", [
-        ["npm:4.0.2", {
-          "packageLocation": "./.yarn/cache/postcss-svgo-npm-4.0.2-5585d65908-618d3d29f2.zip/node_modules/postcss-svgo/",
+        ["npm:4.0.3", {
+          "packageLocation": "./.yarn/cache/postcss-svgo-npm-4.0.3-d340b31f35-6f52642411.zip/node_modules/postcss-svgo/",
           "packageDependencies": [
-            ["postcss-svgo", "npm:4.0.2"],
-            ["is-svg", "npm:3.0.0"],
+            ["postcss-svgo", "npm:4.0.3"],
             ["postcss", "npm:7.0.39"],
             ["postcss-value-parser", "npm:3.3.1"],
             ["svgo", "npm:1.3.2"]
