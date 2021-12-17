@@ -138,7 +138,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:10.5.4"],
             ["pascal-case", "npm:2.0.1"],
             ["pinst", "npm:2.1.6"],
-            ["postcss", "npm:8.2.10"],
+            ["postcss", "npm:8.4.5"],
             ["postcss-cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.1"],
             ["postcss-html", "npm:1.3.0"],
             ["postcss-import", "npm:12.0.1"],
@@ -7639,7 +7639,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:10.5.4"],
             ["pascal-case", "npm:2.0.1"],
             ["pinst", "npm:2.1.6"],
-            ["postcss", "npm:8.2.10"],
+            ["postcss", "npm:8.4.5"],
             ["postcss-cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.1"],
             ["postcss-html", "npm:1.3.0"],
             ["postcss-import", "npm:12.0.1"],
@@ -25898,13 +25898,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["nanoid", [
-        ["npm:3.1.23", {
-          "packageLocation": "./.yarn/cache/nanoid-npm-3.1.23-5f6acb650d-8fa8dc3283.zip/node_modules/nanoid/",
-          "packageDependencies": [
-            ["nanoid", "npm:3.1.23"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:3.1.30", {
           "packageLocation": "./.yarn/cache/nanoid-npm-3.1.30-58cf6fe7ec-276d0d4b0c.zip/node_modules/nanoid/",
           "packageDependencies": [
@@ -27665,16 +27658,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:8.2.10", {
-          "packageLocation": "./.yarn/cache/postcss-npm-8.2.10-714b23d652-1c42c59225.zip/node_modules/postcss/",
-          "packageDependencies": [
-            ["postcss", "npm:8.2.10"],
-            ["colorette", "npm:1.2.2"],
-            ["nanoid", "npm:3.1.23"],
-            ["source-map", "npm:0.6.1"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:8.4.4", {
           "packageLocation": "./.yarn/cache/postcss-npm-8.4.4-59028ec3b7-6cf3fe0ecd.zip/node_modules/postcss/",
           "packageDependencies": [
@@ -27738,7 +27721,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fs-extra", "npm:9.0.1"],
             ["get-stdin", "npm:8.0.0"],
             ["globby", "npm:11.0.1"],
-            ["postcss", "npm:8.2.10"],
+            ["postcss", "npm:8.4.5"],
             ["postcss-load-config", "npm:3.0.0"],
             ["postcss-reporter", "virtual:6aa760739711c4824a505e13798112170ae307b53a91a5a26e00e015b5271ab2866da80c4e97e88c0fc9de58f6cc006ada1dfaf85c0e645a85c88ad7745cde51#npm:7.0.2"],
             ["pretty-hrtime", "npm:1.0.3"],
@@ -28553,7 +28536,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash.get", "npm:4.4.2"],
             ["lodash.groupby", "npm:4.6.0"],
             ["lodash.sortby", "npm:4.7.0"],
-            ["postcss", "npm:8.2.10"]
+            ["postcss", "npm:8.4.5"]
           ],
           "packagePeers": [
             "@types/postcss",
