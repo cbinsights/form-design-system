@@ -4106,7 +4106,7 @@ __metadata:
     semantic-release: 18.0.0
     snake-case: 2.1.0
     style-dictionary: 2.10.2
-    style-loader: 1.2.1
+    style-loader: 1.3.0
     stylelint: 14.1.0
     stylelint-config-prettier: 9.0.3
     stylelint-config-standard: 24.0.0
@@ -23391,7 +23391,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"schema-utils@npm:2.7.0, schema-utils@npm:^2.6.5, schema-utils@npm:^2.6.6, schema-utils@npm:^2.7.0":
+"schema-utils@npm:2.7.0, schema-utils@npm:^2.6.5, schema-utils@npm:^2.7.0":
   version: 2.7.0
   resolution: "schema-utils@npm:2.7.0"
   dependencies:
@@ -24533,19 +24533,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"style-loader@npm:1.2.1":
-  version: 1.2.1
-  resolution: "style-loader@npm:1.2.1"
-  dependencies:
-    loader-utils: ^2.0.0
-    schema-utils: ^2.6.6
-  peerDependencies:
-    webpack: ^4.0.0 || ^5.0.0
-  checksum: cd30484665c9b7a32e9505fafa7494ce2ea868eb9cdaa4c7c7da78ff1990cc18795e90545377004420e827ce82ace5a21c44212fa3844bbdc1debe58523ead7f
-  languageName: node
-  linkType: hard
-
-"style-loader@npm:^1.3.0":
+"style-loader@npm:1.3.0, style-loader@npm:^1.3.0":
   version: 1.3.0
   resolution: "style-loader@npm:1.3.0"
   dependencies:
