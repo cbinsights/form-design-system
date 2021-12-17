@@ -10,6 +10,7 @@
 }
 
 /* specificity fix for border utility class */
+
 /* follow up with: UIP-994 */
 .fds-badge.border--none {
   border-width: 0;
