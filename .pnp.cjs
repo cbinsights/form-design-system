@@ -136,7 +136,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:27.4.5"],
             ["jest-prop-type-error", "npm:1.1.0"],
             ["lint-staged", "npm:10.5.4"],
-            ["pascal-case", "npm:2.0.1"],
+            ["pascal-case", "npm:3.1.2"],
             ["pinst", "npm:2.1.6"],
             ["postcss", "npm:8.4.5"],
             ["postcss-cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.1"],
@@ -7637,7 +7637,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:27.4.5"],
             ["jest-prop-type-error", "npm:1.1.0"],
             ["lint-staged", "npm:10.5.4"],
-            ["pascal-case", "npm:2.0.1"],
+            ["pascal-case", "npm:3.1.2"],
             ["pinst", "npm:2.1.6"],
             ["postcss", "npm:8.4.5"],
             ["postcss-cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.1"],
@@ -15640,15 +15640,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["camel-case", [
-        ["npm:3.0.0", {
-          "packageLocation": "./.yarn/cache/camel-case-npm-3.0.0-d87e5afe35-4190ed6ab8.zip/node_modules/camel-case/",
-          "packageDependencies": [
-            ["camel-case", "npm:3.0.0"],
-            ["no-case", "npm:2.3.2"],
-            ["upper-case", "npm:1.1.3"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:4.1.1", {
           "packageLocation": "./.yarn/cache/camel-case-npm-4.1.1-6ae5ac15ac-ba99681991.zip/node_modules/camel-case/",
           "packageDependencies": [
@@ -25008,6 +24999,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tslib", "npm:1.14.1"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:2.0.2", {
+          "packageLocation": "./.yarn/cache/lower-case-npm-2.0.2-151055f1c2-83a0a5f159.zip/node_modules/lower-case/",
+          "packageDependencies": [
+            ["lower-case", "npm:2.0.2"],
+            ["tslib", "npm:2.3.1"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["lowlight", [
@@ -26034,6 +26033,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["no-case", "npm:3.0.3"],
             ["lower-case", "npm:2.0.1"],
             ["tslib", "npm:1.14.1"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:3.0.4", {
+          "packageLocation": "./.yarn/cache/no-case-npm-3.0.4-12884c3d98-0b2ebc113d.zip/node_modules/no-case/",
+          "packageDependencies": [
+            ["no-case", "npm:3.0.4"],
+            ["lower-case", "npm:2.0.2"],
+            ["tslib", "npm:2.3.1"]
           ],
           "linkType": "HARD",
         }]
@@ -27342,21 +27350,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["pascal-case", [
-        ["npm:2.0.1", {
-          "packageLocation": "./.yarn/cache/pascal-case-npm-2.0.1-97fc825dec-4c539bf556.zip/node_modules/pascal-case/",
-          "packageDependencies": [
-            ["pascal-case", "npm:2.0.1"],
-            ["camel-case", "npm:3.0.0"],
-            ["upper-case-first", "npm:1.1.2"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:3.1.1", {
           "packageLocation": "./.yarn/cache/pascal-case-npm-3.1.1-1341da3441-7e37861305.zip/node_modules/pascal-case/",
           "packageDependencies": [
             ["pascal-case", "npm:3.1.1"],
             ["no-case", "npm:3.0.3"],
             ["tslib", "npm:1.14.1"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:3.1.2", {
+          "packageLocation": "./.yarn/cache/pascal-case-npm-3.1.2-35f5b9bff6-ba98bfd595.zip/node_modules/pascal-case/",
+          "packageDependencies": [
+            ["pascal-case", "npm:3.1.2"],
+            ["no-case", "npm:3.0.4"],
+            ["tslib", "npm:2.3.1"]
           ],
           "linkType": "HARD",
         }]
@@ -33838,25 +33846,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["chalk", "npm:2.4.2"],
             ["figures", "npm:3.2.0"],
             ["log-update", "npm:3.4.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["upper-case", [
-        ["npm:1.1.3", {
-          "packageLocation": "./.yarn/cache/upper-case-npm-1.1.3-061d82781f-991c845de7.zip/node_modules/upper-case/",
-          "packageDependencies": [
-            ["upper-case", "npm:1.1.3"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["upper-case-first", [
-        ["npm:1.1.2", {
-          "packageLocation": "./.yarn/cache/upper-case-first-npm-1.1.2-a07735d821-7467267967.zip/node_modules/upper-case-first/",
-          "packageDependencies": [
-            ["upper-case-first", "npm:1.1.2"],
-            ["upper-case", "npm:1.1.3"]
           ],
           "linkType": "HARD",
         }]
