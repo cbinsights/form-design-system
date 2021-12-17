@@ -1,7 +1,3 @@
-/* stylelint-disable number-max-precision */
-/* stylelint-disable selector-max-specificity */
-/* stylelint-disable declaration-property-value-disallowed-list */
-
 /**
 Form tag defaults
 */
@@ -83,8 +79,6 @@ input[disabled] {
 
 select {
   appearance: menulist;
-  -moz-appearance: menulist;
-  -webkit-appearance: menulist;
   height: var(--space-xl);
 }
 
@@ -109,7 +103,7 @@ textarea {
 
 input[type='seach'] {
   box-sizing: content-box;
-  -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
 input[type='file'] {
@@ -151,7 +145,6 @@ input[type='radio']:disabled {
 /**
  * Focus states
  */
-/* stylelint-disable-next-line selector-max-specific */
 input:not([type='checkbox']):not([type='radio']):not([type='range']):focus,
 select:focus,
 textarea:focus {
@@ -160,10 +153,8 @@ textarea:focus {
   box-shadow: 0 0 0 2px var(--border-color-focusRing);
 }
 
-/* stylelint-disable selector-max-specific */
 :invalid:not([type='checkbox']):not([type='radio']):not([type='range']):focus,
 .error:not([type='checkbox']):not([type='radio']):not([type='range']):focus {
   border-color: var(--color-red);
   box-shadow: 0 0 0 2px var(--color-red);
 }
-/* stylelint-enable */

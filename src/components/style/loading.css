@@ -15,9 +15,9 @@
   position: relative;
 }
 
-.fdsLoading--m:before,
-.fdsLoading--s:before,
-.fdsLoading--xs:before {
+.fdsLoading--m::before,
+.fdsLoading--s::before,
+.fdsLoading--xs::before {
   content: '';
   position: absolute;
   border-radius: 50%;
@@ -31,7 +31,7 @@
   width: 62px;
 }
 
-.fdsLoading--m:before {
+.fdsLoading--m::before {
   top: 32px;
   left: 32px;
   width: 48px;
@@ -48,7 +48,7 @@
   width: 32px;
 }
 
-.fdsLoading--s:before {
+.fdsLoading--s::before {
   top: 16px;
   left: 16px;
   width: 24px;
@@ -65,7 +65,7 @@
   width: 16px;
 }
 
-.fdsLoading--xs:before {
+.fdsLoading--xs::before {
   top: 8px;
   left: 8px;
   width: 12px;

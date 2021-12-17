@@ -23,10 +23,9 @@
 
 /* use highlight color instead of focus ring */
 [data-reach-menu-item]:focus {
-  outline: 0; /* stylelint-disable-line */
+  outline: 0;
 }
 
-/* stylelint-disable-next-line selector-max-attribute */
 [data-reach-menu-item][data-selected] {
   background: var(--color-lightGray);
   color: inherit;
@@ -37,6 +36,6 @@
 }
 
 .fdsMenuItem--disabled[data-selected] {
-  background: rgba(var(--rgb-lightGray), 0.25) !important;
+  background: rgb(var(--rgb-lightGray) 25%) !important;
   cursor: not-allowed;
 }
