@@ -3334,7 +3334,7 @@ __metadata:
     "@types/react-transition-group": 4.4.4
     "@types/rimraf": 3.0.2
     "@types/semantic-release": 17.2.3
-    "@types/svgo": 1.3.2
+    "@types/svgo": 1.3.6
     "@types/testing-library__jest-dom": 5.14.2
     "@types/testing-library__user-event": 4.2.0
     "@types/tinycolor2": 1.4.3
@@ -3350,7 +3350,7 @@ __metadata:
     commitizen: 4.2.4
     components: "link:./src/components"
     css: 2.2.4
-    cssnano: 4.1.10
+    cssnano: 4.1.11
     cz-conventional-changelog: 3.3.0
     d3-scale: 3.2.3
     dayjs: 1.10.7
@@ -6828,10 +6828,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/svgo@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@types/svgo@npm:1.3.2"
-  checksum: ddd0db71ada001626a0471afe4f2e6aee3b057460f25ae7da36c9343e3b31be2b467e1af0901745453ea9c16a417bf7e0b1018c1ff1984e399db61dd8e87491f
+"@types/svgo@npm:1.3.6":
+  version: 1.3.6
+  resolution: "@types/svgo@npm:1.3.6"
+  checksum: 46d648b51a9485eb129ba30da009bb3d6223434bbe224cb051351d9f6055f3c3688544dee5a200d007e993822a4ccec2d96fd13f7c04a2ac8495a602de028f04
   languageName: node
   linkType: hard
 
@@ -10692,9 +10692,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano-preset-default@npm:^4.0.7":
-  version: 4.0.7
-  resolution: "cssnano-preset-default@npm:4.0.7"
+"cssnano-preset-default@npm:^4.0.8":
+  version: 4.0.8
+  resolution: "cssnano-preset-default@npm:4.0.8"
   dependencies:
     css-declaration-sorter: ^4.0.1
     cssnano-util-raw-cache: ^4.0.1
@@ -10724,9 +10724,9 @@ __metadata:
     postcss-ordered-values: ^4.1.2
     postcss-reduce-initial: ^4.0.3
     postcss-reduce-transforms: ^4.0.2
-    postcss-svgo: ^4.0.2
+    postcss-svgo: ^4.0.3
     postcss-unique-selectors: ^4.0.1
-  checksum: ebc382757b9819fc730f77ffb6bc9c37f7e758cedfb33010b3f4f5d4789a6ab1407185c5f69f161223dc9b5c96e07c024b32f942e30ad164b2c2a6e4411c227f
+  checksum: eb32c9fdd8bd4683e33d62284b6a9c4eb705b745235f4bb51a5571e1eb6738f636958fc9a6218fb51de43e0e2f74386a705b4c7ff2d1dcc611647953ba6ce159
   languageName: node
   linkType: hard
 
@@ -10760,15 +10760,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano@npm:4.1.10":
-  version: 4.1.10
-  resolution: "cssnano@npm:4.1.10"
+"cssnano@npm:4.1.11":
+  version: 4.1.11
+  resolution: "cssnano@npm:4.1.11"
   dependencies:
     cosmiconfig: ^5.0.0
-    cssnano-preset-default: ^4.0.7
+    cssnano-preset-default: ^4.0.8
     is-resolvable: ^1.0.0
     postcss: ^7.0.0
-  checksum: 698179cb73cfbd04c16f9b54e54e403d3c4c557fae4fe53ff70f08011e0c6c2540333dbbd539670167f75dd27eed344ea8ec0a453513fd283d26551823d75d8b
+  checksum: 2453fbe9f9f9e2ffe87dc5c718578f1b801fc7b82eaad12f5564c84bb0faf1774ea52e01874ecd29d1782aa7d0d84f0dbc95001eed9866ebd9bc523638999c9b
   languageName: node
   linkType: hard
 
@@ -14316,13 +14316,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-comment-regex@npm:^1.1.0":
-  version: 1.1.2
-  resolution: "html-comment-regex@npm:1.1.2"
-  checksum: 64c1e13c93f91554a06327176663037e630f5a47de8aae6a6a60cbca25e6d7b63ee16dd35707e33ba09288b900c6947050c6945c34a0a84d27f5415cef525599
-  languageName: node
-  linkType: hard
-
 "html-element-map@npm:^1.2.0":
   version: 1.2.0
   resolution: "html-element-map@npm:1.2.0"
@@ -15593,15 +15586,6 @@ __metadata:
   version: 0.1.1
   resolution: "is-subset@npm:0.1.1"
   checksum: 97b8d7852af165269b7495095691a6ce6cf20bdfa1f846f97b4560ee190069686107af4e277fbd93aa0845c4d5db704391460ff6e9014aeb73264ba87893df44
-  languageName: node
-  linkType: hard
-
-"is-svg@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "is-svg@npm:3.0.0"
-  dependencies:
-    html-comment-regex: ^1.1.0
-  checksum: 5acaa204075324618713ab22447a2828dd639dbd388b44a5969b813c6f77fb89900de958761f3a64165a2fff84127e687a6660ae874b7de9d673c73c92009e44
   languageName: node
   linkType: hard
 
@@ -20718,15 +20702,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-svgo@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "postcss-svgo@npm:4.0.2"
+"postcss-svgo@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "postcss-svgo@npm:4.0.3"
   dependencies:
-    is-svg: ^3.0.0
     postcss: ^7.0.0
     postcss-value-parser: ^3.0.0
     svgo: ^1.0.0
-  checksum: 618d3d29f2ddf1dbf142e6bd1ba54b0582686a366a05c2ffe50fb3f687f250cb1c13be000648790bb7e7af866b03cfcf2eb4dd702ac397bd07639ae31bc81d9e
+  checksum: 6f5264241193ca3ba748fdf43c88ef692948d2ae38787398dc90089061fed884064ec14ee244fce07f19c419d1b058c77e135407d0932b09e93e528581ce3e10
   languageName: node
   linkType: hard
 
