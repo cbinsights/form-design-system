@@ -2,12 +2,19 @@ import React from 'react';
 import FDS from 'dictionary/js/styleConstants';
 import CheckIcon from 'icons/react/CheckIcon';
 import DenyIcon from 'icons/react/DenyIcon';
-import PropTypes from 'prop-types';
+
+export interface CopyExampleProps {
+  /** valid example text */
+  valid: string;
+
+  /** optional invalid example text */
+  invalid: string;
+}
 
 /**
  * For displaying a do/don't example of copy writing
  */
-const CopyExample = ({ valid, invalid }) => (
+const CopyExample = ({ valid, invalid }: CopyExampleProps): JSX.Element => (
   <div className="bgColor--haze rounded--all padding--y--s padding--x--l">
     <table>
       <tbody>
@@ -31,13 +38,5 @@ const CopyExample = ({ valid, invalid }) => (
     </table>
   </div>
 );
-
-CopyExample.propTypes = {
-  /** valid example text */
-  valid: PropTypes.string.isRequired,
-
-  /** optional invalid example text */
-  invalid: PropTypes.string,
-};
 
 export default CopyExample;
