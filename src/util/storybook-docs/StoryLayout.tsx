@@ -1,8 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import FDS from 'dictionary/js/styleConstants';
 
-export const StoryWrapper = ({ children, className = '', ...rest }) => (
+export interface StoryItemProps {
+  children: React.ReactNode;
+}
+
+export interface StoryWrapperProps {
+  children: React.ReactNode;
+  className: string;
+}
+
+export const StoryWrapper = ({
+  children,
+  className = '',
+  ...rest
+}: StoryWrapperProps): JSX.Element => (
   <div
     {...rest}
     className={`display--inlineFlex ${className}`}
@@ -17,15 +29,6 @@ export const StoryWrapper = ({ children, className = '', ...rest }) => (
   </div>
 );
 
-StoryWrapper.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
-
-export const StoryItem = ({ children }) => (
+export const StoryItem = ({ children }: StoryItemProps): JSX.Element => (
   <div className="margin--right--s margin--bottom--s">{children}</div>
 );
-
-StoryItem.propTypes = {
-  children: PropTypes.node,
-};
