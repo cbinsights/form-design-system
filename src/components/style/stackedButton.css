@@ -27,20 +27,20 @@
 }
 
 .fdsStackedButton--isActive {
-  background-color: rgba(64, 64, 64, 0.2);
+  background-color: rgb(64 64 64 / 20%);
 }
 
 .fdsStackedButton:hover {
-  background-color: rgba(64, 64, 64, 0.08);
+  background-color: rgb(64 64 64 / 8%);
   color: var(--button-primary-color);
 }
 
 .fdsStackedButton:active {
-  background-color: rgba(64, 64, 64, 0.24);
+  background-color: rgb(64 64 64 / 24%);
 }
 
 .fdsStackedButton--isActive:focus {
-  background-color: rgba(64, 64, 64, 0.2);
+  background-color: rgb(64 64 64 / 20%);
 }
 
 .fdsStackedButton--isToggled {
