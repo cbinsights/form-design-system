@@ -5,9 +5,9 @@ import cc from 'classcat';
 
 export interface ColorSwatchProps {
   name?: string;
-  hex: string;
-  cssVar: string;
-  jsVar: string;
+  hex?: string;
+  cssVar?: string;
+  jsVar?: string;
 }
 
 export interface ColorSwatchWrapperProps {
@@ -15,13 +15,16 @@ export interface ColorSwatchWrapperProps {
 }
 
 export interface CopyButtonProps {
-  value: string;
+  value?: string;
   position?: string;
-  copyToClipboard: (arg: string) => void;
+  copyToClipboard?: (arg: string) => void;
 }
 
 const CopyButton = ({ value, copyToClipboard }: CopyButtonProps): JSX.Element => (
-  <button onClick={() => copyToClipboard(value)} className="swatchContainer-copyButton">
+  <button
+    onClick={() => (copyToClipboard ? copyToClipboard((value = '')) : null)}
+    className="swatchContainer-copyButton"
+  >
     {value}
   </button>
 );
@@ -33,7 +36,7 @@ export const ColorSwatch = (props: ColorSwatchProps): JSX.Element => {
   const [copiedText, copyToClipboard] = useClipboard();
 
   const colorName = props.name;
-  const hexName = `#${props.hex.toUpperCase()}`;
+  const hexName = props.hex ? `#${props.hex.toUpperCase()}` : '';
   const { cssVar, jsVar } = props;
 
   const layouts = [
