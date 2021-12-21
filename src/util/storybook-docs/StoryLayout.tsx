@@ -2,12 +2,12 @@ import React from 'react';
 import FDS from 'dictionary/js/styleConstants';
 
 export interface StoryItemProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export interface StoryWrapperProps {
-  children: React.ReactNode;
-  className: string;
+  children?: React.ReactNode;
+  className?: string;
 }
 
 export const StoryWrapper = ({
