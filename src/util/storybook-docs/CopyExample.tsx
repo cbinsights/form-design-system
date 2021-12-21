@@ -8,7 +8,7 @@ export interface CopyExampleProps {
   valid: string;
 
   /** optional invalid example text */
-  invalid: string;
+  invalid?: string;
 }
 
 /**
