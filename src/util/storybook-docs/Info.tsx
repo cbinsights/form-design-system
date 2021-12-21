@@ -1,11 +1,16 @@
 import React from 'react';
 import FDS from 'dictionary/js/styleConstants';
-import PropTypes from 'prop-types';
+
+export interface InfoProps {
+  children: React.ReactNode;
+
+  type?: 'warn' | 'info';
+}
 
 /**
  * For displaying important info in MDX docs
  */
-export const Info = ({ type, children }) => {
+export const Info = ({ type = 'info', children }: InfoProps): JSX.Element => {
   const accentMap = {
     warn: FDS.COLOR_ORANGE,
     info: FDS.COLOR_SKY,
@@ -31,16 +36,6 @@ export const Info = ({ type, children }) => {
       <span className="color--heading">{children}</span>
     </blockquote>
   );
-};
-
-Info.defaultProps = {
-  type: 'info',
-};
-
-Info.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
-    .isRequired,
-  type: PropTypes.oneOf(['warn', 'info']),
 };
 
 export default Info;
