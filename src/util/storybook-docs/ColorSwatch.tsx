@@ -1,26 +1,36 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { mostReadable } from 'tinycolor2';
 import useClipboard from 'util/storybook-docs/useClipboard';
 import cc from 'classcat';
 
-const CopyButton = ({ value, copyToClipboard }) => (
+export interface ColorSwatchProps {
+  name?: string;
+  hex: string;
+  cssVar: string;
+  jsVar: string;
+}
+
+export interface ColorSwatchWrapperProps {
+  children?: React.ReactNode;
+}
+
+export interface CopyButtonProps {
+  value: string;
+  position?: string;
+  copyToClipboard: (arg: string) => void;
+}
+
+const CopyButton = ({ value, copyToClipboard }: CopyButtonProps): JSX.Element => (
   <button onClick={() => copyToClipboard(value)} className="swatchContainer-copyButton">
     {value}
   </button>
 );
 
-CopyButton.propTypes = {
-  value: PropTypes.string,
-  position: PropTypes.string,
-  copyToClipboard: PropTypes.func,
-};
+const mostReadableConfig = (hexName: string) =>
+  mostReadable(hexName, ['#333'], { includeFallbackColors: true, level: 'AAA' });
 
-const mostReadableConfig = (hexName) =>
-  mostReadable(hexName, '#333', { includeFallbackColors: true, level: 'AAA' });
-
-export const ColorSwatch = (props) => {
-  const [copiedText, copyToClipboard] = useClipboard('');
+export const ColorSwatch = (props: ColorSwatchProps): JSX.Element => {
+  const [copiedText, copyToClipboard] = useClipboard();
 
   const colorName = props.name;
   const hexName = `#${props.hex.toUpperCase()}`;
@@ -76,19 +86,8 @@ export const ColorSwatch = (props) => {
   );
 };
 
-ColorSwatch.propTypes = {
-  name: PropTypes.string,
-  hex: PropTypes.string,
-  cssVar: PropTypes.string,
-  jsVar: PropTypes.string,
-};
-
-export const ColorSwatchWrapper = (props) => (
+export const ColorSwatchWrapper = (props: ColorSwatchWrapperProps): JSX.Element => (
   <div className="swatchWrapper">{props.children}</div>
 );
-
-ColorSwatchWrapper.propTypes = {
-  children: PropTypes.node,
-};
 
 export default ColorSwatch;
