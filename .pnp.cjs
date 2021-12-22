@@ -112,7 +112,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["classcat", "npm:5.0.3"],
             ["commitizen", "npm:4.2.4"],
             ["components", "link:./src/components::locator=%40cbinsights%2Ffds%40workspace%3A."],
-            ["css", "npm:2.2.4"],
+            ["css", "npm:3.0.0"],
             ["cssnano", "npm:4.1.11"],
             ["cz-conventional-changelog", "npm:3.3.0"],
             ["d3-scale", "npm:3.3.0"],
@@ -154,7 +154,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-is", "npm:16.13.1"],
             ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.3.1"],
             ["react-popper", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.2.4"],
-            ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.1"],
+            ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],
             ["rimraf", "npm:3.0.2"],
             ["semantic-release", "npm:18.0.1"],
             ["snake-case", "npm:3.0.4"],
@@ -7613,7 +7613,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["classcat", "npm:5.0.3"],
             ["commitizen", "npm:4.2.4"],
             ["components", "link:./src/components::locator=%40cbinsights%2Ffds%40workspace%3A."],
-            ["css", "npm:2.2.4"],
+            ["css", "npm:3.0.0"],
             ["cssnano", "npm:4.1.11"],
             ["cz-conventional-changelog", "npm:3.3.0"],
             ["d3-scale", "npm:3.3.0"],
@@ -7655,7 +7655,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-is", "npm:16.13.1"],
             ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.3.1"],
             ["react-popper", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.2.4"],
-            ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.1"],
+            ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],
             ["rimraf", "npm:3.0.2"],
             ["semantic-release", "npm:18.0.1"],
             ["snake-case", "npm:3.0.4"],
@@ -17111,17 +17111,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["css", [
-        ["npm:2.2.4", {
-          "packageLocation": "./.yarn/cache/css-npm-2.2.4-2a363d6a5d-a35d483c5c.zip/node_modules/css/",
-          "packageDependencies": [
-            ["css", "npm:2.2.4"],
-            ["inherits", "npm:2.0.4"],
-            ["source-map", "npm:0.6.1"],
-            ["source-map-resolve", "npm:0.5.3"],
-            ["urix", "npm:0.1.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:3.0.0", {
           "packageLocation": "./.yarn/cache/css-npm-3.0.0-ef426b63b3-4273ac816d.zip/node_modules/css/",
           "packageDependencies": [
@@ -30040,17 +30029,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["react-transition-group", [
-        ["npm:4.4.1", {
-          "packageLocation": "./.yarn/cache/react-transition-group-npm-4.4.1-5b62a122ef-0bcd8af483.zip/node_modules/react-transition-group/",
+        ["npm:4.4.2", {
+          "packageLocation": "./.yarn/cache/react-transition-group-npm-4.4.2-5052c30656-b67bf5b3e8.zip/node_modules/react-transition-group/",
           "packageDependencies": [
-            ["react-transition-group", "npm:4.4.1"]
+            ["react-transition-group", "npm:4.4.2"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.1", {
-          "packageLocation": "./.yarn/__virtual__/react-transition-group-virtual-6c44f3b5a1/0/cache/react-transition-group-npm-4.4.1-5b62a122ef-0bcd8af483.zip/node_modules/react-transition-group/",
+        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2", {
+          "packageLocation": "./.yarn/__virtual__/react-transition-group-virtual-0c8ad71087/0/cache/react-transition-group-npm-4.4.2-5052c30656-b67bf5b3e8.zip/node_modules/react-transition-group/",
           "packageDependencies": [
-            ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.1"],
+            ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],
             ["@babel/runtime", "npm:7.12.5"],
             ["@types/react", "npm:17.0.37"],
             ["@types/react-dom", "npm:17.0.6"],
