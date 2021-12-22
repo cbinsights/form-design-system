@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { DocsContext } from '@storybook/addon-docs/blocks';
 
-export const Rest = () => {
+type RestType = JSX.Element | null;
+
+export const Rest = (): RestType => {
   const context = useContext(DocsContext);
 
-  const isRest = context.parameters.docs.fds?.attributes;
+  const isRest = context.parameters?.docs.fds?.attributes;
 
   if (!isRest) return null;
 
