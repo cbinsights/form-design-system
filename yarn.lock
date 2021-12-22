@@ -4097,11 +4097,11 @@ __metadata:
     react: 16.14.0
     react-day-picker: 7.4.10
     react-dom: 16.14.0
-    react-hook-form: 7.19.1
+    react-hook-form: 7.22.3
     react-is: 16.13.1
     react-markdown: 4.3.1
     react-popper: 2.2.4
-    react-transition-group: 4.4.1
+    react-transition-group: 4.4.2
     rimraf: 3.0.2
     semantic-release: 18.0.1
     snake-case: 3.0.4
@@ -22277,12 +22277,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:7.19.1":
-  version: 7.19.1
-  resolution: "react-hook-form@npm:7.19.1"
+"react-hook-form@npm:7.22.3":
+  version: 7.22.3
+  resolution: "react-hook-form@npm:7.22.3"
   peerDependencies:
     react: ^16.8.0 || ^17
-  checksum: a52420b7d7fbf0c2536b9901e48423d6de3ea4d240e18a91404f65da7ef81a124136284ee800df544993a5727957ea17c4167ded778dc9627cca341c355876ee
+  checksum: ea95034df3f6cefe0d58cc328605898dbc2864618918e1182e07dbd497999afe3927093675ef06ac70f68827c793f99c176915eb41b7d8d578eba3fd88e10773
   languageName: node
   linkType: hard
 
@@ -22453,9 +22453,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-transition-group@npm:4.4.1":
-  version: 4.4.1
-  resolution: "react-transition-group@npm:4.4.1"
+"react-transition-group@npm:4.4.2":
+  version: 4.4.2
+  resolution: "react-transition-group@npm:4.4.2"
   dependencies:
     "@babel/runtime": ^7.5.5
     dom-helpers: ^5.0.1
@@ -22464,7 +22464,7 @@ __metadata:
   peerDependencies:
     react: ">=16.6.0"
     react-dom: ">=16.6.0"
-  checksum: 0bcd8af483709832e318dcef84c26ebddeb866bf4f58010286367ef0c1e7c5106e00cfc65688b9102414cb3d572c63909c2eb7ea972b4420fc70a78c10b6e8ad
+  checksum: b67bf5b3e86dbab72d658b9a52a3589e5960583ab28c7c66272427d8fe30d4c7de422d5046ae96bd2683cdf80cc3264b2516f5ce80cae1dbe6cf3ca6dda392c5
   languageName: node
   linkType: hard
 
