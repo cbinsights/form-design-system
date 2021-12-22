@@ -135,7 +135,7 @@
     "commitizen": "4.2.4",
     "components": "link:./src/components",
     "css": "2.2.4",
-    "cssnano": "5.0.14",
+    "cssnano": "4.1.11",
     "cz-conventional-changelog": "3.3.0",
     "d3-scale": "3.3.0",
     "dayjs": "1.10.7",
@@ -204,7 +204,7 @@
   ],
   "lint-staged": {
     "*": [
-      "prettier --write"
+      "prettier --write --ignore-unknown"
     ],
     "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --no-ignore --fix"
