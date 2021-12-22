@@ -1,7 +1,7 @@
 import { normalizePathToFile } from './cleanExports.js';
 
 describe('normalizing file names', () => {
-  test.each([
+  test.concurrent.each([
     ['/any/number/of/longer/paths/joeyTribbiani.png', 'JoeyTribbiani.png'],
     ['/shorter/paths/monicageller.png', 'Monicageller.png'],
     ['/any/path/CHANDLERBING.png', 'Chandlerbing.png'],
