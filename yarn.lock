@@ -4059,7 +4059,7 @@ __metadata:
     classcat: 5.0.3
     commitizen: 4.2.4
     components: "link:./src/components"
-    css: 2.2.4
+    css: 3.0.0
     cssnano: 4.1.11
     cz-conventional-changelog: 3.3.0
     d3-scale: 3.3.0
@@ -4097,17 +4097,17 @@ __metadata:
     react: 16.14.0
     react-day-picker: 7.4.10
     react-dom: 16.14.0
-    react-hook-form: 7.19.1
+    react-hook-form: 7.22.3
     react-is: 16.13.1
     react-markdown: 4.3.1
     react-popper: 2.2.4
-    react-transition-group: 4.4.1
+    react-transition-group: 4.4.2
     rimraf: 3.0.2
     semantic-release: 18.0.1
     snake-case: 3.0.4
     style-dictionary: 3.1.1
-    style-loader: 1.3.0
-    stylelint: 14.1.0
+    style-loader: 3.3.1
+    stylelint: 14.2.0
     stylelint-config-prettier: 9.0.3
     stylelint-config-standard: 24.0.0
     svg-to-jsx: 1.0.4
@@ -10661,6 +10661,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"colord@npm:^2.9.2":
+  version: 2.9.2
+  resolution: "colord@npm:2.9.2"
+  checksum: 2aa6a9b3abbce74ba3c563886cfeb433ea0d7df5ad6f4a560005eddab1ddf7c0fc98f39b09b599767a19c86dd3837b77f66f036e479515d4b17347006dbd6d9f
+  languageName: node
+  linkType: hard
+
 "colorette@npm:^1.2.1, colorette@npm:^1.2.2":
   version: 1.2.2
   resolution: "colorette@npm:1.2.2"
@@ -11404,19 +11411,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css@npm:2.2.4":
-  version: 2.2.4
-  resolution: "css@npm:2.2.4"
-  dependencies:
-    inherits: ^2.0.3
-    source-map: ^0.6.1
-    source-map-resolve: ^0.5.2
-    urix: ^0.1.0
-  checksum: a35d483c5ccc04bcde3b1e7393d58ad3eee1dd6956df0f152de38e46a17c0ee193c30eec6b1e59831ad0e74599385732000e95987fcc9cb2b16c6d951bae49e1
-  languageName: node
-  linkType: hard
-
-"css@npm:^3.0.0":
+"css@npm:3.0.0, css@npm:^3.0.0":
   version: 3.0.0
   resolution: "css@npm:3.0.0"
   dependencies:
@@ -11787,6 +11782,18 @@ __metadata:
     supports-color:
       optional: true
   checksum: 2c3352e37d5c46b0d203317cd45ea0e26b2c99f2d9dfec8b128e6ceba90dfb65425f5331bf3020fe9929d7da8c16758e737f4f3bfc0fce6b8b3d503bae03298b
+  languageName: node
+  linkType: hard
+
+"debug@npm:^4.3.3":
+  version: 4.3.3
+  resolution: "debug@npm:4.3.3"
+  dependencies:
+    ms: 2.1.2
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 14472d56fe4a94dbcfaa6dbed2dd3849f1d72ba78104a1a328047bb564643ca49df0224c3a17fa63533fd11dd3d4c8636cd861191232a2c6735af00cc2d4de16
   languageName: node
   linkType: hard
 
@@ -15424,10 +15431,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ignore@npm:^5.1.9":
-  version: 5.1.9
-  resolution: "ignore@npm:5.1.9"
-  checksum: 6f6b2235f4e63648116c5814f76b2d3d63fae9c21b8a466862e865732f59e787c9938a9042f9457091db6f0d811508ea3c8c6a60f35bafc4ceea08bbe8f96fd5
+"ignore@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "ignore@npm:5.2.0"
+  checksum: 6b1f926792d614f64c6c83da3a1f9c83f6196c2839aa41e1e32dd7b8d174cef2e329d75caabb62cb61ce9dc432f75e67d07d122a037312db7caa73166a1bdb77
   languageName: node
   linkType: hard
 
@@ -17625,10 +17632,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"known-css-properties@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "known-css-properties@npm:0.23.0"
-  checksum: 10d6400f6b411b731b9766be730ede298c7b28e94e2aaa882a014e5975da8028f3c7bab599358d4f53e1118ab33fc7e085c2b851167c698072bac917c372236f
+"known-css-properties@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "known-css-properties@npm:0.24.0"
+  checksum: 071c3a9457ed2c5c46b6172d2c7b6a253ca4aec0c5c84da06e705026c377529fc57b690957c87f9313606be63a5152dc706102c09ba36102cc484936ec2f96b9
   languageName: node
   linkType: hard
 
@@ -21500,13 +21507,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.6":
-  version: 6.0.7
-  resolution: "postcss-selector-parser@npm:6.0.7"
+"postcss-selector-parser@npm:^6.0.7":
+  version: 6.0.8
+  resolution: "postcss-selector-parser@npm:6.0.8"
   dependencies:
     cssesc: ^3.0.0
     util-deprecate: ^1.0.2
-  checksum: 661808ad629e3f289e0d237fbe9bb13766dadd2d548ec09ae86f68118f5d98be0f25bbaf5cd88486c5416e2eefaa9f73c59c2fc98dc370872fa51b250c7d1d9c
+  checksum: 550351c8d04216106e259f7c433652aa6742dd7ddbedf7afdc313526963bb170589a6fefd1bc1fe6268a2cf9f5073d4ecb09bc7b5b4bef49edf80634300500af
   languageName: node
   linkType: hard
 
@@ -22270,12 +22277,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:7.19.1":
-  version: 7.19.1
-  resolution: "react-hook-form@npm:7.19.1"
+"react-hook-form@npm:7.22.3":
+  version: 7.22.3
+  resolution: "react-hook-form@npm:7.22.3"
   peerDependencies:
     react: ^16.8.0 || ^17
-  checksum: a52420b7d7fbf0c2536b9901e48423d6de3ea4d240e18a91404f65da7ef81a124136284ee800df544993a5727957ea17c4167ded778dc9627cca341c355876ee
+  checksum: ea95034df3f6cefe0d58cc328605898dbc2864618918e1182e07dbd497999afe3927093675ef06ac70f68827c793f99c176915eb41b7d8d578eba3fd88e10773
   languageName: node
   linkType: hard
 
@@ -22446,9 +22453,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-transition-group@npm:4.4.1":
-  version: 4.4.1
-  resolution: "react-transition-group@npm:4.4.1"
+"react-transition-group@npm:4.4.2":
+  version: 4.4.2
+  resolution: "react-transition-group@npm:4.4.2"
   dependencies:
     "@babel/runtime": ^7.5.5
     dom-helpers: ^5.0.1
@@ -22457,7 +22464,7 @@ __metadata:
   peerDependencies:
     react: ">=16.6.0"
     react-dom: ">=16.6.0"
-  checksum: 0bcd8af483709832e318dcef84c26ebddeb866bf4f58010286367ef0c1e7c5106e00cfc65688b9102414cb3d572c63909c2eb7ea972b4420fc70a78c10b6e8ad
+  checksum: b67bf5b3e86dbab72d658b9a52a3589e5960583ab28c7c66272427d8fe30d4c7de422d5046ae96bd2683cdf80cc3264b2516f5ce80cae1dbe6cf3ca6dda392c5
   languageName: node
   linkType: hard
 
@@ -23947,7 +23954,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-resolve@npm:^0.5.0, source-map-resolve@npm:^0.5.2":
+"source-map-resolve@npm:^0.5.0":
   version: 0.5.3
   resolution: "source-map-resolve@npm:0.5.3"
   dependencies:
@@ -24591,7 +24598,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"style-loader@npm:1.3.0, style-loader@npm:^1.3.0":
+"style-loader@npm:3.3.1":
+  version: 3.3.1
+  resolution: "style-loader@npm:3.3.1"
+  peerDependencies:
+    webpack: ^5.0.0
+  checksum: 470feef680f59e2fce4d6601b5c55b88c01ad8d1dd693c528ffd591ff5fd7c01a4eff3bdbe62f26f847d6bd2430c9ab594be23307cfe7a3446ab236683f0d066
+  languageName: node
+  linkType: hard
+
+"style-loader@npm:^1.3.0":
   version: 1.3.0
   resolution: "style-loader@npm:1.3.0"
   dependencies:
@@ -24662,13 +24678,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:14.1.0":
-  version: 14.1.0
-  resolution: "stylelint@npm:14.1.0"
+"stylelint@npm:14.2.0":
+  version: 14.2.0
+  resolution: "stylelint@npm:14.2.0"
   dependencies:
     balanced-match: ^2.0.0
+    colord: ^2.9.2
     cosmiconfig: ^7.0.1
-    debug: ^4.3.2
+    debug: ^4.3.3
     execall: ^2.0.0
     fast-glob: ^3.2.7
     fastest-levenshtein: ^1.0.12
@@ -24678,11 +24695,11 @@ __metadata:
     globby: ^11.0.4
     globjoin: ^0.1.4
     html-tags: ^3.1.0
-    ignore: ^5.1.9
+    ignore: ^5.2.0
     import-lazy: ^4.0.0
     imurmurhash: ^0.1.4
     is-plain-object: ^5.0.0
-    known-css-properties: ^0.23.0
+    known-css-properties: ^0.24.0
     mathml-tag-names: ^2.1.3
     meow: ^9.0.0
     micromatch: ^4.0.4
@@ -24693,7 +24710,7 @@ __metadata:
     postcss-media-query-parser: ^0.2.3
     postcss-resolve-nested-selector: ^0.1.1
     postcss-safe-parser: ^6.0.0
-    postcss-selector-parser: ^6.0.6
+    postcss-selector-parser: ^6.0.7
     postcss-value-parser: ^4.1.0
     resolve-from: ^5.0.0
     specificity: ^0.4.1
@@ -24701,12 +24718,12 @@ __metadata:
     strip-ansi: ^6.0.1
     style-search: ^0.1.0
     svg-tags: ^1.0.0
-    table: ^6.7.3
+    table: ^6.7.5
     v8-compile-cache: ^2.3.0
     write-file-atomic: ^3.0.3
   bin:
     stylelint: bin/stylelint.js
-  checksum: c7a016ce0c0737cc5fa9ab8ab025cba2e534eae4ba936fc41d90de7e13e0947b6a78d68d2644572c0f743822444a4cdc25bb2f0bf3e3f9a8993a08b209b13e1a
+  checksum: cf0195b143efdea5a22d4e04817ac11ec9103a976a703265813c27baa9b52b9033f57e241b1f6ab7eb3b2eed63f66509b983c1fa03b29cb75372cc32cacfaec0
   languageName: node
   linkType: hard
 
@@ -24870,7 +24887,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"table@npm:^6.7.3":
+"table@npm:^6.7.5":
   version: 6.7.5
   resolution: "table@npm:6.7.5"
   dependencies:
