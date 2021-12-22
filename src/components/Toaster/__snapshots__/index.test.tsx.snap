@@ -432,7 +432,7 @@ exports[`Toaster component matches snapshot 1`] = `
                                             fill="transparent"
                                             r={16}
                                             stroke="rgba(64, 64, 64, 0.38)"
-                                            strokeWidth="2"
+                                            strokeWidth={2}
                                             style={
                                               Object {
                                                 "strokeDasharray": 100.53096491487338,
