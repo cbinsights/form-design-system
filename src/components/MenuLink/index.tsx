@@ -1,7 +1,6 @@
 import React from 'react';
 import { MenuLink as ReachMenuLink } from '@reach/menu-button';
-
-const noop = () => {};
+import { noop } from 'util/index';
 
 export interface MenuLinkProps {
   /** selection callback */

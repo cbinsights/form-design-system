@@ -14,12 +14,14 @@ module.exports = {
     browser: true,
   },
   rules: {
-    '@typescript-eslint/no-explicit-any': 0,
+    // For unused parameters we allow prefixing them with an underscore
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     // We want to use any as some people are not abiding by our contract and we do not want to have Typescript throw an error quite yet
-    '@typescript-eslint/no-empty-function': 0,
+    '@typescript-eslint/no-explicit-any': 0,
     // We like using empty noop (for now)
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-empty-function': 0,
     // It's necessary to turn this off for non Typescript files
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
 
     /* =========================================
        We use "no-restricted-syntax" is used to
