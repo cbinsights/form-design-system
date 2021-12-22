@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Title,
   Subtitle,
@@ -13,7 +12,11 @@ import ImportPath from 'util/storybook-docs/ImportPath';
 import Badges from 'util/storybook-docs/Badges';
 import Related from 'util/storybook-docs/Related';
 
-const Layout = ({ hasStories = true }) => (
+export interface LayoutProps {
+  hasStories?: boolean;
+}
+
+const Layout = ({ hasStories = true }: LayoutProps): JSX.Element => (
   <>
     <Related />
     <Title />
@@ -27,10 +30,6 @@ const Layout = ({ hasStories = true }) => (
   </>
 );
 
-Layout.propTypes = {
-  hasStories: PropTypes.bool,
-};
-
-export const NoStoriesLayout = () => <Layout hasStories={false} />;
+export const NoStoriesLayout = (): JSX.Element => <Layout hasStories={false} />;
 
 export default Layout;
