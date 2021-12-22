@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './styles.css';
 import '@cbinsights/fds/lib/assets/all-styles.min.css';
+import ActionsArrowUpIcon from '@cbinsights/fds/lib/icons/react/ActionsArrowUpIcon';
 
 import {
   Avatar,
@@ -21,7 +22,7 @@ import {
 function App() {
   return (
     <div className="padding--all--m">
-      <Button label="ok" theme="blue" />
+      <Button label="ok" theme="blue" IconRight={ActionsArrowUpIcon} />
 
       <Avatar name="CB" />
 

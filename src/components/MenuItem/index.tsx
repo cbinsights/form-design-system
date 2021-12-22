@@ -1,7 +1,6 @@
 import React from 'react';
 import { MenuItem as ReachMenuItem } from '@reach/menu-button';
-
-const noop = () => {};
+import { noop } from 'util/index';
 
 export interface MenuItemProps {
   /** selection callback */

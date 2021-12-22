@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cc from 'classcat';
 import FDS from 'dictionary/js/styleConstants';
 import CheckIcon from 'icons/react/CheckIcon';
@@ -7,13 +6,44 @@ import InformationIcon from 'icons/react/InformationIcon';
 import DenyIcon from 'icons/react/DenyIcon';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
-import customPropTypes from 'components/util/customPropTypes';
 import Button from 'components/Button';
 import IconButton from 'components/IconButton';
 
 import CountdownButton from './CountdownButton';
 
-export const TYPES = ['info', 'warn', 'error', 'success', 'progress'];
+type ToastType = 'info' | 'warn' | 'error' | 'success' | 'progress';
+
+export interface ToastProps {
+  /** JSX Content of Toast */
+  content: React.ReactNode;
+
+  /** Type of toast */
+  type?: ToastType;
+
+  /** Label for action button */
+  actionLabel?: string;
+
+  /** Callback for action button click */
+  onAction?: React.MouseEventHandler<HTMLButtonElement>;
+
+  /** Time in ms to auto-dismiss toast */
+  dismissDelay?: number;
+
+  /** Should this toast auto-dismiss itself? */
+  isAutoDismiss?: boolean;
+
+  /* Controls if toast gets dismiss when the ActionButton is clicked */
+  dismissOnAction?: boolean;
+
+  /** Is this toast user-dismissable? */
+  canDismiss?: boolean;
+
+  /** Number 1-100 declaring % progress */
+  progress?: number;
+
+  /** Passed by Toaster: function to dismiss the toast */
+  onDismiss?(...args: unknown[]): unknown;
+}
 
 const Toast = ({
   isAutoDismiss = true,
@@ -25,8 +55,8 @@ const Toast = ({
   actionLabel,
   progress,
   onAction,
-  dismissToast /* Passed from Toaster */,
-}) => {
+  onDismiss /* Passed from Toaster */,
+}: ToastProps): JSX.Element => {
   const classNames = cc(['toast', `toast--${type}`]);
 
   const icon = {
@@ -42,6 +72,7 @@ const Toast = ({
         !
       </div>
     ),
+    progress: undefined,
   }[type];
 
   const accentColor = {
@@ -54,8 +85,8 @@ const Toast = ({
 
   const iconStyle = { backgroundColor: accentColor };
 
-  const onActionDismiss = (event) => {
-    if (dismissOnAction) dismissToast();
+  const onActionDismiss: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+    if (dismissOnAction && onDismiss) onDismiss();
     if (onAction) onAction(event);
   };
 
@@ -99,7 +130,7 @@ const Toast = ({
           <FlexItem>
             <div className="toast-constrainGrowth">{content}</div>
           </FlexItem>
-          {actionLabel && (onAction || (dismissToast && dismissOnAction)) && (
+          {actionLabel && (onAction || (onDismiss && dismissOnAction)) && (
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
                 <Button
@@ -116,14 +147,14 @@ const Toast = ({
               <div className="toast-constrainGrowth alignChild--center--center">
                 {isAutoDismiss ? (
                   <CountdownButton
-                    onClick={dismissToast}
+                    onClick={onDismiss}
                     duration={dismissDelay}
                     label="Close"
                   />
                 ) : (
                   <IconButton
                     Icon={DenyIcon}
-                    onClick={dismissToast}
+                    onClick={onDismiss}
                     radius="circle"
                     label="Close"
                   />
@@ -135,38 +166,6 @@ const Toast = ({
       </div>
     </div>
   );
-};
-
-Toast.propTypes = {
-  /** JSX Content of Toast */
-  content: PropTypes.node.isRequired,
-
-  /** Type of toast */
-  type: PropTypes.oneOf(TYPES),
-
-  /** Label for action button */
-  actionLabel: PropTypes.string,
-
-  /** Callback for action button click */
-  onAction: PropTypes.func,
-
-  /** Time in ms to auto-dismiss toast */
-  dismissDelay: PropTypes.number,
-
-  /** Should this toast auto-dismiss itself? */
-  isAutoDismiss: PropTypes.bool,
-
-  /* Controls if toast gets dismiss when the ActionButton is clicked */
-  dismissOnAction: PropTypes.bool,
-
-  /** Is this toast user-dismissable? */
-  canDismiss: PropTypes.bool,
-
-  /** Number 1-100 declaring % progress */
-  progress: customPropTypes.range(1, 100),
-
-  /** Passed by Toaster: function to dismiss the toast */
-  dismissToast: PropTypes.func,
 };
 
 export default Toast;
