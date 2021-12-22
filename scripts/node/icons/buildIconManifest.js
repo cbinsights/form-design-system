@@ -2,8 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const glob = require('glob');
 const { buildConfig } = require('./icons.config');
-const SVGO = require('svgo');
-const { svgoOptions, svgoPlugins } = require('./helpers/svgoConfig');
+const { optimize } = require('svgo');
 
 if (!fs.existsSync(buildConfig.docs.output)) {
   fs.mkdirSync(buildConfig.docs.output);
@@ -11,14 +10,10 @@ if (!fs.existsSync(buildConfig.docs.output)) {
 
 const processFile = async (filepath) => {
   const iconName = path.basename(filepath, '.svg');
-  const svgo = new SVGO({
-    ...svgoOptions,
-    plugins: [...svgoPlugins, { cleanupIDs: { prefix: iconName } }],
-  });
 
   const optimized = await fs.promises
     .readFile(filepath)
-    .then((svg) => svgo.optimize(svg, { filepath }));
+    .then((svg) => optimize(svg, { path: filepath, multipass: true }));
 
   return {
     name: iconName,
