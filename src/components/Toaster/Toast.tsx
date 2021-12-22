@@ -42,7 +42,7 @@ export interface ToastProps {
   progress?: number;
 
   /** Passed by Toaster: function to dismiss the toast */
-  dismissToast?(...args: unknown[]): unknown;
+  onDismiss?(...args: unknown[]): unknown;
 }
 
 const Toast = ({
@@ -55,7 +55,7 @@ const Toast = ({
   actionLabel,
   progress,
   onAction,
-  dismissToast /* Passed from Toaster */,
+  onDismiss /* Passed from Toaster */,
 }: ToastProps): JSX.Element => {
   const classNames = cc(['toast', `toast--${type}`]);
 
@@ -86,7 +86,7 @@ const Toast = ({
   const iconStyle = { backgroundColor: accentColor };
 
   const onActionDismiss: React.MouseEventHandler<HTMLButtonElement> = (event) => {
-    if (dismissOnAction && dismissToast) dismissToast();
+    if (dismissOnAction && onDismiss) onDismiss();
     if (onAction) onAction(event);
   };
 
@@ -130,7 +130,7 @@ const Toast = ({
           <FlexItem>
             <div className="toast-constrainGrowth">{content}</div>
           </FlexItem>
-          {actionLabel && (onAction || (dismissToast && dismissOnAction)) && (
+          {actionLabel && (onAction || (onDismiss && dismissOnAction)) && (
             <FlexItem shrink>
               <div className="toast-constrainGrowth alignChild--center--center">
                 <Button
@@ -147,14 +147,14 @@ const Toast = ({
               <div className="toast-constrainGrowth alignChild--center--center">
                 {isAutoDismiss ? (
                   <CountdownButton
-                    onClick={dismissToast}
+                    onClick={onDismiss}
                     duration={dismissDelay}
                     label="Close"
                   />
                 ) : (
                   <IconButton
                     Icon={DenyIcon}
-                    onClick={dismissToast}
+                    onClick={onDismiss}
                     radius="circle"
                     label="Close"
                   />

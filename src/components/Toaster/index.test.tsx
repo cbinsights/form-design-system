@@ -12,15 +12,14 @@ describe('Toaster component', () => {
   });
 
   it('passes dismiss func to toast', () => {
-    const onDismiss = jest.fn();
+    const mockOnDismiss = jest.fn();
     const component = mount(
       <Toaster
-        onDismiss={onDismiss}
         isOpen
-        toastInstance={{ type: 'info', content: <p>test</p> }}
+        toastInstance={{ type: 'info', content: <p>test</p>, onDismiss: mockOnDismiss }}
       />
     );
-    const { dismissToast } = component.find(Toast).props();
-    expect(typeof dismissToast).toBe('function');
+    const { onDismiss } = component.find(Toast).props();
+    expect(typeof onDismiss).toBe('function');
   });
 });

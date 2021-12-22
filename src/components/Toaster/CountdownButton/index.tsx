@@ -4,8 +4,7 @@ import FDS from 'dictionary/js/styleConstants';
 import IconButton from 'components/IconButton';
 import DenyIcon from 'icons/react/DenyIcon';
 import Icon from 'components/Icon';
-
-interface CircleInfo {
+export interface CircleInfo {
   radius: number;
   circumference: number;
   centerOffset: number;

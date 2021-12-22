@@ -15,8 +15,6 @@ export interface ToasterProps {
   /** Should this toast auto-dismiss itself? */
   isAutoDismiss?: boolean;
 
-  onDismiss?: (...args: unknown[]) => void;
-
   /** Controls the display for your specific toast. */
   toastInstance?: ToastProps;
 }
@@ -24,7 +22,6 @@ export interface ToasterProps {
 export const Toaster = ({
   isAutoDismiss = true,
   isOpen = false,
-  onDismiss,
   toastInstance = {
     content: null,
   },
@@ -37,9 +34,12 @@ export const Toaster = ({
       isAutoDismiss &&
       toastInstance.type !== 'progress' &&
       toastInstance.canDismiss !== false &&
-      onDismiss
+      toastInstance.onDismiss
     ) {
-      const timer = setTimeout(() => onDismiss(), dismissDelay);
+      const timer = setTimeout(
+        () => toastInstance.onDismiss && toastInstance.onDismiss(),
+        dismissDelay
+      );
 
       return function cleanup() {
         clearTimeout(timer);
@@ -53,7 +53,7 @@ export const Toaster = ({
     isAutoDismiss,
     toastInstance.type,
     toastInstance.canDismiss,
-    onDismiss,
+    toastInstance.onDismiss,
   ]);
 
   return (
@@ -71,7 +71,7 @@ export const Toaster = ({
               <Toast
                 dismissDelay={dismissDelay}
                 isAutoDismiss={isAutoDismiss}
-                dismissToast={onDismiss}
+                onDismiss={toastInstance.onDismiss}
                 content={toastInstance.content}
                 type={toastInstance.type}
                 progress={toastInstance.progress}
@@ -88,7 +88,7 @@ export const Toaster = ({
   );
 };
 
-const ToasterWrapper = (props: ToasterProps): React.ReactNode =>
+const ToasterWrapper = (props: ToasterProps): JSX.Element =>
   ReactDOM.createPortal(
     <Toaster {...props} />,
     // eslint-disable-next-line no-undef
