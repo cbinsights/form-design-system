@@ -1,21 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import useClipboard from 'util/storybook-docs/useClipboard';
 import ReactMarkdown from 'react-markdown';
 import cc from 'classcat';
 
-export const Table = (props) => (
+export interface TableProps {
+  children?: React.ReactNode;
+  shrinkLastColumn?: boolean;
+}
+
+export const Table = (props: TableProps): JSX.Element => (
   <table className={`doctable ${props.shrinkLastColumn ? 'shrinkLastColumn' : ''}`}>
     {props.children}
   </table>
 );
 
-Table.propTypes = {
-  children: PropTypes.node,
-  shrinkLastColumn: PropTypes.bool,
-};
+export interface TableCellProps {
+  children?: React.ReactNode;
+  copy?: boolean;
+  isCSS?: boolean;
+}
 
-export const TableCell = ({ children, isCSS, copy, ...props }) => {
+export const TableCell = ({
+  children,
+  isCSS,
+  copy,
+  ...props
+}: TableCellProps): JSX.Element => {
   const [copiedText, copyToClipboard] = useClipboard();
   return (
     <td
@@ -25,8 +35,10 @@ export const TableCell = ({ children, isCSS, copy, ...props }) => {
           hasCSS: isCSS,
         },
       ])}
-      onClick={(e) => {
-        copyToClipboard(e.currentTarget.firstElementChild.innerText.trim());
+      onClick={(e: React.MouseEvent<HTMLTableCellElement>) => {
+        if (e.currentTarget.firstElementChild?.textContent) {
+          copyToClipboard(e.currentTarget.firstElementChild.textContent.trim());
+        }
       }}
       {...props}
     >
@@ -42,13 +54,11 @@ export const TableCell = ({ children, isCSS, copy, ...props }) => {
   );
 };
 
-TableCell.propTypes = {
-  children: PropTypes.node,
-  copy: PropTypes.bool,
-  isCSS: PropTypes.bool,
-};
+export interface TableHeadLayoutProps {
+  headers?: Array<string | number>;
+}
 
-const TableHeadLayout = ({ headers = [] }) => (
+const TableHeadLayout = ({ headers = [] }: TableHeadLayoutProps): JSX.Element => (
   <thead>
     <tr>
       {headers.map((header) => (
@@ -58,9 +68,14 @@ const TableHeadLayout = ({ headers = [] }) => (
   </thead>
 );
 
-TableHeadLayout.propTypes = {
-  headers: PropTypes.array,
-};
+export interface TableLayoutProps {
+  rows?: Array<Array<React.ReactNode | object>>;
+  headers?: Array<string | number>;
+  copy?: boolean;
+  shrinkLastColumn?: boolean;
+  /* controls whether we consider the first column of a table to be CSS classes */
+  isCSS?: boolean;
+}
 
 export const TableLayout = ({
   headers,
@@ -68,7 +83,7 @@ export const TableLayout = ({
   rows = [],
   isCSS,
   copy = true,
-}) => (
+}: TableLayoutProps): JSX.Element => (
   <Table shrinkLastColumn={shrinkLastColumn}>
     <TableHeadLayout headers={headers} />
     <tbody>
@@ -88,14 +103,5 @@ export const TableLayout = ({
     </tbody>
   </Table>
 );
-
-TableLayout.propTypes = {
-  rows: PropTypes.array,
-  headers: PropTypes.array,
-  copy: PropTypes.bool,
-  shrinkLastColumn: PropTypes.bool,
-  /* controls whether we consider the first column of a table to be CSS classes */
-  isCSS: PropTypes.bool,
-};
 
 export default Table;
