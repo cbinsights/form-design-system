@@ -11,7 +11,7 @@
 const { exec } = require('child_process');
 const path = require('path');
 const { sketchConfig, buildConfig } = require('./icons.config');
-const cleanExports = require('./helpers/cleanExports');
+const { cleanExports } = require('./helpers/cleanExports');
 
 if (!process.argv[2]) {
   throw new Error('Path to sketch file missing');
