@@ -50,6 +50,12 @@ export interface TextInputProps {
   /** Specify width of label (useful for when label is positioned to left */
   labelWidth?: string;
 
+  /** callback for input focus */
+  onFocus?: () => void;
+
+  /** regexp that the input element's value is checked against */
+  pattern?: string;
+
   showRequired?: boolean;
   showLabel?: boolean;
   placeholder?: string;
