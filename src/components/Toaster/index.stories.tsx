@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { v4 } from 'uuid';
 
-import { Toaster } from 'components/Toaster';
+import { Toaster, ToasterProps } from 'components/Toaster';
 import Toast from './Toast';
 
-export const Primary = (args) => {
+export const Primary = (args: ToasterProps): JSX.Element => {
   const [isToastShowing, setIsToastShowing] = useState(false);
   return (
     <>
@@ -14,9 +14,9 @@ export const Primary = (args) => {
       <Toaster
         {...args}
         isOpen={isToastShowing}
+        onDismiss={() => setIsToastShowing(false)}
         toastInstance={{
           content: 'hey',
-          onDismiss: () => setIsToastShowing(false),
           type: 'info',
           progress: 42,
           dismissOnAction: true,
@@ -27,15 +27,26 @@ export const Primary = (args) => {
   );
 };
 
-export const Playground = () => {
-  const defaults = { id: v4(), isOpen: false, isAutoDismiss: true, toastInstance: {} };
+export const Playground = (): JSX.Element => {
+  const defaults: ToasterProps = {
+    id: v4(),
+    isOpen: false,
+    isAutoDismiss: true,
+    toastInstance: { content: null },
+  };
   const [params, setParams] = useState(defaults);
   const dismissToast = () => {
     setParams({ ...params, isOpen: false });
   };
   const randomNum = () => Math.floor(Math.random() * 100);
 
-  const { id, isOpen, toastInstance, isAutoDismiss, actionLabel } = params;
+  const {
+    id,
+    isOpen,
+    toastInstance,
+    isAutoDismiss,
+    toastInstance: { actionLabel },
+  } = params;
   return (
     <div className="padding--all">
       <h4>Core:</h4>
@@ -234,8 +245,8 @@ export const Playground = () => {
         id={id}
         isOpen={isOpen}
         isAutoDismiss={isAutoDismiss}
+        onDismiss={dismissToast}
         toastInstance={{
-          onDismiss: dismissToast,
           actionLabel: toastInstance.actionLabel,
           progress: toastInstance.progress,
           type: toastInstance.type,
@@ -255,7 +266,7 @@ Playground.parameters = {
   },
 };
 
-export const Variations = () => (
+export const Variations = (): JSX.Element => (
   <React.Fragment>
     <Toast
       content={
