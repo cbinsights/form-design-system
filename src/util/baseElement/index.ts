@@ -10,7 +10,7 @@ import React from 'react';
 interface BaseElementArgs {
   href?: string;
   onClick?: boolean | React.MouseEventHandler | (() => void);
-  as?: React.ElementType;
+  as?: any;
 }
 
 const baseElement = ({ href, onClick, as }: BaseElementArgs): any => {

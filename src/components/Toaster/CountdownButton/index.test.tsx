@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import CountdownButton, { getCircleInfo } from '.';
+import CountdownButton, { CountdownButtonProps, getCircleInfo, CircleInfo } from '.';
 
-const renderComponent = (props) => shallow(<CountdownButton {...props} />);
+const renderComponent = (props: CountdownButtonProps) =>
+  shallow(<CountdownButton {...props} />);
 
 const MOCK_PROPS = { duration: 666 };
 
@@ -15,9 +16,9 @@ describe('CountdownButton', () => {
 
   it('calculates circle dimensions correctly', () => {
     const actual = getCircleInfo(90, 10);
-    const expected = {
-      r: 40,
-      c: Math.PI * 40 * 2,
+    const expected: CircleInfo = {
+      radius: 40,
+      circumference: Math.PI * 40 * 2,
       centerOffset: 45,
     };
 
