@@ -14,32 +14,32 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const rimraf = require('rimraf');
-const pascalCase = require('pascal-case');
+const { pascalCase } = require('pascal-case');
 const { sketchConfig, buildConfig } = require('../icons.config');
+
+const normalizePathToFile = (file) => {
+  console.log(file);
+  const ext = file.split('.')[1];
+  let result = `${pascalCase(path.basename(file, ext))}.${ext}`;
+  if (ext === 'png') {
+    result = result.replace('_', '@'); // use standard PNG scale convention
+  }
+  return result;
+};
 
 /**
  * Moves files from `filePaths` arr one by one to a new destination and
- * normalizes file names to PascalCase.
+ * normalizes file names
  *
  * @param {Array} filePaths absolute paths to all svgs exported from sketch
  * @param {String} destination desired destination for cleaned up exports
  * @param {Function} cbFn callback when move is complete
  */
 const moveFiles = (filePaths, destination, cbFn) => {
-  const ext = filePaths[0].split('.')[1];
-
-  const fileNames = filePaths.map((filePath) => {
-    let result = `${pascalCase(path.basename(filePath, ext))}.${ext}`;
-    if (ext === 'png') {
-      result = result.replace('_', '@'); // use standard PNG scale convention
-    }
-    return result;
+  filePaths.forEach((filePath) => {
+    const file = normalizePathToFile(filePath);
+    fs.renameSync(filePath, `${destination}/${file}`);
   });
-
-  filePaths.forEach((filePath, i) => {
-    fs.renameSync(filePath, `${destination}/${fileNames[i]}`);
-  });
-
   cbFn();
 };
 
@@ -65,4 +65,7 @@ const cleanExports = (ext) => {
   });
 };
 
-module.exports = cleanExports;
+module.exports = {
+  cleanExports,
+  normalizePathToFile,
+};
