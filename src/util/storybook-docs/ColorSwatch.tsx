@@ -2,6 +2,7 @@ import React from 'react';
 import { mostReadable } from 'tinycolor2';
 import useClipboard from 'util/storybook-docs/useClipboard';
 import cc from 'classcat';
+import { noop } from 'util/index';
 
 export interface ColorSwatchProps {
   name?: string;
@@ -22,7 +23,7 @@ export interface CopyButtonProps {
 
 const CopyButton = ({ value, copyToClipboard }: CopyButtonProps): JSX.Element => (
   <button
-    onClick={() => (copyToClipboard ? copyToClipboard((value = '')) : null)}
+    onClick={() => (copyToClipboard ? copyToClipboard((value = '')) : noop)}
     className="swatchContainer-copyButton"
   >
     {value}
