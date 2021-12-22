@@ -94,6 +94,8 @@ import LinkedinFilledIcon from './LinkedinFilledIcon';
 import LockIcon from './LockIcon';
 import MAIcon from './MAIcon';
 import MarketMapIcon from './MarketMapIcon';
+import MenuCloseIcon from './MenuCloseIcon';
+import MenuOpenIcon from './MenuOpenIcon';
 import MinusIcon from './MinusIcon';
 import MoreIcon from './MoreIcon';
 import MoveIcon from './MoveIcon';
@@ -268,6 +270,8 @@ export {
   LockIcon,
   MAIcon,
   MarketMapIcon,
+  MenuCloseIcon,
+  MenuOpenIcon,
   MinusIcon,
   MoreIcon,
   MoveIcon,

@@ -4038,7 +4038,7 @@ __metadata:
     "@types/prettier": 2.4.2
     "@types/prop-types": 15.7.4
     "@types/raf-schd": 4.0.1
-    "@types/react": 16.14.21
+    "@types/react": 17.0.37
     "@types/react-dom": 17.0.6
     "@types/react-is": 17.0.3
     "@types/react-transition-group": 4.4.4
@@ -4103,7 +4103,7 @@ __metadata:
     react-popper: 2.2.4
     react-transition-group: 4.4.1
     rimraf: 3.0.2
-    semantic-release: 18.0.0
+    semantic-release: 18.0.1
     snake-case: 3.0.4
     style-dictionary: 3.1.1
     style-loader: 1.3.0
@@ -4113,7 +4113,7 @@ __metadata:
     svg-to-jsx: 1.0.4
     svgo: 1.3.2
     tinycolor2: 1.4.2
-    ts-migrate: 0.1.26
+    ts-migrate: 0.1.27
     typescript: 4.5.4
     util: "link:./src/util"
     uuid: 8.3.2
@@ -5478,20 +5478,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/commit-analyzer@npm:^9.0.0":
-  version: 9.0.1
-  resolution: "@semantic-release/commit-analyzer@npm:9.0.1"
+"@semantic-release/commit-analyzer@npm:^9.0.2":
+  version: 9.0.2
+  resolution: "@semantic-release/commit-analyzer@npm:9.0.2"
   dependencies:
     conventional-changelog-angular: ^5.0.0
     conventional-commits-filter: ^2.0.0
-    conventional-commits-parser: ^3.0.7
+    conventional-commits-parser: ^3.2.3
     debug: ^4.0.0
     import-from: ^4.0.0
     lodash: ^4.17.4
     micromatch: ^4.0.2
   peerDependencies:
     semantic-release: ">=18.0.0-beta.1"
-  checksum: 4b38f235c7f3c424717693663e7ceac48319687b62d0a28429d04f03add183632fb64905847bdc499d0cee306b8d5e228018a0b495d260c09fd9f1209c40c100
+  checksum: f7f759e608c0c044ba8ec1b3aabad4305ac057cc45156b60a2f8dc355f5193b84ff7c661aefd4522659172f4d6ecf80219b8b28714bd76e4eb32e734b2e6ead9
   languageName: node
   linkType: hard
 
@@ -7480,14 +7480,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:16.14.21":
-  version: 16.14.21
-  resolution: "@types/react@npm:16.14.21"
+"@types/react@npm:17.0.37":
+  version: 17.0.37
+  resolution: "@types/react@npm:17.0.37"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 9660ea0a2c7ad364295c1e5abd6b98a05fd372a0f06f97850f60fcc254bcec766d19b101c0acc382746a4e0b71848d88097a1db7124e3fd441c0472fb6b3f849
+  checksum: e68b0d59aa69577fc6a6d654b25d5d8408625498f4c483f160b557fac21e840f6e8807cbde93e9f039949b6d624a019b1990d18499c1d65aecf3605c25e30242
   languageName: node
   linkType: hard
 
@@ -10580,7 +10580,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-convert@npm:^1.8.2, color-convert@npm:^1.9.0, color-convert@npm:^1.9.1":
+"color-convert@npm:^1.8.2, color-convert@npm:^1.9.0, color-convert@npm:^1.9.3":
   version: 1.9.3
   resolution: "color-convert@npm:1.9.3"
   dependencies:
@@ -10612,13 +10612,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-string@npm:^1.4.0, color-string@npm:^1.5.2":
+"color-string@npm:^1.4.0":
   version: 1.6.0
   resolution: "color-string@npm:1.6.0"
   dependencies:
     color-name: ^1.0.0
     simple-swizzle: ^0.2.2
   checksum: 33466a65277dd3d4ce24ef1991b47069292f75d1a43b0d2e7ea43076ba793728e965d50deed2b523f35519f4995a908253fcbcc774baceae8e439bc78c02e850
+  languageName: node
+  linkType: hard
+
+"color-string@npm:^1.6.0":
+  version: 1.9.0
+  resolution: "color-string@npm:1.9.0"
+  dependencies:
+    color-name: ^1.0.0
+    simple-swizzle: ^0.2.2
+  checksum: 93c6678b847f8cfa47d19677fd19e1d4b19d7a33f100644400357c298266080b5bca64e5f874fa8ac8cc0aa0606ad44f7a838b4e6fd05e6affea190a68555bb4
   languageName: node
   linkType: hard
 
@@ -10642,12 +10652,12 @@ __metadata:
   linkType: hard
 
 "color@npm:^3.0.0":
-  version: 3.1.2
-  resolution: "color@npm:3.1.2"
+  version: 3.2.1
+  resolution: "color@npm:3.2.1"
   dependencies:
-    color-convert: ^1.9.1
-    color-string: ^1.5.2
-  checksum: 58ab3bf57d5acf95917045cac30db57fa8f8c0e92b8d54f2adaf5e843bb17abe0914809bd44b34b9747e6e08a2f0126adc7964e1ca45fe8948f44aad04e853c9
+    color-convert: ^1.9.3
+    color-string: ^1.6.0
+  checksum: f81220e8b774d35865c2561be921f5652117638dcda7ca4029262046e37fc2444ac7bbfdd110cf1fd9c074a4ee5eda8f85944ffbdda26186b602dd9bb05f6400
   languageName: node
   linkType: hard
 
@@ -10944,7 +10954,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-commits-parser@npm:^3.0.0, conventional-commits-parser@npm:^3.0.7, conventional-commits-parser@npm:^3.2.2":
+"conventional-commits-parser@npm:^3.0.0, conventional-commits-parser@npm:^3.2.2, conventional-commits-parser@npm:^3.2.3":
   version: 3.2.3
   resolution: "conventional-commits-parser@npm:3.2.3"
   dependencies:
@@ -12311,21 +12321,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dot-prop@npm:^5.1.0":
+"dot-prop@npm:^5.1.0, dot-prop@npm:^5.2.0":
   version: 5.3.0
   resolution: "dot-prop@npm:5.3.0"
   dependencies:
     is-obj: ^2.0.0
   checksum: d5775790093c234ef4bfd5fbe40884ff7e6c87573e5339432870616331189f7f5d86575c5b5af2dcf0f61172990f4f734d07844b1f23482fff09e3c4bead05ea
-  languageName: node
-  linkType: hard
-
-"dot-prop@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "dot-prop@npm:5.2.0"
-  dependencies:
-    is-obj: ^2.0.0
-  checksum: 709a8208bff4fc4d5a11e357957a9e59ed625d7db909d14ea1e0dbeb30d26c25325a6e64ea27ed96fb17978cc13c7e38cf30bac17bb81eb9b5a740a4fe909a87
   languageName: node
   linkType: hard
 
@@ -20695,13 +20696,13 @@ __metadata:
   linkType: hard
 
 "postcss-calc@npm:^7.0.1":
-  version: 7.0.3
-  resolution: "postcss-calc@npm:7.0.3"
+  version: 7.0.5
+  resolution: "postcss-calc@npm:7.0.5"
   dependencies:
     postcss: ^7.0.27
     postcss-selector-parser: ^6.0.2
     postcss-value-parser: ^4.0.2
-  checksum: d308469058239b9d6eb0f03d25b8f95f54e8d6b205d5d7d1b99eb0afac2c203a3a750e16489bb7304c5978cde8399945262fb82a4e464eb77f6713344485318a
+  checksum: 03640d493fb0e557634ab23e5d1eb527b014fb491ac3e62b45e28f5a6ef57e25a209f82040ce54c40d5a1a7307597a55d3fa6e8cece0888261a66bc75e39a68b
   languageName: node
   linkType: hard
 
@@ -23475,11 +23476,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:18.0.0":
-  version: 18.0.0
-  resolution: "semantic-release@npm:18.0.0"
+"semantic-release@npm:18.0.1":
+  version: 18.0.1
+  resolution: "semantic-release@npm:18.0.1"
   dependencies:
-    "@semantic-release/commit-analyzer": ^9.0.0
+    "@semantic-release/commit-analyzer": ^9.0.2
     "@semantic-release/error": ^3.0.0
     "@semantic-release/github": ^8.0.0
     "@semantic-release/npm": ^8.0.0
@@ -23509,7 +23510,7 @@ __metadata:
     yargs: ^16.2.0
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 3fee100afea9f5285329a782ba7d89b4119ac164dec12f746eb905ff9cd06e69a117911400b005060db7860612a28eb7b96e5ae5fbd8e1119659b6474b6a5693
+  checksum: e99634d2fd392d007cd83cc28318cd4b0781825b550e75486676941b8f67a32c1b907c53de2761440b38ead220629cc3778c22373aacce4ee291dba43971b0d6
   languageName: node
   linkType: hard
 
@@ -25303,42 +25304,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-migrate-plugins@npm:^0.1.26":
-  version: 0.1.26
-  resolution: "ts-migrate-plugins@npm:0.1.26"
+"ts-migrate-plugins@npm:^0.1.27":
+  version: 0.1.27
+  resolution: "ts-migrate-plugins@npm:0.1.27"
   dependencies:
     eslint: ^7.14.0
     jscodeshift: ^0.13.0
     json-schema: ^0.3.0
-    ts-migrate-server: ^0.1.26
+    ts-migrate-server: ^0.1.27
   peerDependencies:
     typescript: ">4.0"
-  checksum: c224f6b9104cd576f923fb4dd709dcbee17b2d7a61a4f1aeb7e2ac21c4d2e78136ef6e85fc2a77b5224fe4ecf96c7ffeba54f0d76e8f7fa14a669d38661549d6
+  checksum: 1edbde90f549a6b4eb66d926631b306f0f7e0c592993e88c3d40b70418748ba79d26956a4761eb64620089609b2fe0f68c71c502aefa2f7c29ee9c7015c8059a
   languageName: node
   linkType: hard
 
-"ts-migrate-server@npm:^0.1.26":
-  version: 0.1.26
-  resolution: "ts-migrate-server@npm:0.1.26"
+"ts-migrate-server@npm:^0.1.27":
+  version: 0.1.27
+  resolution: "ts-migrate-server@npm:0.1.27"
   dependencies:
     "@ts-morph/bootstrap": ^0.9.1
     pretty-ms: ^7.0.1
     updatable-log: ^0.2.0
   peerDependencies:
     typescript: ">4.0"
-  checksum: 135f9dbf3bfd34b46e65f1650e616672aa2405c1cffc3fff4d48a83d8fbb4c1e6f0e6f40552a03908708bf5c349bd0584cb9b24e4e2a94c2208c987e6f7d8980
+  checksum: 8f22833785962072bcacb847abaa9c3a4e970cfc3d31633a4df7b560e9b445012a1b8083b70f2846e7adffa8240ca5b08d167636c809bc5745bdf46827179bcc
   languageName: node
   linkType: hard
 
-"ts-migrate@npm:0.1.26":
-  version: 0.1.26
-  resolution: "ts-migrate@npm:0.1.26"
+"ts-migrate@npm:0.1.27":
+  version: 0.1.27
+  resolution: "ts-migrate@npm:0.1.27"
   dependencies:
     create-jest-runner: ^0.5.3
     json5: ^2.1.1
     json5-writer: ^0.1.8
-    ts-migrate-plugins: ^0.1.26
-    ts-migrate-server: ^0.1.26
+    ts-migrate-plugins: ^0.1.27
+    ts-migrate-server: ^0.1.27
     updatable-log: ^0.2.0
     yargs: ^15.0.2
   peerDependencies:
@@ -25346,7 +25347,7 @@ __metadata:
   bin:
     ts-migrate: build/cli.js
     ts-migrate-full: bin/ts-migrate-full.sh
-  checksum: e6122c65268f3a2378237704321265ba267925812b60e85c622d171a2bcc865fac998fb39957f01d0bce749f203514e61047ea62a2594fb460888acaf15814b6
+  checksum: 85b67afaabe8836b1cf5d1b7da549a85b6ad2efa4e9012c90f4ef81181f653cf45d2697121aeb9338df011cb1bebb900dca9eb223bb32c0b6ac5b8ec8453c5ad
   languageName: node
   linkType: hard
 
