@@ -21,9 +21,9 @@ export interface CopyButtonProps {
   copyToClipboard?: (arg: string) => void;
 }
 
-const CopyButton = ({ value, copyToClipboard }: CopyButtonProps): JSX.Element => (
+const CopyButton = ({ value, copyToClipboard = noop }: CopyButtonProps): JSX.Element => (
   <button
-    onClick={() => (copyToClipboard ? copyToClipboard((value = '')) : noop)}
+    onClick={() => copyToClipboard((value = ''))}
     className="swatchContainer-copyButton"
   >
     {value}
