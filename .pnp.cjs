@@ -112,7 +112,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["classcat", "npm:5.0.3"],
             ["commitizen", "npm:4.2.4"],
             ["components", "link:./src/components::locator=%40cbinsights%2Ffds%40workspace%3A."],
-            ["css", "npm:2.2.4"],
+            ["css", "npm:3.0.0"],
             ["cssnano", "npm:4.1.11"],
             ["cz-conventional-changelog", "npm:3.3.0"],
             ["d3-scale", "npm:3.3.0"],
@@ -7613,7 +7613,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["classcat", "npm:5.0.3"],
             ["commitizen", "npm:4.2.4"],
             ["components", "link:./src/components::locator=%40cbinsights%2Ffds%40workspace%3A."],
-            ["css", "npm:2.2.4"],
+            ["css", "npm:3.0.0"],
             ["cssnano", "npm:4.1.11"],
             ["cz-conventional-changelog", "npm:3.3.0"],
             ["d3-scale", "npm:3.3.0"],
@@ -17111,17 +17111,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["css", [
-        ["npm:2.2.4", {
-          "packageLocation": "./.yarn/cache/css-npm-2.2.4-2a363d6a5d-a35d483c5c.zip/node_modules/css/",
-          "packageDependencies": [
-            ["css", "npm:2.2.4"],
-            ["inherits", "npm:2.0.4"],
-            ["source-map", "npm:0.6.1"],
-            ["source-map-resolve", "npm:0.5.3"],
-            ["urix", "npm:0.1.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:3.0.0", {
           "packageLocation": "./.yarn/cache/css-npm-3.0.0-ef426b63b3-4273ac816d.zip/node_modules/css/",
           "packageDependencies": [
