@@ -253,7 +253,11 @@ const Popover = React.forwardRef<HTMLElement, PopoverProps>(
       >
         <Popper
           innerRef={(node) => {
-            (refContent as MutableRefObject<HTMLElement>).current = node;
+            if (typeof refContent === 'function') {
+              refContent(node);
+            } else {
+              (refContent as MutableRefObject<HTMLElement>).current = node;
+            }
           }}
           modifiers={popperModifiers}
           placement={getPopperPlacement(position, alignment)}

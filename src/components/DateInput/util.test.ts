@@ -1,4 +1,4 @@
-import { getYearRange, isValidUserDate } from './util.js';
+import { getYearRange, isValidUserDate } from './util';
 
 describe('DateInput utils', () => {
   describe('getYearRange', () => {
