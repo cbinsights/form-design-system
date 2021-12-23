@@ -4074,7 +4074,7 @@ __metadata:
     eslint-plugin-jest: 25.3.0
     eslint-plugin-react: 7.28.0
     eslint-plugin-storybook: 0.5.5
-    focus-trap-react: 8.3.2
+    focus-trap-react: 8.9.0
     fs-extra: 10.0.0
     glob: 7.2.0
     handlebars: 4.7.7
@@ -14039,25 +14039,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"focus-trap-react@npm:8.3.2":
-  version: 8.3.2
-  resolution: "focus-trap-react@npm:8.3.2"
+"focus-trap-react@npm:8.9.0":
+  version: 8.9.0
+  resolution: "focus-trap-react@npm:8.9.0"
   dependencies:
-    focus-trap: ^6.2.2
+    focus-trap: ^6.7.1
   peerDependencies:
     prop-types: ^15.7.2
     react: ">=16.0.0"
     react-dom: ">=16.0.0"
-  checksum: 2576b9d72a5db223c6908e5b4792541fc4db7693613ae27089850ac3476bf64ca8539e88328920a20423af0e30ebed707e9d9808d48932161c230c439d3bd74b
+  checksum: 94fd2f55b5622256ff9b65650af4dff4615b61cc41efa60fc073670ef5f38c9044130b5c83cdee291d21b7c90ff0595d19103a8e7490be9fd7ddb841cc2ae689
   languageName: node
   linkType: hard
 
-"focus-trap@npm:^6.2.2":
-  version: 6.2.3
-  resolution: "focus-trap@npm:6.2.3"
+"focus-trap@npm:^6.7.1":
+  version: 6.7.1
+  resolution: "focus-trap@npm:6.7.1"
   dependencies:
-    tabbable: ^5.1.4
-  checksum: f2046d67ad2b19c7138187ff3df9c467634f69d2dad80716db589463ed35fe685fb497cff44a10a695fc1e305f01127ad68ddbe05c7c9dcf64972e250021cbcc
+    tabbable: ^5.2.1
+  checksum: b96c54a6a2976f8509ed8447ce3a8b76db3801b9c170f278f60b0c878478f2bb2ebc6dbe3ccd7157006b9a7ad9a86c18283efff0f3e387e29ba3ea89d8687b9c
   languageName: node
   linkType: hard
 
@@ -24922,10 +24922,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tabbable@npm:^5.1.4":
-  version: 5.1.5
-  resolution: "tabbable@npm:5.1.5"
-  checksum: cb6e58dd4e1822c71efb1e8866bb838d27fc7b1885f153838974ed783c1d0f94aac37dd8810054ee566cdc46f55e6fba24f72c23a6d390e62edddb3b1733ce12
+"tabbable@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "tabbable@npm:5.2.1"
+  checksum: d26e9eeb880c4c78b59244bac2c931ad46f6c64a01e5c15ba6da348dc86442222912733846a9e63373342a81fa15d4afb31267606b38431510d10b0fb9ec9bba
   languageName: node
   linkType: hard
 
