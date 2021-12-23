@@ -17,6 +17,7 @@ import {
   DropdownButton,
   Radio,
   DateInput,
+  Popover,
 } from '@cbinsights/fds/lib/components';
 
 function App() {
@@ -43,6 +44,22 @@ function App() {
       <Radio name="radio group" label="radio" />
 
       <DateInput />
+
+      <Popover
+        transitionName="GrowFast"
+        trigger={
+          <div className="margin--bottom">
+            <Button label="show popover" />
+          </div>
+        }
+      >
+        <div
+          className="padding--all"
+          style={{ outline: '3px dotted red', background: '#FFFFFF' }}
+        >
+          popover content
+        </div>
+      </Popover>
     </div>
   );
 }
