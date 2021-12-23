@@ -4100,7 +4100,7 @@ __metadata:
     react-hook-form: 7.22.3
     react-is: 16.13.1
     react-markdown: 4.3.1
-    react-popper: 2.2.4
+    react-popper: 2.2.5
     react-transition-group: 4.4.2
     rimraf: 3.0.2
     semantic-release: 18.0.1
@@ -22352,7 +22352,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-popper@npm:2.2.4, react-popper@npm:^2.2.4":
+"react-popper@npm:2.2.5":
+  version: 2.2.5
+  resolution: "react-popper@npm:2.2.5"
+  dependencies:
+    react-fast-compare: ^3.0.1
+    warning: ^4.0.2
+  peerDependencies:
+    "@popperjs/core": ^2.0.0
+    react: ^16.8.0 || ^17
+  checksum: 915fcf08e1da4fd48a200074fcdd936f601ee2173f1e730cfed8a54fd47716aa8bf9cce2392463e3bcbe64a096d0baf463809ed2874b94d3a9d430ae6d817b5d
+  languageName: node
+  linkType: hard
+
+"react-popper@npm:^2.2.4":
   version: 2.2.4
   resolution: "react-popper@npm:2.2.4"
   dependencies:
