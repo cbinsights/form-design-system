@@ -43,7 +43,11 @@ export const TableCell = ({
       {...props}
     >
       <div style={{ width: '100%' }}>
-        {typeof children === 'string' ? <ReactMarkdown source={children} /> : children}
+        {typeof children === 'string' ? (
+          <ReactMarkdown>{children}</ReactMarkdown>
+        ) : (
+          children
+        )}
       </div>
       {copy && (
         <span className="cliptext">
