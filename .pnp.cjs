@@ -115,7 +115,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["css", "npm:3.0.0"],
             ["cssnano", "npm:4.1.11"],
             ["cz-conventional-changelog", "npm:3.3.0"],
-            ["d3-scale", "npm:3.3.0"],
+            ["d3-scale", "npm:4.0.2"],
             ["dayjs", "npm:1.10.7"],
             ["dictionary", "link:./src/dictionary::locator=%40cbinsights%2Ffds%40workspace%3A."],
             ["enzyme", "npm:3.11.0"],
@@ -7616,7 +7616,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["css", "npm:3.0.0"],
             ["cssnano", "npm:4.1.11"],
             ["cz-conventional-changelog", "npm:3.3.0"],
-            ["d3-scale", "npm:3.3.0"],
+            ["d3-scale", "npm:4.0.2"],
             ["dayjs", "npm:1.10.7"],
             ["dictionary", "link:./src/dictionary::locator=%40cbinsights%2Ffds%40workspace%3A."],
             ["enzyme", "npm:3.11.0"],
@@ -17857,87 +17857,73 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["d3-array", [
-        ["npm:2.12.1", {
-          "packageLocation": "./.yarn/cache/d3-array-npm-2.12.1-104e51ecda-97853b7b52.zip/node_modules/d3-array/",
+        ["npm:3.1.1", {
+          "packageLocation": "./.yarn/cache/d3-array-npm-3.1.1-2bf9c13a24-bb1a76d2da.zip/node_modules/d3-array/",
           "packageDependencies": [
-            ["d3-array", "npm:2.12.1"],
-            ["internmap", "npm:1.0.1"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:2.9.1", {
-          "packageLocation": "./.yarn/cache/d3-array-npm-2.9.1-aa60466469-1b0846d3f3.zip/node_modules/d3-array/",
-          "packageDependencies": [
-            ["d3-array", "npm:2.9.1"]
+            ["d3-array", "npm:3.1.1"],
+            ["internmap", "npm:2.0.3"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["d3-color", [
-        ["npm:2.0.0", {
-          "packageLocation": "./.yarn/cache/d3-color-npm-2.0.0-e7f04a5d87-b887354aa3.zip/node_modules/d3-color/",
+        ["npm:3.0.1", {
+          "packageLocation": "./.yarn/cache/d3-color-npm-3.0.1-bea992b889-5096af3bd3.zip/node_modules/d3-color/",
           "packageDependencies": [
-            ["d3-color", "npm:2.0.0"]
+            ["d3-color", "npm:3.0.1"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["d3-format", [
-        ["npm:2.0.0", {
-          "packageLocation": "./.yarn/cache/d3-format-npm-2.0.0-74628e435e-c4d3c8f994.zip/node_modules/d3-format/",
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/d3-format-npm-3.1.0-dfc19924ca-f345ec3b8a.zip/node_modules/d3-format/",
           "packageDependencies": [
-            ["d3-format", "npm:2.0.0"]
+            ["d3-format", "npm:3.1.0"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["d3-interpolate", [
-        ["npm:2.0.1", {
-          "packageLocation": "./.yarn/cache/d3-interpolate-npm-2.0.1-7e198300b3-4a2018ac34.zip/node_modules/d3-interpolate/",
+        ["npm:3.0.1", {
+          "packageLocation": "./.yarn/cache/d3-interpolate-npm-3.0.1-77ddca7977-a42ba314e2.zip/node_modules/d3-interpolate/",
           "packageDependencies": [
-            ["d3-interpolate", "npm:2.0.1"],
-            ["d3-color", "npm:2.0.0"]
+            ["d3-interpolate", "npm:3.0.1"],
+            ["d3-color", "npm:3.0.1"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["d3-scale", [
-        ["npm:3.3.0", {
-          "packageLocation": "./.yarn/cache/d3-scale-npm-3.3.0-6a8f0391dc-f77e73f0fb.zip/node_modules/d3-scale/",
+        ["npm:4.0.2", {
+          "packageLocation": "./.yarn/cache/d3-scale-npm-4.0.2-d17a53447b-a9c770d283.zip/node_modules/d3-scale/",
           "packageDependencies": [
-            ["d3-scale", "npm:3.3.0"],
-            ["d3-array", "npm:2.9.1"],
-            ["d3-format", "npm:2.0.0"],
-            ["d3-interpolate", "npm:2.0.1"],
-            ["d3-time", "npm:2.1.1"],
-            ["d3-time-format", "npm:3.0.0"]
+            ["d3-scale", "npm:4.0.2"],
+            ["d3-array", "npm:3.1.1"],
+            ["d3-format", "npm:3.1.0"],
+            ["d3-interpolate", "npm:3.0.1"],
+            ["d3-time", "npm:3.0.0"],
+            ["d3-time-format", "npm:4.1.0"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["d3-time", [
-        ["npm:2.0.0", {
-          "packageLocation": "./.yarn/cache/d3-time-npm-2.0.0-4db6d17600-9d1c1510b1.zip/node_modules/d3-time/",
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/d3-time-npm-3.0.0-a4963e64c8-01646568ef.zip/node_modules/d3-time/",
           "packageDependencies": [
-            ["d3-time", "npm:2.0.0"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:2.1.1", {
-          "packageLocation": "./.yarn/cache/d3-time-npm-2.1.1-73fdf673f7-d1c7b9658c.zip/node_modules/d3-time/",
-          "packageDependencies": [
-            ["d3-time", "npm:2.1.1"],
-            ["d3-array", "npm:2.12.1"]
+            ["d3-time", "npm:3.0.0"],
+            ["d3-array", "npm:3.1.1"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["d3-time-format", [
-        ["npm:3.0.0", {
-          "packageLocation": "./.yarn/cache/d3-time-format-npm-3.0.0-0803464fb3-c20c1667db.zip/node_modules/d3-time-format/",
+        ["npm:4.1.0", {
+          "packageLocation": "./.yarn/cache/d3-time-format-npm-4.1.0-7f352c4634-7342bce283.zip/node_modules/d3-time-format/",
           "packageDependencies": [
-            ["d3-time-format", "npm:3.0.0"],
-            ["d3-time", "npm:2.0.0"]
+            ["d3-time-format", "npm:4.1.0"],
+            ["d3-time", "npm:3.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -22586,10 +22572,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["internmap", [
-        ["npm:1.0.1", {
-          "packageLocation": "./.yarn/cache/internmap-npm-1.0.1-658c30de3f-9d00f8c0cf.zip/node_modules/internmap/",
+        ["npm:2.0.3", {
+          "packageLocation": "./.yarn/cache/internmap-npm-2.0.3-d74f5c9998-7ca41ec6ab.zip/node_modules/internmap/",
           "packageDependencies": [
-            ["internmap", "npm:1.0.1"]
+            ["internmap", "npm:2.0.3"]
           ],
           "linkType": "HARD",
         }]
