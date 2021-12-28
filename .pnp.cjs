@@ -142,7 +142,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.1"],
             ["postcss-html", "npm:1.3.0"],
             ["postcss-import", "npm:12.0.1"],
-            ["postcss-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.2.1"],
+            ["postcss-loader", "npm:3.0.0"],
             ["postcss-preset-env", "npm:5.3.0"],
             ["prettier", "npm:2.5.1"],
             ["prop-types", "npm:15.8.0"],
@@ -7643,7 +7643,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.3.1"],
             ["postcss-html", "npm:1.3.0"],
             ["postcss-import", "npm:12.0.1"],
-            ["postcss-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.2.1"],
+            ["postcss-loader", "npm:3.0.0"],
             ["postcss-preset-env", "npm:5.3.0"],
             ["prettier", "npm:2.5.1"],
             ["prop-types", "npm:15.8.0"],
@@ -22330,6 +22330,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["import-cwd", [
+        ["npm:2.1.0", {
+          "packageLocation": "./.yarn/cache/import-cwd-npm-2.1.0-e65be8b668-b8786fa357.zip/node_modules/import-cwd/",
+          "packageDependencies": [
+            ["import-cwd", "npm:2.1.0"],
+            ["import-from", "npm:2.1.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:3.0.0", {
           "packageLocation": "./.yarn/cache/import-cwd-npm-3.0.0-2f801f964d-f2c4230e83.zip/node_modules/import-cwd/",
           "packageDependencies": [
@@ -22369,6 +22377,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["import-from", [
+        ["npm:2.1.0", {
+          "packageLocation": "./.yarn/cache/import-from-npm-2.1.0-1a73711878-91f6f89f46.zip/node_modules/import-from/",
+          "packageDependencies": [
+            ["import-from", "npm:2.1.0"],
+            ["resolve-from", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:3.0.0", {
           "packageLocation": "./.yarn/cache/import-from-npm-3.0.0-8656bfd330-5040a7400e.zip/node_modules/import-from/",
           "packageDependencies": [
@@ -24680,13 +24696,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/klona-npm-2.0.4-6bc4e7cd86-abc6690882.zip/node_modules/klona/",
           "packageDependencies": [
             ["klona", "npm:2.0.4"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:2.0.5", {
-          "packageLocation": "./.yarn/cache/klona-npm-2.0.5-5d403f2d77-8c976126ea.zip/node_modules/klona/",
-          "packageDependencies": [
-            ["klona", "npm:2.0.5"]
           ],
           "linkType": "HARD",
         }]
@@ -28674,6 +28683,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["postcss-load-config", [
+        ["npm:2.1.2", {
+          "packageLocation": "./.yarn/cache/postcss-load-config-npm-2.1.2-5372164a56-2e6d3a4995.zip/node_modules/postcss-load-config/",
+          "packageDependencies": [
+            ["postcss-load-config", "npm:2.1.2"],
+            ["cosmiconfig", "npm:5.2.1"],
+            ["import-cwd", "npm:2.1.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:3.0.0", {
           "packageLocation": "./.yarn/cache/postcss-load-config-npm-3.0.0-744be1ddf7-179838250e.zip/node_modules/postcss-load-config/",
           "packageDependencies": [
@@ -28685,39 +28703,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["postcss-loader", [
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/postcss-loader-npm-3.0.0-f4ab99b685-a6a922cbcc.zip/node_modules/postcss-loader/",
+          "packageDependencies": [
+            ["postcss-loader", "npm:3.0.0"],
+            ["loader-utils", "npm:1.4.0"],
+            ["postcss", "npm:7.0.39"],
+            ["postcss-load-config", "npm:2.1.2"],
+            ["schema-utils", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:4.3.0", {
           "packageLocation": "./.yarn/cache/postcss-loader-npm-4.3.0-3e7af086e3-b8ba29789d.zip/node_modules/postcss-loader/",
           "packageDependencies": [
             ["postcss-loader", "npm:4.3.0"]
           ],
           "linkType": "SOFT",
-        }],
-        ["npm:6.2.1", {
-          "packageLocation": "./.yarn/cache/postcss-loader-npm-6.2.1-45828eb0de-e40ae79c3e.zip/node_modules/postcss-loader/",
-          "packageDependencies": [
-            ["postcss-loader", "npm:6.2.1"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.2.1", {
-          "packageLocation": "./.yarn/__virtual__/postcss-loader-virtual-a5577156b5/0/cache/postcss-loader-npm-6.2.1-45828eb0de-e40ae79c3e.zip/node_modules/postcss-loader/",
-          "packageDependencies": [
-            ["postcss-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.2.1"],
-            ["@types/postcss", null],
-            ["@types/webpack", "npm:5.28.0"],
-            ["cosmiconfig", "npm:7.0.0"],
-            ["klona", "npm:2.0.5"],
-            ["postcss", "npm:8.4.5"],
-            ["semver", "npm:7.3.5"],
-            ["webpack", "virtual:0dc39cc4ef61d567603f290f8f6843eb6bb61bf7f813e471f2f9de7908c2b1d306c65b6fa7bbd8b0f136e208f43b13693ebd7f95d78e78267b51265185927418#npm:5.65.0"]
-          ],
-          "packagePeers": [
-            "@types/postcss",
-            "@types/webpack",
-            "postcss",
-            "webpack"
-          ],
-          "linkType": "HARD",
         }],
         ["virtual:b5e539ced6f4b3131b6ee9af1a1a78d66c13001e7f137f6b56899c524b32b9192942b70a808b0900d472d7f1d27836ee93da412d24d890b4d09c9e25247c0fc3#npm:4.3.0", {
           "packageLocation": "./.yarn/__virtual__/postcss-loader-virtual-256e885c38/0/cache/postcss-loader-npm-4.3.0-3e7af086e3-b8ba29789d.zip/node_modules/postcss-loader/",
