@@ -3997,7 +3997,7 @@ __metadata:
     "@babel/preset-react": 7.16.5
     "@babel/preset-typescript": 7.16.5
     "@babel/runtime": 7.16.5
-    "@commitlint/cli": 16.0.0
+    "@commitlint/cli": 16.0.1
     "@commitlint/config-conventional": 16.0.0
     "@commitlint/prompt": 16.0.0
     "@commitlint/prompt-cli": 16.0.0
@@ -4071,7 +4071,7 @@ __metadata:
     eslint: 8.5.0
     eslint-config-prettier: 8.3.0
     eslint-plugin-import: 2.25.3
-    eslint-plugin-jest: 25.3.0
+    eslint-plugin-jest: 25.3.2
     eslint-plugin-react: 7.28.0
     eslint-plugin-storybook: 0.5.5
     focus-trap-react: 8.9.0
@@ -4141,9 +4141,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:16.0.0":
-  version: 16.0.0
-  resolution: "@commitlint/cli@npm:16.0.0"
+"@commitlint/cli@npm:16.0.1":
+  version: 16.0.1
+  resolution: "@commitlint/cli@npm:16.0.1"
   dependencies:
     "@commitlint/format": ^16.0.0
     "@commitlint/lint": ^16.0.0
@@ -4156,7 +4156,7 @@ __metadata:
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: 203d1a02bd45e5d4ffc08359e0c4dad3866759faa8708c1d5b362e7621cd156bf387ad74c5d26c28360a9205d9669f76645118d628af23feb20ebd690bf2dadc
+  checksum: a4ec182911a6a26cd4e5ad878089075ca96c417aac538b6bb42a4e7fd9c96e1c73ef4c9034c153f017ce28bf1c2ca837f403034e6462910f4c51a383aba3d5ee
   languageName: node
   linkType: hard
 
@@ -13300,9 +13300,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:25.3.0":
-  version: 25.3.0
-  resolution: "eslint-plugin-jest@npm:25.3.0"
+"eslint-plugin-jest@npm:25.3.2":
+  version: 25.3.2
+  resolution: "eslint-plugin-jest@npm:25.3.2"
   dependencies:
     "@typescript-eslint/experimental-utils": ^5.0.0
   peerDependencies:
@@ -13313,7 +13313,7 @@ __metadata:
       optional: true
     jest:
       optional: true
-  checksum: d801c166f528392fbb0234e34b893e97c24a7be049744f2d23b1702bce6202d5f0760886a591f884ffa82c7e01a2b06134e86da991bfa568ca5a90311e5f452e
+  checksum: 2d8d2305a35efb4ee8c67794228da705d7cc83ce882dfc4fe258289c319c849f17cb6d61678519c770a20eb9740fd96e7537baf024154aff41039ac332c33ce7
   languageName: node
   linkType: hard
 
