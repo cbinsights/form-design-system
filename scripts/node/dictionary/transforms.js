@@ -1,4 +1,4 @@
-const snakeCase = require('snake-case');
+const { snakeCase } = require('snake-case');
 const { getRgbComponents } = require('./util/color');
 const { isCustomMedia, excludeCustomMedia } = require('./filters');
 
@@ -91,7 +91,7 @@ const toVarNames = (prop) => ({
  */
 const toRgbComponents = (prop) => {
   const { r, g, b } = getRgbComponents(prop.original.value);
-  return `${r}, ${g}, ${b}`;
+  return `${r} ${g} ${b}`;
 };
 
 /**
