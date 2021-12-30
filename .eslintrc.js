@@ -24,9 +24,9 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
 
     /* =========================================
-       We use "no-restricted-syntax" is used to
-      limit what gets rolled out in each stage.
-      https://cbinsights.atlassian.net/wiki/spaces/TD/pages/2379907163/Rollout+plan
+       We generally do not prefer using enums.
+       Instead, utilize union types and type
+       narrowing with `as const`.
        ========================================= */
     'no-restricted-syntax': [
       'error',
