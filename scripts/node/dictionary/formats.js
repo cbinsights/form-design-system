@@ -158,9 +158,9 @@ const formatRgbComponents = (filteredDictionary) =>
   [
     `${jsComment()}`,
     `/**
-* Use these RGB values to compose 'rgba()' colors with a custom alpha channel.
+* Use these RGB values to compose 'rgb()' colors with a custom alpha channel, using the new color function notation.
 *
-* color: rgba( var(--rgb-purple), 0.38);
+* color: rgba(var(--rgb-purple) / 38%);
 */`,
     ':root {',
     ...filteredDictionary.allProperties.map(
