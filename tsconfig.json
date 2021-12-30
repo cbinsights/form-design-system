@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
+    "rootDir": ".",
     "baseUrl": "./src",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -15,6 +15,6 @@
     "moduleResolution": "node",
     "jsx": "preserve"
   },
-  "include": ["src"],
+  "include": ["./"],
   "exclude": ["**/*.test.tsx", "**/*.stories.tsx"]
 }

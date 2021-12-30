@@ -39,9 +39,9 @@ function App() {
 
       <SeparatorList items={['item1', 'item2', 'item...']} />
 
-      <DropdownButton children={'placeholder'} />
+      <DropdownButton>Placeholder</DropdownButton>
 
-      <Radio name="radio group" label="radio" />
+      <Radio name="radio group" label="radio" value="1" />
 
       <DateInput />
 

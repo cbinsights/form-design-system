@@ -18,7 +18,7 @@
     "build:full": "yarn clean && yarn build:bootstrap && yarn build:styles && yarn build:icons && yarn build:comp && yarn build:distCSS && yarn build:types",
     "build:types": "tsc  --noEmit false --emitDeclarationOnly true --declaration true --outDir lib",
     "build": "yarn build:full",
-    "gen:dictionary": "node ./scripts/node/dictionary/build.js",
+    "gen:dictionary": "TS_NODE_TRANSPILE_ONLY=true ts-node ./scripts/node/dictionary/build.js",
     "gen:icons": "yarn icons:react && yarn icons:setup",
     "styles:min": "NODE_ENV=production postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.min.css --config=./postcss.config.js",
     "styles:full": "postcss src/base-styles/index.css --verbose --output=lib/base-styles/base-styles.full.css --config=./postcss.config.js",
@@ -185,6 +185,7 @@
     "svgo": "1.3.2",
     "tinycolor2": "1.4.2",
     "ts-migrate": "0.1.27",
+    "ts-node": "10.4.0",
     "typescript": "4.5.4",
     "util": "link:./src/util",
     "webpack": "5.65.0"
