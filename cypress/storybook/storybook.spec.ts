@@ -13,10 +13,3 @@ describe('My Passing Test', () => {
     expect(true).to.equal(true);
   });
 });
-
-describe('My Failing Test', () => {
-  it('Does not do much!', () => {
-    // eslint-disable-next-line jest/valid-expect
-    expect(true).to.equal(false);
-  });
-});
