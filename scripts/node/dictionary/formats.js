@@ -170,7 +170,7 @@ const formatRgbComponents = (filteredDictionary) =>
   ].join('\n');
 
 // Custom formats
-module.exports = [
+export const formats = [
   {
     name: 'js/customProperties',
     formatter: formatJSCustomProperties,

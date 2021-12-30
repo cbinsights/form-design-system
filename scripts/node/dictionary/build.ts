@@ -1,13 +1,13 @@
-const path = require('path');
-const { REPO_ROOT } = require('../constants');
+import path from 'path';
+import { REPO_ROOT } from '../constants';
 
 const StyleDictionary = require('style-dictionary').extend(
   path.resolve(REPO_ROOT, 'dictionary.config.json')
 );
 
-const { allFilters } = require('./filters');
-const transforms = require('./transforms');
-const formats = require('./formats');
+import { allFilters } from './filters';
+import { transforms } from './transforms';
+import { formats } from './formats';
 
 const fancyLog = (msg: string) => {
   const logHR = `${new Array(msg.length).fill('~').join('')}`;
@@ -16,22 +16,17 @@ const fancyLog = (msg: string) => {
   console.log(logHR);
 };
 
-interface Filter {
-  name: string;
-  matcher: () => boolean;
-}
-
-allFilters.forEach((f: Filter) => {
-  console.log(`Registering filter ${f.name}`);
-  StyleDictionary.registerFilter(f);
-});
-
-transforms.forEach((t: Filter) => {
+transforms.forEach((t) => {
   console.log(`Registering transform ${t.name}`);
   StyleDictionary.registerTransform(t);
 });
 
-formats.forEach((f: Filter) => {
+allFilters.forEach((f) => {
+  console.log(`Registering filter ${f.name}`);
+  StyleDictionary.registerFilter(f);
+});
+
+formats.forEach((f) => {
   console.log(`Registering format ${f.name}`);
   StyleDictionary.registerFormat(f);
 });

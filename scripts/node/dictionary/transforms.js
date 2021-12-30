@@ -108,7 +108,7 @@ const toMqInfo = (prop) => ({
 });
 
 // Custom transforms
-module.exports = [
+export const transforms = [
   {
     name: 'name/item',
     type: 'name',
