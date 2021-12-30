@@ -9,7 +9,7 @@ export interface BadgeProps {
    * String to render inside the Badge bubble.
    * The `element` type should be reserved for FDS icons.
    */
-  label?: string | Icon | (() => Icon);
+  label?: string | Icon | JSX.Element;
 
   /** When true, an indicator dot will be rendered when the `message` is empty */
   showDot?: boolean;
