@@ -1,10 +1,11 @@
 import React from 'react';
+import { Story } from '@storybook/react';
 
 import Radio, { RadioProps } from '.';
 
 const Template = (args: RadioProps): JSX.Element => <Radio {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<RadioProps> = Template.bind({});
 Primary.args = {
   name: 'radio-group-name',
   label: 'I agree to receive spam',

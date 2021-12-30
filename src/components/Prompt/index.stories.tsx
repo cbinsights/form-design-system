@@ -1,12 +1,13 @@
 import React from 'react';
 import { NoStoriesLayout } from 'util/storybook-docs/Layout';
+import { Story } from '@storybook/react';
 import Button from 'components/Button';
 
-import Prompt from '.';
+import Prompt, { PromptProps } from '.';
 
-const Template = (args) => <Prompt {...args} />;
+const Template = (args: PromptProps) => <Prompt {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<PromptProps> = Template.bind({});
 Primary.args = {
   isOpen: true,
   desc: 'This change will be permanent and cannot be undone.',
@@ -15,7 +16,7 @@ Primary.args = {
   secondaryButton: <Button theme="ghost" label="Keep Collection" />,
 };
 
-export const NoDescription = Template.bind({});
+export const NoDescription: Story<PromptProps> = Template.bind({});
 NoDescription.args = {
   ...Primary.args,
   desc: false,
