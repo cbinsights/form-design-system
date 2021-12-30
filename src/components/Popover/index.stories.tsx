@@ -91,8 +91,8 @@ export const PopoverWithinAPopover = (args: PopoverProps): JSX.Element => (
         <p>
           Here is something else to
           <Popover
-            trigger={<button className="margin--left--xs">click</button>}
             {...args}
+            trigger={<button className="margin--left--xs">click</button>}
           >
             <div className="bgColor--white rounded--all elevation--2 padding--all">
               <div className="padding--all--m">
