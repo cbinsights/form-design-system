@@ -84,7 +84,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/eslint", "npm:8.2.1"],
             ["@types/fs-extra", "npm:9.0.13"],
             ["@types/glob", "npm:7.2.0"],
-            ["@types/jest", "npm:27.0.3"],
+            ["@types/jest", "npm:27.4.0"],
             ["@types/mdx-js__react", "npm:1.5.5"],
             ["@types/postcss-import", "npm:14.0.0"],
             ["@types/prettier", "npm:2.4.2"],
@@ -7709,7 +7709,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/eslint", "npm:8.2.1"],
             ["@types/fs-extra", "npm:9.0.13"],
             ["@types/glob", "npm:7.2.0"],
-            ["@types/jest", "npm:27.0.3"],
+            ["@types/jest", "npm:27.4.0"],
             ["@types/mdx-js__react", "npm:1.5.5"],
             ["@types/postcss-import", "npm:14.0.0"],
             ["@types/prettier", "npm:2.4.2"],
@@ -12521,10 +12521,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:27.0.3", {
-          "packageLocation": "./.yarn/cache/@types-jest-npm-27.0.3-c4c49cbce2-3683a99458.zip/node_modules/@types/jest/",
+        ["npm:27.4.0", {
+          "packageLocation": "./.yarn/cache/@types-jest-npm-27.4.0-33755263ec-d2350267f9.zip/node_modules/@types/jest/",
           "packageDependencies": [
-            ["@types/jest", "npm:27.0.3"],
+            ["@types/jest", "npm:27.4.0"],
             ["jest-diff", "npm:27.4.2"],
             ["pretty-format", "npm:27.4.2"]
           ],
@@ -19644,7 +19644,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["eslint-plugin-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:25.3.2"],
             ["@types/eslint", "npm:8.2.1"],
-            ["@types/jest", "npm:27.0.3"],
+            ["@types/jest", "npm:27.4.0"],
             ["@types/typescript-eslint__eslint-plugin", null],
             ["@typescript-eslint/eslint-plugin", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.8.1"],
             ["@typescript-eslint/experimental-utils", "virtual:1df844ae6137bfbb0cc3cf5143029a9da107ff26746dcf96db474f4e98f0a176451e7eee00f584a2e839347f1f995aff317439f5de3b3822e6f6d80c741b1b91#npm:5.3.1"],
