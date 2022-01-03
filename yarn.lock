@@ -4296,7 +4296,7 @@ __metadata:
     react-dom: 16.14.0
     react-hook-form: 7.22.5
     react-is: 16.13.1
-    react-markdown: 7.1.1
+    react-markdown: 7.1.2
     react-popper: 2.2.5
     react-transition-group: 4.4.2
     rimraf: 3.0.2
@@ -22896,9 +22896,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-markdown@npm:7.1.1":
-  version: 7.1.1
-  resolution: "react-markdown@npm:7.1.1"
+"react-markdown@npm:7.1.2":
+  version: 7.1.2
+  resolution: "react-markdown@npm:7.1.2"
   dependencies:
     "@types/hast": ^2.0.0
     "@types/unist": ^2.0.0
@@ -22917,7 +22917,7 @@ __metadata:
   peerDependencies:
     "@types/react": ">=16"
     react: ">=16"
-  checksum: 108759c9e1b083402e1f38a88d32e6eb640c0d38d24ccfdec86a5ac3262ecc59e7494dc45eaecd6d613e7b91914dc54558ffc2b2e6cf3d2f6e5230b27fe348c9
+  checksum: 6f6cd6cfee64e936edb31e3aca49dd284fc5f55c018cb4430f9b3f2f1b3df343a6507c8f33714f1bb2f620a5a05650166bc1add951fd6f8623731b689afedcfd
   languageName: node
   linkType: hard
 
