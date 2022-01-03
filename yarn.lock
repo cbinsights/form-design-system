@@ -4219,18 +4219,18 @@ __metadata:
     "@testing-library/jest-dom": 5.16.1
     "@testing-library/react": 12.1.2
     "@testing-library/user-event": 13.5.0
-    "@types/babel__core": 7.1.17
+    "@types/babel__core": 7.1.18
     "@types/babel__plugin-transform-runtime": 7.9.2
     "@types/babel__preset-env": 7.9.2
     "@types/css": 0.0.33
     "@types/cssnano": 4.0.1
-    "@types/enzyme": 3.10.10
+    "@types/enzyme": 3.10.11
     "@types/enzyme-adapter-react-16": 1.0.6
     "@types/enzyme-to-json": 1.5.4
     "@types/eslint": 8.2.1
     "@types/fs-extra": 9.0.13
     "@types/glob": 7.2.0
-    "@types/jest": 27.0.3
+    "@types/jest": 27.4.0
     "@types/mdx-js__react": 1.5.5
     "@types/postcss-import": 14.0.0
     "@types/prettier": 2.4.2
@@ -4279,7 +4279,7 @@ __metadata:
     icons: "link:./src/icons"
     jest: 27.4.5
     jest-prop-type-error: 1.1.0
-    lint-staged: 12.1.4
+    lint-staged: 12.1.5
     pascal-case: 3.1.2
     pinst: 2.1.6
     postcss: 8.4.5
@@ -4296,7 +4296,7 @@ __metadata:
     react-dom: 16.14.0
     react-hook-form: 7.22.5
     react-is: 16.13.1
-    react-markdown: 7.1.1
+    react-markdown: 7.1.2
     react-popper: 2.2.5
     react-transition-group: 4.4.2
     rimraf: 3.0.2
@@ -7241,16 +7241,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/babel__core@npm:7.1.17":
-  version: 7.1.17
-  resolution: "@types/babel__core@npm:7.1.17"
+"@types/babel__core@npm:7.1.18":
+  version: 7.1.18
+  resolution: "@types/babel__core@npm:7.1.18"
   dependencies:
     "@babel/parser": ^7.1.0
     "@babel/types": ^7.0.0
     "@types/babel__generator": "*"
     "@types/babel__template": "*"
     "@types/babel__traverse": "*"
-  checksum: 0108efab8acb6a8e0aab6f8113d5ef1fc4b58d40737aa70a3ee83112959e0880e5548374e7edb562e4e837cde4ae47265348b04eb7e684283b0dea418d013420
+  checksum: 2e5b5d7c84f347d3789575486e58b0df5c91613abc3d27e716274aba3048518e07e1f068250ba829e2ed58532ccc88da595ce95ba2688e7bbcd7c25a3c6627ed
   languageName: node
   linkType: hard
 
@@ -7418,13 +7418,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/enzyme@npm:3.10.10":
-  version: 3.10.10
-  resolution: "@types/enzyme@npm:3.10.10"
+"@types/enzyme@npm:3.10.11":
+  version: 3.10.11
+  resolution: "@types/enzyme@npm:3.10.11"
   dependencies:
     "@types/cheerio": "*"
     "@types/react": "*"
-  checksum: e2393f87d6737d643789fb1a83c53c5cb6cb9eaebf1e1c8a3163d95f778f3741a9734fea47761a7648d9c778166ffd531f61c0aa4c5bf97b0d8018cacad05a49
+  checksum: 4085899b16e691e715f374345fae2963dc89a002c55a249381e37f94d93c8d016ad7208a8d11cc0f2d8c7cdfa6fa9f5590f0bfae984e51571f5d1e9c2d6ee782
   languageName: node
   linkType: hard
 
@@ -7568,13 +7568,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:27.0.3":
-  version: 27.0.3
-  resolution: "@types/jest@npm:27.0.3"
+"@types/jest@npm:27.4.0":
+  version: 27.4.0
+  resolution: "@types/jest@npm:27.4.0"
   dependencies:
     jest-diff: ^27.0.0
     pretty-format: ^27.0.0
-  checksum: 3683a9945821966f6dccddf337219a5d682633687c9d30df859223db553589f63e9b2c34e69f0cc845c86ffcf115742f25c12ea03c8d33d2244890fdc0af61e2
+  checksum: d2350267f954f9a2e4a15e5f02fbf19a77abfb9fd9e57a954de1fb0e9a0d3d5f8d3646ac7d9c42aeb4b4d828d2e70624ec149c85bb50a48634a54eed8429e1f8
   languageName: node
   linkType: hard
 
@@ -18165,9 +18165,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:12.1.4":
-  version: 12.1.4
-  resolution: "lint-staged@npm:12.1.4"
+"lint-staged@npm:12.1.5":
+  version: 12.1.5
+  resolution: "lint-staged@npm:12.1.5"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -18184,7 +18184,7 @@ __metadata:
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: f1f829328fbd0878e8c2100fe0968101e94903ce5acf95bae98ec6daa84c4e95f87957f9040782427be2087659f3809626ea42ba53bbe5f0036c4d3806cb313d
+  checksum: e4d64e97769faf45adad9898c843ed8ef495469fc3edef0b8daff834ddb504ab47e33579763f8d85cbba6db993bd5cd86ac0bcaf92f6fd7486d4fb9a5fe774c6
   languageName: node
   linkType: hard
 
@@ -22896,9 +22896,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-markdown@npm:7.1.1":
-  version: 7.1.1
-  resolution: "react-markdown@npm:7.1.1"
+"react-markdown@npm:7.1.2":
+  version: 7.1.2
+  resolution: "react-markdown@npm:7.1.2"
   dependencies:
     "@types/hast": ^2.0.0
     "@types/unist": ^2.0.0
@@ -22917,7 +22917,7 @@ __metadata:
   peerDependencies:
     "@types/react": ">=16"
     react: ">=16"
-  checksum: 108759c9e1b083402e1f38a88d32e6eb640c0d38d24ccfdec86a5ac3262ecc59e7494dc45eaecd6d613e7b91914dc54558ffc2b2e6cf3d2f6e5230b27fe348c9
+  checksum: 6f6cd6cfee64e936edb31e3aca49dd284fc5f55c018cb4430f9b3f2f1b3df343a6507c8f33714f1bb2f620a5a05650166bc1add951fd6f8623731b689afedcfd
   languageName: node
   linkType: hard
 
