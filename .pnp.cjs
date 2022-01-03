@@ -78,7 +78,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel__preset-env", "npm:7.9.2"],
             ["@types/css", "npm:0.0.33"],
             ["@types/cssnano", "npm:4.0.1"],
-            ["@types/enzyme", "npm:3.10.10"],
+            ["@types/enzyme", "npm:3.10.11"],
             ["@types/enzyme-adapter-react-16", "npm:1.0.6"],
             ["@types/enzyme-to-json", "npm:1.5.4"],
             ["@types/eslint", "npm:8.2.1"],
@@ -7703,7 +7703,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel__preset-env", "npm:7.9.2"],
             ["@types/css", "npm:0.0.33"],
             ["@types/cssnano", "npm:4.0.1"],
-            ["@types/enzyme", "npm:3.10.10"],
+            ["@types/enzyme", "npm:3.10.11"],
             ["@types/enzyme-adapter-react-16", "npm:1.0.6"],
             ["@types/enzyme-to-json", "npm:1.5.4"],
             ["@types/eslint", "npm:8.2.1"],
@@ -12328,10 +12328,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/enzyme", [
-        ["npm:3.10.10", {
-          "packageLocation": "./.yarn/cache/@types-enzyme-npm-3.10.10-a011830d8e-e2393f87d6.zip/node_modules/@types/enzyme/",
+        ["npm:3.10.11", {
+          "packageLocation": "./.yarn/cache/@types-enzyme-npm-3.10.11-b2cc4cff6b-4085899b16.zip/node_modules/@types/enzyme/",
           "packageDependencies": [
-            ["@types/enzyme", "npm:3.10.10"],
+            ["@types/enzyme", "npm:3.10.11"],
             ["@types/cheerio", "npm:0.22.29"],
             ["@types/react", "npm:16.9.46"]
           ],
@@ -19134,7 +19134,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/enzyme-adapter-react-16-virtual-9709941ef4/0/cache/enzyme-adapter-react-16-npm-1.15.6-4b0fcfdfcc-b0f31037c7.zip/node_modules/enzyme-adapter-react-16/",
           "packageDependencies": [
             ["enzyme-adapter-react-16", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.15.6"],
-            ["@types/enzyme", "npm:3.10.10"],
+            ["@types/enzyme", "npm:3.10.11"],
             ["@types/react", "npm:17.0.38"],
             ["@types/react-dom", "npm:17.0.6"],
             ["enzyme", "npm:3.11.0"],
@@ -19214,7 +19214,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["enzyme-to-json", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.6.2"],
             ["@types/cheerio", "npm:0.22.22"],
-            ["@types/enzyme", "npm:3.10.10"],
+            ["@types/enzyme", "npm:3.10.11"],
             ["enzyme", "npm:3.11.0"],
             ["lodash", "npm:4.17.21"],
             ["react-is", "npm:16.13.1"]
