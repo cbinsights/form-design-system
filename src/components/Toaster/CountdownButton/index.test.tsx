@@ -1,19 +1,26 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
-import CountdownButton, { CountdownButtonProps, getCircleInfo, CircleInfo } from '.';
-
-const renderComponent = (props: CountdownButtonProps) =>
-  shallow(<CountdownButton {...props} />);
+import CountdownButton, { getCircleInfo, CircleInfo } from '.';
 
 const MOCK_PROPS = { duration: 666 };
 
 describe('CountdownButton', () => {
-  it('matches snapshot', () => {
-    const component = renderComponent(MOCK_PROPS);
-    expect(component).toMatchSnapshot();
+  it('renders component', () => {
+    render(<CountdownButton {...MOCK_PROPS} />);
+    expect(screen.getByTitle('Close')).toBeInTheDocument();
   });
 
+  describe('CountdownButton animation', () => {
+    it('shows a full timer stroke on mount', () => {
+      const { container } = render(<CountdownButton {...MOCK_PROPS} />);
+      const circle = container.querySelector('div > div > svg > circle');
+      expect(circle).toHaveStyle('stroke-dashoffset: 0');
+    });
+  });
+});
+
+describe('getCircleInfo', () => {
   it('calculates circle dimensions correctly', () => {
     const actual = getCircleInfo(90, 10);
     const expected: CircleInfo = {
@@ -24,15 +31,6 @@ describe('CountdownButton', () => {
 
     Object.keys(expected).forEach((k) => {
       expect(actual[k]).toEqual(expected[k]);
-    });
-  });
-
-  describe('CountdownButton animation', () => {
-    const component = mount(<CountdownButton {...MOCK_PROPS} />);
-    const { strokeDashoffset } = component.find('circle').get(0).props.style;
-
-    it('shows a full timer stroke on mount', () => {
-      expect(strokeDashoffset).toBe(0);
     });
   });
 });
