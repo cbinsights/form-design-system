@@ -68,6 +68,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/components", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.4.9"],
             ["@storybook/core-events", "npm:6.4.9"],
             ["@storybook/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.4.9"],
+            ["@storybook/testing-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.2.2"],
             ["@storybook/theming", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.4.9"],
             ["@testing-library/dom", "npm:8.11.1"],
             ["@testing-library/jest-dom", "npm:5.16.1"],
@@ -7568,6 +7569,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/components", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.4.9"],
             ["@storybook/core-events", "npm:6.4.9"],
             ["@storybook/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.4.9"],
+            ["@storybook/testing-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.2.2"],
             ["@storybook/theming", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.4.9"],
             ["@testing-library/dom", "npm:8.11.1"],
             ["@testing-library/jest-dom", "npm:5.16.1"],
@@ -11784,6 +11786,45 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react-dom",
             "@types/react",
             "react-dom",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@storybook/testing-react", [
+        ["npm:1.2.2", {
+          "packageLocation": "./.yarn/cache/@storybook-testing-react-npm-1.2.2-f2a220d30c-2ad6d20a7a.zip/node_modules/@storybook/testing-react/",
+          "packageDependencies": [
+            ["@storybook/testing-react", "npm:1.2.2"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.2.2", {
+          "packageLocation": "./.yarn/__virtual__/@storybook-testing-react-virtual-42f5a24c01/0/cache/@storybook-testing-react-npm-1.2.2-f2a220d30c-2ad6d20a7a.zip/node_modules/@storybook/testing-react/",
+          "packageDependencies": [
+            ["@storybook/testing-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.2.2"],
+            ["@storybook/addons", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.4.9"],
+            ["@storybook/client-api", null],
+            ["@storybook/csf", "npm:0.0.2--canary.87bc651.0"],
+            ["@storybook/preview-web", null],
+            ["@storybook/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.4.9"],
+            ["@types/react", "npm:17.0.38"],
+            ["@types/storybook__addons", null],
+            ["@types/storybook__client-api", null],
+            ["@types/storybook__preview-web", null],
+            ["@types/storybook__react", null],
+            ["react", "npm:16.14.0"]
+          ],
+          "packagePeers": [
+            "@storybook/addons",
+            "@storybook/client-api",
+            "@storybook/preview-web",
+            "@storybook/react",
+            "@types/react",
+            "@types/storybook__addons",
+            "@types/storybook__client-api",
+            "@types/storybook__preview-web",
+            "@types/storybook__react",
             "react"
           ],
           "linkType": "HARD",
