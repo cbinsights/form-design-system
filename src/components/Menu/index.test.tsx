@@ -1,48 +1,62 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import { MenuItem } from 'components';
 import Menu from '.';
 
-describe('Popover component', () => {
+describe('Menu component', () => {
   /**
    * `@reach/menu-button` has its own test coverage.
    * FDS provides only styling overrides, so snapshots will be adequate coverage for our code.
    */
-  it('matches snapshot (string items)', () => {
-    const wrapper = mount(
+  it('renders component (strings)', () => {
+    render(
       <Menu trigger={<a href="#">trigger</a>}>
-        <MenuItem onSelect={() => {}}>First</MenuItem>
-        <MenuItem onSelect={() => {}}>Second</MenuItem>
-        <MenuItem onSelect={() => {}}>Third</MenuItem>
+        <MenuItem onSelect={jest.fn()}>First</MenuItem>
+        <MenuItem onSelect={jest.fn()}>Second</MenuItem>
+        <MenuItem onSelect={jest.fn()}>Third</MenuItem>
       </Menu>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(screen.getByText('First')).toBeInTheDocument();
+    expect(screen.getByText('Second')).toBeInTheDocument();
+    expect(screen.getByText('Third')).toBeInTheDocument();
   });
-  it('matches snapshot (JSX items)', () => {
-    const wrapper = mount(
+  it('renders component (JSX items)', () => {
+    render(
       <Menu trigger={<a href="#">trigger</a>}>
-        <MenuItem onSelect={() => {}}>
+        <MenuItem onSelect={jest.fn()}>
           <p>First</p>
         </MenuItem>
-        <MenuItem onSelect={() => {}}>
+        <MenuItem onSelect={jest.fn()}>
           <p>Second</p>
         </MenuItem>
-        <MenuItem onSelect={() => {}}>
+        <MenuItem onSelect={jest.fn()}>
           <p>Third</p>
         </MenuItem>
       </Menu>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(screen.getByText('First')).toBeInTheDocument();
+    expect(screen.getByText('Second')).toBeInTheDocument();
+    expect(screen.getByText('Third')).toBeInTheDocument();
   });
-  it('matches snapshot (disabled)', () => {
-    const wrapper = mount(
-      <Menu isDisabled trigger={<a href="#">trigger</a>}>
-        <MenuItem onSelect={() => {}}>First</MenuItem>
-        <MenuItem onSelect={() => {}}>Second</MenuItem>
-        <MenuItem onSelect={() => {}}>Third</MenuItem>
+  it('renders trigger element only', () => {
+    const mockOnClick = jest.fn();
+    render(
+      <Menu
+        isDisabled
+        trigger={
+          <a href="#" onClick={mockOnClick}>
+            trigger
+          </a>
+        }
+      >
+        <MenuItem onSelect={jest.fn()}>First</MenuItem>
+        <MenuItem onSelect={jest.fn()}>Second</MenuItem>
+        <MenuItem onSelect={jest.fn()}>Third</MenuItem>
       </Menu>
     );
-    expect(wrapper).toMatchSnapshot();
+    const anchor = screen.getByRole('link');
+    expect(anchor).toBeInTheDocument();
+    expect(screen.queryAllByText(/first|second|third/i).length).toStrictEqual(0);
   });
 });
