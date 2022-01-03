@@ -1,13 +1,17 @@
-describe('Visiting Storybook Test', () => {
-  it('visits storybook', () => {
-    cy.visit('http://localhost:6006');
+/* eslint-disable jest/valid-expect */
+/* eslint-disable jest/valid-expect-in-promise */
+import { composeStories } from '@storybook/testing-react';
+import { mount } from '@cypress/react';
+import * as stories from '../../src/components/Button/index.stories';
 
-    cy.url().should('include', '/story/intro-intro--page');
-  });
-});
+// compile the "Primary" story with the library
+const { Primary } = composeStories(stories);
 
-describe('My Passing Test', () => {
-  it('Does not do much!', () => {
-    expect(true).to.equal(true);
-  });
+it('Should empty the field when clicking the cross', () => {
+  // and mount the story using @cypress/react library
+  mount(Primary);
+
+  // then run our tests
+  cy.get('svg').click();
+  cy.get('input').then((i) => expect(i.val()).to.be.empty);
 });
