@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import State from 'util/storybook-docs/State';
 import Button from 'components/Button';
+import { Story } from '@storybook/react';
 import Popover, { PopoverProps } from '.';
 
 const Template = (args: PopoverProps): JSX.Element => <Popover {...args} />;
-export const Primary = Template.bind({});
+export const Primary: Story<PopoverProps> = Template.bind({});
 Primary.args = {
   transitionName: 'GrowFast',
   trigger: (
@@ -22,7 +23,7 @@ Primary.args = {
   ),
 };
 
-export const StyledPopoverContent = Template.bind({});
+export const StyledPopoverContent: Story<PopoverProps> = Template.bind({});
 StyledPopoverContent.args = {
   trigger: <Button theme="outlined" label="Open popover" />,
   position: 'bottom',
