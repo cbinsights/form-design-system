@@ -126,7 +126,7 @@ PopoverWithinAPopover.argTypes = {
 };
 
 export const CloseOnScroll = (args: PopoverProps): JSX.Element => {
-  const containerEl = useRef(null);
+  const containerEl = useRef() as React.MutableRefObject<HTMLInputElement>;
   return (
     <div
       ref={containerEl}
@@ -163,7 +163,7 @@ CloseOnScroll.parameters = {
 };
 
 export const DisableScrolling = (args: PopoverProps): JSX.Element => {
-  const containerEl = useRef(null);
+  const containerEl = useRef() as React.MutableRefObject<HTMLInputElement>;
   return (
     <div
       ref={containerEl}
