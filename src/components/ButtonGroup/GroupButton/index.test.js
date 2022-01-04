@@ -9,6 +9,6 @@ const Wrapper = (props) => <div {...props} data-test="snapshot-wrapper" />;
 describe('GroupButton component', () => {
   it('renders component', () => {
     render(<GroupButton value="Feed" Icon={Icon} isActive={true} Wrapper={Wrapper} />);
-    expect(screen.getByRole('button')).toHaveTextContent('🌭');
+    expect(screen.getByRole('button', { name: '🌭' })).toBeInTheDocument();
   });
 });
