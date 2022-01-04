@@ -1,28 +1,25 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import StarFilledIcon from 'icons/react/StarFilledIcon';
 import Chip, { ChipProps } from '.';
 
-const renderComponent = (props: ChipProps) => shallow(<Chip {...props} />);
-
 describe('Chip component', () => {
-  it('matches snapshot (default props)', () => {
-    const component = renderComponent({
-      label: 'foo',
-    });
-    expect(component).toMatchSnapshot();
+  it('renders component (default props)', () => {
+    render(<Chip label={'foo'} />);
+    expect(screen.getByText('foo')).toBeInTheDocument();
   });
 
-  it('matches snapshot (set all props)', () => {
-    const component = renderComponent({
+  it('renders component (set all props)', () => {
+    const props: ChipProps = {
       label: 'foo',
       isActive: true,
       subtitle: 'bar',
-      onClose: () => {},
+      onClose: jest.fn(),
       Icon: StarFilledIcon,
       size: 'm',
       theme: 'blue',
-    });
-    expect(component).toMatchSnapshot();
+    };
+    render(<Chip {...props} />);
+    expect(screen.getByText('foo')).toBeInTheDocument();
   });
 });
