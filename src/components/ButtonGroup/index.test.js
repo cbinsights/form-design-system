@@ -1,9 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import ButtonGroup from '.';
-
-const renderComponent = (props) => shallow(<ButtonGroup {...props} />);
 
 const Icon = () => <span>🌭</span>;
 
@@ -13,18 +11,15 @@ const buttons = [
 ];
 
 describe('ButtonGroup component', () => {
-  it('matches snapshot (default props)', () => {
-    const component = renderComponent({
-      buttons,
-    });
-    expect(component).toMatchSnapshot();
+  it('renders correctly', () => {
+    render(<ButtonGroup buttons={buttons}></ButtonGroup>);
+    expect(screen.getByText('Feed')).toBeInTheDocument();
   });
 
-  it('matches snapshot (set all props)', () => {
-    const component = renderComponent({
-      buttons,
-      onChange: () => {},
-    });
-    expect(component).toMatchSnapshot();
+  it('calls onChange with "Feed"', () => {
+    const mockOnChange = jest.fn();
+    render(<ButtonGroup buttons={buttons} onChange={mockOnChange}></ButtonGroup>);
+    fireEvent.click(screen.getByText('Feed'));
+    expect(mockOnChange).toHaveBeenCalledWith('Feed');
   });
 });
