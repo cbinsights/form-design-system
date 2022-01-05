@@ -15,7 +15,7 @@ type ToastType = 'info' | 'warn' | 'error' | 'success' | 'progress';
 
 export interface ToastProps {
   /** JSX Content of Toast */
-  content: React.ReactNode;
+  content?: React.ReactNode;
 
   /** Type of toast */
   type?: ToastType;
@@ -51,7 +51,7 @@ const Toast = ({
   canDismiss = true,
   dismissOnAction = true,
   type = 'info',
-  content,
+  content = null,
   actionLabel,
   progress,
   onAction,

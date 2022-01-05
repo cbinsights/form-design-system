@@ -1,13 +1,20 @@
 import React from 'react';
 import StarFilledIcon from 'icons/react/StarFilledIcon';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
+import { Story } from '@storybook/react';
 import State from 'util/storybook-docs/State';
 
 import IconButton, { THEMES, RADII, SIZES, IconButtonProps } from '.';
 
+type HashMap = {
+  [number: string]: string;
+};
+
+const INVERTED_THEMES = THEMES.filter((theme) => theme !== 'aqua');
+
 const Template = (args: IconButtonProps): JSX.Element => <IconButton {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<IconButtonProps> = Template.bind({});
 Primary.args = {
   Icon: StarFilledIcon,
 };
@@ -22,7 +29,7 @@ export const Themes = (args: IconButtonProps): JSX.Element => (
   </StoryWrapper>
 );
 
-export const Destructive = Template.bind({});
+export const Destructive: Story<IconButtonProps> = Template.bind({});
 Destructive.args = {
   ...Primary.args,
   isDestructive: true,
@@ -46,7 +53,7 @@ export const IsActive = (args: IconButtonProps): JSX.Element => (
     <StoryWrapper>
       <State
         initialValue={{}}
-        render={(value, setValue) => (
+        render={(value: { [number: string]: string }, setValue) => (
           <>
             {THEMES.map((theme, idx) => (
               <StoryItem key={idx}>
@@ -71,7 +78,7 @@ export const IsActive = (args: IconButtonProps): JSX.Element => (
                 {...args}
                 {...Primary.args}
                 isDestructive
-                isActive={!value[0]}
+                isActive={!value}
                 onClick={() => setValue(!value)}
               />
             </StoryItem>
@@ -83,9 +90,9 @@ export const IsActive = (args: IconButtonProps): JSX.Element => (
       <StoryWrapper>
         <State
           initialValue={{}}
-          render={(value, setValue) => (
+          render={(value: HashMap, setValue) => (
             <>
-              {['ghost', 'outlined'].map((theme, idx) => (
+              {INVERTED_THEMES.map((theme, idx) => (
                 <StoryItem key={idx}>
                   <IconButton
                     {...args}
