@@ -35,7 +35,7 @@ export interface GroupButtonProps {
    * `wrapper` must render the children prop passed into it
    * to render the GroupButton.
    */
-  Wrapper?: () => JSX.Element;
+  Wrapper?: (props: { children: React.ReactNode }) => JSX.Element;
 
   /** Assigns the first button styling. */
   isFirstButton?: boolean;
