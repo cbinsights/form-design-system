@@ -32,7 +32,7 @@ export const getFlexSettings = (childCount: number, userSettings: FlexType): Fle
  * @param {Object} props react props
  * @returns {ReactElement}
  */
-const InputGroup = ({ children, flexSettings }: InputGroupProps): JSX.Element => {
+const InputGroup = ({ children, flexSettings = [] }: InputGroupProps): JSX.Element => {
   const growShrinkArr = getFlexSettings(React.Children.count(children), flexSettings);
 
   return (
@@ -57,7 +57,7 @@ export interface InputGroupProps {
    *
    * `grow` - grow the input element to fill remaining space
    */
-  flexSettings: FlexType;
+  flexSettings?: FlexType;
 }
 
 export default InputGroup;

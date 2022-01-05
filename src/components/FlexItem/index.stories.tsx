@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Story } from '@storybook/react';
 import Flex from 'components/Flex';
 import FlexItem, { FlexItemProps } from '.';
 
@@ -19,7 +19,7 @@ const Template = (args: FlexItemProps): JSX.Element => (
   </div>
 );
 
-export const Primary = Template.bind({});
+export const Primary: Story<FlexItemProps> = Template.bind({});
 Primary.args = {};
 
 export default {
