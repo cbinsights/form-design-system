@@ -1,15 +1,16 @@
 import React from 'react';
 import SeparatorList, { SeparatorListProps } from '.';
+import { Story } from '@storybook/react';
 
 const Template = (args: SeparatorListProps): JSX.Element => <SeparatorList {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<SeparatorListProps> = Template.bind({});
 Primary.args = {
   separator: '✈️',
   items: ['New York', 'Paris', 'Schenectady', 'Los Angeles', 'Hong Kong'],
 };
 
-export const Pipes = Template.bind({});
+export const Pipes: Story<SeparatorListProps> = Template.bind({});
 Pipes.args = {
   separator: '|️',
   items: [
@@ -31,7 +32,7 @@ Pipes.args = {
   ],
 };
 
-export const Breadcrumbs = Template.bind({});
+export const Breadcrumbs: Story<SeparatorListProps> = Template.bind({});
 Breadcrumbs.args = {
   separator: '/',
   items: [

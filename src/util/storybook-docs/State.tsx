@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-type Props<ValueType> = {
-  render: (value: ValueType, setValue: (newValue: ValueType) => void) => JSX.Element;
-  initialValue: ValueType;
+type Props<T> = {
+  render: (value: T, setValue: (newValue: T) => void) => JSX.Element;
+  initialValue: T;
 };
 
 export function State<ValueType>({

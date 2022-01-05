@@ -3,9 +3,9 @@ import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import { IconProps } from 'components/Icon';
 
-export const THEMES = ['ghost', 'aqua', 'outlined'];
-export const RADII = ['square', 'circle'];
-export const SIZES = ['s', 'm'];
+export const THEMES = ['ghost', 'aqua', 'outlined'] as const;
+export const RADII = ['square', 'circle'] as const;
+export const SIZES = ['s', 'm'] as const;
 
 export interface IconButtonProps {
   /**

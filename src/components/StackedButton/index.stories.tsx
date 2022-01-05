@@ -12,7 +12,7 @@ export const Primary = (args: StackedButtonProps): JSX.Element => (
 export const IsActiveAndToggled = (args: StackedButtonProps): JSX.Element => (
   <State
     initialValue={{}}
-    render={(value, setValue) => (
+    render={(value: Record<number, boolean>, setValue) => (
       <>
         {[
           { label: 'isActive', Icon: SalesforceIcon },
