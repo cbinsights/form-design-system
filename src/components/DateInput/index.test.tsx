@@ -5,8 +5,8 @@ import userEvent from '@testing-library/user-event';
 import DateInput, { DATE_FORMAT_MAP } from '.';
 
 describe('DateInput component', () => {
-  let dateChangeFn;
-  let inputChangeFn;
+  let dateChangeFn: null | (() => Date);
+  let inputChangeFn: null | (() => Date);
 
   beforeEach(() => {
     dateChangeFn = jest.fn();
