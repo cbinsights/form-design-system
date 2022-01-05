@@ -4,8 +4,10 @@ import { render } from '@testing-library/react';
 import FlexItem from 'components/FlexItem';
 import Flex from '.';
 
-const hasAllClasses = (container, classes) =>
-  classes.every((c) => Object.values(container.firstChild.classList).includes(c));
+const hasAllClasses = (container, classes: string[]) =>
+  classes.every((c: unknown) =>
+    Object.values(container.firstChild.classList).includes(c)
+  );
 
 const hasRowClasses = (container) =>
   hasAllClasses(container, ['flex--row', 'flex--alignStretch']);
