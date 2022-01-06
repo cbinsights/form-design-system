@@ -13,7 +13,7 @@ export interface StackedButtonProps {
    * - `import { Link } from 'react-router'`
    * - `Link={Link}`
    */
-  Link: React.ElementType;
+  Link?: React.ElementType;
   /**
    * Controls whether the button is disabled or not. Will control the disabled
    * presentation of either an anchor or button rendered under the hood,
@@ -21,7 +21,7 @@ export interface StackedButtonProps {
    */
   disabled?: boolean;
   /**  Pass in "only" a FDS Icon reference to display it (e.g. Icon={ApproveIcon}) */
-  Icon: React.ComponentType<IconProps>;
+  Icon?: React.ComponentType<IconProps>;
   /** Text inside the button */
   label: string | number;
   /** Controls the active state, which changes UI (colors) */
