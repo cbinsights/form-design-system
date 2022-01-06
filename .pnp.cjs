@@ -29460,10 +29460,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["prismjs", [
-        ["npm:1.25.0", {
-          "packageLocation": "./.yarn/cache/prismjs-npm-1.25.0-8d60169ac0-04d8eae9d1.zip/node_modules/prismjs/",
+        ["npm:1.26.0", {
+          "packageLocation": "./.yarn/cache/prismjs-npm-1.26.0-15be1ab06b-6de058930c.zip/node_modules/prismjs/",
           "packageDependencies": [
-            ["prismjs", "npm:1.25.0"]
+            ["prismjs", "npm:1.26.0"]
           ],
           "linkType": "HARD",
         }]
@@ -30549,7 +30549,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.38"],
             ["highlight.js", "npm:10.1.2"],
             ["lowlight", "npm:1.14.0"],
-            ["prismjs", "npm:1.25.0"],
+            ["prismjs", "npm:1.26.0"],
             ["react", "npm:16.14.0"],
             ["refractor", "npm:3.1.0"]
           ],
@@ -30857,7 +30857,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["refractor", "npm:3.1.0"],
             ["hastscript", "npm:5.1.2"],
             ["parse-entities", "npm:2.0.0"],
-            ["prismjs", "npm:1.25.0"]
+            ["prismjs", "npm:1.26.0"]
           ],
           "linkType": "HARD",
         }]
