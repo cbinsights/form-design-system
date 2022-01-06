@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import FlexItem from '.';
+import FlexItem, { FlexItemProps } from '.';
 
-const renderComponent = (props) => shallow(<FlexItem {...props} />);
+const renderComponent = (props: FlexItemProps) => shallow(<FlexItem {...props} />);
 
 describe('Flex component', () => {
   it('matches snapshot (default props)', () => {
-    const flex = renderComponent();
+    const flex = renderComponent({});
     expect(flex).toMatchSnapshot();
   });
 
@@ -16,7 +16,6 @@ describe('Flex component', () => {
       shrink: true,
       align: 'center',
       justify: 'spaceBetween',
-      className: 'foo',
     });
     expect(flex).toMatchSnapshot();
   });

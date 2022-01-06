@@ -2,7 +2,8 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import DateInput, { DATE_FORMAT_MAP } from '.';
+import DateInput, { DateFormat, DATE_FORMAT_MAP } from '.';
+import { getKeys } from 'util/index';
 
 describe('DateInput component', () => {
   let dateChangeFn: null | (() => Date);
@@ -59,8 +60,7 @@ describe('DateInput component', () => {
 
   it('updates input value when user selects a day in the picker', () => {
     fireEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
-    expect(screen.getByRole('textbox').value).toBe('07/07/2020'); // MM/DD/YYYY === 10 chars
-    expect(screen.getByRole('textbox').value).toHaveLength(10); // MM/DD/YYYY === 10 chars
+    expect(screen.getByDisplayValue('07/07/2020')).toBeInTheDocument();
   });
 
   it('clears selected date when user backspaces out the input', async () => {
@@ -79,8 +79,9 @@ describe('DateInput component', () => {
 });
 
 describe('Date formats', () => {
+  const formats = getKeys(DATE_FORMAT_MAP);
   it('uses correct placeholder for a given format', () => {
-    Object.keys(DATE_FORMAT_MAP).forEach((format) => {
+    formats.forEach((format: DateFormat) => {
       render(<DateInput dateFormat={format} />);
       expect(screen.getByPlaceholderText(DATE_FORMAT_MAP[format])).toBeInTheDocument();
     });
@@ -88,7 +89,7 @@ describe('Date formats', () => {
 
   it('formats default date in input value correctly for a given format', () => {
     const expectedValues = ['06/01/2020', '01/06/2020', '2020/06/01'];
-    Object.keys(DATE_FORMAT_MAP).forEach((format, i) => {
+    formats.forEach((format: DateFormat, i: number) => {
       render(<DateInput dateFormat={format} defaultDate={new Date('June 1 2020')} />);
       expect(screen.getByDisplayValue(expectedValues[i])).toBeInTheDocument();
     });

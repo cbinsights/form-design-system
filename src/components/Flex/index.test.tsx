@@ -9,10 +9,10 @@ const hasAllClasses = (container, classes: string[]) =>
     Object.values(container.firstChild.classList).includes(c)
   );
 
-const hasRowClasses = (container) =>
+const hasRowClasses = (container: HTMLElement) =>
   hasAllClasses(container, ['flex--row', 'flex--alignStretch']);
 
-const hasColumnClasses = (container) =>
+const hasColumnClasses = (container: HTMLElement) =>
   hasAllClasses(container, ['flex--column', 'flex--alignStretch']);
 
 describe('Flex Component', () => {
