@@ -143,7 +143,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-loader", "npm:3.0.0"],
             ["postcss-preset-env", "npm:5.3.0"],
             ["prettier", "npm:2.5.1"],
-            ["prop-types", "npm:15.8.0"],
+            ["prop-types", "npm:15.8.1"],
             ["raf-schd", "npm:4.0.3"],
             ["react", "npm:16.14.0"],
             ["react-day-picker", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.4.10"],
@@ -7768,7 +7768,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-loader", "npm:3.0.0"],
             ["postcss-preset-env", "npm:5.3.0"],
             ["prettier", "npm:2.5.1"],
-            ["prop-types", "npm:15.8.0"],
+            ["prop-types", "npm:15.8.1"],
             ["raf-schd", "npm:4.0.3"],
             ["react", "npm:16.14.0"],
             ["react-day-picker", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.4.10"],
@@ -20591,7 +20591,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.38"],
             ["@types/react-dom", "npm:17.0.6"],
             ["focus-trap", "npm:6.7.1"],
-            ["prop-types", "npm:15.8.0"],
+            ["prop-types", "npm:15.8.1"],
             ["react", "npm:16.14.0"],
             ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"]
           ],
@@ -29653,10 +29653,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:15.8.0", {
-          "packageLocation": "./.yarn/cache/prop-types-npm-15.8.0-6f60fc44c7-d8d51cf55d.zip/node_modules/prop-types/",
+        ["npm:15.8.1", {
+          "packageLocation": "./.yarn/cache/prop-types-npm-15.8.1-17c71ee7ee-c056d3f1c0.zip/node_modules/prop-types/",
           "packageDependencies": [
-            ["prop-types", "npm:15.8.0"],
+            ["prop-types", "npm:15.8.1"],
             ["loose-envify", "npm:1.4.0"],
             ["object-assign", "npm:4.1.1"],
             ["react-is", "npm:16.13.1"]
