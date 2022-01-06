@@ -100,7 +100,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
             ["@types/tinycolor2", "npm:1.4.3"],
-            ["@types/uuid", "npm:8.3.3"],
+            ["@types/uuid", "npm:8.3.4"],
             ["@types/webpack", "npm:5.28.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.8.1"],
             ["@typescript-eslint/parser", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.8.1"],
@@ -7725,7 +7725,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
             ["@types/tinycolor2", "npm:1.4.3"],
-            ["@types/uuid", "npm:8.3.3"],
+            ["@types/uuid", "npm:8.3.4"],
             ["@types/webpack", "npm:5.28.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.8.1"],
             ["@typescript-eslint/parser", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.8.1"],
@@ -12969,10 +12969,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/uuid", [
-        ["npm:8.3.3", {
-          "packageLocation": "./.yarn/cache/@types-uuid-npm-8.3.3-805fed50df-3f340155bb.zip/node_modules/@types/uuid/",
+        ["npm:8.3.4", {
+          "packageLocation": "./.yarn/cache/@types-uuid-npm-8.3.4-7547f4402c-6f11f3ff70.zip/node_modules/@types/uuid/",
           "packageDependencies": [
-            ["@types/uuid", "npm:8.3.3"]
+            ["@types/uuid", "npm:8.3.4"]
           ],
           "linkType": "HARD",
         }]
