@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import ButtonGroup from '.';
-import { noop } from '../../util';
+import { noop } from 'util/index';
 
 const Icon = () => <span>🌭</span>;
 

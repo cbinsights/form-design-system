@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import GroupButton from '.';
-import { noop } from '../../../util';
+import { noop } from 'util/index';
 
 const Icon = () => <span>🌭</span>;
 const Wrapper = (props) => {

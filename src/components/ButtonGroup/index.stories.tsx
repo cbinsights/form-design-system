@@ -4,7 +4,7 @@ import FeedIcon from 'icons/react/FeedIcon';
 import State from 'util/storybook-docs/State';
 import { Story } from '@storybook/react';
 import ButtonGroup, { ButtonGroupProps } from '.';
-import { noop } from '../../util';
+import { noop } from 'util/index';
 
 const Template = (args: ButtonGroupProps): JSX.Element => <ButtonGroup {...args} />;
 
