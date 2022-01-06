@@ -57,6 +57,9 @@ describe('Menu component', () => {
     );
     const anchor = screen.getByRole('link');
     expect(anchor).toBeInTheDocument();
-    expect(screen.queryAllByText(/first|second|third/i).length).toStrictEqual(0);
+    // MenuItems are not expected to be rendered so we check for them to be null
+    expect(screen.queryByText('First')).toBeNull();
+    expect(screen.queryByText('Second')).toBeNull();
+    expect(screen.queryByText('Third')).toBeNull();
   });
 });
