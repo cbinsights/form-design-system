@@ -4200,6 +4200,7 @@ __metadata:
     "@commitlint/config-conventional": 16.0.0
     "@commitlint/prompt": 16.0.0
     "@commitlint/prompt-cli": 16.0.0
+    "@floating-ui/react-dom": 0.4.2
     "@mdx-js/react": 1.6.22
     "@popperjs/core": 2.11.0
     "@reach/menu-button": 0.16.2
@@ -4810,6 +4811,35 @@ __metadata:
     minimatch: ^3.0.4
     strip-json-comments: ^3.1.1
   checksum: b35b50d7b65bd8acd92a05b6fb15ac62c0cefa40dfef0324ca5bf8632bf3679bab6e173c53b3ad1e1d837701cecdbd9c144b35f46588cdf4e046a9caa272488d
+  languageName: node
+  linkType: hard
+
+"@floating-ui/core@npm:^0.3.0":
+  version: 0.3.1
+  resolution: "@floating-ui/core@npm:0.3.1"
+  checksum: b5b646f662994cff2feb694781c1fae2025293b74c6bbdb891a647a26b57aa8499cee8d8211f8dd9eafa53909cc24ad451545678c250162b30c37bc02046845a
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^0.1.10":
+  version: 0.1.10
+  resolution: "@floating-ui/dom@npm:0.1.10"
+  dependencies:
+    "@floating-ui/core": ^0.3.0
+  checksum: 9a247f87ef9fd5d20ebfcb262222adce394c49a9c9b35da966794edf7aecc193ee6481cdb6e25a561c6f3d4eb4dea1dad3bc712ccfdba4aeb565d9228618ca94
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react-dom@npm:0.4.2":
+  version: 0.4.2
+  resolution: "@floating-ui/react-dom@npm:0.4.2"
+  dependencies:
+    "@floating-ui/dom": ^0.1.10
+    use-isomorphic-layout-effect: ^1.1.1
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 2319b905b6d32f47ef9fe9334f164ea5af9321b4d21f5fcd1d46ed74fc2b94df83f35ee6936557e0222dbccc8af6569ff09a6f1d3feebd65ace05a677826ab1f
   languageName: node
   linkType: hard
 
@@ -26783,6 +26813,18 @@ __metadata:
     "@types/react":
       optional: true
   checksum: ae47fd96ad5973208472490b9e769c0965b0bfedbc21696c1450b6e71745732129cbb66450b8f33c6f6ef65716fff4381cb97c9fb3d5d7a2622fe6c6f6d3e702
+  languageName: node
+  linkType: hard
+
+"use-isomorphic-layout-effect@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "use-isomorphic-layout-effect@npm:1.1.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: fd9061817d4945af37fd79866b1fe96a09cafe873169a66ec699140b609c64db6c60512d94ec3ca90967837026ea6e6d003901c557693708aeee11d392418a9e
   languageName: node
   linkType: hard
 

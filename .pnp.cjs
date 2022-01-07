@@ -54,6 +54,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@commitlint/config-conventional", "npm:16.0.0"],
             ["@commitlint/prompt", "npm:16.0.0"],
             ["@commitlint/prompt-cli", "npm:16.0.0"],
+            ["@floating-ui/react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.4.2"],
             ["@mdx-js/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.6.22"],
             ["@popperjs/core", "npm:2.11.0"],
             ["@reach/menu-button", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.16.2"],
@@ -7679,6 +7680,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@commitlint/config-conventional", "npm:16.0.0"],
             ["@commitlint/prompt", "npm:16.0.0"],
             ["@commitlint/prompt-cli", "npm:16.0.0"],
+            ["@floating-ui/react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.4.2"],
             ["@mdx-js/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.6.22"],
             ["@popperjs/core", "npm:2.11.0"],
             ["@reach/menu-button", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.16.2"],
@@ -8374,6 +8376,53 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["js-yaml", "npm:4.1.0"],
             ["minimatch", "npm:3.0.4"],
             ["strip-json-comments", "npm:3.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@floating-ui/core", [
+        ["npm:0.3.1", {
+          "packageLocation": "./.yarn/cache/@floating-ui-core-npm-0.3.1-ee3b5f939e-b5b646f662.zip/node_modules/@floating-ui/core/",
+          "packageDependencies": [
+            ["@floating-ui/core", "npm:0.3.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@floating-ui/dom", [
+        ["npm:0.1.10", {
+          "packageLocation": "./.yarn/cache/@floating-ui-dom-npm-0.1.10-23e873d057-9a247f87ef.zip/node_modules/@floating-ui/dom/",
+          "packageDependencies": [
+            ["@floating-ui/dom", "npm:0.1.10"],
+            ["@floating-ui/core", "npm:0.3.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@floating-ui/react-dom", [
+        ["npm:0.4.2", {
+          "packageLocation": "./.yarn/cache/@floating-ui-react-dom-npm-0.4.2-1c631f32e7-2319b905b6.zip/node_modules/@floating-ui/react-dom/",
+          "packageDependencies": [
+            ["@floating-ui/react-dom", "npm:0.4.2"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.4.2", {
+          "packageLocation": "./.yarn/__virtual__/@floating-ui-react-dom-virtual-7f625333dd/0/cache/@floating-ui-react-dom-npm-0.4.2-1c631f32e7-2319b905b6.zip/node_modules/@floating-ui/react-dom/",
+          "packageDependencies": [
+            ["@floating-ui/react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.4.2"],
+            ["@floating-ui/dom", "npm:0.1.10"],
+            ["@types/react", "npm:17.0.38"],
+            ["@types/react-dom", "npm:17.0.6"],
+            ["react", "npm:16.14.0"],
+            ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"],
+            ["use-isomorphic-layout-effect", "virtual:7f625333dd0795c9a6c95265b7f43d94f6658aafa3a385865bf2857da4aadf73175ba878fad078a0f5acb49fcbb458f93650648ac7a22061eeb5c2ec30231f78#npm:1.1.1"]
+          ],
+          "packagePeers": [
+            "@types/react-dom",
+            "@types/react",
+            "react-dom",
+            "react"
           ],
           "linkType": "HARD",
         }]
@@ -34802,6 +34851,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["use-isomorphic-layout-effect", "npm:1.0.0"]
           ],
           "linkType": "SOFT",
+        }],
+        ["npm:1.1.1", {
+          "packageLocation": "./.yarn/cache/use-isomorphic-layout-effect-npm-1.1.1-f64e49c61c-fd9061817d.zip/node_modules/use-isomorphic-layout-effect/",
+          "packageDependencies": [
+            ["use-isomorphic-layout-effect", "npm:1.1.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:7f625333dd0795c9a6c95265b7f43d94f6658aafa3a385865bf2857da4aadf73175ba878fad078a0f5acb49fcbb458f93650648ac7a22061eeb5c2ec30231f78#npm:1.1.1", {
+          "packageLocation": "./.yarn/__virtual__/use-isomorphic-layout-effect-virtual-d4bfd00786/0/cache/use-isomorphic-layout-effect-npm-1.1.1-f64e49c61c-fd9061817d.zip/node_modules/use-isomorphic-layout-effect/",
+          "packageDependencies": [
+            ["use-isomorphic-layout-effect", "virtual:7f625333dd0795c9a6c95265b7f43d94f6658aafa3a385865bf2857da4aadf73175ba878fad078a0f5acb49fcbb458f93650648ac7a22061eeb5c2ec30231f78#npm:1.1.1"],
+            ["@types/react", "npm:17.0.38"],
+            ["react", "npm:16.14.0"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
+          ],
+          "linkType": "HARD",
         }],
         ["virtual:f29e9fa6744a307ee53327c3386204c57b30fe4aff55f3559bfcddbe095a0e0b4df23578d40c84558cc1956ae012d071590fe7bd4e376af3edc1dd3edc02cb8f#npm:1.0.0", {
           "packageLocation": "./.yarn/__virtual__/use-isomorphic-layout-effect-virtual-5c831b67f8/0/cache/use-isomorphic-layout-effect-npm-1.0.0-0f9b19ced6-ae47fd96ad.zip/node_modules/use-isomorphic-layout-effect/",
