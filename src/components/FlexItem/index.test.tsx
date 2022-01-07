@@ -3,11 +3,11 @@ import { shallow } from 'enzyme';
 
 import FlexItem, { FlexItemProps } from '.';
 
-const renderComponent = (props: FlexItemProps) => shallow(<FlexItem {...props} />);
+const renderComponent = (props?: FlexItemProps) => shallow(<FlexItem {...props} />);
 
 describe('Flex component', () => {
   it('matches snapshot (default props)', () => {
-    const flex = renderComponent({});
+    const flex = renderComponent();
     expect(flex).toMatchSnapshot();
   });
 
