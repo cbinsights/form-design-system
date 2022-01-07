@@ -50,8 +50,7 @@
     "prepublishOnly": "yarn pinst --disable",
     "postpublish": "yarn pinst --enable",
     "start:storybook": "start-storybook -p 9009 -s public --ci",
-    "cy:test:storybook": "cypress run --headless -C cypress.storybook.json",
-    "ci:start-and-test-storybook": "cross-env START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test start:storybook http://localhost:6006 cy:test:storybook"
+    "cy:test:storybook": "cypress run --headless -C cypress.storybook.json"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
