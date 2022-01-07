@@ -48,7 +48,10 @@
     "check": "yarn lint && yarn test && yarn type-check",
     "postinstall": "yarn husky install",
     "prepublishOnly": "yarn pinst --disable",
-    "postpublish": "yarn pinst --enable"
+    "postpublish": "yarn pinst --enable",
+    "start:storybook": "start-storybook -p 9009 -s public --ci",
+    "cy:test:storybook": "cypress run --headless -C cypress.storybook.json",
+    "ci:start-and-test-storybook": "cross-env START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test start:storybook http://localhost:6006 cy:test:storybook"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
@@ -91,6 +94,7 @@
     "@storybook/components": "6.4.9",
     "@storybook/core-events": "6.4.9",
     "@storybook/react": "6.4.9",
+    "@storybook/testing-react": "^1.2.2",
     "@storybook/theming": "6.4.9",
     "@testing-library/dom": "8.11.1",
     "@testing-library/jest-dom": "5.16.1",
@@ -135,6 +139,7 @@
     "components": "link:./src/components",
     "css": "3.0.0",
     "cssnano": "4.1.11",
+    "cypress": "9.2.0",
     "cz-conventional-changelog": "3.3.0",
     "dayjs": "1.10.7",
     "dictionary": "link:./src/dictionary",
@@ -217,6 +222,7 @@
     }
   },
   "dependencies": {
+    "@cypress/react": "5.12.0",
     "@popperjs/core": "2.11.0",
     "@reach/menu-button": "0.16.2",
     "classcat": "5.0.3",
