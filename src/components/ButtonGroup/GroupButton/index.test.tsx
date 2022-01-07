@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import GroupButton from '.';
+import GroupButton, { ElementChildren } from '.';
 import { noop } from 'util/index';
 
 const Icon = () => <span>🌭</span>;
-const Wrapper = (props) => {
+const Wrapper = (props: ElementChildren) => {
   return <div {...props} data-test="snapshot-wrapper" />;
 };
 
