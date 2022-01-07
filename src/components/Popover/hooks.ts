@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect } from 'react';
+import { RefObject, useEffect } from 'react';
 
 let overflowStyle: string | null = null;
 
@@ -9,12 +9,12 @@ let overflowStyle: string | null = null;
  * @param {Boolean} isDisabled
  */
 export const useDisableScroll = (
-  disableScrollRef: MutableRefObject<HTMLElement> | undefined,
+  disableScrollRef: RefObject<HTMLElement> | undefined,
   isDisabled: boolean
 ): void => {
   useEffect(() => {
-    if (disableScrollRef) {
-      const domNode = disableScrollRef.current || disableScrollRef;
+    if (disableScrollRef?.current) {
+      const domNode = disableScrollRef.current;
       if (isDisabled) {
         overflowStyle = domNode.style.overflow;
         domNode.style.overflow = 'hidden';
@@ -33,13 +33,13 @@ export const useDisableScroll = (
  * @param {Boolean} closeCallback - function that closes the popover
  */
 export const useCloseOnScroll = (
-  closeOnScrollRef: MutableRefObject<HTMLElement> | undefined,
+  closeOnScrollRef: RefObject<HTMLElement> | undefined,
   isActive: boolean,
   closeCallback: () => void
 ): void => {
   useEffect(() => {
-    if (closeOnScrollRef && isActive) {
-      const scrollRef = closeOnScrollRef.current || closeOnScrollRef;
+    if (closeOnScrollRef?.current && isActive) {
+      const scrollRef = closeOnScrollRef.current;
       scrollRef.addEventListener('scroll', function scrollLogic() {
         closeCallback();
         scrollRef.removeEventListener('scroll', scrollLogic);

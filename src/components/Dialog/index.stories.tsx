@@ -1,4 +1,5 @@
 import React from 'react';
+import { Story } from '@storybook/react';
 import { NoStoriesLayout } from 'util/storybook-docs/Layout';
 
 import Button from 'components/Button';
@@ -10,7 +11,7 @@ const Template = (args: DialogProps): JSX.Element => (
   <Dialog disableFocusTrap={true} {...args} />
 );
 
-export const Primary = Template.bind({});
+export const Primary: Story<DialogProps> = Template.bind({});
 Primary.args = {
   isOpen: true,
   content: 'Modal content here',
@@ -18,7 +19,7 @@ Primary.args = {
   disablePortal: true,
 };
 
-export const DialogWithSubtitle = Template.bind({});
+export const DialogWithSubtitle: Story<DialogProps> = Template.bind({});
 DialogWithSubtitle.args = {
   isOpen: true,
   content: 'Modal content here',
@@ -27,7 +28,7 @@ DialogWithSubtitle.args = {
   disablePortal: true,
 };
 
-export const ScrollingContent = Template.bind({});
+export const ScrollingContent: Story<DialogProps> = Template.bind({});
 ScrollingContent.args = {
   isOpen: true,
   content:
@@ -35,7 +36,7 @@ ScrollingContent.args = {
   title: 'Long content area',
 };
 
-export const ScrollingContentWithFooter = Template.bind({});
+export const ScrollingContentWithFooter: Story<DialogProps> = Template.bind({});
 ScrollingContentWithFooter.args = {
   isOpen: true,
   content:
@@ -44,7 +45,9 @@ ScrollingContentWithFooter.args = {
   title: 'Long content area w/footer',
 };
 
-export const ScrollingContentFooterPermanentBorder = Template.bind({});
+export const ScrollingContentFooterPermanentBorder: Story<DialogProps> = Template.bind(
+  {}
+);
 ScrollingContentFooterPermanentBorder.args = {
   isOpen: true,
   content:
@@ -54,7 +57,10 @@ ScrollingContentFooterPermanentBorder.args = {
   alwaysShowBorder: true,
 };
 
-export const DialogFromPopover = ({ onDismiss, ...args }: DialogProps): JSX.Element => {
+export const DialogFromPopover = ({
+  onDismiss = () => {},
+  ...args
+}: DialogProps): JSX.Element => {
   const [dialogIsOpen, setDialogOpen] = React.useState(false);
   const handleClick = () => {
     setDialogOpen(true);

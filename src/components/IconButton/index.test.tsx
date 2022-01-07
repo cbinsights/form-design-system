@@ -5,14 +5,14 @@ import IconButton from '.';
 
 describe('ButtonGroup component', () => {
   it('matches snapshot (default props)', () => {
-    const component = shallow(<IconButton Icon={() => {}} label="Label" />);
+    const component = shallow(<IconButton Icon={() => null} label="Label" />);
     expect(component).toMatchSnapshot();
   });
 
   it('matches snapshot (set all props)', () => {
     const component = shallow(
       <IconButton
-        Icon={() => {}}
+        Icon={() => null}
         label="Label"
         isActive={true}
         radius="circle"

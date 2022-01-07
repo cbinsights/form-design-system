@@ -7,7 +7,7 @@ describe('Dialog', () => {
 
   it('tests that dialog renders properly', () => {
     // Scrolling should not be locked before dialog is open
-    expect(window.getComputedStyle(document.body).overflow).toBe('');
+    expect(window.getComputedStyle(document.body).getPropertyValue('overflow')).toBe('');
 
     render(
       <Dialog
@@ -39,13 +39,12 @@ describe('Dialog', () => {
 
     /* Tests styles */
     /* ============ */
-    expect(window.getComputedStyle(screen.getByRole('dialog'))['max-height']).toBe(
-      '1000px'
-    );
-    expect(window.getComputedStyle(screen.getByRole('dialog'))['max-width']).toBe(
-      '1000px'
-    );
+    const computedStyles = window.getComputedStyle(screen.getByRole('dialog'));
+    expect(computedStyles.getPropertyValue('max-height')).toBe('1000px');
+    expect(computedStyles.getPropertyValue('max-width')).toBe('1000px');
     // Scrolling should be locked when dialog is open
-    expect(window.getComputedStyle(document.documentElement).overflow).toBe('hidden');
+    expect(
+      window.getComputedStyle(document.documentElement).getPropertyValue('overflow')
+    ).toBe('hidden');
   });
 });
