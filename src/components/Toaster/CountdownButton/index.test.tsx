@@ -12,10 +12,12 @@ describe('CountdownButton', () => {
   });
 
   describe('CountdownButton animation', () => {
-    it('shows a full timer stroke on mount', () => {
-      const { container } = render(<CountdownButton {...MOCK_PROPS} />);
-      const circle = container.querySelector('div > div > svg > circle');
-      expect(circle).toHaveStyle('stroke-dashoffset: 0');
+    it('starts stroke at 0 on component mount', async () => {
+      render(<CountdownButton {...MOCK_PROPS} />);
+      const circle = screen.getByRole('alert');
+      expect(
+        window.getComputedStyle(circle).getPropertyValue('stroke-dashoffset')
+      ).toEqual('0');
     });
   });
 });
