@@ -30,9 +30,8 @@ describe('getCircleInfo', () => {
       circumference: Math.PI * 40 * 2,
       centerOffset: 45,
     };
-
-    Object.keys(expected).forEach((k) => {
-      expect(actual[k]).toEqual(expected[k]);
-    });
+    expect(actual.radius).toEqual(expected.radius);
+    expect(actual.circumference).toEqual(expected.circumference);
+    expect(actual.centerOffset).toEqual(expected.centerOffset);
   });
 });

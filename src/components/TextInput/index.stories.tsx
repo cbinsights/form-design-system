@@ -7,6 +7,7 @@ import InputGroup from 'components/InputGroup';
 import State from 'util/storybook-docs/State';
 
 import TextInput, { TextInputProps } from '.';
+import { noop } from 'util/index';
 
 export const Primary = (args: TextInputProps): JSX.Element => (
   <TextInput {...args} label="First Name" />
@@ -43,7 +44,10 @@ export const ExampleLayout = ({ onChange }: TextInputProps): JSX.Element => (
   </>
 );
 
-export const ControlledInput = ({ onChange, ...args }: TextInputProps): JSX.Element => (
+export const ControlledInput = ({
+  onChange = noop,
+  ...args
+}: TextInputProps): JSX.Element => (
   <State
     initialValue="Controlled"
     render={(value, setValue) => (
@@ -53,7 +57,7 @@ export const ControlledInput = ({ onChange, ...args }: TextInputProps): JSX.Elem
         showLabel={false}
         value={value}
         onChange={(e) => {
-          onChange();
+          onChange(e);
           setValue(e.target.value);
         }}
       />

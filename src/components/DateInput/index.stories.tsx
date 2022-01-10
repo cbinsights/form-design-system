@@ -1,13 +1,14 @@
 import React from 'react';
+import { Story } from '@storybook/react';
 
-import DateInput from '.';
+import DateInput, { DateInputProps } from '.';
 
-const Template = (args) => <DateInput {...args} />;
+const Template = (args: DateInputProps) => <DateInput {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<DateInputProps> = Template.bind({});
 Primary.args = {};
 
-export const DefaultSelectedDate = Template.bind({});
+export const DefaultSelectedDate: Story<DateInputProps> = Template.bind({});
 DefaultSelectedDate.args = {
   defaultDate: '01/01/2010',
 };
@@ -21,14 +22,14 @@ DefaultSelectedDate.parameters = {
   },
 };
 
-export const DateRanges = Template.bind({});
-DateRanges.args = {
+export const DateRange: Story<DateInputProps> = Template.bind({});
+DateRange.args = {
   label: 'Enter a date in 2020',
   minDate: new Date('Jan 1 2020'),
   maxDate: new Date('Dec 31 2020'),
 };
 
-DateRanges.parameters = {
+DateRange.parameters = {
   docs: {
     description: {
       story:
@@ -37,9 +38,9 @@ DateRanges.parameters = {
   },
 };
 
-export const PopoverProps = Template.bind({});
+export const PopoverProps: Story<DateInputProps> = Template.bind({});
 PopoverProps.args = {
-  popoverProps: { alignment: 'end' },
+  popoverProps: { alignment: 'end', children: null },
 };
 
 PopoverProps.parameters = {
@@ -51,7 +52,7 @@ PopoverProps.parameters = {
   },
 };
 
-export const LabelPosition = Template.bind({});
+export const LabelPosition: Story<DateInputProps> = Template.bind({});
 LabelPosition.args = {
   label: 'DateInput',
   labelPosition: 'left',
