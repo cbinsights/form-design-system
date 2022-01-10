@@ -3,6 +3,7 @@ import React, {
   useEffect,
   useState,
   Ref,
+  RefObject,
   MutableRefObject,
   HTMLAttributes,
 } from 'react';
@@ -82,10 +83,10 @@ export interface PopoverProps {
   onClose?: () => void;
 
   /** When popover opens, this element should freeze scrolling. When the popover closes, the scrollability of this element should resume. */
-  disableScrollRef?: MutableRefObject<HTMLElement>;
+  disableScrollRef?: RefObject<HTMLElement>;
 
   /** When the Popover detects scroll events from this ref, the popover should close. */
-  closeOnScrollRef?: MutableRefObject<HTMLElement>;
+  closeOnScrollRef?: RefObject<HTMLElement>;
 
   /** Ref to forward to the content container of the popover */
   ref?: Ref<HTMLElement>;

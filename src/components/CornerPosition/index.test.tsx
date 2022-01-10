@@ -1,15 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import CornerPosition from '.';
 
 describe('CornerPosition component', () => {
-  it('matches snapshot', () => {
-    const component = shallow(
-      <CornerPosition decoration={<span />}>
+  it('renders component', () => {
+    render(
+      <CornerPosition decoration={<span>42</span>}>
         <div />
       </CornerPosition>
     );
-    expect(component).toMatchSnapshot();
+    expect(screen.getByText('42')).toBeInTheDocument();
   });
 });

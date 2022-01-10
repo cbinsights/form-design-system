@@ -11,7 +11,13 @@ describe('StackedButton component', () => {
 
   it('matches snapshot (set all props)', () => {
     const component = shallow(
-      <StackedButton Link={() => {}} disabled Icon={() => {}} label="button" isActive />
+      <StackedButton
+        Link={() => null}
+        disabled
+        Icon={() => null}
+        label="button"
+        isActive
+      />
     );
     expect(component).toMatchSnapshot();
   });

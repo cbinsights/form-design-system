@@ -26,9 +26,9 @@ export const DATE_FORMAT_MAP = {
   MDY: 'MM/DD/YYYY',
   DMY: 'DD/MM/YYYY',
   YMD: 'YYYY/MM/DD', // ISO-8601, the best but least used standard
-};
+} as const;
 
-export type DateFormat = 'MDY' | 'DMY' | 'YMD';
+export type DateFormat = keyof typeof DATE_FORMAT_MAP;
 
 export interface DateInputProps {
   /**

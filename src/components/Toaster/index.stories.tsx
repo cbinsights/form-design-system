@@ -14,13 +14,13 @@ export const Primary = (args: ToasterProps): JSX.Element => {
       <Toaster
         {...args}
         isOpen={isToastShowing}
-        onDismiss={() => setIsToastShowing(false)}
         toastInstance={{
           content: 'hey',
           type: 'info',
           progress: 42,
           dismissOnAction: true,
           actionLabel: 'Action',
+          onDismiss: () => setIsToastShowing(false),
         }}
       />
     </>
@@ -40,13 +40,8 @@ export const Playground = (): JSX.Element => {
   };
   const randomNum = () => Math.floor(Math.random() * 100);
 
-  const {
-    id,
-    isOpen,
-    toastInstance,
-    isAutoDismiss,
-    toastInstance: { actionLabel },
-  } = params;
+  const { id, isOpen, toastInstance, isAutoDismiss } = params;
+  const actionLabel = toastInstance?.actionLabel;
   return (
     <div className="padding--all">
       <h4>Core:</h4>
@@ -124,7 +119,7 @@ export const Playground = (): JSX.Element => {
         onClick={() =>
           setParams({
             ...params,
-            toastInstance: { ...params.toastInstance, progress: null },
+            toastInstance: { ...params.toastInstance, progress: undefined },
           })
         }
       >
@@ -180,7 +175,7 @@ export const Playground = (): JSX.Element => {
         onClick={() =>
           setParams({
             ...params,
-            toastInstance: { ...params.toastInstance, actionLabel: null },
+            toastInstance: { ...params.toastInstance, actionLabel: undefined },
           })
         }
       >
@@ -245,12 +240,9 @@ export const Playground = (): JSX.Element => {
         id={id}
         isOpen={isOpen}
         isAutoDismiss={isAutoDismiss}
-        onDismiss={dismissToast}
         toastInstance={{
-          actionLabel: toastInstance.actionLabel,
-          progress: toastInstance.progress,
-          type: toastInstance.type,
-          content: toastInstance.content,
+          ...toastInstance,
+          onDismiss: dismissToast,
         }}
       />
     </div>
