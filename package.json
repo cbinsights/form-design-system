@@ -224,6 +224,7 @@
     "@cypress/react": "5.12.0",
     "@popperjs/core": "2.11.0",
     "@reach/menu-button": "0.16.2",
+    "@storybook/client-api": "6.4.10",
     "classcat": "5.0.3",
     "focus-trap-react": "8.9.0",
     "raf-schd": "4.0.3",
