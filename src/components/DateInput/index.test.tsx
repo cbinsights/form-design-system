@@ -2,8 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import DateInput, { DateFormat, DATE_FORMAT_MAP } from '.';
-import { getKeys } from 'util/index';
+import DateInput, { DateFormat } from '.';
 
 describe('DateInput component', () => {
   let dateChangeFn: null | (() => Date);
@@ -79,11 +78,12 @@ describe('DateInput component', () => {
 });
 
 describe('Date formats', () => {
-  const formats = getKeys(DATE_FORMAT_MAP);
+  const formats: DateFormat[] = ['MDY', 'DMY', 'YMD'];
   it('uses correct placeholder for a given format', () => {
-    formats.forEach((format: DateFormat) => {
+    const expected = ['MM/DD/YYYY', 'DD/MM/YYYY', 'YYYY/MM/DD'];
+    formats.forEach((format: DateFormat, index) => {
       render(<DateInput dateFormat={format} />);
-      expect(screen.getByPlaceholderText(DATE_FORMAT_MAP[format])).toBeInTheDocument();
+      expect(screen.getByPlaceholderText(expected[index])).toBeInTheDocument();
     });
   });
 
