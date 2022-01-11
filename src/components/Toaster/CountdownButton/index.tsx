@@ -102,6 +102,7 @@ const CountdownButton = ({
             viewBox={`0 0 ${circleSize} ${circleSize}`}
           >
             <circle
+              role="alert"
               cx={centerOffset}
               cy={centerOffset}
               r={radius}
