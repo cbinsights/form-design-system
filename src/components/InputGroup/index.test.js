@@ -15,8 +15,8 @@ describe('InputGroup component', () => {
         </select>
       </InputGroup>
     );
-    expect(screen.getByText('Horse-size duck')).toBeInTheDocument();
-    expect(screen.getByText('Duck-size horse')).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: 'Horse-size duck' })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: 'Duck-size horse' })).toBeInTheDocument();
   });
 
   describe('getFlexSettings', () => {
