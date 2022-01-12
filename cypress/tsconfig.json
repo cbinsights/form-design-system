@@ -5,5 +5,5 @@
     "types": ["cypress"],
     "jsx": "preserve"
   },
-  "include": ["**/*.tsx", "storybook/storybook.spec.tsx"]
+  "include": ["**/*.ts", "storybook/storybook.spec.ts"]
 }

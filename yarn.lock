@@ -4200,7 +4200,6 @@ __metadata:
     "@commitlint/config-conventional": 16.0.0
     "@commitlint/prompt": 16.0.0
     "@commitlint/prompt-cli": 16.0.0
-    "@cypress/react": 5.12.0
     "@mdx-js/react": 1.6.22
     "@popperjs/core": 2.11.0
     "@reach/menu-button": 0.16.2
@@ -4621,51 +4620,6 @@ __metadata:
   version: 1.4.0
   resolution: "@csstools/convert-colors@npm:1.4.0"
   checksum: 26069eeb845a506934c821c203feb97f5de634c5fbeb9978505a2271d6cfdb0ce400240fca9620a4ef2e68953928ea25aab92ea8454e0edf5cd074066d9ad57b
-  languageName: node
-  linkType: hard
-
-"@cypress/mount-utils@npm:1.0.2":
-  version: 1.0.2
-  resolution: "@cypress/mount-utils@npm:1.0.2"
-  checksum: fc3ad2d4bbb0505c85a9b8f16033aed074efb50de5605699312c688cb545b8ddb344738dcb14b73761bf403ea9e99c58b651ffd827df0d2862f45cc2fec77b6b
-  languageName: node
-  linkType: hard
-
-"@cypress/react@npm:5.12.0":
-  version: 5.12.0
-  resolution: "@cypress/react@npm:5.12.0"
-  dependencies:
-    "@cypress/mount-utils": 1.0.2
-    debug: ^4.3.2
-    find-webpack: 2.2.1
-    find-yarn-workspace-root: 2.0.0
-  peerDependencies:
-    "@babel/core": ">=7"
-    "@babel/preset-env": ">=7"
-    "@cypress/webpack-dev-server": "*"
-    "@types/react": ^16.9.16 || ^17.0.0
-    babel-loader: ">=8"
-    cypress: "*"
-    next: ">=8"
-    react: ^=16.x || ^=17.x
-    react-dom: ^=16.x || ^=17.x
-    webpack: ">=4"
-  peerDependenciesMeta:
-    "@babel/core":
-      optional: true
-    "@babel/preset-env":
-      optional: true
-    "@cypress/webpack-dev-server":
-      optional: true
-    "@types/react":
-      optional: true
-    babel-loader:
-      optional: true
-    next:
-      optional: true
-    webpack:
-      optional: true
-  checksum: 93ab88848d45a64341288be5fa489cd0225c6023859f49d26e49a14f3540c1b4151e22dc26562382889a205656ab36f74dbc17497437e3e29035c1fea8db9577
   languageName: node
   linkType: hard
 
@@ -11029,7 +10983,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-more-types@npm:2.24.0, check-more-types@npm:^2.24.0":
+"check-more-types@npm:^2.24.0":
   version: 2.24.0
   resolution: "check-more-types@npm:2.24.0"
   checksum: b09080ec3404d20a4b0ead828994b2e5913236ef44ed3033a27062af0004cf7d2091fbde4b396bf13b7ce02fb018bc9960b48305e6ab2304cd82d73ed7a51ef4
@@ -12600,15 +12554,6 @@ __metadata:
     supports-color:
       optional: true
   checksum: 820ea160e267e23c953c9ed87e7ad93494d8cda2f7349af5e7e3bb236d23707ee3022f477d5a7d2ee86ef2bf7d60aa9ab22d1f58080d7deb9dccd073585e1e43
-  languageName: node
-  linkType: hard
-
-"debug@npm:4.1.1":
-  version: 4.1.1
-  resolution: "debug@npm:4.1.1"
-  dependencies:
-    ms: ^2.1.1
-  checksum: 1e681f5cce94ba10f8dde74b20b42e4d8cf0d2a6700f4c165bb3bb6885565ef5ca5885bf07e704974a835f2415ff095a63164f539988a1f07e8a69fe8b1d65ad
   languageName: node
   linkType: hard
 
@@ -14745,36 +14690,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-webpack@npm:2.2.1":
-  version: 2.2.1
-  resolution: "find-webpack@npm:2.2.1"
-  dependencies:
-    debug: 4.1.1
-    find-yarn-workspace-root: 1.2.1
-    mocked-env: 1.3.2
-  checksum: 3a0254c3e5abf78f6af2d86431e8f948886883be4a82c79cd66b9bdb3d27ac7889e7009952d17ecb000cebd09db35dee4354ca09475d398ed79832419e7aa4eb
-  languageName: node
-  linkType: hard
-
-"find-yarn-workspace-root@npm:1.2.1":
-  version: 1.2.1
-  resolution: "find-yarn-workspace-root@npm:1.2.1"
-  dependencies:
-    fs-extra: ^4.0.3
-    micromatch: ^3.1.4
-  checksum: a8f4565fb1ead6122acc0d324fa3257c20f7b0c91b7b266dab9eee7251fb5558fcff5b35dbfd301bfd1cbb91c1cdd1799b28ffa5b9a92efd8c7ded3663652bbe
-  languageName: node
-  linkType: hard
-
-"find-yarn-workspace-root@npm:2.0.0":
-  version: 2.0.0
-  resolution: "find-yarn-workspace-root@npm:2.0.0"
-  dependencies:
-    micromatch: ^4.0.2
-  checksum: fa5ca8f9d08fe7a54ce7c0a5931ff9b7e36f9ee7b9475fb13752bcea80ec6b5f180fa5102d60b376d5526ce924ea3fc6b19301262efa0a5d248dd710f3644242
-  languageName: node
-  linkType: hard
-
 "findup-sync@npm:^4.0.0":
   version: 4.0.0
   resolution: "findup-sync@npm:4.0.0"
@@ -15001,17 +14916,6 @@ __metadata:
     path-is-absolute: ^1.0.0
     rimraf: ^2.2.8
   checksum: 6edfd65fc813baa27f1603778c0f5ec11f8c5006a20b920437813ee2023eba18aeec8bef1c89b2e6c84f9fc90fdc7c916f4a700466c8c69d22a35d018f2570f0
-  languageName: node
-  linkType: hard
-
-"fs-extra@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "fs-extra@npm:4.0.3"
-  dependencies:
-    graceful-fs: ^4.1.2
-    jsonfile: ^4.0.0
-    universalify: ^0.1.0
-  checksum: c5ae3c7043ad7187128e619c0371da01b58694c1ffa02c36fb3f5b459925d9c27c3cb1e095d9df0a34a85ca993d8b8ff6f6ecef868fd5ebb243548afa7fc0936
   languageName: node
   linkType: hard
 
@@ -18598,7 +18502,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lazy-ass@npm:1.6.0, lazy-ass@npm:^1.6.0":
+"lazy-ass@npm:^1.6.0":
   version: 1.6.0
   resolution: "lazy-ass@npm:1.6.0"
   checksum: 5a3ebb17915b03452320804466345382a6c25ac782ec4874fecdb2385793896cd459be2f187dc7def8899180c32ee0ab9a1aa7fe52193ac3ff3fe29bb0591729
@@ -20223,18 +20127,6 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: 3bce20ea525f9477befe458ab85284b0b66c8dc3812f94155af07c827175948cdd8114852ac6c6d82009b13c1048c37f6d98743eb019651ee25c39acc8aabe7d
-  languageName: node
-  linkType: hard
-
-"mocked-env@npm:1.3.2":
-  version: 1.3.2
-  resolution: "mocked-env@npm:1.3.2"
-  dependencies:
-    check-more-types: 2.24.0
-    debug: 4.1.1
-    lazy-ass: 1.6.0
-    ramda: 0.26.1
-  checksum: 4c2afc800c15ba84364305a97317e90530541202212a4cd115a397ca3bc56c85ffcb6b7cafa4363be8069e49c55ae1e3f6c86ff02d3b5f2ca6a0c247087050d7
   languageName: node
   linkType: hard
 
@@ -23334,13 +23226,6 @@ __metadata:
   version: 1.0.0
   resolution: "railroad-diagrams@npm:1.0.0"
   checksum: 9e312af352b5ed89c2118edc0c06cef2cc039681817f65266719606e4e91ff6ae5374c707cc9033fe29a82c2703edf3c63471664f97f0167c85daf6f93496319
-  languageName: node
-  linkType: hard
-
-"ramda@npm:0.26.1":
-  version: 0.26.1
-  resolution: "ramda@npm:0.26.1"
-  checksum: 19c2730e44c129538151ae034c89be9b2c6a4ccc7c65cff57497418bc532ce09282f98cd927c39b0b03c6bc3f1d1a12d822b7b07f96a1634f4958a6c05b7b384
   languageName: node
   linkType: hard
 
