@@ -1,13 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import FloatingAction from '.';
 
 describe('FloatingAction component', () => {
-  it('matches snapshot (set all props)', () => {
-    const component = shallow(
-      <FloatingAction Icon={() => {}} label="delete the internet" />
-    );
-    expect(component).toMatchSnapshot();
+  it('renders component (set all props)', () => {
+    render(<FloatingAction Icon={() => null} label="delete the internet" />);
+    expect(screen.getByTitle('delete the internet')).toBeInTheDocument();
   });
 });
