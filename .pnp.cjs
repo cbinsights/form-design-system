@@ -50,7 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.16.7"],
             ["@babel/preset-typescript", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.16.7"],
             ["@babel/runtime", "npm:7.16.7"],
-            ["@commitlint/cli", "npm:16.0.1"],
+            ["@commitlint/cli", "npm:16.0.2"],
             ["@commitlint/config-conventional", "npm:16.0.0"],
             ["@commitlint/prompt", "npm:16.0.0"],
             ["@commitlint/prompt-cli", "npm:16.0.0"],
@@ -7675,7 +7675,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.16.7"],
             ["@babel/preset-typescript", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.16.7"],
             ["@babel/runtime", "npm:7.16.7"],
-            ["@commitlint/cli", "npm:16.0.1"],
+            ["@commitlint/cli", "npm:16.0.2"],
             ["@commitlint/config-conventional", "npm:16.0.0"],
             ["@commitlint/prompt", "npm:16.0.0"],
             ["@commitlint/prompt-cli", "npm:16.0.0"],
@@ -7810,10 +7810,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@commitlint/cli", [
-        ["npm:16.0.1", {
-          "packageLocation": "./.yarn/cache/@commitlint-cli-npm-16.0.1-a43d26e49a-a4ec182911.zip/node_modules/@commitlint/cli/",
+        ["npm:16.0.2", {
+          "packageLocation": "./.yarn/cache/@commitlint-cli-npm-16.0.2-0fc722cf95-20760e0f8d.zip/node_modules/@commitlint/cli/",
           "packageDependencies": [
-            ["@commitlint/cli", "npm:16.0.1"],
+            ["@commitlint/cli", "npm:16.0.2"],
             ["@commitlint/format", "npm:16.0.0"],
             ["@commitlint/lint", "npm:16.0.0"],
             ["@commitlint/load", "npm:16.0.0"],
