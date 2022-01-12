@@ -1,21 +1,22 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import SeparatorList from '.';
 
 describe('Section component', () => {
-  it('matches snapshot for string items', () => {
-    const component = shallow(
+  it('renders string items', () => {
+    render(
       <SeparatorList
         separator="🐍"
         items={['why', 'did', 'it', 'have', 'to', 'be', 'snakes?']}
       />
     );
-    expect(component).toMatchSnapshot();
+    const items = screen.getAllByRole('listitem');
+    expect(items.length).toEqual(7);
   });
 
-  it('matches snapshot for mixed strings and components', () => {
-    const component = shallow(
+  it('renders mixed strings and components', () => {
+    render(
       <SeparatorList
         separator="🎃"
         items={[
@@ -26,16 +27,17 @@ describe('Section component', () => {
         ]}
       />
     );
-    expect(component).toMatchSnapshot();
+    expect(screen.getByRole('link')).toBeInTheDocument();
+    expect(screen.getByText('snapshot')).toBeInTheDocument();
   });
 
-  it('all list items include the correct data-separator attribute', () => {
+  it('renders all list items include the correct data-separator attribute', () => {
     const TEST_SEPARATOR = '・';
-    const component = shallow(
-      <SeparatorList separator={TEST_SEPARATOR} items={['one', 'two', 'three']} />
-    );
-    component.find('li').forEach((item) => {
-      expect(item.prop('data-separator')).toBe(TEST_SEPARATOR);
+    render(<SeparatorList separator={TEST_SEPARATOR} items={['one', 'two', 'three']} />);
+    const items = screen.getAllByRole('listitem');
+    expect(items.length).toEqual(3);
+    items.forEach((item) => {
+      expect(item.getAttribute('data-separator')).toEqual('・');
     });
   });
 });
