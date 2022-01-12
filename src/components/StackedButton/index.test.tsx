@@ -1,24 +1,24 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import StackedButton from '.';
 
 describe('StackedButton component', () => {
-  it('matches snapshot (default props)', () => {
-    const component = shallow(<StackedButton label="Button" />);
-    expect(component).toMatchSnapshot();
+  it('renders component (default props)', () => {
+    render(<StackedButton label="Button" />);
+    expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
-  it('matches snapshot (set all props)', () => {
-    const component = shallow(
+  it('renders component (set all props)', () => {
+    render(
       <StackedButton
-        Link={() => null}
+        Link={() => <a href="#"></a>}
         disabled
         Icon={() => null}
         label="button"
         isActive
       />
     );
-    expect(component).toMatchSnapshot();
+    expect(screen.getByRole('link')).toBeInTheDocument();
   });
 });
