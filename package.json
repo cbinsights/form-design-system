@@ -48,7 +48,9 @@
     "check": "yarn lint && yarn test && yarn type-check",
     "postinstall": "yarn husky install",
     "prepublishOnly": "yarn pinst --disable",
-    "postpublish": "yarn pinst --enable"
+    "postpublish": "yarn pinst --enable",
+    "start:storybook": "start-storybook -p 9009 -s public --ci",
+    "cy:test:storybook": "cypress run --headless -C cypress.storybook.json"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
@@ -135,6 +137,7 @@
     "components": "link:./src/components",
     "css": "3.0.0",
     "cssnano": "4.1.11",
+    "cypress": "9.2.0",
     "cz-conventional-changelog": "3.3.0",
     "dayjs": "1.10.7",
     "dictionary": "link:./src/dictionary",
