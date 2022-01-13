@@ -1,16 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import TextInput from '.';
 
 describe('TextInput component', () => {
-  it('matches snapshot (default)', () => {
-    const wrapper = shallow(<TextInput label="label" />);
-    expect(wrapper).toMatchSnapshot();
+  it('renders component (default props)', () => {
+    render(<TextInput label="label" />);
+    expect(screen.getByRole('textbox', { name: 'label' })).toBeInTheDocument();
   });
 
-  it('matches snapshot (all props)', () => {
-    const wrapper = shallow(
+  it('renders component (all props)', () => {
+    render(
       <TextInput
         label="label"
         errorText="errorText"
@@ -23,6 +23,6 @@ describe('TextInput component', () => {
         labelWidth="200px"
       />
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(screen.getByRole('spinbutton', { name: 'label' })).toBeInTheDocument();
   });
 });
