@@ -10,7 +10,7 @@ import TextInput, { TextInputProps } from '.';
 import { noop } from 'util/index';
 
 export const Primary = (args: TextInputProps): JSX.Element => (
-  <TextInput {...args} label="First Name" />
+  <TextInput {...args} label="First Name" ref={null} />
 );
 
 export const ExampleLayout = ({ onChange }: TextInputProps): JSX.Element => (
@@ -60,6 +60,7 @@ export const ControlledInput = ({
           onChange(e);
           setValue(e.target.value);
         }}
+        ref={null}
       />
     )}
   />
@@ -73,6 +74,7 @@ export const Icons = ({ onChange, ...args }: TextInputProps): JSX.Element => (
     IconLeft={CaretDownIcon}
     IconRight={CaretDownIcon}
     onChange={onChange}
+    ref={null}
   />
 );
 
@@ -84,6 +86,7 @@ export const SideLabel = ({ onChange, ...args }: TextInputProps): JSX.Element =>
     before="before"
     after="after"
     onChange={onChange}
+    ref={null}
   />
 );
 
