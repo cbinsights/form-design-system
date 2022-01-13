@@ -6,7 +6,7 @@ import TextInput from '.';
 describe('TextInput component', () => {
   it('renders component (default props)', () => {
     render(<TextInput label="label" />);
-    expect(screen.getByText('label')).toBeInTheDocument();
+    expect(screen.getByRole('textbox', { name: 'label' })).toBeInTheDocument();
   });
 
   it('renders component (all props)', () => {
@@ -23,6 +23,6 @@ describe('TextInput component', () => {
         labelWidth="200px"
       />
     );
-    expect(screen.getByText('label')).toBeInTheDocument();
+    expect(screen.getByRole('spinbutton', { name: 'label' })).toBeInTheDocument();
   });
 });
