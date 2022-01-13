@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import InputGroup, { getFlexSettings } from '.';
 
 describe('InputGroup component', () => {
   it('matches snapshot (set all props)', () => {
-    const wrapper = shallow(
+    render(
       <InputGroup>
         <input type="text" />
         <input type="text" />
@@ -15,7 +15,8 @@ describe('InputGroup component', () => {
         </select>
       </InputGroup>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(screen.getByRole('option', { name: 'Horse-size duck' })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: 'Duck-size horse' })).toBeInTheDocument();
   });
 
   describe('getFlexSettings', () => {
