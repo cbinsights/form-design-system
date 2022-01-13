@@ -93,7 +93,6 @@
     "@storybook/components": "6.4.9",
     "@storybook/core-events": "6.4.9",
     "@storybook/react": "6.4.9",
-    "@storybook/testing-react": "^1.2.2",
     "@storybook/theming": "6.4.9",
     "@testing-library/dom": "8.11.1",
     "@testing-library/jest-dom": "5.16.1",
@@ -223,7 +222,6 @@
   "dependencies": {
     "@popperjs/core": "2.11.0",
     "@reach/menu-button": "0.16.2",
-    "@storybook/client-api": "6.4.10",
     "classcat": "5.0.3",
     "focus-trap-react": "8.9.0",
     "raf-schd": "4.0.3",

@@ -1,4 +1,3 @@
-/* eslint-disable jest/expect-expect */
 const getIframeDocument = () =>
   cy.get('#storybook-preview-iframe').its('0.contentDocument').should('exist');
 
