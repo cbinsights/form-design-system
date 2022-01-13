@@ -5,16 +5,14 @@ import SeparatorList from '.';
 
 describe('Section component', () => {
   it('renders string items', () => {
-    render(
-      <SeparatorList
-        separator="🐍"
-        items={['why', 'did', 'it', 'have', 'to', 'be', 'snakes?']}
-      />
-    );
+    const initialItems = ['why', 'did', 'it', 'have', 'to', 'be', 'snakes?'];
+    render(<SeparatorList separator="🐍" items={initialItems} />);
     const list = screen.getByRole('list');
     const { getAllByRole } = within(list);
     const items = getAllByRole('listitem');
     expect(items.length).toEqual(7);
+    const text = items.map((item) => item.textContent);
+    expect(text).toEqual(initialItems);
   });
 
   it('renders mixed strings and components', () => {
@@ -39,11 +37,14 @@ describe('Section component', () => {
 
   it('renders all list items include the correct data-separator attribute', () => {
     const TEST_SEPARATOR = '・';
-    render(<SeparatorList separator={TEST_SEPARATOR} items={['one', 'two', 'three']} />);
+    const initialItems = ['one', 'two', 'three'];
+    render(<SeparatorList separator={TEST_SEPARATOR} items={initialItems} />);
     const list = screen.getByRole('list');
     const { getAllByRole } = within(list);
     const items = getAllByRole('listitem');
     expect(items.length).toEqual(3);
+    const text = items.map((item) => item.textContent);
+    expect(text).toEqual(initialItems);
     items.forEach((item) => {
       expect(item.getAttribute('data-separator')).toEqual('・');
     });
