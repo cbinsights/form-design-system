@@ -21,15 +21,15 @@ describe('InputGroup component', () => {
 
   describe('getFlexSettings', () => {
     it('sets expected default for 2 items', () => {
-      expect(getFlexSettings(2, [])).toStrictEqual(['grow', 'shrink']);
+      expect(getFlexSettings(2)).toStrictEqual(['grow', 'shrink']);
     });
 
     it('sets expected default for 3 items', () => {
-      expect(getFlexSettings(3, [])).toStrictEqual(['shrink', 'grow', 'shrink']);
+      expect(getFlexSettings(3)).toStrictEqual(['shrink', 'grow', 'shrink']);
     });
 
     it('sets expected default for 4 items', () => {
-      expect(getFlexSettings(4, [])).toStrictEqual(['shrink', 'grow', 'grow', 'shrink']);
+      expect(getFlexSettings(4)).toStrictEqual(['shrink', 'grow', 'grow', 'shrink']);
     });
 
     it('overrides default when user passes in their own settings', () => {

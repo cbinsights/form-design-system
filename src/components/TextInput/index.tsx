@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import cc from 'classcat';
 import IconInput from './IconInput';
 import DecoratedInput from './DecoratedInput';
@@ -47,6 +47,7 @@ export interface TextInputProps
 
   showRequired?: boolean;
   showLabel?: boolean;
+  ref?: RefObject<HTMLInputElement>;
 }
 
 const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(

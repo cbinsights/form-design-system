@@ -14,7 +14,7 @@ export type FlexType = 'shrink' | 'grow';
  */
 export const getFlexSettings = (
   childCount: number,
-  userSettings: FlexType[]
+  userSettings?: FlexType[]
 ): FlexType[] => {
   // always obey a valid `flexSettings` prop when passed by a user
   if (userSettings && userSettings.length === childCount) return userSettings;
