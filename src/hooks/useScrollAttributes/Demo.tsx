@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import FDS from 'dictionary/js/styleConstants';
 import useScrollAttributes from '.';
 
 const nested = {
-  boxSizing: 'border-box',
+  boxSizing: 'border-box' as const,
   border: '1px dashed purple',
   display: 'inline-flex',
 };
@@ -12,11 +11,15 @@ const nested = {
 const intermediary = {
   padding: 12,
   border: `2px dashed ${FDS.COLOR_RED}`,
-  overflowY: 'auto',
+  overflowY: 'auto' as const,
   marginBottom: '10px',
 };
 
-export const ExampleItem = (props) => (
+interface ExampleItemProps {
+  label?: string;
+}
+
+export const ExampleItem = (props: ExampleItemProps): JSX.Element => (
   <div
     className="fontSize--xl display--inlineFlex alignChild--center--center media--xl color--red"
     style={{
@@ -29,19 +32,15 @@ export const ExampleItem = (props) => (
   </div>
 );
 
-ExampleItem.propTypes = {
-  label: PropTypes.string,
-};
-
-const Demo = () => {
-  const ref = useRef();
+const Demo = (): JSX.Element => {
+  const ref = useRef<HTMLDivElement>(null);
   const [isAtScrollStart, isAtScrollEnd] = useScrollAttributes(ref);
   return (
     <>
       <div style={intermediary} ref={ref}>
         <div style={nested}>
-          {new Array(20).fill(0).map((item, idx) => (
-            <ExampleItem label={idx} key={idx} />
+          {new Array(20).fill(0).map((_, idx) => (
+            <ExampleItem label={`${idx}`} key={idx} />
           ))}
         </div>
       </div>
