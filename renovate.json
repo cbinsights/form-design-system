@@ -1,7 +1,6 @@
 {
-  "extends": ["config:base", "schedule:earlyMondays"],
+  "extends": ["config:base", "schedule:monthly"],
   "timezone": "America/New_York",
-  "prConcurrentLimit": 10,
   "assigneesSampleSize": 1,
   "ignorePaths": ["**/example/**"],
   "packageRules": [
