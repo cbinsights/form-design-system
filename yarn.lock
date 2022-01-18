@@ -4295,7 +4295,7 @@ __metadata:
     react: 16.14.0
     react-day-picker: 7.4.10
     react-dom: 16.14.0
-    react-hook-form: 7.23.0
+    react-hook-form: 7.24.1
     react-is: 16.13.1
     react-markdown: 7.1.2
     react-popper: 2.2.5
@@ -23244,12 +23244,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:7.23.0":
-  version: 7.23.0
-  resolution: "react-hook-form@npm:7.23.0"
+"react-hook-form@npm:7.24.1":
+  version: 7.24.1
+  resolution: "react-hook-form@npm:7.24.1"
   peerDependencies:
     react: ^16.8.0 || ^17
-  checksum: 8b63d89f2ab147799ce40f98951c0db57c42f831bce38d9927f5358f57615f4102d02b678fd38d0dd93bac00d2e5277e1ea3df17562aa853d80becfa15583222
+  checksum: 2c2dce2e503d2a2e680af553b3df2f7df3fa95e4a5837fbe2c84e9cb3eebaf67011ee83f939884671b6d3e14e160ce2fea1b20b78c7e480d49f2ed1514b4365a
   languageName: node
   linkType: hard
 
