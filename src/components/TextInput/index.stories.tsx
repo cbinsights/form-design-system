@@ -147,7 +147,7 @@ export const Misc = ({ onChange }: TextInputProps): JSX.Element => (
       <TextInput
         before="$"
         type="number"
-        value="666"
+        defaultValue={666}
         label="Misc"
         showLabel={false}
         onChange={onChange}
@@ -162,7 +162,7 @@ export const Misc = ({ onChange }: TextInputProps): JSX.Element => (
       <TextInput
         IconLeft={CaretDownIcon}
         type="number"
-        value="666"
+        defaultValue={666}
         label="Misc"
         showLabel={false}
         onChange={onChange}
@@ -177,7 +177,7 @@ export const Misc = ({ onChange }: TextInputProps): JSX.Element => (
       <TextInput
         IconRight={CaretDownIcon}
         type="number"
-        value="666"
+        defaultValue={666}
         label="Misc"
         showLabel={false}
         onChange={onChange}
