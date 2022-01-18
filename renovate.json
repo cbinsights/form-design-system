@@ -1,5 +1,5 @@
 {
-  "extends": ["config:base", "schedule:first day of the month"],
+  "extends": ["config:base", "schedule:monthly"],
   "timezone": "America/New_York",
   "assigneesSampleSize": 1,
   "ignorePaths": ["**/example/**"],
