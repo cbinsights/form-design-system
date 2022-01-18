@@ -1,9 +1,9 @@
 import React from 'react';
 import SearchIcon from 'icons/react/SearchIcon';
 import TextInput from 'components/TextInput';
-import InputGroup from '.';
+import InputGroup, { InputGroupProps } from '.';
 
-export const DropdownVariations = (args) => (
+export const DropdownVariations = (args: InputGroupProps): JSX.Element => (
   <>
     <div className="margin--bottom">
       <InputGroup {...args}>
@@ -42,7 +42,7 @@ export const DropdownVariations = (args) => (
   </>
 );
 
-export const TextInputs = (args) => (
+export const TextInputs = (args: InputGroupProps): JSX.Element => (
   <InputGroup {...args}>
     <input type="text" placeholder="First Name" />
     <input type="text" placeholder="Middle Name" />
@@ -50,7 +50,7 @@ export const TextInputs = (args) => (
   </InputGroup>
 );
 
-export const GrowAndShrink = (args) => (
+export const GrowAndShrink = (args: InputGroupProps): JSX.Element => (
   <InputGroup {...args} flexSettings={['grow', 'shrink', 'grow']}>
     <TextInput
       before="$"
@@ -76,7 +76,7 @@ GrowAndShrink.parameters = {
   },
 };
 
-export const OtherExamples = (args) => (
+export const OtherExamples = (args: InputGroupProps): JSX.Element => (
   <>
     <label>Valuation</label>
     <InputGroup {...args}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import InputGroup, { getFlexSettings } from '.';
+import InputGroup, { FlexType, getFlexSettings } from '.';
 
 describe('InputGroup component', () => {
   it('matches snapshot (set all props)', () => {
@@ -33,7 +33,7 @@ describe('InputGroup component', () => {
     });
 
     it('overrides default when user passes in their own settings', () => {
-      const userSetting = ['grow', 'grow', 'shrink', 'grow'];
+      const userSetting: FlexType[] = ['grow', 'grow', 'shrink', 'grow'];
       expect(getFlexSettings(userSetting.length, userSetting)).toStrictEqual(userSetting);
     });
   });
