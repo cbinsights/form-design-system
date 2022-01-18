@@ -17,3 +17,6 @@ lib/
 node_modules
 
 public/
+
+cypress/videos
+cypress/screenshots
