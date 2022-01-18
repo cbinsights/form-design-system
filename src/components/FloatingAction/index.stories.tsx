@@ -1,11 +1,12 @@
 import React from 'react';
 import ApproveIcon from 'icons/react/ApproveIcon';
+import { Story } from '@storybook/react';
 
-import FloatingAction from '.';
+import FloatingAction, { FloatingActionProps } from '.';
 
-const Template = (args) => <FloatingAction {...args} />;
+const Template = (args: FloatingActionProps): JSX.Element => <FloatingAction {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary: Story<FloatingActionProps> = Template.bind({});
 
 Primary.args = {
   Icon: ApproveIcon,
