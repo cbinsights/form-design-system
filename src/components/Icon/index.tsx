@@ -9,5 +9,5 @@ export interface IconProps {
   customSize?: number;
 }
 
-type Icon = (props: IconProps) => JSX.Element;
+type Icon = React.ComponentType<IconProps>;
 export default Icon;
