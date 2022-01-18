@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import cc from 'classcat';
 import IconInput from './IconInput';
 import DecoratedInput from './DecoratedInput';
 import { IconProps } from 'components/Icon';
 
-export interface TextInputProps {
+export interface TextInputProps
+  extends React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
   /** Control aria-label */
   'aria-label'?: string;
   /** Control whether input has error styling */
@@ -29,15 +33,6 @@ export interface TextInputProps {
    */
   IconRight?: React.ComponentType<IconProps>;
 
-  /** Input element `type` attribute */
-  type?: string;
-
-  /** Controls showing asterisk on label, signifying field is required */
-  required?: boolean;
-
-  /** Standard React onChange event */
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
-
   /** String to place to the left of the input. Not a substitute for a label! */
   before?: string;
 
@@ -50,17 +45,9 @@ export interface TextInputProps {
   /** Specify width of label (useful for when label is positioned to left */
   labelWidth?: string;
 
-  /** callback for input focus */
-  onFocus?: () => void;
-
-  /** regexp that the input element's value is checked against */
-  pattern?: string;
-
   showRequired?: boolean;
   showLabel?: boolean;
-  placeholder?: string;
-  value?: string;
-  name?: string;
+  ref?: RefObject<HTMLInputElement>;
 }
 
 const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
