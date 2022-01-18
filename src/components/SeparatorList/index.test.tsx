@@ -1,21 +1,22 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen, within } from '@testing-library/react';
 
 import SeparatorList from '.';
 
 describe('Section component', () => {
-  it('matches snapshot for string items', () => {
-    const component = shallow(
-      <SeparatorList
-        separator="🐍"
-        items={['why', 'did', 'it', 'have', 'to', 'be', 'snakes?']}
-      />
-    );
-    expect(component).toMatchSnapshot();
+  it('renders string items', () => {
+    const initialItems = ['why', 'did', 'it', 'have', 'to', 'be', 'snakes?'];
+    render(<SeparatorList separator="🐍" items={initialItems} />);
+    const list = screen.getByRole('list');
+    const { getAllByRole } = within(list);
+    const items = getAllByRole('listitem');
+    expect(items.length).toEqual(7);
+    const text = items.map((item) => item.textContent);
+    expect(text).toEqual(initialItems);
   });
 
-  it('matches snapshot for mixed strings and components', () => {
-    const component = shallow(
+  it('renders mixed strings and components', () => {
+    render(
       <SeparatorList
         separator="🎃"
         items={[
@@ -26,16 +27,26 @@ describe('Section component', () => {
         ]}
       />
     );
-    expect(component).toMatchSnapshot();
+    const list = screen.getByRole('list');
+    const { getAllByRole, getByRole, getByText } = within(list);
+    const items = getAllByRole('listitem');
+    expect(items.length).toEqual(2);
+    expect(getByRole('link')).toBeInTheDocument();
+    expect(getByText('snapshot')).toBeInTheDocument();
   });
 
-  it('all list items include the correct data-separator attribute', () => {
+  it('renders all list items include the correct data-separator attribute', () => {
     const TEST_SEPARATOR = '・';
-    const component = shallow(
-      <SeparatorList separator={TEST_SEPARATOR} items={['one', 'two', 'three']} />
-    );
-    component.find('li').forEach((item) => {
-      expect(item.prop('data-separator')).toBe(TEST_SEPARATOR);
+    const initialItems = ['one', 'two', 'three'];
+    render(<SeparatorList separator={TEST_SEPARATOR} items={initialItems} />);
+    const list = screen.getByRole('list');
+    const { getAllByRole } = within(list);
+    const items = getAllByRole('listitem');
+    expect(items.length).toEqual(3);
+    const text = items.map((item) => item.textContent);
+    expect(text).toEqual(initialItems);
+    items.forEach((item) => {
+      expect(item.getAttribute('data-separator')).toEqual('・');
     });
   });
 });
