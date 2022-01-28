@@ -1,14 +1,13 @@
 import React from 'react';
 import StarFilledIcon from 'icons/react/StarFilledIcon';
-import { Story } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import { StoryWrapper, StoryItem } from 'util/storybook-docs/StoryLayout';
 import Chip, { THEMES, SIZES, ChipProps } from '.';
 
-const Template = (args: ChipProps) => <Chip {...args} />;
-
-export const Primary: Story<ChipProps> = Template.bind({});
-Primary.args = {
-  label: 'Hello world',
+export const Primary: StoryObj<ChipProps> = {
+  args: {
+    label: 'Hello world',
+  },
 };
 
 export const Themes = (): JSX.Element => (
@@ -41,22 +40,25 @@ export const Sizes = (): JSX.Element => (
   </StoryWrapper>
 );
 
-export const Subtitle: Story<ChipProps> = Template.bind({});
-Subtitle.args = {
-  label: 'Chip',
-  subtitle: 'subtitle',
+export const Subtitle: StoryObj<ChipProps> = {
+  args: {
+    label: 'Chip',
+    subtitle: 'subtitle',
+  },
 };
 
-export const Icon: Story<ChipProps> = Template.bind({});
-Icon.args = {
-  label: 'Chip',
-  Icon: StarFilledIcon,
+export const Icon: StoryObj<ChipProps> = {
+  args: {
+    label: 'Chip',
+    Icon: StarFilledIcon,
+  },
 };
 
-export const Close: Story<ChipProps> = Template.bind({});
-Close.args = {
-  label: 'Chip',
-  onClose: () => {},
+export const Close: StoryObj<ChipProps> = {
+  args: {
+    label: 'Chip',
+    onClose: () => {},
+  },
 };
 
 export default {

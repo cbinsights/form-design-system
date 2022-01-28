@@ -1,15 +1,14 @@
 import React from 'react';
 import CheckIcon from 'icons/react/CheckIcon';
 import Badge from 'components/Badge';
-import { Story } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import CornerPosition, { CornerPositionProps } from '.';
 
-const Template = (args: CornerPositionProps) => <CornerPosition {...args} />;
-
-export const Primary: Story<CornerPositionProps> = Template.bind({});
-Primary.args = {
-  decoration: <Badge label="42" />,
-  children: <button>lorem ipsum</button>,
+export const Primary: StoryObj<CornerPositionProps> = {
+  args: {
+    decoration: <Badge label="42" />,
+    children: <button>lorem ipsum</button>,
+  },
 };
 
 export const Variations = (): JSX.Element => (
