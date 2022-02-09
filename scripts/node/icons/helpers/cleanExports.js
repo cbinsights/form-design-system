@@ -18,7 +18,7 @@ const { pascalCase } = require('pascal-case');
 const { sketchConfig, buildConfig } = require('../icons.config');
 
 const normalizePathToFile = (pathName) => {
-  const ext = pathName.split('.')[1];
+  const ext = pathName.split('.')[-1];
   let fileName = `${pascalCase(path.basename(pathName, ext))}.${ext}`;
   if (ext === 'png') {
     fileName = fileName.replace('_', '@'); // use standard PNG scale convention
