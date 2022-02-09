@@ -17,8 +17,13 @@ const rimraf = require('rimraf');
 const { pascalCase } = require('pascal-case');
 const { sketchConfig, buildConfig } = require('../icons.config');
 
+const getExt = (str) => {
+  const arr = str.split('.');
+  return arr.pop();
+};
+
 const normalizePathToFile = (pathName) => {
-  const ext = pathName.split('.')[-1];
+  const ext = getExt(pathName);
   let fileName = `${pascalCase(path.basename(pathName, ext))}.${ext}`;
   if (ext === 'png') {
     fileName = fileName.replace('_', '@'); // use standard PNG scale convention
