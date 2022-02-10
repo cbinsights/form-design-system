@@ -21,6 +21,7 @@ import BarChartIcon from './BarChartIcon';
 import BatteryIcon from './BatteryIcon';
 import BellIcon from './BellIcon';
 import BoardIcon from './BoardIcon';
+import BoxIcon from './BoxIcon';
 import BriefcaseIcon from './BriefcaseIcon';
 import CarIcon from './CarIcon';
 import CaretDownIcon from './CaretDownIcon';
@@ -44,6 +45,7 @@ import CommentIcon from './CommentIcon';
 import CommentedIcon from './CommentedIcon';
 import CompanyIcon from './CompanyIcon';
 import CompanyCustomIcon from './CompanyCustomIcon';
+import CompeteIcon from './CompeteIcon';
 import ConferenceIcon from './ConferenceIcon';
 import CropIcon from './CropIcon';
 import DatePickerIcon from './DatePickerIcon';
@@ -120,12 +122,14 @@ import PresentIcon from './PresentIcon';
 import PublishIcon from './PublishIcon';
 import PuzzleIcon from './PuzzleIcon';
 import QuestionIcon from './QuestionIcon';
+import QuoteIcon from './QuoteIcon';
 import RadioEmptyIcon from './RadioEmptyIcon';
 import RadioFilledIcon from './RadioFilledIcon';
 import RedoIcon from './RedoIcon';
 import ResearchIcon from './ResearchIcon';
 import ResetIcon from './ResetIcon';
 import ResizeIcon from './ResizeIcon';
+import RocketIcon from './RocketIcon';
 import RotateIcon from './RotateIcon';
 import SalesforceIcon from './SalesforceIcon';
 import SaveIcon from './SaveIcon';
@@ -153,6 +157,7 @@ import ThreeDotIcon from './ThreeDotIcon';
 import ThumbsUpIcon from './ThumbsUpIcon';
 import ToolsIcon from './ToolsIcon';
 import TrashIcon from './TrashIcon';
+import TrophyIcon from './TrophyIcon';
 import TwitterIcon from './TwitterIcon';
 import TwitterFilledIcon from './TwitterFilledIcon';
 import UmbrellaIcon from './UmbrellaIcon';
@@ -197,6 +202,7 @@ export {
   BatteryIcon,
   BellIcon,
   BoardIcon,
+  BoxIcon,
   BriefcaseIcon,
   CarIcon,
   CaretDownIcon,
@@ -220,6 +226,7 @@ export {
   CommentedIcon,
   CompanyIcon,
   CompanyCustomIcon,
+  CompeteIcon,
   ConferenceIcon,
   CropIcon,
   DatePickerIcon,
@@ -296,12 +303,14 @@ export {
   PublishIcon,
   PuzzleIcon,
   QuestionIcon,
+  QuoteIcon,
   RadioEmptyIcon,
   RadioFilledIcon,
   RedoIcon,
   ResearchIcon,
   ResetIcon,
   ResizeIcon,
+  RocketIcon,
   RotateIcon,
   SalesforceIcon,
   SaveIcon,
@@ -329,6 +338,7 @@ export {
   ThumbsUpIcon,
   ToolsIcon,
   TrashIcon,
+  TrophyIcon,
   TwitterIcon,
   TwitterFilledIcon,
   UmbrellaIcon,

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/quote</title>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.87">
+        <g id="comment-quote-(1)" fill="#404040" transform="translate(3.000000, 3.000000)">
+            <path d="M16.2,0 L1.8,0 C0.81,0 0,0.81 0,1.8 L0,12.6 C0,13.59 0.81,14.4 1.8,14.4 L5.4,14.4 L5.4,17.1 C5.4,17.64 5.76,18 6.3,18 L6.75,18 C6.93,18 7.2,17.91 7.38,17.73 L10.71,14.4 L16.2,14.4 C17.19,14.4 18,13.59 18,12.6 L18,1.8 C18,0.81 17.19,0 16.2,0 M8.1,9.9 L4.5,9.9 L4.5,6.12 L5.67,3.6 L7.47,3.6 L6.21,6.3 L8.1,6.3 L8.1,9.9 M13.5,9.9 L9.9,9.9 L9.9,6.12 L11.07,3.6 L12.87,3.6 L11.61,6.3 L13.5,6.3 L13.5,9.9 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
