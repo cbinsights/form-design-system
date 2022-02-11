@@ -220,6 +220,7 @@
     "focus-trap-react": "8.9.0",
     "raf-schd": "4.0.3",
     "react-popper": "2.2.5",
+    "react-select": "5.2.2",
     "uuid": "8.3.2"
   },
   "resolutions": {
