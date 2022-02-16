@@ -23,12 +23,16 @@ const Tooltip = ({
   maxWidth = 240,
 }: TooltipProps): JSX.Element => (
   <RadixTooltip.Provider>
-    <RadixTooltip.Root delayDuration={350} defaultOpen>
+    <RadixTooltip.Root delayDuration={350}>
       <RadixTooltip.Trigger asChild>{trigger}</RadixTooltip.Trigger>
-      <RadixTooltip.Content side={position} sideOffset={parseInt(FDS.SPACE_S, 10)}>
+      <RadixTooltip.Content
+        side={position}
+        sideOffset={parseInt(FDS.SPACE_S, 10)}
+        asChild
+      >
         <div
           style={{ maxWidth: maxWidth ? `${maxWidth}px` : undefined }}
-          className="bgColor--charcoal inverted align--center padding--y--s padding--x elevation--2 rounded--all fontSize--s fontWeight--bold"
+          className="ease-in-out bgColor--charcoal inverted align--center padding--y--s padding--x elevation--2 rounded--all fontSize--s fontWeight--bold"
         >
           {message}
         </div>

@@ -4319,7 +4319,6 @@ __metadata:
     "@popperjs/core": 2.11.0
     "@radix-ui/react-tooltip": 0.1.6
     "@reach/menu-button": 0.16.2
-    "@stitches/react": 1.2.6
     "@storybook/addon-a11y": 6.4.19
     "@storybook/addon-backgrounds": 6.4.19
     "@storybook/addon-docs": 6.4.19
@@ -6359,15 +6358,6 @@ __metadata:
   dependencies:
     "@sinonjs/commons": ^1.7.0
   checksum: 09b5a158ce013a6c37613258bad79ca4efeb99b1f59c41c73cca36cac00b258aefcf46eeea970fccf06b989414d86fe9f54c1102272c0c3bdd51a313cea80949
-  languageName: node
-  linkType: hard
-
-"@stitches/react@npm:1.2.6":
-  version: 1.2.6
-  resolution: "@stitches/react@npm:1.2.6"
-  peerDependencies:
-    react: ">= 16.3.0"
-  checksum: 416088cdde17a22d6cdb04cf1cf756c6e5fc291dd7e41f82ce422bb95432ad32b6d990e7264d996d367c40bbc674d61be087e4e1f7b23eea7f81ef6266373a9c
   languageName: node
   linkType: hard
 
