@@ -1,6 +1,6 @@
 import React from 'react';
 import { getValueType } from '../utils';
-// import styles from '../styles.css';
+import styles from '../styles.css';
 import { SelectProps } from '../Search';
 import { Props } from 'react-select';
 
@@ -27,7 +27,7 @@ export const SelectedValue = ({ item, selectProps }: SelectedValueProps): JSX.El
 
   return (
     <span
-      //   className={`${styles[type]} ${type === 'bool' ? `${styles[`bool${text}`]}` : ''}`}
+      className={`${styles[type]} ${type === 'bool' ? `${styles[`bool${text}`]}` : ''}`}
       role="presentation"
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}

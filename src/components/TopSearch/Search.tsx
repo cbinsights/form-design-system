@@ -1,7 +1,13 @@
 import React from 'react';
-import Select, { InputActionMeta, MultiValue, Props, GroupBase } from 'react-select';
+import Select, {
+  InputActionMeta,
+  MultiValue,
+  Props,
+  GroupBase,
+  SelectInstance,
+} from 'react-select';
 import { customComponents, customThemes, customStyles } from './CustomSelectUtils';
-// import styles from './styles.css';
+import styles from './styles.css';
 
 declare module 'react-select/dist/declarations/src/Select' {
   export interface Props<
@@ -19,9 +25,9 @@ declare module 'react-select/dist/declarations/src/Select' {
 
 export interface SelectProps {
   id?: number | string;
-  text?: string;
-  value: string;
-  type?: string;
+  text: string;
+  value?: string;
+  type: string;
   label?: string;
   category?: string;
   defaultType?: string;
@@ -52,31 +58,32 @@ export interface SearchProps extends Props<SelectProps, true> {
   inputValue?: string;
   isCustomQueryInput: boolean;
   searchItems?: MultiValue<SelectProps>;
-  selectRef?: any;
+  selectRef?: React.RefObject<SelectInstance<SelectProps, true>>;
 }
 
 export const Search = ({
-  handleChange,
+  controlledInput,
+  cursorPosition,
+  // customClassName,
+  formatOptionLabel,
   handleBlur,
+  handleChange,
+  handleClear,
   handleFocus,
   handleInputChange,
-  options,
-  isCustomQueryInput,
-  selectRef,
-  handleMenuClose,
-  searchItems,
-  handleClear,
-  inputValue,
-  setCursorPosition,
-  cursorPosition,
-  formatOptionLabel,
-  //   customClassName,
   handleKeyDown,
+  handleMenuClose,
   handleSetSearchItems,
-  controlledInput,
+  inputValue,
+  isCustomQueryInput,
+  options,
+  searchItems,
+  selectRef,
+  setCursorPosition,
 }: SearchProps): JSX.Element => (
-  <Select<SelectProps, true>
-    inputId={'topSearchSelectInput'}
+  <Select
+    // <SelectProps, true>
+    inputId={styles.topSearchSelectInput}
     ref={selectRef}
     onMenuClose={handleMenuClose}
     value={searchItems}

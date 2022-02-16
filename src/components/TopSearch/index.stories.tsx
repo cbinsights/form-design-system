@@ -1,5 +1,5 @@
 import { StoryObj } from '@storybook/react';
-import Search, { SearchProps } from './Search';
+import TopSearch from './index';
 
 // export const CustomInputExample: StoryObj<any> = {
 //   args: {
@@ -10,11 +10,11 @@ import Search, { SearchProps } from './Search';
 //   },
 // };
 
-export const Primary: StoryObj<SearchProps> = {
+export const Primary: StoryObj = {
   args: {},
 };
 
 export default {
-  component: Search,
+  component: TopSearch,
   title: 'components/TopSearch',
 };
