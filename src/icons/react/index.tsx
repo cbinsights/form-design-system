@@ -47,6 +47,7 @@ import CompanyIcon from './CompanyIcon';
 import CompanyCustomIcon from './CompanyCustomIcon';
 import CompeteIcon from './CompeteIcon';
 import ConferenceIcon from './ConferenceIcon';
+import CopyToIcon from './CopyToIcon';
 import CropIcon from './CropIcon';
 import DatePickerIcon from './DatePickerIcon';
 import DenyIcon from './DenyIcon';
@@ -232,6 +233,7 @@ export {
   CompanyCustomIcon,
   CompeteIcon,
   ConferenceIcon,
+  CopyToIcon,
   CropIcon,
   DatePickerIcon,
   DenyIcon,
