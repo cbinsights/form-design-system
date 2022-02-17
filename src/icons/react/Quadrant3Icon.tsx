@@ -7,7 +7,7 @@
 import React from 'react';
 import { IconProps } from 'components/Icon';
 
-const Quadrant_3Icon = ({
+const Quadrant3Icon = ({
   size = 's',
   color,
   customSize,
@@ -30,5 +30,5 @@ const Quadrant_3Icon = ({
   </div>
 );
 
-export default Quadrant_3Icon;
+export default Quadrant3Icon;
 

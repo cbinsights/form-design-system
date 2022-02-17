@@ -122,9 +122,9 @@ import PiggyBankIcon from './PiggyBankIcon';
 import PresentIcon from './PresentIcon';
 import PublishIcon from './PublishIcon';
 import PuzzleIcon from './PuzzleIcon';
-import Quadrant_2Icon from './Quadrant_2Icon';
-import Quadrant_3Icon from './Quadrant_3Icon';
-import Quadrant_4Icon from './Quadrant_4Icon';
+import Quadrant2Icon from './Quadrant2Icon';
+import Quadrant3Icon from './Quadrant3Icon';
+import Quadrant4Icon from './Quadrant4Icon';
 import QuadrantIcon from './QuadrantIcon';
 import QuestionIcon from './QuestionIcon';
 import QuoteIcon from './QuoteIcon';
@@ -308,9 +308,9 @@ export {
   PresentIcon,
   PublishIcon,
   PuzzleIcon,
-  Quadrant_2Icon,
-  Quadrant_3Icon,
-  Quadrant_4Icon,
+  Quadrant2Icon,
+  Quadrant3Icon,
+  Quadrant4Icon,
   QuadrantIcon,
   QuestionIcon,
   QuoteIcon,
