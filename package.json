@@ -112,7 +112,7 @@
     "@types/prettier": "2.4.4",
     "@types/prop-types": "15.7.4",
     "@types/raf-schd": "4.0.1",
-    "@types/react": "17.0.38",
+    "@types/react": "17.0.39",
     "@types/react-dom": "17.0.6",
     "@types/react-is": "17.0.3",
     "@types/react-transition-group": "4.4.4",
