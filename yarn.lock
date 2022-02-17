@@ -4420,7 +4420,7 @@ __metadata:
     svg-to-jsx: 1.0.4
     svgo: 1.3.2
     tinycolor2: 1.4.2
-    ts-migrate: 0.1.27
+    ts-migrate: 0.1.28
     typescript: 4.5.4
     util: "link:./src/util"
     uuid: 8.3.2
@@ -17940,17 +17940,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-schema@npm:0.4.0":
+"json-schema@npm:0.4.0, json-schema@npm:^0.4.0":
   version: 0.4.0
   resolution: "json-schema@npm:0.4.0"
   checksum: 66389434c3469e698da0df2e7ac5a3281bcff75e797a5c127db7c5b56270e01ae13d9afa3c03344f76e32e81678337a8c912bdbb75101c62e487dc3778461d72
-  languageName: node
-  linkType: hard
-
-"json-schema@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "json-schema@npm:0.3.0"
-  checksum: 5287563499c05e156b88fd3998b53fc4bccd29a6233c9b4417d36f8f34bf56d586388745a92a9dccd15822f63c360c045973c12eb4a6a4b4f3fd8fb864d80a14
   languageName: node
   linkType: hard
 
@@ -26186,17 +26179,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-migrate-plugins@npm:^0.1.27":
-  version: 0.1.27
-  resolution: "ts-migrate-plugins@npm:0.1.27"
+"ts-migrate-plugins@npm:^0.1.28":
+  version: 0.1.28
+  resolution: "ts-migrate-plugins@npm:0.1.28"
   dependencies:
     eslint: ^7.14.0
     jscodeshift: ^0.13.0
-    json-schema: ^0.3.0
+    json-schema: ^0.4.0
     ts-migrate-server: ^0.1.27
   peerDependencies:
     typescript: ">4.0"
-  checksum: 1edbde90f549a6b4eb66d926631b306f0f7e0c592993e88c3d40b70418748ba79d26956a4761eb64620089609b2fe0f68c71c502aefa2f7c29ee9c7015c8059a
+  checksum: 8499ed32064e283f6b3cdfb4673586c0b656295ad16a7c0556f071afbfaef672b4edba80db3aa38f7136daf98ad309fafa1db9de0003f33968babf5f97ea8503
   languageName: node
   linkType: hard
 
@@ -26213,14 +26206,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-migrate@npm:0.1.27":
-  version: 0.1.27
-  resolution: "ts-migrate@npm:0.1.27"
+"ts-migrate@npm:0.1.28":
+  version: 0.1.28
+  resolution: "ts-migrate@npm:0.1.28"
   dependencies:
     create-jest-runner: ^0.5.3
     json5: ^2.1.1
     json5-writer: ^0.1.8
-    ts-migrate-plugins: ^0.1.27
+    ts-migrate-plugins: ^0.1.28
     ts-migrate-server: ^0.1.27
     updatable-log: ^0.2.0
     yargs: ^15.0.2
@@ -26229,7 +26222,7 @@ __metadata:
   bin:
     ts-migrate: build/cli.js
     ts-migrate-full: bin/ts-migrate-full.sh
-  checksum: 85b67afaabe8836b1cf5d1b7da549a85b6ad2efa4e9012c90f4ef81181f653cf45d2697121aeb9338df011cb1bebb900dca9eb223bb32c0b6ac5b8ec8453c5ad
+  checksum: a12485fee681afdb8d2b48f65c76ab0b9db180220fe8047124ae2f8a5a2e65d8f90b0ca4fa666fa11266cc0ef2deb660871bdcba4054d7724851fd4124319351
   languageName: node
   linkType: hard
 
