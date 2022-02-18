@@ -1,0 +1,25 @@
+name: Cypress Tests
+
+on:
+  workflow_call:
+
+jobs:
+  cypress-test:
+    name: Cypress test Storybook
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          cache: 'yarn'
+
+      - name: Yarn Install
+        run: yarn --immutable
+
+      - name: Run Storybook
+        run: yarn storybook
+
+      - name: Test Storybook with Cypress
+        run: yarn cy:test:storybook
