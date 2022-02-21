@@ -22,6 +22,7 @@ const CustomValueContainer = ({
       : children;
   return (
     <components.ValueContainer {...props} setValue={props.setValue}>
+      {'beta '}
       {els}
     </components.ValueContainer>
   );
