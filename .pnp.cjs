@@ -73,6 +73,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.2"],
             ["@testing-library/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:12.1.3"],
             ["@testing-library/user-event", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:13.5.0"],
+            ["@types/autosuggest-highlight", "npm:3.2.0"],
             ["@types/babel__core", "npm:7.1.18"],
             ["@types/babel__plugin-transform-runtime", "npm:7.9.2"],
             ["@types/babel__preset-env", "npm:7.9.2"],
@@ -101,6 +102,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/webpack", "npm:5.28.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.8.1"],
             ["@typescript-eslint/parser", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.8.1"],
+            ["autosuggest-highlight", "npm:3.2.1"],
             ["babel-eslint", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:10.1.0"],
             ["babel-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:27.4.5"],
             ["babel-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.2.3"],
@@ -7583,18 +7585,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:7.17.2", {
-          "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.17.2-ec60bc114d-a48702d271.zip/node_modules/@babel/runtime/",
-          "packageDependencies": [
-            ["@babel/runtime", "npm:7.17.2"],
-            ["regenerator-runtime", "npm:0.13.7"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:7.17.0", {
           "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.17.0-447a597408-1864ac3c6a.zip/node_modules/@babel/runtime/",
           "packageDependencies": [
             ["@babel/runtime", "npm:7.17.0"],
+            ["regenerator-runtime", "npm:0.13.7"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:7.17.2", {
+          "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.17.2-ec60bc114d-a48702d271.zip/node_modules/@babel/runtime/",
+          "packageDependencies": [
+            ["@babel/runtime", "npm:7.17.2"],
             ["regenerator-runtime", "npm:0.13.7"]
           ],
           "linkType": "HARD",
@@ -7844,6 +7846,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.2"],
             ["@testing-library/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:12.1.3"],
             ["@testing-library/user-event", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:13.5.0"],
+            ["@types/autosuggest-highlight", "npm:3.2.0"],
             ["@types/babel__core", "npm:7.1.18"],
             ["@types/babel__plugin-transform-runtime", "npm:7.9.2"],
             ["@types/babel__preset-env", "npm:7.9.2"],
@@ -7872,6 +7875,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/webpack", "npm:5.28.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.8.1"],
             ["@typescript-eslint/parser", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.8.1"],
+            ["autosuggest-highlight", "npm:3.2.1"],
             ["babel-eslint", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:10.1.0"],
             ["babel-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:27.4.5"],
             ["babel-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.2.3"],
@@ -8421,7 +8425,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/utils", "npm:1.0.0"],
             ["@emotion/weak-memoize", "npm:0.2.5"],
             ["@types/babel__core", null],
-            ["@types/react", "npm:17.0.38"],
+            ["@types/react", "npm:17.0.39"],
             ["hoist-non-react-statics", "npm:3.3.2"],
             ["react", "npm:16.14.0"]
           ],
@@ -12451,6 +12455,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/autosuggest-highlight", [
+        ["npm:3.2.0", {
+          "packageLocation": "./.yarn/cache/@types-autosuggest-highlight-npm-3.2.0-a505de3987-1cb51e14fb.zip/node_modules/@types/autosuggest-highlight/",
+          "packageDependencies": [
+            ["@types/autosuggest-highlight", "npm:3.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/babel__core", [
         ["npm:7.1.12", {
           "packageLocation": "./.yarn/cache/@types-babel__core-npm-7.1.12-0093691d63-ea3b2eee3b.zip/node_modules/@types/babel__core/",
@@ -14986,6 +14999,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["num2fraction", "npm:1.2.2"],
             ["postcss", "npm:7.0.39"],
             ["postcss-value-parser", "npm:4.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["autosuggest-highlight", [
+        ["npm:3.2.1", {
+          "packageLocation": "./.yarn/cache/autosuggest-highlight-npm-3.2.1-8ceeb71e3e-0d711e536d.zip/node_modules/autosuggest-highlight/",
+          "packageDependencies": [
+            ["autosuggest-highlight", "npm:3.2.1"],
+            ["diacritic", "npm:0.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -18816,6 +18839,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dezalgo", "npm:1.0.3"],
             ["asap", "npm:2.0.6"],
             ["wrappy", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["diacritic", [
+        ["npm:0.0.2", {
+          "packageLocation": "./.yarn/cache/diacritic-npm-0.0.2-6aa0c73fba-0242731039.zip/node_modules/diacritic/",
+          "packageDependencies": [
+            ["diacritic", "npm:0.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -30753,7 +30785,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/runtime", "npm:7.17.0"],
             ["@emotion/cache", "npm:11.7.1"],
             ["@emotion/react", "virtual:3083b24b965d8fef4190f2e42f9b3934f68eb1b8db4d01555a40284bdf068aecd636d487b3276af212f8b4ad6f1a15ada06cad97381310693a048b29950b91af#npm:11.7.1"],
-            ["@types/react", "npm:17.0.38"],
+            ["@types/react", "npm:17.0.39"],
             ["@types/react-dom", "npm:17.0.6"],
             ["@types/react-transition-group", "npm:4.4.4"],
             ["memoize-one", "npm:5.2.1"],

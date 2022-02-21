@@ -1,15 +1,14 @@
 import React from 'react';
 import { ClearIndicatorProps, components } from 'react-select';
 import DenyIcon from 'icons/react/DenyIcon';
-import styles from '../styles.css';
-import { SelectProps } from '../Search';
+import { OptionProps } from '..';
 
 const CustomClearIndicator = (
-  props: ClearIndicatorProps<SelectProps, true>
+  props: ClearIndicatorProps<OptionProps, true>
 ): JSX.Element => {
   return (
     <components.ClearIndicator {...props}>
-      <span className={`margin--x--s ${styles.pointer}`}>
+      <span className={`margin--x--s pointer`}>
         <DenyIcon size="xs" />
       </span>
     </components.ClearIndicator>

@@ -4343,6 +4343,7 @@ __metadata:
     "@testing-library/jest-dom": 5.16.2
     "@testing-library/react": 12.1.3
     "@testing-library/user-event": 13.5.0
+    "@types/autosuggest-highlight": 3.2.0
     "@types/babel__core": 7.1.18
     "@types/babel__plugin-transform-runtime": 7.9.2
     "@types/babel__preset-env": 7.9.2
@@ -4371,6 +4372,7 @@ __metadata:
     "@types/webpack": 5.28.0
     "@typescript-eslint/eslint-plugin": 5.8.1
     "@typescript-eslint/parser": 5.8.1
+    autosuggest-highlight: ^3.2.0
     babel-eslint: 10.1.0
     babel-jest: 27.4.5
     babel-loader: 8.2.3
@@ -7491,6 +7493,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/autosuggest-highlight@npm:3.2.0":
+  version: 3.2.0
+  resolution: "@types/autosuggest-highlight@npm:3.2.0"
+  checksum: 1cb51e14fb5e109df8f2882d779d15a04863799f3e8546572d64e70ff4c84247747bffecf4a0b8591a45d05be4dbed6e08f6f766449e9ea73221a037569251ba
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:7.1.18":
   version: 7.1.18
   resolution: "@types/babel__core@npm:7.1.18"
@@ -9675,6 +9684,15 @@ __metadata:
   bin:
     autoprefixer: bin/autoprefixer
   checksum: 46987bc3de6612f0276c3643061901e33cc5721d07aaeb6f0daf237554448884a59c0b17087bf0f00a07d940abcb5a6eaf2203b962c24fe33d52f76aa845cb70
+  languageName: node
+  linkType: hard
+
+"autosuggest-highlight@npm:^3.2.0":
+  version: 3.2.1
+  resolution: "autosuggest-highlight@npm:3.2.1"
+  dependencies:
+    diacritic: 0.0.2
+  checksum: 0d711e536dcc3780b3bd3e18b3dcf7915d17d4eaa8e14238a8622b2247d6f28c4a5ae133fd01dacb1ba1afaebc35ceede4f7ca858db0ec3a0c351280212cdae0
   languageName: node
   linkType: hard
 
@@ -12807,6 +12825,13 @@ __metadata:
     asap: ^2.0.0
     wrappy: 1
   checksum: 8b26238db91423b2702a7a6d9629d0019c37c415e7b6e75d4b3e8d27e9464e21cac3618dd145f4d4ee96c70cc6ff034227b5b8a0e9c09015a8bdbe6dace3cfb9
+  languageName: node
+  linkType: hard
+
+"diacritic@npm:0.0.2":
+  version: 0.0.2
+  resolution: "diacritic@npm:0.0.2"
+  checksum: 0242731039aefa2ef4b81cc9a2687ed0f6257d23c1aa78c052aad60f3e3851863e2344fa4c7ead094d59d6086ce5f2581a1f544bfd1c5db90267317acdd02222
   languageName: node
   linkType: hard
 

@@ -93,3 +93,45 @@
   font-size: var(--font-size-l);
   color: var(--color-slate);
 }
+
+.logoWrapper {
+  width: 162px;
+}
+
+#styled-input {
+  background-color: var(--color-white);
+  border-radius: 5px;
+  width: 288px;
+}
+
+#styled-input .universe-custom-query {
+  width: 100%;
+  z-index: var(--zindex-modal);
+  padding: 0;
+  max-height: none;
+  font-family: var(--font-family-default);
+  font-size: 14px;
+  color: var(--color-slate);
+}
+
+#styled-input .universe-custom-query .entity {
+  border-radius: 3px;
+  font-size: 16px;
+  color: var(--color-slate);
+}
+
+#styled-input .universe-custom-query .highlight {
+  color: var(--color-white);
+}
+
+.activeBorder {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 3px var(--color-aqua);
+  border: 1px solid var(--color-aqua);
+}
+
+.inactiveBorder {
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  border: 1px solid #ccc;
+}

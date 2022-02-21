@@ -1,19 +1,16 @@
 import React from 'react';
 import { components, ValueContainerProps } from 'react-select';
-import { SelectProps } from '../Search';
+import { OptionProps } from '..';
 
 const CustomValueContainer = ({
   children,
   ...props
-}: ValueContainerProps<SelectProps, true>): JSX.Element => {
+}: ValueContainerProps<OptionProps, true>): JSX.Element => {
   const { cursorPosition } = props.selectProps;
-  // React.Children.toArray flattens the nested array, input ends up at the end, so we pop it into it's own variable.
-  const selected = React.Children.toArray(children);
-  const input = selected.pop();
-  const hasSelectedValues = !!selected.length;
-  const selectedValues = selected ?? [];
+  const selectedValues = React.Children.toArray(children);
+  const input = selectedValues.pop();
   const els =
-    hasSelectedValues && cursorPosition !== undefined
+    props.hasValue && cursorPosition !== undefined
       ? [
           selectedValues.slice(0, cursorPosition < 0 ? 0 : cursorPosition + 1),
           input,

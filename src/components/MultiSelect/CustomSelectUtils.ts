@@ -1,11 +1,11 @@
-import FDS from '@cbinsights/fds/lib/dictionary/js/styleConstants';
+import FDS from 'dictionary/js/styleConstants';
 import CustomValueContainer from './CustomSelectComponents/CustomValueContainer';
 import CustomClearIndicator from './CustomSelectComponents/CustomClearIndicator';
 import CustomInput from './CustomSelectComponents/CustomInput';
 import CustomMultiValue from './CustomSelectComponents/CustomMultiValue';
 import { GroupBase, Theme, ThemeConfig } from 'react-select';
 import { SelectComponents } from 'react-select/dist/declarations/src/components';
-import { SelectProps } from './Search';
+import { OptionProps } from '.';
 
 const SEARCH_BTN_OFFSET = 102;
 
@@ -17,7 +17,7 @@ const CustomNoOptionsMessage = noopComponent;
 const CustomMultiValueRemove = noopComponent;
 
 export const customComponents: Partial<
-  SelectComponents<SelectProps, true, GroupBase<SelectProps>>
+  SelectComponents<OptionProps, true, GroupBase<OptionProps>>
 > = {
   DropdownIndicator: CustomDropdownIndicator,
   IndicatorSeparator: CustomIndicatorSeparator,
@@ -42,19 +42,13 @@ export const customThemes: ThemeConfig = (theme) => ({
   },
 });
 
-export const customStyles = ({
-  isCustomQueryInput,
-}: {
-  isCustomQueryInput: boolean;
-}): any => {
-  const focusedOptionColor = isCustomQueryInput
-    ? 'rgba(64, 64, 64, 0.08)'
-    : FDS.COLOR_AQUA;
+export const customStyles = (isHeader?: boolean): any => {
+  const focusedOptionColor = !isHeader ? 'rgba(64, 64, 64, 0.08)' : FDS.COLOR_AQUA;
   return {
     container: (base: Theme) => ({
       ...base,
       width: '100%',
-      fontSize: `${FDS.FONT_SIZE_L}!important`,
+      fontSize: `${FDS.FONT_SIZE_L} !important`,
     }),
     input: (base: Theme) => ({
       ...base,
@@ -64,7 +58,7 @@ export const customStyles = ({
     }),
     menu: (base: Theme) => ({
       ...base,
-      width: isCustomQueryInput ? '100%' : `calc(100% + ${SEARCH_BTN_OFFSET}px)`,
+      width: !isHeader ? '100%' : `calc(100% + ${SEARCH_BTN_OFFSET}px)`,
       zIndex: FDS.ZINDEX_MODAL,
       margin: '1px 0',
     }),
@@ -76,19 +70,17 @@ export const customStyles = ({
     option: (base: Theme, state: { isFocused: boolean }) => ({
       ...base,
       backgroundColor: state.isFocused ? focusedOptionColor : 'inherit',
-      color: state.isFocused && !isCustomQueryInput ? FDS.COLOR_WHITE : FDS.COLOR_SLATE,
+      color: state.isFocused && !!isHeader ? FDS.COLOR_WHITE : FDS.COLOR_SLATE,
     }),
     control: (base: Theme) => ({
       ...base,
-      paddingLeft: isCustomQueryInput ? FDS.SPACE_XS : '12px',
-      border: 'none!important',
+      paddingLeft: !isHeader ? FDS.SPACE_XS : '12px',
+      border: !isHeader ? '' : 'none !important',
       boxShadow: 'none',
-      borderRadius: isCustomQueryInput
-        ? FDS.SPACE_XS
-        : `${FDS.SPACE_XS} 0 0 ${FDS.SPACE_XS}`,
+      borderRadius: !isHeader ? FDS.SPACE_XS : `${FDS.SPACE_XS} 0 0 ${FDS.SPACE_XS}`,
     }),
     multiValue: () => ({
-      margin: isCustomQueryInput ? '0 2px' : '0 3px',
+      margin: !isHeader ? '0 2px' : '0 3px',
     }),
     multiValueLabel: () => ({}),
     placeholder: (base: Theme) => ({
@@ -100,10 +92,10 @@ export const customStyles = ({
     }),
     valueContainer: (base: Theme) => ({
       ...base,
-      whiteSpace: isCustomQueryInput ? 'normal' : 'nowrap',
+      whiteSpace: !isHeader ? 'normal' : 'nowrap',
       overflow: 'auto',
       textOverflow: 'ellipsis',
-      flexWrap: isCustomQueryInput ? 'wrap' : 'nowrap',
+      flexWrap: !isHeader ? 'wrap' : 'nowrap',
       msOverflowStyle: 'none',
       scrollbarWidth: 'none',
       '&::-webkit-scrollbar': {
