@@ -7,19 +7,19 @@ const CustomValueContainer = ({
   ...props
 }: ValueContainerProps<SelectProps, true>): JSX.Element => {
   const { cursorPosition } = props.selectProps;
-  const childrenArray = React.Children.toArray(children);
-  const firstChildArray = React.Children.toArray(childrenArray[0]);
-  const hasSelectedValues = !!firstChildArray.length;
-  const selectedValues = hasSelectedValues ? [...firstChildArray] : [];
-  const input = childrenArray[1];
-  // insert the input after the cursor position
-  const els = hasSelectedValues
-    ? [
-        selectedValues.slice(0, cursorPosition < 0 ? 0 : cursorPosition + 1),
-        input,
-        selectedValues.slice(cursorPosition < 0 ? 0 : cursorPosition + 1),
-      ]
-    : children;
+  // React.Children.toArray flattens the nested array, input ends up at the end, so we pop it into it's own variable.
+  const selected = React.Children.toArray(children);
+  const input = selected.pop();
+  const hasSelectedValues = !!selected.length;
+  const selectedValues = selected ?? [];
+  const els =
+    hasSelectedValues && cursorPosition !== undefined
+      ? [
+          selectedValues.slice(0, cursorPosition < 0 ? 0 : cursorPosition + 1),
+          input,
+          selectedValues.slice(cursorPosition < 0 ? 0 : cursorPosition + 1),
+        ]
+      : children;
   return (
     <components.ValueContainer {...props} setValue={props.setValue}>
       {els}

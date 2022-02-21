@@ -17,7 +17,7 @@ declare module 'react-select/dist/declarations/src/Select' {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     Group extends GroupBase<Option>
   > {
-    cursorPosition: number;
+    cursorPosition?: number;
     handleSetSearchItems: (items: MultiValue<SelectProps>) => void;
     setCursorPosition: (position: number) => void;
   }
