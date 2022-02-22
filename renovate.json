@@ -1,5 +1,5 @@
 {
-  "extends": ["config:base", "schedule: every day after 12am and before 11pm"],
+  "extends": ["config:base", "schedule: before 24th hour"],
   "timezone": "America/New_York",
   "assigneesSampleSize": 1,
   "ignorePaths": ["**/example/**"],
