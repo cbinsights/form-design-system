@@ -12,4 +12,4 @@ jobs:
   lint:
     uses: cbinsights/form-design-system/.github/workflows/reusable-linting.yml@master
   cypress-test:
-    uses: cbinsights/form-design-system/.github/workflows/cypress-test.yml@master
+    uses: cbinsights/form-design-system/.github/workflows/cypress-test.yml@add-cypress-to-ci
