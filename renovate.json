@@ -1,8 +1,9 @@
 {
-  "extends": ["config:base", "schedule: every day after 12am and before 11pm"],
+  "extends": ["config:base"],
   "timezone": "America/New_York",
   "assigneesSampleSize": 1,
   "ignorePaths": ["**/example/**"],
+  "schedule": ["on the first day of the month"],
   "packageRules": [
     {
       "matchPackagePatterns": ["eslint"],
