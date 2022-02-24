@@ -1,6 +1,5 @@
 // export const mockOptions = [
 //   {
-//
 //     id: 'apple',
 //     text: 'apple',
 //     label: 'apple',
