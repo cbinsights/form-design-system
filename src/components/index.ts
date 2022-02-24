@@ -20,6 +20,7 @@ import MenuLink from 'components/MenuLink';
 import Popover from 'components/Popover';
 import Prompt from 'components/Prompt';
 import Radio from 'components/Radio';
+import Search from 'components/TopSearch';
 import SeparatorList from 'components/SeparatorList';
 import StackedButton from 'components/StackedButton';
 import TextInput from 'components/TextInput';
@@ -50,6 +51,7 @@ export {
   Popover,
   Prompt,
   Radio,
+  Search,
   SeparatorList,
   StackedButton,
   TextInput,
