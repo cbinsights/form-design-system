@@ -18,8 +18,5 @@ jobs:
       - name: Yarn Install
         run: yarn --immutable
 
-      - name: Run Storybook
-        run: yarn start:storybook
-
       - name: Test Storybook with Cypress
         run: yarn ci:start-and-test-storybook

@@ -108,6 +108,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["classcat", "npm:5.0.3"],
             ["commitizen", "npm:4.2.4"],
             ["components", "link:./src/components::locator=%40cbinsights%2Ffds%40workspace%3A."],
+            ["cross-env", "npm:7.0.3"],
             ["css", "npm:3.0.0"],
             ["cssnano", "npm:4.1.11"],
             ["cypress", "npm:9.5.0"],
@@ -7871,6 +7872,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["classcat", "npm:5.0.3"],
             ["commitizen", "npm:4.2.4"],
             ["components", "link:./src/components::locator=%40cbinsights%2Ffds%40workspace%3A."],
+            ["cross-env", "npm:7.0.3"],
             ["css", "npm:3.0.0"],
             ["cssnano", "npm:4.1.11"],
             ["cypress", "npm:9.5.0"],
@@ -17794,6 +17796,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/create-require-npm-1.1.1-839884ca2e-a9a1503d43.zip/node_modules/create-require/",
           "packageDependencies": [
             ["create-require", "npm:1.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["cross-env", [
+        ["npm:7.0.3", {
+          "packageLocation": "./.yarn/cache/cross-env-npm-7.0.3-96d81820f4-26f2f3ea2a.zip/node_modules/cross-env/",
+          "packageDependencies": [
+            ["cross-env", "npm:7.0.3"],
+            ["cross-spawn", "npm:7.0.3"]
           ],
           "linkType": "HARD",
         }]
