@@ -50,7 +50,8 @@
     "prepublishOnly": "yarn pinst --disable",
     "postpublish": "yarn pinst --enable",
     "start:storybook": "start-storybook -p 9009 -s public --ci",
-    "cy:test:storybook": "cypress run --headless -C cypress.storybook.json"
+    "cy:test:storybook": "cypress run --headless -C cypress.storybook.json",
+    "ci:start-and-test-storybook": "cross-env START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test start:storybook http://localhost:9009 cy:test:storybook"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
@@ -173,6 +174,7 @@
     "rimraf": "3.0.2",
     "semantic-release": "18.0.1",
     "snake-case": "3.0.4",
+    "start-server-and-test": "1.14.0",
     "style-dictionary": "3.1.1",
     "style-loader": "3.3.1",
     "stylelint": "14.5.1",

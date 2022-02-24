@@ -22,4 +22,4 @@ jobs:
         run: yarn start:storybook
 
       - name: Test Storybook with Cypress
-        run: yarn cy:test:storybook
+        run: yarn ci:start-and-test-storybook
