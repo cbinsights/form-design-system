@@ -8,7 +8,6 @@ import Select, {
   ActionMeta,
 } from 'react-select';
 import { customComponents, customThemes, customStyles } from './CustomSelectUtils';
-import styles from './styles.css';
 
 declare module 'react-select/dist/declarations/src/Select' {
   export interface Props<
@@ -84,7 +83,7 @@ export const Search: React.FC<SearchProps> = ({
 }) => {
   return (
     <Select<SelectProps, true>
-      inputId={styles.topSearchSelectInput}
+      inputId={'topSearchSelectInput'}
       ref={selectRef}
       onMenuClose={handleMenuClose}
       value={searchItems}

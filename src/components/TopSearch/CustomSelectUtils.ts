@@ -1,4 +1,4 @@
-import FDS from '@cbinsights/fds/lib/dictionary/js/styleConstants';
+import FDS from 'dictionary/js/styleConstants';
 import CustomValueContainer from './CustomSelectComponents/CustomValueContainer';
 import CustomClearIndicator from './CustomSelectComponents/CustomClearIndicator';
 import CustomInput from './CustomSelectComponents/CustomInput';
