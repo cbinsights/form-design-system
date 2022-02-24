@@ -19,7 +19,7 @@ jobs:
         run: yarn --immutable
 
       - name: Run Storybook
-        run: yarn storybook
+        run: yarn start:storybook
 
       - name: Test Storybook with Cypress
         run: yarn cy:test:storybook
