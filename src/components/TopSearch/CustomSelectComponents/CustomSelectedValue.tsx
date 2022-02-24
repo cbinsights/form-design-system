@@ -1,6 +1,5 @@
 import React from 'react';
 import { getValueType } from '../utils';
-import styles from '../styles.css';
 import { SelectProps } from '../Search';
 import { Props } from 'react-select';
 
@@ -14,20 +13,20 @@ export const SelectedValue = ({ item, selectProps }: SelectedValueProps): JSX.El
   const { setCursorPosition, value, handleSetSearchItems } = selectProps;
   const itemIndex = Array.isArray(value) ? value?.findIndex((i) => i === item) : 0;
 
-  const handleClick = () => setCursorPosition(itemIndex);
+  const handleClick = () => setCursorPosition?.(itemIndex);
 
   const handleDoubleClick = () => {
     if (Array.isArray(value)) {
       const deletedItem = value[itemIndex];
       const newValues = value?.filter((val) => val !== deletedItem);
-      setCursorPosition(itemIndex - 1);
+      setCursorPosition?.(itemIndex - 1);
       handleSetSearchItems(newValues);
     }
   };
 
   return (
     <span
-      className={`${styles[type]} ${type === 'bool' ? `${styles[`bool${text}`]}` : ''}`}
+      className={`${type} ${type === 'bool' ? `${`bool${text}`}` : ''}`}
       role="presentation"
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
