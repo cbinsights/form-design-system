@@ -6,10 +6,10 @@ on:
 
 jobs:
   test:
-    uses: ./.github/workflows/workflows/reusable-test.yml
+    uses: ./.github/workflows/reusable-test.yml
   typecheck:
-    uses: ./.github/workflows/workflows/reusable-typecheck.yml
+    uses: ./.github/workflows/reusable-typecheck.yml
   lint:
-    uses: ./.github/workflows/workflows/reusable-linting.yml
+    uses: ./.github/workflows/reusable-linting.yml
   cypress-test:
     uses: ./.github/workflows/reusable-cypress-test.yml
