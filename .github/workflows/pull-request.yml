@@ -6,13 +6,13 @@ on:
 
 jobs:
   test:
-    uses: echo 'cbinsights/form-design-system/.github/workflows/reusable-test.yml@master'
+    uses: cbinsights/form-design-system/.github/workflows/reusable-test.yml@master
   typecheck:
-    uses: echo 'cbinsights/form-design-system/.github/workflows/reusable-typecheck.yml@master'
+    uses: cbinsights/form-design-system/.github/workflows/reusable-typecheck.yml@master
   lint:
-    uses: echo 'cbinsights/form-design-system/.github/workflows/reusable-linting.yml@master'
+    uses: cbinsights/form-design-system/.github/workflows/reusable-linting.yml@master
   cypress-test:
     steps:
       - name: Every time
         run: echo "${GITHUB_HEAD_REF}"
-    uses: echo 'cbinsights/form-design-system/.github/workflows/reusable-cypress-test.yml@rename-cypress-test'
+    uses: cbinsights/form-design-system/.github/workflows/reusable-cypress-test.yml@rename-cypress-test
