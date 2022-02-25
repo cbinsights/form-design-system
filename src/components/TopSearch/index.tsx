@@ -7,9 +7,9 @@ import { filterByStringProp } from 'util/mockFetchData/filterData';
 
 export const TopSearch = (): JSX.Element => {
   const [searchItems, setSearchItems] = React.useState<MultiValue<SelectProps>>();
-  // const [cursorPosition, setCursorPosition] = React.useState(0);
   const [options, setOptions] = React.useState<SelectProps[]>([]);
   const ref = React.useRef<SelectInstance<SelectProps, true>>(null);
+  // const [cursorPosition, setCursorPosition] = React.useState(0);
 
   const handleChange = () => {};
 
