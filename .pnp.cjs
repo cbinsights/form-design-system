@@ -7583,18 +7583,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:7.17.2", {
-          "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.17.2-ec60bc114d-a48702d271.zip/node_modules/@babel/runtime/",
-          "packageDependencies": [
-            ["@babel/runtime", "npm:7.17.2"],
-            ["regenerator-runtime", "npm:0.13.7"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:7.17.0", {
           "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.17.0-447a597408-1864ac3c6a.zip/node_modules/@babel/runtime/",
           "packageDependencies": [
             ["@babel/runtime", "npm:7.17.0"],
+            ["regenerator-runtime", "npm:0.13.7"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:7.17.2", {
+          "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.17.2-ec60bc114d-a48702d271.zip/node_modules/@babel/runtime/",
+          "packageDependencies": [
+            ["@babel/runtime", "npm:7.17.2"],
             ["regenerator-runtime", "npm:0.13.7"]
           ],
           "linkType": "HARD",
@@ -8421,7 +8421,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/utils", "npm:1.0.0"],
             ["@emotion/weak-memoize", "npm:0.2.5"],
             ["@types/babel__core", null],
-            ["@types/react", "npm:17.0.38"],
+            ["@types/react", "npm:17.0.39"],
             ["hoist-non-react-statics", "npm:3.3.2"],
             ["react", "npm:16.14.0"]
           ],
@@ -30753,7 +30753,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/runtime", "npm:7.17.0"],
             ["@emotion/cache", "npm:11.7.1"],
             ["@emotion/react", "virtual:3083b24b965d8fef4190f2e42f9b3934f68eb1b8db4d01555a40284bdf068aecd636d487b3276af212f8b4ad6f1a15ada06cad97381310693a048b29950b91af#npm:11.7.1"],
-            ["@types/react", "npm:17.0.38"],
+            ["@types/react", "npm:17.0.39"],
             ["@types/react-dom", "npm:17.0.6"],
             ["@types/react-transition-group", "npm:4.4.4"],
             ["memoize-one", "npm:5.2.1"],

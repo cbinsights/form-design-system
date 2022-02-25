@@ -6,6 +6,7 @@ import Select, {
   GroupBase,
   SelectInstance,
   ActionMeta,
+  Options,
 } from 'react-select';
 import { customComponents, customThemes, customStyles } from './CustomSelectUtils';
 
@@ -120,7 +121,7 @@ export const Search: React.FC<SearchProps> = ({
       }}
       hideSelectedOptions={false}
       captureMenuScroll={false}
-      isOptionSelected={(option: SelectProps, selectedValue: SelectProps[]) =>
+      isOptionSelected={(option: SelectProps, selectedValue: Options<SelectProps>) =>
         selectedValue.some((i) => i === option)
       }
       filterOption={() => true}
