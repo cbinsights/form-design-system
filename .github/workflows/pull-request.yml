@@ -12,4 +12,7 @@ jobs:
   lint:
     uses: echo 'cbinsights/form-design-system/.github/workflows/reusable-linting.yml@${GITHUB_HEAD_REF}'
   cypress-test:
+    steps:
+      - name: Every time
+        run: echo "${GITHUB_HEAD_REF}"
     uses: echo 'cbinsights/form-design-system/.github/workflows/reusable-cypress-test.yml@${GITHUB_HEAD_REF}'
