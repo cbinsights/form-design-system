@@ -12,7 +12,4 @@ jobs:
   lint:
     uses: cbinsights/form-design-system/.github/workflows/reusable-linting.yml@master
   cypress-test:
-    steps:
-      - name: Every time
-        run: echo "${GITHUB_HEAD_REF}"
-    uses: cbinsights/form-design-system/.github/workflows/reusable-cypress-test.yml@rename-cypress-test
+    uses: ./.github/workflows/reusable-cypress-test.yml
