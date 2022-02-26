@@ -7,7 +7,6 @@ import { filterByStringProp } from 'util/mockFetchData/filterData';
 
 export const TopSearch = (): JSX.Element => {
   const [searchItems, setSearchItems] = React.useState<MultiValue<SelectProps>>();
-  // const [cursorPosition, setCursorPosition] = React.useState(0);
   const [options, setOptions] = React.useState<SelectProps[]>([]);
   const ref = React.useRef<SelectInstance<SelectProps, true>>(null);
 
@@ -45,7 +44,6 @@ export const TopSearch = (): JSX.Element => {
 
   return (
     <Search
-      // cursorPosition={cursorPosition}
       handleBlur={handleBlur}
       handleChange={handleChange}
       handleClear={handleClear}
@@ -58,7 +56,6 @@ export const TopSearch = (): JSX.Element => {
       selectRef={ref}
       searchItems={searchItems}
       handleSetSearchItems={handleSetSearchItems}
-      // setCursorPosition={setCursorPosition}
     />
   );
 };
