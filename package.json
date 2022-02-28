@@ -50,7 +50,8 @@
     "prepublishOnly": "yarn pinst --disable",
     "postpublish": "yarn pinst --enable",
     "start:storybook": "start-storybook -p 9009 -s public --ci",
-    "cy:test:storybook": "cypress run --headless -C cypress.storybook.json"
+    "cy:test:storybook": "cypress run --headless -C cypress.storybook.json",
+    "ci:start-and-test-storybook": "cross-env START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test start:storybook http://localhost:9009 cy:test:storybook"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
@@ -132,6 +133,7 @@
     "babel-plugin-module-resolver": "4.1.0",
     "commitizen": "4.2.4",
     "components": "link:./src/components",
+    "cross-env": "7.0.3",
     "css": "3.0.0",
     "cssnano": "4.1.11",
     "cypress": "9.5.0",
@@ -173,6 +175,7 @@
     "rimraf": "3.0.2",
     "semantic-release": "18.0.1",
     "snake-case": "3.0.4",
+    "start-server-and-test": "1.14.0",
     "style-dictionary": "3.1.1",
     "style-loader": "3.3.1",
     "stylelint": "14.5.1",
@@ -215,6 +218,7 @@
   },
   "dependencies": {
     "@popperjs/core": "2.11.0",
+    "@radix-ui/react-tooltip": "0.1.6",
     "@reach/menu-button": "0.16.2",
     "classcat": "5.0.3",
     "focus-trap-react": "8.9.0",
@@ -225,7 +229,7 @@
   },
   "resolutions": {
     "minimist": ">0.2.1",
-    "prismjs": "1.26.0"
+    "prismjs": "1.27.0"
   },
   "packageManager": "yarn@3.1.1",
   "engines": {
