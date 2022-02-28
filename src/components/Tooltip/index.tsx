@@ -1,44 +1,51 @@
 import React from 'react';
 import FDS from 'dictionary/js/styleConstants';
-import * as RadixTooltip from '@radix-ui/react-tooltip';
+import Popover, { Position } from 'components/Popover';
+
+export const DEFAULT_WIDTH = '240px';
+export const DELAY_MS = 350;
+export const DEFAULT_POSITION = 'bottom';
 
 export interface TooltipProps {
-  /** What we're showing tooltip on */
+  /** JSX - Acts as a positioning reference for the popover and triggers active state */
   trigger: JSX.Element | string;
 
-  /** The actual content of the tooltip */
+  /** Content of the tooltip */
   message: string;
 
   /** Maximum width of tooltip */
   maxWidth?: number;
 
-  /** Position preference of tooltip. */
-  position?: 'top' | 'left' | 'right' | 'bottom';
+  /**
+   * Position preference of tooltip.
+   * `top` for example, will place the tooltip above the trigger.
+   */
+  position?: Position;
 }
 
 const Tooltip = ({
   trigger,
   message,
-  position = 'bottom',
-  maxWidth = 240,
+  maxWidth,
+  position = DEFAULT_POSITION,
 }: TooltipProps): JSX.Element => (
-  <RadixTooltip.Provider>
-    <RadixTooltip.Root delayDuration={350}>
-      <RadixTooltip.Trigger asChild>{trigger}</RadixTooltip.Trigger>
-      <RadixTooltip.Content
-        side={position}
-        sideOffset={parseInt(FDS.SPACE_S, 10)}
-        asChild
-      >
-        <div
-          style={{ maxWidth: maxWidth ? `${maxWidth}px` : undefined }}
-          className="ease-in-out bgColor--charcoal inverted align--center padding--y--s padding--x elevation--2 rounded--all fontSize--s fontWeight--bold"
-        >
-          {message}
-        </div>
-      </RadixTooltip.Content>
-    </RadixTooltip.Root>
-  </RadixTooltip.Provider>
+  <Popover
+    interactionMode="hover"
+    trigger={<span style={{ cursor: 'help' }}>{trigger}</span>}
+    distance={parseInt(FDS.SPACE_S, 10)}
+    position={position}
+    alignment="center"
+    transitionName="GrowFast"
+    delay={DELAY_MS}
+  >
+    <div
+      role="tooltip"
+      style={{ maxWidth: maxWidth ? `${maxWidth}px` : DEFAULT_WIDTH }}
+      className="bgColor--charcoal inverted align--center padding--y--s padding--x elevation--2 rounded--all fontSize--s fontWeight--bold"
+    >
+      {message}
+    </div>
+  </Popover>
 );
 
 export default Tooltip;

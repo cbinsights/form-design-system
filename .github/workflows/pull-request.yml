@@ -6,10 +6,8 @@ on:
 
 jobs:
   test:
-    uses: ./.github/workflows/reusable-test.yml
+    uses: cbinsights/form-design-system/.github/workflows/reusable-test.yml@master
   typecheck:
-    uses: ./.github/workflows/reusable-typecheck.yml
+    uses: cbinsights/form-design-system/.github/workflows/reusable-typecheck.yml@master
   lint:
-    uses: ./.github/workflows/reusable-linting.yml
-  cypress-test:
-    uses: ./.github/workflows/reusable-cypress-test.yml
+    uses: cbinsights/form-design-system/.github/workflows/reusable-linting.yml@master

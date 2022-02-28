@@ -6,7 +6,7 @@ const getIframeBody = () =>
 
 describe('Storybook', () => {
   it('visits storybook button', () => {
-    cy.visit('http://localhost:9009/?path=/story/components-button--breakout');
+    cy.visit('http://localhost:6006/?path=/story/components-button--breakout');
     getIframeBody().get('button').should('contain.text', 'Button');
   });
 });
