@@ -1,5 +1,5 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:base", ":disableRateLimiting"],
   "timezone": "America/New_York",
   "concurrentRequestLimit": 0,
   "prConcurrentLimit": 0,
