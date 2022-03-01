@@ -94,7 +94,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/rimraf", "npm:3.0.2"],
             ["@types/semantic-release", "npm:17.2.3"],
             ["@types/svgo", "npm:1.3.6"],
-            ["@types/testing-library__jest-dom", "npm:5.14.2"],
+            ["@types/testing-library__jest-dom", "npm:5.14.3"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
             ["@types/tinycolor2", "npm:1.4.3"],
             ["@types/uuid", "npm:8.3.4"],
@@ -7858,7 +7858,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/rimraf", "npm:3.0.2"],
             ["@types/semantic-release", "npm:17.2.3"],
             ["@types/svgo", "npm:1.3.6"],
-            ["@types/testing-library__jest-dom", "npm:5.14.2"],
+            ["@types/testing-library__jest-dom", "npm:5.14.3"],
             ["@types/testing-library__user-event", "npm:4.2.0"],
             ["@types/tinycolor2", "npm:1.4.3"],
             ["@types/uuid", "npm:8.3.4"],
@@ -13144,10 +13144,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/testing-library__jest-dom", [
-        ["npm:5.14.2", {
-          "packageLocation": "./.yarn/cache/@types-testing-library__jest-dom-npm-5.14.2-639cce59b8-e08715a565.zip/node_modules/@types/testing-library__jest-dom/",
+        ["npm:5.14.3", {
+          "packageLocation": "./.yarn/cache/@types-testing-library__jest-dom-npm-5.14.3-0aa35d2c00-203443d0e7.zip/node_modules/@types/testing-library__jest-dom/",
           "packageDependencies": [
-            ["@types/testing-library__jest-dom", "npm:5.14.2"],
+            ["@types/testing-library__jest-dom", "npm:5.14.3"],
             ["@types/jest", "npm:26.0.9"]
           ],
           "linkType": "HARD",
