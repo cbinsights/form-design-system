@@ -1,6 +1,8 @@
 {
   "extends": ["config:base"],
   "timezone": "America/New_York",
+  "concurrentRequestLimit": 0,
+  "prConcurrentLimit": 0,
   "assigneesSampleSize": 1,
   "ignorePaths": ["**/example/**"],
   "schedule": ["on the first day of the month"],
