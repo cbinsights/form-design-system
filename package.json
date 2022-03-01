@@ -146,7 +146,7 @@
     "eslint-plugin-jest": "26.1.1",
     "eslint-plugin-react": "7.29.2",
     "eslint-plugin-storybook": "0.5.7",
-    "fs-extra": "10.0.0",
+    "fs-extra": "10.0.1",
     "glob": "7.2.0",
     "handlebars": "4.7.7",
     "husky": "7.0.4",
