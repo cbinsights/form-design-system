@@ -7,6 +7,7 @@ import DenyIcon from 'icons/react/DenyIcon';
 import IconButton from 'components/IconButton';
 import cc from 'classcat';
 import noScroll from './noScroll';
+import * as DialogUi from '@radix-ui/react-dialog';
 
 export const isElementOverflowing = ({
   current,
@@ -97,10 +98,8 @@ const Dialog = ({
   useEffect(() => {
     if (!alwaysShowBorder) {
       handleResize(); // needs to fire once immediately on mount
-      // eslint-disable-next-line no-undef
       window.addEventListener('resize', handleResize);
       return () => {
-        // eslint-disable-next-line no-undef
         window.removeEventListener('resize', handleResize);
       };
     }
@@ -121,8 +120,8 @@ const Dialog = ({
   }, [isOpen]);
 
   const dialogNode = (
-    <div>
-      <div className="dialog-overlay"></div>
+    <DialogUi.Root defaultOpen>
+      <DialogUi.Overlay className="dialog-overlay"></DialogUi.Overlay>
       <div className="dialog-zIndex dialog-wrapper">
         <div
           className="dialog elevation--3 border--focus--noTransition"
@@ -163,9 +162,9 @@ const Dialog = ({
             </React.Fragment>
           )}
           {content && (
-            <div className="dialog-content" ref={contentEl}>
+            <DialogUi.Content className="dialog-content" ref={contentEl}>
               <div className="padding--all bgColor--white">{content}</div>
-            </div>
+            </DialogUi.Content>
           )}
           {footerContent && (
             <div className="dialog-footer">
@@ -184,7 +183,7 @@ const Dialog = ({
           )}
         </div>
       </div>
-    </div>
+    </DialogUi.Root>
   );
 
   const transitionNode = (
