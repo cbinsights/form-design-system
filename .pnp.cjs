@@ -35,7 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["@babel/cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.17.3"],
+            ["@babel/cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.17.6"],
             ["@babel/core", "npm:7.17.5"],
             ["@babel/parser", "npm:7.17.3"],
             ["@babel/plugin-proposal-class-properties", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.16.7"],
@@ -153,7 +153,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["semantic-release", "npm:18.0.1"],
             ["snake-case", "npm:3.0.4"],
             ["start-server-and-test", "npm:1.14.0"],
-            ["style-dictionary", "npm:3.1.1"],
+            ["style-dictionary", "npm:3.7.0"],
             ["style-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.3.1"],
             ["stylelint", "npm:14.5.3"],
             ["stylelint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.3"],
@@ -181,17 +181,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@babel/cli", [
-        ["npm:7.17.3", {
-          "packageLocation": "./.yarn/cache/@babel-cli-npm-7.17.3-fafc9c0c47-83e4fe9f72.zip/node_modules/@babel/cli/",
+        ["npm:7.17.6", {
+          "packageLocation": "./.yarn/cache/@babel-cli-npm-7.17.6-5326707a5b-362c9baf14.zip/node_modules/@babel/cli/",
           "packageDependencies": [
-            ["@babel/cli", "npm:7.17.3"]
+            ["@babel/cli", "npm:7.17.6"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.17.3", {
-          "packageLocation": "./.yarn/__virtual__/@babel-cli-virtual-ae4cd25b20/0/cache/@babel-cli-npm-7.17.3-fafc9c0c47-83e4fe9f72.zip/node_modules/@babel/cli/",
+        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.17.6", {
+          "packageLocation": "./.yarn/__virtual__/@babel-cli-virtual-83862eb1ef/0/cache/@babel-cli-npm-7.17.6-5326707a5b-362c9baf14.zip/node_modules/@babel/cli/",
           "packageDependencies": [
-            ["@babel/cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.17.3"],
+            ["@babel/cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.17.6"],
             ["@babel/core", "npm:7.17.5"],
             ["@jridgewell/trace-mapping", "npm:0.3.4"],
             ["@nicolo-ribaudo/chokidar-2", "npm:2.1.8-no-fsevents.3"],
@@ -7799,7 +7799,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@cbinsights/fds", "workspace:."],
-            ["@babel/cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.17.3"],
+            ["@babel/cli", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.17.6"],
             ["@babel/core", "npm:7.17.5"],
             ["@babel/parser", "npm:7.17.3"],
             ["@babel/plugin-proposal-class-properties", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.16.7"],
@@ -7917,7 +7917,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["semantic-release", "npm:18.0.1"],
             ["snake-case", "npm:3.0.4"],
             ["start-server-and-test", "npm:1.14.0"],
-            ["style-dictionary", "npm:3.1.1"],
+            ["style-dictionary", "npm:3.7.0"],
             ["style-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.3.1"],
             ["stylelint", "npm:14.5.3"],
             ["stylelint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.3"],
@@ -33257,16 +33257,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["style-dictionary", [
-        ["npm:3.1.1", {
-          "packageLocation": "./.yarn/unplugged/style-dictionary-npm-3.1.1-545efd222e/node_modules/style-dictionary/",
+        ["npm:3.7.0", {
+          "packageLocation": "./.yarn/unplugged/style-dictionary-npm-3.7.0-0860ecb1f5/node_modules/style-dictionary/",
           "packageDependencies": [
-            ["style-dictionary", "npm:3.1.1"],
+            ["style-dictionary", "npm:3.7.0"],
             ["chalk", "npm:4.1.0"],
             ["change-case", "npm:4.1.2"],
-            ["commander", "npm:5.1.0"],
-            ["fs-extra", "npm:8.1.0"],
-            ["glob", "npm:7.1.6"],
-            ["json5", "npm:2.1.3"],
+            ["commander", "npm:8.3.0"],
+            ["fs-extra", "npm:10.0.0"],
+            ["glob", "npm:7.2.0"],
+            ["json5", "npm:2.2.0"],
             ["jsonc-parser", "npm:3.0.0"],
             ["lodash", "npm:4.17.21"],
             ["tinycolor2", "npm:1.4.2"]
