@@ -122,7 +122,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.29.2"],
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.7"],
             ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.9.0"],
-            ["fs-extra", "npm:10.0.0"],
+            ["fs-extra", "npm:10.0.1"],
             ["glob", "npm:7.2.0"],
             ["handlebars", "npm:4.7.7"],
             ["husky", "npm:7.0.4"],
@@ -7886,7 +7886,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.29.2"],
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.7"],
             ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.9.0"],
-            ["fs-extra", "npm:10.0.0"],
+            ["fs-extra", "npm:10.0.1"],
             ["glob", "npm:7.2.0"],
             ["handlebars", "npm:4.7.7"],
             ["husky", "npm:7.0.4"],
@@ -21225,6 +21225,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/fs-extra-npm-10.0.0-4f8c704115-5285a3d8f3.zip/node_modules/fs-extra/",
           "packageDependencies": [
             ["fs-extra", "npm:10.0.0"],
+            ["graceful-fs", "npm:4.2.4"],
+            ["jsonfile", "npm:6.0.1"],
+            ["universalify", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:10.0.1", {
+          "packageLocation": "./.yarn/cache/fs-extra-npm-10.0.1-7c8ee14050-c1faaa5eb9.zip/node_modules/fs-extra/",
+          "packageDependencies": [
+            ["fs-extra", "npm:10.0.1"],
             ["graceful-fs", "npm:4.2.4"],
             ["jsonfile", "npm:6.0.1"],
             ["universalify", "npm:2.0.0"]
