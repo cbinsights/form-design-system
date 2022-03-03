@@ -143,14 +143,16 @@ const Dialog = ({
                       {subTitle}
                     </div>
                     {onDismiss && (
-                      <div className="dialog-icon">
-                        <IconButton
-                          Icon={DenyIcon}
-                          onClick={onDismiss}
-                          aria-label="Close"
-                          label="Close"
-                        />
-                      </div>
+                      <DialogUi.Trigger asChild>
+                        <div className="dialog-icon">
+                          <IconButton
+                            Icon={DenyIcon}
+                            onClick={onDismiss}
+                            aria-label="Close"
+                            label="Close"
+                          />
+                        </div>
+                      </DialogUi.Trigger>
                     )}
                   </div>
                 </div>
