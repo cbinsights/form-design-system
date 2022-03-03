@@ -82,11 +82,6 @@ const Dialog = ({
   disablePortal = false,
 }: DialogProps): JSX.Element => {
   const contentEl = useRef<HTMLDivElement>(null);
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (onDismiss && e.key === 'Escape') {
-      onDismiss();
-    }
-  };
 
   const [isOverflowing, setIsOverflowing] = useState(false);
   const schdSetIsOverflowing = rafSchd(setIsOverflowing);
@@ -123,83 +118,82 @@ const Dialog = ({
     <DialogUi.Root defaultOpen>
       <DialogUi.Overlay className="dialog-overlay"></DialogUi.Overlay>
       <div className="dialog-zIndex dialog-wrapper">
-        <div
-          className="dialog elevation--3 border--focus--noTransition"
-          role={role}
-          aria-labelledby={title && 'a11y-dialog-title'}
-          aria-describedby="a11y-dialog-desc"
-          tabIndex={-1}
-          aria-modal="true"
-          onKeyDown={handleKeyDown}
-          style={{
-            maxWidth: width,
-            maxHeight: height,
-          }}
-        >
-          {(title || onDismiss) && (
-            <React.Fragment>
-              <div className="dialog-header">
-                <div className="bgColor--white padding--all border--bottom">
-                  <div>
-                    <div className="padding--right--xl type--head4">
-                      {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
-                      {/* There always needs to be something (even a space) in the header for display reasons */}
+        <DialogUi.Content onPointerDownOutside={(event) => event.preventDefault()}>
+          <div
+            className="dialog elevation--3 border--focus--noTransition"
+            role={role}
+            aria-labelledby={title && 'a11y-dialog-title'}
+            aria-describedby="a11y-dialog-desc"
+            tabIndex={-1}
+            aria-modal="true"
+            style={{
+              maxWidth: width,
+              maxHeight: height,
+            }}
+          >
+            {(title || onDismiss) && (
+              <>
+                <div className="dialog-header">
+                  <div className="bgColor--white padding--all border--bottom">
+                    <div>
+                      <div className="padding--right--xl type--head4">
+                        {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
+                        {/* There always needs to be something (even a space) in the header for display reasons */}
+                      </div>
+                      {subTitle}
                     </div>
-                    {subTitle}
+                    {onDismiss && (
+                      <div className="dialog-icon">
+                        <IconButton
+                          Icon={DenyIcon}
+                          onClick={onDismiss}
+                          aria-label="Close"
+                          label="Close"
+                        />
+                      </div>
+                    )}
                   </div>
-                  {onDismiss && (
-                    <div className="dialog-icon">
-                      <IconButton
-                        Icon={DenyIcon}
-                        onClick={onDismiss}
-                        aria-label="Close"
-                        label="Close"
-                      />
-                    </div>
-                  )}
+                </div>
+              </>
+            )}
+            {content && (
+              <div className="dialog-content" ref={contentEl}>
+                <div className="padding--all bgColor--white">{content}</div>
+              </div>
+            )}
+            {footerContent && (
+              <div className="dialog-footer">
+                <div
+                  className={cc([
+                    {
+                      'border--top': alwaysShowBorder || isOverflowing,
+                    },
+                    'bgColor--white',
+                    'padding--all',
+                  ])}
+                >
+                  {footerContent}
                 </div>
               </div>
-            </React.Fragment>
-          )}
-          {content && (
-            <DialogUi.Content className="dialog-content" ref={contentEl}>
-              <div className="padding--all bgColor--white">{content}</div>
-            </DialogUi.Content>
-          )}
-          {footerContent && (
-            <div className="dialog-footer">
-              <div
-                className={cc([
-                  {
-                    'border--top': alwaysShowBorder || isOverflowing,
-                  },
-                  'bgColor--white',
-                  'padding--all',
-                ])}
-              >
-                {footerContent}
-              </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        </DialogUi.Content>
       </div>
     </DialogUi.Root>
   );
 
   const transitionNode = (
     <CSSTransition timeout={200} in={isOpen} classNames="dialog" unmountOnExit>
-      <React.Fragment>
-        {disableFocusTrap ? dialogNode : <FocusTrap>{dialogNode}</FocusTrap>}
-      </React.Fragment>
+      <>{disableFocusTrap ? dialogNode : <FocusTrap>{dialogNode}</FocusTrap>}</>
     </CSSTransition>
   );
 
   return (
-    <React.Fragment>
+    <>
       {disablePortal
         ? transitionNode
         : ReactDOM.createPortal(transitionNode, document.body)}
-    </React.Fragment>
+    </>
   );
 };
 
