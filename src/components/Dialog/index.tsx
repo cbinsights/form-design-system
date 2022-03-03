@@ -130,6 +130,7 @@ const Dialog = ({
               maxWidth: width,
               maxHeight: height,
             }}
+            data-testid="dialog"
           >
             {(title || onDismiss) && (
               <>
