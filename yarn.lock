@@ -4315,7 +4315,7 @@ __metadata:
     "@commitlint/config-conventional": 16.2.1
     "@commitlint/prompt": 16.2.1
     "@commitlint/prompt-cli": 16.2.1
-    "@mdx-js/react": 2.0.0
+    "@mdx-js/react": 1.6.22
     "@popperjs/core": 2.11.2
     "@reach/menu-button": 0.16.2
     "@storybook/addon-a11y": 6.4.19
@@ -5384,18 +5384,6 @@ __metadata:
   peerDependencies:
     react: ^16.13.1 || ^17.0.0
   checksum: bc84bd514bc127f898819a0c6f1a6915d9541011bd8aefa1fcc1c9bea8939f31051409e546bdec92babfa5b56092a16d05ef6d318304ac029299df5181dc94c8
-  languageName: node
-  linkType: hard
-
-"@mdx-js/react@npm:2.0.0":
-  version: 2.0.0
-  resolution: "@mdx-js/react@npm:2.0.0"
-  dependencies:
-    "@types/mdx": ^2.0.0
-    "@types/react": ">=16"
-  peerDependencies:
-    react: ">=16"
-  checksum: 4d47ac0418eb9820527829838aaf508a2cdea82f7be8c62b4f739bb2a439f98556360dcdf4cef74f7db615f3e0c05e28353c4b5b182bc36e1b920893f54670f4
   languageName: node
   linkType: hard
 
@@ -7838,13 +7826,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mdx@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "@types/mdx@npm:2.0.1"
-  checksum: 521ee9f976af45859a4dd60b159e1cc09109de49ec5570fe70f34cddb0a7b5472b87c1bea743429270398207a997821dec34fd7bd63cbc2a1e5f2f6c701dd1c2
-  languageName: node
-  linkType: hard
-
 "@types/minimatch@npm:*":
   version: 3.0.3
   resolution: "@types/minimatch@npm:3.0.3"
@@ -8059,7 +8040,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.39, @types/react@npm:>=16":
+"@types/react@npm:17.0.39":
   version: 17.0.39
   resolution: "@types/react@npm:17.0.39"
   dependencies:
