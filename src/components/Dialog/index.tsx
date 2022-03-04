@@ -118,7 +118,11 @@ const Dialog = ({
     <DialogUi.Root defaultOpen>
       <DialogUi.Overlay className="dialog-overlay"></DialogUi.Overlay>
       <div className="dialog-zIndex dialog-wrapper">
-        <DialogUi.Content onPointerDownOutside={(event) => event.preventDefault()}>
+        <DialogUi.Content
+          onPointerDownOutside={(event) => event.preventDefault()}
+          asChild
+          className="ease-in-out"
+        >
           <div
             className="dialog elevation--3 border--focus--noTransition"
             role={role}
