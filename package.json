@@ -217,11 +217,13 @@
     }
   },
   "dependencies": {
+    "@playwright/test": "1.19.2",
     "@popperjs/core": "2.11.2",
     "@radix-ui/react-tooltip": "0.1.6",
     "@reach/menu-button": "0.16.2",
     "classcat": "5.0.3",
     "focus-trap-react": "8.9.2",
+    "playwright": "1.19.2",
     "raf-schd": "4.0.3",
     "react-popper": "2.2.5",
     "uuid": "8.3.2"

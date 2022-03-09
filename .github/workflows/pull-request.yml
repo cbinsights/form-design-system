@@ -11,5 +11,5 @@ jobs:
     uses: ./.github/workflows/reusable-typecheck.yml
   lint:
     uses: ./.github/workflows/reusable-linting.yml
-  cypress-test:
-    uses: ./.github/workflows/reusable-cypress-test.yml
+  e2e-test:
+    uses: ./.github/workflows/reusable-e2e-test.yml
