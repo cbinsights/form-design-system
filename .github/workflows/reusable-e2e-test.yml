@@ -14,7 +14,8 @@ jobs:
         with:
           node-version: '14.x'
           cache: 'yarn'
-
+      - name: Install Deps
+        run: npx playwright install-deps
       - name: Yarn Install
         run: yarn --immutable
 
