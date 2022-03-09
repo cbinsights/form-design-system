@@ -49,9 +49,9 @@
     "postinstall": "yarn husky install",
     "prepublishOnly": "yarn pinst --disable",
     "postpublish": "yarn pinst --enable",
-    "start:storybook": "start-storybook -p 9009 -s public --ci",
-    "cy:test:storybook": "cypress run --headless -C cypress.storybook.json",
-    "ci:start-and-test-storybook": "cross-env START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test start:storybook http://localhost:9009 cy:test:storybook"
+    "start:storybook": "start-storybook -p 6006 -s public --ci",
+    "test:storybook": "yarn playwright test storybook",
+    "ci:start-and-test-storybook": "cross-env START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test start:storybook http://localhost:6006 test:storybook"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
