@@ -4082,6 +4082,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime-corejs3@npm:^7.10.2":
+  version: 7.17.2
+  resolution: "@babel/runtime-corejs3@npm:7.17.2"
+  dependencies:
+    core-js-pure: ^3.20.2
+    regenerator-runtime: ^0.13.4
+  checksum: fc7ba261913c66347434051c74b00f320fb5fda7c72f4a4378045b39e31a39420bba2b2cf3fd59367834b43689215b12cb0587a599c95e9619562e1ebec071a7
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:7.17.2":
   version: 7.17.2
   resolution: "@babel/runtime@npm:7.17.2"
@@ -4339,6 +4349,7 @@ __metadata:
     "@commitlint/prompt": 16.2.1
     "@commitlint/prompt-cli": 16.2.1
     "@mdx-js/react": 1.6.22
+    "@playwright-testing-library/test": 4.2.0
     "@playwright/test": 1.19.2
     "@popperjs/core": 2.11.2
     "@radix-ui/react-tooltip": 0.1.6
@@ -4419,6 +4430,7 @@ __metadata:
     pascal-case: 3.1.2
     pinst: 3.0.0
     playwright: 1.19.2
+    playwright-testing-library: 4.2.0
     postcss: 8.4.7
     postcss-cli: 8.3.1
     postcss-html: 1.3.0
@@ -5807,6 +5819,24 @@ __metadata:
   dependencies:
     "@octokit/openapi-types": ^11.2.0
   checksum: f122b9aee8f6baddd515e34a0913e73b21d4bc82d6ee59d77a8aaf01b4a02c10867dd013003d087a83dc96db23511893669015af6d30c27cece185e21cf1df89
+  languageName: node
+  linkType: hard
+
+"@playwright-testing-library/test@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@playwright-testing-library/test@npm:4.2.0"
+  dependencies:
+    "@testing-library/dom": ^7.31.2
+    wait-for-expect: ^3.0.2
+  peerDependencies:
+    "@playwright/test": ^1.12.0
+    playwright: ^1.12.0
+  peerDependenciesMeta:
+    "@playwright/test":
+      optional: true
+    playwright:
+      optional: true
+  checksum: f9cb35c6ed9860f63f9b2521d641be6baa7cafb45f8a86bfa744b41b01833b6624240e7a6a1838f64914b11ef5c27120cdfcf0208522e8704735ca22040fe230
   languageName: node
   linkType: hard
 
@@ -7663,6 +7693,22 @@ __metadata:
     lz-string: ^1.4.4
     pretty-format: ^27.0.2
   checksum: 2245d254b6058590e25de86fb7b3c75e4a31096901a191f80d3efb9fa7e1e273043416f370c8770feb9f3ccc73a1550a877a3b003b593f1728ae828fcb52cd62
+  languageName: node
+  linkType: hard
+
+"@testing-library/dom@npm:^7.31.2":
+  version: 7.31.2
+  resolution: "@testing-library/dom@npm:7.31.2"
+  dependencies:
+    "@babel/code-frame": ^7.10.4
+    "@babel/runtime": ^7.12.5
+    "@types/aria-query": ^4.2.0
+    aria-query: ^4.2.2
+    chalk: ^4.1.0
+    dom-accessibility-api: ^0.5.6
+    lz-string: ^1.4.4
+    pretty-format: ^26.6.2
+  checksum: 54fbedd1ecdfe1d47be2e592b98d18b2ab9d7e731f57231caf9b152593fe7329fe5ebe219e0e5d1e0df5b1ab803121cb8acd8b73bd1fb292bfdc2c55663eb01d
   languageName: node
   linkType: hard
 
@@ -9719,6 +9765,16 @@ __metadata:
   version: 1.0.0
   resolution: "argv-formatter@npm:1.0.0"
   checksum: cf95ea091f4eb0fefdbbc595dbe2e307afee16fc87aad48d72e5e45d5b0b59566dbaa77e45d515242289670904838a501313efffb48ff02f49c6de0c03536a54
+  languageName: node
+  linkType: hard
+
+"aria-query@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "aria-query@npm:4.2.2"
+  dependencies:
+    "@babel/runtime": ^7.10.2
+    "@babel/runtime-corejs3": ^7.10.2
+  checksum: 38401a9a400f26f3dcc24b84997461a16b32869a9893d323602bed8da40a8bcc0243b8d2880e942249a1496cea7a7de769e93d21c0baa439f01e1ee936fed665
   languageName: node
   linkType: hard
 
@@ -12220,6 +12276,13 @@ __metadata:
     browserslist: ^4.16.6
     semver: 7.0.0
   checksum: a807d70b0a7fc06efe23b2863da008db279a5cefe7a95aebe2c37a3e81419e3bb7da08b85778220e0cecec4e0ec7dcaff196d857659944510c74bfdbde73bdde
+  languageName: node
+  linkType: hard
+
+"core-js-pure@npm:^3.20.2":
+  version: 3.21.1
+  resolution: "core-js-pure@npm:3.21.1"
+  checksum: 00a5dff599b7fb0b30746a638b9d0edbdc0df24ed1580ca56be595fbe3c78c375d37fc4e1bff23627109229702c9ee8ea2587a66b8280eb33b85160aa4e401e9
   languageName: node
   linkType: hard
 
@@ -22194,6 +22257,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"playwright-testing-library@npm:4.2.0":
+  version: 4.2.0
+  resolution: "playwright-testing-library@npm:4.2.0"
+  dependencies:
+    "@testing-library/dom": ^7.31.2
+    wait-for-expect: ^3.0.2
+  peerDependencies:
+    "@playwright/test": ^1.12.0
+    playwright: ^1.12.0
+  peerDependenciesMeta:
+    "@playwright/test":
+      optional: true
+    playwright:
+      optional: true
+  checksum: 653f681f9202ca760dfa3dc8a00bcadb79305c4c60ba07420b128a23a0e5e7745a68f02b499e2f1f586d3829c922efab35b9701223dadd0a814f5e1c8745e232
+  languageName: node
+  linkType: hard
+
 "playwright@npm:1.19.2":
   version: 1.19.2
   resolution: "playwright@npm:1.19.2"
@@ -23246,6 +23327,18 @@ __metadata:
     ansi-styles: ^4.0.0
     react-is: ^16.12.0
   checksum: 76f022d2c911d9733a961467545f5aef2cae892da289fff92ba6a6868a10df4d8ef79794ff791e353f67f0edfa85765240f1e7d552e27c94029ae6af1c95174b
+  languageName: node
+  linkType: hard
+
+"pretty-format@npm:^26.6.2":
+  version: 26.6.2
+  resolution: "pretty-format@npm:26.6.2"
+  dependencies:
+    "@jest/types": ^26.6.2
+    ansi-regex: ^5.0.0
+    ansi-styles: ^4.0.0
+    react-is: ^17.0.1
+  checksum: e3b808404d7e1519f0df1aa1f25cee0054ab475775c6b2b8c5568ff23194a92d54bf93274139b6f584ca70fd773be4eaa754b0e03f12bb0a8d1426b07f079976
   languageName: node
   linkType: hard
 
@@ -28090,6 +28183,13 @@ __metadata:
   dependencies:
     xml-name-validator: ^3.0.0
   checksum: ae25c51cf71f1fb2516df1ab33a481f83461a117565b95e3d0927432522323f93b1b2846cbb60196d337970c421adb604fc2d0d180c6a47a839da01db5b9973b
+  languageName: node
+  linkType: hard
+
+"wait-for-expect@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "wait-for-expect@npm:3.0.2"
+  checksum: 2ec1ebd78023fa10bdcf53d78bbd65feea68fdfa0de0b00f3a72f3df089118b91517839ff3926e5ef6cfd1ede65085326d85b0378d4db62c266cc9c859c2de56
   languageName: node
   linkType: hard
 

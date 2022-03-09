@@ -217,7 +217,6 @@
     }
   },
   "dependencies": {
-    "@playwright/test": "1.19.2",
     "@popperjs/core": "2.11.2",
     "@radix-ui/react-tooltip": "0.1.6",
     "@reach/menu-button": "0.16.2",
