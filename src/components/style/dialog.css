@@ -106,11 +106,11 @@
 }
 
 .dialog-overlay[data-state='open'] {
-  animation: overlayFadeIn 300ms ease-out;
+  animation: overlayFadeIn 200ms ease-out;
 }
 
 .dialog-overlay[data-state='closed'] {
-  animation: overlayFadeOut 300ms ease-out;
+  animation: overlayFadeOut 200ms ease-out;
 }
 
 @keyframes fadeIn {
@@ -134,7 +134,7 @@
 }
 
 .ease-in-out[data-state='open'] {
-  animation: fadeIn 300ms ease-out;
+  animation: fadeIn 200ms ease-out;
 }
 
 .ease-in-out[data-state='closed'] {
