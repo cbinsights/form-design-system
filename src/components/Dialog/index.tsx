@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import FocusTrap from 'focus-trap-react';
@@ -6,7 +6,6 @@ import rafSchd from 'raf-schd';
 import DenyIcon from 'icons/react/DenyIcon';
 import IconButton from 'components/IconButton';
 import cc from 'classcat';
-import noScroll from './noScroll';
 import * as DialogUi from '@radix-ui/react-dialog';
 
 export const isElementOverflowing = ({
@@ -100,19 +99,6 @@ const Dialog = ({
     }
     return undefined;
   }, [alwaysShowBorder]);
-
-  useLayoutEffect(() => {
-    // This toggles scrolling on and off based on whether the modal
-    // is shown or not
-    if (isOpen) {
-      noScroll.on();
-    } else {
-      noScroll.off();
-    }
-    return () => {
-      noScroll.off();
-    };
-  }, [isOpen]);
 
   const dialogNode = (
     <DialogUi.Root defaultOpen>
