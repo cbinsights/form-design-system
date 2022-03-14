@@ -101,7 +101,7 @@ const Dialog = ({
   }, [alwaysShowBorder]);
 
   const dialogNode = (
-    <DialogUi.Root defaultOpen onOpenChange={onDismiss}>
+    <DialogUi.Root open={isOpen} onOpenChange={onDismiss}>
       <DialogUi.Overlay className="dialog-overlay"></DialogUi.Overlay>
       <div className="dialog-zIndex dialog-wrapper">
         <DialogUi.Content
