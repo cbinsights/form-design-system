@@ -101,7 +101,7 @@ const Dialog = ({
   }, [alwaysShowBorder]);
 
   const dialogNode = (
-    <DialogUi.Root defaultOpen>
+    <DialogUi.Root defaultOpen onOpenChange={onDismiss}>
       <DialogUi.Overlay className="dialog-overlay"></DialogUi.Overlay>
       <div className="dialog-zIndex dialog-wrapper">
         <DialogUi.Content
@@ -138,7 +138,7 @@ const Dialog = ({
                         <div className="dialog-icon">
                           <IconButton
                             Icon={DenyIcon}
-                            onClick={onDismiss}
+                            // onClick={onDismiss}
                             aria-label="Close"
                             label="Close"
                           />
