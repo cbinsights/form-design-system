@@ -32,12 +32,14 @@ describe('Dialog', () => {
     expect(screen.getByText('subTitle')).toBeInTheDocument();
   });
 
-  it('Tests that onDismiss gets fired correctly', () => {
+  it('tests that onDismiss gets fired correctly when clicking the close icon', () => {
     render(dialog);
     expect(screen.getByText('content')).toBeInTheDocument();
     fireEvent.click(screen.getByLabelText('Close'));
-    expect(screen.queryByText('content')).not.toBeInTheDocument();
+    expect(dismiss).toHaveBeenCalledTimes(1);
+  });
 
+  it('tests that pressing Esc anywhere in dialog should trigger a close', () => {
     render(dialog);
     fireEvent.keyDown(screen.getByTestId('dialog'), { key: 'Escape', code: 27 });
     expect(dismiss).toHaveBeenCalledTimes(2);
