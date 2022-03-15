@@ -50,8 +50,5 @@ describe('Dialog', () => {
 
     expect(computedStyles.getPropertyValue('max-height')).toBe('1000px');
     expect(computedStyles.getPropertyValue('max-width')).toBe('1000px');
-    // expect(
-    //   window.getComputedStyle(document.documentElement).getPropertyValue('overflow')
-    // ).toBe('hidden');
   });
 });
