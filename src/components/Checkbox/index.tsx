@@ -1,6 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { v4 } from 'uuid';
 import cc from 'classcat';
+import * as CheckboxUi from '@radix-ui/react-checkbox';
 
 import CheckEmptyIcon from 'icons/react/CheckEmptyIcon';
 import CheckFilledIcon from 'icons/react/CheckFilledIcon';
@@ -35,16 +36,47 @@ const Checkbox = ({
   label,
   inputRef,
   id = v4(),
-  ...rest
-}: CheckboxProps): JSX.Element => {
+}: // ...rest
+CheckboxProps): JSX.Element => {
   const IconUnchecked = CheckEmptyIcon;
   const IconChecked = indeterminate ? CheckIndeterminateIcon : CheckFilledIcon;
 
+  const [checked, setChecked] = React.useState(indeterminate);
+
+  const handleChange = () => setChecked(!checked);
+
   return (
+    <div>
+      <CheckboxUi.Root
+        className="radix-checkbox"
+        checked={checked}
+        disabled={disabled}
+        onCheckedChange={handleChange}
+        id={id}
+      >
+        <CheckboxUi.Indicator ref={inputRef}>
+          <label className="flush--bottom" htmlFor={id}>
+            {checked && (
+              <span className="fdsCheckable-icon--checked radix-checkbox">
+                <IconChecked size="xs" />
+              </span>
+            )}
+          </label>
+        </CheckboxUi.Indicator>
+      </CheckboxUi.Root>
+      {showLabel && <span className="fdsCheckable-label">{label}</span>}
+    </div>
+  );
+};
+
+export default Checkbox;
+
+{
+  /*
     <div
       className={cc([{ 'fdsCheckable--disabled': disabled }, 'fdsCheckable fdsCheckbox'])}
     >
-      <input
+    <input
         {...rest}
         type="checkbox"
         id={id}
@@ -63,7 +95,5 @@ const Checkbox = ({
         {showLabel && <span className="fdsCheckable-label">{label}</span>}
       </label>
     </div>
-  );
-};
-
-export default Checkbox;
+  */
+}
