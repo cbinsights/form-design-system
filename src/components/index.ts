@@ -20,7 +20,8 @@ import MenuLink from 'components/MenuLink';
 import Popover from 'components/Popover';
 import Prompt from 'components/Prompt';
 import Radio from 'components/Radio';
-import Search from 'components/TopSearch/Search';
+import Header from './Header';
+import MultiSelect from './MultiSelect';
 import SeparatorList from 'components/SeparatorList';
 import StackedButton from 'components/StackedButton';
 import TextInput from 'components/TextInput';
@@ -42,6 +43,7 @@ export {
   Flex,
   FlexItem,
   FloatingAction,
+  Header,
   IconButton,
   Indicator,
   InputGroup,
@@ -51,7 +53,7 @@ export {
   Popover,
   Prompt,
   Radio,
-  Search,
+  MultiSelect,
   SeparatorList,
   StackedButton,
   TextInput,

@@ -13,7 +13,7 @@ export interface TooltipProps {
   maxWidth?: number;
 
   /** Position preference of tooltip. */
-  position?: 'left' | 'top' | 'right' | 'bottom';
+  position?: 'top' | 'left' | 'right' | 'bottom';
 }
 
 const Tooltip = ({
