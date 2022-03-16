@@ -16,6 +16,3 @@
 
 /* Components */
 @import '../components/style/index.css';
-
-/* top search (temporarily) */
-@import '../components/TopSearch/styles.css';
