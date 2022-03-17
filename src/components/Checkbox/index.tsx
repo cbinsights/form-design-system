@@ -46,8 +46,9 @@ CheckboxProps): JSX.Element => {
   const handleChange = () => setChecked(!checked);
 
   return (
-    <div>
+    <>
       <CheckboxUi.Root
+        // {...rest}
         className="radix-checkbox"
         checked={checked}
         disabled={disabled}
@@ -63,9 +64,14 @@ CheckboxProps): JSX.Element => {
             )}
           </label>
         </CheckboxUi.Indicator>
+        {!checked && (
+          <span className="fdsCheckable-icon--unchecked">
+            <IconUnchecked size="xs" />
+          </span>
+        )}
       </CheckboxUi.Root>
       {showLabel && <span className="fdsCheckable-label">{label}</span>}
-    </div>
+    </>
   );
 };
 
