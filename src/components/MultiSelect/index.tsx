@@ -80,6 +80,7 @@ const Search: React.FC<MultiSelectProps> = ({
   selectRef,
   setCursorPosition,
   styles = customStyles(),
+  inputId,
 }) => {
   const defaultFormatOptionLabel = React.useCallback(
     (item: OptionProps) => (
@@ -95,6 +96,7 @@ const Search: React.FC<MultiSelectProps> = ({
 
   return (
     <Select<OptionProps, true>
+      inputId={inputId}
       autoFocus={autoFocus}
       backspaceRemovesValue={backspaceRemovesValue}
       captureMenuScroll={false}
@@ -105,7 +107,6 @@ const Search: React.FC<MultiSelectProps> = ({
       // Use uid as option value to work around react-select's automatically given keys
       getOptionValue={(option: OptionProps) => option.uid}
       hideSelectedOptions={false}
-      inputId={'topSearchSelectInput'}
       inputValue={inputValue}
       isClearable={isClearable}
       isMulti

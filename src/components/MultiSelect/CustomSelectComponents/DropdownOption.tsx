@@ -51,11 +51,9 @@ export const DropdownOption = ({
 
   const TSEnhancementsLayout = (
     <div
-      className={`
-        'smart-input-option'}
-        display--flex
-        ${defaultType === SEARCH_TERM_RESEARCH ? 'border--bottom' : ''}
-      `}
+      className={`smart-input-option display--flex ${
+        defaultType === SEARCH_TERM_RESEARCH ? 'border--bottom' : ''
+      }`}
       data-test="smart-input-option"
       data-sugg-type={category}
       style={optionStyle}
