@@ -78,6 +78,7 @@ export const Header = ({
             </FlexItem>
             <FlexItem shrink>
               <Button
+                data-testid="search-button"
                 label="Search"
                 IconLeft={SearchIcon}
                 style={{
@@ -92,6 +93,7 @@ export const Header = ({
         <FlexItem shrink>
           <div className="inverted">
             <Button
+              data-testid="advanced-search-button"
               label="Advanced Search"
               theme="ghost"
               onClick={onAdvancedSearchClick}
