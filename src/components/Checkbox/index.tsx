@@ -54,21 +54,24 @@ CheckboxProps): JSX.Element => {
         disabled={disabled}
         onCheckedChange={handleChange}
         id={id}
+        // value={}
       >
-        <CheckboxUi.Indicator ref={inputRef}>
-          <label className="flush--bottom" htmlFor={id}>
-            {checked && (
-              <span className="fdsCheckable-icon--checked radix-checkbox">
-                <IconChecked size="xs" />
-              </span>
-            )}
-          </label>
-        </CheckboxUi.Indicator>
-        {!checked && (
-          <span className="fdsCheckable-icon--unchecked">
-            <IconUnchecked size="xs" />
-          </span>
-        )}
+        <>
+          <CheckboxUi.Indicator ref={inputRef} className="">
+            <label className="flush--bottom" htmlFor={id}>
+              {checked && (
+                <span className="radix-checkbox fdsCheckable-icon--checked">
+                  <IconChecked size="xs" />
+                </span>
+              )}
+            </label>
+          </CheckboxUi.Indicator>
+          {!checked && (
+            <span className="fdsCheckable-icon--unchecked">
+              <IconUnchecked size="xs" />
+            </span>
+          )}
+        </>
       </CheckboxUi.Root>
       {showLabel && <span className="fdsCheckable-label">{label}</span>}
     </>
