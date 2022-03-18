@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
-import FocusTrap from 'focus-trap-react';
 import rafSchd from 'raf-schd';
 import DenyIcon from 'icons/react/DenyIcon';
 import IconButton from 'components/IconButton';
@@ -70,7 +69,6 @@ const Dialog = ({
   role = 'dialog',
   width = '500px',
   height = '80vh',
-  disableFocusTrap = false,
   onDismiss,
   alwaysShowBorder,
   isOpen,
@@ -172,7 +170,7 @@ const Dialog = ({
 
   const transitionNode = (
     <CSSTransition timeout={200} in={isOpen} classNames="dialog" unmountOnExit>
-      <>{disableFocusTrap ? dialogNode : <FocusTrap>{dialogNode}</FocusTrap>}</>
+      {dialogNode}
     </CSSTransition>
   );
 

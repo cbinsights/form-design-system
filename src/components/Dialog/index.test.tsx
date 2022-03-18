@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Dialog from '.';
+import userEvent from '@testing-library/user-event';
 
 describe('Dialog', () => {
   const dismiss = jest.fn();
@@ -35,20 +36,20 @@ describe('Dialog', () => {
   it('tests that onDismiss gets fired correctly when clicking the close icon', () => {
     render(dialog);
     expect(screen.getByText('content')).toBeInTheDocument();
-    fireEvent.click(screen.getByLabelText('Close'));
+    userEvent.click(screen.getByLabelText('Close'));
     expect(dismiss).toHaveBeenCalledTimes(1);
   });
 
   it('tests that pressing Esc anywhere in dialog should trigger a close', () => {
     render(dialog);
-    fireEvent.keyDown(screen.getByTestId('dialog'), { key: 'Escape', code: 27 });
+    userEvent.keyboard('{Escape}');
     expect(dismiss).toHaveBeenCalledTimes(2);
   });
 
   it('tests that styles are correct', () => {
     render(dialog);
 
-    const computedStyles = window.getComputedStyle(screen.getByTestId('dialog'));
+    const computedStyles = window.getComputedStyle(screen.getByRole('dialog'));
 
     expect(computedStyles.getPropertyValue('max-height')).toBe('1000px');
     expect(computedStyles.getPropertyValue('max-width')).toBe('1000px');
