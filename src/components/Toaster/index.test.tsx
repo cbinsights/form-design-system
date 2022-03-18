@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Toaster from '.';
+import userEvent from '@testing-library/user-event';
 
 describe('Toaster component', () => {
   it('renders component', () => {
@@ -23,7 +24,7 @@ describe('Toaster component', () => {
       />
     );
     const close = screen.getByTitle('Close');
-    fireEvent.click(close);
+    userEvent.click(close);
     expect(mockOnDismiss).toHaveBeenCalledTimes(1);
   });
 });
