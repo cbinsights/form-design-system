@@ -21,7 +21,7 @@ const CenteredHighlightedText = ({
   return (
     <span
       className="valign--center display--flex display--block"
-      data-test="smart-input-centered-highlighted-text"
+      data-testid="smart-input-centered-highlighted-text"
     >
       {leftText && (
         <span
@@ -32,13 +32,13 @@ const CenteredHighlightedText = ({
               'padding--right--xs': leftText[leftText.length - 1] === ' ',
             },
           ])}
-          data-test="left-text"
+          data-testid="left-text"
         >
           <span dir="ltr">{leftText}</span>
         </span>
       )}
       {centeredText && (
-        <span className="fontWeight--bold flexItem--shrink" data-test="centered-text">
+        <span className="fontWeight--bold flexItem--shrink" data-testid="centered-text">
           {centeredText}
         </span>
       )}
@@ -49,7 +49,7 @@ const CenteredHighlightedText = ({
             'padding--left--xs': rightText && rightText[0] === ' ',
           },
         ])}
-        data-test="right-text"
+        data-testid="right-text"
       >
         {parts.map((part, index) => {
           if (index <= firstHighlightIndex) return null;

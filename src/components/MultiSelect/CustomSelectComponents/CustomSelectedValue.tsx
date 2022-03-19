@@ -30,6 +30,7 @@ export const SelectedValue = ({ item, selectProps }: SelectedValueProps): JSX.El
       role="presentation"
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
+      data-testid="custom-selected-value"
     >
       {text}
       {type === 'entity' && (

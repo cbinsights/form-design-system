@@ -8,7 +8,7 @@ const CustomClearIndicator = (
 ): JSX.Element => {
   return (
     <components.ClearIndicator {...props}>
-      <span className={`margin--x--s pointer`}>
+      <span data-testid="pointer" className={`margin--x--s pointer`}>
         <DenyIcon size="xs" />
       </span>
     </components.ClearIndicator>

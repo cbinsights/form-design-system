@@ -15,6 +15,7 @@ describe('Header component', () => {
       onClear: jest.fn(),
       onMenuClose: jest.fn(),
       onOptionClick: jest.fn(),
+      onSetSearchItems: jest.fn(),
     },
   };
 
