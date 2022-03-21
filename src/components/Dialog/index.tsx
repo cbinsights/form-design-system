@@ -106,7 +106,7 @@ const Dialog = ({
       ></DialogUi.Overlay>
       <div className="dialog-zIndex dialog-wrapper">
         <DialogUi.Content
-          onPointerDownOutside={() => console.log('closes it')}
+          onPointerDownOutside={(event) => event.preventDefault()}
           asChild
           className="ease-in-out"
         >

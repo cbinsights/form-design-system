@@ -36,7 +36,7 @@ describe('Dialog', () => {
   it('tests that clicking outside of the modal does not close it', () => {
     render(dialog);
     userEvent.click(screen.getByTestId('overlay'));
-    expect(dismiss).toHaveBeenCalledTimes(1);
+    expect(dismiss).toHaveBeenCalledTimes(0);
   });
 
   it('tests that onDismiss gets fired correctly when clicking the close icon', () => {
