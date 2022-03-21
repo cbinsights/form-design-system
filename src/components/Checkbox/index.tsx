@@ -47,7 +47,10 @@ const Checkbox = ({
   const handleChange = () => setChecked(!checked);
 
   return (
-    <div {...rest}>
+    <div
+      {...rest}
+      className={cc(['fdsCheckable-label', { 'fdsCheckable--disabled': disabled }])}
+    >
       <Label.Root className="flush--bottom" htmlFor={id}>
         <CheckboxUi.Root
           className="radix-checkbox"
@@ -79,30 +82,3 @@ const Checkbox = ({
 };
 
 export default Checkbox;
-
-{
-  /*
-    <div
-      className={cc([{ 'fdsCheckable--disabled': disabled }, 'fdsCheckable fdsCheckbox'])}
-    >
-    <input
-        {...rest}
-        type="checkbox"
-        id={id}
-        className="media--xs"
-        disabled={disabled}
-        ref={inputRef}
-        aria-label={showLabel ? undefined : label}
-      />
-      <label className="flush--bottom" htmlFor={id}>
-        <span className="fdsCheckable-icon--checked">
-          <IconChecked size="xs" />
-        </span>
-        <span className="fdsCheckable-icon--unchecked">
-          <IconUnchecked size="xs" />
-        </span>
-        {showLabel && <span className="fdsCheckable-label">{label}</span>}
-      </label>
-    </div>
-  */
-}
