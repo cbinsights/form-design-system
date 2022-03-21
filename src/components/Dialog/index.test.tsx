@@ -33,6 +33,12 @@ describe('Dialog', () => {
     expect(screen.getByText('subTitle')).toBeInTheDocument();
   });
 
+  it('tests that clicking outside of the modal does not close it', () => {
+    render(dialog);
+    userEvent.click(screen.getByTestId('overlay'));
+    expect(dismiss).toHaveBeenCalledTimes(1);
+  });
+
   it('tests that onDismiss gets fired correctly when clicking the close icon', () => {
     render(dialog);
     expect(screen.getByText('content')).toBeInTheDocument();
