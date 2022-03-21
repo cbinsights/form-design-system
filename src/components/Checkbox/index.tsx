@@ -37,12 +37,13 @@ const Checkbox = ({
   label,
   inputRef,
   id = v4(),
+  defaultChecked = false,
   ...rest
 }: CheckboxProps): JSX.Element => {
   const IconUnchecked = CheckEmptyIcon;
   const IconChecked = indeterminate ? CheckIndeterminateIcon : CheckFilledIcon;
 
-  const [checked, setChecked] = React.useState(indeterminate);
+  const [checked, setChecked] = React.useState(defaultChecked || indeterminate);
 
   const handleChange = () => setChecked(!checked);
 
@@ -61,15 +62,15 @@ const Checkbox = ({
           // value={}
         >
           <>
-            <CheckboxUi.Indicator ref={inputRef} className="">
+            <CheckboxUi.Indicator className="fdsCheckable" ref={inputRef}>
               {checked && (
-                <span className="checkbox-itself fdsCheckable-icon--checked">
+                <span className="checkbox--disabled">
                   <IconChecked size="xs" />
                 </span>
               )}
             </CheckboxUi.Indicator>
             {!checked && (
-              <span className="checkbox-itself fdsCheckable-icon--unchecked">
+              <span className="checkbox--disabled">
                 <IconUnchecked size="xs" />
               </span>
             )}

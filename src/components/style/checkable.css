@@ -39,5 +39,8 @@
 
 .fdsCheckable--disabled {
   color: var(--font-color-hint) !important;
+}
+
+.checkbox--disabled svg {
   fill: var(--font-color-hint) !important;
 }
