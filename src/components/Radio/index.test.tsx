@@ -1,7 +1,8 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import Radio from '.';
+import userEvent from '@testing-library/user-event';
 
 // uuid will break snapshots, so we must mock it.
 jest.mock('uuid', () => ({
@@ -46,7 +47,7 @@ describe('Radio component', () => {
     const radio = screen.getByRole('radio');
 
     expect(changeFn).not.toHaveBeenCalled();
-    fireEvent.click(radio);
+    userEvent.click(radio);
     expect(changeFn).toHaveBeenCalled();
   });
 });

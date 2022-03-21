@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DateInput, { DateFormat } from '.';
@@ -18,7 +18,8 @@ describe('DateInput component', () => {
         defaultDate="2020-07-07"
       />
     );
-    fireEvent.focus(screen.getByLabelText('Date Input'));
+    // focuses the element
+    userEvent.click(screen.getByLabelText('Date Input'));
   });
 
   afterEach(() => {
@@ -53,12 +54,12 @@ describe('DateInput component', () => {
 
   it('calls onDateChange when user selects a day in the picker', () => {
     expect(dateChangeFn).not.toHaveBeenCalled();
-    fireEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
+    userEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
     expect(dateChangeFn).toHaveBeenCalled();
   });
 
   it('updates input value when user selects a day in the picker', () => {
-    fireEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
+    userEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
     expect(screen.getByDisplayValue('07/07/2020')).toBeInTheDocument();
   });
 

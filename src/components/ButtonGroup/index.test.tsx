@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import ButtonGroup from '.';
 import { noop } from 'util/index';
@@ -20,7 +21,7 @@ describe('ButtonGroup component', () => {
   it('calls onChange with "Feed"', () => {
     const mockOnChange = jest.fn();
     render(<ButtonGroup buttons={buttons} onChange={mockOnChange}></ButtonGroup>);
-    fireEvent.click(screen.getByText('Feed'));
+    userEvent.click(screen.getByText('Feed'));
     expect(mockOnChange).toHaveBeenCalledWith('Feed');
   });
 });
