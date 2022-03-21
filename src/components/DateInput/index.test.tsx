@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DateInput, { DateFormat } from '.';
@@ -18,7 +18,8 @@ describe('DateInput component', () => {
         defaultDate="2020-07-07"
       />
     );
-    fireEvent.focus(screen.getByLabelText('Date Input'));
+    // focuses the element
+    userEvent.click(screen.getByLabelText('Date Input'));
   });
 
   afterEach(() => {
