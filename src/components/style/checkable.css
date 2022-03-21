@@ -25,16 +25,27 @@
   margin-top: 1px;
 }
 
-.fdsCheckable .fds-icon {
-  color: var(--font-color-secondary);
+.radix-checkbox {
+  background: transparent;
+  border: 0px solid transparent;
 }
 
-.fdsCheckable input:focus + label svg {
+.button:focus {
+  border: none;
+  outline: none;
+}
+
+.radix-checkbox .fds-icon {
+  color: var(--font-color-secondary);
+  border-radius: 2px;
+}
+
+.radix-checkbox:focus svg {
   box-shadow: inset 0 0 0 3px var(--border-color-focusRing);
   transition: box-shadow 250ms var(--motion-easing-default);
 }
 
-.fdsCheckable input:checked + label svg {
+.radix-checkbox [data-state='checked' i] svg {
   fill: var(--color-blue);
 }
 
@@ -50,24 +61,24 @@
  * the DOM; we use checked state selectors on the `input`
  * element to determine which one to show
  */
-.fdsCheckable input + label .fdsCheckable-icon--checked {
+.fdsCheckable .radix-checkbox .fdsCheckable-icon--checked {
   display: none;
 }
 
-.fdsCheckable
+/* .fdsCheckable
   input:checked
   + label
   .fdsCheckable-icon--checked {
   display: block;
-}
+} */
 
-.fdsCheckable input + label .fdsCheckable-icon--unchecked {
+/* .fdsCheckable input + label .fdsCheckable-icon--unchecked {
   display: block;
-}
+} */
 
-.fdsCheckable
+/* .fdsCheckable
   input:checked
   + label
   .fdsCheckable-icon--unchecked {
   display: none;
-}
+} */

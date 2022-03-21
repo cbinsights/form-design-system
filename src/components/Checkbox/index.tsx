@@ -2,6 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import { v4 } from 'uuid';
 import cc from 'classcat';
 import * as CheckboxUi from '@radix-ui/react-checkbox';
+import * as Label from '@radix-ui/react-label';
 
 import CheckEmptyIcon from 'icons/react/CheckEmptyIcon';
 import CheckFilledIcon from 'icons/react/CheckFilledIcon';
@@ -36,8 +37,8 @@ const Checkbox = ({
   label,
   inputRef,
   id = v4(),
-}: // ...rest
-CheckboxProps): JSX.Element => {
+  ...rest
+}: CheckboxProps): JSX.Element => {
   const IconUnchecked = CheckEmptyIcon;
   const IconChecked = indeterminate ? CheckIndeterminateIcon : CheckFilledIcon;
 
@@ -46,35 +47,34 @@ CheckboxProps): JSX.Element => {
   const handleChange = () => setChecked(!checked);
 
   return (
-    <>
-      <CheckboxUi.Root
-        // {...rest}
-        className="radix-checkbox"
-        checked={checked}
-        disabled={disabled}
-        onCheckedChange={handleChange}
-        id={id}
-        // value={}
-      >
-        <>
-          <CheckboxUi.Indicator ref={inputRef} className="">
-            <label className="flush--bottom" htmlFor={id}>
+    <div {...rest}>
+      <Label.Root className="flush--bottom" htmlFor={id}>
+        <CheckboxUi.Root
+          className="radix-checkbox"
+          checked={checked}
+          disabled={disabled}
+          onCheckedChange={handleChange}
+          id={id}
+          // value={}
+        >
+          <>
+            <CheckboxUi.Indicator ref={inputRef} className="">
               {checked && (
-                <span className="radix-checkbox fdsCheckable-icon--checked">
+                <span className="checkbox-itself fdsCheckable-icon--checked">
                   <IconChecked size="xs" />
                 </span>
               )}
-            </label>
-          </CheckboxUi.Indicator>
-          {!checked && (
-            <span className="fdsCheckable-icon--unchecked">
-              <IconUnchecked size="xs" />
-            </span>
-          )}
-        </>
-      </CheckboxUi.Root>
-      {showLabel && <span className="fdsCheckable-label">{label}</span>}
-    </>
+            </CheckboxUi.Indicator>
+            {!checked && (
+              <span className="checkbox-itself fdsCheckable-icon--unchecked">
+                <IconUnchecked size="xs" />
+              </span>
+            )}
+          </>
+        </CheckboxUi.Root>
+        {showLabel && <span className="fdsCheckable-label">{label}</span>}
+      </Label.Root>
+    </div>
   );
 };
 

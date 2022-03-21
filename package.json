@@ -84,6 +84,7 @@
     "@commitlint/prompt-cli": "16.2.1",
     "@mdx-js/react": "1.6.22",
     "@radix-ui/react-checkbox": "0.1.5",
+    "@radix-ui/react-label": "0.1.5",
     "@radix-ui/react-tooltip": "0.1.6",
     "@storybook/addon-a11y": "6.4.19",
     "@storybook/addon-backgrounds": "6.4.19",

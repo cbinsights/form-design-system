@@ -4318,6 +4318,7 @@ __metadata:
     "@mdx-js/react": 1.6.22
     "@popperjs/core": 2.11.2
     "@radix-ui/react-checkbox": 0.1.5
+    "@radix-ui/react-label": 0.1.5
     "@radix-ui/react-tooltip": 0.1.6
     "@reach/menu-button": 0.16.2
     "@storybook/addon-a11y": 6.4.19
