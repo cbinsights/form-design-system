@@ -43,14 +43,17 @@ const Checkbox = ({
   const IconUnchecked = CheckEmptyIcon;
   const IconChecked = indeterminate ? CheckIndeterminateIcon : CheckFilledIcon;
 
-  const [checked, setChecked] = React.useState(defaultChecked || indeterminate);
+  const [checked, setChecked] = React.useState(defaultChecked);
 
   const handleChange = () => setChecked(!checked);
 
   return (
     <div
       {...rest}
-      className={cc(['fdsCheckable-label', { 'fdsCheckable--disabled': disabled }])}
+      className={cc([
+        'fdsCheckable-label',
+        { 'fdsCheckable--disabled': !indeterminate && disabled },
+      ])}
     >
       <Label.Root className="flush--bottom" htmlFor={id}>
         <CheckboxUi.Root
@@ -59,18 +62,18 @@ const Checkbox = ({
           disabled={disabled}
           onCheckedChange={handleChange}
           id={id}
-          // value={}
+          // value={} might add value
         >
           <>
             <CheckboxUi.Indicator className="fdsCheckable" ref={inputRef}>
               {checked && (
-                <span className="checkbox--disabled">
+                <span className={cc([{ 'checkbox--disabled': disabled }])}>
                   <IconChecked size="xs" />
                 </span>
               )}
             </CheckboxUi.Indicator>
             {!checked && (
-              <span className="checkbox--disabled">
+              <span className={cc([{ 'checkbox--disabled': disabled }])}>
                 <IconUnchecked size="xs" />
               </span>
             )}
