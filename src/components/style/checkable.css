@@ -1,15 +1,15 @@
 .fdsCheckable {
-  position: relative;
+  display: inline-flex;
 }
 
 .fdsCheckable-label {
   padding-left: var(--space-s);
-  margin-top: 1px;
 }
 
 .radix-checkbox {
   padding: 0;
   margin: 0;
+  margin-bottom: 2px;
   background: transparent;
   border: 0 solid transparent;
 }

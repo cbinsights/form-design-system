@@ -48,7 +48,10 @@ const Checkbox = ({
   return (
     <div
       {...rest}
-      className={cc([{ 'fdsCheckable--disabled': !indeterminate && disabled }])}
+      className={cc([
+        'fdsCheckable',
+        { 'fdsCheckable--disabled': !indeterminate && disabled },
+      ])}
     >
       <Label.Root className="flush--bottom">
         <CheckboxUi.Root
@@ -57,20 +60,18 @@ const Checkbox = ({
           disabled={disabled}
           onCheckedChange={handleChange}
         >
-          <>
-            <CheckboxUi.Indicator className="fdsCheckable" ref={inputRef}>
-              {checked && (
-                <span className={cc([{ 'checkbox--disabled': disabled }])}>
-                  <IconChecked size="xs" />
-                </span>
-              )}
-            </CheckboxUi.Indicator>
-            {!checked && (
+          <CheckboxUi.Indicator ref={inputRef}>
+            {checked && (
               <span className={cc([{ 'checkbox--disabled': disabled }])}>
-                <IconUnchecked size="xs" />
+                <IconChecked size="xs" />
               </span>
             )}
-          </>
+          </CheckboxUi.Indicator>
+          {!checked && (
+            <span className={cc([{ 'checkbox--disabled': disabled }])}>
+              <IconUnchecked size="xs" />
+            </span>
+          )}
         </CheckboxUi.Root>
         {showLabel && <span className="fdsCheckable-label">{label}</span>}
       </Label.Root>
