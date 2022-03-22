@@ -3,7 +3,7 @@ import CustomValueContainer from './CustomSelectComponents/CustomValueContainer'
 import CustomClearIndicator from './CustomSelectComponents/CustomClearIndicator';
 import CustomInput from './CustomSelectComponents/CustomInput';
 import CustomMultiValue from './CustomSelectComponents/CustomMultiValue';
-import { GroupBase, Theme, ThemeConfig } from 'react-select';
+import { GroupBase, StylesConfig, ThemeConfig } from 'react-select';
 import { SelectComponents } from 'react-select/dist/declarations/src/components';
 import { OptionProps } from '.';
 
@@ -42,37 +42,41 @@ export const customThemes: ThemeConfig = (theme) => ({
   },
 });
 
-export const customStyles = (isHeader?: boolean): any => {
+export const customStyles = (isHeader?: boolean): StylesConfig<OptionProps, true> => {
   const focusedOptionColor = !isHeader ? 'rgba(64, 64, 64, 0.08)' : FDS.COLOR_AQUA;
   return {
-    container: (base: Theme) => ({
+    container: (base) => ({
       ...base,
       width: '100%',
       fontSize: `${FDS.FONT_SIZE_L} !important`,
     }),
-    input: (base: Theme) => ({
+    input: (base) => ({
       ...base,
       color: FDS.COLOR_SLATE,
       flex: 'none',
       cursor: 'pointer',
+      input: {
+        boxShadow: 'none !important',
+        minHeight: 'var(--space-xl)',
+      },
     }),
-    menu: (base: Theme) => ({
+    menu: (base) => ({
       ...base,
       width: !isHeader ? '100%' : `calc(100% + ${SEARCH_BTN_OFFSET}px)`,
-      zIndex: FDS.ZINDEX_MODAL,
+      zIndex: Number(FDS.ZINDEX_MODAL),
       margin: '1px 0',
     }),
-    menuList: (base: Theme) => ({
+    menuList: (base) => ({
       ...base,
       maxHeight: 'none',
       borderRadius: FDS.SPACE_XS,
     }),
-    option: (base: Theme, state: { isFocused: boolean }) => ({
+    option: (base, state) => ({
       ...base,
       backgroundColor: state.isFocused ? focusedOptionColor : 'inherit',
       color: state.isFocused && !!isHeader ? FDS.COLOR_WHITE : FDS.COLOR_SLATE,
     }),
-    control: (base: Theme) => ({
+    control: (base) => ({
       ...base,
       paddingLeft: !isHeader ? FDS.SPACE_XS : '12px',
       border: !isHeader ? '' : 'none !important',
@@ -83,14 +87,14 @@ export const customStyles = (isHeader?: boolean): any => {
       margin: !isHeader ? '0 2px' : '0 3px',
     }),
     multiValueLabel: () => ({}),
-    placeholder: (base: Theme) => ({
+    placeholder: (base) => ({
       ...base,
       color: FDS.FONT_COLOR_HINT,
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       textOverflow: 'ellipsis',
     }),
-    valueContainer: (base: Theme) => ({
+    valueContainer: (base) => ({
       ...base,
       whiteSpace: !isHeader ? 'normal' : 'nowrap',
       overflow: 'auto',

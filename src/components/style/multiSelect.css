@@ -16,8 +16,7 @@
   overflow: hidden;
 }
 
-/* stylelint-disable-next-line selector-id-pattern */
-#topSearchSelectInput {
+.fdsMultiSelectInput {
   box-shadow: none !important;
   min-height: var(--space-xl);
 }
@@ -98,7 +97,7 @@
   width: 162px;
 }
 
-#styled-input {
+/* #styled-input {
   background-color: var(--color-white);
   border-radius: 5px;
   width: 288px;
@@ -122,7 +121,7 @@
 
 #styled-input .universe-custom-query .highlight {
   color: var(--color-white);
-}
+} */
 
 .activeBorder {
   transition: all 0.2s ease-in-out;

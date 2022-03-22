@@ -18,7 +18,7 @@ declare module 'react-select/dist/declarations/src/Select' {
     Group extends GroupBase<Option>
   > {
     cursorPosition?: number;
-    onSetSearchItems: (items: MultiValue<OptionProps>) => void;
+    onSetSearchItems?: (items: MultiValue<OptionProps>) => void;
     setCursorPosition?: (position: number) => void;
   }
 }
@@ -48,10 +48,10 @@ export interface OptionProps {
 }
 
 export interface MultiSelectProps extends Props<OptionProps, true> {
-  onChange: (newValue: MultiValue<OptionProps>) => void;
-  onClear: () => void;
-  onMenuClose: () => void;
-  onOptionClick: () => void;
+  onChange?: (newValue: MultiValue<OptionProps>) => void;
+  onClear?: () => void;
+  onMenuClose?: () => void;
+  onOptionClick?: () => void;
   inputValue?: string;
   searchItems?: MultiValue<OptionProps>;
   selectRef?: React.RefObject<SelectInstance<OptionProps, true>>;
@@ -116,12 +116,12 @@ const Search: React.FC<MultiSelectProps> = ({
       onBlur={onBlur}
       onChange={(selectedOption, { action }) => {
         if (action === 'clear') {
-          return onClear();
+          return onClear?.();
         }
         if (action === 'remove-value') {
           return null;
         }
-        return onChange(selectedOption);
+        return onChange?.(selectedOption);
       }}
       onFocus={onFocus}
       onInputChange={onInputChange}
