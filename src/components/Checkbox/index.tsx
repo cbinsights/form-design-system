@@ -1,5 +1,4 @@
 import React, { HTMLAttributes } from 'react';
-import { v4 } from 'uuid';
 import cc from 'classcat';
 import * as CheckboxUi from '@radix-ui/react-checkbox';
 import * as Label from '@radix-ui/react-label';
@@ -36,7 +35,6 @@ const Checkbox = ({
   disabled = false,
   label,
   inputRef,
-  id = v4(),
   defaultChecked = false,
   ...rest
 }: CheckboxProps): JSX.Element => {
@@ -50,19 +48,14 @@ const Checkbox = ({
   return (
     <div
       {...rest}
-      className={cc([
-        'fdsCheckable-label',
-        { 'fdsCheckable--disabled': !indeterminate && disabled },
-      ])}
+      className={cc([{ 'fdsCheckable--disabled': !indeterminate && disabled }])}
     >
-      <Label.Root className="flush--bottom" htmlFor={id}>
+      <Label.Root className="flush--bottom">
         <CheckboxUi.Root
           className="radix-checkbox"
           checked={checked}
           disabled={disabled}
           onCheckedChange={handleChange}
-          id={id}
-          // value={} might add value
         >
           <>
             <CheckboxUi.Indicator className="fdsCheckable" ref={inputRef}>

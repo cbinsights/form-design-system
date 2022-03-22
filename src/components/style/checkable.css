@@ -1,8 +1,3 @@
-/**
- * Component helper classes for styling checkable inputs.
- * Replaces user agent input with an FDS icon.
- */
-
 .fdsCheckable {
   position: relative;
 }
@@ -16,7 +11,7 @@
   padding: 0;
   margin: 0;
   background: transparent;
-  border: 0px solid transparent;
+  border: 0 solid transparent;
 }
 
 .radix-checkbox:focus {
