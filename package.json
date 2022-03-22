@@ -83,8 +83,6 @@
     "@commitlint/prompt": "16.2.1",
     "@commitlint/prompt-cli": "16.2.1",
     "@mdx-js/react": "1.6.22",
-    "@radix-ui/react-dialog": "0.1.7",
-    "@radix-ui/react-tooltip": "0.1.6",
     "@storybook/addon-a11y": "6.4.19",
     "@storybook/addon-backgrounds": "6.4.19",
     "@storybook/addon-docs": "6.4.19",
@@ -220,6 +218,8 @@
   },
   "dependencies": {
     "@popperjs/core": "2.11.2",
+    "@radix-ui/react-dialog": "0.1.7",
+    "@radix-ui/react-tooltip": "0.1.6",
     "@reach/menu-button": "0.16.2",
     "classcat": "5.0.3",
     "focus-trap-react": "8.9.2",
