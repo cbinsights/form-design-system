@@ -1,12 +1,16 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-
+import { ClearIndicatorProps } from 'react-select';
 import CustomClearIndicator from './CustomClearIndicator';
+import { OptionProps } from '..';
+
+interface Props extends ClearIndicatorProps<OptionProps, true> {
+  selectProps: any;
+  theme: any;
+}
 
 describe('CenteredHighlightedText component', () => {
-  const defaultProps = {
-    text: '',
-    id: '',
+  const defaultProps: Props = {
     hasValue: false,
     setValue: jest.fn(),
     cx: jest.fn(),
@@ -15,12 +19,11 @@ describe('CenteredHighlightedText component', () => {
     isMulti: false,
     isRtl: false,
     options: [],
-    selectedOption: jest.fn(),
     clearValue: jest.fn(),
     isFocused: false,
     selectOption: jest.fn(),
-    innerProps: undefined,
-    selectProps: undefined,
+    innerProps: {},
+    selectProps: {},
     theme: undefined,
   };
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import CustomSelectedValue, { SelectedValueProps } from './CustomSelectedValue';
 
@@ -40,21 +41,21 @@ describe('CustomSelectedValue component', () => {
 
   it('should trigger setCursorPosition callback when the custom-selected-value item is clicked', () => {
     const { getByTestId } = render(<CustomSelectedValue {...defaultProps} />);
-    fireEvent.click(getByTestId('custom-selected-value'));
+    userEvent.click(getByTestId('custom-selected-value'));
     expect(setCursorPosition).toHaveBeenCalled();
     expect(onSetSearchItems).not.toHaveBeenCalled();
   });
 
   it('should trigger onSetSearchItems callback when the custom-selected-value item is double clicked', () => {
     const { getByTestId } = render(<CustomSelectedValue {...defaultProps} />);
-    fireEvent.doubleClick(getByTestId('custom-selected-value'));
+    userEvent.dblClick(getByTestId('custom-selected-value'));
     expect(setCursorPosition).toHaveBeenCalled();
     expect(onSetSearchItems).toHaveBeenCalled();
   });
 
   it('should trigger onSetSearchItems callback without the deleted item', () => {
     const { getByTestId } = render(<CustomSelectedValue {...defaultProps} />);
-    fireEvent.doubleClick(getByTestId('custom-selected-value'));
+    userEvent.dblClick(getByTestId('custom-selected-value'));
     expect(onSetSearchItems).toHaveBeenCalledWith([item2]);
   });
 });

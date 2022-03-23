@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Header, { HeaderProps } from '.';
 
@@ -38,14 +39,14 @@ describe('Header component', () => {
     const { getByTestId } = render(
       <Header {...props} onAdvancedSearchClick={handleClick} />
     );
-    fireEvent.click(getByTestId('advanced-search-button'));
+    userEvent.click(getByTestId('advanced-search-button'));
     expect(handleClick).toHaveBeenCalled();
   });
 
   it('should trigger onSearchClick callback when the search-button is clicked', () => {
     const handleClick = jest.fn();
     const { getByTestId } = render(<Header {...props} onSearchClick={handleClick} />);
-    fireEvent.click(getByTestId('search-button'));
+    userEvent.click(getByTestId('search-button'));
     expect(handleClick).toHaveBeenCalled();
   });
 });

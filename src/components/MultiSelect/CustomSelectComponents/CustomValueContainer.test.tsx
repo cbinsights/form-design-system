@@ -2,11 +2,16 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import CustomValueContainer from './CustomValueContainer';
+import { CommonProps, GroupBase } from 'react-select';
+import { OptionProps } from '..';
+
+interface DefaultProps extends CommonProps<OptionProps, true, GroupBase<OptionProps>> {
+  selectProps: any;
+  theme: any;
+}
 
 describe('CustomValueContainer component', () => {
-  const defaultProps = {
-    children: <div data-testid="children"></div>,
-    isDisabled: false,
+  const defaultProps: DefaultProps = {
     clearValue: jest.fn(),
     cx: jest.fn(),
     getStyles: jest.fn(),
@@ -24,7 +29,11 @@ describe('CustomValueContainer component', () => {
   };
 
   it('tests default rendering', () => {
-    const { getByTestId } = render(<CustomValueContainer {...defaultProps} />);
+    const { getByTestId } = render(
+      <CustomValueContainer {...defaultProps} isDisabled={false}>
+        <div data-testid="children" />
+      </CustomValueContainer>
+    );
 
     expect(getByTestId('children')).toBeInTheDocument();
   });
@@ -33,8 +42,9 @@ describe('CustomValueContainer component', () => {
     const { getAllByRole } = render(
       <CustomValueContainer
         {...defaultProps}
-        selectProps={{ cursorPosition: 0 }}
+        selectProps={{ ...defaultProps.selectProps, cursorPosition: 0 }}
         hasValue={true}
+        isDisabled={false}
       >
         <div data-testid="child-1" role="alert">
           child-1
