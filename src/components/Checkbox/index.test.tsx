@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Checkbox from '.';
 
@@ -8,11 +9,11 @@ describe('Checkbox component', () => {
     const { container } = render(
       <Checkbox label="change callback" disabled name="disabled-test" />
     );
-    const input = screen.getByLabelText('change callback', { exact: false });
+    const input = screen.getByLabelText('change callback');
     expect(input).toBeDisabled();
 
-    fireEvent.click(input);
-    expect(input).toBeChecked();
+    userEvent.click(input);
+    expect(input).not.toBeChecked();
     expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
     expect(container.querySelector('.fdsCheckable')).toHaveClass(
       'fdsCheckable--disabled'
@@ -26,9 +27,9 @@ describe('Checkbox component', () => {
     );
     const input = screen.getByLabelText('change callback', { exact: false });
     expect(changeFn).not.toHaveBeenCalled();
-    fireEvent.click(input);
+    userEvent.click(input);
     expect(input).toBeChecked();
-    fireEvent.change(input, { target: input });
+    userEvent.type(input, 'change callback');
     expect(changeFn).toHaveBeenCalled();
   });
 
@@ -45,9 +46,9 @@ describe('Checkbox component', () => {
 
     const input = screen.getByLabelText('unchecking callback', { exact: false });
     expect(changeFn).not.toHaveBeenCalled();
-    fireEvent.click(input);
+    userEvent.click(input);
     expect(input).not.toBeChecked();
-    fireEvent.change(input, { target: input });
+    userEvent.type(input, 'unchecking callback');
     expect(changeFn).toHaveBeenCalled();
   });
 
