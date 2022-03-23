@@ -7,7 +7,8 @@ import CheckEmptyIcon from 'icons/react/CheckEmptyIcon';
 import CheckFilledIcon from 'icons/react/CheckFilledIcon';
 import CheckIndeterminateIcon from 'icons/react/CheckIndeterminateIcon';
 
-export interface CheckboxProps extends HTMLAttributes<HTMLInputElement> {
+type CheckboxExtended = Omit<HTMLAttributes<HTMLInputElement>, 'onChange'>;
+export interface CheckboxProps extends CheckboxExtended {
   /** Label used for a11y attributes _and_ the rendered `label` element */
   label: string;
 
@@ -27,6 +28,8 @@ export interface CheckboxProps extends HTMLAttributes<HTMLInputElement> {
   id?: string;
 
   name?: string;
+
+  onChange?: (checkedEvent: CheckboxUi.CheckedState) => void;
 }
 
 const Checkbox = ({
@@ -36,6 +39,7 @@ const Checkbox = ({
   label,
   inputRef,
   defaultChecked = false,
+  onChange = () => {},
   ...rest
 }: CheckboxProps): JSX.Element => {
   const IconUnchecked = CheckEmptyIcon;
@@ -43,7 +47,10 @@ const Checkbox = ({
 
   const [checked, setChecked] = React.useState(defaultChecked);
 
-  const handleChange = () => setChecked(!checked);
+  const handleChange = (checkedEvent: CheckboxUi.CheckedState) => {
+    setChecked(!checked);
+    onChange(checkedEvent);
+  };
 
   return (
     <div
