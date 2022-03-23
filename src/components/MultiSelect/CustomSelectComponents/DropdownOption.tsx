@@ -54,7 +54,7 @@ export const DropdownOption = ({
       className={`smart-input-option display--flex ${
         defaultType === SEARCH_TERM_RESEARCH ? 'border--bottom' : ''
       }`}
-      data-test="smart-input-option"
+      data-testid="smart-header-input-option"
       data-sugg-type={category}
       style={optionStyle}
       title={text}
@@ -66,12 +66,19 @@ export const DropdownOption = ({
       </div>
       <div className={'optionRight'}>
         {isTabDefaultType ? (
-          <span className="display--block wrap--singleLine--truncate span--100">
+          <span
+            data-testid="keyword"
+            className="display--block wrap--singleLine--truncate span--100"
+          >
             with keyword &quot;<span className="fontWeight--bold">{text}</span>&quot;
           </span>
         ) : (
           <CenteredHighlightedText suggestion={suggestedText} query={query}>
-            {boolean && <span className={'bool'}>{boolean}</span>}
+            {boolean && (
+              <span data-testid="boolean" className={'bool'}>
+                {boolean}
+              </span>
+            )}
             <HighlightedText
               className={'extra-info'}
               suggestion={extraInfo}
@@ -86,7 +93,7 @@ export const DropdownOption = ({
   const CustomQueryInputLayout = (
     <div
       className={'smart-input-option'}
-      data-test="smart-input-option"
+      data-testid="smart-custom-input-option"
       data-sugg-type={category}
       style={optionStyle}
       onMouseDown={handleOptionClick}

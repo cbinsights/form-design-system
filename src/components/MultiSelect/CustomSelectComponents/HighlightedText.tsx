@@ -19,13 +19,13 @@ const HighlightedText = ({
   const matches = match(suggestion, query, { findAllOccurrences: true });
   const parts = parse(suggestion, matches);
   return (
-    <span className={className} data-test="smart-input-highlighted-text">
+    <span className={className} data-testid="smart-input-highlighted-text">
       {parts.map((part, index) => {
         return part.highlight ? (
           <span
             key={String(index)}
             style={{ fontWeight: 700 }}
-            data-test="highlighted-text"
+            data-testid="highlighted-text"
           >
             {part.text}
           </span>
@@ -33,7 +33,7 @@ const HighlightedText = ({
           <strong
             key={String(index)}
             style={{ fontWeight: 300 }}
-            data-test="not-highlighted-text"
+            data-testid="not-highlighted-text"
           >
             {part.text}
           </strong>

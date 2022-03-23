@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 
 import CustomSelectedValue, { SelectedValueProps } from './CustomSelectedValue';
 
-describe('CenteredHighlightedText component', () => {
+describe('CustomSelectedValue component', () => {
   const setCursorPosition = jest.fn();
   const onSetSearchItems = jest.fn();
 
