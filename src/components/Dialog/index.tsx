@@ -77,6 +77,7 @@ const Dialog = ({
   footerContent,
   subTitle,
   disablePortal = false,
+  disableFocusTrap = false,
 }: DialogProps): JSX.Element => {
   const contentEl = useRef<HTMLDivElement>(null);
 
@@ -99,7 +100,7 @@ const Dialog = ({
   }, [alwaysShowBorder]);
 
   const dialogNode = (
-    <DialogUi.Root open={isOpen} onOpenChange={onDismiss}>
+    <DialogUi.Root open={isOpen} onOpenChange={onDismiss} modal={!disableFocusTrap}>
       <DialogUi.Overlay
         data-testid="overlay"
         className="dialog-overlay"
