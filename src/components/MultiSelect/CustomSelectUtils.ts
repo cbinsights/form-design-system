@@ -3,6 +3,8 @@ import CustomValueContainer from './CustomSelectComponents/CustomValueContainer'
 import CustomClearIndicator from './CustomSelectComponents/CustomClearIndicator';
 import CustomInput from './CustomSelectComponents/CustomInput';
 import CustomMultiValue from './CustomSelectComponents/CustomMultiValue';
+import CustomOption from './CustomSelectComponents/CustomOption';
+import CustomMenuList from './CustomSelectComponents/CustomMenuList';
 import { GroupBase, StylesConfig, ThemeConfig } from 'react-select';
 import { SelectComponents } from 'react-select/dist/declarations/src/components';
 import { OptionProps } from '.';
@@ -27,6 +29,8 @@ export const customComponents: Partial<
   ClearIndicator: CustomClearIndicator,
   Input: CustomInput,
   MultiValue: CustomMultiValue,
+  Option: CustomOption,
+  MenuList: CustomMenuList,
 };
 
 export const customThemes: ThemeConfig = (theme) => ({

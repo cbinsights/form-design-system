@@ -5,7 +5,7 @@ import { default as Logo } from './Logo';
 import Button from 'components/Button';
 import FDS from 'dictionary/js/styleConstants';
 import { SearchIcon } from 'icons/react';
-import { DropdownOption } from '../MultiSelect/CustomSelectComponents/DropdownOption';
+import { DetailedDropdownOption } from 'components/MultiSelect/CustomSelectComponents/DropdownOption';
 import { customStyles } from 'components/MultiSelect/CustomSelectUtils';
 
 export interface HeaderProps {
@@ -47,11 +47,10 @@ export const Header = ({
 }: HeaderProps): JSX.Element => {
   const formatOptionLabel = React.useCallback((item: OptionProps) => {
     return (
-      <DropdownOption
+      <DetailedDropdownOption
         selectValue={item}
         query={smartInputProps.inputValue}
         handleOptionClick={smartInputProps.onOptionClick}
-        isHeader={true}
       />
     );
   }, []);

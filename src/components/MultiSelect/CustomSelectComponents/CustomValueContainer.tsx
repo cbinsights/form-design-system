@@ -6,6 +6,7 @@ const CustomValueContainer = ({
   children,
   ...props
 }: ValueContainerProps<OptionProps, true>): JSX.Element => {
+  const innerProps = { ...props.innerProps, role: 'list' };
   const { cursorPosition } = props.selectProps;
   const selectedValues = React.Children.toArray(children);
   const input = selectedValues.pop();
@@ -18,7 +19,11 @@ const CustomValueContainer = ({
         ]
       : children;
   return (
-    <components.ValueContainer {...props} setValue={props.setValue}>
+    <components.ValueContainer
+      {...props}
+      innerProps={innerProps}
+      setValue={props.setValue}
+    >
       {els}
     </components.ValueContainer>
   );

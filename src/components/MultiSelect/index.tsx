@@ -7,7 +7,7 @@ import Select, {
   Options,
 } from 'react-select';
 import { customComponents, customStyles, customThemes } from './CustomSelectUtils';
-import { DropdownOption } from './CustomSelectComponents/DropdownOption';
+import { CondensedDropdownOption } from './CustomSelectComponents/DropdownOption';
 
 declare module 'react-select/dist/declarations/src/Select' {
   export interface Props<
@@ -84,10 +84,9 @@ const Search: React.FC<MultiSelectProps> = ({
 }) => {
   const defaultFormatOptionLabel = React.useCallback(
     (item: OptionProps) => (
-      <DropdownOption
+      <CondensedDropdownOption
         selectValue={item}
         query={inputValue}
-        isHeader={false}
         handleOptionClick={onOptionClick}
       />
     ),

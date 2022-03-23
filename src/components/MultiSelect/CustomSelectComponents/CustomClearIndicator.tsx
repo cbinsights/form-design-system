@@ -6,8 +6,9 @@ import { OptionProps } from '..';
 const CustomClearIndicator = (
   props: ClearIndicatorProps<OptionProps, true>
 ): JSX.Element => {
+  const innerProps = { ...props.innerProps, role: 'button', 'aria-hidden': false };
   return (
-    <components.ClearIndicator {...props}>
+    <components.ClearIndicator {...props} innerProps={innerProps}>
       <span data-testid="pointer" className={`margin--x--s pointer`}>
         <DenyIcon size="xs" />
       </span>

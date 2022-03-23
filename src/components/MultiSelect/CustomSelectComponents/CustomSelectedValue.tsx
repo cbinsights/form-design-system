@@ -20,14 +20,14 @@ export const SelectedValue = ({ item, selectProps }: SelectedValueProps): JSX.El
       const deletedItem = value[itemIndex];
       const newValues = value?.filter((val) => val !== deletedItem);
       setCursorPosition?.(itemIndex - 1);
-      onSetSearchItems(newValues);
+      onSetSearchItems?.(newValues);
     }
   };
 
   return (
     <span
       className={`${type} ${type === 'bool' ? `${`bool${text}`}` : ''}`}
-      role="presentation"
+      role="listitem"
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
       data-testid="custom-selected-value"

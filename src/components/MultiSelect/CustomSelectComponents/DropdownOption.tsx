@@ -23,33 +23,28 @@ export const SuggestionType = ({ suggestion }: SuggestionProps): JSX.Element => 
 export interface DropdownOptionProps {
   selectValue: OptionProps;
   query?: string;
-  isHeader?: boolean;
   handleOptionClick?: () => void;
   optionColor?: string;
 }
 
-export const DropdownOption = ({
+export const DetailedDropdownOption = ({
   selectValue,
   query,
-  isHeader = false,
   optionColor,
   handleOptionClick = () => {},
 }: DropdownOptionProps): JSX.Element => {
   const {
     boolean,
     category,
+    defaultType = '',
     extraInfo = '',
     text = '',
-    defaultType = '',
     alias = '',
   } = selectValue;
-  const optionStyle = { color: optionColor };
-
   const isTabDefaultType = SEARCH_TERM_TABS.includes(defaultType);
-  const SuggestionComponent = isHeader ? SuggestionType : SuggestionIcon;
+  const optionStyle = { color: optionColor };
   const suggestedText = alias ? `${text} (${alias})` : text;
-
-  const TSEnhancementsLayout = (
+  return (
     <div
       className={`smart-input-option display--flex ${
         defaultType === SEARCH_TERM_RESEARCH ? 'border--bottom' : ''
@@ -59,10 +54,10 @@ export const DropdownOption = ({
       style={optionStyle}
       title={text}
       onMouseDown={handleOptionClick}
-      role="presentation"
+      role="option"
     >
       <div className={'optionLeft'}>
-        <SuggestionComponent suggestion={selectValue} />
+        <SuggestionType suggestion={selectValue} />
       </div>
       <div className={'optionRight'}>
         {isTabDefaultType ? (
@@ -89,17 +84,26 @@ export const DropdownOption = ({
       </div>
     </div>
   );
+};
 
-  const CustomQueryInputLayout = (
+export const CondensedDropdownOption = ({
+  selectValue,
+  query,
+  optionColor,
+  handleOptionClick = () => {},
+}: DropdownOptionProps): JSX.Element => {
+  const { boolean, category, extraInfo = '', text = '', alias = '' } = selectValue;
+  const optionStyle = { color: optionColor };
+  const suggestedText = alias ? `${text} (${alias})` : text;
+  return (
     <div
       className={'smart-input-option'}
       data-testid="smart-custom-input-option"
       data-sugg-type={category}
       style={optionStyle}
       onMouseDown={handleOptionClick}
-      role="presentation"
     >
-      <SuggestionComponent suggestion={selectValue} />
+      <SuggestionIcon suggestion={selectValue} />
       <HighlightedText suggestion={suggestedText} query={query} />
       <span className={'bool'}>{boolean}</span>
       <HighlightedText
@@ -109,6 +113,81 @@ export const DropdownOption = ({
       />
     </div>
   );
-
-  return !isHeader ? CustomQueryInputLayout : TSEnhancementsLayout;
 };
+
+// export const DropdownOption = ({
+//   selectValue,
+//   query,
+//   // isHeader = false,
+//   optionColor,
+//   handleOptionClick = () => {},
+// }: DropdownOptionProps): JSX.Element => {
+//   const {
+//     boolean,
+//     category,
+//     extraInfo = '',
+//     text = '',
+//     defaultType = '',
+//     alias = '',
+//   } = selectValue;
+//   const optionStyle = { color: optionColor };
+
+//   const isTabDefaultType = SEARCH_TERM_TABS.includes(defaultType);
+//   const SuggestionComponent = isHeader ? SuggestionType : SuggestionIcon;
+//   const suggestedText = alias ? `${text} (${alias})` : text;
+
+//   const TSEnhancementsLayout = (
+//     <div
+//       className={`smart-input-option display--flex ${
+//         defaultType === SEARCH_TERM_RESEARCH ? 'border--bottom' : ''
+//       }`}
+//       data-test="smart-input-option"
+//       data-sugg-type={category}
+//       style={optionStyle}
+//       title={text}
+//       onMouseDown={handleOptionClick}
+//       role="option"
+//     >
+//       <div className={'optionLeft'}>
+//         <SuggestionComponent suggestion={selectValue} />
+//       </div>
+//       <div className={'optionRight'}>
+//         {isTabDefaultType ? (
+//           <span className="display--block wrap--singleLine--truncate span--100">
+//             with keyword &quot;<span className="fontWeight--bold">{text}</span>&quot;
+//           </span>
+//         ) : (
+//           <CenteredHighlightedText suggestion={suggestedText} query={query}>
+//             {boolean && <span className={'bool'}>{boolean}</span>}
+//             <HighlightedText
+//               className={'extra-info'}
+//               suggestion={extraInfo}
+//               query={query}
+//             />
+//           </CenteredHighlightedText>
+//         )}
+//       </div>
+//     </div>
+//   );
+
+//   const CustomQueryInputLayout = (
+//     <div
+//       className={'smart-input-option'}
+//       data-test="smart-input-option"
+//       data-sugg-type={category}
+//       style={optionStyle}
+//       onMouseDown={handleOptionClick}
+//     >
+//       <SuggestionComponent suggestion={selectValue} />
+//       <HighlightedText suggestion={suggestedText} query={query} />
+//       <span className={'bool'}>{boolean}</span>
+//       <HighlightedText
+//         className={'custom-query-extra-info'}
+//         suggestion={extraInfo}
+//         query={query}
+//       />
+//     </div>
+//   );
+
+//   return !isHeader ? CustomQueryInputLayout : TSEnhancementsLayout;
+// };

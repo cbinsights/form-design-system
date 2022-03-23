@@ -28,10 +28,14 @@ export const Primary: StoryObj<MultiSelectProps> = {
     placeholder: {
       type: 'string',
     },
+    searchItems: {
+      table: { expanded: true },
+    },
   },
   args: {
     options: mockOptions.slice(0, 5),
     isClearable: true,
+    menuIsOpen: false,
   },
 };
 
