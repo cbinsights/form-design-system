@@ -43,7 +43,10 @@ const Checkbox = ({
 
   const [checked, setChecked] = React.useState(defaultChecked);
 
-  const handleChange = () => setChecked(!checked);
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    rest.onChange?.(e);
+    setChecked(!checked);
+  };
 
   return (
     <div

@@ -55,17 +55,12 @@ describe('Checkbox component', () => {
   it('allows users to supply their own id', () => {
     render(
       <>
-        <Checkbox
-          id="checkbox-id"
-          label="Component label"
-          showLabel={false}
-          name="multiple labels"
-        />
+        <Checkbox id="checkbox-id" label="Component label" name="multiple labels" />
         <label htmlFor="checkbox-id">User label</label>
       </>
     );
 
     expect(screen.getByLabelText('Component label')).toBeInTheDocument();
-    expect(screen.getByLabelText('User label')).toBeInTheDocument();
+    expect(screen.getByText('User label')).toBeInTheDocument();
   });
 });
