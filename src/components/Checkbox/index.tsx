@@ -53,7 +53,7 @@ const Checkbox = ({
         { 'fdsCheckable--disabled': !indeterminate && disabled },
       ])}
     >
-      <Label.Root className="flush--bottom">
+      <Label.Root className="flush--bottom" role="presentation">
         <CheckboxUi.Root
           className="radix-checkbox"
           checked={checked}
