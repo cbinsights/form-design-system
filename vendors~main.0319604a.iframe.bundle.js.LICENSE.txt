@@ -48,16 +48,6 @@ object-assign
  * Released under the MIT License.
  */
 
-/*!
-* focus-trap 6.7.3
-* @license MIT, https://github.com/focus-trap/focus-trap/blob/master/LICENSE
-*/
-
-/*!
-* tabbable 5.2.1
-* @license MIT, https://github.com/focus-trap/tabbable/blob/master/LICENSE
-*/
-
 /** @license React v0.19.1
  * scheduler.production.min.js
  *
