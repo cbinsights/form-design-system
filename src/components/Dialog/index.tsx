@@ -90,7 +90,7 @@ const Dialog = ({
 
   useEffect(() => {
     if (!alwaysShowBorder) {
-      handleResize(); // needs to fire one time immediately on mount
+      handleResize(); // needs to fire once immediately on mount
       window.addEventListener('resize', handleResize);
       return () => {
         window.removeEventListener('resize', handleResize);
