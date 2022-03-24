@@ -14,6 +14,7 @@ import FloatingAction from 'components/FloatingAction';
 import IconButton from 'components/IconButton';
 import Indicator from 'components/Indicator';
 import InputGroup from 'components/InputGroup';
+import Loading from 'components/Loading';
 import Menu from 'components/Menu';
 import MenuItem from 'components/MenuItem';
 import MenuLink from 'components/MenuLink';
@@ -47,6 +48,7 @@ export {
   IconButton,
   Indicator,
   InputGroup,
+  Loading,
   Menu,
   MenuItem,
   MenuLink,
