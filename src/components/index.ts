@@ -21,7 +21,7 @@ import Popover from 'components/Popover';
 import Prompt from 'components/Prompt';
 import Radio from 'components/Radio';
 import Header from './Header';
-import MultiSelect from './MultiSelect';
+import SmartInput from './SmartInput';
 import SeparatorList from 'components/SeparatorList';
 import StackedButton from 'components/StackedButton';
 import TextInput from 'components/TextInput';
@@ -53,7 +53,7 @@ export {
   Popover,
   Prompt,
   Radio,
-  MultiSelect,
+  SmartInput,
   SeparatorList,
   StackedButton,
   TextInput,

@@ -1,12 +1,12 @@
 import { Flex, FlexItem } from 'components';
 import React from 'react';
-import MultiSelect, { MultiSelectProps, OptionProps } from '../MultiSelect';
+import MultiSelect, { SmartInputProps, OptionProps } from '../SmartInput';
 import { default as Logo } from './Logo';
 import Button from 'components/Button';
 import FDS from 'dictionary/js/styleConstants';
 import { SearchIcon } from 'icons/react';
-import { DetailedDropdownOption } from 'components/MultiSelect/CustomSelectComponents/DropdownOption';
-import { customStyles } from 'components/MultiSelect/CustomSelectUtils';
+import DropdownOption from 'components/SmartInput/CustomSelectComponents/DropdownOption';
+import { customStyles } from 'components/SmartInput/CustomSelectUtils';
 
 export interface HeaderProps {
   onAdvancedSearchClick: React.MouseEventHandler<HTMLButtonElement>;
@@ -14,24 +14,8 @@ export interface HeaderProps {
   showLogo: boolean;
   logoImg: string;
   Link?: React.ComponentType;
-  smartInputProps: MultiSelectProps;
+  smartInputProps: SmartInputProps;
 }
-
-const HeaderWrapper = ({ children }: { children: React.ReactNode }) => (
-  <div
-    style={{
-      backgroundColor: '#000d20',
-      height: '60px',
-      minWidth: '540px',
-      margin: '0 auto',
-      display: 'flex',
-      alignItems: 'center',
-      padding: '0 16px',
-    }}
-  >
-    {children}
-  </div>
-);
 
 export const Header = ({
   onAdvancedSearchClick,
@@ -42,24 +26,24 @@ export const Header = ({
   smartInputProps: {
     isClearable = true,
     styles = customStyles(true),
+    selectRef = React.useRef(null),
     ...smartInputProps
   },
 }: HeaderProps): JSX.Element => {
-  const formatOptionLabel = React.useCallback((item: OptionProps) => {
-    return (
-      <DetailedDropdownOption
-        selectValue={item}
-        query={smartInputProps.inputValue}
-        handleOptionClick={smartInputProps.onOptionClick}
-      />
-    );
-  }, []);
+  const defaultFormatOptionLabel = (item: OptionProps) => (
+    <DropdownOption
+      type="detailed"
+      option={item}
+      query={smartInputProps.inputValue ?? selectRef?.current?.inputRef?.value}
+      onOptionClick={smartInputProps.onOptionClick}
+    />
+  );
 
   smartInputProps.formatOptionLabel =
-    smartInputProps.formatOptionLabel ?? formatOptionLabel;
+    smartInputProps.formatOptionLabel ?? defaultFormatOptionLabel;
 
   return (
-    <HeaderWrapper>
+    <div className="fdsHeaderWrapper">
       <Flex>
         {showLogo && (
           <FlexItem shrink align="center">
@@ -73,6 +57,7 @@ export const Header = ({
                 {...smartInputProps}
                 isClearable={isClearable}
                 styles={styles}
+                selectRef={selectRef}
               />
             </FlexItem>
             <FlexItem shrink>
@@ -100,7 +85,7 @@ export const Header = ({
           </div>
         </FlexItem>
       </Flex>
-    </HeaderWrapper>
+    </div>
   );
 };
 

@@ -7,10 +7,6 @@ import {
   SearchIcon,
 } from 'icons/react';
 import React from 'react';
-import {
-  DropdownOption,
-  DropdownOptionProps,
-} from './CustomSelectComponents/DropdownOption';
 
 export const RESEARCH = 'research';
 export const COMPANY = 'company';
@@ -114,8 +110,4 @@ export const getItemType = (defaultType?: string, isExpert?: boolean): string =>
     default:
       return 'Keyword';
   }
-};
-
-export const getFormatOptionLabel = (props: DropdownOptionProps): JSX.Element => {
-  return <DropdownOption {...props} />;
 };

@@ -1,8 +1,8 @@
 import { StoryObj } from '@storybook/react';
-import MultiSelect, { MultiSelectProps } from '.';
+import SmartInput, { SmartInputProps } from '.';
 import { mockOptions } from './mockData';
 
-export const Primary: StoryObj<MultiSelectProps> = {
+export const Primary: StoryObj<SmartInputProps> = {
   argTypes: {
     onChange: {
       action: 'onChange',
@@ -31,15 +31,24 @@ export const Primary: StoryObj<MultiSelectProps> = {
     searchItems: {
       table: { expanded: true },
     },
+    inputValue: {
+      type: {
+        name: 'string',
+        required: false,
+      },
+      control: {
+        type: 'text',
+      },
+    },
   },
   args: {
-    options: mockOptions.slice(0, 5),
+    options: mockOptions,
     isClearable: true,
     menuIsOpen: false,
   },
 };
 
 export default {
-  component: MultiSelect,
-  title: 'components/MultiSelect',
+  component: SmartInput,
+  title: 'components/SmartInput',
 };

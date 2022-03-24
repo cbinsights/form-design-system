@@ -7,7 +7,7 @@ import Select, {
   Options,
 } from 'react-select';
 import { customComponents, customStyles, customThemes } from './CustomSelectUtils';
-import { CondensedDropdownOption } from './CustomSelectComponents/DropdownOption';
+import DropdownOption from './CustomSelectComponents/DropdownOption';
 
 declare module 'react-select/dist/declarations/src/Select' {
   export interface Props<
@@ -47,7 +47,7 @@ export interface OptionProps {
   alias?: string;
 }
 
-export interface MultiSelectProps extends Props<OptionProps, true> {
+export interface SmartInputProps extends Props<OptionProps, true> {
   onChange?: (newValue: MultiValue<OptionProps>) => void;
   onClear?: () => void;
   onMenuClose?: () => void;
@@ -57,7 +57,7 @@ export interface MultiSelectProps extends Props<OptionProps, true> {
   selectRef?: React.RefObject<SelectInstance<OptionProps, true>>;
 }
 
-const Search: React.FC<MultiSelectProps> = ({
+const Search: React.FC<SmartInputProps> = ({
   autoFocus,
   backspaceRemovesValue,
   cursorPosition,
@@ -77,20 +77,30 @@ const Search: React.FC<MultiSelectProps> = ({
   options,
   placeholder,
   searchItems,
-  selectRef,
+  selectRef = React.useRef(null),
   setCursorPosition,
   styles = customStyles(),
   inputId,
+  ...rest
 }) => {
-  const defaultFormatOptionLabel = React.useCallback(
-    (item: OptionProps) => (
-      <CondensedDropdownOption
-        selectValue={item}
-        query={inputValue}
-        handleOptionClick={onOptionClick}
-      />
-    ),
-    [inputValue, onOptionClick]
+  // const defaultFormatOptionLabel = React.useCallback(
+  //   (item: OptionProps) => (
+  //     <CondensedDropdownOption
+  //       selectValue={item}
+  //       query={inputValue ?? selectRef?.current?.inputRef?.value}
+  //       handleOptionClick={onOptionClick}
+  //     />
+  //   ),
+  //   [inputValue, onOptionClick]
+  // );
+
+  const defaultFormatOptionLabel = (item: OptionProps) => (
+    <DropdownOption
+      type="condensed"
+      option={item}
+      query={inputValue ?? selectRef?.current?.inputRef?.value}
+      onOptionClick={onOptionClick}
+    />
   );
 
   return (
@@ -135,6 +145,7 @@ const Search: React.FC<MultiSelectProps> = ({
       styles={styles}
       theme={customThemes}
       value={searchItems}
+      {...rest}
     />
   );
 };

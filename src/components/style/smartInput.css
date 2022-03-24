@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 
-.fdsMultiSelectInput {
+.fdsSmartInput {
   box-shadow: none !important;
   min-height: var(--space-xl);
 }

@@ -46,8 +46,12 @@ export const customThemes: ThemeConfig = (theme) => ({
   },
 });
 
-export const customStyles = (isHeader?: boolean): StylesConfig<OptionProps, true> => {
-  const focusedOptionColor = !isHeader ? 'rgba(64, 64, 64, 0.08)' : FDS.COLOR_AQUA;
+export const customStyles = (
+  useStylesForHeader?: boolean
+): StylesConfig<OptionProps, true> => {
+  const focusedOptionColor = useStylesForHeader
+    ? FDS.COLOR_AQUA
+    : 'rgba(64, 64, 64, 0.08)';
   return {
     container: (base) => ({
       ...base,
@@ -66,29 +70,31 @@ export const customStyles = (isHeader?: boolean): StylesConfig<OptionProps, true
     }),
     menu: (base) => ({
       ...base,
-      width: !isHeader ? '100%' : `calc(100% + ${SEARCH_BTN_OFFSET}px)`,
+      width: useStylesForHeader ? `calc(100% + ${SEARCH_BTN_OFFSET}px)` : '100%',
       zIndex: Number(FDS.ZINDEX_MODAL),
       margin: '1px 0',
     }),
     menuList: (base) => ({
       ...base,
-      maxHeight: 'none',
+      // maxHeight: 'none',
       borderRadius: FDS.SPACE_XS,
     }),
     option: (base, state) => ({
       ...base,
       backgroundColor: state.isFocused ? focusedOptionColor : 'inherit',
-      color: state.isFocused && !!isHeader ? FDS.COLOR_WHITE : FDS.COLOR_SLATE,
+      color: state.isFocused && useStylesForHeader ? FDS.COLOR_WHITE : FDS.COLOR_SLATE,
     }),
     control: (base) => ({
       ...base,
-      paddingLeft: !isHeader ? FDS.SPACE_XS : '12px',
-      border: !isHeader ? '' : 'none !important',
+      paddingLeft: useStylesForHeader ? '12px' : FDS.SPACE_XS,
+      border: useStylesForHeader ? 'none !important' : '',
       boxShadow: 'none',
-      borderRadius: !isHeader ? FDS.SPACE_XS : `${FDS.SPACE_XS} 0 0 ${FDS.SPACE_XS}`,
+      borderRadius: useStylesForHeader
+        ? `${FDS.SPACE_XS} 0 0 ${FDS.SPACE_XS}`
+        : FDS.SPACE_XS,
     }),
     multiValue: () => ({
-      margin: !isHeader ? '0 2px' : '0 3px',
+      margin: useStylesForHeader ? '0 3px' : '0 2px',
     }),
     multiValueLabel: () => ({}),
     placeholder: (base) => ({
@@ -100,10 +106,10 @@ export const customStyles = (isHeader?: boolean): StylesConfig<OptionProps, true
     }),
     valueContainer: (base) => ({
       ...base,
-      whiteSpace: !isHeader ? 'normal' : 'nowrap',
+      whiteSpace: useStylesForHeader ? 'nowrap' : 'normal',
       overflow: 'auto',
       textOverflow: 'ellipsis',
-      flexWrap: !isHeader ? 'wrap' : 'nowrap',
+      flexWrap: useStylesForHeader ? 'nowrap' : 'wrap',
       msOverflowStyle: 'none',
       scrollbarWidth: 'none',
       '&::-webkit-scrollbar': {

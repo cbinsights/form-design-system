@@ -4,8 +4,8 @@ import { StoryObj } from '@storybook/react';
 import { MultiValue, SelectInstance } from 'react-select';
 import { mockFetchData } from 'util/mockFetchData';
 import { filterByStringProp } from 'util/mockFetchData/filterData';
-import { mockOptions } from '../MultiSelect/mockData';
-import { MultiSelectProps, OptionProps } from '../MultiSelect';
+import { mockOptions } from '../SmartInput/mockData';
+import { SmartInputProps, OptionProps } from '../SmartInput';
 import cbiLogo from './CBI-logo-white.svg';
 
 export const Primary: StoryObj<HeaderProps> = {
@@ -47,7 +47,6 @@ export const Primary: StoryObj<HeaderProps> = {
   render: ({ showLogo, logoImg, onSearchClick, onAdvancedSearchClick }): JSX.Element => {
     const [searchItems, setSearchItems] = React.useState<MultiValue<OptionProps>>();
     const [options, setOptions] = React.useState<OptionProps[]>([]);
-    // const [cursorPosition, setCursorPosition] = React.useState(0);
     const ref = React.useRef<SelectInstance<OptionProps, true>>(null);
     const [inputValue, setInputValue] = React.useState('');
 
@@ -60,7 +59,6 @@ export const Primary: StoryObj<HeaderProps> = {
     const onKeyDown = () => {};
 
     const onSetSearchItems = (items: MultiValue<OptionProps>) => {
-      console.log('items', items);
       setSearchItems(items);
     };
 
@@ -79,7 +77,7 @@ export const Primary: StoryObj<HeaderProps> = {
       getData();
     }, [mockFetchData, setOptions]);
 
-    const mergedSmartInputProps: MultiSelectProps = {
+    const mergedSmartInputProps: SmartInputProps = {
       onBlur,
       onChange,
       onClear,
@@ -94,6 +92,7 @@ export const Primary: StoryObj<HeaderProps> = {
       options,
       searchItems,
       inputValue,
+      openMenuOnClick: false,
 
       selectRef: ref,
     };

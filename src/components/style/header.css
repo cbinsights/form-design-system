@@ -1,0 +1,9 @@
+.fdsHeaderWrapper {
+  background-color: #000d20;
+  height: 60px;
+  min-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
