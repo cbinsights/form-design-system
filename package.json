@@ -46,6 +46,7 @@
     "semantic-release": "semantic-release",
     "commit": "git-cz",
     "check": "yarn lint && yarn test && yarn type-check",
+    "postinstall": "yarn husky install",
     "prepublishOnly": "yarn pinst --disable",
     "postpublish": "yarn pinst --enable",
     "start:storybook": "start-storybook -p 9009 -s public --ci",

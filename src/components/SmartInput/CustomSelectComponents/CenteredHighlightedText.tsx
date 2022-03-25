@@ -3,7 +3,6 @@ import cx from 'classcat';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
 import { HighlightTextProps } from './HighlightedText';
-// import styles from 'client/modules/top-search/styles/new-top-search.css';
 
 const CenteredHighlightedText = ({
   suggestion,

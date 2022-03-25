@@ -83,17 +83,6 @@ const Search: React.FC<SmartInputProps> = ({
   inputId,
   ...rest
 }) => {
-  // const defaultFormatOptionLabel = React.useCallback(
-  //   (item: OptionProps) => (
-  //     <CondensedDropdownOption
-  //       selectValue={item}
-  //       query={inputValue ?? selectRef?.current?.inputRef?.value}
-  //       handleOptionClick={onOptionClick}
-  //     />
-  //   ),
-  //   [inputValue, onOptionClick]
-  // );
-
   const defaultFormatOptionLabel = (item: OptionProps) => (
     <DropdownOption
       type="condensed"
