@@ -1,6 +1,6 @@
 import { Flex, FlexItem } from 'components';
 import React from 'react';
-import MultiSelect, { SmartInputProps, OptionProps } from '../SmartInput';
+import SmartInput, { SmartInputProps, OptionProps } from '../SmartInput';
 import { default as Logo } from './Logo';
 import Button from 'components/Button';
 import FDS from 'dictionary/js/styleConstants';
@@ -53,7 +53,7 @@ export const Header = ({
         <FlexItem>
           <Flex noGutters>
             <FlexItem>
-              <MultiSelect
+              <SmartInput
                 {...smartInputProps}
                 isClearable={isClearable}
                 styles={styles}

@@ -13,18 +13,13 @@ const SEARCH_BTN_OFFSET = 102;
 
 const noopComponent = (): null => null;
 
-const CustomDropdownIndicator = noopComponent;
-const CustomIndicatorSeparator = noopComponent;
-const CustomNoOptionsMessage = noopComponent;
-const CustomMultiValueRemove = noopComponent;
-
 export const customComponents: Partial<
   SelectComponents<OptionProps, true, GroupBase<OptionProps>>
 > = {
-  DropdownIndicator: CustomDropdownIndicator,
-  IndicatorSeparator: CustomIndicatorSeparator,
-  NoOptionsMessage: CustomNoOptionsMessage,
-  MultiValueRemove: CustomMultiValueRemove,
+  DropdownIndicator: noopComponent,
+  IndicatorSeparator: noopComponent,
+  NoOptionsMessage: noopComponent,
+  MultiValueRemove: noopComponent,
   ValueContainer: CustomValueContainer,
   ClearIndicator: CustomClearIndicator,
   Input: CustomInput,
@@ -76,7 +71,6 @@ export const customStyles = (
     }),
     menuList: (base) => ({
       ...base,
-      // maxHeight: 'none',
       borderRadius: FDS.SPACE_XS,
     }),
     option: (base, state) => ({

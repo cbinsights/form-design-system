@@ -19,11 +19,7 @@ const CustomValueContainer = ({
         ]
       : children;
   return (
-    <components.ValueContainer
-      {...props}
-      innerProps={innerProps}
-      setValue={props.setValue}
-    >
+    <components.ValueContainer {...props} innerProps={innerProps}>
       {els}
     </components.ValueContainer>
   );

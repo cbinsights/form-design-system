@@ -40,11 +40,16 @@ export const Primary: StoryObj<SmartInputProps> = {
         type: 'text',
       },
     },
+    menuIsOpen: {
+      type: {
+        name: 'boolean',
+        required: false,
+      },
+    },
   },
   args: {
     options: mockOptions,
     isClearable: true,
-    menuIsOpen: false,
   },
 };
 
