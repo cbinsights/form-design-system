@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import CustomSelectedValue, { SelectedValueProps } from './CustomSelectedValue';
@@ -35,27 +35,27 @@ describe('CustomSelectedValue component', () => {
   };
 
   it('tests default rendering', () => {
-    const { getByTestId } = render(<CustomSelectedValue {...defaultProps} />);
-    expect(getByTestId('custom-selected-value')).toBeInTheDocument();
+    render(<CustomSelectedValue {...defaultProps} />);
+    expect(screen.getByRole('listitem')).toBeInTheDocument();
   });
 
-  it('should trigger setCursorPosition callback when the custom-selected-value item is clicked', () => {
-    const { getByTestId } = render(<CustomSelectedValue {...defaultProps} />);
-    userEvent.click(getByTestId('custom-selected-value'));
+  it('should trigger setCursorPosition when a selected value item is clicked', () => {
+    render(<CustomSelectedValue {...defaultProps} />);
+    userEvent.click(screen.getByRole('listitem'));
     expect(setCursorPosition).toHaveBeenCalled();
     expect(onSetSearchItems).not.toHaveBeenCalled();
   });
 
-  it('should trigger onSetSearchItems callback when the custom-selected-value item is double clicked', () => {
-    const { getByTestId } = render(<CustomSelectedValue {...defaultProps} />);
-    userEvent.dblClick(getByTestId('custom-selected-value'));
+  it('should trigger onSetSearchItems when a selected value item is double clicked', () => {
+    render(<CustomSelectedValue {...defaultProps} />);
+    userEvent.dblClick(screen.getByRole('listitem'));
     expect(setCursorPosition).toHaveBeenCalled();
     expect(onSetSearchItems).toHaveBeenCalled();
   });
 
   it('should trigger onSetSearchItems callback without the deleted item', () => {
-    const { getByTestId } = render(<CustomSelectedValue {...defaultProps} />);
-    userEvent.dblClick(getByTestId('custom-selected-value'));
+    render(<CustomSelectedValue {...defaultProps} />);
+    userEvent.dblClick(screen.getByRole('listitem'));
     expect(onSetSearchItems).toHaveBeenCalledWith([item2]);
   });
 });

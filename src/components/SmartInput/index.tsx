@@ -57,7 +57,7 @@ export interface SmartInputProps extends Props<OptionProps, true> {
   selectRef?: React.RefObject<SelectInstance<OptionProps, true>>;
 }
 
-const Search: React.FC<SmartInputProps> = ({
+const Search = ({
   autoFocus,
   backspaceRemovesValue,
   cursorPosition,
@@ -80,9 +80,10 @@ const Search: React.FC<SmartInputProps> = ({
   selectRef = React.useRef(null),
   setCursorPosition,
   styles = customStyles(),
+  menuShouldScrollIntoView = false,
   inputId,
   ...rest
-}) => {
+}: SmartInputProps): JSX.Element => {
   const defaultFormatOptionLabel = (item: OptionProps) => (
     <DropdownOption
       type="condensed"
@@ -94,7 +95,6 @@ const Search: React.FC<SmartInputProps> = ({
 
   return (
     <Select<OptionProps, true>
-      inputId={inputId}
       autoFocus={autoFocus}
       backspaceRemovesValue={backspaceRemovesValue}
       captureMenuScroll={false}
@@ -105,12 +105,14 @@ const Search: React.FC<SmartInputProps> = ({
       // Use uid as option value to work around react-select's automatically given keys
       getOptionValue={(option: OptionProps) => option.uid}
       hideSelectedOptions={false}
+      inputId={inputId}
       inputValue={inputValue}
       isClearable={isClearable}
       isMulti
       isOptionSelected={(option: OptionProps, selectedValue: Options<OptionProps>) =>
         selectedValue.some((i) => i === option)
       }
+      menuShouldScrollIntoView={menuShouldScrollIntoView}
       onBlur={onBlur}
       onChange={(selectedOption, { action }) => {
         if (action === 'clear') {

@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-
+import { screen, render } from '@testing-library/react';
 import CenteredHighlightedText from './CenteredHighlightedText';
 
 describe('CenteredHighlightedText component', () => {
@@ -9,26 +8,22 @@ describe('CenteredHighlightedText component', () => {
   };
 
   it('tests default rendering', () => {
-    const { getByTestId, queryByTestId } = render(
-      <CenteredHighlightedText {...defaultProps} />
-    );
-    expect(getByTestId('smart-input-centered-highlighted-text')).toBeInTheDocument();
-    expect(getByTestId('right-text')).toBeInTheDocument();
-    expect(queryByTestId('left-text')).not.toBeInTheDocument();
-    expect(queryByTestId('centered-text')).not.toBeInTheDocument();
+    render(<CenteredHighlightedText {...defaultProps} />);
+    expect(
+      screen.getByTestId('smart-input-centered-highlighted-text')
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('right-text')).toBeInTheDocument();
+    expect(screen.queryByTestId('left-text')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('centered-text')).not.toBeInTheDocument();
   });
 
   it('should include left-text if the query it is included in the suggestion', () => {
-    const { getByTestId } = render(
-      <CenteredHighlightedText {...defaultProps} query="suggestion" />
-    );
-    expect(getByTestId('left-text')).toBeInTheDocument();
+    render(<CenteredHighlightedText {...defaultProps} query="suggestion" />);
+    expect(screen.getByTestId('left-text')).toBeInTheDocument();
   });
 
   it('should include centered text if the query it is included in the suggestion', () => {
-    const { getByTestId } = render(
-      <CenteredHighlightedText {...defaultProps} query="suggestion" />
-    );
-    expect(getByTestId('centered-text')).toBeInTheDocument();
+    render(<CenteredHighlightedText {...defaultProps} query="suggestion" />);
+    expect(screen.getByTestId('centered-text')).toBeInTheDocument();
   });
 });

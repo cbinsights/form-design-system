@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Header, { HeaderProps } from '.';
@@ -11,42 +11,35 @@ describe('Header component', () => {
     showLogo: true,
     logoImg: 'img',
     Link: React.Fragment,
-    smartInputProps: {
-      onChange: jest.fn(),
-      onClear: jest.fn(),
-      onMenuClose: jest.fn(),
-      onOptionClick: jest.fn(),
-      onSetSearchItems: jest.fn(),
-    },
+    smartInputProps: {},
   };
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('tests default rendering', () => {
-    const { getByTestId, getByAltText } = render(<Header {...props} />);
-    expect(getByAltText('logo')).toBeInTheDocument();
-    expect(getByTestId('search-button')).toBeInTheDocument();
-    expect(getByTestId('advanced-search-button')).toBeInTheDocument();
+    render(<Header {...props} />);
+    expect(screen.getByAltText('logo')).toBeInTheDocument();
+    expect(screen.getByRole('combobox')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Search' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Advanced Search' })).toBeInTheDocument();
   });
 
-  it('should not render logo when showLogo is false', () => {
-    const { getByTestId, queryByText } = render(<Header {...props} showLogo={false} />);
-    expect(queryByText('logo')).not.toBeInTheDocument();
-    expect(getByTestId('search-button')).toBeInTheDocument();
-    expect(getByTestId('advanced-search-button')).toBeInTheDocument();
+  it('should not render logo', () => {
+    render(<Header {...props} showLogo={false} />);
+    expect(screen.queryByAltText('logo')).not.toBeInTheDocument();
   });
 
-  it('should trigger onAdvancedSearchClick callback when the advanced-search-button is clicked', () => {
-    const handleClick = jest.fn();
-    const { getByTestId } = render(
-      <Header {...props} onAdvancedSearchClick={handleClick} />
-    );
-    userEvent.click(getByTestId('advanced-search-button'));
-    expect(handleClick).toHaveBeenCalled();
+  it('should trigger onAdvancedSearchClick callback when Advanced Search button is clicked', () => {
+    render(<Header {...props} />);
+    userEvent.click(screen.getByRole('button', { name: 'Advanced Search' }));
+    expect(props.onAdvancedSearchClick).toHaveBeenCalled();
   });
 
-  it('should trigger onSearchClick callback when the search-button is clicked', () => {
-    const handleClick = jest.fn();
-    const { getByTestId } = render(<Header {...props} onSearchClick={handleClick} />);
-    userEvent.click(getByTestId('search-button'));
-    expect(handleClick).toHaveBeenCalled();
+  it('should trigger onSearchClick callback when Search button is clicked', () => {
+    render(<Header {...props} />);
+    userEvent.click(screen.getByRole('button', { name: 'Search' }));
+    expect(props.onSearchClick).toHaveBeenCalled();
   });
 });

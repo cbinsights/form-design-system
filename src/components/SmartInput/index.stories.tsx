@@ -50,6 +50,7 @@ export const Primary: StoryObj<SmartInputProps> = {
   args: {
     options: mockOptions,
     isClearable: true,
+    menuShouldScrollIntoView: false,
   },
 };
 

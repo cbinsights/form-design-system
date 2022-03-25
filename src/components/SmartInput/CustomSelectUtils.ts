@@ -72,6 +72,7 @@ export const customStyles = (
     menuList: (base) => ({
       ...base,
       borderRadius: FDS.SPACE_XS,
+      maxHeight: 'none',
     }),
     option: (base, state) => ({
       ...base,
