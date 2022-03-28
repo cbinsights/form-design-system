@@ -24,7 +24,7 @@ export interface CheckboxProps extends CheckboxExtended {
   /** Disables form field when `true` */
   disabled?: boolean;
 
-  /** Supplies an `id` to the input, often used with `showLabel={false}` to connect the label. */
+  /** Supplies an `id` to the input, it is often used with `showLabel={false}` to connect the label. */
   id?: string;
 
   name?: string;
