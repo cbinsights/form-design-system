@@ -8,6 +8,7 @@ import Select, {
 } from 'react-select';
 import { customComponents, customStyles, customThemes } from './CustomSelectUtils';
 import DropdownOption from './CustomSelectComponents/DropdownOption';
+import { noop } from 'util/index';
 
 declare module 'react-select/dist/declarations/src/Select' {
   export interface Props<
@@ -62,26 +63,26 @@ const Search = ({
   backspaceRemovesValue,
   cursorPosition,
   formatOptionLabel,
+  inputId,
   inputValue,
   isClearable = false,
-  onBlur,
-  onChange,
-  onClear,
-  onFocus,
-  onInputChange,
-  onKeyDown,
-  onMenuClose,
-  onOptionClick,
-  onSetSearchItems,
+  menuShouldScrollIntoView = false,
+  onBlur = noop,
+  onChange = noop,
+  onClear = noop,
+  onFocus = noop,
+  onInputChange = noop,
+  onKeyDown = noop,
+  onMenuClose = noop,
+  onOptionClick = noop,
+  onSetSearchItems = noop,
   openMenuOnClick,
   options,
   placeholder,
   searchItems,
   selectRef = React.useRef(null),
-  setCursorPosition,
+  setCursorPosition = noop,
   styles = customStyles(),
-  menuShouldScrollIntoView = false,
-  inputId,
   ...rest
 }: SmartInputProps): JSX.Element => {
   const defaultFormatOptionLabel = (item: OptionProps) => (

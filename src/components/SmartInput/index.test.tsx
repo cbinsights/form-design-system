@@ -21,6 +21,7 @@ describe('<MultiSelect />', () => {
     render(<MultiSelect options={mockOptions.slice(0, 5)} />);
     const input = screen.getByRole<HTMLInputElement>('combobox');
     userEvent.click(input);
+    screen.debug();
     const options = screen.getAllByRole('option');
     expect(options).toHaveLength(5);
   });

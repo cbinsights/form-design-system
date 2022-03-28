@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import Logo from './Logo';
 
 describe('Logo component', () => {
   it('should include alt property', () => {
-    const { getByAltText } = render(<Logo src="src" />);
-    expect(getByAltText('logo')).toBeInTheDocument();
+    render(<Logo src="src" />);
+    expect(screen.getByAltText('logo')).toBeInTheDocument();
   });
 });

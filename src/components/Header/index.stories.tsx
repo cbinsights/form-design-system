@@ -50,14 +50,6 @@ export const Primary: StoryObj<HeaderProps> = {
     const ref = React.useRef<SelectInstance<OptionProps, true>>(null);
     const [inputValue, setInputValue] = React.useState('');
 
-    const onChange = () => {};
-    const onClear = () => {};
-    const onMenuClose = () => {};
-    const onBlur = () => {};
-    const onFocus = () => {};
-    const onOptionClick = () => {};
-    const onKeyDown = () => {};
-
     const onSetSearchItems = (items: MultiValue<OptionProps>) => {
       setSearchItems(items);
     };
@@ -78,14 +70,7 @@ export const Primary: StoryObj<HeaderProps> = {
     }, [mockFetchData, setOptions]);
 
     const mergedSmartInputProps: SmartInputProps = {
-      onBlur,
-      onChange,
-      onClear,
-      onFocus,
       onInputChange,
-      onKeyDown,
-      onMenuClose,
-      onOptionClick,
       onSetSearchItems,
 
       placeholder: 'Search for companies',

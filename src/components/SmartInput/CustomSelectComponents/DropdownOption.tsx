@@ -100,6 +100,7 @@ const CondensedDropdownOption = ({
       data-sugg-type={category}
       style={optionStyle}
       onMouseDown={onOptionClick}
+      role="option"
     >
       <span className={'suggestionIcon'} data-test="cbi-icon-search">
         {getIcon(defaultType, isExpert)}
