@@ -1,12 +1,11 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
-import FocusTrap from 'focus-trap-react';
 import rafSchd from 'raf-schd';
 import DenyIcon from 'icons/react/DenyIcon';
 import IconButton from 'components/IconButton';
 import cc from 'classcat';
-import noScroll from './noScroll';
+import * as DialogUi from '@radix-ui/react-dialog';
 
 export const isElementOverflowing = ({
   current,
@@ -70,7 +69,6 @@ const Dialog = ({
   role = 'dialog',
   width = '500px',
   height = '80vh',
-  disableFocusTrap = false,
   onDismiss,
   alwaysShowBorder,
   isOpen,
@@ -79,13 +77,9 @@ const Dialog = ({
   footerContent,
   subTitle,
   disablePortal = false,
+  disableFocusTrap = false,
 }: DialogProps): JSX.Element => {
   const contentEl = useRef<HTMLDivElement>(null);
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (onDismiss && e.key === 'Escape') {
-      onDismiss();
-    }
-  };
 
   const [isOverflowing, setIsOverflowing] = useState(false);
   const schdSetIsOverflowing = rafSchd(setIsOverflowing);
@@ -97,110 +91,99 @@ const Dialog = ({
   useEffect(() => {
     if (!alwaysShowBorder) {
       handleResize(); // needs to fire once immediately on mount
-      // eslint-disable-next-line no-undef
       window.addEventListener('resize', handleResize);
       return () => {
-        // eslint-disable-next-line no-undef
         window.removeEventListener('resize', handleResize);
       };
     }
     return undefined;
   }, [alwaysShowBorder]);
 
-  useLayoutEffect(() => {
-    // This toggles scrolling on and off based on whether the modal
-    // is shown or not
-    if (isOpen) {
-      noScroll.on();
-    } else {
-      noScroll.off();
-    }
-    return () => {
-      noScroll.off();
-    };
-  }, [isOpen]);
-
   const dialogNode = (
-    <div>
-      <div className="dialog-overlay"></div>
+    <DialogUi.Root open={isOpen} onOpenChange={onDismiss} modal={!disableFocusTrap}>
+      <DialogUi.Overlay
+        data-testid="overlay"
+        className="dialog-overlay"
+      ></DialogUi.Overlay>
       <div className="dialog-zIndex dialog-wrapper">
-        <div
-          className="dialog elevation--3 border--focus--noTransition"
-          role={role}
-          aria-labelledby={title && 'a11y-dialog-title'}
-          aria-describedby="a11y-dialog-desc"
-          tabIndex={-1}
-          aria-modal="true"
-          onKeyDown={handleKeyDown}
-          style={{
-            maxWidth: width,
-            maxHeight: height,
-          }}
+        <DialogUi.Content
+          onPointerDownOutside={(event) => event.preventDefault()}
+          asChild
+          className="ease-in-out"
         >
-          {(title || onDismiss) && (
-            <React.Fragment>
-              <div className="dialog-header">
-                <div className="bgColor--white padding--all border--bottom">
-                  <div>
-                    <div className="padding--right--xl type--head4">
-                      {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
-                      {/* There always needs to be something (even a space) in the header for display reasons */}
+          <div
+            className="dialog elevation--3 border--focus--noTransition"
+            role={role}
+            aria-labelledby={title && 'a11y-dialog-title'}
+            aria-describedby="a11y-dialog-desc"
+            tabIndex={-1}
+            aria-modal="true"
+            style={{
+              maxWidth: width,
+              maxHeight: height,
+            }}
+            data-testid="dialog"
+          >
+            {(title || onDismiss) && (
+              <>
+                <div className="dialog-header">
+                  <div className="bgColor--white padding--all border--bottom">
+                    <div>
+                      <div className="padding--right--xl type--head4">
+                        {title ? <span id="a11y-dialog-title">{title}</span> : '\u00A0'}{' '}
+                        {/* There always needs to be something (even a space) in the header for display reasons */}
+                      </div>
+                      {subTitle}
                     </div>
-                    {subTitle}
+                    {onDismiss && (
+                      <DialogUi.Trigger asChild>
+                        <div className="dialog-icon">
+                          <IconButton Icon={DenyIcon} aria-label="Close" label="Close" />
+                        </div>
+                      </DialogUi.Trigger>
+                    )}
                   </div>
-                  {onDismiss && (
-                    <div className="dialog-icon">
-                      <IconButton
-                        Icon={DenyIcon}
-                        onClick={onDismiss}
-                        aria-label="Close"
-                        label="Close"
-                      />
-                    </div>
-                  )}
+                </div>
+              </>
+            )}
+            {content && (
+              <div className="dialog-content" ref={contentEl}>
+                <div className="padding--all bgColor--white">{content}</div>
+              </div>
+            )}
+            {footerContent && (
+              <div className="dialog-footer">
+                <div
+                  className={cc([
+                    {
+                      'border--top': alwaysShowBorder || isOverflowing,
+                    },
+                    'bgColor--white',
+                    'padding--all',
+                  ])}
+                >
+                  {footerContent}
                 </div>
               </div>
-            </React.Fragment>
-          )}
-          {content && (
-            <div className="dialog-content" ref={contentEl}>
-              <div className="padding--all bgColor--white">{content}</div>
-            </div>
-          )}
-          {footerContent && (
-            <div className="dialog-footer">
-              <div
-                className={cc([
-                  {
-                    'border--top': alwaysShowBorder || isOverflowing,
-                  },
-                  'bgColor--white',
-                  'padding--all',
-                ])}
-              >
-                {footerContent}
-              </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        </DialogUi.Content>
       </div>
-    </div>
+    </DialogUi.Root>
   );
 
   const transitionNode = (
     <CSSTransition timeout={200} in={isOpen} classNames="dialog" unmountOnExit>
-      <React.Fragment>
-        {disableFocusTrap ? dialogNode : <FocusTrap>{dialogNode}</FocusTrap>}
-      </React.Fragment>
+      {dialogNode}
     </CSSTransition>
   );
 
   return (
-    <React.Fragment>
+    <>
       {disablePortal
         ? transitionNode
         : ReactDOM.createPortal(transitionNode, document.body)}
-    </React.Fragment>
+    </>
   );
 };
 
