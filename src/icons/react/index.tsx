@@ -96,6 +96,7 @@ import LinkedinIcon from './LinkedinIcon';
 import LinkedinFilledIcon from './LinkedinFilledIcon';
 import LockIcon from './LockIcon';
 import MAIcon from './MAIcon';
+import MailIcon from './MailIcon';
 import MarketMapIcon from './MarketMapIcon';
 import MenuCloseIcon from './MenuCloseIcon';
 import MenuOpenIcon from './MenuOpenIcon';
@@ -122,9 +123,9 @@ import PiggyBankIcon from './PiggyBankIcon';
 import PresentIcon from './PresentIcon';
 import PublishIcon from './PublishIcon';
 import PuzzleIcon from './PuzzleIcon';
-import Quadrant2Icon from './Quadrant2Icon';
-import Quadrant3Icon from './Quadrant3Icon';
-import Quadrant4Icon from './Quadrant4Icon';
+import Quadrant_2Icon from './Quadrant_2Icon';
+import Quadrant_3Icon from './Quadrant_3Icon';
+import Quadrant_4Icon from './Quadrant_4Icon';
 import QuadrantIcon from './QuadrantIcon';
 import QuestionIcon from './QuestionIcon';
 import QuoteIcon from './QuoteIcon';
@@ -140,6 +141,7 @@ import SalesforceIcon from './SalesforceIcon';
 import SaveIcon from './SaveIcon';
 import SearchIcon from './SearchIcon';
 import SelectionIcon from './SelectionIcon';
+import SendIcon from './SendIcon';
 import ShareIcon from './ShareIcon';
 import ShoppingCartIcon from './ShoppingCartIcon';
 import SocialGraphIcon from './SocialGraphIcon';
@@ -282,6 +284,7 @@ export {
   LinkedinFilledIcon,
   LockIcon,
   MAIcon,
+  MailIcon,
   MarketMapIcon,
   MenuCloseIcon,
   MenuOpenIcon,
@@ -308,9 +311,9 @@ export {
   PresentIcon,
   PublishIcon,
   PuzzleIcon,
-  Quadrant2Icon,
-  Quadrant3Icon,
-  Quadrant4Icon,
+  Quadrant_2Icon,
+  Quadrant_3Icon,
+  Quadrant_4Icon,
   QuadrantIcon,
   QuestionIcon,
   QuoteIcon,
@@ -326,6 +329,7 @@ export {
   SaveIcon,
   SearchIcon,
   SelectionIcon,
+  SendIcon,
   ShareIcon,
   ShoppingCartIcon,
   SocialGraphIcon,
