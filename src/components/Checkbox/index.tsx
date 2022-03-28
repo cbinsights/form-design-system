@@ -56,8 +56,8 @@ const Checkbox = ({
     <div
       {...rest}
       className={cc([
-        'fdsCheckable',
-        { 'fdsCheckable--disabled': !indeterminate && disabled },
+        'fdsCheckableCheckbox',
+        { 'fdsCheckableCheckbox--disabled': !indeterminate && disabled },
       ])}
     >
       <Label.Root className="flush--bottom" role="presentation">
