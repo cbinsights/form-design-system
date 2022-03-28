@@ -1,73 +1,41 @@
-/**
- * Component helper classes for styling checkable inputs.
- * Replaces user agent input with an FDS icon.
- */
-
 .fdsCheckable {
-  position: relative;
-}
-
-.fdsCheckable input {
-  /* visually hide UA checkbox */
-  position: absolute;
-  opacity: 0;
-  left: 0;
-  top: 0;
-}
-
-.fdsCheckable label {
-  /* contains checkbox icon and text label */
   display: inline-flex;
 }
 
 .fdsCheckable-label {
   padding-left: var(--space-s);
-  margin-top: 1px;
 }
 
-.fdsCheckable .fds-icon {
+.radix-checkbox {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2px;
+  background: transparent;
+  border: 0 solid transparent;
+}
+
+.radix-checkbox:focus {
+  outline: 0;
+}
+
+.radix-checkbox .fds-icon {
   color: var(--font-color-secondary);
 }
 
-.fdsCheckable input:focus + label svg {
+.radix-checkbox:focus svg {
   box-shadow: inset 0 0 0 3px var(--border-color-focusRing);
   transition: box-shadow 250ms var(--motion-easing-default);
+  border-radius: 4px;
 }
 
-.fdsCheckable input:checked + label svg {
+.radix-checkbox [data-state='checked' i] svg {
   fill: var(--color-blue);
 }
 
-.fdsCheckable--disabled :matches(label, svg) {
+.fdsCheckable--disabled {
   color: var(--font-color-hint) !important;
+}
+
+.checkbox--disabled svg {
   fill: var(--font-color-hint) !important;
-}
-
-/**
- * Icon switching
- *
- * Both icons for checked/unchecked state are rendered in
- * the DOM; we use checked state selectors on the `input`
- * element to determine which one to show
- */
-.fdsCheckable input + label .fdsCheckable-icon--checked {
-  display: none;
-}
-
-.fdsCheckable
-  input:checked
-  + label
-  .fdsCheckable-icon--checked {
-  display: block;
-}
-
-.fdsCheckable input + label .fdsCheckable-icon--unchecked {
-  display: block;
-}
-
-.fdsCheckable
-  input:checked
-  + label
-  .fdsCheckable-icon--unchecked {
-  display: none;
 }
