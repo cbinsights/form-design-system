@@ -31,15 +31,12 @@ const CenteredHighlightedText = ({
               'padding--right--xs': leftText[leftText.length - 1] === ' ',
             },
           ])}
-          data-testid="left-text"
         >
           <span dir="ltr">{leftText}</span>
         </span>
       )}
       {centeredText && (
-        <span className="fontWeight--bold flexItem--shrink" data-testid="centered-text">
-          {centeredText}
-        </span>
+        <span className="fontWeight--bold flexItem--shrink">{centeredText}</span>
       )}
       <span
         className={cx([
@@ -48,7 +45,6 @@ const CenteredHighlightedText = ({
             'padding--left--xs': rightText && rightText[0] === ' ',
           },
         ])}
-        data-testid="right-text"
       >
         {parts.map((part, index) => {
           if (index <= firstHighlightIndex) return null;

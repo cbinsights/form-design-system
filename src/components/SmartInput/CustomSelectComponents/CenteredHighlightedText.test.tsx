@@ -9,21 +9,12 @@ describe('CenteredHighlightedText component', () => {
 
   it('tests default rendering', () => {
     render(<CenteredHighlightedText {...defaultProps} />);
-    expect(
-      screen.getByTestId('smart-input-centered-highlighted-text')
-    ).toBeInTheDocument();
-    expect(screen.getByTestId('right-text')).toBeInTheDocument();
-    expect(screen.queryByTestId('left-text')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('centered-text')).not.toBeInTheDocument();
+    expect(screen.getByText('this is a suggestion')).toBeInTheDocument();
   });
 
   it('should include left-text if the query it is included in the suggestion', () => {
     render(<CenteredHighlightedText {...defaultProps} query="suggestion" />);
-    expect(screen.getByTestId('left-text')).toBeInTheDocument();
-  });
-
-  it('should include centered text if the query it is included in the suggestion', () => {
-    render(<CenteredHighlightedText {...defaultProps} query="suggestion" />);
-    expect(screen.getByTestId('centered-text')).toBeInTheDocument();
+    expect(screen.getByText('this is a', { exact: true })).toBeInTheDocument();
+    expect(screen.getByText('suggestion', { exact: true })).toBeInTheDocument();
   });
 });
