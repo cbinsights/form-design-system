@@ -11,14 +11,14 @@ export interface SelectedValueProps {
 export const SelectedValue = ({ item, selectProps }: SelectedValueProps): JSX.Element => {
   const { text, defaultType, isExpert, type } = item;
   const { setCursorPosition, value, onSetSearchItems } = selectProps;
-  const itemIndex = Array.isArray(value) ? value?.findIndex((i) => i === item) : 0;
+  const itemIndex = Array.isArray(value) ? value.findIndex((i) => i === item) : 0;
 
   const handleClick = () => setCursorPosition?.(itemIndex);
 
   const handleDoubleClick = () => {
     if (Array.isArray(value)) {
       const deletedItem = value[itemIndex];
-      const newValues = value?.filter((val) => val !== deletedItem);
+      const newValues = value.filter((val) => val !== deletedItem);
       setCursorPosition?.(itemIndex - 1);
       onSetSearchItems?.(newValues);
     }

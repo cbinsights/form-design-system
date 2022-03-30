@@ -11,6 +11,8 @@ import DropdownOption from './CustomSelectComponents/DropdownOption';
 import { noop } from 'util/index';
 
 declare module 'react-select/dist/declarations/src/Select' {
+  // signature has to be identical for module augmentation so these Generics need ot be here
+  // eslint doesn't like it, so were compromising and disabling them.
   export interface Props<
     Option,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -19,7 +21,7 @@ declare module 'react-select/dist/declarations/src/Select' {
     Group extends GroupBase<Option>
   > {
     cursorPosition?: number;
-    onSetSearchItems?: (items: MultiValue<OptionProps>) => void;
+    onSetSearchItems?: (items: MultiValue<Option>) => void;
     setCursorPosition?: (position: number) => void;
   }
 }

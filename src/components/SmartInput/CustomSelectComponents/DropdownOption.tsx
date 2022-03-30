@@ -1,5 +1,10 @@
 import React from 'react';
-import { getIcon, getItemType, SEARCH_TERM_RESEARCH, SEARCH_TERM_TABS } from '../utils';
+import {
+  getIconName,
+  getItemType,
+  SEARCH_TERM_RESEARCH,
+  SEARCH_TERM_TABS,
+} from '../utils';
 import CenteredHighlightedText from './CenteredHighlightedText';
 import HighlightedText from './HighlightedText';
 import { OptionProps } from '..';
@@ -93,6 +98,7 @@ const CondensedDropdownOption = ({
   } = option;
   const optionStyle = { color: optionColor };
   const suggestedText = alias ? `${text} (${alias})` : text;
+  const Icon = getIconName(defaultType, isExpert);
   return (
     <div
       className={'smart-input-option'}
@@ -103,7 +109,7 @@ const CondensedDropdownOption = ({
       role="option"
     >
       <span className={'suggestionIcon'} data-test="cbi-icon-search">
-        {getIcon(defaultType, isExpert)}
+        <Icon size="xs" />
       </span>
       <HighlightedText suggestion={suggestedText} query={query} />
       <span className={'bool'}>{boolean}</span>

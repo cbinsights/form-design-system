@@ -1,4 +1,4 @@
-import { getItemType, getValueType } from './utils';
+import { getIconName, getItemType, getValueType } from './utils';
 
 describe('utils', () => {
   describe('getValueType', () => {
@@ -16,6 +16,27 @@ describe('utils', () => {
       'returns $expected when defaultType is $defaultType and isExpert is $isExpert',
       ({ defaultType, isExpert, expected }) => {
         expect(getValueType(defaultType, isExpert)).toEqual(expected);
+      }
+    );
+  });
+
+  describe('getIconName', () => {
+    test.each([
+      { defaultType: 'collection', isExpert: true, expected: 'CollectionExpertIcon' },
+      {
+        defaultType: 'collection',
+        isExpert: undefined,
+        expected: 'CollectionPublicIcon',
+      },
+      { defaultType: 'investor', isExpert: undefined, expected: 'CompanyIcon' },
+      { defaultType: 'company', isExpert: undefined, expected: 'CompanyIcon' },
+      { defaultType: 'tag', isExpert: undefined, expected: 'HashtagIcon' },
+      { defaultType: 'person', isExpert: undefined, expected: 'UserIcon' },
+      { defaultType: 'something-else', isExpert: undefined, expected: 'SearchIcon' },
+    ])(
+      'returns $expected when defaultType is $defaultType and isExpert is $isExpert',
+      ({ defaultType, isExpert, expected }) => {
+        expect(getIconName(defaultType, isExpert)).toEqual(expected);
       }
     );
   });
