@@ -15,8 +15,8 @@ describe('Checkbox component', () => {
     userEvent.click(input);
     expect(input).not.toBeChecked();
     expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
-    expect(container.querySelector('.fdsCheckable')).toHaveClass(
-      'fdsCheckable--disabled'
+    expect(container.querySelector('.fdsCheckableCheckbox')).toHaveClass(
+      'fdsCheckableCheckbox--disabled'
     );
   });
 
