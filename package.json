@@ -99,6 +99,7 @@
     "@testing-library/jest-dom": "5.16.2",
     "@testing-library/react": "12.1.3",
     "@testing-library/user-event": "13.5.0",
+    "@types/autosuggest-highlight": "3.2.0",
     "@types/babel__core": "7.1.18",
     "@types/babel__plugin-transform-runtime": "7.9.2",
     "@types/babel__preset-env": "7.9.2",
@@ -223,10 +224,12 @@
     "@radix-ui/react-label": "0.1.5",
     "@radix-ui/react-tooltip": "0.1.6",
     "@reach/menu-button": "0.16.2",
+    "autosuggest-highlight": "^3.2.0",
     "classcat": "5.0.3",
     "focus-trap-react": "8.9.2",
     "raf-schd": "4.0.3",
     "react-popper": "2.2.5",
+    "react-select": "5.2.2",
     "uuid": "8.3.2"
   },
   "resolutions": {
