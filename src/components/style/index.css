@@ -14,11 +14,12 @@
 @import './buttonColors.css';
 @import './buttonGroup.css';
 @import './checkable.css';
-@import './checkbox.css';
 @import './chips.css';
 @import './cornerPosition.css';
 @import './countdownButton.css';
 @import './dateInput.css';
+@import './radio.css';
+@import './textInput.css';
 @import './decoratedInput.css';
 @import './dialog.css';
 @import './dropdownButton.css';
