@@ -7,16 +7,13 @@ import CheckEmptyIcon from 'icons/react/CheckEmptyIcon';
 import CheckFilledIcon from 'icons/react/CheckFilledIcon';
 import CheckIndeterminateIcon from 'icons/react/CheckIndeterminateIcon';
 
-type CheckboxExtended = Omit<HTMLAttributes<HTMLInputElement>, 'onChange'>;
+type CheckboxExtended = Omit<HTMLAttributes<HTMLInputElement>, 'onChange' | 'ref'>;
 export interface CheckboxProps extends CheckboxExtended {
   /** Label used for a11y attributes _and_ the rendered `label` element */
   label: string;
 
   /** If the supplied `label` prop should be rendered to the screen. */
   showLabel?: boolean;
-
-  /** Ref for input element */
-  inputRef?: React.RefObject<HTMLInputElement>;
 
   /** Sets type `indeterminate` to `true` */
   indeterminate?: boolean;
@@ -29,7 +26,11 @@ export interface CheckboxProps extends CheckboxExtended {
 
   name?: string;
 
+  /*** callback that passes back the checkbox state - true, false or "indeterminate" */
   onChange?: (checkedEvent: CheckboxUi.CheckedState) => void;
+
+  /*** Value of checkbox */
+  checked?: boolean;
 }
 
 const Checkbox = ({
@@ -37,21 +38,24 @@ const Checkbox = ({
   indeterminate = false,
   disabled = false,
   label,
-  inputRef,
   defaultChecked = false,
+  checked,
   onChange = () => {},
   ...rest
 }: CheckboxProps): JSX.Element => {
   const IconUnchecked = CheckEmptyIcon;
   const IconChecked = indeterminate ? CheckIndeterminateIcon : CheckFilledIcon;
 
-  const [checked, setChecked] = React.useState(defaultChecked);
+  const [internalChecked, setChecked] = React.useState(checked ?? defaultChecked);
 
   const handleChange = (checkedEvent: CheckboxUi.CheckedState) => {
-    setChecked(!checked);
+    if (checked === undefined) {
+      setChecked(!internalChecked);
+    }
     onChange(checkedEvent);
   };
 
+  const checkedValue = checked ?? internalChecked;
   return (
     <div
       {...rest}
@@ -63,18 +67,18 @@ const Checkbox = ({
       <Label.Root className="flush--bottom" role="presentation">
         <CheckboxUi.Root
           className="radix-checkbox"
-          checked={checked}
+          checked={checkedValue}
           disabled={disabled}
           onCheckedChange={handleChange}
         >
-          <CheckboxUi.Indicator ref={inputRef}>
-            {checked && (
+          <CheckboxUi.Indicator>
+            {checkedValue && (
               <span className={cc([{ 'checkbox--disabled': disabled }])}>
                 <IconChecked size="xs" />
               </span>
             )}
           </CheckboxUi.Indicator>
-          {!checked && (
+          {!checkedValue && (
             <span className={cc([{ 'checkbox--disabled': disabled }])}>
               <IconUnchecked size="xs" />
             </span>
