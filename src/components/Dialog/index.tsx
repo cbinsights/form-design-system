@@ -112,7 +112,7 @@ const Dialog = ({
           className="ease-in-out"
         >
           <div
-            className="dialog elevation--3 border--focus--noTransition"
+            className="dialog elevation--3"
             role={role}
             aria-labelledby={title && 'a11y-dialog-title'}
             aria-describedby="a11y-dialog-desc"
