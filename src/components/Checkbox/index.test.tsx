@@ -57,6 +57,7 @@ describe('Checkbox component', () => {
   });
 
   it('allows users to supply their own id', () => {
+    const mockOnChange = jest.fn();
     render(
       <>
         <Checkbox
@@ -64,6 +65,7 @@ describe('Checkbox component', () => {
           label="Component label"
           showLabel={false}
           name="multiple labels"
+          onChange={mockOnChange}
         />
         <label htmlFor="checkbox-id">User label</label>
       </>
@@ -71,5 +73,12 @@ describe('Checkbox component', () => {
 
     expect(screen.queryByLabelText('Component label')).not.toBeInTheDocument();
     expect(screen.getByText('User label')).toBeInTheDocument();
+
+    const input = screen.getByText('User label', { exact: false });
+    expect(mockOnChange).not.toHaveBeenCalled();
+    userEvent.click(input);
+    expect(input).not.toBeChecked();
+    userEvent.type(input, 'User label');
+    expect(mockOnChange).toHaveBeenCalled();
   });
 });
