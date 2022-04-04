@@ -149,7 +149,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"],
             ["react-hook-form", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.29.0"],
             ["react-is", "npm:16.13.1"],
-            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.0"],
+            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.2"],
             ["react-popper", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.2.5"],
             ["react-select", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.2.2"],
             ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],
@@ -8053,7 +8053,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"],
             ["react-hook-form", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.29.0"],
             ["react-is", "npm:16.13.1"],
-            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.0"],
+            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.2"],
             ["react-popper", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.2.5"],
             ["react-select", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.2.2"],
             ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],
@@ -31596,21 +31596,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-is", "npm:17.0.2"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:18.0.0", {
+          "packageLocation": "./.yarn/cache/react-is-npm-18.0.0-504cb8482b-d38f6afee4.zip/node_modules/react-is/",
+          "packageDependencies": [
+            ["react-is", "npm:18.0.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["react-markdown", [
-        ["npm:8.0.0", {
-          "packageLocation": "./.yarn/cache/react-markdown-npm-8.0.0-3d725f3756-61412ecd18.zip/node_modules/react-markdown/",
+        ["npm:8.0.2", {
+          "packageLocation": "./.yarn/cache/react-markdown-npm-8.0.2-b0146a5b31-9c7f4751bc.zip/node_modules/react-markdown/",
           "packageDependencies": [
-            ["react-markdown", "npm:8.0.0"]
+            ["react-markdown", "npm:8.0.2"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.0", {
-          "packageLocation": "./.yarn/__virtual__/react-markdown-virtual-001e62cf25/0/cache/react-markdown-npm-8.0.0-3d725f3756-61412ecd18.zip/node_modules/react-markdown/",
+        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.2", {
+          "packageLocation": "./.yarn/__virtual__/react-markdown-virtual-371085d15f/0/cache/react-markdown-npm-8.0.2-b0146a5b31-9c7f4751bc.zip/node_modules/react-markdown/",
           "packageDependencies": [
-            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.0"],
+            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.2"],
             ["@types/hast", "npm:2.3.1"],
+            ["@types/prop-types", "npm:15.7.4"],
             ["@types/react", "npm:17.0.43"],
             ["@types/unist", "npm:2.0.3"],
             ["comma-separated-tokens", "npm:2.0.2"],
@@ -31618,7 +31626,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prop-types", "npm:15.7.2"],
             ["property-information", "npm:6.1.1"],
             ["react", "npm:16.14.0"],
-            ["react-is", "npm:17.0.2"],
+            ["react-is", "npm:18.0.0"],
             ["remark-parse", "npm:10.0.1"],
             ["remark-rehype", "npm:10.1.0"],
             ["space-separated-tokens", "npm:2.0.1"],
