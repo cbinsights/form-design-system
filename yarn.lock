@@ -4498,9 +4498,9 @@ __metadata:
     cross-env: 7.0.3
     css: 3.0.0
     cssnano: 4.1.11
-    cypress: 9.5.1
+    cypress: 9.5.3
     cz-conventional-changelog: 3.3.0
-    dayjs: 1.10.8
+    dayjs: 1.11.0
     dictionary: "link:./src/dictionary"
     eslint: 8.10.0
     eslint-config-prettier: 8.4.0
@@ -12920,9 +12920,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:9.5.1":
-  version: 9.5.1
-  resolution: "cypress@npm:9.5.1"
+"cypress@npm:9.5.3":
+  version: 9.5.3
+  resolution: "cypress@npm:9.5.3"
   dependencies:
     "@cypress/request": ^2.88.10
     "@cypress/xvfb": ^1.2.4
@@ -12956,7 +12956,7 @@ __metadata:
     listr2: ^3.8.3
     lodash: ^4.17.21
     log-symbols: ^4.0.0
-    minimist: ^1.2.5
+    minimist: ^1.2.6
     ospath: ^1.2.2
     pretty-bytes: ^5.6.0
     proxy-from-env: 1.0.0
@@ -12968,7 +12968,7 @@ __metadata:
     yauzl: ^2.10.0
   bin:
     cypress: bin/cypress
-  checksum: 96efebb8bfca52f214f793856a7eb40a6eb4a7bc06e5d7c17c7378cec8e3e3975d5777147066d04d95d88b99d4052bbf8749d96b4a25d3f79cc65e88e93f703d
+  checksum: cfd2333fede054a61c1a8d5f3ec0f08b661ff814bff61a418855b542acc8c2d43f3b24dbda849cd9bcce618bf59ce1c5d0abf86a985daaffc0f187db424a5fc8
   languageName: node
   linkType: hard
 
@@ -13042,10 +13042,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:1.10.8":
-  version: 1.10.8
-  resolution: "dayjs@npm:1.10.8"
-  checksum: 5a6b358a0646a780b7dbbec07b8c4400425143f88bf127f456bd2e75a854046f54808d65da2bf964c8267b82dbde0530e990376757ce7d961349d9cde8716a1d
+"dayjs@npm:1.11.0":
+  version: 1.11.0
+  resolution: "dayjs@npm:1.11.0"
+  checksum: 2d36f6d71345114cdcd89147adf9e05b4f8fe81684e08c8bf1f86b140aa0b86ecc3cae661a9348d96feb7fbefd03e1bc3697303688e95209670abcb36b4ece15
   languageName: node
   linkType: hard
 
