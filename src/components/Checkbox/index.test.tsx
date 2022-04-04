@@ -15,56 +15,57 @@ describe('Checkbox component', () => {
     userEvent.click(input);
     expect(input).not.toBeChecked();
     expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
-    expect(container.querySelector('.fdsCheckableCheckbox')).toHaveClass(
-      'fdsCheckableCheckbox--disabled'
+    expect(container.querySelector('.fdsCheckable')).toHaveClass(
+      'fdsCheckable--disabled'
     );
   });
 
   it('fires change callback when checking', () => {
-    const mockOnChange = jest.fn();
+    const changeFn = jest.fn();
     render(
-      <Checkbox
-        label="change callback"
-        name="check-callback-test"
-        onChange={mockOnChange}
-      />
+      <Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />
     );
     const input = screen.getByLabelText('change callback', { exact: false });
-    expect(mockOnChange).not.toHaveBeenCalled();
+    expect(changeFn).not.toHaveBeenCalled();
     userEvent.click(input);
     expect(input).toBeChecked();
     userEvent.type(input, 'change callback');
-    expect(mockOnChange).toHaveBeenCalled();
+    expect(changeFn).toHaveBeenCalled();
   });
 
   it('fires change callback when unchecking', () => {
-    const mockOnChange = jest.fn();
+    const changeFn = jest.fn();
     render(
       <Checkbox
         defaultChecked
         label="unchecking callback"
         name="uncheck-callback-test"
-        onChange={mockOnChange}
+        onChange={changeFn}
       />
     );
 
     const input = screen.getByLabelText('unchecking callback', { exact: false });
-    expect(mockOnChange).not.toHaveBeenCalled();
+    expect(changeFn).not.toHaveBeenCalled();
     userEvent.click(input);
     expect(input).not.toBeChecked();
     userEvent.type(input, 'unchecking callback');
-    expect(mockOnChange).toHaveBeenCalled();
+    expect(changeFn).toHaveBeenCalled();
   });
 
   it('allows users to supply their own id', () => {
     render(
       <>
-        <Checkbox id="checkbox-id" label="Component label" name="multiple labels" />
+        <Checkbox
+          id="checkbox-id"
+          label="Component label"
+          showLabel={false}
+          name="multiple labels"
+        />
         <label htmlFor="checkbox-id">User label</label>
       </>
     );
 
     expect(screen.getByLabelText('Component label')).toBeInTheDocument();
-    expect(screen.getByText('User label')).toBeInTheDocument();
+    expect(screen.getByLabelText('User label')).toBeInTheDocument();
   });
 });
