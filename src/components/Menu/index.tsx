@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Menu as ReachMenu,
-  MenuItems as ReachMenuItems,
-  MenuButton as ReachMenuButton,
-  MenuPopover as ReachMenuPopover,
-} from '@reach/menu-button';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 export interface MenuProps {
   /** JSX node - the element that should trigger the menu */
@@ -15,18 +10,33 @@ export interface MenuProps {
 
   /** Prevent trigger from opening menu */
   isDisabled?: boolean;
+
+  defaultOpen?: boolean;
+
+  open?: boolean;
+
+  align?: DropdownMenu.DropdownMenuContentProps['align'];
 }
 
-const Menu = ({ isDisabled = false, children, trigger }: MenuProps): JSX.Element => {
+export const Menu = ({
+  children,
+  isDisabled,
+  trigger,
+  defaultOpen,
+  open,
+  align = 'start',
+}: MenuProps): JSX.Element => {
   if (isDisabled) return trigger;
-
   return (
-    <ReachMenu>
-      <ReachMenuButton as={trigger.type} {...trigger.props} />
-      <ReachMenuPopover className="elevation--2 rounded--all bgColor--white">
-        <ReachMenuItems>{children}</ReachMenuItems>
-      </ReachMenuPopover>
-    </ReachMenu>
+    <DropdownMenu.Root defaultOpen={defaultOpen} open={open}>
+      <DropdownMenu.Trigger asChild>{trigger}</DropdownMenu.Trigger>
+      <DropdownMenu.Content
+        align={align}
+        className="fdsMenuItems elevation--2 rounded--all bgColor--white"
+      >
+        {children}
+      </DropdownMenu.Content>
+    </DropdownMenu.Root>
   );
 };
 

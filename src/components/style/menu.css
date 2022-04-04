@@ -39,3 +39,28 @@
   background: rgb(var(--rgb-lightGray) / 25%) !important;
   cursor: not-allowed;
 }
+
+.fdsMenuItems {
+  border-width: 0;
+  padding: 0;
+  font-size: inherit;
+  min-width: 140px;
+  max-width: 460px;
+  overflow-y: auto;
+}
+
+.fdsMenuItem,
+.fdsMenuLink {
+  padding: var(--space-s) var(--space-default);
+  white-space: initial;
+  margin: 0;
+}
+
+.fdsMenuItem:focus {
+  outline: 0;
+}
+
+.fdsMenuItem:hover {
+  background: var(--color-lightGray);
+  color: inherit;
+}

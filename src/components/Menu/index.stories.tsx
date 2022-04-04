@@ -7,8 +7,8 @@ import TrashIcon from 'icons/react/TrashIcon';
 import EditIcon from 'icons/react/EditIcon';
 import FundingIcon from 'icons/react/FundingIcon';
 import Tooltip from 'components/Tooltip';
-import { MenuItem, MenuLink } from 'components';
-import Menu, { MenuProps } from '.';
+import { MenuItem, MenuLink, Menu } from 'components';
+import { MenuProps } from '.';
 import { StoryObj } from '@storybook/react';
 
 interface MenuStoryProps extends MenuProps {

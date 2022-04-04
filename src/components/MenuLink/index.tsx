@@ -1,6 +1,7 @@
 import React from 'react';
-import { MenuLink as ReachMenuLink } from '@reach/menu-button';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { noop } from 'util/index';
+import cc from 'classcat';
 
 export interface MenuLinkProps {
   /** selection callback */
@@ -31,22 +32,23 @@ export interface MenuLinkProps {
   href?: string;
 }
 
-const MenuLink = ({
-  onSelect,
+export const MenuLink = ({
   children,
+  Link = React.Fragment,
   isDisabled,
-  Link,
+  onSelect,
   ...rest
-}: MenuLinkProps): JSX.Element => (
-  <ReachMenuLink
-    className={isDisabled ? 'fdsMenuItem--disabled' : undefined}
-    onSelect={!isDisabled ? onSelect : noop}
-    aria-disabled={isDisabled}
-    as={Link}
-    {...rest}
-  >
-    {children}
-  </ReachMenuLink>
-);
+}: MenuLinkProps): JSX.Element => {
+  return (
+    <DropdownMenu.Item
+      className={cc(['fdsMenuItem', isDisabled ? 'fdsMenuItem--disabled' : undefined])}
+      onSelect={!isDisabled ? onSelect : noop}
+      aria-disabled={isDisabled}
+      {...rest}
+    >
+      <Link>{children}</Link>
+    </DropdownMenu.Item>
+  );
+};
 
 export default MenuLink;
