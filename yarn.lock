@@ -4500,7 +4500,7 @@ __metadata:
     cssnano: 4.1.11
     cypress: 9.5.3
     cz-conventional-changelog: 3.3.0
-    dayjs: 1.10.8
+    dayjs: 1.11.0
     dictionary: "link:./src/dictionary"
     eslint: 8.10.0
     eslint-config-prettier: 8.4.0
@@ -13042,10 +13042,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:1.10.8":
-  version: 1.10.8
-  resolution: "dayjs@npm:1.10.8"
-  checksum: 5a6b358a0646a780b7dbbec07b8c4400425143f88bf127f456bd2e75a854046f54808d65da2bf964c8267b82dbde0530e990376757ce7d961349d9cde8716a1d
+"dayjs@npm:1.11.0":
+  version: 1.11.0
+  resolution: "dayjs@npm:1.11.0"
+  checksum: 2d36f6d71345114cdcd89147adf9e05b4f8fe81684e08c8bf1f86b140aa0b86ecc3cae661a9348d96feb7fbefd03e1bc3697303688e95209670abcb36b4ece15
   languageName: node
   linkType: hard
 
