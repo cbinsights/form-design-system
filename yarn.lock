@@ -4320,10 +4320,10 @@ __metadata:
     "@babel/preset-react": 7.16.7
     "@babel/preset-typescript": 7.16.7
     "@babel/runtime": 7.17.2
-    "@commitlint/cli": 16.2.1
+    "@commitlint/cli": 16.2.3
     "@commitlint/config-conventional": 16.2.1
-    "@commitlint/prompt": 16.2.1
-    "@commitlint/prompt-cli": 16.2.1
+    "@commitlint/prompt": 16.2.3
+    "@commitlint/prompt-cli": 16.2.3
     "@mdx-js/react": 1.6.22
     "@popperjs/core": 2.11.2
     "@radix-ui/react-tooltip": 0.1.6
@@ -4359,7 +4359,7 @@ __metadata:
     "@types/prettier": 2.4.4
     "@types/prop-types": 15.7.4
     "@types/raf-schd": 4.0.1
-    "@types/react": 17.0.39
+    "@types/react": 17.0.43
     "@types/react-dom": 17.0.14
     "@types/react-is": 17.0.3
     "@types/react-transition-group": 4.4.4
@@ -4429,7 +4429,7 @@ __metadata:
     start-server-and-test: 1.14.0
     style-dictionary: 3.7.0
     style-loader: 3.3.1
-    stylelint: 14.5.3
+    stylelint: 14.6.1
     stylelint-config-prettier: 9.0.3
     stylelint-config-standard: 25.0.0
     svg-to-jsx: 1.0.4
@@ -4463,13 +4463,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:16.2.1":
-  version: 16.2.1
-  resolution: "@commitlint/cli@npm:16.2.1"
+"@commitlint/cli@npm:16.2.3":
+  version: 16.2.3
+  resolution: "@commitlint/cli@npm:16.2.3"
   dependencies:
     "@commitlint/format": ^16.2.1
     "@commitlint/lint": ^16.2.1
-    "@commitlint/load": ^16.2.1
+    "@commitlint/load": ^16.2.3
     "@commitlint/read": ^16.2.1
     "@commitlint/types": ^16.2.1
     lodash: ^4.17.19
@@ -4478,7 +4478,7 @@ __metadata:
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: da673e8e037f74b1a4257884d8f55fd6bfaf575283aa15b48a787090d3b81bdb49c8daa92aaa93208e1c026296c451e9d697d53380ea93a1a5c110a10e5794d0
+  checksum: e74a83389a736a87593cdc3665c820f1f8e837c9e834883d3e041b65cd6af85410fa65c1b0b8b1909d31eab3eadf4997e31a309af0fa0d211b6db21dc6fb917e
   languageName: node
   linkType: hard
 
@@ -4574,9 +4574,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^16.2.1":
-  version: 16.2.1
-  resolution: "@commitlint/load@npm:16.2.1"
+"@commitlint/load@npm:^16.2.3":
+  version: 16.2.3
+  resolution: "@commitlint/load@npm:16.2.3"
   dependencies:
     "@commitlint/config-validator": ^16.2.1
     "@commitlint/execute-rule": ^16.2.1
@@ -4589,7 +4589,7 @@ __metadata:
     lodash: ^4.17.19
     resolve-from: ^5.0.0
     typescript: ^4.4.3
-  checksum: 2b2fceff10c02ba61a5fa9c24a8f22156af0be6865a6b3b1543d93861d75b1552d7c86ce9cadd8598248387829feee26d0e0e646f3f0822e7a9bc74023e18fde
+  checksum: 11a34e018431c9639c84427305167a4f3a4ebffab0f42c681c5eba347690b444cf4ea3ce5fde953106b3d615a273b8b6afe34fd4f72fa480512d4f2297636191
   languageName: node
   linkType: hard
 
@@ -4611,30 +4611,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/prompt-cli@npm:16.2.1":
-  version: 16.2.1
-  resolution: "@commitlint/prompt-cli@npm:16.2.1"
+"@commitlint/prompt-cli@npm:16.2.3":
+  version: 16.2.3
+  resolution: "@commitlint/prompt-cli@npm:16.2.3"
   dependencies:
-    "@commitlint/prompt": ^16.2.1
+    "@commitlint/prompt": ^16.2.3
     execa: ^5.0.0
     inquirer: ^6.5.2
   bin:
     commit: cli.js
-  checksum: 0f66c26ec7ae39010e885e483d030376499eefc298a230127bca7828cd66f205105cec8734edfa34ae70b791052f26366b61eb86887930ecc86f16ceb29714ac
+  checksum: bed05b5fdd711b996c00a8b64124e10d3c14e63018d33eb4e0d66c07254afa4eade25346ab4197201c9db5a9c673aa6f9a8925dbc29ca499e4f45ff90d187758
   languageName: node
   linkType: hard
 
-"@commitlint/prompt@npm:16.2.1, @commitlint/prompt@npm:^16.2.1":
-  version: 16.2.1
-  resolution: "@commitlint/prompt@npm:16.2.1"
+"@commitlint/prompt@npm:16.2.3, @commitlint/prompt@npm:^16.2.3":
+  version: 16.2.3
+  resolution: "@commitlint/prompt@npm:16.2.3"
   dependencies:
     "@commitlint/ensure": ^16.2.1
-    "@commitlint/load": ^16.2.1
+    "@commitlint/load": ^16.2.3
     "@commitlint/types": ^16.2.1
     chalk: ^4.0.0
     inquirer: ^6.5.2
     lodash: ^4.17.19
-  checksum: 4c4b448971d908cf8d7bdce644e11d31d844c7ed2ea654698c4fd2a4fd04a72a44fa1f8c43cb1b246407e0c75a94e0a7014b3044be5d630832a90515cc0d5fe2
+  checksum: 484511023518afdc2820eef32903089050eb893036168a87e2c3e3a9745132e75c596efd8287d5e4f12156576b9b1f5767f24f83de4f482409b2b51afc3a8cc9
   languageName: node
   linkType: hard
 
@@ -8392,14 +8392,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.39":
-  version: 17.0.39
-  resolution: "@types/react@npm:17.0.39"
+"@types/react@npm:17.0.43":
+  version: 17.0.43
+  resolution: "@types/react@npm:17.0.43"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: bf04d3c2894559012710d595553e12b422d3b91cd8f4f7e122d8cb044ba9c2ba17f6e8a4e09581359cc5509ddc59cd8c8fabd6774f3505a40a45393f074d6e6e
+  checksum: 981b0993f5b3ea9d3488b8cc883201e8ae47ba7732929f788f450a79fd72829e658080d5084e67caa008e58d989b0abc1d5f36ff0a1cda09315ea3a3c0c9dc11
   languageName: node
   linkType: hard
 
@@ -12987,6 +12987,18 @@ __metadata:
     supports-color:
       optional: true
   checksum: 14472d56fe4a94dbcfaa6dbed2dd3849f1d72ba78104a1a328047bb564643ca49df0224c3a17fa63533fd11dd3d4c8636cd861191232a2c6735af00cc2d4de16
+  languageName: node
+  linkType: hard
+
+"debug@npm:^4.3.4":
+  version: 4.3.4
+  resolution: "debug@npm:4.3.4"
+  dependencies:
+    ms: 2.1.2
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 3dbad3f94ea64f34431a9cbf0bafb61853eda57bff2880036153438f50fb5a84f27683ba0d8e5426bf41a8c6ff03879488120cf5b3a761e77953169c0600a708
   languageName: node
   linkType: hard
 
@@ -20541,7 +20553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.2.0, nanoid@npm:^3.3.1":
+"nanoid@npm:^3.3.1":
   version: 3.3.1
   resolution: "nanoid@npm:3.3.1"
   bin:
@@ -23087,14 +23099,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.6":
-  version: 8.4.6
-  resolution: "postcss@npm:8.4.6"
+"postcss@npm:^8.4.12":
+  version: 8.4.12
+  resolution: "postcss@npm:8.4.12"
   dependencies:
-    nanoid: ^3.2.0
+    nanoid: ^3.3.1
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 60e7808f39c4a9d0fa067bfd5eb906168c4eb6d3ff0093f7d314d1979b001a16363deedccd368a7df869c63ad4ae350d27da439c94ff3fb0f8fc93d49fe38a90
+  checksum: 248e3d0f9bbb8efaafcfda7f91627a29bdc9a19f456896886330beb28c5abea0e14c7901b35191928602e2eccbed496b1e94097d27a0b2a980854cd00c7a835f
   languageName: node
   linkType: hard
 
@@ -26190,15 +26202,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:14.5.3":
-  version: 14.5.3
-  resolution: "stylelint@npm:14.5.3"
+"stylelint@npm:14.6.1":
+  version: 14.6.1
+  resolution: "stylelint@npm:14.6.1"
   dependencies:
     balanced-match: ^2.0.0
     colord: ^2.9.2
     cosmiconfig: ^7.0.1
     css-functions-list: ^3.0.1
-    debug: ^4.3.3
+    debug: ^4.3.4
     execall: ^2.0.0
     fast-glob: ^3.2.11
     fastest-levenshtein: ^1.0.12
@@ -26219,7 +26231,7 @@ __metadata:
     normalize-path: ^3.0.0
     normalize-selector: ^0.2.0
     picocolors: ^1.0.0
-    postcss: ^8.4.6
+    postcss: ^8.4.12
     postcss-media-query-parser: ^0.2.3
     postcss-resolve-nested-selector: ^0.1.1
     postcss-safe-parser: ^6.0.0
@@ -26237,7 +26249,7 @@ __metadata:
     write-file-atomic: ^4.0.1
   bin:
     stylelint: bin/stylelint.js
-  checksum: 5fadb61263e003fe791d6c8a31c48825e015a5fee909b0a484baad8d4a46622425409f18d2734a01e91405c825a5b3ccad943ed2298cd4f7df4a0a605c4d0292
+  checksum: 8fb3b94bcec5ee7e09e352dd89f4a52ad900125687a671842e28b4489ddba4b12e28d1883bc25f92590e0c8174cb25d073b2cbe37d409faed0f8f8928ed43b87
   languageName: node
   linkType: hard
 
