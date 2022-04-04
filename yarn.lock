@@ -4533,7 +4533,7 @@ __metadata:
     react-dom: 16.14.0
     react-hook-form: 7.29.0
     react-is: 16.13.1
-    react-markdown: 8.0.0
+    react-markdown: 8.0.2
     react-popper: 2.2.5
     react-select: 5.2.2
     react-transition-group: 4.4.2
@@ -4553,7 +4553,7 @@ __metadata:
     typescript: 4.5.5
     util: "link:./src/util"
     uuid: 8.3.2
-    webpack: 5.69.1
+    webpack: 5.71.0
   peerDependencies:
     dayjs: ^1.9.7
     prop-types: ^15
@@ -8423,7 +8423,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:15.7.4":
+"@types/prop-types@npm:15.7.4, @types/prop-types@npm:^15.0.0":
   version: 15.7.4
   resolution: "@types/prop-types@npm:15.7.4"
   checksum: ef6e1899e59b876c273811b1bd845022fc66d5a3d11cb38a25b6c566b30514ae38fe20a40f67622f362a4f4f7f9224e22d8da101cff3d6e97e11d7b4c307cfc1
@@ -13886,6 +13886,16 @@ __metadata:
     graceful-fs: ^4.2.4
     tapable: ^2.2.0
   checksum: d79fbe531106448b768bb0673fb623ec0202d7ee70373ab7d4f4745d5dfe0806f38c9db7e7da8c941288fe475ab3d538db3791fce522056eeea40ca398c9e287
+  languageName: node
+  linkType: hard
+
+"enhanced-resolve@npm:^5.9.2":
+  version: 5.9.2
+  resolution: "enhanced-resolve@npm:5.9.2"
+  dependencies:
+    graceful-fs: ^4.2.4
+    tapable: ^2.2.0
+  checksum: 792b7a01abb4ee4433b658c71f92d5948675938e0c03cad1732abe843b87395f15cb880ace4f819f78ead94163278283afc79b8be63c0eddca8ab45f7d8c515d
   languageName: node
   linkType: hard
 
@@ -23905,7 +23915,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:17.0.2, react-is@npm:^17.0.0, react-is@npm:^17.0.2":
+"react-is@npm:17.0.2, react-is@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
@@ -23919,17 +23929,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-markdown@npm:8.0.0":
-  version: 8.0.0
-  resolution: "react-markdown@npm:8.0.0"
+"react-is@npm:^18.0.0":
+  version: 18.0.0
+  resolution: "react-is@npm:18.0.0"
+  checksum: d38f6afee4d8d791cdd69c715841c01a503c9b06da6158e0893447cea6ba50cd262dca9bde84127720cf44fd05c58185eafc32accace4bb2deb03b3cdbeb6b6b
+  languageName: node
+  linkType: hard
+
+"react-markdown@npm:8.0.2":
+  version: 8.0.2
+  resolution: "react-markdown@npm:8.0.2"
   dependencies:
     "@types/hast": ^2.0.0
+    "@types/prop-types": ^15.0.0
     "@types/unist": ^2.0.0
     comma-separated-tokens: ^2.0.0
     hast-util-whitespace: ^2.0.0
     prop-types: ^15.0.0
     property-information: ^6.0.0
-    react-is: ^17.0.0
+    react-is: ^18.0.0
     remark-parse: ^10.0.0
     remark-rehype: ^10.0.0
     space-separated-tokens: ^2.0.0
@@ -23940,7 +23958,7 @@ __metadata:
   peerDependencies:
     "@types/react": ">=16"
     react: ">=16"
-  checksum: 61412ecd18443e6f074932d7f2b142d20fc27d1c2042793fce65c28d2d18968419e85700b8f4a3c5f1819d8ac95cca1ee2959b8ca3c18dd8544130fdc1f28bdb
+  checksum: 9c7f4751bca31e1d2f5aa3dc2d1b564152999a8442857f1e9191b4d6fbbff9bee761511f05d52c30cf7dfbbb9fde51e8d9de9034cc3ca3929bc619ac4a825261
   languageName: node
   linkType: hard
 
@@ -28363,9 +28381,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.69.1":
-  version: 5.69.1
-  resolution: "webpack@npm:5.69.1"
+"webpack@npm:5.71.0":
+  version: 5.71.0
+  resolution: "webpack@npm:5.71.0"
   dependencies:
     "@types/eslint-scope": ^3.7.3
     "@types/estree": ^0.0.51
@@ -28376,7 +28394,7 @@ __metadata:
     acorn-import-assertions: ^1.7.6
     browserslist: ^4.14.5
     chrome-trace-event: ^1.0.2
-    enhanced-resolve: ^5.8.3
+    enhanced-resolve: ^5.9.2
     es-module-lexer: ^0.9.0
     eslint-scope: 5.1.1
     events: ^3.2.0
@@ -28396,7 +28414,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 490a6e9e4cd9d0ed3b6c7ca08015da2628919fda8fcf9c36f0f6c0e3ad71eaaaf4b0d12753109f22a4faf79fe9a9063552d9708e0ee2352cf8568433b8e296a7
+  checksum: 84b273a15180d45dafe4fc4a3ccccba2f72210f327a1af39713b3ef78148768afb0e18fa0cddaea4af5dd54ace199fbbdfcef9aec8da7e9c248f8b1b7cc413e1
   languageName: node
   linkType: hard
 
