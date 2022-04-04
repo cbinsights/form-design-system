@@ -219,7 +219,7 @@
   },
   "dependencies": {
     "@popperjs/core": "2.11.2",
-    "@radix-ui/react-tooltip": "0.1.6",
+    "@radix-ui/react-tooltip": "0.1.7",
     "@reach/menu-button": "0.16.2",
     "autosuggest-highlight": "^3.2.0",
     "classcat": "5.0.3",
