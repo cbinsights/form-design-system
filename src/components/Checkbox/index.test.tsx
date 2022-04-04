@@ -15,41 +15,45 @@ describe('Checkbox component', () => {
     userEvent.click(input);
     expect(input).not.toBeChecked();
     expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
-    expect(container.querySelector('.fdsCheckable')).toHaveClass(
-      'fdsCheckable--disabled'
+    expect(container.querySelector('.fdsCheckableCheckbox')).toHaveClass(
+      'fdsCheckableCheckbox--disabled'
     );
   });
 
   it('fires change callback when checking', () => {
-    const changeFn = jest.fn();
+    const mockOnChange = jest.fn();
     render(
-      <Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />
+      <Checkbox
+        label="change callback"
+        name="check-callback-test"
+        onChange={mockOnChange}
+      />
     );
     const input = screen.getByLabelText('change callback', { exact: false });
-    expect(changeFn).not.toHaveBeenCalled();
+    expect(mockOnChange).not.toHaveBeenCalled();
     userEvent.click(input);
     expect(input).toBeChecked();
     userEvent.type(input, 'change callback');
-    expect(changeFn).toHaveBeenCalled();
+    expect(mockOnChange).toHaveBeenCalled();
   });
 
   it('fires change callback when unchecking', () => {
-    const changeFn = jest.fn();
+    const mockOnChange = jest.fn();
     render(
       <Checkbox
         defaultChecked
         label="unchecking callback"
         name="uncheck-callback-test"
-        onChange={changeFn}
+        onChange={mockOnChange}
       />
     );
 
     const input = screen.getByLabelText('unchecking callback', { exact: false });
-    expect(changeFn).not.toHaveBeenCalled();
+    expect(mockOnChange).not.toHaveBeenCalled();
     userEvent.click(input);
     expect(input).not.toBeChecked();
     userEvent.type(input, 'unchecking callback');
-    expect(changeFn).toHaveBeenCalled();
+    expect(mockOnChange).toHaveBeenCalled();
   });
 
   it('allows users to supply their own id', () => {
@@ -65,7 +69,7 @@ describe('Checkbox component', () => {
       </>
     );
 
-    expect(screen.getByLabelText('Component label')).toBeInTheDocument();
-    expect(screen.getByLabelText('User label')).toBeInTheDocument();
+    expect(screen.queryByLabelText('Component label')).not.toBeInTheDocument();
+    expect(screen.getByText('User label')).toBeInTheDocument();
   });
 });
