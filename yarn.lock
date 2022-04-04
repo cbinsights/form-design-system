@@ -4487,7 +4487,7 @@ __metadata:
     "@types/webpack": 5.28.0
     "@typescript-eslint/eslint-plugin": 5.18.0
     "@typescript-eslint/parser": 5.18.0
-    autosuggest-highlight: ^3.2.0
+    autosuggest-highlight: 3.2.1
     babel-eslint: 10.1.0
     babel-jest: 27.5.1
     babel-loader: 8.2.4
@@ -10171,7 +10171,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autosuggest-highlight@npm:^3.2.0":
+"autosuggest-highlight@npm:3.2.1":
   version: 3.2.1
   resolution: "autosuggest-highlight@npm:3.2.1"
   dependencies:
