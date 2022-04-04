@@ -4320,10 +4320,10 @@ __metadata:
     "@babel/preset-react": 7.16.7
     "@babel/preset-typescript": 7.16.7
     "@babel/runtime": 7.17.2
-    "@commitlint/cli": 16.2.1
+    "@commitlint/cli": 16.2.3
     "@commitlint/config-conventional": 16.2.1
-    "@commitlint/prompt": 16.2.1
-    "@commitlint/prompt-cli": 16.2.1
+    "@commitlint/prompt": 16.2.3
+    "@commitlint/prompt-cli": 16.2.3
     "@mdx-js/react": 1.6.22
     "@popperjs/core": 2.11.2
     "@radix-ui/react-tooltip": 0.1.6
@@ -4359,7 +4359,7 @@ __metadata:
     "@types/prettier": 2.4.4
     "@types/prop-types": 15.7.4
     "@types/raf-schd": 4.0.1
-    "@types/react": 17.0.39
+    "@types/react": 17.0.43
     "@types/react-dom": 17.0.14
     "@types/react-is": 17.0.3
     "@types/react-transition-group": 4.4.4
@@ -4463,13 +4463,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:16.2.1":
-  version: 16.2.1
-  resolution: "@commitlint/cli@npm:16.2.1"
+"@commitlint/cli@npm:16.2.3":
+  version: 16.2.3
+  resolution: "@commitlint/cli@npm:16.2.3"
   dependencies:
     "@commitlint/format": ^16.2.1
     "@commitlint/lint": ^16.2.1
-    "@commitlint/load": ^16.2.1
+    "@commitlint/load": ^16.2.3
     "@commitlint/read": ^16.2.1
     "@commitlint/types": ^16.2.1
     lodash: ^4.17.19
@@ -4478,7 +4478,7 @@ __metadata:
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: da673e8e037f74b1a4257884d8f55fd6bfaf575283aa15b48a787090d3b81bdb49c8daa92aaa93208e1c026296c451e9d697d53380ea93a1a5c110a10e5794d0
+  checksum: e74a83389a736a87593cdc3665c820f1f8e837c9e834883d3e041b65cd6af85410fa65c1b0b8b1909d31eab3eadf4997e31a309af0fa0d211b6db21dc6fb917e
   languageName: node
   linkType: hard
 
@@ -4574,9 +4574,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^16.2.1":
-  version: 16.2.1
-  resolution: "@commitlint/load@npm:16.2.1"
+"@commitlint/load@npm:^16.2.3":
+  version: 16.2.3
+  resolution: "@commitlint/load@npm:16.2.3"
   dependencies:
     "@commitlint/config-validator": ^16.2.1
     "@commitlint/execute-rule": ^16.2.1
@@ -4589,7 +4589,7 @@ __metadata:
     lodash: ^4.17.19
     resolve-from: ^5.0.0
     typescript: ^4.4.3
-  checksum: 2b2fceff10c02ba61a5fa9c24a8f22156af0be6865a6b3b1543d93861d75b1552d7c86ce9cadd8598248387829feee26d0e0e646f3f0822e7a9bc74023e18fde
+  checksum: 11a34e018431c9639c84427305167a4f3a4ebffab0f42c681c5eba347690b444cf4ea3ce5fde953106b3d615a273b8b6afe34fd4f72fa480512d4f2297636191
   languageName: node
   linkType: hard
 
@@ -4611,30 +4611,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/prompt-cli@npm:16.2.1":
-  version: 16.2.1
-  resolution: "@commitlint/prompt-cli@npm:16.2.1"
+"@commitlint/prompt-cli@npm:16.2.3":
+  version: 16.2.3
+  resolution: "@commitlint/prompt-cli@npm:16.2.3"
   dependencies:
-    "@commitlint/prompt": ^16.2.1
+    "@commitlint/prompt": ^16.2.3
     execa: ^5.0.0
     inquirer: ^6.5.2
   bin:
     commit: cli.js
-  checksum: 0f66c26ec7ae39010e885e483d030376499eefc298a230127bca7828cd66f205105cec8734edfa34ae70b791052f26366b61eb86887930ecc86f16ceb29714ac
+  checksum: bed05b5fdd711b996c00a8b64124e10d3c14e63018d33eb4e0d66c07254afa4eade25346ab4197201c9db5a9c673aa6f9a8925dbc29ca499e4f45ff90d187758
   languageName: node
   linkType: hard
 
-"@commitlint/prompt@npm:16.2.1, @commitlint/prompt@npm:^16.2.1":
-  version: 16.2.1
-  resolution: "@commitlint/prompt@npm:16.2.1"
+"@commitlint/prompt@npm:16.2.3, @commitlint/prompt@npm:^16.2.3":
+  version: 16.2.3
+  resolution: "@commitlint/prompt@npm:16.2.3"
   dependencies:
     "@commitlint/ensure": ^16.2.1
-    "@commitlint/load": ^16.2.1
+    "@commitlint/load": ^16.2.3
     "@commitlint/types": ^16.2.1
     chalk: ^4.0.0
     inquirer: ^6.5.2
     lodash: ^4.17.19
-  checksum: 4c4b448971d908cf8d7bdce644e11d31d844c7ed2ea654698c4fd2a4fd04a72a44fa1f8c43cb1b246407e0c75a94e0a7014b3044be5d630832a90515cc0d5fe2
+  checksum: 484511023518afdc2820eef32903089050eb893036168a87e2c3e3a9745132e75c596efd8287d5e4f12156576b9b1f5767f24f83de4f482409b2b51afc3a8cc9
   languageName: node
   linkType: hard
 
@@ -8392,14 +8392,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.39":
-  version: 17.0.39
-  resolution: "@types/react@npm:17.0.39"
+"@types/react@npm:17.0.43":
+  version: 17.0.43
+  resolution: "@types/react@npm:17.0.43"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: bf04d3c2894559012710d595553e12b422d3b91cd8f4f7e122d8cb044ba9c2ba17f6e8a4e09581359cc5509ddc59cd8c8fabd6774f3505a40a45393f074d6e6e
+  checksum: 981b0993f5b3ea9d3488b8cc883201e8ae47ba7732929f788f450a79fd72829e658080d5084e67caa008e58d989b0abc1d5f36ff0a1cda09315ea3a3c0c9dc11
   languageName: node
   linkType: hard
 
