@@ -136,7 +136,7 @@
     "components": "link:./src/components",
     "cross-env": "7.0.3",
     "css": "3.0.0",
-    "cssnano": "4.1.11",
+    "cssnano": "5.1.7",
     "cypress": "9.5.3",
     "cz-conventional-changelog": "3.3.0",
     "dayjs": "1.11.0",
@@ -158,11 +158,11 @@
     "pascal-case": "3.1.2",
     "pinst": "3.0.0",
     "postcss": "8.4.12",
-    "postcss-cli": "8.3.1",
+    "postcss-cli": "9.1.0",
     "postcss-html": "1.3.0",
-    "postcss-import": "12.0.1",
-    "postcss-loader": "3.0.0",
-    "postcss-preset-env": "5.3.0",
+    "postcss-import": "14.1.0",
+    "postcss-loader": "6.2.1",
+    "postcss-preset-env": "7.4.3",
     "prettier": "2.6.2",
     "prop-types": "15.8.1",
     "raf-schd": "4.0.3",
@@ -233,7 +233,8 @@
   },
   "resolutions": {
     "minimist": ">0.2.1",
-    "prismjs": "1.27.0"
+    "prismjs": "1.27.0",
+    "postcss": "8"
   },
   "packageManager": "yarn@3.1.1",
   "engines": {
