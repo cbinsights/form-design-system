@@ -1,6 +1,6 @@
 module.exports = {
   testEnvironment: 'jest-environment-jsdom',
-  moduleDirectories: ['src'],
+  moduleDirectories: ['node_modules', 'src'],
   rootDir: './',
   testPathIgnorePatterns: ['<rootDir>/lib/'],
   coveragePathIgnorePatterns: ['<rootDir>/src/icons/react'],
