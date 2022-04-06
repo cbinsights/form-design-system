@@ -9,6 +9,7 @@ import AddSectionSpecialIcon from './AddSectionSpecialIcon';
 import AdvancedSearchIcon from './AdvancedSearchIcon';
 import AdviseIcon from './AdviseIcon';
 import ApproveIcon from './ApproveIcon';
+import ArchiveIcon from './ArchiveIcon';
 import ArrowDownIcon from './ArrowDownIcon';
 import ArrowsIcon from './ArrowsIcon';
 import ArrowUpIcon from './ArrowUpIcon';
@@ -197,6 +198,7 @@ export {
   AdvancedSearchIcon,
   AdviseIcon,
   ApproveIcon,
+  ArchiveIcon,
   ArrowDownIcon,
   ArrowsIcon,
   ArrowUpIcon,
