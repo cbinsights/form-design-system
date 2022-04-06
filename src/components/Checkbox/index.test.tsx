@@ -6,18 +6,12 @@ import Checkbox from '.';
 
 describe('Checkbox component', () => {
   it('passes the `disabled` prop', () => {
-    const { container } = render(
-      <Checkbox label="change callback" disabled name="disabled-test" />
-    );
+    render(<Checkbox label="change callback" disabled name="disabled-test" />);
     const input = screen.getByLabelText('change callback');
     expect(input).toBeDisabled();
 
     userEvent.click(input);
     expect(input).not.toBeChecked();
-    expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
-    expect(container.querySelector('.fdsCheckableCheckbox')).toHaveClass(
-      'fdsCheckableCheckbox--disabled'
-    );
   });
 
   it('fires change callback when checking', () => {
