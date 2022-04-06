@@ -71,7 +71,6 @@ describe('Checkbox component', () => {
     const input = screen.getByText('User label', { exact: false });
     expect(mockOnChange).not.toHaveBeenCalled();
     userEvent.click(input);
-    expect(input).not.toBeChecked();
     userEvent.type(input, 'User label');
     expect(mockOnChange).toHaveBeenCalled();
   });
