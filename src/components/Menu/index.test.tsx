@@ -1,17 +1,21 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { Menu, MenuItem } from 'components';
+import { Menu } from 'components';
 import userEvent from '@testing-library/user-event';
-// import { debugTest } from 'testing-library-visualizer';
 
 describe('Menu component', () => {
   it('renders component (strings)', () => {
     render(
-      <Menu trigger={<a href="#">trigger</a>} defaultOpen>
-        <MenuItem onSelect={jest.fn()}>First</MenuItem>
-        <MenuItem onSelect={jest.fn()}>Second</MenuItem>
-        <MenuItem onSelect={jest.fn()}>Third</MenuItem>
-      </Menu>
+      <Menu.Root defaultOpen>
+        <Menu.Trigger>
+          <a href="#">trigger</a>
+        </Menu.Trigger>
+        <Menu.Content>
+          <Menu.Item onSelect={jest.fn()}>First</Menu.Item>
+          <Menu.Item onSelect={jest.fn()}>Second</Menu.Item>
+          <Menu.Item onSelect={jest.fn()}>Third</Menu.Item>
+        </Menu.Content>
+      </Menu.Root>
     );
     expect(screen.getByText('First')).toBeInTheDocument();
     expect(screen.getByText('Second')).toBeInTheDocument();
@@ -20,17 +24,22 @@ describe('Menu component', () => {
 
   it('renders component (JSX items)', () => {
     render(
-      <Menu trigger={<a href="#">trigger</a>} defaultOpen>
-        <MenuItem onSelect={jest.fn()}>
-          <p>First</p>
-        </MenuItem>
-        <MenuItem onSelect={jest.fn()}>
-          <p>Second</p>
-        </MenuItem>
-        <MenuItem onSelect={jest.fn()}>
-          <p>Third</p>
-        </MenuItem>
-      </Menu>
+      <Menu.Root defaultOpen>
+        <Menu.Trigger>
+          <a href="#">trigger</a>
+        </Menu.Trigger>
+        <Menu.Content>
+          <Menu.Item onSelect={jest.fn()}>
+            <p>First</p>
+          </Menu.Item>
+          <Menu.Item onSelect={jest.fn()}>
+            <p>Second</p>
+          </Menu.Item>
+          <Menu.Item onSelect={jest.fn()}>
+            <p>Third</p>
+          </Menu.Item>
+        </Menu.Content>
+      </Menu.Root>
     );
     expect(screen.getByText('First')).toBeInTheDocument();
     expect(screen.getByText('Second')).toBeInTheDocument();
@@ -38,36 +47,31 @@ describe('Menu component', () => {
   });
 
   it('renders trigger element only', () => {
-    const mockOnClick = jest.fn();
     render(
-      <Menu
-        isDisabled
-        trigger={
-          <a href="#" onClick={mockOnClick}>
-            trigger
-          </a>
-        }
-      >
-        <MenuItem onSelect={jest.fn()}>First</MenuItem>
-        <MenuItem onSelect={jest.fn()}>Second</MenuItem>
-        <MenuItem onSelect={jest.fn()}>Third</MenuItem>
-      </Menu>
+      <Menu.Root>
+        <Menu.Trigger>
+          <a href="#">trigger</a>
+        </Menu.Trigger>
+      </Menu.Root>
     );
     expect(screen.getByRole('link')).toBeInTheDocument();
-    // MenuItems are not expected to be rendered so we check for them to be null
+    // Menu.Items are not expected to be rendered so we check for them to be null
     expect(screen.queryByText('First')).toBeNull();
-    expect(screen.queryByText('Second')).toBeNull();
-    expect(screen.queryByText('Third')).toBeNull();
   });
 });
 
 it('shows content on Menu open', async () => {
   render(
-    <Menu trigger={<a href="#">trigger</a>}>
-      <MenuItem onSelect={jest.fn()}>First</MenuItem>
-      <MenuItem onSelect={jest.fn()}>Second</MenuItem>
-      <MenuItem onSelect={jest.fn()}>Third</MenuItem>
-    </Menu>
+    <Menu.Root>
+      <Menu.Trigger>
+        <a href="#">trigger</a>
+      </Menu.Trigger>
+      <Menu.Content>
+        <Menu.Item onSelect={jest.fn()}>First</Menu.Item>
+        <Menu.Item onSelect={jest.fn()}>Second</Menu.Item>
+        <Menu.Item onSelect={jest.fn()}>Third</Menu.Item>
+      </Menu.Content>
+    </Menu.Root>
   );
   userEvent.type(screen.getByRole('link', { name: 'trigger' }), '{arrowdown}');
   await waitFor(() => {
