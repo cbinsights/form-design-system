@@ -33,12 +33,7 @@ export const PreventingUserInteraction: StoryObj<CheckboxProps> = {
         <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
       </div>
       <div>
-        <Checkbox
-          disabled
-          checked={true}
-          name="disabled-checked"
-          label="Disabled checked"
-        />
+        <Checkbox disabled checked name="disabled-checked" label="Disabled checked" />
       </div>
     </>
   ),
