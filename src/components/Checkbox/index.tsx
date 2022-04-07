@@ -51,7 +51,7 @@ const Checkbox = ({
 
   const handleChange = (checkedEvent: CheckboxUi.CheckedState) => {
     if (checked === undefined) {
-      setChecked(!internalChecked);
+      setChecked((prevInternalChecked) => !prevInternalChecked);
     }
     onChange(checkedEvent);
   };
