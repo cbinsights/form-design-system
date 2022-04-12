@@ -1,0 +1,102 @@
+/* all fixed values are from marketing site footer */
+.FDSFootercontainer {
+  background-color: #000d20;
+  color: #b9b9b9;
+  font-size: var(--font-size-m);
+  line-height: 1.5;
+  padding: 80px 0;
+}
+
+.FDSFootercontainer a {
+  color: inherit;
+}
+
+.FDSFootercontent {
+  margin: 0 auto;
+  max-width: 1218px;
+  padding: 0 41.8px;
+}
+
+.FDSFootermainContent {
+  display: flex;
+}
+
+.FDSFooteraddressSection {
+  flex-basis: 252px;
+  padding-right: 40px;
+}
+
+.FDSFooterseparator {
+  background-color: #b9b9b9;
+  height: 3px;
+  width: 100%;
+}
+
+.FDSFooteraddressSection address {
+  display: block;
+  margin: 0.75em 0;
+  min-width: 230px;
+}
+
+.FDSFooternav {
+  padding: 10px 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 664px;
+  flex-grow: 1;
+}
+
+.FDSFootermenuSection {
+  line-height: 37.23px;
+  flex-basis: calc(25% - 20px);
+  margin: 0 10px;
+}
+
+.FDSFootermenuSection h3 {
+  color: inherit;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-bold);
+}
+
+.FDSFootermoreInfoLinks {
+  margin: 20px 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.FDSFootermoreInfoLink {
+  padding-right: 30px;
+}
+
+.FDSFootercopyright {
+  padding-bottom: 10.5px;
+}
+
+@media (max-width: 840px) {
+  .FDSFootermenuSection {
+    flex-basis: calc(50% - 20px);
+    margin: 0 10px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .FDSFootermainContent {
+    display: block;
+  }
+
+  .FDSFootermenuSection {
+    flex-basis: calc(25% - 20px);
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  .FDSFooternav {
+    display: block;
+    padding: 0;
+  }
+
+  .FDSFootermenuSection {
+    margin: 0 0 15px;
+  }
+}

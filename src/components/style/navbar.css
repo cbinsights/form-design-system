@@ -1,0 +1,501 @@
+.FDSnavfeaturedItemImageContainer {
+  box-shadow: -0.625em 0.625em 0 0 rgb(0 0 0 / 50%);
+  width: 300px;
+  height: 181px;
+}
+
+.FDSnavfeaturedItemImage {
+  display: block;
+}
+
+.FDSnavfeaturedItemText {
+  margin-top: var(--space-l);
+  font-size: 1.25em;
+  color: var(--color-white);
+  font-weight: 900;
+}
+
+.FDSnavfeaturedItemLearnMore {
+  margin-top: var(--space-l);
+  color: var(--color-white);
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.FDSnavfeaturedItemLearnMore:hover {
+  text-decoration: underline;
+}
+
+.FDSnavfeaturedItem {
+  cursor: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0 !important;
+  padding: 35px 35px 0 0 !important;
+  background-color: transparent !important;
+}
+
+.FDSnaviconButton {
+  display: block;
+}
+
+.FDSnavmobileIconButton {
+  display: none;
+}
+
+.FDSnavtopContainer {
+  display: flex;
+}
+
+.FDSnavcontainer {
+  display: flex;
+  position: relative;
+  align-items: center;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.FDSnavhasSubMenu {
+  width: 900px;
+  height: 350px;
+  right: calc(100% - 40em) !important;
+}
+
+.FDSnavdropdownContainer {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  right: -5em;
+  top: 100%;
+  z-index: calc(var(--zindex-navigation) + 1);
+}
+
+.FDSnavmenuContainer > li > a {
+  padding-right: 30px;
+  padding-left: 30px;
+  width: 263px;
+}
+
+.FDSnavmenuContainer {
+  background-color: #a02385;
+  padding: var(--space-l) 0;
+  width: 100%;
+}
+
+.FDSnavsubMenuList {
+  padding: 0;
+  width: 100%;
+  background-color: #6a1e6d;
+}
+
+.FDSnavsubMenuContainer {
+  padding: var(--space-l) 0;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 263px;
+  width: calc(100% - 263px);
+  height: 100%;
+  background-color: #6a1e6d;
+}
+
+.FDSnavdropdownItem {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  width: 263px;
+  background-color: #a02385;
+}
+
+.FDSnavsubMenuItem {
+  box-sizing: border-box;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #6a1e6c;
+  min-height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.FDSnavsubMenuItemLink {
+  color: var(--color-white);
+}
+
+.FDSnavsubMenuItemLink:hover {
+  text-decoration: underline !important;
+}
+
+.FDSnavdropdownItemLink {
+  color: var(--color-white);
+  font-size: 16px;
+}
+
+.FDSnavdropdownItemLink:hover {
+  text-decoration: none;
+}
+
+.FDSnavdropdownItem:hover {
+  background-color: #6a1e6c;
+  cursor: pointer;
+}
+
+.FDSnavutilityBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  height: 35px;
+  background: rgb(216 216 216);
+  align-items: center;
+  padding-right: 140px;
+  font-size: var(--font-size-m);
+}
+
+.FDSnavutilityBarLink {
+  color: rgb(0 0 0);
+  font-weight: var(--font-weight-medium);
+  padding: 0 12px;
+}
+
+.FDSnavutilityBarLink:hover {
+  color: rgb(0 0 0) !important;
+  text-decoration: underline;
+}
+
+.FDSnavnavBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 70px;
+  color: var(--color-white);
+  padding: 0 var(--space-xl);
+}
+
+.FDSnavnavBarListItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  padding: 0 var(--space-s);
+}
+
+.FDSnavnavBarListItem:hover {
+  background-color: #a02385;
+  cursor: pointer;
+}
+
+.FDSnavrequestDemoButton {
+  background-color: #a02385;
+  box-shadow: -10px 10px 0 0 rgb(160 35 133 / 50%);
+  color: #fff;
+  transition: all 0.2s ease-in-out 0s;
+  display: inline-flex;
+  box-sizing: border-box;
+  justify-content: center;
+  min-width: 200px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 10px 25px;
+  font-size: 1.25em;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.FDSnavrequestDemoButton:hover {
+  text-decoration: none;
+  background-color: #6a1e6d;
+}
+
+.FDSnavsiteBranding {
+  padding: 26px 0;
+}
+
+.FDSnavsiteNavigation {
+  flex-grow: 1;
+}
+
+.FDSnavsiteNavigationWrap {
+  display: flex;
+}
+
+.FDSnavnav {
+  background: #000d20;
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-l) !important;
+}
+
+.FDSnavmenuButton {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .FDSnavutilityBar {
+    padding-right: 100px;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .FDSnavfeaturedItem {
+    display: none;
+  }
+
+  .FDSnavhasSubMenu {
+    width: 600px !important;
+    right: calc(100% - 30em) !important;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .FDSnavmenuContainer > li > a {
+    padding: 16px 0 14px;
+  }
+
+  .FDSnavsiteBranding {
+    padding: 0 25px 0 0;
+  }
+
+  .FDSnavdropdownItem:hover > .FDSnavsubMenuContainer {
+    display: block;
+  }
+
+  .FDSnavnavBarListItem:hover > .FDSnavdropdownContainer {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .FDSnavnavBarListItem {
+    padding: 0 12px;
+    border-bottom: 0;
+  }
+
+  .FDSnavrequestDemoButton {
+    align-self: center;
+    min-width: 100px;
+    margin-left: auto;
+    padding: 5px 15px;
+    font-size: 0.75em;
+  }
+
+  .FDSnavdropdownItemLink {
+    font-size: 0.75em;
+  }
+
+  .FDSnavcontainer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .FDSnavrequestDemoButton {
+    padding: 5px 25px;
+    font-size: 1em;
+  }
+
+  .FDSnavdropdownItemLink {
+    font-size: 0.875em;
+  }
+
+  .FDSnavcontainer {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .FDSnavdropdownItemLink {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .FDSnavcontainer {
+    padding: 0 100px;
+  }
+}
+
+/* mobile support ⬇⬇⬇ */
+
+@media screen and (max-width: 920px) {
+  .FDSnavsubMenuContainer {
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    position: initial;
+  }
+
+  .FDSnavmenuContainer {
+    padding: 0;
+  }
+
+  .FDSnavrequestDemoButton {
+    display: none;
+  }
+
+  .FDSnavsiteNavigationWrap {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background: #000d20;
+    z-index: calc(var(--zindex-navigation) + 1);
+  }
+
+  .FDSnavnav {
+    font-size: 0.875em;
+    display: block;
+  }
+
+  .FDSnavlogo_container {
+    display: inline-block;
+    padding: 1em 0;
+  }
+
+  .FDSnavlogo {
+    width: 150px;
+  }
+
+  .FDSnavmenuButton {
+    display: block;
+    width: 50px;
+    margin-left: auto;
+    border: 2px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    float: right;
+    padding: 0.7em 0;
+    color: var(--color-white);
+  }
+
+  .FDSnavnavBar {
+    display: none;
+  }
+
+  .FDSnavutilityBar {
+    display: none;
+  }
+
+  .FDSnavnavBarListItem {
+    margin: 0;
+    background: #a02385;
+    border-bottom: 1px solid #d8d8d8;
+    position: relative;
+    display: block;
+    padding: 0;
+  }
+
+  .FDSnavdropdownContainer {
+    display: none;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    background-color: #6a1e6d;
+    position: relative;
+  }
+
+  .FDSnavdropdownItem {
+    line-height: 30px;
+    width: 100%;
+    min-height: 70px;
+    padding: 0;
+  }
+
+  .FDSnavhasSubMenu {
+    display: none;
+    width: 100% !important;
+    height: 100%;
+  }
+
+  .FDSnavshow {
+    display: block;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .FDSnavdropdownItemLink:hover {
+    text-decoration: underline;
+  }
+
+  .FDSnavcontainer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .FDSnavdropdownItemLink {
+    padding: 20px 30px;
+    background-size: 20px;
+    display: block;
+    color: #fff;
+    font-size: 1.25em;
+    text-decoration: none;
+  }
+
+  .FDSnavsiteNavigation {
+    flex-grow: 1;
+  }
+
+  .FDSnavdropdownButton {
+    position: absolute;
+    top: 17px;
+    right: 10px;
+  }
+
+  .FDSnavopenedSubMenu {
+    background-color: #6a1e6d;
+    display: block;
+    position: relative;
+  }
+
+  .FDSnavsubMenuItem {
+    width: 100%;
+    min-height: 70px;
+  }
+
+  .FDSnavsubMenuItemLink {
+    width: 100% !important;
+  }
+
+  .FDSnaviconButton {
+    display: none;
+  }
+
+  .FDSnavmobileIconButton {
+    display: block;
+  }
+
+  .FDSnavfeaturedItem {
+    position: static;
+  }
+}
+
+/*
+  styles to overide less
+*/
+
+.FDSnavnav li::before {
+  display: none !important;
+}
+
+.FDSnavnav li {
+  margin-bottom: 0 !important;
+}
+
+.FDSnavnav nav {
+  background-color: #000d20 !important;
+}
+
+.FDSnavnav ul {
+  margin-bottom: 0 !important;
+}

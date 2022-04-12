@@ -6,4 +6,8 @@ module.exports = {
   coveragePathIgnorePatterns: ['<rootDir>/src/icons/react'],
   setupFilesAfterEnv: ['<rootDir>/scripts/node/setupTests.js', 'jest-prop-type-error'],
   testRegex: '(/__tests__/.*|(\\.|/)(test))\\.[jt]sx?$',
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
+    '^.+\\.svg$': '<rootDir>/svgTransform.js',
+  },
 };
