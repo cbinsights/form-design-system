@@ -14,6 +14,8 @@ export interface TooltipProps {
 
   /** Position preference of tooltip. */
   position?: 'top' | 'left' | 'right' | 'bottom';
+
+  asChild?: boolean;
 }
 
 const Tooltip = ({
@@ -21,10 +23,11 @@ const Tooltip = ({
   message,
   position = 'bottom',
   maxWidth = 240,
+  asChild = false,
 }: TooltipProps): JSX.Element => (
   <RadixTooltip.Provider>
     <RadixTooltip.Root delayDuration={350}>
-      <RadixTooltip.Trigger asChild>{trigger}</RadixTooltip.Trigger>
+      <RadixTooltip.Trigger asChild={asChild}>{trigger}</RadixTooltip.Trigger>
       <RadixTooltip.Content
         side={position}
         sideOffset={parseInt(FDS.SPACE_S, 10)}
