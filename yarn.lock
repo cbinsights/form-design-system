@@ -4440,7 +4440,9 @@ __metadata:
     "@commitlint/prompt-cli": 16.2.3
     "@mdx-js/react": 1.6.22
     "@popperjs/core": 2.11.4
+    "@radix-ui/react-checkbox": 0.1.5
     "@radix-ui/react-dialog": 0.1.7
+    "@radix-ui/react-label": 0.1.5
     "@radix-ui/react-tooltip": 0.1.7
     "@reach/menu-button": 0.16.2
     "@storybook/addon-a11y": 6.4.20
@@ -6157,6 +6159,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-checkbox@npm:0.1.5":
+  version: 0.1.5
+  resolution: "@radix-ui/react-checkbox@npm:0.1.5"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/primitive": 0.1.0
+    "@radix-ui/react-compose-refs": 0.1.0
+    "@radix-ui/react-context": 0.1.1
+    "@radix-ui/react-label": 0.1.5
+    "@radix-ui/react-presence": 0.1.2
+    "@radix-ui/react-primitive": 0.1.4
+    "@radix-ui/react-use-controllable-state": 0.1.0
+    "@radix-ui/react-use-previous": 0.1.1
+    "@radix-ui/react-use-size": 0.1.1
+  peerDependencies:
+    react: ^16.8 || ^17.0
+  checksum: 658f249a52e1eec2697aa6c9bb43eb9910a3f6ebdb827bfb5561d94f6afaf80d5fb4cb9231672281e1057296e4fcfdb71b204db138e7a12fef7c3ea38303660c
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-compose-refs@npm:0.1.0":
   version: 0.1.0
   resolution: "@radix-ui/react-compose-refs@npm:0.1.0"
@@ -6256,6 +6278,21 @@ __metadata:
   peerDependencies:
     react: ^16.8 || ^17.0
   checksum: 66d7df2b36ded3be4ac0abfe2b85e90abf80863054b365db06b4aca998b72a6fb493a4b1bc437a80ddfaa29a32e266d2aafc746f795e76354bc24802c0bfe791
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-label@npm:0.1.5":
+  version: 0.1.5
+  resolution: "@radix-ui/react-label@npm:0.1.5"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-compose-refs": 0.1.0
+    "@radix-ui/react-context": 0.1.1
+    "@radix-ui/react-id": 0.1.5
+    "@radix-ui/react-primitive": 0.1.4
+  peerDependencies:
+    react: ^16.8 || ^17.0
+  checksum: fc9741d1abdeabd11cbb21ad5e0126e76fe03a2b71b7265bec847d509ad16a83b9e0cb5ef5fa3510274c610385319745a767765aec02a20aae050a1ee6359eff
   languageName: node
   linkType: hard
 
