@@ -6,52 +6,53 @@ import Checkbox from '.';
 
 describe('Checkbox component', () => {
   it('passes the `disabled` prop', () => {
-    render(<Checkbox label="change callback" disabled name="disabled-test" />);
+    const { container } = render(
+      <Checkbox label="change callback" disabled name="disabled-test" />
+    );
     const input = screen.getByLabelText('change callback');
     expect(input).toBeDisabled();
 
     userEvent.click(input);
     expect(input).not.toBeChecked();
+    expect(screen.getByRole('checkbox')).toHaveAttribute('disabled');
+    expect(container.querySelector('.fdsCheckable')).toHaveClass(
+      'fdsCheckable--disabled'
+    );
   });
 
   it('fires change callback when checking', () => {
-    const mockOnChange = jest.fn();
+    const changeFn = jest.fn();
     render(
-      <Checkbox
-        label="change callback"
-        name="check-callback-test"
-        onChange={mockOnChange}
-      />
+      <Checkbox label="change callback" name="check-callback-test" onChange={changeFn} />
     );
     const input = screen.getByLabelText('change callback', { exact: false });
-    expect(mockOnChange).not.toHaveBeenCalled();
+    expect(changeFn).not.toHaveBeenCalled();
     userEvent.click(input);
     expect(input).toBeChecked();
     userEvent.type(input, 'change callback');
-    expect(mockOnChange).toHaveBeenCalled();
+    expect(changeFn).toHaveBeenCalled();
   });
 
   it('fires change callback when unchecking', () => {
-    const mockOnChange = jest.fn();
+    const changeFn = jest.fn();
     render(
       <Checkbox
         defaultChecked
         label="unchecking callback"
         name="uncheck-callback-test"
-        onChange={mockOnChange}
+        onChange={changeFn}
       />
     );
 
     const input = screen.getByLabelText('unchecking callback', { exact: false });
-    expect(mockOnChange).not.toHaveBeenCalled();
+    expect(changeFn).not.toHaveBeenCalled();
     userEvent.click(input);
     expect(input).not.toBeChecked();
     userEvent.type(input, 'unchecking callback');
-    expect(mockOnChange).toHaveBeenCalled();
+    expect(changeFn).toHaveBeenCalled();
   });
 
   it('allows users to supply their own id', () => {
-    const mockOnChange = jest.fn();
     render(
       <>
         <Checkbox
@@ -59,19 +60,12 @@ describe('Checkbox component', () => {
           label="Component label"
           showLabel={false}
           name="multiple labels"
-          onChange={mockOnChange}
         />
         <label htmlFor="checkbox-id">User label</label>
       </>
     );
 
-    expect(screen.queryByLabelText('Component label')).not.toBeInTheDocument();
-    expect(screen.getByText('User label')).toBeInTheDocument();
-
-    const input = screen.getByText('User label', { exact: false });
-    expect(mockOnChange).not.toHaveBeenCalled();
-    userEvent.click(input);
-    userEvent.type(input, 'User label');
-    expect(mockOnChange).toHaveBeenCalled();
+    expect(screen.getByLabelText('Component label')).toBeInTheDocument();
+    expect(screen.getByLabelText('User label')).toBeInTheDocument();
   });
 });
