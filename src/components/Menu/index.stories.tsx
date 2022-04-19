@@ -286,6 +286,9 @@ export const Item = {
           <Menu.Item {...args}>
             <span style={{ outline: '1px dotted red' }}>Click Me!</span>
           </Menu.Item>
+          <Menu.Item>
+            <span>Default props</span>
+          </Menu.Item>
         </Menu.Content>
       </Menu.Root>
     );

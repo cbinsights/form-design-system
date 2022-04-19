@@ -6,8 +6,16 @@ export type MenuTriggerProps = Pick<
   'asChild' | 'children'
 >;
 
-const MenuTrigger = ({ children, ...rest }: MenuTriggerProps): JSX.Element => {
-  return <DropdownMenu.Trigger {...rest}>{children}</DropdownMenu.Trigger>;
+const MenuTrigger = ({
+  children,
+  asChild = true,
+  ...rest
+}: MenuTriggerProps): JSX.Element => {
+  return (
+    <DropdownMenu.Trigger asChild={asChild} {...rest}>
+      {children}
+    </DropdownMenu.Trigger>
+  );
 };
 
 export default MenuTrigger;
