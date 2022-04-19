@@ -3,7 +3,10 @@ import { noop } from 'util/index';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import cc from 'classcat';
 
-export type MenuItemProps = DropdownMenu.DropdownMenuItemProps;
+export type MenuItemProps = Pick<
+  DropdownMenu.DropdownMenuItemProps,
+  'asChild' | 'disabled' | 'onSelect' | 'textValue' | 'children'
+>;
 
 const MenuItem = ({
   children,

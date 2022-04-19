@@ -224,15 +224,6 @@ export const Root: StoryObj<MenuRootProps> = {
       type: 'boolean',
       defaultValue: true,
     },
-    dir: {
-      options: ['ltr', 'rtl'],
-      defaultValue: 'ltr',
-      control: { type: 'radio' },
-    },
-    modal: {
-      type: 'boolean',
-      defaultValue: true,
-    },
     open: {
       type: 'boolean',
       required: false,
@@ -259,38 +250,13 @@ export const Content = {
     );
   },
   argTypes: {
-    align: {
-      options: ['start', 'center', 'end'],
-      defaultValue: 'center',
-      control: { type: 'radio' },
-    },
-    alignOffset: {
-      type: 'number',
-      defaultValue: 0,
-    },
-    allowPinchZoom: {
-      type: 'boolean',
-      defaultValue: false,
-    },
     asChild: {
       type: 'boolean',
       defaultValue: false,
     },
-    avoidCollisions: {
-      type: 'boolean',
-      defaultValue: true,
-    },
     collisionTolerance: {
       type: 'number',
       defaultValue: 0,
-    },
-    forceMount: {
-      type: 'boolean',
-      required: false,
-    },
-    loop: {
-      type: 'boolean',
-      defaultValue: false,
     },
     portalled: {
       type: 'boolean',
@@ -342,8 +308,6 @@ export const Item = {
 };
 
 export default {
-  // component: Menu,
-  subcomponents: Menu,
   title: 'components/Menu',
   parameters: {
     componentSubtitle:
