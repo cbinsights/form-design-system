@@ -4,10 +4,10 @@ import Footer, { FooterProps } from './index';
 
 export const Primary: StoryObj<FooterProps> = {
   args: {
-    domain: 'www.cbinsights.com',
+    site: 'www.cbinsights.com',
   },
   render: (args: FooterProps): JSX.Element => {
-    return <Footer domain={args?.domain} />;
+    return <Footer site={args?.site} />;
   },
 };
 

@@ -1,5 +1,5 @@
 /* all fixed values are from marketing site footer */
-.FDSFootercontainer {
+.fdsFooter-container {
   background-color: #000d20;
   color: #b9b9b9;
   font-size: var(--font-size-m);
@@ -7,38 +7,38 @@
   padding: 80px 0;
 }
 
-.FDSFootercontainer a {
+.fdsFooter-container a {
   color: inherit;
 }
 
-.FDSFootercontent {
+.fdsFooter-content {
   margin: 0 auto;
   max-width: 1218px;
   padding: 0 41.8px;
 }
 
-.FDSFootermainContent {
+.fdsFooter-mainContent {
   display: flex;
 }
 
-.FDSFooteraddressSection {
+.fdsFooter-addressSection {
   flex-basis: 252px;
   padding-right: 40px;
 }
 
-.FDSFooterseparator {
+.fdsFooter-separator {
   background-color: #b9b9b9;
   height: 3px;
   width: 100%;
 }
 
-.FDSFooteraddressSection address {
+.fdsFooter-addressSection address {
   display: block;
   margin: 0.75em 0;
   min-width: 230px;
 }
 
-.FDSFooternav {
+.fdsFooter-nav {
   padding: 10px 0 24px;
   display: flex;
   flex-wrap: wrap;
@@ -46,57 +46,57 @@
   flex-grow: 1;
 }
 
-.FDSFootermenuSection {
+.fdsFooter-menuSection {
   line-height: 37.23px;
   flex-basis: calc(25% - 20px);
   margin: 0 10px;
 }
 
-.FDSFootermenuSection h3 {
+.fdsFooter-menuSection h3 {
   color: inherit;
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-bold);
 }
 
-.FDSFootermoreInfoLinks {
+.fdsFooter-moreInfoLinks {
   margin: 20px 0 24px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.FDSFootermoreInfoLink {
+.fdsFooter-moreInfoLink {
   padding-right: 30px;
 }
 
-.FDSFootercopyright {
+.fdsFooter-copyright {
   padding-bottom: 10.5px;
 }
 
 @media (max-width: 840px) {
-  .FDSFootermenuSection {
+  .fdsFooter-menuSection {
     flex-basis: calc(50% - 20px);
     margin: 0 10px 20px;
   }
 }
 
 @media (max-width: 640px) {
-  .FDSFootermainContent {
+  .fdsFooter-mainContent {
     display: block;
   }
 
-  .FDSFootermenuSection {
+  .fdsFooter-menuSection {
     flex-basis: calc(25% - 20px);
     margin: 0 10px;
   }
 }
 
 @media (max-width: 550px) {
-  .FDSFooternav {
+  .fdsFooter-nav {
     display: block;
     padding: 0;
   }
 
-  .FDSFootermenuSection {
+  .fdsFooter-menuSection {
     margin: 0 0 15px;
   }
 }

@@ -1,4 +1,5 @@
 import React, { useState, memo } from 'react';
+import cc from 'classcat';
 import ActionsArrowRightIcon from 'icons/react/ActionsArrowRightIcon';
 import ActionsArrowDownIcon from 'icons/react/ActionsArrowDownIcon';
 import { IconButton } from 'components';
@@ -25,10 +26,10 @@ const NavBarDropdown = ({ content, showDropdown }: Props): JSX.Element => {
   const hasSubMenu = checkForSubMenu(content);
   const getArrowIcon = (itemName: string): JSX.Element => (
     <>
-      <div className={'FDSnaviconButton'}>
+      <div className={'fdsNavbar-iconButton'}>
         <ActionsArrowRightIcon size="xs" />
       </div>
-      <div className={'FDSnavmobileIconButton'}>
+      <div className={'fdsNavbar-mobileIconButton'}>
         <IconButton
           label="submenu"
           Icon={subMenuState[itemName] ? ActionsArrowUpIcon : ActionsArrowDownIcon}
@@ -42,34 +43,40 @@ const NavBarDropdown = ({ content, showDropdown }: Props): JSX.Element => {
 
   return (
     <div
-      className={`FDSnavdropdownContainer ${hasSubMenu ? 'FDSnavhasSubMenu' : ''} ${
-        showDropdown ? 'FDSnavshow' : ''
-      }`}
+      className={cc([
+        { 'fdsNavbar-hasSubMenu': hasSubMenu, 'fdsNavbar-navShow': showDropdown },
+        'fdsNavbar-dropdownContainer',
+      ])}
     >
-      <ul className={'FDSnavmenuContainer'}>
+      <ul className={'fdsNavbar-menuContainer'}>
         {content.map((menuItem) => (
           <li
-            className={`FDSnavdropdownItem ${showDropdown ? 'FDSnavopenedSubMenu' : ''}`}
+            className={cc([
+              { 'fdsNavbar-openedSubMenu': showDropdown },
+              'fdsNavbar-dropdownItem',
+            ])}
             key={menuItem.itemName}
           >
-            <a className={'FDSnavdropdownItemLink'} href={menuItem.url}>
+            <a className={'fdsNavbar-dropdownItemLink'} href={menuItem.url}>
               {menuItem.itemName}
             </a>
-            {menuItem?.subMenu?.length > 0 && (
+            {menuItem.subMenu?.length > 0 && (
               <>
-                <span className={'FDSnavdropdownButton'}>
+                <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowIcon(menuItem.itemName)}
                 </span>
                 <div
-                  className={`FDSnavsubMenuContainer ${
-                    subMenuState[menuItem.itemName] ? 'FDSnavshow' : ''
+                  className={`fdsNavbar-subMenuContainer ${
+                    subMenuState[menuItem.itemName] ? 'fdsNavbar-navShow' : ''
                   }`}
                 >
-                  <ul className={'FDSnavmenuContainer FDSnavsubMenuList'}>
+                  <ul className={'fdsNavbar-menuContainer fdsNavbar-subMenuList'}>
                     {menuItem.subMenu.map((subMenuItem) => (
-                      <li className={'FDSnavsubMenuItem'} key={subMenuItem.itemName}>
+                      <li className={'fdsNavbar-subMenuItem'} key={subMenuItem.itemName}>
                         <a
-                          className={'FDSnavdropdownItemLink FDSnavsubMenuItemLink'}
+                          className={
+                            'fdsNavbar-dropdownItemLink fdsNavbar-subMenuItemLink'
+                          }
                           href={subMenuItem.url}
                         >
                           {subMenuItem.itemName}
@@ -77,22 +84,22 @@ const NavBarDropdown = ({ content, showDropdown }: Props): JSX.Element => {
                       </li>
                     ))}
                     {menuItem?.subMenuFeaturedItem && (
-                      <li className={'FDSnavfeaturedItem'}>
-                        <div className={'FDSnavfeaturedItemImageContainer'}>
+                      <li className={'fdsNavbar-featuredItem'}>
+                        <div className={'fdsNavbar-featuredItemImageContainer'}>
                           <img
-                            className={'FDSnavfeaturedItemImage'}
+                            className={'fdsNavbar-featuredItemImage'}
                             width="300"
                             height="181"
                             alt="Featured Item"
                             src={menuItem.subMenuFeaturedItem.imageSrc}
                           />
                         </div>
-                        <h3 className={'FDSnavfeaturedItemText'}>
+                        <h3 className={'fdsNavbar-featuredItemText'}>
                           {menuItem?.subMenuFeaturedItem?.itemName}
                         </h3>
                         <p>
                           <a
-                            className={'FDSnavfeaturedItemLearnMore'}
+                            className={'fdsNavbar-featuredItemLearnMore'}
                             href={menuItem?.subMenuFeaturedItem?.url}
                           >
                             Learn More &#x2192;

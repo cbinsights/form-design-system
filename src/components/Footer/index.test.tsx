@@ -4,7 +4,7 @@ import Footer from './';
 
 describe('Footer', () => {
   it('renders the footer', () => {
-    render(<Footer domain="www.cbinsights.com" />);
+    render(<Footer site="www.cbinsights.com" />);
     expect(screen.getByText('About')).toBeInTheDocument();
     expect(screen.getByText('How We Help')).toBeInTheDocument();
     expect(screen.getByText('What We Offer')).toBeInTheDocument();

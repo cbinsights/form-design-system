@@ -4,11 +4,11 @@ import Navbar, { NavBarProps } from './index';
 
 export const Primary: StoryObj<NavBarProps> = {
   args: {
-    domain: 'www.cbinsights.com',
+    site: 'https://www.cbinsights.com',
     utmContext: '',
   },
   render: (args: NavBarProps): JSX.Element => {
-    return <Navbar domain={args?.domain} utmContext={args?.utmContext} />;
+    return <Navbar site={args?.site} utmContext={args?.utmContext} />;
   },
 };
 

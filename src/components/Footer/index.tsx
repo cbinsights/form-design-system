@@ -2,14 +2,14 @@ import React from 'react';
 import cbiLogo from './CBI_Logo_White.svg';
 
 export type FooterProps = {
-  domain: string;
+  site: string;
 };
 
-export const Footer = ({ domain }: FooterProps): JSX.Element => (
-  <footer className={'FDSFootercontainer'}>
-    <div className={'FDSFootercontent'}>
-      <div className={'FDSFootermainContent'}>
-        <section className={'padding--bottom--l FDSFooteraddressSection'}>
+export const Footer = ({ site }: FooterProps): JSX.Element => (
+  <footer className={'fdsFooter-container'}>
+    <div className={'fdsFooter-content'}>
+      <div className={'fdsFooter-mainContent'}>
+        <section className={'padding--bottom--l fdsFooter-addressSection'}>
           <h2>
             <img width="178" height="20" alt="CB Insights logo" src={cbiLogo} />
           </h2>
@@ -25,145 +25,111 @@ export const Footer = ({ domain }: FooterProps): JSX.Element => (
           </address>
         </section>
 
-        <nav className={'FDSFooternav'}>
-          <section className={'FDSFootermenuSection'}>
+        <nav className={'fdsFooter-nav'}>
+          <section className={'fdsFooter-menuSection'}>
             <h3>
-              <a href={`https://${domain}.cbinsights.com/#`}>About</a>
+              <a href={`${site}/#`}>About</a>
             </h3>
             <ul>
               <li>
-                <a href={`https://${domain}.cbinsights.com/about/`}>About Us</a>
+                <a href={`${site}/about/`}>About Us</a>
               </li>
               <li>
-                <a href={`https://${domain}.cbinsights.com/contact-us/`}>Contact Us</a>
+                <a href={`${site}/contact-us/`}>Contact Us</a>
               </li>
               <li>
-                <a href={`https://${domain}.cbinsights.com/community-events/`}>
-                  Community &amp; Events
-                </a>
+                <a href={`${site}/community-events/`}>Community &amp; Events</a>
               </li>
             </ul>
           </section>
 
-          <section className={'FDSFootermenuSection'}>
+          <section className={'fdsFooter-menuSection'}>
             <h3>
-              <a href={`https://${domain}.cbinsights.com/#`}>How We Help</a>
+              <a href={`${site}/#`}>How We Help</a>
             </h3>
             <ul>
               <li>
-                <a
-                  href={`https://${domain}.cbinsights.com/how-we-help/understand-tech-markets/`}
-                >
+                <a href={`${site}/how-we-help/understand-tech-markets/`}>
                   Understand tech markets
                 </a>
               </li>
               <li>
-                <a
-                  href={`https://${domain}.cbinsights.com/how-we-help/competitor-strategy/`}
-                >
+                <a href={`${site}/how-we-help/competitor-strategy/`}>
                   Anticipate competitor strategy
                 </a>
               </li>
               <li>
-                <a
-                  href={`https://${domain}.cbinsights.com/how-we-help/create-tech-strategy/`}
-                >
+                <a href={`${site}/how-we-help/create-tech-strategy/`}>
                   Create tech strategy
                 </a>
               </li>
               <li>
-                <a
-                  href={`https://${domain}.cbinsights.com/how-we-help/find-tech-vendors/`}
-                >
+                <a href={`${site}/how-we-help/find-tech-vendors/`}>
                   Connect with tech vendors
                 </a>
               </li>
               <li>
-                <a
-                  href={`https://${domain}.cbinsights.com/how-we-help/digital-transformation/`}
-                >
+                <a href={`${site}/how-we-help/digital-transformation/`}>
                   Turbocharge digital transformation
                 </a>
               </li>
             </ul>
           </section>
 
-          <section className={'FDSFootermenuSection'}>
+          <section className={'fdsFooter-menuSection'}>
             <h3>
-              <a href={`https://${domain}.cbinsights.com/#`}>What We Offer</a>
+              <a href={`${site}/#`}>What We Offer</a>
             </h3>
             <ul>
               <li>
-                <a href={`https://${domain}.cbinsights.com/what-we-offer/platform/`}>
-                  Platform
-                </a>
+                <a href={`${site}/what-we-offer/platform/`}>Platform</a>
               </li>
               <li>
-                <a href={`https://${domain}.cbinsights.com/what-we-offer/data/`}>Data</a>
+                <a href={`${site}/what-we-offer/data/`}>Data</a>
               </li>
               <li>
-                <a href={`https://${domain}.cbinsights.com/what-we-offer/research/`}>
-                  Research Overview
-                </a>
+                <a href={`${site}/what-we-offer/research/`}>Research Overview</a>
               </li>
               <li>
-                <a
-                  href={`https://${domain}.cbinsights.com/what-we-offer/api-data-feeds/`}
-                >
-                  API &amp; Data Feeds
-                </a>
+                <a href={`${site}/what-we-offer/api-data-feeds/`}>API &amp; Data Feeds</a>
               </li>
               <li>
-                <a href={`https://${domain}.cbinsights.com/what-we-offer/pricing/`}>
-                  Pricing
-                </a>
+                <a href={`${site}/what-we-offer/pricing/`}>Pricing</a>
               </li>
             </ul>
           </section>
 
-          <section className={'FDSFootermenuSection'}>
+          <section className={'fdsFooter-menuSection'}>
             <h3>
-              <a href={`https://${domain}.cbinsights.com/#`}>Popular Research</a>
+              <a href={`${site}/#`}>Popular Research</a>
             </h3>
             <ul>
               <li>
                 <a
-                  href={`https://${domain}.cbinsights.com/research/report/digital-health-startups-redefining-healthcare/`}
+                  href={`${site}/research/report/digital-health-startups-redefining-healthcare/`}
                 >
                   Digital Health 150
                 </a>
               </li>
               <li>
-                <a
-                  href={`https://${domain}.cbinsights.com/research/report/fintech-250-startups-most-promising/`}
-                >
+                <a href={`${site}/research/report/fintech-250-startups-most-promising/`}>
                   Fintech 250
                 </a>
               </li>
               <li>
-                <a href={`https://${domain}.cbinsights.com/research-unicorn-companies/`}>
-                  Unicorn Tracker
-                </a>
+                <a href={`${site}/research-unicorn-companies/`}>Unicorn Tracker</a>
               </li>
               <li>
-                <a href={`https://${domain}.cbinsights.com/org-directory/`}>
-                  Company Directory
-                </a>
+                <a href={`${site}/org-directory/`}>Company Directory</a>
               </li>
               <li>
-                <a href={`https://${domain}.cbinsights.com/esp`}>
-                  ESP Market Matrix Directory
-                </a>
+                <a href={`${site}/esp`}>ESP Market Matrix Directory</a>
               </li>
               <li>
-                <a href={`https://${domain}.cbinsights.com/research-vc-glossary-index/`}>
-                  VC Glossary
-                </a>
+                <a href={`${site}/research-vc-glossary-index/`}>VC Glossary</a>
               </li>
               <li>
-                <a
-                  href={`https://${domain}.cbinsights.com/research/report/retail-technology-startups/`}
-                >
+                <a href={`${site}/research/report/retail-technology-startups/`}>
                   Retail Tech 100
                 </a>
               </li>
@@ -171,31 +137,27 @@ export const Footer = ({ domain }: FooterProps): JSX.Element => (
           </section>
         </nav>
       </div>
-      <div className={'FDSFooterseparator'} />
-      <ul className={'FDSFootermoreInfoLinks'}>
-        <li className={'FDSFootermoreInfoLink'}>
-          <a href={`https://${domain}.cbinsights.com/terms-of-service/`}>
-            Terms of Service
-          </a>
+      <div className={'fdsFooter-separator'} />
+      <ul className={'fdsFooter-moreInfoLinks'}>
+        <li className={'fdsFooter-moreInfoLink'}>
+          <a href={`${site}/terms-of-service/`}>Terms of Service</a>
         </li>
-        <li className={'FDSFootermoreInfoLink'}>
-          <a href={`https://${domain}.cbinsights.com/councils-terms-and-conditions/`}>
+        <li className={'fdsFooter-moreInfoLink'}>
+          <a href={`${site}/councils-terms-and-conditions/`}>
             Council Terms and Conditions
           </a>
         </li>
-        <li className={'FDSFootermoreInfoLink'}>
-          <a href={`https://${domain}.cbinsights.com/privacy-policy/`}>Privacy Policy</a>
+        <li className={'fdsFooter-moreInfoLink'}>
+          <a href={`${site}/privacy-policy/`}>Privacy Policy</a>
         </li>
-        <li className={'FDSFootermoreInfoLink'}>
+        <li className={'fdsFooter-moreInfoLink'}>
           <a href="https://preferences.cbinsights.com/privacy">Do Not Sell My Info</a>
         </li>
-        <li className={'FDSFootermoreInfoLink'}>
-          <a href={`https://${domain}.cbinsights.com/research-partnerships`}>
-            Partnership
-          </a>
+        <li className={'fdsFooter-moreInfoLink'}>
+          <a href={`${site}/research-partnerships`}>Partnership</a>
         </li>
       </ul>
-      <p className={'FDSFootercopyright'}>
+      <p className={'fdsFooter-copyright'}>
         Copyright {new Date().getFullYear()} CB Information Services, Inc. All rights
         reserved.
       </p>

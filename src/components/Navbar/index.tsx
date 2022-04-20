@@ -1,4 +1,5 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, useCallback } from 'react';
+import cc from 'classcat';
 import ActionsArrowDownIcon from 'icons/react/ActionsArrowDownIcon';
 import ActionsArrowUpIcon from 'icons/react/ActionsArrowUpIcon';
 import { IconButton } from 'components';
@@ -19,7 +20,9 @@ const HOW_WE_HELP = 'howWeHelp';
 const WHAT_WE_OFFER = 'whatWeOffer';
 const RESOURCES = 'resources';
 
-const DEFAULT_STATE: { [key: string]: boolean } = {
+type Section = 'navList' | 'whoWeServe' | 'howWeHelp' | 'whatWeOffer' | 'resources';
+
+const DEFAULT_STATE: Record<Section, boolean> = {
   [NAV_LIST]: false,
   [WHO_WE_SERVE]: false,
   [HOW_WE_HELP]: false,
@@ -28,71 +31,77 @@ const DEFAULT_STATE: { [key: string]: boolean } = {
 };
 
 export type NavBarProps = {
-  domain: string;
+  site: string;
   utmContext: string;
 };
 
-const NavBar = ({ domain, utmContext }: NavBarProps): JSX.Element => {
+const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
   const [showClass, setShowClass] = useState(DEFAULT_STATE);
 
-  const handleClick = (sectionName: string): void => {
-    setShowClass({ ...showClass, [sectionName]: !showClass[sectionName] });
+  const handleClick = (sectionName: Section): void => {
+    setShowClass((prevState: Record<Section, boolean>) => ({
+      ...prevState,
+      [sectionName]: !showClass[sectionName],
+    }));
   };
 
-  const getArrowUpOrDown = (isOpen: boolean, sectionName: string): JSX.Element => (
-    <>
-      <div className={'FDSnavmobileIconButton'}>
-        <IconButton
-          Icon={isOpen ? ActionsArrowUpIcon : ActionsArrowDownIcon}
-          onClick={() => handleClick(sectionName)}
-          label="dropdown"
-        />
-      </div>
-      <div className={'FDSnaviconButton'}>
-        <ActionsArrowDownIcon />
-      </div>
-    </>
+  const getArrowUpOrDown = useCallback(
+    (isOpen: boolean, sectionName: Section): JSX.Element => (
+      <>
+        <div className={'fdsNavbar-mobileIconButton'}>
+          <IconButton
+            Icon={isOpen ? ActionsArrowUpIcon : ActionsArrowDownIcon}
+            onClick={() => handleClick(sectionName)}
+            label="dropdown"
+          />
+        </div>
+        <div className={'fdsNavbar-iconButton'}>
+          <ActionsArrowDownIcon />
+        </div>
+      </>
+    ),
+    [showClass]
   );
 
   return (
-    <header id="masthead" className="FDSnavnav" role="navigation">
-      <div className={'FDSnavtopContainer'}>
-        <ul id="utility-menu" className={'FDSnavutilityBar'}>
+    <header id="masthead" className="fdsNavbar-nav" role="navigation">
+      <div className={'fdsNavbar-topContainer'}>
+        <ul id="utility-menu" className={'fdsNavbar-utilityBar'}>
           <li>
             <a
-              href={`${domain}/what-we-offer/technology-vendors/`}
-              className={'FDSnavutilityBarLink'}
+              href={`${site}/what-we-offer/technology-vendors/`}
+              className={'fdsNavbar-utilityBarLink'}
             >
               Technology Vendors
             </a>
           </li>
           <li>
-            <a href={`${domain}/research/`} className={'FDSnavutilityBarLink'}>
+            <a href={`${site}/research/`} className={'fdsNavbar-utilityBarLink'}>
               Recent Research
             </a>
           </li>
           <li>
-            <a href={`${domain}/newsletter/`} className={'FDSnavutilityBarLink'}>
+            <a href={`${site}/newsletter/`} className={'fdsNavbar-utilityBarLink'}>
               Newsletter
             </a>
           </li>
           <li>
-            <a href={`${domain}/media-support/`} className={'FDSnavutilityBarLink'}>
+            <a href={`${site}/media-support/`} className={'fdsNavbar-utilityBarLink'}>
               Media Support
             </a>
           </li>
           <li>
-            <a href={`${domain}/login`} className={'FDSnavutilityBarLink'}>
+            <a href={`${site}/login`} className={'fdsNavbar-utilityBarLink'}>
               Login
             </a>
           </li>
         </ul>
       </div>
-      <div className={'FDSnavcontainer'}>
-        <div className={'FDSnavsiteBranding'}>
-          <a href={`${domain}`}>
+      <div className={'fdsNavbar-container'}>
+        <div className={'fdsNavbar-siteBranding'}>
+          <a href={`${site}`}>
             <img
-              className={'FDSnavlogo'}
+              className={'fdsNavbar-navLogo'}
               width="168"
               height="20"
               alt="CB Insights Logo"
@@ -100,8 +109,8 @@ const NavBar = ({ domain, utmContext }: NavBarProps): JSX.Element => {
             />
           </a>
         </div>
-        <nav id="site-navigation" className={'FDSnavsiteNavigation'}>
-          <div className={'FDSnavmenuButton'}>
+        <nav id="site-navigation" className={'fdsNavbar-navigation'}>
+          <div className={'fdsNavbar-navMenuButton'}>
             <IconButton
               size="m"
               Icon={showClass.navList ? DenyIcon : HamburgerBarsIcon}
@@ -110,60 +119,63 @@ const NavBar = ({ domain, utmContext }: NavBarProps): JSX.Element => {
               label="Menu"
             />
           </div>
-          <div className={'FDSnavsiteNavigationWrap'}>
+          <div className={'fdsNavbar-navigationWrap'}>
             <ul
               id="site-menu"
-              className={`FDSnavnavBar ${showClass.navList ? 'FDSnavshow' : ''}`}
+              className={cc([
+                { 'fdsNavbar-navShow': showClass.navList },
+                'fdsNavbar-navBar',
+              ])}
             >
-              <li className={'FDSnavnavBarListItem'}>
-                <a className={'FDSnavdropdownItemLink'}>Who We Serve</a>
-                <span className={'FDSnavdropdownButton'}>
+              <li className={'fdsNavbar-navBarListItem'}>
+                <a className={'fdsNavbar-dropdownItemLink'}>Who We Serve</a>
+                <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.whoWeServe, WHO_WE_SERVE)}
                 </span>
                 <NavBarDropdown
-                  content={WhoWeServeDropdown(domain)}
+                  content={WhoWeServeDropdown(site)}
                   showDropdown={showClass.whoWeServe}
                 />
               </li>
-              <li className={'FDSnavnavBarListItem'}>
-                <a className={'FDSnavdropdownItemLink'}>How We Help</a>
-                <span className={'FDSnavdropdownButton'}>
+              <li className={'fdsNavbar-navBarListItem'}>
+                <a className={'fdsNavbar-dropdownItemLink'}>How We Help</a>
+                <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.howWeHelp, HOW_WE_HELP)}
                 </span>
                 <NavBarDropdown
-                  content={HowWeHelpDropdown(domain)}
+                  content={HowWeHelpDropdown(site)}
                   showDropdown={showClass.howWeHelp}
                 />
               </li>
-              <li className={'FDSnavnavBarListItem'}>
-                <a className={'FDSnavdropdownItemLink'}>What We Offer</a>
-                <span className={'FDSnavdropdownButton'}>
+              <li className={'fdsNavbar-navBarListItem'}>
+                <a className={'fdsNavbar-dropdownItemLink'}>What We Offer</a>
+                <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.whatWeOffer, WHAT_WE_OFFER)}
                 </span>
                 <NavBarDropdown
-                  content={WhatWeOfferDropdown(domain)}
+                  content={WhatWeOfferDropdown(site)}
                   showDropdown={showClass.whatWeOffer}
                 />
               </li>
-              <li className={'FDSnavnavBarListItem'}>
-                <a className={'FDSnavdropdownItemLink'}>Resources</a>
-                <span className={'FDSnavdropdownButton'}>
+              <li className={'fdsNavbar-navBarListItem'}>
+                <a className={'fdsNavbar-dropdownItemLink'}>Resources</a>
+                <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.resources, RESOURCES)}
                 </span>
                 <NavBarDropdown
-                  content={ResourcesDropdown(domain)}
+                  content={ResourcesDropdown(site)}
                   showDropdown={showClass.resources}
                 />
               </li>
-              <li className={'FDSnavnavBarListItem'}>
-                <a className={'FDSnavdropdownItemLink'} href={`${domain}/about/`}>
+              <li className={'fdsNavbar-navBarListItem'}>
+                <a className={'fdsNavbar-dropdownItemLink'} href={`${site}/about/`}>
                   About Us
                 </a>
               </li>
             </ul>
             <a
               href={`https://www.cbinsights.com/research-request-a-demo?${utmContext}`}
-              className={'FDSnavrequestDemoButton'}
+              className={'fdsNavbar-requestDemoButton'}
             >
               Request a Demo
             </a>
