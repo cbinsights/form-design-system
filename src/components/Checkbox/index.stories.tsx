@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StoryObj } from '@storybook/react';
 import Checkbox, { CheckboxProps } from '.';
+import { Button } from 'components';
 
 export const Primary: StoryObj<CheckboxProps> = {
   args: {
@@ -32,12 +33,7 @@ export const PreventingUserInteraction: StoryObj<CheckboxProps> = {
         <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
       </div>
       <div>
-        <Checkbox
-          disabled
-          defaultChecked
-          name="disabled-checked"
-          label="Disabled checked"
-        />
+        <Checkbox disabled checked name="disabled-checked" label="Disabled checked" />
       </div>
     </>
   ),
@@ -90,8 +86,50 @@ export const ReadingTheValueOfACheckbox: StoryObj<CheckboxProps> = {
   parameters: {
     docs: {
       description: {
-        story:
-          ' The `onChange` prop will be spread on the `input` element the `Checkbox` component renders. Read the `checked` attribute of the event `currentTarget`.',
+        story: 'The `onChange` prop will receive the checked state as its argument.',
+      },
+    },
+  },
+};
+
+export const UncontrolledCheckbox: StoryObj<CheckboxProps> = {
+  args: {
+    label: 'Option one',
+    defaultChecked: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: '',
+      },
+    },
+  },
+};
+
+export const ControlledCheckbox: StoryObj<{ checkboxLabel: string }> = {
+  render: (props) => {
+    const [checked, setChecked] = useState(false);
+    const handleClick = () => {
+      setChecked(!checked);
+    };
+    return (
+      <div>
+        <div>
+          <Checkbox checked={checked} label={props.checkboxLabel} />
+        </div>
+        <div>
+          <Button onClick={handleClick} label="toggle checkbox" />
+        </div>
+      </div>
+    );
+  },
+  args: {
+    checkboxLabel: 'Option one',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: '',
       },
     },
   },
