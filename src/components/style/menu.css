@@ -1,4 +1,12 @@
-.fdsMenuItems {
+/**
+ * Overrides for @reach/menu-button
+ */
+
+[data-reach-popover] {
+  z-index: var(--zindex-modal);
+}
+
+[data-reach-menu-items] {
   border-width: 0;
   padding: 0;
   font-size: inherit;
@@ -7,27 +15,27 @@
   overflow-y: auto;
 }
 
-.fdsMenuItem {
+[data-reach-menu-item] {
   padding: var(--space-s) var(--space-default);
   white-space: initial;
   margin: 0;
-  cursor: pointer;
 }
 
-.fdsMenuItem:focus {
+/* use highlight color instead of focus ring */
+[data-reach-menu-item]:focus {
   outline: 0;
 }
 
-.fdsMenuItem:hover {
+[data-reach-menu-item][data-selected] {
   background: var(--color-lightGray);
   color: inherit;
 }
 
 .fdsMenuItem--disabled {
-  color: var(--font-color-hint);
+  color: var(--font-color-hint) !important;
 }
 
-.fdsMenuItem--disabled:hover {
-  background: rgb(var(--rgb-lightGray) / 25%);
+.fdsMenuItem--disabled[data-selected] {
+  background: rgb(var(--rgb-lightGray) / 25%) !important;
   cursor: not-allowed;
 }

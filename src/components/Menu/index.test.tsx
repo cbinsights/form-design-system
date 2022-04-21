@@ -1,82 +1,65 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
-import { Menu } from 'components';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+
+import { MenuItem } from 'components';
+import Menu from '.';
 
 describe('Menu component', () => {
+  /**
+   * `@reach/menu-button` has its own test coverage.
+   * FDS provides only styling overrides, so snapshots will be adequate coverage for our code.
+   */
   it('renders component (strings)', () => {
     render(
-      <Menu.Root defaultOpen>
-        <Menu.Trigger>
-          <a href="#">trigger</a>
-        </Menu.Trigger>
-        <Menu.Content>
-          <Menu.Item onSelect={jest.fn()}>First</Menu.Item>
-          <Menu.Item onSelect={jest.fn()}>Second</Menu.Item>
-          <Menu.Item onSelect={jest.fn()}>Third</Menu.Item>
-        </Menu.Content>
-      </Menu.Root>
+      <Menu trigger={<a href="#">trigger</a>}>
+        <MenuItem onSelect={jest.fn()}>First</MenuItem>
+        <MenuItem onSelect={jest.fn()}>Second</MenuItem>
+        <MenuItem onSelect={jest.fn()}>Third</MenuItem>
+      </Menu>
     );
     expect(screen.getByText('First')).toBeInTheDocument();
     expect(screen.getByText('Second')).toBeInTheDocument();
     expect(screen.getByText('Third')).toBeInTheDocument();
   });
-
   it('renders component (JSX items)', () => {
     render(
-      <Menu.Root defaultOpen>
-        <Menu.Trigger>
-          <a href="#">trigger</a>
-        </Menu.Trigger>
-        <Menu.Content>
-          <Menu.Item onSelect={jest.fn()}>
-            <p>First</p>
-          </Menu.Item>
-          <Menu.Item onSelect={jest.fn()}>
-            <p>Second</p>
-          </Menu.Item>
-          <Menu.Item onSelect={jest.fn()}>
-            <p>Third</p>
-          </Menu.Item>
-        </Menu.Content>
-      </Menu.Root>
+      <Menu trigger={<a href="#">trigger</a>}>
+        <MenuItem onSelect={jest.fn()}>
+          <p>First</p>
+        </MenuItem>
+        <MenuItem onSelect={jest.fn()}>
+          <p>Second</p>
+        </MenuItem>
+        <MenuItem onSelect={jest.fn()}>
+          <p>Third</p>
+        </MenuItem>
+      </Menu>
     );
     expect(screen.getByText('First')).toBeInTheDocument();
     expect(screen.getByText('Second')).toBeInTheDocument();
     expect(screen.getByText('Third')).toBeInTheDocument();
   });
-
   it('renders trigger element only', () => {
+    const mockOnClick = jest.fn();
     render(
-      <Menu.Root>
-        <Menu.Trigger>
-          <a href="#">trigger</a>
-        </Menu.Trigger>
-      </Menu.Root>
+      <Menu
+        isDisabled
+        trigger={
+          <a href="#" onClick={mockOnClick}>
+            trigger
+          </a>
+        }
+      >
+        <MenuItem onSelect={jest.fn()}>First</MenuItem>
+        <MenuItem onSelect={jest.fn()}>Second</MenuItem>
+        <MenuItem onSelect={jest.fn()}>Third</MenuItem>
+      </Menu>
     );
-    expect(screen.getByRole('link')).toBeInTheDocument();
-    // Menu.Items are not expected to be rendered so we check for them to be null
+    const anchor = screen.getByRole('link');
+    expect(anchor).toBeInTheDocument();
+    // MenuItems are not expected to be rendered so we check for them to be null
     expect(screen.queryByText('First')).toBeNull();
-  });
-});
-
-it('shows content on Menu open', async () => {
-  render(
-    <Menu.Root>
-      <Menu.Trigger>
-        <a href="#">trigger</a>
-      </Menu.Trigger>
-      <Menu.Content>
-        <Menu.Item onSelect={jest.fn()}>First</Menu.Item>
-        <Menu.Item onSelect={jest.fn()}>Second</Menu.Item>
-        <Menu.Item onSelect={jest.fn()}>Third</Menu.Item>
-      </Menu.Content>
-    </Menu.Root>
-  );
-  userEvent.type(screen.getByRole('link', { name: 'trigger' }), '{arrowdown}');
-  await waitFor(() => {
-    expect(screen.getByText('First')).toBeInTheDocument();
-    expect(screen.getByText('Second')).toBeInTheDocument();
-    expect(screen.getByText('Third')).toBeInTheDocument();
+    expect(screen.queryByText('Second')).toBeNull();
+    expect(screen.queryByText('Third')).toBeNull();
   });
 });
