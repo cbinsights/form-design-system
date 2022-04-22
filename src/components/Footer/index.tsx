@@ -1,5 +1,5 @@
 import React from 'react';
-import cbiLogo from './CBI_Logo_White.svg';
+import cbiLogo from 'assets/images/CBI_Logo_White.svg';
 
 export type FooterProps = {
   site: string;

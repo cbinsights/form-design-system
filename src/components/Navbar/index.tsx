@@ -5,7 +5,7 @@ import ActionsArrowUpIcon from 'icons/react/ActionsArrowUpIcon';
 import { IconButton } from 'components';
 import HamburgerBarsIcon from 'icons/react/HamburgerBarsIcon';
 import DenyIcon from 'icons/react/DenyIcon';
-import CBILogo from './CBI_Logo_White.svg';
+import CBILogo from 'assets/images/CBI_Logo_White.svg';
 import {
   whoWeServeDropdown,
   howWeHelpDropdown,

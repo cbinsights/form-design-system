@@ -1,6 +1,6 @@
-import ThreeMImage from './3M_Homepage.png';
-import FeedsGeneral from './Feeds_General.svg';
-import WellsFargoImage from './Wells_Fargo_Homepage.png';
+import ThreeMImage from 'assets/images/3M_Homepage.png';
+import FeedsGeneral from 'assets/images/Feeds_General.svg';
+import WellsFargoImage from 'assets/images/Wells_Fargo_Homepage.png';
 
 type MenuItem = {
   itemName: string;
