@@ -7,10 +7,10 @@ import HamburgerBarsIcon from 'icons/react/HamburgerBarsIcon';
 import DenyIcon from 'icons/react/DenyIcon';
 import CBILogo from './CBI_Logo_White.svg';
 import {
-  WhoWeServeDropdown,
-  HowWeHelpDropdown,
-  WhatWeOfferDropdown,
-  ResourcesDropdown,
+  whoWeServeDropdown,
+  howWeHelpDropdown,
+  whatWeOfferDropdown,
+  resourcesDropdown,
 } from './constants';
 import NavBarDropdown from './NavbarDropdown';
 
@@ -133,7 +133,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                   {getArrowUpOrDown(showClass.whoWeServe, WHO_WE_SERVE)}
                 </span>
                 <NavBarDropdown
-                  content={WhoWeServeDropdown(site)}
+                  content={whoWeServeDropdown(site)}
                   showDropdown={showClass.whoWeServe}
                 />
               </li>
@@ -143,7 +143,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                   {getArrowUpOrDown(showClass.howWeHelp, HOW_WE_HELP)}
                 </span>
                 <NavBarDropdown
-                  content={HowWeHelpDropdown(site)}
+                  content={howWeHelpDropdown(site)}
                   showDropdown={showClass.howWeHelp}
                 />
               </li>
@@ -153,7 +153,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                   {getArrowUpOrDown(showClass.whatWeOffer, WHAT_WE_OFFER)}
                 </span>
                 <NavBarDropdown
-                  content={WhatWeOfferDropdown(site)}
+                  content={whatWeOfferDropdown(site)}
                   showDropdown={showClass.whatWeOffer}
                 />
               </li>
@@ -163,7 +163,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                   {getArrowUpOrDown(showClass.resources, RESOURCES)}
                 </span>
                 <NavBarDropdown
-                  content={ResourcesDropdown(site)}
+                  content={resourcesDropdown(site)}
                   showDropdown={showClass.resources}
                 />
               </li>

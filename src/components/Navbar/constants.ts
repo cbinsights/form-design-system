@@ -20,7 +20,7 @@ export type DropdownMenu = {
   subMenuFeaturedItem?: SubMenuFeature;
 };
 
-export const WhoWeServeDropdown = (site: string): DropdownMenu[] => [
+export const whoWeServeDropdown = (site: string): DropdownMenu[] => [
   {
     itemName: 'Function',
     url: '',
@@ -81,7 +81,7 @@ export const WhoWeServeDropdown = (site: string): DropdownMenu[] => [
   },
 ];
 
-export const HowWeHelpDropdown = (site: string): DropdownMenu[] => [
+export const howWeHelpDropdown = (site: string): DropdownMenu[] => [
   {
     itemName: 'Create Tech Strategy',
     url: `${site}/how-we-help/create-tech-strategy/`,
@@ -109,7 +109,7 @@ export const HowWeHelpDropdown = (site: string): DropdownMenu[] => [
   },
 ];
 
-export const WhatWeOfferDropdown = (site: string): DropdownMenu[] => [
+export const whatWeOfferDropdown = (site: string): DropdownMenu[] => [
   {
     itemName: 'Platform',
     url: `${site}/what-we-offer/platform/`,
@@ -159,7 +159,7 @@ export const WhatWeOfferDropdown = (site: string): DropdownMenu[] => [
   },
 ];
 
-export const ResourcesDropdown = (site: string): DropdownMenu[] => [
+export const resourcesDropdown = (site: string): DropdownMenu[] => [
   {
     itemName: 'Success Stories',
     url: `${site}/resources/case-studies/`,
