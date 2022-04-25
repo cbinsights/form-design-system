@@ -61,6 +61,7 @@
 .fdsCheckable-label {
   padding-left: var(--space-s);
   margin-top: 1px;
+  cursor: pointer;
 }
 
 .fdsCheckable .fds-icon {
