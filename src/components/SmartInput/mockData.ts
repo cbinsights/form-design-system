@@ -2,6 +2,7 @@
 //   {
 //     id: 'apple',
 //     text: 'apple',
+//     value: 'apple',
 //     label: 'apple',
 //     value: 'apple',
 //     type: 'entity',
@@ -13,6 +14,7 @@
 //   {
 //     id: 'apple',
 //     text: 'apple',
+//     value: 'apple',
 //     label: 'apple',
 //     value: 'apple',
 //     type: 'entity',
@@ -25,6 +27,7 @@
 //     category: 'Organization',
 //     compoundId: '1581112103',
 //     text: 'Apple',
+//     value: 'Apple',
 //     value: 'apple.com',
 //     type: 'entity',
 //     url: 'apple.com',
@@ -45,6 +48,7 @@
 //     idUser: [1759217, 96358, 46583],
 //     isExpert: true,
 //     text: "Apple's Investments + M&A",
+//     value: "Apple's Investments + M&A",
 //     type: 'entity',
 //     uid: 'ncqi',
 //     label: "Apple's Investments + M&A",
@@ -57,6 +61,7 @@
 //     idUser: [3381919],
 //     isExpert: false,
 //     text: "Apple's Investments + M&A (Cloned on 2/24/2020)",
+//     value: "Apple's Investments + M&A (Cloned on 2/24/2020)",
 //     type: 'entity',
 //     uid: 'nh3s',
 //     label: "Apple's Investments + M&A (Cloned on 2/24/2020)",
@@ -69,6 +74,7 @@
 //     idUser: [3381919],
 //     isExpert: false,
 //     text: "Apple's Investments + M&A (Cloned on 8/26/2020)",
+//     value: "Apple's Investments + M&A (Cloned on 8/26/2020)",
 //     type: 'entity',
 //     uid: '7j8i',
 //     label: "Apple's Investments + M&A (Cloned on 8/26/2020)",
@@ -77,6 +83,7 @@
 //     category: 'Organization',
 //     compoundId: '18365476025',
 //     text: 'ApplePie Capital',
+//     value: 'ApplePie Capital',
 //     value: 'applepiecapital.com',
 //     type: 'entity',
 //     url: 'applepiecapital.com',
@@ -95,6 +102,7 @@ export const mockOptions = [
   {
     id: 1,
     text: 'Quimm',
+    value: 'Quimm',
     uid: '46cf25ba-a974-42f9-b8e7-8ee163c059f9',
     label: 'Quimm',
     category: 'Organization',
@@ -103,6 +111,7 @@ export const mockOptions = [
   {
     id: 2,
     text: 'Aimbo',
+    value: 'Aimbo',
     uid: '027c87a5-aacf-48e3-b43d-5b6526bd0b8a',
     label: 'Aimbo',
     category: 'Organization',
@@ -111,6 +120,7 @@ export const mockOptions = [
   {
     id: 3,
     text: 'Mymm',
+    value: 'Mymm',
     uid: '960edf30-ea48-4dd8-b3b2-c20bfc933d7e',
     label: 'Mymm',
     category: 'Collection',
@@ -119,6 +129,7 @@ export const mockOptions = [
   {
     id: 4,
     text: 'Dynabox',
+    value: 'Dynabox',
     uid: '6c483fed-18b7-4c51-be34-6a0b651b82b6',
     label: 'Dynabox',
     category: 'Collection',
@@ -127,6 +138,7 @@ export const mockOptions = [
   {
     id: 5,
     text: 'Brainsphere',
+    value: 'Brainsphere',
     uid: '43ced866-24ed-42fd-bf9c-f139d0f565ac',
     label: 'Brainsphere',
     category: 'Organization',
@@ -135,6 +147,7 @@ export const mockOptions = [
   {
     id: 6,
     text: 'Oodoo',
+    value: 'Oodoo',
     uid: 'edf95042-416d-4565-b1e0-4345ffd31808',
     label: 'Oodoo',
     category: 'Collection',
@@ -143,6 +156,7 @@ export const mockOptions = [
   {
     id: 7,
     text: 'Youtags',
+    value: 'Youtags',
     uid: 'ffeba4b3-e358-4efd-b127-5d6ad1037467',
     label: 'Youtags',
     category: 'Collection',
@@ -151,6 +165,7 @@ export const mockOptions = [
   {
     id: 8,
     text: 'Brainsphere',
+    value: 'Brainsphere',
     uid: '0a91a97d-7071-425b-9c7d-9b934e94c19d',
     label: 'Brainsphere',
     category: 'Search Term',
@@ -159,6 +174,7 @@ export const mockOptions = [
   {
     id: 9,
     text: 'Jabbertype',
+    value: 'Jabbertype',
     uid: 'dc44cc51-cb32-406b-865d-c3d6507ca3b2',
     label: 'Jabbertype',
     category: 'Collection',
@@ -167,6 +183,7 @@ export const mockOptions = [
   {
     id: 10,
     text: 'Demivee',
+    value: 'Demivee',
     uid: '1f6bac22-8878-44c6-8900-0b5524ec39da',
     label: 'Demivee',
     category: 'Organization',
@@ -175,6 +192,7 @@ export const mockOptions = [
   {
     id: 11,
     text: 'Gabcube',
+    value: 'Gabcube',
     uid: '91c2e1cd-6fc4-403e-bcfc-fde618f6d5de',
     label: 'Gabcube',
     category: 'Collection',
@@ -183,6 +201,7 @@ export const mockOptions = [
   {
     id: 12,
     text: 'Aimbu',
+    value: 'Aimbu',
     uid: '97ea2df7-06a0-4257-8674-11bd3835fab5',
     label: 'Aimbu',
     category: 'Collection',
@@ -191,6 +210,7 @@ export const mockOptions = [
   {
     id: 13,
     text: 'Fivechat',
+    value: 'Fivechat',
     uid: '98bfcab2-5de7-4221-93f3-3d501ec87339',
     label: 'Fivechat',
     category: 'Collection',
@@ -199,6 +219,7 @@ export const mockOptions = [
   {
     id: 14,
     text: 'Yakijo',
+    value: 'Yakijo',
     uid: 'd57708fd-81d1-4894-9697-d02cf94e33ea',
     label: 'Yakijo',
     category: 'Search Term',
@@ -207,6 +228,7 @@ export const mockOptions = [
   {
     id: 15,
     text: 'Mynte',
+    value: 'Mynte',
     uid: 'dc1df303-2df0-4c2b-b749-18aa684c5027',
     label: 'Mynte',
     category: 'Organization',
@@ -215,6 +237,7 @@ export const mockOptions = [
   {
     id: 16,
     text: 'Livefish',
+    value: 'Livefish',
     uid: 'f991b69e-eadf-493f-ac70-af5a1cab2ba7',
     label: 'Livefish',
     category: 'Search Term',
@@ -223,6 +246,7 @@ export const mockOptions = [
   {
     id: 17,
     text: 'Photobug',
+    value: 'Photobug',
     uid: '7c7213c3-538e-4d52-8c7a-7ed1621917e3',
     label: 'Photobug',
     category: 'Organization',
@@ -231,6 +255,7 @@ export const mockOptions = [
   {
     id: 18,
     text: 'Ailane',
+    value: 'Ailane',
     uid: 'f5bfbf14-739e-4d9b-b906-4d3bbccfe6e2',
     label: 'Ailane',
     category: 'Collection',
@@ -239,6 +264,7 @@ export const mockOptions = [
   {
     id: 19,
     text: 'Mita',
+    value: 'Mita',
     uid: '13451d15-513e-4ccd-b477-c358cd553650',
     label: 'Mita',
     category: 'Collection',
@@ -247,6 +273,7 @@ export const mockOptions = [
   {
     id: 20,
     text: 'Rhynoodle',
+    value: 'Rhynoodle',
     uid: '3499015f-4d8c-4af4-b5f4-7f65e6d2b963',
     label: 'Rhynoodle',
     category: 'Collection',
@@ -255,6 +282,7 @@ export const mockOptions = [
   {
     id: 21,
     text: 'Skivee',
+    value: 'Skivee',
     uid: 'd2ef76e0-3c69-432b-9313-e4fbda15a299',
     label: 'Skivee',
     category: 'Collection',
@@ -263,6 +291,7 @@ export const mockOptions = [
   {
     id: 22,
     text: 'Snaptags',
+    value: 'Snaptags',
     uid: 'fcfac65f-7f53-4290-b60e-413d27cc7cae',
     label: 'Snaptags',
     category: 'Organization',
@@ -271,6 +300,7 @@ export const mockOptions = [
   {
     id: 23,
     text: 'Skynoodle',
+    value: 'Skynoodle',
     uid: '42539bf3-650b-4cb4-af5b-441437f541c0',
     label: 'Skynoodle',
     category: 'Collection',
@@ -279,6 +309,7 @@ export const mockOptions = [
   {
     id: 24,
     text: 'Zooveo',
+    value: 'Zooveo',
     uid: '127cdf00-01fc-45a8-96c2-97a812ffb1bd',
     label: 'Zooveo',
     category: 'Collection',
@@ -287,6 +318,7 @@ export const mockOptions = [
   {
     id: 25,
     text: 'Tagfeed',
+    value: 'Tagfeed',
     uid: '2b104eb4-b5b8-4dd1-b0a8-77983c2f01fc',
     label: 'Tagfeed',
     category: 'Organization',
@@ -295,6 +327,7 @@ export const mockOptions = [
   {
     id: 26,
     text: 'Livetube',
+    value: 'Livetube',
     uid: 'e6f594ac-c048-4068-bb6e-6986e7f17ca2',
     label: 'Livetube',
     category: 'Collection',
@@ -303,6 +336,7 @@ export const mockOptions = [
   {
     id: 27,
     text: 'Pixoboo',
+    value: 'Pixoboo',
     uid: 'b8700446-4b3f-4898-b1af-a8082da22e44',
     label: 'Pixoboo',
     category: 'Organization',
@@ -311,6 +345,7 @@ export const mockOptions = [
   {
     id: 28,
     text: 'Twimbo',
+    value: 'Twimbo',
     uid: '1e955638-db74-4511-b4db-9d19fe305df1',
     label: 'Twimbo',
     category: 'Search Term',
@@ -319,6 +354,7 @@ export const mockOptions = [
   {
     id: 29,
     text: 'Trupe',
+    value: 'Trupe',
     uid: '4ca5f3f3-6c3c-48cb-b8f2-72199b6ad4ec',
     label: 'Trupe',
     category: 'Collection',
@@ -327,6 +363,7 @@ export const mockOptions = [
   {
     id: 30,
     text: 'Meemm',
+    value: 'Meemm',
     uid: '58e82c4f-3586-448f-8411-9fa8ac794c15',
     label: 'Meemm',
     category: 'Search Term',
@@ -335,6 +372,7 @@ export const mockOptions = [
   {
     id: 31,
     text: 'Youspan',
+    value: 'Youspan',
     uid: '717b95aa-bd2c-485b-a23a-cc6d4fce495a',
     label: 'Youspan',
     category: 'Collection',
@@ -343,6 +381,7 @@ export const mockOptions = [
   {
     id: 32,
     text: 'Skyba',
+    value: 'Skyba',
     uid: 'fb9bb9c4-de3c-48db-8b81-f0802fa202b7',
     label: 'Skyba',
     category: 'Search Term',
@@ -351,6 +390,7 @@ export const mockOptions = [
   {
     id: 33,
     text: 'Youspan',
+    value: 'Youspan',
     uid: 'd1c58eef-0ab5-42c5-8879-cd2f71d356b8',
     label: 'Youspan',
     category: 'Collection',
@@ -359,6 +399,7 @@ export const mockOptions = [
   {
     id: 34,
     text: 'Jazzy',
+    value: 'Jazzy',
     uid: '30f529b2-b055-4d2f-85bb-904af256e254',
     label: 'Jazzy',
     category: 'Collection',
@@ -367,6 +408,7 @@ export const mockOptions = [
   {
     id: 35,
     text: 'Ainyx',
+    value: 'Ainyx',
     uid: 'dbc8c76a-283e-42c9-9747-4b11c85709d2',
     label: 'Ainyx',
     category: 'Collection',
@@ -375,6 +417,7 @@ export const mockOptions = [
   {
     id: 36,
     text: 'Kwideo',
+    value: 'Kwideo',
     uid: '68629f22-74af-4cc7-91b2-3b00ed768358',
     label: 'Kwideo',
     category: 'Collection',
@@ -383,6 +426,7 @@ export const mockOptions = [
   {
     id: 37,
     text: 'Fiveclub',
+    value: 'Fiveclub',
     uid: '0fb0867e-989c-49e7-be5a-3adf9371fb46',
     label: 'Fiveclub',
     category: 'Collection',
@@ -391,6 +435,7 @@ export const mockOptions = [
   {
     id: 38,
     text: 'Eayo',
+    value: 'Eayo',
     uid: '36b4f7c0-da04-4bfd-8f53-ff1a664e57a6',
     label: 'Eayo',
     category: 'Collection',
@@ -399,6 +444,7 @@ export const mockOptions = [
   {
     id: 39,
     text: 'Miboo',
+    value: 'Miboo',
     uid: 'b8207c26-a640-4984-b035-7fb3e8468ddd',
     label: 'Miboo',
     category: 'Organization',
@@ -407,6 +453,7 @@ export const mockOptions = [
   {
     id: 40,
     text: 'Skinix',
+    value: 'Skinix',
     uid: '243be9de-15cc-4ae6-b685-8326f4aa2e55',
     label: 'Skinix',
     category: 'Search Term',
@@ -415,6 +462,7 @@ export const mockOptions = [
   {
     id: 41,
     text: 'Vitz',
+    value: 'Vitz',
     uid: 'bfea05ad-90c3-4489-ae62-b2df0a82730d',
     label: 'Vitz',
     category: 'Collection',
@@ -423,6 +471,7 @@ export const mockOptions = [
   {
     id: 42,
     text: 'Dablist',
+    value: 'Dablist',
     uid: '4a691d19-6aa1-4a65-b705-5181f5cf292f',
     label: 'Dablist',
     category: 'Collection',
@@ -431,6 +480,7 @@ export const mockOptions = [
   {
     id: 43,
     text: 'Camido',
+    value: 'Camido',
     uid: '26331dcd-bd34-4296-b772-7a8a5178ce3e',
     label: 'Camido',
     category: 'Search Term',
@@ -439,6 +489,7 @@ export const mockOptions = [
   {
     id: 44,
     text: 'Cogibox',
+    value: 'Cogibox',
     uid: '57dd5eaf-62f7-41ee-9b68-9f4cc1157784',
     label: 'Cogibox',
     category: 'Search Term',
@@ -447,6 +498,7 @@ export const mockOptions = [
   {
     id: 45,
     text: 'Youspan',
+    value: 'Youspan',
     uid: '5ed47633-0d00-4dc4-a826-060862677f3a',
     label: 'Youspan',
     category: 'Search Term',
@@ -455,6 +507,7 @@ export const mockOptions = [
   {
     id: 46,
     text: 'Gabtune',
+    value: 'Gabtune',
     uid: 'e2bfa50e-66ea-4baf-ae57-8f696026bbe8',
     label: 'Gabtune',
     category: 'Collection',
@@ -463,6 +516,7 @@ export const mockOptions = [
   {
     id: 47,
     text: 'Tekfly',
+    value: 'Tekfly',
     uid: '13a6fa30-86c9-48dd-bf27-e79b729e0167',
     label: 'Tekfly',
     category: 'Organization',
@@ -471,6 +525,7 @@ export const mockOptions = [
   {
     id: 48,
     text: 'Kamba',
+    value: 'Kamba',
     uid: '8f2a47ca-1721-478d-adde-d30e52c64b82',
     label: 'Kamba',
     category: 'Search Term',
@@ -479,6 +534,7 @@ export const mockOptions = [
   {
     id: 49,
     text: 'Fivebridge',
+    value: 'Fivebridge',
     uid: 'ffacba41-99b9-47b3-84fa-1fabb6dfc13b',
     label: 'Fivebridge',
     category: 'Organization',
@@ -487,6 +543,7 @@ export const mockOptions = [
   {
     id: 50,
     text: 'Voolith',
+    value: 'Voolith',
     uid: '1ee68951-de10-4f7d-af65-65f376550bad',
     label: 'Voolith',
     category: 'Organization',
