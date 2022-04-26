@@ -1,10 +1,10 @@
 import React from 'react';
 import Select, {
-  MultiValue,
   Props,
   GroupBase,
   SelectInstance,
   Options,
+  PropsValue,
 } from 'react-select';
 import { customComponents, customStyles, customThemes } from './CustomSelectUtils';
 import DropdownOption from './CustomSelectComponents/DropdownOption';
@@ -21,7 +21,8 @@ declare module 'react-select/dist/declarations/src/Select' {
     Group extends GroupBase<Option>
   > {
     cursorPosition?: number;
-    onSetSearchItems?: (items: MultiValue<Option>) => void;
+    hideSelectedItems?: boolean;
+    onSetSearchItems?: (items: PropsValue<Option>) => void;
     setCursorPosition?: (position: number) => void;
   }
 }
@@ -50,14 +51,14 @@ export interface OptionProps {
   alias?: string;
 }
 
-export interface SmartInputProps extends Props<OptionProps, true> {
-  onChange?: (newValue: MultiValue<OptionProps>) => void;
+export interface SmartInputProps extends Props<OptionProps> {
+  onChange?: (newValue: PropsValue<OptionProps>) => void;
   onClear?: () => void;
   onMenuClose?: () => void;
   onOptionClick?: () => void;
   inputValue?: string;
-  searchItems?: MultiValue<OptionProps>;
-  selectRef?: React.RefObject<SelectInstance<OptionProps, true>>;
+  searchItems?: PropsValue<OptionProps>;
+  selectRef?: React.RefObject<SelectInstance<OptionProps, boolean>>;
 }
 
 const Search = ({
@@ -97,7 +98,7 @@ const Search = ({
   );
 
   return (
-    <Select<OptionProps, true>
+    <Select<OptionProps, boolean>
       autoFocus={autoFocus}
       backspaceRemovesValue={backspaceRemovesValue}
       captureMenuScroll={false}
@@ -111,7 +112,6 @@ const Search = ({
       inputId={inputId}
       inputValue={inputValue}
       isClearable={isClearable}
-      isMulti
       isOptionSelected={(option: OptionProps, selectedValue: Options<OptionProps>) =>
         selectedValue.some((i) => i === option)
       }
