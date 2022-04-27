@@ -62,6 +62,7 @@ export const customStyles = (
         boxShadow: 'none !important',
         minHeight: 'var(--space-xl)',
       },
+      display: useStylesForHeader ? 'block' : 'inline-grid',
     }),
     menu: (base) => ({
       ...base,
