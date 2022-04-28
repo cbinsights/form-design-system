@@ -106,6 +106,24 @@ export const UncontrolledCheckbox: StoryObj<CheckboxProps> = {
   },
 };
 
+export const UncontrolledCheckboxWithWrappingLabel = {
+  render: (): JSX.Element => {
+    return (
+      <label>
+        <div style={{ height: '100px', border: '1px dotted cyan' }}></div>
+        <Checkbox
+          label=""
+          showLabel={false}
+          onChange={(checked) => {
+            console.log('onChange triggered!', checked);
+          }}
+        />
+        <span className="fdsCheckable-label">click me!</span>
+      </label>
+    );
+  },
+};
+
 export const ControlledCheckbox: StoryObj<{ checkboxLabel: string }> = {
   render: (props) => {
     const [checked, setChecked] = useState(false);

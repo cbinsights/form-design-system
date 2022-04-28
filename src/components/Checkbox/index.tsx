@@ -57,6 +57,8 @@ const Checkbox = ({
   };
 
   const checkedValue = checked ?? internalChecked;
+  const Element = showLabel ? Label.Root : 'div';
+
   return (
     <div
       {...rest}
@@ -65,7 +67,7 @@ const Checkbox = ({
         { 'fdsCheckableCheckbox--disabled': !indeterminate && disabled },
       ])}
     >
-      <Label.Root className="flush--bottom" role="presentation">
+      <Element className="flush--bottom" role="presentation">
         <CheckboxUi.Root
           className="radix-checkbox"
           checked={checkedValue}
@@ -86,8 +88,8 @@ const Checkbox = ({
             </span>
           )}
         </CheckboxUi.Root>
-        {showLabel && <span className="fdsCheckable-label">{label}</span>}
-      </Label.Root>
+        {showLabel && label && <span className="fdsCheckable-label">{label}</span>}
+      </Element>
     </div>
   );
 };
