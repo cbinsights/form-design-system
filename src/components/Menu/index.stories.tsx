@@ -11,7 +11,7 @@ import { StoryObj } from '@storybook/react';
 import { MenuTriggerProps } from './MenuTrigger';
 import { MenuContentProps } from './MenuContent';
 import { MenuItemProps } from './MenuItem';
-import { MenuRootProps } from './MenuRoot';
+import { MenuProps } from '.';
 
 const hidden = {
   table: {
@@ -58,7 +58,7 @@ const events = {
 
 export const Primary = {
   render: (): JSX.Element => (
-    <Menu.Root>
+    <Menu>
       <Menu.Trigger asChild>
         <Button label="Menu trigger" hasCaret />
       </Menu.Trigger>
@@ -72,7 +72,7 @@ export const Primary = {
           />
         </Menu.Item>
       </Menu.Content>
-    </Menu.Root>
+    </Menu>
   ),
 };
 
@@ -80,7 +80,7 @@ export const AnyTriggerWorks = {
   render: (): JSX.Element => (
     <Flex>
       <FlexItem>
-        <Menu.Root>
+        <Menu>
           <Menu.Trigger asChild>
             <Button theme="outlined" label="Recommended trigger" hasCaret />
           </Menu.Trigger>
@@ -89,10 +89,10 @@ export const AnyTriggerWorks = {
             <Menu.Item>Pizza</Menu.Item>
             <Menu.Item>Tide pod</Menu.Item>
           </Menu.Content>
-        </Menu.Root>
+        </Menu>
       </FlexItem>
       <FlexItem>
-        <Menu.Root>
+        <Menu>
           <Menu.Trigger asChild>
             <button>any button will work</button>
           </Menu.Trigger>
@@ -101,7 +101,7 @@ export const AnyTriggerWorks = {
             <Menu.Item>Pizza</Menu.Item>
             <Menu.Item>Tide pod</Menu.Item>
           </Menu.Content>
-        </Menu.Root>
+        </Menu>
       </FlexItem>
     </Flex>
   ),
@@ -117,7 +117,7 @@ export const AnyTriggerWorks = {
 
 export const CustomItems = {
   render: (): JSX.Element => (
-    <Menu.Root>
+    <Menu>
       <Menu.Trigger asChild>
         <Button hasCaret label="actions" theme="outlined" />
       </Menu.Trigger>
@@ -168,7 +168,7 @@ export const CustomItems = {
           </a>
         </Menu.Item>
       </Menu.Content>
-    </Menu.Root>
+    </Menu>
   ),
   parameters: {
     docs: {
@@ -182,7 +182,7 @@ export const CustomItems = {
 export const Trigger: StoryObj<MenuTriggerProps> = {
   render: (args: MenuTriggerProps): JSX.Element => {
     return (
-      <Menu.Root>
+      <Menu>
         <Menu.Trigger {...args}>
           <Button label="Trigger Button" hasCaret />
         </Menu.Trigger>
@@ -191,7 +191,7 @@ export const Trigger: StoryObj<MenuTriggerProps> = {
           <Menu.Item>Copy</Menu.Item>
           <Menu.Item>Pase</Menu.Item>
         </Menu.Content>
-      </Menu.Root>
+      </Menu>
     );
   },
   argTypes: {
@@ -204,10 +204,10 @@ export const Trigger: StoryObj<MenuTriggerProps> = {
   },
 };
 
-export const Root: StoryObj<MenuRootProps> = {
-  render: (args: MenuRootProps): JSX.Element => {
+export const Root: StoryObj<MenuProps> = {
+  render: (args: MenuProps): JSX.Element => {
     return (
-      <Menu.Root {...args} defaultOpen={args.defaultOpen}>
+      <Menu {...args} defaultOpen={args.defaultOpen}>
         <Menu.Trigger asChild>
           <Button label="Trigger Button" hasCaret />
         </Menu.Trigger>
@@ -216,7 +216,7 @@ export const Root: StoryObj<MenuRootProps> = {
           <Menu.Item>Copy</Menu.Item>
           <Menu.Item>Pase</Menu.Item>
         </Menu.Content>
-      </Menu.Root>
+      </Menu>
     );
   },
   argTypes: {
@@ -235,7 +235,7 @@ export const Root: StoryObj<MenuRootProps> = {
 export const Content = {
   render: (args: MenuContentProps): JSX.Element => {
     return (
-      <Menu.Root>
+      <Menu>
         <Menu.Trigger asChild>
           <Button label="Trigger Button" hasCaret style={{ minWidth: '400px' }} />
         </Menu.Trigger>
@@ -246,7 +246,7 @@ export const Content = {
             <Menu.Item>Pase</Menu.Item>
           </div>
         </Menu.Content>
-      </Menu.Root>
+      </Menu>
     );
   },
   argTypes: {
@@ -278,7 +278,7 @@ export const Content = {
 export const Item = {
   render: (args: MenuItemProps & { onSelect: () => void }): JSX.Element => {
     return (
-      <Menu.Root>
+      <Menu>
         <Menu.Trigger asChild>
           <Button label="Trigger Button" hasCaret />
         </Menu.Trigger>
@@ -290,7 +290,7 @@ export const Item = {
             <span>Default props</span>
           </Menu.Item>
         </Menu.Content>
-      </Menu.Root>
+      </Menu>
     );
   },
   argTypes: {

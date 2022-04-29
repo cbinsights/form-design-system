@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event';
 describe('Menu component', () => {
   it('renders component (strings)', () => {
     render(
-      <Menu.Root defaultOpen>
+      <Menu defaultOpen>
         <Menu.Trigger>
           <a href="#">trigger</a>
         </Menu.Trigger>
@@ -15,7 +15,7 @@ describe('Menu component', () => {
           <Menu.Item onSelect={jest.fn()}>Second</Menu.Item>
           <Menu.Item onSelect={jest.fn()}>Third</Menu.Item>
         </Menu.Content>
-      </Menu.Root>
+      </Menu>
     );
     expect(screen.getByText('First')).toBeInTheDocument();
     expect(screen.getByText('Second')).toBeInTheDocument();
@@ -24,7 +24,7 @@ describe('Menu component', () => {
 
   it('renders component (JSX items)', () => {
     render(
-      <Menu.Root defaultOpen>
+      <Menu defaultOpen>
         <Menu.Trigger>
           <a href="#">trigger</a>
         </Menu.Trigger>
@@ -39,7 +39,7 @@ describe('Menu component', () => {
             <p>Third</p>
           </Menu.Item>
         </Menu.Content>
-      </Menu.Root>
+      </Menu>
     );
     expect(screen.getByText('First')).toBeInTheDocument();
     expect(screen.getByText('Second')).toBeInTheDocument();
@@ -48,11 +48,11 @@ describe('Menu component', () => {
 
   it('renders trigger element only', () => {
     render(
-      <Menu.Root>
+      <Menu>
         <Menu.Trigger>
           <a href="#">trigger</a>
         </Menu.Trigger>
-      </Menu.Root>
+      </Menu>
     );
     expect(screen.getByRole('link')).toBeInTheDocument();
     // Menu.Items are not expected to be rendered so we check for them to be null
@@ -62,7 +62,7 @@ describe('Menu component', () => {
 
 it('shows content on Menu open', async () => {
   render(
-    <Menu.Root>
+    <Menu>
       <Menu.Trigger>
         <a href="#">trigger</a>
       </Menu.Trigger>
@@ -71,7 +71,7 @@ it('shows content on Menu open', async () => {
         <Menu.Item onSelect={jest.fn()}>Second</Menu.Item>
         <Menu.Item onSelect={jest.fn()}>Third</Menu.Item>
       </Menu.Content>
-    </Menu.Root>
+    </Menu>
   );
   userEvent.type(screen.getByRole('link', { name: 'trigger' }), '{arrowdown}');
   await waitFor(() => {
