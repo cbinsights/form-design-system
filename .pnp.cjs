@@ -82,7 +82,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel__plugin-transform-runtime", "npm:7.9.2"],
             ["@types/babel__preset-env", "npm:7.9.2"],
             ["@types/css", "npm:0.0.33"],
-            ["@types/cssnano", "npm:4.0.1"],
+            ["@types/cssnano", "npm:5.0.0"],
             ["@types/eslint", "npm:8.4.1"],
             ["@types/fs-extra", "npm:9.0.13"],
             ["@types/glob", "npm:7.2.0"],
@@ -7989,7 +7989,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel__plugin-transform-runtime", "npm:7.9.2"],
             ["@types/babel__preset-env", "npm:7.9.2"],
             ["@types/css", "npm:0.0.33"],
-            ["@types/cssnano", "npm:4.0.1"],
+            ["@types/cssnano", "npm:5.0.0"],
             ["@types/eslint", "npm:8.4.1"],
             ["@types/fs-extra", "npm:9.0.13"],
             ["@types/glob", "npm:7.2.0"],
@@ -13663,10 +13663,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/cssnano", [
-        ["npm:4.0.1", {
-          "packageLocation": "./.yarn/cache/@types-cssnano-npm-4.0.1-2fe9553c38-183fa4c41d.zip/node_modules/@types/cssnano/",
+        ["npm:5.0.0", {
+          "packageLocation": "./.yarn/cache/@types-cssnano-npm-5.0.0-fe9bc9533f-7d05401db3.zip/node_modules/@types/cssnano/",
           "packageDependencies": [
-            ["@types/cssnano", "npm:4.0.1"],
+            ["@types/cssnano", "npm:5.0.0"],
             ["postcss", "npm:8.4.12"]
           ],
           "linkType": "HARD",

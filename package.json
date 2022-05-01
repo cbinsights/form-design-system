@@ -105,7 +105,7 @@
     "@types/babel__plugin-transform-runtime": "7.9.2",
     "@types/babel__preset-env": "7.9.2",
     "@types/css": "0.0.33",
-    "@types/cssnano": "4.0.1",
+    "@types/cssnano": "5.0.0",
     "@types/eslint": "8.4.1",
     "@types/fs-extra": "9.0.13",
     "@types/glob": "7.2.0",
