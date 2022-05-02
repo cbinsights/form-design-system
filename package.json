@@ -227,7 +227,7 @@
     "@reach/menu-button": "0.16.2",
     "autosuggest-highlight": "3.2.1",
     "classcat": "5.0.3",
-    "focus-trap-react": "8.9.2",
+    "focus-trap-react": "8.11.0",
     "raf-schd": "4.0.3",
     "react-popper": "2.2.5",
     "react-select": "5.2.2",
