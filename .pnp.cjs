@@ -55,7 +55,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@commitlint/prompt", "npm:16.2.4"],
             ["@commitlint/prompt-cli", "npm:16.2.4"],
             ["@mdx-js/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.6.22"],
-            ["@popperjs/core", "npm:2.11.4"],
+            ["@popperjs/core", "npm:2.11.5"],
             ["@radix-ui/react-checkbox", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.5"],
             ["@radix-ui/react-dialog", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.7"],
             ["@radix-ui/react-label", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.5"],
@@ -8039,7 +8039,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@commitlint/prompt", "npm:16.2.4"],
             ["@commitlint/prompt-cli", "npm:16.2.4"],
             ["@mdx-js/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.6.22"],
-            ["@popperjs/core", "npm:2.11.4"],
+            ["@popperjs/core", "npm:2.11.5"],
             ["@radix-ui/react-checkbox", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.5"],
             ["@radix-ui/react-dialog", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.7"],
             ["@radix-ui/react-label", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.5"],
@@ -10078,10 +10078,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@popperjs/core", [
-        ["npm:2.11.4", {
-          "packageLocation": "./.yarn/cache/@popperjs-core-npm-2.11.4-aced735dab-36168d274a.zip/node_modules/@popperjs/core/",
+        ["npm:2.11.5", {
+          "packageLocation": "./.yarn/cache/@popperjs-core-npm-2.11.5-a338f16bd4-fd7f9dca3f.zip/node_modules/@popperjs/core/",
           "packageDependencies": [
-            ["@popperjs/core", "npm:2.11.4"]
+            ["@popperjs/core", "npm:2.11.5"]
           ],
           "linkType": "HARD",
         }],
@@ -32818,7 +32818,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/react-popper-virtual-d410fdbadc/0/cache/react-popper-npm-2.2.5-6e86e4bf1e-915fcf08e1.zip/node_modules/react-popper/",
           "packageDependencies": [
             ["react-popper", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.2.5"],
-            ["@popperjs/core", "npm:2.11.4"],
+            ["@popperjs/core", "npm:2.11.5"],
             ["@types/popperjs__core", null],
             ["@types/react", "npm:17.0.44"],
             ["react", "npm:16.14.0"],
