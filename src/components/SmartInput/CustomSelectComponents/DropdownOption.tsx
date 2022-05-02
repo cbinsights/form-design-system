@@ -5,6 +5,7 @@ import {
   SEARCH_TERM_RESEARCH,
   SEARCH_TERM_TABS,
 } from '../utils';
+import cc from 'classcat';
 import CenteredHighlightedText from './CenteredHighlightedText';
 import HighlightedText from './HighlightedText';
 import { OptionProps } from '..';
@@ -39,9 +40,12 @@ const DetailedDropdownOption = ({
   const suggestedText = alias ? `${text} (${alias})` : text;
   return (
     <div
-      className={`smart-input-option display--flex ${
-        defaultType === SEARCH_TERM_RESEARCH ? 'border--bottom' : ''
-      }`}
+      className={cc([
+        'smart-input-option display--flex',
+        {
+          'border--bottom': defaultType === SEARCH_TERM_RESEARCH,
+        },
+      ])}
       data-testid="smart-header-input-option"
       data-sugg-type={category}
       style={optionStyle}

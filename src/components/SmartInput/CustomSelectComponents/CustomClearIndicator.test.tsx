@@ -78,7 +78,7 @@ describe('CustomClearIndicator component', () => {
     value: null,
   };
 
-  const defaultProps: ClearIndicatorProps<OptionProps, true> = {
+  const defaultProps: ClearIndicatorProps<OptionProps> = {
     hasValue: false,
     setValue: jest.fn(),
     cx: jest.fn(),
