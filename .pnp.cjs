@@ -119,7 +119,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cssnano", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.1.7"],
             ["cypress", "npm:9.6.0"],
             ["cz-conventional-changelog", "npm:3.3.0"],
-            ["dayjs", "npm:1.11.0"],
+            ["dayjs", "npm:1.11.1"],
             ["dictionary", "link:./src/dictionary::locator=%40cbinsights%2Ffds%40workspace%3A."],
             ["eslint", "npm:8.14.0"],
             ["eslint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.5.0"],
@@ -8026,7 +8026,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cssnano", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.1.7"],
             ["cypress", "npm:9.6.0"],
             ["cz-conventional-changelog", "npm:3.3.0"],
-            ["dayjs", "npm:1.11.0"],
+            ["dayjs", "npm:1.11.1"],
             ["dictionary", "link:./src/dictionary::locator=%40cbinsights%2Ffds%40workspace%3A."],
             ["eslint", "npm:8.14.0"],
             ["eslint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.5.0"],
@@ -19648,10 +19648,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:1.11.0", {
-          "packageLocation": "./.yarn/cache/dayjs-npm-1.11.0-592daa78a5-2d36f6d713.zip/node_modules/dayjs/",
+        ["npm:1.11.1", {
+          "packageLocation": "./.yarn/cache/dayjs-npm-1.11.1-aef2935f8f-d5fefd7993.zip/node_modules/dayjs/",
           "packageDependencies": [
-            ["dayjs", "npm:1.11.0"]
+            ["dayjs", "npm:1.11.1"]
           ],
           "linkType": "HARD",
         }]
