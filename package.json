@@ -149,7 +149,7 @@
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-storybook": "0.5.11",
     "fs-extra": "10.0.1",
-    "glob": "7.2.0",
+    "glob": "8.0.1",
     "handlebars": "4.7.7",
     "husky": "7.0.4",
     "icons": "link:./src/icons",
