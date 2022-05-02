@@ -90,7 +90,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/mdx-js__react", "npm:1.5.5"],
             ["@types/postcss-import", "npm:14.0.0"],
             ["@types/prettier", "npm:2.6.0"],
-            ["@types/prop-types", "npm:15.7.4"],
+            ["@types/prop-types", "npm:15.7.5"],
             ["@types/raf-schd", "npm:4.0.1"],
             ["@types/react", "npm:17.0.44"],
             ["@types/react-dom", "npm:18.0.3"],
@@ -7997,7 +7997,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/mdx-js__react", "npm:1.5.5"],
             ["@types/postcss-import", "npm:14.0.0"],
             ["@types/prettier", "npm:2.6.0"],
-            ["@types/prop-types", "npm:15.7.4"],
+            ["@types/prop-types", "npm:15.7.5"],
             ["@types/raf-schd", "npm:4.0.1"],
             ["@types/react", "npm:17.0.44"],
             ["@types/react-dom", "npm:18.0.3"],
@@ -14092,6 +14092,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-prop-types-npm-15.7.4-592896a9fe-ef6e1899e5.zip/node_modules/@types/prop-types/",
           "packageDependencies": [
             ["@types/prop-types", "npm:15.7.4"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:15.7.5", {
+          "packageLocation": "./.yarn/cache/@types-prop-types-npm-15.7.5-2aa48aa177-5b43b8b154.zip/node_modules/@types/prop-types/",
+          "packageDependencies": [
+            ["@types/prop-types", "npm:15.7.5"]
           ],
           "linkType": "HARD",
         }]
@@ -22191,7 +22198,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/focus-trap-react-virtual-6d1b6264d6/0/cache/focus-trap-react-npm-8.9.2-24b26c52f3-31e2e4e0ee.zip/node_modules/focus-trap-react/",
           "packageDependencies": [
             ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.9.2"],
-            ["@types/prop-types", "npm:15.7.4"],
+            ["@types/prop-types", "npm:15.7.5"],
             ["@types/react", "npm:17.0.44"],
             ["@types/react-dom", "npm:18.0.3"],
             ["focus-trap", "npm:6.7.3"],
