@@ -89,7 +89,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:27.4.1"],
             ["@types/mdx-js__react", "npm:1.5.5"],
             ["@types/postcss-import", "npm:14.0.0"],
-            ["@types/prettier", "npm:2.4.4"],
+            ["@types/prettier", "npm:2.6.0"],
             ["@types/prop-types", "npm:15.7.4"],
             ["@types/raf-schd", "npm:4.0.1"],
             ["@types/react", "npm:17.0.43"],
@@ -152,7 +152,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"],
             ["react-hook-form", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.29.0"],
             ["react-is", "npm:16.13.1"],
-            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.2"],
+            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.3"],
             ["react-popper", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.2.5"],
             ["react-select", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.2.2"],
             ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],
@@ -7996,7 +7996,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:27.4.1"],
             ["@types/mdx-js__react", "npm:1.5.5"],
             ["@types/postcss-import", "npm:14.0.0"],
-            ["@types/prettier", "npm:2.4.4"],
+            ["@types/prettier", "npm:2.6.0"],
             ["@types/prop-types", "npm:15.7.4"],
             ["@types/raf-schd", "npm:4.0.1"],
             ["@types/react", "npm:17.0.43"],
@@ -8059,7 +8059,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"],
             ["react-hook-form", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.29.0"],
             ["react-is", "npm:16.13.1"],
-            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.2"],
+            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.3"],
             ["react-popper", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.2.5"],
             ["react-select", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.2.2"],
             ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],
@@ -14063,10 +14063,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:2.4.4", {
-          "packageLocation": "./.yarn/cache/@types-prettier-npm-2.4.4-bab324963d-2c2cc57efd.zip/node_modules/@types/prettier/",
+        ["npm:2.6.0", {
+          "packageLocation": "./.yarn/cache/@types-prettier-npm-2.6.0-68db36c8c1-946f1f82ce.zip/node_modules/@types/prettier/",
           "packageDependencies": [
-            ["@types/prettier", "npm:2.4.4"]
+            ["@types/prettier", "npm:2.6.0"]
           ],
           "linkType": "HARD",
         }]
@@ -31806,10 +31806,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["prismjs", [
-        ["npm:1.27.0", {
-          "packageLocation": "./.yarn/cache/prismjs-npm-1.27.0-ca4e1667c6-85c7f4a3e9.zip/node_modules/prismjs/",
+        ["npm:1.28.0", {
+          "packageLocation": "./.yarn/cache/prismjs-npm-1.28.0-28f20a79ff-bde93fb2be.zip/node_modules/prismjs/",
           "packageDependencies": [
-            ["prismjs", "npm:1.27.0"]
+            ["prismjs", "npm:1.28.0"]
           ],
           "linkType": "HARD",
         }]
@@ -32611,17 +32611,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["react-markdown", [
-        ["npm:8.0.2", {
-          "packageLocation": "./.yarn/cache/react-markdown-npm-8.0.2-b0146a5b31-9c7f4751bc.zip/node_modules/react-markdown/",
+        ["npm:8.0.3", {
+          "packageLocation": "./.yarn/cache/react-markdown-npm-8.0.3-7227aac18d-66c0b45889.zip/node_modules/react-markdown/",
           "packageDependencies": [
-            ["react-markdown", "npm:8.0.2"]
+            ["react-markdown", "npm:8.0.3"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.2", {
-          "packageLocation": "./.yarn/__virtual__/react-markdown-virtual-371085d15f/0/cache/react-markdown-npm-8.0.2-b0146a5b31-9c7f4751bc.zip/node_modules/react-markdown/",
+        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.3", {
+          "packageLocation": "./.yarn/__virtual__/react-markdown-virtual-fce6855f36/0/cache/react-markdown-npm-8.0.3-7227aac18d-66c0b45889.zip/node_modules/react-markdown/",
           "packageDependencies": [
-            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.2"],
+            ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.3"],
             ["@types/hast", "npm:2.3.1"],
             ["@types/prop-types", "npm:15.7.4"],
             ["@types/react", "npm:17.0.43"],
@@ -32945,7 +32945,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.43"],
             ["highlight.js", "npm:10.1.2"],
             ["lowlight", "npm:1.14.0"],
-            ["prismjs", "npm:1.27.0"],
+            ["prismjs", "npm:1.28.0"],
             ["react", "npm:16.14.0"],
             ["refractor", "npm:3.1.0"]
           ],
@@ -33208,7 +33208,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["refractor", "npm:3.1.0"],
             ["hastscript", "npm:5.1.2"],
             ["parse-entities", "npm:2.0.0"],
-            ["prismjs", "npm:1.27.0"]
+            ["prismjs", "npm:1.28.0"]
           ],
           "linkType": "HARD",
         }]
