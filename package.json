@@ -172,7 +172,7 @@
     "react-dom": "16.14.0",
     "react-hook-form": "7.29.0",
     "react-is": "16.13.1",
-    "react-markdown": "8.0.2",
+    "react-markdown": "8.0.3",
     "react-transition-group": "4.4.2",
     "rimraf": "3.0.2",
     "semantic-release": "19.0.2",
@@ -235,7 +235,7 @@
   },
   "resolutions": {
     "minimist": ">0.2.1",
-    "prismjs": "1.27.0",
+    "prismjs": "1.28.0",
     "postcss": "8"
   },
   "packageManager": "yarn@3.1.1",
