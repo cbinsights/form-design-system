@@ -128,7 +128,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.29.4"],
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.11"],
             ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.9.2"],
-            ["fs-extra", "npm:10.0.1"],
+            ["fs-extra", "npm:10.1.0"],
             ["glob", "npm:8.0.1"],
             ["handlebars", "npm:4.7.7"],
             ["husky", "npm:7.0.4"],
@@ -8035,7 +8035,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.29.4"],
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.11"],
             ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.9.2"],
-            ["fs-extra", "npm:10.0.1"],
+            ["fs-extra", "npm:10.1.0"],
             ["glob", "npm:8.0.1"],
             ["handlebars", "npm:4.7.7"],
             ["husky", "npm:7.0.4"],
@@ -22526,10 +22526,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:10.0.1", {
-          "packageLocation": "./.yarn/cache/fs-extra-npm-10.0.1-7c8ee14050-c1faaa5eb9.zip/node_modules/fs-extra/",
+        ["npm:10.1.0", {
+          "packageLocation": "./.yarn/cache/fs-extra-npm-10.1.0-86573680ed-dc94ab3709.zip/node_modules/fs-extra/",
           "packageDependencies": [
-            ["fs-extra", "npm:10.0.1"],
+            ["fs-extra", "npm:10.1.0"],
             ["graceful-fs", "npm:4.2.4"],
             ["jsonfile", "npm:6.0.1"],
             ["universalify", "npm:2.0.0"]
