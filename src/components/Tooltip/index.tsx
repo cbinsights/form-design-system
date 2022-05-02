@@ -24,7 +24,9 @@ const Tooltip = ({
 }: TooltipProps): JSX.Element => (
   <RadixTooltip.Provider>
     <RadixTooltip.Root delayDuration={350}>
-      <RadixTooltip.Trigger asChild>{trigger}</RadixTooltip.Trigger>
+      <RadixTooltip.Trigger asChild>
+        <span>{trigger}</span>
+      </RadixTooltip.Trigger>
       <RadixTooltip.Content
         side={position}
         sideOffset={parseInt(FDS.SPACE_S, 10)}

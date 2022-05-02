@@ -2,7 +2,7 @@
  * The wrapper element
  */
 .fds-icon {
-  fill: currentColor;
+  fill: currentcolor;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@
  * Render with geometric precision to avoid fuzzy rendering.
  */
 .fds-icon svg {
-  shape-rendering: geometricPrecision;
+  shape-rendering: geometricprecision;
   width: 100%;
   height: 100%;
 }

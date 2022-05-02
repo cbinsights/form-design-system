@@ -11,6 +11,7 @@ import DropdownButton from 'components/DropdownButton';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 import FloatingAction from 'components/FloatingAction';
+import Footer from 'components/Footer';
 import IconButton from 'components/IconButton';
 import Indicator from 'components/Indicator';
 import InputGroup from 'components/InputGroup';
@@ -18,6 +19,7 @@ import Loading from 'components/Loading';
 import Menu from 'components/Menu';
 import MenuItem from 'components/MenuItem';
 import MenuLink from 'components/MenuLink';
+import Navbar from 'components/Navbar';
 import Popover from 'components/Popover';
 import Prompt from 'components/Prompt';
 import Radio from 'components/Radio';
@@ -44,6 +46,7 @@ export {
   Flex,
   FlexItem,
   FloatingAction,
+  Footer,
   Header,
   IconButton,
   Indicator,
@@ -52,6 +55,7 @@ export {
   Menu,
   MenuItem,
   MenuLink,
+  Navbar,
   Popover,
   Prompt,
   Radio,
