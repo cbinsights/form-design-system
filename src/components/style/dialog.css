@@ -27,8 +27,6 @@
 
 .dialog-overlay {
   z-index: var(--zindex-modal);
-  background: var(--color-charcoal);
-  opacity: 0.6;
   top: 0;
   left: 0;
   right: 0;
@@ -37,6 +35,7 @@
 }
 
 .dialog-wrapper {
+  background: rgba(var(--rgb-charcoal) / 60%);
   z-index: var(--zindex-modal);
   top: 0;
   left: 0;
@@ -83,4 +82,60 @@
   position: absolute;
   top: 12px;
   right: 12px;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.6;
+  }
+}
+
+@keyframes overlayFadeOut {
+  from {
+    opacity: 0.6;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.dialog-overlay[data-state='open'] {
+  animation: overlayFadeIn 200ms ease-out;
+}
+
+.dialog-overlay[data-state='closed'] {
+  animation: overlayFadeOut 200ms ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.ease-in-out[data-state='open'] {
+  animation: fadeIn 200ms ease-out;
+}
+
+.ease-in-out[data-state='closed'] {
+  animation: fadeOut 200ms ease-out;
 }
