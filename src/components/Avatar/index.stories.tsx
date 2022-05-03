@@ -44,14 +44,15 @@ export const PlaceholderIcon: StoryObj<AvatarProps> = {
 };
 
 export const Colors: StoryObj<AvatarProps> = {
-  render: (): JSX.Element => (
+  render: (args: AvatarProps): JSX.Element => (
     <StoryWrapper>
       <StoryItem>
-        <Avatar name="default" />
+        <Avatar {...args} name="default" />
       </StoryItem>
       {BG_COLORS.map((bgColor, idx) => (
         <StoryItem key={idx}>
           <Avatar
+            {...args}
             name={`${bgColor.slice(0, 1)} ${bgColor.slice(1, 2)}`}
             bgColor={bgColor}
           />
@@ -70,13 +71,17 @@ export const Colors: StoryObj<AvatarProps> = {
 };
 
 export const Images: StoryObj<AvatarProps> = {
-  render: (): JSX.Element => (
+  render: (args: AvatarProps): JSX.Element => (
     <StoryWrapper>
       <StoryItem>
-        <Avatar name="Hello Impecable" imgUrl="http://placeimg.com/80/81/animals" />
+        <Avatar
+          {...args}
+          name="Hello Impecable"
+          imgUrl="http://placeimg.com/80/81/animals"
+        />
       </StoryItem>
       <StoryItem>
-        <Avatar name="Hello Impecable" imgUrl="invalid url" />
+        <Avatar {...args} name="Hello Impecable" imgUrl="invalid url" />
       </StoryItem>
     </StoryWrapper>
   ),
@@ -91,11 +96,11 @@ export const Images: StoryObj<AvatarProps> = {
 };
 
 export const Sizes: StoryObj<AvatarProps> = {
-  render: (): JSX.Element => (
+  render: (args: AvatarProps): JSX.Element => (
     <StoryWrapper>
       {SIZES.map((size, idx) => (
         <StoryItem key={idx}>
-          <Avatar name="Hello Impecable " size={size} />
+          <Avatar {...args} name="Hello Impecable " size={size} />
         </StoryItem>
       ))}
     </StoryWrapper>
@@ -103,11 +108,11 @@ export const Sizes: StoryObj<AvatarProps> = {
 };
 
 export const Radii: StoryObj<AvatarProps> = {
-  render: (): JSX.Element => (
+  render: (args: AvatarProps): JSX.Element => (
     <StoryWrapper>
       {RADII.map((radius, idx) => (
         <StoryItem key={idx}>
-          <Avatar name="Hello Impecable " radius={radius} />
+          <Avatar {...args} name="Hello Impecable " radius={radius} />
         </StoryItem>
       ))}
     </StoryWrapper>
@@ -115,16 +120,17 @@ export const Radii: StoryObj<AvatarProps> = {
 };
 
 export const Button: StoryObj<AvatarProps> = {
-  render: (): JSX.Element => (
+  render: (args: AvatarProps): JSX.Element => (
     <StoryWrapper>
       <StoryItem>
-        <Avatar name="Hello Impecable" href="#" />
+        <Avatar {...args} name="Hello Impecable" href="#" />
       </StoryItem>
       <StoryItem>
-        <Avatar name="Hello Impecable" />
+        <Avatar {...args} name="Hello Impecable" />
       </StoryItem>
       <StoryItem>
         <Avatar
+          {...args}
           name="Hello Impecable"
           imgUrl="http://placeimg.com/80/81/animals"
           href="#"
