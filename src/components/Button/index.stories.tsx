@@ -17,11 +17,11 @@ export const Primary: StoryObj<ButtonProps> = {
 };
 
 export const Themes: StoryObj<ButtonProps> = {
-  render: (): JSX.Element => (
+  render: (args: ButtonProps): JSX.Element => (
     <StoryWrapper>
       {THEMES.map((theme, idx) => (
         <StoryItem key={idx}>
-          <Button theme={theme} label={theme} />
+          <Button {...args} theme={theme} label={theme} />
         </StoryItem>
       ))}
     </StoryWrapper>
@@ -29,11 +29,11 @@ export const Themes: StoryObj<ButtonProps> = {
 };
 
 export const IsDestructive: StoryObj<ButtonProps> = {
-  render: (): JSX.Element => (
+  render: (args: ButtonProps): JSX.Element => (
     <StoryWrapper>
       {THEMES.map((theme, idx) => (
         <StoryItem key={idx}>
-          <Button isDestructive theme={theme} label={theme} />
+          <Button {...args} isDestructive theme={theme} label={theme} />
         </StoryItem>
       ))}
     </StoryWrapper>
@@ -49,14 +49,14 @@ export const IsDestructive: StoryObj<ButtonProps> = {
 };
 
 export const Inverted: StoryObj<ButtonProps> = {
-  render: (): JSX.Element => (
+  render: (args: ButtonProps): JSX.Element => (
     <div className="inverted bgColor--blue padding--all rounded--all">
       <StoryWrapper>
         <StoryItem>
-          <Button theme="ghost" label="Button" />
+          <Button {...args} theme="ghost" label="Button" />
         </StoryItem>
         <StoryItem>
-          <Button theme="outlined" label="Button" />
+          <Button {...args} theme="outlined" label="Button" />
         </StoryItem>
       </StoryWrapper>
     </div>
@@ -77,7 +77,7 @@ type Shape = {
 const initialValue: Shape = {};
 
 export const IsActive: StoryObj<ButtonProps> = {
-  render: (): JSX.Element => (
+  render: (args: ButtonProps): JSX.Element => (
     <>
       <StoryWrapper>
         <State
@@ -87,6 +87,7 @@ export const IsActive: StoryObj<ButtonProps> = {
               {THEMES.map((theme, idx) => (
                 <StoryItem key={idx}>
                   <Button
+                    {...args}
                     theme={theme}
                     isActive={!value[idx]}
                     label={theme}
@@ -150,14 +151,14 @@ export const IsActive: StoryObj<ButtonProps> = {
 };
 
 export const Sizes: StoryObj<ButtonProps> = {
-  render: (): JSX.Element => (
+  render: (args: ButtonProps): JSX.Element => (
     <>
       {SIZES.map((size, idx) => (
         <div
           key={idx}
           className="display--inlineBlock margin--right--s margin--bottom--s"
         >
-          <Button size={size} label="Button" />
+          <Button {...args} size={size} label="Button" />
         </div>
       ))}
     </>
@@ -171,13 +172,13 @@ export const FullWidth: StoryObj<ButtonProps> = {
 };
 
 export const Icons: StoryObj<ButtonProps> = {
-  render: (): JSX.Element => (
+  render: (args: ButtonProps): JSX.Element => (
     <StoryWrapper>
       <StoryItem>
-        <Button IconLeft={WorldIcon} label="Button" />
+        <Button {...args} IconLeft={WorldIcon} label="Button" />
       </StoryItem>
       <StoryItem>
-        <Button IconRight={StarFilledIcon} label="Button" />
+        <Button {...args} IconRight={StarFilledIcon} label="Button" />
       </StoryItem>
     </StoryWrapper>
   ),
@@ -192,43 +193,55 @@ export const Icons: StoryObj<ButtonProps> = {
 };
 
 export const Caret: StoryObj<ButtonProps> = {
-  render: (): JSX.Element => (
+  render: (args: ButtonProps): JSX.Element => (
     <StoryWrapper>
       <StoryItem>
-        <Button theme="blue" hasCaret label="Caret" />
+        <Button {...args} theme="blue" hasCaret label="Caret" />
       </StoryItem>
       <StoryItem>
-        <Button theme="blue" hasCaret IconRight={StarFilledIcon} label="Caret" />
+        <Button
+          {...args}
+          theme="blue"
+          hasCaret
+          IconRight={StarFilledIcon}
+          label="Caret"
+        />
       </StoryItem>
       <StoryItem>
-        <Button theme="blue" hasCaret IconRight={StarFilledIcon} label="Caret" />
+        <Button
+          {...args}
+          theme="blue"
+          hasCaret
+          IconRight={StarFilledIcon}
+          label="Caret"
+        />
       </StoryItem>
     </StoryWrapper>
   ),
 };
 
 export const Loading: StoryObj<ButtonProps> = {
-  render: (): JSX.Element => (
+  render: (args: ButtonProps): JSX.Element => (
     <>
       <StoryWrapper>
         {THEMES.map((theme, idx) => (
           <StoryItem key={idx}>
-            <Button theme={theme} isLoading label="Button" />
+            <Button {...args} theme={theme} isLoading label="Button" />
           </StoryItem>
         ))}
         {THEMES.map((theme, idx) => (
           <StoryItem key={idx}>
-            <Button theme={theme} isDestructive isLoading label="Button" />
+            <Button {...args} theme={theme} isDestructive isLoading label="Button" />
           </StoryItem>
         ))}
       </StoryWrapper>
       <div className="inverted bgColor--blue padding--all rounded--all margin--top">
         <StoryWrapper>
           <StoryItem>
-            <Button theme="ghost" isLoading label="Button" />
+            <Button {...args} theme="ghost" isLoading label="Button" />
           </StoryItem>
           <StoryItem>
-            <Button theme="outlined" isLoading label="Button" />
+            <Button {...args} theme="outlined" isLoading label="Button" />
           </StoryItem>
         </StoryWrapper>
       </div>
@@ -270,13 +283,13 @@ export const Breakout: StoryObj<ButtonProps> = {
 };
 
 export const Misc: StoryObj<ButtonProps> = {
-  render: (): JSX.Element => (
+  render: (args: ButtonProps): JSX.Element => (
     <div
       style={{
         width: '100px',
       }}
     >
-      <Button label="Text can wrap" />
+      <Button {...args} label="Text can wrap" />
     </div>
   ),
 };
