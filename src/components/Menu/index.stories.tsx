@@ -8,9 +8,6 @@ import EditIcon from 'icons/react/EditIcon';
 import FundingIcon from 'icons/react/FundingIcon';
 import { Menu, Tooltip } from 'components';
 import { StoryObj } from '@storybook/react';
-import { MenuTriggerProps } from './MenuTrigger';
-import { MenuContentProps } from './MenuContent';
-import { MenuItemProps } from './MenuItem';
 import { MenuProps } from '.';
 
 const hidden = {
@@ -21,6 +18,7 @@ const hidden = {
 
 const events = {
   content: {
+    ...hidden,
     onCloseAutoFocus: {
       ...hidden,
       action: 'onCloseAutoFocus',
@@ -43,12 +41,14 @@ const events = {
     },
   },
   root: {
+    ...hidden,
     onOpenChange: {
       ...hidden,
       action: 'onOpenChange',
     },
   },
   item: {
+    ...hidden,
     onSelect: {
       ...hidden,
       action: 'onSelect',
@@ -57,14 +57,14 @@ const events = {
 };
 
 export const Primary = {
-  render: (): JSX.Element => (
-    <Menu>
-      <Menu.Trigger asChild>
+  render: (args: any): JSX.Element => (
+    <Menu {...args}>
+      <Menu.Trigger {...args} asChild>
         <Button label="Menu trigger" hasCaret />
       </Menu.Trigger>
-      <Menu.Content>
-        <Menu.Item>🍕 Pizza</Menu.Item>
-        <Menu.Item>🌮 Tacos</Menu.Item>
+      <Menu.Content {...args}>
+        <Menu.Item {...args}>🍕 Pizza</Menu.Item>
+        <Menu.Item {...args}>🌮 Tacos</Menu.Item>
         <Menu.Item>
           <Tooltip
             trigger={<span>🫔 Tamal</span>}
@@ -74,10 +74,15 @@ export const Primary = {
       </Menu.Content>
     </Menu>
   ),
+  argTypes: {
+    ...events.root,
+    ...events.content,
+    ...events.item,
+  },
 };
 
 export const AnyTriggerWorks = {
-  render: (): JSX.Element => (
+  render: (_args: unknown): JSX.Element => (
     <Flex>
       <FlexItem>
         <Menu>
@@ -116,7 +121,7 @@ export const AnyTriggerWorks = {
 };
 
 export const CustomItems = {
-  render: (): JSX.Element => (
+  render: (_args: unknown): JSX.Element => (
     <Menu>
       <Menu.Trigger asChild>
         <Button hasCaret label="actions" theme="outlined" />
@@ -179,134 +184,40 @@ export const CustomItems = {
   },
 };
 
-export const Trigger: StoryObj<MenuTriggerProps> = {
-  render: (args: MenuTriggerProps): JSX.Element => {
+export const DisabledItems: StoryObj<MenuProps> = {
+  render: (_args: MenuProps) => {
     return (
       <Menu>
-        <Menu.Trigger {...args}>
+        <Menu.Trigger>
           <Button label="Trigger Button" hasCaret />
         </Menu.Trigger>
+        <Menu.Content>
+          <Menu.Item disabled>Cut</Menu.Item>
+          <Menu.Item>Copy</Menu.Item>
+          <Menu.Item>Paste</Menu.Item>
+        </Menu.Content>
+      </Menu>
+    );
+  },
+};
+
+export const Disabled: StoryObj<{ disabled: boolean }> = {
+  render: (args: { disabled: boolean }) => (
+    <Menu>
+      <Menu.Trigger>
+        <Button label="Trigger Button" hasCaret />
+      </Menu.Trigger>
+      {!args.disabled && (
         <Menu.Content>
           <Menu.Item>Cut</Menu.Item>
           <Menu.Item>Copy</Menu.Item>
-          <Menu.Item>Pase</Menu.Item>
+          <Menu.Item>Paste</Menu.Item>
         </Menu.Content>
-      </Menu>
-    );
-  },
-  argTypes: {
-    asChild: {
-      type: {
-        name: 'boolean',
-        required: false,
-      },
-    },
-  },
-};
-
-export const Root: StoryObj<MenuProps> = {
-  render: (args: MenuProps): JSX.Element => {
-    return (
-      <Menu {...args} defaultOpen={args.defaultOpen}>
-        <Menu.Trigger asChild>
-          <Button label="Trigger Button" hasCaret />
-        </Menu.Trigger>
-        <Menu.Content>
-          <Menu.Item>Cut</Menu.Item>
-          <Menu.Item>Copy</Menu.Item>
-          <Menu.Item>Pase</Menu.Item>
-        </Menu.Content>
-      </Menu>
-    );
-  },
-  argTypes: {
-    defaultOpen: {
-      type: 'boolean',
-      defaultValue: true,
-    },
-    open: {
-      type: 'boolean',
-      required: false,
-    },
-    ...events.root,
-  },
-};
-
-export const Content = {
-  render: (args: MenuContentProps): JSX.Element => {
-    return (
-      <Menu>
-        <Menu.Trigger asChild>
-          <Button label="Trigger Button" hasCaret style={{ minWidth: '400px' }} />
-        </Menu.Trigger>
-        <Menu.Content {...args}>
-          <div>
-            <Menu.Item>Cut</Menu.Item>
-            <Menu.Item>Copy</Menu.Item>
-            <Menu.Item>Pase</Menu.Item>
-          </div>
-        </Menu.Content>
-      </Menu>
-    );
-  },
-  argTypes: {
-    asChild: {
-      type: 'boolean',
-      defaultValue: false,
-    },
-    collisionTolerance: {
-      type: 'number',
-      defaultValue: 0,
-    },
-    portalled: {
-      type: 'boolean',
-      defaultValue: true,
-    },
-    side: {
-      options: ['top', 'right', 'bottom', 'left'],
-      defaultValue: 'bottom',
-      control: { type: 'radio' },
-    },
-    sideOffset: {
-      type: 'number',
-      defaultValue: 0,
-    },
-    ...events.content,
-  },
-};
-
-export const Item = {
-  render: (args: MenuItemProps & { onSelect: () => void }): JSX.Element => {
-    return (
-      <Menu>
-        <Menu.Trigger asChild>
-          <Button label="Trigger Button" hasCaret />
-        </Menu.Trigger>
-        <Menu.Content>
-          <Menu.Item {...args}>
-            <span style={{ outline: '1px dotted red' }}>Click Me!</span>
-          </Menu.Item>
-          <Menu.Item>
-            <span>Default props</span>
-          </Menu.Item>
-        </Menu.Content>
-      </Menu>
-    );
-  },
-  argTypes: {
-    asChild: {
-      type: 'boolean',
-      defaultValue: false,
-    },
-    disabled: {
-      type: 'boolean',
-      required: false,
-    },
-    textValue: {
-      type: 'string',
-      required: false,
-    },
-    ...events.item,
+      )}
+    </Menu>
+  ),
+  args: {
+    disabled: true,
   },
 };
 

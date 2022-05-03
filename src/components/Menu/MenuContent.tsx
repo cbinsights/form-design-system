@@ -19,7 +19,7 @@ const MenuContent = ({ children, ...rest }: MenuContentProps): JSX.Element => (
     {...rest}
     className={cc(['fdsMenuItems elevation--2 rounded--all bgColor--white'])}
     align={'start'}
-    avoidCollisions={true}
+    avoidCollisions
     sideOffset={0}
     forceMount={undefined}
     loop={false}
