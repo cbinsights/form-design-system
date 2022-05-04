@@ -162,7 +162,7 @@ export default {
     MenuItem,
     MenuLink,
   },
-  title: 'components/Menu',
+  title: 'Components/Menu',
   argTypes: {
     onSelect: {
       action: 'onSelect',

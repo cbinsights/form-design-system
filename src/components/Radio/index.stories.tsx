@@ -84,7 +84,7 @@ export const Controlled: StoryObj<RadioProps> = {
 
 export default {
   component: Radio,
-  title: 'components/Radio',
+  title: 'Components/Radio',
   argTypes: {
     onChange: {
       action: 'onChange',
