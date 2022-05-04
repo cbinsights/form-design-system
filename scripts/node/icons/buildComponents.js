@@ -5,8 +5,7 @@ const glob = require('glob');
 const toJsx = require('svg-to-jsx');
 const getComponentName = require('./helpers/getComponentName');
 const { buildConfig } = require('./icons.config');
-const SVGO = require('svgo');
-const { svgoOptions, svgoPlugins } = require('./helpers/svgoConfig');
+const { optimize } = require('svgo');
 
 // @function TEMPLATE
 const TEMPLATE = require('handlebars').compile(
@@ -21,15 +20,10 @@ const TEMPLATE = require('handlebars').compile(
  */
 const writeComponent = async (filepath) => {
   const componentName = getComponentName(filepath);
-  const iconName = path.basename(filepath, '.svg');
-  const svgo = new SVGO({
-    ...svgoOptions,
-    plugins: [...svgoPlugins, { cleanupIDs: { prefix: iconName } }],
-  });
 
   fs.promises
     .readFile(filepath)
-    .then((svg) => svgo.optimize(svg, { filepath }))
+    .then((svg) => optimize(svg, { path: filepath, multipass: true }))
     .then((optimized) => toJsx(optimized.data))
     .then((jsx) => {
       const content = TEMPLATE({
