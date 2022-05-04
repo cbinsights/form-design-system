@@ -44,14 +44,24 @@ export const Primary: StoryObj<HeaderProps> = {
       },
     },
   },
-  render: ({ showLogo, logoImg, onSearchClick, onAdvancedSearchClick }): JSX.Element => {
+  render: ({
+    showLogo,
+    logoImg,
+    onSearchClick,
+    onAdvancedSearchClick,
+    smartInputProps,
+  }): JSX.Element => {
     const [searchItems, setSearchItems] = React.useState<PropsValue<OptionProps>>();
     const [options, setOptions] = React.useState<OptionProps[]>([]);
     const ref = React.useRef<SelectInstance<OptionProps, true>>(null);
     const [inputValue, setInputValue] = React.useState('');
 
     const onSetSearchItems = (items: PropsValue<OptionProps>) => {
-      setSearchItems(items);
+      if (Array.isArray(searchItems) && Array.isArray(items)) {
+        setSearchItems([...searchItems, ...items]);
+      } else {
+        setSearchItems(items);
+      }
     };
 
     const onInputChange = (value: string) => {
@@ -78,8 +88,10 @@ export const Primary: StoryObj<HeaderProps> = {
       searchItems,
       inputValue,
       openMenuOnClick: false,
+      isMulti: true,
 
       selectRef: ref,
+      ...smartInputProps,
     };
 
     return (
