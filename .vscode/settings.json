@@ -10,5 +10,6 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "explorer.compactFolders": false
+  "explorer.compactFolders": false,
+  "stylelint.stylelintPath": ".yarn/sdks/stylelint/lib/index.js"
 }
