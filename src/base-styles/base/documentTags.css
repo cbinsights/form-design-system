@@ -14,7 +14,7 @@ html {
   font-family: var(--font-family-default);
   font-size: var(--font-size-default);
   color: var(--font-color-primary);
-  text-rendering: geometricPrecision;
+  text-rendering: geometricprecision;
   overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

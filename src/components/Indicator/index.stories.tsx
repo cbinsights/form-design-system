@@ -1,11 +1,10 @@
-import React from 'react';
+import { StoryObj } from '@storybook/react';
 import Indicator, { IndicatorProps } from '.';
 
-const Template = (args: IndicatorProps): JSX.Element => <Indicator {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  label: 'Indicator',
+export const Primary: StoryObj<IndicatorProps> = {
+  args: {
+    label: 'Indicator',
+  },
 };
 
 export default {

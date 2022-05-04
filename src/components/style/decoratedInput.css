@@ -23,7 +23,7 @@
   color: var(--font-color-primary);
 
   /* match `input` border */
-  border: 1px solid rgb(var(--rgb-charcoal) 0.24);
+  border: 1px solid rgb(var(--rgb-charcoal) / 24%);
 
   /* use line box to center text and match input height */
   padding: 0 var(--space-s);
@@ -34,13 +34,13 @@
 .fdsDecoratedInput[data-before] input {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
-  border-left: 1px solid rgb(var(--rgb-charcoal) 0.24);
+  border-left: 1px solid rgb(var(--rgb-charcoal) / 24%);
 }
 
 .fdsDecoratedInput[data-after] input {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  border-right: 1px solid rgb(var(--rgb-charcoal) 0.24);
+  border-right: 1px solid rgb(var(--rgb-charcoal) / 24%);
 }
 
 .fdsDecoratedInput[data-before]::before {

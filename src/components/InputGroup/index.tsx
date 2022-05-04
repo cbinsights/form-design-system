@@ -3,7 +3,7 @@ import React from 'react';
 import Flex from 'components/Flex';
 import FlexItem from 'components/FlexItem';
 
-type FlexType = 'shrink' | 'grow'[];
+export type FlexType = 'shrink' | 'grow';
 
 /**
  * Returns an array InputGroup can use to set grow/shrink on flex items
@@ -12,7 +12,10 @@ type FlexType = 'shrink' | 'grow'[];
  * @param {Array} userSettings - `flexSettings` prop optionally set by user
  * @returns {Array} e.g. ['shrink', 'grow', 'shrink']
  */
-export const getFlexSettings = (childCount: number, userSettings: FlexType): FlexType => {
+export const getFlexSettings = (
+  childCount: number,
+  userSettings?: FlexType[]
+): FlexType[] => {
   // always obey a valid `flexSettings` prop when passed by a user
   if (userSettings && userSettings.length === childCount) return userSettings;
 
@@ -28,11 +31,21 @@ export const getFlexSettings = (childCount: number, userSettings: FlexType): Fle
   return defaultSettings;
 };
 
-/**
- * @param {Object} props react props
- * @returns {ReactElement}
- */
-const InputGroup = ({ children, flexSettings }: InputGroupProps): JSX.Element => {
+export interface InputGroupProps {
+  /** `input` or `select` elements */
+  children: React.ReactNode;
+
+  /**
+   * Controls how the input segments should grow or shrink to fill remaining space.
+   *
+   * `shrink` - segment to shrink to natural width of the input element
+   *
+   * `grow` - grow the input element to fill remaining space
+   */
+  flexSettings?: FlexType[];
+}
+
+const InputGroup = ({ children, flexSettings = [] }: InputGroupProps): JSX.Element => {
   const growShrinkArr = getFlexSettings(React.Children.count(children), flexSettings);
 
   return (
@@ -45,19 +58,5 @@ const InputGroup = ({ children, flexSettings }: InputGroupProps): JSX.Element =>
     </div>
   );
 };
-
-export interface InputGroupProps {
-  /** `input` or `select` elements */
-  children: React.ReactNode;
-
-  /**
-   * Controls how the input segments should grow or shrink to fill remaining space.
-   *
-   * `shrink` - segment to shrink to natural width of the input element
-   *
-   * `grow` - grow the input element to fill remaining space
-   */
-  flexSettings: FlexType;
-}
 
 export default InputGroup;

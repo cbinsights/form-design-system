@@ -16,5 +16,5 @@
     "jsx": "preserve"
   },
   "include": ["src"],
-  "exclude": ["**/*.test.tsx", "**/*.stories.tsx"]
+  "exclude": [".yarn/**/*"]
 }

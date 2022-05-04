@@ -2,8 +2,8 @@
   font-family: var(--font-family-default);
   line-height: var(--font-lineHeight-bigText);
   font-weight: var(--font-weight-bold);
-  color: rgb(var(--rgb-navy, inherit) 0.6);
-  background-color: rgb(var(--rgb-navy, inherit) 0.08);
+  color: rgb(var(--rgb-navy, inherit) / 60%);
+  background-color: rgb(var(--rgb-navy, inherit) / 8%);
   text-align: center;
   display: inline-block;
   vertical-align: middle;

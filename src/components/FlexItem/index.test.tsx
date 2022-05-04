@@ -1,23 +1,24 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
-import FlexItem from '.';
+import FlexItem, { FlexItemProps } from '.';
 
-const renderComponent = (props) => shallow(<FlexItem {...props} />);
+const renderComponent = (props?: FlexItemProps) => render(<FlexItem {...props} />);
 
 describe('Flex component', () => {
-  it('matches snapshot (default props)', () => {
-    const flex = renderComponent();
-    expect(flex).toMatchSnapshot();
+  it('renders component (default props)', () => {
+    const { container } = renderComponent();
+    expect(container.firstChild).toBeInTheDocument();
   });
 
-  it('matches snapshot (set all props)', () => {
-    const flex = renderComponent({
+  it('renders component (set all props)', () => {
+    const { container } = renderComponent({
       shrink: true,
       align: 'center',
       justify: 'spaceBetween',
-      className: 'foo',
     });
-    expect(flex).toMatchSnapshot();
+    expect(container.firstChild).toHaveClass(
+      'flexItem--alignCenter flexItem--justifySpaceBetween flexItem--shrink flexItem'
+    );
   });
 });

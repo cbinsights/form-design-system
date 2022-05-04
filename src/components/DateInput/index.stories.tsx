@@ -1,68 +1,72 @@
-import React from 'react';
+import { StoryObj } from '@storybook/react';
+import DateInput, { DateInputProps } from '.';
 
-import DateInput from '.';
+export const Primary: StoryObj<DateInputProps> = {};
 
-const Template = (args) => <DateInput {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {};
-
-export const DefaultSelectedDate = Template.bind({});
-DefaultSelectedDate.args = {
-  defaultDate: '01/01/2010',
-};
-
-DefaultSelectedDate.parameters = {
-  docs: {
-    description: {
-      story:
-        'The input element in `DateInput` will be empty by default. Due to inconsistency across browsers with how native `Date` parsing works, we recommend passing a string to `defaultDate`.',
+export const DefaultSelectedDate: StoryObj<DateInputProps> = {
+  args: {
+    defaultDate: '01/01/2010',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'The input element in `DateInput` will be empty by default. Due to inconsistency across browsers with how native `Date` parsing works, we recommend passing a string to `defaultDate`.',
+      },
     },
   },
 };
 
-export const DateRanges = Template.bind({});
-DateRanges.args = {
-  label: 'Enter a date in 2020',
-  minDate: new Date('Jan 1 2020'),
-  maxDate: new Date('Dec 31 2020'),
-};
-
-DateRanges.parameters = {
-  docs: {
-    description: {
-      story:
-        ' Setting a range of selectable dates: `DateInput` accepts lower and/or upper bounds for a range of selectable dates with the `minDate` and `maxDate` props. Pass an instance of `Date` to set either end of the range. **Note:** This will restrict the days available in the popover calendar UI, but the user may still type dates outside of range directly into the input. Use the `onDateChange` event for extra validation if necessary.',
+export const DateRange: StoryObj<DateInputProps> = {
+  args: {
+    label: 'Enter a date in 2020',
+    minDate: new Date('Jan 1 2020'),
+    maxDate: new Date('Dec 31 2020'),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          ' Setting a range of selectable dates: `DateInput` accepts lower and/or upper bounds for a range of selectable dates with the `minDate` and `maxDate` props. Pass an instance of `Date` to set either end of the range. **Note:** This will restrict the days available in the popover calendar UI, but the user may still type dates outside of range directly into the input. Use the `onDateChange` event for extra validation if necessary.',
+      },
     },
   },
 };
 
-export const PopoverProps = Template.bind({});
-PopoverProps.args = {
-  popoverProps: { alignment: 'end' },
-};
-
-PopoverProps.parameters = {
-  docs: {
-    description: {
-      story:
-        'The `Popover` containing the date picker can be configured via `popoverProps`. Any valid `Popover` prop is accepted except for `trigger`, which the `DateInput` must control. In this example, the `alignment` prop of the popover has been set so the picker is right-aligned.',
+export const PopoverProps: StoryObj<DateInputProps> = {
+  args: {
+    popoverProps: {
+      alignment: 'end',
+      children: null,
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'The `Popover` containing the date picker can be configured via `popoverProps`. Any valid `Popover` prop is accepted except for `trigger`, which the `DateInput` must control. In this example, the `alignment` prop of the popover has been set so the picker is right-aligned.',
+      },
     },
   },
 };
 
-export const LabelPosition = Template.bind({});
-LabelPosition.args = {
-  label: 'DateInput',
-  labelPosition: 'left',
+export const LabelPosition: StoryObj<DateInputProps> = {
+  args: {
+    label: 'DateInput',
+    labelPosition: 'left',
+  },
 };
 
 export default {
   component: DateInput,
   title: 'components/DateInput',
   argTypes: {
-    onInputChange: { action: 'onInputChange' },
-    onDateChange: { action: 'onDateChange' },
+    onInputChange: {
+      action: 'onInputChange',
+    },
+    onDateChange: {
+      action: 'onDateChange',
+    },
   },
   parameters: {
     componentSubtitle: 'Input for a single date selection',

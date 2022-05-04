@@ -1,7 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import Radio from '.';
+import userEvent from '@testing-library/user-event';
 
 // uuid will break snapshots, so we must mock it.
 jest.mock('uuid', () => ({
@@ -9,22 +10,20 @@ jest.mock('uuid', () => ({
 }));
 
 describe('Radio component', () => {
-  it('matches snapshot', () => {
-    const wrapper = shallow(
-      <Radio label="Snapshot Label" name="snapshot-radio" value="test-value" />
-    );
-    expect(wrapper).toMatchSnapshot();
+  it('renders component', () => {
+    render(<Radio label="Snapshot Label" name="snapshot-radio" value="test-value" />);
+    expect(screen.getByRole('radio')).toBeInTheDocument();
   });
 
-  it('matches snapshot (disabled)', () => {
-    const wrapper = shallow(
+  it('renders component (disabled)', () => {
+    render(
       <Radio disabled label="Snapshot Label" name="snapshot-radio" value="test-value" />
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(screen.getByRole('radio')).toBeInTheDocument();
   });
 
-  it('matches snapshot (checked)', () => {
-    const wrapper = shallow(
+  it('renders component (checked)', () => {
+    render(
       <Radio
         defaultChecked
         label="Snapshot Label"
@@ -32,22 +31,23 @@ describe('Radio component', () => {
         value="test-value"
       />
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(screen.getByRole('radio')).toBeChecked();
   });
 
   it('fires change callback when checking', () => {
     const changeFn = jest.fn();
-    const input = shallow(
+    render(
       <Radio
         name="callback-test"
         onChange={changeFn}
         label="Test change"
         value="test-value"
       />
-    ).find('input');
+    );
+    const radio = screen.getByRole('radio');
 
     expect(changeFn).not.toHaveBeenCalled();
-    input.simulate('change', { target: { checked: true } });
+    userEvent.click(radio);
     expect(changeFn).toHaveBeenCalled();
   });
 });

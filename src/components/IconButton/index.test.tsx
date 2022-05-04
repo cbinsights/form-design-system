@@ -1,18 +1,18 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import IconButton from '.';
 
 describe('ButtonGroup component', () => {
-  it('matches snapshot (default props)', () => {
-    const component = shallow(<IconButton Icon={() => {}} label="Label" />);
-    expect(component).toMatchSnapshot();
+  it('renders component (default props)', () => {
+    render(<IconButton Icon={() => null} label="Label" />);
+    expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
-  it('matches snapshot (set all props)', () => {
-    const component = shallow(
+  it('renders component (set all props)', () => {
+    render(
       <IconButton
-        Icon={() => {}}
+        Icon={() => null}
         label="Label"
         isActive={true}
         radius="circle"
@@ -23,6 +23,6 @@ describe('ButtonGroup component', () => {
         disabled
       />
     );
-    expect(component).toMatchSnapshot();
+    expect(screen.getByRole('button')).toBeInTheDocument();
   });
 });

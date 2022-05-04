@@ -1,25 +1,30 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import Toaster from '.';
-import Toast from './Toast';
+import userEvent from '@testing-library/user-event';
 
 describe('Toaster component', () => {
-  it('matches snapshot', () => {
-    const component = mount(
-      <Toaster isOpen toastInstance={{ type: 'info', content: <p>test</p> }} />
+  it('renders component', () => {
+    render(
+      <Toaster isOpen toastInstance={{ type: 'info', content: <p>Hello World</p> }} />
     );
-    expect(component).toMatchSnapshot();
+    expect(screen.getByText('Hello World')).toBeInTheDocument();
   });
 
-  it('passes dismiss func to toast', () => {
+  it("calls Toast's onDismiss being passed from Toaster", () => {
     const mockOnDismiss = jest.fn();
-    const component = mount(
+    render(
       <Toaster
         isOpen
-        toastInstance={{ type: 'info', content: <p>test</p>, onDismiss: mockOnDismiss }}
+        toastInstance={{
+          type: 'info',
+          content: <p>Hello World</p>,
+          onDismiss: mockOnDismiss,
+        }}
       />
     );
-    const { onDismiss } = component.find(Toast).props();
-    expect(typeof onDismiss).toBe('function');
+    const close = screen.getByTitle('Close');
+    userEvent.click(close);
+    expect(mockOnDismiss).toHaveBeenCalledTimes(1);
   });
 });
