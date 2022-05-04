@@ -13,5 +13,5 @@ export const Primary: StoryObj<FooterProps> = {
 
 export default {
   component: Footer,
-  title: 'components/Footer',
+  title: 'Components/Footer',
 };

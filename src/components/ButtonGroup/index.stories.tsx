@@ -102,5 +102,5 @@ export const Icons: StoryObj<ButtonGroupProps> = {
 
 export default {
   component: ButtonGroup,
-  title: 'components/ButtonGroup',
+  title: 'Components/ButtonGroup',
 };

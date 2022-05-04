@@ -59,7 +59,7 @@ export const LabelPosition: StoryObj<DateInputProps> = {
 
 export default {
   component: DateInput,
-  title: 'components/DateInput',
+  title: 'Components/DateInput',
   argTypes: {
     onInputChange: {
       action: 'onInputChange',

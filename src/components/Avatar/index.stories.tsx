@@ -150,7 +150,7 @@ export const Button: StoryObj<AvatarProps> = {
 
 export default {
   component: Avatar,
-  title: 'components/Avatar',
+  title: 'Components/Avatar',
   parameters: {
     docs: {
       fds: {

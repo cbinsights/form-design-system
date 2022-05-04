@@ -120,7 +120,7 @@ export default {
   subcomponents: {
     FlexItem,
   },
-  title: 'components/Flex',
+  title: 'Components/Flex',
   parameters: {
     componentSubtitle: 'An abstraction of a subset of CSS flexbox',
     docs: {

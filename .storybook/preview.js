@@ -19,17 +19,39 @@ export const parameters = {
     ],
   },
   options: {
-    storySort: {
-      method: 'alphabetical',
-      order: [
+    showRoots: true,
+    storySort: (a, b) => {
+      const alphabeticalSort = () => {
+        if (a[1].id.split('--')[1] === 'primary') {
+          return -1;
+        }
+        a[1].kind === b[1].kind
+          ? 0
+          : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+      };
+
+      const sectionSortOrder = [
         'Intro',
         'UI Guidelines',
         'Design Tokens',
         'Icons',
         'Style Utilities',
         'Components',
-      ],
-      locales: '',
+        'Examples',
+        'Hooks',
+      ].reduce((ordering, section, i) => {
+        ordering[section] = i;
+        return ordering;
+      }, {});
+
+      const sectionSort = () => {
+        return sectionSortOrder[first] - sectionSortOrder[second];
+      };
+
+      const first = a[1].kind.split('/')[0];
+      const second = b[1].kind.split('/')[0];
+      if (first === second) return alphabeticalSort();
+      return sectionSort();
     },
   },
 };

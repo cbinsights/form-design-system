@@ -296,7 +296,7 @@ export const Misc: StoryObj<ButtonProps> = {
 
 export default {
   component: Button,
-  title: 'components/Button',
+  title: 'Components/Button',
   parameters: {
     docs: {
       fds: {

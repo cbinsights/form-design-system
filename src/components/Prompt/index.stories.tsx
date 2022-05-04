@@ -20,7 +20,7 @@ export const NoDescription: StoryObj<PromptProps> = {
 
 export default {
   component: Prompt,
-  title: 'components/Prompt',
+  title: 'Components/Prompt',
   argTypes: {
     onDismiss: {
       action: 'onDismiss',
