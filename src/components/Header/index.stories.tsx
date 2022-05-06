@@ -108,5 +108,5 @@ export const Primary: StoryObj<HeaderProps> = {
 
 export default {
   component: Header,
-  title: 'components/Header',
+  title: 'Components/Header',
 };

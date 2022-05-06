@@ -148,7 +148,7 @@ export const ControlledCheckbox: StoryObj<{ checkboxLabel: string }> = {
 
 export default {
   component: Checkbox,
-  title: 'components/Checkbox',
+  title: 'Components/Checkbox',
   argTypes: {
     onChange: {
       action: 'onChange',

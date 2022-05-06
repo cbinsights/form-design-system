@@ -127,7 +127,7 @@ export const DialogFromPopover: StoryObj<DialogProps> = {
 
 export default {
   component: Dialog,
-  title: 'components/Dialog',
+  title: 'Components/Dialog',
   argTypes: {
     onDismiss: {
       action: 'onDismiss',

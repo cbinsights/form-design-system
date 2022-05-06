@@ -14,5 +14,5 @@ export const Primary: StoryObj<NavBarProps> = {
 
 export default {
   component: Navbar,
-  title: 'components/Navbar',
+  title: 'Components/Navbar',
 };

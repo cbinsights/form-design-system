@@ -19,5 +19,5 @@ export const MaxWidth: StoryObj<TooltipProps> = {
 
 export default {
   component: Tooltip,
-  title: 'components/Tooltip',
+  title: 'Components/Tooltip',
 };
