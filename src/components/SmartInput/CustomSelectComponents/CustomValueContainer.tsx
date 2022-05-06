@@ -17,7 +17,7 @@ const CustomValueContainer = ({
           input,
           selectedValues.slice(cursorPosition < 0 ? 0 : cursorPosition + 1),
         ]
-      : children;
+      : React.Children.toArray(children);
   return (
     <components.ValueContainer {...props} innerProps={innerProps}>
       {els}
