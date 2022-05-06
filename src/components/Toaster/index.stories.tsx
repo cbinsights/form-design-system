@@ -362,7 +362,7 @@ export default {
   subcomponents: {
     Toast,
   },
-  title: 'components/Toaster',
+  title: 'Components/Toaster',
   parameters: {
     componentSubtitle: 'Displays Toast alerts',
     docs: {

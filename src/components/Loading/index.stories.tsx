@@ -1,7 +1,7 @@
 import { StoryObj } from '@storybook/react';
 import Loading, { Props } from '.';
 
-export const Default: StoryObj<Props> = {
+export const Primary: StoryObj<Props> = {
   parameters: {
     layout: 'centered',
   },
@@ -9,5 +9,5 @@ export const Default: StoryObj<Props> = {
 
 export default {
   component: Loading,
-  title: 'components/Loading',
+  title: 'Components/Loading',
 };

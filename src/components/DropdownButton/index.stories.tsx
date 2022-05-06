@@ -9,7 +9,7 @@ export const Primary: StoryObj<DropdownButtonProps> = {
 
 export default {
   component: DropdownButton,
-  title: 'components/DropdownButton',
+  title: 'Components/DropdownButton',
   parameters: {
     docs: {
       fds: {

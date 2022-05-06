@@ -74,7 +74,7 @@ export const WithTableRows: StoryObj<BadgeProps> = {
 
 export default {
   component: Badge,
-  title: 'components/Badge',
+  title: 'Components/Badge',
   parameters: {
     componentSubtitle: 'Renders a bubble with an optional label.',
     docs: {
