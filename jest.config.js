@@ -1,6 +1,6 @@
 module.exports = {
   testEnvironment: 'jest-environment-jsdom',
-  moduleDirectories: ['node_modules', 'src'],
+  moduleDirectories: ['src'],
   rootDir: './',
   testPathIgnorePatterns: ['<rootDir>/lib/'],
   transformIgnorePatterns: ['/node_modules/(?!(uuid|nanoid)/)'],
