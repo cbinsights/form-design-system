@@ -130,7 +130,7 @@
     "@typescript-eslint/eslint-plugin": "5.21.0",
     "@typescript-eslint/parser": "5.21.0",
     "babel-eslint": "10.1.0",
-    "babel-jest": "28.0.3",
+    "babel-jest": "28.1.0",
     "babel-loader": "8.2.5",
     "babel-plugin-module-resolver": "4.1.0",
     "commitizen": "4.2.4",
@@ -153,8 +153,8 @@
     "handlebars": "4.7.7",
     "husky": "7.0.4",
     "icons": "link:./src/icons",
-    "jest": "28.0.3",
-    "jest-environment-jsdom": "28.0.2",
+    "jest": "28.1.0",
+    "jest-environment-jsdom": "28.1.0",
     "jest-prop-type-error": "1.1.0",
     "lint-staged": "12.4.1",
     "pascal-case": "3.1.2",
@@ -237,8 +237,9 @@
     "prismjs": "1.28.0",
     "postcss": "8.4.13"
   },
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@3.2.0",
   "engines": {
-    "npm": "8.8.0"
+    "npm": "8.8.0",
+    "node": ">=16 <17"
   }
 }
