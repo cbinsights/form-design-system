@@ -8,10 +8,11 @@ const CustomValueContainer = ({
 }: ValueContainerProps<OptionProps, boolean>): JSX.Element => {
   const innerProps = { ...props.innerProps, role: 'list' };
   const { cursorPosition } = props.selectProps;
-  const selectedValues = React.Children.toArray(children);
-  const input = selectedValues.pop();
+  const hasSelectedValues = Array.isArray(children) && !!children[0]?.length;
+  const selectedValues = hasSelectedValues ? children[0] : [];
+  const input = hasSelectedValues ? children[1] : null;
   const els =
-    props.hasValue && cursorPosition !== undefined
+    hasSelectedValues && cursorPosition !== undefined
       ? [
           selectedValues.slice(0, cursorPosition < 0 ? 0 : cursorPosition + 1),
           input,

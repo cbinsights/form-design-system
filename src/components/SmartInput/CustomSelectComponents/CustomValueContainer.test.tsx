@@ -109,8 +109,10 @@ describe('CustomValueContainer component', () => {
         hasValue={true}
         isDisabled={false}
       >
-        <div role="presentation">child-1</div>
-        <span role="presentation">child-2</span>
+        <div role="presentation">
+          child-1
+          <span role="presentation">child-2</span>
+        </div>
         <p role="presentation">child-3</p>
       </CustomValueContainer>
     );
