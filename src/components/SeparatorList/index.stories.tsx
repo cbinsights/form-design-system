@@ -45,7 +45,7 @@ export const Breadcrumbs: StoryObj<SeparatorListProps> = {
 
 export default {
   component: SeparatorList,
-  title: 'components/SeparatorList',
+  title: 'Components/SeparatorList',
   parameters: {
     componentSubtitle: 'Renders inline-block list with a custom separator',
     docs: {},

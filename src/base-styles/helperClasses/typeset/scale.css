@@ -49,5 +49,5 @@
 .type--caption {
   font-size: var(--font-size-xs);
   line-height: var(--font-lineHeight-smallText);
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 }

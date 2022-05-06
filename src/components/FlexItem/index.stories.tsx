@@ -29,7 +29,7 @@ export const Primary: StoryObj<FlexItemProps> = {
 
 export default {
   component: FlexItem,
-  title: 'components/FlexItem',
+  title: 'Components/FlexItem',
   parameters: {
     componentSubtitle: 'An abstraction of a subset of CSS flexbox',
     docs: {
