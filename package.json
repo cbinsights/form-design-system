@@ -237,7 +237,7 @@
     "prismjs": "1.28.0",
     "postcss": "8.4.13"
   },
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@3.2.0",
   "engines": {
     "npm": "8.8.0"
   }
