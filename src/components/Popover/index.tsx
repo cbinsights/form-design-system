@@ -177,7 +177,7 @@ const Popover = ({
         align={alignment}
         side={position}
         sideOffset={distance}
-        portalled={disablePortal}
+        portalled={!!disablePortal}
       >
         {popperContent}
       </RadixPopover.Content>
