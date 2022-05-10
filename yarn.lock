@@ -3519,7 +3519,6 @@ __metadata:
     "@commitlint/prompt": 16.2.4
     "@commitlint/prompt-cli": 16.2.4
     "@mdx-js/react": 1.6.22
-    "@popperjs/core": 2.11.5
     "@radix-ui/react-checkbox": 0.1.5
     "@radix-ui/react-dialog": 0.1.7
     "@radix-ui/react-label": 0.1.5
@@ -3619,7 +3618,6 @@ __metadata:
     react-hook-form: 7.30.0
     react-is: 16.13.1
     react-markdown: 8.0.3
-    react-popper: 2.3.0
     react-select: 5.3.1
     react-transition-group: 4.4.2
     rimraf: 3.0.2
@@ -5254,13 +5252,6 @@ __metadata:
     webpack-plugin-serve:
       optional: true
   checksum: 0422329886cba67c40ded26b53e88cc856ef44221477c6fcd886f8150cb077896b5a350ff4afe3962ba96342033680069537c284f61db40c16c98d345bd4e093
-  languageName: node
-  linkType: hard
-
-"@popperjs/core@npm:2.11.5":
-  version: 2.11.5
-  resolution: "@popperjs/core@npm:2.11.5"
-  checksum: fd7f9dca3fb716d7426332b6ee283f88d2724c0ab342fb678865a640bad403dfb9eeebd8204a406986162f7e2b33394f104320008b74d0e9066d7322f70ea35d
   languageName: node
   linkType: hard
 
@@ -23007,20 +22998,6 @@ __metadata:
     react: ^16.6.0 || ^17.0.0
     react-dom: ^16.6.0 || ^17.0.0
   checksum: c820122a4fdce46ff446b2c7bfe45727de42eacf1c2981fe8f8562da246a289dc7349f0732e36390a08ce50717dc52c4e8ab8e418af19cdd2ded7795ea6b8017
-  languageName: node
-  linkType: hard
-
-"react-popper@npm:2.3.0":
-  version: 2.3.0
-  resolution: "react-popper@npm:2.3.0"
-  dependencies:
-    react-fast-compare: ^3.0.1
-    warning: ^4.0.2
-  peerDependencies:
-    "@popperjs/core": ^2.0.0
-    react: ^16.8.0 || ^17 || ^18
-    react-dom: ^16.8.0 || ^17 || ^18
-  checksum: 837111c98738011c69b3069a464ea5bdcbf487105b6148e8faf90cb7337e134edb1b98b8824322941c378756cca30a15c18c25f558e53b85ed5762fa0dc8e6b2
   languageName: node
   linkType: hard
 

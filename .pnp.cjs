@@ -53,7 +53,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@commitlint/prompt", "npm:16.2.4"],\
             ["@commitlint/prompt-cli", "npm:16.2.4"],\
             ["@mdx-js/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.6.22"],\
-            ["@popperjs/core", "npm:2.11.5"],\
             ["@radix-ui/react-checkbox", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.5"],\
             ["@radix-ui/react-dialog", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.7"],\
             ["@radix-ui/react-label", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.5"],\
@@ -153,7 +152,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-hook-form", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.30.0"],\
             ["react-is", "npm:16.13.1"],\
             ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.3"],\
-            ["react-popper", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.3.0"],\
             ["react-select", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.3.1"],\
             ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],\
             ["rimraf", "npm:3.0.2"],\
@@ -6261,7 +6259,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@commitlint/prompt", "npm:16.2.4"],\
             ["@commitlint/prompt-cli", "npm:16.2.4"],\
             ["@mdx-js/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:1.6.22"],\
-            ["@popperjs/core", "npm:2.11.5"],\
             ["@radix-ui/react-checkbox", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.5"],\
             ["@radix-ui/react-dialog", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.7"],\
             ["@radix-ui/react-label", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.1.5"],\
@@ -6361,7 +6358,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-hook-form", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.30.0"],\
             ["react-is", "npm:16.13.1"],\
             ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.3"],\
-            ["react-popper", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.3.0"],\
             ["react-select", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.3.1"],\
             ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],\
             ["rimraf", "npm:3.0.2"],\
@@ -8359,13 +8355,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@popperjs/core", [\
-        ["npm:2.11.5", {\
-          "packageLocation": "./.yarn/cache/@popperjs-core-npm-2.11.5-a338f16bd4-fd7f9dca3f.zip/node_modules/@popperjs/core/",\
-          "packageDependencies": [\
-            ["@popperjs/core", "npm:2.11.5"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:2.6.0", {\
           "packageLocation": "./.yarn/cache/@popperjs-core-npm-2.6.0-8c7ed8df22-87a12a5789.zip/node_modules/@popperjs/core/",\
           "packageDependencies": [\
@@ -30827,36 +30816,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-popper", "npm:2.2.4"]\
           ],\
           "linkType": "SOFT"\
-        }],\
-        ["npm:2.3.0", {\
-          "packageLocation": "./.yarn/cache/react-popper-npm-2.3.0-1045578379-837111c987.zip/node_modules/react-popper/",\
-          "packageDependencies": [\
-            ["react-popper", "npm:2.3.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.3.0", {\
-          "packageLocation": "./.yarn/__virtual__/react-popper-virtual-5c2b10dd6f/0/cache/react-popper-npm-2.3.0-1045578379-837111c987.zip/node_modules/react-popper/",\
-          "packageDependencies": [\
-            ["react-popper", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.3.0"],\
-            ["@popperjs/core", "npm:2.11.5"],\
-            ["@types/popperjs__core", null],\
-            ["@types/react", "npm:17.0.44"],\
-            ["@types/react-dom", "npm:18.0.3"],\
-            ["react", "npm:16.14.0"],\
-            ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"],\
-            ["react-fast-compare", "npm:3.2.0"],\
-            ["warning", "npm:4.0.3"]\
-          ],\
-          "packagePeers": [\
-            "@popperjs/core",\
-            "@types/popperjs__core",\
-            "@types/react-dom",\
-            "@types/react",\
-            "react-dom",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
         }],\
         ["virtual:393f28b354f0a9d34137f3d45bde77af488d4c7710fad8e2355611b1c49fb65e518bd13301282865984053ad94d45a4d4951cb5a88f3d7d45fc669ef5e5d8dcb#npm:2.2.4", {\
           "packageLocation": "./.yarn/__virtual__/react-popper-virtual-273fe94541/0/cache/react-popper-npm-2.2.4-56a549a525-02cdce8d81.zip/node_modules/react-popper/",\

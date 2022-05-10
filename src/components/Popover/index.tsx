@@ -76,114 +76,123 @@ export interface PopoverProps {
   closeOnScrollRef?: RefObject<HTMLElement>;
 
   /** Ref to forward to the content container of the popover */
-  ref?: Ref<HTMLElement>;
+  ref?: Ref<HTMLDivElement>;
 }
 
-const Popover = ({
-  interactionMode = 'click',
-  disablePortal,
-  position = 'bottom',
-  alignment = 'start',
-  distance = 4,
-  delay = 0,
-  onOpen = () => {},
-  onClose = () => {},
-  trigger,
-  children,
-  isOpen,
-  transitionName,
-  disableScrollRef,
-  closeOnScrollRef,
-}: PopoverProps): JSX.Element => {
-  const [isActive, setIsActive] = useState(false);
-  useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
-  useDisableScroll(disableScrollRef, isActive);
+const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
+  (
+    {
+      interactionMode = 'click',
+      disablePortal,
+      position = 'bottom',
+      alignment = 'start',
+      distance = 4,
+      delay = 0,
+      // onUserDismiss = () => {},
+      onOpen = () => {},
+      onClose = () => {},
+      trigger,
+      children,
+      isOpen,
+      transitionName,
+      disableScrollRef,
+      closeOnScrollRef,
+    }: PopoverProps,
+    forwardedRef
+  ) => {
+    const [isActive, setIsActive] = useState(false);
+    // const refTriggerWrap = useRef(null);
+    const refContent = forwardedRef || React.createRef();
+    useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
+    useDisableScroll(disableScrollRef, isActive);
 
-  // update active state on props change to accommodate fully controlled popovers
-  useEffect(() => {
-    setIsActive(interactionMode === 'controlled' && !!isOpen);
-  }, [interactionMode, isOpen]);
+    // update active state on props change to accommodate fully controlled popovers
+    useEffect(() => {
+      setIsActive(interactionMode === 'controlled' && !!isOpen);
+    }, [interactionMode, isOpen]);
 
-  let triggerProps: HTMLAttributes<HTMLElement> = {};
-  let hoverTimeout: number;
-  switch (interactionMode) {
-    case 'hover':
-      triggerProps.onMouseEnter = () => {
-        if (delay > 0) {
-          hoverTimeout = setTimeout(setIsActive, delay, true);
-        } else {
-          setIsActive(true);
-        }
-      };
-      triggerProps.onMouseLeave = () => {
-        if (hoverTimeout) {
-          clearTimeout(hoverTimeout);
-        }
-        setIsActive(false);
-      };
-      triggerProps.onKeyUp = (e) => {
-        if (e.key === 'Tab') {
-          setIsActive(true);
-        }
-      };
-      triggerProps.onKeyDown = (e) => {
-        if (e.key === 'Tab') {
+    let triggerProps: HTMLAttributes<HTMLElement> = {};
+    let hoverTimeout: number;
+    switch (interactionMode) {
+      case 'hover':
+        triggerProps.onMouseEnter = () => {
+          if (delay > 0) {
+            hoverTimeout = setTimeout(setIsActive, delay, true);
+          } else {
+            setIsActive(true);
+          }
+        };
+        triggerProps.onMouseLeave = () => {
+          if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+          }
           setIsActive(false);
-        }
-      };
-      triggerProps.onClick = (e) => {
-        e.stopPropagation();
-        setIsActive(false);
-      };
-      triggerProps.tabIndex = 1;
-      break;
-    case 'click':
-      triggerProps.onClick = (e) => {
-        e.stopPropagation();
-        setIsActive(!isActive);
-      };
-      break;
-    default:
-      triggerProps = {};
-  }
+        };
+        triggerProps.onKeyUp = (e) => {
+          if (e.key === 'Tab') {
+            setIsActive(true);
+          }
+        };
+        triggerProps.onKeyDown = (e) => {
+          if (e.key === 'Tab') {
+            setIsActive(false);
+          }
+        };
+        triggerProps.onClick = (e) => {
+          e.stopPropagation();
+          setIsActive(false);
+        };
+        triggerProps.tabIndex = 1;
+        break;
+      case 'click':
+        triggerProps.onClick = (e) => {
+          e.stopPropagation();
+          setIsActive(!isActive);
+        };
+        break;
+      default:
+        triggerProps = {};
+    }
 
-  const clonedTrigger = React.cloneElement(trigger, triggerProps);
+    const clonedTrigger = React.cloneElement(trigger, triggerProps);
 
-  const contentStyle = {
-    zIndex: Number(FDS.ZINDEX_MODAL),
-  };
+    const contentStyle = {
+      zIndex: Number(FDS.ZINDEX_MODAL),
+    };
 
-  const popperContent = (
-    <CSSTransition
-      onEntered={onOpen}
-      onExited={onClose}
-      in={isActive}
-      unmountOnExit
-      timeout={transitionName ? 200 : 0}
-      classNames={transitionName ? `rtg${transitionName}` : undefined}
-    >
-      <div>{children}</div>
-    </CSSTransition>
-  );
-
-  return (
-    <RadixPopover.Root defaultOpen={isOpen}>
-      <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
-      <RadixPopover.Content
-        style={{
-          ...contentStyle,
-        }}
-        className="ease-in-out"
-        align={alignment}
-        side={position}
-        sideOffset={distance}
-        portalled={!!disablePortal}
+    const popperContent = (
+      <CSSTransition
+        onEntered={onOpen}
+        onExited={onClose}
+        in={isActive}
+        unmountOnExit
+        timeout={transitionName ? 200 : 0}
+        classNames={transitionName ? `rtg${transitionName}` : undefined}
       >
-        {popperContent}
-      </RadixPopover.Content>
-    </RadixPopover.Root>
-  );
-};
+        <div>{children}</div>
+      </CSSTransition>
+    );
+
+    return (
+      <RadixPopover.Root defaultOpen={isOpen}>
+        <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
+        <RadixPopover.Content
+          ref={refContent}
+          style={{
+            ...contentStyle,
+          }}
+          className="ease-in-out"
+          align={alignment}
+          side={position}
+          sideOffset={distance}
+          portalled={!!disablePortal}
+        >
+          {popperContent}
+        </RadixPopover.Content>
+      </RadixPopover.Root>
+    );
+  }
+);
 
 Popover.displayName = 'Popover';
 
