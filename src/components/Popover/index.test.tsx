@@ -25,45 +25,45 @@ describe('Popover component', () => {
     expect(screen.getByText('popover content')).toBeInTheDocument();
   });
 
-  // it('tests that onUserDismiss is called only once when clicking outside popover', async () => {
-  //   const onUserDismiss = jest.fn();
-  //   render(
-  //     <div>
-  //       <Popover trigger={<button>trigger</button>} onUserDismiss={onUserDismiss}>
-  //         <p>popover content</p>
-  //       </Popover>
-  //       <button>outside click</button>
-  //     </div>
-  //   );
+  it('tests that onUserDismiss is called only once when clicking outside popover', async () => {
+    const onUserDismiss = jest.fn();
+    render(
+      <div>
+        <Popover trigger={<button>trigger</button>} onUserDismiss={onUserDismiss}>
+          <p>popover content</p>
+        </Popover>
+        <button>outside click</button>
+      </div>
+    );
 
-  //   userEvent.click(screen.getByText('trigger'));
-  //   userEvent.click(screen.getByText('popover content'));
-  //   expect(screen.getByText('popover content')).toBeInTheDocument();
-  //   userEvent.click(screen.getByText('outside click'));
-  //   await waitFor(() => expect(screen.queryByText('popover content')).toBeNull());
+    userEvent.click(screen.getByText('trigger'));
+    userEvent.click(screen.getByText('popover content'));
+    expect(screen.getByText('popover content')).toBeInTheDocument();
+    userEvent.click(screen.getByText('outside click'));
+    await waitFor(() => expect(screen.queryByText('popover content')).toBeNull());
 
-  //   userEvent.click(screen.getByText('outside click'));
-  //   userEvent.click(screen.getByText('outside click'));
-  //   userEvent.click(screen.getByText('outside click'));
-  //   expect(onUserDismiss).toHaveBeenCalledTimes(1);
-  // });
+    userEvent.click(screen.getByText('outside click'));
+    userEvent.click(screen.getByText('outside click'));
+    userEvent.click(screen.getByText('outside click'));
+    expect(onUserDismiss).toHaveBeenCalledTimes(1);
+  });
 
-  // it('tests that onUserDismiss is called only once when pressing escape key', async () => {
-  //   const onUserDismiss = jest.fn();
-  //   render(
-  //     <Popover trigger={<button>trigger</button>} onUserDismiss={onUserDismiss}>
-  //       <p>popover content</p>
-  //     </Popover>
-  //   );
+  it('tests that onUserDismiss is called only once when pressing escape key', async () => {
+    const onUserDismiss = jest.fn();
+    render(
+      <Popover trigger={<button>trigger</button>} onUserDismiss={onUserDismiss}>
+        <p>popover content</p>
+      </Popover>
+    );
 
-  //   userEvent.click(screen.getByText('trigger'));
-  //   expect(screen.getByText('popover content')).toBeInTheDocument();
-  //   userEvent.type(document.body, '{esc}');
-  //   await waitFor(() => expect(screen.queryByText('popover content')).toBeNull());
+    userEvent.click(screen.getByText('trigger'));
+    expect(screen.getByText('popover content')).toBeInTheDocument();
+    userEvent.type(document.body, '{esc}');
+    await waitFor(() => expect(screen.queryByText('popover content')).toBeNull());
 
-  //   userEvent.type(document.body, '{esc}');
-  //   userEvent.type(document.body, '{esc}');
-  //   userEvent.type(document.body, '{esc}');
-  //   expect(onUserDismiss).toHaveBeenCalledTimes(1);
-  // });
+    userEvent.type(document.body, '{esc}');
+    userEvent.type(document.body, '{esc}');
+    userEvent.type(document.body, '{esc}');
+    expect(onUserDismiss).toHaveBeenCalledTimes(1);
+  });
 });
