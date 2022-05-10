@@ -1,24 +1,10 @@
 import * as RadixPopover from '@radix-ui/react-popover';
-import React, {
-  // useRef,
-  useEffect,
-  useState,
-  Ref,
-  RefObject,
-  // MutableRefObject,
-  HTMLAttributes,
-} from 'react';
-// import ReactDOM from 'react-dom';
-// import { Manager, Reference, Popper } from 'react-popper';
+import React, { useEffect, useState, Ref, RefObject, HTMLAttributes } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import FDS from 'dictionary/js/styleConstants';
-// import { isNotRefsEvent } from 'components/util/events';
-// import { getPopperPlacement } from './util';
 import { useDisableScroll, useCloseOnScroll } from './hooks';
 
-export type Position = 'auto' | 'top' | 'right' | 'bottom' | 'left';
-export type PopperAlignment = 'start' | 'end';
-export type Alignment = PopperAlignment | 'center';
+export type Position = 'top' | 'right' | 'bottom' | 'left';
 export type InteractionMode = 'hover' | 'click' | 'controlled';
 
 export interface PopoverProps {
@@ -66,7 +52,7 @@ export interface PopoverProps {
   position?: Position;
 
   /** Horizontal alignment preference of popover content relative to trigger */
-  alignment?: Alignment;
+  alignment?: 'start' | 'center' | 'end';
 
   /** Offset distance from trigger. */
   distance?: number;
@@ -93,154 +79,111 @@ export interface PopoverProps {
   ref?: Ref<HTMLElement>;
 }
 
-const Popover = React.forwardRef<HTMLElement, PopoverProps>(
-  ({
-    interactionMode = 'click',
-    // disablePortal,
-    // position = 'auto',
-    // alignment = 'start',
-    // distance = 4,
-    // delay = 0,
-    // onUserDismiss = () => {},
-    onOpen = () => {},
-    onClose = () => {},
-    trigger,
-    children,
-    isOpen,
-    transitionName,
-    disableScrollRef,
-    closeOnScrollRef,
-  }: PopoverProps) =>
-    // forwardedRef
-    {
-      const [isActive, setIsActive] = useState(false);
-      // const refTriggerWrap = useRef(null);
-      // const refContent = forwardedRef || React.createRef();
+const Popover = ({
+  interactionMode = 'click',
+  disablePortal,
+  position = 'bottom',
+  alignment = 'start',
+  distance = 4,
+  delay = 0,
+  onOpen = () => {},
+  onClose = () => {},
+  trigger,
+  children,
+  isOpen,
+  transitionName,
+  disableScrollRef,
+  closeOnScrollRef,
+}: PopoverProps): JSX.Element => {
+  const [isActive, setIsActive] = useState(false);
+  useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
+  useDisableScroll(disableScrollRef, isActive);
 
-      useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
-      useDisableScroll(disableScrollRef, isActive);
+  // update active state on props change to accommodate fully controlled popovers
+  useEffect(() => {
+    setIsActive(interactionMode === 'controlled' && !!isOpen);
+  }, [interactionMode, isOpen]);
 
-      // update active state on props change to accommodate fully controlled popovers
-      useEffect(() => {
-        setIsActive(interactionMode === 'controlled' && !!isOpen);
-      }, [interactionMode, isOpen]);
-
-      /**
-       * Called when user takes an action to dismiss the popover
-       */
-      // const handleUserDismiss = (e: MouseEvent | KeyboardEvent) => {
-      //   onUserDismiss(e);
-      //   if (interactionMode !== 'controlled') {
-      //     setIsActive(false);
-      //   }
-      // };
-
-      /**
-       * Closes popover when user presses ESC
-       */
-      // const handleKeyPress = (e: KeyboardEvent) => {
-      //   const isEscapeKey = ['Esc', 'Escape'].some((key) => key === e.key);
-      //   if (isEscapeKey) handleUserDismiss(e);
-      // };
-
-      /**
-       * Closes popover when user clicks outside of content or trigger
-       */
-      // const handleBodyClick = (e: MouseEvent) => {
-      //   const isNotPopoverClick = isNotRefsEvent([refTriggerWrap, refContent], e);
-      //   if (isNotPopoverClick) handleUserDismiss(e);
-      // };
-
-      // useEffect(() => {
-      //   if (isActive) {
-      //     document.body.addEventListener('mousedown', handleBodyClick, false);
-      //     document.body.addEventListener('keyup', handleKeyPress, false);
-      //   }
-
-      //   return () => {
-      //     document.body.removeEventListener('mousedown', handleBodyClick, false);
-      //     document.body.removeEventListener('keyup', handleKeyPress, false);
-      //   };
-      // }, [isActive]);
-
-      let triggerProps: HTMLAttributes<HTMLElement> = {};
-      // let hoverTimeout: number;
-      switch (interactionMode) {
-        // case 'hover':
-        //   triggerProps.onMouseEnter = () => {
-        //     if (delay > 0) {
-        //       hoverTimeout = setTimeout(setIsActive, delay, true);
-        //     } else {
-        //       setIsActive(true);
-        //     }
-        //   };
-        //   triggerProps.onMouseLeave = () => {
-        //     if (hoverTimeout) {
-        //       clearTimeout(hoverTimeout);
-        //     }
-        //     setIsActive(false);
-        //   };
-        //   triggerProps.onKeyUp = (e) => {
-        //     if (e.key === 'Tab') {
-        //       setIsActive(true);
-        //     }
-        //   };
-        //   triggerProps.onKeyDown = (e) => {
-        //     if (e.key === 'Tab') {
-        //       setIsActive(false);
-        //     }
-        //   };
-        //   triggerProps.onClick = (e) => {
-        //     e.stopPropagation();
-        //     setIsActive(false);
-        //   };
-        //   triggerProps.tabIndex = 1;
-        //   break;
-        // case 'click':
-        //   triggerProps.onClick = (e) => {
-        //     e.stopPropagation();
-        //     setIsActive(!isActive);
-        //   };
-        //   break;
-        default:
-          triggerProps = {};
-      }
-
-      const clonedTrigger = React.cloneElement(trigger, triggerProps);
-
-      const contentStyle = {
-        zIndex: Number(FDS.ZINDEX_MODAL),
+  let triggerProps: HTMLAttributes<HTMLElement> = {};
+  let hoverTimeout: number;
+  switch (interactionMode) {
+    case 'hover':
+      triggerProps.onMouseEnter = () => {
+        if (delay > 0) {
+          hoverTimeout = setTimeout(setIsActive, delay, true);
+        } else {
+          setIsActive(true);
+        }
       };
+      triggerProps.onMouseLeave = () => {
+        if (hoverTimeout) {
+          clearTimeout(hoverTimeout);
+        }
+        setIsActive(false);
+      };
+      triggerProps.onKeyUp = (e) => {
+        if (e.key === 'Tab') {
+          setIsActive(true);
+        }
+      };
+      triggerProps.onKeyDown = (e) => {
+        if (e.key === 'Tab') {
+          setIsActive(false);
+        }
+      };
+      triggerProps.onClick = (e) => {
+        e.stopPropagation();
+        setIsActive(false);
+      };
+      triggerProps.tabIndex = 1;
+      break;
+    case 'click':
+      triggerProps.onClick = (e) => {
+        e.stopPropagation();
+        setIsActive(!isActive);
+      };
+      break;
+    default:
+      triggerProps = {};
+  }
 
-      const popperContent = (
-        <CSSTransition
-          onEntered={onOpen}
-          onExited={onClose}
-          in={isActive}
-          unmountOnExit
-          timeout={transitionName ? 200 : 0}
-          classNames={transitionName ? `rtg${transitionName}` : undefined}
-        >
-          <div>{children}</div>
-        </CSSTransition>
-      );
+  const clonedTrigger = React.cloneElement(trigger, triggerProps);
 
-      return (
-        <RadixPopover.Root defaultOpen={isOpen}>
-          <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
-          <RadixPopover.Content
-            style={{
-              ...contentStyle,
-            }}
-            className="ease-in-out"
-            align="start"
-          >
-            {popperContent}
-          </RadixPopover.Content>
-        </RadixPopover.Root>
-      );
-    }
-);
+  const contentStyle = {
+    zIndex: Number(FDS.ZINDEX_MODAL),
+  };
+
+  const popperContent = (
+    <CSSTransition
+      onEntered={onOpen}
+      onExited={onClose}
+      in={isActive}
+      unmountOnExit
+      timeout={transitionName ? 200 : 0}
+      classNames={transitionName ? `rtg${transitionName}` : undefined}
+    >
+      <div>{children}</div>
+    </CSSTransition>
+  );
+
+  return (
+    <RadixPopover.Root defaultOpen={isOpen}>
+      <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
+      <RadixPopover.Content
+        style={{
+          ...contentStyle,
+        }}
+        className="ease-in-out"
+        align={alignment}
+        side={position}
+        sideOffset={distance}
+        portalled={disablePortal}
+      >
+        {popperContent}
+      </RadixPopover.Content>
+    </RadixPopover.Root>
+  );
+};
 
 Popover.displayName = 'Popover';
 

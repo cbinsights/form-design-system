@@ -122,18 +122,8 @@ export const PopoverWithinAPopover: StoryObj<PopoverProps> = {
     </Popover>
   ),
   args: {
-    // isFixed: true,
     disablePortal: true,
   },
-  // argTypes: {
-  //   // triggerElement: hidden,
-  //   // theme: hidden,
-  //   children: hidden,
-  //   // placement: hidden,
-  //   isOpen: hidden,
-  //   onUserDismiss: hidden,
-  //   // triggerType: hidden,
-  // },
 };
 
 export const CloseOnScroll: StoryObj<PopoverProps> = {
