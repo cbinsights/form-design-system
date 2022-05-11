@@ -222,7 +222,7 @@ export const Disabled: StoryObj<{ disabled: boolean }> = {
 };
 
 export default {
-  title: 'components/Menu',
+  title: 'Components/Menu',
   parameters: {
     componentSubtitle:
       'Renders a dropdown containing links, and actions the user can take.',

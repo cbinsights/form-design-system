@@ -87,6 +87,7 @@ import HomeIcon from './HomeIcon';
 import ImageIcon from './ImageIcon';
 import ImportIcon from './ImportIcon';
 import InformationIcon from './InformationIcon';
+import IntegrationIcon from './IntegrationIcon';
 import InvestorIcon from './InvestorIcon';
 import IpoIcon from './IpoIcon';
 import LightBulbIcon from './LightBulbIcon';
@@ -276,6 +277,7 @@ export {
   ImageIcon,
   ImportIcon,
   InformationIcon,
+  IntegrationIcon,
   InvestorIcon,
   IpoIcon,
   LightBulbIcon,

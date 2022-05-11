@@ -44,7 +44,7 @@ export const NoIcon: StoryObj<Props> = {
 
 export default {
   component: ZeroState,
-  title: 'components/ZeroState',
+  title: 'Components/ZeroState',
   parameters: {
     componentSubtitle: 'Placeholder component',
   },

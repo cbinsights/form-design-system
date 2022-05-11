@@ -63,7 +63,7 @@ export const Close: StoryObj<ChipProps> = {
 
 export default {
   component: Chip,
-  title: 'components/Chip',
+  title: 'Components/Chip',
   parameters: {
     docs: {
       fds: {

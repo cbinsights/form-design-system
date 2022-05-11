@@ -27,13 +27,24 @@ export const ManagingCheckedState: StoryObj<CheckboxProps> = {
 };
 
 export const PreventingUserInteraction: StoryObj<CheckboxProps> = {
-  render: (): JSX.Element => (
+  render: (args: CheckboxProps): JSX.Element => (
     <>
       <div>
-        <Checkbox disabled name="disabled-unchecked" label="Disabled unchecked" />
+        <Checkbox
+          {...args}
+          disabled
+          name="disabled-unchecked"
+          label="Disabled unchecked"
+        />
       </div>
       <div>
-        <Checkbox disabled checked name="disabled-checked" label="Disabled checked" />
+        <Checkbox
+          {...args}
+          disabled
+          checked
+          name="disabled-checked"
+          label="Disabled checked"
+        />
       </div>
     </>
   ),
@@ -137,7 +148,7 @@ export const ControlledCheckbox: StoryObj<{ checkboxLabel: string }> = {
 
 export default {
   component: Checkbox,
-  title: 'components/Checkbox',
+  title: 'Components/Checkbox',
   argTypes: {
     onChange: {
       action: 'onChange',

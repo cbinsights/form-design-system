@@ -57,5 +57,5 @@ export const Primary: StoryObj<SmartInputProps> = {
 
 export default {
   component: SmartInput,
-  title: 'components/SmartInput',
+  title: 'Components/SmartInput',
 };

@@ -29,7 +29,7 @@ export const Primary: StoryObj<ToasterProps> = {
 };
 
 export const Playground: StoryObj<ToasterProps> = {
-  render: (): JSX.Element => {
+  render: (args: ToasterProps): JSX.Element => {
     const defaults: ToasterProps = {
       id: v4(),
       isOpen: false,
@@ -254,6 +254,7 @@ export const Playground: StoryObj<ToasterProps> = {
         <b>NOTE: this is state is EXTERNAL to toaster and is being passed in</b>
         <pre>{JSON.stringify(params, null, 1)}</pre>
         <Toaster
+          {...args}
           id={id}
           isOpen={isOpen}
           isAutoDismiss={isAutoDismiss}
@@ -273,9 +274,10 @@ export const Playground: StoryObj<ToasterProps> = {
 };
 
 export const Variations: StoryObj<ToasterProps> = {
-  render: (): JSX.Element => (
+  render: (args: ToasterProps): JSX.Element => (
     <React.Fragment>
       <Toast
+        {...args}
         content={
           <p>
             Check out this <strong className="color--heading">toast</strong>
@@ -287,6 +289,7 @@ export const Variations: StoryObj<ToasterProps> = {
       />
       <br />
       <Toast
+        {...args}
         content={
           <p>
             You better <strong className="color--heading">watch out</strong>
@@ -298,6 +301,7 @@ export const Variations: StoryObj<ToasterProps> = {
       />
       <br />
       <Toast
+        {...args}
         content={
           <p>
             You <strong className="color--heading">Did it!</strong>
@@ -307,6 +311,7 @@ export const Variations: StoryObj<ToasterProps> = {
       />
       <br />
       <Toast
+        {...args}
         content={
           <p>
             Failed to <strong className="color--heading">do a thing</strong>
@@ -318,6 +323,7 @@ export const Variations: StoryObj<ToasterProps> = {
       />
       <br />
       <Toast
+        {...args}
         content={
           <p>
             Uploading a photo of your <strong className="color--heading">your cat</strong>
@@ -327,6 +333,7 @@ export const Variations: StoryObj<ToasterProps> = {
       />
       <br />
       <Toast
+        {...args}
         content={
           <p>
             <strong className="color--heading">42%</strong> complete uploading your cat
@@ -355,7 +362,7 @@ export default {
   subcomponents: {
     Toast,
   },
-  title: 'components/Toaster',
+  title: 'Components/Toaster',
   parameters: {
     componentSubtitle: 'Displays Toast alerts',
     docs: {
