@@ -4,7 +4,7 @@ import { StoryObj } from '@storybook/react';
 import TextInput from 'components/TextInput';
 import InputGroup, { InputGroupProps } from '.';
 
-export const DropdownVariations: StoryObj<InputGroupProps> = {
+export const Primary: StoryObj<InputGroupProps> = {
   render: (args: InputGroupProps): JSX.Element => (
     <>
       <div className="margin--bottom">
@@ -119,7 +119,7 @@ export const OtherExamples: StoryObj<InputGroupProps> = {
 
 export default {
   component: InputGroup,
-  title: 'components/InputGroup',
+  title: 'Components/InputGroup',
   parameters: {
     componentSubtitle: 'Visually groups multiple form fields on one line.',
   },

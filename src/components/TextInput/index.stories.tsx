@@ -198,7 +198,7 @@ export const Misc: StoryObj<TextInputProps> = {
 
 export default {
   component: TextInput,
-  title: 'components/TextInput',
+  title: 'Components/TextInput',
   argTypes: {
     onChange: {
       action: 'onChange',

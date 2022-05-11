@@ -1,7 +1,7 @@
 import Header, { HeaderProps } from './index';
 import React from 'react';
 import { StoryObj } from '@storybook/react';
-import { MultiValue, SelectInstance } from 'react-select';
+import { PropsValue, SelectInstance } from 'react-select';
 import { mockFetchData } from 'util/mockFetchData';
 import { filterByStringProp } from 'util/mockFetchData/filterData';
 import { mockOptions } from '../SmartInput/mockData';
@@ -44,14 +44,24 @@ export const Primary: StoryObj<HeaderProps> = {
       },
     },
   },
-  render: ({ showLogo, logoImg, onSearchClick, onAdvancedSearchClick }): JSX.Element => {
-    const [searchItems, setSearchItems] = React.useState<MultiValue<OptionProps>>();
+  render: ({
+    showLogo,
+    logoImg,
+    onSearchClick,
+    onAdvancedSearchClick,
+    smartInputProps,
+  }): JSX.Element => {
+    const [searchItems, setSearchItems] = React.useState<PropsValue<OptionProps>>();
     const [options, setOptions] = React.useState<OptionProps[]>([]);
     const ref = React.useRef<SelectInstance<OptionProps, true>>(null);
     const [inputValue, setInputValue] = React.useState('');
 
-    const onSetSearchItems = (items: MultiValue<OptionProps>) => {
-      setSearchItems(items);
+    const onSetSearchItems = (items: PropsValue<OptionProps>) => {
+      if (Array.isArray(searchItems) && Array.isArray(items)) {
+        setSearchItems([...searchItems, ...items]);
+      } else {
+        setSearchItems(items);
+      }
     };
 
     const onInputChange = (value: string) => {
@@ -78,8 +88,10 @@ export const Primary: StoryObj<HeaderProps> = {
       searchItems,
       inputValue,
       openMenuOnClick: false,
+      isMulti: true,
 
       selectRef: ref,
+      ...smartInputProps,
     };
 
     return (
@@ -96,5 +108,5 @@ export const Primary: StoryObj<HeaderProps> = {
 
 export default {
   component: Header,
-  title: 'components/Header',
+  title: 'Components/Header',
 };

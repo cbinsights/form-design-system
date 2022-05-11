@@ -5,7 +5,7 @@ import { Props } from 'react-select';
 
 export interface SelectedValueProps {
   item: OptionProps;
-  selectProps: Props<OptionProps, true>;
+  selectProps: Props<OptionProps, boolean>;
 }
 
 export const SelectedValue = ({ item, selectProps }: SelectedValueProps): JSX.Element => {

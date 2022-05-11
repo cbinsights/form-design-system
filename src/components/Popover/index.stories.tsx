@@ -222,7 +222,7 @@ export const DisableScrolling: StoryObj<PopoverProps> = {
 
 export default {
   component: Popover,
-  title: 'components/Popover',
+  title: 'Components/Popover',
   parameters: {
     docs: {
       description: {

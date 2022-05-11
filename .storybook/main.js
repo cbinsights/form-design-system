@@ -7,6 +7,7 @@ module.exports = {
   ],
   addons: [
     '@storybook/addon-postcss',
+    '@storybook/addon-docs',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
   ],

@@ -1,0 +1,102 @@
+/* all fixed values are from marketing site footer */
+.fdsFooter-container {
+  background-color: #000d20;
+  color: #b9b9b9;
+  font-size: var(--font-size-m);
+  line-height: 1.5;
+  padding: 80px 0;
+}
+
+.fdsFooter-container a {
+  color: inherit;
+}
+
+.fdsFooter-content {
+  margin: 0 auto;
+  max-width: 1218px;
+  padding: 0 41.8px;
+}
+
+.fdsFooter-mainContent {
+  display: flex;
+}
+
+.fdsFooter-addressSection {
+  flex-basis: 252px;
+  padding-right: 40px;
+}
+
+.fdsFooter-separator {
+  background-color: #b9b9b9;
+  height: 3px;
+  width: 100%;
+}
+
+.fdsFooter-addressSection address {
+  display: block;
+  margin: 0.75em 0;
+  min-width: 230px;
+}
+
+.fdsFooter-nav {
+  padding: 10px 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 664px;
+  flex-grow: 1;
+}
+
+.fdsFooter-menuSection {
+  line-height: 37.23px;
+  flex-basis: calc(25% - 20px);
+  margin: 0 10px;
+}
+
+.fdsFooter-menuSection h3 {
+  color: inherit;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-bold);
+}
+
+.fdsFooter-moreInfoLinks {
+  margin: 20px 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fdsFooter-moreInfoLink {
+  padding-right: 30px;
+}
+
+.fdsFooter-copyright {
+  padding-bottom: 10.5px;
+}
+
+@media (max-width: 840px) {
+  .fdsFooter-menuSection {
+    flex-basis: calc(50% - 20px);
+    margin: 0 10px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fdsFooter-mainContent {
+    display: block;
+  }
+
+  .fdsFooter-menuSection {
+    flex-basis: calc(25% - 20px);
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  .fdsFooter-nav {
+    display: block;
+    padding: 0;
+  }
+
+  .fdsFooter-menuSection {
+    margin: 0 0 15px;
+  }
+}

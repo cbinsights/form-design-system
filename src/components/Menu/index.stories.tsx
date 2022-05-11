@@ -249,6 +249,7 @@ export const Content = {
       </Menu.Root>
     );
   },
+  title: 'Components/Menu',
   argTypes: {
     asChild: {
       type: 'boolean',
