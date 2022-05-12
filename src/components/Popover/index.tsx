@@ -118,6 +118,13 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       setIsActive(interactionMode === 'controlled' && !!isOpen);
     }, [interactionMode, isOpen]);
 
+    const onPointerDismiss = () => {
+      if (interactionMode === 'controlled' && isActive) {
+        return () => {};
+      }
+      return onUserDismiss;
+    };
+
     let triggerProps: HTMLAttributes<HTMLElement> = {};
     let hoverTimeout: number;
     switch (interactionMode) {
@@ -197,7 +204,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
           sideOffset={distance}
           portalled={!disablePortal} // some places in cbi-site werent passing this prop and will now need them
           onEscapeKeyDown={onUserDismiss}
-          onPointerDownOutside={onUserDismiss} // works when clicking outside - but double renders when clicking the trigger again (in controlled popover)
+          onPointerDownOutside={onPointerDismiss}
         >
           {popperContent}
         </RadixPopover.Content>
