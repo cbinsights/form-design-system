@@ -118,6 +118,8 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       setIsActive(interactionMode === 'controlled' && !!isOpen);
     }, [interactionMode, isOpen]);
 
+    const isHover = interactionMode === 'hover' ? true : undefined;
+
     const onPointerDismiss = () => {
       if (interactionMode === 'controlled' && isActive) {
         return () => {};
@@ -205,6 +207,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
           portalled={!disablePortal} // some places in cbi-site werent passing this prop and will now need them
           onEscapeKeyDown={onUserDismiss}
           onPointerDownOutside={onPointerDismiss}
+          forceMount={isHover}
         >
           {popperContent}
         </RadixPopover.Content>
