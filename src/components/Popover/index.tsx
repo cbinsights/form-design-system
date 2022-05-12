@@ -7,6 +7,13 @@ import { useDisableScroll, useCloseOnScroll } from './hooks';
 export type Position = 'top' | 'right' | 'bottom' | 'left';
 export type InteractionMode = 'hover' | 'click' | 'controlled';
 
+// gets non-optional function type because Parameters doesnt take undefined
+type RequiredOnInteractOutsideFn = Required<
+  React.ComponentProps<typeof RadixPopover.Content>
+>['onInteractOutside'];
+
+// getting the type of the event parameter to use in onUserDismiss from the tuple returned by Parameters
+type InteractOutsideEvent = Parameters<RequiredOnInteractOutsideFn>[0];
 export interface PopoverProps {
   /** JSX - Acts as a positioning reference for the popover and triggers active state */
   trigger: React.ReactElement;
@@ -40,7 +47,7 @@ export interface PopoverProps {
    * Useful for updating `isOpen` in controlled mode.
    * Function is invoked with the DOM event as the argument.
    */
-  onUserDismiss?: (e: MouseEvent | KeyboardEvent) => void;
+  onUserDismiss?: (e: MouseEvent | KeyboardEvent | InteractOutsideEvent) => void;
 
   /** disables portaling the popover to `document.body` */
   disablePortal?: boolean;
@@ -88,7 +95,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       alignment = 'start',
       distance = 4,
       delay = 0,
-      // onUserDismiss = () => {},
+      onUserDismiss = () => {},
       onOpen = () => {},
       onClose = () => {},
       trigger,
@@ -102,7 +109,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
   ) => {
     const [isActive, setIsActive] = useState(false);
     // const refTriggerWrap = useRef(null);
-    const refContent = forwardedRef || React.createRef();
+    // const refContent = forwardedRef || React.createRef();
     useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
     useDisableScroll(disableScrollRef, isActive);
 
@@ -169,7 +176,13 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
         timeout={transitionName ? 200 : 0}
         classNames={transitionName ? `rtg${transitionName}` : undefined}
       >
-        <div>{children}</div>
+        <div
+          style={{
+            ...contentStyle,
+          }}
+        >
+          {children}
+        </div>
       </CSSTransition>
     );
 
@@ -177,15 +190,14 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       <RadixPopover.Root defaultOpen={isOpen}>
         <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
         <RadixPopover.Content
-          ref={refContent}
-          style={{
-            ...contentStyle,
-          }}
+          ref={forwardedRef}
           className="ease-in-out"
           align={alignment}
           side={position}
           sideOffset={distance}
           portalled={!!disablePortal}
+          onEscapeKeyDown={onUserDismiss}
+          onPointerDownOutside={onUserDismiss} // works when clicking outside - but double renders when clicking the trigger again (in controlled popover)
         >
           {popperContent}
         </RadixPopover.Content>
