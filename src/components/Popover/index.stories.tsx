@@ -105,6 +105,7 @@ export const PopoverWithinAPopover: StoryObj<PopoverProps> = {
             <Popover
               {...args}
               trigger={<button className="margin--left--xs">click</button>}
+              disablePortal={false}
             >
               <div className="bgColor--white rounded--all elevation--2 padding--all">
                 <div className="padding--all--m">

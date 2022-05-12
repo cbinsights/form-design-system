@@ -109,7 +109,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
   ) => {
     const [isActive, setIsActive] = useState(false);
     // const refTriggerWrap = useRef(null);
-    // const refContent = forwardedRef || React.createRef();
+    const refContent = forwardedRef || React.createRef();
     useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
     useDisableScroll(disableScrollRef, isActive);
 
@@ -190,12 +190,12 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       <RadixPopover.Root defaultOpen={isOpen}>
         <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
         <RadixPopover.Content
-          ref={forwardedRef}
+          ref={refContent}
           className="ease-in-out"
           align={alignment}
           side={position}
           sideOffset={distance}
-          portalled={!!disablePortal}
+          portalled={!disablePortal} // some places in cbi-site werent passing this prop and will now need them
           onEscapeKeyDown={onUserDismiss}
           onPointerDownOutside={onUserDismiss} // works when clicking outside - but double renders when clicking the trigger again (in controlled popover)
         >
