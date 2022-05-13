@@ -113,12 +113,12 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
     useDisableScroll(disableScrollRef, isActive);
 
+    const forceMount = interactionMode === 'hover' ? true : undefined;
+    const isControlled = interactionMode === 'controlled';
     // update active state on props change to accommodate fully controlled popovers
     useEffect(() => {
-      setIsActive(interactionMode === 'controlled' && !!isOpen);
+      setIsActive(isControlled && !!isOpen);
     }, [interactionMode, isOpen]);
-
-    const forceMount = interactionMode === 'hover' ? true : undefined;
 
     let triggerProps: HTMLAttributes<HTMLElement> = {};
     let hoverTimeout: number;
@@ -178,8 +178,12 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       </CSSTransition>
     );
 
+    const handleChange = (open: boolean) => {
+      open ? onOpen() : onClose();
+    };
+
     return (
-      <RadixPopover.Root defaultOpen={isOpen}>
+      <RadixPopover.Root defaultOpen={isOpen} onOpenChange={handleChange}>
         <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
