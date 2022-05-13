@@ -1,5 +1,12 @@
 import * as RadixPopover from '@radix-ui/react-popover';
-import React, { useEffect, useState, Ref, RefObject, HTMLAttributes } from 'react';
+import React, {
+  useEffect,
+  useState,
+  Ref,
+  RefObject,
+  HTMLAttributes,
+  // useRef,
+} from 'react';
 import { CSSTransition } from 'react-transition-group';
 import FDS from 'dictionary/js/styleConstants';
 import { useDisableScroll, useCloseOnScroll } from './hooks';
@@ -107,8 +114,8 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     }: PopoverProps,
     forwardedRef
   ) => {
-    const [isActive, setIsActive] = useState(false);
     // const refTriggerWrap = useRef(null);
+    const [isActive, setIsActive] = useState(false);
     const refContent = forwardedRef || React.createRef();
     useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
     useDisableScroll(disableScrollRef, isActive);
@@ -183,7 +190,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     };
 
     return (
-      <RadixPopover.Root defaultOpen={isOpen} open={isOpen} onOpenChange={handleChange}>
+      <RadixPopover.Root defaultOpen={isOpen} onOpenChange={handleChange}>
         <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
