@@ -118,14 +118,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       setIsActive(interactionMode === 'controlled' && !!isOpen);
     }, [interactionMode, isOpen]);
 
-    const isHover = interactionMode === 'hover' ? true : undefined;
-
-    const onPointerDismiss = () => {
-      if (interactionMode === 'controlled' && isActive) {
-        return () => {};
-      }
-      return onUserDismiss;
-    };
+    const forceMount = interactionMode === 'hover' ? true : undefined;
 
     let triggerProps: HTMLAttributes<HTMLElement> = {};
     let hoverTimeout: number;
@@ -143,16 +136,6 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
             clearTimeout(hoverTimeout);
           }
           setIsActive(false);
-        };
-        triggerProps.onKeyUp = (e) => {
-          if (e.key === 'Tab') {
-            setIsActive(true);
-          }
-        };
-        triggerProps.onKeyDown = (e) => {
-          if (e.key === 'Tab') {
-            setIsActive(false);
-          }
         };
         triggerProps.onClick = (e) => {
           e.stopPropagation();
@@ -206,8 +189,8 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
           sideOffset={distance}
           portalled={!disablePortal} // some places in cbi-site werent passing this prop and will now need them
           onEscapeKeyDown={onUserDismiss}
-          onPointerDownOutside={onPointerDismiss}
-          forceMount={isHover}
+          onInteractOutside={onUserDismiss}
+          forceMount={forceMount}
         >
           {popperContent}
         </RadixPopover.Content>
