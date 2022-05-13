@@ -22,6 +22,7 @@ declare module 'react-select/dist/declarations/src/Select' {
   > {
     cursorPosition?: number;
     hideSelectedItems?: boolean;
+    isFocused?: boolean;
     onSetSearchItems?: (items: PropsValue<Option>) => void;
     setCursorPosition?: (position: number) => void;
   }
@@ -79,7 +80,7 @@ const Search = ({
   onMenuClose = noop,
   onOptionClick = noop,
   onSetSearchItems = noop,
-  openMenuOnClick,
+  openMenuOnClick = true,
   options,
   placeholder,
   searchItems,
@@ -135,6 +136,7 @@ const Search = ({
       options={options}
       placeholder={placeholder}
       ref={selectRef}
+      isFocused={selectRef.current?.state.isFocused}
       setCursorPosition={setCursorPosition}
       styles={styles}
       theme={customThemes}

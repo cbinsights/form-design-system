@@ -115,6 +115,6 @@ describe('CustomValueContainer component', () => {
       </CustomValueContainer>
     );
     expect(screen.getAllByRole('presentation')).toHaveLength(3);
-    expect(screen.getAllByRole('presentation')[1]).toHaveTextContent('child-3');
+    expect(screen.getAllByRole('presentation')[0]).toHaveTextContent('child-3');
   });
 });
