@@ -183,7 +183,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     };
 
     return (
-      <RadixPopover.Root defaultOpen={isOpen} onOpenChange={handleChange}>
+      <RadixPopover.Root defaultOpen={isOpen} open={isOpen} onOpenChange={handleChange}>
         <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
