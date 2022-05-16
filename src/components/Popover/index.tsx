@@ -1,4 +1,3 @@
-import * as RadixPopover from '@radix-ui/react-popover';
 import React, {
   useEffect,
   useState,
@@ -7,6 +6,8 @@ import React, {
   HTMLAttributes,
   // useRef,
 } from 'react';
+import cc from 'classcat';
+import * as RadixPopover from '@radix-ui/react-popover';
 import { CSSTransition } from 'react-transition-group';
 import FDS from 'dictionary/js/styleConstants';
 import { useDisableScroll, useCloseOnScroll } from './hooks';
@@ -194,7 +195,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
         <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
-          className="ease-in-out"
+          className={cc([{ 'ease-in-out': interactionMode !== 'hover' }])}
           align={alignment}
           side={position}
           sideOffset={distance}
