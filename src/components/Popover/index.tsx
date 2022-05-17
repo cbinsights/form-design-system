@@ -121,8 +121,9 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
     useDisableScroll(disableScrollRef, isActive);
 
-    const forceMount = interactionMode === 'hover' ? true : undefined;
+    const isHover = interactionMode === 'hover';
     const isControlled = interactionMode === 'controlled';
+    const forceMount = isHover ? true : undefined;
     // update active state on props change to accommodate fully controlled popovers
     useEffect(() => {
       setIsActive(isControlled && !!isOpen);
@@ -172,9 +173,9 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
         onEntered={onOpen}
         onExited={onClose}
         in={isActive}
-        unmountOnExit
+        unmountOnExit={isHover}
         timeout={transitionName ? 200 : 0}
-        classNames={transitionName ? `rtg${transitionName}` : undefined}
+        classNames={transitionName && !isActive ? `rtg${transitionName}` : undefined}
       >
         <div
           style={{
@@ -195,11 +196,11 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
         <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
-          className={cc([{ 'ease-in-out': interactionMode !== 'hover' }])}
+          className={cc([{ 'ease-in-out': !isHover }])}
           align={alignment}
           side={position}
           sideOffset={distance}
-          portalled={!disablePortal} // some places in cbi-site werent passing this prop and will now need them
+          portalled={!disablePortal} // some places in cbi-site need to pass this prop
           onEscapeKeyDown={onUserDismiss}
           onInteractOutside={onUserDismiss}
           forceMount={forceMount}
