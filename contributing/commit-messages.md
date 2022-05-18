@@ -3,11 +3,16 @@
 # Commits
 
 FDS uses conventional commits to produce release versions according to semantic release.
+A very basic conventional commit looks like this:
+
+```
+fix(tooltip): add span around trigger
+```
 
 Your commit messages must have a shape like
 
 ```
-<type>[optional scope]: <description>
+<type>(optional scope): <description>
 
 [optional body]
 
@@ -37,6 +42,45 @@ NOTE: you can make use of `yarn commit` script to help you create a commit messa
 - The rest of the types don't produce a version release when they don't contain `BREAKING CHANGE` in the description/footer or `!` in the type.
 
 # Examples
+
+## Commit message with no body
+
+```
+docs: correct spelling of CHANGELOG
+```
+
+expected change in the version:
+
+- 1.0.0 -> 1.0.0
+
+## Commit message with scope
+
+```
+feat(lang): add Polish language
+```
+
+expected change in the version:
+
+- 1.0.0 -> 1.2.0
+
+## Commit message with multi-paragraph body and multiple footers
+
+```
+fix: prevent racing of requests
+
+Introduce a request id and a reference to latest request. Dismiss
+incoming responses other than from latest request.
+
+Remove timeouts which were used to mitigate the racing issue but are
+obsolete now.
+
+Reviewed-by: Z
+Refs: #123
+```
+
+expected change in the version:
+
+- 1.0.0 -> 1.0.1
 
 ## Commit message with description and breaking change footer
 
@@ -81,42 +125,3 @@ BREAKING CHANGE: use JavaScript features not available in Node 6.
 expected change in the version:
 
 - 1.0.0 -> 2.0.0
-
-## Commit message with no body
-
-```
-docs: correct spelling of CHANGELOG
-```
-
-expected change in the version:
-
-- 1.0.0 -> 1.0.0
-
-## Commit message with scope
-
-```
-feat(lang): add Polish language
-```
-
-expected change in the version:
-
-- 1.0.0 -> 1.2.0
-
-## Commit message with multi-paragraph body and multiple footers
-
-```
-fix: prevent racing of requests
-
-Introduce a request id and a reference to latest request. Dismiss
-incoming responses other than from latest request.
-
-Remove timeouts which were used to mitigate the racing issue but are
-obsolete now.
-
-Reviewed-by: Z
-Refs: #123
-```
-
-expected change in the version:
-
-- 1.0.0 -> 1.0.1
