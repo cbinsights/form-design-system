@@ -1,11 +1,4 @@
-import React, {
-  useEffect,
-  useState,
-  Ref,
-  RefObject,
-  HTMLAttributes,
-  // useRef,
-} from 'react';
+import React, { useEffect, useState, RefObject, HTMLAttributes, useRef } from 'react';
 import cc from 'classcat';
 import * as RadixPopover from '@radix-ui/react-popover';
 import { CSSTransition } from 'react-transition-group';
@@ -31,7 +24,7 @@ export interface PopoverProps {
    * does not provide any default styling; content should be styled with background,
    * borders, and shadows as appropriate.
    */
-  children: React.ReactNode | React.ReactElement;
+  children: React.ReactNode;
 
   /**
    * What mode of interaction triggers the active/inactive state of the popover.
@@ -91,7 +84,7 @@ export interface PopoverProps {
   closeOnScrollRef?: RefObject<HTMLElement>;
 
   /** Ref to forward to the content container of the popover */
-  ref?: Ref<HTMLDivElement>;
+  ref?: RefObject<HTMLDivElement>;
 }
 
 const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
@@ -108,16 +101,15 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       onClose = () => {},
       trigger,
       children,
-      isOpen,
+      isOpen = false,
       transitionName,
       disableScrollRef,
       closeOnScrollRef,
     }: PopoverProps,
     forwardedRef
   ) => {
-    // const refTriggerWrap = useRef(null);
-    const [isActive, setIsActive] = useState(false);
-    const refContent = forwardedRef || React.createRef();
+    const [isActive, setIsActive] = useState(isOpen);
+    const refContent = forwardedRef || useRef<HTMLDivElement>(null);
     useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
     useDisableScroll(disableScrollRef, isActive);
 
@@ -188,15 +180,18 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     );
 
     const handleChange = (open: boolean) => {
-      open ? onOpen() : onClose();
+      if (open) {
+        onOpen();
+      } else {
+        onClose();
+      }
     };
-
     return (
-      <RadixPopover.Root defaultOpen={isOpen} onOpenChange={handleChange}>
+      <RadixPopover.Root open={isActive} onOpenChange={handleChange}>
         <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
-          className={cc([{ 'ease-in-out': !isHover }])}
+          className={cc([{ 'ease-in-out': !isHover && !closeOnScrollRef }])}
           align={alignment}
           side={position}
           sideOffset={distance}
@@ -204,6 +199,8 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
           onEscapeKeyDown={onUserDismiss}
           onInteractOutside={onUserDismiss}
           forceMount={forceMount}
+          avoidCollisions
+          collisionTolerance={0}
         >
           {popperContent}
         </RadixPopover.Content>
