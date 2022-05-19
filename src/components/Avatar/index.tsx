@@ -1,4 +1,5 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
+import * as RadixAvatar from '@radix-ui/react-avatar';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import Icon from 'components/Icon';
@@ -65,7 +66,7 @@ export interface AvatarProps
   href?: string;
 }
 
-const Avatar = forwardRef(
+const Avatar = forwardRef<HTMLSpanElement>(
   (
     {
       bgColor = 'purple',
@@ -79,7 +80,7 @@ const Avatar = forwardRef(
       PlaceholderIcon,
       ...rest
     }: AvatarProps,
-    ref
+    _ref
   ) => {
     const cleanName = trimName(name);
 
@@ -97,11 +98,11 @@ const Avatar = forwardRef(
           return 16;
       }
     };
-
+    console.log(Element);
     return (
-      <Element
+      <RadixAvatar.Root
         {...rest}
-        ref={ref}
+        // ref={ref}
         role={Element === 'div' ? 'img' : undefined}
         aria-label={ariaLabel}
         title={cleanName || 'Placeholder Avatar'}
@@ -117,14 +118,14 @@ const Avatar = forwardRef(
           `fdsAvatar--${radius}`,
         ])}
       >
-        {imgUrl && (
-          <span className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
-        )}
+        <RadixAvatar.Image className="fdsAvatar-img" src={imgUrl} />
         {cleanName && grabInitials(cleanName, initialsLength)}
-        {!(cleanName || imgUrl) && PlaceholderIcon && (
-          <PlaceholderIcon customSize={placeholderIconSize()} />
-        )}
-      </Element>
+        <RadixAvatar.Fallback>
+          {!(cleanName || imgUrl) && PlaceholderIcon && (
+            <PlaceholderIcon customSize={placeholderIconSize()} />
+          )}
+        </RadixAvatar.Fallback>
+      </RadixAvatar.Root>
     );
   }
 );
