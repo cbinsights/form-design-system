@@ -19,7 +19,6 @@ export const parameters = {
     ],
   },
   options: {
-    showRoots: true,
     storySort: (a, b) => {
       const alphabeticalSort = () => {
         if (a[1].id.split('--')[1] === 'primary') {

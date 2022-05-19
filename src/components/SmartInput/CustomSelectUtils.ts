@@ -66,8 +66,7 @@ export const customStyles = (
         flex: 'none',
         cursor: 'pointer',
         display: useStylesForHeader && isLastCursorPosition ? 'block' : 'inline-grid',
-        ['flex-grow']:
-          useStylesForHeader && isFocused && isLastCursorPosition ? '1' : '0',
+        flexGrow: useStylesForHeader && isFocused && isLastCursorPosition ? 1 : 0,
         overflow: useStylesForHeader ? 'hidden' : 'inherit',
         ':after': useStylesForHeader
           ? {
