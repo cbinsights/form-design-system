@@ -98,7 +98,7 @@ const Avatar = forwardRef(
           return 16;
       }
     };
-    console.log(Element);
+
     return (
       <RadixAvatar.Root
         {...rest}
