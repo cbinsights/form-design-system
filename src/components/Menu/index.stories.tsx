@@ -1,12 +1,9 @@
 import React from 'react';
-import Button from 'components/Button';
-import Flex from 'components/Flex';
-import FlexItem from 'components/FlexItem';
 import CloneIcon from 'icons/react/CloneIcon';
 import TrashIcon from 'icons/react/TrashIcon';
 import EditIcon from 'icons/react/EditIcon';
 import FundingIcon from 'icons/react/FundingIcon';
-import { Menu, Tooltip } from 'components';
+import { Menu, Tooltip, Dialog, Button, Flex, FlexItem } from 'components';
 import { StoryObj } from '@storybook/react';
 import { MenuProps } from '.';
 import { MenuItemProps } from './MenuItem';
@@ -94,6 +91,33 @@ export const Primary = {
     ...events.root,
     ...events.content,
     ...events.item,
+  },
+};
+
+export const ShowDialogFromMenuItem = {
+  render: (_args: unknown): JSX.Element => {
+    const [showDialog, setShowDialog] = React.useState(false);
+
+    return (
+      <>
+        <Menu>
+          <Menu.Trigger asChild>
+            <Button theme="outlined" label="Click me" hasCaret />
+          </Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item onSelect={() => setShowDialog(true)}>Show Dialog</Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Dialog
+          isOpen={showDialog}
+          content="dialog content goes here"
+          title="dialog title here"
+          onDismiss={() => {
+            setShowDialog(false);
+          }}
+        />
+      </>
+    );
   },
 };
 
