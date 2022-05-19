@@ -4,6 +4,7 @@ import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
 import Checkbox from 'components/Checkbox';
 import Chip from 'components/Chip';
+import ContextMenu from 'components/ContextMenu';
 import CornerPosition from 'components/CornerPosition';
 import DateInput from 'components/DateInput';
 import Dialog from 'components/Dialog';
@@ -37,6 +38,7 @@ export {
   ButtonGroup,
   Checkbox,
   Chip,
+  ContextMenu,
   CornerPosition,
   DateInput,
   Dialog,

@@ -58,8 +58,8 @@ const events = {
   },
 };
 
-export const Primary = {
-  render: (args: AllEvents): JSX.Element => {
+export const Primary: StoryObj<AllEvents> = {
+  render: (args): JSX.Element => {
     return (
       <ContextMenu onOpenChange={args.onOpenChange}>
         <ContextMenu.Trigger>
@@ -127,8 +127,5 @@ export default {
   title: 'Components/ContextMenu',
   parameters: {
     componentSubtitle: 'Renders a context dropdown containing actions the user can take.',
-  },
-  storySort: {
-    order: ['Primary', '*'],
   },
 };
