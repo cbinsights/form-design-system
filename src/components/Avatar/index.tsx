@@ -66,7 +66,7 @@ export interface AvatarProps
   href?: string;
 }
 
-const Avatar = forwardRef<HTMLSpanElement>(
+const Avatar = forwardRef(
   (
     {
       bgColor = 'purple',
