@@ -9,6 +9,19 @@ import FundingIcon from 'icons/react/FundingIcon';
 import { Menu, Tooltip } from 'components';
 import { StoryObj } from '@storybook/react';
 import { MenuProps } from '.';
+import { MenuItemProps } from './MenuItem';
+import { MenuContentProps } from './MenuContent';
+
+type AllEvents = Pick<MenuProps, 'onOpenChange'> &
+  Pick<MenuItemProps, 'onSelect'> &
+  Pick<
+    MenuContentProps,
+    | 'onCloseAutoFocus'
+    | 'onEscapeKeyDown'
+    | 'onPointerDownOutside'
+    | 'onFocusOutside'
+    | 'onInteractOutside'
+  >;
 
 const hidden = {
   table: {
@@ -18,7 +31,6 @@ const hidden = {
 
 const events = {
   content: {
-    ...hidden,
     onCloseAutoFocus: {
       ...hidden,
       action: 'onCloseAutoFocus',
@@ -41,14 +53,12 @@ const events = {
     },
   },
   root: {
-    ...hidden,
     onOpenChange: {
       ...hidden,
       action: 'onOpenChange',
     },
   },
   item: {
-    ...hidden,
     onSelect: {
       ...hidden,
       action: 'onSelect',
@@ -57,14 +67,20 @@ const events = {
 };
 
 export const Primary = {
-  render: (args: any): JSX.Element => (
-    <Menu {...args}>
-      <Menu.Trigger {...args} asChild>
+  render: (args: AllEvents): JSX.Element => (
+    <Menu onOpenChange={args.onOpenChange}>
+      <Menu.Trigger asChild>
         <Button label="Menu trigger" hasCaret />
       </Menu.Trigger>
-      <Menu.Content {...args}>
-        <Menu.Item {...args}>🍕 Pizza</Menu.Item>
-        <Menu.Item {...args}>🌮 Tacos</Menu.Item>
+      <Menu.Content
+        onCloseAutoFocus={args.onCloseAutoFocus}
+        onEscapeKeyDown={args.onEscapeKeyDown}
+        onPointerDownOutside={args.onPointerDownOutside}
+        onFocusOutside={args.onFocusOutside}
+        onInteractOutside={args.onInteractOutside}
+      >
+        <Menu.Item onSelect={args.onSelect}>🍕 Pizza</Menu.Item>
+        <Menu.Item onSelect={args.onSelect}>🌮 Tacos</Menu.Item>
         <Menu.Item>
           <Tooltip
             trigger={<span>🫔 Tamal</span>}
@@ -232,8 +248,5 @@ export default {
           'Use FDS `Popover` instead for content like forms & arbitrary content. Use `MenuLink` for rendering links, and default to using `MenuItem` otherwise.',
       },
     },
-  },
-  storySort: {
-    order: ['Primary', '*'],
   },
 };
