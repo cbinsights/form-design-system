@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { DocsContext } from '@storybook/addon-docs/blocks';
+import { DocsContext } from '@storybook/addon-docs';
 
 type RestType = JSX.Element | null;
 
