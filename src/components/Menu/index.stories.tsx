@@ -1,14 +1,24 @@
 import React from 'react';
-import Button from 'components/Button';
-import Flex from 'components/Flex';
-import FlexItem from 'components/FlexItem';
 import CloneIcon from 'icons/react/CloneIcon';
 import TrashIcon from 'icons/react/TrashIcon';
 import EditIcon from 'icons/react/EditIcon';
 import FundingIcon from 'icons/react/FundingIcon';
-import { Menu, Tooltip } from 'components';
+import { Menu, Tooltip, Dialog, Button, Flex, FlexItem } from 'components';
 import { StoryObj } from '@storybook/react';
 import { MenuProps } from '.';
+import { MenuItemProps } from './MenuItem';
+import { MenuContentProps } from './MenuContent';
+
+type AllEvents = Pick<MenuProps, 'onOpenChange'> &
+  Pick<MenuItemProps, 'onSelect'> &
+  Pick<
+    MenuContentProps,
+    | 'onCloseAutoFocus'
+    | 'onEscapeKeyDown'
+    | 'onPointerDownOutside'
+    | 'onFocusOutside'
+    | 'onInteractOutside'
+  >;
 
 const hidden = {
   table: {
@@ -18,7 +28,6 @@ const hidden = {
 
 const events = {
   content: {
-    ...hidden,
     onCloseAutoFocus: {
       ...hidden,
       action: 'onCloseAutoFocus',
@@ -41,14 +50,12 @@ const events = {
     },
   },
   root: {
-    ...hidden,
     onOpenChange: {
       ...hidden,
       action: 'onOpenChange',
     },
   },
   item: {
-    ...hidden,
     onSelect: {
       ...hidden,
       action: 'onSelect',
@@ -57,14 +64,20 @@ const events = {
 };
 
 export const Primary = {
-  render: (args: any): JSX.Element => (
-    <Menu {...args}>
-      <Menu.Trigger {...args} asChild>
+  render: (args: AllEvents): JSX.Element => (
+    <Menu onOpenChange={args.onOpenChange}>
+      <Menu.Trigger asChild>
         <Button label="Menu trigger" hasCaret />
       </Menu.Trigger>
-      <Menu.Content {...args}>
-        <Menu.Item {...args}>🍕 Pizza</Menu.Item>
-        <Menu.Item {...args}>🌮 Tacos</Menu.Item>
+      <Menu.Content
+        onCloseAutoFocus={args.onCloseAutoFocus}
+        onEscapeKeyDown={args.onEscapeKeyDown}
+        onPointerDownOutside={args.onPointerDownOutside}
+        onFocusOutside={args.onFocusOutside}
+        onInteractOutside={args.onInteractOutside}
+      >
+        <Menu.Item onSelect={args.onSelect}>🍕 Pizza</Menu.Item>
+        <Menu.Item onSelect={args.onSelect}>🌮 Tacos</Menu.Item>
         <Menu.Item>
           <Tooltip
             trigger={<span>🫔 Tamal</span>}
@@ -78,6 +91,33 @@ export const Primary = {
     ...events.root,
     ...events.content,
     ...events.item,
+  },
+};
+
+export const ShowDialogFromMenuItem = {
+  render: (_args: unknown): JSX.Element => {
+    const [showDialog, setShowDialog] = React.useState(false);
+
+    return (
+      <>
+        <Menu>
+          <Menu.Trigger asChild>
+            <Button theme="outlined" label="Click me" hasCaret />
+          </Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item onSelect={() => setShowDialog(true)}>Show Dialog</Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Dialog
+          isOpen={showDialog}
+          content="dialog content goes here"
+          title="dialog title here"
+          onDismiss={() => {
+            setShowDialog(false);
+          }}
+        />
+      </>
+    );
   },
 };
 
@@ -232,8 +272,5 @@ export default {
           'Use FDS `Popover` instead for content like forms & arbitrary content. Use `MenuLink` for rendering links, and default to using `MenuItem` otherwise.',
       },
     },
-  },
-  storySort: {
-    order: ['Primary', '*'],
   },
 };

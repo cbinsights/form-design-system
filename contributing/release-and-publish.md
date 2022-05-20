@@ -6,8 +6,7 @@
 
 ## Managing [semver](https://semver.org/) in FDS
 
-When making changes, bump the semantic version in your branch `Jenkinsfile`.
-Full instructions for doing this can be found [here](https://github.com/cbinsights/form-design-system/#versioningpublishing).
+FDS uses semantic release and [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ## Build pipeline
 
@@ -16,7 +15,7 @@ On every push to `master`, a CI tool will perform these actions:
 1. full build
 2. lint
 3. test
-4. bump the version in `package.json`
+4. type check
 5. publish to npm
 6. tag the release and push the git tag to `origin`
 
