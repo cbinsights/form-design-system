@@ -115,7 +115,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
 
     const isHover = interactionMode === 'hover';
     const isControlled = interactionMode === 'controlled';
-    const forceMount = isHover ? true : undefined;
+
     // update active state on props change to accommodate fully controlled popovers
     useEffect(() => {
       setIsActive(isControlled && !!isOpen);
@@ -195,14 +195,13 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
         <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
-          className={cc([{ 'ease-in-out': !isHover && !closeOnScrollRef }])}
+          className={cc([{ 'ease-in-out': !closeOnScrollRef }])}
           align={alignment}
           side={position}
           sideOffset={distance}
           portalled={!disablePortal} // some places in cbi-site need to pass this prop
           onEscapeKeyDown={onUserDismiss}
           onInteractOutside={onUserDismiss}
-          forceMount={forceMount}
           avoidCollisions
           collisionTolerance={0}
         >
