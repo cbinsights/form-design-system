@@ -3520,6 +3520,7 @@ __metadata:
     "@commitlint/prompt-cli": 16.2.4
     "@mdx-js/react": 1.6.22
     "@radix-ui/react-checkbox": 0.1.5
+    "@radix-ui/react-context-menu": 0.1.6
     "@radix-ui/react-dialog": 0.1.7
     "@radix-ui/react-dropdown-menu": 0.1.6
     "@radix-ui/react-label": 0.1.5
@@ -5344,6 +5345,23 @@ __metadata:
   peerDependencies:
     react: ^16.8 || ^17.0
   checksum: d1455577b2afee141998e847890e8f5ba5cb17aa58ba699f9abe21c7948e2435bbda28f7f7efe825ca200c66bcaf095ff4b93553778d599cba3f611c97cd222e
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-context-menu@npm:0.1.6":
+  version: 0.1.6
+  resolution: "@radix-ui/react-context-menu@npm:0.1.6"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/primitive": 0.1.0
+    "@radix-ui/react-context": 0.1.1
+    "@radix-ui/react-menu": 0.1.6
+    "@radix-ui/react-primitive": 0.1.4
+    "@radix-ui/react-use-callback-ref": 0.1.0
+  peerDependencies:
+    react: ^16.8 || ^17.0
+    react-dom: ^16.8 || ^17.0
+  checksum: b273459c2dbea16d73ec30018fba84f6f3560efcbd4281929293b50d3a09a3183d75c41502190e659346f189a82d0fd0664fefefe26d5e091867610f0ff85afd
   languageName: node
   linkType: hard
 

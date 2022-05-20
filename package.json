@@ -52,7 +52,8 @@
     "postpublish": "yarn pinst --enable",
     "start:storybook": "start-storybook -p 9009 -s public --ci",
     "cy:test:storybook": "cypress run --headless -C cypress.storybook.json",
-    "ci:start-and-test-storybook": "cross-env START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test start:storybook http://localhost:9009 cy:test:storybook"
+    "ci:start-and-test-storybook": "cross-env START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test start:storybook http://localhost:9009 cy:test:storybook",
+    "test-pattern": "yarn test -t"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
@@ -219,6 +220,7 @@
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "0.1.5",
+    "@radix-ui/react-context-menu": "0.1.6",
     "@radix-ui/react-dialog": "0.1.7",
     "@radix-ui/react-dropdown-menu": "0.1.6",
     "@radix-ui/react-label": "0.1.5",
