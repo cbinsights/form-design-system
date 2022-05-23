@@ -26,6 +26,9 @@ const MenuContent = ({ children, ...rest }: MenuContentProps): JSX.Element => (
     allowPinchZoom={false}
     side={'bottom'}
     collisionTolerance={0}
+    onCloseAutoFocus={(e) => {
+      e.preventDefault();
+    }}
   >
     {children}
   </DropdownMenu.Content>
