@@ -13,6 +13,14 @@ A design system by CB Insights.
 yarn add @cbinsights/fds
 ```
 
+### Install SDKs
+
+First time clone of this repo will show you errors on types and it will say it cannot find imported libraries, to fix this you need to install SDKs, to do so, run the following command:
+
+```
+yarn dlx @yarnpkg/sdks vscode
+```
+
 ---
 
 ### Docs

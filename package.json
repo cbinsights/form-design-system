@@ -52,7 +52,8 @@
     "postpublish": "yarn pinst --enable",
     "start:storybook": "start-storybook -p 9009 -s public --ci",
     "cy:test:storybook": "cypress run --headless -C cypress.storybook.json",
-    "ci:start-and-test-storybook": "cross-env START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test start:storybook http://localhost:9009 cy:test:storybook"
+    "ci:start-and-test-storybook": "cross-env START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test start:storybook http://localhost:9009 cy:test:storybook",
+    "test-pattern": "yarn test -t"
   },
   "peerDependencies": {
     "dayjs": "^1.9.7",
@@ -218,19 +219,19 @@
     }
   },
   "dependencies": {
-    "@popperjs/core": "2.11.5",
     "@radix-ui/react-avatar": "0.1.4",
     "@radix-ui/react-checkbox": "0.1.5",
+    "@radix-ui/react-context-menu": "0.1.6",
     "@radix-ui/react-dialog": "0.1.7",
     "@radix-ui/react-dropdown-menu": "0.1.6",
     "@radix-ui/react-label": "0.1.5",
+    "@radix-ui/react-popover": "0.1.6",
     "@radix-ui/react-tooltip": "0.1.7",
     "@reach/menu-button": "0.17.0",
     "autosuggest-highlight": "3.2.1",
     "classcat": "5.0.3",
     "focus-trap-react": "8.11.0",
     "raf-schd": "4.0.3",
-    "react-popper": "2.3.0",
     "react-select": "5.3.1",
     "uuid": "8.3.2"
   },
