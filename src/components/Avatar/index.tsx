@@ -100,32 +100,34 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
     };
 
     return (
-      <RadixAvatar.Root
-        {...rest}
-        ref={ref}
-        role={Element === 'div' ? 'img' : undefined}
-        aria-label={ariaLabel}
-        title={cleanName || 'Placeholder Avatar'}
-        className={cc([
-          {
-            'border--focus': Element !== 'div',
-            'color--white': (DARK_COLORS as ReadonlyArray<string>).includes(bgColor),
-          },
-          'fdsAvatar',
-          'alignChild--center--center',
-          `bgColor--${bgColor}`,
-          `fdsAvatar--${size}`,
-          `fdsAvatar--${radius}`,
-        ])}
-      >
-        <RadixAvatar.Image className="fdsAvatar-img" src={imgUrl} />
-        {cleanName && grabInitials(cleanName, initialsLength)}
-        <RadixAvatar.Fallback>
-          {!(cleanName || imgUrl) && PlaceholderIcon && (
-            <PlaceholderIcon customSize={placeholderIconSize()} />
-          )}
-        </RadixAvatar.Fallback>
-      </RadixAvatar.Root>
+      <Element href={rest.href}>
+        <RadixAvatar.Root
+          {...rest}
+          ref={ref}
+          role={Element === 'div' ? 'img' : undefined}
+          aria-label={ariaLabel}
+          title={cleanName || 'Placeholder Avatar'}
+          className={cc([
+            {
+              'border--focus': Element !== 'div',
+              'color--white': (DARK_COLORS as ReadonlyArray<string>).includes(bgColor),
+            },
+            'fdsAvatar',
+            'alignChild--center--center',
+            `bgColor--${bgColor}`,
+            `fdsAvatar--${size}`,
+            `fdsAvatar--${radius}`,
+          ])}
+        >
+          <RadixAvatar.Image className="fdsAvatar-img" src={imgUrl} />
+          {cleanName && grabInitials(cleanName, initialsLength)}
+          <RadixAvatar.Fallback>
+            {!(cleanName || imgUrl) && PlaceholderIcon && (
+              <PlaceholderIcon customSize={placeholderIconSize()} />
+            )}
+          </RadixAvatar.Fallback>
+        </RadixAvatar.Root>
+      </Element>
     );
   }
 );
