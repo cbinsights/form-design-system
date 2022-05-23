@@ -66,7 +66,7 @@ export interface AvatarProps
   href?: string;
 }
 
-const Avatar = forwardRef(
+const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
   (
     {
       bgColor = 'purple',
@@ -80,7 +80,7 @@ const Avatar = forwardRef(
       PlaceholderIcon,
       ...rest
     }: AvatarProps,
-    _ref
+    ref
   ) => {
     const cleanName = trimName(name);
 
@@ -102,7 +102,7 @@ const Avatar = forwardRef(
     return (
       <RadixAvatar.Root
         {...rest}
-        // ref={ref}
+        ref={ref}
         role={Element === 'div' ? 'img' : undefined}
         aria-label={ariaLabel}
         title={cleanName || 'Placeholder Avatar'}
