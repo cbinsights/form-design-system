@@ -78,7 +78,7 @@ export interface DateInputProps {
   inputRef?: MutableRefObject<HTMLInputElement>;
 
   /** Ref to apply to popover content element */
-  popoverRef?: MutableRefObject<HTMLDivElement>;
+  popoverRef?: MutableRefObject<HTMLElement>;
 
   /**
    * Object accepting any valid prop from `Popover` except for `trigger` and `ref`.
