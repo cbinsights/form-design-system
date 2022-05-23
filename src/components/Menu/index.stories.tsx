@@ -105,7 +105,13 @@ export const ShowDialogFromMenuItem = {
             <Button theme="outlined" label="Click me" hasCaret />
           </Menu.Trigger>
           <Menu.Content>
-            <Menu.Item onSelect={() => setShowDialog(true)}>Show Dialog</Menu.Item>
+            <Menu.Item
+              onSelect={() => {
+                setShowDialog(true);
+              }}
+            >
+              Show Dialog
+            </Menu.Item>
           </Menu.Content>
         </Menu>
         <Dialog
