@@ -3519,13 +3519,13 @@ __metadata:
     "@commitlint/prompt": 16.2.4
     "@commitlint/prompt-cli": 16.2.4
     "@mdx-js/react": 1.6.22
+    "@popperjs/core": 2.11.5
     "@radix-ui/react-avatar": 0.1.4
     "@radix-ui/react-checkbox": 0.1.5
     "@radix-ui/react-context-menu": 0.1.6
     "@radix-ui/react-dialog": 0.1.7
     "@radix-ui/react-dropdown-menu": 0.1.6
     "@radix-ui/react-label": 0.1.5
-    "@radix-ui/react-popover": 0.1.6
     "@radix-ui/react-tooltip": 0.1.7
     "@reach/menu-button": 0.17.0
     "@storybook/addon-a11y": 6.4.22
@@ -3621,6 +3621,7 @@ __metadata:
     react-hook-form: 7.30.0
     react-is: 16.13.1
     react-markdown: 8.0.3
+    react-popper: 2.3.0
     react-select: 5.3.1
     react-transition-group: 4.4.2
     rimraf: 3.0.2
@@ -5258,6 +5259,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@popperjs/core@npm:2.11.5":
+  version: 2.11.5
+  resolution: "@popperjs/core@npm:2.11.5"
+  checksum: fd7f9dca3fb716d7426332b6ee283f88d2724c0ab342fb678865a640bad403dfb9eeebd8204a406986162f7e2b33394f104320008b74d0e9066d7322f70ea35d
+  languageName: node
+  linkType: hard
+
 "@popperjs/core@npm:^2.5.4":
   version: 2.6.0
   resolution: "@popperjs/core@npm:2.6.0"
@@ -5532,32 +5540,6 @@ __metadata:
     react: ^16.8 || ^17.0
     react-dom: ^16.8 || ^17.0
   checksum: e5713742fbacc29cd74c2d023b24a4a49e3e37ad0c2b8a48a8346a567664de1c94000426aaa9e785c4257a05b5f9a196789f0ad34ee963df6dfca6955dceb023
-  languageName: node
-  linkType: hard
-
-"@radix-ui/react-popover@npm:0.1.6":
-  version: 0.1.6
-  resolution: "@radix-ui/react-popover@npm:0.1.6"
-  dependencies:
-    "@babel/runtime": ^7.13.10
-    "@radix-ui/primitive": 0.1.0
-    "@radix-ui/react-compose-refs": 0.1.0
-    "@radix-ui/react-context": 0.1.1
-    "@radix-ui/react-dismissable-layer": 0.1.5
-    "@radix-ui/react-focus-guards": 0.1.0
-    "@radix-ui/react-focus-scope": 0.1.4
-    "@radix-ui/react-id": 0.1.5
-    "@radix-ui/react-popper": 0.1.4
-    "@radix-ui/react-portal": 0.1.4
-    "@radix-ui/react-presence": 0.1.2
-    "@radix-ui/react-primitive": 0.1.4
-    "@radix-ui/react-use-controllable-state": 0.1.0
-    aria-hidden: ^1.1.1
-    react-remove-scroll: ^2.4.0
-  peerDependencies:
-    react: ^16.8 || ^17.0
-    react-dom: ^16.8 || ^17.0
-  checksum: 21e0dfd97876a5b92ffe70a231fb7195f41dd2c2555a268b59e1f7b113f080e69462c8bd6189cd9e657fbeef25129d7f58a96c7906a0add3c087f7dc716f4043
   languageName: node
   linkType: hard
 
@@ -23126,6 +23108,20 @@ __metadata:
     react: ^16.6.0 || ^17.0.0
     react-dom: ^16.6.0 || ^17.0.0
   checksum: c820122a4fdce46ff446b2c7bfe45727de42eacf1c2981fe8f8562da246a289dc7349f0732e36390a08ce50717dc52c4e8ab8e418af19cdd2ded7795ea6b8017
+  languageName: node
+  linkType: hard
+
+"react-popper@npm:2.3.0":
+  version: 2.3.0
+  resolution: "react-popper@npm:2.3.0"
+  dependencies:
+    react-fast-compare: ^3.0.1
+    warning: ^4.0.2
+  peerDependencies:
+    "@popperjs/core": ^2.0.0
+    react: ^16.8.0 || ^17 || ^18
+    react-dom: ^16.8.0 || ^17 || ^18
+  checksum: 837111c98738011c69b3069a464ea5bdcbf487105b6148e8faf90cb7337e134edb1b98b8824322941c378756cca30a15c18c25f558e53b85ed5762fa0dc8e6b2
   languageName: node
   linkType: hard
 

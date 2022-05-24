@@ -8,40 +8,32 @@ describe('DateInput component', () => {
   let dateChangeFn: null | (() => Date);
   let inputChangeFn: null | (() => Date);
 
+  beforeEach(() => {
+    dateChangeFn = jest.fn();
+    inputChangeFn = jest.fn();
+    render(
+      <DateInput
+        onDateChange={dateChangeFn}
+        onInputChange={inputChangeFn}
+        defaultDate="2020-07-07"
+      />
+    );
+    // focuses the element
+    userEvent.click(screen.getByLabelText('Date Input'));
+  });
+
   afterEach(() => {
     dateChangeFn = null;
     inputChangeFn = null;
   });
 
   it('calls onInputChange when the input value changes', async () => {
-    dateChangeFn = jest.fn();
-    inputChangeFn = jest.fn();
-    render(
-      <DateInput
-        onDateChange={dateChangeFn}
-        onInputChange={inputChangeFn}
-        defaultDate="2020-07-07"
-      />
-    );
-
-    userEvent.click(screen.getByLabelText('Date Input'));
     expect(inputChangeFn).not.toHaveBeenCalled();
     await userEvent.type(screen.getByRole('textbox'), '4');
     expect(inputChangeFn).toHaveBeenCalled();
   });
 
   it('calls onDateChange when user types a VALID freeform date', async () => {
-    dateChangeFn = jest.fn();
-    inputChangeFn = jest.fn();
-    render(
-      <DateInput
-        onDateChange={dateChangeFn}
-        onInputChange={inputChangeFn}
-        defaultDate="2020-07-07"
-      />
-    );
-
-    userEvent.click(screen.getByLabelText('Date Input'));
     expect(dateChangeFn).not.toHaveBeenCalled();
     await userEvent.clear(screen.getByRole('textbox'));
     await userEvent.type(screen.getByRole('textbox'), '4/20/2020');
@@ -49,87 +41,29 @@ describe('DateInput component', () => {
   });
 
   it('does not call onDateChange when user types an INCOMPLETE freeform date', async () => {
-    dateChangeFn = jest.fn();
-    inputChangeFn = jest.fn();
-    render(
-      <DateInput
-        onDateChange={dateChangeFn}
-        onInputChange={inputChangeFn}
-        defaultDate="2020-07-07"
-      />
-    );
-
-    userEvent.click(screen.getByLabelText('Date Input'));
     expect(dateChangeFn).not.toHaveBeenCalled();
     await userEvent.type(screen.getByRole('textbox'), '2/3');
     expect(dateChangeFn).not.toHaveBeenCalled();
   });
 
   it('does not call onDateChange when user types an INVALID freeform date', async () => {
-    dateChangeFn = jest.fn();
-    inputChangeFn = jest.fn();
-    render(
-      <DateInput
-        onDateChange={dateChangeFn}
-        onInputChange={inputChangeFn}
-        defaultDate="2020-07-07"
-      />
-    );
-
-    userEvent.click(screen.getByLabelText('Date Input'));
     expect(dateChangeFn).not.toHaveBeenCalled();
     await userEvent.type(screen.getByRole('textbox'), '2/30/2020');
     expect(dateChangeFn).not.toHaveBeenCalled();
   });
 
   it('calls onDateChange when user selects a day in the picker', () => {
-    dateChangeFn = jest.fn();
-    inputChangeFn = jest.fn();
-    render(
-      <DateInput
-        onDateChange={dateChangeFn}
-        onInputChange={inputChangeFn}
-        defaultDate="2020-07-07"
-        popoverProps={{ children: null, isOpen: true }}
-      />
-    );
-
-    userEvent.click(screen.getByLabelText('Date Input'));
     expect(dateChangeFn).not.toHaveBeenCalled();
     userEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
     expect(dateChangeFn).toHaveBeenCalled();
   });
 
   it('updates input value when user selects a day in the picker', () => {
-    dateChangeFn = jest.fn();
-    inputChangeFn = jest.fn();
-    render(
-      <DateInput
-        onDateChange={dateChangeFn}
-        onInputChange={inputChangeFn}
-        defaultDate="2020-07-07"
-        popoverProps={{ children: null, isOpen: true }}
-      />
-    );
-
-    userEvent.click(screen.getByLabelText('Date Input'));
     userEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
     expect(screen.getByDisplayValue('07/07/2020')).toBeInTheDocument();
   });
 
   it('clears selected date when user backspaces out the input', async () => {
-    dateChangeFn = jest.fn();
-    inputChangeFn = jest.fn();
-    render(
-      <DateInput
-        onDateChange={dateChangeFn}
-        onInputChange={inputChangeFn}
-        defaultDate="2020-07-07"
-        popoverProps={{ children: null, isOpen: true }}
-      />
-    );
-
-    userEvent.click(screen.getByLabelText('Date Input'));
     expect(dateChangeFn).not.toHaveBeenCalled();
     expect(
       screen.getByRole('gridcell', { selected: true, name: 'Tue Jul 07 2020' })
