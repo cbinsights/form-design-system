@@ -121,7 +121,7 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
         >
           <RadixAvatar.Image className="fdsAvatar-img" src={imgUrl} />
           {cleanName && grabInitials(cleanName, initialsLength)}
-          <RadixAvatar.Fallback>
+          <RadixAvatar.Fallback delayMs={600}>
             {!(cleanName || imgUrl) && PlaceholderIcon && (
               <PlaceholderIcon customSize={placeholderIconSize()} />
             )}
