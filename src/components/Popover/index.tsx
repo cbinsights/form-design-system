@@ -8,7 +8,7 @@ import { useDisableScroll, useCloseOnScroll } from './hooks';
 export type Position = 'top' | 'right' | 'bottom' | 'left';
 export type InteractionMode = 'hover' | 'click' | 'controlled';
 
-// gets non-optional function type because Parameters doesnt take undefined
+// gets non-optional function type because Parameters doesnt take `undefined`
 type RequiredOnInteractOutsideFn = Required<
   React.ComponentProps<typeof RadixPopover.Content>
 >['onInteractOutside'];
