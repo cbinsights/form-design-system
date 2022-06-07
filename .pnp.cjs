@@ -129,7 +129,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.11"],\
             ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.11.0"],\
             ["fs-extra", "npm:10.1.0"],\
-            ["glob", "npm:8.0.1"],\
+            ["glob", "npm:8.0.3"],\
             ["handlebars", "npm:4.7.7"],\
             ["husky", "npm:7.0.4"],\
             ["icons", "link:./src/icons::locator=%40cbinsights%2Ffds%40workspace%3A."],\
@@ -6337,7 +6337,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.11"],\
             ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.11.0"],\
             ["fs-extra", "npm:10.1.0"],\
-            ["glob", "npm:8.0.1"],\
+            ["glob", "npm:8.0.3"],\
             ["handlebars", "npm:4.7.7"],\
             ["husky", "npm:7.0.4"],\
             ["icons", "link:./src/icons::locator=%40cbinsights%2Ffds%40workspace%3A."],\
@@ -21515,16 +21515,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:8.0.1", {\
-          "packageLocation": "./.yarn/cache/glob-npm-8.0.1-3485e1ee02-7ac782f3ef.zip/node_modules/glob/",\
+        ["npm:8.0.3", {\
+          "packageLocation": "./.yarn/cache/glob-npm-8.0.3-750f909025-50bcdea19d.zip/node_modules/glob/",\
           "packageDependencies": [\
-            ["glob", "npm:8.0.1"],\
+            ["glob", "npm:8.0.3"],\
             ["fs.realpath", "npm:1.0.0"],\
             ["inflight", "npm:1.0.6"],\
             ["inherits", "npm:2.0.4"],\
             ["minimatch", "npm:5.0.1"],\
-            ["once", "npm:1.4.0"],\
-            ["path-is-absolute", "npm:1.0.1"]\
+            ["once", "npm:1.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
