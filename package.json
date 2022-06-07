@@ -152,7 +152,7 @@
     "fs-extra": "10.1.0",
     "glob": "8.0.3",
     "handlebars": "4.7.7",
-    "husky": "7.0.4",
+    "husky": "8.0.1",
     "icons": "link:./src/icons",
     "jest": "28.1.0",
     "jest-environment-jsdom": "28.1.0",
