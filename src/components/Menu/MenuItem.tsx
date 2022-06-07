@@ -6,16 +6,17 @@ import cc from 'classcat';
 export type MenuItemProps = Pick<
   DropdownMenu.DropdownMenuItemProps,
   'asChild' | 'disabled' | 'onSelect' | 'textValue' | 'children'
->;
+> & { className?: string };
 
 const MenuItem = ({
   children,
   disabled,
   onSelect,
+  className,
   ...rest
 }: MenuItemProps): JSX.Element => (
   <DropdownMenu.Item
-    className={cc(['fdsMenuItem', { 'fdsMenuItem--disabled': disabled }])}
+    className={cc(['fdsMenuItem', { 'fdsMenuItem--disabled': disabled }, className])}
     onSelect={disabled ? noop : onSelect}
     aria-disabled={disabled}
     disabled={disabled}
