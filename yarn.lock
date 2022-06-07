@@ -3552,7 +3552,7 @@ __metadata:
     "@types/eslint": 8.4.1
     "@types/fs-extra": 9.0.13
     "@types/glob": 7.2.0
-    "@types/jest": 27.5.0
+    "@types/jest": 28.1.1
     "@types/mdx-js__react": 1.5.5
     "@types/postcss-import": 14.0.0
     "@types/prettier": 2.6.0
@@ -7673,13 +7673,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:27.5.0":
-  version: 27.5.0
-  resolution: "@types/jest@npm:27.5.0"
+"@types/jest@npm:28.1.1":
+  version: 28.1.1
+  resolution: "@types/jest@npm:28.1.1"
   dependencies:
     jest-matcher-utils: ^27.0.0
     pretty-format: ^27.0.0
-  checksum: ca09ac3a17972e18683c57b681a6866c7a56c67f429810ece00425d948da62f207d271becb5cc759da3630f120596ec3c8e0ceb0eecefbe26daffba168b82879
+  checksum: 0a8b045a7b660372decc807c390d3f99a2b12bb1659a1cd593afe04557f4b7c235b0576a5e35b1577710d20e42759d3d8755eb8bed6edc8733f47007e75a5509
   languageName: node
   linkType: hard
 
