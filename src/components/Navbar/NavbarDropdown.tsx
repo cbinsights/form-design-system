@@ -57,9 +57,13 @@ const NavBarDropdown = ({ content, showDropdown }: Props): JSX.Element => {
             ])}
             key={menuItem.itemName}
           >
-            <a className={'fdsNavbar-dropdownItemLink'} href={menuItem.url}>
-              {menuItem.itemName}
-            </a>
+            {menuItem.url ? (
+              <a className={'fdsNavbar-dropdownItemLink'} href={menuItem.url}>
+                {menuItem.itemName}
+              </a>
+            ) : (
+              <div className={'fdsNavbar-dropdownItemLink'}>{menuItem.itemName}</div>
+            )}
             {menuItem.subMenu?.length > 0 && (
               <>
                 <span className={'fdsNavbar-dropdownButton'}>

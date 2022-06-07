@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Popover from '.';
@@ -65,5 +65,55 @@ describe('Popover component', () => {
     userEvent.type(document.body, '{esc}');
     userEvent.type(document.body, '{esc}');
     expect(onUserDismiss).toHaveBeenCalledTimes(1);
+  });
+
+  it('tests that the popover closes when the user scrolls if it is passed a closeOnScrollRef', async () => {
+    const refObject = { current: null };
+    render(
+      <div ref={refObject} style={{ height: 200, overflow: 'scroll' }}>
+        <div style={{ height: 500 }}>
+          <Popover trigger={<button>trigger</button>} closeOnScrollRef={refObject}>
+            <div className="bgColor--white rounded--all elevation--2 padding--all">
+              <h3 className="type--head3">Look at me</h3>
+              <p>
+                <em>i am the popover</em>
+              </p>
+            </div>
+          </Popover>
+        </div>
+        scroll here
+      </div>
+    );
+
+    userEvent.click(screen.getByText('trigger'));
+    expect(screen.getByText('i am the popover')).toBeInTheDocument();
+    fireEvent.scroll(screen.getByText('scroll here'), { target: { scrollTop: 100 } });
+    expect(screen.queryByText('i am the popover')).not.toBeInTheDocument();
+  });
+
+  it('tests that the user cannot scroll if popover is passed a disableScrollRef', async () => {
+    const refObject = { current: null };
+    render(
+      <div
+        data-testid="containerEl"
+        ref={refObject}
+        style={{ height: 200, overflow: 'scroll' }}
+      >
+        <div style={{ height: 500 }}>
+          <Popover trigger={<button>trigger</button>} disableScrollRef={refObject}>
+            <div className="bgColor--white rounded--all elevation--2 padding--all">
+              <h3 className="type--head3">Look at me</h3>
+              <p>
+                <em>i am the popover</em>
+              </p>
+            </div>
+          </Popover>
+        </div>
+        scroll here
+      </div>
+    );
+
+    userEvent.click(screen.getByText('trigger'));
+    expect(screen.getByTestId('containerEl')).toHaveStyle(`overflow: hidden`);
   });
 });
