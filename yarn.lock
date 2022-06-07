@@ -3555,7 +3555,7 @@ __metadata:
     "@types/jest": 28.1.1
     "@types/mdx-js__react": 1.5.5
     "@types/postcss-import": 14.0.0
-    "@types/prettier": 2.6.0
+    "@types/prettier": 2.6.3
     "@types/prop-types": 15.7.5
     "@types/raf-schd": 4.0.1
     "@types/react": 17.0.44
@@ -7858,10 +7858,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:2.6.0":
-  version: 2.6.0
-  resolution: "@types/prettier@npm:2.6.0"
-  checksum: 946f1f82ce6f31664e023a5d65931c31b7d677b454f528f67dce851d72e7fcfe713076f4251b16c3646eecf1545f5f5b909b4962966341ed9ddf5b80113b3674
+"@types/prettier@npm:2.6.3":
+  version: 2.6.3
+  resolution: "@types/prettier@npm:2.6.3"
+  checksum: e1836699ca189fff6d2a73dc22e028b6a6f693ed1180d5998ac29fa197caf8f85aa92cb38db642e4a370e616b451cb5722ad2395dab11c78e025a1455f37d1f0
   languageName: node
   linkType: hard
 
