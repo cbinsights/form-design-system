@@ -3759,7 +3759,7 @@ __metadata:
     react-hook-form: 7.31.3
     react-is: 16.13.1
     react-markdown: 8.0.3
-    react-select: 5.3.1
+    react-select: 5.3.2
     react-transition-group: 4.4.2
     rimraf: 3.0.2
     semantic-release: 19.0.2
@@ -23457,9 +23457,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-select@npm:5.3.1":
-  version: 5.3.1
-  resolution: "react-select@npm:5.3.1"
+"react-select@npm:5.3.2":
+  version: 5.3.2
+  resolution: "react-select@npm:5.3.2"
   dependencies:
     "@babel/runtime": ^7.12.0
     "@emotion/cache": ^11.4.0
@@ -23471,7 +23471,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: d84581571b6374183ab176c9c95ec16858ea43d115de8daf417f83d1f2bd84f1d9b07e6f3d6f87bfb0f46e3691904ea54ded0e6801815bc9e6db1c988329e985
+  checksum: c8c0ecd75704098ef1010fba4df68bcc5e7d76ffcd6d3bac40bc3017758a9c035a887fa82ead9105dc719c14e04c4164d8b7a8e8fa61d0ed39e4bdf48ee3bf1c
   languageName: node
   linkType: hard
 
