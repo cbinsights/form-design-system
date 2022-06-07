@@ -9,6 +9,7 @@ import AddSectionSpecialIcon from './AddSectionSpecialIcon';
 import AdvancedSearchIcon from './AdvancedSearchIcon';
 import AdviseIcon from './AdviseIcon';
 import ApproveIcon from './ApproveIcon';
+import ArchiveIcon from './ArchiveIcon';
 import ArrowDownIcon from './ArrowDownIcon';
 import ArrowsIcon from './ArrowsIcon';
 import ArrowUpIcon from './ArrowUpIcon';
@@ -86,6 +87,7 @@ import HomeIcon from './HomeIcon';
 import ImageIcon from './ImageIcon';
 import ImportIcon from './ImportIcon';
 import InformationIcon from './InformationIcon';
+import IntegrationIcon from './IntegrationIcon';
 import InvestorIcon from './InvestorIcon';
 import IpoIcon from './IpoIcon';
 import LightBulbIcon from './LightBulbIcon';
@@ -197,6 +199,7 @@ export {
   AdvancedSearchIcon,
   AdviseIcon,
   ApproveIcon,
+  ArchiveIcon,
   ArrowDownIcon,
   ArrowsIcon,
   ArrowUpIcon,
@@ -274,6 +277,7 @@ export {
   ImageIcon,
   ImportIcon,
   InformationIcon,
+  IntegrationIcon,
   InvestorIcon,
   IpoIcon,
   LightBulbIcon,

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { DocsContext, Source } from '@storybook/addon-docs/blocks';
+import { DocsContext, Source } from '@storybook/addon-docs';
 
 export const ImportPath = (): JSX.Element => {
   const context = useContext(DocsContext);

@@ -5,7 +5,7 @@ import { Props } from 'react-select';
 
 export interface SelectedValueProps {
   item: OptionProps;
-  selectProps: Props<OptionProps, true>;
+  selectProps: Props<OptionProps, boolean>;
 }
 
 export const SelectedValue = ({ item, selectProps }: SelectedValueProps): JSX.Element => {
@@ -13,13 +13,13 @@ export const SelectedValue = ({ item, selectProps }: SelectedValueProps): JSX.El
   const { setCursorPosition, value, onSetSearchItems } = selectProps;
   const itemIndex = Array.isArray(value) ? value.findIndex((i) => i === item) : 0;
 
-  const handleClick = () => setCursorPosition?.(itemIndex);
+  const handleClick = () => setCursorPosition?.(itemIndex + 1);
 
   const handleDoubleClick = () => {
     if (Array.isArray(value)) {
       const deletedItem = value[itemIndex];
       const newValues = value.filter((val) => val !== deletedItem);
-      setCursorPosition?.(itemIndex - 1);
+      setCursorPosition?.(itemIndex);
       onSetSearchItems?.(newValues);
     }
   };

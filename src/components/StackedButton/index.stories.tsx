@@ -75,7 +75,7 @@ export const Miscellaneous: StoryObj<StackedButtonProps> = {
 
 export default {
   component: StackedButton,
-  title: 'components/StackedButton',
+  title: 'Components/StackedButton',
   parameters: {
     docs: {
       fds: {

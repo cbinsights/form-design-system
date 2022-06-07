@@ -21,7 +21,8 @@ Guidelines for contributing to Form Design System.
 ## [Branching](contributing/branching.md)
 
 - [Features, enhancements, and bug fixes](contributing/branching.md#eatures-enhancements-and-bug-fixes)
-- [Major release branches](contributing/branching.md#major-release-branches)
+
+## [Commit Messages](contributing/commit-messages.md)
 
 ## [Releases and publishing](contributing/release-and-publish.md)
 

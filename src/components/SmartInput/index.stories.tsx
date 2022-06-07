@@ -51,10 +51,11 @@ export const Primary: StoryObj<SmartInputProps> = {
     options: mockOptions,
     isClearable: true,
     menuShouldScrollIntoView: false,
+    isMulti: true,
   },
 };
 
 export default {
   component: SmartInput,
-  title: 'components/SmartInput',
+  title: 'Components/SmartInput',
 };

@@ -3,6 +3,7 @@ import CustomValueContainer from './CustomSelectComponents/CustomValueContainer'
 import CustomClearIndicator from './CustomSelectComponents/CustomClearIndicator';
 import CustomInput from './CustomSelectComponents/CustomInput';
 import CustomMultiValue from './CustomSelectComponents/CustomMultiValue';
+import CustomSingleValue from './CustomSelectComponents/CustomSingleValue';
 import CustomMenuList from './CustomSelectComponents/CustomMenuList';
 import { GroupBase, StylesConfig, ThemeConfig } from 'react-select';
 import { SelectComponents } from 'react-select/dist/declarations/src/components';
@@ -13,7 +14,7 @@ const SEARCH_BTN_OFFSET = 102;
 const noopComponent = (): null => null;
 
 export const customComponents: Partial<
-  SelectComponents<OptionProps, true, GroupBase<OptionProps>>
+  SelectComponents<OptionProps, boolean, GroupBase<OptionProps>>
 > = {
   DropdownIndicator: noopComponent,
   IndicatorSeparator: noopComponent,
@@ -24,6 +25,7 @@ export const customComponents: Partial<
   Input: CustomInput,
   MultiValue: CustomMultiValue,
   MenuList: CustomMenuList,
+  SingleValue: CustomSingleValue,
 };
 
 export const customThemes: ThemeConfig = (theme) => ({
@@ -41,7 +43,7 @@ export const customThemes: ThemeConfig = (theme) => ({
 
 export const customStyles = (
   useStylesForHeader?: boolean
-): StylesConfig<OptionProps, true> => {
+): StylesConfig<OptionProps, boolean> => {
   const focusedOptionColor = useStylesForHeader
     ? FDS.COLOR_AQUA
     : 'rgba(64, 64, 64, 0.08)';
@@ -51,16 +53,33 @@ export const customStyles = (
       width: '100%',
       fontSize: `${FDS.FONT_SIZE_L} !important`,
     }),
-    input: (base) => ({
-      ...base,
-      color: FDS.COLOR_SLATE,
-      flex: 'none',
-      cursor: 'pointer',
-      input: {
-        boxShadow: 'none !important',
-        minHeight: 'var(--space-xl)',
-      },
-    }),
+    input: (base, state) => {
+      const isFocused = state?.selectProps?.isFocused || state?.selectProps?.menuIsOpen;
+      const isLastCursorPosition = Array.isArray(state?.selectProps?.value)
+        ? state?.selectProps?.value?.length === state?.selectProps?.cursorPosition ||
+          state?.selectProps?.value?.length === 0
+        : true;
+
+      return {
+        ...base,
+        color: FDS.COLOR_SLATE,
+        flex: 'none',
+        cursor: 'pointer',
+        display: useStylesForHeader && isLastCursorPosition ? 'block' : 'inline-grid',
+        flexGrow: useStylesForHeader && isFocused && isLastCursorPosition ? 1 : 0,
+        overflow: useStylesForHeader ? 'hidden' : 'inherit',
+        ':after': useStylesForHeader
+          ? {
+              maxWidth: isLastCursorPosition ? '100%' : 'inherit',
+              whiteSpace: 'nowrap',
+            }
+          : {},
+        input: {
+          boxShadow: 'none !important',
+          minHeight: 'var(--space-xl)',
+        },
+      };
+    },
     menu: (base) => ({
       ...base,
       width: useStylesForHeader ? `calc(100% + ${SEARCH_BTN_OFFSET}px)` : '100%',
@@ -80,7 +99,7 @@ export const customStyles = (
     control: (base) => ({
       ...base,
       paddingLeft: useStylesForHeader ? '12px' : FDS.SPACE_XS,
-      border: useStylesForHeader ? 'none !important' : '',
+      border: 'none !important',
       boxShadow: 'none',
       borderRadius: useStylesForHeader
         ? `${FDS.SPACE_XS} 0 0 ${FDS.SPACE_XS}`
@@ -88,6 +107,10 @@ export const customStyles = (
     }),
     multiValue: () => ({
       margin: useStylesForHeader ? '0 3px' : '0 2px',
+    }),
+    singleValue: (base) => ({
+      ...base,
+      color: FDS.COLOR_SLATE,
     }),
     multiValueLabel: () => ({}),
     placeholder: (base) => ({

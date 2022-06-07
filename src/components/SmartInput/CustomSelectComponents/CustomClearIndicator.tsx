@@ -4,7 +4,7 @@ import DenyIcon from 'icons/react/DenyIcon';
 import { OptionProps } from '..';
 
 const CustomClearIndicator = (
-  props: ClearIndicatorProps<OptionProps, true>
+  props: ClearIndicatorProps<OptionProps, boolean>
 ): JSX.Element => {
   const innerProps = { ...props.innerProps, role: 'button', 'aria-hidden': false };
   return (

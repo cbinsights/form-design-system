@@ -11,7 +11,7 @@ export const Primary: StoryObj<FloatingActionProps> = {
 
 export default {
   component: FloatingAction,
-  title: 'components/FloatingAction',
+  title: 'Components/FloatingAction',
   parameters: {
     docs: {
       fds: {
