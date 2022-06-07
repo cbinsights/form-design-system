@@ -131,7 +131,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fs-extra", "npm:10.1.0"],\
             ["glob", "npm:8.0.3"],\
             ["handlebars", "npm:4.7.7"],\
-            ["husky", "npm:7.0.4"],\
+            ["husky", "npm:8.0.1"],\
             ["icons", "link:./src/icons::locator=%40cbinsights%2Ffds%40workspace%3A."],\
             ["jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:28.1.1"],\
             ["jest-environment-jsdom", "npm:28.1.1"],\
@@ -6498,7 +6498,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fs-extra", "npm:10.1.0"],\
             ["glob", "npm:8.0.3"],\
             ["handlebars", "npm:4.7.7"],\
-            ["husky", "npm:7.0.4"],\
+            ["husky", "npm:8.0.1"],\
             ["icons", "link:./src/icons::locator=%40cbinsights%2Ffds%40workspace%3A."],\
             ["jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:28.1.1"],\
             ["jest-environment-jsdom", "npm:28.1.1"],\
@@ -22733,10 +22733,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["husky", [\
-        ["npm:7.0.4", {\
-          "packageLocation": "./.yarn/cache/husky-npm-7.0.4-917ba035c6-c6ec4af63d.zip/node_modules/husky/",\
+        ["npm:8.0.1", {\
+          "packageLocation": "./.yarn/cache/husky-npm-8.0.1-85fede8470-943a73a13d.zip/node_modules/husky/",\
           "packageDependencies": [\
-            ["husky", "npm:7.0.4"]\
+            ["husky", "npm:8.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
