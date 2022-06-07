@@ -26,9 +26,9 @@ export const Primary: StoryObj<FlexProps> = {
 };
 
 export const ClassicMediaBlock: StoryObj<FlexProps> = {
-  render: (): JSX.Element => (
+  render: (args: FlexProps): JSX.Element => (
     <div style={parentStyle} className="debug--flex">
-      <Flex>
+      <Flex {...args}>
         <FlexItem shrink>
           <img src="https://place-hold.it/40x40/a02385/fff&text=:)" />
         </FlexItem>
@@ -52,14 +52,14 @@ export const ClassicMediaBlock: StoryObj<FlexProps> = {
 };
 
 export const AutoSizedContentArea: StoryObj<FlexProps> = {
-  render: (): JSX.Element => (
+  render: (args: FlexProps): JSX.Element => (
     <div
       style={{
         height: '300px',
       }}
       className="debug--flex"
     >
-      <Flex direction="column">
+      <Flex {...args} direction="column">
         <FlexItem shrink>
           <p>
             This is the header, in a <code>FlexItem</code> set to <code>shrink</code>
@@ -90,9 +90,9 @@ export const AutoSizedContentArea: StoryObj<FlexProps> = {
 };
 
 export const ResponsiveFlex: StoryObj<FlexProps> = {
-  render: (): JSX.Element => (
+  render: (args: FlexProps): JSX.Element => (
     <div className="debug--flex">
-      <Flex direction="column" switchDirection="m">
+      <Flex {...args} direction="column" switchDirection="m">
         <FlexItem>
           <p>Item 1</p>
         </FlexItem>
@@ -120,7 +120,7 @@ export default {
   subcomponents: {
     FlexItem,
   },
-  title: 'components/Flex',
+  title: 'Components/Flex',
   parameters: {
     componentSubtitle: 'An abstraction of a subset of CSS flexbox',
     docs: {

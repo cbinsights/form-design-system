@@ -33,7 +33,7 @@ export const Variations = (): JSX.Element => (
 
 export default {
   component: CornerPosition,
-  title: 'components/CornerPosition',
+  title: 'Components/CornerPosition',
   parameters: {
     componentSubtitle:
       'Absolutely positions a decoration node to the top right of another node.',

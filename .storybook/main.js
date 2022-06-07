@@ -7,9 +7,9 @@ module.exports = {
   ],
   addons: [
     '@storybook/addon-postcss',
+    '@storybook/addon-docs',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
-    '@storybook/addon-docs',
   ],
   webpackFinal: async (config) => {
     config.resolve.modules = [...(config.resolve.modules || []), path.resolve('./src')];

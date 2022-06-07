@@ -189,7 +189,7 @@ export const Loading: StoryObj<IconButtonProps> = {
 
 export default {
   component: IconButton,
-  title: 'components/IconButton',
+  title: 'Components/IconButton',
   parameters: {
     docs: {
       fds: {
