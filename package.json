@@ -241,7 +241,7 @@
   },
   "packageManager": "yarn@3.2.0",
   "engines": {
-    "npm": "8.8.0",
+    "npm": "8.12.1",
     "node": ">=16 <17"
   }
 }
