@@ -89,7 +89,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:28.1.1"],\
             ["@types/mdx-js__react", "npm:1.5.5"],\
             ["@types/postcss-import", "npm:14.0.0"],\
-            ["@types/prettier", "npm:2.6.0"],\
+            ["@types/prettier", "npm:2.6.3"],\
             ["@types/prop-types", "npm:15.7.5"],\
             ["@types/raf-schd", "npm:4.0.1"],\
             ["@types/react", "npm:17.0.44"],\
@@ -6297,7 +6297,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:28.1.1"],\
             ["@types/mdx-js__react", "npm:1.5.5"],\
             ["@types/postcss-import", "npm:14.0.0"],\
-            ["@types/prettier", "npm:2.6.0"],\
+            ["@types/prettier", "npm:2.6.3"],\
             ["@types/prop-types", "npm:15.7.5"],\
             ["@types/raf-schd", "npm:4.0.1"],\
             ["@types/react", "npm:17.0.44"],\
@@ -12651,10 +12651,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:2.6.0", {\
-          "packageLocation": "./.yarn/cache/@types-prettier-npm-2.6.0-68db36c8c1-946f1f82ce.zip/node_modules/@types/prettier/",\
+        ["npm:2.6.3", {\
+          "packageLocation": "./.yarn/cache/@types-prettier-npm-2.6.3-8d27063d48-e1836699ca.zip/node_modules/@types/prettier/",\
           "packageDependencies": [\
-            ["@types/prettier", "npm:2.6.0"]\
+            ["@types/prettier", "npm:2.6.3"]\
           ],\
           "linkType": "HARD"\
         }]\
