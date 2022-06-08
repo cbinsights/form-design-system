@@ -151,6 +151,7 @@ import SortDownIcon from './SortDownIcon';
 import SortUpIcon from './SortUpIcon';
 import StarEmptyIcon from './StarEmptyIcon';
 import StarFilledIcon from './StarFilledIcon';
+import StarHalfIcon from './StarHalfIcon';
 import StoreIcon from './StoreIcon';
 import StoryIcon from './StoryIcon';
 import StoryAddIcon from './StoryAddIcon';
@@ -341,6 +342,7 @@ export {
   SortUpIcon,
   StarEmptyIcon,
   StarFilledIcon,
+  StarHalfIcon,
   StoreIcon,
   StoryIcon,
   StoryAddIcon,

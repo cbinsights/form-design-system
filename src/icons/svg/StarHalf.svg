@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/star_half</title>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="star_half" transform="translate(1.960937, 2.500000)">
+            <polygon id="StarFilled" stroke="#404040" points="10.0400002 0 6.93669511 6.28601253 0 7.29490067 5.02000016 12.1883636 3.83516642 19.0978261 10.0400002 15.8349252 16.2448344 19.0978261 15.0600001 12.1883636 20.08 7.29490067 13.143305 6.28601253"></polygon>
+            <polygon id="StarFilled" fill="#404040" points="10.0400002 0 6.93669511 6.28601253 0 7.29490067 5.02000016 12.1883636 3.83516642 19.0978261 10.0400002 15.8349252 10.0400002 12.1883636 10.0390625 9.32348271 10.0400002 7.29490067 10.0390625 6.52995489"></polygon>
+        </g>
+    </g>
+</svg>
