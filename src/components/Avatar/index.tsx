@@ -114,14 +114,14 @@ const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
             },
             'fdsAvatar',
             'alignChild--center--center',
-            `bgColor--${bgColor}`,
+            !imgUrl && `bgColor--${bgColor}`,
             `fdsAvatar--${size}`,
             `fdsAvatar--${radius}`,
           ])}
         >
           <RadixAvatar.Image className="fdsAvatar-img" src={imgUrl} />
-          {cleanName && grabInitials(cleanName, initialsLength)}
-          <RadixAvatar.Fallback delayMs={600}>
+          {!imgUrl && cleanName && grabInitials(cleanName, initialsLength)}
+          <RadixAvatar.Fallback delayMs={400}>
             {!(cleanName || imgUrl) && PlaceholderIcon && (
               <PlaceholderIcon customSize={placeholderIconSize()} />
             )}
