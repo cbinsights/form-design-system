@@ -177,7 +177,7 @@
     "react-markdown": "8.0.3",
     "react-transition-group": "4.4.2",
     "rimraf": "3.0.2",
-    "semantic-release": "19.0.2",
+    "semantic-release": "19.0.3",
     "snake-case": "3.0.4",
     "start-server-and-test": "1.14.0",
     "style-dictionary": "3.7.0",
@@ -219,6 +219,7 @@
     }
   },
   "dependencies": {
+    "@radix-ui/react-avatar": "0.1.4",
     "@radix-ui/react-checkbox": "0.1.5",
     "@radix-ui/react-context-menu": "0.1.6",
     "@radix-ui/react-dialog": "0.1.7",
@@ -241,7 +242,7 @@
   },
   "packageManager": "yarn@3.2.0",
   "engines": {
-    "npm": "8.8.0",
+    "npm": "8.12.1",
     "node": ">=16 <17"
   }
 }
