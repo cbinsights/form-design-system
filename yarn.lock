@@ -3658,6 +3658,7 @@ __metadata:
     "@commitlint/prompt": 17.0.0
     "@commitlint/prompt-cli": 17.0.0
     "@mdx-js/react": 1.6.22
+    "@radix-ui/react-avatar": 0.1.4
     "@radix-ui/react-checkbox": 0.1.5
     "@radix-ui/react-context-menu": 0.1.6
     "@radix-ui/react-dialog": 0.1.7
@@ -5508,6 +5509,21 @@ __metadata:
   peerDependencies:
     react: ^16.8 || ^17.0
   checksum: af09d09a879ecc3bd20e0c265d445aad2ef529bfff63c9e91617f7266b1a4471c8151908ac0973936a05ec18806e8228b035b305fbaccf6410b554980e27f6a6
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-avatar@npm:0.1.4":
+  version: 0.1.4
+  resolution: "@radix-ui/react-avatar@npm:0.1.4"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-context": 0.1.1
+    "@radix-ui/react-primitive": 0.1.4
+    "@radix-ui/react-use-callback-ref": 0.1.0
+    "@radix-ui/react-use-layout-effect": 0.1.0
+  peerDependencies:
+    react: ^16.8 || ^17.0
+  checksum: cbba5f7b7f174a314d37e1c8c6f9a9a7bc9ec30fc5b75af74fa3341d59f3836810d3500189f5bc857f82183c203cdbfd4c87d35077a50778b42a66a8ddd2fd68
   languageName: node
   linkType: hard
 
