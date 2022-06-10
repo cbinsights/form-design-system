@@ -1,4 +1,4 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
+import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, forwardRef } from 'react';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import { CaretDownIcon } from 'icons/react';
@@ -8,8 +8,10 @@ export const SIZES = ['s', 'm'] as const;
 export const THEMES = ['blue', 'orange', 'outlined', 'outlined--blue', 'ghost'] as const;
 export type Theme = typeof THEMES[number];
 
+type FDSButtonAttributes<T> = AnchorHTMLAttributes<T> & ButtonHTMLAttributes<T>;
+
 export interface ButtonProps
-  extends HTMLAttributes<HTMLElement | HTMLButtonElement | HTMLAnchorElement> {
+  extends FDSButtonAttributes<HTMLElement | HTMLButtonElement | HTMLAnchorElement> {
   /** Text inside the button */
   label: string;
 
