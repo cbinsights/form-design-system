@@ -128,7 +128,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
               ])}
             >
               <li className={'fdsNavbar-navBarListItem'}>
-                <a className={'fdsNavbar-dropdownItemLink'}>Who We Serve</a>
+                <div className={'fdsNavbar-dropdownItemLink'}>Who We Serve</div>
                 <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.whoWeServe, WHO_WE_SERVE)}
                 </span>
@@ -138,7 +138,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                 />
               </li>
               <li className={'fdsNavbar-navBarListItem'}>
-                <a className={'fdsNavbar-dropdownItemLink'}>How We Help</a>
+                <div className={'fdsNavbar-dropdownItemLink'}>How We Help</div>
                 <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.howWeHelp, HOW_WE_HELP)}
                 </span>
@@ -148,7 +148,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                 />
               </li>
               <li className={'fdsNavbar-navBarListItem'}>
-                <a className={'fdsNavbar-dropdownItemLink'}>What We Offer</a>
+                <div className={'fdsNavbar-dropdownItemLink'}>What We Offer</div>
                 <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.whatWeOffer, WHAT_WE_OFFER)}
                 </span>
@@ -158,7 +158,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                 />
               </li>
               <li className={'fdsNavbar-navBarListItem'}>
-                <a className={'fdsNavbar-dropdownItemLink'}>Resources</a>
+                <div className={'fdsNavbar-dropdownItemLink'}>Resources</div>
                 <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.resources, RESOURCES)}
                 </span>

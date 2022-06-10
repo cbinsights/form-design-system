@@ -13,9 +13,9 @@ const CustomValueContainer = ({
   const els =
     props.hasValue && cursorPosition !== undefined
       ? [
-          selectedValues.slice(0, cursorPosition < 0 ? 0 : cursorPosition + 1),
+          selectedValues.slice(0, cursorPosition <= 0 ? 0 : cursorPosition),
           input,
-          selectedValues.slice(cursorPosition < 0 ? 0 : cursorPosition + 1),
+          selectedValues.slice(cursorPosition <= 0 ? 0 : cursorPosition),
         ]
       : React.Children.toArray(children);
   return (

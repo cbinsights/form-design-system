@@ -1,33 +1,21 @@
 import React from 'react';
-import {
-  Menu as ReachMenu,
-  MenuItems as ReachMenuItems,
-  MenuButton as ReachMenuButton,
-  MenuPopover as ReachMenuPopover,
-} from '@reach/menu-button';
+import Content from './MenuContent';
+import Item from './MenuItem';
+import Trigger from './MenuTrigger';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
-export interface MenuProps {
-  /** JSX node - the element that should trigger the menu */
-  trigger: React.ReactElement;
+export type MenuProps = Omit<DropdownMenu.DropdownMenuProps, 'modal' | 'dir'>;
 
-  /** React children (should be of type `MenuItem`) */
-  children: React.ReactNode;
-
-  /** Prevent trigger from opening menu */
-  isDisabled?: boolean;
-}
-
-const Menu = ({ isDisabled = false, children, trigger }: MenuProps): JSX.Element => {
-  if (isDisabled) return trigger;
-
+const Menu = ({ children, ...rest }: MenuProps): JSX.Element => {
   return (
-    <ReachMenu>
-      <ReachMenuButton as={trigger.type} {...trigger.props} />
-      <ReachMenuPopover className="elevation--2 rounded--all bgColor--white">
-        <ReachMenuItems>{children}</ReachMenuItems>
-      </ReachMenuPopover>
-    </ReachMenu>
+    <DropdownMenu.Root {...rest} modal dir={'ltr'}>
+      {children}
+    </DropdownMenu.Root>
   );
 };
+
+Menu.Content = Content;
+Menu.Item = Item;
+Menu.Trigger = Trigger;
 
 export default Menu;
