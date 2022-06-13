@@ -10,7 +10,7 @@ import {
   whoWeServeDropdown,
   howWeHelpDropdown,
   whatWeOfferDropdown,
-  resourcesDropdown,
+  aboutUsDropdown,
 } from './constants';
 import NavBarDropdown from './NavbarDropdown';
 
@@ -18,16 +18,16 @@ const NAV_LIST = 'navList';
 const WHO_WE_SERVE = 'whoWeServe';
 const HOW_WE_HELP = 'howWeHelp';
 const WHAT_WE_OFFER = 'whatWeOffer';
-const RESOURCES = 'resources';
+const ABOUT_US = 'aboutUs';
 
-type Section = 'navList' | 'whoWeServe' | 'howWeHelp' | 'whatWeOffer' | 'resources';
+type Section = 'navList' | 'whoWeServe' | 'howWeHelp' | 'whatWeOffer' | 'aboutUs';
 
 const DEFAULT_STATE: Record<Section, boolean> = {
   [NAV_LIST]: false,
   [WHO_WE_SERVE]: false,
   [HOW_WE_HELP]: false,
   [WHAT_WE_OFFER]: false,
-  [RESOURCES]: false,
+  [ABOUT_US]: false,
 };
 
 export type NavBarProps = {
@@ -158,19 +158,14 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                 />
               </li>
               <li className={'fdsNavbar-navBarListItem'}>
-                <div className={'fdsNavbar-dropdownItemLink'}>Resources</div>
+                <div className={'fdsNavbar-dropdownItemLink'}>About Us</div>
                 <span className={'fdsNavbar-dropdownButton'}>
-                  {getArrowUpOrDown(showClass.resources, RESOURCES)}
+                  {getArrowUpOrDown(showClass.aboutUs, WHAT_WE_OFFER)}
                 </span>
                 <NavBarDropdown
-                  content={resourcesDropdown(site)}
-                  showDropdown={showClass.resources}
+                  content={aboutUsDropdown(site)}
+                  showDropdown={showClass.aboutUs}
                 />
-              </li>
-              <li className={'fdsNavbar-navBarListItem'}>
-                <a className={'fdsNavbar-dropdownItemLink'} href={`${site}/about/`}>
-                  About Us
-                </a>
               </li>
             </ul>
             <a
