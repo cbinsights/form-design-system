@@ -37,9 +37,6 @@ export const Footer = ({ site }: FooterProps): JSX.Element => (
               <li>
                 <a href={`${site}/contact-us/`}>Contact Us</a>
               </li>
-              <li>
-                <a href={`${site}/community-events/`}>Community &amp; Events</a>
-              </li>
             </ul>
           </section>
 
