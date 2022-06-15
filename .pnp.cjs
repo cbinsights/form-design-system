@@ -157,6 +157,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.3"],\
             ["react-select", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.3.2"],\
             ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],\
+            ["react-use-measure", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.1.1"],\
             ["rimraf", "npm:3.0.2"],\
             ["semantic-release", "npm:19.0.3"],\
             ["snake-case", "npm:3.0.4"],\
@@ -6525,6 +6526,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-markdown", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.0.3"],\
             ["react-select", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.3.2"],\
             ["react-transition-group", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:4.4.2"],\
+            ["react-use-measure", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.1.1"],\
             ["rimraf", "npm:3.0.2"],\
             ["semantic-release", "npm:19.0.3"],\
             ["snake-case", "npm:3.0.4"],\
@@ -18471,6 +18473,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/dayjs-npm-1.11.3-88985d494e-c87e06b562.zip/node_modules/dayjs/",\
           "packageDependencies": [\
             ["dayjs", "npm:1.11.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["debounce", [\
+        ["npm:1.2.1", {\
+          "packageLocation": "./.yarn/cache/debounce-npm-1.2.1-b09266a260-682a89506d.zip/node_modules/debounce/",\
+          "packageDependencies": [\
+            ["debounce", "npm:1.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -31817,6 +31828,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dom-helpers", "npm:5.2.0"],\
             ["loose-envify", "npm:1.4.0"],\
             ["prop-types", "npm:15.7.2"],\
+            ["react", "npm:16.14.0"],\
+            ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-use-measure", [\
+        ["npm:2.1.1", {\
+          "packageLocation": "./.yarn/cache/react-use-measure-npm-2.1.1-7e53301142-b8e8939229.zip/node_modules/react-use-measure/",\
+          "packageDependencies": [\
+            ["react-use-measure", "npm:2.1.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.1.1", {\
+          "packageLocation": "./.yarn/__virtual__/react-use-measure-virtual-66cbd5dd6b/0/cache/react-use-measure-npm-2.1.1-7e53301142-b8e8939229.zip/node_modules/react-use-measure/",\
+          "packageDependencies": [\
+            ["react-use-measure", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:2.1.1"],\
+            ["@types/react", "npm:17.0.44"],\
+            ["@types/react-dom", "npm:18.0.3"],\
+            ["debounce", "npm:1.2.1"],\
             ["react", "npm:16.14.0"],\
             ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"]\
           ],\

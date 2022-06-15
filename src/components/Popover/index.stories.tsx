@@ -61,6 +61,30 @@ export const StyledPopoverContent: StoryObj<PopoverProps> = {
   },
 };
 
+export const CenteredRightTrigger: StoryObj<PopoverProps> = {
+  args: {
+    trigger: (
+      <div
+        className="alignChild--center--center"
+        style={{ width: 900, height: 50, border: '1px dotted red' }}
+      >
+        1
+      </div>
+    ),
+    position: 'bottom',
+    alignment: 'start',
+    interactionMode: 'hover',
+    children: (
+      <div className="bgColor--white rounded--all elevation--2 padding--all">
+        <h3 className="type--head3">Look at me</h3>
+        <p>
+          <em>i am the popover</em>
+        </p>
+      </div>
+    ),
+  },
+};
+
 export const ControlledPopover: StoryObj<PopoverProps> = {
   render: (args: PopoverProps): JSX.Element => (
     <State

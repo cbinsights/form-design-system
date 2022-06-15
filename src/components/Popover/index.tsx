@@ -3,6 +3,7 @@ import cc from 'classcat';
 import * as RadixPopover from '@radix-ui/react-popover';
 import { CSSTransition } from 'react-transition-group';
 import FDS from 'dictionary/js/styleConstants';
+import useMeasure from 'react-use-measure';
 import { useDisableScroll, useCloseOnScroll } from './hooks';
 
 export type Position = 'top' | 'right' | 'bottom' | 'left';
@@ -60,7 +61,9 @@ export interface PopoverProps {
   position?: Position;
 
   /** Horizontal alignment preference of popover content relative to trigger */
-  alignment?: 'start' | 'center' | 'end';
+  alignment?: 'start' | 'center-right' | 'center' | 'center-left' | 'end';
+
+  alignmentOffset?: number;
 
   /** Offset distance from trigger. */
   distance?: number;
@@ -94,6 +97,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       disablePortal,
       position = 'bottom',
       alignment = 'start',
+      alignmentOffset = 0,
       distance = 4,
       delay = 0,
       onUserDismiss = () => {},
@@ -113,8 +117,20 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     useCloseOnScroll(closeOnScrollRef, isActive, () => setIsActive(false));
     useDisableScroll(disableScrollRef, isActive);
 
+    const [triggerRef, triggerDimensions] = useMeasure();
+
     const isHover = interactionMode === 'hover';
     const isControlled = interactionMode === 'controlled';
+    const finalAlignment =
+      alignment === 'center-right'
+        ? 'start'
+        : alignment === 'center-left'
+        ? 'end'
+        : alignment;
+    const finalAlignOffset =
+      alignment === 'center-right' || alignment === 'center-left'
+        ? triggerDimensions.width / 2 + alignmentOffset
+        : alignmentOffset;
 
     // update active state on props change to accommodate fully controlled popovers
     useEffect(() => {
@@ -192,16 +208,22 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
         open={isActive}
         onOpenChange={!isControlled ? handleChange : undefined}
       >
-        <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
+        <RadixPopover.Trigger asChild ref={triggerRef}>
+          {clonedTrigger}
+        </RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
           className={cc([{ 'ease-in-out': !closeOnScrollRef }])}
-          align={alignment}
+          align={finalAlignment}
+          alignOffset={finalAlignOffset}
           side={position}
           sideOffset={distance}
           portalled={!disablePortal} // some places in cbi-site need to pass this prop
           onEscapeKeyDown={onUserDismiss}
           onInteractOutside={onUserDismiss}
+          onCloseAutoFocus={(e) => {
+            e.preventDefault();
+          }}
           avoidCollisions
           collisionTolerance={0}
         >

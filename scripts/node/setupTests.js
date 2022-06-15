@@ -11,6 +11,7 @@ global.ResizeObserver = class ResizeObserver {
     this.cb([{ borderBoxSize: { inlineSize: 0, blockSize: 0 } }]);
   }
   unobserve() {}
+  disconnect() {}
 };
 
 global.DOMRect = {
