@@ -160,7 +160,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
               <li className={'fdsNavbar-navBarListItem'}>
                 <div className={'fdsNavbar-dropdownItemLink'}>About Us</div>
                 <span className={'fdsNavbar-dropdownButton'}>
-                  {getArrowUpOrDown(showClass.aboutUs, WHAT_WE_OFFER)}
+                  {getArrowUpOrDown(showClass.aboutUs, ABOUT_US)}
                 </span>
                 <NavBarDropdown
                   content={aboutUsDropdown(site)}
