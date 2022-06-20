@@ -1,4 +1,4 @@
-.fdsButton {
+button.fdsButton {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-default);
   line-height: normal;
@@ -81,201 +81,201 @@
   visibility: hidden;
 }
 
-.fdsButton--blue {
+button.fdsButton--blue {
   color: var(--color-white);
   background-color: var(--color-blue);
 }
 
-.fdsButton--blue.fdsButton--isActive {
+button.fdsButton--blue.fdsButton--isActive {
   background-color: #5297b9;
 }
 
-.fdsButton--blue:hover {
+button.fdsButton--blue:hover {
   background-color: #1472a1;
 }
 
-.fdsButton--blue:active {
+button.fdsButton--blue:active {
   background-color: #5297b9;
 }
 
-.fdsButton--blue.fdsButton--isActive:focus {
+button.fdsButton--blue.fdsButton--isActive:focus {
   background-color: #5297b9;
 }
 
-.fdsButton--blue.fdsButton--isDestructive {
+button.fdsButton--blue.fdsButton--isDestructive {
   background-color: var(--color-red);
 }
 
-.fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive {
+button.fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive {
   background-color: #ed737c;
 }
 
-.fdsButton--blue.fdsButton--isDestructive:hover {
+button.fdsButton--blue.fdsButton--isDestructive:hover {
   background-color: #e7424d;
 }
 
-.fdsButton--blue.fdsButton--isDestructive:active {
+button.fdsButton--blue.fdsButton--isDestructive:active {
   background-color: #ed737c;
 }
 
-.fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive:focus {
+button.fdsButton--blue.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: #ed737c;
 }
 
-.fdsButton--orange {
+button.fdsButton--orange {
   color: var(--color-white);
   background-color: var(--color-orange);
 }
 
-.fdsButton--orange.fdsButton--isActive {
+button.fdsButton--orange.fdsButton--isActive {
   background-color: var(--color-orange);
 }
 
-.fdsButton--orange:hover {
+button.fdsButton--orange:hover {
   background-color: #ff7243;
 }
 
-.fdsButton--orange:active {
+button.fdsButton--orange:active {
   background-color: #ff9774;
 }
 
-.fdsButton--orange.fdsButton--isActive:focus {
+button.fdsButton--orange.fdsButton--isActive:focus {
   background-color: #ff9774;
 }
 
-.fdsButton--orange.fdsButton--isDestructive {
+button.fdsButton--orange.fdsButton--isDestructive {
   background-color: var(--color-red);
 }
 
-.fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive {
+button.fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive {
   background-color: #ed737c;
 }
 
-.fdsButton--orange.fdsButton--isDestructive:hover {
+button.fdsButton--orange.fdsButton--isDestructive:hover {
   background-color: #e7424d;
 }
 
-.fdsButton--orange.fdsButton--isDestructive:active {
+button.fdsButton--orange.fdsButton--isDestructive:active {
   background-color: #ed737c;
 }
 
-.fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive:focus {
+button.fdsButton--orange.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: #ed737c;
 }
 
-.fdsButton--ghost {
+button.fdsButton--ghost {
   color: var(--color-charcoal);
 }
 
-.fdsButton--outlined {
+button.fdsButton--outlined {
   border: 1px solid #c4c4c4;
   color: var(--color-charcoal);
   background-color: var(--color-white);
 }
 
-.fdsButton--outlined.fdsButton--isActive {
+button.fdsButton--outlined.fdsButton--isActive {
   background-color: #d9d9d9;
 }
 
-.fdsButton--outlined:hover {
+button.fdsButton--outlined:hover {
   background-color: #f0f0f0;
 }
 
-.fdsButton--outlined:active {
+button.fdsButton--outlined:active {
   background-color: #d9d9d9;
 }
 
-.fdsButton--outlined.fdsButton--isActive:focus {
+button.fdsButton--outlined.fdsButton--isActive:focus {
   background-color: #d9d9d9;
 }
 
-.fdsButton--outlined--blue {
+button.fdsButton--outlined--blue {
   border: 1px solid var(--color-blue);
   color: var(--color-blue);
   background-color: var(--color-white);
 }
 
-.fdsButton--outlined--blue.fdsButton--isActive {
+button.fdsButton--outlined--blue.fdsButton--isActive {
   background-color: #d9d9d9;
 }
 
-.fdsButton--outlined--blue:hover {
+button.fdsButton--outlined--blue:hover {
   background-color: #e4f6ff;
 }
 
-.fdsButton--outlined--blue:active {
+button.fdsButton--outlined--blue:active {
   background-color: #d9d9d9;
 }
 
-.fdsButton--outlined--blue.fdsButton--isActive:focus {
+button.fdsButton--outlined--blue.fdsButton--isActive:focus {
   background-color: #d9d9d9;
 }
 
-.fdsButton--ghost.fdsButton--isActive {
+button.fdsButton--ghost.fdsButton--isActive {
   background-color: rgb(64 64 64 / 20%);
 }
 
-.fdsButton--ghost:hover {
+button.fdsButton--ghost:hover {
   background-color: rgb(64 64 64 / 8%);
 }
 
-.fdsButton--ghost:active {
+button.fdsButton--ghost:active {
   background-color: rgb(64 64 64 / 20%);
 }
 
-.fdsButton--ghost.fdsButton--isActive:focus {
+button.fdsButton--ghost.fdsButton--isActive:focus {
   background-color: rgb(64 64 64 / 20%);
 }
 
-.fdsButton--outlined.fdsButton--isDestructive.fdsButton--isActive {
+button.fdsButton--outlined.fdsButton--isDestructive.fdsButton--isActive {
   background-color: #fad6d8;
 }
 
-.fdsButton--outlined.fdsButton--isDestructive:hover {
+button.fdsButton--outlined.fdsButton--isDestructive:hover {
   background-color: #fdeff0;
 }
 
-.fdsButton--outlined.fdsButton--isDestructive:active {
+button.fdsButton--outlined.fdsButton--isDestructive:active {
   background-color: #fad6d8;
 }
 
-.fdsButton--outlined.fdsButton--isDestructive.fdsButton--isActive:focus {
+button.fdsButton--outlined.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: #fad6d8;
 }
 
-.fdsButton--outlined--blue.fdsButton--isDestructive.fdsButton--isActive {
+button.fdsButton--outlined--blue.fdsButton--isDestructive.fdsButton--isActive {
   background-color: #fad6d8;
 }
 
-.fdsButton--outlined--blue.fdsButton--isDestructive:hover {
+button.fdsButton--outlined--blue.fdsButton--isDestructive:hover {
   background-color: #fdeff0;
 }
 
-.fdsButton--outlined--blue.fdsButton--isDestructive:active {
+button.fdsButton--outlined--blue.fdsButton--isDestructive:active {
   background-color: #fad6d8;
 }
 
-.fdsButton--outlined--blue.fdsButton--isDestructive.fdsButton--isActive:focus {
+button.fdsButton--outlined--blue.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: #fad6d8;
 }
 
-.fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive {
+button.fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive {
   background-color: rgb(229 50 62 / 20%);
 }
 
-.fdsButton--ghost.fdsButton--isDestructive:hover {
+button.fdsButton--ghost.fdsButton--isDestructive:hover {
   background-color: rgb(229 50 62 / 8%);
 }
 
-.fdsButton--ghost.fdsButton--isDestructive:active {
+button.fdsButton--ghost.fdsButton--isDestructive:active {
   background-color: rgb(229 50 62 / 20%);
 }
 
-.fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive:focus {
+button.fdsButton--ghost.fdsButton--isDestructive.fdsButton--isActive:focus {
   background-color: rgb(229 50 62 / 20%);
 }
 
-.fdsButton--loading.fdsButton--outlined--blue
+.fdsButton--loadingbutton.fdsButton--outlined--blue
   .fdsButton--loading-spinner::before {
   border: 2px solid var(--color-blue);
   border-top-color: transparent;
@@ -303,28 +303,30 @@
   background: transparent;
 }
 
-.inverted .fdsButton--ghost.fdsButton--isActive,
-.inverted .fdsButton--outlined.fdsButton--isActive,
-.inverted .fdsButton--outlined--blue.fdsButton--isActive {
+.inverted button.fdsButton--ghost.fdsButton--isActive,
+.inverted button.fdsButton--outlined.fdsButton--isActive,
+.inverted
+  button.fdsButton--outlined--blue.fdsButton--isActive {
   background-color: rgb(255 255 255 / 32%);
 }
 
-.inverted .fdsButton--ghost:hover,
-.inverted .fdsButton--outlined:hover,
-.inverted .fdsButton--outlined--blue:hover {
+.inverted button.fdsButton--ghost:hover,
+.inverted button.fdsButton--outlined:hover,
+.inverted button.fdsButton--outlined--blue:hover {
   background-color: rgb(255 255 255 / 8%);
 }
 
-.inverted .fdsButton--ghost:active,
-.inverted .fdsButton--outlined:active,
-.inverted .fdsButton--outlined--blue:active {
+.inverted button.fdsButton--ghost:active,
+.inverted button.fdsButton--outlined:active,
+.inverted button.fdsButton--outlined--blue:active {
   background-color: rgb(255 255 255 / 32%);
 }
 
-.inverted .fdsButton--ghost.fdsButton--isActive:focus,
-.inverted .fdsButton--outlined.fdsButton--isActive:focus,
+.inverted button.fdsButton--ghost.fdsButton--isActive:focus,
 .inverted
-  .fdsButton--outlined--blue.fdsButton--isActive:focus {
+  button.fdsButton--outlined.fdsButton--isActive:focus,
+.inverted
+  button.fdsButton--outlined--blue.fdsButton--isActive:focus {
   background-color: rgb(255 255 255 / 32%);
 }
 
