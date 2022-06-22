@@ -33,9 +33,10 @@ const DEFAULT_STATE: Record<Section, boolean> = {
 export type NavBarProps = {
   site: string;
   utmContext: string;
+  SearchComponent?: JSX.Element;
 };
 
-const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
+const NavBar = ({ site, utmContext, SearchComponent }: NavBarProps): JSX.Element => {
   const [showClass, setShowClass] = useState(DEFAULT_STATE);
 
   const handleClick = (sectionName: Section): void => {
@@ -109,6 +110,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
             />
           </a>
         </div>
+        <SearchComponent />
         <nav id="site-navigation" className={'fdsNavbar-navigation'}>
           <div className={'fdsNavbar-navMenuButton'}>
             <IconButton
