@@ -110,7 +110,7 @@ const NavBar = ({ site, utmContext, SearchComponent }: NavBarProps): JSX.Element
             />
           </a>
         </div>
-        <SearchComponent />
+        {SearchComponent}
         <nav id="site-navigation" className={'fdsNavbar-navigation'}>
           <div className={'fdsNavbar-navMenuButton'}>
             <IconButton

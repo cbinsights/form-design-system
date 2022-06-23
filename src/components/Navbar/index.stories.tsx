@@ -12,7 +12,7 @@ export const Primary: StoryObj<NavBarProps> = {
   args: {
     site: 'https://www.cbinsights.com',
     utmContext: '',
-    SearchComponent,
+    SearchComponent: <SearchComponent />,
   },
   render: (args: NavBarProps): JSX.Element => {
     return (
