@@ -84,6 +84,7 @@ import HelpIcon from './HelpIcon';
 import HideIcon from './HideIcon';
 import HistoryIcon from './HistoryIcon';
 import HomeIcon from './HomeIcon';
+import HourglassIcon from './HourglassIcon';
 import ImageIcon from './ImageIcon';
 import ImportIcon from './ImportIcon';
 import InformationIcon from './InformationIcon';
@@ -275,6 +276,7 @@ export {
   HideIcon,
   HistoryIcon,
   HomeIcon,
+  HourglassIcon,
   ImageIcon,
   ImportIcon,
   InformationIcon,
