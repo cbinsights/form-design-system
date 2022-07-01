@@ -96,7 +96,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.44"],\
             ["@types/react-dom", "npm:18.0.3"],\
             ["@types/react-is", "npm:17.0.3"],\
-            ["@types/react-transition-group", "npm:4.4.4"],\
+            ["@types/react-transition-group", "npm:4.4.5"],\
             ["@types/rimraf", "npm:3.0.2"],\
             ["@types/semantic-release", "npm:17.2.3"],\
             ["@types/svgo", "npm:1.3.6"],\
@@ -6464,7 +6464,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.44"],\
             ["@types/react-dom", "npm:18.0.3"],\
             ["@types/react-is", "npm:17.0.3"],\
-            ["@types/react-transition-group", "npm:4.4.4"],\
+            ["@types/react-transition-group", "npm:4.4.5"],\
             ["@types/rimraf", "npm:3.0.2"],\
             ["@types/semantic-release", "npm:17.2.3"],\
             ["@types/svgo", "npm:1.3.6"],\
@@ -13092,6 +13092,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-react-transition-group-npm-4.4.4-258f9685b8-86e9ff9731.zip/node_modules/@types/react-transition-group/",\
           "packageDependencies": [\
             ["@types/react-transition-group", "npm:4.4.4"],\
+            ["@types/react", "npm:16.9.46"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:4.4.5", {\
+          "packageLocation": "./.yarn/cache/@types-react-transition-group-npm-4.4.5-8f92107b07-265f1c7406.zip/node_modules/@types/react-transition-group/",\
+          "packageDependencies": [\
+            ["@types/react-transition-group", "npm:4.4.5"],\
             ["@types/react", "npm:16.9.46"]\
           ],\
           "linkType": "HARD"\
