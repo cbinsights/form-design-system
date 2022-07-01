@@ -3766,7 +3766,7 @@ __metadata:
     semantic-release: 19.0.3
     snake-case: 3.0.4
     start-server-and-test: 1.14.0
-    style-dictionary: 3.7.0
+    style-dictionary: 3.7.1
     style-loader: 3.3.1
     stylelint: 14.9.1
     stylelint-config-prettier: 9.0.3
@@ -25963,9 +25963,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"style-dictionary@npm:3.7.0":
-  version: 3.7.0
-  resolution: "style-dictionary@npm:3.7.0"
+"style-dictionary@npm:3.7.1":
+  version: 3.7.1
+  resolution: "style-dictionary@npm:3.7.1"
   dependencies:
     chalk: ^4.0.0
     change-case: ^4.1.2
@@ -25978,7 +25978,7 @@ __metadata:
     tinycolor2: ^1.4.1
   bin:
     style-dictionary: bin/style-dictionary
-  checksum: 97fd972e5eb57d931a2dc2f5e6461642f7c9cdff9bc54642b8ab1372b3a9e613f57fefdca406b773b9d5e061e8450a20967ab3d0c6da5bb2787ea246cede3eac
+  checksum: f2793b51d4c91625d1ee3385a2438c3fb0723183812c47f0fcea96703fc3a8a433ba4b496a3ab3d793c9827229d74483b4d8916d624d7d9bde5d36e8b18831fe
   languageName: node
   linkType: hard
 

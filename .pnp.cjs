@@ -161,7 +161,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["semantic-release", "npm:19.0.3"],\
             ["snake-case", "npm:3.0.4"],\
             ["start-server-and-test", "npm:1.14.0"],\
-            ["style-dictionary", "npm:3.7.0"],\
+            ["style-dictionary", "npm:3.7.1"],\
             ["style-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.3.1"],\
             ["stylelint", "npm:14.9.1"],\
             ["stylelint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.3"],\
@@ -6529,7 +6529,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["semantic-release", "npm:19.0.3"],\
             ["snake-case", "npm:3.0.4"],\
             ["start-server-and-test", "npm:1.14.0"],\
-            ["style-dictionary", "npm:3.7.0"],\
+            ["style-dictionary", "npm:3.7.1"],\
             ["style-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:3.3.1"],\
             ["stylelint", "npm:14.9.1"],\
             ["stylelint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.3"],\
@@ -34150,10 +34150,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["style-dictionary", [\
-        ["npm:3.7.0", {\
-          "packageLocation": "./.yarn/unplugged/style-dictionary-npm-3.7.0-0860ecb1f5/node_modules/style-dictionary/",\
+        ["npm:3.7.1", {\
+          "packageLocation": "./.yarn/unplugged/style-dictionary-npm-3.7.1-20e1c9b69e/node_modules/style-dictionary/",\
           "packageDependencies": [\
-            ["style-dictionary", "npm:3.7.0"],\
+            ["style-dictionary", "npm:3.7.1"],\
             ["chalk", "npm:4.1.0"],\
             ["change-case", "npm:4.1.2"],\
             ["commander", "npm:8.3.0"],\
