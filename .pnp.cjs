@@ -128,7 +128,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:26.5.3"],\
             ["eslint-plugin-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.30.1"],\
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.13"],\
-            ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.11.3"],\
             ["fs-extra", "npm:10.1.0"],\
             ["glob", "npm:8.0.3"],\
             ["handlebars", "npm:4.7.7"],\
@@ -6450,7 +6449,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:26.5.3"],\
             ["eslint-plugin-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.30.1"],\
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.13"],\
-            ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.11.3"],\
             ["fs-extra", "npm:10.1.0"],\
             ["glob", "npm:8.0.3"],\
             ["handlebars", "npm:4.7.7"],\
@@ -21009,47 +21007,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["focus-trap", [\
-        ["npm:6.9.4", {\
-          "packageLocation": "./.yarn/cache/focus-trap-npm-6.9.4-64b032bc16-0b4cebcc11.zip/node_modules/focus-trap/",\
-          "packageDependencies": [\
-            ["focus-trap", "npm:6.9.4"],\
-            ["tabbable", "npm:5.3.3"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["focus-trap-react", [\
-        ["npm:8.11.3", {\
-          "packageLocation": "./.yarn/cache/focus-trap-react-npm-8.11.3-a7302c9217-d293b0645b.zip/node_modules/focus-trap-react/",\
-          "packageDependencies": [\
-            ["focus-trap-react", "npm:8.11.3"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.11.3", {\
-          "packageLocation": "./.yarn/__virtual__/focus-trap-react-virtual-979e2e2b7d/0/cache/focus-trap-react-npm-8.11.3-a7302c9217-d293b0645b.zip/node_modules/focus-trap-react/",\
-          "packageDependencies": [\
-            ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.11.3"],\
-            ["@types/prop-types", "npm:15.7.5"],\
-            ["@types/react", "npm:17.0.44"],\
-            ["@types/react-dom", "npm:18.0.3"],\
-            ["focus-trap", "npm:6.9.4"],\
-            ["prop-types", "npm:15.8.1"],\
-            ["react", "npm:16.14.0"],\
-            ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/prop-types",\
-            "@types/react-dom",\
-            "@types/react",\
-            "prop-types",\
-            "react-dom",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["follow-redirects", [\
         ["npm:1.14.9", {\
           "packageLocation": "./.yarn/cache/follow-redirects-npm-1.14.9-522f191631-f5982e0eb4.zip/node_modules/follow-redirects/",\
@@ -34466,13 +34423,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/tabbable-npm-4.0.0-21da476888-cbe1acbdab.zip/node_modules/tabbable/",\
           "packageDependencies": [\
             ["tabbable", "npm:4.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:5.3.3", {\
-          "packageLocation": "./.yarn/cache/tabbable-npm-5.3.3-baf35cffe9-1aa56e1bb6.zip/node_modules/tabbable/",\
-          "packageDependencies": [\
-            ["tabbable", "npm:5.3.3"]\
           ],\
           "linkType": "HARD"\
         }]\
