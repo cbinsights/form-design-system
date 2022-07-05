@@ -4,6 +4,7 @@ import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
 import Checkbox from 'components/Checkbox';
 import Chip from 'components/Chip';
+import ContextMenu from 'components/ContextMenu';
 import CornerPosition from 'components/CornerPosition';
 import DateInput from 'components/DateInput';
 import Dialog from 'components/Dialog';
@@ -17,8 +18,6 @@ import Indicator from 'components/Indicator';
 import InputGroup from 'components/InputGroup';
 import Loading from 'components/Loading';
 import Menu from 'components/Menu';
-import MenuItem from 'components/MenuItem';
-import MenuLink from 'components/MenuLink';
 import Navbar from 'components/Navbar';
 import Popover from 'components/Popover';
 import Prompt from 'components/Prompt';
@@ -39,6 +38,7 @@ export {
   ButtonGroup,
   Checkbox,
   Chip,
+  ContextMenu,
   CornerPosition,
   DateInput,
   Dialog,
@@ -53,8 +53,6 @@ export {
   InputGroup,
   Loading,
   Menu,
-  MenuItem,
-  MenuLink,
   Navbar,
   Popover,
   Prompt,

@@ -26,6 +26,24 @@ export const Primary: StoryObj<PopoverProps> = {
   },
 };
 
+export const HoveredPopover: StoryObj<PopoverProps> = {
+  args: {
+    interactionMode: 'hover',
+    trigger: <Button theme="outlined" label="Open popover" />,
+    position: 'bottom',
+    alignment: 'start',
+    distance: 8,
+    children: (
+      <div className="bgColor--white rounded--all elevation--2 padding--all">
+        <h3 className="type--head3">Look at me</h3>
+        <p>
+          <em>i am the popover</em>
+        </p>
+      </div>
+    ),
+  },
+};
+
 export const StyledPopoverContent: StoryObj<PopoverProps> = {
   args: {
     trigger: <Button theme="outlined" label="Open popover" />,
@@ -63,9 +81,6 @@ export const ControlledPopover: StoryObj<PopoverProps> = {
           alignment="start"
           interactionMode="controlled"
           isOpen={myIsOpen}
-          onUserDismiss={() => {
-            setMyIsOpen(false);
-          }}
           distance={8}
         >
           <div className="bgColor--white rounded--all elevation--2 padding--all">
@@ -88,12 +103,6 @@ export const ControlledPopover: StoryObj<PopoverProps> = {
   },
 };
 
-// const hidden = {
-//   table: {
-//     disable: true,
-//   },
-// };
-
 export const PopoverWithinAPopover: StoryObj<PopoverProps> = {
   render: (args: PopoverProps): JSX.Element => (
     <Popover trigger={<button>Open popover</button>}>
@@ -111,6 +120,7 @@ export const PopoverWithinAPopover: StoryObj<PopoverProps> = {
             <Popover
               {...args}
               trigger={<button className="margin--left--xs">click</button>}
+              disablePortal={false}
             >
               <div className="bgColor--white rounded--all elevation--2 padding--all">
                 <div className="padding--all--m">
@@ -128,18 +138,8 @@ export const PopoverWithinAPopover: StoryObj<PopoverProps> = {
     </Popover>
   ),
   args: {
-    // isFixed: true,
     disablePortal: true,
   },
-  // argTypes: {
-  //   // triggerElement: hidden,
-  //   // theme: hidden,
-  //   children: hidden,
-  //   // placement: hidden,
-  //   isOpen: hidden,
-  //   onUserDismiss: hidden,
-  //   // triggerType: hidden,
-  // },
 };
 
 export const CloseOnScroll: StoryObj<PopoverProps> = {

@@ -8,7 +8,6 @@ describe('Navbar', () => {
     expect(screen.getByText('Who We Serve')).toBeInTheDocument();
     expect(screen.getByText('How We Help')).toBeInTheDocument();
     expect(screen.getByText('What We Offer')).toBeInTheDocument();
-    expect(screen.getByText('Resources')).toBeInTheDocument();
     expect(screen.getByText('About Us')).toBeInTheDocument();
   });
   it('should open the dropdown on mouseover', () => {

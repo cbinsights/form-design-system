@@ -1,47 +1,157 @@
 import React from 'react';
-import Button from 'components/Button';
-import Flex from 'components/Flex';
-import FlexItem from 'components/FlexItem';
 import CloneIcon from 'icons/react/CloneIcon';
 import TrashIcon from 'icons/react/TrashIcon';
 import EditIcon from 'icons/react/EditIcon';
 import FundingIcon from 'icons/react/FundingIcon';
-import Tooltip from 'components/Tooltip';
-import { MenuItem, MenuLink } from 'components';
-import Menu, { MenuProps } from '.';
+import { Menu, Tooltip, Dialog, Button, Flex, FlexItem } from 'components';
 import { StoryObj } from '@storybook/react';
+import { MenuProps } from '.';
+import { MenuItemProps } from './MenuItem';
+import { MenuContentProps } from './MenuContent';
 
-interface MenuStoryProps extends MenuProps {
-  onSelect: () => void;
-}
+type AllEvents = Pick<MenuProps, 'onOpenChange'> &
+  Pick<MenuItemProps, 'onSelect'> &
+  Pick<
+    MenuContentProps,
+    | 'onCloseAutoFocus'
+    | 'onEscapeKeyDown'
+    | 'onPointerDownOutside'
+    | 'onFocusOutside'
+    | 'onInteractOutside'
+  >;
 
-export const Primary: StoryObj<MenuStoryProps> = {
-  render: ({ onSelect, ...args }: MenuStoryProps): JSX.Element => (
-    <Menu {...args} trigger={<Button label="Menu trigger" hasCaret />}>
-      <MenuItem onSelect={onSelect}>Copy</MenuItem>
-      <MenuItem onSelect={onSelect}>Delete</MenuItem>
-    </Menu>
-  ),
+const hidden = {
+  table: {
+    disable: true,
+  },
 };
 
-export const TriggerElement: StoryObj<MenuStoryProps> = {
-  render: ({ onSelect, ...args }: MenuStoryProps): JSX.Element => (
+const events = {
+  content: {
+    onCloseAutoFocus: {
+      ...hidden,
+      action: 'onCloseAutoFocus',
+    },
+    onEscapeKeyDown: {
+      ...hidden,
+      action: 'onEscapeKeyDown',
+    },
+    onPointerDownOutside: {
+      ...hidden,
+      action: 'onPointerDownOutside',
+    },
+    onFocusOutside: {
+      ...hidden,
+      action: 'onFocusOutside',
+    },
+    onInteractOutside: {
+      ...hidden,
+      action: 'onInteractOutside',
+    },
+  },
+  root: {
+    onOpenChange: {
+      ...hidden,
+      action: 'onOpenChange',
+    },
+  },
+  item: {
+    onSelect: {
+      ...hidden,
+      action: 'onSelect',
+    },
+  },
+};
+
+export const Primary = {
+  render: (args: AllEvents): JSX.Element => (
+    <Menu onOpenChange={args.onOpenChange}>
+      <Menu.Trigger asChild>
+        <Button label="Menu trigger" hasCaret />
+      </Menu.Trigger>
+      <Menu.Content
+        onCloseAutoFocus={args.onCloseAutoFocus}
+        onEscapeKeyDown={args.onEscapeKeyDown}
+        onPointerDownOutside={args.onPointerDownOutside}
+        onFocusOutside={args.onFocusOutside}
+        onInteractOutside={args.onInteractOutside}
+      >
+        <Menu.Item onSelect={args.onSelect}>🍕 Pizza</Menu.Item>
+        <Menu.Item onSelect={args.onSelect}>🌮 Tacos</Menu.Item>
+        <Menu.Item>
+          <Tooltip
+            trigger={<span>🫔 Tamal</span>}
+            message={"Yes, that's the singular for tamales"}
+          />
+        </Menu.Item>
+      </Menu.Content>
+    </Menu>
+  ),
+  argTypes: {
+    ...events.root,
+    ...events.content,
+    ...events.item,
+  },
+};
+
+export const ShowDialogFromMenuItem = {
+  render: (_args: unknown): JSX.Element => {
+    const [showDialog, setShowDialog] = React.useState(false);
+
+    return (
+      <>
+        <Menu>
+          <Menu.Trigger asChild>
+            <Button theme="outlined" label="Click me" hasCaret />
+          </Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item
+              onSelect={() => {
+                setShowDialog(true);
+              }}
+            >
+              Show Dialog
+            </Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Dialog
+          isOpen={showDialog}
+          content="dialog content goes here"
+          title="dialog title here"
+          onDismiss={() => {
+            setShowDialog(false);
+          }}
+        />
+      </>
+    );
+  },
+};
+
+export const AnyTriggerWorks = {
+  render: (_args: unknown): JSX.Element => (
     <Flex>
       <FlexItem>
-        <Menu
-          {...args}
-          trigger={<Button theme="outlined" label="Recommended trigger" hasCaret />}
-        >
-          <MenuItem onSelect={onSelect}>Cake</MenuItem>
-          <MenuItem onSelect={onSelect}>Pizza</MenuItem>
-          <MenuItem onSelect={onSelect}>Tide pod</MenuItem>
+        <Menu>
+          <Menu.Trigger asChild>
+            <Button theme="outlined" label="Recommended trigger" hasCaret />
+          </Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Cake</Menu.Item>
+            <Menu.Item>Pizza</Menu.Item>
+            <Menu.Item>Tide pod</Menu.Item>
+          </Menu.Content>
         </Menu>
       </FlexItem>
       <FlexItem>
-        <Menu {...args} trigger={<button>any button will work</button>}>
-          <MenuItem onSelect={onSelect}>Cake</MenuItem>
-          <MenuItem onSelect={onSelect}>Pizza</MenuItem>
-          <MenuItem onSelect={onSelect}>Tide pod</MenuItem>
+        <Menu>
+          <Menu.Trigger asChild>
+            <button>any button will work</button>
+          </Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Cake</Menu.Item>
+            <Menu.Item>Pizza</Menu.Item>
+            <Menu.Item>Tide pod</Menu.Item>
+          </Menu.Content>
         </Menu>
       </FlexItem>
     </Flex>
@@ -56,118 +166,109 @@ export const TriggerElement: StoryObj<MenuStoryProps> = {
   },
 };
 
-export const CustomItems: StoryObj<MenuStoryProps> = {
-  render: ({ onSelect, ...args }: MenuStoryProps): JSX.Element => (
-    <Menu {...args} trigger={<Button hasCaret label="actions" theme="outlined" />}>
-      <MenuItem onSelect={onSelect}>
-        <div className="color--primary">
-          <Flex align="center">
-            <FlexItem shrink>
-              <TrashIcon />
-            </FlexItem>
-            <FlexItem>Delete</FlexItem>
-          </Flex>
-        </div>
-      </MenuItem>
-      <MenuItem onSelect={onSelect}>
-        <div className="color--primary">
-          <Flex align="center">
-            <FlexItem shrink>
-              <EditIcon />
-            </FlexItem>
-            <FlexItem>Edit</FlexItem>
-          </Flex>
-        </div>
-      </MenuItem>
-      <MenuItem onSelect={onSelect}>
-        <div className="color--primary">
-          <Flex align="center">
-            <FlexItem shrink>
-              <CloneIcon />
-            </FlexItem>
-            <FlexItem>Clone</FlexItem>
-          </Flex>
-        </div>
-      </MenuItem>
-      <MenuItem onSelect={onSelect}>
-        <div className="color--primary">
-          <Flex align="center">
-            <FlexItem shrink>
-              <FundingIcon />
-            </FlexItem>
-            <FlexItem>Bribe</FlexItem>
-          </Flex>
-        </div>
-      </MenuItem>
-      <MenuLink onSelect={onSelect} href="/">
-        Go to Storybook home
-      </MenuLink>
+export const CustomItems = {
+  render: (_args: unknown): JSX.Element => (
+    <Menu>
+      <Menu.Trigger asChild>
+        <Button hasCaret label="actions" theme="outlined" />
+      </Menu.Trigger>
+      <Menu.Content>
+        <Menu.Item>
+          <div className="color--primary">
+            <Flex align="center">
+              <FlexItem shrink>
+                <TrashIcon />
+              </FlexItem>
+              <FlexItem>Delete</FlexItem>
+            </Flex>
+          </div>
+        </Menu.Item>
+        <Menu.Item>
+          <div className="color--primary">
+            <Flex align="center">
+              <FlexItem shrink>
+                <EditIcon />
+              </FlexItem>
+              <FlexItem>Edit</FlexItem>
+            </Flex>
+          </div>
+        </Menu.Item>
+        <Menu.Item>
+          <div className="color--primary">
+            <Flex align="center">
+              <FlexItem shrink>
+                <CloneIcon />
+              </FlexItem>
+              <FlexItem>Clone</FlexItem>
+            </Flex>
+          </div>
+        </Menu.Item>
+        <Menu.Item>
+          <div className="color--primary">
+            <Flex align="center">
+              <FlexItem shrink>
+                <FundingIcon />
+              </FlexItem>
+              <FlexItem>Bribe</FlexItem>
+            </Flex>
+          </div>
+        </Menu.Item>
+        <Menu.Item>
+          <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            Go to Storybook home
+          </a>
+        </Menu.Item>
+      </Menu.Content>
     </Menu>
   ),
   parameters: {
     docs: {
       description: {
-        story: '`MenuItem` and `MenuLink` will accept a plain string or any JSX node.',
+        story: '`Menu.Item` will accept a plain string or any JSX node.',
       },
     },
   },
 };
 
-export const Rest: StoryObj<MenuStoryProps> = {
-  render: (args: MenuProps): JSX.Element => (
-    <Menu {...args} trigger={<Button hasCaret label="actions" theme="outlined" />}>
-      <MenuItem data-test="hello" onSelect={() => {}}>
-        Delete
-      </MenuItem>
-      <MenuLink href="#" data-test="world">
-        Edit
-      </MenuLink>
-    </Menu>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: '`MenuItem` and `MenuLink` accept rest props.',
-      },
-    },
+export const DisabledItems: StoryObj<MenuProps> = {
+  render: (_args: MenuProps) => {
+    return (
+      <Menu>
+        <Menu.Trigger>
+          <Button label="Trigger Button" hasCaret />
+        </Menu.Trigger>
+        <Menu.Content>
+          <Menu.Item disabled>Cut</Menu.Item>
+          <Menu.Item>Copy</Menu.Item>
+          <Menu.Item>Paste</Menu.Item>
+        </Menu.Content>
+      </Menu>
+    );
   },
 };
 
-export const DisabledItems: StoryObj<MenuStoryProps> = {
-  render: ({ onSelect, ...args }: MenuStoryProps): JSX.Element => (
-    <Menu
-      {...args}
-      trigger={<Button theme="outlined" label="Menu with disabled item" hasCaret />}
-    >
-      <MenuItem isDisabled onSelect={onSelect}>
-        <Tooltip trigger={<button>Cake</button>} message="Not your birthday" />
-      </MenuItem>
-      <MenuItem onSelect={onSelect}>Pizza</MenuItem>
-      <MenuItem onSelect={onSelect}>Tide pod</MenuItem>
+export const Disabled: StoryObj<{ disabled: boolean }> = {
+  render: (args: { disabled: boolean }) => (
+    <Menu>
+      <Menu.Trigger>
+        <Button label="Trigger Button" hasCaret />
+      </Menu.Trigger>
+      {!args.disabled && (
+        <Menu.Content>
+          <Menu.Item>Cut</Menu.Item>
+          <Menu.Item>Copy</Menu.Item>
+          <Menu.Item>Paste</Menu.Item>
+        </Menu.Content>
+      )}
     </Menu>
   ),
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'When the `isDisabled` prop is passed to a `MenuItem`, the item will be styled as disabled and the `onSelect` handler will not be called. Prefer hiding actions instead of disabling them. Only disable a `MenuItem` if the disabling is only temporary (e.g. disabling a collections clone while a clone is in progress). When disabling a `MenuItem`, a `Tooltip` is recommended to explain why the action is disabled.',
-      },
-    },
+  args: {
+    disabled: true,
   },
 };
 
 export default {
-  component: Menu,
-  subcomponents: {
-    MenuItem,
-    MenuLink,
-  },
   title: 'Components/Menu',
-  argTypes: {
-    onSelect: {
-      action: 'onSelect',
-    },
-  },
   parameters: {
     componentSubtitle:
       'Renders a dropdown containing links, and actions the user can take.',

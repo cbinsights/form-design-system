@@ -7,7 +7,7 @@ import {
   ArgsTable,
   Stories,
   PRIMARY_STORY,
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import ImportPath from 'util/storybook-docs/ImportPath';
 import Badges from 'util/storybook-docs/Badges';
 import Related from 'util/storybook-docs/Related';

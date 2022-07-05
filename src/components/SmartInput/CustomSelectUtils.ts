@@ -53,16 +53,33 @@ export const customStyles = (
       width: '100%',
       fontSize: `${FDS.FONT_SIZE_L} !important`,
     }),
-    input: (base) => ({
-      ...base,
-      color: FDS.COLOR_SLATE,
-      flex: 'none',
-      cursor: 'pointer',
-      input: {
-        boxShadow: 'none !important',
-        minHeight: 'var(--space-xl)',
-      },
-    }),
+    input: (base, state) => {
+      const isFocused = state?.selectProps?.isFocused || state?.selectProps?.menuIsOpen;
+      const isLastCursorPosition = Array.isArray(state?.selectProps?.value)
+        ? state?.selectProps?.value?.length === state?.selectProps?.cursorPosition ||
+          state?.selectProps?.value?.length === 0
+        : true;
+
+      return {
+        ...base,
+        color: FDS.COLOR_SLATE,
+        flex: 'none',
+        cursor: 'pointer',
+        display: useStylesForHeader && isLastCursorPosition ? 'block' : 'inline-grid',
+        flexGrow: useStylesForHeader && isFocused && isLastCursorPosition ? 1 : 0,
+        overflow: useStylesForHeader ? 'hidden' : 'inherit',
+        ':after': useStylesForHeader
+          ? {
+              maxWidth: isLastCursorPosition ? '100%' : 'inherit',
+              whiteSpace: 'nowrap',
+            }
+          : {},
+        input: {
+          boxShadow: 'none !important',
+          minHeight: 'var(--space-xl)',
+        },
+      };
+    },
     menu: (base) => ({
       ...base,
       width: useStylesForHeader ? `calc(100% + ${SEARCH_BTN_OFFSET}px)` : '100%',
@@ -82,7 +99,7 @@ export const customStyles = (
     control: (base) => ({
       ...base,
       paddingLeft: useStylesForHeader ? '12px' : FDS.SPACE_XS,
-      border: useStylesForHeader ? 'none !important' : '',
+      border: 'none !important',
       boxShadow: 'none',
       borderRadius: useStylesForHeader
         ? `${FDS.SPACE_XS} 0 0 ${FDS.SPACE_XS}`
