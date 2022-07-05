@@ -122,7 +122,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     }, [interactionMode, isOpen]);
 
     let triggerProps: HTMLAttributes<HTMLElement> = {};
-    let hoverTimeout: number;
+    let hoverTimeout: NodeJS.Timeout;
     switch (interactionMode) {
       case 'hover':
         triggerProps.onMouseEnter = () => {
