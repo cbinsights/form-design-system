@@ -5,7 +5,7 @@ import { OptionProps } from '..';
 const CustomValueContainer = ({
   children,
   ...props
-}: ValueContainerProps<OptionProps>): JSX.Element => {
+}: ValueContainerProps<OptionProps, boolean>): JSX.Element => {
   const innerProps = { ...props.innerProps, role: 'list' };
   const { cursorPosition } = props.selectProps;
   const selectedValues = React.Children.toArray(children);
@@ -13,11 +13,11 @@ const CustomValueContainer = ({
   const els =
     props.hasValue && cursorPosition !== undefined
       ? [
-          selectedValues.slice(0, cursorPosition < 0 ? 0 : cursorPosition + 1),
+          selectedValues.slice(0, cursorPosition <= 0 ? 0 : cursorPosition),
           input,
-          selectedValues.slice(cursorPosition < 0 ? 0 : cursorPosition + 1),
+          selectedValues.slice(cursorPosition <= 0 ? 0 : cursorPosition),
         ]
-      : children;
+      : React.Children.toArray(children);
   return (
     <components.ValueContainer {...props} innerProps={innerProps}>
       {els}

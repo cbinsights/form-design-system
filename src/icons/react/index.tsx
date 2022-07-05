@@ -84,9 +84,11 @@ import HelpIcon from './HelpIcon';
 import HideIcon from './HideIcon';
 import HistoryIcon from './HistoryIcon';
 import HomeIcon from './HomeIcon';
+import HourglassIcon from './HourglassIcon';
 import ImageIcon from './ImageIcon';
 import ImportIcon from './ImportIcon';
 import InformationIcon from './InformationIcon';
+import IntegrationIcon from './IntegrationIcon';
 import InvestorIcon from './InvestorIcon';
 import IpoIcon from './IpoIcon';
 import LightBulbIcon from './LightBulbIcon';
@@ -150,6 +152,7 @@ import SortDownIcon from './SortDownIcon';
 import SortUpIcon from './SortUpIcon';
 import StarEmptyIcon from './StarEmptyIcon';
 import StarFilledIcon from './StarFilledIcon';
+import StarHalfIcon from './StarHalfIcon';
 import StoreIcon from './StoreIcon';
 import StoryIcon from './StoryIcon';
 import StoryAddIcon from './StoryAddIcon';
@@ -273,9 +276,11 @@ export {
   HideIcon,
   HistoryIcon,
   HomeIcon,
+  HourglassIcon,
   ImageIcon,
   ImportIcon,
   InformationIcon,
+  IntegrationIcon,
   InvestorIcon,
   IpoIcon,
   LightBulbIcon,
@@ -339,6 +344,7 @@ export {
   SortUpIcon,
   StarEmptyIcon,
   StarFilledIcon,
+  StarHalfIcon,
   StoreIcon,
   StoryIcon,
   StoryAddIcon,

@@ -9,7 +9,7 @@ export const Primary: StoryObj<IndicatorProps> = {
 
 export default {
   component: Indicator,
-  title: 'components/Indicator',
+  title: 'Components/Indicator',
   parameters: {
     docs: {
       fds: {

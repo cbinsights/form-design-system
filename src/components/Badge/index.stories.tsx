@@ -12,19 +12,19 @@ export const Primary: StoryObj<BadgeProps> = {
 };
 
 export const Variations: StoryObj<BadgeProps> = {
-  render: (): JSX.Element => (
+  render: (args: BadgeProps): JSX.Element => (
     <StoryWrapper>
       <StoryItem>
-        <Badge label="42" />
+        <Badge {...args} label="42" />
       </StoryItem>
       <StoryItem>
-        <Badge label="42" type="count" />
+        <Badge {...args} label="42" type="count" />
       </StoryItem>
       <StoryItem>
-        <Badge />
+        <Badge {...args} />
       </StoryItem>
       <StoryItem>
-        <Badge type="count" />
+        <Badge {...args} type="count" />
       </StoryItem>
     </StoryWrapper>
   ),
@@ -74,7 +74,7 @@ export const WithTableRows: StoryObj<BadgeProps> = {
 
 export default {
   component: Badge,
-  title: 'components/Badge',
+  title: 'Components/Badge',
   parameters: {
     componentSubtitle: 'Renders a bubble with an optional label.',
     docs: {

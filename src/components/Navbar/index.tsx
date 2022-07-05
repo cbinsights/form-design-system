@@ -10,7 +10,7 @@ import {
   whoWeServeDropdown,
   howWeHelpDropdown,
   whatWeOfferDropdown,
-  resourcesDropdown,
+  aboutUsDropdown,
 } from './constants';
 import NavBarDropdown from './NavbarDropdown';
 
@@ -18,24 +18,25 @@ const NAV_LIST = 'navList';
 const WHO_WE_SERVE = 'whoWeServe';
 const HOW_WE_HELP = 'howWeHelp';
 const WHAT_WE_OFFER = 'whatWeOffer';
-const RESOURCES = 'resources';
+const ABOUT_US = 'aboutUs';
 
-type Section = 'navList' | 'whoWeServe' | 'howWeHelp' | 'whatWeOffer' | 'resources';
+type Section = 'navList' | 'whoWeServe' | 'howWeHelp' | 'whatWeOffer' | 'aboutUs';
 
 const DEFAULT_STATE: Record<Section, boolean> = {
   [NAV_LIST]: false,
   [WHO_WE_SERVE]: false,
   [HOW_WE_HELP]: false,
   [WHAT_WE_OFFER]: false,
-  [RESOURCES]: false,
+  [ABOUT_US]: false,
 };
 
 export type NavBarProps = {
   site: string;
   utmContext: string;
+  SearchComponent?: JSX.Element;
 };
 
-const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
+const NavBar = ({ site, utmContext, SearchComponent }: NavBarProps): JSX.Element => {
   const [showClass, setShowClass] = useState(DEFAULT_STATE);
 
   const handleClick = (sectionName: Section): void => {
@@ -109,6 +110,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
             />
           </a>
         </div>
+        {SearchComponent}
         <nav id="site-navigation" className={'fdsNavbar-navigation'}>
           <div className={'fdsNavbar-navMenuButton'}>
             <IconButton
@@ -128,7 +130,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
               ])}
             >
               <li className={'fdsNavbar-navBarListItem'}>
-                <a className={'fdsNavbar-dropdownItemLink'}>Who We Serve</a>
+                <div className={'fdsNavbar-dropdownItemLink'}>Who We Serve</div>
                 <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.whoWeServe, WHO_WE_SERVE)}
                 </span>
@@ -138,7 +140,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                 />
               </li>
               <li className={'fdsNavbar-navBarListItem'}>
-                <a className={'fdsNavbar-dropdownItemLink'}>How We Help</a>
+                <div className={'fdsNavbar-dropdownItemLink'}>How We Help</div>
                 <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.howWeHelp, HOW_WE_HELP)}
                 </span>
@@ -148,7 +150,7 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                 />
               </li>
               <li className={'fdsNavbar-navBarListItem'}>
-                <a className={'fdsNavbar-dropdownItemLink'}>What We Offer</a>
+                <div className={'fdsNavbar-dropdownItemLink'}>What We Offer</div>
                 <span className={'fdsNavbar-dropdownButton'}>
                   {getArrowUpOrDown(showClass.whatWeOffer, WHAT_WE_OFFER)}
                 </span>
@@ -158,19 +160,14 @@ const NavBar = ({ site, utmContext }: NavBarProps): JSX.Element => {
                 />
               </li>
               <li className={'fdsNavbar-navBarListItem'}>
-                <a className={'fdsNavbar-dropdownItemLink'}>Resources</a>
+                <div className={'fdsNavbar-dropdownItemLink'}>About Us</div>
                 <span className={'fdsNavbar-dropdownButton'}>
-                  {getArrowUpOrDown(showClass.resources, RESOURCES)}
+                  {getArrowUpOrDown(showClass.aboutUs, ABOUT_US)}
                 </span>
                 <NavBarDropdown
-                  content={resourcesDropdown(site)}
-                  showDropdown={showClass.resources}
+                  content={aboutUsDropdown(site)}
+                  showDropdown={showClass.aboutUs}
                 />
-              </li>
-              <li className={'fdsNavbar-navBarListItem'}>
-                <a className={'fdsNavbar-dropdownItemLink'} href={`${site}/about/`}>
-                  About Us
-                </a>
               </li>
             </ul>
             <a

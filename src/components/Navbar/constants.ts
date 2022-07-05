@@ -79,32 +79,37 @@ export const whoWeServeDropdown = (site: string): DropdownMenu[] => [
       },
     ],
   },
+  {
+    itemName: 'Success Stories',
+    url: `${site}/resources/case-studies/`,
+    subMenu: [],
+  },
 ];
 
 export const howWeHelpDropdown = (site: string): DropdownMenu[] => [
   {
-    itemName: 'Create Tech Strategy',
+    itemName: 'Understand Tech Markets',
+    url: `${site}/how-we-help/understand-tech-markets/`,
+    subMenu: [],
+  },
+  {
+    itemName: 'Anticipate Competitor Strategy',
+    url: `${site}/how-we-help/competitor-strategy/`,
+    subMenu: [],
+  },
+  {
+    itemName: 'Determine Tech Strategy',
     url: `${site}/how-we-help/create-tech-strategy/`,
     subMenu: [],
   },
   {
-    itemName: 'Find Tech Vendors',
+    itemName: 'Connect with Tech Vendors & Partners',
     url: `${site}/how-we-help/find-tech-vendors/`,
     subMenu: [],
   },
   {
     itemName: 'Turbocharge Digital Transformation',
-    url: `${site}/how-we-help/identify-disruptors/`,
-    subMenu: [],
-  },
-  {
-    itemName: 'Track Competitors',
-    url: `${site}/how-we-help/track-competitors/`,
-    subMenu: [],
-  },
-  {
-    itemName: 'Understand Tech Markets',
-    url: `${site}/how-we-help/understand-tech-markets/`,
+    url: `${site}/how-we-help/digital-transformation/`,
     subMenu: [],
   },
 ];
@@ -148,26 +153,57 @@ export const whatWeOfferDropdown = (site: string): DropdownMenu[] => [
     subMenu: [],
   },
   {
-    itemName: 'Our Pricing',
-    url: `${site}/what-we-offer/pricing/`,
-    subMenu: [],
-  },
-  {
     itemName: 'API & Data Feeds',
     url: `${site}/what-we-offer/api-data-feeds/`,
     subMenu: [],
   },
-];
-
-export const resourcesDropdown = (site: string): DropdownMenu[] => [
   {
-    itemName: 'Success Stories',
-    url: `${site}/resources/case-studies/`,
+    itemName: 'Analyst Briefings',
+    url: `${site}/what-we-offer/technology-vendors//`,
     subMenu: [],
   },
   {
-    itemName: 'Events',
-    url: `https://events.cbinsights.com/`,
+    itemName: 'Pricing',
+    url: `${site}/what-we-offer/pricing/`,
+    subMenu: [],
+  },
+];
+
+export const aboutUsDropdown = (site: string): DropdownMenu[] => [
+  {
+    itemName: 'Overview',
+    url: `${site}/about/`,
+    subMenu: [],
+  },
+  {
+    itemName: 'Our teams',
+    url: `${site}/about/`,
+    subMenu: [
+      {
+        itemName: 'Business Development',
+        url: `${site}/about/business-development/`,
+      },
+      {
+        itemName: 'Engineering',
+        url: `${site}/about/engineering/`,
+      },
+      {
+        itemName: 'Operations',
+        url: `${site}/about/operations/`,
+      },
+      {
+        itemName: 'Product',
+        url: `${site}/about/product/`,
+      },
+      {
+        itemName: 'See all →',
+        url: `${site}/about/#work-with-us`,
+      },
+    ],
+  },
+  {
+    itemName: 'Open Jobs',
+    url: `${site}/about/#work-with-us`,
     subMenu: [],
   },
 ];
