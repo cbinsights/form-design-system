@@ -228,7 +228,7 @@
     "@radix-ui/react-popover": "0.1.6",
     "@radix-ui/react-tooltip": "0.1.7",
     "@reach/menu-button": "0.17.0",
-    "autosuggest-highlight": "3.2.1",
+    "autosuggest-highlight": "3.3.0",
     "classcat": "5.0.3",
     "focus-trap-react": "8.11.3",
     "raf-schd": "4.0.3",
