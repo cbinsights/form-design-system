@@ -122,7 +122,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     }, [interactionMode, isOpen]);
 
     let triggerProps: HTMLAttributes<HTMLElement> = {};
-    let hoverTimeout: number;
+    let hoverTimeout: NodeJS.Timeout;
     switch (interactionMode) {
       case 'hover':
         triggerProps.onMouseEnter = () => {
@@ -192,7 +192,9 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
         open={isActive}
         onOpenChange={!isControlled ? handleChange : undefined}
       >
-        <RadixPopover.Trigger asChild>{clonedTrigger}</RadixPopover.Trigger>
+        <RadixPopover.Trigger asChild>
+          <div>{clonedTrigger}</div>
+        </RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
           className={cc([{ 'ease-in-out': !closeOnScrollRef }])}
