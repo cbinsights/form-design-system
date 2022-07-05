@@ -97,7 +97,7 @@
     "@storybook/core-events": "6.5.9",
     "@storybook/react": "6.5.9",
     "@storybook/theming": "6.5.9",
-    "@testing-library/dom": "8.13.0",
+    "@testing-library/dom": "8.14.0",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "12.1.5",
     "@testing-library/user-event": "13.5.0",
@@ -228,7 +228,7 @@
     "@radix-ui/react-popover": "0.1.6",
     "@radix-ui/react-tooltip": "0.1.7",
     "@reach/menu-button": "0.17.0",
-    "autosuggest-highlight": "3.2.1",
+    "autosuggest-highlight": "3.3.0",
     "classcat": "5.0.3",
     "focus-trap-react": "8.11.3",
     "raf-schd": "4.0.3",
@@ -242,7 +242,7 @@
   },
   "packageManager": "yarn@3.2.0",
   "engines": {
-    "npm": "8.12.1",
+    "npm": "8.13.2",
     "node": ">=16 <17"
   }
 }
