@@ -3738,7 +3738,7 @@ __metadata:
     "@types/webpack": 5.28.0
     "@typescript-eslint/eslint-plugin": 5.30.5
     "@typescript-eslint/parser": 5.30.5
-    autosuggest-highlight: 3.2.1
+    autosuggest-highlight: 3.3.0
     babel-eslint: 10.1.0
     babel-jest: 28.1.2
     babel-loader: 8.2.5
@@ -9979,12 +9979,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autosuggest-highlight@npm:3.2.1":
-  version: 3.2.1
-  resolution: "autosuggest-highlight@npm:3.2.1"
+"autosuggest-highlight@npm:3.3.0":
+  version: 3.3.0
+  resolution: "autosuggest-highlight@npm:3.3.0"
   dependencies:
-    diacritic: 0.0.2
-  checksum: 0d711e536dcc3780b3bd3e18b3dcf7915d17d4eaa8e14238a8622b2247d6f28c4a5ae133fd01dacb1ba1afaebc35ceede4f7ca858db0ec3a0c351280212cdae0
+    remove-accents: ^0.4.2
+  checksum: d42fa55add7c0544b564e3c49f70c177c99c136c6120ccc8056bb45887b4536c69ed7168c426931052f267c723f71e4817bcf4714a2c66e693d5b87fc17024dc
   languageName: node
   linkType: hard
 
@@ -13136,13 +13136,6 @@ __metadata:
     asap: ^2.0.0
     wrappy: 1
   checksum: 8b26238db91423b2702a7a6d9629d0019c37c415e7b6e75d4b3e8d27e9464e21cac3618dd145f4d4ee96c70cc6ff034227b5b8a0e9c09015a8bdbe6dace3cfb9
-  languageName: node
-  linkType: hard
-
-"diacritic@npm:0.0.2":
-  version: 0.0.2
-  resolution: "diacritic@npm:0.0.2"
-  checksum: 0242731039aefa2ef4b81cc9a2687ed0f6257d23c1aa78c052aad60f3e3851863e2344fa4c7ead094d59d6086ce5f2581a1f544bfd1c5db90267317acdd02222
   languageName: node
   linkType: hard
 
@@ -24198,6 +24191,13 @@ __metadata:
   dependencies:
     mdast-squeeze-paragraphs: ^4.0.0
   checksum: 2071eb74d0ecfefb152c4932690a9fd950c3f9f798a676f1378a16db051da68fb20bf288688cc153ba5019dded35408ff45a31dfe9686eaa7a9f1df9edbb6c81
+  languageName: node
+  linkType: hard
+
+"remove-accents@npm:^0.4.2":
+  version: 0.4.2
+  resolution: "remove-accents@npm:0.4.2"
+  checksum: 84a6988555dea24115e2d1954db99509588d43fe55a1590f0b5894802776f7b488b3151c37ceb9e4f4b646f26b80b7325dcea2fae58bc3865df146e1fa606711
   languageName: node
   linkType: hard
 
