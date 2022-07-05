@@ -128,7 +128,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:26.5.3"],\
             ["eslint-plugin-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.30.1"],\
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.13"],\
-            ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.11.3"],\
+            ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.2"],\
             ["fs-extra", "npm:10.1.0"],\
             ["glob", "npm:8.0.3"],\
             ["handlebars", "npm:4.7.7"],\
@@ -6450,7 +6450,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:26.5.3"],\
             ["eslint-plugin-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:7.30.1"],\
             ["eslint-plugin-storybook", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:0.5.13"],\
-            ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.11.3"],\
+            ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.2"],\
             ["fs-extra", "npm:10.1.0"],\
             ["glob", "npm:8.0.3"],\
             ["handlebars", "npm:4.7.7"],\
@@ -21011,24 +21011,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["focus-trap-react", [\
-        ["npm:8.11.3", {\
-          "packageLocation": "./.yarn/cache/focus-trap-react-npm-8.11.3-a7302c9217-d293b0645b.zip/node_modules/focus-trap-react/",\
+        ["npm:9.0.2", {\
+          "packageLocation": "./.yarn/cache/focus-trap-react-npm-9.0.2-0de3354db4-984a7f1ea8.zip/node_modules/focus-trap-react/",\
           "packageDependencies": [\
-            ["focus-trap-react", "npm:8.11.3"]\
+            ["focus-trap-react", "npm:9.0.2"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.11.3", {\
-          "packageLocation": "./.yarn/__virtual__/focus-trap-react-virtual-979e2e2b7d/0/cache/focus-trap-react-npm-8.11.3-a7302c9217-d293b0645b.zip/node_modules/focus-trap-react/",\
+        ["virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.2", {\
+          "packageLocation": "./.yarn/__virtual__/focus-trap-react-virtual-40d79888de/0/cache/focus-trap-react-npm-9.0.2-0de3354db4-984a7f1ea8.zip/node_modules/focus-trap-react/",\
           "packageDependencies": [\
-            ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.11.3"],\
+            ["focus-trap-react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:9.0.2"],\
             ["@types/prop-types", "npm:15.7.5"],\
             ["@types/react", "npm:17.0.44"],\
             ["@types/react-dom", "npm:18.0.3"],\
             ["focus-trap", "npm:6.9.4"],\
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:16.14.0"],\
-            ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"]\
+            ["react-dom", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:16.14.0"],\
+            ["tabbable", "npm:5.3.3"]\
           ],\
           "packagePeers": [\
             "@types/prop-types",\
