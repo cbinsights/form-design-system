@@ -3,6 +3,9 @@ import State from 'util/storybook-docs/State';
 import Button from 'components/Button';
 import { StoryObj } from '@storybook/react';
 import Popover, { PopoverProps } from '.';
+import DropdownButton from 'components/DropdownButton';
+import FlexItem from 'components/FlexItem';
+import Flex from 'components/Flex';
 
 export const Primary: StoryObj<PopoverProps> = {
   args: {
@@ -66,9 +69,8 @@ export const ControlledPopover: StoryObj<PopoverProps> = {
     <State
       initialValue={true}
       render={(myIsOpen, setMyIsOpen) => (
-        <Popover
-          {...args}
-          trigger={
+        <Flex>
+          <FlexItem>
             <button
               onClick={() => {
                 setMyIsOpen(!myIsOpen);
@@ -76,20 +78,26 @@ export const ControlledPopover: StoryObj<PopoverProps> = {
             >
               Open popover
             </button>
-          }
-          position="bottom"
-          alignment="start"
-          interactionMode="controlled"
-          isOpen={myIsOpen}
-          distance={8}
-        >
-          <div className="bgColor--white rounded--all elevation--2 padding--all">
-            <h3 className="type--head3">Look at me</h3>
-            <p>
-              <em>i am the popover</em>
-            </p>
-          </div>
-        </Popover>
+          </FlexItem>
+          <FlexItem>
+            <Popover
+              {...args}
+              trigger={<button>im the anchor</button>}
+              position="bottom"
+              alignment="start"
+              interactionMode="controlled"
+              isOpen={myIsOpen}
+              distance={8}
+            >
+              <div className="bgColor--white rounded--all elevation--2 padding--all">
+                <h3 className="type--head3">Look at me</h3>
+                <p>
+                  <em>i am the popover</em>
+                </p>
+              </div>
+            </Popover>
+          </FlexItem>
+        </Flex>
       )}
     />
   ),
@@ -233,6 +241,39 @@ export const DisableScrolling: StoryObj<PopoverProps> = {
           "If you'd like to disable scrolling of some element when a popover is open you can pass a ref of the scrolling element to the `disableScrollRef` prop.",
       },
     },
+  },
+};
+
+export const WithDropdown = {
+  render: (args: PopoverProps): JSX.Element => {
+    const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
+
+    return (
+      <Popover
+        {...args}
+        trigger={
+          <DropdownButton>
+            {!isPopoverOpen ? 'Popover is closed' : 'Popover is open'}
+          </DropdownButton>
+        }
+        position="bottom"
+        alignment="start"
+        distance={8}
+        onOpen={() => {
+          setIsPopoverOpen(true);
+        }}
+        onClose={() => {
+          setIsPopoverOpen(false);
+        }}
+      >
+        <div className="bgColor--white rounded--all elevation--2 padding--all">
+          <h3 className="type--head3">Look at me</h3>
+          <p>
+            <em>i am the popover</em>
+          </p>
+        </div>
+      </Popover>
+    );
   },
 };
 
