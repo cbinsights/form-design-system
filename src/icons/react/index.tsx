@@ -103,6 +103,7 @@ import MailIcon from './MailIcon';
 import MarketMapIcon from './MarketMapIcon';
 import MenuCloseIcon from './MenuCloseIcon';
 import MenuOpenIcon from './MenuOpenIcon';
+import MicroscopeIcon from './MicroscopeIcon';
 import MinusIcon from './MinusIcon';
 import MoreIcon from './MoreIcon';
 import MoveIcon from './MoveIcon';
@@ -295,6 +296,7 @@ export {
   MarketMapIcon,
   MenuCloseIcon,
   MenuOpenIcon,
+  MicroscopeIcon,
   MinusIcon,
   MoreIcon,
   MoveIcon,
