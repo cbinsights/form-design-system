@@ -3,6 +3,7 @@ import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Popover from '.';
+import ComponentWithoutRef from './ComponentWithoutRef';
 
 describe('Popover component', () => {
   it('tests that trigger text gets rendered', () => {
@@ -115,5 +116,60 @@ describe('Popover component', () => {
 
     userEvent.click(screen.getByText('trigger'));
     expect(screen.getByTestId('containerEl')).toHaveStyle(`overflow: hidden`);
+  });
+
+  it("opens even when trigger element doesn't take a ref", () => {
+    render(
+      <Popover trigger={<ComponentWithoutRef>i am the trigger</ComponentWithoutRef>}>
+        <div>i am the popover</div>
+      </Popover>
+    );
+
+    const trigger = screen.getByText('i am the trigger');
+    userEvent.click(trigger);
+    expect(screen.getByText('i am the popover')).toBeInTheDocument();
+  });
+
+  it('triggers onOpen callback when Popover opens and onClose callback when Popover closes for uncontrolled', () => {
+    const mockOnOpen = jest.fn();
+    const mockOnClose = jest.fn();
+
+    render(
+      <Popover
+        trigger={<button>trigger</button>}
+        onClose={mockOnClose}
+        onOpen={mockOnOpen}
+      >
+        <div>i am the popover</div>
+      </Popover>
+    );
+    const trigger = screen.getByText('trigger');
+    userEvent.click(trigger);
+    expect(mockOnOpen).toBeCalledTimes(1);
+    userEvent.click(trigger);
+    expect(mockOnClose).toBeCalledTimes(1);
+  });
+
+  it("doesn't open Popover or trigger callbacks for controlled", () => {
+    const mockOnOpen = jest.fn();
+    const mockOnClose = jest.fn();
+
+    render(
+      <Popover
+        trigger={<button>trigger</button>}
+        onClose={mockOnClose}
+        onOpen={mockOnOpen}
+        interactionMode={'controlled'}
+        isOpen={false}
+      >
+        <div>i am the popover</div>
+      </Popover>
+    );
+    const trigger = screen.getByText('trigger');
+    userEvent.click(trigger);
+    expect(screen.queryByText('i am the popover')).not.toBeInTheDocument();
+    expect(mockOnOpen).toBeCalledTimes(0);
+    userEvent.click(trigger);
+    expect(mockOnClose).toBeCalledTimes(0);
   });
 });

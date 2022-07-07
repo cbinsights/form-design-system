@@ -6,6 +6,7 @@ import Popover, { PopoverProps } from '.';
 import DropdownButton from 'components/DropdownButton';
 import FlexItem from 'components/FlexItem';
 import Flex from 'components/Flex';
+import ComponentWithoutRef from './ComponentWithoutRef';
 
 export const Primary: StoryObj<PopoverProps> = {
   args: {
@@ -265,6 +266,27 @@ export const WithDropdown = {
         onClose={() => {
           setIsPopoverOpen(false);
         }}
+      >
+        <div className="bgColor--white rounded--all elevation--2 padding--all">
+          <h3 className="type--head3">Look at me</h3>
+          <p>
+            <em>i am the popover</em>
+          </p>
+        </div>
+      </Popover>
+    );
+  },
+};
+
+export const TriggerWithoutRef = {
+  render: (args: PopoverProps): JSX.Element => {
+    return (
+      <Popover
+        {...args}
+        trigger={<ComponentWithoutRef>{"I'm a trigger"}</ComponentWithoutRef>}
+        position="bottom"
+        alignment="start"
+        distance={8}
       >
         <div className="bgColor--white rounded--all elevation--2 padding--all">
           <h3 className="type--head3">Look at me</h3>
