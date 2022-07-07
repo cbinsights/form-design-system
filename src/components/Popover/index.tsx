@@ -193,7 +193,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     return (
       <RadixPopover.Root open={isActive} onOpenChange={handleChange}>
         <RadixPopover.Trigger asChild>
-          <div>{clonedTrigger}</div>
+          <div className="display--inlineFlex div--100">{clonedTrigger}</div>
         </RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
@@ -201,7 +201,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
           align={alignment}
           side={position}
           sideOffset={distance}
-          portalled={!disablePortal} // some places in cbi-site need to pass this prop
+          portalled={!disablePortal}
           onEscapeKeyDown={onUserDismiss}
           onInteractOutside={onUserDismiss}
           avoidCollisions
