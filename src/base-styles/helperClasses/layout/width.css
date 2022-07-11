@@ -5,3 +5,7 @@
 .span--50 {
   width: 50% !important;
 }
+
+.div--100 {
+  width: 100%;
+}

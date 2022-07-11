@@ -84,6 +84,7 @@ import HelpIcon from './HelpIcon';
 import HideIcon from './HideIcon';
 import HistoryIcon from './HistoryIcon';
 import HomeIcon from './HomeIcon';
+import HourglassIcon from './HourglassIcon';
 import ImageIcon from './ImageIcon';
 import ImportIcon from './ImportIcon';
 import InformationIcon from './InformationIcon';
@@ -102,6 +103,7 @@ import MailIcon from './MailIcon';
 import MarketMapIcon from './MarketMapIcon';
 import MenuCloseIcon from './MenuCloseIcon';
 import MenuOpenIcon from './MenuOpenIcon';
+import MicroscopeIcon from './MicroscopeIcon';
 import MinusIcon from './MinusIcon';
 import MoreIcon from './MoreIcon';
 import MoveIcon from './MoveIcon';
@@ -275,6 +277,7 @@ export {
   HideIcon,
   HistoryIcon,
   HomeIcon,
+  HourglassIcon,
   ImageIcon,
   ImportIcon,
   InformationIcon,
@@ -293,6 +296,7 @@ export {
   MarketMapIcon,
   MenuCloseIcon,
   MenuOpenIcon,
+  MicroscopeIcon,
   MinusIcon,
   MoreIcon,
   MoveIcon,

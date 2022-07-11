@@ -1,4 +1,5 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
+import * as RadixAvatar from '@radix-ui/react-avatar';
 import cc from 'classcat';
 import baseElement from 'util/baseElement';
 import Icon from 'components/Icon';
@@ -65,7 +66,7 @@ export interface AvatarProps
   href?: string;
 }
 
-const Avatar = forwardRef(
+const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
   (
     {
       bgColor = 'purple',
@@ -99,31 +100,33 @@ const Avatar = forwardRef(
     };
 
     return (
-      <Element
-        {...rest}
-        ref={ref}
-        role={Element === 'div' ? 'img' : undefined}
-        aria-label={ariaLabel}
-        title={cleanName || 'Placeholder Avatar'}
-        className={cc([
-          {
-            'border--focus': Element !== 'div',
-            'color--white': (DARK_COLORS as ReadonlyArray<string>).includes(bgColor),
-          },
-          'fdsAvatar',
-          'alignChild--center--center',
-          `bgColor--${bgColor}`,
-          `fdsAvatar--${size}`,
-          `fdsAvatar--${radius}`,
-        ])}
-      >
-        {imgUrl && (
-          <span className="fdsAvatar-img" style={{ backgroundImage: `url(${imgUrl})` }} />
-        )}
-        {cleanName && grabInitials(cleanName, initialsLength)}
-        {!(cleanName || imgUrl) && PlaceholderIcon && (
-          <PlaceholderIcon customSize={placeholderIconSize()} />
-        )}
+      <Element href={rest.href}>
+        <RadixAvatar.Root
+          {...rest}
+          ref={ref}
+          role={Element === 'div' ? 'img' : undefined}
+          aria-label={ariaLabel}
+          title={cleanName || 'Placeholder Avatar'}
+          className={cc([
+            {
+              'border--focus': Element !== 'div',
+              'color--white': (DARK_COLORS as ReadonlyArray<string>).includes(bgColor),
+            },
+            'fdsAvatar',
+            'alignChild--center--center',
+            !imgUrl && `bgColor--${bgColor}`,
+            `fdsAvatar--${size}`,
+            `fdsAvatar--${radius}`,
+          ])}
+        >
+          <RadixAvatar.Image className="fdsAvatar-img" src={imgUrl} />
+          {!imgUrl && cleanName && grabInitials(cleanName, initialsLength)}
+          <RadixAvatar.Fallback delayMs={400}>
+            {!(cleanName || imgUrl) && PlaceholderIcon && (
+              <PlaceholderIcon customSize={placeholderIconSize()} />
+            )}
+          </RadixAvatar.Fallback>
+        </RadixAvatar.Root>
       </Element>
     );
   }
