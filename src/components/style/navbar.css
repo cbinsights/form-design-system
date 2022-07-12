@@ -175,7 +175,7 @@
   align-items: center;
   min-height: 70px;
   color: var(--color-white);
-  padding: 0 var(--space-xl);
+  padding: 0 var(--space-m);
 }
 
 .fdsNavbar-navBarListItem {
@@ -216,7 +216,7 @@
 }
 
 .fdsNavbar-siteBranding {
-  padding: 26px 0;
+  padding-right: var(--space-m);
 }
 
 .fdsNavbar-navigation {
@@ -308,7 +308,7 @@
   }
 
   .fdsNavbar-container {
-    padding: 0 40px;
+    padding: 0 var(--space-xl);
   }
 }
 
@@ -320,7 +320,7 @@
 
 @media screen and (min-width: 1440px) {
   .fdsNavbar-container {
-    padding: 0 100px;
+    padding: 0 var(--space-xl);
   }
 }
 
