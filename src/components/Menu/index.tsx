@@ -4,11 +4,11 @@ import Item from './MenuItem';
 import Trigger from './MenuTrigger';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
-export type MenuProps = Omit<DropdownMenu.DropdownMenuProps, 'modal' | 'dir'>;
+export type MenuProps = Omit<DropdownMenu.DropdownMenuProps, 'dir'>;
 
-const Menu = ({ children, ...rest }: MenuProps): JSX.Element => {
+const Menu = ({ children, modal = true, ...rest }: MenuProps): JSX.Element => {
   return (
-    <DropdownMenu.Root {...rest} modal dir={'ltr'}>
+    <DropdownMenu.Root {...rest} modal={modal} dir={'ltr'}>
       {children}
     </DropdownMenu.Root>
   );
