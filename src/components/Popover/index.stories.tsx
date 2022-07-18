@@ -89,6 +89,9 @@ export const ControlledPopover: StoryObj<PopoverProps> = {
               interactionMode="controlled"
               isOpen={myIsOpen}
               distance={8}
+              onUserDismiss={() => {
+                setMyIsOpen(false);
+              }}
             >
               <div className="bgColor--white rounded--all elevation--2 padding--all">
                 <h3 className="type--head3">Look at me</h3>

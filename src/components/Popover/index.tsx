@@ -85,26 +85,37 @@ export interface PopoverProps {
 
   /** Ref to forward to the content container of the popover */
   ref?: RefObject<HTMLDivElement>;
+
+  /**
+   * The modality of the popover. When set to `true`, interaction with outside elements will be disabled and only popover content will be visible to screen readers.
+   * Defaults to true.
+   */
+  modal?: boolean;
 }
+
+// function isInteractOutsideEvent(event: ): event is InteractOutsideEvent {
+
+// }
 
 const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
   (
     {
-      interactionMode = 'click',
-      disablePortal,
-      position = 'bottom',
       alignment = 'start',
-      distance = 4,
-      delay = 0,
-      onUserDismiss = () => {},
-      onOpen = () => {},
-      onClose = () => {},
-      trigger,
       children,
-      isOpen = false,
-      transitionName,
-      disableScrollRef,
       closeOnScrollRef,
+      delay = 0,
+      disablePortal,
+      disableScrollRef,
+      distance = 4,
+      interactionMode = 'click',
+      isOpen = false,
+      modal = true,
+      onClose = () => {},
+      onOpen = () => {},
+      onUserDismiss = () => {},
+      position = 'bottom',
+      transitionName,
+      trigger,
     }: PopoverProps,
     forwardedRef
   ) => {
@@ -191,7 +202,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     };
 
     return (
-      <RadixPopover.Root open={isActive} onOpenChange={handleChange}>
+      <RadixPopover.Root open={isActive} onOpenChange={handleChange} modal={modal}>
         <RadixPopover.Trigger asChild>
           <div className="display--inlineFlex div--100">{clonedTrigger}</div>
         </RadixPopover.Trigger>
