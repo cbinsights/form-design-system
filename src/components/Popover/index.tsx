@@ -193,7 +193,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     return (
       <RadixPopover.Root open={isActive} onOpenChange={handleChange}>
         <RadixPopover.Trigger asChild>
-          <div className="display--inlineFlex div--100">{clonedTrigger}</div>
+          <div className="display--flex width--fit">{clonedTrigger}</div>
         </RadixPopover.Trigger>
         <RadixPopover.Content
           ref={refContent}
