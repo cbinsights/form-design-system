@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DateInput, { DateFormat } from '.';
@@ -13,7 +13,7 @@ describe('DateInput component', () => {
     inputChangeFn = null;
   });
 
-  it('calls onInputChange when the input value changes', async () => {
+  it('calls onInputChange when the input value changes', () => {
     dateChangeFn = jest.fn();
     inputChangeFn = jest.fn();
     render(
@@ -26,11 +26,11 @@ describe('DateInput component', () => {
 
     userEvent.click(screen.getByLabelText('Date Input'));
     expect(inputChangeFn).not.toHaveBeenCalled();
-    await userEvent.type(screen.getByRole('textbox'), '4');
+    userEvent.type(screen.getByRole('textbox'), '4');
     expect(inputChangeFn).toHaveBeenCalled();
   });
 
-  it('calls onDateChange when user types a VALID freeform date', async () => {
+  it('calls onDateChange when user types a VALID freeform date', () => {
     dateChangeFn = jest.fn();
     inputChangeFn = jest.fn();
     render(
@@ -43,12 +43,12 @@ describe('DateInput component', () => {
 
     userEvent.click(screen.getByLabelText('Date Input'));
     expect(dateChangeFn).not.toHaveBeenCalled();
-    await userEvent.clear(screen.getByRole('textbox'));
-    await userEvent.type(screen.getByRole('textbox'), '4/20/2020');
+    userEvent.clear(screen.getByRole('textbox'));
+    userEvent.type(screen.getByRole('textbox'), '4/20/2020');
     expect(dateChangeFn).toHaveBeenCalled();
   });
 
-  it('does not call onDateChange when user types an INCOMPLETE freeform date', async () => {
+  it('does not call onDateChange when user types an INCOMPLETE freeform date', () => {
     dateChangeFn = jest.fn();
     inputChangeFn = jest.fn();
     render(
@@ -61,11 +61,11 @@ describe('DateInput component', () => {
 
     userEvent.click(screen.getByLabelText('Date Input'));
     expect(dateChangeFn).not.toHaveBeenCalled();
-    await userEvent.type(screen.getByRole('textbox'), '2/3');
+    userEvent.type(screen.getByRole('textbox'), '2/3');
     expect(dateChangeFn).not.toHaveBeenCalled();
   });
 
-  it('does not call onDateChange when user types an INVALID freeform date', async () => {
+  it('does not call onDateChange when user types an INVALID freeform date', () => {
     dateChangeFn = jest.fn();
     inputChangeFn = jest.fn();
     render(
@@ -78,7 +78,7 @@ describe('DateInput component', () => {
 
     userEvent.click(screen.getByLabelText('Date Input'));
     expect(dateChangeFn).not.toHaveBeenCalled();
-    await userEvent.type(screen.getByRole('textbox'), '2/30/2020');
+    userEvent.type(screen.getByRole('textbox'), '2/30/2020');
     expect(dateChangeFn).not.toHaveBeenCalled();
   });
 
@@ -93,9 +93,6 @@ describe('DateInput component', () => {
         popoverProps={{ children: null, isOpen: true }}
       />
     );
-
-    userEvent.click(screen.getByLabelText('Date Input'));
-    expect(dateChangeFn).not.toHaveBeenCalled();
     userEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
     expect(dateChangeFn).toHaveBeenCalled();
   });
@@ -111,8 +108,6 @@ describe('DateInput component', () => {
         popoverProps={{ children: null, isOpen: true }}
       />
     );
-
-    userEvent.click(screen.getByLabelText('Date Input'));
     userEvent.click(screen.getByRole('gridcell', { name: 'Tue Jul 07 2020' }));
     expect(screen.getByDisplayValue('07/07/2020')).toBeInTheDocument();
   });
@@ -125,16 +120,16 @@ describe('DateInput component', () => {
         onDateChange={dateChangeFn}
         onInputChange={inputChangeFn}
         defaultDate="2020-07-07"
-        popoverProps={{ children: null, isOpen: true }}
       />
     );
-
-    userEvent.click(screen.getByLabelText('Date Input'));
-    expect(dateChangeFn).not.toHaveBeenCalled();
-    expect(
+    screen.getByRole('textbox').focus();
+    await waitFor(() => {
+      screen.getByRole('gridcell', { selected: true, name: 'Tue Jul 07 2020' });
+    });
+    userEvent.click(
       screen.getByRole('gridcell', { selected: true, name: 'Tue Jul 07 2020' })
-    ).toBeInTheDocument();
-    await userEvent.clear(screen.getByRole('textbox'));
+    );
+    userEvent.clear(screen.getByRole('textbox'));
     // did the callback fire with null?
     expect(dateChangeFn).toHaveBeenCalledWith(null);
     // is the date cleared in the picker?
