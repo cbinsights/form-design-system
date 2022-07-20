@@ -90,21 +90,21 @@ export interface PopoverProps {
 const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
   (
     {
-      interactionMode = 'click',
-      disablePortal,
-      position = 'bottom',
       alignment = 'start',
-      distance = 4,
-      delay = 0,
-      onUserDismiss = () => {},
-      onOpen = () => {},
-      onClose = () => {},
-      trigger,
       children,
-      isOpen = false,
-      transitionName,
-      disableScrollRef,
       closeOnScrollRef,
+      delay = 0,
+      disablePortal,
+      disableScrollRef,
+      distance = 4,
+      interactionMode = 'click',
+      isOpen = false,
+      onClose = () => {},
+      onOpen = () => {},
+      onUserDismiss = () => {},
+      position = 'bottom',
+      transitionName,
+      trigger,
     }: PopoverProps,
     forwardedRef
   ) => {
@@ -123,37 +123,34 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       setIsActive(isControlled && !!isOpen);
     }, [interactionMode, isOpen]);
 
-    let triggerProps: HTMLAttributes<HTMLElement> = {};
+    const triggerProps: HTMLAttributes<HTMLElement> = {
+      style: isActive && isControlled ? { pointerEvents: 'none' } : {},
+    };
     let hoverTimeout: NodeJS.Timeout;
-    switch (interactionMode) {
-      case 'hover':
-        triggerProps.onMouseEnter = () => {
-          if (delay > 0) {
-            hoverTimeout = setTimeout(handleChange, delay, true);
-          } else {
-            handleChange(true);
-          }
-        };
-        triggerProps.onMouseLeave = () => {
-          if (hoverTimeout) {
-            clearTimeout(hoverTimeout);
-          }
-          handleChange(false);
-        };
-        triggerProps.onClick = (e) => {
-          e.stopPropagation();
-          handleChange(false);
-        };
-        triggerProps.tabIndex = 1;
-        break;
-      case 'click':
-        triggerProps.onClick = (e) => {
-          e.stopPropagation();
-          handleChange(!isActive);
-        };
-        break;
-      default:
-        triggerProps = {};
+    if (interactionMode === 'hover') {
+      triggerProps.onMouseEnter = () => {
+        if (delay > 0) {
+          hoverTimeout = setTimeout(handleChange, delay, true);
+        } else {
+          handleChange(true);
+        }
+      };
+      triggerProps.onMouseLeave = () => {
+        if (hoverTimeout) {
+          clearTimeout(hoverTimeout);
+        }
+        handleChange(false);
+      };
+      triggerProps.onClick = (e) => {
+        e.stopPropagation();
+        handleChange(false);
+      };
+      triggerProps.tabIndex = 1;
+    } else if (interactionMode === 'click') {
+      triggerProps.onClick = (e) => {
+        e.stopPropagation();
+        handleChange(!isActive);
+      };
     }
 
     const clonedTrigger = React.cloneElement(trigger, triggerProps);
