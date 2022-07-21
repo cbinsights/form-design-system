@@ -124,8 +124,12 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
     }, [interactionMode, isOpen]);
 
     const triggerProps: HTMLAttributes<HTMLElement> = {
-      style: isActive && isControlled ? { pointerEvents: 'none' } : {},
+      style:
+        isActive && isControlled
+          ? { ...trigger.props.style, pointerEvents: 'none' }
+          : trigger.props.style,
     };
+
     let hoverTimeout: NodeJS.Timeout;
     if (interactionMode === 'hover') {
       triggerProps.onMouseEnter = () => {
