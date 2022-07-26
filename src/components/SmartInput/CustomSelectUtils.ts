@@ -98,7 +98,7 @@ export const customStyles = (
     }),
     control: (base) => ({
       ...base,
-      paddingLeft: useStylesForHeader ? '12px' : FDS.SPACE_XS,
+      paddingLeft: useStylesForHeader ? '12px' : FDS.SPACE_S,
       border: 'none !important',
       boxShadow: 'none',
       borderRadius: useStylesForHeader
