@@ -3835,7 +3835,7 @@ __metadata:
     "@types/prop-types": 15.7.5
     "@types/raf-schd": 4.0.1
     "@types/react": 17.0.44
-    "@types/react-dom": 18.0.3
+    "@types/react-dom": 18.0.6
     "@types/react-is": 17.0.3
     "@types/react-transition-group": 4.4.5
     "@types/rimraf": 3.0.2
@@ -8131,12 +8131,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.0.3":
-  version: 18.0.3
-  resolution: "@types/react-dom@npm:18.0.3"
+"@types/react-dom@npm:18.0.6":
+  version: 18.0.6
+  resolution: "@types/react-dom@npm:18.0.6"
   dependencies:
     "@types/react": "*"
-  checksum: 5c87fb610e212f0942ebbf522dfca4c9dc2ac8afa4c601454415e7c42f993518868207faff7658d11974142937ba7af2f80e274c3a3f5e0e697bdd5547dbe1b0
+  checksum: db571047af1a567631758700b9f7d143e566df939cfe5fbf7535347cc0c726a1cdbb5e3f8566d076e54cf708b6c1166689de194a9ba09ee35efc9e1d45911685
   languageName: node
   linkType: hard
 
