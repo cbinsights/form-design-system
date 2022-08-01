@@ -98,7 +98,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-is", "npm:17.0.3"],\
             ["@types/react-transition-group", "npm:4.4.5"],\
             ["@types/rimraf", "npm:3.0.2"],\
-            ["@types/semantic-release", "npm:17.2.3"],\
+            ["@types/semantic-release", "npm:17.2.4"],\
             ["@types/svgo", "npm:1.3.6"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@types/testing-library__user-event", "npm:4.2.0"],\
@@ -7637,7 +7637,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-is", "npm:17.0.3"],\
             ["@types/react-transition-group", "npm:4.4.5"],\
             ["@types/rimraf", "npm:3.0.2"],\
-            ["@types/semantic-release", "npm:17.2.3"],\
+            ["@types/semantic-release", "npm:17.2.4"],\
             ["@types/svgo", "npm:1.3.6"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@types/testing-library__user-event", "npm:4.2.0"],\
@@ -13911,10 +13911,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/semantic-release", [\
-        ["npm:17.2.3", {\
-          "packageLocation": "./.yarn/cache/@types-semantic-release-npm-17.2.3-01ef77e0de-6503c8484b.zip/node_modules/@types/semantic-release/",\
+        ["npm:17.2.4", {\
+          "packageLocation": "./.yarn/cache/@types-semantic-release-npm-17.2.4-7572d13dbb-b4a51db09f.zip/node_modules/@types/semantic-release/",\
           "packageDependencies": [\
-            ["@types/semantic-release", "npm:17.2.3"],\
+            ["@types/semantic-release", "npm:17.2.4"],\
             ["@types/node", "npm:14.0.27"]\
           ],\
           "linkType": "HARD"\

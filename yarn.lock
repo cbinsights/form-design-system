@@ -3839,7 +3839,7 @@ __metadata:
     "@types/react-is": 17.0.3
     "@types/react-transition-group": 4.4.5
     "@types/rimraf": 3.0.2
-    "@types/semantic-release": 17.2.3
+    "@types/semantic-release": 17.2.4
     "@types/svgo": 1.3.6
     "@types/testing-library__jest-dom": 5.14.5
     "@types/testing-library__user-event": 4.2.0
@@ -8241,12 +8241,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/semantic-release@npm:17.2.3":
-  version: 17.2.3
-  resolution: "@types/semantic-release@npm:17.2.3"
+"@types/semantic-release@npm:17.2.4":
+  version: 17.2.4
+  resolution: "@types/semantic-release@npm:17.2.4"
   dependencies:
     "@types/node": "*"
-  checksum: 6503c8484bd4736654fb518457f57f6e211c9b13f1a7485ff7a956f16e1bff3341a3073c851fd57e6055025ad1bac74f6ab8f206f8be871fbbfa2fb782c7e2b0
+  checksum: b4a51db09fdb3fb823c1c826f21fc519ee37e81e238591d853ff556adee714e125314c0786b1ce3e99c32c6751df17c7008cf0d9aad9559d30fd5291eb942a33
   languageName: node
   linkType: hard
 
