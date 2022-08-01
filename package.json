@@ -113,7 +113,7 @@
     "@types/jest": "28.1.4",
     "@types/mdx-js__react": "1.5.5",
     "@types/postcss-import": "14.0.0",
-    "@types/prettier": "2.6.3",
+    "@types/prettier": "2.6.4",
     "@types/prop-types": "15.7.5",
     "@types/raf-schd": "4.0.1",
     "@types/react": "17.0.44",
