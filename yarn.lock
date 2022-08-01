@@ -3848,7 +3848,7 @@ __metadata:
     "@types/webpack": 5.28.0
     "@typescript-eslint/eslint-plugin": 5.30.5
     "@typescript-eslint/parser": 5.30.5
-    autosuggest-highlight: 3.3.0
+    autosuggest-highlight: 3.3.4
     babel-eslint: 10.1.0
     babel-jest: 28.1.2
     babel-loader: 8.2.5
@@ -9926,12 +9926,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autosuggest-highlight@npm:3.3.0":
-  version: 3.3.0
-  resolution: "autosuggest-highlight@npm:3.3.0"
+"autosuggest-highlight@npm:3.3.4":
+  version: 3.3.4
+  resolution: "autosuggest-highlight@npm:3.3.4"
   dependencies:
     remove-accents: ^0.4.2
-  checksum: d42fa55add7c0544b564e3c49f70c177c99c136c6120ccc8056bb45887b4536c69ed7168c426931052f267c723f71e4817bcf4714a2c66e693d5b87fc17024dc
+  checksum: ec89d69770c65f4a6615d1443307553ca1d1b6d397bce4e2e488610a3c42ffc534b986424c362c84089865922c5713cba94be9fd74ed30e13bd5bbf47162c61d
   languageName: node
   linkType: hard
 

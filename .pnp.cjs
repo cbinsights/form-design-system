@@ -107,7 +107,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/webpack", "npm:5.28.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.30.5"],\
             ["@typescript-eslint/parser", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.30.5"],\
-            ["autosuggest-highlight", "npm:3.3.0"],\
+            ["autosuggest-highlight", "npm:3.3.4"],\
             ["babel-eslint", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:10.1.0"],\
             ["babel-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:28.1.2"],\
             ["babel-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.2.5"],\
@@ -7646,7 +7646,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/webpack", "npm:5.28.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.30.5"],\
             ["@typescript-eslint/parser", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.30.5"],\
-            ["autosuggest-highlight", "npm:3.3.0"],\
+            ["autosuggest-highlight", "npm:3.3.4"],\
             ["babel-eslint", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:10.1.0"],\
             ["babel-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:28.1.2"],\
             ["babel-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.2.5"],\
@@ -15902,10 +15902,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["autosuggest-highlight", [\
-        ["npm:3.3.0", {\
-          "packageLocation": "./.yarn/cache/autosuggest-highlight-npm-3.3.0-a21f94455c-d42fa55add.zip/node_modules/autosuggest-highlight/",\
+        ["npm:3.3.4", {\
+          "packageLocation": "./.yarn/cache/autosuggest-highlight-npm-3.3.4-4c3066be68-ec89d69770.zip/node_modules/autosuggest-highlight/",\
           "packageDependencies": [\
-            ["autosuggest-highlight", "npm:3.3.0"],\
+            ["autosuggest-highlight", "npm:3.3.4"],\
             ["remove-accents", "npm:0.4.2"]\
           ],\
           "linkType": "HARD"\
