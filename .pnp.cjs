@@ -74,7 +74,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/core-events", "npm:6.5.9"],\
             ["@storybook/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.5.9"],\
             ["@storybook/theming", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.5.9"],\
-            ["@testing-library/dom", "npm:8.14.0"],\
+            ["@testing-library/dom", "npm:8.16.0"],\
             ["@testing-library/jest-dom", "npm:5.16.4"],\
             ["@testing-library/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:12.1.5"],\
             ["@testing-library/user-event", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:13.5.0"],\
@@ -7613,7 +7613,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/core-events", "npm:6.5.9"],\
             ["@storybook/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.5.9"],\
             ["@storybook/theming", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:6.5.9"],\
-            ["@testing-library/dom", "npm:8.14.0"],\
+            ["@testing-library/dom", "npm:8.16.0"],\
             ["@testing-library/jest-dom", "npm:5.16.4"],\
             ["@testing-library/react", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:12.1.5"],\
             ["@testing-library/user-event", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:13.5.0"],\
@@ -13055,10 +13055,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:8.14.0", {\
-          "packageLocation": "./.yarn/cache/@testing-library-dom-npm-8.14.0-c0d87cffdc-a916ea5167.zip/node_modules/@testing-library/dom/",\
+        ["npm:8.16.0", {\
+          "packageLocation": "./.yarn/cache/@testing-library-dom-npm-8.16.0-f62c9b1562-37aabbec87.zip/node_modules/@testing-library/dom/",\
           "packageDependencies": [\
-            ["@testing-library/dom", "npm:8.14.0"],\
+            ["@testing-library/dom", "npm:8.16.0"],\
             ["@babel/code-frame", "npm:7.10.4"],\
             ["@babel/runtime", "npm:7.12.5"],\
             ["@types/aria-query", "npm:4.2.0"],\
@@ -13144,7 +13144,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@testing-library/user-event", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:13.5.0"],\
             ["@babel/runtime", "npm:7.12.5"],\
-            ["@testing-library/dom", "npm:8.14.0"],\
+            ["@testing-library/dom", "npm:8.16.0"],\
             ["@types/testing-library__dom", null]\
           ],\
           "packagePeers": [\
