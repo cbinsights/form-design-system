@@ -60,9 +60,9 @@ const events = {
 };
 
 export const Primary: StoryObj<AllEvents> = {
-  render: (args): JSX.Element => {
+  render: (args: AllEvents): JSX.Element => {
     return (
-      <ContextMenu onOpenChange={args.onOpenChange}>
+      <ContextMenu {...args} onOpenChange={args.onOpenChange}>
         <ContextMenu.Trigger>
           <div
             style={{
@@ -97,9 +97,9 @@ export const Primary: StoryObj<AllEvents> = {
   },
 };
 
-export const Disabled: StoryObj = {
-  render: (_args) => (
-    <ContextMenu>
+export const Disabled: StoryObj<ContextMenuProps> = {
+  render: (args: ContextMenuProps) => (
+    <ContextMenu {...args}>
       <ContextMenu.Trigger>
         <div
           style={{
