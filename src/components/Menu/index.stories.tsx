@@ -7,7 +7,9 @@ import { Menu, Tooltip, Dialog, Button, Flex, FlexItem } from 'components';
 import { StoryObj } from '@storybook/react';
 import { MenuProps } from '.';
 import { MenuItemProps } from './MenuItem';
-import { MenuContentProps } from './MenuContent';
+import MenuContent, { MenuContentProps } from './MenuContent';
+import MenuItem from './MenuItem';
+import MenuTrigger from './MenuTrigger';
 
 type AllEvents = Pick<MenuProps, 'onOpenChange'> &
   Pick<MenuItemProps, 'onSelect'> &
@@ -268,6 +270,12 @@ export const Disabled: StoryObj<{ disabled: boolean }> = {
 };
 
 export default {
+  component: Menu,
+  subcomponents: {
+    MenuContent,
+    MenuItem,
+    MenuTrigger,
+  },
   title: 'Components/Menu',
   parameters: {
     componentSubtitle:
