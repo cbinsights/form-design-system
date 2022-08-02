@@ -3,7 +3,7 @@ import { StoryObj } from '@storybook/react';
 import ContextMenu, { ContextMenuProps } from '.';
 import ContextMenuItem, { ContextMenuItemProps } from './ContextMenuItem';
 import ContextMenuContent, { ContextMenuContentProps } from './ContextMenuContent';
-import ContextMenuTrigger from './ContextMenuContent';
+import ContextMenuTrigger from './ContextMenuTrigger';
 
 type AllEvents = Pick<ContextMenuProps, 'onOpenChange'> &
   Pick<ContextMenuItemProps, 'onSelect'> &
