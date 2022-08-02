@@ -3,8 +3,13 @@ import * as RadixContextMenu from '@radix-ui/react-context-menu';
 import ContextMenuItem from './ContextMenuItem';
 import ContextMenuTrigger from './ContextMenuTrigger';
 import ContextMenuContent from './ContextMenuContent';
+export interface ContextMenuProps {
+  /** Event handler called when the open state of the context menu changes. */
+  onOpenChange?: (open: boolean) => void;
 
-export type ContextMenuProps = Omit<RadixContextMenu.ContextMenuProps, 'dir' | 'modal'>;
+  /** ContextMenu content, items and trigger */
+  children: React.ReactNode;
+}
 
 const ContextMenu = ({ children, onOpenChange }: ContextMenuProps): JSX.Element => {
   return (

@@ -1,8 +1,9 @@
 import React from 'react';
 import { StoryObj } from '@storybook/react';
 import ContextMenu, { ContextMenuProps } from '.';
-import { ContextMenuItemProps } from './ContextMenuItem';
-import { ContextMenuContentProps } from './ContextMenuContent';
+import ContextMenuItem, { ContextMenuItemProps } from './ContextMenuItem';
+import ContextMenuContent, { ContextMenuContentProps } from './ContextMenuContent';
+import ContextMenuTrigger from './ContextMenuContent';
 
 type AllEvents = Pick<ContextMenuProps, 'onOpenChange'> &
   Pick<ContextMenuItemProps, 'onSelect'> &
@@ -124,6 +125,12 @@ export const Disabled: StoryObj = {
 };
 
 export default {
+  component: ContextMenu,
+  subcomponents: {
+    ContextMenuContent,
+    ContextMenuItem,
+    ContextMenuTrigger,
+  },
   title: 'Components/ContextMenu',
   parameters: {
     componentSubtitle: 'Renders a context dropdown containing actions the user can take.',
