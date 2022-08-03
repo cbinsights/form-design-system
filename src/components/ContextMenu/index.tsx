@@ -11,13 +11,9 @@ export interface ContextMenuProps {
   children: React.ReactNode;
 }
 
-const ContextMenu = ({
-  children,
-  onOpenChange,
-  ...rest
-}: ContextMenuProps): JSX.Element => {
+const ContextMenu = ({ children, onOpenChange }: ContextMenuProps): JSX.Element => {
   return (
-    <RadixContextMenu.Root {...rest} onOpenChange={onOpenChange} dir="ltr" modal>
+    <RadixContextMenu.Root onOpenChange={onOpenChange} dir="ltr" modal>
       {children}
     </RadixContextMenu.Root>
   );
