@@ -1,10 +1,12 @@
 import React from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+export interface MenuTriggerProps {
+  /** Change the component to the HTML tag or custom component of the only child. This will merge the original component props with the props of the supplied element/component and change the underlying DOM node. */
+  asChild?: boolean;
 
-export type MenuTriggerProps = Pick<
-  DropdownMenu.DropdownMenuTriggerProps,
-  'asChild' | 'children'
->;
+  /** ContextMenuTrigger */
+  children: React.ReactNode;
+}
 
 const MenuTrigger = ({
   children,

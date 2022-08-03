@@ -1,8 +1,9 @@
 import React from 'react';
 import { StoryObj } from '@storybook/react';
 import ContextMenu, { ContextMenuProps } from '.';
-import { ContextMenuItemProps } from './ContextMenuItem';
-import { ContextMenuContentProps } from './ContextMenuContent';
+import ContextMenuItem, { ContextMenuItemProps } from './ContextMenuItem';
+import ContextMenuContent, { ContextMenuContentProps } from './ContextMenuContent';
+import ContextMenuTrigger from './ContextMenuTrigger';
 
 type AllEvents = Pick<ContextMenuProps, 'onOpenChange'> &
   Pick<ContextMenuItemProps, 'onSelect'> &
@@ -59,9 +60,9 @@ const events = {
 };
 
 export const Primary: StoryObj<AllEvents> = {
-  render: (args): JSX.Element => {
+  render: (args: AllEvents): JSX.Element => {
     return (
-      <ContextMenu onOpenChange={args.onOpenChange}>
+      <ContextMenu {...args} onOpenChange={args.onOpenChange}>
         <ContextMenu.Trigger>
           <div
             style={{
@@ -96,9 +97,9 @@ export const Primary: StoryObj<AllEvents> = {
   },
 };
 
-export const Disabled: StoryObj = {
-  render: (_args) => (
-    <ContextMenu>
+export const Disabled: StoryObj<ContextMenuProps> = {
+  render: (args: ContextMenuProps) => (
+    <ContextMenu {...args}>
       <ContextMenu.Trigger>
         <div
           style={{
@@ -124,6 +125,12 @@ export const Disabled: StoryObj = {
 };
 
 export default {
+  component: ContextMenu,
+  subcomponents: {
+    ContextMenuContent,
+    ContextMenuItem,
+    ContextMenuTrigger,
+  },
   title: 'Components/ContextMenu',
   parameters: {
     componentSubtitle: 'Renders a context dropdown containing actions the user can take.',

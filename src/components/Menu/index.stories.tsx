@@ -7,7 +7,9 @@ import { Menu, Tooltip, Dialog, Button, Flex, FlexItem } from 'components';
 import { StoryObj } from '@storybook/react';
 import { MenuProps } from '.';
 import { MenuItemProps } from './MenuItem';
-import { MenuContentProps } from './MenuContent';
+import MenuContent, { MenuContentProps } from './MenuContent';
+import MenuItem from './MenuItem';
+import MenuTrigger from './MenuTrigger';
 
 type AllEvents = Pick<MenuProps, 'onOpenChange'> &
   Pick<MenuItemProps, 'onSelect'> &
@@ -63,9 +65,9 @@ const events = {
   },
 };
 
-export const Primary = {
+export const Primary: StoryObj<AllEvents> = {
   render: (args: AllEvents): JSX.Element => (
-    <Menu onOpenChange={args.onOpenChange}>
+    <Menu {...args} onOpenChange={args.onOpenChange}>
       <Menu.Trigger asChild>
         <Button label="Menu trigger" hasCaret />
       </Menu.Trigger>
@@ -94,13 +96,13 @@ export const Primary = {
   },
 };
 
-export const ShowDialogFromMenuItem = {
-  render: (_args: unknown): JSX.Element => {
+export const ShowDialogFromMenuItem: StoryObj<unknown> = {
+  render: (args: unknown): JSX.Element => {
     const [showDialog, setShowDialog] = React.useState(false);
 
     return (
       <>
-        <Menu>
+        <Menu {...args}>
           <Menu.Trigger asChild>
             <Button theme="outlined" label="Click me" hasCaret />
           </Menu.Trigger>
@@ -127,11 +129,11 @@ export const ShowDialogFromMenuItem = {
   },
 };
 
-export const AnyTriggerWorks = {
-  render: (_args: unknown): JSX.Element => (
+export const AnyTriggerWorks: StoryObj<unknown> = {
+  render: (args: unknown): JSX.Element => (
     <Flex>
       <FlexItem>
-        <Menu>
+        <Menu {...args}>
           <Menu.Trigger asChild>
             <Button theme="outlined" label="Recommended trigger" hasCaret />
           </Menu.Trigger>
@@ -143,7 +145,7 @@ export const AnyTriggerWorks = {
         </Menu>
       </FlexItem>
       <FlexItem>
-        <Menu>
+        <Menu {...args}>
           <Menu.Trigger asChild>
             <button>any button will work</button>
           </Menu.Trigger>
@@ -166,9 +168,9 @@ export const AnyTriggerWorks = {
   },
 };
 
-export const CustomItems = {
-  render: (_args: unknown): JSX.Element => (
-    <Menu>
+export const CustomItems: StoryObj<unknown> = {
+  render: (args: unknown): JSX.Element => (
+    <Menu {...args}>
       <Menu.Trigger asChild>
         <Button hasCaret label="actions" theme="outlined" />
       </Menu.Trigger>
@@ -231,9 +233,9 @@ export const CustomItems = {
 };
 
 export const DisabledItems: StoryObj<MenuProps> = {
-  render: (_args: MenuProps) => {
+  render: (args: MenuProps) => {
     return (
-      <Menu>
+      <Menu {...args}>
         <Menu.Trigger>
           <Button label="Trigger Button" hasCaret />
         </Menu.Trigger>
@@ -249,7 +251,7 @@ export const DisabledItems: StoryObj<MenuProps> = {
 
 export const Disabled: StoryObj<{ disabled: boolean }> = {
   render: (args: { disabled: boolean }) => (
-    <Menu>
+    <Menu {...args}>
       <Menu.Trigger>
         <Button label="Trigger Button" hasCaret />
       </Menu.Trigger>
@@ -268,6 +270,12 @@ export const Disabled: StoryObj<{ disabled: boolean }> = {
 };
 
 export default {
+  component: Menu,
+  subcomponents: {
+    MenuContent,
+    MenuItem,
+    MenuTrigger,
+  },
   title: 'Components/Menu',
   parameters: {
     componentSubtitle:
