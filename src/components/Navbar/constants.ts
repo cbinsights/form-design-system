@@ -1,4 +1,4 @@
-import ThreeMImage from 'assets/images/3M_Homepage.png';
+import ProfessionalServicesImage from 'assets/images/professionalservices.png';
 import FeedsGeneral from 'assets/images/Feeds_General.svg';
 import WellsFargoImage from 'assets/images/Wells_Fargo_Homepage.png';
 
@@ -43,6 +43,10 @@ export const whoWeServeDropdown = (site: string): DropdownMenu[] => [
         url: `${site}/who-we-serve/function/venture-capital/`,
       },
       {
+        itemName: 'IT',
+        url: `${site}/who-we-serve/head-of-it/`,
+      },
+      {
         itemName: 'Corporate Innovation',
         url: `${site}/who-we-serve/function/corporate-innovation/`,
       },
@@ -52,9 +56,9 @@ export const whoWeServeDropdown = (site: string): DropdownMenu[] => [
     itemName: 'Industries',
     url: '',
     subMenuFeaturedItem: {
-      url: `${site}/resources/case-studies/3m-case-study/`,
-      imageSrc: ThreeMImage,
-      itemName: '3M Success Story',
+      url: `${site}/who-we-serve/industries/professional-services/`,
+      imageSrc: ProfessionalServicesImage,
+      itemName: 'Professional Services',
     },
     subMenu: [
       {
@@ -72,6 +76,10 @@ export const whoWeServeDropdown = (site: string): DropdownMenu[] => [
       {
         itemName: 'Healthcare',
         url: `${site}/who-we-serve/industries/healthcare/`,
+      },
+      {
+        itemName: 'Industrials',
+        url: `${site}/who-we-serve/industries/industrials/`,
       },
       {
         itemName: 'Financial Services',

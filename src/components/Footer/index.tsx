@@ -47,27 +47,27 @@ export const Footer = ({ site }: FooterProps): JSX.Element => (
             <ul>
               <li>
                 <a href={`${site}/how-we-help/understand-tech-markets/`}>
-                  Understand tech markets
+                  Understand Tech Markets
                 </a>
               </li>
               <li>
                 <a href={`${site}/how-we-help/competitor-strategy/`}>
-                  Anticipate competitor strategy
+                  Anticipate Competitor Strategy
                 </a>
               </li>
               <li>
                 <a href={`${site}/how-we-help/create-tech-strategy/`}>
-                  Create tech strategy
+                  Create Tech Strategy
                 </a>
               </li>
               <li>
                 <a href={`${site}/how-we-help/find-tech-vendors/`}>
-                  Connect with tech vendors
+                  Connect With Tech Vendors
                 </a>
               </li>
               <li>
                 <a href={`${site}/how-we-help/digital-transformation/`}>
-                  Turbocharge digital transformation
+                  Digital Transformation
                 </a>
               </li>
             </ul>
@@ -114,20 +114,25 @@ export const Footer = ({ site }: FooterProps): JSX.Element => (
                 </a>
               </li>
               <li>
+                <a href={`${site}/research/report/retail-technology-startups/`}>
+                  Retail Tech 100
+                </a>
+              </li>
+              <li>
                 <a href={`${site}/research-unicorn-companies/`}>Unicorn Tracker</a>
               </li>
               <li>
                 <a href={`${site}/org-directory/`}>Company Directory</a>
               </li>
               <li>
-                <a href={`${site}/esp`}>ESP Market Matrix Directory</a>
-              </li>
-              <li>
                 <a href={`${site}/research-vc-glossary-index/`}>VC Glossary</a>
               </li>
               <li>
-                <a href={`${site}/research/report/retail-technology-startups/`}>
-                  Retail Tech 100
+                <a href={`${site}/esp`}>ESP Market Matrix Directory</a>
+              </li>
+              <li>
+                <a href={`${site}/research-company-list-applications`}>
+                  Company List Applications
                 </a>
               </li>
             </ul>
