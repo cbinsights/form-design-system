@@ -3,7 +3,7 @@
 .type--head3,
 .type--head4 {
   color: var(--font-color-heading);
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-default);
 }
 
 .inverted .type--head1,
