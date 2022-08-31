@@ -37,16 +37,14 @@ export type NavBarProps = {
   LogoComponent?: React.ComponentType<{ site: string }>;
 };
 
-const DefaultLogo = ({ site }: { site: string }) => (
-  <a href={site}>
-    <img
-      className={'fdsNavbar-navLogo'}
-      width="168"
-      height="20"
-      alt="CB Insights"
-      src={CBILogo}
-    />
-  </a>
+const DefaultLogo = () => (
+  <img
+    className={'fdsNavbar-navLogo'}
+    width="168"
+    height="20"
+    alt="CB Insights"
+    src={CBILogo}
+  />
 );
 
 const NavBar = ({
@@ -118,7 +116,9 @@ const NavBar = ({
       </div>
       <div className={'fdsNavbar-container'}>
         <div className={'fdsNavbar-siteBranding'}>
-          <LogoComponent site={site} />
+          <a href={site}>
+            <LogoComponent />
+          </a>
         </div>
         {SearchComponent}
         <nav id="site-navigation" className={'fdsNavbar-navigation'}>
