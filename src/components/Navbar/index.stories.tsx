@@ -1,6 +1,7 @@
 import React from 'react';
 import { StoryObj } from '@storybook/react';
 import Navbar, { NavBarProps } from './index';
+import logo from '../../assets/images/Feeds_General.svg';
 
 const SearchComponent = (): JSX.Element => (
   <div>
@@ -14,14 +15,20 @@ export const Primary: StoryObj<NavBarProps> = {
     utmContext: '',
     SearchComponent: <SearchComponent />,
   },
-  render: (args: NavBarProps): JSX.Element => {
-    return (
-      <Navbar
-        site={args?.site}
-        utmContext={args?.utmContext}
-        SearchComponent={args.SearchComponent}
-      />
-    );
+};
+
+const DifferentLogo = ({ site }: { site: string }): JSX.Element => (
+  <a href={site}>
+    <img className={'fdsNavbar-navLogo'} width="168" height="20" alt="wow" src={logo} />
+  </a>
+);
+
+export const Logo: StoryObj<NavBarProps> = {
+  args: {
+    site: 'https://www.cbinsights.com',
+    utmContext: '',
+    SearchComponent: <SearchComponent />,
+    LogoComponent: DifferentLogo,
   },
 };
 
