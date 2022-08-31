@@ -34,24 +34,26 @@ export type NavBarProps = {
   site: string;
   utmContext: string;
   SearchComponent?: JSX.Element;
-  LogoComponent?: JSX.Element;
+  LogoComponent?: React.ComponentType<{ site: string }>;
 };
+
+const DefaultLogo = ({ site }: { site: string }) => (
+  <a href={site}>
+    <img
+      className={'fdsNavbar-navLogo'}
+      width="168"
+      height="20"
+      alt="CB Insights"
+      src={CBILogo}
+    />
+  </a>
+);
 
 const NavBar = ({
   site,
   utmContext,
   SearchComponent,
-  LogoComponent = (
-    <a href={`${site}`}>
-      <img
-        className={'fdsNavbar-navLogo'}
-        width="168"
-        height="20"
-        alt="CB Insights"
-        src={CBILogo}
-      />
-    </a>
-  ),
+  LogoComponent = DefaultLogo,
 }: NavBarProps): JSX.Element => {
   const [showClass, setShowClass] = useState(DEFAULT_STATE);
 
@@ -115,7 +117,9 @@ const NavBar = ({
         </ul>
       </div>
       <div className={'fdsNavbar-container'}>
-        <div className={'fdsNavbar-siteBranding'}>{LogoComponent}</div>
+        <div className={'fdsNavbar-siteBranding'}>
+          <LogoComponent site={site} />
+        </div>
         {SearchComponent}
         <nav id="site-navigation" className={'fdsNavbar-navigation'}>
           <div className={'fdsNavbar-navMenuButton'}>
