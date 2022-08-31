@@ -34,12 +34,12 @@ export type NavBarProps = {
   site: string;
   utmContext: string;
   SearchComponent?: JSX.Element;
-  LogoComponent?: React.ComponentType<{ site: string }>;
+  LogoComponent?: () => JSX.Element;
 };
 
 const DefaultLogo = () => (
   <img
-    className={'fdsNavbar-navLogo'}
+    className="fdsNavbar-navLogo"
     width="168"
     height="20"
     alt="CB Insights"

@@ -17,15 +17,13 @@ export const Primary: StoryObj<NavBarProps> = {
   },
 };
 
-const DifferentLogo = ({ site }: { site: string }): JSX.Element => (
-  <a href={site}>
-    <img className={'fdsNavbar-navLogo'} width="168" height="20" alt="wow" src={logo} />
-  </a>
+const DifferentLogo = (): JSX.Element => (
+  <img className="fdsNavbar-navLogo" width="168" height="20" alt="wow" src={logo} />
 );
 
 export const Logo: StoryObj<NavBarProps> = {
   args: {
-    site: 'https://www.cbinsights.com',
+    site: 'https://www.google.com',
     utmContext: '',
     SearchComponent: <SearchComponent />,
     LogoComponent: DifferentLogo,
