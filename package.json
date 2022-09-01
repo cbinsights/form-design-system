@@ -188,7 +188,7 @@
     "svg-to-jsx": "1.0.4",
     "svgo": "1.3.2",
     "tinycolor2": "1.4.2",
-    "typescript": "4.6.4",
+    "typescript": "4.8.2",
     "util": "link:./src/util"
   },
   "repository": {
