@@ -236,7 +236,7 @@
   },
   "resolutions": {
     "minimist": ">0.2.1",
-    "prismjs": "1.28.0",
+    "prismjs": "1.29.0",
     "postcss": "8.4.14"
   },
   "packageManager": "yarn@3.2.0",
