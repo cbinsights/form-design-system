@@ -229,7 +229,7 @@
     "@radix-ui/react-tooltip": "0.1.7",
     "@reach/menu-button": "0.17.0",
     "autosuggest-highlight": "3.3.0",
-    "classcat": "5.0.3",
+    "classcat": "5.0.4",
     "raf-schd": "4.0.3",
     "react-select": "5.4.0",
     "uuid": "8.3.2"

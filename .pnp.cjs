@@ -112,7 +112,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:28.1.2"],\
             ["babel-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.2.5"],\
             ["babel-plugin-module-resolver", "npm:4.1.0"],\
-            ["classcat", "npm:5.0.3"],\
+            ["classcat", "npm:5.0.4"],\
             ["commitizen", "npm:4.2.4"],\
             ["components", "link:./src/components::locator=%40cbinsights%2Ffds%40workspace%3A."],\
             ["cross-env", "npm:7.0.3"],\
@@ -7651,7 +7651,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-jest", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:28.1.2"],\
             ["babel-loader", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.2.5"],\
             ["babel-plugin-module-resolver", "npm:4.1.0"],\
-            ["classcat", "npm:5.0.3"],\
+            ["classcat", "npm:5.0.4"],\
             ["commitizen", "npm:4.2.4"],\
             ["components", "link:./src/components::locator=%40cbinsights%2Ffds%40workspace%3A."],\
             ["cross-env", "npm:7.0.3"],\
@@ -17652,10 +17652,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["classcat", [\
-        ["npm:5.0.3", {\
-          "packageLocation": "./.yarn/cache/classcat-npm-5.0.3-8036cd38f8-360de2cd8c.zip/node_modules/classcat/",\
+        ["npm:5.0.4", {\
+          "packageLocation": "./.yarn/cache/classcat-npm-5.0.4-57c2855a8a-77373c58fa.zip/node_modules/classcat/",\
           "packageDependencies": [\
-            ["classcat", "npm:5.0.3"]\
+            ["classcat", "npm:5.0.4"]\
           ],\
           "linkType": "HARD"\
         }]\

@@ -3853,7 +3853,7 @@ __metadata:
     babel-jest: 28.1.2
     babel-loader: 8.2.5
     babel-plugin-module-resolver: 4.1.0
-    classcat: 5.0.3
+    classcat: 5.0.4
     commitizen: 4.2.4
     components: "link:./src/components"
     cross-env: 7.0.3
@@ -11334,10 +11334,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classcat@npm:5.0.3":
-  version: 5.0.3
-  resolution: "classcat@npm:5.0.3"
-  checksum: 360de2cd8c3ed66fdfded123624e2db2694e32165e1ed20e55afe5c74f9df3d263c414a7f8ca4da7b84f8f7e13a3557581ca475b0fb580ca4f18885857bee011
+"classcat@npm:5.0.4":
+  version: 5.0.4
+  resolution: "classcat@npm:5.0.4"
+  checksum: 77373c58fa15ad2d4494b5c73c7ed2f859e7126227c357a3931e3f2a28e45dd9d8e779c1c8d3a8ba9ece833b21f14cd79160a7999973e28888d7e47f56c83170
   languageName: node
   linkType: hard
 
