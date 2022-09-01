@@ -86,7 +86,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/cssnano", "npm:5.0.0"],\
             ["@types/eslint", "npm:8.4.5"],\
             ["@types/fs-extra", "npm:9.0.13"],\
-            ["@types/glob", "npm:7.2.0"],\
+            ["@types/glob", "npm:8.0.0"],\
             ["@types/jest", "npm:28.1.4"],\
             ["@types/mdx-js__react", "npm:1.5.5"],\
             ["@types/postcss-import", "npm:14.0.0"],\
@@ -7625,7 +7625,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/cssnano", "npm:5.0.0"],\
             ["@types/eslint", "npm:8.4.5"],\
             ["@types/fs-extra", "npm:9.0.13"],\
-            ["@types/glob", "npm:7.2.0"],\
+            ["@types/glob", "npm:8.0.0"],\
             ["@types/jest", "npm:28.1.4"],\
             ["@types/mdx-js__react", "npm:1.5.5"],\
             ["@types/postcss-import", "npm:14.0.0"],\
@@ -13413,10 +13413,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:7.2.0", {\
-          "packageLocation": "./.yarn/cache/@types-glob-npm-7.2.0-772334bf9a-6ae717fedf.zip/node_modules/@types/glob/",\
+        ["npm:8.0.0", {\
+          "packageLocation": "./.yarn/cache/@types-glob-npm-8.0.0-02bd6d4d05-1817b05f5a.zip/node_modules/@types/glob/",\
           "packageDependencies": [\
-            ["@types/glob", "npm:7.2.0"],\
+            ["@types/glob", "npm:8.0.0"],\
             ["@types/minimatch", "npm:3.0.3"],\
             ["@types/node", "npm:14.0.27"]\
           ],\
