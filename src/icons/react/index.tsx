@@ -147,6 +147,7 @@ import SaveIcon from './SaveIcon';
 import SearchIcon from './SearchIcon';
 import SelectionIcon from './SelectionIcon';
 import SendIcon from './SendIcon';
+import SendrequestIcon from './SendrequestIcon';
 import ShareIcon from './ShareIcon';
 import ShoppingCartIcon from './ShoppingCartIcon';
 import SocialGraphIcon from './SocialGraphIcon';
@@ -341,6 +342,7 @@ export {
   SearchIcon,
   SelectionIcon,
   SendIcon,
+  SendrequestIcon,
   ShareIcon,
   ShoppingCartIcon,
   SocialGraphIcon,
