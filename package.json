@@ -160,12 +160,12 @@
     "lint-staged": "13.0.3",
     "pascal-case": "3.1.2",
     "pinst": "3.0.0",
-    "postcss": "8.4.14",
+    "postcss": "8.4.17",
     "postcss-cli": "10.0.0",
-    "postcss-html": "1.4.1",
+    "postcss-html": "1.5.0",
     "postcss-import": "14.1.0",
-    "postcss-loader": "7.0.0",
-    "postcss-preset-env": "7.7.2",
+    "postcss-loader": "7.0.1",
+    "postcss-preset-env": "7.8.2",
     "prettier": "2.7.1",
     "prop-types": "15.8.1",
     "raf-schd": "4.0.3",
@@ -237,7 +237,7 @@
   "resolutions": {
     "minimist": ">0.2.1",
     "prismjs": "1.28.0",
-    "postcss": "8.4.14"
+    "postcss": "8.4.17"
   },
   "packageManager": "yarn@3.2.0",
   "engines": {
