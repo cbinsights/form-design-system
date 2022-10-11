@@ -98,6 +98,7 @@ import LineGraphIcon from './LineGraphIcon';
 import LinkIcon from './LinkIcon';
 import LinkedinIcon from './LinkedinIcon';
 import LinkedinFilledIcon from './LinkedinFilledIcon';
+import LoadingIcon from './LoadingIcon';
 import LockIcon from './LockIcon';
 import MAIcon from './MAIcon';
 import MailIcon from './MailIcon';
@@ -293,6 +294,7 @@ export {
   LinkIcon,
   LinkedinIcon,
   LinkedinFilledIcon,
+  LoadingIcon,
   LockIcon,
   MAIcon,
   MailIcon,

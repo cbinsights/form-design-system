@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/loading</title>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/loading" fill="#404040">
+            <path d="M12,2 C17.511003,2 22,6.4889971 22,12 L22,12 L20,12 C20,7.5698774 16.430123,4 12,4 C7.5698774,4 4,7.5698774 4,12 C4,16.430123 7.5698774,20 12,20 C14.2150615,20 16.2150615,19.1075307 17.6612961,17.6612961 L19.0661283,19.0671239 C17.2550434,20.8779564 14.755249,22 12,22 C6.4889971,22 2,17.511003 2,12 C2,6.4889971 6.4889971,2 12,2 Z" id="Loading"></path>
+        </g>
+    </g>
+</svg>
