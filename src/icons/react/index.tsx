@@ -171,6 +171,7 @@ import TextIcon from './TextIcon';
 import ThreeDotIcon from './ThreeDotIcon';
 import ThumbsUpIcon from './ThumbsUpIcon';
 import ToolsIcon from './ToolsIcon';
+import TranscriptIcon from './TranscriptIcon';
 import TrashIcon from './TrashIcon';
 import TrophyIcon from './TrophyIcon';
 import TwitterIcon from './TwitterIcon';
@@ -367,6 +368,7 @@ export {
   ThreeDotIcon,
   ThumbsUpIcon,
   ToolsIcon,
+  TranscriptIcon,
   TrashIcon,
   TrophyIcon,
   TwitterIcon,
