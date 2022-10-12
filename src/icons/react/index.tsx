@@ -98,6 +98,7 @@ import LineGraphIcon from './LineGraphIcon';
 import LinkIcon from './LinkIcon';
 import LinkedinIcon from './LinkedinIcon';
 import LinkedinFilledIcon from './LinkedinFilledIcon';
+import LoadingIcon from './LoadingIcon';
 import LockIcon from './LockIcon';
 import MAIcon from './MAIcon';
 import MailIcon from './MailIcon';
@@ -170,6 +171,7 @@ import TextIcon from './TextIcon';
 import ThreeDotIcon from './ThreeDotIcon';
 import ThumbsUpIcon from './ThumbsUpIcon';
 import ToolsIcon from './ToolsIcon';
+import TranscriptIcon from './TranscriptIcon';
 import TrashIcon from './TrashIcon';
 import TrophyIcon from './TrophyIcon';
 import TwitterIcon from './TwitterIcon';
@@ -293,6 +295,7 @@ export {
   LinkIcon,
   LinkedinIcon,
   LinkedinFilledIcon,
+  LoadingIcon,
   LockIcon,
   MAIcon,
   MailIcon,
@@ -365,6 +368,7 @@ export {
   ThreeDotIcon,
   ThumbsUpIcon,
   ToolsIcon,
+  TranscriptIcon,
   TrashIcon,
   TrophyIcon,
   TwitterIcon,
