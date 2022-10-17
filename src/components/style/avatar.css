@@ -17,14 +17,14 @@
 
 .fdsAvatar--l {
   font-size: var(--font-size-xl);
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-default);
   width: 56px;
   height: 56px;
 }
 
 .fdsAvatar--m {
   font-size: var(--font-size-m);
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-default);
   width: 32px;
   height: 32px;
 }

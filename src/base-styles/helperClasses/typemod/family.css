@@ -1,7 +1,3 @@
-.fontFamily--condensed {
-  font-family: var(--font-family-condensed) !important;
-}
-
 .fontFamily--default {
   font-family: var(--font-family-default) !important;
 }

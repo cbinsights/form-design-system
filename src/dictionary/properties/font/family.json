@@ -1,9 +1,6 @@
 {
   "font": {
     "family": {
-      "condensed": {
-        "value": "'Roboto Condensed', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif"
-      },
       "default": {
         "value": "Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif"
       },
