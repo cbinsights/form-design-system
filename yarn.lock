@@ -3799,7 +3799,7 @@ __metadata:
     "@radix-ui/react-context-menu": 0.1.6
     "@radix-ui/react-dialog": 0.1.7
     "@radix-ui/react-dropdown-menu": 0.1.6
-    "@radix-ui/react-label": 0.1.5
+    "@radix-ui/react-label": 2.0.0
     "@radix-ui/react-popover": 0.1.6
     "@radix-ui/react-tooltip": 0.1.7
     "@reach/menu-button": 0.17.0
@@ -5580,6 +5580,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-compose-refs@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@radix-ui/react-compose-refs@npm:1.0.0"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+  checksum: fb98be2e275a1a758ccac647780ff5b04be8dcf25dcea1592db3b691fecf719c4c0700126da605b2f512dd89caa111352b9fad59528d736b4e0e9a0e134a74a1
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-context-menu@npm:0.1.6":
   version: 0.1.6
   resolution: "@radix-ui/react-context-menu@npm:0.1.6"
@@ -5722,6 +5733,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-label@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@radix-ui/react-label@npm:2.0.0"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-primitive": 1.0.1
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  checksum: 7ff57bd696d643c428425f4cdffcc54d1fa24b2e33a7a0f0fdc2ab0db10ddbe338fee22084db5706a2e27b7da75c40e11b8f4dde23546f78efcf2e53f83ec6d6
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-menu@npm:0.1.6":
   version: 0.1.6
   resolution: "@radix-ui/react-menu@npm:0.1.6"
@@ -5835,6 +5859,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-primitive@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@radix-ui/react-primitive@npm:1.0.1"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-slot": 1.0.1
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  checksum: 1cc86b72f926be4a42122e7e456e965de0906f16b0dc244b8448bac05905f208598c984a0dd40026f654b4a71d0235335d48a18e377b07b0ec6c6917576a8080
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-roving-focus@npm:0.1.5":
   version: 0.1.5
   resolution: "@radix-ui/react-roving-focus@npm:0.1.5"
@@ -5863,6 +5900,18 @@ __metadata:
   peerDependencies:
     react: ^16.8 || ^17.0
   checksum: 216927b9b1dae28328d630f6b2c91f1a424c0b00fb4efcebb7a109fdfc5bceda5cf878dfac5baa8aa441150d4c5263f5a914f2962bbce8375972ae076e4d3b65
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-slot@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@radix-ui/react-slot@npm:1.0.1"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-compose-refs": 1.0.0
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+  checksum: a20693f8ce532bd6cbff12ba543dfcf90d451f22923bd60b57dc9e639f6e53348915e182002b33444feb6ab753434e78e2a54085bf7092aadda4418f0423763f
   languageName: node
   linkType: hard
 
