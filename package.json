@@ -141,7 +141,7 @@
     "cssnano": "5.1.12",
     "cypress": "9.7.0",
     "cz-conventional-changelog": "3.3.0",
-    "dayjs": "1.11.3",
+    "dayjs": "1.11.6",
     "dictionary": "link:./src/dictionary",
     "eslint": "8.19.0",
     "eslint-config-prettier": "8.5.0",

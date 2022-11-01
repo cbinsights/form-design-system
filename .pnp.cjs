@@ -120,7 +120,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cssnano", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.1.12"],\
             ["cypress", "npm:9.7.0"],\
             ["cz-conventional-changelog", "npm:3.3.0"],\
-            ["dayjs", "npm:1.11.3"],\
+            ["dayjs", "npm:1.11.6"],\
             ["dictionary", "link:./src/dictionary::locator=%40cbinsights%2Ffds%40workspace%3A."],\
             ["eslint", "npm:8.19.0"],\
             ["eslint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.5.0"],\
@@ -7659,7 +7659,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cssnano", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:5.1.12"],\
             ["cypress", "npm:9.7.0"],\
             ["cz-conventional-changelog", "npm:3.3.0"],\
-            ["dayjs", "npm:1.11.3"],\
+            ["dayjs", "npm:1.11.6"],\
             ["dictionary", "link:./src/dictionary::locator=%40cbinsights%2Ffds%40workspace%3A."],\
             ["eslint", "npm:8.19.0"],\
             ["eslint-config-prettier", "virtual:3580ae7d468a11c68757413a82df07ae5b83c9fe12005d09fb9b82d058a79d405c60eb955b486b5599178555a36f46e8c6232007ec18ef8c84fb60c3da6d0b42#npm:8.5.0"],\
@@ -19256,10 +19256,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:1.11.3", {\
-          "packageLocation": "./.yarn/cache/dayjs-npm-1.11.3-88985d494e-c87e06b562.zip/node_modules/dayjs/",\
+        ["npm:1.11.6", {\
+          "packageLocation": "./.yarn/cache/dayjs-npm-1.11.6-44daf311a9-18bdfd9270.zip/node_modules/dayjs/",\
           "packageDependencies": [\
-            ["dayjs", "npm:1.11.3"]\
+            ["dayjs", "npm:1.11.6"]\
           ],\
           "linkType": "HARD"\
         }]\
