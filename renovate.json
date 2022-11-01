@@ -1,25 +1,3 @@
 {
-  "extends": ["config:base", ":disableRateLimiting"],
-  "timezone": "America/New_York",
-  "assigneesSampleSize": 1,
-  "ignorePaths": ["**/example/**"],
-  "schedule": ["on the first day of the month"],
-  "packageRules": [
-    {
-      "matchPackagePatterns": ["eslint"],
-      "groupName": "eslint"
-    },
-    {
-      "matchPackagePatterns": ["testing-library"],
-      "groupName": "testing-library"
-    },
-    {
-      "matchPackagePatterns": ["postcss"],
-      "groupName": "PostCSS"
-    },
-    {
-      "matchPackagePatterns": ["stylelint"],
-      "groupName": "Stylelint"
-    }
-  ]
+  "enabled": false
 }
