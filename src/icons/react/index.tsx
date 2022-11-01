@@ -21,6 +21,7 @@ import BankIcon from './BankIcon';
 import BarChartIcon from './BarChartIcon';
 import BatteryIcon from './BatteryIcon';
 import BellIcon from './BellIcon';
+import BellDisabledIcon from './BellDisabledIcon';
 import BoardIcon from './BoardIcon';
 import BoxIcon from './BoxIcon';
 import BriefcaseIcon from './BriefcaseIcon';
@@ -218,6 +219,7 @@ export {
   BarChartIcon,
   BatteryIcon,
   BellIcon,
+  BellDisabledIcon,
   BoardIcon,
   BoxIcon,
   BriefcaseIcon,
