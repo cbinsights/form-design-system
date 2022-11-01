@@ -231,7 +231,7 @@
     "autosuggest-highlight": "3.3.0",
     "classcat": "5.0.3",
     "raf-schd": "4.0.3",
-    "react-select": "5.4.0",
+    "react-select": "5.5.9",
     "uuid": "8.3.2"
   },
   "resolutions": {
