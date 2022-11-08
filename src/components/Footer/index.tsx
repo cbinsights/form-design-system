@@ -35,6 +35,9 @@ export const Footer = ({ site }: FooterProps): JSX.Element => (
                 <a href={`${site}/about/`}>About Us</a>
               </li>
               <li>
+                <a href={`${site}/research/events`}>Upcoming Webinars</a>
+              </li>
+              <li>
                 <a href={`${site}/contact-us/`}>Contact Us</a>
               </li>
             </ul>
@@ -62,7 +65,7 @@ export const Footer = ({ site }: FooterProps): JSX.Element => (
               </li>
               <li>
                 <a href={`${site}/how-we-help/find-tech-vendors/`}>
-                  Connect With Tech Vendors
+                  Connect with Tech Vendors
                 </a>
               </li>
               <li>
@@ -86,9 +89,6 @@ export const Footer = ({ site }: FooterProps): JSX.Element => (
               </li>
               <li>
                 <a href={`${site}/what-we-offer/research/`}>Research Overview</a>
-              </li>
-              <li>
-                <a href={`${site}/what-we-offer/api-data-feeds/`}>API &amp; Data Feeds</a>
               </li>
               <li>
                 <a href={`${site}/what-we-offer/pricing/`}>Pricing</a>
@@ -134,6 +134,9 @@ export const Footer = ({ site }: FooterProps): JSX.Element => (
                 <a href={`${site}/research-company-list-applications`}>
                   Company List Applications
                 </a>
+              </li>
+              <li>
+                <a href={`${site}/featured-insights`}>Featured Insights</a>
               </li>
             </ul>
           </section>
