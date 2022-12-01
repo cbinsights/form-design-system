@@ -187,6 +187,7 @@ import UploadOutlinedIcon from './UploadOutlinedIcon';
 import UserIcon from './UserIcon';
 import UserFilledIcon from './UserFilledIcon';
 import VerifiedCheckIcon from './VerifiedCheckIcon';
+import VideoPlayerIcon from './VideoPlayerIcon';
 import ViewIcon from './ViewIcon';
 import ViewColumnsIcon from './ViewColumnsIcon';
 import ViewListIcon from './ViewListIcon';
@@ -385,6 +386,7 @@ export {
   UserIcon,
   UserFilledIcon,
   VerifiedCheckIcon,
+  VideoPlayerIcon,
   ViewIcon,
   ViewColumnsIcon,
   ViewListIcon,
