@@ -57,6 +57,7 @@ import DenyIcon from './DenyIcon';
 import DevicesIcon from './DevicesIcon';
 import DocumentIcon from './DocumentIcon';
 import DollarIcon from './DollarIcon';
+import DollarHalfIcon from './DollarHalfIcon';
 import DoneIcon from './DoneIcon';
 import DownloadIcon from './DownloadIcon';
 import DownloadFilledIcon from './DownloadFilledIcon';
@@ -74,6 +75,7 @@ import FeedsIcon from './FeedsIcon';
 import FillIcon from './FillIcon';
 import FilterIcon from './FilterIcon';
 import FireIcon from './FireIcon';
+import FireHalfIcon from './FireHalfIcon';
 import FitIcon from './FitIcon';
 import FundingIcon from './FundingIcon';
 import FunnelIcon from './FunnelIcon';
@@ -130,6 +132,7 @@ import PdfIcon from './PdfIcon';
 import PhoneIcon from './PhoneIcon';
 import PiggyBankIcon from './PiggyBankIcon';
 import PlantIcon from './PlantIcon';
+import PlantHalfIcon from './PlantHalfIcon';
 import PresentIcon from './PresentIcon';
 import PublishIcon from './PublishIcon';
 import PuzzleIcon from './PuzzleIcon';
@@ -259,6 +262,7 @@ export {
   DevicesIcon,
   DocumentIcon,
   DollarIcon,
+  DollarHalfIcon,
   DoneIcon,
   DownloadIcon,
   DownloadFilledIcon,
@@ -276,6 +280,7 @@ export {
   FillIcon,
   FilterIcon,
   FireIcon,
+  FireHalfIcon,
   FitIcon,
   FundingIcon,
   FunnelIcon,
@@ -332,6 +337,7 @@ export {
   PhoneIcon,
   PiggyBankIcon,
   PlantIcon,
+  PlantHalfIcon,
   PresentIcon,
   PublishIcon,
   PuzzleIcon,
