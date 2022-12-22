@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/drag</title>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/drag" fill="#404040" fill-rule="nonzero">
+            <g id="arrow-left-right" transform="translate(2.000000, 7.000000)">
+                <polygon id="Path" points="4.95454545 9.90909091 0 4.95454545 4.95454545 0 6.23636364 1.28181818 3.48181818 4.04545455 16.5181818 4.04545455 13.7636364 1.28181818 15.0454545 0 20 4.95454545 15.0454545 9.90909091 13.7636364 8.62727273 16.5181818 5.86363636 3.48181818 5.86363636 6.23636364 8.62727273"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
