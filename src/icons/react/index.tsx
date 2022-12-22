@@ -62,6 +62,7 @@ import DoneIcon from './DoneIcon';
 import DownloadIcon from './DownloadIcon';
 import DownloadFilledIcon from './DownloadFilledIcon';
 import DownloadOutlinedIcon from './DownloadOutlinedIcon';
+import DragIcon from './DragIcon';
 import EditIcon from './EditIcon';
 import EmailIcon from './EmailIcon';
 import ErrorIcon from './ErrorIcon';
@@ -267,6 +268,7 @@ export {
   DownloadIcon,
   DownloadFilledIcon,
   DownloadOutlinedIcon,
+  DragIcon,
   EditIcon,
   EmailIcon,
   ErrorIcon,
