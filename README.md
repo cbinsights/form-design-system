@@ -1,3 +1,11 @@
+# This repo is now read only. If you are a CB Insights employee:
+
+- FDS Components are now in `@cbi-next/fds`
+- Styles are in `@cbi-next/companion`
+- Icons are now in `cbi-next/cbicons`
+
+---
+
 # Form Design System
 
 A design system by CB Insights.
