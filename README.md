@@ -1,4 +1,4 @@
-# This repo is now read only. If you are a CB Insights employee:
+# This repo is now deprecated only. If you are a CB Insights employee working with `cbi-site`:
 
 - FDS Components are now in `@cbi-next/fds`
 - Styles are in `@cbi-next/companion`
